@@ -1,14 +1,33 @@
+<!-- simple-todos.html -->
 <head>
-  <title>events-app</title>
+  <title>Todo List</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="container">
+    <header>
+      <h1>Todo List</h1>
+    </header>
 
-  {{> hello}}
+    <form class="new-event">
+    	<input type="text" name="text" placeholder="Type to add new events" />
+  	</form>
+    <ul>
+      {{#each events}}
+        {{> event}}
+      {{/each}}
+    </ul>
+
+
+  </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="event">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    <span class="event_name">{{event_name}}</span>
+  </li>
 </template>
