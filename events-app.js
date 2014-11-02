@@ -4,37 +4,34 @@ if (Meteor.isClient) {
   // This code only runs on the client
 
   Template.body.helpers({
-    events: function () {
-      return Events.find({},{sort:{createdAt: -1}});
-    }
+    // search_results: getResults("pillow")
 
   });
-
   Template.body.events({
-
-    "submit .new-event": function (event) {
-      console.info(event)
-      var text = event.target.text.value;
-      Events.insert({
-        event_name: text,
-        createdAt: new Date()
-      });
-      event.target.text.value = "";
-
+    "submit .search-events": function (event) {
+      var search_value = event.target.search.value;
+      search_results = getResults(search_value);
+      event.target.search.value = "";
       return false;
     }
 
    });
-  Template.event.events({
-    "click .toggle-checked": function () {
-      Events.updaet(this._id, {$set: {checked: ! this.checked}});
-    },
-    "click .delete": function () {
-      Events.remove(this._id);
-    }
-  })
+  // Template.results.events({
+  //   "click .toggle-checked": function () {
+  //     Events.update(this._id, {$set: {checked: ! this.checked}});
+  //   },
+  //   "click .delete": function () {
+  //     Events.remove(this._id);
+  //   }
+  // })
 }
-
+function getResults(keyword) {
+    var events = Events.find({event_name: keyword}).fetch();
+    // events.sort(hasLatestVariation);
+    console.log("keyword: " + keyword);
+    console.log("results: " + events);
+    return events;
+}
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
