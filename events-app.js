@@ -18,7 +18,7 @@ if (Meteor.isClient) {
     }
   });
 
-function getResults(keyword) {
+  function getResults(keyword) {
     var events = Events.find({event_name: keyword}).fetch();
     // events.sort(hasLatestVariation);
     console.log("keyword: " + keyword);

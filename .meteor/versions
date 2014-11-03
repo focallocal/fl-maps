@@ -12,8 +12,6 @@ ctl-helper@1.0.4
 ctl@1.0.2
 ddp@1.0.11
 deps@1.0.5
-ecwyne:polymer-elements@1.0.3
-ecwyne:polymer@1.0.2
 ejson@1.0.4
 fastclick@1.0.1
 follower-livedata@1.0.2
