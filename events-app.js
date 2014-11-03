@@ -1,30 +1,20 @@
 Events = new Mongo.Collection("events");
 
 if (Meteor.isClient) {
-  // This code only runs on the client
+  Template.results.search_results = function () {
+      return Session.get('results')
+  };
 
-  Template.body.helpers({
-    // search_results: getResults("pillow")
-
-  });
-  Template.body.events({
+  Template.banner.events({
     "submit .search-events": function (event) {
       var search_value = event.target.search.value;
-      search_results = getResults(search_value);
+      var search_results = getResults(search_value);
+      Session.set('results', search_results);
       event.target.search.value = "";
       return false;
     }
+  });
 
-   });
-  // Template.results.events({
-  //   "click .toggle-checked": function () {
-  //     Events.update(this._id, {$set: {checked: ! this.checked}});
-  //   },
-  //   "click .delete": function () {
-  //     Events.remove(this._id);
-  //   }
-  // })
-}
 function getResults(keyword) {
     var events = Events.find({event_name: keyword}).fetch();
     // events.sort(hasLatestVariation);
@@ -32,8 +22,7 @@ function getResults(keyword) {
     console.log("results: " + events);
     return events;
 }
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+
 }
+
+

@@ -25,14 +25,11 @@
 			<section id="main" class="container">
 		
 				<section class="box special">
+					{{> results}}
 					<header class="major">
 						<h2>Map here</h2>
 					</header>
-					{{#if search_results}}
-						{{#each search_results}}
-							{{> result this}}
-						{{/each}}
-					{{/if}}
+
 					<!-- <span class="image featured"><img src="images/pic01.jpg" alt="" /></span> -->
 				</section>
 
