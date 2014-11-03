@@ -1,14 +1,17 @@
 Events = new Mongo.Collection("events");
 
 if (Meteor.isClient) {
-  Template.results.search_results = function () {
-      return Session.get('results')
-  };
+
+  Template.results.helpers({
+     search_results: function () {
+         return Session.get('results')
+     }
+  });
 
   Template.banner.events({
     "submit .search-events": function (event) {
       var search_value = event.target.search.value;
-      var search_results = getResults(search_value);
+      search_results = getResults(search_value);
       Session.set('results', search_results);
       event.target.search.value = "";
       return false;
