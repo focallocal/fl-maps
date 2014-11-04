@@ -114,3 +114,4 @@ com_crashlytics_export_strings.xml
 ### Meteor ###
 .meteor/local
 .meteor/meteorite
+/client/map.js

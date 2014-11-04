@@ -24,8 +24,15 @@ if (Meteor.isClient) {
     console.log("keyword: " + keyword);
     console.log("results: " + events);
     return events;
-}
+  }
 
+//resize map on window frame size change
+    $(window).resize(function(){
+        var h = $(window).height();
+        var offsetTop = 90;
+        $mc = $('#map_canvas');
+        $mc.css('height',(h-offsetTop));
+    }).resize();
 }
 
 
