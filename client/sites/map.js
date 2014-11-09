@@ -43,8 +43,8 @@ Template.map.rendered = function () {
         map.on("dblclick", function(e) {
             openCreateDialog(e.latlng);
     });
-    
-    
+
+
 //    var self = this;
 //    Meteor.autorun(function() {
 //      var selectedParty = Parties.findOne(Session.get("selected"));
@@ -67,10 +67,10 @@ Template.map.rendered = function () {
 //            [selectedParty.latlng.lat, selectedParty.latlng.lng]]);
 //          self.animatedMarker.setLine(line.getLatLngs());
 //          self.animatedMarker.start();
-//        } 
+//        }
 //      }
 //    })
-    };   
+    };
 //    Template.page.showInviteDialog = function () {
 //        return Session.get("showInviteDialog");
 //    };
