@@ -7,4 +7,6 @@ meteor-platform
 autopublish
 insecure
 mrt:leaflet
+less
+nemo64:bootstrap
 
