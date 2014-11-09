@@ -8,7 +8,7 @@
   "grid":                 false,
   "tables":               false,
   "forms":                false,
-  "buttons":              false,
+  "buttons":              true,
 
   "glyphicons":           false,
   "button-groups":        false,
@@ -29,7 +29,7 @@
   "panels":               false,
   "responsive-embed":     false,
   "wells":                false,
-  "close":                false,
+  "close":                true,
 
   "component-animations": false,
   "dropdowns":            false,
@@ -40,7 +40,7 @@
 
   "affix":                false,
   "alert":                false,
-  "button":               false,
+  "button":               true,
   "collapse":             false,
   "scrollspy":            false,
   "tab":                  false,

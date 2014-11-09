@@ -1,58 +1,26 @@
 <template name="newevent">
 <!--    {{#if showCreateDialog}}-->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newevent">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="newevent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="newevent" tabindex="-1" role="dialog" aria-labelledby="neweventLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+<!--            <span class="sr-only">Close</span>-->
+        </button>
+        <h4 class="modal-title" id="neweventLabel">Create new event!</h4>
       </div>
       <div class="modal-body">
-        ...
+          Coords: \n
+              latitude: {{createCoords.lat}}
+              Longitude: {{createCoords.lng}}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus at, excepturi quisquam modi aperiam, non sapiente vitae eaque consequuntur, accusantium eligendi recusandae commodi incidunt fugiat sunt inventore! Eos nihil, quas?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Publish!</button>
       </div>
     </div>
   </div>
 </div>
-<!--
-   <div class="modal fade" id="newevent"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close cancel">&times;</button>
-      <h3>Add event!!</h3>
-    </div>
-
-    <div class="modal-body">
-      {{#if error}}
-        <div class="alert alert-error">{{error}}</div>
-      {{/if}}
-
-      <label>Title</label>
-      <input type="text" class="title span5">
-
-      <label>Description</label>
-      <textarea class="description span5"></textarea>
-
-      <label class="checkbox">
-        <input type="checkbox" class="private">
-        Private party &mdash; invitees only
-      </label>
-    </div>
-
-    <div class="modal-footer">
-      <a href="#" class="btn cancel">Cancel</a>
-      <a href="#" class="btn btn-primary save">Add party</a>
-    </div>
-  </div>
--->
-
 <!--    {{/if}}-->
 </template>
