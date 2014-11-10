@@ -10,14 +10,17 @@
         <h4 class="modal-title" id="neweventLabel">Create new event!</h4>
       </div>
       <div class="modal-body">
-          Coords: \n
-              latitude: {{createCoords.lat}}
-              Longitude: {{createCoords.lng}}
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus at, excepturi quisquam modi aperiam, non sapiente vitae eaque consequuntur, accusantium eligendi recusandae commodi incidunt fugiat sunt inventore! Eos nihil, quas?
+          {{> newEventForm}}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Publish!</button>
+        <div class="row uniform">
+            <div class="12u">
+                <ul class="actions">
+                    <li><input type="submit" class="special" value="Publish!" /></li>
+                    <li><input type="reset" value="Close" data-dismiss="modal" class="alt" /></li>
+                </ul>
+            </div>
+        </div>
       </div>
     </div>
   </div>

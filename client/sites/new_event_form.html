@@ -1,0 +1,43 @@
+<template name="newEventForm">
+    <section >
+        <form method="post" action="#">
+            <div class="row uniform half">
+                <div class="12u">
+                    <input type="text" name="name" id="name" value="" placeholder="Event name" />
+                </div>
+            </div>
+            <div class="row uniform half">
+                <div class="12u">
+                    <input type="text" name="location" id="location" value=""
+                            placeholder="Location description e.g. trafalgar square" />
+                </div>
+            </div>
+            <div class="row uniform half">
+                <div class="12u">
+                    <input type="text" name="artifact" id="artifact" value=""
+                            placeholder="The item everybody should bring to be recognized." />
+                </div>
+            </div>
+            <div class="row uniform half">
+                <div class="12u">
+                    <div class="select-wrapper">
+                        <select name="category" id="category">
+                            <option value="">- Category -</option>
+                            <option value="1">Pillow fight</option>
+                            <option value="2">Music connection</option>
+                            <option value="3">Picnic</option>
+                            <option value="4">Free hugs</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row uniform half">
+                <div class="12u">
+                    <textarea name="description" id="description"
+                    placeholder="Enter description here. Put a translation if you want.
+And what are the plans in case of wet weather? :)" rows="6"></textarea>
+                </div>
+            </div>
+        </form>
+    </section>
+</template>

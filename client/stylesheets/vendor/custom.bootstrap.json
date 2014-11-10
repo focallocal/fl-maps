@@ -8,7 +8,7 @@
   "grid":                 false,
   "tables":               false,
   "forms":                false,
-  "buttons":              true,
+  "buttons":              false,
 
   "glyphicons":           false,
   "button-groups":        false,
@@ -40,7 +40,7 @@
 
   "affix":                false,
   "alert":                false,
-  "button":               true,
+  "button":               false,
   "collapse":             false,
   "scrollspy":            false,
   "tab":                  false,
