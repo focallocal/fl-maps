@@ -1,4 +1,4 @@
-Template.newevent.helpers({
+Template.newEvent.helpers({
  showCreateDialog: function () {
      return Session.get("showCreateDialog");
  },

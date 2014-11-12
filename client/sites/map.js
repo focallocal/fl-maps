@@ -21,7 +21,7 @@ var openCreateDialog = function (latlng) {
     Session.set("createCoords", latlng);
     Session.set("createError", null);
     Session.set("showCreateDialog", true);
-    $("#newevent").modal("show");
+    $("#newEvent").modal("show");
 };
 
 Template.map.created = function() {
