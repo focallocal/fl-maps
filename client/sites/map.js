@@ -5,7 +5,7 @@ var map, markers = [ ];
 
 var initialize = function (element, centroid, zoom, features) {
     map = L.map(element, {
-        scrollWheelZoom: true,
+        scrollWheelZoom: false,
         doubleClickZoom: false,
         boxZoom: false,
         touchZoom: false
@@ -15,6 +15,43 @@ var initialize = function (element, centroid, zoom, features) {
 
 };
 
+var addMarker = function(marker) {
+    map.addLayer(marker);
+    markers[marker.options._id] = marker;
+};
+
+var removeMarker = function(_id) {
+    var marker = markers[_id];
+    if (map.hasLayer(marker)) map.removeLayer(marker);
+};
+
+
+var createIcon = function(event) {
+    var className = 'leaflet-div-icon ';
+    var category = '';
+    switch (event.category) {
+        case "1":
+            category = 'pillow';
+            break;
+        case "2":
+            category = 'music';
+            break;
+        case "3":
+            category = 'picnic';
+            break;
+        case "4":
+            category = 'freehugs';
+            break;
+        default:
+            category = 'other';
+            break;
+    }
+    return L.divIcon({
+        iconSize: [30, 30],
+        html: '<strong>' + category.substring(0,1).toUpperCase() + '</strong>',
+        className: className + category
+    });
+};
 
 var openCreateDialog = function (latlng) {
     console.log("double click! " + latlng);
@@ -27,6 +64,25 @@ var openCreateDialog = function (latlng) {
 Template.map.created = function() {
     console.log("Map created!");
     Session.set("showCreateDialog", false);
+    Events.find({}).observe({
+        added: function(event) {
+            var marker = new L.Marker(event.latlng, {
+                _id: event._id,
+                icon: createIcon(event)
+            }).on('click', function(e) {
+                    Session.set("selected", e.target.options._id);
+                });
+            addMarker(marker);
+        },
+        changed: function(event) {
+            var marker = markers[event._id];
+            if (marker) marker.setIcon(createIcon(event));
+        },
+        removed: function(event) {
+            removeMarker(event._id);
+        }
+    });
+
 };
 
 Template.map.rendered = function () {
@@ -39,41 +95,40 @@ Template.map.rendered = function () {
 
   // initialize map events
     if (!map) {
-        initialize($("#map_canvas")[0], [ 51.533333, 0.083333 ], 13);
+        initialize($("#map_canvas")[0], [ 48.28593, 16.30371 ], 4);
         map.on("dblclick", function(e) {
             openCreateDialog(e.latlng);
-    });
+
+        });
 
 
-//    var self = this;
-//    Meteor.autorun(function() {
-//      var selectedParty = Parties.findOne(Session.get("selected"));
-//      if (selectedParty) {
-//        if (!self.animatedMarker) {
-//          var line = L.polyline([[selectedParty.latlng.lat, selectedParty.latlng.lng]]);
-//          self.animatedMarker = L.animatedMarker(line.getLatLngs(), {
-//            autoStart: false,
-//            distance: 3000,  // meters
-//            interval: 200, // milliseconds
-//            icon: L.divIcon({
-//              iconSize: [50, 50],
-//              className: 'leaflet-animated-icon'
-//            })
-//          });
-//          map.addLayer(self.animatedMarker);
-//        } else {
-//          // animate to here
-//          var line = L.polyline([[self.animatedMarker.getLatLng().lat, self.animatedMarker.getLatLng().lng],
-//            [selectedParty.latlng.lat, selectedParty.latlng.lng]]);
-//          self.animatedMarker.setLine(line.getLatLngs());
-//          self.animatedMarker.start();
-//        }
-//      }
-//    })
-    };
-//    Template.page.showInviteDialog = function () {
-//        return Session.get("showInviteDialog");
-//    };
+        var self = this;
+        Tracker.autorun(function() {
+          var selectedEvent = Events.findOne(Session.get("selected"));
+          if (selectedEvent) {
+            if (!self.animatedMarker) {
+              var line = L.polyline([[selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
+              self.animatedMarker = L.animatedMarker(line.getLatLngs(), {
+                autoStart: false,
+                distance: 3000,  // meters
+                interval: 200, // milliseconds
+                icon: L.divIcon({
+                  iconSize: [100, 100],
+                  className: 'leaflet-animated-icon'
+                })
+              });
+              map.addLayer(self.animatedMarker);
+            } else {
+              // animate to here
+              var line = L.polyline([[self.animatedMarker.getLatLng().lat, self.animatedMarker.getLatLng().lng],
+                [selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
+              self.animatedMarker.setLine(line.getLatLngs());
+              self.animatedMarker.start();
+            }
+          }
+        })
+    }
+
 
 
 };

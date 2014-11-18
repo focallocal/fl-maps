@@ -1,3 +1,38 @@
 .search-events {
 	color: #646464;
 }
+
+/* markers */
+.leaflet-animated-div-icon {
+	border-radius: 50%;
+	border: none;
+	opacity: .2;
+	background: black;
+}
+.leaflet-div-icon {
+	border-radius: 50%;
+	border: none;
+	line-height: 30px;
+	font-family: FontAwesome, sans-serif;
+	text-align: center;
+	color: white;
+	opacity: .8;
+	vertical-align:middle;
+}
+
+.leaflet-div-icon.pillow {
+	background: #47cdbf;
+}
+.leaflet-div-icon.music {
+	background: #36da7b;
+}
+.leaflet-div-icon.picnic {
+	background: #4fbc12;
+}
+.leaflet-div-icon.freehugs {
+	background: #da47c1;
+}
+.leaflet-div-icon.other {
+	background: #792f2d;
+}
+
