@@ -138,6 +138,18 @@ Template.map.rendered = function () {
               self.animatedMarker.start();
             }
           }
+            var results = Session.get("results");
+            function collectBounds() {
+                var latlngArr = [];
+                for (var i = 0, len = results.length; i < len; i++) {
+                    latlngArr.push(results[i].latlng);
+                }
+                return L.latLngBounds(latlngArr);
+            }
+            if (!!results){
+                var bounds = collectBounds();
+                map.fitBounds(bounds,{maxZoom:6});
+            }
         })
     }
 
