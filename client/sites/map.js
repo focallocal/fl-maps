@@ -41,6 +41,9 @@ var createIcon = function(event) {
         case "4":
             category = 'freehugs';
             break;
+        case "5":
+            category = 'other';
+            break;
         default:
             category = 'other';
             break;

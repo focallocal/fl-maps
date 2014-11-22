@@ -21,10 +21,10 @@
 }
 /* category markers */
 .leaflet-div-icon.pillow {
-	background: #47cdbf;
+	background: #f0d00e;
 }
 .leaflet-div-icon.music {
-	background: #36da7b;
+	background: #3587da;
 }
 .leaflet-div-icon.picnic {
 	background: #4fbc12;
@@ -33,7 +33,7 @@
 	background: #da47c1;
 }
 .leaflet-div-icon.other {
-	background: #792f2d;
+	background: #a6a6c9;
 }
 
 /* selected marker */
