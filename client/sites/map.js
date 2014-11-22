@@ -70,10 +70,22 @@ Template.map.created = function() {
         added: function(event) {
             var marker = new L.Marker(event.latlng, {
                 _id: event._id,
-                icon: createIcon(event)
-            }).on('click', function(e) {
+                icon: createIcon(event),
+                riseOnHover: true
+            });
+            marker.bindPopup(event.title)
+                .on('click', function(e) {
                     Session.set("selected", e.target.options._id);
+                })
+                .on("mouseover", function(e){
+                    setTimeout(function(){e.target.openPopup()}, 500)
+
+                })
+                .on("mouseout", function(e){
+                    setTimeout(function(){e.target.closePopup()}, 1000)
                 });
+              //
+
             addMarker(marker);
         },
         changed: function(event) {
