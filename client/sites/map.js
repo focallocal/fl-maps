@@ -25,7 +25,6 @@ var removeMarker = function(_id) {
     if (map.hasLayer(marker)) map.removeLayer(marker);
 };
 
-
 var createIcon = function(event) {
     var className = 'leaflet-div-icon ';
     var category = '';
@@ -47,8 +46,8 @@ var createIcon = function(event) {
             break;
     }
     return L.divIcon({
-        iconSize: [30, 30],
-        html: '<strong>' + category.substring(0,1).toUpperCase() + '</strong>',
+        iconSize: [10, 10],
+        //html: '<strong>' + category.substring(0,1).toUpperCase() + '</strong>',
         className: className + category
     });
 };
@@ -98,9 +97,7 @@ Template.map.rendered = function () {
         initialize($("#map_canvas")[0], [ 48.28593, 16.30371 ], 4);
         map.on("dblclick", function(e) {
             openCreateDialog(e.latlng);
-
         });
-
 
         var self = this;
         Tracker.autorun(function() {
@@ -110,10 +107,10 @@ Template.map.rendered = function () {
               var line = L.polyline([[selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
               self.animatedMarker = L.animatedMarker(line.getLatLngs(), {
                 autoStart: false,
-                distance: 3000,  // meters
-                interval: 200, // milliseconds
+                distance: 5000,  // meters
+                interval: 5, // milliseconds
                 icon: L.divIcon({
-                  iconSize: [100, 100],
+                  iconSize: [20, 20],
                   className: 'leaflet-animated-icon'
                 })
               });

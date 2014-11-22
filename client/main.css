@@ -19,7 +19,7 @@
 	opacity: .8;
 	vertical-align:middle;
 }
-
+/* category markers */
 .leaflet-div-icon.pillow {
 	background: #47cdbf;
 }
@@ -36,3 +36,10 @@
 	background: #792f2d;
 }
 
+/* selected marker */
+.leaflet-animated-icon {
+	border-radius: 50%;
+	border: none;
+	opacity: .5;
+	background: #da0c0b;
+}
