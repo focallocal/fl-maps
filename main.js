@@ -19,10 +19,11 @@ if (Meteor.isClient) {
   });
 
   function getResults(keyword) {
-    var events = Events.find({event_name: keyword}).fetch();
+    var events = Events.find({title: keyword}).fetch();
     // events.sort(hasLatestVariation);
     console.log("keyword: " + keyword);
     console.log("results: " + events);
+    Session.set("selected",events[0]);
     return events;
   }
 
@@ -34,10 +35,10 @@ if (Meteor.isClient) {
         $mc.css('height',(h-offsetTop));
     }).resize();
 }
-//global
+
+//server and client scope
 Meteor.methods({
     createEvent: function (options) {
-        console.log('trying to save event');
         if (! (typeof options.title === "string" && options.title.length &&
             typeof options.location === "string" && options.location.length &&
             typeof options.artifact === "string" && options.artifact.length &&
