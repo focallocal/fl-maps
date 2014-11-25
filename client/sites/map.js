@@ -2,10 +2,10 @@
 // Map display
 
 var map, markers = [ ];
-
+var resultMarkers = [];
 var initialize = function (element, centroid, zoom, features) {
     map = L.map(element, {
-        scrollWheelZoom: false,
+        scrollWheelZoom: true,
         doubleClickZoom: false,
         boxZoom: false,
         touchZoom: false
@@ -76,15 +76,7 @@ Template.map.created = function() {
             marker.bindPopup(event.title)
                 .on('click', function(e) {
                     Session.set("selected", e.target.options._id);
-                })
-                .on("mouseover", function(e){
-                    setTimeout(function(){e.target.openPopup()}, 500)
-
-                })
-                .on("mouseout", function(e){
-                    setTimeout(function(){e.target.closePopup()}, 1000)
                 });
-              //
 
             addMarker(marker);
         },
@@ -118,11 +110,12 @@ Template.map.rendered = function () {
         Tracker.autorun(function() {
           var selectedEvent = Events.findOne(Session.get("selected"));
           if (selectedEvent) {
+            var line;
             if (!self.animatedMarker) {
-              var line = L.polyline([[selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
+              line = L.polyline([[selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
               self.animatedMarker = L.animatedMarker(line.getLatLngs(), {
                 autoStart: false,
-                distance: 5000,  // meters
+                distance: 10000,  // meters
                 interval: 5, // milliseconds
                 icon: L.divIcon({
                   iconSize: [20, 20],
@@ -132,7 +125,7 @@ Template.map.rendered = function () {
               map.addLayer(self.animatedMarker);
             } else {
               // animate to here
-              var line = L.polyline([[self.animatedMarker.getLatLng().lat, self.animatedMarker.getLatLng().lng],
+              line = L.polyline([[self.animatedMarker.getLatLng().lat, self.animatedMarker.getLatLng().lng],
                 [selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
               self.animatedMarker.setLine(line.getLatLngs());
               self.animatedMarker.start();
@@ -146,9 +139,38 @@ Template.map.rendered = function () {
                 }
                 return L.latLngBounds(latlngArr);
             }
-            if (!!results){
+
+            function clearResults() {
+                for (var i = 0, len = resultMarkers.length; i < len; i++) {
+                    var marker = resultMarkers[i];
+                    if (map.hasLayer(marker)) {
+                        map.removeLayer(marker);
+                    }
+                }
+            }
+
+            function addResults() {
+                for (var i = 0, len = results.length; i < len; i++) {
+                    var result = results[i];
+                    var resultMarker = new L.Marker(result.latlng, {
+                        _id: result._id,
+                        icon: L.divIcon({
+                            iconSize: [20, 20],
+                            className: 'leaflet-result-marker'
+                        }),
+                        zIndexOffset: -2000,
+                        riseOnHover: true
+                    });
+                    resultMarkers[i] = resultMarker;
+                    map.addLayer(resultMarker);
+                }
+            }
+
+            if (!!results && results.length!=0){
                 var bounds = collectBounds();
                 map.fitBounds(bounds,{maxZoom:6});
+                clearResults();
+                addResults();
             }
         })
     }

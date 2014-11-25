@@ -3,6 +3,12 @@
 }
 
 /* markers */
+.leaflet-result-marker {
+	border-radius: 50%;
+	border: none;
+	opacity: .8;
+	background: #0dda00;
+}
 .leaflet-animated-div-icon {
 	border-radius: 50%;
 	border: none;
