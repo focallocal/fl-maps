@@ -132,13 +132,6 @@ Template.map.rendered = function () {
             }
           }
             var results = Session.get("results");
-            function collectBounds() {
-                var latlngArr = [];
-                for (var i = 0, len = results.length; i < len; i++) {
-                    latlngArr.push(results[i].latlng);
-                }
-                return L.latLngBounds(latlngArr);
-            }
 
             function clearResults() {
                 for (var i = 0, len = resultMarkers.length; i < len; i++) {
@@ -165,10 +158,21 @@ Template.map.rendered = function () {
                     map.addLayer(resultMarker);
                 }
             }
+            function collectBounds() {
+                var latlngArr = [];
+                var i;
+                for (i = 0, len = results.length; i < len; i++) {
+                    latlngArr.push(results[i].latlng);
+                }
+                return L.latLngBounds(latlngArr);
+            }
+            function fitBoundsToResultSet() {
+                var bounds = collectBounds();
+                map.fitBounds(bounds, {maxZoom: 6});
+            }
 
             if (!!results && results.length!=0){
-                var bounds = collectBounds();
-                map.fitBounds(bounds,{maxZoom:6});
+                fitBoundsToResultSet();
                 clearResults();
                 addResults();
             }
