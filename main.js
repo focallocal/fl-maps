@@ -1,4 +1,3 @@
-Events = new Mongo.Collection("events");
 
 if (Meteor.isClient) {
 
