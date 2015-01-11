@@ -9,3 +9,6 @@ insecure
 mrt:leaflet
 less
 nemo64:bootstrap
+accounts-base
+accounts-ui
+accounts-google
