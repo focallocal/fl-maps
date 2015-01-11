@@ -12,3 +12,6 @@ nemo64:bootstrap
 accounts-base
 accounts-ui
 accounts-google
+accounts-meetup
+accounts-facebook
+accounts-twitter
