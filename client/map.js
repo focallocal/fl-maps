@@ -75,6 +75,9 @@ var createIcon = function(event) {
 
 var openCreateDialog = function (latlng) {
     console.log("double click! " + latlng);
+    console.log(this.userId);
+    if (! this.userId)
+        throw new Meteor.Error(403, "You must be logged in");
     Session.set("createCoords", latlng);
     Session.set("createError", null);
     Session.set("showCreateDialog", true);

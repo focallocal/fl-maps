@@ -31,8 +31,6 @@ Meteor.methods({
         if (options.description.length > 2000)
             throw new Meteor.Error(413, "Description too long");
         //@TODO
-        //if (! this.userId)
-        //    throw new Meteor.Error(403, "You must be logged in");
         return Events.insert({
             owner: "Mordka",
             latlng: options.latlng,
