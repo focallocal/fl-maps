@@ -32,19 +32,37 @@
 }
 /* category markers */
 .leaflet-div-icon.pillow {
-	background: #f0d00e;
+	background:#E42B33;
 }
-.leaflet-div-icon.music {
-	background: #3587da;
+.leaflet-div-icon.smile {
+	background:#DBDB00;
 }
-.leaflet-div-icon.picnic {
-	background: #4fbc12;
+.leaflet-div-icon.bubble {
+	background:#E9A743;
 }
-.leaflet-div-icon.freehugs {
-	background: #da47c1;
+.leaflet-div-icon.free-hugs {
+	background:#CD36EC;
 }
-.leaflet-div-icon.other {
-	background: #a6a6c9;
+.leaflet-div-icon.musical-connection {
+	background:#05C7F2;
+}
+.leaflet-div-icon.connecting {
+	background:#E9A743;
+}
+.leaflet-div-icon.inspire-city {
+	background:#FFF13B;
+}
+.leaflet-div-icon.guerrilla-urban {
+	background:#1AF23A;
+}
+.leaflet-div-icon.lets-talk {
+	background:#84EC9E
+}
+.leaflet-div-icon.slip-n-slide {
+	background:#7F31E4;
+}
+.leaflet-div-icon.togetherness-projects {
+	background:#BE93DB;
 }
 
 /* selected marker */

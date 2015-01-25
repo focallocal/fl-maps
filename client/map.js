@@ -33,16 +33,34 @@ var createIcon = function(event) {
             category = 'pillow';
             break;
         case "2":
-            category = 'music';
+            category = 'smile';
             break;
         case "3":
-            category = 'picnic';
+            category = 'bubble';
             break;
         case "4":
-            category = 'freehugs';
+            category = 'free-hugs';
             break;
         case "5":
-            category = 'other';
+            category = 'musical-connection';
+            break;
+        case "6":
+            category = 'connecting';
+            break;
+        case "7":
+            category = 'inspire-city';
+            break;
+        case "8":
+            category = 'guerrilla-urban';
+            break;
+        case "9":
+            category = 'lets-talk';
+            break;
+        case "10":
+            category = 'slip-n-slide';
+            break;
+        case "11":
+            category = 'togetherness-projects';
             break;
         default:
             category = 'other';
