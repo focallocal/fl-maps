@@ -6,7 +6,7 @@ ServiceConfiguration.configurations.upsert(
             "secret": "bebe3ceb92be8ec14a363ff325af9a49",
             "loginStyle": "popup"
         }
-});
+    });
 
 ServiceConfiguration.configurations.upsert(
     {"service": "google"},
@@ -16,7 +16,7 @@ ServiceConfiguration.configurations.upsert(
             "secret": "nOOTfPCRL8SnntlE6tUeEam8",
             "loginStyle": "popup"
         }
-});
+    });
 
 
 ServiceConfiguration.configurations.upsert(
@@ -27,7 +27,7 @@ ServiceConfiguration.configurations.upsert(
             "secret": "oS0KtY1WsGv4yt3fSz6UbJVFXB1riAr5aVLngdOZl9sX9Fx2Je",
             "loginStyle": "popup"
         }
-});
+    });
 
 
 ServiceConfiguration.configurations.upsert(
@@ -38,4 +38,4 @@ ServiceConfiguration.configurations.upsert(
             "secret": "i7605716jmpbef8o2kumlo70cj",
             "loginStyle": "popup"
         }
-});
+    });
