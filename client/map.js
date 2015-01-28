@@ -74,7 +74,7 @@ var createIcon = function(event) {
 };
 
 var openCreateDialog = function (latlng) {
-    if (! this.userId)
+    if (! Meteor.userId)
         throw new Meteor.Error(403, "You must be logged in");
     Session.set("createCoords", latlng);
     Session.set("createError", null);
@@ -82,8 +82,15 @@ var openCreateDialog = function (latlng) {
     $("#newEvent").modal("show");
 };
 
+function createPopup(event) {
+    return "<b>" + event.title +
+        "</b><br>" + event.description +
+        "<br>Where: " + event.location +
+        "<br>What to bring: " + event.artifact +
+        "<br> Organised by: " + event.organiser;
+}
+
 Template.map.created = function() {
-    console.log("Map created!");
     Session.set("showCreateDialog", false);
     Events.find({}).observe({
         added: function(event) {
@@ -92,7 +99,7 @@ Template.map.created = function() {
                 icon: createIcon(event),
                 riseOnHover: true
             });
-            marker.bindPopup(event.title)
+            marker.bindPopup(createPopup(event))
                 .on('click', function(e) {
                     Session.set("selected", e.target.options._id);
                 });

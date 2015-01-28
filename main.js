@@ -32,7 +32,7 @@ Meteor.methods({
             throw new Meteor.Error(413, "Description too long");
         //@TODO
         return Events.insert({
-            owner: "Mordka",
+            organiser: Meteor.user().profile.name,
             latlng: options.latlng,
             title: options.title,
             location: options.location,
