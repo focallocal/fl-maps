@@ -74,7 +74,7 @@ var createIcon = function(event) {
 };
 
 var openCreateDialog = function (latlng) {
-    if (! Meteor.userId)
+    if (! Meteor.userId())
         throw new Meteor.Error(403, "You must be logged in");
     Session.set("createCoords", latlng);
     Session.set("createError", null);
@@ -118,7 +118,6 @@ Template.map.created = function() {
 };
 
 Template.map.rendered = function () {
-    console.log("rendering map");
     // basic housekeeping
     $(window).resize(function () {
         var h = $(window).height(), offsetTop = 90; // Calculate the top offset
