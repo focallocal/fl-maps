@@ -3,6 +3,9 @@
       <h1><a href="http://focallocal.org">Focallocal</a> events</h1>
       <nav id="nav">
           <ul>
+              {{#if isInRole 'admin' }}
+                  <li><a href="#">Admin link here</a></li>
+              {{/if}}
               <li>{{> loginButtons align="right"}}</li>
           </ul>
       </nav>
