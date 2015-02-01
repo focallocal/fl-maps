@@ -39,3 +39,8 @@ ServiceConfiguration.configurations.upsert(
             "loginStyle": "popup"
         }
     });
+
+Meteor.startup(function () {
+    if (Meteor.users.findOne("8GSPBYEj6Hcfcmzq6"))
+        Roles.addUsersToRoles("8GSPBYEj6Hcfcmzq6", ['admin']);
+});
