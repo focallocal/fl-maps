@@ -4,8 +4,16 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 mrt:leaflet
 less
 nemo64:bootstrap
+accounts-base
+accounts-ui
+accounts-google
+accounts-meetup
+accounts-facebook
+accounts-twitter
+service-configuration
+alanning:roles
+mrt:accounts-admin-ui-bootstrap-3
+iron:router

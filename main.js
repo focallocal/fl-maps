@@ -8,6 +8,12 @@ if (Meteor.isClient) {
         $mc = $('#map_canvas');
         $mc.css('height',(h-offsetTop));
     }).resize();
+
+    Template.accountsAdmin.helpers({
+        isAdminUser: function() {
+            return Roles.userIsInRole(Meteor.user(), ['admin']);
+        }
+    })
 }
 
 //server and client scope
@@ -31,10 +37,8 @@ Meteor.methods({
         if (options.description.length > 2000)
             throw new Meteor.Error(413, "Description too long");
         //@TODO
-        //if (! this.userId)
-        //    throw new Meteor.Error(403, "You must be logged in");
         return Events.insert({
-            owner: "Mordka",
+            organiser: Meteor.user().profile.name,
             latlng: options.latlng,
             title: options.title,
             location: options.location,

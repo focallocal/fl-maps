@@ -33,16 +33,34 @@ var createIcon = function(event) {
             category = 'pillow';
             break;
         case "2":
-            category = 'music';
+            category = 'smile';
             break;
         case "3":
-            category = 'picnic';
+            category = 'bubble';
             break;
         case "4":
-            category = 'freehugs';
+            category = 'free-hugs';
             break;
         case "5":
-            category = 'other';
+            category = 'musical-connection';
+            break;
+        case "6":
+            category = 'connecting';
+            break;
+        case "7":
+            category = 'inspire-city';
+            break;
+        case "8":
+            category = 'guerrilla-urban';
+            break;
+        case "9":
+            category = 'lets-talk';
+            break;
+        case "10":
+            category = 'slip-n-slide';
+            break;
+        case "11":
+            category = 'togetherness-projects';
             break;
         default:
             category = 'other';
@@ -56,15 +74,23 @@ var createIcon = function(event) {
 };
 
 var openCreateDialog = function (latlng) {
-    console.log("double click! " + latlng);
+    if (! Meteor.userId())
+        throw new Meteor.Error(403, "You must be logged in");
     Session.set("createCoords", latlng);
     Session.set("createError", null);
     Session.set("showCreateDialog", true);
     $("#newEvent").modal("show");
 };
 
+function createPopup(event) {
+    return "<b>" + event.title +
+        "</b><br>" + event.description +
+        "<br>Where: " + event.location +
+        "<br>What to bring: " + event.artifact +
+        "<br> Organised by: " + event.organiser;
+}
+
 Template.map.created = function() {
-    console.log("Map created!");
     Session.set("showCreateDialog", false);
     Events.find({}).observe({
         added: function(event) {
@@ -73,7 +99,7 @@ Template.map.created = function() {
                 icon: createIcon(event),
                 riseOnHover: true
             });
-            marker.bindPopup(event.title)
+            marker.bindPopup(createPopup(event))
                 .on('click', function(e) {
                     Session.set("selected", e.target.options._id);
                 });
@@ -92,7 +118,6 @@ Template.map.created = function() {
 };
 
 Template.map.rendered = function () {
-    console.log("rendering map");
     // basic housekeeping
     $(window).resize(function () {
         var h = $(window).height(), offsetTop = 90; // Calculate the top offset
