@@ -4,12 +4,9 @@
     {{> banner}}
     <section id="main" class="container">
         <section class="box special">
-          {{#if allEventsList}}
-            {{#each allEventsList}}
-              {{title}}
-              {{location}}
+            {{#each events}}
+              <li>{{title}} </li>
             {{/each}}
-          {{/if}}
         </section>
     </section>
     {{> footer}}

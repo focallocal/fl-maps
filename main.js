@@ -8,8 +8,13 @@ if (Meteor.isClient) {
         $mc = $('#map_canvas');
         $mc.css('height',(h-offsetTop));
     }).resize();
+    Meteor.subscribe("events");
 }
-
+if (Meteor.isServer) {
+    Meteor.publish("events",function() {
+        return Events.find({});
+    })
+}
 //server and client scope
 Meteor.methods({
     createEvent: function (options) {
