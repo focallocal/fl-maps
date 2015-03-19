@@ -51,5 +51,3 @@ Meteor.methods({
     }
 });
 
-
-
