@@ -4,9 +4,32 @@
     {{> banner}}
     <section id="main" class="container">
         <section class="box special">
-            {{#each events}}
-              <li>{{title}} </li>
-            {{/each}}
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Event name</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Organiser</th>
+                        <th>Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      {{#each events}}
+                        <tr>
+                          <td>{{title}} </td>
+                          <td>{{location}} </td>
+                          <td>{{description}} </td>
+                          <td>{{category}} </td>
+                          <td>{{organiser}} </td>
+                          <td>{{dateEvent}}</td>
+                        </tr>
+                      {{/each}}
+                    </tbody>
+                </table>
+            </div>
         </section>
     </section>
     {{> footer}}
