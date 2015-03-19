@@ -1,0 +1,18 @@
+<template name="eventsList">
+    <body>
+    {{> header }}
+    {{> banner}}
+    <section id="main" class="container">
+        <section class="box special">
+          {{#if allEventsList}}
+            {{#each allEventsList}}
+              {{title}}
+              {{location}}
+            {{/each}}
+          {{/if}}
+        </section>
+    </section>
+    {{> footer}}
+    {{> newEvent}}
+    </body>
+</template>

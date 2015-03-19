@@ -8,12 +8,6 @@ if (Meteor.isClient) {
         $mc = $('#map_canvas');
         $mc.css('height',(h-offsetTop));
     }).resize();
-
-    Template.accountsAdmin.helpers({
-        isAdminUser: function() {
-            return Roles.userIsInRole(Meteor.user(), ['admin']);
-        }
-    })
 }
 
 //server and client scope

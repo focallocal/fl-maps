@@ -36,3 +36,13 @@ Template.newEvent.events({
        }
    }
 });
+
+Template.eventsList.helpers({
+    allEventsList: function() {
+        var allEvents = Events.find({});
+        console.log(allEvents);
+
+
+        return allEvents;
+    }
+});
