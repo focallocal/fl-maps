@@ -16,3 +16,4 @@ accounts-twitter
 service-configuration
 alanning:roles
 iron:router
+momentjs:moment

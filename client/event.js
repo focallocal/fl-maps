@@ -41,5 +41,9 @@ Template.eventsList.helpers({
     events: function() {
         var ee = Events.find({});
         return ee;
+    },
+    formatDate: function(date) {
+        return moment(date).format('MM-DD-YYYY');
     }
+
 });
