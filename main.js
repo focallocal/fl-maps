@@ -1,6 +1,7 @@
 
 if (Meteor.isClient) {
 
+    Meteor.subscribe("events");
 //resize map on window frame size change
     $(window).resize(function(){
         var h = $(window).height();
@@ -8,7 +9,13 @@ if (Meteor.isClient) {
         $mc = $('#map_canvas');
         $mc.css('height',(h-offsetTop));
     }).resize();
-    Meteor.subscribe("events");
+
+    Template.registerHelper('baseUrl', function(path) {
+        return !!path?Meteor.absoluteUrl(path):Meteor.absoluteUrl();
+    });
+    Template.registerHelper('formatDate', function(date) {
+        return moment(date).format('MM-DD-YYYY');
+    });
 }
 if (Meteor.isServer) {
     Meteor.publish("events",function() {
