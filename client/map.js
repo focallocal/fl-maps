@@ -126,9 +126,18 @@ Template.map.rendered = function () {
 
   // initialize map events
     if (!map) {
-        initialize($("#map_canvas")[0], [ 48.28593, 16.30371 ], 4);
-        map.on("dblclick", function(e) {
-            openCreateDialog(e.latlng);
+        initialize($("#map_canvas")[0], [48.28593, 16.30371], 4);
+        map.on("dblclick", function (e) {
+            var newEventLink = $('<a>')
+                .text('Create event here!')
+                .attr('href', '#')
+                .on('click', function () {
+                    openCreateDialog(e.latlng)
+                })[0];
+            var popup = L.popup()
+                .setLatLng(latlng)
+                .setContent(newEventLink)
+                .openOn(map);
         });
 
         var self = this;
