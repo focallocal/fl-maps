@@ -1,3 +1,16 @@
+
+switch (process.env.ROOT_URL) {
+    case "http://localhost:3000/":
+        console.log("Running in dev");
+        process.env.MEETUP_CLIENT_ID = "38k5c02dj52h5mga9k321ud3uq";
+        process.env.MEETUP_SECRET = "s9b2b3tdk6dmfng9vsmuqi5jjj";
+        break;
+    case "http://focallocal.meteor.com/":
+        process.env.MEETUP_CLIENT_ID = "r2p02hica9uktu1uqpk1d184o9";
+        process.env.MEETUP_SECRET = "i7605716jmpbef8o2kumlo70cj";
+        break;
+}
+
 ServiceConfiguration.configurations.upsert(
     {"service": "facebook"},
     {
@@ -34,13 +47,13 @@ ServiceConfiguration.configurations.upsert(
     {"service": "meetup"},
     {
         $set: {
-            "clientId": "r2p02hica9uktu1uqpk1d184o9",
-            "secret": "i7605716jmpbef8o2kumlo70cj",
+            "clientId": process.env.MEETUP_CLIENT_ID ,
+            "secret": process.env.MEETUP_SECRET,
             "loginStyle": "popup"
         }
     });
 
-Meteor.startup(function () {
-    if (Meteor.users.findOne("8GSPBYEj6Hcfcmzq6"))
-        Roles.addUsersToRoles("8GSPBYEj6Hcfcmzq6", ['admin']);
-});
+//Meteor.startup(function () {
+//    if (Meteor.users.findOne("8GSPBYEj6Hcfcmzq6"))
+//        Roles.addUsersToRoles("8GSPBYEj6Hcfcmzq6", ['admin']);
+//});
