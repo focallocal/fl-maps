@@ -1,11 +1,12 @@
 <template name="header">
   <header id="header" class="alt">
-      <h1><a href="{{baseUrl}}">Focallocal</a> events</h1>
+      <h1><a href="http://focallocal.org/inspire-my-city/" target="_blank">Focallocal</a> events</h1>
       <nav id="nav">
           <ul>
               {{#if isInRole 'admin' }}
                   <li><a href="#">Admin link here</a></li>
               {{/if}}
+              <li><a href="{{baseUrl}}">Home</a></li>
               <li><a href="{{baseUrl 'events'}}">Calendar</a></li>
               <li>{{> loginButtons align="right"}}</li>
           </ul>
