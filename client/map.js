@@ -1,8 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // Map display
 
-var map, markers = [ ];
-var resultMarkers = [];
+var map, markers = [], resultMarkers = [];
 var initialize = function (element, centroid, zoom, features) {
     map = L.map(element, {
         scrollWheelZoom: true,
@@ -10,9 +9,14 @@ var initialize = function (element, centroid, zoom, features) {
         boxZoom: false,
         touchZoom: false
     }).setView(new L.LatLng(centroid[0], centroid[1]), zoom);
-
-    L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {opacity: 0.5}).addTo(map);
-
+    var Stamen_Watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains: 'abcd',
+        minZoom: 1,
+        maxZoom: 16,
+        opacity: 0.5
+    });
+    Stamen_Watercolor.addTo(map);
 };
 
 var addMarker = function(marker) {
@@ -167,6 +171,9 @@ Template.map.rendered = function () {
                 addResults();
             }
         })
+    }
+    else {
+        $('#map_container').html(map.getContainer());
     }
 
 
