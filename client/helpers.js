@@ -12,5 +12,8 @@ Template.results.helpers({
 Template.newEvent.helpers({
    categories: function() {
        return Categories.find({})
-   }
+   },
+    errors: function() {
+        return Session.get('newEventError');
+    }
 });

@@ -1,4 +1,5 @@
 <template name="newEvent">
+<!--    {{#if showCreateDialog}}-->
 <div class="modal fade" id="newEvent" tabindex="-1" role="dialog" aria-labelledby="newEventLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -24,8 +25,8 @@
                   </div>
                   <div class="row uniform half">
                       <div class="12u">
-                          <input type="text" name="artifact" id="artifact"
-                                 placeholder="The item everybody should bring to be recognized." />
+                          <input type="text" name="hyperlink" id="hyperlink"
+                                 placeholder="Paste here an external link to the event" />
                       </div>
                   </div>
                   <div class="row uniform half">
@@ -48,6 +49,9 @@ And what are the plans in case of wet weather? :)" rows="6"></textarea>
                       </div>
                   </div>
               </form>
+              {{#if errors}}
+                <p align="right"><strong>{{errors}}</strong></p>
+              {{/if}}
           </section>
       </div>
       <div class="modal-footer">
@@ -63,4 +67,5 @@ And what are the plans in case of wet weather? :)" rows="6"></textarea>
     </div>
   </div>
 </div>
+<!--    {{/if}}-->
 </template>

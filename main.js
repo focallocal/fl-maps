@@ -24,7 +24,7 @@ Meteor.methods({
     createEvent: function (options) {
         if (! (typeof options.title === "string" && options.title.length &&
             typeof options.location === "string" && options.location.length &&
-            typeof options.artifact === "string" && options.artifact.length &&
+            typeof options.hyperlink === "string" &&
             typeof options.category === "string" && options.category.length &&
             typeof options.description === "string" && options.description.length
             ))
@@ -33,8 +33,8 @@ Meteor.methods({
             throw new Meteor.Error(413, "Event name too long");
         if (options.location.length > 100)
             throw new Meteor.Error(413, "Location too long");
-        if (options.artifact.length > 100)
-            throw new Meteor.Error(413, "Item name too long");
+        if (options.hyperlink.length > 100)
+            throw new Meteor.Error(413, "Link too long");
         if (options.category.length > 100)
             throw new Meteor.Error(413, "Category too long");
         if (options.description.length > 2000)
@@ -44,7 +44,7 @@ Meteor.methods({
             latlng: options.latlng,
             title: options.title,
             location: options.location,
-            artifact: options.artifact,
+            hyperlink: options.hyperlink,
             category: Categories.findOne({_id: options.category}),
             description: options.description,
             datePublished: Date.now(),
