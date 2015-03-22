@@ -20,6 +20,7 @@ deps@1.0.7
 ejson@1.0.6
 facebook@1.1.4
 fastclick@1.0.3
+fermuch:pickadate@1.0.0
 fuatsengul:leaflet@1.0.1
 geojson-utils@1.0.3
 google@1.1.5

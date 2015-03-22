@@ -54,6 +54,7 @@ function createPopup(event) {
     return '<b> <a href="' + event.hyperlink + '" target="_blank">' + event.title + '</a>' +
         "</b><br>" + event.description +
         "<br>Where: " + event.location +
+        "<br>When: " + moment(event.dateEvent).fromNow() +
         "<br> Organised by: " + event.organiser;
 }
 

@@ -24,6 +24,7 @@ Meteor.methods({
     createEvent: function (options) {
         if (! (typeof options.title === "string" && options.title.length &&
             typeof options.location === "string" && options.location.length &&
+            typeof options.dateEvent === "string" && options.dateEvent.length &&
             typeof options.hyperlink === "string" &&
             typeof options.category === "string" && options.category.length &&
             typeof options.description === "string" && options.description.length
@@ -48,7 +49,7 @@ Meteor.methods({
             category: Categories.findOne({_id: options.category}),
             description: options.description,
             datePublished: Date.now(),
-            dateEvent: Date.now()
+            dateEvent: options.dateEvent
         });
     }
 });
