@@ -25,54 +25,6 @@ var removeMarker = function(_id) {
     if (map.hasLayer(marker)) map.removeLayer(marker);
 };
 
-var createIcon = function(event) {
-    var className = 'leaflet-div-icon ';
-    var category = '';
-    switch (event.category) {
-        case "1":
-            category = 'pillow';
-            break;
-        case "2":
-            category = 'smile';
-            break;
-        case "3":
-            category = 'bubble';
-            break;
-        case "4":
-            category = 'free-hugs';
-            break;
-        case "5":
-            category = 'musical-connection';
-            break;
-        case "6":
-            category = 'connecting';
-            break;
-        case "7":
-            category = 'inspire-city';
-            break;
-        case "8":
-            category = 'guerrilla-urban';
-            break;
-        case "9":
-            category = 'lets-talk';
-            break;
-        case "10":
-            category = 'slip-n-slide';
-            break;
-        case "11":
-            category = 'togetherness-projects';
-            break;
-        default:
-            category = 'other';
-            break;
-    }
-    return L.divIcon({
-        iconSize: [10, 10],
-        //html: '<strong>' + category.substring(0,1).toUpperCase() + '</strong>',
-        className: className + category
-    });
-};
-
 var openCreateDialog = function (latlng) {
     if (! Meteor.userId())
         throw new Meteor.Error(403, "You must be logged in");
@@ -95,16 +47,20 @@ Template.map.created = function() {
     Events.find({}).observe({
         added: function(event) {
             var marker = new L.Marker(event.latlng, {
-                _id: event._id,
-                icon: createIcon(event),
-                riseOnHover: true
-            });
-            marker.bindPopup(createPopup(event))
+                    _id: event._id,
+                    icon: L.divIcon({
+                        iconSize: [10, 10],
+                        className: 'leaflet-div-icon'
+                    }),
+                    riseOnHover: true
+                })
+                .bindPopup(createPopup(event))
                 .on('click', function(e) {
-                    Session.set("selected", e.target.options._id);
-                });
-
-            addMarker(marker);
+                    Session.set("selected", event._id);
+                })
+                .addTo(map);
+            marker.valueOf()._icon.style.backgroundColor = event.category.color;
+            markers[marker.options._id] = marker;
         },
         changed: function(event) {
             var marker = markers[event._id];
@@ -135,7 +91,7 @@ Template.map.rendered = function () {
                     openCreateDialog(e.latlng)
                 })[0];
             var popup = L.popup()
-                .setLatLng(latlng)
+                .setLatLng(e.latlng)
                 .setContent(newEventLink)
                 .openOn(map);
         });

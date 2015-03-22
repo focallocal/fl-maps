@@ -1,7 +1,6 @@
 
 switch (process.env.ROOT_URL) {
     case "http://localhost:3000/":
-        console.log("Running in dev");
         process.env.MEETUP_CLIENT_ID = "38k5c02dj52h5mga9k321ud3uq";
         process.env.MEETUP_SECRET = "s9b2b3tdk6dmfng9vsmuqi5jjj";
         break;

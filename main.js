@@ -1,7 +1,5 @@
-
+//client scope
 if (Meteor.isClient) {
-
-    Meteor.subscribe("events");
 //resize map on window frame size change
     $(window).resize(function(){
         var h = $(window).height();
@@ -9,17 +7,16 @@ if (Meteor.isClient) {
         $mc = $('#map_canvas');
         $mc.css('height',(h-offsetTop));
     }).resize();
-
-    Template.registerHelper('baseUrl', function(path) {
-        return !!path?Meteor.absoluteUrl(path):Meteor.absoluteUrl();
-    });
-    Template.registerHelper('formatDate', function(date) {
-        return moment(date).format('MM-DD-YYYY');
-    });
+    Meteor.subscribe("events");
+    Meteor.subscribe("categories");
 }
+//server scope
 if (Meteor.isServer) {
     Meteor.publish("events",function() {
         return Events.find({});
+    });
+    Meteor.publish("categories",function() {
+        return Categories.find({});
     })
 }
 //server and client scope
@@ -42,14 +39,13 @@ Meteor.methods({
             throw new Meteor.Error(413, "Category too long");
         if (options.description.length > 2000)
             throw new Meteor.Error(413, "Description too long");
-        //@TODO
         return Events.insert({
             organiser: Meteor.user().profile.name,
             latlng: options.latlng,
             title: options.title,
             location: options.location,
             artifact: options.artifact,
-            category: options.category,
+            category: Categories.findOne({_id: options.category}),
             description: options.description,
             datePublished: Date.now(),
             dateEvent: Date.now()

@@ -1,8 +1,3 @@
-Template.results.helpers({
-    search_results: function () {
-        return Session.get('results')
-    }
-});
 
 Template.banner.events({
     "submit .search-events": function (event) {
