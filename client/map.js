@@ -32,9 +32,10 @@ var initialize = function (element, centroid, zoom, features) {
     });
 };
 
-var addMarker = function(marker) {
+var addMarker = function(marker, color) {
     map.addLayer(marker);
     markers[marker.options._id] = marker;
+    marker.valueOf()._icon.style.backgroundColor = color;
 };
 
 var removeMarker = function(_id) {
@@ -58,7 +59,7 @@ function createPopup(event) {
 }
 
 function createMarker(event) {
-    var marker = new L.Marker(event.latlng, {
+    return new L.Marker(event.latlng, {
         _id: event._id,
         icon: L.divIcon({
             iconSize: [10, 10],
@@ -66,116 +67,124 @@ function createMarker(event) {
         }),
         riseOnHover: true
     })
-        .bindPopup(createPopup(event))
-        .on('click', function (e) {
-            Session.set("selected", event._id);
-        });
-    return marker;
-}
-Template.map.created = function() {
-    Events.find({}).observe({
-        added: function(event) {
-            var marker = createMarker(event);
-            addMarker(marker);
-            marker.valueOf()._icon.style.backgroundColor = event.category.color;
-        },
-        changed: function(event) {
-            var marker = markers[event._id];
-            if (marker) marker = createMarker(event)//marker.setIcon(createIcon(event));
-        },
-        removed: function(event) {
-            removeMarker(event._id);
-        }
+    .bindPopup(createPopup(event))
+    .on('click', function (e) {
+        Session.set("selected", event._id);
     });
+}
 
-};
-
-Template.map.rendered = function () {
-    // basic housekeeping
-    $(window).resize(function () {
-        var h = $(window).height(), offsetTop = 90; // Calculate the top offset
-        $('#map_canvas').css('height', (h - offsetTop));
-    }).resize();
-
-  // initialize map events
-    if (!map) {
-        initialize($("#map_canvas")[0], [48.28593, 16.30371], 4);
-        var self = this;
-        Tracker.autorun(function() {
-          var selectedEvent = Events.findOne(Session.get("selected"));
-          if (selectedEvent) {
-            var line;
-            if (!self.animatedMarker) {
-              line = L.polyline([[selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
-              self.animatedMarker = L.animatedMarker(line.getLatLngs(), {
+function animateMarkers(self) {
+    var selectedEvent = Events.findOne(Session.get("selected"));
+    if (selectedEvent) {
+        var line;
+        if (!self.animatedMarker) {
+            line = L.polyline([[selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
+            self.animatedMarker = L.animatedMarker(line.getLatLngs(), {
                 autoStart: false,
                 distance: 10000,  // meters
                 interval: 5, // milliseconds
                 icon: L.divIcon({
-                  iconSize: [20, 20],
-                  className: 'leaflet-animated-icon'
+                    iconSize: [20, 20],
+                    className: 'leaflet-animated-icon'
                 })
-              });
-              map.addLayer(self.animatedMarker);
-            } else {
-              // animate to here
-              line = L.polyline([[self.animatedMarker.getLatLng().lat, self.animatedMarker.getLatLng().lng],
+            });
+            map.addLayer(self.animatedMarker);
+        } else {
+            // animate to here
+            line = L.polyline([[self.animatedMarker.getLatLng().lat, self.animatedMarker.getLatLng().lng],
                 [selectedEvent.latlng.lat, selectedEvent.latlng.lng]]);
-              self.animatedMarker.setLine(line.getLatLngs());
-              self.animatedMarker.start();
+            self.animatedMarker.setLine(line.getLatLngs());
+            self.animatedMarker.start();
+        }
+    }
+}
+
+function handleSearchResults(results) {
+    function clearResults() {
+        for (var i = 0, len = resultMarkers.length; i < len; i++) {
+            var marker = resultMarkers[i];
+            if (map.hasLayer(marker)) {
+                map.removeLayer(marker);
             }
-          }
+        }
+    }
+
+    function addResults() {
+        for (var i = 0, len = results.length; i < len; i++) {
+            var result = results[i];
+            var resultMarker = new L.Marker(result.latlng, {
+                _id: result._id,
+                icon: L.divIcon({
+                    iconSize: [20, 20],
+                    className: 'leaflet-result-marker'
+                }),
+                zIndexOffset: -2000,
+                riseOnHover: true
+            });
+            resultMarkers[i] = resultMarker;
+            map.addLayer(resultMarker);
+        }
+    }
+    function collectBounds() {
+        var latlngArr = [];
+        var i;
+        for (i = 0, len = results.length; i < len; i++) {
+            latlngArr.push(results[i].latlng);
+        }
+        return L.latLngBounds(latlngArr);
+    }
+    function fitBoundsToResultSet() {
+        var bounds = collectBounds();
+        map.fitBounds(bounds, {maxZoom: 6});
+    }
+
+    if (!!results && results.length != 0) {
+        fitBoundsToResultSet();
+        clearResults();
+        addResults();
+    }
+}
+
+Template.map.rendered = function () {
+    var $mapCanvas = $('#map_canvas');
+    $(window).resize(function () {
+        var h = $(window).height(), offsetTop = 90; // Calculate the top offset
+        $mapCanvas.css('height', (h - offsetTop));
+    }).resize();
+
+  // initialize map events
+    if (!map) {
+        initialize($mapCanvas[0], [48.28593, 16.30371], 4);
+        var self = this;
+        Tracker.autorun(function() {
+            animateMarkers(self);
             var results = Session.get("results");
-
-            function clearResults() {
-                for (var i = 0, len = resultMarkers.length; i < len; i++) {
-                    var marker = resultMarkers[i];
-                    if (map.hasLayer(marker)) {
-                        map.removeLayer(marker);
-                    }
-                }
-            }
-
-            function addResults() {
-                for (var i = 0, len = results.length; i < len; i++) {
-                    var result = results[i];
-                    var resultMarker = new L.Marker(result.latlng, {
-                        _id: result._id,
-                        icon: L.divIcon({
-                            iconSize: [20, 20],
-                            className: 'leaflet-result-marker'
-                        }),
-                        zIndexOffset: -2000,
-                        riseOnHover: true
-                    });
-                    resultMarkers[i] = resultMarker;
-                    map.addLayer(resultMarker);
-                }
-            }
-            function collectBounds() {
-                var latlngArr = [];
-                var i;
-                for (i = 0, len = results.length; i < len; i++) {
-                    latlngArr.push(results[i].latlng);
-                }
-                return L.latLngBounds(latlngArr);
-            }
-            function fitBoundsToResultSet() {
-                var bounds = collectBounds();
-                map.fitBounds(bounds, {maxZoom: 6});
-            }
-
-            if (!!results && results.length!=0){
-                fitBoundsToResultSet();
-                clearResults();
-                addResults();
-            }
+            handleSearchResults(results);
         })
     }
     else {
         $('#map_container').html(map.getContainer());
     }
 
+    Events.find({}).observe({
+        added: function(event) {
+            var marker = createMarker(event);
+            var color = event.category.color;
+            addMarker(marker, color);
+        },
+        changed: function(event) {
+            var marker = markers[event._id];
+            if (marker) {
+                removeMarker(event._id);
+                marker = createMarker(event);
+                var color = event.category.color;
+                addMarker(marker, color);
+            }
+        },
+        removed: function(event) {
+            removeMarker(event._id);
+        }
+    });
 
 
 };
