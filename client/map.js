@@ -17,6 +17,19 @@ var initialize = function (element, centroid, zoom, features) {
         opacity: 0.5
     });
     Stamen_Watercolor.addTo(map);
+
+    map.on("dblclick", function (e) {
+        var newEventLink = $('<a>')
+            .text('Create event here!')
+            .attr('href', '#')
+            .on('click', function () {
+                openCreateDialog(e.latlng)
+            })[0];
+        var popup = L.popup()
+            .setLatLng(e.latlng)
+            .setContent(newEventLink)
+            .openOn(map);
+    });
 };
 
 var addMarker = function(marker) {
@@ -33,7 +46,6 @@ var openCreateDialog = function (latlng) {
     if (! Meteor.userId())
         throw new Meteor.Error(403, "You must be logged in");
     Session.set("createCoords", latlng);
-    Session.set("createError", null);
     $("#newEvent").modal("show");
 };
 
@@ -45,28 +57,31 @@ function createPopup(event) {
         "<br> Organised by: " + event.organiser;
 }
 
+function createMarker(event) {
+    var marker = new L.Marker(event.latlng, {
+        _id: event._id,
+        icon: L.divIcon({
+            iconSize: [10, 10],
+            className: 'leaflet-div-icon'
+        }),
+        riseOnHover: true
+    })
+        .bindPopup(createPopup(event))
+        .on('click', function (e) {
+            Session.set("selected", event._id);
+        });
+    return marker;
+}
 Template.map.created = function() {
     Events.find({}).observe({
         added: function(event) {
-            var marker = new L.Marker(event.latlng, {
-                    _id: event._id,
-                    icon: L.divIcon({
-                        iconSize: [10, 10],
-                        className: 'leaflet-div-icon'
-                    }),
-                    riseOnHover: true
-                })
-                .bindPopup(createPopup(event))
-                .on('click', function(e) {
-                    Session.set("selected", event._id);
-                })
-                .addTo(map);
+            var marker = createMarker(event);
+            addMarker(marker);
             marker.valueOf()._icon.style.backgroundColor = event.category.color;
-            markers[marker.options._id] = marker;
         },
         changed: function(event) {
             var marker = markers[event._id];
-            if (marker) marker.setIcon(createIcon(event));
+            if (marker) marker = createMarker(event)//marker.setIcon(createIcon(event));
         },
         removed: function(event) {
             removeMarker(event._id);
@@ -85,19 +100,6 @@ Template.map.rendered = function () {
   // initialize map events
     if (!map) {
         initialize($("#map_canvas")[0], [48.28593, 16.30371], 4);
-        map.on("dblclick", function (e) {
-            var newEventLink = $('<a>')
-                .text('Create event here!')
-                .attr('href', '#')
-                .on('click', function () {
-                    openCreateDialog(e.latlng)
-                })[0];
-            var popup = L.popup()
-                .setLatLng(e.latlng)
-                .setContent(newEventLink)
-                .openOn(map);
-        });
-
         var self = this;
         Tracker.autorun(function() {
           var selectedEvent = Events.findOne(Session.get("selected"));
