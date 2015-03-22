@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-mrt:leaflet
 less
 nemo64:bootstrap
 accounts-base
@@ -17,3 +16,4 @@ service-configuration
 alanning:roles
 iron:router
 momentjs:moment
+fuatsengul:leaflet

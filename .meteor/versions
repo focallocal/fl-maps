@@ -20,6 +20,7 @@ deps@1.0.7
 ejson@1.0.6
 facebook@1.1.4
 fastclick@1.0.3
+fuatsengul:leaflet@1.0.1
 geojson-utils@1.0.3
 google@1.1.5
 html-tools@1.0.4
@@ -49,7 +50,6 @@ minimongo@1.0.7
 mobile-status-bar@1.0.3
 momentjs:moment@2.9.0
 mongo@1.1.0
-mrt:leaflet@0.3.8
 nemo64:bootstrap@3.3.1_1
 nemo64:bootstrap-data@3.3.1_1
 oauth@1.1.4
