@@ -34,7 +34,6 @@ var openCreateDialog = function (latlng) {
         throw new Meteor.Error(403, "You must be logged in");
     Session.set("createCoords", latlng);
     Session.set("createError", null);
-    Session.set("showCreateDialog", true);
     $("#newEvent").modal("show");
 };
 
@@ -47,7 +46,6 @@ function createPopup(event) {
 }
 
 Template.map.created = function() {
-    Session.set("showCreateDialog", false);
     Events.find({}).observe({
         added: function(event) {
             var marker = new L.Marker(event.latlng, {
