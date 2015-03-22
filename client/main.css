@@ -38,3 +38,11 @@
 	opacity: .5;
 	background: #da0c0b;
 }
+
+.leaflet-container a {
+	 color: inherit;
+}
+
+.leaflet-container a.leaflet-active {
+	outline: none;
+}
