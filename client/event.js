@@ -28,8 +28,8 @@ Template.newEvent.events({
                 latlng : latlng
            }, function (error, event)  {
               if (! error) {
-                  Session.set('selected', event);
                   $("#newEvent").modal("hide");
+                  Session.set('selected', event);
                   Session.set("newEventError", null);
               } else {
                   Session.set("newEventError", error.reason);
