@@ -7,7 +7,8 @@ var initialize = function (element, centroid, zoom, features) {
         scrollWheelZoom: true,
         doubleClickZoom: false,
         boxZoom: false,
-        touchZoom: false
+        touchZoom: false,
+        fullscreenControl: true
     }).setView(new L.LatLng(centroid[0], centroid[1]), zoom);
     var Stamen_Watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
