@@ -22,7 +22,7 @@
 		margin-right: auto;
 		
 		/* width: (containers) */
-		width: 60em;
+		min-width: 60em;
 	}
 
 	/* Modifiers */

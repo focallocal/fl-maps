@@ -153,9 +153,15 @@ function handleSearchResults(results) {
 
 Template.map.rendered = function () {
     var $mapCanvas = $('#map_canvas');
+    var $window = $(window);
+    var $main = $('#main');
     $(window).resize(function () {
-        var h = $(window).height(), offsetTop = 90; // Calculate the top offset
+        var h = $window.height(),
+            w = $window.width(),
+            offsetTop = 90,
+            offsetWidth = 300;
         $mapCanvas.css('height', (h - offsetTop));
+        $main.css('width', (w-offsetWidth));
     }).resize();
 
   // initialize map events
