@@ -53,7 +53,7 @@ Meteor.methods({
             category: Categories.findOne({_id: options.category}),
             description: options.description,
             datePublished: Date.now(),
-            dateEvent: options.dateEvent
+            dateEvent: moment(options.dateEvent,"DD/MM/YYYY").valueOf() //convert from pickadate
         });
     }
 });

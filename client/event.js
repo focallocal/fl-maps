@@ -8,12 +8,11 @@ Template.newEvent.events({
        var title = template.find("#title").value;
        var city = template.find("#city").value;
        var location = template.find("#location").value;
-       var dateEvent = template.find("#dateEvent").value;
+       var dateEvent = template.find("#dateEvent_hidden").value;
        var hyperlink = template.find("#hyperlink").value;
        var category = template.find("#category").value;
        var description = template.find("#description").value;
        var latlng = Session.get("createCoords");
-
        if (title.length && location.length && city.length &&
            hyperlink.length && category.length &&
            description.length && dateEvent.length) {

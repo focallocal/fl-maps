@@ -26,5 +26,9 @@ Template.newEvent.helpers({
     }
 });
 Template.newEvent.rendered = function() {
-    $('.datepicker').pickadate();
+    $('.datepicker').pickadate({
+        format: 'dddd, dd mmm, yyyy',
+        formatSubmit: 'dd/mm/yyyy',
+        hiddenPrefix: '_hidden'
+    });
 };
