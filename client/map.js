@@ -20,15 +20,19 @@ var initialize = function (element, centroid, zoom, features) {
     Stamen_Watercolor.addTo(map);
 
     map.on("dblclick", function (e) {
-        var newEventLink = $('<a>')
-            .text('Create event here!')
-            .attr('href', '#')
-            .on('click', function () {
-                openCreateDialog(e.latlng)
-            })[0];
-        var popup = L.popup()
-            .setLatLng(e.latlng)
-            .setContent(newEventLink)
+        var newEventMsg;
+        if (!Meteor.userId()) {
+            newEventMsg = $('<span>').text('Please login to add event here!')
+        } else {
+            newEventMsg = $('<a>')
+                .text('Create event here!')
+                .attr('href', '#')
+                .on('click', function () {
+                    openCreateDialog(e.latlng)
+                });
+        }
+        L.popup().setLatLng(e.latlng)
+            .setContent(newEventMsg[0])
             .openOn(map);
     });
 };
