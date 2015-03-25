@@ -58,6 +58,7 @@ var openCreateDialog = function (latlng) {
 function createPopup(event) {
     return '<b> <a href="' + event.hyperlink + '" target="_blank">' + event.title + '</a>' +
         "</b><br>" + event.description +
+        "</b><br>" + event.category.name +
         "<br>Where: " + event.location + ", " + event.city +
         "<br>When: <span title='" + moment(event.dateEvent).format("dddd, MMMM Do YYYY") + "'>" +
         moment(event.dateEvent).fromNow() + "</span>" +
@@ -68,7 +69,7 @@ function createMarker(event) {
     return new L.Marker(event.latlng, {
         _id: event._id,
         icon: L.divIcon({
-            iconSize: [10, 10],
+            iconSize: [15, 15],
             className: 'leaflet-div-icon'
         }),
         riseOnHover: true

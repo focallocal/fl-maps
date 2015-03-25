@@ -14,15 +14,9 @@
 	opacity: .8;
 	background: #0dda00;
 }
-.leaflet-animated-div-icon {
-	border-radius: 50%;
-	border: none;
-	opacity: .2;
-	background: black;
-}
 .leaflet-div-icon {
 	border-radius: 50%;
-	border: none;
+	border: 1px;
 	line-height: 30px;
 	font-family: FontAwesome, sans-serif;
 	text-align: center;
@@ -37,6 +31,7 @@
 	border: none;
 	opacity: .5;
 	background: #da0c0b;
+	z-index: 50 !important;
 }
 
 .leaflet-container a {
