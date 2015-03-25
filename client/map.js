@@ -179,7 +179,8 @@ Template.map.rendered = function () {
         $('#map_container').html(map.getContainer());
     }
 
-    Events.find({}).observe({
+    var futureEvents = Events.find({dateEvent: {$gte:Date.now()}});
+    futureEvents.observe({
         added: function(event) {
             var marker = createMarker(event);
             var color = event.category.color;
