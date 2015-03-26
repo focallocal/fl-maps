@@ -5,7 +5,7 @@
 */
 
 (function($) {
-
+Template.header.rendered = function() {
 	skel.init({
 		reset: 'full',
 		breakpoints: {
@@ -19,40 +19,42 @@
 		},
 		plugins: {
 			layers: {
-			
+
 				// Config.
-					config: {
-						transformTest: function() { return skel.vars.isMobile; }
-					},
-				
+				config: {
+					transformTest: function () {
+						return skel.vars.isMobile;
+					}
+				},
+
 				// Navigation Panel.
-					navPanel: {
-						animation: 'pushX',
-						breakpoints: 'narrower',
-						clickToHide: true,
-						height: '100%',
-						hidden: true,
-						html: '<div data-action="navList" data-args="nav"></div>',
-						orientation: 'vertical',
-						position: 'top-left',
-						side: 'left',
-						width: 250
-					},
+				navPanel: {
+					animation: 'pushX',
+					breakpoints: 'narrower',
+					clickToHide: true,
+					height: '100%',
+					hidden: true,
+					html: '<div data-action="navList" data-args="nav"></div>',
+					orientation: 'vertical',
+					position: 'top-left',
+					side: 'left',
+					width: 250
+				},
 
 				// Navigation Button.
-					navButton: {
-						breakpoints: 'narrower',
-						height: '4em',
-						html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
-						position: 'top-left',
-						side: 'top',
-						width: '6em'
-					}
+				navButton: {
+					breakpoints: 'narrower',
+					height: '4em',
+					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+					position: 'top-left',
+					side: 'top',
+					width: '6em'
+				}
 
 			}
 		}
 	});
-
+}chaser
 	$(function() {
 		
 		var	$window = $(window),
