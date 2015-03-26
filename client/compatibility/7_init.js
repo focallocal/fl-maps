@@ -5,7 +5,6 @@
 */
 
 (function($) {
-Template.header.rendered = function() {
 	skel.init({
 		reset: 'full',
 		breakpoints: {
@@ -54,7 +53,7 @@ Template.header.rendered = function() {
 			}
 		}
 	});
-}chaser
+
 	$(function() {
 		
 		var	$window = $(window),

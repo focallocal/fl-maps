@@ -1,8 +1,4 @@
-Template.newEvent.helpers({
- createCoords: function () {
-     return Session.get("createCoords");
- }
-});
+
 Template.newEvent.events({
    'click .special': function (event, template) {
        var title = template.find("#title").value;
@@ -38,10 +34,4 @@ Template.newEvent.events({
            Session.set("newEventError", "Please fill all required details");
        }
    }
-});
-
-Template.eventsList.helpers({
-    events: function() {
-        return Events.find({});
-    }
 });

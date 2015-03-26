@@ -12,17 +12,15 @@ Template.eventsList.helpers({
 });
 
 // per template helpers
-Template.results.helpers({
-    search_results: function () {
-        return Session.get('results')
-    }
-});
 Template.newEvent.helpers({
    categories: function() {
        return Categories.find({})
    },
     errors: function() {
         return Session.get('newEventError');
+    },
+    createCoords: function () {
+        return Session.get("createCoords");
     }
 });
 Template.newEvent.rendered = function() {
@@ -32,3 +30,8 @@ Template.newEvent.rendered = function() {
         hiddenPrefix: '_hidden'
     });
 };
+Template.eventsList.helpers({
+    events: function() {
+        return Events.find({});
+    }
+});
