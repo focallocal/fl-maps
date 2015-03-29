@@ -48,3 +48,6 @@
 body.landing #main {
 	margin-top: -40em !important;
 }
+.leaflet-popup-content {
+	font-size: medium;
+}
