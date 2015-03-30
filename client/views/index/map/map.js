@@ -57,7 +57,7 @@ var openCreateDialog = function (latlng) {
 };
 
 function createPopup(event) {
-    return '<b> <a href="' + event.hyperlink + '" target="_blank">' + event.title + '</a>' +
+    return '<b> <a href="' + event.hyperlink + '" target="_blank">' + event.title + '(click for more info)</a>' +
         "</b><br>" + event.description +
         "</b><br>" + event.category.name +
         "<br>Where: " + event.location + ", " + event.city +
