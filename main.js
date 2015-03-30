@@ -25,6 +25,7 @@ Meteor.methods({
         if (! (typeof options.title === "string" && options.title.length &&
             typeof options.city === "string" && options.city.length &&
             typeof options.location === "string" && options.location.length &&
+            typeof options.meetingPoint === "string" && options.meetingPoint.length &&
             typeof options.dateEvent === "string" && options.dateEvent.length &&
             typeof options.hyperlink === "string" &&
             typeof options.category === "string" && options.category.length &&
@@ -37,6 +38,8 @@ Meteor.methods({
             throw new Meteor.Error(413, "City too long");
         if (options.location.length > 100)
             throw new Meteor.Error(413, "Location too long");
+        if (options.meetingPoint.length > 100)
+            throw new Meteor.Error(413, "Meeting point too long");
         if (options.hyperlink.length > 100)
             throw new Meteor.Error(413, "Link too long");
         if (options.category.length > 100)
@@ -49,6 +52,7 @@ Meteor.methods({
             title: options.title,
             city: options.city,
             location: options.location,
+            meetingPoint: options.meetingPoint,
             hyperlink: options.hyperlink,
             category: Categories.findOne({_id: options.category}),
             description: options.description,

@@ -61,6 +61,7 @@ function createPopup(event) {
         "</b><br>" + event.description +
         "</b><br>" + event.category.name +
         "<br>Where: " + event.location + ", " + event.city +
+        "<br>Meeting point: " + event.meetingPoint +
         "<br>When: <span title='" + moment(event.dateEvent).format("dddd, MMMM Do YYYY") + "'>" +
         moment(event.dateEvent).fromNow() + "</span>" +
         "<br> Organised by: " + event.organiser;
