@@ -30,8 +30,8 @@ Template.newEvent.rendered = function() {
         hiddenPrefix: '_hidden'
     });
 };
-Template.eventsList.helpers({
+Template.calendar.helpers({
     events: function() {
-        return Events.find({});
+        return Events.find({dateEvent: {$gte:Date.now()}});
     }
 });
