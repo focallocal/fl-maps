@@ -1,4 +1,4 @@
-
+//http://ilearnasigoalong.blogspot.co.uk/2013/10/efficient-techniques-for-fuzzy-and.html
 Template.banner.events({
     "submit .search-events": function (event) {
         event.preventDefault();

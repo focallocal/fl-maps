@@ -2,12 +2,15 @@
 Template.registerHelper('baseUrl', function(path) {
     return !!path?Meteor.absoluteUrl(path):Meteor.absoluteUrl();
 });
-Template.eventsList.helpers({
+Template.calendar.helpers({
     formatDate: function (date) {
         return moment(date).format("dddd, MMMM Do YYYY");
     },
     fromNowDate: function (date) {
         return moment(date).fromNow();
+    },
+    events: function() {
+        return Events.find({dateEvent: {$gte:Date.now()}});
     }
 });
 
@@ -30,8 +33,3 @@ Template.newEvent.rendered = function() {
         hiddenPrefix: '_hidden'
     });
 };
-Template.calendar.helpers({
-    events: function() {
-        return Events.find({dateEvent: {$gte:Date.now()}});
-    }
-});
