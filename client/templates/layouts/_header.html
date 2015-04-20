@@ -1,0 +1,35 @@
+<template name="_header">
+<div id="menu-top">
+  <nav>
+    <div class="nav-wrapper">
+        <a class="brand-logo center" href="{{pathFor 'home'}}">Focallocal events</a>
+
+        <ul class="right">
+          <li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><i class="mdi-navigation-more-vert"></i></a></li>
+        </ul>
+
+        <ul class="right hide-on-med-and-down">
+          <li class="{{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}" title="Home"><i class="mdi-action-home"></i></a></li>
+          <li class="{{ isActiveRoute regex='map' }}"><a href="{{ pathFor 'map' }}" title="Map"><i class="mdi-maps-map"></i></a></li>
+          <li class="{{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'dashboard' }}" title="Dashboard"><i class="mdi-action-dashboard"></i></a></li>
+        </ul>
+        <ul id="user-dropdown" class="dropdown-content">
+          {{#if currentUser}}
+            <li><a href="#" data-action="logout"><i class="mdi-action-lock"></i> Sign Out</a></li>
+          {{else}}
+            <li><a href="{{ pathFor 'atSignIn' }}">Sign in</a></li>
+            <li><a href="{{ pathFor 'atSignUp' }}">Register</a></li>
+          {{/if}}
+        </ul>
+
+        <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+      </div>
+  </nav>
+
+  <ul id="nav-mobile" class="side-nav">
+    <li class="bold {{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}" title="Home"><i class="mdi-action-home"></i> Home</a></li>
+    <li class="bold {{ isActiveRoute regex='map' }}"><a href="{{ pathFor 'map' }}" title="Map"><i class="mdi-maps-map"></i> Map</a></li>
+    <li class="bold {{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'dashboard' }}" title="Dashboard"><i class="mdi-action-dashboard"></i> Dashboard</a></li>
+  </ul>
+</div>
+</template>

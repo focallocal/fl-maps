@@ -4,17 +4,25 @@
 # but you can also edit it by hand.
 
 meteor-platform
-less
-nemo64:bootstrap
-accounts-base
-accounts-ui
-accounts-google
-accounts-meetup
-accounts-facebook
-accounts-twitter
-service-configuration
+accounts-password
 alanning:roles
-iron:router
+zimme:iron-router-active
+cmather:handlebars-server@0.2.0
+dburles:collection-helpers
+reywood:publish-composite
 momentjs:moment
+mrt:underscore-string-latest
+matb33:collection-hooks
+dburles:factory
+anti:fake
+cunneen:mailgun
+iron:router
+yasinuslu:blaze-meta
+materialize:materialize
+useraccounts:materialize
+aldeed:autoform
+aldeed:collection2
+gildaspk:autoform-materialize
+fourseven:scss
 fuatsengul:leaflet
-fermuch:pickadate
+rosh93:slide-panel
