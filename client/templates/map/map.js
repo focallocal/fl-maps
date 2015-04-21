@@ -27,7 +27,7 @@ var initialize = function (element, centroid, zoom, features) {
                 .attr('href', '#')
                 .on('click', function () {
                     event.preventDefault();
-                    slidePanel.showPanel('eventNew', e.latlng)
+                    slidePanel.showPanel('eventsNew', e.latlng)
                 });
         }
         L.popup().setLatLng(e.latlng)

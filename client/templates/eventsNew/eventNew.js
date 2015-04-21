@@ -11,8 +11,9 @@ AutoForm.hooks({
     }
 });
 
-Template.eventNew.events({
-    'click .eventNew': function() {
+
+Template.eventsNew.events({
+    'click .eventsNew': function() {
         // Save();
 
         slidePanel.close();
@@ -21,17 +22,17 @@ Template.eventNew.events({
         slidePanel.close();
     }
 });
-Template.eventNew.rendered = function() {
+Template.eventsNew.rendered = function() {
     var self = this;
 
     // Do some setup in here for when the panel is shown
-    Session.set('eventNew', null);
+    Session.set('eventsNew', null);
 
     // Setup an on close handler
     slidePanel.onClose(function() {
         // Fun stuff
     });
 }
-Template.eventNew.destroyed = function() {
+Template.eventsNew.destroyed = function() {
     // Can do some cleanup in here
 }
