@@ -1,0 +1,6 @@
+<template name="eventsNew">
+    <h5>Create new event!</h5>
+    <div class="card-panel">
+        {{> quickForm collection="Events" id="events-new-form" type="insert" omitFields="organiser,coordinates,location,datePublished"}}
+    </div>
+</template>

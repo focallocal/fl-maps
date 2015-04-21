@@ -1,0 +1,3 @@
+EventsNewController = AppController.extend({
+
+});

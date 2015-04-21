@@ -16,7 +16,7 @@ Events.attachSchema(new SimpleSchema({
     },
     name: {
         type: String,
-        label: "Name",
+        label: "Event name",
         max: 100
     },
     coordinates: {
@@ -46,17 +46,24 @@ Events.attachSchema(new SimpleSchema({
         regEx: SimpleSchema.RegEx.Url
     },
     category: {
-        type: Object
+        type: String,
+        label: "Category",
+        allowedValues: ["Mordka","Karcia"],
+        autoform: {
+            afFieldInput: {
+                firstOption: "(Select a good person)"
+            }
+        }
     },
-    "category._id": {
-        type: String
-    },
-    "category.color": {
-        type: String
-    },
-    "category.name": {
-        type: String
-    },
+    //"category._id": {
+    //    type: String
+    //},
+    //"category.color": {
+    //    type: String
+    //},
+    //"category.name": {
+    //    type: String
+    //},
     description: {
         type: String,
         label: "Description",
