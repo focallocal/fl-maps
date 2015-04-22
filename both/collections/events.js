@@ -75,7 +75,7 @@ Events.attachSchema(new SimpleSchema({
         label: "Date published"
     },
     dateEvent: {
-        type: Date,
+        type: String,
         label: "Date and time of the event"
     }
 }));
