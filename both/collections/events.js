@@ -1,81 +1,98 @@
-Events = new Mongo.Collection("events");
+Events = new Mongo.Collection('events');
 
 Events.helpers({
 
 });
 
-Events.before.insert(function (userId, doc) {
-    doc.dateEvent = moment().toDate();
-});
+//Events.before.insert(function(userId, doc) {
+//    doc.datePublished = moment().toDate();
+//});
 
 Events.attachSchema(new SimpleSchema({
     organiser: {
         type: String,
-        label: "Organiser",
-        max: 50
+        label: 'Organiser',
+        optional: true,
+        max: 50,
+        autoform: {
+            omit: true
+        },
+        autoValue: function() {
+            return Meteor.user().emails[0].address; //TODO username from fb,google,twitter
+        }
+    },
+    category: {
+        type: String,
+        label: 'Category',
+        autoform: {
+            options: function() {
+                return Categories.find().map(function(cat) {
+                    return {label: cat.name, value: cat._id};
+                });
+            },
+            label: false,
+            firstOption: 'Choose the event category'
+        }
     },
     name: {
         type: String,
-        label: "Event name",
+        label: 'Event name',
         max: 100
-    },
-    coordinates: {
-        type: Object
-    },
-    "coordinates.lat": {
-       type: Number
-    },
-    "coordinates.lng": {
-       type: Number
     },
     location: {
         type: String,
-        label: "Location",
+        label: 'Location',
         max: 100
     },
     meetingPoint: {
         type: String,
-        label: "Meeting point",
+        label: 'Meeting point',
         max: 100
+    },
+    dateEvent: {
+        type: String,
+        label: 'Date of the event',
+        autoform: {
+            class: 'datepicker'
+        }
     },
     url: {
         type: String,
-        label: "Link",
+        label: 'Link',
         optional: true,
         max: 200,
         regEx: SimpleSchema.RegEx.Url
     },
-    category: {
-        type: String,
-        label: "Category",
-        allowedValues: ["Mordka","Karcia"],
-        autoform: {
-            type: "select2"
-        }
-    },
-    //"category._id": {
-    //    type: String
-    //},
-    //"category.color": {
-    //    type: String
-    //},
-    //"category.name": {
-    //    type: String
-    //},
     description: {
         type: String,
-        label: "Description",
+        label: 'Description',
         max: 1000,
         autoform: {
-            type: 'textarea'
+            rows: 2
         }
+    },
+    coordinates: {
+        type: Object,
+        optional: true,
+        autoform: {
+            omit: true
+        }
+    },
+    'coordinates.lat': {
+        type: Number
+    },
+    'coordinates.lng': {
+        type: Number
     },
     datePublished: {
         type: Date,
-        label: "Date published"
-    },
-    dateEvent: {
-        type: String,
-        label: "Date and time of the event"
+        label: 'Date published',
+        optional: true,
+        autoform: {
+            omit: true
+        },
+        autoValue: function() {
+            return moment().toDate();
+        }
     }
 }));

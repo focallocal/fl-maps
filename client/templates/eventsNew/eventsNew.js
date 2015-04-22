@@ -1,12 +1,14 @@
 AutoForm.hooks({
     'events-new-form': {
         onSuccess: function (operation, result, template) {
-            slidePanel.close();
-            toast('Event created successfully!', 4000);
+            Materialize.toast('Event created successfully!', 4000);
             //Router.go('map');
             console.log(operation);
             console.log(result);
             //Session.set("selected", event._id)
+        },
+        onError: function(formType, error) {
+            console.error(error);
         }
     }
 });
@@ -35,10 +37,10 @@ Template.eventsNew.rendered = function() {
     // Do some setup in here for when the panel is shown
     Session.set('eventsNew', null);
 
-    // Setup an on close handler
-    slidePanel.onClose(function() {
-        // Fun stuff
-    });
+    //// Setup an on close handler
+    //slidePanel.onClose(function() {
+    //    // Fun stuff
+    //});
 
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
