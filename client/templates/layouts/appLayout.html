@@ -5,13 +5,16 @@
 
   {{> _header}}
 
+  <main>
   {{#if isActiveRoute regex='map'}}
     {{> yield}}
   {{else}}
     <div class="container">
+
       {{> yield}}
     </div>
   {{/if}}
+  </main>
 
   {{> _footer}}
 </template>
