@@ -11,6 +11,16 @@ AutoForm.hooks({
     }
 });
 
+Template.eventsNew.helpers({
+    select2opts: function () {
+        return {placeholder: 'Choose type of the event', minimumResultsForSearch: 20};
+    },
+    categoryOptions: function() {
+        return Categories.find().map(function(cat){
+            return {label:cat.name,value:cat._id}
+        });
+    }
+});
 
 Template.eventsNew.events({
     'click .eventsNew': function() {

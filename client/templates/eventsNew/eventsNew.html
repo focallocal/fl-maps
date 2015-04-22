@@ -1,6 +1,14 @@
 <template name="eventsNew">
     <h5>Create new event!</h5>
     <div class="card-panel">
-        {{> quickForm collection="Events" id="events-new-form" type="insert" omitFields="organiser,coordinates,location,datePublished"}}
+        {{# autoForm collection="Events" id="events-new-form" type="insert"}}
+            {{> afQuickField name="category" type="select2" select2Options=select2opts options=categoryOptions label=false}}
+            {{> afFormGroup name="name" type="text" }}
+            {{> afFormGroup name="location" type="text" }}
+            {{> afFormGroup name="meetingPoint" type="text" }}
+            {{> afFormGroup name="dateEvent" type="date" }}
+            {{> afFormGroup name="url" type="text" }}
+            {{> afFormGroup name="description" type="textarea" }}
+        {{/autoForm}}
     </div>
 </template>
