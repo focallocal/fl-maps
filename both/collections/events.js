@@ -50,9 +50,7 @@ Events.attachSchema(new SimpleSchema({
         label: "Category",
         allowedValues: ["Mordka","Karcia"],
         autoform: {
-            afFieldInput: {
-                firstOption: "(Select a good person)"
-            }
+            type: "select2"
         }
     },
     //"category._id": {
