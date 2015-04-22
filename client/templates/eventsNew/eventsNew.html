@@ -2,13 +2,26 @@
     <h5>Create new event!</h5>
     <div class="card-panel">
         {{# autoForm collection="Events" id="events-new-form" type="insert"}}
-            {{> afQuickField name="category" type="select2" select2Options=select2opts options=categoryOptions label=false}}
+        <fieldset>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Select event type</option>
+                    {{#each categoryOptions}}
+                        <option value={{value}}>{{label}}</option>
+                    {{/each}}
+                </select>
+            </div>
             {{> afFormGroup name="name" type="text" }}
             {{> afFormGroup name="location" type="text" }}
             {{> afFormGroup name="meetingPoint" type="text" }}
-            {{> afFormGroup name="dateEvent" type="date" }}
+            <div class="input-field col s12">
+                <input type="date" class="datepicker" >
+                <label>Pick a date</label>
+            </div>
             {{> afFormGroup name="url" type="text" }}
             {{> afFormGroup name="description" type="textarea" }}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Insert</button>
         {{/autoForm}}
     </div>
 </template>

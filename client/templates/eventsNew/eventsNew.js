@@ -12,9 +12,6 @@ AutoForm.hooks({
 });
 
 Template.eventsNew.helpers({
-    select2opts: function () {
-        return {placeholder: 'Choose type of the event', minimumResultsForSearch: 20};
-    },
     categoryOptions: function() {
         return Categories.find().map(function(cat){
             return {label:cat.name,value:cat._id}
@@ -42,7 +39,14 @@ Template.eventsNew.rendered = function() {
     slidePanel.onClose(function() {
         // Fun stuff
     });
-}
+
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+
+    $('select').material_select();
+};
 Template.eventsNew.destroyed = function() {
     // Can do some cleanup in here
-}
+};
