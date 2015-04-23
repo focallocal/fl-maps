@@ -66,10 +66,7 @@ Events.attachSchema(new SimpleSchema({
     description: {
         type: String,
         label: 'Description',
-        max: 1000,
-        autoform: {
-            rows: 2
-        }
+        max: 1000
     },
     coordinates: {
         type: Object,
