@@ -1,6 +1,11 @@
 <template name="map">
+    <div class="event-action-button fixed-action-btn">
+        <a class="btn-floating btn-large" href="{{pathFor 'events.new'}}">
+            <i class="large mdi-content-add"></i>
+        </a>
+    </div>
     <div id="map-container" class="template-map">
         <div id="map-canvas" class="map"></div>
     </div>
-    {{> slidePanel}}
+    <!--{{> slidePanel}}-->
 </template>

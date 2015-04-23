@@ -32,3 +32,8 @@
 .leaflet-container a.leaflet-active {
     outline: none;
 }
+
+.event-action-button {
+    top: 65px;
+    right: 24px;
+}
