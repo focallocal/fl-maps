@@ -18,7 +18,7 @@ Events.attachSchema(new SimpleSchema({
             omit: true
         },
         autoValue: function() {
-            return Meteor.user().emails[0].address; //TODO username from fb,google,twitter
+            return "testuser"; //Meteor.user().emails[0].address; //TODO username from fb,google,twitter
         }
     },
     category: {
