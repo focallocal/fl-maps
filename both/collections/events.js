@@ -6,9 +6,11 @@ Events.helpers({
 
 Events.before.insert(function(userId, doc) {
 //    doc.datePublished = moment().toDate();
-    //it comes from frontend as e.g. {"category": 3}
-    if (typeof doc.category === "number") {
-        doc.category = Categories.findOne({_id: doc.category});
+    //it comes from frontend as e.g. {"category": "3"}
+    if (typeof doc.category === "string") {
+        var categories = Categories.findOne({_id: Number(doc.category)})
+        console.log(categories);
+        doc.category = categories;
     }
 });
 
