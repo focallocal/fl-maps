@@ -24,7 +24,6 @@ var initialize = function(element, centroid, zoom, features) {
     if (!Meteor.userId()) {
       newEventMsg = $('<span>').text('Please login to add event here!');
     } else {
-      Session.set('coords', e.latlng);
       newEventMsg = $('<a>')
         .text('Create event here!')
         .attr('href', '#')
