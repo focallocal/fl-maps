@@ -4,9 +4,20 @@ Events.helpers({
 
 });
 
-//Events.before.insert(function(userId, doc) {
+Events.before.insert(function(userId, doc) {
 //    doc.datePublished = moment().toDate();
-//});
+    //it comes from frontend as e.g. {"category": 3}
+    if (typeof doc.category === "number") {
+        var category = Categories.findOne({_id: doc.category});
+        doc.category = category
+    }
+    //var coords = Session.get('coords');
+    //if (!coords) {
+    //    console.log('old coordinates ' + doc.coordinates);
+    //    doc.coordinates = {'lat': String(coords.lat), 'lng': String(coords.lng)};
+    //    console.log('new coordinates' + doc.coordinates);
+    //}
+});
 
 Events.attachSchema(new SimpleSchema({
     organiser: {
@@ -22,8 +33,9 @@ Events.attachSchema(new SimpleSchema({
         }
     },
     category: {
-        type: String,
+        type: Object,
         label: 'Category',
+        blackbox: true,
         autoform: {
             options: function() {
                 return Categories.find().map(function(cat) {
@@ -33,6 +45,15 @@ Events.attachSchema(new SimpleSchema({
             label: false,
             firstOption: 'Choose the event category'
         }
+    },
+    'category._id': {
+        type: Number
+    },
+    'category.name': {
+        type: String
+    },
+    'category.color': {
+        type: String
     },
     name: {
         type: String,
@@ -84,7 +105,6 @@ Events.attachSchema(new SimpleSchema({
     datePublished: {
         type: Date,
         label: 'Date published',
-        optional: true,
         autoform: {
             omit: true
         },
