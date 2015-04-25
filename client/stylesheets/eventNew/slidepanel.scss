@@ -2,9 +2,10 @@ html, body {
   overflow-x: hidden;
 }
 .slide-panel {
+  @extend .z-depth-3;
   display: none;
   position: absolute;
-  top: 0;
+  top: $navbar-height;//0;
   right: 0;
   -webkit-transform: translate(100%, 0);
   -o-transform: translate(100%, 0);
