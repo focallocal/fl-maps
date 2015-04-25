@@ -20,10 +20,10 @@ iron:router
 yasinuslu:blaze-meta
 materialize:materialize
 useraccounts:materialize
-aldeed:autoform
 aldeed:collection2
-gildaspk:autoform-materialize
+gildaspk:autoform-materialize@0.0.18
 fourseven:scss
 fuatsengul:leaflet
 rosh93:slide-panel
 msavin:mongol
+aldeed:autoform@5.1.2
