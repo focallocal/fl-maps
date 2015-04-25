@@ -1,11 +1,9 @@
 AutoForm.hooks({
     'events-new-form': {
         onSuccess: function (operation, result, template) {
+            slidePanel.closePanel();
             Materialize.toast('Event created successfully!', 4000);
-            //Router.go('map');
-            console.log(operation);
-            console.log(result);
-            //Session.set("selected", event._id)
+            Session.set("selected", result._id)
         },
         onError: function(formType, error) {
             console.error(error);
@@ -13,34 +11,11 @@ AutoForm.hooks({
     }
 });
 
-Template.eventsNew.helpers({
-    categoryOptions: function() {
-        return Categories.find().map(function(cat){
-            return {label:cat.name,value:cat._id}
-        });
-    }
-});
-
-Template.eventsNew.events({
-    'click .eventsNew': function() {
-        // Save();
-
-        slidePanel.close();
-    },
-    'click .close': function() {
-        slidePanel.close();
-    }
-});
 Template.eventsNew.rendered = function() {
     var self = this;
 
     // Do some setup in here for when the panel is shown
     Session.set('eventsNew', null);
-
-    //// Setup an on close handler
-    //slidePanel.onClose(function() {
-    //    // Fun stuff
-    //});
 
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
@@ -48,6 +23,10 @@ Template.eventsNew.rendered = function() {
     });
 
     $('select').material_select();
+
+    this.$('input[name="coordinates.lat"]').val(Template.currentData().lat);
+    this.$('input[name="coordinates.lng"]').val(Template.currentData().lng);
+    this.$('div.card-panel.autoform-object-field').hide();
 };
 Template.eventsNew.destroyed = function() {
     // Can do some cleanup in here
