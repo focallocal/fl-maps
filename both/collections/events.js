@@ -8,15 +8,8 @@ Events.before.insert(function(userId, doc) {
 //    doc.datePublished = moment().toDate();
     //it comes from frontend as e.g. {"category": 3}
     if (typeof doc.category === "number") {
-        var category = Categories.findOne({_id: doc.category});
-        doc.category = category
+        doc.category = Categories.findOne({_id: doc.category});
     }
-    //var coords = Session.get('coords');
-    //if (!coords) {
-    //    console.log('old coordinates ' + doc.coordinates);
-    //    doc.coordinates = {'lat': String(coords.lat), 'lng': String(coords.lng)};
-    //    console.log('new coordinates' + doc.coordinates);
-    //}
 });
 
 Events.attachSchema(new SimpleSchema({
@@ -91,16 +84,25 @@ Events.attachSchema(new SimpleSchema({
     },
     coordinates: {
         type: Object,
-        optional: true,
         autoform: {
-            omit: true
+            //type: "hidden"
         }
     },
     'coordinates.lat': {
-        type: Number
+        type: String,
+        autoform: {
+            //disabled: true
+            type: "hidden",
+            label: false
+        }
     },
     'coordinates.lng': {
-        type: Number
+        type: String,
+        autoform: {
+            //disabled: true
+            type: "hidden",
+            label: false
+        }
     },
     datePublished: {
         type: Date,
