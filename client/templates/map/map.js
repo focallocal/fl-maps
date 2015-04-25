@@ -40,6 +40,10 @@ var initialize = function(element, centroid, zoom, features) {
 
 
 Template.map.rendered = function() {
+  $('#event-new-button').click(function(){
+    //slidePanel.showPanel('eventsNew');
+    Materialize.toast('Please click on the map twice to add new event', 4000);
+  });
   var $mapCanvas = $('#map-canvas');
   var $mapContainer = $('#map-container');
   var $window = $(window);
