@@ -129,7 +129,6 @@ function animateMarkers(self) {
   var selectedEvent = Events.findOne(Session.get('selected'));
   if (selectedEvent) {
     var line;
-    console.log(self);
     if (self.animatedMarker) {
       // animate to here
       line = L.polyline([[self.animatedMarker.getLatLng().lat,
@@ -139,12 +138,8 @@ function animateMarkers(self) {
       self.animatedMarker.setLine(line.getLatLngs());
       self.animatedMarker.start();
     } else {
-      console.log('ll'+[selectedEvent.coordinates.lat,
-        selectedEvent.coordinates.lng]);
-      console.log('selected event: ' + selectedEvent);
       line = L.polyline([[selectedEvent.coordinates.lat,
         selectedEvent.coordinates.lng]]);
-      console.log('line.getLatLngs()'+line.getLatLngs());
       self.animatedMarker = L.animatedMarker(line.getLatLngs(), {
         autoStart: false,
         distance: 10000,  // meters
