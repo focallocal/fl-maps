@@ -8,9 +8,11 @@ Events.before.insert(function(userId, doc) {
 //    doc.datePublished = moment().toDate();
     //it comes from frontend as e.g. {"category": "3"}
     if (typeof doc.category === "string") {
-        var categories = Categories.findOne({_id: Number(doc.category)})
-        console.log(categories);
-        doc.category = categories;
+        doc.category = Categories.findOne({_id: Number(doc.category)});
+    }
+    var user = Meteor.user();
+    if (user) {
+        doc.organiser = user.profile.name;
     }
 });
 
@@ -22,9 +24,6 @@ Events.attachSchema(new SimpleSchema({
         max: 50,
         autoform: {
             omit: true
-        },
-        autoValue: function() {
-            return "testuser"; //Meteor.user().emails[0].address; //TODO username from fb,google,twitter
         }
     },
     category: {

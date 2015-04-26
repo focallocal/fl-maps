@@ -12,7 +12,6 @@ function createServiceConfiguration(service, clientId, secret) {
 
 Meteor.startup(function() {
     var settings = Meteor.settings[process.env.NODE_ENV];
-    console.log(settings);
     createServiceConfiguration("google", settings.google.oauth_key, settings.google.oauth_secret);
     createServiceConfiguration("meetup", settings.meetup.oauth_key, settings.meetup.oauth_secret);
     //createServiceConfiguration("facebook", settings.facebook.oauth_key, settings.facebook.oauth_secret);
@@ -35,4 +34,10 @@ Meteor.startup(function() {
                 "loginStyle": "popup"
             }
         });
+});
+
+Accounts.onCreateUser(function(options, user) {
+    if (options.profile) user.profile = options.profile;
+    if (options.email) user.profile = {"name" : options.email};
+    return user;
 });
