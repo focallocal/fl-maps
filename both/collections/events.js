@@ -30,7 +30,6 @@ Events.attachSchema(new SimpleSchema({
     category: {
         type: Object,
         label: 'Category',
-        blackbox: true,
         autoform: {
             options: function() {
                 return Categories.find().map(function(cat) {
@@ -91,7 +90,8 @@ Events.attachSchema(new SimpleSchema({
         }
     },
     'coordinates.lat': {
-        type: String,
+        type: Number,
+        decimal: true,
         autoform: {
             //disabled: true
             type: "hidden",
@@ -99,7 +99,8 @@ Events.attachSchema(new SimpleSchema({
         }
     },
     'coordinates.lng': {
-        type: String,
+        type: Number,
+        decimal: true,
         autoform: {
             //disabled: true
             type: "hidden",
