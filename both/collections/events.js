@@ -65,10 +65,13 @@ Events.attachSchema(new SimpleSchema({
         max: 100
     },
     dateEvent: {
-        type: String,
+        type: Date,
         label: 'Date of the event',
         autoform: {
-            class: 'datepicker'
+            type: 'pickadate',
+            pickadateOptions: {
+                format: 'd mmmm, yyyy'
+            }
         }
     },
     url: {
