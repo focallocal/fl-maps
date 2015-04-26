@@ -27,9 +27,13 @@
 
 .leaflet-container a {
     color: inherit;
+    text-decoration: underline;
 }
 
 .leaflet-container a.leaflet-active {
     outline: none;
+}
+.leaflet-container {
+    font: inherit;
 }
 
