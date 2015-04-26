@@ -1,6 +1,11 @@
 <template name="eventPopup">
     {{category.name}} <br>
-    <b> <a href="  {{url}}  " target="_blank"> {{name}} (click here)</a>
+    <b>
+        {{#if url}}
+            <a href="{{url}}" target="_blank">{{name}} (click here)</a>
+        {{else}}
+            {{name}}
+        {{/if}}
     </b><br>  {{description}}
     <br>Where:   {{location}}
     <br>Meeting point:   {{meetingPoint}}
