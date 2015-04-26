@@ -19,11 +19,6 @@ Template.eventsNew.rendered = function() {
     // Do some setup in here for when the panel is shown
     Session.set('eventsNew', null);
 
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
-    });
-
     $('select').material_select();
     if (Template.currentData() != null) {
         this.$('input[name="coordinates.lat"]').val(Template.currentData().lat);
