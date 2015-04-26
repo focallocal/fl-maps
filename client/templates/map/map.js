@@ -107,14 +107,7 @@ var removeMarker = function(_id) {
 };
 
 function createPopup(event) {
-  return '<b> <a href="' + event.url + '" target="_blank">' + event.name + ' (click here)</a>' +
-    "</b><br>" + event.description +
-    "</b><br>" + event.category.name +
-    "<br>Where: " + event.location +
-    "<br>Meeting point: " + event.meetingPoint +
-    "<br>When: <span title='" + moment(event.dateEvent).format("dddd, MMMM Do YYYY") + "'>" +
-    moment(event.dateEvent).fromNow() + "</span>" +
-    "<br> Organised by: " + event.organiser;
+  return Blaze.toHTMLWithData(Template.eventPopup,event);
 }
 
 function createMarker(event) {

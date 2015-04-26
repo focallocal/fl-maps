@@ -1,0 +1,9 @@
+<template name="eventPopup">
+    {{category.name}} <br>
+    <b> <a href="  {{url}}  " target="_blank"> {{name}} (click here)</a>
+    </b><br>  {{description}}
+    <br>Where:   {{location}}
+    <br>Meeting point:   {{meetingPoint}}
+    <br>When: <span title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}</span>
+    <br> Organised by: {{organiser}}
+</template>
