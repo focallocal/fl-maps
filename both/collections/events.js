@@ -10,9 +10,8 @@ Events.before.insert(function(userId, doc) {
     if (typeof doc.category === "string") {
         doc.category = Categories.findOne({_id: Number(doc.category)});
     }
-    var user = Meteor.user();
-    if (user) {
-        doc.organiser = user.profile.name;
+    if (userId) { //checks if request comes from frontend
+        doc.organiser = Meteor.user().profile.name;
     }
 });
 
