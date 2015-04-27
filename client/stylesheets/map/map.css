@@ -27,7 +27,6 @@
 
 .leaflet-container a {
     color: inherit;
-    text-decoration: underline;
 }
 
 .leaflet-container a.leaflet-active {
@@ -35,5 +34,9 @@
 }
 .leaflet-container {
     font: inherit;
+}
+
+.leaflet-popup-content a {
+    text-decoration: underline;
 }
 
