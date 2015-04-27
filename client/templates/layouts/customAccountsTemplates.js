@@ -1,2 +1,2 @@
-Template.customFullPageAtForm.replaces("fullPageAtForm");
-Template.customAtSocial.replaces("atSocial");
+//Template.customFullPageAtForm.replaces("fullPageAtForm");
+//Template.customAtSocial.replaces("atSocial");

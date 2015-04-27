@@ -18,7 +18,7 @@ Factory.define('event', Events, {
 
 if (Events.find({}).count() === 0) {
     console.log("Repopulating db...");
-    _(10).times(function (n) {
+    _(20).times(function (n) {
         Factory.create('event');
     });
 }
