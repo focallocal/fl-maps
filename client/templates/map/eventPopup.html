@@ -1,4 +1,11 @@
 <template name="eventPopup">
+    {{#if currentUser}}
+        {{#if isCurrentUser organiser}}
+            <a class="edit-event waves-effect waves-teal btn-flat" onclick="slidePanel.showPanel('eventsEdit');">
+                <i class="mdi-editor-mode-edit left"></i>
+                Edit event</a><br>
+        {{/if}}
+    {{/if}}
     {{category.name}} <br>
     <b>
         {{#if url}}
