@@ -3,13 +3,7 @@ Events = new Mongo.Collection('events');
 Events.helpers({
 
 });
-
 Events.before.insert(function(userId, doc) {
-//    doc.datePublished = moment().toDate();
-    //it comes from frontend as e.g. {"category": "3"}
-    if (typeof doc.category === "string") {
-        doc.category = Categories.findOne({_id: Number(doc.category)});
-    }
     if (userId) { //checks if request comes from frontend
         doc.organiser = Meteor.user().profile.name;
     }
@@ -26,8 +20,11 @@ Events.attachSchema(new SimpleSchema({
         }
     },
     category: {
-        type: Object,
-        label: 'Category',
+        type: Object
+    },
+    'category._id': {
+        type: Number,
+        //optional: true,
         autoform: {
             options: function() {
                 return Categories.find().map(function(cat) {
@@ -35,17 +32,32 @@ Events.attachSchema(new SimpleSchema({
                 });
             },
             label: false,
-            firstOption: 'Choose the event category'
+            firstOption: 'Choose event category'
         }
     },
-    'category._id': {
-        type: Number
-    },
     'category.name': {
-        type: String
+        type: String,
+        autoform: {
+            type: 'hidden'
+        },
+        optional: true,
+        autoValue: function() {
+            var categoryId = this.field('category._id').value;
+            if (!categoryId) return null;
+            return Categories.findOne(categoryId).name;
+        }
     },
     'category.color': {
-        type: String
+        type: String,
+        autoform: {
+            type: 'hidden'
+        },
+        optional: true,
+        autoValue: function() {
+            var categoryId = this.field('category._id').value;
+            if (!categoryId) return null;
+            return Categories.findOne(categoryId).color;
+        }
     },
     name: {
         type: String,
