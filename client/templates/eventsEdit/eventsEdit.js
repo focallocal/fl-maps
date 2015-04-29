@@ -18,20 +18,14 @@ Template.eventsEdit.helpers({
 });
 
 Template.eventsEdit.rendered = function() {
-    var self = this;
-    //this.$('#event-return-button').click(function(){
-    //    slidePanel.closePanel();
-    //});
-    // Do some setup in here for when the panel is shown
-    Session.set('eventsEdit', null);
-
     $('select').material_select();
-    if (Template.currentData() != null) {
-        this.$('input[name="coordinates.lat"]').val(Template.currentData().lat);
-        this.$('input[name="coordinates.lng"]').val(Template.currentData().lng);
+    var selectedEvent = Events.findOne(Session.get('selected'));
+    if (selectedEvent != null) {
+        this.$('input[name="coordinates.lat"]').val(selectedEvent.coordinates.lat);
+        this.$('input[name="coordinates.lng"]').val(selectedEvent.coordinates.lng);
     }
-    this.$('div.card-panel.autoform-object-field').hide();
 };
+
 Template.eventsNew.destroyed = function() {
     // Can do some cleanup in here
 };
