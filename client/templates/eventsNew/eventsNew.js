@@ -12,12 +12,23 @@ AutoForm.hooks({
 });
 
 Template.eventsNew.rendered = function() {
-    $('select').material_select();
-    if (Template.currentData() != null) {
-        this.$('input[name="coordinates.lat"]').val(Template.currentData().lat);
-        this.$('input[name="coordinates.lng"]').val(Template.currentData().lng);
+    var coords = Session.get('coords');
+    console.log("eventsNew rendered, coords " + coords );
+    if (!coords) {
+        console.log("waiting for coords");
+        Session.set('awaitingCoords',true);
+    } else {
+        console.log('coords defined');
+        this.$('input[name="coordinates.lat"]').val(coords.lat);
+        this.$('input[name="coordinates.lng"]').val(coords.lng);
+        $('select').material_select();
     }
 };
+Template.eventsNew.helpers({
+    coords: function() {
+        return Session.get('coords');
+    }
+});
 Template.eventsNew.destroyed = function() {
     // Can do some cleanup in here
 };

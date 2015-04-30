@@ -6,6 +6,10 @@
     <!--</div>-->
     <h5>Create a new event!</h5>
     <div class="card-panel">
-      {{> quickForm collection="Events" id="events-new-form" type="insert"}}
+        {{#if coords}}
+            {{> quickForm collection="Events" id="events-new-form" type="insert"}}
+        {{else}}
+            <h3>Pick a place on the map!</h3>
+        {{/if}}
     </div>
 </template>

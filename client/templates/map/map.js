@@ -19,30 +19,47 @@ var initialize = function(element, centroid, zoom, features) {
   });
   Stamen_Watercolor.addTo(map);
 
-  map.on('dblclick', function(e) {
-    var newEventMsg;
-    if (!Meteor.userId()) {
-      newEventMsg = $('<span>').text('Please login to add event here!');
-    } else {
-      newEventMsg = $('<a>')
-        .text('Create event here!')
-        .attr('href', '#')
-        .on('click', function() {
-          event.preventDefault();
-          slidePanel.showPanel('eventsNew', e.latlng);
-        });
-    }
-    L.popup().setLatLng(e.latlng)
-      .setContent(newEventMsg[0])
-      .openOn(map);
-  });
+  map.on('click', function (e) {
+      if (Session.get('awaitingCoords')) {
+        console.log("opening popup");
+        var newEventMsg = $('<a>')
+            .text('Create event here!')
+            .attr('href', '#')
+            .on('click', function () {
+              event.preventDefault();
+              Session.set('coords', e.latlng);
+              Session.set('awaitingCoords',false);
+            });
+        L.popup().setLatLng(e.latlng)
+            .setContent(newEventMsg[0])
+            .openOn(map);
+      }
+    }).on('dblclick', function (e) {
+      var newEventMsg;
+      if (!Meteor.userId()) {
+        newEventMsg = $('<span>').text('Please login to add event here!');
+      } else {
+        newEventMsg = $('<a>')
+            .text('Create event here!')
+            .attr('href', '#')
+            .on('click', function () {
+              event.preventDefault();
+                Session.set('coords', e.latlng);
+              slidePanel.showPanel('eventsNew');
+            });
+      }
+      L.popup().setLatLng(e.latlng)
+          .setContent(newEventMsg[0])
+          .openOn(map);
+    });
 };
 
 
 Template.map.rendered = function() {
   $('#event-new-button').click(function(){
-    //slidePanel.showPanel('eventsNew');
-    Materialize.toast('Please double click on the map', 4000);
+      Session.set('coords',false);
+    slidePanel.showPanel('eventsNew');
+    //Materialize.toast('Please double click on the map', 4000);
   });
   var $mapCanvas = $('#map-canvas');
   var $mapContainer = $('#map-container');
