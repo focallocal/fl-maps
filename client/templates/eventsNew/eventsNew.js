@@ -13,16 +13,11 @@ AutoForm.hooks({
 
 Template.eventsNew.rendered = function() {
     var coords = Session.get('coords');
-    console.log("eventsNew rendered, coords " + coords );
-    if (!coords) {
-        console.log("waiting for coords");
-        Session.set('awaitingCoords',true);
-    } else {
-        console.log('coords defined');
+    if (coords) {
         this.$('input[name="coordinates.lat"]').val(coords.lat);
         this.$('input[name="coordinates.lng"]').val(coords.lng);
-        $('select').material_select();
     }
+    $('select').material_select();
 };
 Template.eventsNew.helpers({
     coords: function() {
