@@ -72,10 +72,8 @@ Template.map.rendered = function() {
     $mapContainer.html(map.getContainer());
   }
 
-  //var futureEvents = Events.find({dateEvent: {$gte:Date.now()}});
-  //var events = MapController.data.events
-  //console.log(events);
-  var futureEvents = Events.find({});
+  var futureEvents = this.data.events;
+    console.log('showing ' + futureEvents.count() + ' events ');
   futureEvents.observe({
     added: function(event) {
       var marker = createMarker(event);
