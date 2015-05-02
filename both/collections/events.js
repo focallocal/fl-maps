@@ -4,6 +4,7 @@ Events.helpers({
 
 });
 Events.before.insert(function(userId, doc) {
+    doc.dateCreated = new Date();
     if (userId) { //checks if request comes from frontend
         doc.organiser = Meteor.user().profile.name;
     }
@@ -80,7 +81,8 @@ Events.attachSchema(new SimpleSchema({
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
-                format: 'd mmmm, yyyy'
+                format: 'd mmmm, yyyy',
+                formatSubmit: 'yyyy-mm-dd'
             }
         }
     },
@@ -120,14 +122,11 @@ Events.attachSchema(new SimpleSchema({
             label: false
         }
     },
-    datePublished: {
+    dateCreated: {
         type: Date,
         label: 'Date published',
         autoform: {
             omit: true
-        },
-        autoValue: function() {
-            return moment().toDate();
         }
     }
 }));
