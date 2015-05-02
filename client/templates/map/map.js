@@ -43,22 +43,13 @@ var initialize = function(element, centroid, zoom, features) {
 };
 
 
+
 Template.map.rendered = function() {
-  $('#event-new-button').click(function(){
-    Session.set('coords',false);
-    Session.set('awaitingCoords',true);
-    Materialize.toast('Please tap the map to choose place.', 20000);
-  });
   var $mapCanvas = $('#map-canvas');
   var $mapContainer = $('#map-container');
-  var $window = $(window);
-  $(window).resize(function() {
-    var h = $window.height(),
-      offsetTop = $('#menu-top').height();
-    $mapCanvas.css('height', (h - offsetTop));
-  }).resize();
+  adjustMapHeightToWindowSize($mapCanvas);
+  initNewEventButton();
 
-  // initialize map events
   if (!map) {
     initialize($mapCanvas[0], [48.28593, 16.30371], 2);
     var self = this;
@@ -72,9 +63,7 @@ Template.map.rendered = function() {
     $mapContainer.html(map.getContainer());
   }
 
-  var futureEvents = this.data.events;
-    console.log('showing ' + futureEvents.count() + ' events ');
-  futureEvents.observe({
+  this.data.events.observe({
     added: function(event) {
       var marker = createMarker(event);
       var color = event.category.color;
@@ -203,4 +192,19 @@ function handleSearchResults(results) {
     clearResults();
     addResults();
   }
+}
+
+function adjustMapHeightToWindowSize($mapCanvas) {
+  $(window).resize(function () {
+    var h = $(this).height(),
+        offsetTop = $('#menu-top').height();
+    $mapCanvas.css('height', (h - offsetTop));
+  }).resize();
+}
+function initNewEventButton() {
+  $('#event-new-button').tooltip({delay: 50}).click(function () {
+    Session.set('coords', false);
+    Session.set('awaitingCoords', true);
+    Materialize.toast('Where to create event? Tap the map now...', 5000);
+  });
 }
