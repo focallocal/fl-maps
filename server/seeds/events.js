@@ -12,7 +12,7 @@ Factory.define('event', Events, {
     url: function() { return "http://focallocal.org"; },
     description: function() { return Fake.sentence(); },
     category: function() { return Categories.findOne({_id : _.random(1,11)}); },
-    datePublished: function() { return moment().format("YYYY-MM-DD"); },
+    dateCreated: function() { return moment().format("YYYY-MM-DD"); },
     dateEvent: function() { return moment().format("YYYY-MM-DD"); }
 });
 
