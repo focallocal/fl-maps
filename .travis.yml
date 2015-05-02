@@ -1,9 +1,16 @@
-sudo: required
 language: node_js
 node_js:
-  - "0.8"
-  - "0.10"
-
+- '0.10'
 before_install:
-  - "curl -L http://git.io/ejPSng | /bin/sh"
-env: TEST_COMMAND=./travis.sh
+- sudo apt-get install expect
+- curl https://install.meteor.com | /bin/sh
+- meteor update
+- npm install
+branches:
+  only:
+  - new-frontend
+env:
+  global:
+  - METEOR_DEPLOY_URL=focallocal-test.meteor.com
+script:
+  - "expect deploy.exp"
