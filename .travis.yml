@@ -1,15 +1,13 @@
 language: node_js
 node_js:
-- '0.10'
+- '0.12'
 before_install:
 - sudo apt-get install expect
 - curl https://install.meteor.com | /bin/sh
 - meteor update
-branches:
-  only:
-  - new-frontend
-env:
-  global:
-  - METEOR_DEPLOY_URL=focallocal-test.meteor.com
+#build all branches, uncomment below to change it
+#branches:
+#  only:
+#  - master
 script:
   - "expect deploy.exp"
