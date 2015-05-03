@@ -5,7 +5,6 @@ before_install:
 - sudo apt-get install expect
 - curl https://install.meteor.com | /bin/sh
 - meteor update
-- npm install
 branches:
   only:
   - new-frontend
