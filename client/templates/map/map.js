@@ -21,11 +21,7 @@ var initialize = function(element, centroid, zoom, features) {
 
   map.on('click', function (e) {
       if (Session.get('awaitingCoords')) {
-          var newEventMsg;
-          if (!Meteor.userId()) {
-              newEventMsg = $('<span>').text('Please login to add event here!');
-          } else {
-              newEventMsg = $('<a>')
+          var newEventMsg = $('<a>')
                   .text('Create event here!')
                   .attr('href', '#')
                   .on('click', function () {
@@ -34,7 +30,6 @@ var initialize = function(element, centroid, zoom, features) {
                       Session.set('awaitingCoords',false);
                       slidePanel.showPanel('eventsNew');
                   });
-          }
           L.popup().setLatLng(e.latlng)
               .setContent(newEventMsg[0])
               .openOn(map);
@@ -203,8 +198,12 @@ function adjustMapHeightToWindowSize($mapCanvas) {
 }
 function initNewEventButton() {
   $('#event-new-button').tooltip({delay: 50}).click(function () {
-    Session.set('coords', false);
-    Session.set('awaitingCoords', true);
-    Materialize.toast('Where to create event? Tap the map now...', 5000);
+    if (!Meteor.userId()) {
+      Materialize.toast('Oops! Please login to add event!', 3000);
+    } else {
+      Session.set('coords', false);
+      Session.set('awaitingCoords', true);
+      Materialize.toast('Where to create event? Tap the map now...', 8000);
+    }
   });
 }
