@@ -12,7 +12,7 @@
         <ul class="right hide-on-med-and-down">
           <li class="{{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}" title="Home"><i class="mdi-action-home"></i></a></li>
           <li class="{{ isActiveRoute regex='map' }}"><a href="{{ pathFor 'map' }}" title="Map"><i class="mdi-maps-map"></i></a></li>
-          <li class="{{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'dashboard' }}" title="Dashboard"><i class="mdi-action-dashboard"></i></a></li>
+          <li class="{{ isActiveRoute regex='calendar' }}"><a href="{{ pathFor 'calendar' }}" title="Events calendar"><i class="mdi-action-list"></i></a></li>
         </ul>
         <ul id="user-dropdown" class="dropdown-content">
           {{#if currentUser}}
@@ -30,7 +30,7 @@
   <ul id="nav-mobile" class="side-nav">
     <li class="bold {{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}" title="Home"><i class="mdi-action-home"></i> Home</a></li>
     <li class="bold {{ isActiveRoute regex='map' }}"><a href="{{ pathFor 'map' }}" title="Map"><i class="mdi-maps-map"></i> Map</a></li>
-    <li class="bold {{ isActiveRoute regex='dashboard' }}"><a href="{{ pathFor 'dashboard' }}" title="Dashboard"><i class="mdi-action-dashboard"></i> Dashboard</a></li>
+    <li class="bold {{ isActiveRoute regex='calendar' }}"><a href="{{ pathFor 'calendar' }}" title="Events calendar"><i class="mdi-action-list"></i> Calendar</a></li>
   </ul>
 </div>
 </header>
