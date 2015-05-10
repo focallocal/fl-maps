@@ -3,7 +3,7 @@ CalendarController = AppController.extend({
     return this.subscribe('events');
   },
   data: {
-    events: Events.find({})
+    eventsList: Events.find({})
   },
   onAfterAction: function () {
     Meta.setTitle('Calendar');

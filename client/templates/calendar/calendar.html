@@ -1,19 +1,19 @@
 <template name="calendar">
   <div class="template-calendar">
-    <a class="btn-floating btn-large waves-effect waves-light red lighten-2 right" href="{{pathFor 'items.new'}}"><i class="mdi-content-add"></i></a>
 
-    <h1>Calendar</h1>
+    <h1>Upcoming events</h1>
 
     <ul class="collection">
-      {{#each items}}
-        <li class="collection-item avatar">
+      {{#each eventsList}}
+        <a href="{{url}}" target="_blank" class="collection-item avatar">
           <i class="mdi-action-done circle red lighten-2"></i>
           <span class="title">{{ name }}</span>
+          <span class="secondary-content">{{printDate dateEvent}}</span>
           <p class="truncate">
-            {{ description }}
+            {{description}}
+            {{location}}
           </p>
-          <span class="secondary-content"><i class="mdi-action-grade"></i> {{ rating }}</span>
-        </li>
+        </a>
       {{/each}}
     </ul>
 
