@@ -6,9 +6,9 @@
     <ul class="collection">
       {{#each eventsList}}
         <a href="{{url}}" target="_blank" class="collection-item avatar">
-          <i class="mdi-action-done circle red lighten-2"></i>
+          <i class="mdi-social-mood medium circle"></i>
           <span class="title">{{ name }}</span>
-          <span class="secondary-content">{{printDate dateEvent}}</span>
+            <span class="badge" title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}</span>
           <p class="truncate">
             {{description}}
             {{location}}
