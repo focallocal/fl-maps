@@ -6,5 +6,5 @@ Template.registerHelper('printDate', function(date){
   return moment(date).format("dddd, MMMM Do YYYY");
 });
 Template.registerHelper('printDateFromNow', function(date){
-  return moment("2015-05-11T00:00:00.000Z").isSame(moment(),'day')?'Today':moment(date).fromNow();
+  return moment(date).isSame(moment(),'day')?'Today':moment(date).fromNow();
 });
