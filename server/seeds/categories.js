@@ -4,7 +4,7 @@ if (Categories.find({}).count() === 0) {
     Categories.upsert({"_id": 2}, {$set: {"name": "Take a Smile", "color": '#33691e'}});
     Categories.upsert({"_id": 3}, {$set: {"name": "Give a Bubble", "color": '#304ffe'}});
     Categories.upsert({"_id": 4}, {$set: {"name": "Free Hugs", "color": '#c51162'}});
-    Categories.upsert({"_id": 5}, {$set: {"name": "Musical Connection", "color": '#0091ea'}});
+    Categories.upsert({"_id": 5}, {$set: {"name": "Musical Connection", "color": '#3e2723'}});
     Categories.upsert({"_id": 6}, {$set: {"name": "Connecting Canvas", "color": '#ff3d00'}});
     Categories.upsert({"_id": 7}, {$set: {"name": "Inspire YOUR City", "color": '#ff6d00'}});
     Categories.upsert({"_id": 8}, {$set: {"name": "Guerrilla Urban Beautification", "color": '#00c853'}});
