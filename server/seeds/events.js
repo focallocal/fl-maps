@@ -13,7 +13,7 @@ Factory.define('event', Events, {
     description: function() { return Fake.sentence(); },
     category: function() { return Categories.findOne({_id : _.random(1,11)}); },
     dateCreated: function() { return moment().format("YYYY-MM-DD"); },
-    dateEvent: function() { return moment().format("YYYY-MM-DD"); }
+    dateEvent: function() { return moment().add(_.random(1,30),'days').format("YYYY-MM-DD"); }
 });
 
 if (Events.find({}).count() === 0) {
