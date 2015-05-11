@@ -3,7 +3,8 @@ CalendarController = AppController.extend({
     return this.subscribe('events');
   },
   data: {
-    eventsList: Events.find({})
+    upcomingEvents: Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}}),
+    pastEvents: Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}})
   },
   onAfterAction: function () {
     Meta.setTitle('Calendar');

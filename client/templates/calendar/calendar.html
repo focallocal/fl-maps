@@ -4,7 +4,7 @@
     <h1>Upcoming events</h1>
 
     <ul class="collection">
-      {{#each eventsList}}
+      {{#each upcomingEvents}}
         <li class="collection-item avatar">
           <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
           <div>
@@ -19,5 +19,24 @@
       {{/each}}
     </ul>
 
+    {{#if notEmpty pastEvents}}
+      <h1>Past events</h1>
+
+      <ul class="collection">
+        {{#each pastEvents}}
+            <li class="collection-item avatar">
+                <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
+                <div>
+                    <span class="title">{{ name }}</span>
+                    <span class="badge" title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}, {{location}}</span>
+                    <p>{{category.name}}<br>
+                      {{description}}
+                    </p>
+                    <a href="{{url}}" target="_blank" class="secondary-content"><i class="mdi-action-open-in-browser small"></i></a>
+                </div>
+            </li>
+        {{/each}}
+      </ul>
+    {{/if}}
   </div>
 </template>
