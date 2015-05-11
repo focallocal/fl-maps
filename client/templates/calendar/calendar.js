@@ -1,3 +1,5 @@
-Template.calendar.rendered = function() {
-
-};
+Template.calendar.helpers({
+    notEmpty: function(data) {
+        return data.count() != 0;
+    }
+});
