@@ -1,42 +1,38 @@
 <template name="calendar">
-  <div class="template-calendar">
+    <div class="template-calendar">
 
-    <h1>Upcoming events</h1>
+        <h2>Upcoming events</h2>
 
-    <ul class="collection">
-      {{#each upcomingEvents}}
-        <li class="collection-item avatar">
-          <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
-          <div>
-            <span class="title">{{ name }}</span>
-            <span class="badge" title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}, {{location}}</span>
-              <p>{{category.name}}<br>
-                {{description}}
-             </p>
-            <a href="{{url}}" target="_blank" class="secondary-content"><i class="mdi-action-open-in-browser small"></i></a>
-          </div>
-        </li>
-      {{/each}}
-    </ul>
+        {{#if notEmpty upcomingEvents}}
+            <ul class="collection">
+                {{#each upcomingEvents}}
+                    {{> calendarEvent}}
+                {{/each}}
+            </ul>
+        {{else}}
+            <div>
+            <h5 class="center-align">
+                No upcoming events :( Please add one!
+            </h5>
+        </div>
 
-    {{#if notEmpty pastEvents}}
-      <h1>Past events</h1>
+        {{/if}}
 
-      <ul class="collection">
-        {{#each pastEvents}}
-            <li class="collection-item avatar">
-                <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
-                <div>
-                    <span class="title">{{ name }}</span>
-                    <span class="badge" title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}, {{location}}</span>
-                    <p>{{category.name}}<br>
-                      {{description}}
-                    </p>
-                    <a href="{{url}}" target="_blank" class="secondary-content"><i class="mdi-action-open-in-browser small"></i></a>
-                </div>
-            </li>
-        {{/each}}
-      </ul>
-    {{/if}}
-  </div>
+        <h2>Past events</h2>
+
+        {{#if notEmpty pastEvents}}
+            <ul class="collection">
+                {{#each pastEvents}}
+                    {{> calendarEvent}}
+                {{/each}}
+            </ul>
+        {{else}}
+            <div>
+            <h5 class="center-align">
+                No events in the past.
+            </h5>
+        </div>
+
+        {{/if}}
+    </div>
 </template>
