@@ -1,9 +1,13 @@
 <template name="eventPopup">
+<div id="popup-{{_id}}">
     {{#if currentUser}}
         {{#if isCurrentUser organiser}}
-            <a class="edit-event waves-effect waves-teal btn-flat" onclick="slidePanel.showPanel('eventsEdit');">
+            <a class="edit-event waves-effect waves-amber btn-flat">
                 <i class="mdi-editor-mode-edit left"></i>
-                Edit event</a><br>
+                Edit</a>
+            <a class="remove-event waves-effect waves-amber btn-flat">
+                <i class="mdi-action-delete left"></i>
+                Remove</a><br>
         {{/if}}
     {{/if}}
     {{category.name}} <br>
@@ -18,4 +22,5 @@
     <br>Meeting point:   {{meetingPoint}}
     <br>When: <span title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}</span>
     <br> Organised by: {{organiser}}
+</div>
 </template>
