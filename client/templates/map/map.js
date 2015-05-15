@@ -106,10 +106,11 @@ function createMarker(event) {
     }),
     riseOnHover: true
   })
-    .bindPopup(createPopup(event))
-    .on('click', function(e) {
-      Session.set('selected', event._id);
-    });
+      .on('click', function(e) {
+        Session.set('selected', event._id);
+        Template.eventPopup.onCreated();
+      })
+    .bindPopup(createPopup(event));
 }
 
 function animateMarkers(self) {
@@ -197,7 +198,7 @@ function adjustMapHeightToWindowSize($mapCanvas) {
   }).resize();
 }
 function initNewEventButton() {
-  $('#event-new-button').tooltip({delay: 50}).click(function () {
+  $('#event-new-btn').click(function () {
     if (!Meteor.userId()) {
       Materialize.toast('Oops! Please login to add event!', 3000);
     } else {
@@ -206,4 +207,5 @@ function initNewEventButton() {
       Materialize.toast('Where to create event? Tap the map now...', 8000);
     }
   });
+  $('.tooltipped').tooltip({delay: 50});
 }
