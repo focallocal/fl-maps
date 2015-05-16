@@ -98,19 +98,22 @@ function createPopup(event) {
 }
 
 function createMarker(event) {
-  return new L.Marker(event.coordinates, {
-    _id: event._id,
-    icon: L.divIcon({
-      iconSize: [15, 15],
-      className: 'leaflet-div-icon'
-    }),
-    riseOnHover: true
-  })
-      .on('click', function(e) {
-        Session.set('selected', event._id);
-        Template.eventPopup.onCreated();
-      })
-    .bindPopup(createPopup(event));
+  var marker = new L.Marker(event.coordinates, {
+      _id: event._id,
+      icon: L.divIcon({
+        iconSize: [15, 15],
+        className: 'leaflet-div-icon'
+      }),
+      riseOnHover: true
+    })
+    .bindPopup(createPopup(event))
+    .on('click', function(e) {
+      Session.set('selected', event._id);
+    })
+    .on('popupopen', function() {
+      Template.eventPopup.onCreated();  //has to be called explicitly
+    });
+  return marker;
 }
 
 function animateMarkers(self) {

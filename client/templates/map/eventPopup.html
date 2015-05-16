@@ -1,13 +1,16 @@
 <template name="eventPopup">
-<div id="popup-{{_id}}">
+<div id="eventPopup">
     {{#if currentUser}}
         {{#if isCurrentUser organiser}}
-            <a class="edit-event waves-effect waves-amber btn-flat">
+            <span>
+            <a class="edit-btn waves-effect waves-amber btn-flat">
                 <i class="mdi-editor-mode-edit left"></i>
                 Edit</a>
-            <a class="remove-event waves-effect waves-amber btn-flat">
+            <a class="remove-btn waves-effect waves-amber btn-flat" data-target="confirm-delete">
                 <i class="mdi-action-delete left"></i>
-                Remove</a><br>
+                Remove</a>
+            </span><br>
+
         {{/if}}
     {{/if}}
     {{category.name}} <br>
