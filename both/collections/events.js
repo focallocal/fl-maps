@@ -1,8 +1,5 @@
 Events = new Mongo.Collection('events');
 
-Events.helpers({
-
-});
 Events.before.insert(function(userId, doc) {
     doc.dateCreated = new Date();
     if (userId) { //checks if request comes from frontend
@@ -14,7 +11,6 @@ if (Meteor.isClient)  {
         'events-new-form': {
             after: {
                 insert: function() {
-                    console.log("Stop waiting for corrds.");
                     Session.set('awaitingCoords', false);
                 }
             }
@@ -120,7 +116,7 @@ Events.attachSchema(new SimpleSchema({
         decimal: true,
         autoform: {
             //disabled: true
-            //type: "hidden",
+            type: "hidden",
             label: false
         }
     },
@@ -129,7 +125,7 @@ Events.attachSchema(new SimpleSchema({
         decimal: true,
         autoform: {
             //disabled: true
-            //type: "hidden",
+            type: "hidden",
             label: false
         }
     },
