@@ -20,20 +20,20 @@ var initialize = function(element, centroid, zoom, features) {
   Stamen_Watercolor.addTo(map);
 
   map.on('click', function (e) {
-      if (Session.get('awaitingCoords')) {
-          var newEventMsg = $('<a>')
-                  .text('Create event here!')
-                  .attr('href', '#')
-                  .on('click', function () {
-                      event.preventDefault();
-                      Session.set('coords', e.latlng);
-                      Session.set('awaitingCoords',false);
-                      slidePanel.showPanel('eventsNew');
-                  });
-          L.popup().setLatLng(e.latlng)
-              .setContent(newEventMsg[0])
-              .openOn(map);
-      }
+    $('#event-new-btn').trigger('mouseleave');
+    if (Session.get('awaitingCoords')) {
+      Session.set('coords', e.latlng);
+      var newEventMsg = $('<a>')
+          .text('Create event here!')
+          .attr('href', '#')
+          .on('click', function () {
+            event.preventDefault();
+            slidePanel.showPanel('eventsNew');
+          });
+      L.popup().setLatLng(e.latlng)
+          .setContent(newEventMsg[0])
+          .openOn(map);
+    }
   });
 };
 
