@@ -12,11 +12,13 @@ AutoForm.hooks({
 });
 
 Template.eventsNew.rendered = function() {
-    var coords = Session.get('coords');
-    if (coords) {
-        this.$('input[name="coordinates.lat"]').val(coords.lat);
-        this.$('input[name="coordinates.lng"]').val(coords.lng);
-    }
+    Tracker.autorun(function() {
+        var coords = Session.get('coords');
+        if (coords) {
+            this.$('input[name="coordinates.lat"]').val(coords.lat);
+            this.$('input[name="coordinates.lng"]').val(coords.lng);
+        }
+    });
     $('select').material_select();
 };
 Template.eventsNew.helpers({

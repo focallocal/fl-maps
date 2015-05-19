@@ -9,7 +9,18 @@ Events.before.insert(function(userId, doc) {
         doc.organiser = Meteor.user().profile.name;
     }
 });
-
+if (Meteor.isClient)  {
+    AutoForm.hooks({
+        'events-new-form': {
+            after: {
+                insert: function() {
+                    console.log("Stop waiting for corrds.");
+                    Session.set('awaitingCoords', false);
+                }
+            }
+        }
+    })
+}
 Events.attachSchema(new SimpleSchema({
     organiser: {
         type: String,
@@ -109,7 +120,7 @@ Events.attachSchema(new SimpleSchema({
         decimal: true,
         autoform: {
             //disabled: true
-            type: "hidden",
+            //type: "hidden",
             label: false
         }
     },
@@ -118,7 +129,7 @@ Events.attachSchema(new SimpleSchema({
         decimal: true,
         autoform: {
             //disabled: true
-            type: "hidden",
+            //type: "hidden",
             label: false
         }
     },
