@@ -3,7 +3,11 @@ Events = new Mongo.Collection('events');
 Events.before.insert(function(userId, doc) {
     doc.dateCreated = new Date();
     if (userId) { //checks if request comes from frontend
-        doc.organiser = Meteor.user().profile.name;
+        var user = Meteor.user();
+        doc.organiser = {
+            _id: userId,
+            name: user.profile.name
+        }
     }
 });
 if (Meteor.isClient)  {
@@ -19,12 +23,21 @@ if (Meteor.isClient)  {
 }
 Events.attachSchema(new SimpleSchema({
     organiser: {
-        type: String,
-        label: 'Organiser',
-        optional: true,
-        max: 50,
+        type: Object,
         autoform: {
             omit: true
+        }
+    },
+    'organiser._id': {
+        type: String,
+        autoform: {
+            type: 'hidden'
+        }
+    },
+    'organiser.name': {
+        type: String,
+        autoform: {
+            type: 'hidden'
         }
     },
     category: {
