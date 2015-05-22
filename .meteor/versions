@@ -39,6 +39,7 @@ gildaspk:autoform-materialize@0.0.18
 google@1.1.5
 gwendall:session-json@0.1.7
 handlebars@1.0.3
+houston:admin@2.0.3
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0
@@ -94,6 +95,7 @@ spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
+tmeasday:paginated-subscription@0.2.4
 tracker@1.0.7
 twitter@1.1.4
 ui@1.0.6
