@@ -3,21 +3,22 @@
     <div class="container">
       <div class="row">
         <div class="col l4 s12">
-          <h3 class="white-text">Want to know more?</h3>
+          <h3 class="white-text">About</h3>
           <p class="grey-text text-lighten-4">
-              Go to focallocal.org
+              This website is part of <a href="http://www.focallocal.org">Focallocal.org</a>
           </p>
         </div>
-        <div class="col l4 s12">
-          <h3 class="white-text">Want to volunteer?</h3>
-          <p class="grey-text text-lighten-4">
-              You can join the team and work together! <br>
-              We need:
-                - HR director
-                - social media director
-                - web devlopers, designers
-          </p>
-        </div>
+          <div class="col l4 s12">
+              <h3 class="white-text">Sitemap</h3>
+
+              <ul>
+                  <li><a href="{{ pathFor 'home' }}">Home</a></li>
+                  <li><a href="{{ pathFor 'map' }}">Events map</a></li>
+                  <li><a href="{{ pathFor 'calendar' }}">Events list</a></li>
+                  <li><a href="{{ pathFor 'atSignIn' }}">Sign in</a></li>
+                  <li><a href="{{ pathFor 'atSignUp' }}">Register</a></li>
+              </ul>
+          </div>
         <div class="col l4 s12">
           <h3 class="white-text">Connect</h3>
           <p class="grey-text text-lighten-4">
