@@ -8,3 +8,8 @@
     font-size: 8rem;
     line-height: 270px;
 }
+
+footer a {
+    color: #fff !important;
+    font-weight: 500;
+}
