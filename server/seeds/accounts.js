@@ -13,6 +13,7 @@ function createServiceConfiguration(service, clientId, secret) {
 Meteor.startup(function() {
     var settings = Meteor.settings[process.env.NODE_ENV];
     console.log("Node.js environment: "+process.env.NODE_ENV);
+    console.log("Meteor.settings: " + Meteor.settings);
     console.log("settings: " + settings);
     console.log("settings type: " + typeof settings);
     if (settings!=undefined) {
