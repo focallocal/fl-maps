@@ -1,3 +1,0 @@
-ItemsNewController = AppController.extend({
-  
-});
