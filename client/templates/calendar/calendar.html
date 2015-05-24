@@ -4,7 +4,7 @@
         <h2>Upcoming events</h2>
 
         {{#if notEmpty upcomingEvents}}
-            <ul class="collection">
+            <ul class="collapsible popout">
                 {{#each upcomingEvents}}
                     {{> calendarEvent}}
                 {{/each}}
@@ -21,7 +21,7 @@
         <h2>Past events</h2>
 
         {{#if notEmpty pastEvents}}
-            <ul class="collection">
+            <ul class="collapsible popout">
                 {{#each pastEvents}}
                     {{> calendarEvent}}
                 {{/each}}

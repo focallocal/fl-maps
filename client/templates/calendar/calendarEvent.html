@@ -1,13 +1,26 @@
 <template name="calendarEvent">
-    <li class="collection-item avatar">
-        <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
-        <div>
+    <li>
+        <div class="collapsible-header">
+            <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
             <span class="title">{{ name }}</span>
-            <span class="badge" title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}, {{location}}</span>
-            <p>{{category.name}}<br>
-              {{description}}
+            <span class="badge"
+                  title="{{printDate dateEvent}}"> <strong>{{location}}</strong> {{printDateFromNow dateEvent}}</span>
+        </div>
+        <div class="collapsible-body">
+            <p>
+                {{description}}
+                {{#if url}}
+                <span class="badge" title="Go to the website!">
+                    <a href="{{url}}" target="_blank">
+                        <i class="mdi-action-open-in-browser small"></i>
+                    </a>
+                </span>
+            {{/if}}
             </p>
-            <a href="{{url}}" target="_blank" class="secondary-content"><i class="mdi-action-open-in-browser small"></i></a>
+
+            <p>
+                <span class="badge">{{ category.name }}</span>
+            </p>
         </div>
     </li>
 </template>

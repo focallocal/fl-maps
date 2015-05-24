@@ -13,3 +13,22 @@ footer a {
     color: #fff !important;
     font-weight: 500;
 }
+.template-calendar .title {
+    font-weight: 500;
+}
+.template-calendar .circle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    top: 6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.template-calendar i.circle {
+    font-size: 18px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #999;
+    text-align: center;
+}
