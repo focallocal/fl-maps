@@ -10,6 +10,6 @@ Router.route('/events/new', {
   name: 'events.new'
 });
 
-Router.route('/map', {
+Router.route('/events/map', {
   name: 'map'
 });
