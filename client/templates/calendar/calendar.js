@@ -3,3 +3,9 @@ Template.calendar.helpers({
         return data.count() != 0;
     }
 });
+
+Template.calendar.rendered=function() {
+    $('.collapsible').collapsible({
+        accordion : true
+    });
+}
