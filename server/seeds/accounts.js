@@ -13,10 +13,6 @@ function createServiceConfiguration(service, clientId, secret) {
 Meteor.startup(function() {
     var settings = Meteor.settings[process.env.NODE_ENV];
     console.log("Node.js environment: "+process.env.NODE_ENV);
-    console.log("process.env.METEOR_SETTINGS: " + JSON.stringify(process.env.METEOR_SETTINGS));
-    console.log("Meteor.settings: " + JSON.stringify(Meteor.settings));
-    console.log("Settings: " + settings);
-    console.log("Settings type: " + typeof settings);
     if (settings!=undefined) {
         console.log("Loading tokens...") ;
         createServiceConfiguration("google", settings.google.oauth_key, settings.google.oauth_secret);

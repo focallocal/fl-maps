@@ -1,33 +1,45 @@
 <template name="_footer">
   <footer class="page-footer">
     <div class="container">
-      <div class="row">
-        <div class="col l4 s12">
-          <h3 class="white-text">About</h3>
-          <p class="grey-text text-lighten-4">
-              This website is part of <a href="http://www.focallocal.org">Focallocal.org</a>
-          </p>
-        </div>
-          <div class="col l4 s12">
-              <h3 class="white-text">Sitemap</h3>
+        <div class="row">
+            <div class="col l4 s12">
+                <h3 class="white-text">About</h3>
 
-              <ul>
-                  <li><a href="{{ pathFor 'home' }}">Home</a></li>
-                  <li><a href="{{ pathFor 'map' }}">Events map</a></li>
-                  <li><a href="{{ pathFor 'calendar' }}">Events list</a></li>
-                  <li><a href="{{ pathFor 'atSignIn' }}">Sign in</a></li>
-                  <li><a href="{{ pathFor 'atSignUp' }}">Register</a></li>
-              </ul>
-          </div>
-        <div class="col l4 s12">
-          <h3 class="white-text">Connect</h3>
-          <p class="grey-text text-lighten-4">
-              Facebook - 10 0000 likes<br>
-              Twitter - 5000 followers<br>
-              Youtube - 112 movies
-          </p>
+                <p class="grey-text text-lighten-4">
+                    This website is part of <a href="http://www.focallocal.org">Focallocal.org</a>
+                </p>
+            </div>
+            <div class="col l4 s12">
+                <h3 class="white-text">Sitemap</h3>
+
+                <ul>
+                    <li><a href="{{ pathFor 'home' }}">Home</a></li>
+                    <li><a href="{{ pathFor 'map' }}">Events map</a></li>
+                    <li><a href="{{ pathFor 'calendar' }}">Events list</a></li>
+                    <li><a href="{{ pathFor 'atSignIn' }}">Sign in</a></li>
+                    <li><a href="{{ pathFor 'atSignUp' }}">Register</a></li>
+                </ul>
+            </div>
+            <div class="col l4 s12">
+                <h3 class="white-text">Connect</h3>
+
+                <div class="fb-like" data-href="http://focallocal.org" data-layout="button_count"
+                     data-colorscheme="dark" data-action="like" data-show-faces="false"
+                     data-share="false"></div>
+                <br>
+
+                <div><a class="twitter-follow-button" href="https://twitter.com/focallocal" data-size="large">
+                    Follow @Focallocal</a>
+                </div>
+
+                <div class="g-plusone" data-href="http://focallocal.org" data-size="standard" data-annotation="bubble"
+                     data-width="150"></div>
+                <br>
+
+                <div class="g-ytsubscribe" data-channel="focallocal" data-layout="default"
+                     data-count="default"></div>
+            </div>
         </div>
-      </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
