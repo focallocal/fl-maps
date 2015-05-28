@@ -201,8 +201,9 @@ function adjustMapHeightToWindowSize($mapCanvas) {
   }).resize();
 }
 function initNewEventButton() {
-  $('.tooltipped').tooltip({delay: 50});
-  $('#event-new-btn').click(function () {
+  var $newEventBtn = $('#event-new-btn');
+  $($newEventBtn,'.tooltipped').tooltip({delay: 50});
+  $newEventBtn.click(function () {
     if (!Meteor.userId()) {
       Materialize.toast('Oops! Please login to add event!', 3000);
     } else {
@@ -211,4 +212,7 @@ function initNewEventButton() {
       Materialize.toast('Where to create event? Tap the map now...', 8000);
     }
   }).trigger('mouseenter');
+ $('body').click(function() {
+   $newEventBtn.trigger('mouseleave');
+ })
 }
