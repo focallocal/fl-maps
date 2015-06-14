@@ -6,7 +6,7 @@ Template._footer.rendered=function() {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.3&appId=756456811041102";
+        js.src = "//connect.facebook.net/en_EN/sdk.js#xfbml=1&version=v2.3&appId=756456811041102";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
@@ -29,6 +29,8 @@ Template._footer.rendered=function() {
     }(document, "script", "twitter-wjs"));
 
     //google
-    gapi.plusone.go();
-    gapi.ytsubscribe.go();
-}
+    if (gapi) {
+        gapi.plusone.go();
+        gapi.ytsubscribe.go();
+    }
+};
