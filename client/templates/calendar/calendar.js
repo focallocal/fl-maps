@@ -1,6 +1,6 @@
 Template.calendar.helpers({
     notEmpty: function(data) {
-        return data.count() != 0;
+        return data && data.count() != 0;
     }
 });
 
