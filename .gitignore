@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io
 settings.json
+mup.json
 ### SublimeText ###
 # cache files for sublime text
 *.tmlanguage.cache
