@@ -32,3 +32,9 @@ footer a {
     background-color: #999;
     text-align: center;
 }
+
+/*vertical spacing in event form*/
+.slide-panel .row {
+    margin-top: 0;
+    margin-bottom: 0px;
+}
