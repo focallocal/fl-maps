@@ -19,7 +19,6 @@ Template.eventsNew.rendered = function() {
             this.$('input[name="coordinates.lng"]').val(coords.lng);
         }
     });
-    $('select').material_select();
 };
 Template.eventsNew.helpers({
     coords: function() {
