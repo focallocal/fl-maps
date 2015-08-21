@@ -18,7 +18,6 @@ Template.eventsEdit.helpers({
 });
 
 Template.eventsEdit.rendered = function() {
-    $('select').material_select();
     var selectedEvent = Events.findOne(Session.get('selected'));
     if (selectedEvent != null) {
         this.$('input[name="coordinates.lat"]').val(selectedEvent.coordinates.lat);
