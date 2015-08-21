@@ -26,7 +26,7 @@ var initialize = function(element, centroid, zoom, features) {
       var newEventMsg = $('<a>')
           .text('Create event here!')
           .attr('href', '#')
-          .on('click', function () {
+          .on('click', function (event) {
             event.preventDefault();
             slidePanel.showPanel('eventsNew');
           });

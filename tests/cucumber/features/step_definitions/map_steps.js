@@ -15,11 +15,6 @@
 
             return this.server.call('reset'); // this.ddp is a connection to the mirror
         });
-        this.When(/^I navigate to "([^"]*)"$/, function (relativePath) {
-            // WebdriverIO supports Promises/A+ out the box, so you can return that too
-            return this.client. // this.browser is a pre-configured WebdriverIO + PhantomJS instance
-                url(url.resolve(process.env.ROOT_URL, relativePath)); // process.env.ROOT_URL always points to the mirror
-        });
 
         this.Then(/^I should see popup "([^"]*)"$/, function (expectedPopup) {
             // you can use chai-as-promised in step definitions also
