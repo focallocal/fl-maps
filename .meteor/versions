@@ -112,6 +112,7 @@ underscore@1.0.3
 underscorestring:underscore.string@3.0.3_1
 url@1.0.4
 useraccounts:core@1.12.2
+useraccounts:iron-routing@1.12.2
 useraccounts:materialize@1.12.2
 velocity:chokidar@1.0.3_1
 velocity:console-reporter@0.1.3
