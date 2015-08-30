@@ -38,3 +38,5 @@ lampe:rssfeed
 xolvio:cucumber@0.14.0-rc.1
 velocity:console-reporter
 useraccounts:iron-routing
+aldeed:geocoder
+sergeyt:typeahead
