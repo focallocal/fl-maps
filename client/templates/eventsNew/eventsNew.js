@@ -14,29 +14,38 @@ AutoForm.hooks({
 Template.eventsNew.rendered = function() {
     Meteor.typeahead.inject();
 };
-
+Template.eventsNew.onCreated(function() {
+    this.debounce = null;
+});
 Template.eventsNew.helpers({
-    getCoords: function (query, sync, asyncCallback) {
-        Meteor.call('getCoords', query, function (error, result) {
-            var mapResultToDisplay = function () {
-                return result.map(function (v) {
-                        var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
-                        var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
-                        return {
-                            value: streetName + streetNumber + v.city + ', ' + v.country,
-                            lat: v.latitude,
-                            lng: v.longitude
-                        };
-                    }
-                );
-            };
+    geocodeDataSource: function(query, sync, asyncCallback) {
+        var instance = Template.instance();
+        if (instance.debounce) {
+            Meteor.clearTimeout(instance.debounce);
+        }
+        const debounceDelay = 500;
+        instance.debounce = Meteor.setTimeout(function() {
+            Meteor.call('getCoords', query, function (error, result) {
+                var mapResultToDisplay = function () {
+                  return result.map(function (v) {
+                            var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
+                            var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
+                            return {
+                                value: streetName + streetNumber + v.city + ', ' + v.country,
+                                lat: v.latitude,
+                                lng: v.longitude
+                            };
+                        }
+                    );
+                };
 
-            if (error != undefined) {
-                console.error(error);
-            } else {
-                asyncCallback(mapResultToDisplay());
-            }
-        });
+                if (error != undefined) {
+                    console.error(error);
+                } else {
+                    asyncCallback(mapResultToDisplay());
+                }
+            });
+        }, debounceDelay);
     },
     selectedHandler: function (event, suggestion, datasetName) {
         var dropPin = function() {

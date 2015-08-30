@@ -94,7 +94,7 @@ Events.attachSchema(new SimpleSchema({
             afFieldInput: {
                 //SEE DOCS: https://github.com/sergeyt/meteor-typeahead
                 'class': "typeahead",
-                'data-source': "getCoords",
+                'data-source': "geocodeDataSource",
                 'data-min-length': "3",
                 'data-autoselect': "true",
                 'data-selected': "selectedHandler"
