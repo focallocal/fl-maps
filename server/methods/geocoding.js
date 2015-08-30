@@ -12,13 +12,6 @@ function initializeGeocoding() {
 geoCoder = initializeGeocoding();
 Meteor.methods({
     'getCoords': function(location) {
-        //TODO implement debouncing
-        //function debounce(wait) {
-        //    return function debounce(fn) { return _.debounce(fn, wait); };
-        //}
-        console.log('getting coords for ' + location);
-        var result = geoCoder.geocode(location);
-        console.log(result);
-        return result;
+        return geoCoder.geocode(location);
     }
 });
