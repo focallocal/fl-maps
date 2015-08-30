@@ -88,7 +88,18 @@ Events.attachSchema(new SimpleSchema({
     location: {
         type: String,
         label: 'Location',
-        max: 100
+        max: 100,
+        autoform: {
+            //add attributes to the form element
+            afFieldInput: {
+                //SEE DOCS: https://github.com/sergeyt/meteor-typeahead
+                'class': "typeahead",
+                'data-source': "getCoords",
+                'data-min-length': "3",
+                'data-autoselect': "true",
+                'data-selected': "selectedHandler"
+            }
+        }
     },
     meetingPoint: {
         type: String,

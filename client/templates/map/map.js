@@ -19,22 +19,6 @@ var initialize = function(element, centroid, zoom, features) {
   });
   Stamen_Watercolor.addTo(map);
 
-  map.on('click', function (e) {
-    $('#event-new-btn').trigger('mouseleave');
-    if (Session.get('awaitingCoords')) {
-      Session.set('coords', e.latlng);
-      var newEventMsg = $('<a>')
-          .text('Create event here!')
-          .attr('href', '#')
-          .on('click', function (event) {
-            event.preventDefault();
-            slidePanel.showPanel('eventsNew');
-          });
-      L.popup().setLatLng(e.latlng)
-          .setContent(newEventMsg[0])
-          .openOn(map);
-    }
-  });
 };
 
 
@@ -207,9 +191,7 @@ function initNewEventButton() {
     if (!Meteor.userId()) {
       Materialize.toast('Oops! Please login to add event!', 3000);
     } else {
-      Session.set('coords', false);
-      Session.set('awaitingCoords', true);
-      Materialize.toast('Where to create event? Tap the map now...', 8000);
+      slidePanel.showPanel('eventsNew');
     }
   }).trigger('mouseenter');
  $('body').click(function() {
