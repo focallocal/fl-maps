@@ -78,5 +78,5 @@ Template.eventsForm.rendered = function() {
 };
 
 Template.eventsForm.destroyed = function() {
-    // Can do some cleanup in here
+    $('.typeahead').typeahead('destroy');
 };
