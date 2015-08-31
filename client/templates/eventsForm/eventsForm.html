@@ -1,0 +1,13 @@
+<template name="eventsForm">
+
+    <div class="card-panel">
+    {{#if isEdit}}
+        <h5>Edit event</h5>
+        {{> quickForm collection="Events" doc=selectedEventDoc id="events-form" type="update"}}
+    {{else}}
+        <h5>New event</h5>
+        {{> quickForm collection="Events" id="events-form" type="insert"}}
+    {{/if}}
+
+    </div>
+</template>

@@ -10,17 +10,6 @@ Events.before.insert(function(userId, doc) {
         }
     }
 });
-if (Meteor.isClient)  {
-    AutoForm.hooks({
-        'events-new-form': {
-            after: {
-                insert: function() {
-                    Session.set('awaitingCoords', false);
-                }
-            }
-        }
-    })
-}
 Events.attachSchema(new SimpleSchema({
     organiser: {
         type: Object,
