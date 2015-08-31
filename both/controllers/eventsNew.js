@@ -3,6 +3,7 @@ EventsNewController = AppController.extend({
         return this.subscribe('categories');
     },
     data: {
+        isEdit: false,
         categories: Categories.find({})
     },
     onAfterAction: function () {

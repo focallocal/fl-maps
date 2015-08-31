@@ -8,7 +8,7 @@ Router.route('/events/list', {
 });
 
 Router.route('/events/new', {
-  name: 'events.new',
+  name: 'events.form',
   controller: 'EventsNewController'
 });
 
