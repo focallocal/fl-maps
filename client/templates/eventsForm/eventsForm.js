@@ -23,13 +23,12 @@ Template.eventsForm.helpers({
         instance.debounce = Meteor.setTimeout(function() {
             Meteor.call('getCoords', query, function (error, result) {
                 var mapResultToDisplay = function () {
-                    //console.log(result);
                     return result.map(function (v) {
-                            console.log("mapuje " + JSON.stringify(v));
                             var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
                             var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
+                            var city  = _.isNull(v.city) ? '' : v.city + ', ';
                             return {
-                                value: streetName + streetNumber + v.city + ', ' + v.country,
+                                value: streetName + streetNumber + city + v.country,
                                 lat: v.latitude,
                                 lng: v.longitude
                             };
