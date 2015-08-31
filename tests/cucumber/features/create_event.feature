@@ -11,6 +11,4 @@ Feature: Creating an event
   Scenario: Clicking the 'new event' button will open a hint popup
     When I navigate to "/events/map"
     And I click the button "#event-new-btn"
-    Then I should see toast saying "Where to create event? Tap the map now..."
-    When I click on the map
     Then I should see the new event form
