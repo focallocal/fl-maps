@@ -1,8 +1,8 @@
 AutoForm.hooks({
-    'events-edit-form': {
+    'events-form': {
         onSuccess: function (operation, result, template) {
             slidePanel.closePanel();
-            Materialize.toast('Event updated successfully!', 4000);
+            Materialize.toast('Event submitted successfully!', 4000);
             Session.set("selected", result._id)
         },
         onError: function(formType, error) {
@@ -10,21 +10,22 @@ AutoForm.hooks({
         }
     }
 });
-Template.eventsEdit.onCreated(function() {
+Template.eventsForm.onCreated(function() {
     this.debounce = null;
 });
-Template.eventsEdit.helpers({
-    //TODO refactor me! DRY
+Template.eventsForm.helpers({
     geocodeDataSource: function(query, sync, asyncCallback) {
         var instance = Template.instance();
         if (instance.debounce) {
             Meteor.clearTimeout(instance.debounce);
         }
-        const debounceDelay = 500;
+        const debounceDelay = 500; //wait half a second before triggering search
         instance.debounce = Meteor.setTimeout(function() {
             Meteor.call('getCoords', query, function (error, result) {
                 var mapResultToDisplay = function () {
+                    //console.log(result);
                     return result.map(function (v) {
+                            console.log("mapuje " + JSON.stringify(v));
                             var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
                             var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
                             return {
@@ -38,6 +39,7 @@ Template.eventsEdit.helpers({
 
                 if (error != undefined) {
                     console.error(error);
+                    return;
                 } else {
                     asyncCallback(mapResultToDisplay());
                 }
@@ -61,7 +63,7 @@ Template.eventsEdit.helpers({
     }
 });
 
-Template.eventsEdit.rendered = function() {
+Template.eventsForm.rendered = function() {
     Meteor.typeahead.inject();
     var selectedEvent = Events.findOne(Session.get('selected'));
     if (selectedEvent != null) {
@@ -76,6 +78,6 @@ Template.eventsEdit.rendered = function() {
     fixMaterializeActiveClassTrigger();
 };
 
-Template.eventsNew.destroyed = function() {
+Template.eventsForm.destroyed = function() {
     // Can do some cleanup in here
 };

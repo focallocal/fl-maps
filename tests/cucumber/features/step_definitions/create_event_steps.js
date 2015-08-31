@@ -37,7 +37,7 @@
 
         this.Then(/^I should see the new event form$/, function () {
             return this.client.
-                waitForVisible('#events-new-form').
+                waitForVisible('#events-form').
                 should.eventually.be.true;
         });
     };
