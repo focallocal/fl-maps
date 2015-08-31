@@ -22,18 +22,6 @@
                 click(buttonId);
         });
 
-        this.When(/^I click on the map$/, function () {
-            return this.client.
-                click('img.leaflet-tile:nth-child(3)').
-                waitForVisible('.leaflet-popup-content').
-                click('.leaflet-popup-content > a');
-        });
-
-        this.Then(/^I should see toast saying "([^"]*)"$/, function (msg) {
-                return this.client.
-                    waitForVisible('#toast-container').
-                    getText('#toast-container .toast').should.become(msg);
-        });
 
         this.Then(/^I should see the new event form$/, function () {
             return this.client.
