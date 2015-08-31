@@ -68,6 +68,12 @@ Template.eventsEdit.rendered = function() {
         this.$('input[name="coordinates.lat"]').val(selectedEvent.coordinates.lat);
         this.$('input[name="coordinates.lng"]').val(selectedEvent.coordinates.lng);
     }
+    //this is because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
+    function fixMaterializeActiveClassTrigger() {
+        $('input[name=location]').detach().insertBefore('.twitter-typeahead');
+        $('.twitter-typeahead').find('input[type=text]').remove();
+    }
+    fixMaterializeActiveClassTrigger();
 };
 
 Template.eventsNew.destroyed = function() {

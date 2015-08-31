@@ -13,6 +13,14 @@ AutoForm.hooks({
 
 Template.eventsNew.rendered = function() {
     Meteor.typeahead.inject();
+
+    //this is because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
+    function fixMaterializeActiveClassTrigger() {
+        $('input[name=location]').detach().insertBefore('.twitter-typeahead');
+        $('.twitter-typeahead').find('input[type=text]').remove();
+    }
+    fixMaterializeActiveClassTrigger();
+
 };
 Template.eventsNew.onCreated(function() {
     this.debounce = null;
@@ -27,6 +35,7 @@ Template.eventsNew.helpers({
         instance.debounce = Meteor.setTimeout(function() {
             Meteor.call('getCoords', query, function (error, result) {
                 var mapResultToDisplay = function () {
+                    console.log(result);
                   return result.map(function (v) {
                             var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
                             var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
