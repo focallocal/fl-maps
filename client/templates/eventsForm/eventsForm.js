@@ -38,6 +38,8 @@ Template.eventsForm.helpers({
 
                 if (error != undefined) {
                     console.error(error);
+                    var msgInfo = $('<div>').addClass("red-text").append($('<i>').addClass('mdi-alert-warning')).append(' Location not available, are you offline?');
+                    $('input[name=location]').closest('div').append(msgInfo);
                     return;
                 } else {
                     asyncCallback(mapResultToDisplay());
