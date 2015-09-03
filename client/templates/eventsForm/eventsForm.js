@@ -3,6 +3,7 @@ AutoForm.hooks({
         onSuccess: function (operation, result, template) {
             slidePanel.closePanel();
             Materialize.toast('Event submitted successfully!', 4000);
+            $('#congratsModal').openModal();
             Session.set("selected", result._id)
         },
         onError: function(formType, error) {
@@ -38,6 +39,8 @@ Template.eventsForm.helpers({
 
                 if (error != undefined) {
                     console.error(error);
+                    var msgInfo = $('<div>').addClass("red-text").append($('<i>').addClass('mdi-alert-warning')).append(' Location not available, are you offline?');
+                    $('input[name=location]').closest('div').append(msgInfo);
                     return;
                 } else {
                     asyncCallback(mapResultToDisplay());
