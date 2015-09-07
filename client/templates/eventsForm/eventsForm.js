@@ -3,8 +3,10 @@ AutoForm.hooks({
         onSuccess: function (operation, result, template) {
             slidePanel.closePanel();
             Materialize.toast('Event submitted successfully!', 4000);
-            $('#congratsModal').openModal();
-            Session.set("selected", result._id)
+            if (operation === "insert") {
+                Session.set("selected", result);
+                $('#congratsModal').openModal();
+            }
         },
         onError: function(formType, error) {
             console.error(error);
