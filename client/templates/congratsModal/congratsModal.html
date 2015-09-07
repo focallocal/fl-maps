@@ -2,8 +2,19 @@
     <!-- Modal Structure -->
     <div id="congratsModal" class="modal">
         <div class="modal-content">
-            <h4>Congrats, you've submitted the event!</h4>
-            <p>We've prepared some link for you to spread info!</p>
+            <h4>Congratulations, your event is LIVE!</h4>
+            <p>Suggestions for further advertising</p>
+            {{#with shareData}}
+                <a href={{shareOnFacebookLink url}} target="_blank" class="btn btn-facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href={{shareOnTwitterLink url title}} target="_blank" class="btn btn-twitter">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                <a href={{shareOnGooglePlusLink url}} target="_blank" class="btn btn-google-plus">
+                  <i class="fa fa-google-plus"></i>
+                </a>
+            {{/with}}
         </div>
         <div class="modal-footer">
             <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Ok, done!</a>
