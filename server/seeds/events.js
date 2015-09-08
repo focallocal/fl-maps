@@ -24,6 +24,9 @@ Meteor.startup(function () {
         ,
         meetingPoint: function () {
             return Fake.word();
+        },
+        findHints: function () {
+            return Fake.word();
         }
         ,
         url: function () {

@@ -95,6 +95,11 @@ Events.attachSchema(new SimpleSchema({
         label: 'Meeting point',
         max: 100
     },
+    findHints: {
+        type: String,
+        label: 'How to find us?',
+        max: 250
+    },
     dateEvent: {
         type: Date,
         label: 'Date of the event',
