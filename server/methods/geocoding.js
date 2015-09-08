@@ -1,5 +1,4 @@
 function initializeGeocoding() {
-    console.log(Meteor.settings);
     if (Meteor.settings['private'] == undefined) {
         throw new Meteor.Error('no-settings', "No configuration found. Did you forget to run meteor with --settings option?");
     }
