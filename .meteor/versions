@@ -105,6 +105,7 @@ simple:json-routes@1.0.4
 softwarerero:accounts-t9n@1.0.9
 spacebars@1.0.6
 spacebars-compiler@1.0.6
+spiderable@1.0.7
 srp@1.0.3
 templating@1.1.1
 tmeasday:paginated-subscription@0.2.4
