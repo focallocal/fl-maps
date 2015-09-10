@@ -2,28 +2,28 @@
 <div id="eventPopup">
     {{#if currentUser}}
         {{#if isCurrentUser organiser}}
-            <span>
-            <a class="edit-btn waves-effect waves-amber btn-flat">
-                <i class="mdi-editor-mode-edit left"></i>
-                Edit</a>
-            <a class="remove-btn waves-effect waves-amber btn-flat" data-target="confirm-delete">
-                <i class="mdi-action-delete left"></i>
-                Remove</a>
-            </span><br>
-
+        <div class="right-align">
+            <a class="edit-btn  btn-flat">
+                <i class="mdi-editor-mode-edit"></i>
+            </a>
+            <a class="remove-btn btn-flat" data-target="confirm-delete">
+                <i class="mdi-action-delete"></i>
+            </a>
+        </div>
         {{/if}}
     {{/if}}
-    {{category.name}} <br>
-    <b>
-    {{name}}
-    </b><br>  {{description}}
-    <br>Where:   {{location}}
-    <br>Meeting point:   {{meetingPoint}}
-    <br>When: <span title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}</span>
-    <br> Organised by: {{organiser.name}}
-    <br>
-    {{#if url}}
-        <a href="{{url}}" target="_blank">{{url}}</a>
-    {{/if}}
+    <span style="color: {{category.color}}">{{category.name}}</span>
+    <h5>{{name}}</h5>
+    <blockquote>
+        {{description}}
+        <br>Where:   {{location}}
+        <br>Meeting point:   {{meetingPoint}}
+        <br>When: <span title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}</span>
+        <br> Organised by: {{organiser.name}}
+        <br>
+        {{#if url}}
+            <a href="{{url}}" target="_blank">{{url}}</a>
+        {{/if}}
+    </blockquote>
 </div>
 </template>

@@ -30,13 +30,16 @@ Template.eventsForm.helpers({
         const debounceDelay = 500; //wait half a second before triggering search
         instance.debounce = Meteor.setTimeout(function() {
             Meteor.call('getCoords', query, function (error, result) {
+                console.info("Query: " + query);
                 var mapResultToDisplay = function () {
                     return result.map(function (v) {
+                            console.info("Response: " + JSON.stringify(v));
                             var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
                             var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
                             var city  = _.isNull(v.city) ? '' : v.city + ', ';
+                            var state  = _.isNull(v.state) ? '' : v.state + ', ';
                             return {
-                                value: streetName + streetNumber + city + v.country,
+                                value: streetName + streetNumber + city + state + v.country,
                                 lat: v.latitude,
                                 lng: v.longitude
                             };
@@ -69,7 +72,6 @@ Template.eventsForm.helpers({
 });
 
 Template.eventsForm.rendered = function() {
-    AutoForm.resetForm('events-form');
     Meteor.typeahead.inject();
     var copyCoordsFromSelectedEvent = function () {
         if (Session.get('isEdit')) {
@@ -91,5 +93,6 @@ Template.eventsForm.rendered = function() {
 Template.eventsForm.destroyed = function() {
     var $typeahead = $('.typeahead');
     $typeahead.unbind();
+    AutoForm.resetForm('events-form');
     $typeahead.typeahead('destroy');
 };
