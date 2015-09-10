@@ -191,7 +191,8 @@ function initNewEventButton() {
     if (!Meteor.userId()) {
       Materialize.toast('Oops! Please login to add event!', 3000);
     } else {
-      slidePanel.showPanel('eventsForm', {isEdit:false});
+      Session.set('isEdit',false);
+      slidePanel.showPanel('eventsForm');
     }
   }).trigger('mouseenter');
  $('body').click(function() {

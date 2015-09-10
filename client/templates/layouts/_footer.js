@@ -29,7 +29,7 @@ Template._footer.rendered=function() {
     }(document, "script", "twitter-wjs"));
 
     //google
-    if (gapi) {
+    if (typeof gapi!='undefined') {
         gapi.plusone.go();
         gapi.ytsubscribe.go();
     }
