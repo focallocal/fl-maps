@@ -63,9 +63,11 @@ Template.eventsForm.helpers({
         var coordsDefined = !_.isUndefined(suggestion.lat) && !_.isUndefined(suggestion.lng);
         if (coordsDefined) {
             Template.instance().setCoordinates(suggestion.lat,suggestion.lng);
+            AutoForm.validateField('events-form', 'coordinates', false); //remove potential validation error
         } else {
             throw Meteor.Error('cords-undefined', 'Coordinates are empty for the selected location');
         }
+
     },
     selectedEventDoc: function() { return Events.findOne(Session.get('selected')); },
     isEdit: function() { return Session.get('isEdit') }
