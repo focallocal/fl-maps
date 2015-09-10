@@ -43,3 +43,6 @@ footer a {
 .fb-like {
     margin-bottom: 5px;
 }
+li.highlight div {
+  background-color: #F47E17;
+}
