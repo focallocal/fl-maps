@@ -1,6 +1,16 @@
 <template name="calendar">
     <div class="template-calendar container">
-
+        <div class="row">
+            <form class="col s6">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="mdi-action-search prefix"></i>
+                        <input type="text" id="search">
+                        <label for="search">Search</label>
+                    </div>
+                </div>
+            </form>
+        </div>
         <h2>Upcoming events</h2>
 
         {{#if notEmpty upcomingEvents}}
