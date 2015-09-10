@@ -15,15 +15,15 @@
     {{/if}}
     {{category.name}} <br>
     <b>
-        {{#if url}}
-            <a href="{{url}}" target="_blank">{{name}} (click here)</a>
-        {{else}}
-            {{name}}
-        {{/if}}
+    {{name}}
     </b><br>  {{description}}
     <br>Where:   {{location}}
     <br>Meeting point:   {{meetingPoint}}
     <br>When: <span title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}</span>
     <br> Organised by: {{organiser.name}}
+    <br>
+    {{#if url}}
+        <a href="{{url}}" target="_blank">{{url}}</a>
+    {{/if}}
 </div>
 </template>
