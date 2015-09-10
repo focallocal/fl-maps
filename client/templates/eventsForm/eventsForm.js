@@ -15,6 +15,11 @@ AutoForm.hooks({
 });
 Template.eventsForm.onCreated(function() {
     this.debounce = null;
+    this.setCoordinates = function (lat, lng) {
+        var instance = Template.instance();
+        instance.$('input[name="coordinates.lat"]').val(lat);
+        instance.$('input[name="coordinates.lng"]').val(lng);
+    };
 });
 Template.eventsForm.helpers({
     geocodeDataSource: function(query, sync, asyncCallback) {
@@ -41,9 +46,10 @@ Template.eventsForm.helpers({
 
                 if (error != undefined) {
                     console.error(error);
-                    var msgInfo = $('<div>').addClass("red-text").append($('<i>').addClass('mdi-alert-warning')).append(' Location not available, are you offline?');
-                    $('input[name=location]').closest('div').append(msgInfo);
-                    return;
+                    Events.simpleSchema().namedContext("events-form").addInvalidKeys([{
+                        name: "location",
+                        type: "offline"
+                    }]);
                 } else {
                     asyncCallback(mapResultToDisplay());
                 }
@@ -51,37 +57,39 @@ Template.eventsForm.helpers({
         }, debounceDelay);
     },
     selectedHandler: function (event, suggestion, datasetName) {
-        var dropPin = function() {
-            var coordsDefined = !_.isUndefined(suggestion.lat) && !_.isUndefined(suggestion.lng);
-            if (coordsDefined) {
-                $('input[name="coordinates.lat"]').val(suggestion.lat);
-                $('input[name="coordinates.lng"]').val(suggestion.lng);
-            } else {
-                throw Meteor.Error('cords-undefined', 'Coordinates are empty for the selected location');
-            }
-        };
-        dropPin();
+        var coordsDefined = !_.isUndefined(suggestion.lat) && !_.isUndefined(suggestion.lng);
+        if (coordsDefined) {
+            Template.instance().setCoordinates(suggestion.lat,suggestion.lng);
+        } else {
+            throw Meteor.Error('cords-undefined', 'Coordinates are empty for the selected location');
+        }
     },
-    selectedEventDoc: function(){
-        return Events.findOne(Session.get('selected'));
-    }
+    selectedEventDoc: function() { return Events.findOne(Session.get('selected')); },
+    isEdit: function() { return Session.get('isEdit') }
 });
 
 Template.eventsForm.rendered = function() {
+    AutoForm.resetForm('events-form');
     Meteor.typeahead.inject();
-    var selectedEvent = Events.findOne(Session.get('selected'));
-    if (selectedEvent != null) {
-        this.$('input[name="coordinates.lat"]').val(selectedEvent.coordinates.lat);
-        this.$('input[name="coordinates.lng"]').val(selectedEvent.coordinates.lng);
-    }
-    //this is because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
-    function fixMaterializeActiveClassTrigger() {
+    var copyCoordsFromSelectedEvent = function () {
+        if (Session.get('isEdit')) {
+            var selectedEvent = Events.findOne(Session.get('selected'));
+            if (selectedEvent != null) {
+                Template.instance().setCoordinates(selectedEvent.coordinates.lat, selectedEvent.coordinates.lng);
+            }
+        }
+    };
+    copyCoordsFromSelectedEvent();
+    var fixMaterializeActiveClassTrigger = function() {
         $('input[name=location]').detach().insertBefore('.twitter-typeahead');
         $('.twitter-typeahead').find('input[type=text]').remove();
-    }
+    };
+    //this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
     fixMaterializeActiveClassTrigger();
 };
 
 Template.eventsForm.destroyed = function() {
-    $('.typeahead').typeahead('destroy');
+    var $typeahead = $('.typeahead');
+    $typeahead.unbind();
+    $typeahead.typeahead('destroy');
 };

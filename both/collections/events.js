@@ -86,8 +86,58 @@ Events.attachSchema(new SimpleSchema({
                 'data-source': "geocodeDataSource",
                 'data-min-length': "3",
                 'data-autoselect': "true",
+                'data-highlight': "true",
                 'data-selected': "selectedHandler"
             }
+        },
+        //@TODO could be nice if we could validate ONLY this field on blur, this could save API usage
+        custom: _.debounce(function() {
+            if (Meteor.isClient && this.isSet) {
+                Meteor.call("getCoords", this.value, function (error, result) {
+                    if (typeof result == 'undefined' || result.length == 0) {
+                        Events.simpleSchema().namedContext("events-form").addInvalidKeys([{
+                            name: "location",
+                            type: "notFound"
+                        }]);
+                    }
+                });
+            }
+        },600)
+    },
+    coordinates: {
+        type: Object,
+        autoform: {
+            //type: "hidden"
+        },
+        optional: true,
+        custom: function() {
+            var invalidKeys = Events.simpleSchema().namedContext("events-form").invalidKeys().
+                map(function(key){
+                    return key.name
+                });
+            var locationKey = 'location';
+            var isLocationValid = !_.contains(invalidKeys,locationKey);
+            if (isLocationValid) {
+                if (!this.isSet) return "required";
+            }
+        }
+    },
+    'coordinates.lat': {
+        type: Number,
+        decimal: true,
+        autoform: {
+            //disabled: true
+            type: "hidden",
+            label: false
+        }
+    },
+    'coordinates.lng': {
+        type: Number,
+        decimal: true,
+        autoform: {
+            //disabled: true
+            type: "hidden",
+            label: false
         }
     },
     meetingPoint: {
@@ -123,30 +173,6 @@ Events.attachSchema(new SimpleSchema({
         label: 'Description',
         max: 1000
     },
-    coordinates: {
-        type: Object,
-        autoform: {
-            //type: "hidden"
-        }
-    },
-    'coordinates.lat': {
-        type: Number,
-        decimal: true,
-        autoform: {
-            //disabled: true
-            type: "hidden",
-            label: false
-        }
-    },
-    'coordinates.lng': {
-        type: Number,
-        decimal: true,
-        autoform: {
-            //disabled: true
-            type: "hidden",
-            label: false
-        }
-    },
     dateCreated: {
         type: Date,
         label: 'Date published',
@@ -155,3 +181,9 @@ Events.attachSchema(new SimpleSchema({
         }
     }
 }));
+SimpleSchema.messages({
+    "required category._id": "Please select a category",
+    "required coordinates": "Please select a location",
+    "notFound location": "Location not found",
+    "offline location": "Location not available, are you offline?"
+});

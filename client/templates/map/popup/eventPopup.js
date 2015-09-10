@@ -1,6 +1,7 @@
 Template.eventPopup.onCreated=function() {
     $('.edit-btn','#eventPopup').click(function(){
-        slidePanel.showPanel('eventsForm',{isEdit:true});
+    	Session.set('isEdit', true);
+        slidePanel.showPanel('eventsForm');
     });
 
     $('.remove-btn','#eventPopup').leanModal();
