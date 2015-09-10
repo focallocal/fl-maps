@@ -34,8 +34,13 @@ Template.map.rendered = function() {
     var self = this;
     Tracker.autorun(function() {
       animateMarkers(self);
-      var results = Session.get('results');
-      handleSearchResults(results);
+      var selectedEvent = Events.findOne(Session.get('selected'));
+      if (selectedEvent) {
+        var marker = markers[selectedEvent._id];
+        if (marker) marker.openPopup();
+      }
+      //var results = Session.get('results');
+      //handleSearchResults(results);
     })
   }
   else {
