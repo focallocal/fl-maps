@@ -98,6 +98,12 @@ function createMarker(event) {
     .bindPopup(createPopup(event))
     .on('click', function(e) {
       Session.set('selected', event._id);
+      var hasEditPermissionTo = function (selectedEvent) {
+        return Meteor.user().profile.name === selectedEvent.organiser.name
+      };
+      if (!hasEditPermissionTo(event)) {
+        slidePanel.closePanel('eventsForm');
+      }
     })
     .on('popupopen', function() {
       Template.eventPopup.onCreated();  //has to be called explicitly
