@@ -25,3 +25,28 @@
 .btn.btn-google-plus:focus {
   color: #FFFFFF;
 }
+
+#congratsModal .btn {
+  width: 75px;
+}
+
+.btn.btn-couchsurfing {
+  border-radius: 4px;
+  color: #FFFFFF;
+  background: #d2480a url("/images/couchsurfing-icon-36.png") no-repeat center center;
+
+}
+.btn.btn-couchsurfing:hover,
+.btn.btn-couchsurfing:focus {
+  color: #FFFFFF;
+}
+
+.btn.btn-eventbrite {
+  border-radius: 4px;
+  color: #FFFFFF;
+  background: #fd7a26 url("/images/eventbrite-icon-36.png") no-repeat center center;
+}
+.btn.btn-eventbrite:hover,
+.btn.btn-eventbrite:focus {
+  color: #FFFFFF;
+}
