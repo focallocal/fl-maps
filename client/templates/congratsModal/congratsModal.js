@@ -13,7 +13,7 @@ Template.congratsModal.helpers({
 		return 'https://www.facebook.com/sharer/sharer.php?&u=' + url;
 	},
 	shareOnTwitterLink: function(url,title) {
-		return 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title ;
+		return 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '&hashtags=Focallocal';
 	},
 	shareOnGooglePlusLink: function(url) {
 		return 'https://plus.google.com/share?url=' + url;
