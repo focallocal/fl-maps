@@ -11,7 +11,7 @@ function initializeGeocoding() {
 }
 geoCoder = initializeGeocoding();
 Meteor.methods({
-    'getCoords': function(location) {
-        return geoCoder.geocode(location);
+    'getCoords': function(address) {
+        return geoCoder.geocode(address);
     }
 });
