@@ -12,7 +12,7 @@ RssFeed.publish('upcomingEvents', function(query) {
     Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}).forEach(function(doc) {
         var newDescription = '<![CDATA['+doc.description +
                         '<br> Type of event: ' + doc.category.name +
-                        '<br> City: ' + doc.location +
+                        '<br> Address: ' + doc.address +
                         '<br> Meeting point: ' + doc.meetingPoint +
                         '<br> Date of event: ' + moment(doc.dateEvent).format("dddd, MMMM Do YYYY")+
                         ' ]]>';

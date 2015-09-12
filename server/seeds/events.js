@@ -1,11 +1,11 @@
 Meteor.startup(function () {
     Factory.define('event', Events, {
         coordinates: function () {
-            var location = {
+            var address = {
                 "lat": _.random(-90, 90),
                 "lng": _.random(-180, 180)
             };
-            return location;
+            return address;
         },
         organiser: function () {
             var userObject = {
@@ -14,7 +14,7 @@ Meteor.startup(function () {
             }
             return userObject;
         },
-        location: function () {
+        address: function () {
             return Fake.word();
         }
         ,

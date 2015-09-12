@@ -74,9 +74,9 @@ Events.attachSchema(new SimpleSchema({
         label: 'Event name',
         max: 100
     },
-    location: {
+    address: {
         type: String,
-        label: 'Location',
+        label: 'Address or postcode',
         max: 100,
         autoform: {
             //add attributes to the form element
@@ -96,7 +96,7 @@ Events.attachSchema(new SimpleSchema({
                 Meteor.call("getCoords", this.value, function (error, result) {
                     if (typeof result == 'undefined' || result.length == 0) {
                         Events.simpleSchema().namedContext("events-form").addInvalidKeys([{
-                            name: "location",
+                            name: "address",
                             type: "notFound"
                         }]);
                     }
@@ -115,9 +115,9 @@ Events.attachSchema(new SimpleSchema({
                 map(function(key){
                     return key.name
                 });
-            var locationKey = 'location';
-            var isLocationValid = !_.contains(invalidKeys,locationKey);
-            if (isLocationValid) {
+            var addressKey = 'address';
+            var isAddressValid = !_.contains(invalidKeys,addressKey);
+            if (isAddressValid) {
                 if (!this.isSet) return "required";
             }
         }
@@ -183,7 +183,7 @@ Events.attachSchema(new SimpleSchema({
 }));
 SimpleSchema.messages({
     "required category._id": "Please select a category",
-    "required coordinates": "Please select a location",
-    "notFound location": "Location not found",
-    "offline location": "Location not available, are you offline?"
+    "required coordinates": "Please provide an address",
+    "notFound address": "Address not found",
+    "offline address": "Address not available, are you offline?"
 });
