@@ -99,7 +99,8 @@ function createMarker(event) {
         .on('click', function(e) {
             Session.set('selected', event._id);
             var hasEditPermissionTo = function (selectedEvent) {
-                return Meteor.user().profile.name === selectedEvent.organiser.name
+                var loggedInUser = Meteor.user();
+                return !!loggedInUser && loggedInUser.profile.name === selectedEvent.organiser.name
             };
             if (!hasEditPermissionTo(event)) {
                 slidePanel.closePanel('eventsForm');
