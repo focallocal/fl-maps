@@ -5,7 +5,13 @@ AutoForm.hooks({
             Materialize.toast('Event submitted successfully!', 4000);
             if (operation === "insert") {
                 Session.set("selected", result);
-                $('#congratsModal').openModal();
+                var openSelectedPopup = function () {
+                    $('#icon-' + result).trigger('click');
+                };
+                $('#congratsModal').openModal({
+                    complete : openSelectedPopup
+                });
+
             }
         },
         onError: function(formType, error) {
