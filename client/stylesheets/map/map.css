@@ -1,19 +1,8 @@
 /* markers */
-.leaflet-result-marker {
-    border-radius: 50%;
-    border: none;
-    opacity: .8;
-    background: #0dda00;
-}
 .leaflet-div-icon {
     border-radius: 50%;
-    border: 1px;
-    line-height: 30px;
-    font-family: FontAwesome, sans-serif;
-    text-align: center;
+    border: 1px solid black;
     color: white;
-    opacity: .8;
-    vertical-align:middle;
 }
 
 /* selected marker */
