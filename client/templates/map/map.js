@@ -1,4 +1,27 @@
 var map, markers = [], resultMarkers = [];
+var pruneCluster = new PruneClusterForLeaflet();
+
+pruneCluster.PrepareLeafletMarker = function(leafletMarker, data) {
+    leafletMarker.setIcon(data.icon, data.category);
+    //listeners can be applied to markers in this function
+    leafletMarker.on('click', function(){
+        Session.set('selected', data.event._id);
+        var hasEditPermissionTo = function (selectedEvent) {
+            var loggedInUser = Meteor.user();
+            return !!loggedInUser && loggedInUser.profile.name === selectedEvent.organiser.name
+        };
+        if (!hasEditPermissionTo(data.event)) {
+            slidePanel.closePanel('eventsForm');
+        }
+    });
+    // A popup can already be attached to the marker
+    // bindPopup can override it, but it's faster to update the content instead
+    if (leafletMarker.getPopup()) {
+        leafletMarker.setPopupContent(data.popup);
+    } else {
+        leafletMarker.bindPopup(data.popup);
+    }
+};
 var initializeLeafletMap = function(element, centroid, zoom) {
     map = L.map(element, {
         scrollWheelZoom: true,
@@ -7,6 +30,13 @@ var initializeLeafletMap = function(element, centroid, zoom) {
         touchZoom: true,
         fullscreenControl: true
     }).setView(new L.LatLng(centroid[0], centroid[1]), zoom);
+    map.addLayer(pruneCluster);
+
+    map.on('popupopen', function(e) {
+        if (e.popup) {
+            Template.eventPopup.onCreated();
+        }
+    });
 
     var Stamen_Watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, ' +
@@ -20,8 +50,6 @@ var initializeLeafletMap = function(element, centroid, zoom) {
     Stamen_Watercolor.addTo(map);
 };
 
-
-
 Template.map.rendered = function() {
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
@@ -32,84 +60,73 @@ Template.map.rendered = function() {
         $mapContainer.html(map.getContainer());
     } else {
         var centroid = [48.28593, 16.30371];
-        initializeLeafletMap($mapCanvas[0], centroid, 2);
+        initializeLeafletMap($mapCanvas[0], centroid, 3);
         var self = this;
         Tracker.autorun(function () {
             animateMarkers(self);
-            var selectedEvent = Events.findOne(Session.get('selected'));
-            if (selectedEvent) {
-                var marker = markers[selectedEvent._id];
-                if (marker) marker.openPopup();
-            }
-            //var results = Session.get('results');
-            //handleSearchResults(results);
         })
     }
 
     this.data.events.observe({
         added: function(event) {
-            var marker = createMarker(event);
-            var color = event.category.color;
-            addMarker(marker, color);
+            addMarker(event);
+            pruneCluster.ProcessView();
         },
-        changed: function(event) {
-            var marker = markers[event._id];
-            if (marker) {
-                removeMarker(event._id);
-                marker = createMarker(event);
-                var color = event.category.color;
-                addMarker(marker, color);
-            }
+        changed: function(newEvent,oldEvent) {
+            removeMarker(oldEvent);
+            addMarker(newEvent);
+            pruneCluster.ProcessView();
         },
         removed: function(event) {
-            removeMarker(event._id);
+            removeMarker(event);
+            pruneCluster.ProcessView();
         }
     });
-
-
 };
 
-
-var addMarker = function(marker, color) {
-    map.addLayer(marker);
-    markers[marker.options._id] = marker;
-    marker.valueOf()._icon.style.backgroundColor = color;
+var addMarker = function(event) {
+    var marker = createMarker(event);
+    pruneCluster.RegisterMarker(marker);
+    markers[event._id] = marker;
 };
 
-var removeMarker = function(_id) {
-    var marker = markers[_id];
-    if (map.hasLayer(marker)) map.removeLayer(marker);
+var removeMarker = function(event) {
+    var marker = markers[event._id];
+    if (marker) {
+        pruneCluster.RemoveMarkers([marker]);
+        delete markers[event._id];
+    }
 };
 
-function createPopup(event) {
+function createPopupContent(event) {
     return Blaze.toHTMLWithData(Template.eventPopup,event);
 }
 
+var prepareMarkerData = function (event) {
+    return {
+        event: event,
+        icon: createIcon(event._id,event.category.color),
+        popup: createPopupContent(event),
+        category: event.category._id
+    };
+};
+
 function createMarker(event) {
-    var iconDiameter = 15;
-    var marker = new L.Marker(event.coordinates, {
-        _id: event._id,
-        icon: L.divIcon({
-            iconSize: [iconDiameter, iconDiameter],
-            className: 'leaflet-div-icon'
-        }),
-        riseOnHover: true
+    var data = prepareMarkerData(event);
+    return new PruneCluster.Marker(event.coordinates.lat, event.coordinates.lng, data);
+}
+
+function createIcon(id,color) {
+    //using custom library to create icon https://github.com/tonekk/Leaflet-Extended-Div-Icon
+    var icon = L.extendedDivIcon({
+        iconSize: [15, 15],
+        className: 'leaflet-div-icon',
+        id: 'icon-'+id,
+        style: {
+            backgroundColor: color
+        }
     });
-    marker.bindPopup(createPopup(event))
-        .on('click', function(e) {
-            Session.set('selected', event._id);
-            var hasEditPermissionTo = function (selectedEvent) {
-                var loggedInUser = Meteor.user();
-                return !!loggedInUser && loggedInUser.profile.name === selectedEvent.organiser.name
-            };
-            if (!hasEditPermissionTo(event)) {
-                slidePanel.closePanel('eventsForm');
-            }
-        })
-        .on('popupopen', function() {
-            Template.eventPopup.onCreated();  //has to be called explicitly
-        });
-    return marker;
+    return icon;
 }
 
 function animateMarkers(self) {
@@ -140,54 +157,6 @@ function animateMarkers(self) {
     }
 }
 
-function handleSearchResults(results) {
-    function clearResults() {
-        for (var i = 0, len = resultMarkers.length; i < len; i++) {
-            var marker = resultMarkers[i];
-            if (map.hasLayer(marker)) {
-                map.removeLayer(marker);
-            }
-        }
-    }
-
-    function addResults() {
-        for (var i = 0, len = results.length; i < len; i++) {
-            var result = results[i];
-            var resultMarker = new L.Marker(result.coordinates, {
-                _id: result._id,
-                icon: L.divIcon({
-                    iconSize: [20, 20],
-                    className: 'leaflet-result-marker'
-                }),
-                zIndexOffset: -2000,
-                riseOnHover: true
-            });
-            resultMarkers[i] = resultMarker;
-            map.addLayer(resultMarker);
-        }
-    }
-
-    function collectBounds() {
-        var latlngArr = [];
-        var i,len;
-        for (i = 0, len = results.length; i < len; i++) {
-            latlngArr.push(results[i].coordinates);
-        }
-        return L.latLngBounds(latlngArr);
-    }
-
-    function fitBoundsToResultSet() {
-        var bounds = collectBounds();
-        map.fitBounds(bounds, {maxZoom: 6});
-    }
-
-    if (!!results && results.length != 0) {
-        fitBoundsToResultSet();
-        clearResults();
-        addResults();
-    }
-}
-
 function adjustMapHeightToWindowSize($mapCanvas) {
     $(window).resize(function () {
         var h = $(this).height(),
@@ -195,6 +164,7 @@ function adjustMapHeightToWindowSize($mapCanvas) {
         $mapCanvas.css('height', (h - offsetTop));
     }).resize();
 }
+
 function initNewEventButton() {
     var $newEventBtn = $('#event-new-btn');
     $($newEventBtn,'.tooltipped').tooltip({delay: 50});
