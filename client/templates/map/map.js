@@ -50,6 +50,19 @@ var initializeLeafletMap = function(element, centroid, zoom) {
     Stamen_Watercolor.addTo(map);
 };
 
+Template.map.viewmodel({
+  // centers map and open popup associated with selected marker
+  panTo: function() {
+    console.log('ckuced!');
+    var eventId = Session.get('selected');
+    var event = Events.findOne(eventId);
+    if (event) {
+        map.panTo([event.coordinates.lat,event.coordinates.lng]);
+        $('#icon-' + eventId).trigger('click');
+    }
+  }
+});
+
 Template.map.rendered = function() {
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
