@@ -57,7 +57,13 @@ Template.map.viewmodel({
     var event = Events.findOne(eventId);
     if (event) {
         map.panTo([event.coordinates.lat,event.coordinates.lng]);
-        $('#icon-' + eventId).trigger('click');
+        setTimeout(function(){
+            map.setZoom(10);
+        }, 1000);
+        $('#map-container').trigger('click'); //set focus
+        setTimeout(function(){
+            $('#icon-' + eventId).trigger('click'); //TODO uncluster before clicking
+        }, 2000);
     }
   }
 });
