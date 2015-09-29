@@ -53,7 +53,6 @@ var initializeLeafletMap = function(element, centroid, zoom) {
 Template.map.viewmodel({
   // centers map and open popup associated with selected marker
   panTo: function() {
-    console.log('ckuced!');
     var eventId = Session.get('selected');
     var event = Events.findOne(eventId);
     if (event) {

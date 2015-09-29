@@ -16,7 +16,6 @@ Template._header.rendered = function() {
 
 Template._header.events({
   'click .loginWithGoogle': function() {
-    console.log('google');
     Meteor.loginWithGoogle({requestPermissions: ['email']},function(err){
       if (err) {
         Materialize.toast('Login failed (' + err.reason || 'unknown reason' + ')', 4000);
