@@ -11,7 +11,7 @@
     border: none;
     opacity: .5;
     background: #da0c0b;
-    z-index: 50 !important;
+    z-index: -1000 !important; /* always display animated icon 'behind' the marker icon */
 }
 
 .leaflet-container a {
