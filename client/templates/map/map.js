@@ -82,24 +82,24 @@ Template.map.rendered = function() {
         var self = this;
         Tracker.autorun(function () {
             animateMarkers(self);
-        })
+        });
+        this.data.events.observe({
+            added: function(event) {
+                addMarker(event);
+                pruneCluster.ProcessView();
+            },
+            changed: function(newEvent,oldEvent) {
+                removeMarker(oldEvent);
+                addMarker(newEvent);
+                pruneCluster.ProcessView();
+            },
+            removed: function(event) {
+                removeMarker(event);
+                pruneCluster.ProcessView();
+            }
+        });
     }
 
-    this.data.events.observe({
-        added: function(event) {
-            addMarker(event);
-            pruneCluster.ProcessView();
-        },
-        changed: function(newEvent,oldEvent) {
-            removeMarker(oldEvent);
-            addMarker(newEvent);
-            pruneCluster.ProcessView();
-        },
-        removed: function(event) {
-            removeMarker(event);
-            pruneCluster.ProcessView();
-        }
-    });
 };
 
 var addMarker = function(event) {
