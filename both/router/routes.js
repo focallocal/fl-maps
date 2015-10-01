@@ -16,3 +16,8 @@ Router.route('/events/map', {
   name: 'map',
   controller: 'MapController'
 });
+
+Router.route('/events/:_id', {
+  name: 'event.show',
+  controller: 'EventController'
+});
