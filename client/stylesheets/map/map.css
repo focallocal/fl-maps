@@ -25,7 +25,8 @@
     font: inherit;
 }
 
-.leaflet-popup-content a {
-    text-decoration: underline;
+.leaflet-container .details-btn {
+    color: #fff;
+    margin: auto;
 }
 
