@@ -6,3 +6,21 @@ Template.event.helpers({
     }
 
 });
+
+Template.event.events({
+    'click #go-back-btn': function() {
+        Router.go('map');
+    }
+});
+
+Template.event.rendered = function() {
+    var initializeTabs = function initializeTabs() {
+        $('ul.tabs').tabs();
+    };
+    var setNiceBackground = function setNiceBackground() {
+        document.body.style.background = '#fffde7';
+    };
+
+    setNiceBackground();
+    initializeTabs();
+};

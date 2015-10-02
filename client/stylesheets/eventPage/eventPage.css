@@ -1,0 +1,9 @@
+/* Event page styles */
+.event-image {
+    height: 200px;
+}
+.event-info label {
+  color: #212121;
+  font-size: 14px;
+  font-weight: bolder;
+}
