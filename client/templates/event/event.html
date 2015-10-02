@@ -1,5 +1,45 @@
 <template name="event">
-    This are details of
-        {{name}} <br />
-        {{address}}
+
+    <div class="row">
+        <div class="col m2 hide-on-small-only">
+            <a id="go-back-btn" class="waves-effect waves-orange btn-flat" href="#">
+                <i class="large mdi-navigation-arrow-back"></i>
+            </a>
+        </div>
+        <div class="col s12 m8">
+            <div class="card">
+                <div class="card-image event-image" style="background-color: {{category.color}};">
+                    <!--<img src="/images/field_web.jpg">-->
+                    <span class="card-title">{{category.name}}</span>
+                </div>
+                <div class="card-content no-padding">
+                    <ul class="tabs">
+                        <li class="tab col s3"><a class="active" href="#scope1">About event</a></li>
+                        <li class="tab col s3"><a href="#scope2">Images</a></li>
+                        <li class="tab col s3"><a href="#scope3">Videos</a></li>
+                        <li class="tab col s3"><a href="#scope4">Comments</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="scope1" class="col s12">
+                    {{> eventAbout}}
+                </div>
+                <div id="scope2" class="col s12">
+                  {{category.name}} photos:
+                   <br />
+                  <label>Coming soon!</label></div>
+                <div id="scope3" class="col s12">
+                  {{category.name}} videos:
+                   <br />
+                  <label>Coming soon!</label></div>
+                <div id="scope4" class="col s12">
+                  No comments yet.
+                   <br />
+                  <label>Coming soon!</label></div>
+            </div>
+
+        </div>
+    </div>
 </template>
