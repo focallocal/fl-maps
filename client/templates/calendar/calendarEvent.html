@@ -18,9 +18,13 @@
                 </h5>
                 {{description}}
             </p>
-            <p>
-               <span class="badge">Organised by: <strong>{{ organiser.name  }}</strong></span>
-            </p>
+
+            <div class="center-align">
+                <a class="details-btn waves-effect waves-light btn" data-id="{{_id}}">
+                    SHOW MORE <i class="mdi-action-input right"></i>
+                </a>
+                <span class="badge">Organised by: <strong>{{organiser.name}}</strong></span>
+            </div>
         </div>
     </li>
 </template>

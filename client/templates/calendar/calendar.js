@@ -15,6 +15,10 @@ Template.calendar.events({
                 $(this).removeClass('highlight');
             }
         });
+    },
+    'click .details-btn': function(event) {
+        var eventId = event.currentTarget.dataset.id;
+        Router.go('event.show', {_id: eventId});
     }
 });
 Template.calendar.rendered=function() {
