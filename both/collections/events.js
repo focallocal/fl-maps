@@ -161,6 +161,10 @@ Events.attachSchema(new SimpleSchema({
             }
         }
     },
+    time: {
+        type: Number,
+        label: 'Hour'
+    },
     url: {
         type: String,
         label: 'Link',

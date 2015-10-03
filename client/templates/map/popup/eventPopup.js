@@ -1,4 +1,11 @@
 Template.eventPopup.onCreated=function() {
+    //Open share modal
+    $('.promo-btn','#eventPopup').click(function(){
+        $('#congratsModal').openModal({
+            dismissible: false
+        });
+    });
+
     //Open event edit form
     $('.edit-btn','#eventPopup').click(function(){
         Session.set('isEdit', true);

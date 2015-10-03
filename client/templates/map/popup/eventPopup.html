@@ -3,6 +3,9 @@
     {{#if currentUser}}
         {{#if isCurrentUser organiser}}
         <div class="right-align">
+            <a class="promo-btn  btn-flat">
+                <i class="mdi-social-share"></i>
+            </a>
             <a class="edit-btn  btn-flat">
                 <i class="mdi-editor-mode-edit"></i>
             </a>
@@ -27,9 +30,7 @@
     </blockquote>
 
     <div class="center-align">
-        <a class="details-btn waves-effect waves-light btn">
-            SHOW MORE <i class="mdi-action-input right"></i>
-        </a>
+        {{> showMoreButton}}
     </div>
 </div>
 </template>
