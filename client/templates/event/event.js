@@ -9,7 +9,7 @@ Template.event.helpers({
 
 Template.event.events({
     'click #go-back-btn': function() {
-        Router.go('map');
+        history.back();
     }
 });
 
