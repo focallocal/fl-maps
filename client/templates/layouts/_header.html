@@ -15,7 +15,6 @@
           <li class="{{ isActiveRoute regex='home' }}"><a href="{{ pathFor 'home' }}" title="Home"><i class="mdi-action-home"></i></a></li>
           <li class="{{ isActiveRoute regex='map' }}"><a href="{{ pathFor 'map' }}" title="Map"><i class="mdi-maps-map"></i></a></li>
           <li class="{{ isActiveRoute regex='calendar' }}"><a href="{{ pathFor 'calendar' }}" title="Events calendar"><i class="mdi-action-list"></i></a></li>
-          <li class="{{ isActiveRoute regex='help' }}"><a onclick="$('#congratsModal').openModal();" title="About"><i class="mdi-action-info-outline"></i></a></li>
         </ul>
         <ul id="user-dropdown" class="dropdown-content">
           {{#if currentUser}}
