@@ -29,8 +29,8 @@ Meteor.startup(function () {
             return Fake.word();
         }
         ,
-        url: function () {
-            return "http://focallocal.org";
+        time: function() {
+            return '12:30';
         }
         ,
         description: function () {
@@ -38,7 +38,7 @@ Meteor.startup(function () {
         }
         ,
         category: function () {
-            return Categories.findOne({_id: _.random(1, 11)});
+            return Categories.findOne(_.random(1, 11));
         }
         ,
         dateCreated: function () {
