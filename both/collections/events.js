@@ -53,7 +53,7 @@ Events.attachSchema(new SimpleSchema({
         optional: true,
         autoValue: function() {
             var categoryId = this.field('category._id').value;
-            if (!categoryId) return null;
+            if (!categoryId) return this.value;     //don't change the value if can't find _id
             return Categories.findOne(categoryId).name;
         }
     },
@@ -65,7 +65,7 @@ Events.attachSchema(new SimpleSchema({
         optional: true,
         autoValue: function() {
             var categoryId = this.field('category._id').value;
-            if (!categoryId) return null;
+            if (!categoryId) return this.value;     //don't change the value if can't find _id
             return Categories.findOne(categoryId).color;
         }
     },
@@ -166,15 +166,10 @@ Events.attachSchema(new SimpleSchema({
         label: 'Hour'
     },
     //optional links to social sites where the event is promoted
-    //url: {
-    //    type: Array,
-    //    optional: true
-    //},
     'links.$.url': {
         type: String,
         label: 'Link',
         max: 200,
-        //hidden:true,
         regEx: SimpleSchema.RegEx.Url
     },
     description: {

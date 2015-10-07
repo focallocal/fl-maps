@@ -3,7 +3,7 @@
     <div class="card-panel">
     {{#if isEdit}}
         <h5>Edit event</h5>
-        {{> quickForm collection="Events" doc=selectedEventDoc id="events-form" type="update"}}
+        {{> quickForm collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
     {{else}}
         <div class="row">
             <div class="col">
@@ -17,7 +17,7 @@
                 </span>
             </div>
         </div>
-        {{> quickForm collection="Events" id="events-form" type="insert"}}
+        {{> quickForm collection="Events" id="events-form" omitFields='links' type="insert"}}
     {{/if}}
 
     </div>

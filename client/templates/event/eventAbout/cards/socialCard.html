@@ -13,7 +13,7 @@
             {{#if isCurrentUser organiser}}
                 You are the organiser. Add the links here!
                 {{#if isEditMode}}
-                    {{#autoForm collection="Events" doc=this id='events-form' type='update' autosave=true}}
+                    {{#autoForm collection="Events" doc=this id='links-form' data-event-id=this._id type='update' autosave=true}}
                         {{> afArrayField name="links" template='sociallinks' minCount=0 maxCount=3}}
                     {{/autoForm}}
                 {{/if}}
