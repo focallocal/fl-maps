@@ -162,14 +162,19 @@ Events.attachSchema(new SimpleSchema({
         }
     },
     time: {
-        type: Number,
+        type: String,
         label: 'Hour'
     },
-    url: {
+    //optional links to social sites where the event is promoted
+    //url: {
+    //    type: Array,
+    //    optional: true
+    //},
+    'links.$.url': {
         type: String,
         label: 'Link',
-        optional: true,
         max: 200,
+        //hidden:true,
         regEx: SimpleSchema.RegEx.Url
     },
     description: {

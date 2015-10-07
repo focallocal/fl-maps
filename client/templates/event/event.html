@@ -15,7 +15,7 @@
                 <div class="card-content no-padding">
                     <ul class="tabs">
                         <li class="tab col s3"><a class="active" href="#scope1">About event</a></li>
-                        <li class="tab col s3"><a href="#scope2">Images</a></li>
+                        <li class="tab col s3"><a href="#scope2">Photos</a></li>
                         <li class="tab col s3"><a href="#scope3">Videos</a></li>
                         <li class="tab col s3"><a href="#scope4">Comments</a></li>
                     </ul>
@@ -27,17 +27,14 @@
                     {{> eventAbout}}
                 </div>
                 <div id="scope2" class="col s12">
-                  {{category.name}} photos:
-                   <br />
-                  <label>Coming soon!</label></div>
+                    {{> eventPhotos}}
+                </div>
                 <div id="scope3" class="col s12">
-                  {{category.name}} videos:
-                   <br />
-                  <label>Coming soon!</label></div>
+                    {{> eventVideos}}
+                </div>
                 <div id="scope4" class="col s12">
-                  No comments yet.
-                   <br />
-                  <label>Coming soon!</label></div>
+                    {{> eventComments}}
+                </div>
             </div>
 
         </div>

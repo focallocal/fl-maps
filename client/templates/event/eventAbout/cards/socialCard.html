@@ -1,0 +1,28 @@
+<template name="socialCard">
+    <div class="card z-depth-1">
+        <div class="card-content">
+            <span class="card-title grey-text text-darken-4">Social</span>
+            {{#if isCurrentUser organiser}}
+                <span class="right">
+                    <a class="edit-btn btn-flat">
+                        <i class="{{#if isEditMode}}mdi-editor-border-color{{else}}mdi-editor-mode-edit{{/if}}"></i>
+                    </a>
+                </span>
+            {{/if}}
+            <div class="divider"></div>
+            {{#if isCurrentUser organiser}}
+                You are the organiser. Add the links here!
+                {{#if isEditMode}}
+                    {{#autoForm collection="Events" doc=this id='events-form' type='update' autosave=true}}
+                        {{> afArrayField name="links" template='sociallinks' minCount=0 maxCount=3}}
+                    {{/autoForm}}
+                {{/if}}
+            {{/if}}
+            <ul>
+                {{#each this.links}}
+                    <li><a href="{{url}}">{{url}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
