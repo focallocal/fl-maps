@@ -16,7 +16,6 @@ EventController = AppController.extend({
     }
   },
   onAfterAction: function () {
-    console
     Meta.setTitle('Event ' + this.data.name);
   }
 });
