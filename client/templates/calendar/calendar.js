@@ -18,6 +18,7 @@ Template.calendar.events({
     },
     'click .details-btn': function(event) {
         var eventId = event.currentTarget.dataset.id;
+        GAnalytics.event("Events","open_event_calendar");
         Router.go('event.show', {_id: eventId});
     }
 });

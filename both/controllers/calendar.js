@@ -7,6 +7,7 @@ CalendarController = AppController.extend({
     pastEvents: Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}})
   },
   onAfterAction: function () {
+    GAnalytics.pageview("/calendar");
     Meta.setTitle('Calendar');
   }
 });

@@ -6,6 +6,7 @@ MapController = AppController.extend({
         events: Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}})
     },
     onAfterAction: function () {
+        GAnalytics.pageview("/map");
         Meta.setTitle('Map ');
     }
 });

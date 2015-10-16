@@ -7,6 +7,7 @@ EventsNewController = AppController.extend({
         categories: Categories.find({})
     },
     onAfterAction: function () {
+        GAnalytics.pageview("/new_event");
         Meta.setTitle('New event ');
     }
 });

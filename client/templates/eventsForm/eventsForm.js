@@ -8,9 +8,13 @@ AutoForm.hooks({
                 $('#congratsModal').openModal({
                    dismissible: false
                  });
+                GAnalytics.event("Events","create");
+            } else {
+                GAnalytics.event("Events","edit");
             }
         },
         onError: function(formType, error) {
+            GAnalytics.event("Events","form_error");
             console.error(error);
         }
     }
