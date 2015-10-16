@@ -33,6 +33,7 @@ var initializeLeafletMap = function(element, centroid, zoom) {
     map.addLayer(pruneCluster);
 
     map.on('popupopen', function(e) {
+        GAnalytics.event("Events","open_popup");
         if (e.popup) {
             Template.eventPopup.onCreated();
         }

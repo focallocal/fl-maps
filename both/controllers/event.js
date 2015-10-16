@@ -16,6 +16,7 @@ EventController = AppController.extend({
     }
   },
   onAfterAction: function () {
+    GAnalytics.pageview("/event_page");
     Meta.setTitle('Event ' + this.data.name);
   }
 });
