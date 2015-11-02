@@ -1,6 +1,6 @@
 /*** Colors ***/
 
-$primary-color: color("yellow", "darken-4") !default;
+$primary-color: color("orange", "darken-2") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
@@ -103,7 +103,7 @@ $navbar-height-mobile: 56px !default;
 
 /*** Tabs ***/
 $tabs-underline-color: $primary-color-light !default;
-$tabs-text-color: $primary-color !default;
+$tabs-text-color: $link-color !default; //$primary-color
 $tabs-bg-color: #fff !default;
 
 /*** Tables ***/
