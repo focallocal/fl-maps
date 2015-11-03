@@ -44,16 +44,11 @@ nav {
     color: #fff;
     display: inline-block;
     font-size: 2.1rem;
-    padding: 0;
+    padding: 0 15px;
 
     &.center {
       left: 50%;
 //      @include transform(translateX(-50%));
-    }
-
-    @media #{$medium-and-down} {
-      left: 50%;
-      @include transform(translateX(-50%));
     }
 
     &.right {
@@ -66,6 +61,11 @@ nav {
   // Navbar Links
   ul {
     margin: 0;
+    @media #{$large-and-up} {
+      &.left {
+        margin-left: 160px;
+      }
+    }
 
     li {
       @include transition(background-color .3s);
@@ -74,6 +74,19 @@ nav {
 
       &:hover, &.active {
         background-color: rgba(0,0,0,.1);
+      }
+
+      @media #{$large-and-up} {
+        &.text-icon i {
+          text-align: center;
+          height: 0 !important;;
+          line-height: 45px !important;
+          font-size: 1.4rem;
+        }
+        &.text-icon span {
+          position: relative;
+          top: 12px;
+        }
       }
     }
     a {
