@@ -76,7 +76,7 @@ nav {
         background-color: rgba(0,0,0,.1);
       }
 
-      @media #{$large-and-up} {
+      //@media #{$large-and-up} {
         &.text-icon i {
           text-align: center;
           height: 0 !important;;
@@ -86,7 +86,7 @@ nav {
         &.text-icon span {
           position: relative;
           top: 12px;
-        }
+        //}
       }
     }
     a {
