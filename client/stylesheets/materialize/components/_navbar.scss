@@ -77,13 +77,13 @@ nav {
       }
 
       //@media #{$large-and-up} {
-        &.text-icon i {
+        &.text-icon a > i {
           text-align: center;
           height: 0 !important;;
           line-height: 45px !important;
           font-size: 1.4rem;
         }
-        &.text-icon span {
+        &.text-icon a > span {
           position: relative;
           top: 12px;
         //}

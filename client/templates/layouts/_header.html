@@ -33,9 +33,6 @@
             </li>
         </ul>
 
-        <ul class="right">
-          <li><a class="dropdown-button" href="#!" data-activates="user-dropdown"><i class="mdi-navigation-more-vert"></i></a></li>
-        </ul>
 
         <ul class="right">
           <li class="text-icon {{ isActiveRoute regex='home' }}">
@@ -55,6 +52,11 @@
               <i class="mdi-action-list"></i>
               <span>Calendar</span>
             </a>
+          </li>
+          <li class="{{ isActiveRoute regex='signIn|signUp' }}">
+              <a class="dropdown-button" href="#!" data-activates="user-dropdown">
+                  <i class="mdi-action-account-circle"></i>
+              </a>
           </li>
         </ul>
         <ul id="user-dropdown" class="dropdown-content">
