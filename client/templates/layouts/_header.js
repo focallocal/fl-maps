@@ -10,7 +10,7 @@ Template._header.rendered = function() {
       belowOrigin: true
     });
 
-    //this.$('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
+    this.$('.button-collapse').sideNav({menuWidth: 240, activationWidth: 70});
   }.bind(this), 200);
 };
 
