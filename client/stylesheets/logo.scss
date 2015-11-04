@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Hobo";
+  src: url("#{$hobo-font-path}hobo.ttf") format("truetype");
+  font-weight: 400;
+}
+//logo font face
+.brand-logo {
+  font-family: "Hobo", sans-serif;
+}
