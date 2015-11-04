@@ -8,6 +8,10 @@ EventsNewController = AppController.extend({
     },
     onAfterAction: function () {
         GAnalytics.pageview("/new_event");
-        Meta.setTitle('New event ');
+    },
+    seo: {
+    title: function () {
+        return 'New event ';
     }
+}
 });
