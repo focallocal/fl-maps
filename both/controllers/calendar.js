@@ -8,6 +8,10 @@ CalendarController = AppController.extend({
   },
   onAfterAction: function () {
     GAnalytics.pageview("/calendar");
-    Meta.setTitle('Calendar');
+  },
+  seo: {
+    title: function () {
+      return 'Calendar ';
+    }
   }
 });

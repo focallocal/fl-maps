@@ -1,6 +1,10 @@
 HomeController = AppController.extend({
   onAfterAction: function () {
     GAnalytics.pageview("/home");
-    Meta.setTitle('Welcome ');
+  },
+  seo: {
+    title: function () {
+      return 'Welcome  ';
+    }
   }
 });

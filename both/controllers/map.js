@@ -7,7 +7,11 @@ MapController = AppController.extend({
     },
     onAfterAction: function () {
         GAnalytics.pageview("/map");
-        Meta.setTitle('Map ');
+    },
+    seo: {
+        title: function () {
+            return 'Map ';
+        }
     }
 });
 

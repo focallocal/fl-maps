@@ -17,7 +17,6 @@ dburles:factory
 anti:fake
 cunneen:mailgun
 iron:router
-yasinuslu:blaze-meta
 materialize:materialize
 useraccounts:materialize
 aldeed:collection2
@@ -46,3 +45,4 @@ prunecluster:prunecluster
 mordka:leaflet-extended-div-icon
 manuel:viewmodel
 datariot:ganalytics
+lookback:seo
