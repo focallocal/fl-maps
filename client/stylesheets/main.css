@@ -49,3 +49,8 @@ footer a {
 li.highlight div {
   background-color: #F47E17;
 }
+
+/*share dialog*/
+#selectable blockquote {
+    margin: 0 !important;
+}
