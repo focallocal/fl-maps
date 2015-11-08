@@ -6,7 +6,7 @@ Template.congratsModal.helpers({
         	Meteor.Error('no-event-selected', 'No event selected.');
         	return;
         }
-		event.url = event.url ? event.url : window.location.href;
+		event.url = event.url ? event.url : Meteor.absoluteUrl('events/'+eventId);
 		return event;
 	},
 	shareOnFacebookLink: function(event) {
