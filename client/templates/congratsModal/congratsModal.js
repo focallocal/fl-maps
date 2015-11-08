@@ -9,24 +9,28 @@ Template.congratsModal.helpers({
 		event.url = event.url ? event.url : window.location.href;
 		return event;
 	},
-	shareOnFacebookLink: function(url) {
-		const fbKey = Meteor.settings.public.facebook.oauth_key;
-		var url = 'http://www.facebook.com/dialog/feed?app_id='+ fbKey +
+	shareOnFacebookLink: function(event) {
+		const prodFbApiKey = Meteor.settings.public.facebook.oauth_key;
+		var url = 'http://www.facebook.com/dialog/feed?app_id='+ prodFbApiKey +
 			'&link=http://focallocal.meteor.com' +
 			'&picture=http://www.lifewithcats.tv/wp-content/uploads/2013/07/xsdre.jpg' +
-			'&name=' + encodeURIComponent('test name') +
-			'&caption=' + encodeURIComponent('test caption') +
-		'&description=' + encodeURIComponent('test description') +
-		'&redirect_uri=http://focallocal.meteor.com' +
-		'&display=popup';
+			'&name=' + encodeURIComponent(event.name) +
+			'&caption=' + encodeURIComponent(event.category.name) +
+			'&description=' + encodeURIComponent(event.description) +
+			'&redirect_uri=http://focallocal.meteor.com' +
+			'&display=popup';
 		return url;
 		//return 'https://www.facebook.com/sharer/sharer.php?&u=' + url;
 	},
-	shareOnTwitterLink: function(url,title) {
-		return 'https://twitter.com/intent/tweet?url=' + url + '&text=' + title + '&hashtags=Focallocal';
+	shareOnTwitterLink: function(event) {
+		var promoText = 'I\'ve just created new GatherUp! ';
+		return 'https://twitter.com/intent/tweet?url=' + event.url + 
+			'&text=' +  encodeURIComponent(promoText) +
+			encodeURIComponent(event.name) + 
+			'&hashtags=Focallocal';
 	},
-	shareOnGooglePlusLink: function(url) {
-		return 'https://plus.google.com/share?url=' + url;
+	shareOnGooglePlusLink: function(event) {
+		return 'https://plus.google.com/share?url=' + event.url;
 	}
 });
 function selectText(containerid) {
