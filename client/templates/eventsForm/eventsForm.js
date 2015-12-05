@@ -38,7 +38,10 @@ Template.eventsForm.helpers({
             Meteor.call('getCoords', query, function (error, result) {
                 console.info("Query: " + query);
                 var mapResultToDisplay = function () {
-                    return result.map(function (v) {
+                    var isCity = function(element, index) {
+                        return element.city!=null
+                    };
+                    return result.filter(isCity).map(function (v) {
                             console.info("Response: " + JSON.stringify(v));
                             var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
                             var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
