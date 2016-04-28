@@ -30,3 +30,13 @@
     margin: auto;
 }
 
+
+/*dont use material design for leaflet controls*/
+[type="checkbox"]:not(:checked).leaflet-control-layers-selector,
+[type="checkbox"]:checked.leaflet-control-layers-selector {
+    /*box-sizing: border-box;*/
+    /*padding: 0;*/
+    position: inherit;
+    left: inherit;
+    visibility: inherit;
+}
