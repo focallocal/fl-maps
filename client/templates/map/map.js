@@ -1,7 +1,8 @@
-var map, markers = [], resultMarkers = [];
-var pruneCluster = new PruneClusterForLeaflet();
+var map, markers = {};
+var viewLayers = {};    //stores prune cluster instances for each event category
 
-pruneCluster.PrepareLeafletMarker = function(leafletMarker, data) {
+//a function to override prune cluster marker behaviour
+function PrepareLeafletMarker(leafletMarker, data) {
     leafletMarker.setIcon(data.icon, data.category);
     //listeners can be applied to markers in this function
     leafletMarker.on('click', function(){
@@ -22,7 +23,9 @@ pruneCluster.PrepareLeafletMarker = function(leafletMarker, data) {
         leafletMarker.bindPopup(data.popup);
     }
 };
-var initializeLeafletMap = function(element, centroid, zoom) {
+
+var initializeLeafletMap = function(element, zoom) {
+    var centroid = [48.28593, 16.30371];
     map = L.map(element, {
         scrollWheelZoom: true,
         doubleClickZoom: false,
@@ -30,8 +33,12 @@ var initializeLeafletMap = function(element, centroid, zoom) {
         touchZoom: true,
         fullscreenControl: true
     }).setView(new L.LatLng(centroid[0], centroid[1]), zoom);
-    map.addLayer(pruneCluster);
-
+    //add prune cluster layers for each event category to allow filtering by category
+    _.values(viewLayers).forEach(function (layer) {
+        map.addLayer(layer)
+    });
+    addLegendControl();
+    
     map.on('popupopen', function(e) {
         GAnalytics.event("Events","open_popup");
         if (e.popup) {
@@ -49,6 +56,17 @@ var initializeLeafletMap = function(element, centroid, zoom) {
         opacity: 0.7
     });
     Stamen_Watercolor.addTo(map);
+
+    function addLegendControl() {
+        var controls = {};
+        _.keys(viewLayers).forEach(function (categoryName,ind) {
+            // var styled = '<div class="switch"><label><input type="checkbox"><span class="lever"></span>'+categoryName+'</label></div>';
+            // var styled = '<p><input type="checkbox" class="filled-in" id="cat'+ind+'" checked="checked"/><label for="cat'+ind+'">'+categoryName+'</label></p>';
+            controls[categoryName] = viewLayers[categoryName];
+        });
+        var control = L.control.layers(null, controls, {collapsed: true});
+        control.addTo(map);
+    }
 };
 
 Template.map.viewmodel({
@@ -69,6 +87,13 @@ Template.map.viewmodel({
   }
 });
 
+Template.map.created = function() {
+    Categories.find().fetch().forEach(function (category) {
+        var clusterLayer = new PruneClusterForLeaflet();
+        clusterLayer.PrepareLeafletMarker = PrepareLeafletMarker;
+        viewLayers[category.name] = clusterLayer
+    });
+};
 Template.map.rendered = function() {
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
@@ -78,8 +103,7 @@ Template.map.rendered = function() {
     if (map) {
         $mapContainer.html(map.getContainer());
     } else {
-        var centroid = [48.28593, 16.30371];
-        initializeLeafletMap($mapCanvas[0], centroid, 3);
+        initializeLeafletMap($mapCanvas[0], 3);
         var self = this;
         Tracker.autorun(function () {
             animateMarkers(self);
@@ -87,16 +111,13 @@ Template.map.rendered = function() {
         this.data.events.observe({
             added: function(event) {
                 addMarker(event);
-                pruneCluster.ProcessView();
             },
             changed: function(newEvent,oldEvent) {
                 removeMarker(oldEvent);
                 addMarker(newEvent);
-                pruneCluster.ProcessView();
             },
             removed: function(event) {
                 removeMarker(event);
-                pruneCluster.ProcessView();
             }
         });
     }
@@ -105,15 +126,20 @@ Template.map.rendered = function() {
 
 var addMarker = function(event) {
     var marker = createMarker(event);
-    pruneCluster.RegisterMarker(marker);
+    marker.category = event.category.name;
+    var viewLayer = viewLayers[event.category.name];
+    viewLayer.RegisterMarker(marker);
+    viewLayer.ProcessView();
     markers[event._id] = marker;
 };
 
 var removeMarker = function(event) {
     var marker = markers[event._id];
     if (marker) {
-        pruneCluster.RemoveMarkers([marker]);
-        delete markers[event._id];
+        var viewLayer = viewLayers[event.category.name];
+        viewLayer.RemoveMarkers([marker]);
+        viewLayer.ProcessView();
+        delete marker[event._id];
     }
 };
 
