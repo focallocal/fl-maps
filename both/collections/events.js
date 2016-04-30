@@ -33,7 +33,7 @@ Events.attachSchema(new SimpleSchema({
         type: Object
     },
     'category._id': {
-        type: Number,
+        type: String,
         //optional: true,
         autoform: {
             options: function() {

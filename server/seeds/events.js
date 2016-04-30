@@ -1,3 +1,6 @@
+var inDevelopment = function () {
+    return process.env.NODE_ENV === "development";
+};
 Meteor.startup(function () {
     Factory.define('event', Events, {
         coordinates: function () {
@@ -38,7 +41,9 @@ Meteor.startup(function () {
         }
         ,
         category: function () {
-            return Categories.findOne(_.random(1, 11));
+            var allCategories = Categories.find().fetch();
+            var randomIndex = _.random(0, allCategories.length);
+            return allCategories[randomIndex];
         }
         ,
         dateCreated: function () {
@@ -50,7 +55,7 @@ Meteor.startup(function () {
         }
     });
 
-    if (Events.find({}).count() === 0) {
+    if (inDevelopment() && Events.find({}).count() === 0) {
         console.log("Repopulating db...");
         _(20).times(function (n) {
             Factory.create('event');
