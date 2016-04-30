@@ -1,0 +1,20 @@
+<template name="rightLinks">
+    <li class="text-icon {{ isActiveRoute regex='home' }}">
+        <a href="{{ pathFor 'home' }}" title="Home">
+            <i class="mdi-action-home"></i>
+            <span>Home</span>
+        </a>
+    </li>
+    <li class="text-icon {{ isActiveRoute regex='map' }}">
+        <a href="{{ pathFor 'map' }}" title="Map">
+            <i class="mdi-maps-map"></i>
+            <span>Map</span>
+        </a>
+    </li>
+    <li class="text-icon {{ isActiveRoute regex='calendar' }}">
+        <a href="{{ pathFor 'calendar' }}" title="Calendar">
+            <i class="mdi-action-list"></i>
+            <span>Calendar</span>
+        </a>
+    </li>
+</template>

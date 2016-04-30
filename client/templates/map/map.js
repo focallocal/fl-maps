@@ -28,7 +28,7 @@ var initializeLeafletMap = function(element, zoom) {
     var centroid = [48.28593, 16.30371];
     map = L.map(element, {
         scrollWheelZoom: true,
-        doubleClickZoom: false,
+        doubleClickZoom: true,
         boxZoom: false,
         touchZoom: true,
         fullscreenControl: true

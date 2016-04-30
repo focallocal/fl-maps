@@ -1,0 +1,48 @@
+<template name="_header">
+
+    <div id="fb-root"></div> <!--facebook share button-->
+<header>
+<div id="menu-top">
+  <nav>
+    <div class="nav-wrapper">
+        <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">Focallocal</a>
+        <ul class="hide-on-small-and-down left">
+            {{> leftLinks}}
+        </ul>
+        <ul class="right">
+            {{> rightLinks}}
+
+            <li class="{{ isActiveRoute regex='signIn|signUp' }}">
+                <a class="dropdown-button" href="#!" data-activates="user-dropdown">
+                    <i class="mdi-action-account-circle"></i>
+                </a>
+            </li>
+        </ul>
+
+        <ul id="user-dropdown" class="dropdown-content">
+          {{#if currentUser}}
+            <li><a href="#" data-action="logout">Sign Out</a></li>
+          {{else}}
+            <li><a href="{{ pathFor 'atSignIn' }}">Log in</a></li>
+            <li><a href="{{ pathFor 'atSignUp' }}">Register</a></li>
+          {{/if}}
+        </ul>
+
+        <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+      </div>
+  </nav>
+
+  <ul id="nav-mobile" class="side-nav">
+      <!--{{> rightLinks}}-->
+      <!--<li class="text-icon">-->
+          <!--<a class="dropdown-button" href="{{ pathFor 'atSignUp' }}" >-->
+              <!--<i class="mdi-action-account-circle"></i>-->
+              <!--<span>Log in</span>-->
+          <!--</a>-->
+      <!--</li>-->
+      <!--<li class="divider"></li>-->
+      {{> leftLinks}}
+  </ul>
+</div>
+</header>
+</template>
