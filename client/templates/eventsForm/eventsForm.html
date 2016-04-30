@@ -2,12 +2,12 @@
 
     <div class="card-panel">
     {{#if isEdit}}
-        <h5>Edit event</h5>
+        <h5>Edit gather</h5>
         {{> quickForm collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
     {{else}}
         <div class="row">
             <div class="col">
-                <h5>New event</h5>
+                <h5>New gather</h5>
             </div>
             <div class="col">
                 <span class="grey-text right-align">Need help?
