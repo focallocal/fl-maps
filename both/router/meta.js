@@ -1,15 +1,15 @@
 if(Meteor.isClient) {
 
     var defaults = {
-        title: 'Events for Focallocal - A Worldwide Movement for Positive Social Action', // Will apply to <title>, Twitter and OpenGraph.
-        suffix: 'Events for Focallocal ',
+        title: 'Focallocal Gather - A Worldwide Movement for Positive Social Action', // Will apply to <title>, Twitter and OpenGraph.
+        suffix: 'Gather events',
         separator: '·',
 
         // Will apply to meta, Twitter and OpenGraph.
         description: 'Create an account or log into Events for Focallocal. ' +
         'Create positive events and share them with friends, family and other people you know.',
         // Will apply to Twitter and OpenGraph.
-        image: 'http://focallocal.org/wp-content/uploads/2015/11/focallocal-logo-transparent-lowres.png',
+        image: 'http://focallocal.org/assets/images/focallocal-logo.png',
 
         meta: {
             keywords: ['focallocal', 'positive', 'events']
@@ -22,7 +22,7 @@ if(Meteor.isClient) {
         },
 
         og: {
-            site_name: 'Events for focallocal',
+            site_name: 'Focallocal Gather',
             image: 'http://focallocal.org/wp-content/uploads/2015/11/focallocal-logo-transparent-lowres.png'
             // etc.
         }

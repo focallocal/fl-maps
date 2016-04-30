@@ -66,6 +66,14 @@ var initializeLeafletMap = function(element, zoom) {
         });
         var control = L.control.layers(null, controls, {collapsed: true});
         control.addTo(map);
+        // $('.leaflet-control-layers-overlays label div span').each(function(el) {
+        //     console.log('events',jQuery._data( $(this), "events" ));
+        //     $(this).replaceWith($('<label>' + this.innerHTML + '</label>'));
+        // });
+        // $('.leaflet-control-layers-overlays label div').each(function(el) {
+        //     $(this).replaceWith($('<p>' + this.innerHTML + '</p>'));
+        // });
+
     }
 };
 
@@ -216,7 +224,7 @@ function initNewEventButton() {
     $newEventBtn.click(function () {
         if (!Meteor.userId()) {
             var toastTimeout = 3000;
-            Materialize.toast('Oops! Please login to add event!', toastTimeout);
+            Materialize.toast('Oops! Please login to add gather!', toastTimeout);
         } else {
             Session.set('isEdit',false);
             slidePanel.showPanel('eventsForm');

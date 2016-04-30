@@ -1,7 +1,7 @@
 RssFeed.publish('upcomingEvents', function(query) {
     var self = this;
-    self.setValue('title', self.cdata('Focallocal events'));
-    self.setValue('description', self.cdata('Upcoming focallocal events'));
+    self.setValue('title', self.cdata('Focallocal gathers'));
+    self.setValue('description', self.cdata('Upcoming focallocal gathers'));
     self.setValue('link', 'http://focallocal.meteor.com');
     self.setValue('lastBuildDate', new Date());
     self.setValue('pubDate', new Date());
