@@ -2,11 +2,13 @@ language: node_js
 node_js:
 - '0.12'
 before_install:
-- sudo apt-get install expect
-- curl https://install.meteor.com | /bin/sh
-#build all branches, uncomment below to change it
-#branches:
-#  only:
-#  - master
+- openssl aes-256-cbc -K $encrypted_4db1576f9513_key -iv $encrypted_4db1576f9513_iv
+  -in mup.json.enc -out mup.json -d
+#- sudo apt-get install expect
+- npm install -g mupx
+#- curl https://install.meteor.com | /bin/sh
+branches:
+  only:
+  - master
 script:
-  - "expect deploy.exp"
+- mupx deploy
