@@ -6,9 +6,9 @@ Focallocal events
 
 Usage
 -----
-1. Go to http://focallocal.meteor.com
+1. Go to http://gather.focallocal.org
 2. Register using your email or use your account Facebook|Google|Twitter|Meetup
-3. Go to the map page http://focallocal.meteor.com/events/map
+3. Go to the map page http://gather.focallocal.org/events/map
 4. Add a new event using (+) button
 5. Share the event details on social media (using buttons on final message modal window)
 
@@ -72,7 +72,7 @@ The point is to achieve continuous delivery which means
 2. Testing - (TODO) run functional tests 
 3. Deploying 
     * use settings.json from a secret variable in Travis build's settings
-    * Deploy to http://focallocal.meteor.com if it's a push to `master` branch
+    * Deploy to http://gather.focallocal.org if it's a push to `master` branch
     * Deploy to http://focallocal-test.meteor.com if it's a push to `any other` branch
 The workflow is configured in `.travis.yml` and deployment is configured in the `expect` script `deploy.exp`
 
