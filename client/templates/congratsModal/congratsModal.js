@@ -12,12 +12,12 @@ Template.congratsModal.helpers({
 	shareOnFacebookLink: function(event) {
 		const prodFbApiKey = Meteor.settings.public.facebook.oauth_key;
 		var url = 'http://www.facebook.com/dialog/feed?app_id='+ prodFbApiKey +
-			'&link=http://focallocal.meteor.com' +
+			'&link=http://gather.focallocal.org' +
 			'&picture=http://www.lifewithcats.tv/wp-content/uploads/2013/07/xsdre.jpg' +
 			'&name=' + encodeURIComponent(event.name) +
 			'&caption=' + encodeURIComponent(event.category.name) +
 			'&description=' + encodeURIComponent(event.description) +
-			'&redirect_uri=http://focallocal.meteor.com' +
+			'&redirect_urihttp://gather.focallocal.org' +
 			'&display=popup';
 		return url;
 		//return 'https://www.facebook.com/sharer/sharer.php?&u=' + url;
