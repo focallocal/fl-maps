@@ -175,7 +175,7 @@ Events.attachSchema(new SimpleSchema({
     description: {
         type: String,
         label: 'Description',
-        max: 1000
+        max: 250
     },
     dateCreated: {
         type: Date,
