@@ -6,7 +6,7 @@ AutoForm.hooks({
             if (operation === "insert") {
                 Session.set("selected", result);
                 $('#congratsModal').openModal({
-                   dismissible: false
+                   dismissible: true
                  });
                 GAnalytics.event("Events","create");
             } else {
