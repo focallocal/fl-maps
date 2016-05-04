@@ -10,6 +10,7 @@ Events.before.insert(function(userId, doc) {
         }
     }
 });
+
 Events.attachSchema(new SimpleSchema({
     organiser: {
         type: Object,
@@ -153,6 +154,13 @@ Events.attachSchema(new SimpleSchema({
     dateEvent: {
         type: Date,
         label: 'Date of the event',
+        autoValue: function() {
+            if (this.isSet) {
+                var date = new Date(this.value);
+                var time = this.field('time').value;
+                return mergeDateTime(date, time);
+            }
+        },
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
@@ -163,7 +171,15 @@ Events.attachSchema(new SimpleSchema({
     },
     time: {
         type: String,
-        label: 'Hour'
+        label: 'Hour',
+        autoform: {
+            options: function () {
+                return getTimesArr().map(function (entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            firstOption: 'Pick a time!'
+        }
     },
     //optional links to social sites where the event is promoted
     'links.$.url': {
@@ -191,3 +207,23 @@ SimpleSchema.messages({
     "notFound address": "Address not found",
     "offline address": "Address not available, are you offline?"
 });
+
+function mergeDateTime(date, time) {
+    var hour = time.split(':')[0];
+    var minutes = time.split(':')[1];
+    date.setHours(hour);
+    date.setMinutes(minutes);
+    return date
+}
+
+//get array of times in 24h format
+function getTimesArr() {
+    var timeArr = [];
+    for (var hour = 0; hour < 24; ++hour) {
+        ['00', '30'].forEach(function (minutes) {
+            var time = hour + ':' + minutes;
+            timeArr.push(time)
+        });
+    }
+    return timeArr
+}
