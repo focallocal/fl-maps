@@ -42,7 +42,7 @@ Meteor.startup(function () {
         ,
         category: function () {
             var allCategories = Categories.find().fetch();
-            var randomIndex = _.random(0, allCategories.length);
+            var randomIndex = _.random(0, allCategories.length - 1);
             return allCategories[randomIndex];
         }
         ,
