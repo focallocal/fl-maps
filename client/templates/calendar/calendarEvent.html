@@ -4,10 +4,11 @@
             <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
             <span class="title">{{ category.name }}</span>
             <span class="badge"
-                  title="{{printDate dateEvent}}"> <strong>{{address}}</strong> {{printDateFromNow dateEvent}}</span>
+                  title="{{printDate dateEvent}}">  {{printDateFromNow dateEvent}}</span>
         </div>
         <div class="collapsible-body">
             <p>
+
                 <h5>
                     {{ name }}
                     {{#if url}}
@@ -17,11 +18,15 @@
                     {{/if}}
                 </h5>
                 {{description}}
+
+            </p>
+            <p class="badge">
+                <strong>{{address}}</strong>
             </p>
 
             <div>
                 {{> showMoreButton}}
-                <span class="badge">Organised by: <strong>{{organiser.name}}</strong></span>
+                <span class="badge organiser-hidden">Organised by: <strong>{{organiser.name}}</strong></span>
             </div>
         </div>
     </li>
