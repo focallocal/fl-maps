@@ -3,7 +3,7 @@
         <div class="collapsible-header">
             <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
             <span class="title">{{ category.name }}</span>
-            <span class="badge"
+            <span class="badge  hide-on-small-and-down"
                   title="{{printDate dateEvent}}">  {{printDateFromNow dateEvent}}</span>
         </div>
         <div class="collapsible-body">
@@ -26,7 +26,7 @@
 
             <div>
                 {{> showMoreButton}}
-                <span class="badge organiser-hidden">Organised by: <strong>{{organiser.name}}</strong></span>
+                <span class="badge hide-on-small-and-down">Organised by: <strong>{{organiser.name}}</strong></span>
             </div>
         </div>
     </li>
