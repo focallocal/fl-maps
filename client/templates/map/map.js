@@ -25,20 +25,23 @@ function PrepareLeafletMarker(leafletMarker, data) {
 };
 
 var initializeLeafletMap = function(element, zoom) {
-    var centroid = [48.28593, 16.30371];
+    var centroid = [17.31, 16.35];
     map = L.map(element, {
         scrollWheelZoom: true,
         doubleClickZoom: true,
         boxZoom: false,
         touchZoom: true,
-        fullscreenControl: true
+        fullscreenControl: true,
+        maxBounds: L.latLngBounds(L.latLng(80.9, 100.7), L.latLng(-100.3, -100.7)),
+        minZoom: 1.6
+
     }).setView(new L.LatLng(centroid[0], centroid[1]), zoom);
     //add prune cluster layers for each event category to allow filtering by category
     _.values(viewLayers).forEach(function (layer) {
         map.addLayer(layer)
     });
     addLegendControl();
-    
+
     map.on('popupopen', function(e) {
         GAnalytics.event("Events","open_popup");
         if (e.popup) {
@@ -51,7 +54,7 @@ var initializeLeafletMap = function(element, zoom) {
         '<a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; ' +
         'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         subdomains: 'abcd',
-        minZoom: 1,
+        minZoom:0.6,
         maxZoom: 16,
         opacity: 0.7
     });
@@ -78,21 +81,21 @@ var initializeLeafletMap = function(element, zoom) {
 };
 
 Template.map.viewmodel({
-  // centers map and open popup associated with selected marker
-  panTo: function() {
-    var eventId = Session.get('selected');
-    var event = Events.findOne(eventId);
-    if (event) {
-        map.panTo([event.coordinates.lat,event.coordinates.lng]);
-        setTimeout(function(){
-            map.setZoom(10);
-        }, 1000);
-        $('#map-container').trigger('click'); //set focus
-        setTimeout(function(){
-            $('#icon-' + eventId).trigger('click'); //TODO uncluster before clicking
-        }, 2000);
+    // centers map and open popup associated with selected marker
+    panTo: function() {
+        var eventId = Session.get('selected');
+        var event = Events.findOne(eventId);
+        if (event) {
+            map.panTo([event.coordinates.lat,event.coordinates.lng]);
+            setTimeout(function(){
+                map.setZoom(10);
+            }, 1000);
+            $('#map-container').trigger('click'); //set focus
+            setTimeout(function(){
+                $('#icon-' + eventId).trigger('click'); //TODO uncluster before clicking
+            }, 2000);
+        }
     }
-  }
 });
 
 Template.map.created = function() {
@@ -111,7 +114,7 @@ Template.map.rendered = function() {
     if (map) {
         $mapContainer.html(map.getContainer());
     } else {
-        initializeLeafletMap($mapCanvas[0], 3);
+        initializeLeafletMap($mapCanvas[0], 2.5);
         var self = this;
         Tracker.autorun(function () {
             animateMarkers(self);
@@ -234,3 +237,4 @@ function initNewEventButton() {
         $newEventBtn.trigger('mouseleave');
     })
 }
+
