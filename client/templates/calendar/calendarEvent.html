@@ -3,25 +3,30 @@
         <div class="collapsible-header">
             <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
             <span class="title">{{ category.name }}</span>
-            <span class="badge"
-                  title="{{printDate dateEvent}}"> <strong>{{address}}</strong> {{printDateFromNow dateEvent}}</span>
+            <span class="badge  hide-on-small-and-down"
+                  title="{{printDate dateEvent}}">  {{printDateFromNow dateEvent}}</span>
         </div>
         <div class="collapsible-body">
             <p>
-                <h5>
-                    {{ name }}
-                    {{#if url}}
-                        <a href="{{url}}" target="_blank" title="Go to the website!">
-                            <i class="mdi-action-open-in-browser small"></i>
-                        </a>
-                    {{/if}}
-                </h5>
-                {{description}}
+
+            <h5>
+                {{ name }}
+                {{#if url}}
+                    <a href="{{url}}" target="_blank" title="Go to the website!">
+                        <i class="mdi-action-open-in-browser small"></i>
+                    </a>
+                {{/if}}
+            </h5>
+            {{description}}
+
+            </p>
+            <p class="badge">
+                <strong>{{address}}</strong>
             </p>
 
             <div>
                 {{> showMoreButton}}
-                <span class="badge">Organised by: <strong>{{organiser.name}}</strong></span>
+                <span class="badge hide-on-small-and-down">Organised by: <strong>{{organiser.name}}</strong></span>
             </div>
         </div>
     </li>
