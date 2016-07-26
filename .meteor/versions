@@ -125,6 +125,7 @@ spacebars@1.0.12
 spacebars-compiler@1.0.12
 spiderable@1.0.13
 srp@1.0.9
+standard-minifier-js@1.0.8
 templating@1.1.14
 templating-tools@1.0.4
 tmeasday:paginated-subscription@0.2.4
