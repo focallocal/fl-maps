@@ -3,7 +3,6 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 accounts-password
 alanning:roles
 zimme:iron-router-active
@@ -38,9 +37,24 @@ aldeed:geocoder
 sergeyt:typeahead
 fortawesome:fontawesome
 spiderable
-bevanhunt:leaflet
+bevanhunt:leaflet@1.3.1
 prunecluster:prunecluster
 mordka:leaflet-extended-div-icon
 manuel:viewmodel
 datariot:ganalytics
 lookback:seo
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+jquery
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
+#standard-minifier-css
+standard-minifier-js
