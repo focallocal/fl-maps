@@ -13,6 +13,7 @@ aldeed:simple-schema@1.3.3
 aldeed:template-extension@3.4.3
 allow-deny@1.0.5
 anti:fake@0.4.1
+arillo:flow-router-helpers@0.5.2
 autoupdate@1.2.11
 babel-compiler@6.8.5
 babel-runtime@0.1.9_1
@@ -70,6 +71,8 @@ iron:middleware-stack@1.0.9
 iron:router@1.0.9
 iron:url@1.0.9
 jquery@1.11.9
+kadira:blaze-layout@2.3.0
+kadira:flow-router@2.12.1
 lai:collection-extensions@0.1.4
 lampe:rssfeed@0.1.1
 launch-screen@1.0.12
@@ -141,4 +144,5 @@ useraccounts:materialize@1.12.3
 webapp@1.2.11
 webapp-hashing@1.0.9
 yasinuslu:blaze-meta@0.3.1
+zimme:active-route@2.3.2
 zimme:iron-router-active@1.0.4

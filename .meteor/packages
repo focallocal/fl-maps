@@ -58,3 +58,6 @@ spacebars
 check
 #standard-minifier-css
 standard-minifier-js
+kadira:flow-router
+kadira:blaze-layout
+arillo:flow-router-helpers
