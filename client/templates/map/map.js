@@ -98,14 +98,16 @@ Template.map.viewmodel({
     }
 });
 
-Template.map.created = function() {
+Template.map.onCreated(function() {
+  this.subscribe('events')
+  this.subscribe('categories');
     Categories.find().fetch().forEach(function (category) {
         var clusterLayer = new PruneClusterForLeaflet();
         clusterLayer.PrepareLeafletMarker = PrepareLeafletMarker;
         viewLayers[category.name] = clusterLayer
     });
-};
-Template.map.rendered = function() {
+});
+Template.map.onRendered(function() {
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
     adjustMapHeightToWindowSize($mapCanvas);
@@ -133,7 +135,7 @@ Template.map.rendered = function() {
         });
     }
 
-};
+});
 
 var addMarker = function(event) {
     var marker = createMarker(event);
@@ -237,4 +239,3 @@ function initNewEventButton() {
         $newEventBtn.trigger('mouseleave');
     })
 }
-
