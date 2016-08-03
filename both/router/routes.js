@@ -21,7 +21,7 @@ FlowRouter.route('/events/new', {
 });
 
 FlowRouter.route('/events/map', {
-  name: 'events.form',
+  name: 'map',
   action: function() {
     BlazeLayout.render('appLayout', {main: 'map'});
   }
