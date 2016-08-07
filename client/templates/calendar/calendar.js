@@ -1,16 +1,20 @@
 Template.calendar.onCreated(function () {
     this.subscribe('events');
-    
+
 });
 
 Template.calendar.onRendered(function () {
-  this.$('.collapsible').collapsible({
-      accordion : true
-  });
+  setTimeout(function() {
+    this.$(".collapsible").collapsible({
+      accordion: false
+    });
+  }, 5000);
 });
+
 Template.calendar.helpers({
     upcomingEvents: function(){
       return Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}});
+
     },
     pastEvents: function(){
       return Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}})
