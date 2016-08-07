@@ -15,7 +15,6 @@ matb33:collection-hooks
 dburles:factory
 anti:fake
 cunneen:mailgun
-iron:router
 materialize:materialize
 useraccounts:materialize
 aldeed:collection2
