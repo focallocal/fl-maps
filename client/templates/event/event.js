@@ -1,3 +1,4 @@
+
 Template.event.helpers({
     eventId: function () {
         var controller = Iron.controller();
@@ -12,10 +13,3 @@ Template.event.events({
         history.back();
     }
 });
-
-Template.event.rendered = function() {
-    var initializeTabs = function initializeTabs() {
-        $('ul.tabs').tabs();
-    };
-    initializeTabs();
-};

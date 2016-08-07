@@ -21,12 +21,14 @@ AutoForm.hooks({
 });
 Template.eventsForm.onCreated(function() {
     this.debounce = null;
+    console.log('hear');
     this.subscribe('categories');
     this.setCoordinates = function (lat, lng) {
         var instance = Template.instance();
         instance.$('input[name="coordinates.lat"]').val(lat);
         instance.$('input[name="coordinates.lng"]').val(lng);
     };
+
 });
 Template.eventsForm.helpers({
     categories: function(){
@@ -88,6 +90,9 @@ Template.eventsForm.helpers({
 
 Template.eventsForm.onRendered(function () {
     Meteor.typeahead.inject();
+
+    this.$('input[name=address]').detach().insertBefore('.twitter-typeahead');
+    this.$('.twitter-typeahead').find('input[type=text]').remove();
     var copyCoordsFromSelectedEvent = function () {
         if (Session.get('isEdit')) {
             var selectedEvent = Events.findOne(Session.get('selected'));
