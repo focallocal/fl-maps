@@ -36,6 +36,7 @@ var initializeLeafletMap = function(element, zoom) {
         minZoom: 1.6
 
     }).setView(new L.LatLng(centroid[0], centroid[1]), zoom);
+
     //add prune cluster layers for each event category to allow filtering by category
     _.values(viewLayers).forEach(function (layer) {
         map.addLayer(layer)
@@ -59,6 +60,16 @@ var initializeLeafletMap = function(element, zoom) {
         opacity: 0.7
     });
     Stamen_Watercolor.addTo(map);
+
+    var StreetNamesLayer = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    });
+    StreetNamesLayer.addTo(map);
+
+    var TransportLayer = L.tileLayer('http://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    });
+    TransportLayer.addTo(map);
 
     function addLegendControl() {
         var controls = {};
@@ -98,14 +109,17 @@ Template.map.viewmodel({
     }
 });
 
-Template.map.created = function() {
+Template.map.onCreated(function() {
+  this.subscribe('events')
+  this.subscribe('categories');
     Categories.find().fetch().forEach(function (category) {
-        var clusterLayer = new PruneClusterForLeaflet();
-        clusterLayer.PrepareLeafletMarker = PrepareLeafletMarker;
-        viewLayers[category.name] = clusterLayer
+        // var clusterLayer = new PruneClusterForLeaflet();
+        // clusterLayer.PrepareLeafletMarker = PrepareLeafletMarker;
+        // viewLayers[category.name] = clusterLayer
+
     });
-};
-Template.map.rendered = function() {
+});
+Template.map.onRendered(function() {
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
     adjustMapHeightToWindowSize($mapCanvas);
@@ -114,26 +128,30 @@ Template.map.rendered = function() {
     if (map) {
         $mapContainer.html(map.getContainer());
     } else {
-        initializeLeafletMap($mapCanvas[0], 2.5);
         var self = this;
+
+        initializeLeafletMap($mapCanvas[0], 2.5);
         Tracker.autorun(function () {
             animateMarkers(self);
         });
-        this.data.events.observe({
-            added: function(event) {
-                addMarker(event);
-            },
-            changed: function(newEvent,oldEvent) {
-                removeMarker(oldEvent);
-                addMarker(newEvent);
-            },
-            removed: function(event) {
-                removeMarker(event);
-            }
-        });
+
+        if (this.data && this.data.events) {
+            this.data.events.observe({
+                added: function(event) {
+                    addMarker(event);
+                },
+                changed: function(newEvent,oldEvent) {
+                    removeMarker(oldEvent);
+                    addMarker(newEvent);
+                },
+                removed: function(event) {
+                    removeMarker(event);
+                }
+            });
+        }
     }
 
-};
+});
 
 var addMarker = function(event) {
     var marker = createMarker(event);
@@ -237,4 +255,3 @@ function initNewEventButton() {
         $newEventBtn.trigger('mouseleave');
     })
 }
-

@@ -1,23 +1,55 @@
-Router.route('/', {
-  name: 'home'
+FlowRouter.route('/', {
+  name: 'home',
+  action: function() {
+    BlazeLayout.render('appLayout', {main: 'home'});
+  }
 });
 
-Router.route('/events/list', {
+
+FlowRouter.route('/events/list', {
   name: 'calendar',
-  controller: 'CalendarController'
+  action: function() {
+    BlazeLayout.render('appLayout', {main: 'calendar'});
+  }
 });
 
-Router.route('/events/new', {
+FlowRouter.route('/events/new', {
   name: 'events.form',
-  controller: 'EventsNewController'
+  action: function() {
+    BlazeLayout.render('appLayout', {main: 'eventsForm'});
+  }
 });
 
-Router.route('/events/map', {
+FlowRouter.route('/events/map', {
   name: 'map',
-  controller: 'MapController'
+  action: function() {
+    BlazeLayout.render('appLayout', {main: 'map'});
+  }
 });
 
-Router.route('/events/:_id', {
-  name: 'event.show',
-  controller: 'EventController'
+FlowRouter.route('/events/:_id', {
+  name: 'eventById',
+  action: function() {
+    BlazeLayout.render('appLayout', {main: 'event'});
+  }
 });
+
+// Router.route('/events/list', {
+//   name: 'calendar',
+//   controller: 'CalendarController'
+// });
+
+// Router.route('/events/new', {
+//   name: 'events.form',
+//   controller: 'EventsNewController'
+// });
+//
+// Router.route('/events/map', {
+//   name: 'map',
+//   controller: 'MapController'
+// });
+//
+// Router.route('/events/:_id', {
+//   name: 'event.show',
+//   controller: 'EventController'
+// });

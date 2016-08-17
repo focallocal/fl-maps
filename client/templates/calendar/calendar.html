@@ -9,11 +9,12 @@
                 </div>
             </form>
         </div>
+        {{#if Template.subscriptionsReady}}
         <div class="row">
             <h2>Upcoming gathers</h2>
         </div>
         <div class="row">
-            {{#if notEmpty upcomingEvents}}
+            {{#if upcomingEvents}}
                 <ul class="collapsible popout">
                 {{#each upcomingEvents}}
                     {{> calendarEvent}}
@@ -32,7 +33,7 @@
             <h2>Past gathers</h2>
         </div>
         <div class="row">
-            {{#if notEmpty pastEvents}}
+            {{#if pastEvents}}
                 <ul class="collapsible popout">
                     {{#each pastEvents}}
                         {{> calendarEvent}}
@@ -46,5 +47,6 @@
                 </div>
             {{/if}}
         </div>
+        {{/if}}
     </div>
 </template>
