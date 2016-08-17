@@ -21,6 +21,7 @@ AutoForm.hooks({
 });
 Template.eventsForm.onCreated(function() {
     this.debounce = null;
+    this.subscribe('categories');
     this.setCoordinates = function (lat, lng) {
         var instance = Template.instance();
         instance.$('input[name="coordinates.lat"]').val(lat);
@@ -28,6 +29,9 @@ Template.eventsForm.onCreated(function() {
     };
 });
 Template.eventsForm.helpers({
+    categories: function(){
+      return Categories.find({});
+    },
     geocodeDataSource: function(query, sync, asyncCallback) {
         var instance = Template.instance();
         if (instance.debounce) {
@@ -82,7 +86,7 @@ Template.eventsForm.helpers({
     isEdit: function() { return Session.get('isEdit') }
 });
 
-Template.eventsForm.rendered = function() {
+Template.eventsForm.onRendered(function () {
     Meteor.typeahead.inject();
     var copyCoordsFromSelectedEvent = function () {
         if (Session.get('isEdit')) {
@@ -99,11 +103,11 @@ Template.eventsForm.rendered = function() {
     };
     //this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
     fixMaterializeActiveClassTrigger();
-};
+});
 
-Template.eventsForm.destroyed = function() {
+Template.eventsForm.onDestroyed(function () {
     var $typeahead = $('.typeahead');
     $typeahead.unbind();
     AutoForm.resetForm('events-form');
     $typeahead.typeahead('destroy');
-};
+});

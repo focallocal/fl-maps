@@ -1,6 +1,19 @@
+Template.calendar.onCreated(function () {
+    this.subscribe('events');
+    
+});
+
+Template.calendar.onRendered(function () {
+  this.$('.collapsible').collapsible({
+      accordion : true
+  });
+});
 Template.calendar.helpers({
-    notEmpty: function(data) {
-        return data && data.count() != 0;
+    upcomingEvents: function(){
+      return Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}});
+    },
+    pastEvents: function(){
+      return Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}})
     }
 });
 Template.calendar.events({
@@ -19,11 +32,8 @@ Template.calendar.events({
     'click .details-btn': function(event) {
         var eventId = event.currentTarget.dataset.id;
         GAnalytics.event("Events","open_event_calendar");
-        Router.go('event.show', {_id: eventId});
+        const params = {_id: eventId};
+        const path = FlowRouter.path("eventById", params);
+        Router.go(path);
     }
 });
-Template.calendar.rendered=function() {
-    $('.collapsible').collapsible({
-        accordion : true
-    });
-};
