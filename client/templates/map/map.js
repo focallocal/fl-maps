@@ -116,23 +116,27 @@ Template.map.onRendered(function() {
     if (map) {
         $mapContainer.html(map.getContainer());
     } else {
-        initializeLeafletMap($mapCanvas[0], 2.5);
         var self = this;
+
+        initializeLeafletMap($mapCanvas[0], 2.5);
         Tracker.autorun(function () {
             animateMarkers(self);
         });
-        this.data.events.observe({
-            added: function(event) {
-                addMarker(event);
-            },
-            changed: function(newEvent,oldEvent) {
-                removeMarker(oldEvent);
-                addMarker(newEvent);
-            },
-            removed: function(event) {
-                removeMarker(event);
-            }
-        });
+
+        if (this.data && this.data.events) {
+            this.data.events.observe({
+                added: function(event) {
+                    addMarker(event);
+                },
+                changed: function(newEvent,oldEvent) {
+                    removeMarker(oldEvent);
+                    addMarker(newEvent);
+                },
+                removed: function(event) {
+                    removeMarker(event);
+                }
+            });
+        }
     }
 
 });
