@@ -5,7 +5,6 @@
 
 accounts-password
 alanning:roles
-zimme:iron-router-active
 cmather:handlebars-server@0.2.0
 dburles:collection-helpers
 reywood:publish-composite
