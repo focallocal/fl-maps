@@ -57,7 +57,6 @@ google@1.1.13
 gwendall:session-json@0.1.7
 handlebars@1.0.7
 hot-code-push@1.0.4
-houston:admin@2.0.5
 html-tools@1.0.10
 htmljs@1.0.10
 http@1.1.8
@@ -131,7 +130,6 @@ srp@1.0.9
 standard-minifier-js@1.0.8
 templating@1.1.14
 templating-tools@1.0.4
-tmeasday:paginated-subscription@0.2.4
 tracker@1.0.15
 twitter@1.1.11
 ui@1.0.11

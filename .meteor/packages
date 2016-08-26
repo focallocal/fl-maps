@@ -29,7 +29,6 @@ accounts-meetup
 accounts-twitter
 accounts-facebook
 aldeed:template-extension
-houston:admin
 lampe:rssfeed
 useraccounts:iron-routing
 aldeed:geocoder
