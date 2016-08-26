@@ -29,7 +29,6 @@ accounts-twitter
 accounts-facebook
 aldeed:template-extension
 lampe:rssfeed
-useraccounts:iron-routing
 aldeed:geocoder
 sergeyt:typeahead
 fortawesome:fontawesome
@@ -59,3 +58,4 @@ kadira:flow-router
 kadira:blaze-layout
 arillo:flow-router-helpers
 reactive-var
+useraccounts:flow-routing

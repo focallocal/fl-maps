@@ -1,27 +1,11 @@
 AccountsTemplates.configureRoute('signIn',
     {
-        layoutTemplate: 'appLayout',
-        onAfterAction: function () {
-            GAnalytics.pageview("/login");
-        },
-        seo: {
-            title: function () {
-                return 'Login ';
-            }
-        }
+        layoutTemplate: 'appLayout'
     }
 );
 AccountsTemplates.configureRoute('signUp',
     {
-        layoutTemplate: 'appLayout',
-        onAfterAction: function () {
-            GAnalytics.pageview("/signup");
-        },
-        seo: {
-            title: function () {
-                return 'Register ';
-            }
-        }
+        layoutTemplate: 'appLayout'
     }
 );
 AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'});
