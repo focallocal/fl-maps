@@ -5,6 +5,14 @@ FlowRouter.route('/', {
   }
 });
 
+FlowRouter.route('/sign-in', {
+  name: 'signIn'
+});
+
+FlowRouter.route('/sign-up', {
+  name: 'signUp'
+});
+
 
 FlowRouter.route('/events/list', {
   name: 'calendar',

@@ -23,8 +23,8 @@
           {{#if currentUser}}
             <li><a href="#" data-action="logout">Sign Out</a></li>
           {{else}}
-            <li><a href="{{ pathFor 'atSignIn' }}">Log in</a></li>
-            <li><a href="{{ pathFor 'atSignUp' }}">Register</a></li>
+            <li><a href="{{ pathFor 'signIn' }}">Log in</a></li>
+            <li><a href="{{ pathFor 'signUp' }}">Register</a></li>
           {{/if}}
         </ul>
 
