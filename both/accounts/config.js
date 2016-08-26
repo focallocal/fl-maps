@@ -1,11 +1,17 @@
-AccountsTemplates.configureRoute('signIn',
-    {
-        layoutTemplate: 'appLayout'
-    }
-);
+AccountsTemplates.configureRoute('signIn', {
+    name: 'signin',
+    path: '/sign-in',
+    template: 'fullPageAtForm',
+    layoutTemplate: 'appLayout',
+    contentRegion: 'main'
+});
 AccountsTemplates.configureRoute('signUp',
     {
-        layoutTemplate: 'appLayout'
+      name: 'signin',
+      path: '/sign-up',
+      template: 'fullPageAtForm',
+      layoutTemplate: 'appLayout',
+      contentRegion: 'main'
     }
 );
 AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'});
