@@ -59,3 +59,4 @@ kadira:blaze-layout
 arillo:flow-router-helpers
 reactive-var
 useraccounts:flow-routing
+zimme:active-route
