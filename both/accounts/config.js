@@ -1,3 +1,5 @@
+AccountsTemplates.configure({showForgotPasswordLink:true});
+
 AccountsTemplates.configureRoute('signIn',
     {
         layoutTemplate: 'appLayout',
@@ -11,6 +13,36 @@ AccountsTemplates.configureRoute('signIn',
         }
     }
 );
+
+AccountsTemplates.configureRoute('forgotPwd',
+  {
+    layoutTemplate: 'appLayout',
+    onAfterAction: function () {
+        GAnalytics.pageview("/forgot-password");
+    },
+    seo: {
+        title: function () {
+            return 'Forgot Password ';
+        }
+    }
+}
+);
+
+AccountsTemplates.configureRoute('resetPwd',
+  {
+    layoutTemplate: 'appLayout',
+    onAfterAction: function () {
+        GAnalytics.pageview("/reset-password");
+    },
+    seo: {
+        title: function () {
+            return 'Reset Password ';
+        }
+    }
+}
+
+);
+
 AccountsTemplates.configureRoute('signUp',
     {
         layoutTemplate: 'appLayout',
