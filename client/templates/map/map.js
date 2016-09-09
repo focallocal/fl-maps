@@ -23,7 +23,7 @@ function PrepareLeafletMarker(leafletMarker, data) {
         leafletMarker.bindPopup(data.popup);
     }
 };
-
+//
 var initializeLeafletMap = function(element, zoom) {
     var centroid = [17.31, 16.35];
     map = L.map(element, {
@@ -98,18 +98,34 @@ Template.map.viewmodel({
     }
 });
 
-Template.map.created = function() {
-    Categories.find().fetch().forEach(function (category) {
-        var clusterLayer = new PruneClusterForLeaflet();
-        clusterLayer.PrepareLeafletMarker = PrepareLeafletMarker;
-        viewLayers[category.name] = clusterLayer
-    });
-};
-Template.map.rendered = function() {
+Template.map.onCreated(function() {
+  this.subscribe('events')
+  this.subscribe('categories');
+  var instance = this;
+      instance.categories = new ReactiveVar([]);
+      instance.allEvents = new ReactiveVar([]);
+
+
+        Tracker.autorun(function () {
+          instance.categories.get().forEach(function (category) {
+              var clusterLayer = new PruneClusterForLeaflet();
+              clusterLayer.PrepareLeafletMarker = PrepareLeafletMarker;
+              viewLayers[category.name] = clusterLayer
+          });
+
+        });
+
+
+
+});
+Template.map.onRendered(function() {
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
     adjustMapHeightToWindowSize($mapCanvas);
     initNewEventButton();
+
+
+
 
     if (map) {
         $mapContainer.html(map.getContainer());
@@ -118,8 +134,10 @@ Template.map.rendered = function() {
         var self = this;
         Tracker.autorun(function () {
             animateMarkers(self);
+
         });
-        this.data.events.observe({
+        var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
+        cursor.observe({
             added: function(event) {
                 addMarker(event);
             },
@@ -131,10 +149,22 @@ Template.map.rendered = function() {
                 removeMarker(event);
             }
         });
+
+
     }
 
-};
-
+});
+//
+//
+Template.map.helpers({
+  mapData: function(){
+    Template.instance().categories.set(Categories.find({}))
+    // Template.instance().allEvents.set(Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}));
+  }
+});
+//
+//
+//
 var addMarker = function(event) {
     var marker = createMarker(event);
     marker.category = event.category.name;
@@ -184,7 +214,7 @@ function createIcon(id,color) {
     });
     return icon;
 }
-
+//
 function animateMarkers(self) {
     var selectedEvent = Events.findOne(Session.get('selected'));
     if (selectedEvent) {
@@ -212,7 +242,7 @@ function animateMarkers(self) {
         }
     }
 }
-
+//
 function adjustMapHeightToWindowSize($mapCanvas) {
     $(window).resize(function () {
         var h = $(this).height(),
@@ -237,4 +267,3 @@ function initNewEventButton() {
         $newEventBtn.trigger('mouseleave');
     })
 }
-

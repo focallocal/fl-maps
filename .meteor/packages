@@ -5,7 +5,6 @@
 
 accounts-password
 alanning:roles
-zimme:iron-router-active
 cmather:handlebars-server@0.2.0
 dburles:collection-helpers
 reywood:publish-composite
@@ -15,7 +14,6 @@ matb33:collection-hooks
 dburles:factory
 anti:fake
 cunneen:mailgun
-iron:router
 materialize:materialize
 useraccounts:materialize
 aldeed:collection2
@@ -30,9 +28,7 @@ accounts-meetup
 accounts-twitter
 accounts-facebook
 aldeed:template-extension
-houston:admin
 lampe:rssfeed
-useraccounts:iron-routing
 aldeed:geocoder
 sergeyt:typeahead
 fortawesome:fontawesome
@@ -42,7 +38,6 @@ prunecluster:prunecluster
 mordka:leaflet-extended-div-icon
 manuel:viewmodel
 datariot:ganalytics
-lookback:seo
 meteor-base
 mobile-experience
 mongo
@@ -58,3 +53,9 @@ spacebars
 check
 #standard-minifier-css
 standard-minifier-js
+kadira:flow-router
+kadira:blaze-layout
+arillo:flow-router-helpers
+reactive-var
+useraccounts:flow-routing
+zimme:active-route
