@@ -1,27 +1,17 @@
-AccountsTemplates.configureRoute('signIn',
-    {
-        layoutTemplate: 'appLayout',
-        onAfterAction: function () {
-            GAnalytics.pageview("/login");
-        },
-        seo: {
-            title: function () {
-                return 'Login ';
-            }
-        }
-    }
-);
+AccountsTemplates.configureRoute('signIn', {
+    name: 'signin',
+    path: '/sign-in',
+    template: 'fullPageAtForm',
+    layoutTemplate: 'appLayout',
+    contentRegion: 'main'
+});
 AccountsTemplates.configureRoute('signUp',
     {
-        layoutTemplate: 'appLayout',
-        onAfterAction: function () {
-            GAnalytics.pageview("/signup");
-        },
-        seo: {
-            title: function () {
-                return 'Register ';
-            }
-        }
+      name: 'signin',
+      path: '/sign-up',
+      template: 'fullPageAtForm',
+      layoutTemplate: 'appLayout',
+      contentRegion: 'main'
     }
 );
 AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'});

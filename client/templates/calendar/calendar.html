@@ -9,30 +9,31 @@
                 </div>
             </form>
         </div>
+        {{#if Template.subscriptionsReady}}
         <div class="row">
             <h2>Upcoming gathers</h2>
         </div>
         <div class="row">
-            {{#if notEmpty upcomingEvents}}
+            <!-- {{#if upcomingEvents}} -->
                 <ul class="collapsible popout">
                 {{#each upcomingEvents}}
                     {{> calendarEvent}}
                 {{/each}}
                 </ul>
-            {{else}}
+            <!-- {{else}} -->
                 <div>
                     <h5 class="center-align">
                         No upcoming events :( Please add one!
                     </h5>
                 </div>
-            {{/if}}
+            <!-- {{/if}} -->
         </div>
 
         <div class="row">
             <h2>Past gathers</h2>
         </div>
         <div class="row">
-            {{#if notEmpty pastEvents}}
+            {{#if pastEvents}}
                 <ul class="collapsible popout">
                     {{#each pastEvents}}
                         {{> calendarEvent}}
@@ -46,5 +47,6 @@
                 </div>
             {{/if}}
         </div>
+        {{/if}}
     </div>
 </template>
