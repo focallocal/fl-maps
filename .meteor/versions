@@ -61,14 +61,6 @@ html-tools@1.0.10
 htmljs@1.0.10
 http@1.1.8
 id-map@1.0.8
-iron:controller@1.0.8
-iron:core@1.0.8
-iron:dynamic-template@1.0.8
-iron:layout@1.0.8
-iron:location@1.0.9
-iron:middleware-stack@1.0.9
-iron:router@1.0.9
-iron:url@1.0.9
 jquery@1.11.9
 kadira:blaze-layout@2.3.0
 kadira:flow-router@2.12.1
@@ -78,7 +70,6 @@ launch-screen@1.0.12
 livedata@1.0.18
 localstorage@1.0.11
 logging@1.0.14
-lookback:seo@1.1.0
 manuel:isdev@1.0.0
 manuel:reactivearray@1.0.5
 manuel:viewmodel@1.9.12
@@ -140,5 +131,4 @@ useraccounts:flow-routing@1.12.3
 useraccounts:materialize@1.12.3
 webapp@1.2.11
 webapp-hashing@1.0.9
-yasinuslu:blaze-meta@0.3.1
 zimme:active-route@2.3.2
