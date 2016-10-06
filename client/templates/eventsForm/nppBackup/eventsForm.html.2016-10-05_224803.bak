@@ -1,0 +1,28 @@
+<template name="eventsForm">
+
+    <div class="card-panel">
+    {{#if isEdit}}
+      {{#if Template.subscriptionsReady}}
+        <h5>Edit gather</h5>
+        {{> quickForm1 collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
+      {{/if}}
+    {{else}}
+        <div class="row">
+            <div class="col">
+                <h5>New gather</h5>
+            </div>
+            <div class="col">
+                <span class="grey-text right-align">Need help?
+                <a target="_blank"
+                   href="http://focallocal.org/how-to-create-a-positive-social-action-activity">
+                    Read our guide!</a>
+                </span>
+            </div>
+        </div>
+        {{#if Template.subscriptionsReady}}
+          {{> quickForm1 collection="Events" id="events-form" omitFields='links' type="insert"}}
+        {{/if}}
+    {{/if}}
+
+    </div>
+</template>

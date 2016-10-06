@@ -84,7 +84,7 @@ Template.eventsForm.helpers({
         }
 
     },
-    selectedEventDoc: function() { return Events.findOne(Session.get('selected'));},
+    selectedEventDoc: function() { return Events.findOne(Session.get('selected')); },
     isEdit: function() { return Session.get('isEdit') }
 });
 
