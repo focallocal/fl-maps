@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mordka/fl-events.svg?branch=master)](https://travis-ci.org/mordka/fl-events)
+[![Build Status](https://travis-ci.org/focallocal/fl-maps.svg?branch=master)](https://travis-ci.org/focallocal/fl-maps)
 Focallocal events 
 ====================
 *Because organising social events should as simple as ordering pizza.*
@@ -23,7 +23,7 @@ Install Meteor
 
 Clone the project repository
 
-    git clone https://github.com/mordka/fl-events.git
+    git clone https://github.com/focallocal/fl-maps.git
     cd fl-events
     
 #### Running 
@@ -64,8 +64,8 @@ Additionally, it's essential to set up cloud based testing solution, to run func
 
 Continuous integration
 ----------------------------
-We have [Travis build](https://travis-ci.org/mordka/fl-events) in place which monitors this repository. 
-Every commit & push results in a new buildbeingg triggered. 
+We have [Travis build](https://travis-ci.org/focallocal/fl-maps) in place which monitors this repository. 
+Every **commit to master** branch results in a new build being triggered. 
 The point is to achieve continuous delivery which means 
 
 1. Building - with the latest meteor 
