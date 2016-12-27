@@ -9,6 +9,17 @@
                 </div>
             </form>
         </div>
+        <div class="row">
+            <div class="col s12 l6" id="gather-filter-container">
+                <button class="btn" id="gather-filter-btn">ADD Filter</button>
+                {{#each filters}}
+                    <div class="added-gather-filter orange orange-dark">
+                		{{this}}
+                		<button class="remove-gather-filter"><i class="mdi-content-add"></i></button>
+                	</div>
+                {{/each}}
+            </div>
+        </div>
         {{#if Template.subscriptionsReady}}
         <div class="row">
             <h2>Upcoming gathers</h2>
