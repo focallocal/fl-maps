@@ -1,6 +1,7 @@
 Template.calendar.onCreated(function () {
     this.subscribe('events');
-    Session.setDefault("filters", []);
+
+    this.filters = new ReactiveVar([]);
 });
 
 Template.calendar.onRendered(function () {
@@ -12,15 +13,29 @@ Template.calendar.onRendered(function () {
 });
 
 Template.calendar.helpers({
-    upcomingEvents: function(){
-      return Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}});
+    upcomingEvents: function() {
+      var events = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}}).fetch();
 
+      // Filter Events
+      var filters = Template.instance().filters.get();
+      if (filters.length > 0) {
+        filters.forEach(function(f) {
+          for (var i = events.length - 1; i >= 0; i--) {
+            var address = events[i].address.toLowerCase();
+            if (address.indexOf(f.toLowerCase()) === -1) {
+              events.splice(i, 1);
+            }
+          }
+        });
+      }
+
+      return events;
     },
     pastEvents: function(){
       return Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}})
     },
     filters: function() {
-      return Session.get('filters');
+      return Template.instance().filters.get();
     }
 });
 Template.calendar.events({
@@ -46,25 +61,21 @@ Template.calendar.events({
         const path = FlowRouter.path("eventById", params);
         Router.go(path);
     },
-    'click #gather-filter-btn': function(event) {
-        var $search = $("#search");
-        var filter = $search.val()
-        var filters = Session.get("filters");
+    'click #gather-filter-btn': function(event, template) {
+        var $search = $('#search');
+        var filter = $search.val();
+        var filters = template.filters.get();
 
         if (filter.length > 0 && filters.indexOf(filter) === -1) {
           filters.push(filter);
-          Session.set("filters", filters);
+          template.filters.set(filters);
           $search.val('');
-          // 
-          // var events = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}});
-          //
-          // console.log(events);
         }
     },
-    'click .remove-gather-filter': function(event) {
+    'click .remove-gather-filter': function(event, template) {
         var tag = $(event.currentTarget).parent().text();
-        var filters = Session.get('filters');
+        var filters = template.filters.get()
         filters.splice(filters.indexOf(tag.trim()), 1);
-        Session.set("filters", filters);
+        template.filters.set(filters);
     }
 });
