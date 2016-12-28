@@ -9,24 +9,35 @@
                 </div>
             </form>
         </div>
+        <div class="row">
+            <div class="col s12 l6" id="gather-filter-container">
+                <button class="btn" id="gather-filter-btn">ADD Filter</button>
+                {{#each filters}}
+                    <div class="added-gather-filter orange darken-4">
+                		{{this}}
+                		<button class="remove-gather-filter">&#x2715;</button>
+                	</div>
+                {{/each}}
+            </div>
+        </div>
         {{#if Template.subscriptionsReady}}
         <div class="row">
             <h2>Upcoming gathers</h2>
         </div>
         <div class="row">
-            <!-- {{#if upcomingEvents}} -->
+            {{#if upcomingEvents}}
                 <ul class="collapsible popout">
                 {{#each upcomingEvents}}
                     {{> calendarEvent}}
                 {{/each}}
                 </ul>
-            <!-- {{else}} -->
+            {{else}}
                 <div>
                     <h5 class="center-align">
                         No upcoming events :( Please add one!
                     </h5>
                 </div>
-            <!-- {{/if}} -->
+            {{/if}}
         </div>
 
         <div class="row">
