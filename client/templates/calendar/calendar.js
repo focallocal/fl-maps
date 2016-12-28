@@ -12,21 +12,33 @@ Template.calendar.onRendered(function () {
   }, 5000);
 });
 
+// General Functions
+function filterEvents(events, filters) {
+  filters.forEach(function(f) {
+    for (var i = events.length - 1; i >= 0; i--) {
+      var event = events[i];
+      var searchBase = event.address +
+                      event.organiser +
+                      event.meetingPoint +
+                      event.description +
+                      event.category.name;
+
+      if (searchBase.toLowerCase().indexOf(f.toLowerCase()) === -1) {
+        events.splice(i, 1);
+      }
+    }
+  });
+  return events;
+}
+
 Template.calendar.helpers({
     upcomingEvents: function() {
       var events = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}}).fetch();
 
-      // Filter Events
       var filters = Template.instance().filters.get();
+
       if (filters.length > 0) {
-        filters.forEach(function(f) {
-          for (var i = events.length - 1; i >= 0; i--) {
-            var address = events[i].address.toLowerCase();
-            if (address.indexOf(f.toLowerCase()) === -1) {
-              events.splice(i, 1);
-            }
-          }
-        });
+        return filterEvents(events, filters);
       }
 
       return events;
@@ -34,17 +46,10 @@ Template.calendar.helpers({
     pastEvents: function(){
       var events = Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}}).fetch();
 
-      // Filter Events
       var filters = Template.instance().filters.get();
+
       if (filters.length > 0) {
-        filters.forEach(function(f) {
-          for (var i = events.length - 1; i >= 0; i--) {
-            var address = events[i].address.toLowerCase();
-            if (address.indexOf(f.toLowerCase()) === -1) {
-              events.splice(i, 1);
-            }
-          }
-        });
+        return filterEvents(events, filters);
       }
 
       return events;
