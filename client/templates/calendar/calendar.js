@@ -32,7 +32,22 @@ Template.calendar.helpers({
       return events;
     },
     pastEvents: function(){
-      return Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}})
+      var events = Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}}).fetch();
+
+      // Filter Events
+      var filters = Template.instance().filters.get();
+      if (filters.length > 0) {
+        filters.forEach(function(f) {
+          for (var i = events.length - 1; i >= 0; i--) {
+            var address = events[i].address.toLowerCase();
+            if (address.indexOf(f.toLowerCase()) === -1) {
+              events.splice(i, 1);
+            }
+          }
+        });
+      }
+
+      return events;
     },
     filters: function() {
       return Template.instance().filters.get();
@@ -69,7 +84,9 @@ Template.calendar.events({
         if (filter.length > 0 && filters.indexOf(filter) === -1) {
           filters.push(filter);
           template.filters.set(filters);
-          $search.val('');
+          $search.val('')
+                .trigger('keyup')
+                .focusout();
         }
     },
     'click .remove-gather-filter': function(event, template) {
