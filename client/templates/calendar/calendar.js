@@ -28,6 +28,12 @@ function filterEvents(events, filters) {
       }
     }
   });
+  // Fixes unresponsive events in the calendar
+  setTimeout(function() {
+    this.$(".collapsible").collapsible({
+      accordion: false
+    });
+  }, 5000);
   return events;
 }
 
@@ -107,9 +113,11 @@ Template.calendar.events({
         }
     },
     'click .remove-gather-filter': function(event, template) {
-        var tag = $(event.currentTarget).parent().text();
-        var filters = template.filters.get()
-        filters.splice(filters.indexOf(tag.trim()), 1);
+        var tag = $(event.currentTarget).parent().text().trim();
+        tag = tag.substring(0, tag.length - 2).trim();
+        var filters = template.filters.get();
+        
+        filters.splice(filters.indexOf(tag), 1);
         template.filters.set(filters);
     }
 });
