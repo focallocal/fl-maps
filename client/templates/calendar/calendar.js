@@ -39,6 +39,12 @@ Template.calendar.helpers({
 
       if (filters.length > 0) {
         return filterEvents(events, filters);
+      } else {
+        setTimeout(function() {
+          this.$(".collapsible").collapsible({
+            accordion: false
+          });
+        }, 5000);
       }
 
       return events;
@@ -50,6 +56,12 @@ Template.calendar.helpers({
 
       if (filters.length > 0) {
         return filterEvents(events, filters);
+      } else {
+        setTimeout(function() {
+          this.$(".collapsible").collapsible({
+            accordion: false
+          });
+        }, 5000);
       }
 
       return events;
