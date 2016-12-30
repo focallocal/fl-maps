@@ -19,8 +19,14 @@ AutoForm.hooks({
         }
     }
 });
+
+// Fix for geocodeDataSource (It doesen't have access to Template.instance())
+var templateInstance = null;
+//
+
 Template.eventsForm.onCreated(function() {
     this.debounce = null;
+    templateInstance = Template.instance();
     console.log('hear');
     this.subscribe('categories');
     this.setCoordinates = function (lat, lng) {
@@ -30,12 +36,13 @@ Template.eventsForm.onCreated(function() {
     };
 
 });
+
 Template.eventsForm.helpers({
     categories: function(){
-      return Categories.find({});
+        return Categories.find({});
     },
-    geocodeDataSource: function(query, sync, asyncCallback) {
-        var instance = Template.instance();
+    geocodeDataSource: function(query, sync, asyncCallback, template) {
+        var instance = templateInstance;
         if (instance.debounce) {
             Meteor.clearTimeout(instance.debounce);
         }
