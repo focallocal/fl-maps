@@ -41,7 +41,7 @@ Template.eventsForm.helpers({
     categories: function(){
         return Categories.find({});
     },
-    geocodeDataSource: function(query, sync, asyncCallback, template) {
+    geocodeDataSource: function(query, sync, asyncCallback) {
         var instance = templateInstance;
         if (instance.debounce) {
             Meteor.clearTimeout(instance.debounce);
@@ -95,7 +95,7 @@ Template.eventsForm.helpers({
     isEdit: function() { return Session.get('isEdit') }
 });
 
-Template.eventsForm.onRendered(function () {
+Template.autoForm.onRendered(function () {
     Meteor.typeahead.inject();
 
     this.$('input[name=address]').detach().insertBefore('.twitter-typeahead');
