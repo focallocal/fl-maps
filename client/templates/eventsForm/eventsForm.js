@@ -27,6 +27,7 @@ var templateInstance = null;
 Template.eventsForm.onCreated(function() {
     this.debounce = null;
     templateInstance = Template.instance();
+    this.autocompleteMapData = new ReactiveVar([], false);
     console.log('hear');
     this.subscribe('categories');
     this.setCoordinates = function (lat, lng) {
@@ -37,54 +38,62 @@ Template.eventsForm.onCreated(function() {
 
 });
 
+function fetchTypeaheadData(query, instance) {
+    if (query === undefined) {
+        instance.autocompleteMapData.set([]);
+    }
+    if (instance.debounce) {
+        Meteor.clearTimeout(instance.debounce);
+    }
+    const debounceDelay = 500; //wait half a second before triggering search
+    instance.debounce = Meteor.setTimeout(function() {
+        Meteor.call('getCoords', query, function (error, result) {
+            console.info("Query: " + query);
+            var mapResultToDisplay = function () {
+                var isCity = function(element, index) {
+                    return element.city!=null
+                };
+                return result.filter(isCity).map(function (v) {
+                        console.info("Response: " + JSON.stringify(v));
+                        var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
+                        var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
+                        var city  = _.isNull(v.city) ? '' : v.city + ', ';
+                        var state  = _.isNull(v.state) ? '' : v.state + ', ';
+                        return {
+                            value: streetName + streetNumber + city + state + v.country,
+                            lat: v.latitude,
+                            lng: v.longitude
+                        };
+                    }
+                );
+            };
+
+            if (error != undefined) {
+                console.error(error);
+                Events.simpleSchema().namedContext("events-form").addInvalidKeys([{
+                    name: "address",
+                    type: "offline"
+                }]);
+            } else {
+                instance.autocompleteMapData.set(mapResultToDisplay());
+                // Force typeahead to update dataSource
+                Meteor.typeahead.inject();
+            }
+        });
+    }, debounceDelay);
+}
+
 Template.eventsForm.helpers({
     categories: function(){
         return Categories.find({});
     },
-    geocodeDataSource: function(query, sync, asyncCallback) {
-        var instance = templateInstance;
-        if (instance.debounce) {
-            Meteor.clearTimeout(instance.debounce);
-        }
-        const debounceDelay = 500; //wait half a second before triggering search
-        instance.debounce = Meteor.setTimeout(function() {
-            Meteor.call('getCoords', query, function (error, result) {
-                console.info("Query: " + query);
-                var mapResultToDisplay = function () {
-                    var isCity = function(element, index) {
-                        return element.city!=null
-                    };
-                    return result.filter(isCity).map(function (v) {
-                            console.info("Response: " + JSON.stringify(v));
-                            var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
-                            var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
-                            var city  = _.isNull(v.city) ? '' : v.city + ', ';
-                            var state  = _.isNull(v.state) ? '' : v.state + ', ';
-                            return {
-                                value: streetName + streetNumber + city + state + v.country,
-                                lat: v.latitude,
-                                lng: v.longitude
-                            };
-                        }
-                    );
-                };
-
-                if (error != undefined) {
-                    console.error(error);
-                    Events.simpleSchema().namedContext("events-form").addInvalidKeys([{
-                        name: "address",
-                        type: "offline"
-                    }]);
-                } else {
-                    asyncCallback(mapResultToDisplay());
-                }
-            });
-        }, debounceDelay);
+    geocodeDataSource: function() {
+        return templateInstance.autocompleteMapData.get();
     },
     selectedHandler: function (event, suggestion, datasetName) {
         var coordsDefined = !_.isUndefined(suggestion.lat) && !_.isUndefined(suggestion.lng);
         if (coordsDefined) {
-            Template.instance().setCoordinates(suggestion.lat,suggestion.lng);
+            templateInstance.setCoordinates(suggestion.lat,suggestion.lng);
             AutoForm.validateField('events-form', 'coordinates', false); //remove potential validation error
         } else {
             throw Meteor.Error('cords-undefined', 'Coordinates are empty for the selected location');
@@ -115,6 +124,10 @@ Template.autoForm.onRendered(function () {
     };
     //this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
     fixMaterializeActiveClassTrigger();
+
+    $('input[name=address]').on('input', function() {
+        fetchTypeaheadData($(this).val(), templateInstance);
+    });
 });
 
 Template.eventsForm.onDestroyed(function () {
