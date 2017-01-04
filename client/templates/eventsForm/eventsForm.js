@@ -39,8 +39,9 @@ Template.eventsForm.onCreated(function() {
 });
 
 function fetchTypeaheadData(query, instance) {
-    if (query === undefined) {
+    if (_.isUndefined(query) || query.length < 3) {
         instance.autocompleteMapData.set([]);
+        return;
     }
     if (instance.debounce) {
         Meteor.clearTimeout(instance.debounce);
@@ -75,9 +76,9 @@ function fetchTypeaheadData(query, instance) {
                     type: "offline"
                 }]);
             } else {
-                instance.autocompleteMapData.set(mapResultToDisplay());
-                // Force typeahead to update dataSource
-                Meteor.typeahead.inject();
+                var result = mapResultToDisplay();
+                console.info(result);
+                instance.autocompleteMapData.set(result);
             }
         });
     }, debounceDelay);
@@ -126,6 +127,9 @@ Template.autoForm.onRendered(function () {
     fixMaterializeActiveClassTrigger();
 
     $('input[name=address]').on('input', function() {
+        // Force typeahead to display results
+        $('.typeahead').focus();
+        // Update results from user input
         fetchTypeaheadData($(this).val(), templateInstance);
     });
 });
