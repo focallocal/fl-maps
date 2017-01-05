@@ -88,7 +88,7 @@ Events.attachSchema(new SimpleSchema({
                 'data-min-length': "3",
                 'data-autoselect': "true",
                 'data-highlight': "true",
-                'data-selected': "selectedHandler"
+                'data-select': "selectedHandler"
             }
         },
         //@TODO could be nice if we could validate ONLY this field on blur, this could save API usage

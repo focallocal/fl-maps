@@ -19,8 +19,10 @@ AutoForm.hooks({
         }
     }
 });
+
 Template.eventsForm.onCreated(function() {
     this.debounce = null;
+    this.autocompleteMapData = new ReactiveVar([], false);
     console.log('hear');
     this.subscribe('categories');
     this.setCoordinates = function (lat, lng) {
@@ -30,9 +32,10 @@ Template.eventsForm.onCreated(function() {
     };
 
 });
+
 Template.eventsForm.helpers({
     categories: function(){
-      return Categories.find({});
+        return Categories.find({});
     },
     geocodeDataSource: function(query, sync, asyncCallback) {
         var instance = Template.instance();
@@ -75,6 +78,7 @@ Template.eventsForm.helpers({
         }, debounceDelay);
     },
     selectedHandler: function (event, suggestion, datasetName) {
+        console.log("Setting the coords!!");
         var coordsDefined = !_.isUndefined(suggestion.lat) && !_.isUndefined(suggestion.lng);
         if (coordsDefined) {
             Template.instance().setCoordinates(suggestion.lat,suggestion.lng);
@@ -88,7 +92,7 @@ Template.eventsForm.helpers({
     isEdit: function() { return Session.get('isEdit') }
 });
 
-Template.eventsForm.onRendered(function () {
+Template.autoForm.onRendered(function () {
     Meteor.typeahead.inject();
 
     this.$('input[name=address]').detach().insertBefore('.twitter-typeahead');
