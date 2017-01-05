@@ -78,9 +78,10 @@ Template.eventsForm.helpers({
         }, debounceDelay);
     },
     selectedHandler: function (event, suggestion, datasetName) {
+        console.log("Setting the coords!!");
         var coordsDefined = !_.isUndefined(suggestion.lat) && !_.isUndefined(suggestion.lng);
         if (coordsDefined) {
-            templateInstance.setCoordinates(suggestion.lat,suggestion.lng);
+            Template.instance().setCoordinates(suggestion.lat,suggestion.lng);
             AutoForm.validateField('events-form', 'coordinates', false); //remove potential validation error
         } else {
             throw Meteor.Error('cords-undefined', 'Coordinates are empty for the selected location');
