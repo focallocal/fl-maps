@@ -107,25 +107,33 @@ Template.map.onCreated(function() {
 
 
         Tracker.autorun(function () {
+          var looped = false;
           instance.categories.get().forEach(function (category) {
               var clusterLayer = new PruneClusterForLeaflet();
               clusterLayer.PrepareLeafletMarker = PrepareLeafletMarker;
               viewLayers[category.name] = clusterLayer
+              if (!looped) {
+                  looped = true;
+              }
           });
+          if (looped === true) {
+              console.log(instance.categories.get());
+              startMap();
+          }
 
         });
 
 
 
 });
-Template.map.onRendered(function() {
+
+function startMap() {
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
     adjustMapHeightToWindowSize($mapCanvas);
     initNewEventButton();
 
-
-
+    console.log(markers);
 
     if (map) {
         $mapContainer.html(map.getContainer());
@@ -149,16 +157,21 @@ Template.map.onRendered(function() {
                 removeMarker(event);
             }
         });
-
-
     }
+}
 
+Template.map.onRendered(function() {
+
+    if (_.isEmpty(Template.instance().categories.get())) {
+        return;
+    }
+    startMap();
 });
 //
 //
 Template.map.helpers({
   mapData: function(){
-    Template.instance().categories.set(Categories.find({}))
+    Template.instance().categories.set(Categories.find({}));
     // Template.instance().allEvents.set(Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}));
   }
 });
