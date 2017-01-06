@@ -117,7 +117,6 @@ Template.map.onCreated(function() {
               }
           });
           if (looped === true) {
-              console.log(instance.categories.get());
               startMap();
           }
 
@@ -132,8 +131,6 @@ function startMap() {
     var $mapContainer = $('#map-container');
     adjustMapHeightToWindowSize($mapCanvas);
     initNewEventButton();
-
-    console.log(markers);
 
     if (map) {
         $mapContainer.html(map.getContainer());
