@@ -159,10 +159,6 @@ function startMap() {
 
 Template.map.onRendered(function() {
 
-    if (_.isEmpty(Template.instance().categories.get())) {
-        return;
-    }
-    startMap();
 });
 //
 //
