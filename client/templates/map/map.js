@@ -127,6 +127,7 @@ Template.map.onCreated(function() {
 });
 
 function startMap() {
+
     var $mapCanvas = $('#map-canvas');
     var $mapContainer = $('#map-container');
     adjustMapHeightToWindowSize($mapCanvas);
@@ -139,22 +140,21 @@ function startMap() {
         var self = this;
         Tracker.autorun(function () {
             animateMarkers(self);
-
-        });
-        var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
-        cursor.observe({
-            added: function(event) {
-                addMarker(event);
-            },
-            changed: function(newEvent,oldEvent) {
-                removeMarker(oldEvent);
-                addMarker(newEvent);
-            },
-            removed: function(event) {
-                removeMarker(event);
-            }
         });
     }
+    var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
+    cursor.observe({
+        added: function(event) {
+            addMarker(event);
+        },
+        changed: function(newEvent, oldEvent) {
+            removeMarker(oldEvent);
+            addMarker(newEvent);
+        },
+        removed: function(event) {
+            removeMarker(event);
+        }
+    });
 }
 
 Template.map.onRendered(function() {
@@ -273,3 +273,8 @@ function initNewEventButton() {
         $newEventBtn.trigger('mouseleave');
     })
 }
+
+Template.map.onDestroyed(function() {
+    viewLayers = {};
+    markers = {};
+});
