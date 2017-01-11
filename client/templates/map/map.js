@@ -138,23 +138,23 @@ function startMap() {
     } else {
         initializeLeafletMap($mapCanvas[0], 2.5);
         var self = this;
-        var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
-        cursor.observe({
-            added: function(event) {
-                addMarker(event);
-            },
-            changed: function(newEvent, oldEvent) {
-                removeMarker(oldEvent);
-                addMarker(newEvent);
-            },
-            removed: function(event) {
-                removeMarker(event);
-            }
-        });
         Tracker.autorun(function () {
             animateMarkers(self);
         });
     }
+    var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
+    cursor.observe({
+        added: function(event) {
+            addMarker(event);
+        },
+        changed: function(newEvent, oldEvent) {
+            removeMarker(oldEvent);
+            addMarker(newEvent);
+        },
+        removed: function(event) {
+            removeMarker(event);
+        }
+    });
 }
 
 Template.map.onRendered(function() {
