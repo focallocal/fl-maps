@@ -78,7 +78,6 @@ Template.eventsForm.helpers({
         }, debounceDelay);
     },
     selectedHandler: function (event, suggestion, datasetName) {
-        console.log("Setting the coords!!");
         var coordsDefined = !_.isUndefined(suggestion.lat) && !_.isUndefined(suggestion.lng);
         if (coordsDefined) {
             Template.instance().setCoordinates(suggestion.lat,suggestion.lng);
