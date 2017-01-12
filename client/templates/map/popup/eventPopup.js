@@ -17,7 +17,9 @@ Template.eventPopup.onCreated=function() {
     $('.details-btn','#eventPopup').click(function() {
         var eventId = Session.get('selected');
         GAnalytics.event("Events","open_event_popup");
-        Router.go('event.show', {_id: eventId});
+        const params = {_id: eventId};
+        const path = FlowRouter.path("eventById", params);
+        FlowRouter.go(path);
     });
 
     //Open modal asking to delete event
