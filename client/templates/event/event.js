@@ -1,9 +1,12 @@
+Template.event.onCreated(function() {
+    this.subscribe('events');
+});
 
 Template.event.helpers({
-    eventId: function () {
-        var controller = Iron.controller();
-        // reactively return the value of eventId
-        return controller.state.get('eventId');
+    selectedEvent: function () {
+        const eventId = FlowRouter.current().params._id;
+        const event = Events.find({_id: eventId}).fetch()[0];
+        return event;
     }
 
 });
