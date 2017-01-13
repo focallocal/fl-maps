@@ -219,7 +219,7 @@ function mergeDateTime(date, time) {
 //get array of times in 24h format
 function getTimesArr() {
     var timeArr = [];
-    for (var hour = 0; hour < 24; ++hour) {
+    for (var hour = 8; hour < 24; ++hour) {
         ['00', '30'].forEach(function (minutes) {
             var time = hour + ':' + minutes;
             timeArr.push(time)
