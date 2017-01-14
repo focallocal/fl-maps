@@ -8,9 +8,9 @@
         </div>
         <div class="col s12 m8">
             <div class="card">
-                <div class="card-image event-image" style="background-color: {{category.color}};">
+                <div class="card-image event-image" style="background-color: {{selectedEvent.category.color}};">
                     <!--<img src="/images/field_web.jpg">-->
-                    <span class="card-title">{{category.name}}</span>
+                    <span class="card-title">{{selectedEvent.category.name}}</span>
                 </div>
                 <div class="card-content no-padding">
                     <ul class="tabs">
@@ -29,16 +29,16 @@
 
             <div class="row">
                 <div id="scope1" class="col s12">
-                    {{> eventAbout}}
+                    {{> eventAbout selectedEvent}}
                 </div>
                 <div id="scope2" class="col s12">
-                    {{> eventPhotos}}
+                    {{> eventPhotos selectedEvent}}
                 </div>
                 <div id="scope3" class="col s12">
-                    {{> eventVideos}}
+                    {{> eventVideos selectedEvent}}
                 </div>
                 <div id="scope4" class="col s12">
-                    {{> eventComments}}
+                    {{> eventComments selectedEvent}}
                 </div>
             </div>
 

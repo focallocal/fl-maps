@@ -97,7 +97,7 @@ Template.calendar.events({
         GAnalytics.event("Events","open_event_calendar");
         const params = {_id: eventId};
         const path = FlowRouter.path("eventById", params);
-        Router.go(path);
+        FlowRouter.go(path);
     },
     'click #gather-filter-btn': function(event, template) {
         var $search = $('#search');
@@ -116,7 +116,7 @@ Template.calendar.events({
         var tag = $(event.currentTarget).parent().text().trim();
         tag = tag.substring(0, tag.length - 2).trim();
         var filters = template.filters.get();
-        
+
         filters.splice(filters.indexOf(tag), 1);
         template.filters.set(filters);
     }
