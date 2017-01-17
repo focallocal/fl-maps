@@ -15,6 +15,7 @@ Template.eventPopup.onCreated=function() {
 
     //Go to event details page
     $('.details-btn','#eventPopup').click(function() {
+        $(".leaflet-popup").remove();
         var eventId = Session.get('selected');
         GAnalytics.event("Events","open_event_popup");
         const params = {_id: eventId};
