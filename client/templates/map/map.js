@@ -82,19 +82,22 @@ var initializeLeafletMap = function(element, zoom) {
 
 Template.map.viewmodel({
     // centers map and open popup associated with selected marker
-    panTo: function() {
-        var eventId = Session.get('selected');
-        var event = Events.findOne(eventId);
-        if (event) {
-            map.panTo([event.coordinates.lat,event.coordinates.lng]);
-            setTimeout(function(){
-                map.setZoom(10);
-            }, 1000);
-            $('#map-container').trigger('click'); //set focus
-            setTimeout(function(){
-                $('#icon-' + eventId).trigger('click'); //TODO uncluster before clicking
-            }, 2000);
-        }
+    // panTo: function() {
+    //     var eventId = Session.get('selected');
+    //     var event = Events.findOne(eventId);
+    //     if (event) {
+    //         map.panTo([event.coordinates.lat,event.coordinates.lng]);
+    //         setTimeout(function(){
+    //             map.setZoom(10);
+    //         }, 1000);
+    //         $('#map-container').trigger('click'); //set focus
+    //         setTimeout(function(){
+    //             $('#icon-' + eventId).trigger('click'); //TODO uncluster before clicking
+    //         }, 2000);
+    //     }
+    // }
+    reload: function() {
+      window.location.reload();
     }
 });
 
