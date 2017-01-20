@@ -188,10 +188,21 @@ Events.attachSchema(new SimpleSchema({
         max: 200,
         regEx: SimpleSchema.RegEx.Url
     },
+    overview: {
+      type: String,
+      label: 'Overview',
+      max: 150,
+      autoform: {
+          type: "textarea"
+      }
+  },
     description: {
         type: String,
         label: 'Description',
-        max: 250
+        max: 400,
+        autoform: {
+            type: "textarea"
+        }
     },
     dateCreated: {
         type: Date,

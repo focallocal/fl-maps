@@ -18,7 +18,11 @@
     <span style="color: {{category.color}}">{{category.name}}</span>
     <h5>{{name}}</h5>
     <blockquote>
-        <span style="white-space: pre-wrap; word-wrap: break-word">{{description}}</span>
+        {{#if overview}}
+            <span style="white-space: pre-wrap; word-wrap: break-word">{{overview}}</span>
+        {{else}}
+            <span style="white-space: pre-wrap; word-wrap: break-word">No overview provided</span>
+        {{/if}}
         <br>Where:   {{address}}
         <br>Meeting point:   {{meetingPoint}}
         <br>When: <span title="{{printDate dateEvent}}">{{printDateFromNow dateEvent}}</span>
