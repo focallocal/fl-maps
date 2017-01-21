@@ -20,6 +20,15 @@ AutoForm.hooks({
     }
 });
 
+function setCharCount(limit, $elem) {
+    $elem.parent().append('<div class="characters-left-container"><span class="characters-left">' + limit + '</span> Characters Left</div>');
+
+    $elem.on('input', function() {
+        var $this = $(this);
+        $this.parent().find(".characters-left").text(limit - $this.val().length);
+    });
+}
+
 Template.eventsForm.onCreated(function() {
     this.debounce = null;
     this.autocompleteMapData = new ReactiveVar([], false);
@@ -111,6 +120,10 @@ Template.autoForm.onRendered(function () {
     };
     //this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
     fixMaterializeActiveClassTrigger();
+
+    // Insert character counter for overview and description
+    setCharCount(150, $(".overview-word-limit"));
+    setCharCount(400, $(".description-word-limit"));
 });
 
 Template.eventsForm.onDestroyed(function () {
