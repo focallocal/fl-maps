@@ -18,7 +18,7 @@ materialize:materialize@=0.97.7
 useraccounts:materialize
 aldeed:collection2
 gildaspk:autoform-materialize@0.0.18
-fourseven:scss@=3.2.0
+fourseven:scss
 rosh93:slide-panel
 msavin:mongol
 aldeed:autoform@5.1.2
