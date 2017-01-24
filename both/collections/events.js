@@ -193,7 +193,8 @@ Events.attachSchema(new SimpleSchema({
       label: 'Overview',
       max: 150,
       autoform: {
-          type: "textarea"
+          type: "textarea",
+          class: "overview-word-limit"
       }
   },
     description: {
@@ -201,7 +202,8 @@ Events.attachSchema(new SimpleSchema({
         label: 'Description',
         max: 400,
         autoform: {
-            type: "textarea"
+            type: "textarea",
+            class: "description-word-limit"
         }
     },
     dateCreated: {
