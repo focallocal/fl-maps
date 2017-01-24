@@ -1,7 +1,7 @@
-@import "client/stylesheets/materialize/materialize.scss";
-@import "client/stylesheets/eventForm/slidepanel.scss";
-@import "client/stylesheets/eventForm/typeahead.scss";
-@import "client/stylesheets/logo.scss";
+@import "materialize/materialize.scss";
+@import "eventForm/slidepanel.scss";
+@import "eventForm/typeahead.scss";
+@import "logo.scss";
 
 @media #{$small-and-down} {
   #congratsModal {
@@ -10,3 +10,8 @@
     max-height: 100%;
   }
 }
+
+@import "client/stylesheets/eventForm/slidepanel.scss";
+@import "client/stylesheets/eventForm/typeahead.scss";
+@import "client/stylesheets/materialize/materialize.scss";
+@import "client/stylesheets/logo.scss";
