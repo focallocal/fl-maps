@@ -1,4 +1,4 @@
-AutoForm.hooks({
+ AutoForm.hooks({
     'events-form': {
         onSuccess: function (operation, result, template) {
             slidePanel.closePanel();
@@ -120,6 +120,10 @@ Template.autoForm.onRendered(function () {
     };
     //this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
     fixMaterializeActiveClassTrigger();
+
+    // Initialize sequence
+    var sequence = new SequenceForm('.sequence-form-fields', '#next');
+    sequence.init();
 
     // Insert character counter for overview and description
     setCharCount(150, $(".overview-word-limit"));
