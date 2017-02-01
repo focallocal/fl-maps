@@ -122,7 +122,7 @@ Template.autoForm.onRendered(function () {
     fixMaterializeActiveClassTrigger();
 
     // Initialize sequence
-    var sequence = new SequenceForm('.sequence-form-fields', '#next');
+    var sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
     sequence.init();
 
     // Insert character counter for overview and description
