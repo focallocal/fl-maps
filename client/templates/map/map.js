@@ -11,8 +11,9 @@ function PrepareLeafletMarker(leafletMarker, data) {
             var loggedInUser = Meteor.user();
             return !!loggedInUser && loggedInUser.profile.name === selectedEvent.organiser.name
         };
+        console.log(!hasEditPermissionTo(data.event));
         if (!hasEditPermissionTo(data.event)) {
-            slidePanel.closePanel('eventsForm');
+            slidePanel.closePanel('editEvent');
         }
     });
     // A popup can already be attached to the marker
@@ -269,7 +270,9 @@ function initNewEventButton() {
             Materialize.toast('Oops! Please login to add gather!', toastTimeout);
         } else {
             Session.set('isEdit',false);
-            slidePanel.showPanel('eventsForm');
+            $("#eventsFormModal").openModal({
+                dismissible: true
+            });
         }
     }).trigger('mouseenter');
     $('body').click(function() {
