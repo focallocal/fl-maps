@@ -30,38 +30,34 @@ geocodeDataSource = function geocodeDataSource(query, sync, asyncCallback) {
 			Meteor.clearTimeout(instance.debounce);
 	}
 	const debounceDelay = 500; //wait half a second before triggering search
-	 instance.debounce = Meteor.setTimeout(function() {
-			Meteor.call('getCoords', query, function (error, result) {
-					console.info("Query: " + query);
-					var mapResultToDisplay = function () {
-							var isCity = function(element, index) {
-									return element.city!=null
-							};
-							return result.filter(isCity).map(function (v) {
-											console.info("Response: " + JSON.stringify(v));
-											var streetName = _.isNull(v.streetName) ? '' :v.streetName + ' ';
-											var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
-											var city  = _.isNull(v.city) ? '' : v.city + ', ';
-											var state  = _.isNull(v.state) ? '' : v.state + ', ';
-											return {
-													 value: streetName + streetNumber + city + state + v.country,
-													 lat: v.latitude,
-													 lng: v.longitude
-											};
-									}
-							);
-					};
-
-					if (error != undefined) {
-							console.error(error);
-							Events.simpleSchema().namedContext("events-form").addInvalidKeys([{
-									name: "address",
-									type: "offline"
-							}]);
-					} else {
-							asyncCallback(mapResultToDisplay());
+	instance.debounce = Meteor.setTimeout(function() {
+		Meteor.call('getCoords', query, function (error, result) {
+			console.info("Query: " + query);
+			var mapResultToDisplay = function () {
+				return result.map(function (v) {
+					console.info("Response: " + JSON.stringify(v));
+					var streetName = _.isNull(v.streetName) ? '' : v.streetName + ' ';
+					var streetNumber = _.isNull(v.streetNumber) ? _.isEmpty(streetName) ? '' : ', ' : +v.streetNumber + ', ';
+					var city  = _.isNull(v.city) ? '' : v.city + ', ';
+					var state  = _.isNull(v.state) ? '' : v.state + ', ';
+					return {
+						value: streetName + streetNumber + city + state + v.country,
+						lat: v.latitude,
+						lng: v.longitude};
 					}
-			});
+				);
+			};
+
+			if (error != undefined) {
+					console.error(error);
+					Events.simpleSchema().namedContext("events-form").addInvalidKeys([{
+							name: "address",
+							type: "offline"
+					}]);
+			} else {
+					asyncCallback(mapResultToDisplay());
+			}
+		});
 	}, debounceDelay);
 };
 
