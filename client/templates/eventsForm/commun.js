@@ -1,9 +1,15 @@
 setCharCount = function setCharCount(limit, $elem) {
-	 $elem.parent().append('<div class="characters-left-container"><span class="characters-left">' + limit + '</span> Characters Left</div>');
 
-	 $elem.on('input', function() {
-			 var $this = $(this);
-			 $this.parent().find(".characters-left").text(limit - $this.val().length);
+	if ($elem.parent().find('.characters-left-container').length !== 0) {
+		// Alredy set
+		return;
+	}
+
+	$elem.parent().append('<div class="characters-left-container"><span class="characters-left">' + limit + '</span> Characters Left</div>');
+
+	$elem.on('input', function() {
+			var $this = $(this);
+			$this.parent().find(".characters-left").text(limit - $this.val().length);
 	 });
 };
 
