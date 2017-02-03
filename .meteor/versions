@@ -52,7 +52,7 @@ fastclick@1.0.12
 fortawesome:fontawesome@4.4.0
 fourseven:scss@3.8.1
 geojson-utils@1.0.9
-gildaspk:autoform-materialize@0.0.21
+gildaspk:autoform-materialize@0.0.26
 google@1.1.13
 gwendall:session-json@0.1.7
 handlebars@1.0.7
