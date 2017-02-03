@@ -1,0 +1,75 @@
+<template name="newEvent">
+	<div class="modal" id="eventsFormModal">
+		<div class="modal-content">
+			<div class="row">
+				<h3 class="txt-center">New Gather</h3>
+				{{#if Template.subscriptionsReady}}
+					{{#autoForm collection="Events" id="events-form" type="insert"}}
+						<ul class="sequence-form-fields">
+							<li class="sequence-field" value="0">
+								<div class="col">
+									<h5>1. Choose a Category</h5>
+									<span class="grey-text right-align">Not sure? Here's a list of suggestions: <a href="http://news.focallocal.org/activities">news.focallocal.org/activities</a>(if the Positive Action you want to create isn't there let us know at contact@focallocal.org)
+									Give your Gathering a name</span>
+								</div>
+								{{> afQuickField name="organiser._id"}}
+								{{> afQuickField name="organiser.name"}}
+								{{> afQuickField name="category.name"}}
+								{{> afQuickField name="category.color"}}
+								{{> afQuickField name="category"}}
+							</li>
+							<li class="sequence-field" value="1">
+								<div class="col">
+									<h5>2. Give it a Name</h5>
+								</div>
+								{{> afQuickField name="name"}}</li>
+							<li class="sequence-field" value="2">
+								<div class="col">
+									<h5>3. Select an Address</h5>
+									<span class="grey-text">Enter address or postcode/zip - or choose from commonly used meeting points in that city, (clicking on a commonly used point auto-fills that location into the text entry box).</span>
+								</div>
+								{{> afQuickField name="address"}}
+								{{> afQuickField name="coordinates"}}
+								{{> afQuickField name="coordinates.lat"}}
+								{{> afQuickField name="coordinates.lng"}}
+							</li>
+							<li class="sequence-field" value="3">
+								<div class="col">
+									<h5>4. Choose a specific meeting point (hidden on street sleeper map) Point</h5>
+									<span class="grey-text">Be as specific as possible. Next to a statue? North, West of a bridge? Not sure? Check Google Earth for a good meeting spot.</span>
+								</div>
+								{{> afQuickField name="meetingPoint"}}
+							</li>
+							<li class="sequence-field" value="4">
+								<div class="col">
+									<h5>5. How will people recognise you? (hidden on street sleeper map)</h5>
+									<span class="grey-text">Carrying a Teddy Bear on your Shoulder? Wearing a bright yellow hat? wearing a Focallocal badge or T-shirt?</span>
+								</div>
+								{{> afQuickField name="findHints"}}
+							</li>
+							<li class="sequence-field" value="5">
+								<div class="col">
+									<h5>6. Choose a Date and Time</h5>
+								</div>
+								{{> afQuickField name="dateEvent"}}
+								{{> afQuickField name="time"}}
+							</li>
+							<li class="sequence-field" value="6">
+								<div class="col">
+									<h5>7. Description/More Details</h5>
+								</div>
+								{{> afQuickField name="overview"}}
+								{{> afQuickField name="description"}}
+							</li>
+						</ul>
+						<div>
+							<button type="button" class="btn btn-primary" id="back">Back</button>
+								<button type="button" class="btn btn-primary" id="next">Next</button>
+								<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					{{/autoForm}}
+				{{/if}}
+				</div>
+			</div>
+		</div>
+</template>
