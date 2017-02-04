@@ -1,3 +1,5 @@
+var sequence = undefined;
+
 AutoForm.hooks({
 	 'events-form': {
 			 onSuccess: function (operation, result, template) {
@@ -16,6 +18,14 @@ AutoForm.hooks({
 					 console.error(error);
 			 }
 	 }
+});
+
+Template.newEvent.viewmodel({
+	clearForm: function() {
+		AutoForm.resetForm('events-form');
+		$("#eventTitle").text('New Gather');
+		sequence.resetSequence();
+	}
 });
 
 Template.newEvent.onCreated(function() {
@@ -40,11 +50,12 @@ Template.autoForm.onRendered(function () {
 
 	onRendered.call(this);
 
-	// Initialize sequence
-	var sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
-	 sequence.init();
+	sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
 
-	 sequence.setBeforeNextTrigger(function(inputContainer) {
+	// Initialize sequence
+	sequence.init();
+
+	sequence.setBeforeNextTrigger(function(inputContainer) {
 		 var $fields = inputContainer.find('.validate-field');
 		 var $inputs = $fields.find('input');
 
@@ -66,6 +77,10 @@ Template.autoForm.onRendered(function () {
 
 					 valid = false;
 
+				 } else if (name === 'coordinates.lat' && $elem.val().length === 0) {
+
+					 valid = false;
+
 				 } else {
 
 					 var inputValid = AutoForm.validateField('events-form', name, false);
@@ -80,8 +95,29 @@ Template.autoForm.onRendered(function () {
 
 		 return valid;
 	 });
-});
 
+	 $('input[name="name"]').on('input', function() {
+		 var $this = $(this);
+		 var $title = $("#eventTitle");
+
+		 if ($this.val().length > 0) {
+			$title.text($this.val());
+		} else {
+			$title.text("New Gather");
+		}
+	 });
+
+	 // Fix height issue
+	//  $('input[data-schema-key="dateEvent"]').on('focus', function() {
+	// 	 var $this = $(".picker__wrap");
+	// 	 var height = $this.height();
+	 //
+	// 	 console.log($this);
+	 //
+	// 	 $("#events-form").height('100%');
+	//  });
+
+});
 Template.newEvent.onDestroyed(function () {
 	onDestroyed.call(this);
 });

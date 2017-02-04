@@ -144,4 +144,14 @@ SequenceForm.prototype.back = function() {
 SequenceForm.prototype.setBeforeNextTrigger = function(func) {
 	var vm = this;
 	vm.beforeNextCall = func;
-}
+};
+
+SequenceForm.prototype.resetSequence = function() {
+	var vm = this;
+	var $currentField = vm._$fields[vm._currentField.number];
+	vm._currentField.number = 0;
+	var $firstField = vm._$fields[vm._currentField.number];
+
+	$currentField.hide();
+	$firstField.show();	
+};

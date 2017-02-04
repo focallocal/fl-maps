@@ -1,9 +1,9 @@
 <template name="newEvent">
 	<div class="modal" id="eventsFormModal">
 		<div class="modal-content">
-			<a href="#!" id="newEventFormClose" class="modal-action modal-close waves-effect waves-red btn-flat">x</a>
+			<a href="#!" id="newEventFormClose" class="modal-action modal-close waves-effect waves-red btn-flat" data-bind="click:clearForm">x</a>
 			<div class="row">
-				<h3 class="txt-center">New Gather</h3>
+				<h3 class="txt-center" id="eventTitle">New Gather</h3>
 				{{#if Template.subscriptionsReady}}
 					{{#autoForm collection="Events" id="events-form" type="insert"}}
 						<ul class="sequence-form-fields">
@@ -35,8 +35,6 @@
 								<div class="validate-field">
 									{{> afQuickField name="address"}}
 									{{> afQuickField name="coordinates"}}
-									{{> afQuickField name="coordinates.lat"}}
-									{{> afQuickField name="coordinates.lng"}}
 								</div>
 							</li>
 							<li class="sequence-field" value="3">
