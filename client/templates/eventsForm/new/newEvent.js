@@ -42,7 +42,44 @@ Template.autoForm.onRendered(function () {
 
 	// Initialize sequence
 	var sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
-	 sequence.init()
+	 sequence.init();
+
+	 sequence.setBeforeNextTrigger(function(inputContainer) {
+		 var $fields = inputContainer.find('.validate-field');
+		 var $inputs = $fields.find('input');
+
+		 var selectInput = $fields.find('select');
+
+		 if (selectInput !== undefined) {
+			 $inputs.push(selectInput);
+		 }
+
+		 var valid = true;
+
+		 $inputs.each(function(elem) {
+			 var $elem = $($inputs[elem]);
+			 var name = $elem.attr('name');
+
+			 if (name !== undefined && name.length !== 0) {
+
+				 if (name === 'category._id' && $elem.val().length === 0) {
+
+					 valid = false;
+
+				 } else {
+
+					 var inputValid = AutoForm.validateField('events-form', name, false);
+					 valid = valid && inputValid;
+
+					 if ($elem.val().length === 0 && $elem.attr('type') === 'text') {
+						 valid = false;
+					 }
+				 }
+			 }
+		 });
+
+		 return valid;
+	 });
 });
 
 Template.newEvent.onDestroyed(function () {
