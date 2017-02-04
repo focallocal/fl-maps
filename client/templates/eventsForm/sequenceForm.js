@@ -87,7 +87,15 @@ SequenceForm.prototype.next = function () {
 		return;
 	}
 
+
 	var $currentField = vm._$fields[vm._currentField.number];
+
+	if (vm.beforeNextCall !== undefined) {
+		if (!vm.beforeNextCall($currentField)) {
+			return;
+		}
+	}
+
 	vm._currentField.number += 1;
 	var $nextField = vm._$fields[vm._currentField.number];
 
@@ -132,3 +140,8 @@ SequenceForm.prototype.back = function() {
 	$nextField.show();
 
 };
+
+SequenceForm.prototype.setBeforeNextTrigger = function(func) {
+	var vm = this;
+	vm.beforeNextCall = func;
+}
