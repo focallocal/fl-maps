@@ -222,6 +222,9 @@ SimpleSchema.messages({
 });
 
 function mergeDateTime(date, time) {
+    if (date === undefined || time === undefined) {
+      return;
+    }
     var hour = time.split(':')[0];
     var minutes = time.split(':')[1];
     date.setHours(hour);

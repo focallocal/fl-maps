@@ -108,14 +108,12 @@ Template.autoForm.onRendered(function () {
 	 });
 
 	 // Fix height issue
-	//  $('input[data-schema-key="dateEvent"]').on('focus', function() {
-	// 	 var $this = $(".picker__wrap");
-	// 	 var height = $this.height();
-	 //
-	// 	 console.log($this);
-	 //
-	// 	 $("#events-form").height('100%');
-	//  });
+	 $('input[data-schema-key="dateEvent"]').on('focus', function() {
+		 var $this = $(".picker__wrap");
+		 var height = $this.height();
+
+		 $("#eventsFormModal").height(height);
+	 });
 
 });
 Template.newEvent.onDestroyed(function () {
