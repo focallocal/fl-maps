@@ -153,5 +153,9 @@ SequenceForm.prototype.resetSequence = function() {
 	var $firstField = vm._$fields[vm._currentField.number];
 
 	$currentField.hide();
-	$firstField.show();	
+	$firstField.show();
+
+	vm._$nextBtn.removeAttr('disabled');
+	vm._$backBtn.attr('disabled','disabled');
+	vm._$submitBtn.hide();
 };
