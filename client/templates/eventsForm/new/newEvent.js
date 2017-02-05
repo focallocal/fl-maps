@@ -56,6 +56,8 @@ Template.autoForm.onRendered(function () {
 	sequence.init();
 
 	sequence.setBeforeNextTrigger(function(inputContainer) {
+		 $("#eventsFormModal").css({height: ""});
+
 		 var $fields = inputContainer.find('.validate-field');
 		 var $inputs = $fields.find('input');
 
@@ -78,6 +80,10 @@ Template.autoForm.onRendered(function () {
 					 valid = false;
 
 				 } else if (name === 'coordinates.lat' && $elem.val().length === 0) {
+
+					 valid = false;
+
+				 } else if (name === 'time' && $elem.val().length === 0) {
 
 					 valid = false;
 
@@ -114,7 +120,6 @@ Template.autoForm.onRendered(function () {
 
 		 $("#eventsFormModal").height(height);
 	 });
-
 });
 Template.newEvent.onDestroyed(function () {
 	onDestroyed.call(this);
