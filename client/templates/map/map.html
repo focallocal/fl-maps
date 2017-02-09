@@ -11,15 +11,14 @@
                     href="http://focallocal.org/how-to-create-a-positive-social-action-activity" target="_blank">?</a></li>
         </ul>
     </div>
-    <div id="map-container" class="template-map">
-
-        <div id="map-canvas" class="map"></div>
-      {{#if Template.subscriptionsReady}}
-      {{mapData}}
-      {{else}}
-        loading
-      {{/if}}
-
+    <img src="/images/cluster_icon_google.png" hidden/>
+    <div class="map-container">
+        {{#if Template.subscriptionsReady}}
+            {{mapData}}
+            {{> googleMap name="map" options=mapOptions}}
+        {{ else }}
+            loading...
+        {{/if}}
     </div>
     {{> slidePanel }}
     {{> newEvent }}
