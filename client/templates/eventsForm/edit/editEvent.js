@@ -1,3 +1,5 @@
+var instance = null;
+
 AutoForm.hooks({
 	'events-form': {
 			onSuccess: function (operation, result, template) {
@@ -15,6 +17,7 @@ AutoForm.hooks({
 
 Template.editEvent.onCreated(function() {
 	create.call(this);
+	instance = this;
 });
 
 Template.editEvent.helpers({
@@ -31,17 +34,15 @@ Template.editEvent.helpers({
 	isEdit: function() { return Session.get('isEdit') }
 });
 
-Template.autoForm.onRendered(function () {
-	 var copyCoordsFromSelectedEvent = function () {
-			 var selectedEvent = Events.findOne(Session.get('selected'));
-			 if (selectedEvent != null) {
-					 console.log(Template.instance());
-					 Template.instance().setCoordinates(selectedEvent.coordinates.lat, selectedEvent.coordinates.lng);
-			 }
-	 };
-	 copyCoordsFromSelectedEvent();
-
-	 onRendered.call(this);
+Template.autoForm.onRendered(function() {
+	copyCoordsFromSelectedEvent = function () {
+		var selectedEvent = Events.findOne(Session.get('selected'));
+		if (selectedEvent != null) {
+			instance.setCoordinates(selectedEvent.coordinates.lat, selectedEvent.coordinates.lng);
+		}
+	};
+	copyCoordsFromSelectedEvent();
+	onRendered.call(this);
 });
 
 Template.editEvent.onDestroyed(function () {

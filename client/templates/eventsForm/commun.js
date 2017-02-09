@@ -74,10 +74,8 @@ selectedHandler = function selectedHandler(event, suggestion, datasetName) {
 onRendered = function onRendered() {
 	Meteor.typeahead.inject();
 
-	this.$('input[name=address]').detach().insertBefore('.twitter-typeahead');
-	this.$('.twitter-typeahead').find('input[type=text]').remove();
 	var fixMaterializeActiveClassTrigger = function() {
-			$('input[name=address]').detach().insertBefore('.twitter-typeahead');
+			$('input[name=address]').first().detach().insertBefore('.twitter-typeahead');
 			$('.twitter-typeahead').find('input[type=text]').remove();
 	};
 	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
