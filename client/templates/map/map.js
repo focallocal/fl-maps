@@ -1,5 +1,6 @@
 var markerCluster = null;
 var markers = {};
+var addedMarkers = {};
 
 function adjustMapHeightToWindowSize($mapCanvas) {
 	$(window).resize(function () {
@@ -32,27 +33,45 @@ function createPopupContent(event) {
 	return Blaze.toHTMLWithData(Template.eventPopup, event);
 }
 
-function setCluster(map) {
-	if (markerCluster !== null) {
-		markerCluster.setMap(null);
-		markerCluster = null;
-	}
+function addMarkersCluster(map, event) {
 
-	var markersForCluster = [];
-	for (var layer in markers) {
-		if (markers.hasOwnProperty(layer)) {
-			for (var marker in markers[layer]) {
-				if (markers[layer].hasOwnProperty(marker)) {
-					markersForCluster.push(markers[layer][marker]);
+	if (markerCluster === null) {
+		var markerList = [];
+
+		for (var layer in markers) {
+			if (markers.hasOwnProperty(layer)) {
+				var layerMarkers = markers[layer];
+				for (var marker in layerMarkers) {
+					if (layerMarkers.hasOwnProperty(marker)) {
+						addedMarkers[marker] = true;
+						markerList.push(layerMarkers[marker]);
+					}
 				}
 			}
 		}
+
+		markerCluster = new MarkerClusterer(map, markerList, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
 	}
 
-	markerCluster = new MarkerClusterer(map, markersForCluster, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+	if (event === undefined) {
+		return;
+	}
+
+	if (addedMarkers[event._id] === true) {
+		return;
+	}
+
+	markerCluster.addMarker(markers[event.category.name][event._id]);
+
 }
 
 function addMarker(event, map) {
+
+	if (addedMarkers[event._id]) {
+		return;
+	}
+
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng),
 		map: map
@@ -70,13 +89,14 @@ function addMarker(event, map) {
 }
 
 function removeMarker(event) {
-	if (markers[event.category.name] !== undefined) {
+	if (markers[event.category.name] !== undefined && markerCluster !== null) {
 		var marker = markers[event.category.name][event._id];
 		marker.setMap(null);
-
 		marker.unbind('click', false);
 
 		markers[event.category.name][event._id] = undefined;
+		addedMarkers[event._id] = undefined;
+		markerCluster.removeMarker(marker);
 	}
 }
 
@@ -93,34 +113,36 @@ Template.map.onCreated(function() {
 
 		adjustMapHeightToWindowSize($('.map-container'));
 
-		instance.events.get().forEach(function(event) {
-			addMarker(event, map.instance);
-			// Watch for new events
+		if (_.isEmpty(markers)) {
+			instance.events.get().forEach(function(event) {
+				addMarker(event, map.instance);
+			});
+
 			var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
 			cursor.observe({
 				added: function(event) {
-					addMarker(event);
-					setCluster(map.instance);
+					addMarker(event, map.instance);
+					addMarkersCluster(map.instance, event);
 				},
 				changed: function(newEvent, oldEvent) {
 					removeMarker(oldEvent);
 					addMarker(newEvent, map.instance);
-					setCluster(map.instance);
+					addMarkersCluster(map.instance, newEvent);
 				},
 				removed: function(event) {
 					removeMarker(event);
 				}
 			});
-		});
-
-		setCluster(map.instance);
-
+		}
+		addMarkersCluster(map.instance);
 	});
 });
 
 
 Template.map.onRendered(function() {
-	GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4"});
+	if (_.isEmpty(markers)) {
+		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4"});
+	}
 });
 
 Template.map.helpers({
@@ -150,7 +172,10 @@ Template.map.viewmodel({
 });
 
 
-Template.map.onDestroyed(function() {
-	markers = {};
-	markerCluster = {};
-});
+// Template.map.onDestroyed(function() {
+// 	if (markerCluster !== null) {
+// 		markerCluster.clearMarkers();
+// 		markerCluster = null;
+// 	}
+// 	addedMarkers = {};
+// });
