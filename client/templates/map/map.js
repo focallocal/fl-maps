@@ -80,18 +80,38 @@ function addMarker(event, map) {
 		scale: 5
 	};
 
-
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng),
 		map: map,
 		icon: circle
 	});
 
-	marker.addListener('click', function() {
+	marker.addListener('click', function()
+	{
+
+		if ($('#eventPopup').length !== 0) {
+			return;
+		}
+
+		Session.set('selected', event._id);
+
 		var infoWindow = new google.maps.InfoWindow({
 			content: createPopupContent(event)
 		});
 		infoWindow.open(map, this);
+
+		var hasEditPermissionTo = function (selectedEvent) {
+			var loggedInUser = Meteor.user();
+			return !!loggedInUser && loggedInUser.profile.name === selectedEvent.organiser.name
+		};
+
+		if (!hasEditPermissionTo(event)) {
+			slidePanel.closePanel('editEvent');
+		}
+
+		GAnalytics.event("Events","open_popup");
+		Template.eventPopup.onCreated();
+
 	});
 
 	markers[event.category.name] = markers[event.category.name] || {};
