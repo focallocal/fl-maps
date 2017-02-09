@@ -72,10 +72,19 @@ function addMarker(event, map) {
 		return;
 	}
 
+	var circle = {
+		path: 'M 2, 2 m -1, 0 a 1,1 0 1,1 2,0 a 1,1 0 1,1 -2,0',
+		strokeColor: event.category.color,
+		fillColor: event.category.color,
+		fillOpacity: 1,
+		scale: 5
+	};
+
+
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng),
 		map: map,
-		visible: false
+		icon: circle
 	});
 
 	marker.addListener('click', function() {
@@ -84,17 +93,6 @@ function addMarker(event, map) {
 		});
 		infoWindow.open(map, this);
 	});
-
-	var circle = new google.maps.Circle({
-		radius: 1,
-		fillColor: event.category.color,
-		strokeColor: event.category.color,
-		strokeOpacity: 1,
-		strokeWeight: 20
-	});
-
-	circle.bindTo('center', marker, 'position');
-	circle.bindTo('map', marker, 'map');
 
 	markers[event.category.name] = markers[event.category.name] || {};
 	markers[event.category.name][event._id] = marker;
