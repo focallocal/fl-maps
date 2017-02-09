@@ -121,6 +121,7 @@ Template.autoForm.onRendered(function () {
 		 $("#eventsFormModal").height(height);
 	 });
 });
+
 Template.newEvent.onDestroyed(function () {
 	onDestroyed.call(this);
 });

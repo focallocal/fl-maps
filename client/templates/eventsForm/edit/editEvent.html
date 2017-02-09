@@ -1,8 +1,8 @@
 <template name="editEvent">
 	<div class="card-panel">
 		{{#if Template.subscriptionsReady}}
-		<h5>Edit gather</h5>
-		{{> quickForm collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
+			<h5>Edit gather</h5>
+			{{> quickForm collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
 		{{/if}}
 	</div>
 </template>
