@@ -242,10 +242,8 @@ Template.map.onCreated(function() {
 
 Template.map.onRendered(function() {
 	if (_.isEmpty(markers)) {
-		GoogleMaps.load({key: Meteor.settings['public'].google_api_key, libraries: 'places'});
+		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
 	}
-
-	console.log(Meteor.settings['public']);
 
 	$(".layers-for-map-btn").on('click', function() {
 		$(".layers-for-map").toggle();
