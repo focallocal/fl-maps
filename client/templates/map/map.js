@@ -4,6 +4,29 @@ var addedMarkers = {};
 var addedLayers = {};
 var eventMap = null;
 
+function initSearchBox(map) {
+	var $input = $('#search-input');
+	console.log($input.get(0));
+	var searchBox = new google.maps.places.SearchBox($input.get(0));
+	map.controls[google.maps.ControlPosition.TOP_LEFT].push($input.get(0));
+
+	map.addListener('bounds_changed', function() {
+		searchBox.setBounds(map.getBounds());
+	});
+
+	searchBox.addListener('places_changed', function() {
+		var places = searchBox.getPlaces();
+
+		if (places.length === 0) {
+			return;
+		}
+
+		var bounds = new google.maps.LatLngBounds();
+		map.fitBounds(bounds);
+	});
+}
+
+
 function hideLayer(name) {
 	var layerMarkers = markers[name];
 
@@ -212,13 +235,14 @@ Template.map.onCreated(function() {
 			});
 		}
 		addMarkersCluster(map.instance);
+		initSearchBox(map.instance);
 	});
 });
 
 
 Template.map.onRendered(function() {
 	if (_.isEmpty(markers)) {
-		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4"});
+		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
 	}
 
 	$(".layers-for-map-btn").on('click', function() {
