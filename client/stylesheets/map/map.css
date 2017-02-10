@@ -36,12 +36,41 @@
 }
 
 
-/*dont use material design for leaflet controls*/
-[type="checkbox"]:not(:checked).leaflet-control-layers-selector,
-[type="checkbox"]:checked.leaflet-control-layers-selector {
+/*dont use material design for layer controls*/
+[type="checkbox"]:not(:checked).layer-checkbox,
+[type="checkbox"]:checked.layer-checkbox {
     /*box-sizing: border-box;*/
     /*padding: 0;*/
     position: inherit;
     left: inherit;
     visibility: inherit;
+    opacity: 1;
+    margin-right: 5px;
+}
+
+.layers-for-map-container {
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  z-index: 10;
+}
+
+.layers-for-map-btn {
+  opacity: .6;
+}
+
+.layers-for-map-btn:hover {
+  opacity: 1 !important;
+}
+
+/*.layer-checkbox:not(:checked), .layer-checkbox:checked {
+  position: inherit !important;
+  left: auto !important;
+}*/
+
+.layers-for-map {
+  display: none;
+  margin-top: 0px;
+  padding: 10px;
+  background-color: white;
 }

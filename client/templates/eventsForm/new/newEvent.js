@@ -48,6 +48,10 @@ Template.newEvent.helpers({
 
 Template.autoForm.onRendered(function () {
 
+	if (Session.get('isEdit') === true) {
+		return;
+	}
+
 	onRendered.call(this);
 
 	sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
@@ -121,6 +125,7 @@ Template.autoForm.onRendered(function () {
 		 $("#eventsFormModal").height(height);
 	 });
 });
+
 Template.newEvent.onDestroyed(function () {
 	onDestroyed.call(this);
 });
