@@ -1,6 +1,35 @@
 var markerCluster = null;
 var markers = {};
 var addedMarkers = {};
+var addedLayers = {};
+var eventMap = null;
+
+function hideLayer(name) {
+	var layerMarkers = markers[name];
+
+	for (var marker in layerMarkers) {
+		if (layerMarkers.hasOwnProperty(marker)) {
+			markerCluster.removeMarker(layerMarkers[marker]);
+			layerMarkers[marker].setMap(null);
+		}
+	}
+}
+
+function showLayer(name) {
+	var layerMarkers = markers[name];
+
+	for (var marker in layerMarkers) {
+		if (layerMarkers.hasOwnProperty(marker)) {
+			layerMarkers[marker].setMap(eventMap);
+			markerCluster.addMarker(layerMarkers[marker]);
+		}
+	}
+}
+
+function addLayer(name) {
+	var $layerToogleContainer = $(".layers-for-map-list");
+	$layerToogleContainer.append('<li value="' + name + '"><input type="checkbox" class="layer-checkbox" checked="checked" />' + name + '</li>');
+}
 
 function adjustMapHeightToWindowSize($mapCanvas) {
 	$(window).resize(function () {
@@ -80,18 +109,38 @@ function addMarker(event, map) {
 		scale: 5
 	};
 
-
 	var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng),
 		map: map,
 		icon: circle
 	});
 
-	marker.addListener('click', function() {
+	marker.addListener('click', function()
+	{
+
+		if ($('#eventPopup').length !== 0) {
+			return;
+		}
+
+		Session.set('selected', event._id);
+
 		var infoWindow = new google.maps.InfoWindow({
 			content: createPopupContent(event)
 		});
 		infoWindow.open(map, this);
+
+		var hasEditPermissionTo = function (selectedEvent) {
+			var loggedInUser = Meteor.user();
+			return !!loggedInUser && loggedInUser.profile.name === selectedEvent.organiser.name
+		};
+
+		if (!hasEditPermissionTo(event)) {
+			slidePanel.closePanel('editEvent');
+		}
+
+		GAnalytics.event("Events","open_popup");
+		Template.eventPopup.onCreated();
+
 	});
 
 	markers[event.category.name] = markers[event.category.name] || {};
@@ -120,6 +169,24 @@ Template.map.onCreated(function() {
 	instance.categories = new ReactiveVar([]);
 
 	GoogleMaps.ready('map', function(map) {
+
+		eventMap = map.instance;
+
+		instance.categories.get().forEach(function(category) {
+			if (addedLayers[category.name] !== true) {
+				addedLayers[category.name] = true;
+				addLayer(category.name);
+			}
+		});
+
+		$('.layer-checkbox').on('click', function() {
+			var $this = $(this);
+			if ($this.is(':checked')) {
+				showLayer($this.parent().text());
+			} else {
+				hideLayer($this.parent().text());
+			}
+		});
 
 		adjustMapHeightToWindowSize($('.map-container'));
 
@@ -153,6 +220,18 @@ Template.map.onRendered(function() {
 	if (_.isEmpty(markers)) {
 		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4"});
 	}
+
+	$(".layers-for-map-btn").on('click', function() {
+		$(".layers-for-map").toggle();
+	});
+
+	$('#layers-toggle-all').on('click', function() {
+		var layers = $('.layers-for-map-list').find('li');
+		layers.each(function(layer) {
+			var $checkbox = $(layers[layer]).find('.layer-checkbox').first();
+			$checkbox.click();
+		});
+	});
 });
 
 Template.map.helpers({
