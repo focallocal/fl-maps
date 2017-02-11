@@ -263,7 +263,21 @@ Template.map.helpers({
 		if (GoogleMaps.loaded()) {
 			return {
 				center: new google.maps.LatLng(0, 0),
-				zoom: 3
+				zoom: 3,
+				mapTypeControl: true,
+				 mapTypeControlOptions: {
+						 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+						 position: google.maps.ControlPosition.LEFT_TOP
+				 },
+				 zoomControl: true,
+				 zoomControlOptions: {
+						 position: google.maps.ControlPosition.LEFT_CENTER
+				 },
+				 scaleControl: true,
+				 streetViewControl: true,
+				 streetViewControlOptions: {
+						 position: google.maps.ControlPosition.LEFT_TOP
+				 },
 			}
 		}
 	},
