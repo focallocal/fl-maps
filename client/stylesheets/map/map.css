@@ -77,14 +77,11 @@
 
 #search-input {
   background-color: white;
-  width: 50%;
-  left: 50%;
+  width: 40%;
   padding: 10px;
-  opacity: 0.7;
   border-bottom: none;
 }
 
 #search-input:focus {
-  opacity: 1;
-  border-bottom: none;
+  box-shadow: none;
 }

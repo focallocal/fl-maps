@@ -6,23 +6,19 @@ var eventMap = null;
 
 function initSearchBox(map) {
 	var $input = $('#search-input');
-	console.log($input.get(0));
-	var searchBox = new google.maps.places.SearchBox($input.get(0));
+	var searchBox = new google.maps.places.Autocomplete($input.get(0));
 	map.controls[google.maps.ControlPosition.TOP_LEFT].push($input.get(0));
 
-	map.addListener('bounds_changed', function() {
-		searchBox.setBounds(map.getBounds());
-	});
+	searchBox.bindTo('bounds', map);
 
-	searchBox.addListener('places_changed', function() {
-		var places = searchBox.getPlaces();
+	searchBox.addListener('place_changed', function() {
+		var place = searchBox.getPlace();
 
-		if (places.length === 0) {
+		if (place === null) {
 			return;
 		}
 
-		var bounds = new google.maps.LatLngBounds();
-		map.fitBounds(bounds);
+		map.fitBounds(place.geometry.viewport);
 	});
 }
 
