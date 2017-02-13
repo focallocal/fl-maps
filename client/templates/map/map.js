@@ -274,6 +274,8 @@ Template.map.helpers({
 				 streetViewControlOptions: {
 						 position: google.maps.ControlPosition.LEFT_TOP
 				 },
+				 //go to https://snazzymaps.com/ and copy the given code for a template and paste here
+				styles: [{"stylers":[{"saturation":100},{"gamma":0.6}]}],
 			}
 		}
 	},
