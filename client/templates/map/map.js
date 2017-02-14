@@ -15,6 +15,7 @@ function resetMakerData() {
 			for (marker in markers[layer]) {
 				if (markers[layer].hasOwnProperty(marker)) {
 					markers[layer][marker].setMap(null);
+					markers[layer][marker].unbind('click');
 				}
 			}
 		}
@@ -280,7 +281,7 @@ Template.map.onRendered(function() {
 			$checkbox.click();
 		});
 	});
-	
+
 	initNewEventButton();
 });
 
@@ -334,4 +335,5 @@ Template.map.viewmodel({
 Template.map.onDestroyed(function() {
 	resetMakerData();
 	created = false;
+	slidePanel.closePanel('editEvent');
 });
