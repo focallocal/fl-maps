@@ -3,7 +3,27 @@ var markers = {};
 var addedMarkers = {};
 var addedLayers = {};
 var eventMap = null;
-var eventsReady = false;
+var created = false;
+
+function resetMakerData() {
+	if (markerCluster !== null) {
+		markerCluster.clearMarkers();
+	}
+	markerCluster = null;
+	for (layer in markers) {
+		if (markers.hasOwnProperty(layer)) {
+			for (marker in markers[layer]) {
+				if (markers[layer].hasOwnProperty(marker)) {
+					markers[layer][marker].setMap(null);
+				}
+			}
+		}
+	}
+	markers = {};
+	addedMarkers = {};
+	addedLayers = {};
+	eventMap = null;
+}
 
 function initSearchBox(map) {
 	var $input = $('#search-input');
@@ -108,7 +128,6 @@ function addMarkersCluster(map, event) {
 	}
 
 	if (addedMarkers[event._id] === true) {
-		console.log("ASDFSDFDS");
 		return;
 	}
 
@@ -184,6 +203,7 @@ function removeMarker(event) {
 }
 
 Template.map.onCreated(function() {
+	resetMakerData();
 	var instance = this;
 
 	instance.subscribe('events');
@@ -215,27 +235,31 @@ Template.map.onCreated(function() {
 		adjustMapHeightToWindowSize($('.map-container'));
 
 		instance.events.get().forEach(function(event) {
-			if (eventsReady === false) {
-				eventsReady = true;
-			}
 			addMarker(event, map.instance);
 		});
 
 		var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
 		cursor.observe({
 			added: function(event) {
-				addMarker(event, map.instance);
-				addMarkersCluster(map.instance, event);
+				if (created === true) {
+					addMarker(event, map.instance);
+					addMarkersCluster(map.instance, event);
+				}
 			},
 			changed: function(newEvent, oldEvent) {
-				removeMarker(oldEvent);
-				addMarker(newEvent, map.instance);
-				addMarkersCluster(map.instance, newEvent);
+				if (created === true) {
+					removeMarker(oldEvent);
+					addMarker(newEvent, map.instance);
+					addMarkersCluster(map.instance, newEvent);
+				}
 			},
 			removed: function(event) {
-				removeMarker(event);
+				if (created === true) {
+					removeMarker(event);
+				}
 			}
 		});
+		created = true;
 		addMarkersCluster(map.instance);
 		initSearchBox(map.instance);
 	});
@@ -256,6 +280,8 @@ Template.map.onRendered(function() {
 			$checkbox.click();
 		});
 	});
+	
+	initNewEventButton();
 });
 
 Template.map.helpers({
@@ -291,7 +317,6 @@ Template.map.helpers({
 
 GoogleMaps.ready('map', function(map) {
 	GoogleMaps.initialize();
-	initNewEventButton();
 });
 
 Template.map.viewmodel({
@@ -307,19 +332,6 @@ Template.map.viewmodel({
 // var eventMap = null;
 
 Template.map.onDestroyed(function() {
-	markerCluster.clearMarkers();
-	markerCluster = null;
-	for (layer in markers) {
-		if (markers.hasOwnProperty(layer)) {
-			for (marker in markers[layer]) {
-				if (markers[layer].hasOwnProperty(marker)) {
-					markers[layer][marker].setMap(null);
-				}
-			}
-		}
-	}
-	markers = {};
-	addedMarkers = {};
-	addedLayers = {};
-	eventMap = null;
+	resetMakerData();
+	created = false;
 });
