@@ -3,6 +3,7 @@ var markers = {};
 var addedMarkers = {};
 var addedLayers = {};
 var eventMap = null;
+var eventsReady = false;
 
 function initSearchBox(map) {
 	var $input = $('#search-input');
@@ -111,6 +112,7 @@ function addMarkersCluster(map, event) {
 	}
 
 	if (addedMarkers[event._id] === true) {
+		console.log("ASDFSDFDS");
 		return;
 	}
 
@@ -173,6 +175,9 @@ function addMarker(event, map) {
 function removeMarker(event) {
 	if (markers[event.category.name] !== undefined && markerCluster !== null) {
 		var marker = markers[event.category.name][event._id];
+		if (marker === null) {
+			return;
+		}
 		marker.setMap(null);
 		marker.unbind('click', false);
 
@@ -213,27 +218,28 @@ Template.map.onCreated(function() {
 
 		adjustMapHeightToWindowSize($('.map-container'));
 
-		if (_.isEmpty(markers)) {
-			instance.events.get().forEach(function(event) {
-				addMarker(event, map.instance);
-			});
+		instance.events.get().forEach(function(event) {
+			if (eventsReady === false) {
+				eventsReady = true;
+			}
+			addMarker(event, map.instance);
+		});
 
-			var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
-			cursor.observe({
-				added: function(event) {
-					addMarker(event, map.instance);
-					addMarkersCluster(map.instance, event);
-				},
-				changed: function(newEvent, oldEvent) {
-					removeMarker(oldEvent);
-					addMarker(newEvent, map.instance);
-					addMarkersCluster(map.instance, newEvent);
-				},
-				removed: function(event) {
-					removeMarker(event);
-				}
-			});
-		}
+		var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
+		cursor.observe({
+			added: function(event) {
+				addMarker(event, map.instance);
+				addMarkersCluster(map.instance, event);
+			},
+			changed: function(newEvent, oldEvent) {
+				removeMarker(oldEvent);
+				addMarker(newEvent, map.instance);
+				addMarkersCluster(map.instance, newEvent);
+			},
+			removed: function(event) {
+				removeMarker(event);
+			}
+		});
 		addMarkersCluster(map.instance);
 		initSearchBox(map.instance);
 	});
@@ -241,9 +247,7 @@ Template.map.onCreated(function() {
 
 
 Template.map.onRendered(function() {
-	if (_.isEmpty(markers)) {
-		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
-	}
+	GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
 
 	$(".layers-for-map-btn").on('click', function() {
 		$(".layers-for-map").toggle();
@@ -298,11 +302,26 @@ Template.map.viewmodel({
 	}
 });
 
+// var markerCluster = null;
+// var markers = {};
+// var addedMarkers = {};
+// var addedLayers = {};
+// var eventMap = null;
 
-// Template.map.onDestroyed(function() {
-// 	if (markerCluster !== null) {
-// 		markerCluster.clearMarkers();
-// 		markerCluster = null;
-// 	}
-// 	addedMarkers = {};
-// });
+Template.map.onDestroyed(function() {
+	markerCluster.clearMarkers();
+	markerCluster = null;
+	for (layer in markers) {
+		if (markers.hasOwnProperty(layer)) {
+			for (marker in markers[layer]) {
+				if (markers[layer].hasOwnProperty(marker)) {
+					markers[layer][marker].setMap(null);
+				}
+			}
+		}
+	}
+	markers = {};
+	addedMarkers = {};
+	addedLayers = {};
+	eventMap = null;
+});
