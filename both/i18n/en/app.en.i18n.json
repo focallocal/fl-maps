@@ -1,0 +1,21 @@
+
+{
+  "home": {
+    "title": "Hello from I18N",
+    "description": "Build up your reading list.",
+    "create_gather": "Free Resource",
+    "opening_hour": "Start time",
+    "closing_hour": "Closing time"
+  },
+  "newEvent": {
+    "new_gather": "Title",
+    "choose_event": "eg. Blink",
+    "event_name": "Add a title",
+    "address_or_postcode": "Author",
+    "meeting_point": "eg. Malcolm Gladwell",
+    "how_to_find_us": "Add an author",
+    "date_of_event": "Add Book",
+    "hour": "Adding Book",
+    "description": "Couldn't add book"
+  }
+}
