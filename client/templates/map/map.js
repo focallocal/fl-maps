@@ -3,6 +3,28 @@ var markers = {};
 var addedMarkers = {};
 var addedLayers = {};
 var eventMap = null;
+var created = false;
+
+function resetMakerData() {
+	if (markerCluster !== null) {
+		markerCluster.clearMarkers();
+	}
+	markerCluster = null;
+	for (layer in markers) {
+		if (markers.hasOwnProperty(layer)) {
+			for (marker in markers[layer]) {
+				if (markers[layer].hasOwnProperty(marker)) {
+					markers[layer][marker].setMap(null);
+					markers[layer][marker].unbind('click');
+				}
+			}
+		}
+	}
+	markers = {};
+	addedMarkers = {};
+	addedLayers = {};
+	eventMap = null;
+}
 
 function initSearchBox(map) {
 	var $input = $('#search-input');
@@ -169,6 +191,9 @@ function addMarker(event, map) {
 function removeMarker(event) {
 	if (markers[event.category.name] !== undefined && markerCluster !== null) {
 		var marker = markers[event.category.name][event._id];
+		if (marker === null) {
+			return;
+		}
 		marker.setMap(null);
 		marker.unbind('click', false);
 
@@ -179,6 +204,7 @@ function removeMarker(event) {
 }
 
 Template.map.onCreated(function() {
+	resetMakerData();
 	var instance = this;
 
 	instance.subscribe('events');
@@ -209,27 +235,32 @@ Template.map.onCreated(function() {
 
 		adjustMapHeightToWindowSize($('.map-container'));
 
-		if (_.isEmpty(markers)) {
-			instance.events.get().forEach(function(event) {
-				addMarker(event, map.instance);
-			});
+		instance.events.get().forEach(function(event) {
+			addMarker(event, map.instance);
+		});
 
-			var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
-			cursor.observe({
-				added: function(event) {
+		var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
+		cursor.observe({
+			added: function(event) {
+				if (created === true) {
 					addMarker(event, map.instance);
 					addMarkersCluster(map.instance, event);
-				},
-				changed: function(newEvent, oldEvent) {
+				}
+			},
+			changed: function(newEvent, oldEvent) {
+				if (created === true) {
 					removeMarker(oldEvent);
 					addMarker(newEvent, map.instance);
 					addMarkersCluster(map.instance, newEvent);
-				},
-				removed: function(event) {
+				}
+			},
+			removed: function(event) {
+				if (created === true) {
 					removeMarker(event);
 				}
-			});
-		}
+			}
+		});
+		created = true;
 		addMarkersCluster(map.instance);
 		initSearchBox(map.instance);
 	});
@@ -237,9 +268,7 @@ Template.map.onCreated(function() {
 
 
 Template.map.onRendered(function() {
-	if (_.isEmpty(markers)) {
-		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
-	}
+	GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
 
 	$(".layers-for-map-btn").on('click', function() {
 		$(".layers-for-map").toggle();
@@ -252,6 +281,8 @@ Template.map.onRendered(function() {
 			$checkbox.click();
 		});
 	});
+
+	initNewEventButton();
 });
 
 Template.map.helpers({
@@ -287,7 +318,6 @@ Template.map.helpers({
 
 GoogleMaps.ready('map', function(map) {
 	GoogleMaps.initialize();
-	initNewEventButton();
 });
 
 Template.map.viewmodel({
@@ -296,11 +326,14 @@ Template.map.viewmodel({
 	}
 });
 
+// var markerCluster = null;
+// var markers = {};
+// var addedMarkers = {};
+// var addedLayers = {};
+// var eventMap = null;
 
-// Template.map.onDestroyed(function() {
-// 	if (markerCluster !== null) {
-// 		markerCluster.clearMarkers();
-// 		markerCluster = null;
-// 	}
-// 	addedMarkers = {};
-// });
+Template.map.onDestroyed(function() {
+	resetMakerData();
+	created = false;
+	slidePanel.closePanel('editEvent');
+});
