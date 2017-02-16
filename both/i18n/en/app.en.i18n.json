@@ -19,5 +19,35 @@
     "btns": {
       "0": "GET STARTED"
     }
+  },
+  "newEvent": {
+    "title": "New Gather",
+    "section_titles": {
+      "0": "1. Choose a Category",
+      "1": "2. Give it a Name",
+      "2": "3. Select an Address",
+      "3": "4. Choose a specific meeting point (hidden on street sleeper map) Point",
+      "4": "5. How will people recognise you? (hidden on street sleeper map)",
+      "5": "6. Choose a Date and Time",
+      "6": "7. Description/More Details",
+      "sub": {
+        "0": {
+          "0": "Not sure? Here's a list of suggestions:",
+          "1": "(if the Positive Action you want to create isn't there let us know at contact@focallocal.org)
+          Give your Gathering a name"
+        },
+        "2": "Enter address or postcode/zip - or choose from commonly used meeting points in that city, (clicking on a commonly used point auto-fills that location into the text entry box).",
+        "3": "Be as specific as possible. Next to a statue? North, West of a bridge? Not sure? Check Google Earth for a good meeting spot.",
+        "4": "Carrying a Teddy Bear on your Shoulder? Wearing a bright yellow hat? wearing a Focallocal badge or T-shirt?"
+      }
+    },
+    "btns": {
+      "0": "Back",
+      "1": "Next",
+      "2": "Submit"
+    }
+  },
+  "editEvent": {
+    "title": "Edit gather"
   }
 }
