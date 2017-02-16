@@ -1,21 +1,23 @@
 
 {
-  "home": {
-    "title": "Hello from I18N",
-    "description": "Build up your reading list.",
-    "create_gather": "Free Resource",
-    "opening_hour": "Start time",
-    "closing_hour": "Closing time"
+  "general": {
+    "focallocal": "Focallocal"
   },
-  "newEvent": {
-    "new_gather": "Title",
-    "choose_event": "eg. Blink",
-    "event_name": "Add a title",
-    "address_or_postcode": "Author",
-    "meeting_point": "eg. Malcolm Gladwell",
-    "how_to_find_us": "Add an author",
-    "date_of_event": "Add Book",
-    "hour": "Adding Book",
-    "description": "Couldn't add book"
+  "home": {
+    "title": "Focallocal Gather",
+    "sub_title": "The only place for true social connection this summer.",
+    "section_titles": {
+      "0": "What is Focallocal?",
+      "1": "Want to join?",
+      "2": "It's free!",
+      "sub": {
+        "0": "is a community driven by the true will to bring people closer together We have now more than 10 thousand members. They attend events organised all over the world.",
+        "1": "Everybody can be part of this great community. Attend the events! Organise your own!",
+        "2": "You pay with the smile, not money :) Help us to spread the positive energy to make the world a better place!"
+      }
+    },
+    "btns": {
+      "0": "GET STARTED"
+    }
   }
 }
