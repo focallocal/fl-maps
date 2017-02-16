@@ -60,3 +60,4 @@ reactive-var
 useraccounts:flow-routing
 zimme:active-route
 dburles:google-maps
+tap:i18n
