@@ -1,7 +1,10 @@
 
 {
   "general": {
-    "focallocal": "Focallocal"
+    "focallocal": "Focallocal",
+    "btns": {
+      "0": "Show More"
+    }
   },
   "home": {
     "title": "Focallocal Gather",
@@ -49,5 +52,34 @@
   },
   "editEvent": {
     "title": "Edit gather"
+  },
+  "eventConfirmDelete": {
+    "title": "Please confirm",
+    "subtitle": "Are you sure to delete this event?",
+    "btns": {
+      "0": "Yes, delete it!",
+      "1": "No, take me back!"
+    }
+  },
+  "congratsModal": {
+    "title": "Congratulations, your event is LIVE!",
+    "subtitle": "Promote the event now - we've made it super easy for you!",
+    "subtitle_1": "Share with your friends with just one click",
+    "text": {
+      "0": "Simply click the buttons above and copy/paste the info below.",
+      "1": "with the Focallocal Community",
+      "tags": {
+        "0": "Description",
+        "1": "When",
+        "2": "Address",
+        "3": "Meeting point",
+        "4": "How to find us",
+        "5": "Event link"
+      },
+      "2": "Become a Positive Action Hero and join the Global Movement for Positive Change at www.focallocal.org"
+    },
+    "btns": {
+      "0": "Ok, done!"
+    }
   }
 }
