@@ -8,18 +8,15 @@
           <div class="container promo">
               <div class="row">
                   <div class="row center s12 m12 l12">
-                    <h2 class="header">Focallocal Gather {{_ "home.title"}}</h2>
+                    <h2 class="header">{{_ "home.title"}}</h2>
                     <p> <!-- grey-text text-darken-3 lighten-3 -->
-                      The only place for true social connection this summer.
+                      {{_ "home.sub_title"}}
                     </p>
                   </div>
                   <div class="row">
                       <div class="col s12 m6 l6 offset-l2 offset-m2">
-                          <h4>What is Focallocal?</h4>
-                          <p><strong>Focallocal</strong> is a community driven
-                              by the true will to bring people closer together
-                              We have now more than 10 thousand members.
-                              They attend events organised all over the world.
+                          <h4>{{_ "home.section_titles.0"}}</h4>
+                          <p><strong>{{_ "general.focallocal"}}</strong> {{_ "home.section_titles.sub.0"}}
                           </p>
                       </div>
                       <div class="col s12 m4 l4 center">
@@ -31,27 +28,21 @@
                           <i class="mdi-social-people large"></i>
                       </div>
                       <div class="col s12 m6 l6">
-                          <h4>Want to join?</h4>
-                          <p>Everybody can be part of this great community.
-                              Attend the events! Organise your own!</p>
+                          <h4>{{_ "home.section_titles.1"}}</h4>
+                          <p>{{_ "home.section_titles.sub.1"}}</p>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col s12 m6 l6 offset-l2 offset-m2">
-                          <h4>It's free!</h4>
-                          <p>You pay with the smile, not money :)
-                              Help us to spread the positive energy
-                              to make the world a better place!
-                          </p>
+                          <h4>{{_ "home.section_titles.2"}}</h4>
+                          <p>{{_ "home.section_titles.sub.2"}}</p>
                       </div>
                       <div class="col s12 m4 l4 center">
                           <i class="mdi-social-mood large"></i>
                       </div>
                   </div>
                   <div class="row center">
-                      <a class="btn waves-effect waves-light btn-large" href="{{ pathFor 'map' }}">
-                          GET STARTED
-                      </a>
+                      <a class="btn waves-effect waves-light btn-large" href="{{ pathFor 'map' }}">{{_ "home.btns.0"}}</a>
                   </div>
               </div>
           </div>
