@@ -2,19 +2,19 @@
     <li class="text-icon {{ isActiveRoute regex='home' }}">
         <a href="{{ pathFor 'home' }}" title="Home">
             <i class="mdi-action-home"></i>
-            <span>Home</span>
+            <span>{{_ "rightLinks.text.0"}}</span>
         </a>
     </li>
     <li class="text-icon {{ isActiveRoute regex='map' }}">
         <a href="{{ pathFor 'map' }}" title="Map">
             <i class="mdi-maps-map"></i>
-            <span>Map</span>
+            <span>{{_ "rightLinks.text.1"}}</span>
         </a>
     </li>
     <li class="text-icon {{ isActiveRoute regex='calendar' }}">
         <a href="{{ pathFor 'calendar' }}" title="Calendar">
             <i class="mdi-action-list"></i>
-            <span>Calendar</span>
+            <span>{{_ "rightLinks.text.2"}}</span>
         </a>
     </li>
 </template>
