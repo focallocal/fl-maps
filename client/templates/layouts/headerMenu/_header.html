@@ -5,7 +5,7 @@
 <div id="menu-top">
   <nav>
     <div class="nav-wrapper">
-        <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">Focallocal</a>
+        <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
         <ul class="hide-on-small-and-down left">
             {{> leftLinks}}
         </ul>
@@ -21,10 +21,10 @@
 
         <ul id="user-dropdown" class="dropdown-content">
           {{#if currentUser}}
-            <li><a href="#" data-action="logout">Sign Out</a></li>
+            <li><a href="#" data-action="logout">{{_ "_header.text.0"}}</a></li>
           {{else}}
-            <li><a href="{{ pathFor 'signIn' }}">Log in</a></li>
-            <li><a href="{{ pathFor 'signUp' }}">Register</a></li>
+            <li><a href="{{ pathFor 'signIn' }}">{{_ "_header.text.1"}}</a></li>
+            <li><a href="{{ pathFor 'signUp' }}">{{_ "_header.text.2"}}</a></li>
           {{/if}}
         </ul>
 
