@@ -1,7 +1,10 @@
 
 {
   "general": {
-    "focallocal": "Focallocal",
+    "text": {
+      "focallocal": "Focallocal",
+      "focallocal.web": "Focallocal.org"
+    },
     "btns": {
       "0": "Show More"
     }
@@ -80,6 +83,62 @@
     },
     "btns": {
       "0": "Ok, done!"
+    }
+  },
+  "_footer": {
+    "section_titles": {
+      "0": "About",
+      "1": "Sitemap",
+      "2": "Connect",
+      "sub": {
+        "0": "This website is part of",
+        "1": {
+          "list": {
+            "0": "Home",
+            "1": "Events map",
+            "2": "Events list",
+            "3": "Sign in",
+            "4": "Register",
+            "5": "Rss feed"
+          }
+        }
+      }
+    }
+  },
+  "_header": {
+    "text": {
+      "0": "Sign Out",
+      "1": "Log in",
+      "2": "Register"
+    }
+  },
+  "rightLinks": {
+    "text": {
+      "0": "Home",
+      "1": "Map",
+      "2": "Calendar"
+    }
+  },
+  "leftLinks": {
+    "text": {
+      "0": "About Us",
+      "1": "Happy News",
+      "2": "Activities",
+      "3": "Join The Team"
+    }
+  },
+  "calendar": {
+    "section_titles": {
+      "0": "Search",
+      "1": "Upcoming gathers",
+      "2": "Past gathers",
+      "sub": {
+        "0": "No upcoming events :( Please add one!",
+        "1": "No gathers in the past."
+      }
+    },
+    "btns": {
+      "0": "ADD Filter"
     }
   }
 }
