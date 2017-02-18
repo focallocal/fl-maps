@@ -212,6 +212,32 @@ Events.attachSchema(new SimpleSchema({
         autoform: {
             omit: true
         }
+    },
+    reported: {
+      type: Object,
+      optional: true,
+      autoform: {
+          hidden: true
+      }
+    },
+    'reported.number': {
+        type: Number,
+        decimal: true,
+        autoform: {
+            hidden: true
+        }
+    },
+    'reported.status': {
+        type: Boolean,
+        autoform: {
+          hidden: true
+        }
+    },
+    'reported.admin_overwrite': {
+        type: Boolean,
+        autoform: {
+            hidden: true
+        }
     }
 }));
 SimpleSchema.messages({
