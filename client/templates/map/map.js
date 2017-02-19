@@ -80,6 +80,11 @@ function adjustMapHeightToWindowSize($mapCanvas) {
 	}).resize();
 }
 
+function initNewCategoryButton() {
+	var $newCategoryBtn = $("#category-btn");
+	$($newCategoryBtn, '.tooltipped').tooltip({delay: 50});
+}
+
 function initNewEventButton() {
 	var $newEventBtn = $('#event-new-btn');
 	$($newEventBtn,'.tooltipped').tooltip({delay: 50});
@@ -283,6 +288,7 @@ Template.map.onRendered(function() {
 	});
 
 	initNewEventButton();
+	initNewCategoryButton();
 });
 
 Template.map.helpers({
