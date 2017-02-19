@@ -145,5 +145,21 @@
     "text": {
       "0": "New Category"
     }
+  },
+  "event": {
+    "text": {
+      "0": "Think this is spam or an error? Let us know!",
+      "tags": {
+        "0": "About Event",
+        "1": "Photos",
+        "2": "Videos",
+        "3": "Comments"
+      },
+      "1": "* This event has been reported by",
+      "2": "user(s)"
+    },
+    "btns": {
+      "0": "Report"
+    }
   }
 }
