@@ -6,7 +6,9 @@ Categories.attachSchema(new SimpleSchema({
 	},
 	'color': {
 		type: String,
-		max: 7,
-		min: 7
+		autoform: {
+			id: 'category-color',
+			label: false
+		}
 	}
 }));

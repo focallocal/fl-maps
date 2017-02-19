@@ -57,27 +57,27 @@ SequenceForm.prototype.init = function() {
 	vm._fieldAmount = fields.length;
 
 
-	vm._checkInit();
+	// vm._checkInit();
 };
 
-SequenceForm.prototype._checkInit = function() {
-	// Checks that everything that's needed is defined
-	var vm = this;
-
-	if (
-		vm._$formId.length === 0 ||
-		vm._$nextBtn.length === 0 ||
-		vm._$submitBtn.length === 0 ||
-		vm._$fields[0].length === 0 ||
-		vm._fieldAmount === undefined ||
-		vm._$backBtn.length === 0
-	) {
-		console.error("Something went wrong with SequenceForm.init");
-		return false;
-	}
-
-	return true;
-};
+// SequenceForm.prototype._checkInit = function() {
+// 	// Checks that everything that's needed is defined
+// 	var vm = this;
+//
+// 	if (
+// 		vm._$formId.length === 0 ||
+// 		vm._$nextBtn.length === 0 ||
+// 		vm._$submitBtn.length === 0 ||
+//
+// 		vm._fieldAmount === undefined ||
+// 		vm._$backBtn.length === 0
+// 	) {
+// 		console.error("Something went wrong with SequenceForm.init");
+// 		return false;
+// 	}
+//
+// 	return true;
+// };
 
 SequenceForm.prototype.next = function () {
 	// Next field in sequence
