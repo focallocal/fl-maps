@@ -339,15 +339,12 @@ GoogleMaps.ready('map', function(map) {
 
 Template.map.viewmodel({
 	panTo: function() {
-
+		var event = Session.get('selectedEvent');
+		var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
+		eventMap.panTo(latLng);
+		eventMap.setZoom(10);
 	}
 });
-
-// var markerCluster = null;
-// var markers = {};
-// var addedMarkers = {};
-// var addedLayers = {};
-// var eventMap = null;
 
 Template.map.onDestroyed(function() {
 	resetMakerData();
