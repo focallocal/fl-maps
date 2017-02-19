@@ -141,6 +141,15 @@
       "0": "ADD Filter"
     }
   },
+  "map": {
+    "text": {
+      "0": "Legend",
+      "1": "Create your Gather now!"
+    },
+    "btns": {
+      "0": "Toogle All"
+    }
+  },
   "event": {
     "text": {
       "0": "Think this is spam or an error? Let us know!",
