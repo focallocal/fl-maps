@@ -66,7 +66,7 @@ Template.autoForm.onRendered(function () {
 
 	onRendered.call(this);
 
-	sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
+	sequence = new SequenceForm('.sequence-form-fields', '#next', '#new-event-submit', '#back');
 
 	// Initialize sequence
 	sequence.init();
