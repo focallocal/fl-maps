@@ -73,6 +73,8 @@
   margin-top: 0px;
   padding: 10px;
   background-color: white;
+  box-shadow: 5px 10px 10px #555555;
+  font-size: 1.2em;
 }
 
 #search-input {
