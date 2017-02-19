@@ -182,6 +182,15 @@ function addMarker(event, map) {
 		GAnalytics.event("Events","open_popup");
 		Template.eventPopup.onCreated();
 
+		var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
+		eventMap.panTo(latLng);
+		eventMap.setZoom(7);
+
+		$("#report-btn").on('click', function() {
+			$('#confirm-report-map').openModal({
+		      dismissible: false
+		  });
+		});
 	});
 
 	markers[event.category.name] = markers[event.category.name] || {};
