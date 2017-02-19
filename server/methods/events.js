@@ -2,25 +2,38 @@ Meteor.methods({
   'Events.insert': function (params) {
     Events.insert(params);
   },
-  'Events.report': function(_id) {
+  'Events.report': function(_id, _user_id) {
 
     if (_id.length === 0) {
       return;
     }
 
-    var event = Events.find({_id: _id});
+    var event = Events.find({_id: _id}).fetch()[0];
     var number = 0;
+    var userList = [];
 
-    if (event.report !== undefined) {
-      number = event.report.number + 1;
+    if (event.reported !== undefined) {
+      number = event.reported.number + 1;
+      userList = event.reported.users || [];
     }
 
-    var report = {
+    if (userList.indexOf(_user_id) !== -1) {
+      return 'You already reported this event!';
+    }
+
+    userList.push(_user_id);
+
+    var reported = {
       status: true,
       admin_overwrite: false,
-      number: number
+      number: number,
+      users: userList
     };
 
-    Events.update(_id, {'$set': {'report': report}}, { upsert: true, validate: false});
+    event['reported'] = reported;
+
+    Events.update({_id: _id}, {'$set': event}, {validate: false});
+
+    return 'Event Reported!';
   }
 });

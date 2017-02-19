@@ -1,10 +1,12 @@
 Template.eventConfirmReport.events({
     'click .yes-btn': function() {
         var selectedEventId = Session.get('selected');
-        Meteor.call('Events.report', selectedEventId);
-        GAnalytics.event("Events","report");
-        Materialize.toast('Event Reported!', 4000);
+        var userId = Meteor.user()._id;
 
-        console.log(Events.find({_id: selectedEventId}).fetch()[0]);
+        Meteor.call('Events.report', selectedEventId, userId, function(error, result) {
+            Materialize.toast(result, 4000);
+        });
+        
+        GAnalytics.event("Events","report");
     },
 });

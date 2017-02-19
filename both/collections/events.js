@@ -238,6 +238,12 @@ Events.attachSchema(new SimpleSchema({
         autoform: {
             hidden: true
         }
+    },
+    'reported.users': {
+      type: [String],
+      autoform: {
+        hidden: true
+      }
     }
 }));
 SimpleSchema.messages({
