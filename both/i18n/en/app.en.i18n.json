@@ -140,5 +140,10 @@
     "btns": {
       "0": "ADD Filter"
     }
+  },
+  "categoryForm": {
+    "text": {
+      "0": "New Category"
+    }
   }
 }
