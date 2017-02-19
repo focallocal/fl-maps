@@ -6,7 +6,7 @@ Template.eventConfirmReport.events({
         Meteor.call('Events.report', selectedEventId, userId, function(error, result) {
             Materialize.toast(result, 4000);
         });
-        
+
         GAnalytics.event("Events","report");
     },
 });
