@@ -3,6 +3,9 @@
 		<div class="modal-content">
 			<div class="row">
 				<h3 class="txt-center">{{_ "categoryForm.text.0"}}</h3>
+				{{#if Template.subscriptionsReady}}
+					{{> quickForm collection="Categories" id="new-category-form" type="insert"}}
+				{{/if}}
 			</div>
 		</div>
 	</div>
