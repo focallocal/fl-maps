@@ -186,6 +186,11 @@ function addMarker(event, map) {
 		eventMap.panTo(latLng);
 		eventMap.setZoom(7);
 
+		$("#report-btn").on('click', function() {
+			$('#confirm-report-map').openModal({
+		      dismissible: false
+		  });
+		});
 	});
 
 	markers[event.category.name] = markers[event.category.name] || {};
