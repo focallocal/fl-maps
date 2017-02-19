@@ -140,5 +140,13 @@
     "btns": {
       "0": "ADD Filter"
     }
+  },
+  "map": {
+    "text": {
+      "0": "Legend"
+    },
+    "btns": {
+      "0": "Toogle All"
+    }
   }
 }
