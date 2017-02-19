@@ -16,16 +16,24 @@
                     <ul class="tabs">
                         <li class="tab col s3"><a class="active" href="#scope1">
                             <i class="mdi-action-info"></i><span
-                                class="hide-on-med-and-down">About event</span></a></li>
+                                class="hide-on-med-and-down">{{_ "event.text.tags.0"}}</span></a></li>
                         <li class="tab col s3"><a href="#scope2"><i class="mdi-image-photo"></i><span
-                                class="hide-on-med-and-down"> Photos</span></a></li>
+                                class="hide-on-med-and-down">{{_ "event.text.tags.1"}}</span></a></li>
                         <li class="tab col s3"><a href="#scope3"><i class="mdi-av-videocam"></i><span
-                                class="hide-on-med-and-down"> Videos</span></a></li>
+                                class="hide-on-med-and-down"> {{_ "event.text.tags.2"}}</span></a></li>
                         <li class="tab col s3"><a href="#scope4"><i class="mdi-communication-comment"></i><span
-                                class="hide-on-med-and-down"> Comments</span></a></li>
+                                class="hide-on-med-and-down"> {{_ "event.text.tags.3"}}</span></a></li>
                     </ul>
                 </div>
             </div>
+
+            {{#if selectedEvent.reported.status}}
+
+                <div class="col s12">
+                  <span style="color: red">{{_ "event.text.1"}} {{selectedEvent.reported.number}} {{_ "event.text.2"}}</span>
+                </div>
+
+            {{/if}}
 
             <div class="row">
                 <div id="scope1" class="col s12">

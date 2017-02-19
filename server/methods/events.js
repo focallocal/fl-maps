@@ -9,7 +9,7 @@ Meteor.methods({
     }
 
     var event = Events.find({_id: _id}).fetch()[0];
-    var number = 0;
+    var number = 1;
     var userList = [];
 
     if (event.reported !== undefined) {
