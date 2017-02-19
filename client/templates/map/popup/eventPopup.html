@@ -15,6 +15,11 @@
         </div>
         {{/if}}
     {{/if}}
+    {{#if reported.status}}
+      <div>
+        <span style="color: red">{{_ "event.text.1"}} {{reported.number}} {{_ "event.text.2"}}</span>
+      </div>
+    {{/if}}
     <span style="color: {{category.color}}">{{category.name}}</span>
     <h5>{{name}}</h5>
     <blockquote>
