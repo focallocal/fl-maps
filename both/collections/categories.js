@@ -5,8 +5,8 @@ Categories.attachSchema(new SimpleSchema({
 		type: String
 	},
 	'color': {
-		type: String
+		type: String,
 		max: 7,
 		min: 7
 	}
-});
+}));
