@@ -10,5 +10,14 @@ Categories.attachSchema(new SimpleSchema({
 			id: 'category-color',
 			label: false
 		}
+	},
+	'approved': {
+		type: Boolean,
+		autoform: {
+			type: 'hidden'
+		},
+		autoValue: function() {
+			return false;
+		}
 	}
 }));

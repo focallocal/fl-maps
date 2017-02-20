@@ -74,6 +74,13 @@ Template.calendar.helpers({
     },
     filters: function() {
       return Template.instance().filters.get();
+    },
+    unapprovedCategories: function() {
+      return Categories.find({'approved': false});
+    },
+    isAdmin: function() {
+      console.log(Meteor.user());
+      return false;
     }
 });
 Template.calendar.events({
