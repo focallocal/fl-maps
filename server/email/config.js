@@ -1,11 +1,8 @@
 Meteor.startup(function() {
 
   Meteor.Mailgun.config({
-
-    username: 'postmaster@sandbox1d46721db76744558a4f31dfe22d3a9b.mailgun.org',
-    password: '43178c8316f2f7107c3fa7c3e689a98e',
-    domain: 'https://api.mailgun.net/v3/sandbox1d46721db76744558a4f31dfe22d3a9b.mailgun.org'
-
+    username: 'postmaster@maps.focallocal.org',
+    password: '29616944c3065bb0a0dbd3d3804ba22f'
      });
 
   Meteor.methods({
