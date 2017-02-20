@@ -37,7 +37,7 @@ Template.newEvent.onCreated(function() {
 
 Template.newEvent.helpers({
 	categories: function(){
-		return Categories.find({});
+		return Categories.find({'approved': true});
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
