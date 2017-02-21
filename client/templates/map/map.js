@@ -168,6 +168,7 @@ function addMarker(event, map) {
 		var infoWindow = new google.maps.InfoWindow({
 			content: createPopupContent(event)
 		});
+
 		infoWindow.open(map, this);
 
 		var hasEditPermissionTo = function (selectedEvent) {
@@ -184,18 +185,52 @@ function addMarker(event, map) {
 
 		var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
 		eventMap.panTo(latLng);
-		eventMap.setZoom(7);
+		if(eventMap.getZoom() < 7){
+			eventMap.setZoom(7);
+		}
+		//
+
+
 
 		$("#report-btn").on('click', function() {
 			$('#confirm-report-map').openModal({
 		      dismissible: false
 		  });
 		});
-	});
+
 
 	markers[event.category.name] = markers[event.category.name] || {};
 	markers[event.category.name][event._id] = marker;
+});
+
+marker.addListener('dblclick', function() {
+	var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
+	eventMap.panTo(latLng);
+
+	//right now it smoths until zoom 15
+	//if you want more zoom just increase the value
+	smoothZoom(eventMap, 15, eventMap.getZoom()); // call smoothZoom, parameters map, final zoomLevel, and starting zoom level
+})
+
+}//end add marker with event listeners
+
+//////////////smoth zoom function begin///////////////////////////////////
+// the smooth zoom function
+function smoothZoom (map, max, cnt) {
+    if (cnt >= max) {
+        return;
+    }
+    else {
+        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
+            google.maps.event.removeListener(z);
+            smoothZoom(map, max, cnt + 1);
+        });
+        setTimeout(function(){map.setZoom(cnt)}, 100); // 80ms is what I found to work well on my system -- it might not work well on all systems
+    }
 }
+
+
+///////////////////////////////smoth zoom end/////////////////////////
 
 function removeMarker(event) {
 	if (markers[event.category.name] !== undefined && markerCluster !== null) {
@@ -272,6 +307,7 @@ Template.map.onCreated(function() {
 		created = true;
 		addMarkersCluster(map.instance);
 		initSearchBox(map.instance);
+
 	});
 });
 
@@ -284,10 +320,6 @@ Template.map.onRendered(function() {
 	});
 
 	$(".layers-for-map").show();
-
-	setTimeout(function() {
-		$(".layers-for-map").hide();
-	}, 5000);
 
 	$('#layers-toggle-all').on('click', function() {
 		var layers = $('.layers-for-map-list').find('li');
@@ -321,7 +353,7 @@ Template.map.helpers({
 						 position: google.maps.ControlPosition.LEFT_TOP
 				 },
 				 //go to https://snazzymaps.com/ and copy the given code for a template and paste here
-				styles: [
+				styles:[
     {
         "featureType": "all",
         "elementType": "all",
@@ -456,13 +488,13 @@ Template.map.helpers({
                 "lightness": "-5"
             },
             {
-                "hue": "#94ff00"
+                "hue": "#8bff00"
             },
             {
-                "gamma": "1.1"
+                "gamma": "1.20"
             },
             {
-                "saturation": "30"
+                "saturation": "12"
             }
         ]
     },
@@ -508,6 +540,21 @@ Template.map.helpers({
             },
             {
                 "lightness": "0"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            },
+            {
+                "hue": "#ff0000"
+            },
+            {
+                "gamma": "7.50"
             }
         ]
     },
