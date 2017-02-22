@@ -321,6 +321,8 @@ Template.map.onRendered(function() {
 
 	$(".layers-for-map").show();
 
+	setTimeout(function() {$(".layers-for-map").hide()}, 1000);
+
 	$('#layers-toggle-all').on('click', function() {
 		var layers = $('.layers-for-map-list').find('li');
 		layers.each(function(layer) {
