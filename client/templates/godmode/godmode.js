@@ -1,19 +1,65 @@
 function addAdmin() {
 	// Select input
-	console.log("ADDING");
 	var $addAdminForm = $("#enable-admin-form");
-	var email = "";
+	var email = $addAdminForm.find('input[name="email"]').val();
+
+	if (email.length === 0) {
+		// Not Valid
+		return;
+	}
+
+	Meteor.call('Admin.addFromEmail', email, function(err, result) {
+		Materialize.toast(result, 4000);
+	});
 }
 
 function removeAdmin() {
 	// Select input
-	console.log("REMOVING");
+	// Select input
+	var $removeAdminForm = $("#remove-admin-form");
+	var email = $removeAdminForm.find('input[name="email"]').val();
+
+	if (email.length === 0) {
+		// Not Valid
+		return;
+	}
+
+	Meteor.call('Admin.removeFromEmail', email, function(err, result) {
+		Materialize.toast(result, 4000);
+	});
 }
 
 Template.godmode.onCreated(function() {
+	this.admins = new ReactiveVar([]);
+	this.subscribe("categories");
+	var instance = this;
+
+	Meteor.call('Admin.getAdmins', function(err, result) {
+		if (err) {
+			Materialize.toast(err.message, 4000);
+		} else {
+			instance.admins.set(result);
+		}
+	});
+
 });
 
-Template.godmode.events(function() {
-	'click #remove-admin-btn': removeAdmin,
-	'click #add-admin-btn': addAdmin
+Template.godmode.helpers({
+	admins: function() {
+		return Template.instance().admins.get();
+	},
+	categories: function() {
+		return Categories.find({});
+	}
+});
+
+Template.godmode.onRendered(function() {
+	// Click Events
+	$("#enable-admin-btn").on('click', function() {
+		addAdmin();
+	});
+
+	$("#remove-admin-btn").on('click', function() {
+		removeAdmin();
+	});
 });
