@@ -15,9 +15,6 @@ Categories.attachSchema(new SimpleSchema({
 		type: Boolean,
 		autoform: {
 			type: 'hidden'
-		},
-		autoValue: function() {
-			return false;
 		}
 	}
 }));

@@ -57,7 +57,11 @@
 				<h4>Categories</h4>
 				<ul>
 					{{#each categories}}
-						<li>{{name}}</li>
+						{{#if approved}}
+							<li>{{name}} <input class="toggle-approval-category" type="checkbox" value="{{name}}" checked/></li>
+						{{else}}
+							<li>{{name}} <input class="toggle-approval-category" type="checkbox" value="{{name}}"/></li>
+						{{/if}}
 					{{/each}}
 				</ul>
 			</div>
