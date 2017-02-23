@@ -80,6 +80,22 @@ function adjustMapHeightToWindowSize($mapCanvas) {
 	}).resize();
 }
 
+function initNewCategoryButton() {
+	var $newCategoryBtn = $("#category-btn");
+	$($newCategoryBtn, '.tooltipped').tooltip({delay: 50});
+
+	$newCategoryBtn.on('click', function() {
+		if (!Meteor.userId()) {
+			var toastTimeout = 3000;
+			Materialize.toast('Oops! Please login to add gather!', toastTimeout);
+		} else {
+			$("#categoryFormModal").openModal({
+				dismissible: true
+			});
+		}
+	});
+}
+
 function initNewEventButton() {
 	var $newEventBtn = $('#event-new-btn');
 	$($newEventBtn,'.tooltipped').tooltip({delay: 50});
@@ -332,6 +348,7 @@ Template.map.onRendered(function() {
 	});
 
 	initNewEventButton();
+	initNewCategoryButton();
 });
 
 Template.map.helpers({
