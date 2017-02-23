@@ -9,3 +9,9 @@ Events.allow({
     return userId;
   }
 });
+
+Categories.allow({
+  'insert': function(userId, doc) {
+    return userId
+  }
+});
