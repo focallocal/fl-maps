@@ -41,3 +41,10 @@ FlowRouter.route('/events/:_id', {
     BlazeLayout.render('appLayout', {main: 'event'});
   }
 });
+
+FlowRouter.route('/godmode', {
+  name: 'manageAdmins',
+  action: function() {
+    BlazeLayout.render('godmode');
+  }
+})
