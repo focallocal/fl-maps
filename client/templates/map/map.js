@@ -280,16 +280,14 @@ Template.map.onCreated(function() {
 		adjustMapHeightToWindowSize($('.map-container'));
 
 		instance.categories.get().forEach(function(category) {
-			if (addedLayers[category.name] === undefined && category.approved === true) {
-				addedLayers[category.name] = category;
+			if (addedLayers[category.name] === undefined) {
+				addedLayers[category.name] = true;
 				addLayer(category.name);
 			}
 		});
 
 		instance.events.get().forEach(function(event) {
-			 if (addedLayers[event.category.name] !== undefined) {
-				addMarker(event, map.instance);
-			}
+			addMarker(event, map.instance);
 		});
 
 		var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});

@@ -31,7 +31,7 @@ function removeAdmin() {
 
 Template.godmode.onCreated(function() {
 	this.admins = new ReactiveVar([]);
-	this.subscribe("categories");
+	this.subscribe("categories.raw");
 	var instance = this;
 
 	Meteor.call('Admin.getAdmins', function(err, result) {

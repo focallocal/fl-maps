@@ -70,6 +70,20 @@ Events.attachSchema(new SimpleSchema({
             return Categories.findOne(categoryId).color;
         }
     },
+    'category.approved': {
+      type: Boolean,
+      autoform: {
+        type: 'hidden'
+      },
+      optional: true,
+      autoValue: function() {
+        var categoryId = this.field('category._id').value;
+        if (!categoryId) {
+          return false;
+        }
+        return Categories.findOne(categoryId).approved;
+      }
+    },
     name: {
         type: String,
         label: 'Event name',
