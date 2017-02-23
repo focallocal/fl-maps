@@ -277,26 +277,19 @@ Template.map.onCreated(function() {
 
 		eventMap = map.instance;
 
+		adjustMapHeightToWindowSize($('.map-container'));
+
 		instance.categories.get().forEach(function(category) {
-			if (addedLayers[category.name] !== true) {
-				addedLayers[category.name] = true;
+			if (addedLayers[category.name] === undefined && category.approved === true) {
+				addedLayers[category.name] = category;
 				addLayer(category.name);
 			}
 		});
 
-		$('.layer-checkbox').on('click', function() {
-			var $this = $(this);
-			if ($this.is(':checked')) {
-				showLayer($this.parent().text());
-			} else {
-				hideLayer($this.parent().text());
-			}
-		});
-
-		adjustMapHeightToWindowSize($('.map-container'));
-
 		instance.events.get().forEach(function(event) {
-			addMarker(event, map.instance);
+			 if (addedLayers[event.category.name] !== undefined) {
+				addMarker(event, map.instance);
+			}
 		});
 
 		var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
@@ -320,6 +313,16 @@ Template.map.onCreated(function() {
 				}
 			}
 		});
+
+		$('.layer-checkbox').on('click', function() {
+			var $this = $(this);
+			if ($this.is(':checked')) {
+				showLayer($this.parent().text());
+			} else {
+				hideLayer($this.parent().text());
+			}
+		});
+
 		created = true;
 		addMarkersCluster(map.instance);
 		initSearchBox(map.instance);

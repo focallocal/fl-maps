@@ -1,11 +1,9 @@
-Events.allow({
+Categories.allow({
   'insert': function(userId, doc) {
-    return userId;
+    return userId
   },
   'update': function(userId, doc, fields, modifier) {
-    return userId;
-  },
-  'remove': function(userId, doc) {
+    console.log("ASDFWR##@WE");
     return userId;
   }
 });

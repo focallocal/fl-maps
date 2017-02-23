@@ -47,3 +47,14 @@
 .godmode-card {
 	padding: 20px;
 }
+
+[type="checkbox"]:not(:checked).toggle-approval-category,
+[type="checkbox"]:checked.toggle-approval-category {
+	/*box-sizing: border-box;*/
+	/*padding: 0;*/
+	position: inherit;
+	left: inherit;
+	visibility: inherit;
+	opacity: 1;
+	margin-right: 5px;
+}
