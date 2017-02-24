@@ -37,7 +37,7 @@ Template.newEvent.onCreated(function() {
 
 Template.newEvent.helpers({
 	categories: function(){
-		return Categories.find({});
+		return Categories.find({'approved': true});
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
@@ -66,7 +66,7 @@ Template.autoForm.onRendered(function () {
 
 	onRendered.call(this);
 
-	sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
+	sequence = new SequenceForm('.sequence-form-fields', '#next', '#new-event-submit', '#back');
 
 	// Initialize sequence
 	sequence.init();

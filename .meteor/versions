@@ -82,6 +82,7 @@ meteor@1.1.16
 meteor-base@1.0.4
 meteorspark:util@0.2.0
 meteortoys:toykit@0.8.7
+michalvalasek:autoform-bootstrap-colorpicker@0.1.0
 minifier-js@1.1.13
 minimongo@1.0.17
 mobile-experience@1.0.4
@@ -113,6 +114,7 @@ retry@1.0.8
 reywood:publish-composite@1.4.2
 rosh93:slide-panel@0.1.6
 routepolicy@1.0.11
+ryanswapp:spectrum-colorpicker@0.0.1
 sergeyt:typeahead@0.11.1_9
 service-configuration@1.0.10
 session@1.1.6

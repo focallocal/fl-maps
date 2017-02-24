@@ -80,6 +80,22 @@ function adjustMapHeightToWindowSize($mapCanvas) {
 	}).resize();
 }
 
+function initNewCategoryButton() {
+	var $newCategoryBtn = $("#category-btn");
+	$($newCategoryBtn, '.tooltipped').tooltip({delay: 50});
+
+	$newCategoryBtn.on('click', function() {
+		if (!Meteor.userId()) {
+			var toastTimeout = 3000;
+			Materialize.toast('Oops! Please login to add gather!', toastTimeout);
+		} else {
+			$("#categoryFormModal").openModal({
+				dismissible: true
+			});
+		}
+	});
+}
+
 function initNewEventButton() {
 	var $newEventBtn = $('#event-new-btn');
 	$($newEventBtn,'.tooltipped').tooltip({delay: 50});
@@ -261,23 +277,14 @@ Template.map.onCreated(function() {
 
 		eventMap = map.instance;
 
+		adjustMapHeightToWindowSize($('.map-container'));
+
 		instance.categories.get().forEach(function(category) {
-			if (addedLayers[category.name] !== true) {
+			if (addedLayers[category.name] === undefined) {
 				addedLayers[category.name] = true;
 				addLayer(category.name);
 			}
 		});
-
-		$('.layer-checkbox').on('click', function() {
-			var $this = $(this);
-			if ($this.is(':checked')) {
-				showLayer($this.parent().text());
-			} else {
-				hideLayer($this.parent().text());
-			}
-		});
-
-		adjustMapHeightToWindowSize($('.map-container'));
 
 		instance.events.get().forEach(function(event) {
 			addMarker(event, map.instance);
@@ -304,6 +311,16 @@ Template.map.onCreated(function() {
 				}
 			}
 		});
+
+		$('.layer-checkbox').on('click', function() {
+			var $this = $(this);
+			if ($this.is(':checked')) {
+				showLayer($this.parent().text());
+			} else {
+				hideLayer($this.parent().text());
+			}
+		});
+
 		created = true;
 		addMarkersCluster(map.instance);
 		initSearchBox(map.instance);
@@ -332,6 +349,7 @@ Template.map.onRendered(function() {
 	});
 
 	initNewEventButton();
+	initNewCategoryButton();
 });
 
 Template.map.helpers({
