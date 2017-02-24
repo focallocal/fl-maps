@@ -100,14 +100,29 @@ button.btn-floating {
   border: none;
 }
 
+.glow {
+  margin: auto;
+  width: 147px;
+  height: 90px;
+  background-color: #1f5afe;
+
+}
+
 // Fixed Action Button
 .fixed-action-btn {
   position: absolute;
   right: 23px;
   bottom: 23px;
-  padding-top: 15px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   margin-bottom: 0;
   z-index: 1001;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 15px 8px rgba(230, 81, 0, .75);
+  -moz-box-shadow: 0px 0px 15px 8px rgba(230, 81, 0, .75);
+  box-shadow: 0px 0px 15px 8px rgba(230, 81, 0, .75);
 
   ul {
     left: 0;
