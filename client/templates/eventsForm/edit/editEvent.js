@@ -21,8 +21,8 @@ Template.editEvent.onCreated(function() {
 });
 
 Template.editEvent.helpers({
-	categories: function(){
-		return Categories.find({});
+	categories: function() {
+		return Categories.find({'approved': true});
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		console.log("ASFDS");

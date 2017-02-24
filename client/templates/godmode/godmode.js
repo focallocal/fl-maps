@@ -31,7 +31,7 @@ function removeAdmin() {
 
 Template.godmode.onCreated(function() {
 	this.admins = new ReactiveVar([]);
-	this.subscribe("categories");
+	this.subscribe("categories.raw");
 	var instance = this;
 
 	Meteor.call('Admin.getAdmins', function(err, result) {
@@ -62,4 +62,16 @@ Template.godmode.onRendered(function() {
 	$("#remove-admin-btn").on('click', function() {
 		removeAdmin();
 	});
+
+	// $(".toggle-approval-category").on('click', function() {
+	// 	console.log("ASDFADS");
+	// 	var categoryName = $(this).val();
+	// 	Meteor.call('Categories.approveToggle', Template.instance().categoriesByName[categoryName]);
+	// });
+});
+
+Template.godmode.events({
+	'click .toggle-approval-category': function() {
+		Meteor.call('Categories.approveToggle', this._id);
+	}
 });

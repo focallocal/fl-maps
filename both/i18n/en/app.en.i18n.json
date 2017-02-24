@@ -141,6 +141,11 @@
       "0": "ADD Filter"
     }
   },
+  "categoryForm": {
+    "text": {
+      "0": "New Category"
+    }
+  },
   "map": {
     "text": {
       "0": "Legend",
