@@ -1,3 +1,15 @@
+if (Meteor.isClient) {
+
+  FlowRouter.wait();
+  var roles = Meteor.subscribe('roles');
+  Tracker.autorun(function() {
+    if (roles.ready()) {
+      FlowRouter.initialize();
+    }
+  });
+
+}
+
 FlowRouter.route('/', {
   name: 'home',
   action: function() {
@@ -42,8 +54,26 @@ FlowRouter.route('/events/:_id', {
   }
 });
 
-FlowRouter.route('/godmode', {
-  name: 'manageAdmins',
+var adminRoutes = FlowRouter.group({
+  name: 'godmodeRoutes',
+  prefix: '/godmode',
+  triggersEnter: [function(context, redirect) {
+    if (!Meteor.userId()) {
+      FlowRouter.go('/sign-in');
+    }
+
+    if (Roles.subscription.ready()) {
+      if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+        return true;
+      } else {
+        FlowRouter.go('/');
+      }
+    }
+  }]
+});
+
+adminRoutes.route('/', {
+  name: 'dashboard',
   action: function() {
     BlazeLayout.render('godmode');
   }
