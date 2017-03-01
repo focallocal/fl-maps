@@ -3,7 +3,7 @@ AutoForm.hooks({
 			 onSuccess: function (operation, result, template) {
 				 	// TODO: Close modal
 					 $("#categoryFormModal").hide();
-					 Materialize.toast('Category submitted successfully!', 4000);
+					 Materialize.toast('Category submitted successfully and will be reviewed!', 4000);
 
 					 GAnalytics.event("Category","created");
 			 },
@@ -16,6 +16,12 @@ AutoForm.hooks({
 
 Template.categoryForm.onCreated(function() {
 	this.subscribe('categories');
+	this.categories = [];
+	var instance = this;
+
+	Tracker.autorun(function() {
+		instance.categories = Categories.find({}).fetch();
+	});
 });
 
 Template.categoryForm.onRendered(function() {
@@ -23,6 +29,10 @@ Template.categoryForm.onRendered(function() {
 		$("#category-color").spectrum({
 			color: "#000",
 			preferredFormat: "hex"
+		});
+
+		$("#category-name").on('change', function() {
+			Template.instance().categories.find($(this));
 		});
 	});
 });
