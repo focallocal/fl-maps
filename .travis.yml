@@ -14,5 +14,6 @@ before_install:
 branches:
   only:
   - master
+  - street-sleeper
 script:
 - mupx deploy
