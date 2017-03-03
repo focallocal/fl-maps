@@ -10,16 +10,16 @@
     }
   },
   "home": {
-    "title": "Focallocal Gather",
-    "sub_title": "The only place for true social connection this summer.",
+    "title": "Brighter Tomorrow Map",
+    "sub_title": "Connecting people going through difficult times with the free resources available, and those who want to offer support in their local community",
     "section_titles": {
-      "0": "What is Focallocal?",
-      "1": "Want to join?",
-      "2": "It's free!",
+      "0": "How does the Brighter Tomorrow Map work?",
+      "1": "How can i connect with people near me and offer support?",
+      "2": "What is the Focallocal Community?",
       "sub": {
-        "0": "is a community driven by the true will to bring people closer together We have now more than 10 thousand members. They attend events organised all over the world.",
-        "1": "Everybody can be part of this great community. Attend the events! Organise your own!",
-        "2": "You pay with the smile, not money :) Help us to spread the positive energy to make the world a better place!"
+        "0": "The map is for you to list and find, all free resources available in your local community to help people who are homeless, on going through hardships to meet their basic needs, and take steps towards improving their situation",
+        "1": "The map gives two options. 1) Print it as a guide and give it to anyone in need 2) Post resources you'd like to offer to those in need. like a CV help workshop, teaching a skill, or just meeting for a tea and chat",
+        "2": "We built this map! We are an open community for taking local action, globally. Focallocal aims to hit at the very roots of issues within our societies, by simply uniting people in positive action; taking ownership of issues you want to see improved in your local community and together creating activities and projects to achieve change"
       }
     },
     "btns": {
@@ -27,24 +27,24 @@
     }
   },
   "newEvent": {
-    "title": "New Gather",
+    "title": "New Resource",
     "section_titles": {
       "0": "1. Choose a Category",
-      "1": "2. Give it a Name",
+      "1": "2. Name",
       "2": "3. Select an Address",
-      "3": "4. Choose a specific meeting point (hidden on street sleeper map) Point",
-      "4": "5. How will people recognise you? (hidden on street sleeper map)",
-      "5": "6. Choose a Date and Time",
+      "3": "4. Who is offering the resource",
+      "4": "5. What days and times is it open?",
+      "5": "6. End date",
       "6": "7. Description/More Details",
       "sub": {
         "0": {
           "0": "Not sure? Here's a list of suggestions:",
-          "1": "(if the Positive Action you want to create isn't there let us know at contact@focallocal.org)
-          Give your Gathering a name"
+          "1": "(contact us at contact@focallocal.org)
+          (what is this line of code? where does it go??)"
         },
         "2": "Enter address or postcode/zip - or choose from commonly used meeting points in that city, (clicking on a commonly used point auto-fills that location into the text entry box).",
-        "3": "Be as specific as possible. Next to a statue? North, West of a bridge? Not sure? Check Google Earth for a good meeting spot.",
-        "4": "Carrying a Teddy Bear on your Shoulder? Wearing a bright yellow hat? wearing a Focallocal badge or T-shirt?"
+        "3": "Is it a group of friendly people? a charity? a religion? is it you? who are you?",
+        "4": "Please find accurate details, so no-one has to travel to somewhere which is closed"
       }
     },
     "btns": {
@@ -54,20 +54,20 @@
     }
   },
   "editEvent": {
-    "title": "Edit gather"
+    "title": "Edit Resource"
   },
   "eventConfirmDelete": {
     "title": "Please confirm",
-    "subtitle": "Are you sure to delete this event?",
+    "subtitle": "Are you sure to delete?",
     "btns": {
       "0": "Yes, delete it!",
       "1": "No, take me back!"
     }
   },
   "congratsModal": {
-    "title": "Congratulations, your event is LIVE!",
-    "subtitle": "Promote the event now - we've made it super easy for you!",
-    "subtitle_1": "Share with your friends with just one click",
+    "title": "Congratulations, your resource is LIVE and HELPING people in need!",
+    "subtitle": "Spread the word so more people can access and contribute this fabulous resource map",
+    "subtitle_1": "One click to share with your friends and family",
     "text": {
       "0": "Simply click the buttons above and copy/paste the info below.",
       "1": "with the Focallocal Community",
@@ -75,9 +75,9 @@
         "0": "Description",
         "1": "When",
         "2": "Address",
-        "3": "Meeting point",
-        "4": "How to find us",
-        "5": "Event link"
+        "3": "Who",
+        "4": "Days and Times",
+        "5": "Resource Link"
       },
       "2": "Become a Positive Action Hero and join the Global Movement for Positive Change at www.focallocal.org"
     },
@@ -95,8 +95,8 @@
         "1": {
           "list": {
             "0": "Home",
-            "1": "Events map",
-            "2": "Events list",
+            "1": "Resource map",
+            "2": "Resource list",
             "3": "Sign in",
             "4": "Register",
             "5": "Rss feed"
@@ -122,34 +122,29 @@
   "leftLinks": {
     "text": {
       "0": "About Us",
-      "1": "Happy News",
-      "2": "Activities",
+      "1": "Action News",
+      "2": "Missions",
       "3": "Join The Team"
     }
   },
   "calendar": {
     "section_titles": {
       "0": "Search",
-      "1": "Upcoming gathers",
-      "2": "Past gathers",
+      "1": "Current Resources",
+      "2": "Past Resources",
       "sub": {
-        "0": "No upcoming events :( Please add one!",
-        "1": "No gathers in the past."
+        "0": "No listed Resources :( Please add one!",
+        "1": "No past Resouces posted here"
       }
     },
     "btns": {
       "0": "ADD Filter"
     }
   },
-  "categoryForm": {
-    "text": {
-      "0": "New Category"
-    }
-  },
   "map": {
     "text": {
       "0": "Legend",
-      "1": "Create your Gather now!"
+      "1": "Add your Resource now!"
     },
     "btns": {
       "0": "Toggle All"
@@ -159,16 +154,16 @@
     "text": {
       "0": "Think this is spam or an error? Let us know!",
       "tags": {
-        "0": "About Event",
+        "0": "About Resource",
         "1": "Photos",
         "2": "Videos",
         "3": "Comments"
       },
-      "1": "* This event has been reported by",
+      "1": "* This resource has been reported as spam or innaccurate by",
       "2": "user(s)"
     },
     "btns": {
-      "0": "Report"
+      "0": "Report as innaccurate or spam"
     }
   }
 }
