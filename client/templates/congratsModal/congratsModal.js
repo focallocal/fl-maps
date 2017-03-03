@@ -1,12 +1,11 @@
 Template.congratsModal.helpers({
 	selectedEvent: function() {
-	  var eventId = Session.get('selected');
-	  var event = Events.findOne(eventId);
-	  if (event == undefined) {
-	  	Meteor.Error('no-event-selected', 'No event selected.');
-	  	return;
-		}
-		Session.set('selectedEvent', event);
+        var eventId = Session.get('selected');
+        var event = Events.findOne(eventId);
+        if (event == undefined) {
+        	Meteor.Error('no-event-selected', 'No event selected.');
+        	return;
+        }
 		event.url = event.url ? event.url : Meteor.absoluteUrl('events/'+eventId);
 		return event;
 	},
@@ -25,9 +24,9 @@ Template.congratsModal.helpers({
 	},
 	shareOnTwitterLink: function(event) {
 		var promoText = 'I\'ve just created new GatherUp! ';
-		return 'https://twitter.com/intent/tweet?url=' + event.url +
+		return 'https://twitter.com/intent/tweet?url=' + event.url + 
 			'&text=' +  encodeURIComponent(promoText) +
-			encodeURIComponent(event.name) +
+			encodeURIComponent(event.name) + 
 			'&hashtags=Focallocal';
 	},
 	shareOnGooglePlusLink: function(event) {

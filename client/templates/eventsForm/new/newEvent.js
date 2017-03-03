@@ -1,11 +1,10 @@
 var sequence = undefined;
 
 AutoForm.hooks({
-	 'events-form-new': {
+	 'events-form': {
 			 onSuccess: function (operation, result, template) {
 				 	// TODO: Close modal
-					 clearForm();
-					 $("#eventsFormModal").hide();
+
 					 Materialize.toast('Event submitted successfully!', 4000);
 
 					 Session.set("selected", result);
@@ -21,14 +20,12 @@ AutoForm.hooks({
 	 }
 });
 
-function clearForm() {
-	AutoForm.resetForm('events-form');
-	$("#eventTitle").text('New Gather');
-	sequence.resetSequence();
-}
-
 Template.newEvent.viewmodel({
-	clearForm: clearForm
+	clearForm: function() {
+		AutoForm.resetForm('events-form');
+		$("#eventTitle").text('New Gather');
+		sequence.resetSequence();
+	}
 });
 
 Template.newEvent.onCreated(function() {
@@ -37,7 +34,7 @@ Template.newEvent.onCreated(function() {
 
 Template.newEvent.helpers({
 	categories: function(){
-		return Categories.find({'approved': true});
+		return Categories.find({});
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
@@ -55,18 +52,9 @@ Template.autoForm.onRendered(function () {
 		return;
 	}
 
-	Meteor.typeahead.inject();
-
-	var fixMaterializeActiveClassTrigger = function() {
-			$('#events-form-new').find('input[name=address]').detach().insertBefore('.twitter-typeahead');
-			$('#events-form-new').find('.twitter-typeahead').find('input[type=text]').remove();
-	};
-	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
-	fixMaterializeActiveClassTrigger();
-
 	onRendered.call(this);
 
-	sequence = new SequenceForm('.sequence-form-fields', '#next', '#new-event-submit', '#back');
+	sequence = new SequenceForm('.sequence-form-fields', '#next', 'button[type="submit"]', '#back');
 
 	// Initialize sequence
 	sequence.init();

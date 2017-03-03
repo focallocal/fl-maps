@@ -3,28 +3,6 @@ var markers = {};
 var addedMarkers = {};
 var addedLayers = {};
 var eventMap = null;
-var created = false;
-
-function resetMakerData() {
-	if (markerCluster !== null) {
-		markerCluster.clearMarkers();
-	}
-	markerCluster = null;
-	for (layer in markers) {
-		if (markers.hasOwnProperty(layer)) {
-			for (marker in markers[layer]) {
-				if (markers[layer].hasOwnProperty(marker)) {
-					markers[layer][marker].setMap(null);
-					markers[layer][marker].unbind('click');
-				}
-			}
-		}
-	}
-	markers = {};
-	addedMarkers = {};
-	addedLayers = {};
-	eventMap = null;
-}
 
 function initSearchBox(map) {
 	var $input = $('#search-input');
@@ -78,22 +56,6 @@ function adjustMapHeightToWindowSize($mapCanvas) {
 	        offsetTop = $('#menu-top').height();
 	    $mapCanvas.css('height', (h - offsetTop));
 	}).resize();
-}
-
-function initNewCategoryButton() {
-	var $newCategoryBtn = $("#category-btn");
-	$($newCategoryBtn, '.tooltipped').tooltip({delay: 50});
-
-	$newCategoryBtn.on('click', function() {
-		if (!Meteor.userId()) {
-			var toastTimeout = 3000;
-			Materialize.toast('Oops! Please login to add gather!', toastTimeout);
-		} else {
-			$("#categoryFormModal").openModal({
-				dismissible: true
-			});
-		}
-	});
 }
 
 function initNewEventButton() {
@@ -184,7 +146,6 @@ function addMarker(event, map) {
 		var infoWindow = new google.maps.InfoWindow({
 			content: createPopupContent(event)
 		});
-
 		infoWindow.open(map, this);
 
 		var hasEditPermissionTo = function (selectedEvent) {
@@ -199,61 +160,15 @@ function addMarker(event, map) {
 		GAnalytics.event("Events","open_popup");
 		Template.eventPopup.onCreated();
 
-		var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
-		eventMap.panTo(latLng);
-		if(eventMap.getZoom() < 7){
-			eventMap.setZoom(7);
-		}
-		//
-
-
-
-		$("#report-btn").on('click', function() {
-			$('#confirm-report-map').openModal({
-		      dismissible: false
-		  });
-		});
-
+	});
 
 	markers[event.category.name] = markers[event.category.name] || {};
 	markers[event.category.name][event._id] = marker;
-});
-
-marker.addListener('dblclick', function() {
-	var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
-	eventMap.panTo(latLng);
-
-	//right now it smoths until zoom 15
-	//if you want more zoom just increase the value
-	smoothZoom(eventMap, 15, eventMap.getZoom()); // call smoothZoom, parameters map, final zoomLevel, and starting zoom level
-})
-
-}//end add marker with event listeners
-
-//////////////smoth zoom function begin///////////////////////////////////
-// the smooth zoom function
-function smoothZoom (map, max, cnt) {
-    if (cnt >= max) {
-        return;
-    }
-    else {
-        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
-            google.maps.event.removeListener(z);
-            smoothZoom(map, max, cnt + 1);
-        });
-        setTimeout(function(){map.setZoom(cnt)}, 100); // 80ms is what I found to work well on my system -- it might not work well on all systems
-    }
 }
-
-
-///////////////////////////////smoth zoom end/////////////////////////
 
 function removeMarker(event) {
 	if (markers[event.category.name] !== undefined && markerCluster !== null) {
 		var marker = markers[event.category.name][event._id];
-		if (marker === null) {
-			return;
-		}
 		marker.setMap(null);
 		marker.unbind('click', false);
 
@@ -264,7 +179,6 @@ function removeMarker(event) {
 }
 
 Template.map.onCreated(function() {
-	resetMakerData();
 	var instance = this;
 
 	instance.subscribe('events');
@@ -277,38 +191,10 @@ Template.map.onCreated(function() {
 
 		eventMap = map.instance;
 
-		adjustMapHeightToWindowSize($('.map-container'));
-
 		instance.categories.get().forEach(function(category) {
-			if (addedLayers[category.name] === undefined) {
+			if (addedLayers[category.name] !== true) {
 				addedLayers[category.name] = true;
 				addLayer(category.name);
-			}
-		});
-
-		instance.events.get().forEach(function(event) {
-			addMarker(event, map.instance);
-		});
-
-		var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
-		cursor.observe({
-			added: function(event) {
-				if (created === true) {
-					addMarker(event, map.instance);
-					addMarkersCluster(map.instance, event);
-				}
-			},
-			changed: function(newEvent, oldEvent) {
-				if (created === true) {
-					removeMarker(oldEvent);
-					addMarker(newEvent, map.instance);
-					addMarkersCluster(map.instance, newEvent);
-				}
-			},
-			removed: function(event) {
-				if (created === true) {
-					removeMarker(event);
-				}
 			}
 		});
 
@@ -321,24 +207,43 @@ Template.map.onCreated(function() {
 			}
 		});
 
-		created = true;
+		adjustMapHeightToWindowSize($('.map-container'));
+
+		if (_.isEmpty(markers)) {
+			instance.events.get().forEach(function(event) {
+				addMarker(event, map.instance);
+			});
+
+			var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
+			cursor.observe({
+				added: function(event) {
+					addMarker(event, map.instance);
+					addMarkersCluster(map.instance, event);
+				},
+				changed: function(newEvent, oldEvent) {
+					removeMarker(oldEvent);
+					addMarker(newEvent, map.instance);
+					addMarkersCluster(map.instance, newEvent);
+				},
+				removed: function(event) {
+					removeMarker(event);
+				}
+			});
+		}
 		addMarkersCluster(map.instance);
 		initSearchBox(map.instance);
-
 	});
 });
 
 
 Template.map.onRendered(function() {
-	GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
+	if (_.isEmpty(markers)) {
+		GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
+	}
 
 	$(".layers-for-map-btn").on('click', function() {
 		$(".layers-for-map").toggle();
 	});
-
-	$(".layers-for-map").show();
-
-	setTimeout(function() {$(".layers-for-map").hide()}, 1000);
 
 	$('#layers-toggle-all').on('click', function() {
 		var layers = $('.layers-for-map-list').find('li');
@@ -347,9 +252,6 @@ Template.map.onRendered(function() {
 			$checkbox.click();
 		});
 	});
-
-	initNewEventButton();
-	initNewCategoryButton();
 });
 
 Template.map.helpers({
@@ -373,239 +275,7 @@ Template.map.helpers({
 						 position: google.maps.ControlPosition.LEFT_TOP
 				 },
 				 //go to https://snazzymaps.com/ and copy the given code for a template and paste here
-				styles:[
-    {
-        "featureType": "all",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": "100"
-            },
-            {
-                "gamma": "0.50"
-            },
-            {
-                "weight": "1.00"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "weight": "4.00"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "all",
-        "stylers": [
-            {
-                "weight": "0.4"
-            },
-            {
-                "hue": "#b9ff00"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.country",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "weight": "4.00"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "all",
-        "stylers": [
-            {
-                "hue": "#b9ff00"
-            },
-            {
-                "lightness": "0"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "all",
-        "stylers": [
-            {
-                "weight": "3"
-            },
-            {
-                "lightness": "0"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "weight": "1.00"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.neighborhood",
-        "elementType": "all",
-        "stylers": [
-            {
-                "gamma": "1.97"
-            },
-            {
-                "lightness": "0"
-            },
-            {
-                "weight": "6.26"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": "67"
-            },
-            {
-                "gamma": "1.00"
-            },
-            {
-                "saturation": "100"
-            },
-            {
-                "weight": "2.17"
-            },
-            {
-                "hue": "#0053ff"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": "0"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "all",
-        "stylers": [
-            {
-                "weight": "1.00"
-            },
-            {
-                "lightness": "-5"
-            },
-            {
-                "hue": "#8bff00"
-            },
-            {
-                "gamma": "1.20"
-            },
-            {
-                "saturation": "12"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "weight": "0.50"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "saturation": "33"
-            },
-            {
-                "lightness": "35"
-            },
-            {
-                "weight": "1.00"
-            },
-            {
-                "gamma": "1"
-            },
-            {
-                "visibility": "off"
-            },
-            {
-                "hue": "#fffa00"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "saturation": "-91"
-            },
-            {
-                "lightness": "0"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "hue": "#ff0000"
-            },
-            {
-                "gamma": "7.50"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "hue": "#ff0000"
-            },
-            {
-                "saturation": "0"
-            },
-            {
-                "lightness": "0"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "all",
-        "stylers": [
-            {
-                "weight": "0.30"
-            },
-            {
-                "lightness": "0"
-            }
-        ]
-    }
-],
+				styles: [{"stylers":[{"saturation":100},{"gamma":0.6}]}],
 			}
 		}
 	},
@@ -617,19 +287,20 @@ Template.map.helpers({
 
 GoogleMaps.ready('map', function(map) {
 	GoogleMaps.initialize();
+	initNewEventButton();
 });
 
 Template.map.viewmodel({
 	panTo: function() {
-		var event = Session.get('selectedEvent');
-		var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
-		eventMap.panTo(latLng);
-		eventMap.setZoom(10);
+
 	}
 });
 
-Template.map.onDestroyed(function() {
-	resetMakerData();
-	created = false;
-	slidePanel.closePanel('editEvent');
-});
+
+// Template.map.onDestroyed(function() {
+// 	if (markerCluster !== null) {
+// 		markerCluster.clearMarkers();
+// 		markerCluster = null;
+// 	}
+// 	addedMarkers = {};
+// });

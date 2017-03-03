@@ -21,11 +21,10 @@ Template.editEvent.onCreated(function() {
 });
 
 Template.editEvent.helpers({
-	categories: function() {
-		return Categories.find({'approved': true});
+	categories: function(){
+		return Categories.find({});
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
-		console.log("ASFDS");
 		geocodeDataSource(query, sync, asyncCallback);
 	},
 	selectedHandler: function (event, suggestion, datasetName) {
@@ -36,9 +35,6 @@ Template.editEvent.helpers({
 });
 
 Template.autoForm.onRendered(function() {
-	if (Session.get('isEdit') !== true) {
-		return;
-	}
 	copyCoordsFromSelectedEvent = function () {
 		var selectedEvent = Events.findOne(Session.get('selected'));
 		if (selectedEvent != null) {
@@ -46,16 +42,6 @@ Template.autoForm.onRendered(function() {
 		}
 	};
 	copyCoordsFromSelectedEvent();
-
-	Meteor.typeahead.inject();
-
-	var fixMaterializeActiveClassTrigger = function() {
-			$('#events-form').find('input[name=address]').detach().insertBefore('.twitter-typeahead');
-			$('#events-form').find('.twitter-typeahead').find('input[type=text]').remove();
-	};
-	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
-	fixMaterializeActiveClassTrigger();
-
 	onRendered.call(this);
 });
 

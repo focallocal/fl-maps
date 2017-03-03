@@ -5,7 +5,7 @@ accounts-meetup@1.0.10
 accounts-oauth@1.1.13
 accounts-password@1.1.13
 accounts-twitter@1.0.10
-alanning:roles@1.2.15
+alanning:roles@1.2.13
 aldeed:autoform@5.8.1
 aldeed:collection2@2.5.0
 aldeed:geocoder@0.3.6
@@ -82,7 +82,6 @@ meteor@1.1.16
 meteor-base@1.0.4
 meteorspark:util@0.2.0
 meteortoys:toykit@0.8.7
-michalvalasek:autoform-bootstrap-colorpicker@0.1.0
 minifier-js@1.1.13
 minimongo@1.0.17
 mobile-experience@1.0.4
@@ -114,7 +113,6 @@ retry@1.0.8
 reywood:publish-composite@1.4.2
 rosh93:slide-panel@0.1.6
 routepolicy@1.0.11
-ryanswapp:spectrum-colorpicker@0.0.1
 sergeyt:typeahead@0.11.1_9
 service-configuration@1.0.10
 session@1.1.6

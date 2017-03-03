@@ -1,174 +1,21 @@
 
 {
-  "general": {
-    "text": {
-      "focallocal": "Focallocal",
-      "focallocal.web": "Focallocal.org"
-    },
-    "btns": {
-      "0": "Show More"
-    }
-  },
   "home": {
-    "title": "The Focallocal Community",
-    "sub_title": "Local Action for Global Change",
-    "section_titles": {
-      "0": "What is Focallocal?",
-      "1": "Is it for me?",
-      "2": "Our Message",
-      "sub": {
-        "0": "is an open community of many thousands of positive people, targeting the root causes of all societal issues. Creating easy and fun Positive Action tools to empowering people and communities everywhere to create the World they want to live in",
-        "1": "you'll be joining a Global Movement. Using simple, fun activities to make a happier World for everyone to live in. Meeting positive, pro-active people and making awesome new friends both, locally and globally",
-        "2": "is simply: don’t live in frustration at what others aren’t doing. Lets come together do it ourselves! Uniting to take responsibility for health and happiness of life where we live ..and having heaps of fun doing it!"
-      }
-    },
-    "btns": {
-      "0": "Create/Find"
-    }
+    "title": "Hello from I18N",
+    "description": "Build up your reading list.",
+    "create_gather": "Free Resource",
+    "opening_hour": "Start time",
+    "closing_hour": "Closing time"
   },
   "newEvent": {
-    "title": "New Gather",
-    "section_titles": {
-      "0": "1. Choose a Category",
-      "1": "2. Give it a Name",
-      "2": "3. Select an Address",
-      "3": "4. Choose a specific meeting point (hidden on street sleeper map) Point",
-      "4": "5. How will people recognise you? (hidden on street sleeper map)",
-      "5": "6. Choose a Date and Time",
-      "6": "7. Description/More Details",
-      "sub": {
-        "0": {
-          "0": "Not sure? Here's a list of suggestions:",
-          "1": "(if the Positive Action you want to create isn't there let us know at contact@focallocal.org)
-          Give your Gathering a name"
-        },
-        "2": "Enter address or postcode/zip - or choose from commonly used meeting points in that city, (clicking on a commonly used point auto-fills that location into the text entry box).",
-        "3": "Be as specific as possible. Next to a statue? North, West of a bridge? Not sure? Check Google Earth for a good meeting spot.",
-        "4": "Carrying a Teddy Bear on your Shoulder? Wearing a bright yellow hat? wearing a Focallocal badge or T-shirt?"
-      }
-    },
-    "btns": {
-      "0": "Back",
-      "1": "Next",
-      "2": "Submit"
-    }
-  },
-  "editEvent": {
-    "title": "Edit gather"
-  },
-  "eventConfirmDelete": {
-    "title": "Please confirm",
-    "subtitle": "Are you sure to delete this event?",
-    "btns": {
-      "0": "Yes, delete it!",
-      "1": "No, take me back!"
-    }
-  },
-  "congratsModal": {
-    "title": "Congratulations, your event is LIVE!",
-    "subtitle": "Promote the event now - we've made it super easy for you!",
-    "subtitle_1": "Share with your friends with just one click",
-    "text": {
-      "0": "Simply click the buttons above and copy/paste the info below.",
-      "1": "with the Focallocal Community",
-      "tags": {
-        "0": "Description",
-        "1": "When",
-        "2": "Address",
-        "3": "Meeting point",
-        "4": "How to find us",
-        "5": "Event link"
-      },
-      "2": "Become a Positive Action Hero and join the Global Movement for Positive Change at www.focallocal.org"
-    },
-    "btns": {
-      "0": "Ok, done!"
-    }
-  },
-  "_footer": {
-    "section_titles": {
-      "0": "About",
-      "1": "Sitemap",
-      "2": "Connect",
-      "sub": {
-        "0": "This website is part of",
-        "1": {
-          "list": {
-            "0": "Home",
-            "1": "Events map",
-            "2": "Events list",
-            "3": "Sign in",
-            "4": "Register",
-            "5": "Rss feed"
-          }
-        }
-      }
-    }
-  },
-  "_header": {
-    "text": {
-      "0": "Sign Out",
-      "1": "Log in",
-      "2": "Register"
-    }
-  },
-  "rightLinks": {
-    "text": {
-      "0": "Home",
-      "1": "Map",
-      "2": "Calendar"
-    }
-  },
-  "leftLinks": {
-    "text": {
-      "0": "About Us",
-      "1": "Happy News",
-      "2": "Activities",
-      "3": "Join The Team"
-    }
-  },
-  "calendar": {
-    "section_titles": {
-      "0": "Search",
-      "1": "Upcoming gathers",
-      "2": "Past gathers",
-      "sub": {
-        "0": "No upcoming events :( Please add one!",
-        "1": "No gathers in the past."
-      }
-    },
-    "btns": {
-      "0": "ADD Filter"
-    }
-  },
-  "categoryForm": {
-    "text": {
-      "0": "New Category"
-    }
-  },
-  "map": {
-    "text": {
-      "0": "Legend",
-      "1": "Create your Gather now!"
-    },
-    "btns": {
-      "0": "Toggle All"
-    }
-  },
-  "event": {
-    "text": {
-      "0": "Think this is spam or an error? Let us know!",
-      "tags": {
-        "0": "About Event",
-        "1": "Photos",
-        "2": "Videos",
-        "3": "Comments"
-      },
-      "1": "* This event has been reported by",
-      "2": "user(s)"
-    },
-    "btns": {
-      "0": "Report"
-    }
+    "new_gather": "Title",
+    "choose_event": "eg. Blink",
+    "event_name": "Add a title",
+    "address_or_postcode": "Author",
+    "meeting_point": "eg. Malcolm Gladwell",
+    "how_to_find_us": "Add an author",
+    "date_of_event": "Add Book",
+    "hour": "Adding Book",
+    "description": "Couldn't add book"
   }
 }

@@ -72,6 +72,15 @@ selectedHandler = function selectedHandler(event, suggestion, datasetName) {
 };
 
 onRendered = function onRendered() {
+	Meteor.typeahead.inject();
+
+	var fixMaterializeActiveClassTrigger = function() {
+			$('input[name=address]').first().detach().insertBefore('.twitter-typeahead');
+			$('.twitter-typeahead').find('input[type=text]').remove();
+	};
+	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
+	fixMaterializeActiveClassTrigger();
+
 	// Insert character counter for overview and description
 	setCharCount(150, $(".overview-word-limit"));
 	setCharCount(400, $(".description-word-limit"));
