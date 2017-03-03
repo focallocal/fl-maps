@@ -10,20 +10,20 @@
     }
   },
   "home": {
-    "title": "The Focallocal Community",
-    "sub_title": "Local Action for Global Change",
+    "title": "Focallocal Gather",
+    "sub_title": "The only place for true social connection this summer.",
     "section_titles": {
       "0": "What is Focallocal?",
-      "1": "Is it for me?",
-      "2": "Our Message",
+      "1": "Want to join?",
+      "2": "It's free!",
       "sub": {
-        "0": "is an open community of many thousands of positive people, targeting the root causes of all societal issues. Creating easy and fun Positive Action tools to empowering people and communities everywhere to create the World they want to live in",
-        "1": "you'll be joining a Global Movement. Using simple, fun activities to make a happier World for everyone to live in. Meeting positive, pro-active people and making awesome new friends both, locally and globally",
-        "2": "is simply: don’t live in frustration at what others aren’t doing. Lets come together do it ourselves! Uniting to take responsibility for health and happiness of life where we live ..and having heaps of fun doing it!"
+        "0": "is a community driven by the true will to bring people closer together We have now more than 10 thousand members. They attend events organised all over the world.",
+        "1": "Everybody can be part of this great community. Attend the events! Organise your own!",
+        "2": "You pay with the smile, not money :) Help us to spread the positive energy to make the world a better place!"
       }
     },
     "btns": {
-      "0": "Create/Find"
+      "0": "GET STARTED"
     }
   },
   "newEvent": {
