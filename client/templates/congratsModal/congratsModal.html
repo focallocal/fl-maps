@@ -2,9 +2,9 @@
     <!-- Modal Structure -->
     <div id="congratsModal" class="modal">
         <div class="modal-content">
-            <h4>Congratulations, your event is LIVE!</h4>
-            <h5>Promote the event now - we've made it super easy for you!</h5>
-            <h6>Share with your friends with just one click</h6>
+            <h4>{{_ "congratsModal.title"}}</h4>
+            <h5>{{_ "congratsModal.subtitle"}}</h5>
+            <h6>{{_ "congratsModal.subtitle_1"}}</h6>
             {{#with selectedEvent}}
                 <p>
                     <a href={{shareOnFacebookLink this}} target="_blank" class="btn btn-facebook">
@@ -21,29 +21,29 @@
                     <a href="https://eventbrite.com/create" target="_blank" class="btn btn-eventbrite">
                     </a>
                 </p>
-                <strong>Simply click the buttons above and copy/paste the info below.</strong> <br />
+                <strong>{{_ "congratsModal.text.0"}}</strong> <br />
                 <a id="copy-button" class="waves-effect waves-orange btn-flat">
                     <i class="mdi-notification-system-update right"></i>
                     Select all
                 </a>
                 <div id="selectable">
                   <blockquote>
-                    {{name}}: {{category.name}} with the Focallocal Community <br />
-                    Description: {{description}} <br />
-                      Become a Positive Action Hero and join the Global Movement for Positive Change at www.focallocal.org <br/>
-                    When: {{printDate dateEvent}} <br />
-                    Address: {{address}} <br />
-                    Meeting point: {{meetingPoint}} <br />
-                    How to find us: {{findHints}} <br />
+                    {{name}}: {{category.name}} {{_ "congratsModal.text.1"}} <br />
+                    {{_ "congratsModal.text.tags.0"}}: {{description}} <br />
+                    {{_ "congratsModal.text.2"}}<br/>
+                    {{_ "congratsModal.text.tag.1"}}: {{printDate dateEvent}} <br />
+                    {{_ "congratsModal.text.tag.2"}}: {{address}} <br />
+                    {{_ "congratsModal.text.tag.3"}}: {{meetingPoint}} <br />
+                    {{_ "congratsModal.text.tag.4"}}: {{findHints}} <br />
                     {{#if url}}
-                        Event link: <a href="{{url}}" target="_blank">{{url}}</a>
+                        {{_ "congratsModal.text.tag.5"}}: <a href="{{url}}" target="_blank">{{url}}</a>
                     {{/if}}<br />
                   </blockquote>
                 </div>
             {{/with}}
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat" data-bind="click:reload">Ok, done!</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat" data-bind="click:panTo">{{_ "congratsModal.btns.0"}}</a>
         </div>
     </div>
 </template>

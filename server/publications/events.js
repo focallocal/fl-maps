@@ -1,9 +1,8 @@
 Meteor.publishComposite("events", function() {
     return {
         find: function() {
-            return Events.find({});
-        }
-        ,
+            return Events.find({'category.approved': true});
+        },
         children: [
            {
              find: function(event) {

@@ -1,3 +1,3 @@
 Template.home.rendered = function() {
-    $('.parallax').parallax();  
+    $('.parallax').parallax();
 };

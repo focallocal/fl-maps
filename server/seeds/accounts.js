@@ -37,10 +37,6 @@ Meteor.startup(function() {
                 }
             });
     }
-
-    //add additional collections to houston admin
-    // Houston.add_collection(Meteor.users);
-    // Houston.add_collection(Houston._admins);
 });
 
 Accounts.onCreateUser(function(options, user) {
