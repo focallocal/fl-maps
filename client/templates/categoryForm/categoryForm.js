@@ -5,6 +5,7 @@ AutoForm.hooks({
 					 $("#categoryFormModal").hide();
 					 Materialize.toast('Category submitted successfully and will be reviewed!', 4000);
 
+					 newAddedCategory = result;
 					 GAnalytics.event("Category","created");
 			 },
 			 onError: function(formType, error) {
@@ -29,10 +30,6 @@ Template.categoryForm.onRendered(function() {
 		$("#category-color").spectrum({
 			color: "#000",
 			preferredFormat: "hex"
-		});
-
-		$("#category-name").on('change', function() {
-			Template.instance().categories.find($(this));
 		});
 	});
 });
