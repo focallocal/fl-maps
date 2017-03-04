@@ -1,0 +1,4 @@
+.travis.yml merge=ours
+.mup.tar.enc merge=ours
+package.json merge=ours
+./both/i18n/* merge=ours
