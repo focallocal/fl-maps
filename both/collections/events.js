@@ -87,7 +87,10 @@ Events.attachSchema(new SimpleSchema({
     name: {
         type: String,
         label: 'Event name',
-        max: 100
+        max: 100,
+        autoform: {
+            id: "event-name"    
+        }
     },
     address: {
         type: String,
