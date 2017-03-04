@@ -14,20 +14,20 @@
     "sub_title": "The only place for true social connection this summer.",
     "section_titles": {
       "0": "What is Focallocal?",
-      "1": "Want to join?",
-      "2": "It's free!",
+      "1": "Why should I join?",
+      "2": "Our Message",
       "sub": {
-        "0": "is a community driven by the true will to bring people closer together We have now more than 10 thousand members. They attend events organised all over the world.",
-        "1": "Everybody can be part of this great community. Attend the events! Organise your own!",
-        "2": "You pay with the smile, not money :) Help us to spread the positive energy to make the world a better place!"
+        "0": "is an open community of thousands of positive people, together targeting the root causes of all societal issues. Creating easy and fun Positive Action tools to empowering people and communities everywhere to create the World they want to live in",
+        "1": "you'll be joining a Global Movement. Using simple, fun activities to make a happier World for everyone to live in. Meeting positive, pro-active people and making awesome new friends both, locally and globally",
+        "2": "is simply: don’t live in frustration at what others aren’t doing. Lets come together do it ourselves! Uniting to take responsibility for health and happiness of life where we live ..and having heaps of fun doing it!"
       }
     },
     "btns": {
-      "0": "GET STARTED"
+      "0": "Create/Find Action"
     }
   },
   "newEvent": {
-    "title": "New Gather",
+    "title": "New Action",
     "section_titles": {
       "0": "1. Choose a Category",
       "1": "2. Give it a Name",
@@ -40,7 +40,7 @@
         "0": {
           "0": "Not sure? Here's a list of suggestions:",
           "1": "(if the Positive Action you want to create isn't there let us know at contact@focallocal.org)
-          Give your Gathering a name"
+          Give your Positive Action a name"
         },
         "2": "Enter address or postcode/zip - or choose from commonly used meeting points in that city, (clicking on a commonly used point auto-fills that location into the text entry box).",
         "3": "Be as specific as possible. Next to a statue? North, West of a bridge? Not sure? Check Google Earth for a good meeting spot.",
@@ -54,7 +54,7 @@
     }
   },
   "editEvent": {
-    "title": "Edit gather"
+    "title": "Edit Action"
   },
   "eventConfirmDelete": {
     "title": "Please confirm",
@@ -123,18 +123,19 @@
     "text": {
       "0": "About Us",
       "1": "Happy News",
-      "2": "Activities",
-      "3": "Join The Team"
+      "2": "Action Center",
+      "3": "Map",
+      "4": "Join The Team"
     }
   },
   "calendar": {
     "section_titles": {
       "0": "Search",
-      "1": "Upcoming gathers",
-      "2": "Past gathers",
+      "1": "Upcoming positive action",
+      "2": "Past positive actions",
       "sub": {
         "0": "No upcoming events :( Please add one!",
-        "1": "No gathers in the past."
+        "1": "No action in the past."
       }
     },
     "btns": {
@@ -149,7 +150,7 @@
   "map": {
     "text": {
       "0": "Legend",
-      "1": "Create your Gather now!"
+      "1": "Create your Activity now!"
     },
     "btns": {
       "0": "Toggle All"
