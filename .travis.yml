@@ -3,9 +3,6 @@ sudo: required
 node_js:
 - '0.12'
 before_install:
-- echo $encrypted_4db1576f9513_key
-- echo $encrypted_4db1576f9513_iv
-- echo $METEOR_SETTINGS
 - openssl aes-256-cbc -K $encrypted_4db1576f9513_key -iv $encrypted_4db1576f9513_iv
   -in mup.tar.enc -out mup.tar -d
 - tar xvf mup.tar
