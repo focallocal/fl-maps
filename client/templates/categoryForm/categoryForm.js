@@ -5,7 +5,6 @@ AutoForm.hooks({
 					 $("#categoryFormModal").hide();
 					 Materialize.toast('Category submitted successfully and will be reviewed!', 4000);
 
-					 newAddedCategory = result;
 					 GAnalytics.event("Category","created");
 			 },
 			 onError: function(formType, error) {

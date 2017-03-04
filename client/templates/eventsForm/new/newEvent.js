@@ -1,5 +1,4 @@
 var sequence = undefined;
-newAddedCategory = undefined;
 
 AutoForm.hooks({
 	 'events-form-new': {
@@ -49,13 +48,7 @@ Template.newEvent.onCreated(function() {
 
 Template.newEvent.helpers({
 	categories: function(){
-		var categories = Categories.find({'approved': true}).fetch();
-
-		if (newAddedCategory !== undefined) {
-			categories.push(newAddedCategory);
-		}
-		console.log(newAddedCategory);
-		return categories;
+		return Categories.find({'approved': true}).fetch();
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
