@@ -2,10 +2,7 @@ Categories = new Mongo.Collection("categories");
 
 Categories.attachSchema(new SimpleSchema({
 	'name': {
-		type: String,
-		autoform: {
-			id: 'category-name'
-		}
+		type: String
 	},
 	'color': {
 		type: String,
@@ -17,9 +14,7 @@ Categories.attachSchema(new SimpleSchema({
 	'approved': {
 		type: Boolean,
 		autoform: {
-			type: 'hidden',
-			defaultValue: false
-		},
-		optional: true
+			type: 'hidden'
+		}
 	}
 }));
