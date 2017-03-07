@@ -27,6 +27,17 @@ function clearForm() {
 	sequence.resetSequence();
 }
 
+function initNewCategoryButton() {
+	var $newCategoryBtn = $("#category-btn");
+
+	$newCategoryBtn.on('click', function() {
+		$("#categoryFormModal").openModal({
+			dismissible: true
+		});
+	});
+}
+
+
 Template.newEvent.viewmodel({
 	clearForm: clearForm
 });
@@ -37,7 +48,7 @@ Template.newEvent.onCreated(function() {
 
 Template.newEvent.helpers({
 	categories: function(){
-		return Categories.find({'approved': true});
+		return Categories.find({'approved': true}).fetch();
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
@@ -54,6 +65,8 @@ Template.autoForm.onRendered(function () {
 	if (Session.get('isEdit') === true) {
 		return;
 	}
+
+	initNewCategoryButton();
 
 	Meteor.typeahead.inject();
 
@@ -118,7 +131,7 @@ Template.autoForm.onRendered(function () {
 		 return valid;
 	 });
 
-	 $('input[name="name"]').on('input', function() {
+	 $('#event-name').on('input', function() {
 		 var $this = $(this);
 		 var $title = $("#eventTitle");
 
