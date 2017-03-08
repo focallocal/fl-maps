@@ -4,10 +4,11 @@ node_js:
 - '0.12'
 before_install:
 - openssl aes-256-cbc -K $encrypted_65446dba965b_key -iv $encrypted_65446dba965b_iv
-  -in settings.tar.enc -out settings.tar -d
-- openssl aes-256-cbc -K $encrypted_65446dba965b_key -iv $encrypted_65446dba965b_iv
   -in mup.tar.enc -out mup.tar -d
+- openssl aes-256-cbc -K $encrypted_65446dba965b_key -iv $encrypted_65446dba965b_iv
+  -in settings.tar.enc -out settings.tar -d
 - tar xvf mup.tar
+- tar xvf settings.tar
 - npm install -g mupx
 - curl https://install.meteor.com | /bin/sh
 branches:
