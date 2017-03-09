@@ -79,7 +79,8 @@
 
 #search-input {
   background-color: white;
-  width: 40%;
+  width: 30%;
+  height: 2rem;
   padding: 10px;
   border-bottom: none;
 }
