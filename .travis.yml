@@ -3,8 +3,7 @@ sudo: required
 node_js:
 - '0.12'
 before_install:
-- openssl aes-256-cbc -K $encrypted_65446dba965b_key -iv $encrypted_65446dba965b_iv
-  -in deployment.tar.enc -out deployment.tar -d
+- openssl aes-256-cbc -k "$encrypted_key_sleeper_i" -in deployment.tar.enc -out deployment.tar -d
 - tar xvf deployment.tar
 - npm install -g mupx
 - curl https://install.meteor.com | /bin/sh
