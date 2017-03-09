@@ -348,12 +348,12 @@ Template.map.helpers({
 				 },
 				 zoomControl: true,
 				 zoomControlOptions: {
-						 position: google.maps.ControlPosition.LEFT_CENTER
+						 position: google.maps.ControlPosition.LEFT_BOTTOM
 				 },
 				 scaleControl: true,
 				 streetViewControl: true,
 				 streetViewControlOptions: {
-						 position: google.maps.ControlPosition.LEFT_TOP
+						 position: google.maps.ControlPosition.LEFT_BOTTOM
 				 },
 				 //go to https://snazzymaps.com/ and copy the given code for a template and paste here
 				styles:[
