@@ -1,8 +1,8 @@
 {
-  "name": "fl-sleeper",
+  "name": "fl-events",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run"    
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"
