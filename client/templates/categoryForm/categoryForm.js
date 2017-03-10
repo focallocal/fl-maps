@@ -14,6 +14,10 @@ AutoForm.hooks({
 	 }
 });
 
+function clearForm() {
+	AutoForm.resetForm('new-category-form');
+}
+
 Template.categoryForm.onCreated(function() {
 	this.subscribe('categories');
 	this.categories = [];
@@ -31,4 +35,8 @@ Template.categoryForm.onRendered(function() {
 			preferredFormat: "hex"
 		});
 	});
+});
+
+Template.categoryForm.viewmodel({
+	clearForm: clearForm
 });
