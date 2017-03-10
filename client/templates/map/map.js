@@ -314,7 +314,7 @@ Template.map.onCreated(function() {
 
 
 Template.map.onRendered(function() {
-	GoogleMaps.load({key: "AIzaSyAbKJHLD4QLHnp-nmA37RJpZHQC0qbpba4", libraries: 'places'});
+	GoogleMaps.load({key: Meteor.settings["public"]["gm"]["key"], libraries: 'places'});
 
 	$(".layers-for-map-btn").on('click', function() {
 		$(".layers-for-map").toggle();
