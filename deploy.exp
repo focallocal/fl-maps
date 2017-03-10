@@ -8,6 +8,8 @@ set password "$env(METEOR_PASSWORD)"
 #deploy every other branch to test environment
 if {$env(TRAVIS_BRANCH) == "master"} {
     set deployUrl "$env(METEOR_PRODUCTION_URL)"
+} else if {$env(TRAVIS_BRANCH) == "street-sleeper"} {
+    set deployUrl "$env(METEOR_PRODUCTION_URL)"
 } else {
     set deployUrl "$env(METEOR_STAGING_URL)"
 }
