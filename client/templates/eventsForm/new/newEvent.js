@@ -5,7 +5,7 @@ AutoForm.hooks({
 			 onSuccess: function (operation, result, template) {
 				 	// TODO: Close modal
 					 clearForm();
-					 $("#eventsFormModal").hide();
+					 $("#newEventFormClose").click();
 					 Materialize.toast('Event submitted successfully!', 4000);
 
 					 Session.set("selected", result);
