@@ -2,3 +2,4 @@
 .mup.tar.enc merge=ours
 package.json merge=ours
 ./both/i18n/en/* merge=ours
+deployment.tar.enc merge=ours
