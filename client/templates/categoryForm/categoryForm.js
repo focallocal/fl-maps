@@ -2,7 +2,7 @@ AutoForm.hooks({
 	 'new-category-form': {
 			 onSuccess: function (operation, result, template) {
 				 	// TODO: Close modal
-					 $("#categoryFormModal").hide();
+					 $("#newCategoryFormClose").click();
 					 Materialize.toast('Category submitted successfully and will be reviewed!', 4000);
 
 					 GAnalytics.event("Category","created");
@@ -13,6 +13,10 @@ AutoForm.hooks({
 			 }
 	 }
 });
+
+function clearForm() {
+	AutoForm.resetForm('new-category-form');
+}
 
 Template.categoryForm.onCreated(function() {
 	this.subscribe('categories');
@@ -31,4 +35,8 @@ Template.categoryForm.onRendered(function() {
 			preferredFormat: "hex"
 		});
 	});
+});
+
+Template.categoryForm.viewmodel({
+	clearForm: clearForm
 });
