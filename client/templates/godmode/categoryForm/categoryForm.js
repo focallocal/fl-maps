@@ -3,7 +3,7 @@ AutoForm.hooks({
 			 onSuccess: function (operation, result, template) {
 				 	// TODO: Close modal
 					 $("#newCategoryFormClose").click();
-					 Materialize.toast('Category submitted successfully and will be reviewed!', 4000);
+					 Materialize.toast('Category Added!', 4000);
 
 					 GAnalytics.event("Category","created");
 			 },

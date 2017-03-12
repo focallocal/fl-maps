@@ -27,17 +27,6 @@ function clearForm() {
 	sequence.resetSequence();
 }
 
-function initNewCategoryButton() {
-	var $newCategoryBtn = $("#category-btn");
-
-	$newCategoryBtn.on('click', function() {
-		$("#categoryFormModal").openModal({
-			dismissible: true
-		});
-	});
-}
-
-
 Template.newEvent.viewmodel({
 	clearForm: clearForm
 });
@@ -65,8 +54,6 @@ Template.autoForm.onRendered(function () {
 	if (Session.get('isEdit') === true) {
 		return;
 	}
-
-	initNewCategoryButton();
 
 	Meteor.typeahead.inject();
 
