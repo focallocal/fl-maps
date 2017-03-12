@@ -88,3 +88,10 @@
 #search-input:focus {
   box-shadow: none;
 }
+
+.layer-color {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+}
