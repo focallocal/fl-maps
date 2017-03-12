@@ -58,3 +58,20 @@
 	opacity: 1;
 	margin-right: 5px;
 }
+
+.remove-category {
+	margin: 5px;
+	background-color: transparent;
+	border: none;
+}
+
+.remove-category:focus {
+	background-color: transparent;
+}
+
+.category-color {
+	height: 10px;
+	width: 10px;
+	display: inline-block;
+	margin: 0px 10px 0px 10px;
+}

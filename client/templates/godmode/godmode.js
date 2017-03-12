@@ -54,14 +54,8 @@ Template.godmode.helpers({
 });
 
 Template.godmode.onRendered(function() {
-	// Click Events
-	$("#enable-admin-btn").on('click', function() {
-		addAdmin();
-	});
 
-	$("#remove-admin-btn").on('click', function() {
-		removeAdmin();
-	});
+	$("body").css({"background-color": "white"});
 
 	// $(".toggle-approval-category").on('click', function() {
 	// 	console.log("ASDFADS");
@@ -73,5 +67,19 @@ Template.godmode.onRendered(function() {
 Template.godmode.events({
 	'click .toggle-approval-category': function() {
 		Meteor.call('Categories.approveToggle', this._id);
+	},
+	'click #enable-admin-btn': function() {
+		addAdmin();
+	},
+	'click #remove-admin-btn': function() {
+		removeAdmin();
+	},
+	'click .remove-category': function() {
+		Meteor.call('Categories.remove', this._id);
+	},
+	'click #newCategory': function() {
+		$("#categoryFormModal").openModal({
+			dismissible: false
+		});
 	}
 });

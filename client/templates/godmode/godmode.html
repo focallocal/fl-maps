@@ -54,16 +54,19 @@
 
 		<div class="row godmode-section-title">
 			<h4>Categories</h4>
+			<button type="button" class="btn teal" id="newCategory">New Category</button>
 			<ul>
 				{{#each categories}}
 					{{#if approved}}
-						<li>{{name}} <input class="toggle-approval-category" type="checkbox" value="{{name}}" checked/></li>
+						<li>{{name}} <div class="category-color" style="background-color:{{color}};"></div> <input class="toggle-approval-category" type="checkbox" value="{{name}}" checked/></li>
 					{{else}}
-						<li>{{name}} <input class="toggle-approval-category" type="checkbox" value="{{name}}"/></li>
+						<li><button type="button" class="remove-category">X</button>{{name}} <div class="category-color" style="background-color:{{color}};"></div> <input class="toggle-approval-category" type="checkbox" value="{{name}}"/></li>
 					{{/if}}
 				{{/each}}
 			</ul>
 		</div>
+
+		{{> categoryForm}}
 
 	</div>
 </template>
