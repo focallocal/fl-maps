@@ -58,3 +58,13 @@
 	opacity: 1;
 	margin-right: 5px;
 }
+
+.remove-category {
+	margin: 5px;
+	background-color: transparent;
+	border: none;
+}
+
+.remove-category:focus {
+	background-color: transparent;
+}

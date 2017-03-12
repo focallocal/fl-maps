@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io
 settings.json
 mup.json
+deployment.tar
 ### SublimeText ###
 # cache files for sublime text
 *.tmlanguage.cache
