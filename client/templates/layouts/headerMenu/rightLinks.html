@@ -1,20 +1,20 @@
 <template name="rightLinks">
     <li class="text-icon {{ isActiveRoute regex='home' }}">
         <a href="{{ pathFor 'home' }}" title="Home" class="center-align">
-            <i class="material-icons">home</i>
-            <!-- <span>{{_ "rightLinks.text.0"}}</span> -->
+            <i class="material-icons right">home</i>
+            <span>{{_ "rightLinks.text.0"}}</span>
         </a>
     </li>
     <li class="text-icon {{ isActiveRoute regex='map' }}">
         <a href="{{ pathFor 'map' }}" title="Map" class="center-align">
-            <i class="material-icons">map</i>
-            <!-- <span>{{_ "rightLinks.text.1"}}</span> -->
+            <i class="material-icons right">map</i>
+            <span>{{_ "rightLinks.text.1"}}</span>
         </a>
     </li>
     <li class="text-icon {{ isActiveRoute regex='calendar' }}">
         <a href="{{ pathFor 'calendar' }}" title="Calendar" class="center-align">
-            <i class="material-icons">list</i>
-            <!-- <span>{{_ "rightLinks.text.2"}}</span> -->
+            <i class="material-icons right">list</i>
+            <span>{{_ "rightLinks.text.2"}}</span>
         </a>
     </li>
 </template>
