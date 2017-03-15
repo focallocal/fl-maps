@@ -1,72 +1,144 @@
-<template name="_header">
+<!-- <template name="_header">
 
+    <div id="fb-root"></div>
+<header>
+<div id="menu-top">
+  <nav>
+    <div class="nav-wrapper">
+        <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
+        <ul class="hide-on-small-and-down left">
+            {{> leftLinks}}
+        </ul>
+        <ul class="right">
+            {{> rightLinks}}
 
-
-
-  <div id="menu-top" >
-    <nav class="nav-extended">
-        <div class="nav-wrapper">
-          <a class="brand-logo  hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
-
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-
-          <ul class="right">
-            <li class="text-icon">
-                <a href="{{ pathFor 'home' }}" title="Home" class="center-align">
-                    <i class="material-icons right">home</i>
-                    <span>{{_ "rightLinks.text.0"}}</span>
+            <li class="{{ isActiveRoute regex='signIn|signUp' }}">
+                <a class="dropdown-button" href="#!" data-activates="user-dropdown">
+                    <i class="mdi-action-account-circle"></i>
                 </a>
             </li>
-          
-          </ul>
+        </ul>
+
+        <ul id="user-dropdown" class="dropdown-content">
+          {{#if currentUser}}
+            <li><a href="#" data-action="logout">{{_ "_header.text.0"}}</a></li>
+          {{else}}
+            <li><a href="{{ pathFor 'signIn' }}">{{_ "_header.text.1"}}</a></li>
+            <li><a href="{{ pathFor 'signUp' }}">{{_ "_header.text.2"}}</a></li>
+          {{/if}}
+        </ul>
+
+        <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+      </div>
+  </nav>
+
+  <ul id="nav-mobile" class="side-nav">
+      {{> rightLinks}}-->
+      <!--<li class="text-icon">-->
+          <!--<a class="dropdown-button" href="{{ pathFor 'atSignUp' }}" >-->
+              <!--<i class="mdi-action-account-circle"></i>-->
+              <!--<span>Log in</span>-->
+          <!--</a>-->
+      <!--</li>-->
+      <!--<li class="divider"></li>
+      {{> leftLinks sidenav=true}}
+  </ul>
+</div>
+</header>
+</template> -->
 
 
 
 
-          <div class="nav-content hide-on-med-and-down">
-                <ul class="tabs tabs-transparent">
-                  <li class="tab"><a href="http://news.focallocal.org/about-us/" title="About" class="center-align">
-                        <i class="material-icons left">info</i>
-                        <span>{{_ "leftLinks.text.0"}}</span>
-                    </a></li>
-                  <li class="tab">
-                    <a href="http://news.focallocal.org/" title="News" class="center-align">
-                        <i class="material-icons left">public</i>
-                        <span>{{_ "leftLinks.text.1"}}</span>
-                    </a>
-                  </li>
-                  <li class="tab"><a href="http://action.focallocal.org/" title="Action Center" class="center-align">
-                      <i class="material-icons left">stars</i>
-                      <span>{{_ "leftLinks.text.2"}}</span>
-                  </a></li>
-                  <li class="tab">
-                    <a href="http://gather.focallocal.org/" title="Map" class="center-align">
-                        <i class="material-icons left">flare</i>
-                        <span>{{_ "leftLinks.text.3"}}</span>
-                    </a>
-                </li>
-                <li class="tab">
-                  <a href="http://news.focallocal.org/focallocal-core-team-applications/" title="Events" class="center-align">
-                      <i class="material-icons left">important_devices</i>
-                      <span>{{_ "leftLinks.text.4"}}</span>
-                  </a>
-              </li>
+<template name="_header">
 
-
-                </ul>
-              </div>
+    <div id="fb-root"></div> <!--facebook share button-->
+<header>
+<div id="menu-top">
 
 
 
 
-          <ul class="side-nav" id="mobile-demo">
-            {{> leftLinks}}
-          </ul>
 
-        </div>
-
-      </nav>
-
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <!-- Dropdown Trigger -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
     </div>
+  </nav>
 
+
+
+  <!-- Icons Structure -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+        <li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+<!-- Extendend Structure -->
+<!-- We can put as many links we like in the content section as tabs -->
+
+  <nav class="nav-extended">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+      <div class="nav-content">
+        <ul id="tabs-swipe-demo" class="tabs">
+
+
+          <!-- By default, Materialize tabs will ignore their default anchor behaviour.
+           To force a tab to behave as a regular hyperlink, just specify the target property of that link!  -->
+          <li class="tab">
+            <a href="http://news.focallocal.org/" target="_self" title="News" class="center-align">
+                <i class="material-icons left">public</i>
+                <span>{{_ "leftLinks.text.1"}}</span>
+            </a>
+          </li>
+          <li class="tab">
+            <a href="http://news.focallocal.org/" target="_self" title="News" class="center-align">
+                <i class="material-icons left">public</i>
+                <span>{{_ "leftLinks.text.1"}}</span>
+            </a>
+          </li>
+  </ul>
+
+      </div>
+
+
+    </nav>
+
+
+</div>
+
+</header>
 </template>
