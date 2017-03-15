@@ -1,31 +1,72 @@
 <template name="_header">
 
-  <div id="fb-root"></div>
 
-<header>
-  <div id="menu-top">
-    <nav>
+
+
+  <div id="menu-top" >
+    <nav class="nav-extended">
         <div class="nav-wrapper">
-          <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
+          <a class="brand-logo  hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
 
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
           <ul class="right">
-            {{> rightLinks}}
+            <li class="text-icon">
+                <a href="{{ pathFor 'home' }}" title="Home" class="center-align">
+                    <i class="material-icons right">home</i>
+                    <span>{{_ "rightLinks.text.0"}}</span>
+                </a>
+            </li>
+          
           </ul>
 
-          <ul class="left hide-on-med-and-down">
-            {{> leftLinks}}
-          </ul>
+
+
+
+          <div class="nav-content hide-on-med-and-down">
+                <ul class="tabs tabs-transparent">
+                  <li class="tab"><a href="http://news.focallocal.org/about-us/" title="About" class="center-align">
+                        <i class="material-icons left">info</i>
+                        <span>{{_ "leftLinks.text.0"}}</span>
+                    </a></li>
+                  <li class="tab">
+                    <a href="http://news.focallocal.org/" title="News" class="center-align">
+                        <i class="material-icons left">public</i>
+                        <span>{{_ "leftLinks.text.1"}}</span>
+                    </a>
+                  </li>
+                  <li class="tab"><a href="http://action.focallocal.org/" title="Action Center" class="center-align">
+                      <i class="material-icons left">stars</i>
+                      <span>{{_ "leftLinks.text.2"}}</span>
+                  </a></li>
+                  <li class="tab">
+                    <a href="http://gather.focallocal.org/" title="Map" class="center-align">
+                        <i class="material-icons left">flare</i>
+                        <span>{{_ "leftLinks.text.3"}}</span>
+                    </a>
+                </li>
+                <li class="tab">
+                  <a href="http://news.focallocal.org/focallocal-core-team-applications/" title="Events" class="center-align">
+                      <i class="material-icons left">important_devices</i>
+                      <span>{{_ "leftLinks.text.4"}}</span>
+                  </a>
+              </li>
+
+
+                </ul>
+              </div>
+
+
+
 
           <ul class="side-nav" id="mobile-demo">
             {{> leftLinks}}
           </ul>
 
         </div>
-      </nav>
-    </div>
 
-</header>
+      </nav>
+
+    </div>
 
 </template>

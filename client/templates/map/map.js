@@ -67,9 +67,9 @@ function showLayer(name) {
 	}
 }
 
-function addLayer(category) {
+function addLayer(name) {
 	var $layerToogleContainer = $(".layers-for-map-list");
-	$layerToogleContainer.append('<li value="' + category.name + '"> <div class="layer-color" style="background-color:' + category.color + ';"></div><input type="checkbox" class="layer-checkbox" checked="checked" />' + category.name + '</li>');
+	$layerToogleContainer.append('<li value="' + name + '"><input type="checkbox" class="layer-checkbox" checked="checked" />' + name + '</li>');
 }
 
 function adjustMapHeightToWindowSize($mapCanvas) {
@@ -188,25 +188,30 @@ function addMarker(event, map) {
 		if(eventMap.getZoom() < 7){
 			eventMap.setZoom(7);
 		}
+		//
+
+
 
 		$("#report-btn").on('click', function() {
 			$('#confirm-report-map').openModal({
 		      dismissible: false
 		  });
 		});
-	});
 
-	marker.addListener('dblclick', function() {
-		var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
-		eventMap.panTo(latLng);
-
-		//right now it smoths until zoom 15
-		//if you want more zoom just increase the value
-		smoothZoom(eventMap, 15, eventMap.getZoom()); // call smoothZoom, parameters map, final zoomLevel, and starting zoom level
-	});
 
 	markers[event.category.name] = markers[event.category.name] || {};
 	markers[event.category.name][event._id] = marker;
+});
+
+marker.addListener('dblclick', function() {
+	var latLng = new google.maps.LatLng(event.coordinates.lat, event.coordinates.lng);
+	eventMap.panTo(latLng);
+
+	//right now it smoths until zoom 15
+	//if you want more zoom just increase the value
+	smoothZoom(eventMap, 15, eventMap.getZoom()); // call smoothZoom, parameters map, final zoomLevel, and starting zoom level
+})
+
 }//end add marker with event listeners
 
 //////////////smoth zoom function begin///////////////////////////////////
@@ -260,7 +265,7 @@ Template.map.onCreated(function() {
 		instance.categories.get().forEach(function(category) {
 			if (addedLayers[category.name] === undefined) {
 				addedLayers[category.name] = true;
-				addLayer(category);
+				addLayer(category.name);
 			}
 		});
 
@@ -293,9 +298,9 @@ Template.map.onCreated(function() {
 		$('.layer-checkbox').on('click', function() {
 			var $this = $(this);
 			if ($this.is(':checked')) {
-				showLayer($this.parent().text().trim());
+				showLayer($this.parent().text());
 			} else {
-				hideLayer($this.parent().text().trim());
+				hideLayer($this.parent().text());
 			}
 		});
 
