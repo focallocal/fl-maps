@@ -1,7 +1,7 @@
 <template name="calendarEvent">
     <li>
         <div class="collapsible-header">
-            <i class="mdi-action-grade circle" style="background-color: {{category.color}}"></i>
+            <i class="material-icons circle" style="background-color: {{category.color}}">star</i>
             <span class="title">{{ category.name }}</span>
             <span class="badge  hide-on-small-and-down"
                   title="{{printDate dateEvent}}">  {{printDateFromNow dateEvent}}</span>
