@@ -12,7 +12,22 @@
 
           <ul class="right nav-format">
             {{> rightLinks}}
-          </ul>
+
+           <li class="{{ isActiveRoute regex='signIn|signUp' }}">
+               <a class="dropdown-button ceter-align user-dropdown" href="#!" data-activates="user-dropdown">
+                   <i class="material-icons">account_circle</i>
+               </a>
+           </li>
+         </ul>
+
+         <ul id="user-dropdown" class="dropdown-content">
+           {{#if currentUser}}
+             <li><a href="#" data-action="logout">{{_ "_header.text.0"}}</a></li>
+           {{else}}
+             <li><a href="{{ pathFor 'signIn' }}">{{_ "_header.text.1"}}</a></li>
+             <li><a href="{{ pathFor 'signUp' }}">{{_ "_header.text.2"}}</a></li>
+           {{/if}}
+         </ul>
 
           <ul class="left hide-on-med-and-down nav-format">
             {{> leftLinks}}
