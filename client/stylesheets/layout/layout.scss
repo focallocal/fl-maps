@@ -5,6 +5,13 @@
 
 	li {
 
+		a.user-dropdown {
+			i {
+				height: $navbar-height !important;
+				line-height: $navbar-height !important;
+			}
+		}
+
 		i {
 			height: 3*$navbar-height/4 !important;
 			line-height: 3*$navbar-height/4 !important;
