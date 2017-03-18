@@ -1,48 +1,31 @@
 <template name="_header">
 
-    <div id="fb-root"></div> <!--facebook share button-->
+  <div id="fb-root"></div>
+
 <header>
-<div id="menu-top">
-  <nav>
-    <div class="nav-wrapper">
-        <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
-        <ul class="hide-on-small-and-down left">
-            {{> leftLinks}}
-        </ul>
-        <ul class="right">
+  <div id="menu-top">
+    <nav>
+        <div class="nav-wrapper">
+          <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
+
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+          <ul class="right nav-format">
             {{> rightLinks}}
+          </ul>
 
-            <li class="{{ isActiveRoute regex='signIn|signUp' }}">
-                <a class="dropdown-button" href="#!" data-activates="user-dropdown">
-                    <i class="mdi-action-account-circle"></i>
-                </a>
-            </li>
-        </ul>
+          <ul class="left hide-on-med-and-down nav-format">
+            {{> leftLinks}}
+          </ul>
 
-        <ul id="user-dropdown" class="dropdown-content">
-          {{#if currentUser}}
-            <li><a href="#" data-action="logout">{{_ "_header.text.0"}}</a></li>
-          {{else}}
-            <li><a href="{{ pathFor 'signIn' }}">{{_ "_header.text.1"}}</a></li>
-            <li><a href="{{ pathFor 'signUp' }}">{{_ "_header.text.2"}}</a></li>
-          {{/if}}
-        </ul>
+          <ul class="side-nav" id="mobile-demo">
+            {{> leftLinks}}
+          </ul>
 
-        <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-      </div>
-  </nav>
+        </div>
+      </nav>
+    </div>
 
-  <ul id="nav-mobile" class="side-nav">
-      <!--{{> rightLinks}}-->
-      <!--<li class="text-icon">-->
-          <!--<a class="dropdown-button" href="{{ pathFor 'atSignUp' }}" >-->
-              <!--<i class="mdi-action-account-circle"></i>-->
-              <!--<span>Log in</span>-->
-          <!--</a>-->
-      <!--</li>-->
-      <!--<li class="divider"></li>-->
-      {{> leftLinks sidenav=true}}
-  </ul>
-</div>
 </header>
+
 </template>

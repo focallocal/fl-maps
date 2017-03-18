@@ -1,35 +1,65 @@
 .dropdown-content {
   @extend .z-depth-1;
-  background-color: #FFFFFF;
+  background-color: $dropdown-bg-color;
   margin: 0;
   display: none;
   min-width: 100px;
-  max-height: 200px;
+  max-height: 650px;
   overflow-y: auto;
   opacity: 0;
   position: absolute;
-  white-space: nowrap; // Force one line
-  z-index: 1002;
+  z-index: 999;
   will-change: width, height;
 
   li {
     clear: both;
     color: $off-black;
     cursor: pointer;
+    min-height: $dropdown-item-height;
     line-height: 1.5rem;
     width: 100%;
     text-align: left;
     text-transform: none;
 
-    &:hover, &.active {
-      background-color: #eee;
+    &:hover, &.active, &.selected {
+      background-color: $dropdown-hover-bg-color;
+    }
+
+    &.active.selected {
+      background-color: darken($dropdown-hover-bg-color, 5%);
+    }
+
+    &.divider {
+      min-height: 0;
+      height: 1px;
     }
 
     & > a, & > span {
-      font-size: 1.2rem;
+      font-size: 16px;
       color: $dropdown-color;
       display: block;
-      padding: 1rem 1rem;
+      line-height: 22px;
+      padding: (($dropdown-item-height - 22) / 2) 16px;
+    }
+
+    & > span > label {
+      top: 1px;
+      left: 0;
+      height: 18px;
+    }
+
+    // Icon alignment override
+    & > a > i {
+      height: inherit;
+      line-height: inherit;
     }
   }
 }
+
+// Input field specificity bugfix
+.input-field.col .dropdown-content [type="checkbox"] + label {
+  top: 1px;
+  left: 0;
+  height: 18px;
+}
+
