@@ -1,0 +1,27 @@
+@import "../materialize/materialize.scss";
+
+.nav-format {
+	line-height: 0px;
+
+	li {
+
+		i {
+			height: 3*$navbar-height/4 !important;
+			line-height: 3*$navbar-height/4 !important;
+
+			@media #{$small-and-down} {
+				height: 3*$navbar-height-mobile/4 !important;
+				line-height: 3*$navbar-height/4 !important;
+			}
+		}
+
+		div {
+			height: $navbar-height/4;
+			line-height: 0px;
+
+			@media #{$small-and-down} {
+				height: $navbar-height-mobile/4;
+			}
+		}
+	}
+}

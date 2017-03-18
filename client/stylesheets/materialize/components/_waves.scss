@@ -14,7 +14,6 @@
     cursor: pointer;
     display: inline-block;
     overflow: hidden;
-    margin: 2px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -35,7 +34,7 @@
     // text-decoration: none;
     z-index: 1;
     will-change: opacity, transform;
-    @include transition(all .3s ease-out);
+    transition: .3s ease-out;
 
     .waves-ripple {
         position: absolute;
@@ -52,12 +51,9 @@
         // background: -o-radial-gradient($gradient);
         // background: -moz-radial-gradient($gradient);
         // background: radial-gradient($gradient);
-        @include transition(all 0.7s ease-out);
-        -webkit-transition-property: -webkit-transform, opacity;
-        -moz-transition-property: -moz-transform, opacity;
-        -o-transition-property: -o-transform, opacity;
+        transition: all 0.7s ease-out;
         transition-property: transform, opacity;
-        @include transform(scale(0));
+        transform: scale(0);
         pointer-events: none;
     }
 
@@ -85,14 +81,27 @@
       background-color: rgba(0, 150, 136, 0.70);
     }
 
+    // Style input button bug.
+    input[type="button"], input[type="reset"], input[type="submit"] {
+        border: 0;
+        font-style: normal;
+        font-size: inherit;
+        text-transform: inherit;
+        background: none;
+    }
+
+    img {
+        position: relative;
+        z-index: -1;
+    }
 }
 
 .waves-notransition {
-    @include transition(none #{"!important"});
+    transition: none #{"!important"};
 }
 
 .waves-circle {
-    @include transform(translateZ(0));
+    transform: translateZ(0);
     -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
 }
 
@@ -163,6 +172,6 @@
 }
 
 /* Firefox Bug: link not triggered */
-a.waves-effect .waves-ripple {
+.waves-effect .waves-ripple {
     z-index: -1;
 }
