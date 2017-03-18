@@ -15,3 +15,11 @@
   background: none;
   border: none;
 }
+
+.collapsible-header {
+  position: relative;
+}
+
+.collapsible-body {
+  position: relative;
+}
