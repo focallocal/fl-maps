@@ -36,6 +36,9 @@ Template.newEvent.onCreated(function() {
 });
 
 Template.newEvent.helpers({
+	categories: function(){
+		return Categories.find({'approved': true}).fetch();
+	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
 	},
