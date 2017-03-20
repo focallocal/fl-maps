@@ -326,6 +326,12 @@ Template.map.onRendered(function() {
 		});
 	});
 
+	$("#print-btn").on('click', function() {
+		$("#unfinished-feature-modal").openModal({
+			dismissible: true
+		});
+	});
+
 	initNewEventButton();
 });
 

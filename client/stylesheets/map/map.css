@@ -96,3 +96,11 @@
   display: inline-block;
   margin: 0px 10px 0px 10px;
 }
+
+#print-btn-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  z-index: 2;
+}
