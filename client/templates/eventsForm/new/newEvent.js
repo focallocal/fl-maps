@@ -53,9 +53,10 @@ Template.autoForm.onRendered(function () {
 	}
 
 	$("#new-resource").on('click', function() {
-		var category = Categories.find({name: "Offer A New Resource"}).fetch();
+		var category = Categories.find({name: "Offer A New Resource"}).fetch()[0];
 		if (category !== undefined) {
-			$("#category-container").find("input").first().val(category.name);
+			var $categoryContainer = $("#category-container");
+			$categoryContainer.find("ul").find('li span:contains(' + category.name + ')').click();
 		}
 	});
 
