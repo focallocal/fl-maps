@@ -36,9 +36,6 @@ Template.newEvent.onCreated(function() {
 });
 
 Template.newEvent.helpers({
-	categories: function(){
-		return Categories.find({'approved': true}).fetch();
-	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
 	},
@@ -54,6 +51,13 @@ Template.autoForm.onRendered(function () {
 	if (Session.get('isEdit') === true) {
 		return;
 	}
+
+	$("#new-resource").on('click', function() {
+		var category = Categories.find({name: "Offer a new Resource"}).fetch();
+		if (category !== undefined) {
+			console.log(category);
+		}
+	});
 
 	Meteor.typeahead.inject();
 
