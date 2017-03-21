@@ -55,6 +55,14 @@ Template.autoForm.onRendered(function () {
 		return;
 	}
 
+	$("#new-resource").on('click', function() {
+		var category = Categories.find({name: "Offer A New Resource"}).fetch()[0];
+		if (category !== undefined) {
+			var $categoryContainer = $("#category-container");
+			$categoryContainer.find("ul").find('li span:contains(' + category.name + ')').click();
+		}
+	});
+
 	Meteor.typeahead.inject();
 
 	var fixMaterializeActiveClassTrigger = function() {
