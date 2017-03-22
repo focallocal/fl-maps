@@ -11,10 +11,6 @@
 
     <input id="search-input" class="controls" type="text" placeholder="Search">
 
-    <div id="print-btn-container">
-        <button id="print-btn" type="button" class="btn">Print</button>
-    </div>
-
     <div class="fixed-action-btn">
         <a id="event-new-btn" class="btn-floating btn-large tooltipped waves-effect waves-light " href="#"
            data-position="left" data-delay="50" data-tooltip='{{_ "map.text.1"}}'>
@@ -36,7 +32,6 @@
             loading...
         {{/if}}
     </div>
-    {{> unfinishedFeatureModal}}
     {{> slidePanel }}
     {{> newEvent }}
     {{> eventConfirmDelete}}
