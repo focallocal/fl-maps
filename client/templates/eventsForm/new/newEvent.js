@@ -36,9 +36,6 @@ Template.newEvent.onCreated(function() {
 });
 
 Template.newEvent.helpers({
-	categories: function(){
-		return Categories.find({'approved': true}).fetch();
-	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
 		geocodeDataSource(query, sync, asyncCallback);
 	},
@@ -54,6 +51,14 @@ Template.autoForm.onRendered(function () {
 	if (Session.get('isEdit') === true) {
 		return;
 	}
+
+	$("#new-resource").on('click', function() {
+		var category = Categories.find({name: "Offer A New Resource"}).fetch()[0];
+		if (category !== undefined) {
+			var $categoryContainer = $("#category-container");
+			$categoryContainer.find("ul").find('li span:contains(' + category.name + ')').click();
+		}
+	});
 
 	Meteor.typeahead.inject();
 
