@@ -33,6 +33,14 @@
            {{> aboutDropDown}}
          </ul>
 
+         <ul id="shop-dropdown" class="dropdown-content">
+           {{> shopDropDown}}
+         </ul>
+
+         <ul id="projects-dropdown" class="dropdown-content">
+           {{> projectsDropDown}}
+         </ul>
+
           <ul class="left hide-on-med-and-down nav-format">
             <li>
               <a href="#!" title="About" class="center-align dropdown-button" data-activates="about-dropdown">
@@ -41,6 +49,22 @@
               </a>
             </li>
             {{> leftLinks}}
+            <li>
+              <a href="#!" title="Shop" class="center-align dropdown-button" data-activates="shop-dropdown">
+                <i class="material-icons">shop</i>
+                <div>
+                  Shop
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#!" title="Projects" class="center-align dropdown-button" data-activates="projects-dropdown">
+                <i class="material-icons">developer_board</i>
+                <div>
+                  Projects
+                </div>
+              </a>
+            </li>
           </ul>
 
           <ul class="side-nav" id="side-nav-left">
