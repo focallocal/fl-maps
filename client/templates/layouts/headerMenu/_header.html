@@ -8,7 +8,7 @@
         <div class="nav-wrapper">
           <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
 
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#" data-activates="side-nav-left" class="button-collapse"><i class="material-icons">menu</i></a>
 
           <ul class="right nav-format">
             {{> rightLinks}}
@@ -29,12 +29,22 @@
            {{/if}}
          </ul>
 
+         <ul id="about-dropdown" class="dropdown-content">
+           {{> aboutDropDown}}
+         </ul>
+
           <ul class="left hide-on-med-and-down nav-format">
+            <li>
+              <a href="#!" title="About" class="center-align dropdown-button" data-activates="about-dropdown">
+                  <i class="material-icons">info</i>
+                  <div>{{_ "leftLinks.text.0"}}</div>
+              </a>
+            </li>
             {{> leftLinks}}
           </ul>
 
-          <ul class="side-nav" id="mobile-demo">
-            {{> leftLinks}}
+          <ul class="side-nav" id="side-nav-left">
+            {{> sideNavLinks}}
           </ul>
 
         </div>
