@@ -11,3 +11,13 @@
 		transform: translate(-50%, -50%);
 	}
 }
+
+.welcome-input-container {
+	margin-top: 50px;
+	width: 50%;
+	display: inline-block;
+
+	input {
+		margin-bottom: 1px !important;
+	}
+}

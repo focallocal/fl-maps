@@ -8,13 +8,19 @@
 							<div class="abs-center">
 								<h2 class="txt-center">Welcome</h2>
 								<div class="row center-align">
+									<span class="grey-text">Quick Start. Learn how to use this tool of positivity.</span>
+								</div>
+								<div class="row center-align">
 									<button class="btn btn-primary" id="welcome-start">Start &gt;</button>
 								</div>
 							</div>
 						</li>
-						<li class="sequence-field" value="1">
-							<div>
+						<li class="sequence-field" id="search-start-location-container" value="1">
+							<div class="center-align">
 								<h4 class="txt-center">1. Your City</h4>
+								<div class="welcome-input-container">
+									<input type="text" class="input typeahead" data-source="geocodeDataSource" data-min-length="3" data-autoselect="true" data-highlight="true" data-select="selectedHandler" name="welcome-location"/>
+								</div>
 							</div>
 						</li>
 						<li class="sequence-field" value="2">

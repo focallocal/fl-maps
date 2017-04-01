@@ -63,7 +63,7 @@ Template.autoForm.onRendered(function () {
 	Meteor.typeahead.inject();
 
 	var fixMaterializeActiveClassTrigger = function() {
-			$('#events-form-new').find('input[name=address]').detach().insertBefore('.twitter-typeahead');
+			$('#events-form-new').find('input[name=address]').detach().insertBefore($('#events-form-new').find('.twitter-typeahead'));
 			$('#events-form-new').find('.twitter-typeahead').find('input[type=text]').remove();
 	};
 	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
