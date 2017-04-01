@@ -2,7 +2,7 @@ var markerCluster = null;
 var markers = {};
 var addedMarkers = {};
 var addedLayers = {};
-var eventMap = null;
+eventMap = null;
 var created = false;
 
 function resetMakerData() {
