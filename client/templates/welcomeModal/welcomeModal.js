@@ -31,6 +31,10 @@ Template.welcomeModal.onRendered(function() {
 		sequence.next();
 		$sequenceBtns.show();
 	});
+
+	$("#explore-btn").on('click', function() {
+		$("#welcomeModalClose").click();
+	});
 });
 
 Template.welcomeModal.helpers({
@@ -69,7 +73,8 @@ Template.welcomeModal.helpers({
 	},
 	selectedHandler: function selectedHandler(event, suggestion, datasetName) {
 
-		$("#welcomeModal").hide();
+		$("#welcomeModal").hide(500);
+		$(".lean-overlay").css({"opacity": 0});
 
 		var latLng = new google.maps.LatLng(suggestion.lat, suggestion.lng);
 		eventMap.panTo(latLng);
@@ -78,7 +83,8 @@ Template.welcomeModal.helpers({
 		}
 
 		setTimeout(function() {
-			$("#welcomeModal").show();
-		}, 1000);
+			$("#welcomeModal").show(500);
+			$(".lean-overlay").css({"opacity": 0.5});
+		}, 2000);
 	}
 });
