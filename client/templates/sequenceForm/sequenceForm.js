@@ -123,6 +123,10 @@ SequenceForm.prototype.back = function() {
 		return;
 	}
 
+	if (vm.beforeBackCall !== undefined) {
+		vm.beforeBackCall(vm._currentField);
+	}
+
 	var $currentField = vm._$fields[vm._currentField.number];
 	vm._currentField.number -= 1;
 	var $nextField = vm._$fields[vm._currentField.number];
@@ -144,6 +148,11 @@ SequenceForm.prototype.back = function() {
 SequenceForm.prototype.setBeforeNextTrigger = function(func) {
 	var vm = this;
 	vm.beforeNextCall = func;
+};
+
+SequenceForm.prototype.setBeforeBackTrigger = function(func) {
+	var vm = this;
+	vm.beforeBackCall = func;
 };
 
 SequenceForm.prototype.resetSequence = function() {
