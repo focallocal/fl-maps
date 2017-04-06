@@ -6,16 +6,8 @@ Template.welcomeModal.onCreated(function() {
 
 Template.welcomeModal.onRendered(function() {
 	sequence = new SequenceForm('#welcome-sequence', '#welcome-btn-next', '#explore-btn', '#welcome-btn-back');
-	var $sequenceBtns = $("#welcome-sequence-buttons");
-
-	sequence.setBeforeBackTrigger(function(currentField) {
-		if (currentField.number === 1) {
-			$sequenceBtns.hide();
-		}
-	});
 
 	sequence.init();
-	$sequenceBtns.hide();
 
 	Meteor.typeahead.inject();
 
@@ -26,14 +18,23 @@ Template.welcomeModal.onRendered(function() {
 	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
 	fixMaterializeActiveClassTrigger();
 
-
-	$("#welcome-start").on('click', function() {
-		sequence.next();
-		$sequenceBtns.show();
-	});
-
 	$("#explore-btn").on('click', function() {
 		$("#welcomeModalClose").click();
+	});
+
+	$("#welcome-discover").on('click', function() {
+		$("#welcomeModalClose").click();
+		FlowRouter.go('/events/list');
+	});
+
+	$("#welcome-create").on('click', function() {
+		$("#welcomeModalClose").click();
+		$("#event-new-btn").click();
+	});
+
+	$("#welcome-login").on("click", function() {
+		$("#welcomeModalClose").click();
+		FlowRouter.go('/sign-in');
 	});
 });
 
