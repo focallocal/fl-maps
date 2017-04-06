@@ -332,9 +332,11 @@ Template.map.onRendered(function() {
 		});
 	});
 
-	$("#welcomeModal").openModal({
-		dismissible: true
-	});
+	if (Meteor.user() === null && $("#welcomeModal").length !== 0) {
+		$("#welcomeModal").openModal({
+			dismissible: true
+		});
+	}
 
 	initNewEventButton();
 });
