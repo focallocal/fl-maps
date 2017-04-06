@@ -332,6 +332,10 @@ Template.map.onRendered(function() {
 		});
 	});
 
+	$("#welcomeModal").openModal({
+		dismissible: true
+	});
+
 	initNewEventButton();
 });
 
