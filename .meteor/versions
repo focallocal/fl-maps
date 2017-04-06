@@ -1,7 +1,6 @@
 accounts-base@1.2.8
 accounts-facebook@1.0.10
 accounts-google@1.0.10
-accounts-meetup@1.0.10
 accounts-oauth@1.1.13
 accounts-password@1.1.13
 accounts-twitter@1.0.10
@@ -77,7 +76,6 @@ manuel:reactivearray@1.0.5
 manuel:viewmodel@1.9.12
 matb33:collection-hooks@0.8.0
 materialize:materialize@0.97.7
-meetup@1.6.4
 meteor@1.1.16
 meteor-base@1.0.4
 meteorspark:util@0.2.0
