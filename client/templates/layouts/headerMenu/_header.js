@@ -10,8 +10,6 @@ Template._header.rendered = function() {
       belowOrigin: true
     });
 
-
-
     this.$('.button-collapse').sideNav({
       menuWidth: 200,
       activationWidth: 70,

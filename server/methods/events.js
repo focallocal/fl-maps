@@ -4,8 +4,8 @@ Meteor.methods({
   },
   'Events.report': function(_id, _user_id) {
 
-    if (_id.length === 0) {
-      return;
+    if (_id === null) {
+      return 'You must be logged in!';
     }
 
     var event = Events.find({_id: _id}).fetch()[0];

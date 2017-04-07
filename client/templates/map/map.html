@@ -12,7 +12,7 @@
     <input id="search-input" class="controls" type="text" placeholder="Search">
 
     <div id="print-btn-container">
-        <button id="print-btn" type="button" class="btn">Print</button>
+       <button id="print-btn" type="button" class="btn">Print</button>
     </div>
 
     <div class="fixed-action-btn">
@@ -36,10 +36,11 @@
             loading...
         {{/if}}
     </div>
-    {{> unfinishedFeatureModal}}
     {{> slidePanel }}
     {{> newEvent }}
     {{> eventConfirmDelete}}
     {{> congratsModal }}
     {{> eventConfirmReport id="confirm-report-map"}}
+    {{> welcomeModal}}
+    {{> unfinishedFeatureModal}}
 </template>
