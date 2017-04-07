@@ -32,3 +32,32 @@
 		}
 	}
 }
+
+.dropdown-content {
+	top: 65px !important;
+	width: auto !important;
+}
+
+.hide-left-links {
+	@media only screen and (max-width: 1065px) {
+		display: none !important;
+	}
+}
+
+.brand-logo {
+	@media only screen and (max-width: 1065px) {
+		display: none !important;
+	}
+}
+
+a.button-collapse {
+	@media only screen and (max-width: 1065px) {
+		display: block !important;
+	}
+}
+
+nav {
+	@media only screen and (max-width: 600px) {
+		height: $navbar-height !important;
+	}
+}

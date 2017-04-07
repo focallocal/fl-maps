@@ -15,7 +15,6 @@ Meteor.startup(function() {
     if (settings!=undefined) {
         console.log("Loading tokens...") ;
         createServiceConfiguration("google", settings.google.oauth_key, settings.google.oauth_secret);
-        createServiceConfiguration("meetup", settings.meetup.oauth_key, settings.meetup.oauth_secret);
         //createServiceConfiguration("facebook", settings.facebook.oauth_key, settings.facebook.oauth_secret);
         //createServiceConfiguration("twitter", settings.twitter.oauth_key, settings.twitter.oauth_secret);
         ServiceConfiguration.configurations.upsert(
