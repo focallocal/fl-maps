@@ -1,0 +1,42 @@
+<template name="welcomeModal">
+	<div class="modal" id="welcomeModal">
+		<div class="modal-content">
+			<a href="#!" id="welcomeModalClose" class="modal-action modal-close waves-effect waves-red btn-flat">x</a>
+			<div class="row">
+					<ul id="welcome-sequence">
+						<li class="sequence-field" id="search-start-location-container" value="0">
+							<div class="center-align">
+								<h4 class="txt-center">1. Your City</h4>
+								<div class="welcome-input-container">
+									<input type="text" class="input typeahead" data-source="geocodeDataSource" data-min-length="3" data-autoselect="true" data-highlight="true" data-select="selectedHandler" name="welcome-location"/>
+								</div>
+							</div>
+						</li>
+						<li class="sequence-field" value="1">
+							<div class="center-align">
+								<h4 class="txt-center">2. Discover</h4>
+								<div>
+									<p class="grey-text">Discover positive action events. You can also access this list by clicking the 'calendar' button on the left corner of the navbar.</p>
+									<button class="btn" type="button" id="welcome-discover">Discover</button>
+								</div>
+							</div>
+						</li>
+						<li class="sequence-field" value="2">
+							<div class="center-align">
+								<h4 class="txt-center">3. Create</h4>
+								<div>
+									<p class="grey-text">Create a new one. You can also crate new events by clicking the '+' button in the bottom right corner of the page. <a href="#" id="welcome-login">Login Required</a></p>
+									<button class="btn" type="button" id="welcome-create">Create</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div id="welcome-sequence-buttons">
+						<button type="button" class="btn btn-primary" id="welcome-btn-back">BACK</button>
+						<button type="button" class="btn btn-primary" id="welcome-btn-next">NEXT</button>
+						<button type="button" class="btn btn-primary" id="explore-btn">EXPLORE</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</template>
