@@ -6,9 +6,9 @@
   <div id="menu-top">
     <nav>
         <div class="nav-wrapper">
-          <a class="brand-logo hide-on-med-and-down left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
+          <a class="brand-logo left" href="{{pathFor 'home'}}">{{_ "general.text.focallocal"}}</a>
 
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#" data-activates="side-nav-left" class="button-collapse"><i class="material-icons">menu</i></a>
 
           <ul class="right nav-format">
             {{> rightLinks}}
@@ -29,12 +29,63 @@
            {{/if}}
          </ul>
 
-          <ul class="left hide-on-med-and-down nav-format">
-            {{> leftLinks}}
+         <ul id="about-dropdown" class="dropdown-content">
+           {{> aboutDropDown}}
+         </ul>
+
+         <ul id="shop-dropdown" class="dropdown-content">
+           {{> shopDropDown}}
+         </ul>
+
+         <ul id="projects-dropdown" class="dropdown-content">
+           {{> projectsDropDown}}
+         </ul>
+
+          <ul class="left hide-left-links nav-format">
+            <li>
+              <a href="#!" title="About" class="center-align dropdown-button" data-activates="about-dropdown">
+                  <i class="material-icons">info</i>
+                  <div>{{_ "leftLinks.text.0"}}</div>
+              </a>
+            </li>
+            <li class="{{liClass}}">
+                <a href="http://news.focallocal.org/" title="News" class="center-align">
+                    <i class="material-icons">public</i>
+                    <div>{{_ "leftLinks.text.1"}}</div>
+                </a>
+            </li>
+            <li class="{{liClass}}">
+                <a href="http://action.focallocal.org/" title="Action Center" class="center-align">
+                    <i class="material-icons">stars</i>
+                    <div>{{_ "leftLinks.text.2"}}</div>
+                </a>
+            </li>
+            <li class="{{liClass}}">
+                <a href="http://gather.focallocal.org/" title="Map" class="center-align">
+                    <i class="material-icons">flare</i>
+                    <div>{{_ "leftLinks.text.3"}}</div>
+                </a>
+            </li>
+            <li>
+              <a href="#!" title="Projects" class="center-align dropdown-button" data-activates="projects-dropdown">
+                <i class="material-icons">developer_board</i>
+                <div>
+                  Projects
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#!" title="Shop" class="center-align dropdown-button" data-activates="shop-dropdown">
+                <i class="material-icons">shop</i>
+                <div>
+                  Shop
+                </div>
+              </a>
+            </li>
           </ul>
 
-          <ul class="side-nav" id="mobile-demo">
-            {{> leftLinks}}
+          <ul class="side-nav" id="side-nav-left">
+            {{> sideNavLinks}}
           </ul>
 
         </div>

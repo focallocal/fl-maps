@@ -98,9 +98,9 @@
 }
 
 #print-btn-container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10px;
-  z-index: 2;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   left: 10px;
+   z-index: 2;
 }

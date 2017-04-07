@@ -2,7 +2,7 @@ var markerCluster = null;
 var markers = {};
 var addedMarkers = {};
 var addedLayers = {};
-var eventMap = null;
+eventMap = null;
 var created = false;
 
 function resetMakerData() {
@@ -331,6 +331,12 @@ Template.map.onRendered(function() {
 			dismissible: true
 		});
 	});
+
+	if (Meteor.user() === null && $("#welcomeModal").length !== 0) {
+		$("#welcomeModal").openModal({
+			dismissible: true
+		});
+	}
 
 	initNewEventButton();
 });

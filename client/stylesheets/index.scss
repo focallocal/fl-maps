@@ -5,6 +5,7 @@
 @import "logo.scss";
 @import "godmode/godmode.scss";
 @import "layout/layout.scss";
+@import "welcomeModal/welcomeModal.scss";
 
 @media #{$small-and-down} {
   #congratsModal {
