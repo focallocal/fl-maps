@@ -1,25 +1,17 @@
-#welcome-sequence {
-	.sequence-field {
-		height: 30vh;
-		position: relative;
-		display: inline-block;
-		width: 100%;
-	}
-
-	.abs-center {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-}
-
 .welcome-input-container {
-	margin-top: 50px;
+	margin-top: 10px;
 	width: 50%;
 	display: inline-block;
 
 	input {
 		margin-bottom: 1px !important;
+	}
+}
+
+.welcome-row {
+	margin-bottom: 50px !important;
+
+	div {
+		padding: 10px;
 	}
 }
