@@ -1,13 +1,13 @@
-var sequence = undefined;
+// var sequence = undefined;
 
 Template.welcomeModal.onCreated(function() {
 	this.debounce = null;
 });
 
 Template.welcomeModal.onRendered(function() {
-	sequence = new SequenceForm('#welcome-sequence', '#welcome-btn-next', '#explore-btn', '#welcome-btn-back');
-
-	sequence.init();
+	// sequence = new SequenceForm('#welcome-sequence', '#welcome-btn-next', '#explore-btn', '#welcome-btn-back');
+	//
+	// sequence.init();
 
 	Meteor.typeahead.inject();
 
