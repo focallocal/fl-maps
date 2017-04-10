@@ -24,7 +24,6 @@ aldeed:autoform@5.1.2
 accounts-google
 service-configuration
 accounts-twitter
-accounts-facebook
 aldeed:template-extension
 lampe:rssfeed
 aldeed:geocoder
@@ -62,3 +61,4 @@ tap:i18n
 michalvalasek:autoform-bootstrap-colorpicker
 ryanswapp:spectrum-colorpicker
 alanning:roles
+accounts-facebook
