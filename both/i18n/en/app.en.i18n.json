@@ -118,12 +118,25 @@
     }
   },
   "leftLinks": {
-    "text": {
+    "content": {
       "0": "About Us",
       "1": "Happy News",
       "2": "Action Center",
       "3": "Map",
-      "4": "Join The Team"
+      "4": {
+        "title": "Projects",
+        "content": {
+          "0": "Positive Action Activities",
+          "1": "Brighter Tomorrows map"
+        }
+      },
+      "5": {
+        "title": "Shop",
+        "content": {
+          "0": "Positive Action Shop",
+          "1": "Community Marketplace"
+        }
+      }
     }
   },
   "calendar": {
@@ -168,6 +181,19 @@
     },
     "btns": {
       "0": "Report"
+    }
+  },
+  "welcomeModal": {
+    "text": {
+      "0": {
+        "0": "Zoom to",
+        "1": "Your City"
+      }
+    },
+    "btns": {
+      "0": "Add or Create",
+      "1": "Find (List View)",
+      "2": "X - CLOSE AND EXPLORE"
     }
   }
 }
