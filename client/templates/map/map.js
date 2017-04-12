@@ -338,6 +338,12 @@ Template.map.onRendered(function() {
 		});
 	}
 
+	$("#join-us-btn").on('click', function() {
+		$("#join-us-modal").openModal({
+			dismissible: true
+		});
+	});
+
 	initNewEventButton();
 });
 
