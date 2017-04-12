@@ -1,13 +1,17 @@
 .welcome-input-container {
-	margin-top: 10px;
-	width: 50%;
+	width: 70%;
 	display: inline-block;
 
 	input {
+		margin-top: -5px !important;
 		margin-bottom: 1px !important;
 	}
 }
 
 .welcome-row {
-	margin-bottom: 20px !important;
+	margin-bottom: 10px !important;
+}
+
+.btn-welcome {
+	font-size: 17px;
 }
