@@ -17,12 +17,16 @@
       "2": "What is the Focallocal Community?",
       "sub": {
         "0": "The map is for you to list and find, all free resources available in your local community to help people who are homeless, on going through hardships to meet their basic needs, and take steps towards improving their situation",
-        "1": "The map gives two options \\n 1) Print it as a guide and give it to anyone in need \\n 2) Post resources you'd like to offer to those in need. like a CV help workshop, teaching a skill, or just meeting for a tea and chat",
-        "2": "We built this map! We are an open community for taking local action, globally. Focallocal aims to hit at the very roots of issues within our societies, by simply uniting people in positive action; taking ownership of issues you want to see improved in your local community and together creating activities and projects to achieve change"
+        "1": {
+          "0": "The map gives two options:",
+          "1": "1) Print it as a guide and give it to anyone in need",
+          "2": "2) Post resources you'd like to offer to those in need. like a CV help workshop, teaching a skill, or just meeting for a tea and chat"
+        },
+        "4": "We built this map! We are an open community for taking local action, globally. Focallocal aims to hit at the very roots of issues within our societies, by simply uniting people in positive action; taking ownership of issues you want to see improved in your local community and together creating activities and projects to achieve change"
       }
     },
     "btns": {
-      "0": "GET STARTED"
+      "0": "Begin Building a Brighter Tomorrow"
     }
   },
   "newEvent": {
@@ -118,11 +122,57 @@
     }
   },
   "leftLinks": {
-    "text": {
+    "content": {
       "0": "About Us",
-      "1": "Action News",
-      "2": "Missions",
-      "3": "Join The Team"
+      "1": "Happy News",
+      "2": "Action Center",
+      "3": "Map",
+      "4": {
+        "title": "Projects",
+        "content": {
+          "0": "Positive Action Activities",
+          "1": "Brighter Tomorrows map"
+        }
+      },
+      "5": {
+        "title": "Shop",
+        "content": {
+          "0": "Positive Action Shop",
+          "1": "Community Marketplace"
+        }
+      }
+    }
+  },
+  "sideNav": {
+    "content": {
+      "0": "Happy News",
+      "1": "Action Center",
+      "2": "Map",
+      "3": {
+        "title": "About Us",
+        "content": {
+          "0": "Hire Us",
+          "1": "Community Values",
+          "2": "F.A.Q",
+          "3": "The Road to Focallocal",
+          "4": "Will We Succeed?",
+          "5": "Focallocal in the News"
+        }
+      },
+      "4": {
+        "title": "Shop",
+        "content": {
+          "0": "Positive Action Shop",
+          "1": "Community Marketplace"
+        }
+      },
+      "5": {
+        "title": "Projects",
+        "content": {
+          "0": "Positive Action Activities",
+          "1": "Brighter Tomorrow Map"
+        }
+      }
     }
   },
   "calendar": {
@@ -162,6 +212,19 @@
     },
     "btns": {
       "0": "Report as innaccurate or spam"
+    }
+  },
+  "welcomeModal": {
+    "text": {
+      "0": {
+        "0": "Zoom to",
+        "1": "Your City"
+      }
+    },
+    "btns": {
+      "0": "Add or Create",
+      "1": "Find (List View)",
+      "2": "X - CLOSE AND EXPLORE"
     }
   }
 }
