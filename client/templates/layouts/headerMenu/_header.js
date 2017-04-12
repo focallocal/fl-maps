@@ -11,7 +11,7 @@ Template._header.rendered = function() {
     });
 
     this.$('.button-collapse').sideNav({
-      menuWidth: 200,
+      menuWidth: 300,
       activationWidth: 70,
       closeOnClick: true
     });
