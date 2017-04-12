@@ -209,5 +209,18 @@
     "btns": {
       "0": "Report as innaccurate or spam"
     }
+  },
+  "welcomeModal": {
+    "text": {
+      "0": {
+        "0": "Zoom to",
+        "1": "Your City"
+      }
+    },
+    "btns": {
+      "0": "Add or Create",
+      "1": "Find (List View)",
+      "2": "X - CLOSE AND EXPLORE"
+    }
   }
 }
