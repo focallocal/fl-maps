@@ -139,6 +139,38 @@
       }
     }
   },
+  "sideNav": {
+    "content": {
+      "0": "Happy News",
+      "1": "Action Center",
+      "2": "Map",
+      "3": {
+        "title": "About Us",
+        "content": {
+          "0": "Hire Us",
+          "1": "Community Values",
+          "2": "F.A.Q",
+          "3": "The Road to Focallocal",
+          "4": "Will We Succeed?",
+          "5": "Focallocal in the News"
+        }
+      },
+      "4": {
+        "title": "Shop",
+        "content": {
+          "0": "Positive Action Shop",
+          "1": "Community Marketplace"
+        }
+      },
+      "5": {
+        "title": "Projects",
+        "content": {
+          "0": "Positive Action Activities",
+          "1": "Brighter Tomorrow Map"
+        }
+      }
+    }
+  },
   "calendar": {
     "section_titles": {
       "0": "Search",
