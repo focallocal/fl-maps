@@ -11,8 +11,13 @@
 
     <input id="search-input" class="controls" type="text" placeholder="Search">
 
-    <div id="print-btn-container">
-       <button id="print-btn" type="button" class="btn">Print</button>
+    <div id="floating-btn-container">
+        <div class="row">
+            <button id="print-btn" type="button" class="btn">Print</button>
+        </div>
+       <div class="row">
+           <button id="join-us-btn" type="button" class="btn">Join Us</button>
+       </div>
     </div>
 
     <div class="fixed-action-btn">
@@ -43,4 +48,5 @@
     {{> eventConfirmReport id="confirm-report-map"}}
     {{> welcomeModal}}
     {{> unfinishedFeatureModal}}
+    {{> joinModal}}
 </template>
