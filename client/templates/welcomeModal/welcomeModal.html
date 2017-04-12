@@ -5,7 +5,7 @@
 			<div class="row">
 				<div id="search-start-location-container" class="row welcome-row">
 					<div class="center-align">
-						<h4 class="txt-center">Zoom to <strong>Your City</strong></h4>
+						<h4 class="txt-center">{{_ "welcomeModal.text.0.0"}} <strong>{{_ "welcomeModal.text.0.1"}}</strong></h4>
 						<div class="welcome-input-container">
 							<input type="text" class="input typeahead" data-source="geocodeDataSource" data-min-length="3" data-autoselect="true" data-highlight="true" data-select="selectedHandler" name="welcome-location"/>
 						</div>
@@ -13,16 +13,16 @@
 				</div>
 				<div class="row welcome-row">
 					<div class="center-align">
-						<button class="btn" type="button" id="welcome-create">Add or Create</button>
+						<button class="btn" type="button" id="welcome-create">{{_ "welcomeModal.btns.0"}}</button>
 					</div>
 				</div>
 				<div class="row welcome-row">
 					<div class="center-align">
-						<button class="btn" type="button" id="welcome-discover">Find (List View)</button>
+						<button class="btn" type="button" id="welcome-discover">{{_ "welcomeModal.btns.1"}}</button>
 					</div>
 				</div>
 				<div id="welcome-sequence-buttons">
-					<button type="button" class="btn btn-primary" id="explore-btn">X - CLOSE AND EXPLORE</button>
+					<button type="button" class="btn btn-primary" id="explore-btn">{{_ "welcomeModal.btns.2"}}</button>
 				</div>
 			</div>
 		</div>
