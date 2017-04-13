@@ -99,8 +99,8 @@
 
 #floating-btn-container {
    position: absolute;
-   top: 50%;
+   bottom: -40px;
    transform: translateY(-50%);
-   left: 10px;
+   left: 50px;
    z-index: 2;
 }
