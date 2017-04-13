@@ -22,7 +22,13 @@
       }
     },
     "btns": {
-      "0": "Create Action"
+      "0": "Action Center",
+      "1": "Create Action",
+      "2": "Join Activity",
+      "3": "Community News",
+      "4": "Youtube",
+      "5": "Facebook",
+      "6": "read more"
     }
   },
   "newEvent": {
