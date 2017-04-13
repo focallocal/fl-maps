@@ -26,7 +26,11 @@
       }
     },
     "btns": {
-      "0": "Begin Building a Brighter Tomorrow"
+      "0": "Begin Building a Brighter Tomorrow",
+      "1": "Community News",
+      "2": "Youtube",
+      "3": "Facebook",
+      "4": "read more"
     }
   },
   "newEvent": {
