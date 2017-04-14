@@ -247,32 +247,32 @@ Events.attachSchema(new SimpleSchema({
       type: Object,
       optional: true,
       autoform: {
-          hidden: true
+          type: 'hidden'
       }
     },
     'reported.number': {
         type: Number,
         decimal: true,
         autoform: {
-            hidden: true
+            type: 'hidden'
         }
     },
     'reported.status': {
         type: Boolean,
         autoform: {
-          hidden: true
+          type: 'hidden'
         }
     },
     'reported.admin_overwrite': {
         type: Boolean,
         autoform: {
-            hidden: true
+            type: 'hidden'
         }
     },
     'reported.users': {
       type: [String],
       autoform: {
-        hidden: true
+        type: 'hidden'
       }
     }
 }));
