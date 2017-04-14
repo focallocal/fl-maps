@@ -104,6 +104,12 @@ Template.autoForm.onRendered(function () {
 
 					 valid = false;
 
+				 } else if (name === 'findHints') {
+
+					 $elem.focus();
+					 $elem.val('Not Provided');
+					 valid = true;
+
 				 } else if (name === 'time' && $elem.val().length === 0) {
 
 					 valid = false;
