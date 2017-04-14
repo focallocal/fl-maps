@@ -53,11 +53,12 @@ Template.autoForm.onRendered(function () {
 	}
 
 	$("#new-resource").on('click', function() {
-		var category = Categories.find({name: "Offer A New Resource"}).fetch()[0];
+		var category = Categories.find({name: "Community Support (Offers)"}).fetch()[0];
 		if (category !== undefined) {
 			var $categoryContainer = $("#category-container");
 			$categoryContainer.find("ul").find('li span:contains(' + category.name + ')').click();
 		}
+		$("#next").click();
 	});
 
 	Meteor.typeahead.inject();
