@@ -87,6 +87,7 @@ function initNewEventButton() {
 		if (!Meteor.userId()) {
 			var toastTimeout = 3000;
 			Materialize.toast('Oops! Please login to add gather!', toastTimeout);
+			FlowRouter.go('/sign-in');
 		} else {
 			Session.set('isEdit',false);
 			$("#eventsFormModal").openModal({
