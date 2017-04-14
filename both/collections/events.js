@@ -89,7 +89,7 @@ Events.attachSchema(new SimpleSchema({
         label: 'Event name',
         max: 100,
         autoform: {
-            id: "event-name"    
+            id: "event-name"
         }
     },
     address: {
@@ -166,7 +166,8 @@ Events.attachSchema(new SimpleSchema({
     findHints: {
         type: String,
         label: 'How to find us?',
-        max: 250
+        max: 250,
+        optional: true
     },
     dateEvent: {
         type: Date,
