@@ -45,10 +45,15 @@
         "4":"Carrying a Teddy Bear on your Shoulder? Wearing a bright yellow hat? wearing a Focallocal badge or T-shirt?"
       }
     },
-    "btns":{
-      "0":"Back",
-      "1":"Next",
-      "2":"Submit"
+    "btns": {
+      "0": "Back",
+      "1": "Next",
+      "2": "Submit",
+      "3": "Suggestions",
+      "4": "Offer a new resource"
+    },
+    "links": {
+      "0": "http://discuss.focallocal.org/t/suggested-resources-to-offer/158"
     }
   },
   "editEvent":{
@@ -213,6 +218,19 @@
     },
     "btns":{
       "0":"Report Inaccuracy or Abuse"
+    }
+  },
+  "welcomeModal": {
+    "text": {
+      "0": {
+        "0": "Zoom to",
+        "1": "Your City"
+      }
+    },
+    "btns": {
+      "0": "Add or Create",
+      "1": "Find (List View)",
+      "2": "X - CLOSE AND EXPLORE"
     }
   }
 }
