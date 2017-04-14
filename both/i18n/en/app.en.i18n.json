@@ -54,7 +54,12 @@
     "btns": {
       "0": "Back",
       "1": "Next",
-      "2": "Submit"
+      "2": "Submit",
+      "3": "Suggestions",
+      "4": "Offer a new resource"
+    },
+    "links": {
+      "0": "http://news.focallocal.org/activities-list/"
     }
   },
   "editEvent": {
