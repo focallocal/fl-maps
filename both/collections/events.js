@@ -43,7 +43,7 @@ Events.attachSchema(new SimpleSchema({
                 });
             },
             label: false,
-            firstOption: 'Choose event category'
+            firstOption: 'Choose Category'
         }
     },
     'category.name': {
