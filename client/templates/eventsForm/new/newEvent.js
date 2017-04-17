@@ -148,6 +148,16 @@ Template.autoForm.onRendered(function () {
 
 		 $("#eventsFormModal").height(height);
 	 });
+
+	 // Date step
+	 $("#repeating-event").hide();
+	 $('#repeating_check').on('click', function() {
+		 $("#one-time-event").toggle();
+		 $("#repeating-event").toggle();
+	 });
+
+	 $('ul.tabs').tabs();
+	 $(".tabs-fix-width").width("1000px");
 });
 
 Template.newEvent.onDestroyed(function () {

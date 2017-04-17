@@ -58,9 +58,62 @@
 									<h5>{{_ "newEvent.section_titles.5"}}</h5>
 								</div>
 								<div class="validate-field">
-									{{> afQuickField name="dateEvent"}}
-									{{> afQuickField name="time"}}
-									{{> afQuickField name="time_end"}}
+									{{> afQuickField name="repeating"}}
+									<div id="one-time-event">
+										{{> afQuickField name="dateEvent"}}
+										{{> afQuickField name="time"}}
+										{{> afQuickField name="time_end"}}
+									</div>
+									<div id="repeating-event">
+										<div class="row">
+											<div class="col s12 tabs-fix-overflow">
+												<ul class="tabs tabs-fix-width">
+													<li class="tab col s3"><a href="#sunday">Sunday</a></li>
+													<li class="tab col s3"><a href="#monday">Monday</a></li>
+													<li class="tab col s3"><a href="#tuesday">Tuesday</a></li>
+													<li class="tab col s3"><a href="#wednesday">Wednesday</a></li>
+													<li class="tab col s3"><a href="#thursday">Thursday</a></li>
+													<li class="tab col s3"><a href="#friday">Friday</a></li>
+													<li class="tab col s3"><a href="#saturday">Saturday</a></li>
+												</ul>
+											</div>
+											<div id="sunday" class="col s12">
+												{{> afQuickField name="week.sunday.enable"}}
+												{{> afQuickField name="week.sunday.time"}}
+												{{> afQuickField name="week.sunday.time_end"}}
+											</div>
+											<div id="monday" class="col s12">
+												{{> afQuickField name="week.monday.enable"}}
+												{{> afQuickField name="week.monday.time"}}
+												{{> afQuickField name="week.monday.time_end"}}
+											</div>
+											<div id="tuesday" class="col s12">
+												{{> afQuickField name="week.tuesday.enable"}}
+												{{> afQuickField name="week.tuesday.time"}}
+												{{> afQuickField name="week.tuesday.time_end"}}
+											</div>
+											<div id="wednesday" class="col s12">
+												{{> afQuickField name="week.wednesday.enable"}}
+												{{> afQuickField name="week.wednesday.time"}}
+												{{> afQuickField name="week.wednesday.time_end"}}
+											</div>
+											<div id="thursday" class="col s12">
+												{{> afQuickField name="week.thursday.enable"}}
+												{{> afQuickField name="week.thursday.time"}}
+												{{> afQuickField name="week.thursday.time_end"}}
+											</div>
+											<div id="friday" class="col s12">
+												{{> afQuickField name="week.friday.enable"}}
+												{{> afQuickField name="week.friday.time"}}
+												{{> afQuickField name="week.friday.time_end"}}
+											</div>
+											<div id="saturday" class="col s12">
+												{{> afQuickField name="week.saturday.enable"}}
+												{{> afQuickField name="week.saturday.time"}}
+												{{> afQuickField name="week.saturday.time_end"}}
+											</div>
+										</div>
+									</div>
 								</div>
 							</li>
 							<li class="sequence-field" value="6">

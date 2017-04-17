@@ -11,6 +11,64 @@ Events.before.insert(function(userId, doc) {
     }
 });
 
+WeekDay = new SimpleSchema({
+    enable: {
+        type: Boolean,
+        label: 'Enable',
+        defaultValue: false
+    },
+    time: {
+        type: String,
+        label: 'Opening Time',
+        optional: true,
+        autoform: {
+            options: function () {
+                return getTimesArr().map(function (entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            firstOption: 'Pick a time!'
+        }
+    },
+    time_end: {
+        type: String,
+        label: 'Closing Time',
+        optional: true,
+        autoform: {
+            options: function() {
+                return getTimesArr().map(function(entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            firstOption: 'Pick a time!'
+        }
+    }
+});
+
+Week = new SimpleSchema({
+    sunday: {
+        type: WeekDay
+    },
+    monday: {
+        type: WeekDay
+    },
+    tuesday: {
+        type: WeekDay
+    },
+    wednesday: {
+        type: WeekDay
+    },
+    thursday: {
+        type: WeekDay
+    },
+    friday: {
+        type: WeekDay
+    },
+    saturday: {
+        type: WeekDay
+    }
+});
+
 Events.attachSchema(new SimpleSchema({
     organiser: {
         type: Object,
@@ -274,6 +332,17 @@ Events.attachSchema(new SimpleSchema({
       autoform: {
         type: 'hidden'
       }
+    },
+    'repeating': {
+        label: 'More than one day?',
+        type: Boolean,
+        autoform: {
+            id: 'repeating_check'
+        }
+    },
+    week: {
+        type: Week,
+        optional: true
     }
 }));
 SimpleSchema.messages({
