@@ -53,19 +53,19 @@
 									{{> afQuickField name="findHints"}}
 								</div>
 							</li>
-							<li class="sequence-field" value="5">
+							<li class="sequence-field" value="5" id="lifetime-section">
 								<div class="col">
 									<h5>{{_ "newEvent.section_titles.5"}}</h5>
 								</div>
 								<div class="validate-field">
-									{{> afQuickField name="repeating"}}
+									{{> afQuickField name="week_enable"}}
 									<div id="one-time-event">
 										{{> afQuickField name="dateEvent"}}
 										{{> afQuickField name="time"}}
 										{{> afQuickField name="time_end"}}
 									</div>
-									<div id="repeating-event">
-										<div class="row">
+									<div id="week-event">
+										<div class="row flush-bottom" id="week-tabs">
 											<div class="col s12 tabs-fix-overflow">
 												<ul class="tabs tabs-fix-width">
 													<li class="tab col s3"><a href="#sunday">Sunday</a></li>
@@ -77,22 +77,22 @@
 													<li class="tab col s3"><a href="#saturday">Saturday</a></li>
 												</ul>
 											</div>
-											<div id="sunday" class="col s12">
+											<div id="sunday" class="col s12 day-inputs">
 												{{> afQuickField name="week.sunday.enable"}}
 												{{> afQuickField name="week.sunday.time"}}
 												{{> afQuickField name="week.sunday.time_end"}}
 											</div>
-											<div id="monday" class="col s12">
+											<div id="monday" class="col s12 day-inputs">
 												{{> afQuickField name="week.monday.enable"}}
 												{{> afQuickField name="week.monday.time"}}
 												{{> afQuickField name="week.monday.time_end"}}
 											</div>
-											<div id="tuesday" class="col s12">
+											<div id="tuesday" class="col s12 day-inputs">
 												{{> afQuickField name="week.tuesday.enable"}}
 												{{> afQuickField name="week.tuesday.time"}}
 												{{> afQuickField name="week.tuesday.time_end"}}
 											</div>
-											<div id="wednesday" class="col s12">
+											<div id="wednesday" class="col s12 day-inputs">
 												{{> afQuickField name="week.wednesday.enable"}}
 												{{> afQuickField name="week.wednesday.time"}}
 												{{> afQuickField name="week.wednesday.time_end"}}
@@ -111,6 +111,20 @@
 												{{> afQuickField name="week.saturday.enable"}}
 												{{> afQuickField name="week.saturday.time"}}
 												{{> afQuickField name="week.saturday.time_end"}}
+											</div>
+										</div>
+										<div class="row flush-bottom">
+											{{> afQuickField name="repetition.enable"}}
+											<div id="repeating-event" class="row">
+												{{> afQuickField name="repetition.frequency"}}
+												<div id="monthly_detail" class="row flush-bottom">
+													<span>On the </span>
+													{{> afQuickField name="repetition.monthly.day"}}
+												</div>
+												{{> afQuickField name="repetition.forever_enable"}}
+												<div id="lifetime_weeks">
+													<span>Repeat for how many weeks?</span>{{> afQuickField name="repetition.lifetime_weeks"}}
+												</div>
 											</div>
 										</div>
 									</div>
