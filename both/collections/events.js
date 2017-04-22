@@ -69,6 +69,66 @@ Week = new SimpleSchema({
     }
 });
 
+Repetition = new SimpleSchema({
+    enable: {
+        label: 'Reccuring?',
+        type: Boolean,
+        defaultValue: false,
+        autoform: {
+            id: 'repeating_enable_check'
+        }
+    },
+    frequency: {
+        label: 'Frequency',
+        type: String,
+        defaultValue: false,
+        autoform: {
+            type: 'select-radio',
+            label: false,
+            options: function () {
+                return ["Weekly", "Biweekly", "Monthly"].map(function (entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            id: 'frequency'
+        }
+    },
+    monthly: {
+        type: Object,
+        optional: true
+    },
+    'monthly.day': {
+        'label': 'Day',
+        type: Number,
+        autoform: {
+            options: function () {
+                return getDaysArr().map(function (entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            firstOption: 'Pick a Day!'
+        }
+    },
+    forever_enable: {
+        type: Boolean,
+        defaultValue: false,
+        label: 'Forever',
+        autoform: {
+            checked: true,
+            id: "forever_enable"
+        }
+    },
+    lifetime_weeks: {
+        type: Number,
+        defaultValue: 1,
+        autoform: {
+            label: false,
+            min: "1",
+            class: "flush-bottom"
+        }
+    }
+});
+
 Events.attachSchema(new SimpleSchema({
     organiser: {
         type: Object,
@@ -230,6 +290,10 @@ Events.attachSchema(new SimpleSchema({
     dateEvent: {
         type: Date,
         label: 'Date of the event',
+        optional: true,
+        custom: function() {
+            return lifetimeBasicValidation.call(this);
+        },
         autoValue: function() {
             if (this.isSet) {
                 var date = new Date(this.value);
@@ -248,6 +312,10 @@ Events.attachSchema(new SimpleSchema({
     time: {
         type: String,
         label: 'Starting Time',
+        optional: true,
+        custom: function() {
+            return lifetimeBasicValidation.call(this);
+        },
         autoform: {
             options: function () {
                 return getTimesArr().map(function (entry) {
@@ -260,6 +328,10 @@ Events.attachSchema(new SimpleSchema({
     time_end: {
         type: String,
         label: 'Closing Time',
+        optional: true,
+        custom: function() {
+            return lifetimeBasicValidation.call(this);
+        },
         autoform: {
             options: function() {
                 return getTimesArr().map(function(entry) {
@@ -333,12 +405,17 @@ Events.attachSchema(new SimpleSchema({
         type: 'hidden'
       }
     },
-    'repeating': {
+    week_enable: {
         label: 'More than one day?',
         type: Boolean,
+        defaultValue: false,
         autoform: {
-            id: 'repeating_check'
+            id: 'week_enable_check'
         }
+    },
+    repetition: {
+        type: Repetition,
+        optional: true
     },
     week: {
         type: Week,
@@ -363,6 +440,14 @@ function mergeDateTime(date, time) {
     return date
 }
 
+function getDaysArr() {
+    var result = [];
+    for (var i = 0; i <= 31; i++) {
+        result.push(i);
+    }
+    return result;
+}
+
 //get array of times in 24h format
 function getTimesArr() {
     var timeArr = [];
@@ -373,4 +458,11 @@ function getTimesArr() {
         });
     }
     return timeArr
+}
+
+// Helper functions for validation
+function lifetimeBasicValidation() {
+    if (!this.field('week_enable').value && !this.isSet) {
+        return "required";
+    }
 }
