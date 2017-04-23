@@ -21,6 +21,9 @@ WeekDay = new SimpleSchema({
         type: String,
         label: 'Opening Time',
         optional: true,
+        custom: function() {
+            return weekDayValidation.call(this);
+        },
         autoform: {
             options: function () {
                 return getTimesArr().map(function (entry) {
@@ -34,6 +37,9 @@ WeekDay = new SimpleSchema({
         type: String,
         label: 'Closing Time',
         optional: true,
+        custom: function() {
+            return weekDayValidation.call(this);
+        },
         autoform: {
             options: function() {
                 return getTimesArr().map(function(entry) {
@@ -81,7 +87,12 @@ Repetition = new SimpleSchema({
     frequency: {
         label: 'Frequency',
         type: String,
-        defaultValue: false,
+        optional: true,
+        custom: function() {
+            if (this.siblingField("enable").value && !this.isSet) {
+                return "required";
+            }
+        },
         autoform: {
             type: 'select-radio',
             label: false,
@@ -93,13 +104,15 @@ Repetition = new SimpleSchema({
             id: 'frequency'
         }
     },
-    monthly: {
-        type: Object,
-        optional: true
-    },
-    'monthly.day': {
+    monthlyDays: {
         'label': 'Day',
         type: Number,
+        optional: true,
+        custom: function() {
+            if (this.siblingField("enable").value && this.siblingField("frequency").value === "Monthly" && !this.isSet) {
+                return "required";
+            }
+        },
         autoform: {
             options: function () {
                 return getDaysArr().map(function (entry) {
@@ -121,6 +134,17 @@ Repetition = new SimpleSchema({
     lifetime_weeks: {
         type: Number,
         defaultValue: 1,
+        optional: true,
+        custom: function() {
+            var enabled = this.siblingField("forever_enable").value;
+            if (!enabled) {
+                if (!this.isSet) {
+                    return "required";
+                } else if (parseInt(this.value) < 1) {
+                    return "required";
+                }
+            }
+        },
         autoform: {
             label: false,
             min: "1",
@@ -463,6 +487,12 @@ function getTimesArr() {
 // Helper functions for validation
 function lifetimeBasicValidation() {
     if (!this.field('week_enable').value && !this.isSet) {
+        return "required";
+    }
+}
+
+function weekDayValidation() {
+    if (this.siblingField("enable").value && !this.isSet) {
         return "required";
     }
 }
