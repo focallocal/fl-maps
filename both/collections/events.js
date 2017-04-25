@@ -1,7 +1,14 @@
 Events = new Mongo.Collection('events');
 
 Events.before.insert(function(userId, doc) {
-    doc.dateCreated = new Date();
+    var currentDate = new Date();
+    doc.dateCreated = currentDate;
+
+    if (doc.week_enable === true) {
+        currentDate.setDate(currentDate.getDate() + 7*doc.repetition.lifetime_weeks);
+        doc.dateEvent = currentDate;
+    }
+
     if (userId) { //checks if request comes from frontend
         var user = Meteor.user();
         doc.organiser = {
