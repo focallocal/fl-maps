@@ -2,7 +2,22 @@
 	<div class="card-panel">
 		{{#if Template.subscriptionsReady}}
 			<h5>{{_ "editEvent.title"}}</h5>
-			{{> quickForm collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
+			{{#autoForm collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
+				{{> afQuickField name="organiser._id"}}
+				{{> afQuickField name="organiser.name"}}
+				{{> afQuickField name="category"}}
+				{{> afQuickField name="name"}}
+				{{> afQuickField name="address"}}
+				{{> afQuickField name="coordinates"}}
+				{{> afQuickField name="meetingPoint"}}
+				{{> afQuickField name="findHints"}}
+				{{> eventLifetime}}
+				{{> afQuickField name="overview"}}
+				{{> afQuickField name="description"}}
+				<div class="row">
+					<button type="submit" class="btn">Update</button>
+				</div>
+			{{/autoForm}}
 		{{/if}}
 	</div>
 </template>

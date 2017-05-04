@@ -13,8 +13,19 @@
 	top: 10px;
 }
 
-.tabs-fix-overflow {
-	overflow: scroll;
+// [type="checkbox"]:not(:checked).input-fix-enable,
+// [type="checkbox"]:checked.input-fix-enable {
+// 	/*box-sizing: border-box;*/
+// 	/*padding: 0;*/
+// 	position: inherit;
+// 	left: inherit;
+// 	visibility: inherit;
+// 	opacity: 1;
+// 	margin-left: 5px;
+// }
+
+.day-enable {
+	display: inline-block !important;
 }
 
 .tab > a {
