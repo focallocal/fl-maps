@@ -1,13 +1,7 @@
 Events = new Mongo.Collection('events');
 
 Events.before.insert(function(userId, doc) {
-    var currentDate = new Date();
-    doc.dateCreated = currentDate;
-
-    if (doc.week_enable === true) {
-        currentDate.setDate(currentDate.getDate() + 7*doc.repetition.lifetime_weeks);
-        doc.dateEvent = currentDate;
-    }
+    doc.dateCreated = new Date();
 
     if (userId) { //checks if request comes from frontend
         var user = Meteor.user();
@@ -18,11 +12,16 @@ Events.before.insert(function(userId, doc) {
     }
 });
 
+
+
 WeekDay = new SimpleSchema({
     enable: {
         type: Boolean,
-        label: 'Enable',
-        defaultValue: false
+        defaultValue: false,
+        autoform: {
+            label: false,
+            class: 'day-enable'
+        }
     },
     time: {
         type: String,
@@ -138,24 +137,31 @@ Repetition = new SimpleSchema({
             id: "forever_enable"
         }
     },
-    lifetime_weeks: {
-        type: Number,
-        defaultValue: 1,
+    lifetime_date: {
+        type: Date,
         optional: true,
+        label: "Ending Date",
         custom: function() {
             var enabled = this.siblingField("forever_enable").value;
             if (!enabled) {
                 if (!this.isSet) {
                     return "required";
-                } else if (parseInt(this.value) < 1) {
-                    return "required";
                 }
             }
         },
+        autoValue: function() {
+            if (this.isSet) {
+                var date = new Date(this.value);
+                var time = this.field('time').value;
+                return mergeDateTime(date, time);
+            }
+        },
         autoform: {
-            label: false,
-            min: "1",
-            class: "flush-bottom"
+            type: 'pickadate',
+            pickadateOptions: {
+                format: 'd mmmm, yyyy',
+                formatSubmit: 'yyyy-mm-dd'
+            }
         }
     }
 });
@@ -320,11 +326,7 @@ Events.attachSchema(new SimpleSchema({
     },
     dateEvent: {
         type: Date,
-        label: 'Date of the event',
-        optional: true,
-        custom: function() {
-            return lifetimeBasicValidation.call(this);
-        },
+        label: 'Date of the action',
         autoValue: function() {
             if (this.isSet) {
                 var date = new Date(this.value);

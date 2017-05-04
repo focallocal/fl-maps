@@ -1,0 +1,116 @@
+<template name="eventLifetime">
+
+	{{> afQuickField name="week_enable"}}
+	{{> afQuickField name="dateEvent"}}
+	<div id="one-time-event">
+		{{> afQuickField name="time"}}
+		{{> afQuickField name="time_end"}}
+	</div>
+	<div id="week-event">
+		<div class="row flush-bottom">
+			<div class="row">
+				<div class="col s6 day-container">
+					Sunday
+					{{> afQuickField name="week.sunday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.sunday.time"}}
+						{{> afQuickField name="week.sunday.time_end"}}
+					</div>
+				</div>
+				<div class="col s6 day-container">
+					Monday
+					{{> afQuickField name="week.monday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.monday.time"}}
+						{{> afQuickField name="week.monday.time_end"}}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6 day-container">
+					Tuesday
+					{{> afQuickField name="week.sunday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.sunday.time"}}
+						{{> afQuickField name="week.sunday.time_end"}}
+					</div>
+				</div>
+				<div class="col s6 day-container">
+					Wednesday
+					{{> afQuickField name="week.wednesday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.wednesday.time"}}
+						{{> afQuickField name="week.wednesday.time_end"}}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s6 day-container">
+					Thursday
+					{{> afQuickField name="week.thursday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.thursday.time"}}
+						{{> afQuickField name="week.thursday.time_end"}}
+					</div>
+				</div>
+				<div class="col s6 day-container">
+					Friday
+					{{> afQuickField name="week.friday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.friday.time"}}
+						{{> afQuickField name="week.friday.time_end"}}
+					</div>
+				</div>
+			</div>
+			<div class="row day-container">
+				Saturday
+				{{> afQuickField name="week.saturday.enable"}}
+				<div class="day-times">
+					{{> afQuickField name="week.saturday.time"}}
+					{{> afQuickField name="week.saturday.time_end"}}
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="row">
+					<div class="col s4">
+						Sunday
+					</div>
+					<div class="enable-inline-container">
+						{{> afQuickField name="week.sunday.enable"}}
+					</div>
+					<div class="col s9 time-select-inline-fix">
+						{{> afQuickField name="week.sunday.time"}}
+						{{> afQuickField name="week.sunday.time_end"}}
+					</div>
+				</div>
+				<div class="row">
+					Monday
+					<div class="enable-inline-container">
+						{{> afQuickField name="week.monday.enable"}}
+					</div>
+				</div>
+				<div class="row">
+					Tuesday
+					<div class="enable-inline-container">
+						{{> afQuickField name="week.tuesday.enable"}}
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<div class="row flush-bottom">
+			{{> afQuickField name="repetition.enable"}}
+			<div id="repeating-event" class="row">
+				{{> afQuickField name="repetition.frequency"}}
+				<div id="monthly_detail" class="row flush-bottom">
+					<span>On the </span>
+					{{> afQuickField name="repetition.monthlyDays"}}
+				</div>
+			</div>
+			{{> afQuickField name="repetition.forever_enable"}}
+			<div id="lifetime_weeks">
+				<span>When does it end?</span>{{> afQuickField name="repetition.lifetime_date"}}
+			</div>
+		</div>
+	</div>
+
+</template>

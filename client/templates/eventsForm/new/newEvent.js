@@ -243,34 +243,7 @@ Template.autoForm.onRendered(function () {
 
 		 $("#eventsFormModal").height(height);
 	 });
-
-	 // Date step
-	 $("#week-event").hide();
-	 $('#week_enable_check').on('click', function() {
-		 $("#one-time-event").toggle();
-		 $("#week-event").toggle();
-	 });
-
-	 $("#repeating-event").hide();
-	 $("#repeating_enable_check").on('click', function() {
-		 $("#repeating-event").toggle();
-	 });
-
-	 $("#monthly_detail").hide();
-	 $('#frequency_Monthly').parent().parent().on('click', function() {
-		 if($('#frequency_Monthly').is(':checked')) {
-			 $("#monthly_detail").show();
-		 } else {
-			 $("#monthly_detail").hide();
-		 }
-	 });
-
-	 $("#lifetime_weeks").hide();
-	 $("#forever_enable").on('click', function() {
-		 $("#lifetime_weeks").toggle();
-	 });
-
-	 $('ul.tabs').tabs();
+	 
 	 $(".tabs-fix-width").width("900px");
 });
 
