@@ -46,7 +46,7 @@ Template.autoForm.onRendered(function() {
 
 	$(".day-enable").on('click', function() {
 		var $this = $(this);
-		var $times = $this.parents(".day-container").find(".day-times");
+		var $times = $this.parents(".day-inputs").find(".day-times");
 
 		if ($this.is(":checked") === true) {
 			$times.show();
