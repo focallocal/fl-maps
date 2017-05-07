@@ -9,15 +9,7 @@
 	<div id="week-event">
 		<div class="row flush-bottom">
 			<div class="row">
-				<div class="col s6 day-container">
-					Sunday
-					{{> afQuickField name="week.sunday.enable"}}
-					<div class="day-times">
-						{{> afQuickField name="week.sunday.time"}}
-						{{> afQuickField name="week.sunday.time_end"}}
-					</div>
-				</div>
-				<div class="col s6 day-container">
+				<div class="col s6 day-inputs">
 					Monday
 					{{> afQuickField name="week.monday.enable"}}
 					<div class="day-times">
@@ -25,9 +17,7 @@
 						{{> afQuickField name="week.monday.time_end"}}
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col s6 day-container">
+				<div class="col s6 day-inputs">
 					Tuesday
 					{{> afQuickField name="week.sunday.enable"}}
 					<div class="day-times">
@@ -35,7 +25,9 @@
 						{{> afQuickField name="week.sunday.time_end"}}
 					</div>
 				</div>
-				<div class="col s6 day-container">
+			</div>
+			<div class="row">
+				<div class="col s6 day-inputs">
 					Wednesday
 					{{> afQuickField name="week.wednesday.enable"}}
 					<div class="day-times">
@@ -43,9 +35,7 @@
 						{{> afQuickField name="week.wednesday.time_end"}}
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col s6 day-container">
+				<div class="col s6 day-inputs">
 					Thursday
 					{{> afQuickField name="week.thursday.enable"}}
 					<div class="day-times">
@@ -53,7 +43,9 @@
 						{{> afQuickField name="week.thursday.time_end"}}
 					</div>
 				</div>
-				<div class="col s6 day-container">
+			</div>
+			<div class="row">
+				<div class="col s6 day-inputs">
 					Friday
 					{{> afQuickField name="week.friday.enable"}}
 					<div class="day-times">
@@ -61,13 +53,23 @@
 						{{> afQuickField name="week.friday.time_end"}}
 					</div>
 				</div>
+				<div class="col s6 day-inputs">
+					Saturday
+					{{> afQuickField name="week.saturday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.saturday.time"}}
+						{{> afQuickField name="week.saturday.time_end"}}
+					</div>
+				</div>
 			</div>
-			<div class="row day-container">
-				Saturday
-				{{> afQuickField name="week.saturday.enable"}}
-				<div class="day-times">
-					{{> afQuickField name="week.saturday.time"}}
-					{{> afQuickField name="week.saturday.time_end"}}
+			<div class="row">
+				<div class="col s6 day-inputs">
+					Sunday
+					{{> afQuickField name="week.sunday.enable"}}
+					<div class="day-times">
+						{{> afQuickField name="week.sunday.time"}}
+						{{> afQuickField name="week.sunday.time_end"}}
+					</div>
 				</div>
 			</div>
 			<!-- <div class="row">
