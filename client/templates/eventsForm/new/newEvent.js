@@ -49,8 +49,10 @@ function recurringLifeTimeValidation() {
 				}
 			}
 			if (foreverEnable === false) {
-				var $weeksLifeTime = $("#lifetime_weeks").find("input");
-				if (parseInt($weeksLifeTime.val()) < 1) {
+				var $dateLifeTime = $("#lifetime_weeks").find("input");
+				console.log($dateLifeTime);
+				if ($dateLifeTime.length === 0) {
+					console.log($dateLifeTime.length);
 					valid = false;
 				}
 			}
@@ -89,6 +91,7 @@ function weekLifeTimeValidation() {
 		var days = $(".day-inputs");
 		days.each(function(index) {
 			var dayValidation = dayLifeTimeValidation($(days[index]));
+			console.log(dayValidation);
 			if (dayValidation.checked) {
 				enable_valid = true;
 			}
@@ -243,7 +246,7 @@ Template.autoForm.onRendered(function () {
 
 		 $("#eventsFormModal").height(height);
 	 });
-	 
+
 	 $(".tabs-fix-width").width("900px");
 });
 
