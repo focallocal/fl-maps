@@ -4,7 +4,35 @@
             <span class="card-title grey-text text-darken-4">Info</span>
             <div class="divider"></div>
             <h5>{{name}}</h5>
-            <label>Date:</label> {{printDate dateEvent}}<br />
+
+            {{#if week_enable}}
+                <label>Starting Date:</label> {{printDate dateEvent}}
+                <br>
+                {{#unless repetition.forever_enable}}
+                    <label>Ending Date:</label>  {{printDate repetition.lifetime_date}}
+                    <br>
+                {{/unless}}
+                {{#each weekArray week}}
+                    {{#if day.enable}}
+                        <label>{{name}}:</label>
+                        {{day.time}} - {{day.time_end}}
+                        <br />
+                    {{/if}}
+                {{/each}}
+
+                {{#if repetition.enable}}
+                    <span class="red-text">{{frequencyValue repetition}}</span>
+                    <br />
+                    <br />
+                {{/if}}
+            {{else}}
+                <label>Date:</label> {{printDate dateEvent}}
+                <br />
+                <label>Starting Time:</label> time
+                <br>
+                <label>Ending Time</label> time_end
+            {{/if}}
+
             <label>Overview:</label> {{overview}}
             <br />
             <label>Description:</label> {{description}}

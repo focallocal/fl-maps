@@ -2,11 +2,166 @@ Events = new Mongo.Collection('events');
 
 Events.before.insert(function(userId, doc) {
     doc.dateCreated = new Date();
+
     if (userId) { //checks if request comes from frontend
         var user = Meteor.user();
         doc.organiser = {
             _id: userId,
             name: user.profile.name
+        }
+    }
+});
+
+
+
+WeekDay = new SimpleSchema({
+    enable: {
+        type: Boolean,
+        defaultValue: false,
+        autoform: {
+            label: false,
+            class: 'day-enable'
+        }
+    },
+    time: {
+        type: String,
+        label: 'Opening Time',
+        optional: true,
+        custom: function() {
+            return weekDayValidation.call(this);
+        },
+        autoform: {
+            options: function () {
+                return getTimesArr().map(function (entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            firstOption: 'Pick a time!'
+        }
+    },
+    time_end: {
+        type: String,
+        label: 'Closing Time',
+        optional: true,
+        custom: function() {
+            return weekDayValidation.call(this);
+        },
+        autoform: {
+            options: function() {
+                return getTimesArr().map(function(entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            firstOption: 'Pick a time!'
+        }
+    }
+});
+
+Week = new SimpleSchema({
+    sunday: {
+        type: WeekDay
+    },
+    monday: {
+        type: WeekDay
+    },
+    tuesday: {
+        type: WeekDay
+    },
+    wednesday: {
+        type: WeekDay
+    },
+    thursday: {
+        type: WeekDay
+    },
+    friday: {
+        type: WeekDay
+    },
+    saturday: {
+        type: WeekDay
+    }
+});
+
+Repetition = new SimpleSchema({
+    enable: {
+        label: 'Reccuring?',
+        type: Boolean,
+        defaultValue: false,
+        autoform: {
+            id: 'repeating_enable_check'
+        }
+    },
+    frequency: {
+        label: 'Frequency',
+        type: String,
+        optional: true,
+        custom: function() {
+            if (this.siblingField("enable").value && !this.isSet) {
+                return "required";
+            }
+        },
+        autoform: {
+            type: 'select-radio',
+            label: false,
+            options: function () {
+                return ["Weekly", "Biweekly", "Monthly"].map(function (entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            id: 'frequency'
+        }
+    },
+    monthlyDays: {
+        'label': 'Day',
+        type: Number,
+        optional: true,
+        custom: function() {
+            if (this.siblingField("enable").value && this.siblingField("frequency").value === "Monthly" && !this.isSet) {
+                return "required";
+            }
+        },
+        autoform: {
+            options: function () {
+                return getDaysArr().map(function (entry) {
+                    return {label: entry, value: entry};
+                });
+            },
+            firstOption: 'Pick a Day!'
+        }
+    },
+    forever_enable: {
+        type: Boolean,
+        defaultValue: false,
+        label: 'Forever',
+        autoform: {
+            checked: true,
+            id: "forever_enable"
+        }
+    },
+    lifetime_date: {
+        type: Date,
+        optional: true,
+        label: "Ending Date",
+        custom: function() {
+            var enabled = this.siblingField("forever_enable").value;
+            if (!enabled) {
+                if (!this.isSet) {
+                    return "required";
+                }
+            }
+        },
+        autoValue: function() {
+            if (this.isSet) {
+                var date = new Date(this.value);
+                var time = this.field('time').value;
+                return mergeDateTime(date, time);
+            }
+        },
+        autoform: {
+            type: 'pickadate',
+            pickadateOptions: {
+                format: 'd mmmm, yyyy',
+                formatSubmit: 'yyyy-mm-dd'
+            }
         }
     }
 });
@@ -171,7 +326,7 @@ Events.attachSchema(new SimpleSchema({
     },
     dateEvent: {
         type: Date,
-        label: 'Date of the event',
+        label: 'Date of the action',
         autoValue: function() {
             if (this.isSet) {
                 var date = new Date(this.value);
@@ -190,6 +345,10 @@ Events.attachSchema(new SimpleSchema({
     time: {
         type: String,
         label: 'Starting Time',
+        optional: true,
+        custom: function() {
+            return lifetimeBasicValidation.call(this);
+        },
         autoform: {
             options: function () {
                 return getTimesArr().map(function (entry) {
@@ -202,6 +361,10 @@ Events.attachSchema(new SimpleSchema({
     time_end: {
         type: String,
         label: 'Closing Time',
+        optional: true,
+        custom: function() {
+            return lifetimeBasicValidation.call(this);
+        },
         autoform: {
             options: function() {
                 return getTimesArr().map(function(entry) {
@@ -274,6 +437,22 @@ Events.attachSchema(new SimpleSchema({
       autoform: {
         type: 'hidden'
       }
+    },
+    week_enable: {
+        label: 'More than one day?',
+        type: Boolean,
+        defaultValue: false,
+        autoform: {
+            id: 'week_enable_check'
+        }
+    },
+    repetition: {
+        type: Repetition,
+        optional: true
+    },
+    week: {
+        type: Week,
+        optional: true
     }
 }));
 SimpleSchema.messages({
@@ -294,6 +473,14 @@ function mergeDateTime(date, time) {
     return date
 }
 
+function getDaysArr() {
+    var result = [];
+    for (var i = 0; i <= 31; i++) {
+        result.push(i);
+    }
+    return result;
+}
+
 //get array of times in 24h format
 function getTimesArr() {
     var timeArr = [];
@@ -304,4 +491,17 @@ function getTimesArr() {
         });
     }
     return timeArr
+}
+
+// Helper functions for validation
+function lifetimeBasicValidation() {
+    if (!this.field('week_enable').value && !this.isSet) {
+        return "required";
+    }
+}
+
+function weekDayValidation() {
+    if (this.siblingField("enable").value && !this.isSet) {
+        return "required";
+    }
 }
