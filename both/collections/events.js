@@ -161,7 +161,8 @@ Repetition = new SimpleSchema({
             pickadateOptions: {
                 format: 'd mmmm, yyyy',
                 formatSubmit: 'yyyy-mm-dd'
-            }
+            },
+            id: "lifetime-date"
         }
     }
 });
