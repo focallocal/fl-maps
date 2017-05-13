@@ -17,7 +17,6 @@ WeekDay = new SimpleSchema({
         type: Boolean,
         defaultValue: false,
         autoform: {
-            label: false,
             class: 'day-enable'
         }
     },
