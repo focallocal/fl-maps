@@ -1,5 +1,3 @@
-
-
 Template.autoForm.onRendered(function() {
 
 	if ($("#week_enable_check").is(":checked") === false) {
@@ -55,38 +53,10 @@ Template.autoForm.onRendered(function() {
 		}
 	});
 
-	// fixWeekEnables();
-	// fixWeekTimes();
-});
+	var $dayInputs = $(".day-inputs");
 
-// // Hack for displaying times inline
-// function fixWeekTimes() {
-// 	var $days = $(".time-select-inline-fix");
-//
-// 	$days.each(function(index) {
-//
-// 		$day = $($days[index]);
-// 		$selects = $day.find("select").detach();
-//
-// 		$day.children().remove();
-// 		console.error($selects);
-// 		$day.append($selects);
-// 	});
-// }
-//
-// // Hack for displaying enables inline;
-// function fixWeekEnables() {
-// 	var $enables = $(".input-fix-enable");
-// 	$enables.each(function(index) {
-// 		// Select enable
-// 		var $enable = $($enables[index]);
-// 		// Get the container
-// 		var $container = $enable.parents(".enable-inline-container");
-// 		console.log($container);
-// 		$enable = $enable.detach();
-// 		// Remove left over fields from autoform
-// 		$container.children().remove();
-// 		// Insert enable
-// 		$container.prepend($enable);
-// 	});
-// }
+	$dayInputs.each(function(elem) {
+		var $elem = $($dayInputs[elem]);
+		$elem.find("label").first().text($elem.attr("id"));
+	});
+});
