@@ -216,7 +216,7 @@ Template.autoForm.onRendered(function () {
 
 				 } else {
 
-					 var inputValid = AutoForm.validateField('events-form', name, false);
+					 var inputValid = AutoForm.validateField('events-form-new', name, false);
 					 valid = valid && inputValid;
 
 					 if ($elem.val().length === 0 && $elem.attr('type') === 'text') {
@@ -248,6 +248,7 @@ Template.autoForm.onRendered(function () {
 	 });
 
 	 $(".tabs-fix-width").width("900px");
+
 });
 
 Template.newEvent.onDestroyed(function () {
