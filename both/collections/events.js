@@ -12,8 +12,6 @@ Events.before.insert(function(userId, doc) {
     }
 });
 
-
-
 WeekDay = new SimpleSchema({
     enable: {
         type: Boolean,
@@ -130,7 +128,6 @@ Repetition = new SimpleSchema({
     },
     forever_enable: {
         type: Boolean,
-        defaultValue: false,
         label: 'Forever',
         autoform: {
             checked: true,
@@ -147,13 +144,6 @@ Repetition = new SimpleSchema({
                 if (!this.isSet) {
                     return "required";
                 }
-            }
-        },
-        autoValue: function() {
-            if (this.isSet) {
-                var date = new Date(this.value);
-                var time = this.field('time').value;
-                return mergeDateTime(date, time);
             }
         },
         autoform: {
@@ -328,13 +318,6 @@ Events.attachSchema(new SimpleSchema({
     dateEvent: {
         type: Date,
         label: 'Date of the action',
-        autoValue: function() {
-            if (this.isSet) {
-                var date = new Date(this.value);
-                var time = this.field('time').value;
-                return mergeDateTime(date, time);
-            }
-        },
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
