@@ -1,9 +1,15 @@
 Template.infoCard.helpers({
-	weekArray: function(week) {
+	weekArray: function(week, time_equal, time, time_end) {
 		var weekArray = [];
 		for (var key in week) {
 			var name = key.charAt(0).toUpperCase() + key.slice(1);
-			weekArray.push({name: name, day: week[key]});
+			if (time_equal === true) {
+				week[key].time = time;
+				week[key].time_end = time_end;
+				weekArray.push({name: name, day: week[key]});
+			} else {
+				weekArray.push({name: name, day: week[key]});
+			}
 		}
 		return weekArray;
 	},

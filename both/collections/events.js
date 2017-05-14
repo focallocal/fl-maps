@@ -436,6 +436,15 @@ Events.attachSchema(new SimpleSchema({
     week: {
         type: Week,
         optional: true
+    },
+    time_equal: {
+        type: Boolean,
+        defaultValue: false,
+        optional: true,
+        label: "Set Times Equal",
+        autoform: {
+            id: 'times-equal'
+        }
     }
 }));
 SimpleSchema.messages({
@@ -478,13 +487,15 @@ function getTimesArr() {
 
 // Helper functions for validation
 function lifetimeBasicValidation() {
-    if (!this.field('week_enable').value && !this.isSet) {
+    if ((!this.field('week_enable').value || this.field('time_equal').value) && !this.isSet) {
         return "required";
     }
 }
 
 function weekDayValidation() {
     if (this.siblingField("enable").value && !this.isSet) {
-        return "required";
+        if (this.field('time_equal').value === false) {
+            return "required";
+        }
     }
 }
