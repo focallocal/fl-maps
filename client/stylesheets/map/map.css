@@ -104,3 +104,7 @@
    left: 50px;
    z-index: 2;
 }
+
+#events-form {
+  overflow-y: scroll;
+}

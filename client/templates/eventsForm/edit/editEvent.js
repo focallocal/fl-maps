@@ -25,7 +25,6 @@ Template.editEvent.helpers({
 		return Categories.find({'approved': true});
 	},
 	geocodeDataSource: function(query, sync, asyncCallback) {
-		console.log("ASFDS");
 		geocodeDataSource(query, sync, asyncCallback);
 	},
 	selectedHandler: function (event, suggestion, datasetName) {
@@ -34,6 +33,14 @@ Template.editEvent.helpers({
 	selectedEventDoc: function() { return Events.findOne(Session.get('selected'));},
 	isEdit: function() { return Session.get('isEdit') }
 });
+
+function adjustMapHeightToWindowSize($elem) {
+	$(window).resize(function () {
+	    var h = $(this).height(),
+	        offsetTop = $('#menu-top').height();
+					$elem.css('height', (h - offsetTop * 2));
+	}).resize();
+}
 
 Template.autoForm.onRendered(function() {
 	if (Session.get('isEdit') !== true) {
@@ -55,6 +62,8 @@ Template.autoForm.onRendered(function() {
 	};
 	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
 	fixMaterializeActiveClassTrigger();
+
+	adjustMapHeightToWindowSize($("#events-form"));
 
 	onRendered.call(this);
 });
