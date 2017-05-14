@@ -12,14 +12,11 @@ Events.before.insert(function(userId, doc) {
     }
 });
 
-
-
 WeekDay = new SimpleSchema({
     enable: {
         type: Boolean,
         defaultValue: false,
         autoform: {
-            label: false,
             class: 'day-enable'
         }
     },
@@ -130,7 +127,6 @@ Repetition = new SimpleSchema({
     },
     forever_enable: {
         type: Boolean,
-        defaultValue: false,
         label: 'Forever',
         autoform: {
             checked: true,
@@ -149,19 +145,13 @@ Repetition = new SimpleSchema({
                 }
             }
         },
-        autoValue: function() {
-            if (this.isSet) {
-                var date = new Date(this.value);
-                var time = this.field('time').value;
-                return mergeDateTime(date, time);
-            }
-        },
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
                 format: 'd mmmm, yyyy',
                 formatSubmit: 'yyyy-mm-dd'
-            }
+            },
+            id: "lifetime-date"
         }
     }
 });
@@ -327,13 +317,6 @@ Events.attachSchema(new SimpleSchema({
     dateEvent: {
         type: Date,
         label: 'Date of the action',
-        autoValue: function() {
-            if (this.isSet) {
-                var date = new Date(this.value);
-                var time = this.field('time').value;
-                return mergeDateTime(date, time);
-            }
-        },
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
@@ -453,6 +436,15 @@ Events.attachSchema(new SimpleSchema({
     week: {
         type: Week,
         optional: true
+    },
+    time_equal: {
+        type: Boolean,
+        defaultValue: false,
+        optional: true,
+        label: "Set Times Equal",
+        autoform: {
+            id: 'times-equal'
+        }
     }
 }));
 SimpleSchema.messages({
@@ -495,13 +487,15 @@ function getTimesArr() {
 
 // Helper functions for validation
 function lifetimeBasicValidation() {
-    if (!this.field('week_enable').value && !this.isSet) {
+    if ((!this.field('week_enable').value || this.field('time_equal').value) && !this.isSet) {
         return "required";
     }
 }
 
 function weekDayValidation() {
     if (this.siblingField("enable").value && !this.isSet) {
-        return "required";
+        if (this.field('time_equal').value === false) {
+            return "required";
+        }
     }
 }
