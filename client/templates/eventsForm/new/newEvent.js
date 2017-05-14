@@ -52,7 +52,6 @@ function recurringLifeTimeValidation() {
 				var $dateLifeTime = $("#lifetime_weeks").find("input");
 				console.log($dateLifeTime);
 				if ($dateLifeTime.length === 0) {
-					console.log($dateLifeTime.length);
 					valid = false;
 				}
 			}
@@ -83,6 +82,7 @@ function dayLifeTimeValidation($day) {
 
 function weekLifeTimeValidation() {
 	var $oneTimeLifeTimeDisable= $("#week_enable_check");
+	var $timesEqualChecked = $("#times-equal").is(":checked");
 	var valid = true;
 	var enable_valid = true;
 
@@ -91,11 +91,11 @@ function weekLifeTimeValidation() {
 		var days = $(".day-inputs");
 		days.each(function(index) {
 			var dayValidation = dayLifeTimeValidation($(days[index]));
-			console.log(dayValidation);
+
 			if (dayValidation.checked) {
 				enable_valid = true;
 			}
-			if (dayValidation.validation === false) {
+			if (dayValidation.validation === false && $timesEqualChecked === false) {
 				valid = false;
 				return false;
 			}
@@ -107,9 +107,10 @@ function weekLifeTimeValidation() {
 function oneTimeLifeTimeValidation() {
 	var $oneTimeLifeTime = $("#one-time-event");
 	var $oneTimeLifeTimeEnable = $("#week_enable_check");
+	var $timesEqual = $("#times-equal");
 	var valid = true;
 
-	if ($oneTimeLifeTimeEnable.is(":checked") === false) {
+	if ($oneTimeLifeTimeEnable.is(":checked") === false || $timesEqual.is(":checked") === true) {
 		var $inputs = $oneTimeLifeTime.find("input");
 		$inputs.each(function(index) {
 			var $elem = $($inputs[index]);
@@ -216,7 +217,7 @@ Template.autoForm.onRendered(function () {
 
 				 } else {
 
-					 var inputValid = AutoForm.validateField('events-form', name, false);
+					 var inputValid = AutoForm.validateField('events-form-new', name, false);
 					 valid = valid && inputValid;
 
 					 if ($elem.val().length === 0 && $elem.attr('type') === 'text') {
@@ -248,6 +249,7 @@ Template.autoForm.onRendered(function () {
 	 });
 
 	 $(".tabs-fix-width").width("900px");
+
 });
 
 Template.newEvent.onDestroyed(function () {

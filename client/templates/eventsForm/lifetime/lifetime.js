@@ -1,42 +1,66 @@
-
-
 Template.autoForm.onRendered(function() {
 
-	if ($("#week_enable_check").is(":checked") === false) {
-		$("#week-event").hide();
-	} else {
-		$("#one-time-event").hide();
+	function equalTimesCheck($oneTimeEvent) {
+		var $timesEqual = $("#times-equal");
+		var $dayTimes = $(".days-times");
+
+		if ($timesEqual.is(":checked") === true) {
+			$dayTimes.hide();
+			$oneTimeEvent.show();
+		} else {
+			$dayTimes.show();
+			$oneTimeEvent.hide();
+		}
 	}
 
-	if ($("#repeating_enable_check").is(":checked") == false) {
-		$("#repeating-event").hide();
-	} else {
-		$("#repeating-event").show();
+	function weekEnableCheck() {
+		var $oneTimeEvent = $("#one-time-event");
+		var $weekEvent = $("#week-event");
+
+		if ($("#week_enable_check").is(":checked") === false) {
+			$oneTimeEvent.show();
+			$weekEvent.hide();
+		} else {
+			$oneTimeEvent.hide();
+			$weekEvent.show();
+			equalTimesCheck($oneTimeEvent);
+		}
 	}
 
-	if ($("#frequency_Monthly").is(":checked") === true) {
-		$("#monthly_detail").show();
-	} else {
-		$("#monthly_detail").hide();
+	function repeatingEnableCheck() {
+		var $repeatingEvent = $("#repeating-event");
+		if ($("#repeating_enable_check").is(":checked") == false) {
+			$repeatingEvent.hide();
+		} else {
+			$repeatingEvent.show();
+		}
 	}
+
+	function frequencyMonthly() {
+		var $monthlyDetail = $("#monthly_detail");
+		if ($("#frequency_Monthly").is(":checked") === true) {
+			$monthlyDetail.show();
+		} else {
+			$monthlyDetail.hide();
+		}
+	}
+
+	weekEnableCheck();
+	repeatingEnableCheck();
+	frequencyMonthly();
 
 	$('#week_enable_check').on('click', function() {
-		$("#one-time-event").toggle();
-		$("#week-event").toggle();
+		weekEnableCheck();
 	});
 
 	$("#repeating_enable_check").on('click', function() {
-		$("#repeating-event").toggle();
+		repeatingEnableCheck();
 	});
 
 	$(".day-times").hide();
 
 	$('#frequency_Monthly').parent().parent().on('click', function() {
-		if($('#frequency_Monthly').is(':checked')) {
-			$("#monthly_detail").show();
-		} else {
-			$("#monthly_detail").hide();
-		}
+		frequencyMonthly();
 	});
 
 	$("#lifetime_weeks").hide();
@@ -45,48 +69,27 @@ Template.autoForm.onRendered(function() {
 	});
 
 	$(".day-enable").on('click', function() {
-		var $this = $(this);
-		var $times = $this.parents(".day-inputs").find(".day-times");
 
-		if ($this.is(":checked") === true) {
-			$times.show();
-		} else {
-			$times.hide();
+		if ($("#times-equal").is(':checked') == false) {
+			var $this = $(this);
+			var $times = $this.parents(".day-inputs").find(".day-times");
+
+			if ($this.is(":checked") === true) {
+				$times.show();
+			} else {
+				$times.hide();
+			}
 		}
 	});
 
-	// fixWeekEnables();
-	// fixWeekTimes();
-});
+	var $dayInputs = $(".day-inputs");
 
-// // Hack for displaying times inline
-// function fixWeekTimes() {
-// 	var $days = $(".time-select-inline-fix");
-//
-// 	$days.each(function(index) {
-//
-// 		$day = $($days[index]);
-// 		$selects = $day.find("select").detach();
-//
-// 		$day.children().remove();
-// 		console.error($selects);
-// 		$day.append($selects);
-// 	});
-// }
-//
-// // Hack for displaying enables inline;
-// function fixWeekEnables() {
-// 	var $enables = $(".input-fix-enable");
-// 	$enables.each(function(index) {
-// 		// Select enable
-// 		var $enable = $($enables[index]);
-// 		// Get the container
-// 		var $container = $enable.parents(".enable-inline-container");
-// 		console.log($container);
-// 		$enable = $enable.detach();
-// 		// Remove left over fields from autoform
-// 		$container.children().remove();
-// 		// Insert enable
-// 		$container.prepend($enable);
-// 	});
-// }
+	$dayInputs.each(function(elem) {
+		var $elem = $($dayInputs[elem]);
+		$elem.find("label").first().text($elem.attr("id"));
+	});
+
+	$("#times-equal").on('click', function() {
+		equalTimesCheck($("#one-time-event"));
+	});
+});
