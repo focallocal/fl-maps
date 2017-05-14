@@ -12,9 +12,9 @@
                     <label>Ending Date:</label>  {{printDate repetition.lifetime_date}}
                     <br>
                 {{/unless}}
-                {{#each weekArray week}}
+                {{#each weekArray week time_equal time time_end}}
                     {{#if day.enable}}
-                        <label>{{name}}:</label>
+                        <label>{{name}}: {{week}}</label>
                         {{day.time}} - {{day.time_end}}
                         <br />
                     {{/if}}
