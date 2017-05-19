@@ -42,10 +42,6 @@
       "5":"6. Choose a Date and Time",
       "6":"7. Description/More Details",
       "sub":{
-        "0":{
-          "0":"Not sure? Here's a list of suggestions:",
-          "1":"REMOVE"
-        },
         "2":"REMOVE",
         "3":"Be as specific as possible. Next to a statue? North, West of a bridge? Not sure? Check Google Earth",
         "4":"Carrying a Teddy Bear on your Shoulder? Wearing a bright yellow hat? wearing a Focallocal badge or T-shirt?"
@@ -57,9 +53,6 @@
       "2": "Submit",
       "3": "Suggestions",
       "4": "Offer a new resource"
-    },
-    "links": {
-      "0": "http://discuss.focallocal.org/t/suggested-resources-to-offer/158"
     }
   },
   "editEvent":{
@@ -74,9 +67,9 @@
     }
   },
   "congratsModal":{
-    "title":"Congratulations, your resource is LIVE and ready to help those in need!",
-    "subtitle":"Promote if needed - we've made it super easy for you!",
-    "subtitle_1":"Share with your friends with just one click",
+    "title":"Congratulations!",
+    "subtitle":"We’re one step closer to a happier and more connected World",
+    "subtitle_1":"Use the tools below, we’ve made it super easy for you to reach many more people!",
     "text":{
       "0":"Simply click the buttons above and copy/paste the info below.",
       "1":"with the Focallocal Community",
@@ -100,7 +93,7 @@
       "1":"Sitemap",
       "2":"Connect",
       "sub":{
-        "0":"This website is part of",
+        "0":"This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
         "1":{
           "list":{
             "0":"Home",
@@ -208,6 +201,9 @@
     },
     "btns":{
       "0":"Toggle All"
+    },
+    "links": {
+      "0": "http://news.focallocal.org/homelessness-resource-map-about"
     }
   },
   "event":{

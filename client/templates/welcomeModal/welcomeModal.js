@@ -83,9 +83,9 @@ Template.welcomeModal.helpers({
 			eventMap.setZoom(12);
 		}
 
-		setTimeout(function() {
-			$("#welcomeModal").show(500);
-			$(".lean-overlay").css({"opacity": 0.5});
-		}, 2000);
+		// setTimeout(function() {
+		// 	$("#welcomeModal").show(500);
+		// 	$(".lean-overlay").css({"opacity": 0.5});
+		// }, 2000);
 	}
 });
