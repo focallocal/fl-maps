@@ -231,7 +231,7 @@ Events.attachSchema(new SimpleSchema({
     },
     name: {
         type: String,
-        label: 'Event name',
+        label: 'Name',
         max: 100,
         autoform: {
             id: "event-name"
@@ -305,7 +305,7 @@ Events.attachSchema(new SimpleSchema({
     },
     meetingPoint: {
         type: String,
-        label: 'Meeting point',
+        label: 'How to Find',
         max: 100
     },
     findHints: {
@@ -316,7 +316,7 @@ Events.attachSchema(new SimpleSchema({
     },
     dateEvent: {
         type: Date,
-        label: 'Date of the action',
+        label: 'Date',
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
