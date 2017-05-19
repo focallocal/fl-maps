@@ -13,6 +13,14 @@
 	top: 10px;
 }
 
+#events-form-new {
+	.picker--opened {
+		.picker__holder {
+			height: 200vh !important;
+		}
+	}
+}
+
 // [type="checkbox"]:not(:checked).input-fix-enable,
 // [type="checkbox"]:checked.input-fix-enable {
 // 	/*box-sizing: border-box;*/
