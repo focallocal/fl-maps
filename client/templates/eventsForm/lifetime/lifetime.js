@@ -2,13 +2,12 @@ Template.autoForm.onRendered(function() {
 
 	function equalTimesCheck($oneTimeEvent) {
 		var $timesEqual = $("#times-equal");
-		var $dayTimes = $(".days-times");
+		var $dayTimes = $(".day-times");
 
 		if ($timesEqual.is(":checked") === true) {
 			$dayTimes.hide();
 			$oneTimeEvent.show();
 		} else {
-			$dayTimes.show();
 			$oneTimeEvent.hide();
 		}
 	}
@@ -63,7 +62,6 @@ Template.autoForm.onRendered(function() {
 		frequencyMonthly();
 	});
 
-	$("#lifetime_weeks").hide();
 	$("#forever_enable").on('click', function() {
 		$("#lifetime_weeks").toggle();
 	});
@@ -91,5 +89,12 @@ Template.autoForm.onRendered(function() {
 
 	$("#times-equal").on('click', function() {
 		equalTimesCheck($("#one-time-event"));
+	});
+
+	// Set required labels
+	var $inputs = $(".required-label-tag");
+	$inputs.each(function(index) {
+		var $input = $($inputs[index]);
+		$input.siblings('label').css({'color': 'red'});
 	});
 });
