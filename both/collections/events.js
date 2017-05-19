@@ -22,7 +22,7 @@ WeekDay = new SimpleSchema({
     },
     time: {
         type: String,
-        label: 'Opening Time',
+        label: 'Opening Time *',
         optional: true,
         custom: function() {
             return weekDayValidation.call(this);
@@ -33,12 +33,13 @@ WeekDay = new SimpleSchema({
                     return {label: entry, value: entry};
                 });
             },
-            firstOption: 'Pick a time!'
+            firstOption: 'Pick a time!',
+            class: "required-label-tag"
         }
     },
     time_end: {
         type: String,
-        label: 'Closing Time',
+        label: 'Closing Time *',
         optional: true,
         custom: function() {
             return weekDayValidation.call(this);
@@ -49,7 +50,8 @@ WeekDay = new SimpleSchema({
                     return {label: entry, value: entry};
                 });
             },
-            firstOption: 'Pick a time!'
+            firstOption: 'Pick a time!',
+            class: "required-label-tag"
         }
     }
 });
@@ -80,7 +82,7 @@ Week = new SimpleSchema({
 
 Repetition = new SimpleSchema({
     enable: {
-        label: 'Reccuring?',
+        label: 'How often?',
         type: Boolean,
         defaultValue: false,
         autoform: {
@@ -129,14 +131,14 @@ Repetition = new SimpleSchema({
         type: Boolean,
         label: 'Forever',
         autoform: {
-            checked: true,
+            checked: false,
             id: "forever_enable"
         }
     },
     lifetime_date: {
         type: Date,
         optional: true,
-        label: "Ending Date",
+        label: "Ending Date *",
         custom: function() {
             var enabled = this.siblingField("forever_enable").value;
             if (!enabled) {
@@ -151,7 +153,8 @@ Repetition = new SimpleSchema({
                 format: 'd mmmm, yyyy',
                 formatSubmit: 'yyyy-mm-dd'
             },
-            id: "lifetime-date"
+            id: "lifetime-date",
+            class: "required-label-tag"
         }
     }
 });
@@ -316,18 +319,19 @@ Events.attachSchema(new SimpleSchema({
     },
     dateEvent: {
         type: Date,
-        label: 'Date',
+        label: 'Date *',
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
                 format: 'd mmmm, yyyy',
                 formatSubmit: 'yyyy-mm-dd'
-            }
+            },
+            class: 'required-label-tag'
         }
     },
     time: {
         type: String,
-        label: 'Starting Time',
+        label: 'Starting Time *',
         optional: true,
         custom: function() {
             return lifetimeBasicValidation.call(this);
@@ -338,12 +342,13 @@ Events.attachSchema(new SimpleSchema({
                     return {label: entry, value: entry};
                 });
             },
-            firstOption: 'Pick a time!'
-        }
+            firstOption: 'Pick a time!',
+            class: "required-label-tag"
+        },
     },
     time_end: {
         type: String,
-        label: 'Closing Time',
+        label: 'Closing Time *',
         optional: true,
         custom: function() {
             return lifetimeBasicValidation.call(this);
@@ -354,7 +359,8 @@ Events.attachSchema(new SimpleSchema({
                     return {label: entry, value: entry};
                 });
             },
-            firstOption: 'Pick a time!'
+            firstOption: 'Pick a time!',
+            class: "required-label-tag"
         }
     },
     //optional links to social sites where the event is promoted
