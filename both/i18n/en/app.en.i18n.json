@@ -40,22 +40,14 @@
       "3": "4. Choose a specific meeting point",
       "4": "5. How will people recognise you?",
       "5": "6. Choose a Date and Time",
-      "6": "7. Description/More Details",
-      "sub": {
-        "0": {
-          "0": "Not sure? Here's a list of suggestions:"
-        }
-      }
+      "6": "7. Description/More Details"
     },
     "btns": {
       "0": "Back",
       "1": "Next",
       "2": "Submit",
       "3": "Suggestions",
-      "4": "Offer a new resource"
-    },
-    "links": {
-      "0": "http://news.focallocal.org/activities-list/"
+      "4": "Something New"
     }
   },
   "editEvent": {
@@ -70,9 +62,9 @@
     }
   },
   "congratsModal": {
-    "title": "Congratulations, your event is LIVE!",
-    "subtitle": "Promote the event now - we've made it super easy for you!",
-    "subtitle_1": "Share with your friends with just one click",
+    "title": "Congratulations!",
+    "subtitle": "We're one step closer to a happier and more connected World",
+    "subtitle_1": "Use the tool below, we've made it super easy for you to reach many more people!",
     "text": {
       "0": "Simply click the buttons above and copy/paste the info below.",
       "1": "with the Focallocal Community",
@@ -82,7 +74,7 @@
         "2": "Address",
         "3": "Meeting point",
         "4": "How to find us",
-        "5": "Event link"
+        "5": "Link"
       },
       "2": "Become a Positive Action Hero and join the Global Movement for Positive Change at www.focallocal.org"
     },
@@ -96,7 +88,7 @@
       "1": "Sitemap",
       "2": "Connect",
       "sub": {
-        "0": "This website is part of",
+        "0": "This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
         "1": {
           "list": {
             "0": "Home",
@@ -204,6 +196,9 @@
     },
     "btns": {
       "0": "Toggle All"
+    },
+    "links": {
+      "0": "http://news.focallocal.org/gather-about"
     }
   },
   "event": {
@@ -215,7 +210,7 @@
         "2": "Videos",
         "3": "Comments"
       },
-      "1": "* This event has been reported by",
+      "1": "* This has been reported by",
       "2": "user(s)"
     },
     "btns": {
