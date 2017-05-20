@@ -3,9 +3,9 @@ Events.allow({
     return userId;
   },
   'update': function(userId, doc, fields, modifier) {
-    return userId;
+    return userId && doc.organiser._id === userId || Roles.userIsInRole(userId, ['admin']);
   },
   'remove': function(userId, doc) {
-    return userId;
+    return userId && doc.organiser._id === userId || Roles.userIsInRole(userId, ['admin']);
   }
 });
