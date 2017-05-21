@@ -1,8 +1,8 @@
 Meteor.startup(function() {
 
   Meteor.Mailgun.config({
-    username: 'postmaster@maps.focallocal.org',
-    password: '29616944c3065bb0a0dbd3d3804ba22f'
+    username: Meteor.settings.MailGunUsername,
+    password: Meteor.settings.MailGunPassword
      });
 
   Meteor.methods({
