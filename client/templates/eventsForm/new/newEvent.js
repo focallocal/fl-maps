@@ -27,105 +27,6 @@ function clearForm() {
 	sequence.resetSequence();
 }
 
-function lifeTimeValidtion() {
-	return oneTimeLifeTimeValidation() && weekLifeTimeValidation() && recurringLifeTimeValidation();
-}
-
-function recurringLifeTimeValidation() {
-	var $checked = $("#repeating_enable_check");
-	var valid = true;
-	if ($checked.is(":checked") === true) {
-		var frequencyWeekly = $("#frequency_Weekly").is(":checked");
-		var frequencyBiweekly = $("#frequency_Biweekly").is(":checked");
-		var frequencyMonthly = $("#frequency_Monthly").is(":checked");
-
-		var foreverEnable = $("#forever_enable").is(":checked");
-
-		if (frequencyWeekly || frequencyBiweekly || frequencyMonthly) {
-			if (frequencyMonthly) {
-				var $monthly = $("#monthly_detail").find("input").first();
-				if ($monthly.val() === "Pick a Day!") {
-					valid = false;
-				}
-			}
-			if (foreverEnable === false) {
-				var $dateLifeTime = $("#lifetime_weeks").find("input");
-				console.log($dateLifeTime);
-				if ($dateLifeTime.length === 0) {
-					valid = false;
-				}
-			}
-		} else {
-			valid = false;
-		}
-	}
-	return valid;
-}
-
-function dayLifeTimeValidation($day) {
-	var $checked = $day.find('input[type=checkbox]');
-	var valid = true;
-	var checked = false;
-	if ($checked.is(":checked") === true) {
-		checked = true;
-		var inputs = $day.find("input");
-		inputs.each(function(i) {
-			var $input = $(inputs[i]);
-			valid = ($input.val() !== undefined) && ($input.val() !== "Pick a time!") ;
-			if (!valid) {
-				return false;
-			}
-		});
-	}
-	return {validation: valid, checked: checked};
-}
-
-function weekLifeTimeValidation() {
-	var $oneTimeLifeTimeDisable= $("#week_enable_check");
-	var $timesEqualChecked = $("#times-equal").is(":checked");
-	var valid = true;
-	var enable_valid = true;
-
-	if ($oneTimeLifeTimeDisable.is(":checked") === true) {
-		enable_valid = false;
-		var days = $(".day-inputs");
-		days.each(function(index) {
-			var dayValidation = dayLifeTimeValidation($(days[index]));
-
-			if (dayValidation.checked) {
-				enable_valid = true;
-			}
-			if (dayValidation.validation === false && $timesEqualChecked === false) {
-				valid = false;
-				return false;
-			}
-		});
-	}
-	return valid && enable_valid;
-}
-
-function oneTimeLifeTimeValidation() {
-	var $oneTimeLifeTime = $("#one-time-event");
-	var $oneTimeLifeTimeEnable = $("#week_enable_check");
-	var $timesEqual = $("#times-equal");
-	var valid = true;
-
-	if ($oneTimeLifeTimeEnable.is(":checked") === false || $timesEqual.is(":checked") === true) {
-		var $inputs = $oneTimeLifeTime.find("input");
-		$inputs.each(function(index) {
-			var $elem = $($inputs[index]);
-			var val = $elem.val();
-			if (val.length === 0 || val === "Pick a time!") {
-				valid = false;
-			}
-			if (valid === false) {
-				return false;
-			}
-		});
-	}
-	return valid;
-}
-
 Template.newEvent.viewmodel({
 	clearForm: clearForm
 });
@@ -176,57 +77,73 @@ Template.autoForm.onRendered(function () {
 	// Initialize sequence
 	sequence.init();
 
+	function finishLifetimeValidation() {
+		var lifetimeInvalid = $("#lifetime-section").find(".mdi-alert-warning").length !== 0;
+
+		if (lifetimeInvalid == true) {
+			return false;
+		} else {
+			// Make sure that week days & frequency are valid
+			AutoForm.getValidationContext('events-form-new').resetValidation();
+			// Skip trigger
+			sequence.next(true);
+		}
+	}
+
 	sequence.setBeforeNextTrigger(function(inputContainer) {
 		 $("#eventsFormModal").css({height: ""});
 
 		 if (inputContainer.attr("id") === "lifetime-section") {
-			 return lifeTimeValidtion();
-		 }
+			 // Validate the whole form becuase of a bug in autoform
+			 AutoForm.validateForm('events-form-new');
+			 setTimeout(finishLifetimeValidation, 300);
+			 return false;
 
-		 var $fields = inputContainer.find('.validate-field');
+		 } else {
 
-		 var $inputs = $fields.find('input');
+			 var $fields = inputContainer.find('.validate-field');
 
-		 var selectInput = $fields.find('select');
+			 var $inputs = $fields.find('input');
 
-		 if (selectInput !== undefined) {
-			 $inputs.push(selectInput);
-		 }
+			 var selectInput = $fields.find('select');
 
-		 var valid = true;
+			 if (selectInput !== undefined) {
+				 $inputs.push(selectInput);
+			 }
 
-		 $inputs.each(function(elem) {
-			 var $elem = $($inputs[elem]);
-			 var name = $elem.attr('name');
+			 var valid = true;
 
-			 if (name !== undefined && name.length !== 0) {
+			 $inputs.each(function(elem) {
+				 var $elem = $($inputs[elem]);
+				 var name = $elem.attr('name') || $elem.attr('data-schema-key');
 
-				 if (name === 'category._id' && $elem.val().length === 0) {
+				 if (name !== undefined && name.length !== 0) {
 
-					 valid = false;
+					 if (name === 'category._id' && $elem.val().length === 0) {
 
-				 } else if (name === 'coordinates.lat' && $elem.val().length === 0) {
-
-					 valid = false;
-
-				 } else if (name === 'findHints') {
-
-					 $elem.focus();
-					 $elem.val('Not Provided');
-					 valid = true;
-
-				 } else {
-
-					 var inputValid = AutoForm.validateField('events-form-new', name, false);
-					 valid = valid && inputValid;
-
-					 if ($elem.val().length === 0 && $elem.attr('type') === 'text') {
 						 valid = false;
+
+					 } else if (name === 'coordinates.lat' && $elem.val().length === 0) {
+
+						 valid = false;
+
+					 } else if (name === 'findHints') {
+
+						 $elem.focus();
+						 $elem.val('Not Provided');
+						 valid = true;
+
+					 } else {
+
+						 if ($elem.val().length === 0 && $elem.attr('type') === 'text') {
+							 valid = false;
+						 }
+
 					 }
 				 }
-			 }
-		 });
-		 return valid;
+			 });
+			 return valid;
+		 }
 	 });
 
 	 $('#event-name').on('input', function() {

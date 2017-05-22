@@ -79,7 +79,7 @@ SequenceForm.prototype.init = function() {
 // 	return true;
 // };
 
-SequenceForm.prototype.next = function () {
+SequenceForm.prototype.next = function (skip) {
 	// Next field in sequence
 	var vm = this;
 
@@ -90,10 +90,13 @@ SequenceForm.prototype.next = function () {
 
 	var $currentField = vm._$fields[vm._currentField.number];
 
-	if (vm.beforeNextCall !== undefined) {
+	if (vm.beforeNextCall !== undefined && !skip) {
+		vm._$nextBtn.attr('disabled','disabled');
 		if (!vm.beforeNextCall($currentField)) {
+			vm._$nextBtn.removeAttr('disabled');
 			return;
 		}
+		vm._$nextBtn.removeAttr('disabled');
 	}
 
 	vm._currentField.number += 1;
