@@ -1,5 +1,6 @@
 Meteor.methods({
   'Events.insert': function (params) {
+    check(doc, Schema.contact);
     Events.insert(params);
   },
   'Events.report': function(_id, _user_id) {
