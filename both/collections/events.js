@@ -124,7 +124,8 @@ Repetition = new SimpleSchema({
                     return {label: entry, value: entry};
                 });
             },
-            firstOption: 'Pick a Day!'
+            firstOption: 'Pick a Day!',
+            id: 'monthlyDay'
         }
     },
     forever_enable: {
@@ -140,10 +141,12 @@ Repetition = new SimpleSchema({
         optional: true,
         label: "Ending Date *",
         custom: function() {
-            var enabled = this.siblingField("forever_enable").value;
-            if (!enabled) {
-                if (!this.isSet) {
-                    return "required";
+            if (this.field('week_enable').value) {
+                var enabled = this.siblingField("forever_enable").value;
+                if (!enabled) {
+                    if (!this.isSet) {
+                        return "required";
+                    }
                 }
             }
         },
@@ -436,8 +439,7 @@ Events.attachSchema(new SimpleSchema({
         }
     },
     repetition: {
-        type: Repetition,
-        optional: true
+        type: Repetition
     },
     week: {
         type: Week,
@@ -457,7 +459,8 @@ SimpleSchema.messages({
     "required category._id": "Please select a category",
     "required coordinates": "Please provide an address",
     "notFound address": "Address not found",
-    "offline address": "Address not available, are you offline?"
+    "offline address": "Address not available, are you offline?",
+    "required repetition.frequency": "Please select an option"
 });
 
 function mergeDateTime(date, time) {
