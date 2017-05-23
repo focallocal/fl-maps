@@ -48,6 +48,11 @@
       "2": "Submit",
       "3": "Suggestions",
       "4": "Something New"
+    },
+    "subs": {
+      "0": "'Choose a category' and post your positive action gathering",
+      "1": "'Suggestions' to read more about them",
+      "2": "'Something new' to suggest an new positive action"
     }
   },
   "editEvent": {

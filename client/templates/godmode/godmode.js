@@ -81,5 +81,10 @@ Template.godmode.events({
 		$("#categoryFormModal").openModal({
 			dismissible: false
 		});
+	},
+	'click #set-default': function() {
+		$("#defaultSelectModal").openModal({
+			dismissible: false
+		})
 	}
 });
