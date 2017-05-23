@@ -12,7 +12,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col s6">
+			<div class="col s12 l6">
 				<div class="card godmode-card green lighten-1">
 					<div class="card-title godmode-card-title">
 						<h4 class="center white-text">Enable Admin</h4>
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 
-			<div class="col s6">
+			<div class="col s12 l6">
 				<div class="card godmode-card red lighten-1">
 					<div class="card-title godmode-card-title">
 						<h4 class="center white-text">Disable Admin</h4>
@@ -54,19 +54,33 @@
 
 		<div class="row godmode-section-title">
 			<h4>Categories</h4>
-			<button type="button" class="btn teal" id="newCategory">New Category</button>
+			<div class="row">
+				<button type="button" class="btn teal" id="newCategory">New Category</button>
+				<button type="button" class="btn teal" id="set-default">Set Default</button>
+			</div>
 			<ul>
 				{{#each categories}}
 					{{#if approved}}
-						<li>{{name}} <div class="category-color" style="background-color:{{color}};"></div> <input class="toggle-approval-category" type="checkbox" value="{{name}}" checked/></li>
+						{{#unless default}}
+							<li>{{name}} <div class="category-color" style="background-color:{{color}};"></div> <input class="toggle-approval-category" type="checkbox" value="{{name}}" checked/></li>
+						{{/unless}}
 					{{else}}
 						<li><button type="button" class="remove-category">X</button>{{name}} <div class="category-color" style="background-color:{{color}};"></div> <input class="toggle-approval-category" type="checkbox" value="{{name}}"/></li>
+					{{/if}}
+
+					{{#if default}}
+						<li class="border-highlight">
+							<h5>Default</h5>
+							{{name}}
+							<div class="category-color" style="background-color:{{color}};"></div>
+						</li>
 					{{/if}}
 				{{/each}}
 			</ul>
 		</div>
 
 		{{> categoryForm}}
+		{{> defaultSelect }}
 
 	</div>
 </template>
