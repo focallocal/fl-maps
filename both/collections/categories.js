@@ -21,5 +21,12 @@ Categories.attachSchema(new SimpleSchema({
 			defaultValue: false
 		},
 		optional: true
+	},
+	'default': {
+		type: Boolean,
+		autoform: {
+			type: 'hidden'
+		},
+		optional: true
 	}
 }));
