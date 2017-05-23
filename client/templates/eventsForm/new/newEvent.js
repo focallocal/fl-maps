@@ -1,4 +1,5 @@
 var sequence = undefined;
+var defaultCategory = new ReactiveVar('');
 
 AutoForm.hooks({
 	 'events-form-new': {
@@ -33,6 +34,13 @@ Template.newEvent.viewmodel({
 
 Template.newEvent.onCreated(function() {
 	create.call(this);
+
+	Tracker.autorun(function() {
+		var temp = Categories.find({default: true}).fetch()[0];
+		if (temp !== undefined) {
+			defaultCategory.set(temp.name);
+		}
+	});
 });
 
 Template.newEvent.helpers({
@@ -53,7 +61,7 @@ Template.autoForm.onRendered(function () {
 	}
 
 	$("#new-resource").on('click', function() {
-		var category = Categories.find({name: "Community Support (Offers)"}).fetch()[0];
+		var category = Categories.find({name: defaultCategory.get()}).fetch()[0];
 		if (category !== undefined) {
 			var $categoryContainer = $("#category-container");
 			$categoryContainer.find("ul").find('li span:contains(' + category.name + ')').click();

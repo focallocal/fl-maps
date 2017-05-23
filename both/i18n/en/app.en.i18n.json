@@ -52,7 +52,12 @@
       "1": "Next",
       "2": "Submit",
       "3": "Suggestions",
-      "4": "Offer a new resource"
+      "4": "Offer a resource"
+    },
+    "subs": {
+      "0": "'Choose category' enter a resource you've found",
+      "1": "'Offer a resource' to offer something to support people nearby who are homeless",
+      "2": "'Suggestions' see ideas for what you can offer"
     }
   },
   "editEvent":{

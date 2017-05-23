@@ -1,0 +1,17 @@
+<template name="defaultSelect">
+	<div class="modal" id="defaultSelectModal">
+		<div class="modal-content">
+			<a href="#!" id="defaultSelectModalClose" class="modal-action modal-close waves-effect waves-red btn-flat">x</a>
+			<div class="row">
+				<h3 class="txt-center">Please Select a Default</h3>
+				{{#if Template.subscriptionsReady}}
+					{{#each categories}}
+						{{#unless default}}
+							<button type="button" class="select-default btn white waves-effect waves-blue" style="margin: 10px; color: black" value="{{_id}}">{{name}} <div class="category-color" style="background-color:{{color}};"></div></button>
+						{{/unless}}
+					{{/each}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</template>
