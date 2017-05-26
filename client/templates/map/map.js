@@ -144,7 +144,7 @@ function addMarker(event, map) {
 	}
 
 	var circle = {
-		path: 'M 2, 2 m -1, 0 a 1,1 0 1,1 2,0 a 1,1 0 1,1 -2,0',
+		path: 'M 0, 0 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0',
 		strokeColor: event.category.color,
 		fillColor: event.category.color,
 		fillOpacity: 1,
