@@ -144,11 +144,12 @@ function addMarker(event, map) {
 	}
 
 	var circle = {
-		path: 'M 0, 0 m -1, 0 a 1,1 0 1,0 2,0 a 1,1 0 1,0 -2,0',
-		strokeColor: event.category.color,
+		path: 'M 0, 0 m -2, 0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0',
+		strokeColor: 'black',
+		strokeWeight: 2,
 		fillColor: event.category.color,
 		fillOpacity: 1,
-		scale: 5
+		scale: 4
 	};
 
 	var marker = new google.maps.Marker({
