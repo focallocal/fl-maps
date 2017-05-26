@@ -56,8 +56,8 @@
     },
     "subs": {
       "0": "'Choose category' enter a resource you've found",
-      "1": "'Offer a resource' to offer something to support people nearby who are homeless",
-      "2": "'Suggestions' see ideas for what you can offer"
+      "2": "'Offer a resource' to offer something to support people nearby who are homeless",
+      "1": "'Suggestions' see ideas for what you can offer"
     }
   },
   "editEvent":{
