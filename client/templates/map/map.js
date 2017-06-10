@@ -270,7 +270,8 @@ Template.map.onCreated(function() {
 			addMarker(event, map.instance);
 		});
 
-		var cursor = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}});
+		var cursor = Events.find({"$or": [{dateEvent: {$gte:moment().startOf('day').toDate()}}, {'repetition.lifetime_date': {$gte:moment().startOf('day').toDate()}}, {'repetition.forever_enable': true}]});
+
 		cursor.observe({
 			added: function(event) {
 				if (created === true) {
@@ -608,7 +609,7 @@ Template.map.helpers({
 	},
 	mapData: function() {
 		Template.instance().categories.set(Categories.find({}));
-		Template.instance().events.set(Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}));
+		Template.instance().events.set(Events.find({"$or": [{dateEvent: {$gte:moment().startOf('day').toDate()}}, {'repetition.lifetime_date': {$gte:moment().startOf('day').toDate()}}, {'repetition.forever_enable': true}]}));
 	}
 });
 

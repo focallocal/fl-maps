@@ -12,6 +12,22 @@ Events.before.insert(function(userId, doc) {
     }
 });
 
+Events.before.update(function(userId, doc, fieldNames, modifier) {
+  if (userId) {
+    if (doc['week_enable'] === true && modifier['$set']['week_enable'] !== false || modifier['$set']['week_enable'] === true) {
+      if (doc['repetition']['forever_enable'] === true || modifier['$set']['repetition.forever_enable'] === true) {
+        delete modifier['$unset']['repetition.lifetime_date'];
+        modifier['$set']['repetition.lifetime_date'] = '';
+      }
+    } else {
+      delete modifier['$unset']['repetition.lifetime_date'];
+      modifier['$set']['repetition.lifetime_date'] = '';
+      delete modifier['$unset']['repetition.forever_enable']
+      modifier['$set']['repetition.forever_enable'] = false;
+    }
+  }
+});
+
 WeekDay = new SimpleSchema({
     enable: {
         type: Boolean,
