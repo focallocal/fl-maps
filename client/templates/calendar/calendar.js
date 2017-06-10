@@ -39,7 +39,7 @@ function filterEvents(events, filters) {
 
 Template.calendar.helpers({
     upcomingEvents: function() {
-      var events = Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}, {sort: {dateEvent: 1}}).fetch();
+      var events = Events.find({"$or": [{dateEvent: {$gte:moment().startOf('day').toDate()}}, {'repetition.lifetime_date': {$gte:moment().startOf('day').toDate()}}, {'repetition.forever_enable': true}]}, {sort: {dateEvent: 1}}).fetch();
 
       var filters = Template.instance().filters.get();
 
@@ -56,7 +56,7 @@ Template.calendar.helpers({
       return events;
     },
     pastEvents: function(){
-      var events = Events.find({dateEvent: {$lt:moment().startOf('day').toDate()}}, {sort: {dateEvent: -1}}).fetch();
+      var events = Events.find({"$and": [{dateEvent: {$lt:moment().startOf('day').toDate()}}, {"$or": [{'repetition.lifetime_date': {$lt:moment().startOf('day').toDate()}}, {'week_enable': false}]}]}, {sort: {dateEvent: -1}}).fetch();
 
       var filters = Template.instance().filters.get();
 
