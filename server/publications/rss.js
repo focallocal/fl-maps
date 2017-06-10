@@ -9,7 +9,7 @@ RssFeed.publish('upcomingEvents', function(query) {
     // managingEditor, webMaster, language, docs, generator
 
     //TODO create helper to get upcoming events and refactor all occurences in project
-    Events.find({dateEvent: {$gte:moment().startOf('day').toDate()}}).forEach(function(doc) {
+    Events.find({"$or": [{dateEvent: {$gte:moment().startOf('day').toDate()}}, {'repetition.lifetime_date': {$gte:moment().startOf('day').toDate()}}, {'repetition.forever_enable': true}]}).forEach(function(doc) {
         var newDescription = '<![CDATA['+doc.description +
                         '<br> Type of event: ' + doc.category.name +
                         '<br> Address: ' + doc.address +
