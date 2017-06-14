@@ -65,6 +65,9 @@ Template.autoForm.onRendered(function() {
 
 	adjustMapHeightToWindowSize($("#events-form"));
 
+	// Init the event lifetime js
+	iniinitLifetime("#events-form");
+
 	onRendered.call(this);
 });
 

@@ -78,6 +78,9 @@ Template.autoForm.onRendered(function () {
 	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
 	fixMaterializeActiveClassTrigger();
 
+// Init lifetime section js
+	iniinitLifetime("#events-form-new");
+
 	onRendered.call(this);
 
 	sequence = new SequenceForm('.sequence-form-fields', '#next', '#new-event-submit', '#back');

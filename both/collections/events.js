@@ -102,7 +102,7 @@ Repetition = new SimpleSchema({
         type: Boolean,
         defaultValue: false,
         autoform: {
-            id: 'repeating_enable_check'
+            class: 'repeating_enable_check'
         }
     },
     frequency: {
@@ -122,7 +122,7 @@ Repetition = new SimpleSchema({
                     return {label: entry, value: entry};
                 });
             },
-            id: 'frequency'
+            class: 'frequency'
         }
     },
     monthlyDays: {
@@ -141,7 +141,7 @@ Repetition = new SimpleSchema({
                 });
             },
             firstOption: 'Pick a Day!',
-            id: 'monthlyDay'
+            class: 'monthlyDay'
         }
     },
     forever_enable: {
@@ -149,7 +149,7 @@ Repetition = new SimpleSchema({
         label: 'Forever',
         autoform: {
             checked: false,
-            id: "forever_enable"
+            class: "forever_enable"
         }
     },
     lifetime_date: {
@@ -172,7 +172,7 @@ Repetition = new SimpleSchema({
                 format: 'd mmmm, yyyy',
                 formatSubmit: 'yyyy-mm-dd'
             },
-            id: "lifetime-date",
+            class: "lifetime-date",
             class: "required-label-tag"
         }
     }
@@ -451,7 +451,7 @@ Events.attachSchema(new SimpleSchema({
         type: Boolean,
         defaultValue: false,
         autoform: {
-            id: 'week_enable_check'
+            class: 'week_enable_check'
         }
     },
     repetition: {
@@ -467,8 +467,30 @@ Events.attachSchema(new SimpleSchema({
         optional: true,
         label: "Set Times Equal",
         autoform: {
-            id: 'times-equal'
+            class: 'times-equal'
         }
+    },
+    engagement: {
+      type: Object
+    },
+    'engagement.limitless': {
+      type: Boolean,
+      autoform: {
+        checked: false,
+        default: false
+      }
+    },
+    'engagement.limit': {
+      type: Number,
+      autoform: {
+        min: '0'
+      }
+    },
+    'engagement.attendees': {
+      type: [String],
+      autoform: {
+        type: 'hidden'
+      }
     }
 }));
 SimpleSchema.messages({
@@ -507,7 +529,7 @@ function getTimesArr() {
             timeArr.push(time)
         });
     }
-    return timeArr
+    return timeArr;
 }
 
 // Helper functions for validation
