@@ -1,8 +1,8 @@
-Template.autoForm.onRendered(function() {
 
+iniinitLifetime = function(parentForm) {
 	function equalTimesCheck($oneTimeEvent) {
-		var $timesEqual = $("#times-equal");
-		var $dayTimes = $(".day-times");
+		var $timesEqual = $(parentForm + " .times-equal");
+		var $dayTimes = $(parentForm + " .day-times");
 
 		if ($timesEqual.is(":checked") === true) {
 			$dayTimes.hide();
@@ -13,10 +13,10 @@ Template.autoForm.onRendered(function() {
 	}
 
 	function weekEnableCheck() {
-		var $oneTimeEvent = $("#one-time-event");
-		var $weekEvent = $("#week-event");
+		var $oneTimeEvent = $(parentForm + " .one-time-event");
+		var $weekEvent = $(parentForm + " .week-event");
 
-		if ($("#week_enable_check").is(":checked") === false) {
+		if ($(parentForm + " .week_enable_check").is(":checked") === false) {
 			$oneTimeEvent.show();
 			$weekEvent.hide();
 		} else {
@@ -27,8 +27,8 @@ Template.autoForm.onRendered(function() {
 	}
 
 	function repeatingEnableCheck() {
-		var $repeatingEvent = $("#repeating-event");
-		if ($("#repeating_enable_check").is(":checked") == false) {
+		var $repeatingEvent = $(parentForm + " .repeating-event");
+		if ($(parentForm + " .repeating_enable_check").is(":checked") == false) {
 			$repeatingEvent.hide();
 		} else {
 			$repeatingEvent.show();
@@ -36,8 +36,8 @@ Template.autoForm.onRendered(function() {
 	}
 
 	function frequencyMonthly() {
-		var $monthlyDetail = $("#monthly_detail");
-		if ($("#frequency_Monthly").is(":checked") === true) {
+		var $monthlyDetail = $(parentForm + " .monthly_detail");
+		if ($(parentForm + " .frequency[value=Monthly]").is(":checked") === true) {
 			$monthlyDetail.show();
 		} else {
 			$monthlyDetail.hide();
@@ -48,27 +48,27 @@ Template.autoForm.onRendered(function() {
 	repeatingEnableCheck();
 	frequencyMonthly();
 
-	$('#week_enable_check').on('click', function() {
+	$(parentForm + " .week_enable_check").on('click', function() {
 		weekEnableCheck();
 	});
 
-	$("#repeating_enable_check").on('click', function() {
+	$(parentForm + " .repeating_enable_check").on('click', function() {
 		repeatingEnableCheck();
 	});
 
-	$(".day-times").hide();
+	$(parentForm + " .day-times").hide();
 
-	$('#frequency_Monthly').parent().parent().on('click', function() {
+	$(parentForm + " .frequency[value=Monthly]").parent().parent().on('click', function() {
 		frequencyMonthly();
 	});
 
-	$("#forever_enable").on('click', function() {
-		$("#lifetime_weeks").toggle();
+	$(parentForm + " .forever_enable").on('click', function() {
+		$(parentForm + " .lifetime_weeks").toggle();
 	});
 
-	$(".day-enable").on('click', function() {
+	$(parentForm + " .day-enable").on('click', function() {
 
-		if ($("#times-equal").is(':checked') == false) {
+		if ($(parentForm + " .times-equal").is(':checked') == false) {
 			var $this = $(this);
 			var $times = $this.parents(".day-inputs").find(".day-times");
 
@@ -80,21 +80,20 @@ Template.autoForm.onRendered(function() {
 		}
 	});
 
-	var $dayInputs = $(".day-inputs");
+	var $dayInputs = $(parentForm + " .day-inputs");
 
 	$dayInputs.each(function(elem) {
 		var $elem = $($dayInputs[elem]);
-		$elem.find("label").first().text($elem.attr("id"));
+		$elem.find("label").first().text($elem.attr("value"));
 	});
 
-	$("#times-equal").on('click', function() {
-		equalTimesCheck($("#one-time-event"));
+	$(parentForm + " .times-equal").on('click', function() {
+		equalTimesCheck($(parentForm + " .one-time-event"));
 	});
-
 	// Set required labels
-	var $inputs = $(".required-label-tag");
+	var $inputs = $(parentForm + " .required-label-tag");
 	$inputs.each(function(index) {
 		var $input = $($inputs[index]);
 		$input.siblings('label').css({'color': 'red'});
 	});
-});
+}
