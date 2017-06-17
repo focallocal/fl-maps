@@ -13,16 +13,34 @@ Events.before.insert(function(userId, doc) {
 });
 
 Events.before.update(function(userId, doc, fieldNames, modifier) {
-  if (userId) {
+  // Check is the update comes from reporting the event or updating attendence
+  if (userId && modifier['$set']['engagement'] === undefined && modifier['$set']['reported'] === undefined) {
+    // Check for week enable checkbox
     if (doc['week_enable'] === true && modifier['$set']['week_enable'] !== false || modifier['$set']['week_enable'] === true) {
-      if (doc['repetition']['forever_enable'] === true || modifier['$set']['repetition.forever_enable'] === true) {
-        delete modifier['$unset']['repetition.lifetime_date'];
+      if ((doc['repetition']['forever_enable'] === true && modifier['$set']['repetition.forever_enable'] !== false) || modifier['$set']['repetition.forever_enable'] === true) {
+
+        // Removes the end date so that the event query returns the correct events.
+
+        if (modifier['$unset']['repetition.lifetime_date'] !== undefined) {
+          delete modifier['$unset']['repetition.lifetime_date'];
+        }
+
         modifier['$set']['repetition.lifetime_date'] = '';
       }
     } else {
-      delete modifier['$unset']['repetition.lifetime_date'];
+
+      // Removes both to make sure that the event query returns the correct events
+
+      if (modifier['$unset']['repetition.lifetime_date'] !== undefined) {
+        delete modifier['$unset']['repetition.lifetime_date'];
+      }
+
       modifier['$set']['repetition.lifetime_date'] = '';
-      delete modifier['$unset']['repetition.forever_enable']
+
+      if ( modifier['$unset']['repetition.forever_enable'] !== undefined) {
+        delete modifier['$unset']['repetition.forever_enable'];
+      }
+
       modifier['$set']['repetition.forever_enable'] = false;
     }
   }
@@ -102,7 +120,7 @@ Repetition = new SimpleSchema({
         type: Boolean,
         defaultValue: false,
         autoform: {
-            id: 'repeating_enable_check'
+            class: 'repeating_enable_check'
         }
     },
     frequency: {
@@ -122,7 +140,7 @@ Repetition = new SimpleSchema({
                     return {label: entry, value: entry};
                 });
             },
-            id: 'frequency'
+            class: 'frequency'
         }
     },
     monthlyDays: {
@@ -141,7 +159,7 @@ Repetition = new SimpleSchema({
                 });
             },
             firstOption: 'Pick a Day!',
-            id: 'monthlyDay'
+            class: 'monthlyDay'
         }
     },
     forever_enable: {
@@ -149,7 +167,7 @@ Repetition = new SimpleSchema({
         label: 'Forever',
         autoform: {
             checked: false,
-            id: "forever_enable"
+            class: "forever_enable"
         }
     },
     lifetime_date: {
@@ -172,7 +190,7 @@ Repetition = new SimpleSchema({
                 format: 'd mmmm, yyyy',
                 formatSubmit: 'yyyy-mm-dd'
             },
-            id: "lifetime-date",
+            class: "lifetime-date",
             class: "required-label-tag"
         }
     }
@@ -451,7 +469,7 @@ Events.attachSchema(new SimpleSchema({
         type: Boolean,
         defaultValue: false,
         autoform: {
-            id: 'week_enable_check'
+            class: 'week_enable_check'
         }
     },
     repetition: {
@@ -467,8 +485,25 @@ Events.attachSchema(new SimpleSchema({
         optional: true,
         label: "Set Times Equal",
         autoform: {
-            id: 'times-equal'
+            class: 'times-equal'
         }
+    },
+    engagement: {
+      type: Object,
+      optional: true
+    },
+    'engagement.limit': {
+      type: Number,
+      autoform: {
+        min: '0'
+      }
+    },
+    'engagement.attendees': {
+      type: [String],
+      optional: true,
+      autoform: {
+        type: 'hidden'
+      }
     }
 }));
 SimpleSchema.messages({
@@ -507,7 +542,7 @@ function getTimesArr() {
             timeArr.push(time)
         });
     }
-    return timeArr
+    return timeArr;
 }
 
 // Helper functions for validation

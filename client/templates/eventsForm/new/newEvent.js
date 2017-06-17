@@ -78,6 +78,22 @@ Template.autoForm.onRendered(function () {
 	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
 	fixMaterializeActiveClassTrigger();
 
+// Init lifetime section js
+	iniinitLifetime("#events-form-new");
+
+	$("#new-limitless").on('click', function() {
+		// Checks for the state of the limitless button
+		var $this = $(this);
+		if ($this.is(":checked") === false) {
+			// Hide the limit field
+			$("#new-limit-container").show();
+			$('#events-form-new input[name="engagement.limit"]').val(0);
+		} else {
+			// Show the limit field
+			$("#new-limit-container").hide();
+		}
+	});
+
 	onRendered.call(this);
 
 	sequence = new SequenceForm('.sequence-form-fields', '#next', '#new-event-submit', '#back');
