@@ -13,16 +13,34 @@ Events.before.insert(function(userId, doc) {
 });
 
 Events.before.update(function(userId, doc, fieldNames, modifier) {
-  if (userId) {
+  // Check is the update comes from reporting the event or updating attendence
+  if (userId && modifier['$set']['engagement'] === undefined && modifier['$set']['reported'] === undefined) {
+    // Check for week enable checkbox
     if (doc['week_enable'] === true && modifier['$set']['week_enable'] !== false || modifier['$set']['week_enable'] === true) {
-      if (doc['repetition']['forever_enable'] === true || modifier['$set']['repetition.forever_enable'] === true) {
-        delete modifier['$unset']['repetition.lifetime_date'];
+      if ((doc['repetition']['forever_enable'] === true && modifier['$set']['repetition.forever_enable'] !== false) || modifier['$set']['repetition.forever_enable'] === true) {
+
+        // Removes the end date so that the event query returns the correct events.
+
+        if (modifier['$unset']['repetition.lifetime_date'] !== undefined) {
+          delete modifier['$unset']['repetition.lifetime_date'];
+        }
+
         modifier['$set']['repetition.lifetime_date'] = '';
       }
     } else {
-      delete modifier['$unset']['repetition.lifetime_date'];
+
+      // Removes both to make sure that the event query returns the correct events
+
+      if (modifier['$unset']['repetition.lifetime_date'] !== undefined) {
+        delete modifier['$unset']['repetition.lifetime_date'];
+      }
+
       modifier['$set']['repetition.lifetime_date'] = '';
-      delete modifier['$unset']['repetition.forever_enable']
+
+      if ( modifier['$unset']['repetition.forever_enable'] !== undefined) {
+        delete modifier['$unset']['repetition.forever_enable'];
+      }
+
       modifier['$set']['repetition.forever_enable'] = false;
     }
   }
@@ -471,14 +489,8 @@ Events.attachSchema(new SimpleSchema({
         }
     },
     engagement: {
-      type: Object
-    },
-    'engagement.limitless': {
-      type: Boolean,
-      autoform: {
-        checked: false,
-        default: false
-      }
+      type: Object,
+      optional: true
     },
     'engagement.limit': {
       type: Number,
@@ -488,6 +500,7 @@ Events.attachSchema(new SimpleSchema({
     },
     'engagement.attendees': {
       type: [String],
+      optional: true,
       autoform: {
         type: 'hidden'
       }

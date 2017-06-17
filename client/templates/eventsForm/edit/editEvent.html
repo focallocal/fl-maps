@@ -14,8 +14,17 @@
 				{{> eventLifetime}}
 				{{> afQuickField name="overview"}}
 				{{> afQuickField name="description"}}
-				<!-- {{> afQuickField name="engagement.limitless"}}
-				{{> afQuickField name="engagement.limit"}} -->
+				<div id="edit-limit-container">
+					{{> afQuickField name="engagement"}}
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<p>
+							<input type="checkbox" id="edit-limitless">
+							<label for="edit-limitless">No Limit</label>
+						</p>
+					</div>
+				</div>
 				<div class="row">
 					<button type="submit" class="btn">Update</button>
 				</div>
