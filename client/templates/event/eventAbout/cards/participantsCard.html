@@ -1,8 +1,13 @@
 <template name="participantCard">
 	<div class="card z-depth-2">
-		<div class="card-content event-info">
-			<span class="card-title grey-text text-darken-4">Will You be Attending?</span>
+		<div class="card-content event-info" id="participation">
+			{{#if userId}}
+				<span class="card-title grey-text text-darken-4">Will You be Attending?</span>
+			{{else}}
+				<span class="card-title grey-text text-darken-4">Engagement</span>
+			{{/if}}
 			<div class="divider"></div>
+			<br>
 			{{#if participationInfo.maxCapacity}}
 				<div class="row">
 					<div class="col s12 center-align">
@@ -15,15 +20,15 @@
 					{{#if participationInfo.userAttending}}
 						<div class="row">
 							<div class="col s12">
-								<div class="col s12 m6 center-align">
+								<div class="col s12 center-align">
 									<span>You are Attending! </span>
-									<a href="javascript:void(0)" id="willNotAttend">Not anymore</a>
+									(<a href="#participation" id="willNotAttend">Not anymore?</a>)
 								</div>
 							</div>
 						</div>
 					{{else}}
 						<div class="row">
-							<div class="col s12 m6 center-align">
+							<div class="col s12 center-align">
 								<button type="button" class="btn" id="willAttend">YES</button>
 							</div>
 						</div>
@@ -34,15 +39,12 @@
 
 			<div class="row">
 				{{#if engagement.limit}}
-					<div class="row">
-						<span class="grey-text"><strong>Limit: </strong>{{engagement.limit}}</span>
-					</div>
+					<span class="grey-text"><strong>Limit: </strong>{{engagement.limit}}</span>
 				{{else}}
 					<span class="grey-text"><strong>Limit: </strong>No Limit</span>
 				{{/if}}
-				<div class="row">
+					<br>
 					<span class="grey-text"><strong>Attending: </strong>{{participationInfo.attendeesNum}}</span>
-				</div>
 			</div>
 		</div>
 	</div>
