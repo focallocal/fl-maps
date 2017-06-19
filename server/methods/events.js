@@ -5,7 +5,7 @@ Meteor.methods({
   },
   'Events.report': function(_id, _user_id) {
 
-    if (_user_id === null) {
+    if (_user_id === undefined) {
       return 'You must be logged in!';
     }
 
@@ -41,7 +41,7 @@ Meteor.methods({
 
     // Adds or removes the user to the list of attendees
 
-    if (_user_id === null) {
+    if (_user_id === undefined) {
 
       return "You must be logged in!";
 
@@ -98,7 +98,7 @@ Meteor.methods({
     var attendeesNum = (event.engagement.attendees || []).length;
     var limit = event.engagement.limit;
 
-    if (_user_id === null) {
+    if (!_user_id) {
       return {
         maxCapacity: (limit <= attendeesNum) && limit !== 0,
         attendeesNum: attendeesNum
