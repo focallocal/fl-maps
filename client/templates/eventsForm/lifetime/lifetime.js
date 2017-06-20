@@ -1,5 +1,5 @@
 
-iniinitLifetime = function(parentForm) {
+iniinitLifetime = function(parentForm, scrollTarget, scrollPositionTarget, heightBase) {
 	function equalTimesCheck($oneTimeEvent) {
 		var $timesEqual = $(parentForm + " .times-equal");
 		var $dayTimes = $(parentForm + " .day-times");
@@ -95,5 +95,18 @@ iniinitLifetime = function(parentForm) {
 	$inputs.each(function(index) {
 		var $input = $($inputs[index]);
 		$input.siblings('label').css({'color': 'red'});
+	});
+
+	$(parentForm + " .picker__input").on('click', function() {
+		var $scrollTarget = $(scrollTarget);
+		var $scrollPositionTarget = $(scrollPositionTarget);
+		// var $heightBase = $(heightBase);
+
+		// Fix Height
+		// $("#" + $(this).attr("id") + "_root").find('.picker__holder').height($heightBase.height());
+
+		// Scroll to picker (window.location.hash does not work)
+
+		$scrollTarget.scrollTop($scrollPositionTarget.height()/2 - 160);
 	});
 }

@@ -190,8 +190,7 @@ Repetition = new SimpleSchema({
                 format: 'd mmmm, yyyy',
                 formatSubmit: 'yyyy-mm-dd'
             },
-            class: "lifetime-date",
-            class: "required-label-tag"
+            class: "lifetime-date required-label-tag"
         }
     }
 });
