@@ -2,13 +2,13 @@
 
 Template.participantCard.onCreated(function() {
 	this.participationInfo = new ReactiveVar({});
-	this.userId = Meteor.user()._id;
+	this.userId = Meteor.user() || {_id: ''};
+	this.userId = this.userId._id;
 
 	instance = this;
 
 	this.reloadParticipationInfo = function() {
 		var selectedEventId = Session.get('selected');
-
 		Meteor.call('Events.getEngagement', selectedEventId, instance.userId, function(error, result) {
 			instance.participationInfo.set(result);
 		});
