@@ -79,7 +79,7 @@ Template.autoForm.onRendered(function () {
 	fixMaterializeActiveClassTrigger();
 
 // Init lifetime section js
-	iniinitLifetime("#events-form-new", '#eventsFormModal', '#eventsFormModal', '#eventsFormModal');
+	iniinitLifetime("#events-form-new", '#eventsFormModal', '#time-select');
 
 	$("#new-limitless").on('click', function() {
 		// Checks for the state of the limitless button

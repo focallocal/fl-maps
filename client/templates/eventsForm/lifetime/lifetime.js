@@ -1,5 +1,5 @@
 
-iniinitLifetime = function(parentForm, scrollTarget, scrollPositionTarget, heightBase) {
+iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 	function equalTimesCheck($oneTimeEvent) {
 		var $timesEqual = $(parentForm + " .times-equal");
 		var $dayTimes = $(parentForm + " .day-times");
@@ -9,6 +9,15 @@ iniinitLifetime = function(parentForm, scrollTarget, scrollPositionTarget, heigh
 			$oneTimeEvent.show();
 		} else {
 			$oneTimeEvent.hide();
+			// Enable single day times
+			$dayTimes.each(function(index) {
+				var $elem = $($dayTimes[index]);
+				if ($elem.parent().find('input[type="checkbox"]').is(':checked') === true) {
+					$elem.show();
+				} else {
+					$elem.hide();
+				}
+			});
 		}
 	}
 
@@ -56,8 +65,6 @@ iniinitLifetime = function(parentForm, scrollTarget, scrollPositionTarget, heigh
 		repeatingEnableCheck();
 	});
 
-	$(parentForm + " .day-times").hide();
-
 	$(parentForm + " .frequency[value=Monthly]").parent().parent().on('click', function() {
 		frequencyMonthly();
 	});
@@ -99,7 +106,7 @@ iniinitLifetime = function(parentForm, scrollTarget, scrollPositionTarget, heigh
 
 	$(parentForm + " .picker__input").on('click', function() {
 		var $scrollTarget = $(scrollTarget);
-		var $scrollPositionTarget = $(scrollPositionTarget);
+		// var $scrollPositionTarget = $(scrollPositionTarget);
 		// var $heightBase = $(heightBase);
 
 		// Fix Height
@@ -107,6 +114,44 @@ iniinitLifetime = function(parentForm, scrollTarget, scrollPositionTarget, heigh
 
 		// Scroll to picker (window.location.hash does not work)
 
-		$scrollTarget.scrollTop($scrollPositionTarget.height()/2 - 160);
+		$scrollTarget.scrollTop(0);
+	});
+
+	var $timeInput = undefined;
+	var options = function() {
+		var timeArr = [];
+		for (var hour = 8; hour < 24; ++hour) {
+			['00', '30'].forEach(function (minutes) {
+				var time = hour + ':' + minutes;
+				timeArr.push({time: time});
+			});
+		}
+		return timeArr;
+	}();
+
+	// Initialize the mobile friendly selection UI
+	var timesSelection = new OptionSelect(function(selected) {
+		$timeInput.val(selected.time);
+	}, timeSelectContainer, options);
+
+	// Activate time selection on click (OptionSelect)
+	$("input.selection-trigger-time").on('click', function(e) {
+		e.preventDefault();
+		timesSelection.open();
+		$timeInput = $(this);
+		$(scrollTarget).scrollTop(0);
+		return false;
+	});
+
+	$("input.selection-trigger-time").on('keydown', function(e) {
+		e.preventDefault();
+		return false;
+	});
+
+	$("input.selection-trigger-time").on("change", function(e) {
+		var $this = $(this);
+		if (options.indexOf($this.val()) === -1) {
+			$this.val('Pick a Time!');
+		}
 	});
 }

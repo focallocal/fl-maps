@@ -62,13 +62,8 @@ WeekDay = new SimpleSchema({
             return weekDayValidation.call(this);
         },
         autoform: {
-            options: function () {
-                return getTimesArr().map(function (entry) {
-                    return {label: entry, value: entry};
-                });
-            },
-            firstOption: 'Pick a time!',
-            class: "required-label-tag"
+          defaultValue: "Pick a Time!",
+          class: "required-label-tag selection-trigger-time"
         }
     },
     time_end: {
@@ -79,13 +74,8 @@ WeekDay = new SimpleSchema({
             return weekDayValidation.call(this);
         },
         autoform: {
-            options: function() {
-                return getTimesArr().map(function(entry) {
-                    return {label: entry, value: entry};
-                });
-            },
-            firstOption: 'Pick a time!',
-            class: "required-label-tag"
+          defaultValue: "Pick a Time!",
+          class: "required-label-tag selection-trigger-time"
         }
     }
 });
@@ -373,13 +363,8 @@ Events.attachSchema(new SimpleSchema({
             return lifetimeBasicValidation.call(this);
         },
         autoform: {
-            options: function () {
-                return getTimesArr().map(function (entry) {
-                    return {label: entry, value: entry};
-                });
-            },
-            firstOption: 'Pick a time!',
-            class: "required-label-tag"
+          defaultValue: "Pick a Time!",
+          class: "required-label-tag selection-trigger-time"
         },
     },
     time_end: {
@@ -390,13 +375,8 @@ Events.attachSchema(new SimpleSchema({
             return lifetimeBasicValidation.call(this);
         },
         autoform: {
-            options: function() {
-                return getTimesArr().map(function(entry) {
-                    return {label: entry, value: entry};
-                });
-            },
-            firstOption: 'Pick a time!',
-            class: "required-label-tag"
+          defaultValue: "Pick a Time!",
+          class: "required-label-tag selection-trigger-time"
         }
     },
     //optional links to social sites where the event is promoted
@@ -532,17 +512,6 @@ function getDaysArr() {
     return result;
 }
 
-//get array of times in 24h format
-function getTimesArr() {
-    var timeArr = [];
-    for (var hour = 8; hour < 24; ++hour) {
-        ['00', '30'].forEach(function (minutes) {
-            var time = hour + ':' + minutes;
-            timeArr.push(time)
-        });
-    }
-    return timeArr;
-}
 
 // Helper functions for validation
 function lifetimeBasicValidation() {

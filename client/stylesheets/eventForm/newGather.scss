@@ -14,12 +14,8 @@
 	top: 10px;
 }
 
-#events-form-new {
-	.picker--opened {
-		.picker__holder {
-			height: 200vh !important;
-		}
-	}
+.modal-content {
+	position: relative;
 }
 
 #events-form {

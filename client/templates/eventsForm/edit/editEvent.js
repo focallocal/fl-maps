@@ -66,7 +66,7 @@ Template.autoForm.onRendered(function() {
 	adjustMapHeightToWindowSize($("#events-form"));
 
 	// Init the event lifetime js
-	iniinitLifetime("#events-form", window ,"#events-form", "#events-form");
+	iniinitLifetime("#events-form", window, "#time-select-edit");
 
 	$("#edit-limitless").on('click', function() {
 		// Checks for the state of the limitless button
@@ -82,7 +82,7 @@ Template.autoForm.onRendered(function() {
 	});
 
 	// Make sure that window does not scroll when focusing on input
-	$("#events-form input").on('focus', function() {
+	$("#events-form input").on('focus', function(e) {
 		e.preventDefault();
 	});
 

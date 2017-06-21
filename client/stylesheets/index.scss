@@ -7,6 +7,7 @@
 @import "layout/layout.scss";
 @import "welcomeModal/welcomeModal.scss";
 @import "home/home.scss";
+@import "optionSelect/optionSelect.scss";
 
 @media #{$small-and-down} {
   #congratsModal {
