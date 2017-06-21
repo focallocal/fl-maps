@@ -79,7 +79,7 @@ Template.autoForm.onRendered(function () {
 	fixMaterializeActiveClassTrigger();
 
 // Init lifetime section js
-	iniinitLifetime("#events-form-new");
+	iniinitLifetime("#events-form-new", '#eventsFormModal', '#time-select');
 
 	$("#new-limitless").on('click', function() {
 		// Checks for the state of the limitless button
@@ -179,17 +179,7 @@ Template.autoForm.onRendered(function () {
 		} else {
 			$title.text("New Gather");
 		}
-	 });
-
-	 // Fix height issue
-	 $('input[data-schema-key="dateEvent"]').on('focus', function() {
-		 var $this = $(".picker__wrap");
-		 var height = $this.height();
-
-		 $("#eventsFormModal").height(height);
-	 });
-
-	 $(".tabs-fix-width").width("900px");
+	});
 
 });
 
