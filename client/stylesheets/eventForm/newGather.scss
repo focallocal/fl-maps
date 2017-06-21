@@ -5,6 +5,7 @@
 #eventsFormModal {
 	width: 30%;
 	min-width: 350px;
+	max-height: 85%;
 }
 
 #newEventFormClose {
@@ -13,11 +14,13 @@
 	top: 10px;
 }
 
-#events-form-new {
-	.picker--opened {
-		.picker__holder {
-			height: 200vh !important;
-		}
+.modal-content {
+	position: relative;
+}
+
+#events-form {
+	.picker__frame {
+		overflow: scroll;
 	}
 }
 

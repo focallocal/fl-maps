@@ -1,0 +1,26 @@
+.option-select {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	display: none;
+	background-color: white;
+}
+
+.option-select-inner {
+	margin: 0 auto;
+	width: 50%;
+	padding: 10px;
+}
+
+.option-select-list {
+	height: 40vh;
+	overflow: scroll;
+}
+
+#option-select-close {
+	margin: 0 auto;
+	display: block;
+}
