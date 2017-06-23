@@ -211,13 +211,9 @@ Events.attachSchema(new SimpleSchema({
         type: String,
         //optional: true,
         autoform: {
-            options: function() {
-                return Categories.find().map(function(cat) {
-                    return {label: cat.name, value: cat._id};
-                });
-            },
             label: false,
-            firstOption: 'Choose Category'
+            hidden: true,
+            class: "category-select-id"
         }
     },
     'category.name': {
