@@ -11,16 +11,23 @@
 
 .option-select-inner {
 	margin: 0 auto;
-	width: 50%;
+	width: 90%;
 	padding: 10px;
 }
 
 .option-select-list {
-	height: 40vh;
-	overflow: scroll;
+	height: 200px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-size: 20px;
 }
 
 #option-select-close {
 	margin: 0 auto;
 	display: block;
+	font-size: 30px;
+
+	&:hover {
+		background-color: white;
+	}
 }
