@@ -1,0 +1,154 @@
+* {
+  outline: none !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {max-height: 1000000px;}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  color: $base-text-color;
+  font: $base-font-weight #{$font-size-base}/#{$line-height-base} $base-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+}
+
+label {
+  font-family: $font-family-accent;
+}
+
+button,
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='submit'], .btn {
+  background-color: transparent;
+  -webkit-appearance: none;
+  border: 1px solid $brand-primary;
+  color: $brand-primary;
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 10px;
+  font-family: $font-family-accent;
+  &:hover {
+    color: white;
+    background: $brand-primary;
+  }
+}
+
+select {
+  height: 40px;
+}
+
+strong {
+  font-family: $font-family-header;
+}
+
+button.link {
+  background: transparent;
+  border: 0;
+  color: $brand-primary;
+  font-size: 14px;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
+  &:hover {
+    background-color: transparent;
+    border: 0;
+    text-decoration: underline;
+  }
+}
+
+// adaptive images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// google map fix
+.gm-style img {max-width: none}
+
+// forms
+
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+select {
+  border: 1px solid $gray-light;
+  background: white;
+  padding: 5px 10px;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+input[type='number'],
+  //input[type='url'],
+  // input[type='date'],
+textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid $gray-light;
+  width: 100%;
+  ::-webkit-input-placeholder { /* Chrome */
+    color: $gray;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $gray;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $gray;
+    opacity: 1;
+  }
+  :-moz-placeholder { /* Firefox 4 - 18 */
+    color: $gray;
+    opacity: 1;
+  }
+
+  // &:hover {
+
+  // }
+
+  &:focus {
+    border-color: $form-element-focus-border-color;
+  }
+
+  @include placeholder {
+    color: $placeholder-color;
+  }
+}
+
+select {
+  -webkit-border-radius: 0;
+}
+
+textarea {
+  resize: vertical;
+  vertical-align: top;
+}
+
+input {
+  &._error {
+    border: 1px solid $red !important;
+  }
+}
