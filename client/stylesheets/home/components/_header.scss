@@ -1,0 +1,102 @@
+#header{
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  &._fixed {
+    background: rgba(255, 255, 255, .93);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  }
+  .logo {
+    @include flexbox;
+    @include align-items(center);
+    height: 70px;
+    @media screen and (max-width: 980px) {
+      @include justify-content(center);
+    }
+    img {
+      width: 150px;
+    }
+  }
+  .toggle-menu {
+    display: none;
+    @media screen and (max-width: 980px) {
+      display: block;
+      color: $base-text-color;
+      position: absolute;
+      top: 7px;
+      font-size: 30px;
+      left: 10px;
+      border: 0;
+    }
+  }
+  nav {
+    position: absolute;
+    right: 0;
+    height: 70px;
+    top: 0;
+    button {
+      display: none;
+    }
+    @media screen and (max-width: 980px) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      text-align: center;
+      background: rgba($brand-primary, .98);
+      opacity: 0;
+      visibility: hidden;
+      &._opened {
+        opacity: 1;
+        visibility: visible;
+      }
+      ul {
+        flex-direction: column;
+        li {
+          margin-bottom: 20px;
+          a {
+            color: white;
+            font-size: 24px;
+            text-transform: uppercase;
+          }
+        }
+      }
+      button {
+        display: block;
+        position: absolute;
+        font-size: 40px;
+        top: 20px;
+        right: 20px;
+        color: white;
+        border: 0;
+        background: transparent;
+      }
+    }
+    ul {
+      list-style: none;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      li {
+        display: inline-block;
+        a {
+          color: $base-text-color;
+          padding: 5px 20px;
+          border-radius: 5px;
+          &._active, &:hover {
+            background: $brand-primary;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+}
