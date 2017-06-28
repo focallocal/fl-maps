@@ -22,7 +22,7 @@
     z-index: 2;
     height: 100vh;
   }
-  .buttons, .align-center-flex {
+  .buttons {
 
     display: flex;
     display: -webkit-box;
@@ -33,9 +33,10 @@
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
+    flex-wrap: wrap;
 
     button, .btn {
-      background: $brand-primary;      
+      background: $brand-primary;
       color: white;
       font-size: 30px;
       margin: 10px;
@@ -44,7 +45,7 @@
     }
 
     .btn {
-      display: block;
+      display: inline-table;;
     }
 
     .height-fix {
