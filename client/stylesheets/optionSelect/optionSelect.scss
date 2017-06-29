@@ -16,9 +16,9 @@
 }
 
 .option-select-list {
-	height: 200px;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	height: auto !important;
+	overflow-y: visible;
+	overflow-x: initial;
 	font-size: 20px;
 }
 
