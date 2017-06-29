@@ -129,8 +129,6 @@ iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 		return timeArr;
 	}();
 
-	console.log(options);
-
 	// Initialize the mobile friendly selection UI
 	var timesSelection = new OptionSelect(function(selected) {
 		$timeInput.val(selected.option);
