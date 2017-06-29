@@ -230,9 +230,9 @@
       }
     },
     "btns": {
-      "0": "Add or Create",
-      "1": "Find (List View)",
-      "2": "X - CLOSE AND EXPLORE"
+      "0": "Post a Gathering",
+      "1": "Browse List",
+      "2": "X - Explore the Map"
     }
   }
 }
