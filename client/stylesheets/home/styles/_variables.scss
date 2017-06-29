@@ -21,8 +21,8 @@ $brand-secondary: rgba(96, 101, 165, 0.91);
 $base-font-sans-serif: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
 $base-font-serif: 'Proxima Nova', 'Helvetica Neue', 'Georgia', sans-serif;
 
-$font-family-text: $base-font-sans-serif;
-$font-family-header: $base-font-sans-serif;
+$font-family-text: $base-font-serif;
+$font-family-header: $base-font-serif;
 $font-family-accent: $base-font-serif;
 
 $screen-xs:                  480px !default;
@@ -75,8 +75,8 @@ $placeholder-color: $gray !default;
 
 // Headers
 $h1-font-size: 30px !default;
-$h2-font-size: 27px !default;
-$h3-font-size: 24px !default;
+$h2-font-size: 24px !default;
+$h3-font-size: 18px !default;
 $h4-font-size: 21px !default;
 $h5-font-size: 17px !default;
 $h6-font-size: 15px !default;
