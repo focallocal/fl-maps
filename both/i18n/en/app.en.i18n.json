@@ -1,28 +1,28 @@
 {
-  "general": {
-    "text": {
-      "focallocal": "Focallocal",
-      "focallocal.web": "Focallocal.org"
+  "general":{
+    "text":{
+      "focallocal":"Focallocal",
+      "focallocal.web":"Focallocal.org"
     },
-    "btns": {
-      "0": "Show More"
+    "btns":{
+      "0":"Show More"
     }
   },
-  "home": {
-    "title": "The Focallocal Community",
-    "sub_title": "Local Action for Global Change",
-    "section_titles": {
-      "0": "What is Focallocal?",
-      "1": "What awaits me if i join?",
-      "2": "Our Message",
-      "sub": {
-        "0": "Is an open community of thousands of people, together targeting the root causes of any and all societal issues. We create easy and fun Positive Action activities to empower people and communities everywhere to build World they want to live in",
-        "1": "You'll be a part of a Global Movement on a mission to change the World. Using simple, fun activities to achieve a friendlier, happier and more at peace future. Meeting positive, pro-active, awesome new friends both locally, and globally",
-        "2": "Is simply: don’t live in frustration at what others are not doing. Lets come together and do it ourselves! Unite and take responsibility for health and happiness of life where we live ..and lets make change fun!"
+  "home":{
+    "title":"The Brighter Tomorrow Map",
+    "sub_title":"Connecting people going through difficult times with the free resources available nearby, and to the people who want to offer them support living in their local community",
+    "section_titles":{
+      "0":"How does the Brighter Tomorrow Map work?",
+      "1":"What can I do to support people living on the streets near me?",
+      "2":"What is the Focallocal Community?",
+      "sub":{
+        "0":"On the map, you can post and search for all the free resources available in your local community, which people who are homeless, or going through hardship, need to meet their basic needs and take steps towards improving their situation to build a brighter tomorrow",
+        "1":"The map gives you two options.  Firstly; you can zoom in on your city and print a map of the resources available, to give out to anyone you meet who is in need. Secondly; Add resources you'd like to offer to those in need. something like a CV help workshop, teaching a skill or intro, materials and advice to someone interested in starting a career in your industry, or just meeting to buy them a tea and share a friendly chat",
+        "2":"Focallocal - Local Action for Global Change. We built this map - We are an open community of people taking local action, all around the World. Focallocal aims to hit at the roots of issues within our societies; by ignoring politics and simply uniting people in positive action, we empower people to take ownership of issues you want to see improved in your local community and together create positive activities and projects to achieve a change"
       }
     },
-    "btns": {
-      "0": "Action Center",
+    "btns":{
+      "0": "Begin",
       "1": "Create Action",
       "2": "Join Activity",
       "3": "Community News",
@@ -31,101 +31,106 @@
       "6": "read more"
     }
   },
-  "newEvent": {
-    "title": "New Action",
-    "section_titles": {
-      "0": "1. Choose a Category",
-      "1": "2. Give it a Name",
-      "2": "3. Select an Address",
-      "3": "4. Choose a specific meeting point",
-      "4": "5. How will people recognise you?",
-      "5": "6. Choose a Date and Time",
-      "6": "7. Description/More Details"
+  "newEvent":{
+    "title":"New Resource",
+    "section_titles":{
+      "0":"1. Category",
+      "1":"2. Name",
+      "2":"3. Address",
+      "3":"4. How can someone find the resource",
+      "4":"5. Offering a Resource? How will people recognise you? (otherwise just click next)",
+      "5":"6. Choose a Date and Time",
+      "6":"7. Description/More Details",
+      "sub":{
+        "2":"REMOVE",
+        "3":"Be as specific as possible. Next to a statue? North, West of a bridge? Not sure? Check Google Earth",
+        "4":"Carrying a Teddy Bear on your Shoulder? Wearing a bright yellow hat? wearing a Focallocal badge or T-shirt?"
+      }
     },
     "btns": {
       "0": "Back",
       "1": "Next",
       "2": "Submit",
       "3": "Suggestions",
-      "4": "Something New"
+      "4": "Offer a resource"
     },
     "subs": {
-      "0": "'Choose a category' and post your positive action gathering",
-      "1": "'Suggestions' to read more about them",
-      "2": "'Something new' to suggest an new positive action"
+      "0": "'Choose category' enter a resource you've found",
+      "2": "'Offer a resource' to offer something to support people nearby who are homeless",
+      "1": "'Suggestions' see ideas for what you can offer"
     }
   },
-  "editEvent": {
-    "title": "Edit Action"
+  "editEvent":{
+    "title":"Edit Action"
   },
-  "eventConfirmDelete": {
-    "title": "Please confirm",
-    "subtitle": "Are you sure to delete this event?",
-    "btns": {
-      "0": "Yes, delete it!",
-      "1": "No, take me back!"
+  "eventConfirmDelete":{
+    "title":"Please confirm",
+    "subtitle":"Are you sure to delete this?",
+    "btns":{
+      "0":"Yes, delete it!",
+      "1":"No, take me back!"
     }
   },
-  "congratsModal": {
-    "title": "Congratulations!",
-    "subtitle": "We're one step closer to a happier and more connected World",
-    "subtitle_1": "Use the tool below, we've made it super easy for you to reach many more people!",
-    "text": {
-      "0": "Simply click the buttons above and copy/paste the info below.",
-      "1": "with the Focallocal Community",
-      "tags": {
-        "0": "Description",
-        "1": "When",
-        "2": "Address",
-        "3": "Meeting point",
-        "4": "How to find us",
-        "5": "Link"
+  "congratsModal":{
+    "title":"Congratulations!",
+    "subtitle":"We’re one step closer to a happier and more connected World",
+    "subtitle_1":"Use the tools below, we’ve made it super easy for you to reach many more people!",
+    "text":{
+      "0":"Simply click the buttons above and copy/paste the info below.",
+      "1":"with the Focallocal Community",
+      "tags":{
+        "0":"Description",
+        "1":"When",
+        "2":"Address",
+        "3":"Meeting point",
+        "4":"How to find it",
+        "5":"External link"
       },
-      "2": "Become a Positive Action Hero and join the Global Movement for Positive Change at www.focallocal.org"
+      "2":"Join the Global Movement, become a Positive Action Hero and take action for Positive Change where you live right now, at www.focallocal.org"
     },
-    "btns": {
-      "0": "Ok, done!"
+    "btns":{
+      "0":"Ok, done!"
     }
   },
-  "_footer": {
-    "section_titles": {
-      "0": "About",
-      "1": "Sitemap",
-      "2": "Connect",
-      "sub": {
-        "0": "This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
-        "1": {
-          "list": {
-            "0": "Home",
-            "1": "Events map",
-            "2": "Events list",
-            "3": "Sign in",
-            "4": "Register",
-            "5": "Rss feed"
+  "_footer":{
+    "section_titles":{
+      "0":"About",
+      "1":"Sitemap",
+      "2":"Connect",
+      "sub":{
+        "0":"This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
+        "1":{
+          "list":{
+            "0":"Home",
+            "1":"Map view",
+            "2":"List view",
+            "3":"Sign in",
+            "4":"Register",
+            "5":"Rss feed"
           }
         }
       }
     }
   },
-  "_header": {
-    "text": {
-      "0": "Sign Out",
-      "1": "Log in",
-      "2": "Register"
+  "_header":{
+    "text":{
+      "0":"Sign Out",
+      "1":"Log in",
+      "2":"Register"
     }
   },
-  "rightLinks": {
-    "text": {
-      "0": "Home",
-      "1": "Map",
-      "2": "Calendar"
+  "rightLinks":{
+    "text":{
+      "0":"Home",
+      "1":"Map",
+      "2":"Calendar"
     }
   },
   "leftLinks": {
     "content": {
       "0": "About Us",
       "1": "Happy News",
-      "2": "Action Center",
+      "2": "Begin",
       "3": "Map",
       "4": {
         "title": "Projects",
@@ -175,51 +180,51 @@
       }
     }
   },
-  "calendar": {
-    "section_titles": {
-      "0": "Search",
-      "1": "Upcoming positive action",
-      "2": "Past positive actions",
-      "sub": {
-        "0": "No upcoming events :( Please add one!",
-        "1": "No action in the past."
+  "calendar":{
+    "section_titles":{
+      "0":"Search",
+      "1":"Upcoming Resources",
+      "2":"Past Offerings",
+      "sub":{
+        "0":"No upcoming offerings :( Please add one!",
+        "1":"No action in the past."
       }
     },
-    "btns": {
-      "0": "ADD Filter"
+    "btns":{
+      "0":"ADD Filter"
     }
   },
-  "categoryForm": {
-    "text": {
-      "0": "New Category"
+  "categoryForm":{
+    "text":{
+      "0":"New Category"
     }
   },
-  "map": {
-    "text": {
-      "0": "Legend",
-      "1": "Create your Activity now!"
+  "map":{
+    "text":{
+      "0":"Legend",
+      "1":"Add or Offer a Resource now!"
     },
-    "btns": {
-      "0": "Toggle All"
+    "btns":{
+      "0":"Toggle All"
     },
     "links": {
-      "0": "http://news.focallocal.org/gather-about"
+      "0": "http://news.focallocal.org/homelessness-resource-map-about"
     }
   },
-  "event": {
-    "text": {
-      "0": "Think this is spam or an error? Let us know!",
-      "tags": {
-        "0": "About Event",
-        "1": "Photos",
-        "2": "Videos",
-        "3": "Comments"
+  "event":{
+    "text":{
+      "0":"Think this is spam or an error? Let us know!",
+      "tags":{
+        "0":"About",
+        "1":"Photos",
+        "2":"Videos",
+        "3":"Comments"
       },
-      "1": "* This has been reported by",
-      "2": "user(s)"
+      "1":"* This submission has been reported by",
+      "2":"user(s)"
     },
-    "btns": {
-      "0": "Report"
+    "btns":{
+      "0":"Report Inaccuracy or Abuse"
     }
   },
   "welcomeModal": {
