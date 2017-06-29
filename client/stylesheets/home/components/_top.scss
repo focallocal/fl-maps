@@ -1,7 +1,7 @@
 #top {
-  height: 110vh;
+  height: 115vh;
     @media screen and (max-width: 980px) {
-      height: 90vh; }
+      height: 95vh; }
   text-align: center;
   background-image: url(/images/happy_people.jpg);
   background-position: center center;
@@ -15,7 +15,7 @@
     top: 65px;
     left: 0;
     width: 100%;
-    height: 110%;
+    height: 115%;
     background: $gray-lighter;
     opacity: .92;
   }
