@@ -118,9 +118,11 @@ Events.attachSchema(new SimpleSchema({
                 });
             var addressKey = 'address';
             var isAddressValid = !_.contains(invalidKeys,addressKey);
+           /*
             if (isAddressValid) {
                 if (!this.isSet) return "required";
             }
+            */
         }
     },
     'coordinates.lat': {
