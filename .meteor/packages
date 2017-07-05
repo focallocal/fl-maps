@@ -13,7 +13,7 @@ matb33:collection-hooks
 dburles:factory
 anti:fake
 cunneen:mailgun
-materialize:materialize@=0.97.7
+materialize:materialize
 useraccounts:materialize
 aldeed:collection2
 gildaspk:autoform-materialize@0.0.18
