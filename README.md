@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/focallocal/fl-maps.svg?branch=master)](https://travis-ci.org/focallocal/fl-maps)
-Focallocal events 
+Focallocal - Positive Action Events Map and Brighter Tomorrow Map 
 ====================
-*Because organising social events should as simple as ordering pizza.*
+*Because organising social events to make our communities happier should as simple as ordering pizza.*
 
 
 Usage
@@ -71,12 +71,23 @@ The point is to achieve continuous delivery which means
 1. Building - with the latest meteor 
 2. Testing - (TODO) run functional tests 
 3. Deploying 
-    * use settings.json from a secret variable in Travis build's settings
+    * contact Andy or one of the team for the latest settings.json file
     * Deploy to http://gather.focallocal.org if it's a push to `master` branch
     * Deploy to http://focallocal-test.meteor.com if it's a push to `any other` branch
+    * Changes are pushed to the Brighter Tomorrow Map, with variables between the two set in i18n
 The workflow is configured in `.travis.yml` and deployment is configured in the `expect` script `deploy.exp`
 
-   
+4. Pull Request
+    * You first create a fork of fl-maps.
+    * Then you clone you're fork on youre computer.
+    * You set up 2 remotes: you're fork named origin, and the fl-maps named upstream
+    * Before begining working on the code, you always pull everithing from upstream inside your master, then you crete a new branch, example - fixingBug
+    * When you are ready to upload the code, you create a push on you're ORIGIN remote.
+    *Lastly, you go on github, inside you're fork page, and you will see a button -- CREATE PULL REQUEST
+
+The most important thing before starting is to ALWAYS pull everithing from the UPSTREAM remote
+
+
 Contributing
 ------------
 
@@ -93,9 +104,8 @@ Contributing
 
 TODO
 ------------
-- [ ] All the features are long listed in Asana.com. It's closed for members but anybody is welcomed to join.
 - [ ] Set up a cloud based testing solution as a part of Continous Integration solution.
-- [ ] Host application on a dedicated server. Currently we host the app on free meteor infrastructure. As long we don't have too many users, it's ok, but If we want to scale, we have to invest some money in VPS.
+- [ ] Host application on a dedicated server. If we want to scale, we have to find or invest some money in VPS.
 - [ ] Fix Velocity tests configuration to run PhantomJS tests seamlessly. 
 
 About the Project
@@ -104,7 +114,7 @@ About the Project
 > Focallocal is an open, encouraging and supportive community for people who want to explore creative and fun ways to make our communities friendlier, more connected, safer and happier for everyone to enjoy living in.
 > Together, our ideas and the success stories from community members activities are shared and repeated by other Focallocallers all around the World, each making a positive difference to life in their local community.
 
-[I want to know more!](http://focallocal.org/about-us)
+[I want to know more!](http://focallocal.org)
 
 ![Focallocal logo](http://focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
 
