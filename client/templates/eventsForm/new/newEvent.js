@@ -45,6 +45,10 @@ Template.newEvent.onCreated(function() {
 			defaultCategory.set(temp.name);
 		}
 	});
+
+
+     
+
 });
 
 Template.newEvent.helpers({
@@ -73,6 +77,8 @@ Template.autoForm.onRendered(function () {
 		$("#next").click();
 	});
 
+	
+
 	Meteor.typeahead.inject();
 
 	var fixMaterializeActiveClassTrigger = function() {
@@ -82,7 +88,7 @@ Template.autoForm.onRendered(function () {
 	//this is a hack, because Typeahead duplicates input and inserts it inside of a new span item which breaks Materialize
 	fixMaterializeActiveClassTrigger();
 
-// Init lifetime section js
+    // Init lifetime section js
 	iniinitLifetime("#events-form-new", '#eventsFormModal', '#time-select');
 
 	$("#new-limitless").on('click', function() {
@@ -222,6 +228,13 @@ Template.autoForm.onRendered(function () {
 			$this.val('Choose a Category!');
 		}
 	});
+
+
+
+
+
+
+
 
 });
 
