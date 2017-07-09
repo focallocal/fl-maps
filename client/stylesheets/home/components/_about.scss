@@ -1,0 +1,46 @@
+#about {
+  .container {
+    > p {
+      padding: 0 50px;
+      @media screen and (max-width: 980px) {
+        padding: 0;
+      }
+      > span {
+        display: block;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .items {
+    @include flexbox;
+    @media screen and (max-width: 980px) {
+      @include flex-direction(column);
+    }
+    .item {
+      @include flex-grow(1);
+      text-align: center;
+      .icon {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        background-size: 70%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        &.share {
+          background-image: url(/images/share.png);
+        }
+        &.friends {
+          background-image: url(/images/friends.png);
+        }
+        &.smiley {
+          background-image: url(/images/smiley.png);
+        }
+      }
+      h4 {
+        text-transform: uppercase;
+        padding: 0 50px;
+        font-size: 20px;
+      }
+    }
+  }
+}

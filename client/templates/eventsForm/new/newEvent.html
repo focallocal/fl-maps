@@ -4,99 +4,485 @@
 			<a href="#!" id="newEventFormClose" class="modal-action modal-close waves-effect waves-red btn-flat" data-bind="click:clearForm">x</a>
 			<div class="row">
 				<h3 class="txt-center" id="eventTitle">{{_ "newEvent.title"}}</h3>
-				{{#if Template.subscriptionsReady}}
-					{{#autoForm collection="Events" id="events-form-new" type="insert"}}
-						<ul class="sequence-form-fields">
-							<li class="sequence-field" value="0">
-								<div class="col">
-									<span class="grey-text exp-sub">{{_ "newEvent.subs.0"}}</span>
-									<br />
-									<!-- <span class="grey-text exp-sub">{{_ "newEvent.subs.1"}}</span>
+				{{#if Template.subscriptionsReady}} {{#autoForm collection="Events" id="events-form-new" type="insert"}}
+				<ul class="sequence-form-fields">
+					<li class="sequence-field" value="0">
+						<div class="col">
+							<span class="grey-text exp-sub">{{_ "newEvent.subs.0"}}</span>
+							<br />
+							<!-- <span class="grey-text exp-sub">{{_ "newEvent.subs.1"}}</span>
 									<br /> -->
-									<span class="grey-text exp-sub">{{_ "newEvent.subs.2"}}</span>
-									<h5>{{_ "newEvent.section_titles.0"}}</h5>
+							<span class="grey-text exp-sub">{{_ "newEvent.subs.2"}}</span>
+							<h5>{{_ "newEvent.section_titles.0"}}</h5>
+						</div>
+						{{> afQuickField name="organiser._id"}} {{> afQuickField name="organiser.name"}}
+						<div class="validate-field" id="category-container">
+							<div class="input-field col s12">
+								<label for="category-select">Category</label>
+								<input type="text" readonly="true" id="category-select-input" name="category-select">
+							</div>
+							{{> afQuickField name="category"}}
+						</div>
+						<!-- <a class="btn" href='{{_ "newEvent.links.0"}}'>{{_ "newEvent.btns.3"}}</a> -->
+						<button type="button" class="btn btn-spacer" id="new-resource">{{_ "newEvent.btns.4"}}</button>
+					</li>
+					<li class="sequence-field" value="1">
+						<div class="col">
+							<h5>{{_ "newEvent.section_titles.1"}}</h5>
+						</div>
+						<div class="validate-field">
+							{{> afQuickField name="name"}}
+						</div>
+					</li>
+					<li class="sequence-field" value="2">
+						<div class="col">
+							<h5>{{_ "newEvent.section_titles.2"}}</h5>
+						</div>
+						<div class="validate-field">
+							{{> afQuickField name="address"}} {{> afQuickField name="coordinates"}}
+						</div>
+					</li>
+					<li class="sequence-field" value="3">
+						<div class="col">
+							<h5>{{_ "newEvent.section_titles.3"}}</h5>
+						</div>
+						<div class="validate-field">
+							{{> afQuickField name="meetingPoint"}}
+						</div>
+					</li>
+					<li class="sequence-field" value="4">
+						<div class="col">
+							<h5>{{_ "newEvent.section_titles.4"}}</h5>
+						</div>
+						<div class="validate-field">
+							{{> afQuickField name="findHints"}}
+						</div>
+					</li>
+					<li class="sequence-field" value="5" id="lifetime-section">
+						<div class="col">
+							<h5>{{_ "newEvent.section_titles.5"}}</h5>
+						</div>
+						<div class="validate-field">
+							<!--	{{> eventLifetime}}-->
+
+
+
+							<div class="container">
+								<div class="row">
+									<h1 class="col s12">Timepicker</h1>
+									<form class="col s12">
+										<div class="row">
+											<div class="input-field col s12">
+												<label for="input_starttime" class="active">Time</label>
+												<input id="input_starttime" class="timepicker" type="text">
+												<div class="clockpicker picker" style="display: none;">
+													<div class="picker__holder">
+														<div class="picker__frame">
+															<div class="picker__wrap">
+																<div class="picker__box">
+																	<div class="picker__date-display">
+																		<div class="clockpicker-display">
+																			<div class="clockpicker-display-column"><span class="clockpicker-span-hours">04</span>:<span class="clockpicker-span-minutes text-primary">20</span></div>
+																			<div
+																			 class="clockpicker-display-column clockpicker-display-am-pm">
+																				<div class="clockpicker-span-am-pm">PM</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="picker__calendar-container">
+																	<div class="clockpicker-plate">
+																		<div class="clockpicker-canvas">
+																			<svg class="clockpicker-svg" width="270" height="270">
+																				<g transform="translate(135,135)">
+																					<circle class="clockpicker-canvas-bg clockpicker-canvas-bg-trans" r="20" cx="95.26279441628826" cy="54.99999999999998"></circle>
+																					<circle class="clockpicker-canvas-fg" r="5" cx="95.26279441628826" cy="54.99999999999998"></circle>
+																					<line x1="0" y1="0" x2="77.94228634059948" y2="44.99999999999998"></line>
+																					<circle class="clockpicker-canvas-bearing" cx="0" cy="0" r="2"></circle>
+																				</g>
+																			</svg>
+																		</div>
+																		<div class="clockpicker-dial clockpicker-hours clockpicker-dial-out" style="visibility: hidden;">
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 170px; top: 19.7372px;">1</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 210.263px; top: 60px;">2</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 225px; top: 115px;">3</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 210.263px; top: 170px;">4</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 170px; top: 210.263px;">5</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 115px; top: 225px;">6</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 60px; top: 210.263px;">7</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 19.7372px; top: 170px;">8</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 5px; top: 115px;">9</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 19.7372px; top: 60px;">10</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 60px; top: 19.7372px;">11</div>
+																			<div class="clockpicker-tick" style="font-size: 140%; left: 115px; top: 5px;">12</div>
+																		</div>
+																		<div class="clockpicker-dial clockpicker-minutes" style="visibility: visible;">
+																			<div class="clockpicker-tick" style="left: 115px; top: 5px; font-size: 140%;">00</div>
+																			<div class="clockpicker-tick" style="left: 170px; top: 19.7372px; font-size: 140%;">05</div>
+																			<div class="clockpicker-tick" style="left: 210.263px; top: 60px; font-size: 140%;">10</div>
+																			<div class="clockpicker-tick" style="left: 225px; top: 115px; font-size: 140%;">15</div>
+																			<div class="clockpicker-tick" style="left: 210.263px; top: 170px; font-size: 140%;">20</div>
+																			<div class="clockpicker-tick" style="left: 170px; top: 210.263px; font-size: 140%;">25</div>
+																			<div class="clockpicker-tick" style="left: 115px; top: 225px; font-size: 140%;">30</div>
+																			<div class="clockpicker-tick" style="left: 60px; top: 210.263px; font-size: 140%;">35</div>
+																			<div class="clockpicker-tick" style="left: 19.7372px; top: 170px; font-size: 140%;">40</div>
+																			<div class="clockpicker-tick" style="left: 5px; top: 115px; font-size: 140%;">45</div>
+																			<div class="clockpicker-tick" style="left: 19.7372px; top: 60px; font-size: 140%;">50</div>
+																			<div class="clockpicker-tick" style="left: 60px; top: 19.7372px; font-size: 140%;">55</div>
+																		</div>
+																	</div>
+																	<div class="clockpicker-am-pm-block"><button type="button" class="btn-floating btn-flat clockpicker-button am-button">AM</button><button type="button"
+																		 class="btn-floating btn-flat clockpicker-button pm-button active">PM</button></div>
+																</div>
+																<div class="picker__footer"><button type="button" class="btn-flat clockpicker-button">Done</button></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 								</div>
-								{{> afQuickField name="organiser._id"}}
-								{{> afQuickField name="organiser.name"}}
-								<div class="validate-field" id="category-container">
-									{{> afQuickField name="category"}}
-								</div>
-								<!-- <a class="btn" href='{{_ "newEvent.links.0"}}'>{{_ "newEvent.btns.3"}}</a> -->
-								<button type="button" class="btn btn-spacer" id="new-resource">{{_ "newEvent.btns.4"}}</button>
-							</li>
-							<li class="sequence-field" value="1">
-								<div class="col">
-									<h5>{{_ "newEvent.section_titles.1"}}</h5>
-								</div>
-								<div class="validate-field">
-									{{> afQuickField name="name"}}
-								</div>
-							</li>
-							<li class="sequence-field" value="2">
-								<div class="col">
-									<h5>{{_ "newEvent.section_titles.2"}}</h5>
-								</div>
-								<div class="validate-field">
-									{{> afQuickField name="address"}}
-									{{> afQuickField name="coordinates"}}
-								</div>
-							</li>
-							<li class="sequence-field" value="3">
-								<div class="col">
-									<h5>{{_ "newEvent.section_titles.3"}}</h5>
-								</div>
-								<div class="validate-field">
-									{{> afQuickField name="meetingPoint"}}
-								</div>
-							</li>
-							<li class="sequence-field" value="4">
-								<div class="col">
-									<h5>{{_ "newEvent.section_titles.4"}}</h5>
-								</div>
-								<div class="validate-field">
-									{{> afQuickField name="findHints"}}
-								</div>
-							</li>
-							<li class="sequence-field" value="5" id="lifetime-section">
-								<div class="col">
-									<h5>{{_ "newEvent.section_titles.5"}}</h5>
-								</div>
-								<div class="validate-field">
-									{{> eventLifetime}}
-								</div>
-							</li>
-							<li class="sequence-field" value="6">
-								<div class="col">
-									<h5>{{_ "newEvent.section_titles.6"}}</h5>
-								</div>
-								<div class="validate-field">
-									{{> afQuickField name="overview"}}
-									{{> afQuickField name="description"}}
-									<div id="new-limit-container">
-										{{> afQuickField name="engagement"}}
-									</div>
-									<div class="row">
-										<div class="col s12">
-											<p>
-												<input type="checkbox" id="new-limitless">
-												<label for="new-limitless">No Limit</label>
-											</p>
+								<div class="row">
+									<div class="input-field col s12">
+										<label for="input_endtime" class="active">Time</label>
+										<input id="input_endtime" class="timepicker" type="text">
+										<div class="clockpicker picker darktheme" style="display: none;">
+											<div class="picker__holder">
+												<div class="picker__frame">
+													<div class="picker__wrap">
+														<div class="picker__box">
+															<div class="picker__date-display">
+																<div class="clockpicker-display">
+																	<div class="clockpicker-display-column"><span class="clockpicker-span-hours">14</span>:<span class="clockpicker-span-minutes text-primary">11</span></div>
+																	<div
+																	 class="clockpicker-display-column clockpicker-display-am-pm">
+																		<div class="clockpicker-span-am-pm"></div>
+																</div>
+															</div>
+														</div>
+														<div class="picker__calendar-container">
+															<div class="clockpicker-plate">
+																<div class="clockpicker-canvas">
+																	<svg class="clockpicker-svg" width="270" height="270">
+																		<g transform="translate(135,135)">
+																			<circle class="clockpicker-canvas-bg clockpicker-canvas-bg-trans" r="20" cx="100.4900003406861" cy="-44.74103073833804"></circle>
+																			<circle class="clockpicker-canvas-fg active" r="5" cx="100.4900003406861" cy="-44.74103073833804"></circle>
+																			<line x1="0" y1="0" x2="82.21909118783408" y2="-36.60629787682203"></line>
+																			<circle class="clockpicker-canvas-bearing" cx="0" cy="0" r="2"></circle>
+																		</g>
+																	</svg>
+																</div>
+																<div class="clockpicker-dial clockpicker-hours clockpicker-dial-out" style="visibility: hidden;">
+																	<div class="clockpicker-tick" style="left: 115px; top: 5px;">00</div>
+																	<div class="clockpicker-tick" style="left: 155px; top: 45.718px; font-size: 120%;">1</div>
+																	<div class="clockpicker-tick" style="left: 184.282px; top: 75px; font-size: 120%;">2</div>
+																	<div class="clockpicker-tick" style="left: 195px; top: 115px; font-size: 120%;">3</div>
+																	<div class="clockpicker-tick" style="left: 184.282px; top: 155px; font-size: 120%;">4</div>
+																	<div class="clockpicker-tick" style="left: 155px; top: 184.282px; font-size: 120%;">5</div>
+																	<div class="clockpicker-tick" style="left: 115px; top: 195px; font-size: 120%;">6</div>
+																	<div class="clockpicker-tick" style="left: 75px; top: 184.282px; font-size: 120%;">7</div>
+																	<div class="clockpicker-tick" style="left: 45.718px; top: 155px; font-size: 120%;">8</div>
+																	<div class="clockpicker-tick" style="left: 35px; top: 115px; font-size: 120%;">9</div>
+																	<div class="clockpicker-tick" style="left: 45.718px; top: 75px; font-size: 120%;">10</div>
+																	<div class="clockpicker-tick" style="left: 75px; top: 45.718px; font-size: 120%;">11</div>
+																	<div class="clockpicker-tick" style="left: 115px; top: 35px; font-size: 120%;">12</div>
+																	<div class="clockpicker-tick" style="left: 170px; top: 19.7372px;">13</div>
+																	<div class="clockpicker-tick" style="left: 210.263px; top: 60px;">14</div>
+																	<div class="clockpicker-tick" style="left: 225px; top: 115px;">15</div>
+																	<div class="clockpicker-tick" style="left: 210.263px; top: 170px;">16</div>
+																	<div class="clockpicker-tick" style="left: 170px; top: 210.263px;">17</div>
+																	<div class="clockpicker-tick" style="left: 115px; top: 225px;">18</div>
+																	<div class="clockpicker-tick" style="left: 60px; top: 210.263px;">19</div>
+																	<div class="clockpicker-tick" style="left: 19.7372px; top: 170px;">20</div>
+																	<div class="clockpicker-tick" style="left: 5px; top: 115px;">21</div>
+																	<div class="clockpicker-tick" style="left: 19.7372px; top: 60px;">22</div>
+																	<div class="clockpicker-tick" style="left: 60px; top: 19.7372px;">23</div>
+																</div>
+																<div class="clockpicker-dial clockpicker-minutes" style="visibility: visible;">
+																	<div class="clockpicker-tick" style="left: 115px; top: 5px; font-size: 140%;">00</div>
+																	<div class="clockpicker-tick" style="left: 170px; top: 19.7372px; font-size: 140%;">05</div>
+																	<div class="clockpicker-tick" style="left: 210.263px; top: 60px; font-size: 140%;">10</div>
+																	<div class="clockpicker-tick" style="left: 225px; top: 115px; font-size: 140%;">15</div>
+																	<div class="clockpicker-tick" style="left: 210.263px; top: 170px; font-size: 140%;">20</div>
+																	<div class="clockpicker-tick" style="left: 170px; top: 210.263px; font-size: 140%;">25</div>
+																	<div class="clockpicker-tick" style="left: 115px; top: 225px; font-size: 140%;">30</div>
+																	<div class="clockpicker-tick" style="left: 60px; top: 210.263px; font-size: 140%;">35</div>
+																	<div class="clockpicker-tick" style="left: 19.7372px; top: 170px; font-size: 140%;">40</div>
+																	<div class="clockpicker-tick" style="left: 5px; top: 115px; font-size: 140%;">45</div>
+																	<div class="clockpicker-tick" style="left: 19.7372px; top: 60px; font-size: 140%;">50</div>
+																	<div class="clockpicker-tick" style="left: 60px; top: 19.7372px; font-size: 140%;">55</div>
+																</div>
+															</div>
+															<div class="clockpicker-am-pm-block"></div>
+														</div>
+														<div class="picker__footer"><button type="button" class="btn-flat clockpicker-button">Done</button></div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
-							</li>
-						</ul>
-						<div>
-							<button type="button" class="btn btn-primary" id="back">{{_ "newEvent.btns.0"}}</button>
-								<button type="button" class="btn btn-primary" id="next">{{_ "newEvent.btns.1"}}</button>
-								<button type="submit" id="new-event-submit" class="btn btn-primary">{{_ "newEvent.btns.2"}}</button>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<label for="input_date" class="active">Date</label>
+									<input id="input_date" class="datepicker picker__input" type="text" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false"
+									 aria-readonly="false" aria-owns="input_date_root">
+									<div class="picker" id="input_date_root" tabindex="0"
+									 aria-hidden="true">
+										<div class="picker__holder">
+											<div class="picker__frame">
+												<div class="picker__wrap">
+													<div class="picker__box">
+														<div class="picker__date-display">
+															<div class="picker__weekday-display">Friday</div>
+															<div class="picker__month-display">
+																<div>Jul</div>
+															</div>
+															<div class="picker__day-display">
+																<div>7</div>
+															</div>
+															<div class="picker__year-display">
+																<div>2017</div>
+															</div>
+														</div>
+														<div class="picker__calendar-container">
+															<div class="picker__header">
+																<div class="picker__month">July</div>
+																<div class="picker__year">2017</div>
+																<div class="picker__nav--prev" data-nav="-1" role="button" aria-controls="input_date_table" title="Previous month">
+																</div>
+																<div class="picker__nav--next" data-nav="1" role="button" aria-controls="input_date_table" title="Next month">
+																</div>
+															</div>
+															<table class="picker__table" id="input_date_table" role="grid" aria-controls="input_date" aria-readonly="true">
+																<thead>
+																	<tr>
+																		<th class="picker__weekday" scope="col" title="Sunday">S</th>
+																		<th class="picker__weekday" scope="col" title="Monday">M</th>
+																		<th class="picker__weekday" scope="col" title="Tuesday">T</th>
+																		<th class="picker__weekday" scope="col" title="Wednesday">W</th>
+																		<th class="picker__weekday" scope="col" title="Thursday">T</th>
+																		<th class="picker__weekday" scope="col" title="Friday">F</th>
+																		<th class="picker__weekday" scope="col" title="Saturday">S</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1498338000000" role="gridcell" aria-label="25 June, 2017">25</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1498424400000" role="gridcell" aria-label="26 June, 2017">26</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1498510800000" role="gridcell" aria-label="27 June, 2017">27</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1498597200000" role="gridcell" aria-label="28 June, 2017">28</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1498683600000" role="gridcell" aria-label="29 June, 2017">29</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1498770000000" role="gridcell" aria-label="30 June, 2017">30</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1498856400000" role="gridcell" aria-label="1 July, 2017">1</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1498942800000" role="gridcell" aria-label="2 July, 2017">2</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499029200000" role="gridcell" aria-label="3 July, 2017">3</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499115600000" role="gridcell" aria-label="4 July, 2017">4</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499202000000" role="gridcell" aria-label="5 July, 2017">5</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499288400000" role="gridcell" aria-label="6 July, 2017">6</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus picker__day--today picker__day--selected picker__day--highlighted"
+																			 data-pick="1499374800000" role="gridcell" aria-label="7 July, 2017" aria-selected="true" aria-activedescendant="true">7</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499461200000" role="gridcell" aria-label="8 July, 2017">8</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499547600000" role="gridcell" aria-label="9 July, 2017">9</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499634000000" role="gridcell" aria-label="10 July, 2017">10</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499720400000" role="gridcell" aria-label="11 July, 2017">11</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499806800000" role="gridcell" aria-label="12 July, 2017">12</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499893200000" role="gridcell" aria-label="13 July, 2017">13</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1499979600000" role="gridcell" aria-label="14 July, 2017">14</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500066000000" role="gridcell" aria-label="15 July, 2017">15</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500152400000" role="gridcell" aria-label="16 July, 2017">16</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500238800000" role="gridcell" aria-label="17 July, 2017">17</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500325200000" role="gridcell" aria-label="18 July, 2017">18</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500411600000" role="gridcell" aria-label="19 July, 2017">19</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500498000000" role="gridcell" aria-label="20 July, 2017">20</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500584400000" role="gridcell" aria-label="21 July, 2017">21</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500670800000" role="gridcell" aria-label="22 July, 2017">22</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500757200000" role="gridcell" aria-label="23 July, 2017">23</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500843600000" role="gridcell" aria-label="24 July, 2017">24</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1500930000000" role="gridcell" aria-label="25 July, 2017">25</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1501016400000" role="gridcell" aria-label="26 July, 2017">26</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1501102800000" role="gridcell" aria-label="27 July, 2017">27</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1501189200000" role="gridcell" aria-label="28 July, 2017">28</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1501275600000" role="gridcell" aria-label="29 July, 2017">29</div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1501362000000" role="gridcell" aria-label="30 July, 2017">30</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--infocus" data-pick="1501448400000" role="gridcell" aria-label="31 July, 2017">31</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1501534800000" role="gridcell" aria-label="1 August, 2017">1</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1501621200000" role="gridcell" aria-label="2 August, 2017">2</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1501707600000" role="gridcell" aria-label="3 August, 2017">3</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1501794000000" role="gridcell" aria-label="4 August, 2017">4</div>
+																		</td>
+																		<td role="presentation">
+																			<div class="picker__day picker__day--outfocus" data-pick="1501880400000" role="gridcell" aria-label="5 August, 2017">5</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<div class="picker__footer"><button class="btn-flat picker__today" type="button" data-pick="1499374800000" aria-controls="input_date" disabled="disabled">Today</button>
+															<button
+															 class="btn-flat picker__clear" type="button" data-clear="1" aria-controls="input_date" disabled="disabled">Clear</button><button class="btn-flat picker__close" type="button" data-close="true" aria-controls="input_date"
+																 disabled="disabled">Close</button></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							</form>
 						</div>
-					{{/autoForm}}
-				{{/if}}
+			</div>
+			<script type="text/javascript">
+				$('#input_starttime').clockpicker({
+					placement: 'bottom',
+					align: 'left',
+					twelvehour: true
+				});
+				$('#input_endtime').clockpicker({
+					placement: 'bottom',
+					align: 'left',
+					darktheme: true,
+					twelvehour: false
+				});
+				$('.datepicker').pickadate();
+			</script>
+
+
+			<div class="hiddendiv common"></div>
+
+
+		</div>
+
+
+
+
+
+
+		</li>
+		<li class="sequence-field" value="6">
+			<div class="col">
+				<h5>{{_ "newEvent.section_titles.6"}}</h5>
+			</div>
+			<div class="validate-field">
+				{{> afQuickField name="overview"}} {{> afQuickField name="description"}}
+				<div id="new-limit-container">
+					{{> afQuickField name="engagement"}}
 				</div>
-				<div class="option-select" id="time-select">
-					{{> optionSelect}}
+				<div class="row">
+
+
+
+
 				</div>
 			</div>
+		</li>
+		</ul>
+		<div>
+			<button type="button" class="btn btn-primary" id="back">{{_ "newEvent.btns.0"}}</button>
+			<button type="button" class="btn btn-primary" id="next">{{_ "newEvent.btns.1"}}</button>
+			<button type="submit" id="new-event-submit" class="btn btn-primary">{{_ "newEvent.btns.2"}}</button>
 		</div>
+		{{/autoForm}} {{/if}}
+	</div>
+	<div class="option-select" id="time-select">
+		{{> optionSelect}}
+	</div>
+	<div class="option-select" id="category-select">
+		{{> optionSelect}}
+	</div>
+	</div>
+	</div>
+
+
 </template>

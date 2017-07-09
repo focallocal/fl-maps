@@ -111,12 +111,3 @@ atlassian-ide-plugin.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
-
-
-### Meteor ###
-.meteor/local
-.meteor/meteorite
-
-### NPM ###
-node_modules
-*.log
