@@ -1,7 +1,10 @@
 [![Build Status](https://travis-ci.org/focallocal/fl-maps.svg?branch=master)](https://travis-ci.org/focallocal/fl-maps)
 Focallocal Gathering Map and Brighter Tomorrow Map 
 ====================
-*Because organising social events to make our communities happier, and supporting people who are homeless in your local community, should both be as simple as ordering pizza.*
+
+*Because organising social events to make our communities happier, and supporting people who are homeless in your local community, should both be as simple as ordering pizza*
+
+
 Usage
 -----
 1. Go to http://gather.focallocal.org or http://brightertomorrowmap.com
@@ -9,6 +12,7 @@ Usage
 3. Go to the map page 
 4. Add a new listing using (+) button
 5. Use buttons at the end to either copy/paste the details to other social media event hubs (gather), or share details inviting more people to use the map on social media (brighter tomorrow map) using buttons on final message modal window
+
 
 
 Project set up (for developers)
@@ -22,6 +26,7 @@ Clone the project repository
     cd fl-events
 
 We suggest using Atom.io as a text editor to work on the code
+
     
 #### Running 
 Currently we are experimenting with functional tests. On slow machines it's recomended to run the app without tests
@@ -30,6 +35,7 @@ If you prefer to run the app with the test framework (executing tests every time
    
     CHIMP_OPTIONS="--format=pretty --sync=false --browser=firefox" meteor
     
+
 #### Testing
 There are few end-to-end Velocity tests located under... yes, you guessed: `tests/`. They are written in Cucumber. 
 [Guidelines for writing Cucumber Velocity tests](velocity.readme.io/v1.0/docs/getting-started-with-cucumber)
@@ -45,6 +51,7 @@ You can disable Velocity tests
     export VELOCITY=0 
     meteor run
     
+
 ##### What are these tests for?
 Currently, I develop the project with tests disabled and I trigger tests after implementing a feature. It takes some time on my old laptop to run mirror with firefox browser.
 Ideally, these tests should be mostly unit tests with few end-to-end tests, and they all should be running in the background using the fastest driver - PhantomJS. If you have some time to play with this, then pull requests are more than welcomed!
@@ -75,6 +82,7 @@ The workflow is configured in `.travis.yml` and deployment is configured in the 
 The most important thing before starting is to ALWAYS pull everithing from the UPSTREAM remote
 
 
+
 Contributing
 ------------
 * Create something awesome -- make the code better, add some functionality,
@@ -87,6 +95,7 @@ Contributing
 `pull request`: http://help.github.com/pull-requests/
 
 
+
 TODO
 ------------
 - [ ] Set up a cloud based testing solution as a part of Continous Integration solution.
@@ -94,6 +103,7 @@ TODO
 - [ ] Fix Velocity tests configuration to run PhantomJS tests seamlessly. 
 - [ ] Turn the site into an app which syncs with the main Focallocal app (needs to be built)
 - [ ] Integrate database of user accounts and info between either Meteor/Wordpress, or Meteor/Discourse (Wordpress and Discourse are already sync'd)
+
 
 
 About the Project
