@@ -1,35 +1,53 @@
 <template name="_footer">
-  <footer id="footer">
-          <div class="container">
-            <div class="row">
-              <div>
-                <h4>About</h4>
-                <p>This site is a part of the FocalLocal community</p>
-              </div>
-              <div>
-                <h4>Sitemap</h4>
+  <footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l4 s12">
+                <h3 class="white-text">{{_ "_footer.section_titles.0"}}</h3>
+
+                <p class="grey-text text-lighten-4">
+                    {{_ "_footer.section_titles.sub.0"}} <a href="http://www.focallocal.org">focallocal.org</a>
+                </p>
+            </div>
+            <div class="col l4 s12">
+                <h3 class="white-text">{{_ "_footer.section_titles.1"}}</h3>
+
                 <ul>
-                  <li><a href="http://brightertomorrowmap.com/">Brighter Tomorrow Map</a></li>
-                  <li><a href="http://gather.focallocal.org/events/map">Events Map</a></li>
+                    <li><a href="{{ pathFor 'home' }}">{{_ "_footer.section_titles.sub.1.list.0"}}</a></li>
+                    <li><a href="{{ pathFor 'map' }}">{{_ "_footer.section_titles.sub.1.list.1"}}</a></li>
+                    <li><a href="{{ pathFor 'calendar' }}">{{_ "_footer.section_titles.sub.1.list.2"}}</a></li>
+                    <li><a href="{{ pathFor 'atSignIn' }}">{{_ "_footer.section_titles.sub.1.list.3"}}</a></li>
+                    <li><a href="{{ pathFor 'atSignUp' }}">{{_ "_footer.section_titles.sub.1.list.4"}}</a></li>
+                    <li><a href="rss/upcomingEvents">{{_ "_footer.section_titles.sub.1.list.5"}}</a></li>
                 </ul>
-              </div>
-              <div>
-                <h4>Connect</h4>
-                <div class="social-links">
-                  <a href="https://www.facebook.com/groups/focallocal" class="social-link facebook">
-                    <i class="fa fa-facebook" ></i>
-                  </a>
-                  <a href="https://www.youtube.com/user/Focallocal/" class="social-link youtube">
-                    <i class="fa fa-youtube" ></i>
-                  </a>
+            </div>
+            <div class="col l4 s12">
+                <h3 class="white-text">{{_ "_footer.section_titles.2"}}</h3>
+
+                <div class="fb-like" data-href="http://focallocal.org" data-layout="button_count"
+                     data-colorscheme="dark" data-action="like" data-show-faces="false"
+                     data-share="false"></div>
+                <br>
+
+                <div><a class="twitter-follow-button" href="https://twitter.com/focallocal" data-size="large">
+                    Follow @Focallocal</a>
                 </div>
-              </div>
+
+                <div class="g-plusone" data-href="http://focallocal.org" data-size="standard" data-annotation="bubble"
+                     data-width="150"></div>
+                <br>
+
+                <div class="g-ytsubscribe" data-channel="focallocal" data-layout="default"
+                     data-count="default"></div>
             </div>
-          </div>
-          <div class="bottom-text">
-            <div class="container">
-                <strong>2017 FocalLocal.</strong> There's beauty all around you, remember to take a little break and enjoy it today
-            </div>
-          </div>
-        </footer>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made with
+            <i class="mdi-action-favorite-outline"></i>
+            by Focallocal Team
+        </div>
+    </div>
+  </footer>
 </template>

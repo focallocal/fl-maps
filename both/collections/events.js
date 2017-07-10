@@ -211,9 +211,13 @@ Events.attachSchema(new SimpleSchema({
         type: String,
         //optional: true,
         autoform: {
+            options: function() {
+                return Categories.find().map(function(cat) {
+                    return {label: cat.name, value: cat._id};
+                });
+            },
             label: false,
-            hidden: true,
-            class: "category-select-id"
+            firstOption: 'Choose Category'
         }
     },
     'category.name': {
@@ -355,7 +359,9 @@ Events.attachSchema(new SimpleSchema({
         type: String,
         label: 'Starting Time *',
         optional: true,
-        
+        custom: function() {
+            return lifetimeBasicValidation.call(this);
+        },
         autoform: {
           defaultValue: "Pick a Time!",
           class: "required-label-tag selection-trigger-time"
@@ -365,7 +371,9 @@ Events.attachSchema(new SimpleSchema({
         type: String,
         label: 'Closing Time *',
         optional: true,
-
+        custom: function() {
+            return lifetimeBasicValidation.call(this);
+        },
         autoform: {
           defaultValue: "Pick a Time!",
           class: "required-label-tag selection-trigger-time"

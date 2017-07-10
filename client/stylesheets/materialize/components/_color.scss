@@ -328,7 +328,7 @@ $grey: (
   "darken-1":   #757575,
   "darken-2":   #616161,
   "darken-3":   #424242,
-  "darken-4":   #ff5a01
+  "darken-4":   #212121
 );
 
 $shades: (
@@ -409,3 +409,4 @@ $colors: (
   @warn "Unknown `#{name}` in $colors.";
   @return null;
 }
+
