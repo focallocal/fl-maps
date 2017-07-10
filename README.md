@@ -111,5 +111,9 @@ About the Project
 *Focallocal events* is a part of a big project, or rather movement, [Focallocal](http://focallocal.org). 
 > Focallocal is an open, encouraging and supportive community for people who want to explore creative and fun ways to make our communities friendlier, more connected, safer and happier for everyone to enjoy living in.
 > Together, our ideas and the success stories from community members activities are shared and repeated by other Focallocallers all around the World, each making a positive difference to life in their local community.
+
+
 [I want to know more!](http://focallocal.org)
-![Focallocal logo](http://focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
+
+
+![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
