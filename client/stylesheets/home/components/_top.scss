@@ -1,0 +1,86 @@
+#top {
+  height: 100vh;
+  text-align: center;
+  background-image: url(/images/happy_people.jpg);
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $gray-lighter;
+    opacity: .92;
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+  }
+  .buttons, .align-center-flex {
+
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    button, .btn {
+      background: $brand-primary;
+      color: white;
+      font-size: 30px;
+      margin: 10px;
+      width: 250px;
+      padding: 10px;
+    }
+
+    .btn {
+      display: inline-table;;
+    }
+
+    .height-fix {
+      line-height: 60px;
+    }
+  }
+  .logo {
+    height: 60vh;
+    @media screen and (max-width: 980px) {
+      height: 35vh;
+    }
+  }
+  .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    @include transform(translate(-50%, -50%));
+  }
+  .mission {
+    button {
+      background: transparent;
+      border: 0;
+      font-size: 40px;
+      color: $brand-primary;
+      @media screen and (max-width: 980px) {
+        font-size: 24px;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
+    p {
+      display: inline-block;
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+}

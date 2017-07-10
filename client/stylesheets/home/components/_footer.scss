@@ -1,0 +1,87 @@
+#footer {
+  background: $brand-primary;
+  padding: 30px 0 0 0;
+  h2, p {
+    color: white;
+  }
+  .row {
+    @include flexbox;
+    > div {
+      padding: 20px;
+      width: 33.33%;
+      color: white;
+    }
+    @media screen and (max-width: 980px) {
+      @include flex-direction(column);
+      > div {
+        width: 100%;
+      }
+      text-align: center;
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+  .bottom-text {
+    background: rgba(255, 255, 255, .1);
+    margin-bottom: 0;
+    margin-top: 50px;
+    color: white;
+    padding: 10px 0;
+    @media screen and (max-width: 980px) {
+      padding: 20px;
+    }
+  }
+  h4 {
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  ul {
+    list-style: none;
+    li {
+      margin-bottom: 10px;
+      a {
+        font-size: 18px;
+        color: white;
+        text-transform: uppercase;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .social-links {
+    .social-link {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      text-align: center;
+      color: white;
+      font-size: 45px;
+      border: 1px solid white;
+      line-height: 70px;
+      margin-right: 20px;
+      @media screen and (max-width: 980px) {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+      &.facebook {
+        &:hover {
+          background: #3b5998;
+        }
+      }
+      &.twitter {
+        &:hover {
+          background: #1da1f2;
+        }
+      }
+      &.youtube {
+        &:hover {
+          background: #cd201f;
+        }
+      }
+    }
+  }
+}
