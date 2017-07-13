@@ -16,8 +16,9 @@
 }
 
 .option-select-list {
-	height: 40vh;
-	overflow: scroll;
+	height: auto !important;
+	overflow-y: visible;
+	overflow-x: initial;
 }
 
 #option-select-close {
