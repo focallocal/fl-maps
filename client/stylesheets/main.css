@@ -54,3 +54,7 @@ li.highlight div {
 #selectable blockquote {
     margin: 0 !important;
 }
+
+.btn-flat {
+   white-space: pre !important;
+ }
