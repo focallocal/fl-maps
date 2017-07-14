@@ -17,13 +17,7 @@ AutoForm.hooks({
 
 Template.editEvent.onCreated(function() {
 	create.call(this);
-	this.categories = new ReactiveVar([]);
 	instance = this;
-
-	Tracker.autorun(function() {
-		instance.categories.set(Categories.find({}).fetch());
-	});
-
 });
 
 Template.editEvent.helpers({
@@ -93,47 +87,6 @@ Template.autoForm.onRendered(function() {
 	});
 
 	onRendered.call(this);
-
-	// Enable Category Select
-	var $categoryInput = $("input#category-select-input-edit");
-	var $categoryId = $("#events-form .category-select-id");
-
-	$categoryInput.val(Categories.find({_id: $categoryId.val()}).fetch()[0].name);
-
-	var options = function() {
-		var categories = instance.categories.get();
-		for (category in categories) {
-			categories[category].option = categories[category].name;
-		}
-		return categories;
-	}();
-
-	// Initialize the mobile friendly selection UI
-	var categorySelection = new OptionSelect(function(selected) {
-		$categoryInput.val(selected.option);
-		$categoryId.val(selected._id);
-	}, '#category-select-edit', options);
-
-	// Activate time selection on click (OptionSelect)
-	$("input#category-select-input-edit").on('click', function(e) {
-		e.preventDefault();
-		categorySelection.open();
-		$("#events-form-new").scrollTop(0);
-		return false;
-	});
-
-	$("input#category-select-input-edit").on('keydown', function(e) {
-		e.preventDefault();
-		return false;
-	});
-
-	$("input#category-select-input-edit").on("change", function(e) {
-		var $this = $(this);
-		if (options.indexOf($this.val()) === -1) {
-			$this.val('Choose a Category!');
-		}
-	});
-
 });
 
 Template.editEvent.onDestroyed(function () {
