@@ -1,71 +1,92 @@
-<template name="home1">
-  <div class="template-home">
-      <div class="parallax-container">
-          <!--1690 × 1127 pixels-->
-          <div class="parallax"><img src="/images/field_web.jpg"></div>
-      </div>
-      <div class="section white flow-text">
-          <div class="container promo">
-              <div class="row">
-                  <div class="row center s12 m12 l12">
-                    <h2 class="header">{{_ "home.title"}}</h2>
-                    <p> <!-- grey-text text-darken-3 lighten-3 -->
-                      {{_ "home.sub_title"}}
-                    </p>
-                  </div>
-                  <div class="row center">
-                    </div>
-                  <div class="row center">
-                      <a class="btn waves-effect waves-light btn-large btn-spacer" href="http://action.focallocal.org/">{{_ "home.btns.0"}}</a>
-                      <a class="btn waves-effect waves-light btn-large btn-spacer" href="{{ pathFor 'map' }}">{{_ "home.btns.1"}}</a>
-                      <a class="btn waves-effect waves-light btn-large btn-spacer" href="http://gather.focallocal.org/events/list">{{_ "home.btns.2"}}</a>
-                    </div>
-                  <div class="row">
-                      <div class="col s12 m6 l8 offset-l1 offset-m1">
-                          <h4>{{_ "home.section_titles.0"}}</h4>
-                          <p><strong>{{_ "general.text.focallocal"}}</strong> {{_ "home.section_titles.sub.0"}}
-                          </p>
-                      </div>
-                      <div class="col s12 m4 l2 center">
-                          <i class="mdi-social-public large"></i>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col s12 m4 l2 offset-l1 offset-m1 center">
-                          <i class="mdi-social-people large"></i>
-                      </div>
-                      <div class="col s12 m6 l8">
-                          <h4>{{_ "home.section_titles.1"}}</h4>
-                          <p>{{_ "home.section_titles.sub.1"}}</p>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="col s12 m6 l8 offset-l1 offset-m1">
-                          <h4>{{_ "home.section_titles.2"}}</h4>
-                          <p>{{_ "home.section_titles.sub.2"}}</p>
-                      </div>
-                      <div class="col s12 m4 l2 center">
-                          <i class="mdi-social-mood large"></i>
-                      </div>
-                  </div>
-
-                  <div class="row center">
-                      <div>
-                          <h4></h4>
-                        </div>
-                    </div>
-                  <div class="row center">
-                      <a class="btn waves-effect waves-light btn-large btn-spacer" href="http://news.focallocal.org/">{{_ "home.btns.3"}}</a>
-                      <a class="btn waves-effect waves-light btn-large btn-spacer" href="http://action.focallocal.org/">{{_ "home.btns.4"}}</a>
-                      <a class="btn waves-effect waves-light btn-large btn-spacer" href="https://www.facebook.com/groups/focallocal/">{{_ "home.btns.5"}}</a>
-                      <a class="btn waves-effect waves-light btn-large btn-spacer" href="http://focallocal.org/">{{_ "home.btns.6"}}</a>
-              </div>
+<template name="home">
+  <div id="top">
+        <div class="container">
+          <div class="center-content">
+            <img class="logo" src="/images/logo.png" alt="logo" />
+            <div class="mission">
+              <button><i class="fa fa-play"></i></button>
+              <p>{{_ "home.btns.0"}}</p>
             </div>
+            <div class="buttons">
+              <a class="waves-effect waves-light btn-large" href="http://action.focallocal.org/fl-actioncenter/">{{_ "home.btns.1"}}</a>
+              <a class="waves-effect waves-light btn-large" href="http://gather.focallocal.org/events/map">{{_ "home.btns.2"}}</a>
+            </div>
+            <h4>{{_ "home.title"}}</h4>
           </div>
+        </div>
       </div>
-      <div class="parallax-container">
-          <div class="parallax"><img src="/images/activity_web.jpg"></div>
-      </div>
+      <section id="about" class="content-section">
+           <div class="container">
+             <h2>{{_ "home.sections.0.title"}}</h2>
+             <div>
+               <p>{{_ "home.sections.0.content.0"}}</p>
+               <p>{{_ "home.sections.0.content.1"}}</p>
+               <p>{{_ "home.sections.0.content.2"}}</p>
+             </div>
+             <div class="items">
+               <div class="item">
+                 <div class="icon smiley" ></div>
+                 <h4>{{_ "home.sections.0.content.items.smiley"}}</h4>
+               </div>
+               <div class="item">
+                 <div class="icon friends" ></div>
+                 <h4>{{_ "home.sections.0.content.items.friends"}}</h4>
+               </div>
+               <div class="item">
+                 <div class="icon share" ></div>
+                 <h4>{{_ "home.sections.0.content.items.share"}}</h4>
+               </div>
+             </div>
+                  <p>
+                   <span>{{_ "home.sections.0.content.3"}}</span>
+                 </p>
+           </div>
+         </section>
+         <section id="adventures" class="content-section side-text">
+             <div class="container">
+               <h2>{{_ "home.sections.1.title"}}</h2>
+               <div class="row">
+                 <div>
+                   <iframe width="100%" height="315" src="https://www.youtube.com/embed/tG4l514O0t4" frameBorder="0" allowFullScreen ></iframe>
+                 </div>
+                 <div class="text-cont">
+                   <p>{{_ "home.sections.1.content.0"}}</p>
+                   <p>{{_ "home.sections.1.content.1"}}</p>
+                   <p>{{_ "home.sections.1.content.2"}}</p>
+                   <p>{{_ "home.sections.1.content.3"}}</p>
+                 </div>
+               </div>
+             </div>
+           </section>
+           <section id="mission" class="content-section side-text invert">
+                <div class="container">
+                  <h2>{{_ "home.sections.2.title"}}</h2>
+                  <div class="row">
+                    <div>
+                      <iframe width="100%" height="315" src="https://www.youtube.com/embed/WUppGn2Z4b4?list=PLzwMXFvS_OYMIrrdyP1ASjmD3uz9NqC9p" frameBorder="0" allowFullScreen ></iframe>
+                    </div>
+                    <div class="text-cont">
+                      <p>{{_ "home.sections.2.content.0"}}<br /><br />{{_ "home.sections.2.content.1"}}<br /><br />{{_ "home.sections.2.content.2"}}<br /><br />{{_ "home.sections.2.content.3"}}<br /><br />{{_ "home.sections.2.content.4"}}</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="more-links"  class="content-section">
+                  <div class="container">
+                    <h2>{{_ "home.sections.3.title"}}</h2>
+                    <p>{{_ "home.sections.3.content.0"}}</p>
+                    <div class="buttons">
+                      <div class="item">
+                        <a href="https://www.youtube.com/user/Focallocal" class="btn">{{_ "home.sections.3.content.btns.0"}}</a>
+                      </div>
+                      <div class="item">
+                        <a href="https://www.facebook.com/groups/focallocal/" class="btn">{{_ "home.sections.3.content.btns.1"}}</a>
+                      </div>
+                      <div class="item">
+                        <a href="https://the-positive-action-shop.myshopify.com/" class="btn">{{_ "home.sections.3.content.btns.2"}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
 
-  </div>
 </template>

@@ -9,26 +9,57 @@
     }
   },
   "home": {
-    "title": "The Focallocal Community",
-    "sub_title": "Local Action for Global Change",
-    "section_titles": {
-      "0": "What is Focallocal?",
-      "1": "What awaits me if i join?",
-      "2": "Our Message",
-      "sub": {
-        "0": "Is an open community of thousands of people, together targeting the root causes of any and all societal issues. We create easy and fun Positive Action activities to empower people and communities everywhere to build World they want to live in",
-        "1": "You'll be a part of a Global Movement on a mission to change the World. Using simple, fun activities to achieve a friendlier, happier and more at peace future. Meeting positive, pro-active, awesome new friends both locally, and globally",
-        "2": "Is simply: don’t live in frustration at what others are not doing. Lets come together and do it ourselves! Unite and take responsibility for health and happiness of life where we live ..and lets make change fun!"
+    "title": "Local Action for Global Change",
+    "sections": {
+      "0": {
+        "title": "What is Focallocal?",
+        "content": {
+          "0": "Focallocal is an open, welcoming community of thousands of positive people around the world.",
+          "1": "Since 2011 we have been coming together and targeting the root causes of any, and all societal issues.",
+          "2": "Sharing ideas, and using fun activities to empower people to build a friendlier, happier more connected future for everyone.",
+          "3": "Join us and turn Positive Action into a daily habit to explore your power to change the world, and the happiness it'll bring into your life",
+          "items": {
+            "smiley": "make the world ‘happier’ every day",
+            "friends": "meet ‘positive’ friends all over the world",
+            "share": "share + learn skills for your career or building change"
+          }
+        }
+      },
+      "1": {
+        "title": "What adventures await me?",
+        "content": {
+          "0": "You'll be a part of a growing global Movement with a plan to change the world",
+          "1": "Meeting positive, pro-active, awesome new friends both locally, and globally",
+          "2": "Together using simple, fun activities and exploring new ideas to shape friendlier, happier communities",
+          "3": "Bringing peace and well-being to everyone, everywhere"
+        }
+      },
+      "2": {
+        "title": "What is our mission and message?",
+        "content": {
+          "0": "Oh and fun! ..making change should also be fun and easy. That way as many people as possible want to join in!",
+          "1": "Focallocal is about empowering people",
+          "2": "The time for waiting for others to fix this planet is over. Modern technology allows us to coordinate action and share great ideas for change in a way never before possible",
+          "3": "While each action may feel like a tiny ripple. As more and more people join in the effects multiply, combining to form an unstoppable wave, a Positive Action Movement which can sweep across this planet",
+          "4": "Our message is that YOU have the power to change the world around you, and our mission is to give you the tools to create that positive change"
+        }
+      },
+      "3": {
+        "title": "Focallocal is all about taking action",
+        "content": {
+          "0": "Here's more actions to explore",
+          "btns": {
+            "0": "Watch + Share Videos",
+            "1": "Write + Read articles",
+            "2": "Find + Get actions tools"
+          }
+        }
       }
     },
     "btns": {
-      "0": "Action Center",
-      "1": "Create Action",
-      "2": "Join Activity",
-      "3": "Community News",
-      "4": "Youtube",
-      "5": "Facebook",
-      "6": "read more"
+      "0": "Your mission starts now",
+      "1": "Build Projects",
+      "2": "Meet Focallocallers"
     }
   },
   "newEvent": {
