@@ -1,0 +1,60 @@
+#more-links {
+  position: relative;
+  background-image: url(/images/friends.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  padding: 100px 0;
+  @media screen and (max-width: 980px) {
+    padding-bottom: 50px;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $brand-secondary;
+    opacity: .8;
+  }
+  h2, p {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    text-align: center;
+    margin: 0;
+  }
+  p {
+    font-size: 34px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .buttons {
+    position: relative;
+    z-index: 2;
+    @include flexbox;
+    @media screen and (max-width: 980px) {
+      @include flex-direction(column);
+      button, .btn {
+        width: 80vw;
+        margin-bottom: 10px;
+      }
+    }
+    .item {
+      @include flex-grow(1);
+      text-align: center;
+      button, .btn {
+        background: $brand-primary;
+        color: white;
+        font-size: 24px;
+        margin: 10px;
+      }
+      .btn {
+        display: inline-table;
+      }
+    }
+  }
+}

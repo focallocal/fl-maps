@@ -1,3 +1,24 @@
+// Basic styles
+@import "styles/fonts";
+@import "styles/variables";
+@import "styles/mixins";
+@import 'styles/functions';
+@import 'styles/mixins';
+@import 'styles/helpers';
+@import "styles/normalize";
+@import "styles/base";
+
+
+
+@import "components/common";
+@import "components/top";
+@import "components/about";
+@import "components/adventures";
+@import "components/moreLinks";
+@import "components/footer";
+
+
+
 .btn-spacer {
 	margin-top: 10px;
 }
