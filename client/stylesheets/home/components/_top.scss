@@ -1,10 +1,11 @@
 #top {
-  height: 100vh;
+  height: 115vh;
+  @media screen and (max-width: 980px) {
+  height: 95vh; }
   text-align: center;
   background-image: url(/images/happy_people.jpg);
   background-position: center center;
   -webkit-background-size: cover;
-
   background-size: cover;
   &:after {
     content: "";
@@ -13,7 +14,7 @@
     top: 65px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 115%;
     background: $gray-lighter;
     opacity: .92;
   }
@@ -22,7 +23,7 @@
     z-index: 2;
     height: 100vh;
   }
-  .buttons {
+  .buttons, .align-center-flex {
 
     display: flex;
     display: -webkit-box;
@@ -55,7 +56,7 @@
   .logo {
     height: 60vh;
     @media screen and (max-width: 980px) {
-      height: 40vh;
+      height: 35vh;
     }
   }
   .center-content {
