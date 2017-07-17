@@ -5,6 +5,12 @@
 			{{#autoForm collection="Events" doc=selectedEventDoc id="events-form" omitFields='links' type="update"}}
 				{{> afQuickField name="organiser._id"}}
 				{{> afQuickField name="organiser.name"}}
+				<div class="row">
+					<div class="input-field col s12">
+						<label for="category-select-edit">Category</label>
+						<input type="text" readonly="true" id="category-select-input-edit" name="category-select-edit" />
+					</div>
+				</div>
 				{{> afQuickField name="category"}}
 				{{> afQuickField name="name"}}
 				{{> afQuickField name="address"}}
@@ -29,7 +35,7 @@
 					<button type="submit" class="btn">Update</button>
 				</div>
 			{{/autoForm}}
-			<div class="option-select" id="time-select-edit">
+			<div class="option-select" id="options-edit">
 				{{> optionSelect}}
 			</div>
 		{{/if}}

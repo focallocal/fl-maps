@@ -1,5 +1,6 @@
 var sequence = undefined;
 var defaultCategory = new ReactiveVar('');
+var instance = undefined;
 
 AutoForm.hooks({
 	 'events-form-new': {
@@ -34,8 +35,11 @@ Template.newEvent.viewmodel({
 
 Template.newEvent.onCreated(function() {
 	create.call(this);
+	this.categories = new ReactiveVar([]);
+	instance  = this;
 
 	Tracker.autorun(function() {
+		instance.categories.set(Categories.find({}).fetch());
 		var temp = Categories.find({default: true}).fetch()[0];
 		if (temp !== undefined) {
 			defaultCategory.set(temp.name);
@@ -63,8 +67,8 @@ Template.autoForm.onRendered(function () {
 	$("#new-resource").on('click', function() {
 		var category = Categories.find({name: defaultCategory.get()}).fetch()[0];
 		if (category !== undefined) {
-			var $categoryContainer = $("#category-container");
-			$categoryContainer.find("ul").find('li span:contains(' + category.name + ')').click();
+			$("#events-form-new .category-select-id").val(category._id);
+			$("input#category-select-input").val(category.name);
 		}
 		$("#next").click();
 	});
@@ -79,7 +83,7 @@ Template.autoForm.onRendered(function () {
 	fixMaterializeActiveClassTrigger();
 
 // Init lifetime section js
-	iniinitLifetime("#events-form-new", '#eventsFormModal', '#time-select');
+	iniinitLifetime("#events-form-new", '#eventsFormModal', '#option-select');
 
 	$("#new-limitless").on('click', function() {
 		// Checks for the state of the limitless button
@@ -178,6 +182,45 @@ Template.autoForm.onRendered(function () {
 			$title.text($this.val());
 		} else {
 			$title.text("New Gather");
+		}
+	});
+
+	// Enable Category Select
+	var $categoryInput = $("input#category-select-input");
+	var $categoryId = $("#events-form-new .category-select-id");
+
+	var options = function() {
+		var categories = instance.categories.get();
+		for (category in categories) {
+			categories[category].option = categories[category].name;
+		}
+		return categories;
+	}();
+
+	// Initialize the mobile friendly selection UI
+	var categorySelection = new OptionSelect(function(selected) {
+		$categoryInput.val(selected.option);
+		$categoryId.val(selected._id);
+	}, '#option-select', options);
+
+	// Activate time selection on click (OptionSelect)
+	$("input#category-select-input").on('click', function(e) {
+		e.preventDefault();
+		categorySelection.forceSetData(categorySelection);
+		categorySelection.open();
+		$("#events-form-new").scrollTop(0);
+		return false;
+	});
+
+	$("input#category-select-input").on('keydown', function(e) {
+		e.preventDefault();
+		return false;
+	});
+
+	$("input#category-select-input").on("change", function(e) {
+		var $this = $(this);
+		if (options.indexOf($this.val()) === -1) {
+			$this.val('Choose a Category!');
 		}
 	});
 

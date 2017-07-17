@@ -123,7 +123,7 @@ iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 		for (var hour = 8; hour < 24; ++hour) {
 			['00', '30'].forEach(function (minutes) {
 				var time = hour + ':' + minutes;
-				timeArr.push({time: time});
+				timeArr.push({option: time});
 			});
 		}
 		return timeArr;
@@ -131,12 +131,13 @@ iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 
 	// Initialize the mobile friendly selection UI
 	var timesSelection = new OptionSelect(function(selected) {
-		$timeInput.val(selected.time);
+		$timeInput.val(selected.option);
 	}, timeSelectContainer, options);
 
 	// Activate time selection on click (OptionSelect)
 	$("input.selection-trigger-time").on('click', function(e) {
 		e.preventDefault();
+		timesSelection.forceSetData(timesSelection);
 		timesSelection.open();
 		$timeInput = $(this);
 		$(scrollTarget).scrollTop(0);
