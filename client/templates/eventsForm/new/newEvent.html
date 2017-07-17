@@ -19,6 +19,10 @@
 								{{> afQuickField name="organiser._id"}}
 								{{> afQuickField name="organiser.name"}}
 								<div class="validate-field" id="category-container">
+									<div class="input-field col s12">
+										<label for="category-select">Category</label>
+										<input type="text" readonly="true" id="category-select-input" name="category-select" />
+									</div>
 									{{> afQuickField name="category"}}
 								</div>
 								<!-- <a class="btn" href='{{_ "newEvent.links.0"}}'>{{_ "newEvent.btns.3"}}</a> -->
@@ -94,9 +98,9 @@
 					{{/autoForm}}
 				{{/if}}
 				</div>
-				<div class="option-select" id="time-select">
-					{{> optionSelect}}
-				</div>
 			</div>
+		</div>
+		<div class="option-select" id="option-select">
+			{{> optionSelect}}
 		</div>
 </template>
