@@ -211,9 +211,10 @@ Events.attachSchema(new SimpleSchema({
         type: String,
         //optional: true,
         autoform: {
-            label: false,
-            hidden: true,
-            class: "category-select-id"
+          hidden: true,
+          label: false,
+          firstOption: 'Choose Category',
+          class: 'category-select-id'
         }
     },
     'category.name': {

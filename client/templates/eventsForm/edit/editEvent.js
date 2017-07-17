@@ -23,7 +23,6 @@ Template.editEvent.onCreated(function() {
 	Tracker.autorun(function() {
 		instance.categories.set(Categories.find({}).fetch());
 	});
-
 });
 
 Template.editEvent.helpers({
@@ -72,7 +71,7 @@ Template.autoForm.onRendered(function() {
 	adjustMapHeightToWindowSize($("#events-form"));
 
 	// Init the event lifetime js
-	iniinitLifetime("#events-form", window, "#time-select-edit");
+	iniinitLifetime("#events-form", window, "#options-edit");
 
 	$("#edit-limitless").on('click', function() {
 		// Checks for the state of the limitless button
@@ -87,18 +86,19 @@ Template.autoForm.onRendered(function() {
 		}
 	});
 
-	// Make sure that window does not scroll when focusing on input
-	$("#events-form input").on('focus', function(e) {
-		e.preventDefault();
-	});
+	Tracker.autorun(function() {
+		var $categoryInput = $("input#category-select-input-edit");
+		var $categoryId = $("#events-form .category-select-id");
 
-	onRendered.call(this);
+		var category = Categories.find({_id: $categoryId.val()}).fetch()[0];
+
+		$categoryInput.val(category.name);
+
+	});
 
 	// Enable Category Select
 	var $categoryInput = $("input#category-select-input-edit");
 	var $categoryId = $("#events-form .category-select-id");
-
-	$categoryInput.val(Categories.find({_id: $categoryId.val()}).fetch()[0].name);
 
 	var options = function() {
 		var categories = instance.categories.get();
@@ -112,13 +112,14 @@ Template.autoForm.onRendered(function() {
 	var categorySelection = new OptionSelect(function(selected) {
 		$categoryInput.val(selected.option);
 		$categoryId.val(selected._id);
-	}, '#category-select-edit', options);
+	}, '#options-edit', options);
 
 	// Activate time selection on click (OptionSelect)
 	$("input#category-select-input-edit").on('click', function(e) {
 		e.preventDefault();
+		categorySelection.forceSetData(categorySelection);
 		categorySelection.open();
-		$("#events-form-new").scrollTop(0);
+		$("#events-form").scrollTop(0);
 		return false;
 	});
 
@@ -134,6 +135,12 @@ Template.autoForm.onRendered(function() {
 		}
 	});
 
+	// Make sure that window does not scroll when focusing on input
+	$("#events-form input").on('focus', function(e) {
+		e.preventDefault();
+	});
+
+	onRendered.call(this);
 });
 
 Template.editEvent.onDestroyed(function () {

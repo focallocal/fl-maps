@@ -83,7 +83,7 @@ Template.autoForm.onRendered(function () {
 	fixMaterializeActiveClassTrigger();
 
 // Init lifetime section js
-	iniinitLifetime("#events-form-new", '#eventsFormModal', '#time-select');
+	iniinitLifetime("#events-form-new", '#eventsFormModal', '#option-select');
 
 	$("#new-limitless").on('click', function() {
 		// Checks for the state of the limitless button
@@ -201,11 +201,12 @@ Template.autoForm.onRendered(function () {
 	var categorySelection = new OptionSelect(function(selected) {
 		$categoryInput.val(selected.option);
 		$categoryId.val(selected._id);
-	}, '#category-select', options);
+	}, '#option-select', options);
 
 	// Activate time selection on click (OptionSelect)
 	$("input#category-select-input").on('click', function(e) {
 		e.preventDefault();
+		categorySelection.forceSetData(categorySelection);
 		categorySelection.open();
 		$("#events-form-new").scrollTop(0);
 		return false;

@@ -8,27 +8,58 @@
       "0":"Show More"
     }
   },
-  "home":{
-    "title":"The Brighter Tomorrow Map",
-    "sub_title":"Connecting people going through difficult times with the free resources available nearby, and to the people who want to offer them support living in their local community",
-    "section_titles":{
-      "0":"How does the Brighter Tomorrow Map work?",
-      "1":"What can I do to support people living on the streets near me?",
-      "2":"What is the Focallocal Community?",
-      "sub":{
-        "0":"On the map, you can post and search for all the free resources available in your local community, which people who are homeless, or going through hardship, need to meet their basic needs and take steps towards improving their situation to build a brighter tomorrow",
-        "1":"The map gives you two options.  Firstly; you can zoom in on your city and print a map of the resources available, to give out to anyone you meet who is in need. Secondly; Add resources you'd like to offer to those in need. something like a CV help workshop, teaching a skill or intro, materials and advice to someone interested in starting a career in your industry, or just meeting to buy them a tea and share a friendly chat",
-        "2":"Focallocal - Local Action for Global Change. We built this map - We are an open community of people taking local action, all around the World. Focallocal aims to hit at the roots of issues within our societies; by ignoring politics and simply uniting people in positive action, we empower people to take ownership of issues you want to see improved in your local community and together create positive activities and projects to achieve a change"
+  "home": {
+    "title": "Local Action for Global Change",
+    "sections": {
+      "0": {
+        "title": "What is Focallocal?",
+        "content": {
+          "0": "Focallocal is an open, welcoming community of thousands of positive people around the world.",
+          "1": "Since 2011 we have been coming together and targeting the root causes of any, and all societal issues.",
+          "2": "Sharing ideas, and using fun activities to empower people to build a friendlier, happier more connected future for everyone.",
+          "3": "Join us and turn Positive Action into a daily habit to explore your power to change the world, and the happiness it'll bring into your life",
+          "items": {
+            "smiley": "make the world ‘happier’ every day",
+            "friends": "make ‘positive’ friends all over the world",
+            "share": "share or learn skills too"
+          }
+        }
+      },
+      "1": {
+        "title": "What adventures await me?",
+        "content": {
+          "0": "You'll be a part of a growing global Movement with a plan to change the world",
+          "1": "Meeting positive, pro-active, awesome new friends both locally, and globally",
+          "2": "Together using simple, fun activities and exploring new ideas to shape friendlier, happier communities",
+          "3": "Bringing peace and well-being to everyone, everywhere"
+        }
+      },
+      "2": {
+        "title": "What is our mission and message?",
+        "content": {
+          "0": "Times are changing, and so can our feeling of powerless at the pain we see every day around us, and on the news",
+          "1": "Today's technology gives us ALL have the power to solve ALL of the world's problems ourselves, by coming together and using positive and innovative tools to target their roots causes",
+          "2": "While each action may feel like a tiny ripple. As the Positve Action Movement sweeps around the world these ripples will combine into an unstoppable wave of positive change!",
+          "3": "Focallocal is about empowering people. The time for waiting for others to fix this planet is over",
+          "4": "That future is ours, if we all just do a little Positive Action, every day!"
+        }
+      },
+      "3": {
+        "title": "Focallocal is all about taking action",
+        "content": {
+          "0": "Here's more actions to explore",
+          "btns": {
+            "0": "Watch + Share Videos",
+            "1": "Write + Read articles",
+            "2": "Find + Get actions tools"
+          }
+        }
       }
     },
-    "btns":{
-      "0": "Begin",
-      "1": "Create Action",
-      "2": "Join Activity",
-      "3": "Community News",
-      "4": "Youtube",
-      "5": "Facebook",
-      "6": "read more"
+    "btns": {
+      "0": "Your mission starts now",
+      "1": "Build Projects",
+      "2": "Meet Focallocallers"
     }
   },
   "newEvent":{

@@ -137,6 +137,7 @@ iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 	// Activate time selection on click (OptionSelect)
 	$("input.selection-trigger-time").on('click', function(e) {
 		e.preventDefault();
+		timesSelection.forceSetData(timesSelection);
 		timesSelection.open();
 		$timeInput = $(this);
 		$(scrollTarget).scrollTop(0);

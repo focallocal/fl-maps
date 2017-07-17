@@ -1,35 +1,34 @@
-var instance = null;
+Template.optionSelect.optionsData = new ReactiveVar({});
 
 OptionSelect = function OptionSelect(optionSelectFunction, id, options) {
 	this.optionSelect = optionSelectFunction;
 	this.containerId = id;
 	this.options = options;
 
-	instance.instanceData.set(this);
+	Template.optionSelect.optionsData.set(this);
 }
+
+OptionSelect.prototype.forceSetData = function (instance) {
+	Template.optionSelect.optionsData.set(instance);
+};
 
 OptionSelect.prototype.open = function() {
 	$(this.containerId).show();
 };
 
-Template.optionSelect.onCreated(function() {
-	this.instanceData = new ReactiveVar({});
-	instance = this;
-});
-
 Template.optionSelect.helpers({
 	options: function() {
-		return instance.instanceData.get().options;
+		return Template.optionSelect.optionsData.get().options;
 	}
 });
 
 Template.optionSelect.events({
 	'click .option-select__selection': function() {
-		var obj = instance.instanceData.get();
+		var obj = Template.optionSelect.optionsData.get();
 		obj.optionSelect(this);
 		$(obj.containerId).hide();
 	},
 	'click #option-select-close': function() {
-		$(instance.instanceData.get().containerId).hide();
+		$(Template.optionSelect.optionsData.get().containerId).hide();
 	}
 });
