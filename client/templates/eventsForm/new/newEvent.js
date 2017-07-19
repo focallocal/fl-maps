@@ -60,6 +60,10 @@ Template.newEvent.helpers({
 
 Template.autoForm.onRendered(function () {
 
+	if (this.data.id !== "events-form-new") {
+		return;
+	}
+
 	if (Session.get('isEdit') === true) {
 		return;
 	}
