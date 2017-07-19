@@ -354,7 +354,7 @@ Template.map.helpers({
 	mapOptions: function() {
 		if (GoogleMaps.loaded()) {
 			return {
-				center: new google.maps.LatLng(0, 0),
+				center: new google.maps.LatLng(45, -45),
 				zoom: 3,
 				mapTypeControl: true,
 				 mapTypeControlOptions: {
