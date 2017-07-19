@@ -28,12 +28,14 @@ Template.categoryForm.onCreated(function() {
 	});
 });
 
-Template.categoryForm.onRendered(function() {
-	Template.autoForm.onRendered(function() {
-		$("#category-color").spectrum({
-			color: "#000",
-			preferredFormat: "hex"
-		});
+Template.autoForm.onRendered(function() {
+	if (this.data.id !== "new-category-form") {
+		return;
+	}
+	
+	$("#category-color").spectrum({
+		color: "#000",
+		preferredFormat: "hex"
 	});
 });
 
