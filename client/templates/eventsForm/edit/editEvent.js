@@ -48,7 +48,8 @@ function adjustMapHeightToWindowSize($elem) {
 }
 
 Template.autoForm.onRendered(function() {
-	if (Session.get('isEdit') !== true) {
+
+	if (Session.get('isEdit') !== true || this.data.id !== "events-form") {
 		return;
 	}
 	copyCoordsFromSelectedEvent = function () {
