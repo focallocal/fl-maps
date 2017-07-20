@@ -91,10 +91,11 @@
 }
 
 .layer-color {
-  height: 20px;
-  width: 20px;
   display: inline-block;
+  height: 1px;
+  width: 1px;
   margin: 0px 10px 0px 10px;
+  border: 13px solid;
 }
 
 #floating-btn-container {
@@ -107,4 +108,25 @@
 
 #events-form {
   overflow-y: scroll;
+}
+
+/* For printing the map */
+@media print {
+
+  .fixed-action-btn, .layers-for-map-btn, #search-input, header, .layer-checkbox, #layers-toggle-all, #print-btn, #join-us-btn, #footer {
+    display: none !important;
+  }
+
+  .layer-color {
+    border: 5px solid;
+  }
+
+  .layers-for-map-container {
+    font-size: 10px;
+  }
+
+  .layers-for-map h4 {
+    font-size: 15px;
+  }
+
 }

@@ -69,7 +69,7 @@ function showLayer(name) {
 
 function addLayer(category) {
 	var $layerToogleContainer = $(".layers-for-map-list");
-	$layerToogleContainer.append('<li value="' + category.name + '"> <div class="layer-color" style="background-color:' + category.color + ';"></div><input type="checkbox" class="layer-checkbox" checked="checked" />' + category.name + '</li>');
+	$layerToogleContainer.append('<li value="' + category.name + '"> <div class="layer-color" style="border-color:' + category.color + ';"></div><input type="checkbox" class="layer-checkbox" checked="checked" />' + category.name + '</li>');
 }
 
 function adjustMapHeightToWindowSize($mapCanvas) {
@@ -330,9 +330,12 @@ Template.map.onRendered(function() {
 	});
 
 	$("#print-btn").on('click', function() {
-		$("#unfinished-feature-modal").openModal({
-			dismissible: true
-		});
+		// $("#unfinished-feature-modal").openModal({
+		// 	dismissible: true
+		// });
+		$(".layers-for-map").show();
+		window.print();
+		$(".layers-for-map").hide();
 	});
 
 	if (Meteor.user() === null && $("#welcomeModal").length !== 0) {
