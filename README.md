@@ -73,13 +73,13 @@ The point is to achieve continuous delivery which means
 The workflow is configured in `.travis.yml` and deployment is configured in the `expect` script `deploy.exp`
 4. Pull Request
     * You first create a fork of fl-maps.
-    * Then you clone you're fork on youre computer.
-    * You set up 2 remotes: you're fork named origin, and the fl-maps named upstream
-    * Before begining working on the code, you always pull everithing from upstream inside your master, then you crete a new branch, example - fixingBug
+    * Then you clone your fork on your computer.
+    * You set up 2 remotes: your fork named 'origin', and the fl-maps named 'upstream'
+    * Before begining working on the code, you always pull everything from upstream inside your version of master, then you create a new branch, example - fixingBug32
     * When you are ready to upload the code, you create a push on you're ORIGIN remote.
-    *Lastly, you go on github, inside you're fork page, and you will see a button -- CREATE PULL REQUEST
+    *Lastly, you go on github, inside your fork page, and you will see a button -- CREATE PULL REQUEST
     
-The most important thing before starting is to ALWAYS pull everithing from the UPSTREAM remote
+The most important thing before starting is to ALWAYS pull everything from the UPSTREAM remote
 
 
 
