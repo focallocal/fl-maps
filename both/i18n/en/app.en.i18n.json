@@ -100,7 +100,7 @@
   "congratsModal": {
     "title": "Congratulations!",
     "subtitle": "We're one step closer to a happier and more connected World",
-    "subtitle_1": "Use the tool below, we've made it super easy for you to reach many more people!",
+    "subtitle_1": "We've made it super easy for you to get many more people to come!",
     "text": {
       "0": "Simply click the buttons above and copy/paste the info below.",
       "1": "with the Focallocal Community",
@@ -227,7 +227,7 @@
   },
   "map": {
     "text": {
-      "0": "Legend",
+      "0": "Key",
       "1": "Create your Activity now!"
     },
     "btns": {
