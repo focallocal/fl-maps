@@ -63,7 +63,7 @@
     }
   },
   "newEvent": {
-    "title": "Offer a Resource",
+    "title": "A New Resource",
     "section_titles": {
       "0": "1. Choose a Category",
       "1": "2. Name",
