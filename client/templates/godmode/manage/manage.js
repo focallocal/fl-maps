@@ -29,9 +29,8 @@ function removeAdmin() {
 	});
 }
 
-Template.godmode.onCreated(function() {
+Template.manage.onCreated(function() {
 	this.admins = new ReactiveVar([]);
-	this.subscribe("categories.raw");
 	var instance = this;
 
 	Meteor.call('Admin.getAdmins', function(err, result) {
@@ -44,47 +43,17 @@ Template.godmode.onCreated(function() {
 
 });
 
-Template.godmode.helpers({
+Template.manage.helpers({
 	admins: function() {
 		return Template.instance().admins.get();
-	},
-	categories: function() {
-		return Categories.find({});
 	}
 });
 
-Template.godmode.onRendered(function() {
-
-	$("body").css({"background-color": "white"});
-
-	// $(".toggle-approval-category").on('click', function() {
-	// 	console.log("ASDFADS");
-	// 	var categoryName = $(this).val();
-	// 	Meteor.call('Categories.approveToggle', Template.instance().categoriesByName[categoryName]);
-	// });
-});
-
-Template.godmode.events({
-	'click .toggle-approval-category': function() {
-		Meteor.call('Categories.approveToggle', this._id);
-	},
+Template.manage.events({
 	'click #enable-admin-btn': function() {
 		addAdmin();
 	},
 	'click #remove-admin-btn': function() {
 		removeAdmin();
-	},
-	'click .remove-category': function() {
-		Meteor.call('Categories.remove', this._id);
-	},
-	'click #newCategory': function() {
-		$("#categoryFormModal").openModal({
-			dismissible: false
-		});
-	},
-	'click #set-default': function() {
-		$("#defaultSelectModal").openModal({
-			dismissible: false
-		})
 	}
 });

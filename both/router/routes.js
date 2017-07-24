@@ -75,6 +75,27 @@ var adminRoutes = FlowRouter.group({
 adminRoutes.route('/', {
   name: 'dashboard',
   action: function() {
-    BlazeLayout.render('godmode');
+    BlazeLayout.render('dashboardLanding');
   }
-})
+});
+
+adminRoutes.route('/manage', {
+  name: 'manage',
+  action: function() {
+    BlazeLayout.render('manage');
+  }
+});
+
+adminRoutes.route('/categories', {
+  name: 'categories',
+  action: function() {
+    BlazeLayout.render('categories');
+  }
+});
+
+adminRoutes.route('/reported', {
+  name: 'reported',
+  action: function() {
+    BlazeLayout.render('reported');
+  }
+});
