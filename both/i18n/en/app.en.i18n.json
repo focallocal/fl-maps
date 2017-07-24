@@ -9,43 +9,43 @@
     }
   },
   "home": {
-    "title": "Local Action for Global Change",
+    "title": "Connecting those going through difficult times with a path to a brighter tomorrow",
     "sections": {
       "0": {
-        "title": "What is Focallocal?",
+        "title": "The Brighter Tomorrow Map",
         "content": {
-          "0": "Focallocal is an open, welcoming community of thousands of positive people around the world.",
-          "1": "Since 2011 we have been coming together and targeting the root causes of any, and all societal issues.",
-          "2": "Sharing ideas, and using fun activities to empower people to build a friendlier, happier more connected future for everyone.",
-          "3": "Join us and turn Positive Action into a daily habit to explore your power to change the world, and the happiness it'll bring into your life",
+          "0": "The Brighter Tomorrow Map was built for you by the Focallocal Positive Action Community",
+          "1": "A global Movement for anyone who has had enough of the issues troubling this world and are taking action to tackle their root causes",
+          "2": "This map is a tool to reconnect our communities, so we can effectivly support each other through difficult times",
+          "3": "This map aims to help people who are homeless to find the resources they need to meet their basic needs and find a path to a brighter future",
           "items": {
-            "smiley": "make the world ‘happier’ every day",
-            "friends": "meet ‘positive’ friends all over the world",
-            "share": "share + learn skills for your career or building change"
+            "smiley": "post free resources you find which people can use to meet their basic needs",
+            "friends": "connect with people who want to help, or those nearby who need it",
+            "share": "offer things you can do to make a difference to the lives of others living locally"
           }
         }
       },
       "1": {
-        "title": "What adventures await me?",
+        "title": "Receive Support",
         "content": {
-          "0": "You'll be a part of a growing global Movement with a plan to change the world",
-          "1": "Meeting positive, pro-active, awesome new friends both locally, and globally",
-          "2": "Together using simple, fun activities and exploring new ideas to shape friendlier, happier communities",
-          "3": "Bringing peace and well-being to everyone, everywhere"
+          "0": "Use the map to find and post all the free resources in your local area. showers. food. shelter. charging stations. support groups.",
+          "1": "Many people nearby want to help you build a happier life. Their kind offers of support can be found on the map",
+          "2": "Please don't ask those offering support for money, that's not what this map is for. Many charities now advise people not to, and so it risks pushing away those who are trying to help you",
+          "3": "Difficult times come, and they go. its normal. People will help if you help yourself. Take one step forwards at a time and life will get better"
         }
       },
       "2": {
-        "title": "What is our mission and message?",
+        "title": "Offer Support",
         "content": {
-          "0": "Oh and fun! ..making change should also be fun and easy. That way as many people as possible want to join in!",
-          "1": "Focallocal is about empowering people",
-          "2": "The time for waiting for others to fix this planet is over. Modern technology allows us to coordinate action and share great ideas for change in a way never before possible",
-          "3": "While each action may feel like a tiny ripple. As more and more people join in the effects multiply, combining to form an unstoppable wave, a Positive Action Movement which can sweep across this planet",
-          "4": "Our message is that YOU have the power to change the world around you, and our mission is to give you the tools to create that positive change"
+          "0": "Post every free resource you find onto the map. suit hire for interviews. shelters or religious buildings offering showers. support groups. pass it on coffee. where to find free food",
+          "1": "The helpless feeling of walking past people who are sleeping on the streets, wanting to help but not knowing what you can do. That changes today!",
+          "2": "Browse our suggestions for things you can offer to support people struggling nearby. Post your offers onto the map. like;",
+          "3": "CV/resume building help. Teach a skill. An intro, old books and advice on starting in your profession. Or simply buy a cup of tea, or a meal to share a friendly chat and likely some rare normality",
+          "4": "Print the map as a valuable guide to give those on the streets, helping them access resources to improve and change their situation"
         }
       },
       "3": {
-        "title": "Focallocal is all about taking action",
+        "title": "Focallocal is all about taking actio",
         "content": {
           "0": "Here's more actions to explore",
           "btns": {
@@ -57,8 +57,8 @@
       }
     },
     "btns": {
-      "0": "Your mission starts now",
-      "1": "Build Projects",
+      "0": "",
+      "1": "buttons",
       "2": "Meet Focallocallers"
     }
   },
