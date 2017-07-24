@@ -3,7 +3,7 @@ Meteor.startup(function() {
   Meteor.Mailgun.config({
     username: Meteor.settings.MailGunUsername,
     password: Meteor.settings.MailGunPassword
-     });
+  });
 
   Meteor.methods({
     'sendContactEmail': function(name, email, message) {
