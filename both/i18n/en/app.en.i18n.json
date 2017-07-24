@@ -45,7 +45,7 @@
         }
       },
       "3": {
-        "title": "Focallocal is all about taking action",
+        "title": "Focallocal is about taking action",
         "content": {
           "0": "Here's more actions to explore",
           "btns": {
@@ -57,9 +57,9 @@
       }
     },
     "btns": {
-      "0": "Your mission starts now",
-      "1": "Build Projects",
-      "2": "Meet Focallocallers"
+      "0": "",
+      "1": "Action Center",
+      "2": "Gatherings Map"
     }
   },
   "newEvent": {
@@ -83,7 +83,7 @@
     "subs": {
       "0": "'Choose a category' and post your positive action gathering",
       "1": "'Suggestions' to read more about them",
-      "2": "'Something new' to suggest an new positive action"
+      "2": "'Something new' to suggest a new positive action"
     }
   },
   "editEvent": {
@@ -100,7 +100,7 @@
   "congratsModal": {
     "title": "Congratulations!",
     "subtitle": "We're one step closer to a happier and more connected World",
-    "subtitle_1": "Use the tool below, we've made it super easy for you to reach many more people!",
+    "subtitle_1": "We've made it super easy for you to get many more people to come!",
     "text": {
       "0": "Simply click the buttons above and copy/paste the info below.",
       "1": "with the Focallocal Community",
@@ -112,7 +112,7 @@
         "4": "How to find us",
         "5": "Link"
       },
-      "2": "Become a Positive Action Hero and join the Global Movement for Positive Change at www.focallocal.org"
+      "2": "Join the Global Movement for Positive Change at www.focallocal.org"
     },
     "btns": {
       "0": "Ok, done!"
@@ -227,7 +227,7 @@
   },
   "map": {
     "text": {
-      "0": "Legend",
+      "0": "Key",
       "1": "Create your Activity now!"
     },
     "btns": {
