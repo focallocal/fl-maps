@@ -1,11 +1,11 @@
 {
-  "general": {
-    "text": {
-      "focallocal": "Focallocal",
-      "focallocal.web": "Focallocal.org"
+  "general":{
+    "text":{
+      "focallocal":"Focallocal",
+      "focallocal.web":"Focallocal.org"
     },
-    "btns": {
-      "0": "Show More"
+    "btns":{
+      "0":"Show More"
     }
   },
   "home": {
@@ -114,49 +114,49 @@
       },
       "2": "Join the Global Movement for Positive Change at www.focallocal.org"
     },
-    "btns": {
-      "0": "Ok, done!"
+    "btns":{
+      "0":"Ok, done!"
     }
   },
-  "_footer": {
-    "section_titles": {
-      "0": "About",
-      "1": "Sitemap",
-      "2": "Connect",
-      "sub": {
-        "0": "This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
-        "1": {
-          "list": {
-            "0": "Home",
-            "1": "Events map",
-            "2": "Events list",
-            "3": "Sign in",
-            "4": "Register",
-            "5": "Rss feed"
+  "_footer":{
+    "section_titles":{
+      "0":"About",
+      "1":"Sitemap",
+      "2":"Connect",
+      "sub":{
+        "0":"This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
+        "1":{
+          "list":{
+            "0":"Home",
+            "1":"Map view",
+            "2":"List view",
+            "3":"Sign in",
+            "4":"Register",
+            "5":"Rss feed"
           }
         }
       }
     }
   },
-  "_header": {
-    "text": {
-      "0": "Sign Out",
-      "1": "Log in",
-      "2": "Register"
+  "_header":{
+    "text":{
+      "0":"Sign Out",
+      "1":"Log in",
+      "2":"Register"
     }
   },
-  "rightLinks": {
-    "text": {
-      "0": "Home",
-      "1": "Map",
-      "2": "Calendar"
+  "rightLinks":{
+    "text":{
+      "0":"Home",
+      "1":"Map",
+      "2":"Calendar"
     }
   },
   "leftLinks": {
     "content": {
       "0": "About Us",
       "1": "Happy News",
-      "2": "Action Center",
+      "2": "Begin",
       "3": "Map",
       "4": {
         "title": "Projects",
@@ -206,23 +206,23 @@
       }
     }
   },
-  "calendar": {
-    "section_titles": {
-      "0": "Search",
-      "1": "Upcoming positive action",
-      "2": "Past positive actions",
-      "sub": {
-        "0": "No upcoming events :( Please add one!",
-        "1": "No action in the past."
+  "calendar":{
+    "section_titles":{
+      "0":"Search",
+      "1":"Upcoming Resources",
+      "2":"Past Offerings",
+      "sub":{
+        "0":"No upcoming offerings :( Please add one!",
+        "1":"No action in the past."
       }
     },
-    "btns": {
-      "0": "ADD Filter"
+    "btns":{
+      "0":"ADD Filter"
     }
   },
-  "categoryForm": {
-    "text": {
-      "0": "New Category"
+  "categoryForm":{
+    "text":{
+      "0":"New Category"
     }
   },
   "map": {
@@ -230,27 +230,27 @@
       "0": "Key",
       "1": "Create your Activity now!"
     },
-    "btns": {
-      "0": "Toggle All"
+    "btns":{
+      "0":"Toggle All"
     },
     "links": {
-      "0": "http://news.focallocal.org/gather-about"
+      "0": "http://news.focallocal.org/homelessness-resource-map-about"
     }
   },
-  "event": {
-    "text": {
-      "0": "Think this is spam or an error? Let us know!",
-      "tags": {
-        "0": "About Event",
-        "1": "Photos",
-        "2": "Videos",
-        "3": "Comments"
+  "event":{
+    "text":{
+      "0":"Think this is spam or an error? Let us know!",
+      "tags":{
+        "0":"About",
+        "1":"Photos",
+        "2":"Videos",
+        "3":"Comments"
       },
-      "1": "* This has been reported by",
-      "2": "user(s)"
+      "1":"* This submission has been reported by",
+      "2":"user(s)"
     },
-    "btns": {
-      "0": "Report"
+    "btns":{
+      "0":"Report Inaccuracy or Abuse"
     }
   },
   "welcomeModal": {
@@ -261,9 +261,9 @@
       }
     },
     "btns": {
-      "0": "Add a Gathering",
-      "1": "Browse",
-      "2": "X - Explore the Map"
+      "0": "Add or Create",
+      "1": "Find (List View)",
+      "2": "X - CLOSE AND EXPLORE"
     }
   }
 }
