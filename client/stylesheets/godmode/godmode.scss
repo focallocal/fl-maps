@@ -28,8 +28,24 @@
 	margin-top: 0px;
 }
 
-.godmode-section-title {
+.godmode-content-spacer {
 	margin: 5px 0px 2px 20px !important;
+}
+
+.godmode-section {
+	color: white;
+	padding: 5px;
+
+	display: flex;
+	flex-direction: row;
+
+	.godmode-title {
+		font-size: 1em;
+	}
+
+	.godmode-util {
+	}
+
 }
 
 #enable-admin-form, #remove-admin-form {

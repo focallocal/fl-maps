@@ -1,18 +1,27 @@
 <template name="categories">
 	<div class="godmode-content">
 
-		<nav class="teal lighten-2">
+		<nav class="teal lighten-1">
 			<div class="nav-wrapper">
 				<a href="/godmode" class="brand-logo center">Admin Dashboard</a>
 			</div>
 		</nav>
 
-		<div class="row godmode-section-title">
-			<h4>Categories</h4>
-			<div class="row">
+		<div class="row godmode-section teal lighten-2">
+			<div class="godmode-title">
+				Categories	
+			</div>
+			<div class="godmode-util">
 				<button type="button" class="btn teal" id="newCategory">New Category</button>
 				<button type="button" class="btn teal" id="set-default">Set Default</button>
 			</div>
+		</div>
+
+		<div class="row godmode-content-spacer">
+			<!-- <div class="row">
+				<button type="button" class="btn teal" id="newCategory">New Category</button>
+				<button type="button" class="btn teal" id="set-default">Set Default</button>
+			</div> -->
 			<ul>
 				{{#each categories}}
 					{{#if approved}}
