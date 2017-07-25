@@ -120,7 +120,7 @@ iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 	var $timeInput = undefined;
 	var options = function() {
 		var timeArr = [];
-		for (var hour = 8; hour < 24; ++hour) {
+		for (var hour = 0; hour < 24; ++hour) {
 			['00', '30'].forEach(function (minutes) {
 				var time = hour + ':' + minutes;
 				timeArr.push({option: time});

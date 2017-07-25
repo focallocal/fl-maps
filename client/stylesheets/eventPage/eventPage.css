@@ -7,3 +7,7 @@
   font-size: 20px;
   font-weight: bolder;
 }
+
+#eventPopup .btn-flat {
+  line-height: 0.9rem;
+}
