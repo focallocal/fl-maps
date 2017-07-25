@@ -162,7 +162,9 @@ Template.autoForm.onRendered(function () {
 					 } else if (name === 'findHints') {
 
 						 $elem.focus();
-						 $elem.val('Not Provided');
+						 if ($elem.val().length <= 0) {
+							 $elem.val('Not Provided');
+						 }
 						 valid = true;
 
 					 } else {
