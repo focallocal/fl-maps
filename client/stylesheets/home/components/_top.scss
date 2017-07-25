@@ -64,6 +64,10 @@
     left: 50%;
     width: 100%;
     @include transform(translate(-50%, 0));
+
+    h4 {
+      font-size: 1.60em;
+    }
   }
   .mission {
     button {
