@@ -17,30 +17,10 @@
 			</div>
 		</div>
 
-		<div class="row godmode-content-spacer">
-			<!-- <div class="row">
-				<button type="button" class="btn teal" id="newCategory">New Category</button>
-				<button type="button" class="btn teal" id="set-default">Set Default</button>
-			</div> -->
-			<ul>
-				{{#each categories}}
-					{{#if approved}}
-						{{#unless default}}
-							<li>{{name}} <div class="category-color" style="background-color:{{color}};"></div> <input class="toggle-approval-category" type="checkbox" value="{{name}}" checked/></li>
-						{{/unless}}
-					{{else}}
-						<li><button type="button" class="remove-category">X</button>{{name}} <div class="category-color" style="background-color:{{color}};"></div> <input class="toggle-approval-category" type="checkbox" value="{{name}}"/></li>
-					{{/if}}
-
-					{{#if default}}
-						<li class="border-highlight">
-							<h5>Default</h5>
-							{{name}}
-							<div class="category-color" style="background-color:{{color}};"></div>
-						</li>
-					{{/if}}
-				{{/each}}
-			</ul>
+		<div class="row">
+			{{#each categories}}
+				{{> categoryInfo}}
+			{{/each}}
 		</div>
 
 		{{> categoryForm}}
