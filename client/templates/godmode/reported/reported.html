@@ -1,15 +1,18 @@
 <template name="reported">
 	<div class="godmode-content">
 
-		<nav class="teal lighten-2">
+		<nav class="teal lighten-1">
 			<div class="nav-wrapper">
 				<a href="/godmode" class="brand-logo center">Admin Dashboard</a>
 			</div>
 		</nav>
 
-		<div class="row godmode-section-title">
-			<h4>Reported Events</h4>
+		<div class="row godmode-section teal lighten-2">
+			<div class="godmode-title">
+				Reported Events
+			</div>
 		</div>
+		
 		{{#if events}}
 			{{#each events}}
 				{{> eventInfo}}
