@@ -106,7 +106,7 @@ Week = new SimpleSchema({
 
 Repetition = new SimpleSchema({
     enable: {
-        label: 'How often?',
+        label: 'Recurring?',
         type: Boolean,
         defaultValue: false,
         autoform: {
@@ -154,7 +154,7 @@ Repetition = new SimpleSchema({
     },
     forever_enable: {
         type: Boolean,
-        label: 'Forever',
+        label: 'Forever or Unknown',
         autoform: {
             checked: false,
             class: "forever_enable"
@@ -342,7 +342,7 @@ Events.attachSchema(new SimpleSchema({
     },
     dateEvent: {
         type: Date,
-        label: 'Date *',
+        label: 'Starting Date *',
         autoform: {
             type: 'pickadate',
             pickadateOptions: {
