@@ -69,19 +69,8 @@ iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 		frequencyMonthly();
 	});
 
-	// Make sure it's in sync with 'lifetime_weeks'
-	if ($(parentForm + " .forever_enable").is(":checked")) {
-		$(parentForm + " .lifetime_weeks").hide();
-	} else {
-		$(parentForm + " .lifetime_weeks").show();
-	}
-
 	$(parentForm + " .forever_enable").on('click', function() {
-		if ($(this).is(":checked")) {
-			$(parentForm + " .lifetime_weeks").hide();
-		} else {
-			$(parentForm + " .lifetime_weeks").show();
-		}
+		$(parentForm + " .lifetime_weeks").toggle();
 	});
 
 	$(parentForm + " .day-enable").on('click', function() {
