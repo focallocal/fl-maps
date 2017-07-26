@@ -1,4 +1,4 @@
-Template.eventInfo.events({
+Template.categoryInfo.events({
 	'click .collapse-btn': function(event) {
 		var $removeTarget = $(".info-body-active");
 		var $currentTarget = $(event.currentTarget).parents(".info-collapse").find(".info-body");
