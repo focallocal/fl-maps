@@ -14,11 +14,11 @@
 		<div class="info-body grey lighten-4 category-info-body ">
 			<div class="info-body-wrap">
 				<div class="btn-group">
-					<button type="button" class="btn btn-flat grey lighten-1 white-text remove-category">Delete</button>
+					<button type="button" class="btn btn-flat red lighten-3 white-text remove-category">Delete</button>
 					{{#unless approved}}
-						<button type="button" class="btn btn-flat grey lighten-1 white-text toggle-approval-category">Enable</button>
+						<button type="button" class="btn btn-flat grey lighten-3 black-text toggle-approval-category">Enable</button>
 					{{else}}
-						<button type="button" id="category-disable" class="btn btn-flat grey lighten-1 white-text toggle-approval-category">Disable</button>
+						<button type="button" id="category-disable" class="btn btn-flat grey lighten-3 black-text toggle-approval-category">Disable</button>
 					{{/unless}}
 				</div>
 			</div>
