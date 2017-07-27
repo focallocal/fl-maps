@@ -99,3 +99,17 @@ adminRoutes.route('/reported', {
     BlazeLayout.render('reported');
   }
 });
+
+adminRoutes.route('/users', {
+  name: 'users',
+  action: function() {
+    BlazeLayout.render('users');
+  }
+});
+
+adminRoutes.route('/notifications', {
+  name: 'notifications',
+  action: function() {
+    BlazeLayout.render('notifications');
+  }
+});
