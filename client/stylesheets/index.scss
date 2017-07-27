@@ -9,6 +9,7 @@
 @import "home/home.scss";
 @import "optionSelect/optionSelect.scss";
 @import "infoCollapse/infoCollapse.scss";
+@import "tile/tile.scss";
 
 @media #{$small-and-down} {
   #congratsModal {
