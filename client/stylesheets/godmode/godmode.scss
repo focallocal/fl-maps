@@ -3,22 +3,6 @@
 	margin: 4px 1px 4px 1px;
 }
 
-.godmode-card-title {
-	h4 {
-		margin-bottom: 0px;
-	}
-}
-
-.godmode-card-content > .row {
-	margin-top: 2px;
-}
-
-.godmode-card-footer {
-	padding: 10px;
-	bottom: 0px;
-	position: absolute;
-}
-
 .godmode-content {
 	background-color: white;
 	padding: 0px;
@@ -52,59 +36,13 @@
 		font-size: 1em;
 		margin-top: auto;
 		margin-bottom: auto;
+		margin-left: 10px;
 	}
 
 	.godmode-util {
 		margin-left: auto;
 	}
 
-}
-
-#enable-admin-form, #remove-admin-form {
-	input {
-		border-color: white;
-		box-shadow: none;
-		color: white;
-		font-size: 1.3em;
-	}
-
-	label {
-		color: white;
-		font-size: 1.3em;
-	}
-}
-
-#remove-admin-btn, #enable-admin-btn {
-	margin-bottom: 5px;
-	color: white;
-	font-size: 1.3em;
-}
-
-.godmode-card {
-	padding: 20px;
-	height: 230px;
-	position: relative;
-}
-
-[type="checkbox"]:not(:checked).toggle-approval-category,
-[type="checkbox"]:checked.toggle-approval-category {
-	/*box-sizing: border-box;*/
-	/*padding: 0;*/
-	position: inherit;
-	left: inherit;
-	visibility: inherit;
-	opacity: 1;
-	margin-right: 5px;
-}
-
-.remove-category {
-	margin: 5px;
-	background-color: transparent;
-	border: none;
-}
-
-.remove-category:focus {
-	background-color: transparent;
 }
 
 .category-color {
@@ -130,6 +68,10 @@
 	}
 }
 
+.info-body-active.user-info-body {
+	height: 80px;
+}
+
 .info-body-active.category-info-body {
 	height: 70px;
 
@@ -153,4 +95,16 @@
 .info-height-limit {
 	max-height: 75vh;
 	overflow-y: scroll;
+}
+
+.admin-input-container {
+	display: flex;
+	justify-content: space-around;
+
+	input {
+		width: 50vw !important;
+		margin: 0px;
+		font-size: 1.4em !important;
+		text-align: center;
+	}
 }
