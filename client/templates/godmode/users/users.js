@@ -1,0 +1,3 @@
+Template.users.onCreated(function() {
+
+});

@@ -32,6 +32,10 @@
 	margin: 5px 0px 2px 20px !important;
 }
 
+.godmode-bottom-margin {
+	margin-bottom: 30px;
+}
+
 .godmode-section {
 	color: white;
 	padding: 5px;
@@ -41,6 +45,8 @@
 
 	.godmode-title {
 		font-size: 1em;
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 
 	.godmode-util {
@@ -134,4 +140,9 @@
 			margin: 0px 10px 0px 10px;
 		}
 	}
+}
+
+.info-height-limit {
+	max-height: 75vh;
+	overflow-y: scroll;
 }
