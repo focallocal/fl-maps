@@ -11,45 +11,19 @@
 			<div class="godmode-title">
 				Permission Management
 			</div>
-		</div>
-
-		<div class="row">
-			<div class="col s12 l6">
-				<div class="card godmode-card green lighten-1">
-					<div class="card-title godmode-card-title">
-						<h4 class="center white-text">Enable Admin</h4>
-					</div>
-					<div class="card-content godmode-card-content">
-						<div id="enable-admin-form" method="post">
-							<label for="email">User Email</label>
-							<input class="input-field" type="text" name="email"/>
-							<a href="#" id="enable-admin-btn" class="right">Enable &gt;</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col s12 l6">
-				<div class="card godmode-card red lighten-1">
-					<div class="card-title godmode-card-title">
-						<h4 class="center white-text">Disable Admin</h4>
-					</div>
-					<div class="card-content godmode-card-content">
-						<div id="remove-admin-form">
-							<label for="email">User Email</label>
-							<input class="input-field" type="text" name="email"/>
-							<a href="#" id="remove-admin-btn" class="right">Disable &gt;</a>
-						</div>
-					</div>
-				</div>
+			<div class="godmode-util">
+				<button type="button" class="btn btn-flat white-text teal" id="enable-admin-btn">Enable</button>
+				<button type="button" class="btn btn-flat red-text white" id="remove-admin-btn">Disable</button>
 			</div>
 		</div>
 
 		<div class="row godmode-content-spacer">
-			<h5>Admins</h5>
+			<div class="admin-input-container">
+				<input type="text" placeholder="Victim's Email" id="target-email"/>
+			</div>
 			<ul>
 				{{#each admins}}
-					<li>{{profile.name}}</li>
+					<li>{{> userInfo}}</li>
 				{{/each}}
 			</ul>
 		</div>

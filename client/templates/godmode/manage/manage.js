@@ -1,7 +1,6 @@
 function addAdmin() {
 	// Select input
-	var $addAdminForm = $("#enable-admin-form");
-	var email = $addAdminForm.find('input[name="email"]').val();
+	var email = $("#target-email").val();
 
 	if (email.length === 0) {
 		// Not Valid
@@ -14,10 +13,9 @@ function addAdmin() {
 }
 
 function removeAdmin() {
+
 	// Select input
-	// Select input
-	var $removeAdminForm = $("#remove-admin-form");
-	var email = $removeAdminForm.find('input[name="email"]').val();
+	var email = $("#target-email").val();
 
 	if (email.length === 0) {
 		// Not Valid
