@@ -111,14 +111,17 @@
 
 /* Reported Events */
 .info-body {
-	.event-info-more-btn {
+	.event-info-more-btn, .event-info-delete-btn {
+		color: white;
+		padding: 10px;
+		font-size: 17px;
+	}
+
+	.event-info-btns {
 		position: absolute;
 		display: block;
 		bottom: 15px;
 		right: 20px;
-		color: white;
-		padding: 10px;
-		font-size: 17px;
 	}
 }
 

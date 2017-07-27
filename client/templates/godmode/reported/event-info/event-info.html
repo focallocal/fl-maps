@@ -19,8 +19,17 @@
 
 				<p>{{overview}}</p>
 
-				<strong>Attending:</strong> <span>1</span>
-				<a href="/events/{{_id}}" class="event-info-more-btn red lighten-1">More</a>
+				<strong>Attending:</strong> <span>{{attending}}</span>
+				<br>
+				{{#if limit}}
+					<strong>Limit:</strong> <span>{{limit}}</span>
+				{{else}}
+					<strong>Limit:</strong> <span>No Limit</span>
+				{{/if}}
+				<div class="event-info-btns">
+					<a href="/events/{{_id}}" class="event-info-more-btn red lighten-1">More</a>
+					<a href="javascript:void(0)" class="event-info-delete-btn white black-text">Delete</a>
+				</div>
 			</div>
 		</div>
 	</div>
