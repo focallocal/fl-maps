@@ -1,0 +1,33 @@
+<template name="userInfo">
+	<div class="info-collapse">
+		<div class="info-header grey lighten-3">
+			<div class="collapse-btn-wrap">
+				<a href="#" class="collapse-btn grey lighten-1"><i class="material-icons">person</i></a>
+			</div>
+			<div class="info-title black-text">
+				{{profile.name}}
+			</div>
+			<div class="info-title black-text">
+				{{roles.__global_roles__}}
+			</div>
+		</div>
+		<div class="info-body user-info-body grey lighten-4">
+			<div class="info-body-wrap black-text">
+				<strong>Email: </strong>
+				{{#if services.google}}
+					{{services.google.email}}
+				{{else}}
+					{{#if services.facebook}}
+						{{services.facebook.email}}
+					{{else}}
+						{{#if services.twitter}}
+						services.twitter.email
+						{{/if}}
+					{{/if}}
+				{{/if}}
+				<br />
+				<strong>Joined: </strong> {{printDate createdAt}}
+			</div>
+		</div>
+	</div>
+</template>

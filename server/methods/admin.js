@@ -51,7 +51,7 @@ Meteor.methods({
 		}
 
 		if (!Roles.userIsInRole(Meteor.user()._id, ['admin'])) {
-			Meteor.Error('perssion', 'Access Denied');
+			Meteor.Error('permission', 'Access Denied');
 			return;
 		}
 
