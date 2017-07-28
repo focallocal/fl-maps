@@ -33,7 +33,7 @@
 	flex-direction: row;
 
 	.godmode-title {
-		font-size: 1em;
+		font-size: 1.1em;
 		margin-top: auto;
 		margin-bottom: auto;
 		margin-left: 10px;
@@ -54,13 +54,13 @@
 
 /* Reported Events */
 .info-body {
-	.event-info-more-btn, .event-info-delete-btn {
+	.event-info-more-btn, .event-info-delete-btn, .user-info-ban-btn {
 		color: white;
 		padding: 10px;
 		font-size: 17px;
 	}
 
-	.event-info-btns {
+	.godmode-info-btns {
 		position: absolute;
 		display: block;
 		bottom: 15px;
@@ -69,7 +69,7 @@
 }
 
 .info-body-active.user-info-body {
-	height: 80px;
+	height: 100px;
 }
 
 .info-body-active.category-info-body {
@@ -97,7 +97,7 @@
 	overflow-y: scroll;
 }
 
-.admin-input-container {
+.godmode-input-container {
 	display: flex;
 	justify-content: space-around;
 

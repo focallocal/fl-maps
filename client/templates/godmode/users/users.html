@@ -13,7 +13,12 @@
 		</div>
 
 		<div class="row godmode-content-spacer">
-			Under development.
+			<div class="godmode-input-container">
+				<input type="text" placeholder="Search" id="user-search"/>
+			</div>
+			{{#each users}}
+				{{> userInfo}}
+			{{/each}}
 		</div>
 
 	</div>
