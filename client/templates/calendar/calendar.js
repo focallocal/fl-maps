@@ -79,7 +79,6 @@ Template.calendar.helpers({
       return Categories.find({'approved': false});
     },
     isAdmin: function() {
-      console.log(Meteor.user());
       return false;
     }
 });

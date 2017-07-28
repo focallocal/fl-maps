@@ -63,6 +63,10 @@ div.info-body-active {
 	margin: 0px;
 	color: white;
 
+	-webkit-transition: height 0.5s !important;
+	-o-transition: height 0.5s !important;
 	transition: height 0.5s !important;
+	-webkit-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
