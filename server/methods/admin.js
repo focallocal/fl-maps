@@ -68,5 +68,31 @@ Meteor.methods({
 
 		return Roles.getUsersInRole('admin').fetch();
 
+	},
+	'Admin.banUserById': function(userId) {
+		if (!Meteor.user()) {
+			return 'Access Denied';
+		}
+		// Check if user is an admin
+		if (!Roles.userIsInRole(Meteor.user()._id, ['admin'])) {
+			return "Access Denied";
+		}
+
+		Roles.setUserRoles(userId, ['banned'], Roles.GLOBAL_GROUP);
+
+		return "Banned."
+	},
+	'Admin.unbanUserById': function(userId) {
+		if (!Meteor.user()) {
+			return 'Access Denied';
+		}
+		// Check if user is an admin
+		if (!Roles.userIsInRole(Meteor.user()._id, ['admin'])) {
+			return "Access Denied";
+		}
+
+		Roles.setUserRoles(userId, [], Roles.GLOBAL_GROUP);
+
+		return "Banned."
 	}
 });
