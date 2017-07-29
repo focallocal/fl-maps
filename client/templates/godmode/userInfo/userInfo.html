@@ -1,18 +1,18 @@
 <template name="userInfo">
 	<div class="info-collapse">
-		<div class="info-header grey lighten-3">
+		<div class="info-header {{#if isUserInRole _id 'banned'}} red lighten-1 {{else}} grey lighten-3 {{/if}}">
 			<div class="collapse-btn-wrap">
-				<a href="#" class="collapse-btn grey lighten-1"><i class="material-icons">person</i></a>
+				<a href="#" class="collapse-btn {{#if isUserInRole _id 'banned'}} red darken-1 {{else}} grey lighten-1 {{/if}}"><i class="material-icons">person</i></a>
 			</div>
-			<div class="info-title black-text">
+			<div class="info-title {{#if isUserInRole _id 'banned'}} white-text {{else}} black-text {{/if}}">
 				{{profile.name}}
 			</div>
-			<div class="info-title black-text">
+			<div class="info-title {{#if isUserInRole _id 'banned'}} white-text {{else}} black-text {{/if}}">
 				{{roles.__global_roles__}}
 			</div>
 		</div>
-		<div class="info-body user-info-body grey lighten-4">
-			<div class="info-body-wrap black-text">
+		<div class="info-body user-info-body {{#if isUserInRole _id 'banned'}} red lighten-2 {{else}} grey lighten-4 {{/if}}">
+			<div class="info-body-wrap {{#if isUserInRole _id 'banned'}} white-text {{else}} black-text {{/if}}">
 				<strong>Email: </strong>
 				{{#if services.google}}
 					{{services.google.email}}
@@ -29,7 +29,11 @@
 				<strong>Joined: </strong> {{printDate createdAt}}
 
 				<div class="godmode-info-btns">
-					<a href="javascript:void(0)" class="user-info-ban-btn red white-text lighten-1">Ban</a>
+					{{#if isUserInRole _id 'banned'}}
+						<a href="javascript:void(0)" class="user-info-unban-btn white red-text">Unban</a>
+					{{else}}
+						<a href="javascript:void(0)" class="user-info-ban-btn red white-text lighten-1">Ban</a>
+					{{/if}}
 				</div>
 
 			</div>

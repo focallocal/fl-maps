@@ -54,7 +54,8 @@
 
 /* Reported Events */
 .info-body {
-	.event-info-more-btn, .event-info-delete-btn, .user-info-ban-btn {
+	.event-info-more-btn, .event-info-delete-btn, .user-info-ban-btn, .user-info-unban-btn {
+		cursor: pointer;
 		color: white;
 		padding: 10px;
 		font-size: 17px;
