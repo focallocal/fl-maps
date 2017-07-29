@@ -22,7 +22,7 @@ Meteor.methods({
 			return "User not Found";
 		}
 
-		Roles.addUsersToRoles(user._id, 'admin', Roles.GLOBAL_GROUP);
+		Roles.setUserRoles(user._id, ['admin'], Roles.GLOBAL_GROUP);
 
 		return input + " is now an admin";
 	},
@@ -93,6 +93,6 @@ Meteor.methods({
 
 		Roles.setUserRoles(userId, [], Roles.GLOBAL_GROUP);
 
-		return "Banned."
+		return "Unbanned."
 	}
 });

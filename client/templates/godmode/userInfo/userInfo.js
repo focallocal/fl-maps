@@ -11,5 +11,19 @@ Template.userInfo.events({
 			}
 			$currentTarget.addClass("info-body-active");
 		});
+	},
+	'click .user-info-ban-btn': function(event, template) {
+		var id = template.data._id;
+		console.error(template.data);
+		Meteor.call('Admin.banUserById', id, function(err, result) {
+			Materialize.toast(result, 3000);
+		});
+	},
+	'click .user-info-unban-btn': function(event, template) {
+		var id = template.data._id;
+		console.error(template.data);
+		Meteor.call('Admin.unbanUserById', id, function(err, result) {
+			Materialize.toast(result, 3000);
+		});
 	}
 });
