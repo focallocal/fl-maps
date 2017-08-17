@@ -11,3 +11,11 @@
 #eventPopup .btn-flat {
   line-height: 0.9rem;
 }
+
+a.edit-btn {
+  white-space: normal !important;
+}
+
+#go-back-btn {
+  white-space: normal !important;
+}
