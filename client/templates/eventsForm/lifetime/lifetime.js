@@ -143,6 +143,7 @@ iniinitLifetime = function(parentForm, scrollTarget, timeSelectContainer) {
 	// Initialize the mobile friendly selection UI
 	var timesSelection = new OptionSelect(function(selected) {
 		$timeInput.val(selected.option);
+		$timeInput.find("label").addClass("active");
 	}, timeSelectContainer, options);
 
 	// Activate time selection on click (OptionSelect)
