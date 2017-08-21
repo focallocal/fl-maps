@@ -100,6 +100,8 @@ Template.autoForm.onRendered(function() {
 	// Enable Category Select
 	var $categoryInput = $("input#category-select-input-edit");
 	var $categoryId = $("#events-form .category-select-id");
+	
+	$categoryInput.parent().find("label").addClass("active");
 
 	var options = function() {
 		var categories = instance.categories.get();
@@ -113,6 +115,7 @@ Template.autoForm.onRendered(function() {
 	var categorySelection = new OptionSelect(function(selected) {
 		$categoryInput.val(selected.option);
 		$categoryId.val(selected._id);
+		$categoryInput.parent().find("label").addClass("active");
 	}, '#options-edit', options);
 
 	// Activate time selection on click (OptionSelect)
