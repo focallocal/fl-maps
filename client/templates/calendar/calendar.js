@@ -2,6 +2,7 @@ Template.calendar.onCreated(function () {
     this.subscribe('events');
 
     this.filters = new ReactiveVar([]);
+    this.search = new ReactiveVar('');
 });
 
 Template.calendar.onRendered(function () {
@@ -37,40 +38,39 @@ function filterEvents(events, filters) {
   return events;
 }
 
+function getFilteredEvents(events, template) {
+  var filters = template.filters.get() || [];
+  var search = template.search.get();
+
+  var _searchArray = [];
+
+  if (search) {
+    _searchArray.push(search);
+  }
+
+  if (filters.length > 0 || _searchArray.length) {
+    return filterEvents(events, filters.concat(_searchArray));
+  } else {
+    setTimeout(function() {
+      this.$(".collapsible").collapsible({
+        accordion: false
+      });
+    }, 5000);
+  }
+
+  return events;
+}
+
 Template.calendar.helpers({
     upcomingEvents: function() {
       var events = Events.find({"$or": [{dateEvent: {$gte:moment().startOf('day').toDate()}}, {'repetition.lifetime_date': {$gte:moment().startOf('day').toDate()}}, {'repetition.forever_enable': true}]}, {sort: {dateEvent: 1}}).fetch();
 
-      var filters = Template.instance().filters.get();
-
-      if (filters.length > 0) {
-        return filterEvents(events, filters);
-      } else {
-        setTimeout(function() {
-          this.$(".collapsible").collapsible({
-            accordion: false
-          });
-        }, 5000);
-      }
-
-      return events;
+      return getFilteredEvents(events, Template.instance());
     },
     pastEvents: function(){
       var events = Events.find({"$and": [{dateEvent: {$lt:moment().startOf('day').toDate()}}, {"$or": [{'repetition.lifetime_date': {$lt:moment().startOf('day').toDate()}}, {'week_enable': false}]}]}, {sort: {dateEvent: -1}}).fetch();
 
-      var filters = Template.instance().filters.get();
-
-      if (filters.length > 0) {
-        return filterEvents(events, filters);
-      } else {
-        setTimeout(function() {
-          this.$(".collapsible").collapsible({
-            accordion: false
-          });
-        }, 5000);
-      }
-
-      return events;
+      return getFilteredEvents(events, Template.instance());
     },
     filters: function() {
       return Template.instance().filters.get();
@@ -83,20 +83,11 @@ Template.calendar.helpers({
     }
 });
 Template.calendar.events({
-    'keyup #search': function(event) {
+    'keyup #search': function(event, template) {
         var searchString = event.currentTarget.value.toLowerCase();
 
-        $('.template-calendar li').each(function() {
-            var $this = $(this);
-            var haystack = $this.text().toLowerCase();
-
-            if(searchString.length > 0 && haystack.indexOf(searchString) >= 0) {
-                $this.addClass('highlight');
-            } else {
-                $this.removeClass('highlight');
-            }
-
-        });
+        // serach string to
+        template.search.set(searchString);
     },
     'click .details-btn': function(event) {
         var eventId = event.currentTarget.dataset.id;
