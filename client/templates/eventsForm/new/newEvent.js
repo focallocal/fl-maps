@@ -207,6 +207,7 @@ Template.autoForm.onRendered(function () {
 	var categorySelection = new OptionSelect(function(selected) {
 		$categoryInput.val(selected.option);
 		$categoryId.val(selected._id);
+		$categoryInput.parent().find("label").addClass("active");
 	}, '#option-select', options);
 
 	// Activate time selection on click (OptionSelect)
