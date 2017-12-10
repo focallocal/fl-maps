@@ -1,0 +1,71 @@
+#welcome-screen {
+	color: black;
+
+	.welcome-message-container {
+		position: absolute;
+
+		top: 50%;
+		left: 50%;
+
+		transform: translate(-50%, -50%);
+
+		padding: 20px;
+
+		min-width: 90vh;
+
+		h3 {
+			color: #262626;
+
+			margin-top: 70px;
+			margin-bottom: 70px;
+		}
+
+		#tour h3 {
+			color: black;
+		}
+	}
+
+	.arrow-container {
+		i {
+			font-size: 4.4em;
+		}
+	}
+
+	#legend-tour-arrow {
+		position: absolute;
+
+		right: 80px;
+		top: 45px;
+	}
+
+	#adding-tour-arrow {
+		position: absolute;
+		right: 80px;
+		bottom: 5px;
+	}
+
+	.btn-welcome {
+		margin: 10px;
+		font-size: 1.5em;
+
+		padding: 20px;
+
+		height: auto;
+	}
+}
+
+.fs-screen-fog {
+	height: 100vh;
+	width: 100vw;
+
+	position: absolute;
+
+	background-color: rgba(255, 255, 255, 0.8);
+
+	top: 0;
+	left: 0;
+
+	z-index: 99;
+
+	display:block;
+}

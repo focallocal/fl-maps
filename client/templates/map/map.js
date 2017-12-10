@@ -84,6 +84,7 @@ function initNewEventButton() {
 	var $newEventBtn = $('#event-new-btn');
 	$($newEventBtn,'.tooltipped').tooltip({delay: 50});
 	$newEventBtn.click(function () {
+		$("#welcome-screen").hide();
 		if (!Meteor.userId()) {
 			var toastTimeout = 3000;
 			Materialize.toast('Oops! Please login to add gather!', toastTimeout);
@@ -316,10 +317,6 @@ Template.map.onRendered(function() {
 	$(".layers-for-map-btn").on('click', function() {
 		$(".layers-for-map").toggle();
 	});
-
-	$(".layers-for-map").show();
-
-	setTimeout(function() {$(".layers-for-map").hide()}, 1000);
 
 	$('#layers-toggle-all').on('click', function() {
 		var layers = $('.layers-for-map-list').find('li');

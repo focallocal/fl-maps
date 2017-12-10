@@ -88,4 +88,26 @@
       margin: 0;
     }
   }
+
+  @media screen and (max-height: 330px) {
+    min-height: 350px;
+
+    &:after {
+      min-height: 350px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    min-height: 600px;
+    &:after {
+      min-height: 600px;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    min-height: 700px;
+    &:after {
+      min-height: 700px;
+    }
+  }
 }
