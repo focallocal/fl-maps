@@ -253,17 +253,23 @@
       "0": "Report"
     }
   },
-  "welcomeModal": {
+  "welcomeScreen": {
     "text": {
       "0": {
-        "0": "Zoom to",
-        "1": "Your City"
+        "0": "Welcome to a brighter tomorrow.",
+        "1": "Would you like a tour to see how this map can transform homelessness around the World through connection?",
+        "2": "Legend",
+        "3": "Filter to find free resources available nearby to meet basic needs and build a path to a brighter future.",
+        "4": "Map",
+        "5": "Double click on the map to zoom in. Then click on the dot to read more.",
+        "6": "Adding Resources",
+        "7": "Add a free resource you've found. You can also offer a resource, something you can offer to help those living on the streets nearby."
       }
     },
     "btns": {
-      "0": "Add a Gathering",
-      "1": "Browse",
-      "2": "X - Explore the Map"
+      "0": "Begin Quick Tour",
+      "1": "I've got this",
+      "2": "(Give it a try)"
     }
   }
 }
