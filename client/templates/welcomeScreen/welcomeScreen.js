@@ -1,59 +1,65 @@
 Template.welcomeScreen.onRendered(function() {
-	$("#tour").hide();
-	$("#legend-tour").hide();
+	$(".legend-tour").hide();
+	$(".map-tour").hide();
+	$(".add-tour").hide();
+	$(".map-tour").hide();
+	$(".handout-tour").hide();
+	$(".more-tour").hide();
 
 	$("#event-new-btn").hide();
-	$("#guide-btn").hide();
-
-	$("#adding-tour").hide();
 });
 
-var tourCtl = new SequenceForm("#tour", "#next-tour", "#done-tour", "#back-tour");
+var hideAll = function() {
+	$("#tour-start").hide();
 
-var beforeNext = function($c) {
-	if ($c.attr('value') === '0') {
-		$("#legend-tour").hide();
-	} else if ($c.attr('value') === '1') {
-		$("#event-new-btn").show();
-		$("#guide-btn").show();
-		$("#adding-tour").show();
-	}
-	return true;
-}
+	$(".legend-tour").hide();
+	$(".map-tour").hide();
+	$(".add-tour").hide();
+	$(".map-tour").hide();
+	$(".handout-tour").hide();
+	$(".more-tour").hide();
 
-var beforeBack = function(c) {
-	if (c.number === 1 ) {
-		$("#legend-tour").show();
-	} else if (c.number === 2) {
-		$("#event-new-btn").hide();
-		$("#guide-btn").hide();
-		$("#adding-tour").hide();
-	}
-	return true;
+	$("#event-new-btn").hide();
 }
 
 Template.welcomeScreen.events({
-	'click #tour-pass': function() {
-		$('#welcome-screen').hide();
-		$("#event-new-btn").show();
-		$("#guide-btn").show();
-	},
-	'click #tour-begin': function() {
-		$("#welcome-start").hide();
-		$("#tour").show();
-		$("#legend-tour").show();
-
-		tourCtl.init();
-
-		tourCtl.setBeforeNextTrigger(beforeNext);
-		tourCtl.setBeforeBackTrigger(beforeBack);
-	},
 	'click #done-tour': function() {
 		$("#welcome-screen").hide();
 		$("#event-new-btn").show();
 		$("#guide-btn").show();
+
+		$("#event-new-btn").removeAttr('disabled');
 	},
-	'click #event-new-btn': function() {
-		$("#welcome-screen").hide();
+	'click #legend-tour': function() {
+		hideAll();
+
+		$('.legend-tour').show();
+	},
+	'click .map-tour': function() {
+		hideAll();
+
+		$('.map-tour').show();
+	},
+	'click #post-tour': function() {
+		hideAll();
+
+		$(".add-tour").show();
+		$("#event-new-btn").show();
+		$("#event-new-btn").attr('disabled', 'disabled');
+	},
+	'click #map-tour': function() {
+		hideAll();
+
+		$(".map-tour").show();
+	},
+	'click #handout-tour': function() {
+		hideAll();
+
+		$(".handout-tour").show()
+	},
+	'click #more-tour': function() {
+		hideAll();
+
+		$(".more-tour").show();
 	}
 })
