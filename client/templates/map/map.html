@@ -47,7 +47,9 @@
     {{> eventConfirmDelete}}
     {{> congratsModal }}
     {{> eventConfirmReport id="confirm-report-map"}}
-    {{> welcomeScreen}}
+    {{#unless currentUser }}
+      {{> welcomeScreen}}
+    {{/unless}}
     {{> unfinishedFeatureModal}}
     {{> joinModal}}
 </template>

@@ -263,13 +263,24 @@
         "4": "Map",
         "5": "Double click on the map to zoom in. Then click on the dot to read more.",
         "6": "Adding Resources",
-        "7": "Add a free resource you've found. You can also offer a resource, something you can offer to help those living on the streets nearby."
+        "7": "Add a free resource you've found. You can also offer a resource, something you can offer to help those living on the streets nearby.",
+        "8": "Print",
+        "9": "Print a guide of valuable support and resources available in your local area to give out to people who are homeless on the streets. Or as a useful poster for a wall or window. [full functionality coming soon]",
+        "10": "Navigation",
+        "11": "Click",
+        "12": "'About' to read more.",
+        "13": "'Calendar' to search by date, location and resource",
+        "14": "'Projects' to see more from Focallocal Positive community.",
+        "15": "'Join' to join out volunteer community creating a world with more peace and happiness."
       }
     },
     "btns": {
-      "0": "Begin Quick Tour",
-      "1": "I've got this",
-      "2": "(Give it a try)"
+      "0": "Post",
+      "1": "Find",
+      "2": "Map",
+      "3": "Hand Out",
+      "4": "More",
+      "5": "Close and Begin"
     }
   }
 }
