@@ -1,50 +1,80 @@
 <template name="welcomeScreen">
 	<div class="fs-screen-fog" id="welcome-screen">
-		<div class="welcome-message-container center-align" id="welcome-start">
-			<h2>{{_ "welcomeScreen.text.0.0"}}</h2>
-			<h3>{{_ "welcomeScreen.text.0.1"}}</h3>
-			<div class="btn-group">
-				<a href="javascript:void(0)" class="btn btn-wire btn-welcome" id="tour-begin">{{_ "welcomeScreen.btns.0"}}</a>
-				<a href="javascript:void(0)" class="btn btn-wire btn-welcome" id="tour-pass">{{_ "welcomeScreen.btns.1"}}</a>
+
+		<div class="legend-tour">
+			<div class="arrow-container" id="legend-tour-arrow"><i class="material-icons">arrow_forward</i></div>
+			<div class="layers-for-map-container">
+					<button type="button" class="btn layers-for-map-btn"><i class="material-icons">list</i></button>
+					<div class="layers-for-map">
+							<p>{{_ "map.text.0"}}</p>
+							<ul class="layers-for-map-list">
+							</ul>
+							<button type="button" id="layers-toggle-all" class="btn"><h7>{{_ "map.btns.0"}}</h7></button>
+					</div>
 			</div>
 		</div>
-		<div class="row" id="tour">
-			<div id="legend-tour">
-				<div class="arrow-container" id="legend-tour-arrow">{{_ "welcomeScreen.btns.2"}} <i class="material-icons">arrow_forward</i></div>
-				<div class="layers-for-map-container">
-						<button type="button" class="btn layers-for-map-btn"><i class="material-icons">list</i></button>
-						<div class="layers-for-map">
-								<h4>{{_ "map.text.0"}}</h4>
-								<ul class="layers-for-map-list">
-								</ul>
-								<button type="button" id="layers-toggle-all" class="btn"><h7>{{_ "map.btns.0"}}</h7></button>
-						</div>
-				</div>
+
+		<div class="add-tour">
+			<div class="arrow-container" id="adding-tour-arrow"><i class="material-icons">arrow_forward</i></div>
+		</div>
+
+		<div class="handout-tour">
+			<div id="print-tour-btn">
+	        <div class="row">
+						<button type="button" class="btn">Print</button>
+					</div>
 			</div>
-			<div id="adding-tour">
-				<div class="arrow-container" id="adding-tour-arrow">{{_ "welcomeScreen.btns.2"}} <i class="material-icons">arrow_forward</i></div>
+		</div>
+
+		<div class="handout-tour">
+			<div class="arrow-container" id="handout-arrow">
+				<i class="material-icons">arrow_backward</i>
 			</div>
-			<div class="welcome-message-container center-align">
-				<ul class="sequence-form-fields">
-					<li class="sequence-field" value="0">
-						<h2>{{_ "welcomeScreen.text.0.2"}}</h2>
-						<h3>{{_ "welcomeScreen.text.0.3"}}</h3>
-					</li>
-					<li class="sequence-field" value="1">
-						<h2>{{_ "welcomeScreen.text.0.4"}}</h2>
-						<h3>{{_ "welcomeScreen.text.0.5"}}</h3>
-					</li>
-					<li class="sequence-field" value="2">
-						<h2>{{_ "welcomeScreen.text.0.6"}}</h2>
-						<h3>{{_ "welcomeScreen.text.0.7"}}</h3>
-					</li>
-				</ul>
+		</div>
+
+		<div class="welcome-message-container center-align" id="welcome-start">
+
+			<div id="tour-start">
+				<h2>{{_ "welcomeScreen.text.0.0"}}</h2>
+				<p>{{_ "welcomeScreen.text.0.1"}}</p>
+			</div>
+
+			<div class="legend-tour">
+				<h2>{{_ "welcomeScreen.text.0.2"}}</h2>
+				<p>{{_ "welcomeScreen.text.0.3"}}</p>
+			</div>
+			<div class="map-tour">
+				<h2>{{_ "welcomeScreen.text.0.4"}}</h2>
+				<p>{{_ "welcomeScreen.text.0.5"}}</p>
+			</div>
+			<div class="add-tour">
+				<h2>{{_ "welcomeScreen.text.0.6"}}</h2>
+				<p>{{_ "welcomeScreen.text.0.7"}}</p>
+			</div>
+			<div class="handout-tour">
+				<h2>{{_ "welcomeScreen.text.0.8"}}</h2>
+				<p>{{_ "welcomeScreen.text.0.9"}}</p>
+			</div>
+			<div class="more-tour">
+				<h2>{{_ "welcomeScreen.text.0.10"}}</h2>
+				<p><b>{{_ "welcomeScreen.text.0.11"}}</b></p>
+				<p>{{_ "welcomeScreen.text.0.12"}}</p>
+				<p>{{_ "welcomeScreen.text.0.13"}}</p>
+				<p>{{_ "welcomeScreen.text.0.14"}}</p>
+				<p>{{_ "welcomeScreen.text.0.15"}}</p>
+			</div>
+			<div id="tour-bts">
 				<div>
-					<button type="button" class="btn btn-primary btn-welcome" id="back-tour">Back</button>
-					<button type="button" class="btn btn-primary btn-welcome" id="next-tour">Next</button>
-					<button type="button" class="btn btn-primary btn-welcome" id="done-tour">Done</button>
+					<button type="button" class="btn btn-primary btn-welcome" id="post-tour">{{_ "welcomeScreen.btns.0"}}</button>
+					<button type="button" class="btn btn-primary btn-welcome" id="legend-tour">{{_ "welcomeScreen.btns.1"}}</button>
+					<button type="button" class="btn btn-primary btn-welcome" id="map-tour">{{_ "welcomeScreen.btns.2"}}</button>
+					<button type="button" class="btn btn-primary btn-welcome" id="handout-tour">{{_ "welcomeScreen.btns.3"}}</button>
+					<button type="button" class="btn btn-primary btn-welcome" id="more-tour">{{_ "welcomeScreen.btns.4"}}</button>
+					<br />
+					<button type="button" class="btn btn-primary btn-welcome" id="done-tour">{{_ "welcomeScreen.btns.5"}}</button>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </template>
