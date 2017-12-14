@@ -11,18 +11,28 @@
 
 		padding: 20px;
 
-		min-width: 90vh;
+		width: 99vw;
 
-		h3 {
+		p {
 			color: #262626;
 
-			margin-top: 70px;
-			margin-bottom: 70px;
+			font-size: 1.5em;
+
+			margin-top: 30px;
+			margin-bottom: 30px;
+
+			text-align: center;
 		}
 
 		#tour h3 {
 			color: black;
 		}
+	}
+
+	#print-tour-btn {
+		position: absolute;
+		bottom: 73px;
+		left: 50px;
 	}
 
 	.arrow-container {
@@ -52,6 +62,100 @@
 
 		height: auto;
 	}
+
+	#handout-arrow {
+		position: absolute;
+		bottom: 63px;
+		left: 150px;
+	}
+
+	@media only screen and (max-device-width: 635px) {
+		h2 {
+			font-size: 1.3em;
+
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 0.6em;
+		}
+
+		.btn-welcome {
+			margin: 10px;
+			font-size: 1em;
+
+			padding: 10px;
+
+			height: auto;
+		}
+	}
+
+	@media only screen and (max-width: 635px) {
+		h2 {
+			font-size: 1.3em;
+		}
+		p {
+			font-size: 0.6em;
+		}
+
+		.btn-welcome {
+			margin: 10px;
+			font-size: 1em;
+
+			padding: 10px;
+
+			height: auto;
+		}
+	}
+
+	@media only screen and (max-device-width: 540px) {
+		h2 {
+			font-size: 1em;
+
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		p {
+			font-size: 0.8em !important;
+		}
+
+		.btn-welcome {
+			margin: 10px;
+			font-size: 1em;
+
+			padding: 10px;
+
+			height: auto;
+		}
+
+		.welcome-message-container {
+			width: 85vw !important;
+		}
+	}
+
+	@media only screen and (max-width: 540px) {
+		h2 {
+			font-size: 1em;
+		}
+		p {
+			font-size: 0.8em !important;
+		}
+
+		.btn-welcome {
+			margin: 10px;
+			font-size: 1em;
+
+			margin-top: 10px;
+			margin-bottom: 10px;
+
+			padding: 5px;
+
+			height: auto;
+		}
+		.welcome-message-container {
+			width: 85vw !important;
+		}
+	}
 }
 
 .fs-screen-fog {
@@ -68,4 +172,8 @@
 	z-index: 99;
 
 	display:block;
+}
+
+#event-new-btn[disabled="disabled"] {
+	background-color: #e65100 !important;
 }
