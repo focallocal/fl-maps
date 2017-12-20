@@ -154,7 +154,7 @@ Repetition = new SimpleSchema({
     },
     forever_enable: {
         type: Boolean,
-        label: 'Forever or Unknown',
+        label: 'Repeats Forever or for Unknown Time',
         autoform: {
             checked: false,
             class: "forever_enable"

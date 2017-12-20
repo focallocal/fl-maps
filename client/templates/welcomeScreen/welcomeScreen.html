@@ -1,6 +1,10 @@
 <template name="welcomeScreen">
 	<div class="fs-screen-fog" id="welcome-screen">
 
+		<div class="more-tour">
+			{{> _header}}
+		</div>
+
 		<div class="legend-tour">
 			<div class="arrow-container" id="legend-tour-arrow"><i class="material-icons">arrow_forward</i></div>
 			<div class="layers-for-map-container">
@@ -37,6 +41,7 @@
 			<div id="tour-start">
 				<h2>{{_ "welcomeScreen.text.0.0"}}</h2>
 				<p>{{_ "welcomeScreen.text.0.1"}}</p>
+				<img src="/images/graph.svg" alt="how the map works" class="expl-map" />
 			</div>
 
 			<div class="legend-tour">
@@ -46,10 +51,11 @@
 			<div class="map-tour">
 				<h2>{{_ "welcomeScreen.text.0.4"}}</h2>
 				<p>{{_ "welcomeScreen.text.0.5"}}</p>
+				<img src="/images/cluster_icon_google.png" />
 			</div>
 			<div class="add-tour">
 				<h2>{{_ "welcomeScreen.text.0.6"}}</h2>
-				<p>{{_ "welcomeScreen.text.0.7"}}</p>
+				<p>{{_ "welcomeScreen.text.0.7.0"}}<h6> {{_ "welcomeScreen.text.0.7.1"}}</h6></p>
 			</div>
 			<div class="handout-tour">
 				<h2>{{_ "welcomeScreen.text.0.8"}}</h2>
@@ -58,10 +64,10 @@
 			<div class="more-tour">
 				<h2>{{_ "welcomeScreen.text.0.10"}}</h2>
 				<p><b>{{_ "welcomeScreen.text.0.11"}}</b></p>
-				<p>{{_ "welcomeScreen.text.0.12"}}</p>
-				<p>{{_ "welcomeScreen.text.0.13"}}</p>
-				<p>{{_ "welcomeScreen.text.0.14"}}</p>
-				<p>{{_ "welcomeScreen.text.0.15"}}</p>
+				<p><b>{{_ "welcomeScreen.text.0.12"}}</b> {{_ "welcomeScreen.text.0.13"}}</p>
+				<p><b>{{_ "welcomeScreen.text.0.14"}}</b> {{_ "welcomeScreen.text.0.15"}}</p>
+				<p><b>{{_ "welcomeScreen.text.0.16"}}</b> {{_ "welcomeScreen.text.0.17"}}</p>
+				<p><b>{{_ "welcomeScreen.text.0.18"}}</b> {{_ "welcomeScreen.text.0.19"}}</p>
 			</div>
 			<div id="tour-bts">
 				<div>

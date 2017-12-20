@@ -256,22 +256,29 @@
   "welcomeScreen": {
     "text": {
       "0": {
-        "0": "Welcome to a brighter tomorrow.",
-        "1": "Would you like a tour to see how this map can transform homelessness around the World through connection?",
+        "0": "Welcome to the Gatherings Maps.",
+        "1": "Would you like a tour to see how this map can help help spread possitivity in the world?",
         "2": "Legend",
-        "3": "Filter to find free resources available nearby to meet basic needs and build a path to a brighter future.",
+        "3": "Filter to find events available nearby to help spread possitivity and build a better tomorrow",
         "4": "Map",
         "5": "Double click on the map to zoom in. Then click on the dot to read more.",
-        "6": "Adding Resources",
-        "7": "Add a free resource you've found. You can also offer a resource, something you can offer to help those living on the streets nearby.",
+        "6": "Adding Events",
+        "7": {
+          "0": "Click + to add your event",
+          "1": "(or one you've found)"
+        },
         "8": "Print",
-        "9": "Print a guide of valuable support and resources available in your local area to give out to people who are homeless on the streets. Or as a useful poster for a wall or window. [full functionality coming soon]",
+        "9": "Print a guide of events available in your local area to give out to people. Or as a useful poster for a wall or window. (full functionality coming soon)",
         "10": "Navigation",
         "11": "Click",
-        "12": "'About' to read more.",
-        "13": "'Calendar' to search by date, location and resource",
-        "14": "'Projects' to see more from Focallocal Positive community.",
-        "15": "'Join' to join out volunteer community creating a world with more peace and happiness."
+        "12": "About",
+        "13": "to read more.",
+        "14": "Calendar",
+        "15": "to search by date, location and event",
+        "16": "Projects",
+        "17": "to see more from Focallocal Positive community.",
+        "18": "Join",
+        "19": "to join out volunteer community creating a world with more peace and happiness."
       }
     },
     "btns": {

@@ -10,7 +10,7 @@ if (Meteor.isClient) {
 
 }
 
-FlowRouter.route('/', {
+FlowRouter.route('/home', {
   name: 'home',
   action: function() {
     BlazeLayout.render('appLayout', {main: 'home'});
@@ -40,7 +40,7 @@ FlowRouter.route('/events/new', {
   }
 });
 
-FlowRouter.route('/events/map', {
+FlowRouter.route('/', {
   name: 'map',
   action: function() {
     BlazeLayout.render('appLayout', {main: 'map'});
