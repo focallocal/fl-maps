@@ -27,6 +27,14 @@
 		#tour h3 {
 			color: black;
 		}
+
+		.expl-map {
+			height: 50vh;
+		}
+
+		img {
+			margin-bottom: 5px;
+		}
 	}
 
 	#print-tour-btn {
@@ -55,7 +63,8 @@
 	}
 
 	.btn-welcome {
-		margin: 10px;
+		margin: -1px;
+		margin-top: 3px;
 		font-size: 1.5em;
 
 		padding: 20px;
@@ -81,7 +90,6 @@
 		}
 
 		.btn-welcome {
-			margin: 10px;
 			font-size: 1em;
 
 			padding: 10px;
@@ -99,7 +107,6 @@
 		}
 
 		.btn-welcome {
-			margin: 10px;
 			font-size: 1em;
 
 			padding: 10px;
@@ -120,7 +127,6 @@
 		}
 
 		.btn-welcome {
-			margin: 10px;
 			font-size: 1em;
 
 			padding: 10px;
@@ -142,11 +148,7 @@
 		}
 
 		.btn-welcome {
-			margin: 10px;
 			font-size: 1em;
-
-			margin-top: 10px;
-			margin-bottom: 10px;
 
 			padding: 5px;
 
