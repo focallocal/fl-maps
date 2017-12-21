@@ -11,6 +11,7 @@ Template.welcomeScreen.onRendered(function() {
 
 var hideAll = function() {
 	$("#tour-start").hide();
+	$(".tour-start").hide();
 
 	$(".legend-tour").hide();
 	$(".map-tour").hide();
