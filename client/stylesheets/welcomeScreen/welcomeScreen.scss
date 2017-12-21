@@ -11,7 +11,7 @@
 
 		padding: 20px;
 
-		width: 99vw;
+		width: 70vw;
 
 		p {
 			color: #262626;
@@ -29,7 +29,8 @@
 		}
 
 		.expl-map {
-			height: 50vh;
+			width: 75vw;
+			max-width: 70vh;
 		}
 
 		img {
@@ -65,6 +66,7 @@
 	.btn-welcome {
 		margin: -1px;
 		margin-top: 3px;
+		margin-bottom: 15px;
 		font-size: 1.5em;
 
 		padding: 20px;

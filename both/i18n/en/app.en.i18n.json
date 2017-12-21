@@ -257,22 +257,29 @@
     "text": {
       "0": {
         "0": "Welcome to the Gatherings Maps.",
-        "1": "Would you like a tour to see how this map can help help spread possitivity in the world?",
+        "1": "This is a tool to spread possitivity around the world by connecting people, communities and ideas. Click on the buttons bellow to explore what you can do here.",
         "2": "Legend",
         "3": "Filter to find events available nearby to help spread possitivity and build a better tomorrow",
         "4": "Map",
-        "5": "Double click on the map to zoom in. Then click on the dot to read more.",
+        "5": {
+            "0": "Double click on the map to zoom in.",
+            "1": "Then click on the dot to read more."
+        },
         "6": "Adding Events",
         "7": {
           "0": "Click + to add your event",
           "1": "(or one you've found)",
-          "2": ""
+          "2": "",
+          "3": ""
         },
         "8": "Print",
-        "9": "Print a guide of events available in your local area to give out to people. Or as a useful poster for a wall or window. (full functionality coming soon)",
+        "9": {
+          "0": "Print a guide of events available in your local area to give out to people.",
+          "1": "Or as a useful poster for a wall or window. (full functionality coming soon)"
+        },
         "10": "Navigation",
         "11": "Click",
-        "12": "About",
+        "12": "Home",
         "13": "to read more.",
         "14": "Calendar",
         "15": "to search by date, location and event",
