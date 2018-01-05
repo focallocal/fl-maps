@@ -1,47 +1,47 @@
 {
-  "general": {
-    "text": {
-      "focallocal": "Focallocal",
-      "focallocal.web": "Focallocal.org"
+  "general":{
+    "text":{
+      "focallocal":"Focallocal",
+      "focallocal.web":"Focallocal.org"
     },
-    "btns": {
-      "0": "Show More"
+    "btns":{
+      "0":"Show More"
     }
   },
   "home": {
-    "title": "Local Action for Global Change",
+    "title": "A path to a brighter tomorrow. Reconnecting communities to transform homelessness",
     "sections": {
       "0": {
-        "title": "What is Focallocal?",
+        "title": "The Brighter Tomorrow Map",
         "content": {
-          "0": "Focallocal is an open, welcoming community of thousands of positive people around the world.",
-          "1": "Since 2011 we have been coming together and targeting the root causes of any, and all societal issues.",
-          "2": "Sharing ideas, and using fun activities to empower people to build a friendlier, happier more connected future for everyone.",
-          "3": "Join us and turn Positive Action into a daily habit to explore your power to change the world, and the happiness it'll bring into your life",
+          "0": "This map is a tool to reconnect our communities so we can effectivly support each other through difficult times",
+          "1": "The Brighter Tomorrow Map is built for you by volunteers at the Focallocal Positive Action Community",
+          "2": "A global Movement for anyone who has had enough of the issues troubling this world and are taking action to build change",
+          "3": "This map aims to help people who are homeless find the resources they need to meet their basic needs and begin a path to a brighter future",
           "items": {
-            "smiley": "make the world ‘happier’ every day",
-            "friends": "meet ‘positive’ friends all over the world",
-            "share": "share + learn skills for your career or building change"
+            "smiley": "find + post free resources to meet basic needs",
+            "friends": "connect with people who want to help, or those nearby who need it",
+            "share": "offer things you can do to support people locally who need them"
           }
         }
       },
       "1": {
-        "title": "What adventures await me?",
+        "title": "Receive Support",
         "content": {
-          "0": "You'll be a part of a growing global Movement with a plan to change the world",
-          "1": "Meeting positive, pro-active, awesome new friends both locally, and globally",
-          "2": "Together using simple, fun activities and exploring new ideas to shape friendlier, happier communities",
-          "3": "Bringing peace and well-being to everyone, everywhere"
+          "0": "Use the map to find and post all the free resources in your local area. showers. food. shelter. washing machines. support groups",
+          "1": "Many people nearby want to support you building a happier life. Their kind offers can be found on the map",
+          "2": "Please don't ask for money, its not what this map is for. Many charities now advise people not to, and so it risks pushing away those who are trying to help you",
+          "3": "People will help, but only you can change life. Focus on one step towards the life you want each day and it will get better"
         }
       },
       "2": {
-        "title": "What is our mission and message?",
+        "title": "Offer Support",
         "content": {
-          "0": "Oh and fun! ..making change should also be fun and easy. That way as many people as possible want to join in!",
-          "1": "Focallocal is about empowering people",
-          "2": "The time for waiting for others to fix this planet is over. Modern technology allows us to coordinate action and share great ideas for change in a way never before possible",
-          "3": "While each action may feel like a tiny ripple. As more and more people join in the effects multiply, combining to form an unstoppable wave, a Positive Action Movement which can sweep across this planet",
-          "4": "Our message is that YOU have the power to change the world around you, and our mission is to give you the tools to create that positive change"
+          "0": "Print the map as a valuable guide to give those on the streets, helping them access resources to improve and change their situation",
+          "1": "The helpless feeling of walking past people who are sleeping on the streets, wanting to help but not knowing what you can do. That changes today!",
+          "2": "Browse suggestions for things you can offer on the map to support people struggling nearby, like;",
+          "3": "CV/resume building help. Teach a skill. An intro, old books and advice on starting in your profession. Or simply a cup of tea, or a meal to share a friendly chat and some normality",
+          "4": "Post free resources you find onto the map. suit hire for interviews. shelters or religious buildings offering showers. support groups. pass it on coffee. where to find free food"
         }
       },
       "3": {
@@ -51,25 +51,25 @@
           "btns": {
             "0": "Watch + Share Videos",
             "1": "Write + Read articles",
-            "2": "Find + Get actions tools"
+            "2": "Find + Get action tools"
           }
         }
       }
     },
     "btns": {
-      "0": "",
-      "1": "Action Center",
-      "2": "Gatherings Map"
+      "0": "xxxxxx",
+      "1": "Resources Map",
+      "2": "Resources List"
     }
   },
   "newEvent": {
-    "title": "New Action",
+    "title": "A New Resource",
     "section_titles": {
       "0": "1. Choose a Category",
-      "1": "2. Give it a Name",
-      "2": "3. Select an Address",
-      "3": "4. Choose a specific meeting point",
-      "4": "5. How will people recognise you?",
+      "1": "2. Name",
+      "2": "3. Address",
+      "3": "4. Any Requirements for Accessing the Resource",
+      "4": "5. Describe how can someone find it/you",
       "5": "6. Choose a Date and Time",
       "6": "7. Description/More Details"
     },
@@ -78,20 +78,20 @@
       "1": "Next",
       "2": "Submit",
       "3": "Suggestions",
-      "4": "Something New"
+      "4": "Offer a Resource"
     },
     "subs": {
-      "0": "'Choose a category' and post your positive action gathering",
-      "1": "'Suggestions' to read more about them",
-      "2": "'Something new' to suggest a new positive action"
+      "0": "'Choose a category' and post your resource",
+      "1": "'Suggestions' browse ideas of what you can offer",
+      "2": "'Offer a Resource' to suggest an new positive action"
     }
   },
   "editEvent": {
-    "title": "Edit Action"
+    "title": "Edit Listing"
   },
   "eventConfirmDelete": {
     "title": "Please confirm",
-    "subtitle": "Are you sure to delete this event?",
+    "subtitle": "Are you sure to delete this resource?",
     "btns": {
       "0": "Yes, delete it!",
       "1": "No, take me back!"
@@ -100,7 +100,7 @@
   "congratsModal": {
     "title": "Congratulations!",
     "subtitle": "We're one step closer to a happier and more connected World",
-    "subtitle_1": "We've made it super easy for you to get many more people to come!",
+    "subtitle_1": "If you'd like to share your resource on another platform",
     "text": {
       "0": "Simply click the buttons above and copy/paste the info below.",
       "1": "with the Focallocal Community",
@@ -108,55 +108,55 @@
         "0": "Description",
         "1": "When",
         "2": "Address",
-        "3": "Meeting point",
-        "4": "How to find us",
+        "3": "Requirements",
+        "4": "How to find it/me",
         "5": "Link"
       },
       "2": "Join the Global Movement for Positive Change at www.focallocal.org"
     },
-    "btns": {
-      "0": "Ok, done!"
+    "btns":{
+      "0":"Ok, done!"
     }
   },
-  "_footer": {
-    "section_titles": {
-      "0": "About",
-      "1": "Sitemap",
-      "2": "Connect",
-      "sub": {
-        "0": "This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
-        "1": {
-          "list": {
-            "0": "Home",
-            "1": "Events map",
-            "2": "Events list",
-            "3": "Sign in",
-            "4": "Register",
-            "5": "Rss feed"
+  "_footer":{
+    "section_titles":{
+      "0":"About",
+      "1":"Sitemap",
+      "2":"Connect",
+      "sub":{
+        "0":"This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
+        "1":{
+          "list":{
+            "0":"Home",
+            "1":"Map view",
+            "2":"List view",
+            "3":"Sign in",
+            "4":"Register",
+            "5":"Rss feed"
           }
         }
       }
     }
   },
-  "_header": {
-    "text": {
-      "0": "Sign Out",
-      "1": "Log in",
-      "2": "Register"
+  "_header":{
+    "text":{
+      "0":"Sign Out",
+      "1":"Log in",
+      "2":"Register"
     }
   },
-  "rightLinks": {
-    "text": {
-      "0": "Home",
-      "1": "Map",
-      "2": "Calendar"
+  "rightLinks":{
+    "text":{
+      "0":"Home",
+      "1":"Map",
+      "2":"Calendar"
     }
   },
   "leftLinks": {
     "content": {
       "0": "About Us",
       "1": "Happy News",
-      "2": "Action Center",
+      "2": "Begin",
       "3": "Map",
       "4": {
         "title": "Projects",
@@ -206,23 +206,23 @@
       }
     }
   },
-  "calendar": {
-    "section_titles": {
-      "0": "Search",
-      "1": "Upcoming positive action",
-      "2": "Past positive actions",
-      "sub": {
-        "0": "No upcoming events :( Please add one!",
-        "1": "No action in the past."
+  "calendar":{
+    "section_titles":{
+      "0":"Search",
+      "1":"Upcoming Resources",
+      "2":"Past Offerings",
+      "sub":{
+        "0":"No upcoming offerings :( Please add one!",
+        "1":"No action in the past."
       }
     },
-    "btns": {
-      "0": "ADD Filter"
+    "btns":{
+      "0":"ADD Filter"
     }
   },
-  "categoryForm": {
-    "text": {
-      "0": "New Category"
+  "categoryForm":{
+    "text":{
+      "0":"New Category"
     }
   },
   "map": {
@@ -230,59 +230,59 @@
       "0": "Key",
       "1": "Create your Activity now!"
     },
-    "btns": {
-      "0": "Toggle All"
+    "btns":{
+      "0":"Toggle All"
     },
     "links": {
-      "0": "http://news.focallocal.org/gather-about"
+      "0": "http://news.focallocal.org/homelessness-resource-map-about"
     }
   },
-  "event": {
-    "text": {
-      "0": "Think this is spam or an error? Let us know!",
-      "tags": {
-        "0": "About Event",
-        "1": "Photos",
-        "2": "Videos",
-        "3": "Comments"
+  "event":{
+    "text":{
+      "0":"Think this is spam or an error? Let us know!",
+      "tags":{
+        "0":"About",
+        "1":"Photos",
+        "2":"Videos",
+        "3":"Comments"
       },
-      "1": "* This has been reported by",
-      "2": "user(s)"
+      "1":"* This submission has been reported by",
+      "2":"user(s)"
     },
-    "btns": {
-      "0": "Report"
+    "btns":{
+      "0":"Report Inaccuracy or Abuse"
     }
   },
   "welcomeScreen": {
     "text": {
       "0": {
-        "0": "Welcome to the Gatherings Maps.",
-        "1": "This is a tool to spread possitivity around the world by connecting people, communities and ideas. Click on the buttons bellow to explore what you can do here.",
-        "2": "Legend",
-        "3": "Filter to find events available nearby to help spread possitivity and build a better tomorrow",
+        "0": "Welcome to a brighter tomorrow.",
+        "1": "This is a tool to transform homelessness around the world by connecting people, communities and ideas. Click on the buttons bellow to explore what you can do here.",
+        "2": "Find",
+        "3": "Explore free resources available nearby to meet basic needs and to begin on a path to a brighter future.",
         "4": "Map",
         "5": {
-            "0": "Double click on the map to zoom in.",
-            "1": "Then click on the dot to read more."
+          "0": "Double click on map to zoom in.",
+          "1": "Then click on a dot to read more about an available free resource, or a community offer."
         },
-        "6": "Adding Events",
+        "6": "Adding Resources",
         "7": {
-          "0": "Click + to add your event",
-          "1": "(or one you've found)",
-          "2": "",
-          "3": ""
+          "0": "Click + to add a free resource you've found nearby to help those who are homeless connect with",
+          "1": "(shelters, public toilets, addiction support groups, free suit hire for interviews, etc)",
+          "2": "or to offer a resource something you can do for those living on the streets nearby",
+          "3": "Click '?' find great ideas of effective things you can offer to help from around the world."
         },
         "8": "Print",
         "9": {
-          "0": "Print a guide of events available in your local area to give out to people.",
-          "1": "Or as a useful poster for a wall or window. (full functionality coming soon)"
+          "0": "Print a guide of valuable support and resources available in your local area to give out to people who are homeless on the streets.",
+          "1": "Or as a useful poster for a wall or window (full functionality coming soon)."
         },
         "10": "Navigation",
         "11": "Click",
         "12": "Home",
         "13": "to read more.",
         "14": "Calendar",
-        "15": "to search by date, location and event",
+        "15": "to search by date, location and resource",
         "16": "Projects",
         "17": "to see more from Focallocal Positive community.",
         "18": "Join",
