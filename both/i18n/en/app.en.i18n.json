@@ -296,6 +296,9 @@
       "3": "Hand Out",
       "4": "More",
       "5": "Close and Begin"
+    },
+    "imgs": {
+      "middle_img_path": "/images/logo.png"
     }
   }
 }
