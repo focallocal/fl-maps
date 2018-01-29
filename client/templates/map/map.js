@@ -5,6 +5,8 @@ var addedLayers = {};
 eventMap = null;
 var created = false;
 
+MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ = "https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m";
+
 function resetMakerData() {
 	if (markerCluster !== null) {
 		markerCluster.clearMarkers();
@@ -122,7 +124,7 @@ function addMarkersCluster(map, event) {
 			}
 		}
 
-		markerCluster = new MarkerClusterer(map, markerList, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+		markerCluster = new MarkerClusterer(map, markerList, {});
 
 	}
 
