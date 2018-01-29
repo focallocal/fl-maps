@@ -7,6 +7,9 @@ Template.welcomeScreen.onRendered(function() {
 	$(".more-tour").hide();
 
 	$("#event-new-btn").hide();
+
+	// Ajust Height
+	$(".fs-screen-fog").css({height: $('#__blaze-root').height()});
 });
 
 var hideAll = function() {
