@@ -99,6 +99,7 @@ mrt:underscore-string-latest@2.3.3
 msavin:mongol@1.1.5
 npm-bcrypt@0.8.6_3
 npm-mongo@1.4.45
+oakworks:marker-clusterer@0.1.1
 oauth@1.1.11
 oauth1@1.1.10
 oauth2@1.1.10
