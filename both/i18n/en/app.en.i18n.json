@@ -256,8 +256,8 @@
   "welcomeScreen": {
     "text": {
       "0": {
-        "0": "Welcome to the Gatherings Maps.",
-        "1": "This is a tool to spread positivity around the world by connecting people, communities and ideas. Click on the buttons below to explore what you can do here.",
+        "0": "Welcome to the Focallocal Public Happiness Community",
+        "1": "This is a quick walkthrough for you to explore the wonderful tools here for you to make where you live and the whole world a happier, safer and more connected place for everybody. Click the buttons below, and logout anytime to see this walkthrough again",
         "2": "Legend",
         "3": "Filter to find events available nearby to help spread positivity and build a better tomorrow",
         "4": "Map",
@@ -265,9 +265,9 @@
             "0": "Double click on the map to zoom in.",
             "1": "Then click on the dot to read more."
         },
-        "6": "Adding Events",
+        "6": "Public Happiness Gatherings",
         "7": {
-          "0": "Click + to add your public happiness gathering",
+          "0": "Post Click + to add your public happiness gathering",
           "1": "(or one you've found)",
           "2": "",
           "3": ""
