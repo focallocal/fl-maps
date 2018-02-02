@@ -17,10 +17,10 @@
           "0": "Focallocal is an open, welcoming community of thousands of positive people around the world.",
           "1": "Since 2011 we have been coming together and targeting the root causes of any, and all societal issues.",
           "2": "Sharing ideas, and using fun activities to empower people to build a friendlier, happier more connected future for everyone.",
-          "3": "Join us and turn Positive Action into a daily habit to explore your power to change the world, and the happiness it'll bring into your life",
+          "3": "Join us and turn Public Happiness into a daily habit to explore your power to change the world, and the happiness it'll bring into your life",
           "items": {
-            "smiley": "make the world ‘happier’ every day",
-            "friends": "meet ‘positive’ friends all over the world",
+            "smiley": "make the world happier every day",
+            "friends": "make + meet positive friends all over the world",
             "share": "share + learn skills for your career or building change"
           }
         }
@@ -63,7 +63,7 @@
     }
   },
   "newEvent": {
-    "title": "New Action",
+    "title": "New",
     "section_titles": {
       "0": "1. Choose a Category",
       "1": "2. Give it a Name",
@@ -81,17 +81,17 @@
       "4": "Something New"
     },
     "subs": {
-      "0": "'Choose a category' and post your positive action gathering",
-      "1": "'Suggestions' to read more about them",
-      "2": "'Something new' to suggest a new positive action"
+      "0": "'Choose a category' and create your listing",
+      "1": "Find the best 'Suggestions' from around the world",
+      "2": "'Something new' suggest your own idea (mods will approve it asap)"
     }
   },
   "editEvent": {
-    "title": "Edit Action"
+    "title": "Edit"
   },
   "eventConfirmDelete": {
     "title": "Please confirm",
-    "subtitle": "Are you sure to delete this event?",
+    "subtitle": "Are you sure to delete this?",
     "btns": {
       "0": "Yes, delete it!",
       "1": "No, take me back!"
@@ -100,9 +100,9 @@
   "congratsModal": {
     "title": "Congratulations!",
     "subtitle": "We're one step closer to a happier and more connected World",
-    "subtitle_1": "We've made it super easy for you to get many more people to come!",
+    "subtitle_1": "We've made it super easy to share this and reach more people!",
     "text": {
-      "0": "Simply click the buttons above and copy/paste the info below.",
+      "0": "Simply click the buttons above and then copy/paste the info below.",
       "1": "with the Focallocal Community",
       "tags": {
         "0": "Description",
@@ -110,12 +110,12 @@
         "2": "Address",
         "3": "Meeting point",
         "4": "How to find us",
-        "5": "Link"
+        "5": "Add a link"
       },
-      "2": "Join the Global Movement for Positive Change at www.focallocal.org"
+      "2": "Join the global Movement at www.focallocal.org"
     },
     "btns": {
-      "0": "Ok, done!"
+      "0": "Done!"
     }
   },
   "_footer": {
@@ -124,12 +124,12 @@
       "1": "Sitemap",
       "2": "Connect",
       "sub": {
-        "0": "This website has been created by volunteers at the Focallocal Positive Action Community as part of our mission if local action for global change. Find out more and join us at",
+        "0": "This website has been created by volunteers at the Focallocal Public Happiness Community as part of our mission of local action for global change. Join us at",
         "1": {
           "list": {
             "0": "Home",
-            "1": "Events map",
-            "2": "Events list",
+            "1": "Map",
+            "2": "List",
             "3": "Sign in",
             "4": "Register",
             "5": "Rss feed"
@@ -161,15 +161,15 @@
       "4": {
         "title": "Projects",
         "content": {
-          "0": "Positive Action Activities",
+          "0": "Public Happiness",
           "1": "Brighter Tomorrows map"
+          "2": "More Happiness Movement"
         }
       },
       "5": {
         "title": "Shop",
         "content": {
-          "0": "Positive Action Shop",
-          "1": "Community Marketplace"
+          "0": "Public Happiness Shop",
         }
       }
     }
@@ -193,15 +193,15 @@
       "4": {
         "title": "Shop",
         "content": {
-          "0": "Positive Action Shop",
-          "1": "Community Marketplace"
+          "0": "Public Happiness Shop",
         }
       },
       "5": {
         "title": "Projects",
         "content": {
-          "0": "Positive Action Activities",
+          "0": "Public Happiness Activities",
           "1": "Brighter Tomorrow Map"
+          "2": "More Happiness Movement"
         }
       }
     }
@@ -209,11 +209,11 @@
   "calendar": {
     "section_titles": {
       "0": "Search",
-      "1": "Upcoming positive action",
-      "2": "Past positive actions",
+      "1": "Upcoming",
+      "2": "Past",
       "sub": {
-        "0": "No upcoming events :( Please add one!",
-        "1": "No action in the past."
+        "0": "Nothing coming up :( Please add one!",
+        "1": "No previous posts"
       }
     },
     "btns": {
@@ -228,7 +228,7 @@
   "map": {
     "text": {
       "0": "Key",
-      "1": "Create your Activity now!"
+      "1": "Add"
     },
     "btns": {
       "0": "Toggle All"
@@ -241,7 +241,7 @@
     "text": {
       "0": "Think this is spam or an error? Let us know!",
       "tags": {
-        "0": "About Event",
+        "0": "About",
         "1": "Photos",
         "2": "Videos",
         "3": "Comments"
@@ -267,14 +267,14 @@
         },
         "6": "Adding Events",
         "7": {
-          "0": "Click + to add your event",
+          "0": "Click + to add your public happiness gathering",
           "1": "(or one you've found)",
           "2": "",
           "3": ""
         },
         "8": "Print",
         "9": {
-          "0": "Print a guide of events available in your local area to give out to people.",
+          "0": "Print a list of whats coming up in your local area to give out to people.",
           "1": "Or as a useful poster for a wall or window. (full functionality coming soon)"
         },
         "10": "Navigation",
@@ -284,9 +284,9 @@
         "14": "Calendar",
         "15": "to search by date, location and event",
         "16": "Projects",
-        "17": "to see more from Focallocal Positive community.",
+        "17": "to see more from Focallocal Public Happiness Community.",
         "18": "Join",
-        "19": "to join out volunteer community creating a world with more peace and happiness."
+        "19": "to join out volunteer community creating a world with more peace, well-being and happiness."
       }
     },
     "btns": {
