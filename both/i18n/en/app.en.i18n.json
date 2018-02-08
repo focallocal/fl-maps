@@ -162,14 +162,14 @@
         "title": "Projects",
         "content": {
           "0": "Public Happiness",
-          "1": "Brighter Tomorrows map"
+          "1": "Brighter Tomorrows map",
           "2": "More Happiness Movement"
         }
       },
       "5": {
         "title": "Shop",
         "content": {
-          "0": "Public Happiness Shop",
+          "0": "Public Happiness Shop"
         }
       }
     }
@@ -193,14 +193,14 @@
       "4": {
         "title": "Shop",
         "content": {
-          "0": "Public Happiness Shop",
+          "0": "Public Happiness Shop"
         }
       },
       "5": {
         "title": "Projects",
         "content": {
           "0": "Public Happiness Activities",
-          "1": "Brighter Tomorrow Map"
+          "1": "Brighter Tomorrow Map",
           "2": "More Happiness Movement"
         }
       }
