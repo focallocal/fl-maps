@@ -1,12 +1,12 @@
 [![Build Status](https://travis-ci.org/focallocal/fl-maps.svg?branch=master)](https://travis-ci.org/focallocal/fl-maps)
-Focallocal Gathering Map and Brighter Tomorrow Map 
-====================
+# Focallocal Gathering Map and Brighter Tomorrow Map 
+
+## Project Information
 
 *Because organising social events to make our communities happier, and supporting people who are homeless in your local community, should both be as simple as ordering pizza*
 
 
-Usage
------
+## End User Guide
 1. Go to http://gather.focallocal.org or http://brightertomorrowmap.com
 2. Register using your email or use your account Facebook|Google|Twitter|Meetup
 3. Go to the map page 
@@ -14,20 +14,23 @@ Usage
 5. Use buttons at the end to either copy/paste the details to other social media event hubs (gather), or share details inviting more people to use the map on social media (brighter tomorrow map) using buttons on final message modal window
 
 
+## Contributing
 
-Project set up (for developers)
-----------------------------
-Project is built on [Meteor](https://github.com/meteor/meteor), a simple environment 
-for building modern web applications.
-Install Meteor
-    curl https://install.meteor.com | /bin/sh
-Clone the project repository
-    git clone https://github.com/focallocal/fl-maps.git
-    cd fl-events
+Developer Setup:
 
-We suggest using Atom.io as a text editor to work on the code
+```
+# skip if meteor is already installed.
+# can alternatively install through website at www.meteor.com
+curl https://install.meteor.com | /bin/sh
 
-    
+# clone the repository
+git clone https://github.com/focallocal/fl-maps.git fl-maps
+
+# enter the project folder
+cd fl-maps
+```
+
+
 #### Running 
 Currently we are experimenting with functional tests. On slow machines it's recomended to run the app without tests
     VELOCITY=0 meteor 
