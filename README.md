@@ -1,3 +1,6 @@
+![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
+
+[Official Website](http://focallocal.org)
 [![Build Status](https://travis-ci.org/focallocal/fl-maps.svg?branch=master)](https://travis-ci.org/focallocal/fl-maps)
 # Focallocal Gathering Map and Brighter Tomorrow Map 
 
@@ -5,14 +8,14 @@
 
 *Because organising social events to make our communities happier, and supporting people who are homeless in your local community, should both be as simple as ordering pizza*
 
+There are 2 instances of this Meteor app running:
+- Focallocal Public Happiness Movement: http://gather.focallocal.org
+    - Builds from `master` branch
+- Brighter Tomorrow Map: http://brightertomorrowmap.com/
+    - Builds from `street-sleeper` branch
 
-## End User Guide
-1. Go to http://gather.focallocal.org or http://brightertomorrowmap.com
-2. Register using your email or use your account Facebook|Google|Twitter|Meetup
-3. Go to the map page 
-4. Add a new listing using (+) button
-5. Use buttons at the end to either copy/paste the details to other social media event hubs (gather), or share details inviting more people to use the map on social media (brighter tomorrow map) using buttons on final message modal window
-
+Travis CI builds from the `master` branch and pushes changes to the `street-sleeper` branch.
+Code for the two branches are mostly identical, and any differences between the two branches are achieved throught the `il8n` plugin.  
 
 ## Contributing
 
@@ -24,11 +27,21 @@ Developer Setup:
 curl https://install.meteor.com | /bin/sh
 
 # clone the repository
+# if you forked the repo, clone your forked downstream repo 
 git clone https://github.com/focallocal/fl-maps.git fl-maps
 
 # enter the project folder
 cd fl-maps
+
+# Install dependencies
+meteor npm install
+
+# Install meteor packages and start meteor server
+# make sure that you have the settings.json file at project root.
+npm start 
 ```
+
+Submit PRs to `master`. `street-sleeper` will be updated through Travis CI. 
 
 
 #### Running 
@@ -97,18 +110,6 @@ Contributing
 `Fork it`: http://help.github.com/forking/
 `pull request`: http://help.github.com/pull-requests/
 
-
-
-TODO
-------------
-- [ ] Set up a cloud based testing solution as a part of Continous Integration solution.
-- [ ] Host application on a dedicated server. If we want to scale, we have to find or invest some money in VPS.
-- [ ] Fix Velocity tests configuration to run PhantomJS tests seamlessly. 
-- [ ] Turn the site into an app which syncs with the main Focallocal app (needs to be built)
-- [ ] Integrate database of user accounts and info between either Meteor/Wordpress, or Meteor/Discourse (Wordpress and Discourse are already sync'd)
-
-
-
 About the Project
 -----------------
 *Focallocal events* is a part of a big project, or rather movement, [Focallocal](http://focallocal.org). 
@@ -116,7 +117,7 @@ About the Project
 > Together, our ideas and the success stories from community members activities are shared and repeated by other Focallocallers all around the World, each making a positive difference to life in their local community.
 
 
-[I want to know more!](http://focallocal.org)
 
 
-![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
+
+
