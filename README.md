@@ -2,14 +2,20 @@
 
 [Official Website](http://focallocal.org)
 [![Build Status](https://travis-ci.org/focallocal/fl-maps.svg?branch=master)](https://travis-ci.org/focallocal/fl-maps)
-# Focallocal Gathering Map and Brighter Tomorrow Map 
+# Focallocal: Gathering Map and Brighter Tomorrow Map 
 
-## Project Information
+*Focallocal events* is a part of the [Focallocal](http://focallocal.org) movement. 
+> Focallocal is an open, encouraging and supportive community for people who want to explore creative and fun ways to make our communities friendlier, more connected, safer and happier for everyone to enjoy living in.
+
+> Together, our ideas and the success stories from community members activities are shared and repeated by other Focallocallers all around the World, each making a positive difference to life in their local community.
+
 
 *Because organising social events to make our communities happier, and supporting people who are homeless in your local community, should both be as simple as ordering pizza*
 
+
+## Project Information
 There are 2 instances of this Meteor app running:
-- Focallocal Public Happiness Movement: http://gather.focallocal.org
+- Focallocal Gathering Map: http://gather.focallocal.org
     - Builds from `master` branch
 - Brighter Tomorrow Map: http://brightertomorrowmap.com/
     - Builds from `street-sleeper` branch
@@ -109,15 +115,4 @@ Contributing
 * Submit a `pull request`
 `Fork it`: http://help.github.com/forking/
 `pull request`: http://help.github.com/pull-requests/
-
-About the Project
------------------
-*Focallocal events* is a part of a big project, or rather movement, [Focallocal](http://focallocal.org). 
-> Focallocal is an open, encouraging and supportive community for people who want to explore creative and fun ways to make our communities friendlier, more connected, safer and happier for everyone to enjoy living in.
-> Together, our ideas and the success stories from community members activities are shared and repeated by other Focallocallers all around the World, each making a positive difference to life in their local community.
-
-
-
-
-
 
