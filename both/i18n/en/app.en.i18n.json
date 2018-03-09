@@ -82,7 +82,7 @@
     },
     "subs": {
       "0": "'Choose a category' and create your listing",
-      "1": "Find the best 'Suggestions' from around the world",
+      "1": "Find the best 'suggestions' from around the world",
       "2": "'Something new' suggest your own idea (mods will approve it asap)"
     }
   },
@@ -234,7 +234,7 @@
       "0": "Toggle All"
     },
     "links": {
-      "0": "http://news.focallocal.org/gather-about"
+      "0": "http://focallocal.org/about"
     }
   },
   "event": {
