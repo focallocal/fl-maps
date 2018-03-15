@@ -25,7 +25,7 @@ AutoForm.hooks({
 
 function clearForm() {
 	AutoForm.resetForm('events-form');
-	$("#eventTitle").text('New Gather');
+	$("#eventTitle").text('New Listing');
 	sequence.resetSequence();
 }
 
@@ -187,7 +187,7 @@ Template.autoForm.onRendered(function () {
 		 if ($this.val().length > 0) {
 			$title.text($this.val());
 		} else {
-			$title.text("New Gather");
+			$title.text("New Listing");
 		}
 	});
 
