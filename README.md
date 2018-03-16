@@ -26,6 +26,7 @@ Code for the two branches are mostly identical, and any differences between the 
 ## Contributing
 
 Developer Setup:
+**Obtain the `settings.json` file from the slack channel and place it at project root.**
 
 ```
 # skip if meteor is already installed.
