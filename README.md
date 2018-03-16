@@ -49,7 +49,7 @@ npm start
 
 Submit PRs to `master`. `street-sleeper` will be updated through Travis CI. 
 
-
+### Testing
 #### Running 
 Currently we are experimenting with functional tests. On slow machines it's recomended to run the app without tests
     VELOCITY=0 meteor 
@@ -58,8 +58,7 @@ If you prefer to run the app with the test framework (executing tests every time
     CHIMP_OPTIONS="--format=pretty --sync=false --browser=firefox" meteor
     
 
-#### Testing
-There are few end-to-end Velocity tests located under... yes, you guessed: `tests/`. They are written in Cucumber. 
+There are few end-to-end Velocity tests located under `tests/`, written in Cucumber. 
 [Guidelines for writing Cucumber Velocity tests](velocity.readme.io/v1.0/docs/getting-started-with-cucumber)
 Running `meteor` will run meteor app process altogether with **mirror**. 
 > Mirrors are used by test frameworks to run tests within. Tests are typically destructive and as such require a different database. Mirrors run a parallel version of your app with a different database as not to intrude on the main development workflow.
@@ -72,21 +71,14 @@ It's documented [here](https://velocity.readme.io/docs/getting-started-with-cucu
 You can disable Velocity tests
     export VELOCITY=0 
     meteor run
-    
-
-##### What are these tests for?
-Currently, I develop the project with tests disabled and I trigger tests after implementing a feature. It takes some time on my old laptop to run mirror with firefox browser.
-Ideally, these tests should be mostly unit tests with few end-to-end tests, and they all should be running in the background using the fastest driver - PhantomJS. If you have some time to play with this, then pull requests are more than welcomed!
-Additionally, it's essential to set up cloud based testing solution, to run functional tests against all the modern browsers, including mobile browsers. (See TODO)
-Continuous integration
 
 
-----------------------------
+### CI
 We have [Travis build](https://travis-ci.org/focallocal/fl-maps) in place which monitors this repository. 
 Every **commit to master** branch results in a new build being triggered. 
 The point is to achieve continuous delivery which means 
 1. Building - with the latest meteor 
-2. Testing - (TODO) run functional tests 
+2. Testing
 3. Deploying 
     * contact Andy or one of the team for the latest settings.json file
     * Deploy to http://gather.focallocal.org if it's a push to `master` branch
@@ -99,20 +91,6 @@ The workflow is configured in `.travis.yml` and deployment is configured in the 
     * You set up 2 remotes: your fork named 'origin', and the fl-maps named 'upstream'
     * Before begining working on the code, you always pull everything from upstream inside your version of master, then you create a new branch, example - fixingBug32
     * When you are ready to upload the code, you create a push on you're ORIGIN remote.
-    *Lastly, you go on github, inside your fork page, and you will see a button -- CREATE PULL REQUEST
-    
+    * Lastly, you go on github, inside your fork page, and you will see a button -- CREATE PULL REQUEST
+
 The most important thing before starting is to ALWAYS pull everything from the UPSTREAM remote
-
-
-
-Contributing
-------------
-* Create something awesome -- make the code better, add some functionality,
-  whatever (this is the hardest part).
-* `Fork it`
-* Create a topic branch to house your changes
-* Get all of your commits in the new topic branch
-* Submit a `pull request`
-`Fork it`: http://help.github.com/forking/
-`pull request`: http://help.github.com/pull-requests/
-
