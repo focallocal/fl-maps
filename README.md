@@ -25,21 +25,21 @@ Code for the two branches are mostly identical, and any differences between the 
 
 ## Contributing
 
-Developer Setup:
-
+Meteor installation:
+- for windows, please follow the meteor installation steps on the Meteor website.
+- for linux, you can use `curl https://install.meteor.com | /bin/sh` to install meteor.
+Clone the repo:
 ```
-# skip if meteor is already installed.
-# can alternatively install through website at www.meteor.com
-curl https://install.meteor.com | /bin/sh
-
-# clone the repository
+# clone the repository 
 # if you forked the repo, clone your forked downstream repo 
 git clone https://github.com/focallocal/fl-maps.git fl-maps
-
+```
+For both linux & windows:
+```
 # enter the project folder
 cd fl-maps
 
-# Install dependencies
+# Install npm dependencies
 meteor npm install
 
 # Install meteor packages and start meteor server
@@ -50,7 +50,9 @@ npm start
 Submit PRs to `master`. `street-sleeper` will be updated through Travis CI. 
 
 ### Testing
-#### Running 
+**Note that tests are being upgraded to Chimp/Mocha/Chai, please refer to [issue #437](https://github.com/focallocal/fl-maps/issues/437).**
+
+<!-- #### Running (old)
 Currently we are experimenting with functional tests. On slow machines it's recomended to run the app without tests
     VELOCITY=0 meteor 
 If you prefer to run the app with the test framework (executing tests every time you save) then run it with
@@ -70,21 +72,19 @@ That's why I'm using firefox driver by default. To select another driver you can
 It's documented [here](https://velocity.readme.io/docs/getting-started-with-cucumber#section-chimp-options)
 You can disable Velocity tests
     export VELOCITY=0 
-    meteor run
+    meteor run -->
 
 
 ### CI
 We have [Travis build](https://travis-ci.org/focallocal/fl-maps) in place which monitors this repository. 
+
 Every **commit to master** branch results in a new build being triggered. 
-The point is to achieve continuous delivery which means 
-1. Building - with the latest meteor 
-2. Testing
-3. Deploying 
-    * contact Andy or one of the team for the latest settings.json file
+
+
+1. Deploying 
     * Deploy to http://gather.focallocal.org if it's a push to `master` branch
-    * Deploy to http://focallocal-test.meteor.com if it's a push to `any other` branch
     * Changes are pushed to the Brighter Tomorrow Map, with variables between the two set in i18n
-The workflow is configured in `.travis.yml` and deployment is configured in the `expect` script `deploy.exp`
+    * The workflow is configured in `.travis.yml` and deployment is configured in the `expect` script `deploy.exp`
 4. Pull Request
     * You first create a fork of fl-maps.
     * Then you clone your fork on your computer.
@@ -92,5 +92,4 @@ The workflow is configured in `.travis.yml` and deployment is configured in the 
     * Before begining working on the code, you always pull everything from upstream inside your version of master, then you create a new branch, example - fixingBug32
     * When you are ready to upload the code, you create a push on you're ORIGIN remote.
     * Lastly, you go on github, inside your fork page, and you will see a button -- CREATE PULL REQUEST
-
-The most important thing before starting is to ALWAYS pull everything from the UPSTREAM remote
+    * ALWAYS pull everything from the UPSTREAM remote
