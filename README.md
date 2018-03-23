@@ -28,13 +28,15 @@ Code for the two branches are mostly identical, and any differences between the 
 Meteor installation:
 - for windows, please follow the meteor installation steps on the Meteor website.
 - for linux, you can use `curl https://install.meteor.com | /bin/sh` to install meteor.
-Clone the repo:
+
 ```
 # clone the repository 
 # if you forked the repo, clone your forked downstream repo 
 git clone https://github.com/focallocal/fl-maps.git fl-maps
 ```
-For both linux & windows:
+For repo setup:
+- **Obtain the `settings.json` file from the slack channel and place it at project root.**
+- Submit PRs to `master`. `street-sleeper` will be updated through Travis CI. 
 ```
 # enter the project folder
 cd fl-maps
@@ -47,7 +49,8 @@ meteor npm install
 npm start 
 ```
 
-Submit PRs to `master`. `street-sleeper` will be updated through Travis CI. 
+
+
 
 ### Testing
 **Note that tests are being upgraded to Chimp/Mocha/Chai, please refer to [issue #437](https://github.com/focallocal/fl-maps/issues/437).**
