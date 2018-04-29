@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <sitemap>
+      <loc>http://gather.focallocal.org/sitemap.xml</loc>
+   </sitemap>
+   <sitemap>
+      <loc>http://news.focallocal.org/sitemap.xml</loc>
+   </sitemap>
+   <sitemap>
+      <loc>http://action.focallocal.org/sitemap.xml</loc>
+   </sitemap>
+   <sitemap>
+      <loc>http://activities.focallocal.org/sitemap.xml</loc>
+   </sitemap>
+   <sitemap>
+      <loc>http://morehappiness.focallocal.org/sitemap.xml</loc>
+   </sitemap>
+   <sitemap>
+      <loc>http://discuss.focallocal.org/sitemap.xml</loc>
+   </sitemap>
+   <sitemap>
+      <loc>http://brightertomorrowmap.com/sitemap.xml</loc>
+   </sitemap>
+
+  </sitemapindex>
