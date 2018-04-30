@@ -28,13 +28,13 @@
                 </a>
                 <div id="selectable">
                   <blockquote>
-                    {{name}}: {{category.name}} {{_ "congratsModal.text.1"}} <br />
-                    {{_ "congratsModal.text.tags.0"}}: {{description}} <br />
-                    {{_ "congratsModal.text.2"}}<br/>
-                    {{_ "congratsModal.text.tags.1"}}: {{printDate dateEvent}} <br />
-                    {{_ "congratsModal.text.tags.2"}}: {{address}} <br />
-                    {{_ "congratsModal.text.tags.3"}}: {{meetingPoint}} <br />
-                    {{_ "congratsModal.text.tags.4"}}: {{findHints}} <br />
+                    <p>{{name}}: {{category.name}} {{_ "congratsModal.text.1"}}</p>
+                    <p>{{_ "congratsModal.text.tags.0"}}: {{description}}</p>
+                    <p>{{_ "congratsModal.text.2"}}</p>
+                    <p>{{_ "congratsModal.text.tags.1"}}: {{printDate dateEvent}}</p>
+                    <p>{{_ "congratsModal.text.tags.2"}}: {{address}}</p>
+                    <p>{{_ "congratsModal.text.tags.3"}}: {{meetingPoint}}</p>
+                    <p>{{_ "congratsModal.text.tags.4"}}: {{findHints}}</p>
                     {{#if url}}
                         {{_ "congratsModal.text.tags.5"}}: <a href="{{url}}" target="_blank">{{url}}</a>
                     {{/if}}<br />
