@@ -78,6 +78,16 @@
   font-size: 1.2em;
 }
 
+.layers-for-map .layers-header {
+  position: relative;
+}
+
+.layers-for-map .layers-header #layers-toggle-all {
+  position: absolute;
+  top: 2.5px;
+  right: 0;
+}
+
 #search-input {
   background-color: white;
   width: 30%;
