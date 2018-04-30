@@ -157,7 +157,6 @@
       "1": "Happy News",
       "2": "Action Center",
       "3": "Map",
-      "6": "Activities",
       "4": {
         "title": "Projects",
         "content": {
@@ -166,12 +165,8 @@
           "2": "More Happiness Movement"
         }
       },
-      "5": {
-        "title": "Shop",
-        "content": {
-          "0": "Active Happiness Clothing"
-        }
-      }
+      "5": "Shop",
+      "6": "Activities"
     }
   },
   "sideNav": {
@@ -190,12 +185,7 @@
           "5": "Focallocal in the News"
         }
       },
-      "4": {
-        "title": "Shop",
-        "content": {
-          "0": "Public Happiness Shop"
-        }
-      },
+      "4": "Shop",
       "5": {
         "title": "Projects",
         "content": {

@@ -470,6 +470,7 @@ Events.attachSchema(new SimpleSchema({
     },
     'engagement.limit': {
       type: Number,
+      label: 'Attendee Limit',
       autoform: {
         min: '0'
       }
