@@ -69,9 +69,8 @@
       "1": "2. Give it a Name",
       "2": "3. Select an Address",
       "3": "4. Choose a specific meeting point",
-      "4": "5. How will people recognise you?",
-      "5": "6. Choose a Date and Time",
-      "6": "7. Description/More Details"
+      "4": "5. Choose a Date and Time",
+      "5": "6. Description/More Details"
     },
     "btns": {
       "0": "Back",
