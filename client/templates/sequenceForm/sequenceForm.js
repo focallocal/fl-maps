@@ -107,7 +107,8 @@ SequenceForm.prototype.next = function (skip) {
 	$nextField.show();
 
 	if (vm._fieldAmount - 1 === vm._currentField.number) {
-		vm._$nextBtn.attr('disabled', 'disabled');
+		// Hide next button on last step
+		vm._$nextBtn.addClass('hide');
 		vm._$submitBtn.show();
 	}
 
@@ -134,6 +135,7 @@ SequenceForm.prototype.back = function() {
 	vm._currentField.number -= 1;
 	var $nextField = vm._$fields[vm._currentField.number];
 
+	vm._$nextBtn.removeClass('hide');
 	vm._$nextBtn.removeAttr('disabled');
 	vm._$submitBtn.hide();
 
