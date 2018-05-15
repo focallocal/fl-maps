@@ -1,0 +1,102 @@
+@import './variables.scss';
+@import './bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
+
+body {
+  background: #efef;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// Apply a default black-lighter color for all elements
+body, h1, h2, h3, h4, h5, p, span {
+  color: $black-lighter;
+}
+
+// Button
+
+.btn {
+  color: #fff;
+  font-weight: 400;
+  // font-family: Arial;
+  border-radius: 10px;
+
+  &:active, &:focus {
+    box-shadow: none !important;
+  }
+
+  &.btn-secondary {
+    background-color: $green;
+    border: #00a955;
+
+    &:active, {
+      background-color: $green-darker !important;
+    }
+  }
+}
+
+// Social Buttons
+
+.btn.fab {
+  width: 100px;
+  border: none;
+  margin-right: 5px;
+
+  &.fa-facebook-f {
+    background-color: #3B5998;
+  }
+
+  &.fa-twitter {
+    background-color: #55ACEE;
+  }
+
+  &.fa-google-plus-g {
+    background-color: #DD4B39;
+  }
+}
+
+// Anchor Links
+
+a {
+  outline: none;
+}
+
+// Blockquote
+
+blockquote {
+  border-left: 5px solid;
+  padding-left: 20px;
+}
+
+// Uniforms
+
+.day-picker-modal {
+  max-width: 300px;
+}
+
+.input-icon {
+  position: relative;
+
+  input {
+    height: 50px;
+    width: 350px;
+    box-shadow: none;
+  }
+
+  .fas {
+    position: absolute;
+    right: 13px;
+    top: 16px;
+    color: #495057;
+    font-size: 1.15em;
+    opacity: .4;
+  }
+}
+
+// NProgress
+
+#nprogress {
+
+  .bar {
+    background: $green !important;
+  }
+}

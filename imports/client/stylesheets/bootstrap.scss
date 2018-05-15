@@ -1,0 +1,20 @@
+// Override bootstrap defaults!
+
+/* Dropdown */
+
+.dropdown {
+
+  .dropdown-item {
+
+    &.active, &:focus, &:active, &:hover {
+      background: $gray-lighter;
+      font-weight: bolder;
+    }
+  }
+}
+
+/* Input */
+
+input {
+  border-radius: 4px;
+}

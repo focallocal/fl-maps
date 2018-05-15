@@ -1,0 +1,5 @@
+import menu from './menu.json'
+
+export default {
+  MainMenu: menu
+}

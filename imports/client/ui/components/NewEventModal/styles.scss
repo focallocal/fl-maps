@@ -1,0 +1,75 @@
+#new-event-modal {
+
+  .modal-content {
+    height: 598px;
+    overflow-y: auto;
+  }
+
+  .inline-inputs {
+    display: flex;
+    flex-direction: row;
+
+    &>div {
+      flex: 1;
+
+      &:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  input[name="engagement.limit"] {
+    width: 200px;
+  }
+
+  .select-field {
+    width: 100%;
+
+    &.error {
+
+      &>div>div {
+        border-color: #dc3545;
+        box-shadow: none;
+      }
+    }
+
+    .input-icon {
+      width: 100%;
+
+      input {
+        height: 38px;
+        width: 100%;
+        padding-right: calc(.75rem + 24px);
+      }
+
+      .fas {
+        top: 10px;
+      }
+    }
+
+    #suggestions {
+      position: relative;
+      top: 10px;
+    }
+
+    &>div>div {
+      background: #fff;
+    }
+  }
+
+  .modal-footer {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+    button:only-child {
+      position: relative;
+      right: 4px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .modal-content {
+      height: auto;
+    }
+  }
+}
