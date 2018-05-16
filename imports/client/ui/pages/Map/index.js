@@ -16,14 +16,41 @@ class MapComponent_ extends Component {
   state = {
     bounds: null,
     center: { lat: 46, lng: -43 },
-    currentEventInfo: null
+    zoom: 3,
+    currentEventInfo: null,
+    userLocation: null
+  }
+
+  componentWillMount () {
+    // Get coordinates from another component (Home)
+    const position = sessionStorage.getItem('position')
+
+    if (position) {
+      try {
+        const { userLocation, ...coords } = JSON.parse(position)
+        const center = {
+          lng: parseFloat(coords.lng),
+          lat: parseFloat(coords.lat)
+        }
+        this.setState({
+          center,
+          zoom: 7, // we want to only search in the local area
+          userLocation: userLocation ? center : null
+        })
+        console.log(center)
+      } catch (ex) {/* fail silently */}
+
+      // sessionStorage.removeItem('position')
+    }
   }
 
   render () {
     const {
       bounds,
       center,
-      currentEventInfo
+      zoom,
+      currentEventInfo,
+      userLocation
     } = this.state
 
     const {
@@ -34,7 +61,7 @@ class MapComponent_ extends Component {
       <GoogleMap
         ref={ref => this.map = ref}
         center={center}
-        defaultZoom={3}
+        defaultZoom={zoom}
         defaultOptions={mapOptions()}
       >
         <SearchBox
@@ -47,7 +74,6 @@ class MapComponent_ extends Component {
         </SearchBox>
 
         <MarkerClusterer
-          onClick={this.onMarkerClustererClick}
           averageCenter
           enableRetinaIcons
           gridSize={60}
@@ -63,7 +89,6 @@ class MapComponent_ extends Component {
                 position={{ lat: event.address.lat, lng: event.address.lng }}
                 icon={{ ...circle, fillColor }}
                 onClick={() => this.toggleInfoWindow(event._id)}
-                id={event._id}
               >
                 {currentEventInfo === event._id && (
                   <InfoWindow onCloseClick={() => this.toggleInfoWindow(null)}>
@@ -75,14 +100,13 @@ class MapComponent_ extends Component {
           })}
         </MarkerClusterer>
         <NewEvent />
+        {userLocation && (
+          <Marker
+            position={userLocation}
+          />
+        )}
       </GoogleMap>
     )
-  }
-
-  onMarkerClustererClick = () => {
-    return (markerClusterer) => {
-      const clickedMarkers = markerClusterer.getMarkers()
-    }
   }
 
   toggleInfoWindow = (_id) => {
