@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader'
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
+import history from '../utils/history'
 
 // Includes
 import MainMenu from './includes/MainMenu'
@@ -14,12 +15,12 @@ import CongratsModal from './components/NewEventModal/CongratsModal'
 class App extends Component {
   render () {
     return (
-      <Router>
+      <Router history={history}>
         <Fragment>
           <MainMenu />
 
           <Route exact path='/' component={Home} />
-          <Route exact path='/map' component={Map_} />
+          <Route path='/map' component={Map_} />
           <Route exact path='/thank-you' component={CongratsModal} />
           <Authentication />
         </Fragment>

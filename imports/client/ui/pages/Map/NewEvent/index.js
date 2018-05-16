@@ -1,40 +1,46 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { Meteor } from 'meteor/meteor'
+import { Route } from 'react-router-dom'
 import { Button } from 'reactstrap'
+import router from '/imports/client/utils/history'
 import NewEventModal from '/imports/client/ui/components/NewEventModal'
 import './styles.scss'
 
 class NewEvent extends Component {
-
-  state = {
-    isModalOpen: false
-  }
-
   render () {
-    const {
-      isModalOpen
-    } = this.state
-
     return (
       <div id='map--new-event'>
-        <Button className='circle' onClick={this.toggleModal}>
+        <Button className='circle' onClick={this.openModal}>
           <i className='fas fa-plus' />
         </Button>
-        <NewEventModal
-          isOpen={isModalOpen}
-          toggleModal={this.toggleModal}
-        />
+        <Route path='/map' render={({ location }) => {
+          const isOpen = location.search === '?new=1'
+
+          return (
+            <NewEventModal
+              isOpen={isOpen}
+              toggleModal={this.closeModal}
+            />
+          )
+        }} />
       </div>
     )
   }
 
-  toggleModal = () => {
-    this.setState(prevState => ({ isModalOpen: !prevState.isModalOpen }))
+  openModal () {
+    // Allow modal only for users
+
+    if (!Meteor.userId()) {
+      sessionStorage.setItem('redirect', '/map?new=1')
+      router.push('/sign-in')
+    } else {
+      router.push('/map?new=1')
+    }
   }
-}
 
-NewEvent.propTypes = {
-
+  closeModal () {
+    router.push('/map?new=0')
+  }
 }
 
 export default NewEvent

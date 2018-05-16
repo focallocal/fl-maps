@@ -3,6 +3,7 @@ import { Redirect } from 'react-router'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { withTracker } from 'meteor/react-meteor-data'
 import { AccountsReactComponent, AccountsReact } from 'meteor/meteoreact:accounts'
+import routerHistory from '/imports/client/utils/history'
 import './styles.scss'
 
 class Authentication extends Component {
@@ -38,6 +39,9 @@ class Authentication extends Component {
             history={history}
             route={path}
             token={params.token} // for the reset-password route
+            config={{
+              onLoginHook: onLoginHook
+            }}
           />
         </div>
       </div>
@@ -47,6 +51,14 @@ class Authentication extends Component {
   signOut = () => {
     AccountsReact.logout()
     return <Redirect to='/' />
+  }
+}
+
+function onLoginHook () {
+  const redirect = sessionStorage.getItem('redirect')
+  if (redirect) {
+    routerHistory.push(redirect)
+    sessionStorage.removeItem('redirect')
   }
 }
 

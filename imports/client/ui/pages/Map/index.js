@@ -1,26 +1,23 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps"
-import mapStyles from './mapStyles'
+import { Meteor } from 'meteor/meteor'
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps'
+import mapOptions from './mapOptions'
 import MapContainer from './MapContainer'
-import { Input } from 'reactstrap'
 import './styles.scss'
 
 const MapComponent = withScriptjs(withGoogleMap(props => {
-
   return (
     <GoogleMap
       defaultZoom={3}
       defaultCenter={{ lat: 46, lng: -43 }}
-      defaultOptions={{ styles: mapStyles }}
+      defaultOptions={mapOptions()}
     />
   )
 }))
 
 class Map_ extends Component {
-
   render () {
-    const { key} = Meteor.settings.public.gm
+    const { key } = Meteor.settings.public.gm
 
     return (
       <MapComponent

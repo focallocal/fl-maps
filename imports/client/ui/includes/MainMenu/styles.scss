@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Spicy+Rice');
+@import '/imports/client/stylesheets/variables.scss';
 
 #main-menu {
-  height: 64px;
+  height: $menu-height;
   padding: 0 16px;
-  background: #f57c00;
-  color: #fff;
+  background: $menu-background;
+  color: $menu-color;
   font-size: .9em;
   font-weight: 300;
   justify-content: space-between; // ensures there is a space between left and right navs
@@ -21,8 +22,13 @@
       color: #fff !important;
       transition: background .2s, ease-in;
 
-      & > * {
+      & > * { // Link children (title and icon)
+        position: relative;
         flex: 1;
+      }
+
+      & > div { // Link title
+        top: 2px;
       }
 
       &.active, &:hover {
@@ -42,10 +48,9 @@
         font-size: 1.3em;
 
         &.inline {
-          display: inline-block;
-          position: relative;
-          left: 4px;
-          top: 2px;
+          position: absolute;
+          right: -15px;
+          top: 0;
         }
       }
     }

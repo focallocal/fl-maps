@@ -10,13 +10,9 @@ import './styles.scss'
 
 const STEPS_COUNT = 1
 class NewEventModal extends Component {
-  state = {
-    currentStep: 0,
-    model: {}
-  }
 
-  componentDidMount () {
-    this.loadModelFromStorage(this)
+  state = {
+    currentStep: 0
   }
 
   render () {
@@ -29,7 +25,7 @@ class NewEventModal extends Component {
       currentStep
     } = this.state
 
-    const model = this.form ? this.form.getModel() : this.state.model
+    const model = this.form ? this.form.getModel() : this.loadModelFromStorage()
 
     return (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={toggleModal} size='lg'>
@@ -95,8 +91,9 @@ class NewEventModal extends Component {
     const model = localStorage.getItem('new-event-model')
 
     if (model != null) {
-      this.setState({ model: EventsSchema.clean(JSON.parse(model)) })
+      return EventsSchema.clean(JSON.parse(model))
     }
+    return {}
   }
 }
 
