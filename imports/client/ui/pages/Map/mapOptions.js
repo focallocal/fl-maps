@@ -10,6 +10,18 @@ export default function options () {
     streetViewControlOptions: {
       position: google.maps.ControlPosition.LEFT_BOTTOM
     },
+    fullscreenControlOptions: {
+      position: google.maps.ControlPosition.LEFT_BOTTOM
+    },
     mapTypeControl: false
   }
+}
+
+export const circle = {
+  path: 'M 0, 0 m -2, 0 a 2,2 0 1,0 4,0 a 2,2 0 1,0 -4,0',
+  strokeColor: 'black',
+  strokeWeight: 2,
+  fillColor: null,
+  fillOpacity: 1,
+  scale: 4
 }

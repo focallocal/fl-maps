@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Meteor } from 'meteor/meteor'
 import { Redirect } from 'react-router'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { withTracker } from 'meteor/react-meteor-data'
@@ -7,17 +8,16 @@ import routerHistory from '/imports/client/utils/history'
 import './styles.scss'
 
 class Authentication extends Component {
-
   render () {
     const { arState, signOut } = this
 
     return (
       <Switch>
-        <Route exact path='/sign-in'          component={arState} />
-        <Route exact path='/sign-up'          component={arState} />
-        <Route exact path='/sign-out'         component={signOut} />
-        <Route exact path='/forgot-password'  component={arState} />
-        <Route exact path='/change-password'  component={arState} />
+        <Route exact path='/sign-in' component={arState} />
+        <Route exact path='/sign-up' component={arState} />
+        <Route exact path='/sign-out' component={signOut} />
+        <Route exact path='/forgot-password' component={arState} />
+        <Route exact path='/change-password' component={arState} />
         <Route exact path='/reset-password/:token' component={arState} />
       </Switch>
     )

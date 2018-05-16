@@ -1,3 +1,5 @@
 import './seeds/accounts'
 import '/imports/both'
+import './development'
 import './methods'
+import './publications'

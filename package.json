@@ -10,6 +10,7 @@
     "@babel/runtime": "^7.0.0-beta.42",
     "bcrypt": "^2.0.1",
     "bootstrap": "^4.1.1",
+    "faker": "^4.1.0",
     "i18next": "^11.3.2",
     "meteor-node-stubs": "^0.3.2",
     "nprogress": "^0.2.0",

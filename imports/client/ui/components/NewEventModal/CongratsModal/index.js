@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import { NavLink, Redirect } from 'react-router-dom'
 import { EventsSchema } from '/imports/both/collections/events'
+import { formatCategories, formatDate } from '/imports/client/utils/format'
 import './styles.scss'
 
 const socialButtons = [
@@ -10,6 +11,7 @@ const socialButtons = [
   { icon: 'fab fa-twitter', onClick: shareOnTwitterLink },
   { icon: 'fab fa-google-plus-g', onClick: shareOnGooglePlusLink }
 ]
+
 class CongratsModal extends Component {
   render () {
     const {
@@ -18,8 +20,8 @@ class CongratsModal extends Component {
     } = localStorage
 
     if (!event_) {
-      // localStorage.removeItem('new-event-model')
-      // localStorage.removeitem('new-event-id')
+      localStorage.removeItem('new-event-model')
+      localStorage.removeitem('new-event-id')
       return <Redirect to='/' />
     }
 
@@ -79,23 +81,6 @@ const SelectableText = ({ event }) => {
       </blockquote>
     </div>
   )
-}
-
-function formatCategories (categories) {
-  console.log(categories)
-  return categories.reduce((str, category, index) => {
-    str += `${category.name}, `
-
-    if (!categories[index + 1]) {
-      str = str.substr(0, str.length - 2)
-    }
-
-    return str
-  }, '')
-}
-
-function formatDate (date) {
-  return new Date(date).toISOString().substring(0, 10).split('-').join('/')
 }
 
 function getUrl (_id) {
