@@ -9,6 +9,7 @@ export default function options () {
     },
     streetViewControlOptions: {
       position: google.maps.ControlPosition.LEFT_BOTTOM
-    }
+    },
+    mapTypeControl: false
   }
 }

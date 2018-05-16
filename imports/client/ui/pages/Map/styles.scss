@@ -7,28 +7,10 @@
   }
 
   #google-maps-searchbox {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-}
-
-#google-maps-searchbox {
-
-  #suggestions {
-    font-size: .8em;
-    max-width: 350px;
-
-    .list-group-item {
-      font-weight: bold;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      cursor: pointer;
-
-      &:hover {
-        background: #eee;
-      }
-    }
+    position: absolute !important;
+    top: 10px !important;
+    left: 10px !important;
+    height: 45px;
+    width: 350px;
   }
 }

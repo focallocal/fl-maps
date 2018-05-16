@@ -3,15 +3,19 @@
     "standard",
     "plugin:react/recommended"
   ],
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
   },
   "plugins": [
     "react",
-    "import"
+    "import",
+    "babel"
   ],
   "rules": {
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'babel/semi': 0,
+    'no-return-assign': 0
   },
   "globals": {
     'google': 1

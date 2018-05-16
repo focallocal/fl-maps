@@ -1,5 +1,5 @@
-import { Meteor } from 'meteor/meteor'
 import React, { Component } from 'react'
+import { Meteor } from 'meteor/meteor'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
@@ -10,10 +10,9 @@ import './styles.scss'
 
 const STEPS_COUNT = 1
 class NewEventModal extends Component {
-
   state = {
     currentStep: 0
-  }
+  };
 
   render () {
     const {
@@ -61,11 +60,11 @@ class NewEventModal extends Component {
 
   moveNext = () => {
     this.setState(prevState => ({ currentStep: prevState.currentStep + 1 }))
-  }
+  };
 
   moveBack = () => {
     this.setState(prevState => ({ currentStep: prevState.currentStep - 1 }))
-  }
+  };
 
   submit = () => {
     this.form.validate()
@@ -81,7 +80,7 @@ class NewEventModal extends Component {
         })
       })
       .catch(err => console.log(err))
-  }
+  };
 
   saveModelToStorage (model) {
     localStorage.setItem('new-event-model', JSON.stringify(model))

@@ -4,7 +4,6 @@ import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-au
 import { ListGroup, ListGroupItem, Input } from 'reactstrap'
 
 class SearchBox extends React.Component {
-
   state = {
     address: ''
   }
@@ -13,7 +12,7 @@ class SearchBox extends React.Component {
     const { address } = this.props
 
     if (address) {
-      this.setState({ address})
+      this.setState({ address })
     }
   }
 
@@ -53,7 +52,7 @@ class SearchBox extends React.Component {
           </div>
         )}
       </PlacesAutocomplete>
-    );
+    )
   }
 
   handleChange = (address) => {
