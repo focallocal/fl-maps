@@ -25,7 +25,10 @@ npm run start // Dont forget to include the settings.json file
 // Then just search for things which are implemented on the current version but not (or not fully completed) on the react-version.
 ```
 
-There also might be opened issues - if you decide to work on any of them please add a "**work in progress**" label.
+
+There also might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
+
+*if you decide to work on an issue please add a "**work in progress**" label.*
 
 ---
 
