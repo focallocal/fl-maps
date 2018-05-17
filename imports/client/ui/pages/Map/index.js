@@ -12,7 +12,6 @@ import NewEvent from './NewEvent'
 import './styles.scss'
 
 class MapComponent_ extends Component {
-
   state = {
     bounds: null,
     center: { lat: 46, lng: -43 },
@@ -21,10 +20,10 @@ class MapComponent_ extends Component {
     userLocation: null
   }
 
-  componentWillMount () {
+  UNSAFE_componentWillMount () {
     // Get coordinates from another component (Home)
-    const position = sessionStorage.getItem('position')
 
+    const position = sessionStorage.getItem('position')
     if (position) {
       try {
         const { userLocation, ...coords } = JSON.parse(position)
@@ -37,10 +36,9 @@ class MapComponent_ extends Component {
           zoom: 7, // we want to only search in the local area
           userLocation: userLocation ? center : null
         })
-        console.log(center)
-      } catch (ex) {/* fail silently */}
+      } catch (ex) { /* fail silently */ }
 
-      // sessionStorage.removeItem('position')
+      sessionStorage.removeItem('position')
     }
   }
 
@@ -79,7 +77,6 @@ class MapComponent_ extends Component {
           gridSize={60}
         >
           {events.map(event => {
-
             if (Meteor.isDevelopment && !event.address) { return } // react-hot-loader bug fix
             const fillColor = event.categories.length > 1 ? '#d09d7a' : event.categories[0].color
 
@@ -121,8 +118,8 @@ class MapComponent_ extends Component {
   }
 
   handlePlaces = () => {
-    const places = this.searchBox.getPlaces();
-    const bounds = new window.google.maps.LatLngBounds();
+    const places = this.searchBox.getPlaces()
+    const bounds = new window.google.maps.LatLngBounds()
 
     places.forEach(place => {
       if (place.geometry.viewport) {
@@ -130,18 +127,18 @@ class MapComponent_ extends Component {
       } else {
         bounds.extend(place.geometry.location)
       }
-    });
+    })
     const nextMarkers = places.map(place => ({
-      position: place.geometry.location,
-    }));
+      position: place.geometry.location
+    }))
     const nextCenter = nextMarkers[0] ? nextMarkers[0].position : this.state.center
 
     this.setState({
       center: nextCenter,
-      markers: nextMarkers,
+      markers: nextMarkers
     })
 
-    this.map.fitBounds(bounds);
+    this.map.fitBounds(bounds)
   }
 }
 const MapComponent = withScriptjs(withGoogleMap(MapComponent_))
@@ -149,11 +146,12 @@ const MapComponent = withScriptjs(withGoogleMap(MapComponent_))
 class Map_ extends Component {
   render () {
     const { key } = Meteor.settings.public.gm
+    const url = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&v=3.exp&libraries=places'
 
     return (
       <MapComponent
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${key}&v=3.exp&libraries=places`}
-        loadingElement={<div style={{ height: `100%` }} />}
+        googleMapURL={!window.google ? url : '-'}
+        loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div id='map-container' />}
         mapElement={<div id='map' />}
         events={this.props.events}

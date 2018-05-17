@@ -1,24 +1,22 @@
-import React          from 'react'
-import connectField   from 'uniforms/connectField'
-import filterDOMProps from 'uniforms/filterDOMProps'
-import Select         from 'react-select'
-import SearchBox      from '/imports/client/ui/pages/Map/SearchBox'
+import React from 'react'
+import connectField from 'uniforms/connectField'
+import Select from 'react-select'
+import PlacesSearchBox from '/imports/client/ui/components/PlacesSearchBox'
 
 import { FormGroup, Label } from 'reactstrap'
 
 const Select_ = ({
-    allowedValues,
-    id,
-    label,
-    name,
-    onChange,
-    placeholder_,
-    value,
-    selectOptions = {},
-    error,
-    ...props
+  allowedValues,
+  id,
+  label,
+  name,
+  onChange,
+  placeholder_,
+  value,
+  selectOptions = {},
+  error,
+  ...props
 }) => {
-
   const {
     multi,
     labelKey,
@@ -42,13 +40,13 @@ const Select_ = ({
           placeholder={placeholder_}
         />
       ) : (
-        <SearchBox
+        <PlacesSearchBox
           onSelect={onChange}
           address={value ? value.name : null}
           placeholder={placeholder_}
         />
       )
-    }
+      }
     </FormGroup>
   )
 }
@@ -63,7 +61,7 @@ function getValue (options, value, isMulti) {
   if (isMulti) {
     const data = value.reduce((arr, val) => {
       return arr.concat(options[val.value])
-    } , [])
+    }, [])
     return data
   }
 
@@ -87,7 +85,7 @@ function formatOptions (options = [], labelKey) {
     options_ = [options]
   }
 
-  return options_.reduce(function(arr, option, index) {
+  return options_.reduce(function (arr, option, index) {
     return arr.concat({
       value: index,
       label: labelKey ? option[labelKey] : option
@@ -95,4 +93,4 @@ function formatOptions (options = [], labelKey) {
   }, [])
 }
 
-export default connectField(Select_);
+export default connectField(Select_)

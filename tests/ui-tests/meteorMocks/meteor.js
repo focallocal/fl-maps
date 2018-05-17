@@ -1,6 +1,13 @@
 
 const Meteor = {
-  user: jest.fn()
+  user: jest.fn(),
+  settings: {
+    public: {
+      gm: {
+        key: ''
+      }
+    }
+  }
 }
 
 export {

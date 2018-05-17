@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import FindOrPost from './FindOrPost'
 import './styles.scss'

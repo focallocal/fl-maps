@@ -46,5 +46,23 @@
       text-align: center;
       font-weight: bold;
     }
+
+    .error-msg {
+      position: relative;
+      top: 3px;
+      color: #dc3545;
+      font-size: .9em;
+    }
+
+    .geolocation-help {
+      font-size: .8em;
+      color: rgba(50, 50, 50, 1);
+      cursor: pointer;
+      transition: color .2s ease;
+
+      &:hover {
+        color: rgba(0, 0, 0, 1);
+      }
+    }
   }
 }
