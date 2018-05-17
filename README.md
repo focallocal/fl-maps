@@ -2,13 +2,6 @@
 
 This is the base branch for the new react-based fl-maps.
 
-```javascript
-git clone -b react-maps https://github.com/focallocal/fl-maps
-cd fl-maps
-meteor npm install
-npm run start // Dont forget to include the settings.json file
-```
-
 I'm aware of all the missiing features/styles etc, just wanted to share the work i've done so far.
 
 Let me know what you think!
@@ -17,9 +10,30 @@ Let me know what you think!
 
 This application is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (*try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them*)
 
+## **important**
+This branch is currently just a basic migrated version of the main branch - it means that we should only focus on re-creating the pages of the main version.
+
+I suggest you to run this branch locally and open http://gather.focallocal.org/ on your browser - then just play with the browser, try different actions and look for pages/functionalities which are not implemented yet by the this branch's version.
+
+```javascript
+git clone -b react-maps https://github.com/focallocal/fl-maps
+cd fl-maps
+meteor npm install
+npm run start // Dont forget to include the settings.json file
+
+// Now open two tabs on your browser - localhost:3000 and http://gather.focallocal.org/
+// Then just search for things which are implemented on the current version but not (or not fully completed) on the react-version.
+```
+
+There also might be opened issues - if you decide to work on any of them please add a "**work in progress**" label.
+
+---
+
 The first thing you should know is that this is not a typical meteor app:
 
 - We favor **imports statements** over **global variables**
+
+- And also **npm modules** over **meteor's packages** (as much as possible)
 
 - We replace meteor's built in compiler with [`meteor-webpack`](https://github.com/ardatan/meteor-webpack).   
 this allows us to take advantage over many great webpack-based tools like [react-hot-loader](https://github.com/gaearon/react-hot-loader) among others..
