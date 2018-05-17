@@ -57,7 +57,7 @@ const EventsSchema = new SimpleSchema({
   'name': {
     type: String,
     uniforms: {
-      label: 'Event Name'
+      label: 'Name'
     }
   },
   'address': {

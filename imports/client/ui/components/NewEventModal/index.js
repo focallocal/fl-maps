@@ -6,9 +6,11 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import AutoForm from '/imports/client/utils/uniforms-custom/AutoForm'
 import { EventsSchema } from '/imports/both/collections/events'
 import FormWizard from './FormWizard'
+import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 const STEPS_COUNT = 1
+const { NewEventModal: i18n_ } = i18n
 class NewEventModal extends Component {
   state = {
     currentStep: 0
@@ -29,7 +31,7 @@ class NewEventModal extends Component {
     return (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={toggleModal} size='lg'>
         <ModalHeader toggle={toggleModal}>
-          New Event
+          {i18n_.modal_header}
         </ModalHeader>
 
         <ModalBody>

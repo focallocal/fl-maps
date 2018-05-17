@@ -1,5 +1,9 @@
-import menu from './menu.json'
+import MainMenu from './menu.json'
+import Home from './home.json'
+import NewEventModal from './new-event-modal.json'
 
 export default {
-  MainMenu: menu
+  MainMenu,
+  Home,
+  NewEventModal
 }

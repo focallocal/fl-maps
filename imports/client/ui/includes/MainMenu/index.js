@@ -4,7 +4,6 @@ import { NavLink as RouterNavLink } from 'react-router-dom'
 import DropDownItem from './DropDownItem'
 import LinkItem from './LinkItem'
 import UserItem from './UserItem'
-
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 

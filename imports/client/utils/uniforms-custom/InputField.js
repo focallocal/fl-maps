@@ -30,7 +30,7 @@ const Text = ({
       min={min}
       invalid={Boolean(error)}
     />
-    {max && <div>{`${max - value.length} characters left`}</div>}
+    {max && <div className='characters-left'>{`${max - value.length} characters left`}</div>}
   </FormGroup>
 
 const handleChange = (e, onChange, max, min) => {
