@@ -16,5 +16,9 @@ export function formatCategories (categories) {
 }
 
 export function formatDate (date) {
+  if (!date) {
+    throw new Error('please provide a valid date')
+  }
+
   return new Date(date).toISOString().substring(0, 10).split('-').join('/')
 }

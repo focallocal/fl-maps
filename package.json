@@ -27,8 +27,7 @@
     "react-select": "^2.0.0-beta.2",
     "reactstrap": "^6.0.1",
     "simpl-schema": "^1.5.0",
-    "uniforms": "^1.24.3",
-    "uniforms-unstyled": "^1.24.3"
+    "uniforms": "^1.24.3"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

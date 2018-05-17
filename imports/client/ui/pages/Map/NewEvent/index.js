@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
-import { Route } from 'react-router-dom'
+import { withRouter, Route } from 'react-router-dom'
 import { Button } from 'reactstrap'
-import router from '/imports/client/utils/history'
 import NewEventModal from '/imports/client/ui/components/NewEventModal'
 import './styles.scss'
+
+const queryStringToOpenModal = '?new=1'
+const queryStringToCloseModal = '?new=0'
 
 class NewEvent extends Component {
   render () {
@@ -14,7 +16,7 @@ class NewEvent extends Component {
           <i className='fas fa-plus' />
         </Button>
         <Route path='/map' render={({ location }) => {
-          const isOpen = location.search === '?new=1'
+          const isOpen = location.search.startsWith(queryStringToOpenModal)
 
           return (
             <NewEventModal
@@ -27,20 +29,26 @@ class NewEvent extends Component {
     )
   }
 
-  openModal () {
+  openModal = () => {
     // Allow modal only for users
+    const route = '/map' + queryStringToOpenModal
 
     if (!Meteor.userId()) {
-      sessionStorage.setItem('redirect', '/map?new=1')
-      router.push('/sign-in')
+      sessionStorage.setItem('redirect', route)
+      this.props.history.push('/sign-in')
     } else {
-      router.push('/map?new=1')
+      this.props.history.push(route)
     }
   }
 
-  closeModal () {
-    router.push('/map?new=0')
+  closeModal = () => {
+    this.props.history.push(queryStringToCloseModal)
   }
 }
 
-export default NewEvent
+export default withRouter(NewEvent)
+export {
+  // For testing purposes
+  queryStringToOpenModal,
+  queryStringToCloseModal
+}

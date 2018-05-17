@@ -1,7 +1,7 @@
-import { Meteor } from 'meteor/meteor'
 import '../both'
 import './stylesheets/main.scss'
 import 'react-day-picker/lib/style.css' // DatePicker styles
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import NProgress from 'nprogress' // Progress Bar
 import 'nprogress/nprogress.css'

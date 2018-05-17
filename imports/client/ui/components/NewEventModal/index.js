@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import PropTypes from 'prop-types'
-import { withRouter } from 'react-router-dom'
+import router from '/imports/client/utils/history'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
-import AutoForm from 'uniforms-unstyled/AutoForm'
+import AutoForm from '/imports/client/utils/uniforms-custom/AutoForm'
 import { EventsSchema } from '/imports/both/collections/events'
 import FormWizard from './FormWizard'
 import './styles.scss'
@@ -69,12 +69,13 @@ class NewEventModal extends Component {
   submit = () => {
     this.form.validate()
       .then(() => {
-        const model = EventsSchema.clean(this.form.getModel())
         window.NProgress.set(0.4)
+
+        const model = EventsSchema.clean(this.form.getModel())
         Meteor.call('Events.newEvent', model, (err, res) => {
           if (!err) {
             localStorage.setItem('new-event-id', res)
-            this.props.history.push('/thank-you')
+            router.push('/thank-you')
           }
           window.NProgress.done()
         })
@@ -101,4 +102,4 @@ NewEventModal.propTypes = {
   toggleModal: PropTypes.func.isRequired
 }
 
-export default withRouter(NewEventModal)
+export default NewEventModal

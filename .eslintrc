@@ -6,6 +6,8 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
+    "mocha": true,
+    "jest": true
   },
   "plugins": [
     "react",

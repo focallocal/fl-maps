@@ -113,4 +113,43 @@
       text-decoration: none;
     }
   }
+
+  @media screen and (max-width: 1004px) {
+    & {
+
+      #left-links {
+
+        .nav-item {
+          display: none;
+
+          &:last-child, &:nth-child(2) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 621px) {
+    & {
+
+      #left-links {
+
+        .nav-item {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 451px) {
+    & {
+      height: 55px;
+      padding: 0 6px;
+      
+      #brand-logo {
+        display: none;
+      }
+    }
+  }
 }
