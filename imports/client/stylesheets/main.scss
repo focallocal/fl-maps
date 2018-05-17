@@ -4,7 +4,10 @@
 
 body {
   background: #efef;
-  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  font-family: $default-font;
 }
 
 // Apply a default black-lighter color for all elements

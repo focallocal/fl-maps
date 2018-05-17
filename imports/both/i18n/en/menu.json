@@ -29,7 +29,7 @@
         "route": "/sign-in"
       },
       {
-        "title": "Join now",
+        "title": "Sign up",
         "route": "/sign-up"
       }
     ]
