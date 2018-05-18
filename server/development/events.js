@@ -6,19 +6,19 @@ import { Meteor } from 'meteor/meteor'
 import Events from '/imports/both/collections/events'
 import faker from 'faker'
 
-if (Meteor.isDevelopment) {
-  Meteor.methods({
-    'upsertFake' () {
-      for (let i = 0; i < 20; i++) {
-        Events.upsert({ _id: `fake-id-${i}`}, {
-          $set: generateEvent()
-        })
-      }
-    }
-  })
-
-  Meteor.call('upsertFake')
-}
+// if (Meteor.isDevelopment) {
+//   Meteor.methods({
+//     'upsertFake' () {
+//       for (let i = 0; i < 20; i++) {
+//         Events.upsert({ _id: `fake-id-${i}`}, {
+//           $set: generateEvent()
+//         })
+//       }
+//     }
+//   })
+//
+//   Meteor.call('upsertFake')
+// }
 
 function generateEvent () {
   return {

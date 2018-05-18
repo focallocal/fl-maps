@@ -9,12 +9,13 @@ import FormWizard from './FormWizard'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
-const STEPS_COUNT = 1
-const { NewEventModal: i18n_ } = i18n
+const STEPS_COUNT = 2 // Number of form steps
+const { NewEventModal: i18n_ } = i18n // Strings from i18n
+
 class NewEventModal extends Component {
   state = {
-    currentStep: 0
-  };
+    currentStep: 1
+  }
 
   render () {
     const {
@@ -22,11 +23,11 @@ class NewEventModal extends Component {
       toggleModal
     } = this.props
 
-    const {
-      currentStep
-    } = this.state
+    const { currentStep } = this.state
 
     const model = this.form ? this.form.getModel() : this.loadModelFromStorage()
+
+    this.ensureFormRef() // Fix null ref issue
 
     return (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={toggleModal} size='lg'>
@@ -38,10 +39,12 @@ class NewEventModal extends Component {
           <AutoForm
             schema={EventsSchema}
             model={model}
-            ref={form => this.form = form}
+            ref={ref => this.form = ref}
             onChangeModel={this.saveModelToStorage}
           >
-            <FormWizard currentStep={currentStep} />
+            {this.form ? <FormWizard currentStep={currentStep} form={this.form} />
+              : <div />
+            }
           </AutoForm>
         </ModalBody>
 
@@ -96,6 +99,17 @@ class NewEventModal extends Component {
       return EventsSchema.clean(JSON.parse(model))
     }
     return {}
+  }
+
+  ensureFormRef = () => {
+    if (!this.form) {
+      let interval = setInterval(() => {
+        if (this.form) {
+          clearInterval(interval)
+        }
+        this.forceUpdate()
+      }, 100)
+    }
   }
 }
 

@@ -2,19 +2,22 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import FirstStep from './FirstStep'
 import SecondStep from './SecondStep'
+import ThirdStep from './ThirdStep'
+import './DateTimeModule/styles.scss'
 
 class FormWizard extends Component {
-
   render () {
     const {
-      currentStep
+      currentStep,
+      form
     } = this.props
 
     return (
       <Fragment>
 
-        {currentStep === 0 && <FirstStep />}
-        {currentStep === 1 && <SecondStep />}
+        <FirstStep show={currentStep === 0}/>
+        <SecondStep show={currentStep === 1} form={form} />
+        <ThirdStep show={currentStep === 2} />
 
       </Fragment>
     )
@@ -22,7 +25,8 @@ class FormWizard extends Component {
 }
 
 FormWizard.propTypes = {
-  currentStep: PropTypes.number.isRequired
+  currentStep: PropTypes.number.isRequired,
+  form: PropTypes.object.isRequired
 }
 
 export default FormWizard
