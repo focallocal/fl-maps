@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "standard",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "jest": true
+  },
+  "plugins": [
+    "react",
+    "import",
+    "babel"
+  ],
+  "rules": {
+    'react/prop-types': 0,
+    'babel/semi': 0,
+    'no-return-assign': 0,
+    'camelcase': 0
+  },
+  "globals": {
+    'google': 1,
+    'NProgress': 1,
+    'jest': 1
+  }
+}

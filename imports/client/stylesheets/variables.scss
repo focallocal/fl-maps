@@ -1,0 +1,21 @@
+
+/* General */
+$default-font: 'Montserrat', Arial, sans-serif;
+
+/* Colors */
+$black-lighter: rgba(0,0,0,.75);
+$gray-lighter:  #eee;
+$green:         #00a955;
+$green-darker:  #00763b;
+$orange:        #f57c00;
+$white:         #fff;
+
+/* Components */
+
+// MainMenu
+$menu-height: 64px;
+$menu-background: $orange;
+$menu-color: $white;
+
+// Map
+$new-event-btn-background: $orange;

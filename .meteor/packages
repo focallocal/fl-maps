@@ -1,65 +1,29 @@
 # Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
 #
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
+meteor-base@1.3.0             # Packages every Meteor app needs to have
+mobile-experience@1.0.5       # Packages for a great mobile UX
+mongo@1.4.2                   # The database Meteor supports right now
+reactive-var@1.0.11            # Reactive variable for tracker
+tracker@1.1.3                 # Meteor's client-side reactive programming library
+
+standard-minifier-css@1.4.0   # CSS minifier run for production mode
+standard-minifier-js@2.3.1    # JS minifier run for production mode
+shell-server@0.3.1            # Server-side component of the `meteor shell` command
+ardatan:webpack
+ardatan:webpack-dev-middleware
+meteoreact:fix-unsupported-properties
+
+react-meteor-data
 accounts-password
-cmather:handlebars-server@0.2.0
-dburles:collection-helpers
-reywood:publish-composite
-momentjs:moment
-mrt:underscore-string-latest
-matb33:collection-hooks
-dburles:factory
-anti:fake
-cunneen:mailgun
-materialize:materialize@=0.97.7
-useraccounts:materialize
-aldeed:collection2
-gildaspk:autoform-materialize@0.0.18
-fourseven:scss
-rosh93:slide-panel
-msavin:mongol
-aldeed:autoform@5.1.2
-accounts-google
+meteoreact:accounts
+meteoreact:accounts-unstyled
 service-configuration
-accounts-twitter
-aldeed:template-extension
-lampe:rssfeed
-aldeed:geocoder
-sergeyt:typeahead
-fortawesome:fontawesome
-spiderable
-bevanhunt:leaflet@1.3.1
-prunecluster:prunecluster
-mordka:leaflet-extended-div-icon
-manuel:viewmodel
-datariot:ganalytics
-meteor-base
-mobile-experience
-mongo
-blaze-html-templates
-session
-jquery
-tracker
-logging
-reload
-random
-ejson
-spacebars
-check
-#standard-minifier-css
-standard-minifier-js
-kadira:flow-router
-kadira:blaze-layout
-arillo:flow-router-helpers
-reactive-var
-useraccounts:flow-routing
-zimme:active-route
-dburles:google-maps
-tap:i18n
-michalvalasek:autoform-bootstrap-colorpicker
-ryanswapp:spectrum-colorpicker
-alanning:roles
+accounts-google
 accounts-facebook
-oakworks:marker-clusterer@=0.1.1
+accounts-twitter
+aldeed:collection2@3.0.0
+mdg:validated-method

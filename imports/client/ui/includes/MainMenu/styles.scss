@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Spicy+Rice');
+@import '/imports/client/stylesheets/variables.scss';
+
+#main-menu {
+  height: $menu-height;
+  padding: 0 16px;
+  background: $menu-background;
+  color: $menu-color;
+  font-size: .9em;
+  font-weight: 300;
+  justify-content: space-between; // ensures there is a space between left and right navs
+  box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, .5);
+
+  .nav {
+    height: 100%; // get main-menu height
+
+
+    .nav-link {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+      color: #fff !important;
+      transition: background .2s, ease-in;
+
+      & > * { // Link children (title and icon)
+        position: relative;
+        flex: 1;
+      }
+
+      & > div { // Link title
+        top: 2px;
+      }
+
+      &.active, &:hover {
+        background: rgba(0,0,0,.1);
+      }
+
+      &:active, &:focus {
+        outline: 0;
+      }
+
+      .fas { // Icons
+        position: relative;
+        top: 4px;
+        display: block;
+        margin-bottom: 2px;
+        text-align: center;
+        font-size: 1.3em;
+
+        &.inline {
+          position: absolute;
+          right: -15px;
+          top: 0;
+        }
+      }
+    }
+
+    .dropdown {
+      height: 100%;
+
+      .dropdown-menu {
+        position: relative;
+        top: -2px !important;
+      }
+
+      .dropdown-item {
+        color: #e65100;
+        cursor: pointer;
+        font-weight: 300;
+      }
+    }
+
+    #user-item {
+      height: 100%;
+      font-size: 1.6em;
+
+      .dropdown {
+        height: 100%;
+
+        .nav-link {
+          height: 100%;
+
+          .fas {
+            position: relative;
+            top: 9px;
+
+            &.fa-caret-down { // Hide caret for this item
+              display: none;
+            }
+          }
+        }
+
+        .dropdown-menu {
+          // a hack to prevent the dropdown from being cut by the edge of the screen.
+          top: -2px !important;
+          right: -20px;
+          left: initial;
+        }
+      }
+    }
+  }
+
+  #brand-logo {
+    position: relative;
+    top: 6px;
+    font-size: 2.1em;
+    line-height: 1.4;
+    margin-right: .5rem;
+
+    a {
+      font-family: 'Spicy Rice', cursive;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  @media screen and (max-width: 1004px) {
+    & {
+
+      #left-links {
+
+        .nav-item {
+          display: none;
+
+          &:last-child, &:nth-child(2) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 621px) {
+    & {
+
+      #left-links {
+
+        .nav-item {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 451px) {
+    & {
+      height: 55px;
+      padding: 0 6px;
+
+      #brand-logo {
+        display: none;
+      }
+    }
+  }
+}

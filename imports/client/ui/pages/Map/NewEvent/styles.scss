@@ -1,0 +1,14 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#map--new-event {
+  position: absolute;
+  right: 16px;
+  bottom: 30px;
+
+  button {
+    height: 55px;
+    width: 55px;
+    background: $new-event-btn-background;
+    border-radius: 50%;
+  }
+}

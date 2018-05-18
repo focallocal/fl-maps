@@ -1,0 +1,55 @@
+
+#authentication {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &>div {
+    width: 425px;
+    padding: 24px 32px 32px 32px;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    margin-top: 65px;
+
+    form {
+      width: 100%;
+      margin-bottom: 16px;
+      background: #fff;
+
+      h1 {
+        display: none;
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-bottom: 6px;
+
+      &.google {
+        background: #DD4B39;
+      }
+
+      &.facebook {
+        background: #3B5998;
+      }
+
+      &.twitter {
+        background: #55ACEE;
+      }
+
+      &.google, &.facebook, &.twitter {
+        border: none;
+
+        i {
+          position: relative;
+          right: 5px;
+        }
+      }
+    }
+
+    a { // redirect link
+      margin-top: 16px;
+    }
+  }
+}

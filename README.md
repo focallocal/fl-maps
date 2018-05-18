@@ -1,98 +1,83 @@
 ![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
 
-[Official Website](http://focallocal.org)
-[![Build Status](https://travis-ci.org/focallocal/fl-maps.svg?branch=master)](https://travis-ci.org/focallocal/fl-maps)
-# Focallocal: Gathering Map and Brighter Tomorrow Map 
+This is the base branch for the new react-based fl-maps.
 
-*Focallocal events* is a part of the [Focallocal](http://focallocal.org) movement. 
-> Focallocal is an open, encouraging and supportive community for people who want to explore creative and fun ways to make our communities friendlier, more connected, safer and happier for everyone to enjoy living in.
+I'm aware of all the missiing features/styles etc, just wanted to share the work i've done so far.
 
-> Together, our ideas and the success stories from community members activities are shared and repeated by other Focallocallers all around the World, each making a positive difference to life in their local community.
+Let me know what you think!
 
+# Contribution Guide
 
-*Because organising social events to make our communities happier, and supporting people who are homeless in your local community, should both be as simple as ordering pizza*
+This application is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (*try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them*)
 
+## **important**
+This branch is currently just a basic migrated version of the main branch - it means that we should only focus on re-creating the pages of the main version.
 
-## Project Information
-There are 2 instances of this Meteor app running:
-- Focallocal Gathering Map: http://gather.focallocal.org
-    - Builds from `master` branch
-- Brighter Tomorrow Map: http://brightertomorrowmap.com/
-    - Builds from `street-sleeper` branch
+I suggest you to run this branch locally and open http://gather.focallocal.org/ on your browser - then just play with the browser, try different actions and look for pages/functionalities which are not implemented yet by the this branch's version.
 
-Travis CI builds from the `master` branch and pushes changes to the `street-sleeper` branch.
-Code for the two branches are mostly identical, and any differences between the two branches are achieved throught the `il8n` plugin.  
-
-## Contributing
-
-Meteor installation:
-- for windows, please follow the meteor installation steps on the Meteor website.
-- for linux, you can use `curl https://install.meteor.com | /bin/sh` to install meteor.
-
-```
-# clone the repository 
-# if you forked the repo, clone your forked downstream repo 
-git clone https://github.com/focallocal/fl-maps.git fl-maps
-```
-For repo setup:
-- **Obtain the `settings.json` file from the slack channel and place it at project root.**
-- Submit PRs to `master`. `street-sleeper` will be updated through Travis CI. 
-```
-# enter the project folder
+```javascript
+git clone -b react-maps https://github.com/focallocal/fl-maps
 cd fl-maps
-
-# Install npm dependencies
 meteor npm install
+npm run start // Dont forget to include the settings.json file
 
-# Install meteor packages and start meteor server
-# make sure that you have the settings.json file at project root.
-npm start 
+// Now open two tabs on your browser - localhost:3000 and http://gather.focallocal.org/
+// Then just search for things which are implemented on the current version but not (or not fully completed) on the react-version.
 ```
 
 
+There also might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
 
+*look for issues with the [**"React Conversion"** ](https://github.com/focallocal/fl-maps/labels/React%20Conversion)* label
 
-### Testing
-**Note that tests are being upgraded to Chimp/Mocha/Chai, please refer to [issue #437](https://github.com/focallocal/fl-maps/issues/437).**
+*if you decide to work on an issue please add a **"work in progress"** label.*
 
-<!-- #### Running (old)
-Currently we are experimenting with functional tests. On slow machines it's recomended to run the app without tests
-    VELOCITY=0 meteor 
-If you prefer to run the app with the test framework (executing tests every time you save) then run it with
-   
-    CHIMP_OPTIONS="--format=pretty --sync=false --browser=firefox" meteor
-    
+---
 
-There are few end-to-end Velocity tests located under `tests/`, written in Cucumber. 
-[Guidelines for writing Cucumber Velocity tests](velocity.readme.io/v1.0/docs/getting-started-with-cucumber)
-Running `meteor` will run meteor app process altogether with **mirror**. 
-> Mirrors are used by test frameworks to run tests within. Tests are typically destructive and as such require a different database. Mirrors run a parallel version of your app with a different database as not to intrude on the main development workflow.
-  
-You can check if the mirror is running - http://localhost:5000
-There is some issue when running these tests under default PhantomJS driver, at least on my machine. 
-That's why I'm using firefox driver by default. To select another driver you can bypass default Velocity settings.
-    export CHIMP_OPTIONS="--format=pretty --sync=false --browser=firefox"
-It's documented [here](https://velocity.readme.io/docs/getting-started-with-cucumber#section-chimp-options)
-You can disable Velocity tests
-    export VELOCITY=0 
-    meteor run -->
+The first thing you should know is that this is not a typical meteor app:
 
+- We favor **imports statements** over **global variables**
 
-### CI
-We have [Travis build](https://travis-ci.org/focallocal/fl-maps) in place which monitors this repository. 
+- And also **npm modules** over **meteor's packages** (as much as possible)
 
-Every **commit to master** branch results in a new build being triggered. 
+- We replace meteor's built in compiler with [`meteor-webpack`](https://github.com/ardatan/meteor-webpack).   
+this allows us to take advantage over many great webpack-based tools like [react-hot-loader](https://github.com/gaearon/react-hot-loader) among others..
 
+- We use [jest](https://facebook.github.io/jest/) as a test runner for most of the ui parts
 
-1. Deploying 
-    * Deploy to http://gather.focallocal.org if it's a push to `master` branch
-    * Changes are pushed to the Brighter Tomorrow Map, with variables between the two set in i18n
-    * The workflow is configured in `.travis.yml` and deployment is configured in the `expect` script `deploy.exp`
-4. Pull Request
-    * You first create a fork of fl-maps.
-    * Then you clone your fork on your computer.
-    * You set up 2 remotes: your fork named 'origin', and the fl-maps named 'upstream'
-    * Before begining working on the code, you always pull everything from upstream inside your version of master, then you create a new branch, example - fixingBug32
-    * When you are ready to upload the code, you create a push on you're ORIGIN remote.
-    * Lastly, you go on github, inside your fork page, and you will see a button -- CREATE PULL REQUEST
-    * ALWAYS pull everything from the UPSTREAM remote
+## Packages
+
+The following is a list of the packages that you should be familiar with:
+
+#### Meteor Packages
+
+* [react-meteor-data](https://github.com/meteor/react-packages/) - Get reactive updates from the server into components
+* [meteoreact:accounts](https://github.com/royGil/accounts-react/) - Automatic generation of user related forms
+* [mdg:validated-method](https://github.com/meteor/validated-method) - A powerful wrapper for meteor's methods
+
+#### Npm Packages
+
+* [Reactstrap](https://reactstrap.github.io/) - React components for bootstrap
+* [React Router v4](https://github.com/ReactTraining/react-router) - A router for react
+* [Simpl-schema](https://github.com/aldeed/simple-schema-js) - Schema defintions for our collections
+* [Uniforms](https://github.com/vazco/uniforms) - Automatic generation of forms in react
+* [NProgress](http://ricostacruz.com/nprogress/) - Display a progressbar between client-server requests
+* [react-google-maps](https://github.com/tomchentw/react-google-maps) - React components that wraps google-maps api
+* [Enzyme](https://github.com/airbnb/enzyme) - A testing utility for react
+
+*Please make sure you are familiar with those packages before attempting to use them*
+
+## Coding Style
+
+This project uses the [**standard**](https://standardjs.com/) coding style guidelines (enforced by [**eslint-standard-config**](https://github.com/standard/eslint-config-standard))
+
+*Please ensure your text editor is configured to use a linter so it can warn you about an incorrect code*
+
+## **Gotchas**
+
+* Currently, the server will only reload itself when files **inside the server folder** are changed. (this is a bug in the current version of the meteor-webpack package).
+If you change something in a different folder and need the server to reload - just type and save a "dummy" character (space/tab...) into one of the files in the server folder.
+
+* React-hot-loader will only hot-reload for changes that are made inside the <App /> component. This is the default behavior but i've added this note just to make sure you are aware rof this.
+
+* Both of the maps (gathering and brightertomorrow) use the same code base - we differentiate their strings by using different i18n files for each.

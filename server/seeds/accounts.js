@@ -1,45 +1,50 @@
-function createServiceConfiguration(service, clientId, secret) {
-    ServiceConfiguration.configurations.upsert(
-        {"service": service},
-        {
-            $set: {
-                "clientId": clientId,
-                "secret": secret,
-                "loginStyle": "popup"
-            }
-        });
+import { Meteor } from 'meteor/meteor'
+/*
+  Set up oAuth for Google, Facebook and Twitter
+*/
+
+var settings = Meteor.settings[process.env.NODE_ENV]
+if (settings !== undefined) {
+  // Google
+  ServiceConfiguration.configurations.upsert(
+    { service: 'google' },
+    {
+      $set: {
+        'loginStyle': 'popup',
+        'clientId': settings.google.oauth_key,
+        'secret': settings.google.oauth_secret
+      }
+    }
+  )
+
+  // Facebook
+  ServiceConfiguration.configurations.upsert(
+    {'service': 'facebook'},
+    {
+      $set: {
+        'appId': settings.facebook.oauth_key,
+        'secret': settings.facebook.oauth_secret,
+        'loginStyle': 'popup'
+      }
+    }
+  )
+
+  // Twitter
+  ServiceConfiguration.configurations.upsert(
+    { service: 'twitter' },
+    {
+      $set: {
+        'consumerKey': settings.twitter.oauth_key,
+        'secret': settings.twitter.oauth_secret,
+        'loginStyle': 'popup'
+      }
+    }
+  )
 }
 
-Meteor.startup(function() {
-    var settings = Meteor.settings[process.env.NODE_ENV];
-    if (settings!=undefined) {
-        console.log("Loading tokens...") ;
-        createServiceConfiguration("google", settings.google.oauth_key, settings.google.oauth_secret);
-        //createServiceConfiguration("facebook", settings.facebook.oauth_key, settings.facebook.oauth_secret);
-        //createServiceConfiguration("twitter", settings.twitter.oauth_key, settings.twitter.oauth_secret);
-        ServiceConfiguration.configurations.upsert(
-            {"service": "twitter"},
-            {
-                $set: {
-                    "consumerKey": settings.twitter.oauth_key,
-                    "secret": settings.twitter.oauth_secret,
-                    "loginStyle": "popup"
-                }
-            });
-        ServiceConfiguration.configurations.upsert(
-            {"service": "facebook"},
-            {
-                $set: {
-                    "appId": settings.facebook.oauth_key,
-                    "secret": settings.facebook.oauth_secret,
-                    "loginStyle": "popup"
-                }
-            });
-    }
-});
+Accounts.onCreateUser(function (options, user) {
+  if (options.profile) user.profile = options.profile
+  if (options.email) user.profile = {'name': options.email}
 
-Accounts.onCreateUser(function(options, user) {
-    if (options.profile) user.profile = options.profile;
-    if (options.email) user.profile = {"name" : options.email};
-    return user;
-});
+  return user
+})
