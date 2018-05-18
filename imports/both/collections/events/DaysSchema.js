@@ -3,15 +3,13 @@ import * as helpers from './helpers'
 
 SimpleSchema.extendOptions(['uniforms'])
 
-const OneDaySchema = new SimpleSchema({
-  'startingDate': {
-    type: Date,
-    uniforms: {
-      label: 'Date'
-    }
+const DaysSchema = new SimpleSchema({
+  'day': {
+    type: String,
+    allowedValues: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   },
   'startingTime': helpers.startingTime,
   'endingTime': helpers.endingTime
 })
 
-export default OneDaySchema
+export default DaysSchema

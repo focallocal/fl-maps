@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { CustomInput, FormText } from 'reactstrap'
+import { FormText } from 'reactstrap'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
+import WeekDays from '../WeekDays'
 import SetSameHoursPopover from './SetSameHoursPopover'
 import './styles.scss'
 
@@ -19,6 +20,10 @@ class SpecificPeriod extends Component {
       selectedDays
     } = this.state
 
+    const {
+      form
+    } = this.props
+
     return (
       <div id='specific-period' style={{ display: this.props.show ? 'block' : 'none' }}>
         <div className='inline-inputs'>
@@ -32,49 +37,14 @@ class SpecificPeriod extends Component {
 
         <SetSameHoursPopover handleDefaults={this.handleDefaults} />
 
-        {weekDays.map((day, index) => {
-          return (
-            <div key={index} className='day'>
-              <CustomInput
-                id={day}
-                className='checkbox'
-                type='checkbox'
-                label={day.substr(0, 3)}
-                checked={selectedDays.includes(day)}
-                onChange={() => this.handleDayChange(day, index)}
-              />
-              <div className='hours'>
-                <AutoField name={'when.specificPeriod.days.' + index + '.startingTime'} />
-                <span>-</span>
-                <AutoField name={'when.specificPeriod.days.' + index + '.endingTime'} />
-              </div>
-            </div>
-          )
-        })}
+        <WeekDays
+          schemaKey='when.specificPeriod.days'
+          selectedDays={selectedDays}
+          form={form}
+          context={this}
+        />
       </div>
     )
-  }
-
-  handleDayChange = (day, index) => {
-    const { form } = this.props
-    let selectedDays = [...this.state.selectedDays]
-
-    if (selectedDays.includes(day)) {
-      // Uncheck day
-      selectedDays[index] = null
-
-      // Delete the day object from form's model
-      let days = [...form.getModel().when.specificPeriod.days]
-      days.splice(index, 1, null)
-
-      // Update model
-      form.change('when.specificPeriod.days', days)
-    } else {
-      // Check day
-      selectedDays[index] = day
-    }
-
-    this.setState({ selectedDays })
   }
 
   handleDefaults = (key, value) => {

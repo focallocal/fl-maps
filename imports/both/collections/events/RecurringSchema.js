@@ -1,23 +1,43 @@
 import SimpleSchema from 'simpl-schema'
+import DaysSchema from './DaysSchema'
+import * as helpers from './helpers'
 
 SimpleSchema.extendOptions(['uniforms'])
 
 const RecurringSchema = new SimpleSchema({
   'type': {
     type: String,
-    allowedValues: ['Weekly', 'Monthly', 'Yearly']
-  },
-  'startingDate': {
-    type: Date,
+    allowedValues: ['week', 'month', 'year'],
+    autoValue: () => 'week',
     uniforms: {
-      label: 'Starting Date'
+      customType: 'select',
+      selectOptions: {
+        labelMapper: {
+          'week': 'week(s)',
+          'month': 'month(s)',
+          'year': 'year(s)'
+        },
+        defaultValueIndex: 0
+      }
     }
   },
-  'endingDate': {
-    type: Date,
+  'every': {
+    type: String,
+    allowedValues: [1, 2, 3, 4, 5, 6],
+    autoValue: () => 1,
     uniforms: {
-      label: 'Ending Date'
+      customType: 'select',
+      selectOptions: {
+        defaultValueIndex: 0
+      }
     }
+  },
+  'days': {
+    type: Array
+  },
+  'days.$': {
+    type: Number,
+    allowedValues: Array(31).fill(1).map((x, y) => x + y)
   }
 })
 

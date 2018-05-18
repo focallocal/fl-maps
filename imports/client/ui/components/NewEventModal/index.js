@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import PropTypes from 'prop-types'
 import router from '/imports/client/utils/history'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
-import AutoForm from '/imports/client/utils/uniforms-custom/AutoForm'
 import { EventsSchema } from '/imports/both/collections/events'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import FormWizard from './FormWizard'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
@@ -14,7 +13,12 @@ const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
 class NewEventModal extends Component {
   state = {
-    currentStep: 1
+    currentStep: 1,
+    form: null
+  }
+
+  componentDidMount () {
+    this.setState({ currentStep: 1 })
   }
 
   render () {
@@ -25,10 +29,6 @@ class NewEventModal extends Component {
 
     const { currentStep } = this.state
 
-    const model = this.form ? this.form.getModel() : this.loadModelFromStorage()
-
-    this.ensureFormRef() // Fix null ref issue
-
     return (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={toggleModal} size='lg'>
         <ModalHeader toggle={toggleModal}>
@@ -36,16 +36,7 @@ class NewEventModal extends Component {
         </ModalHeader>
 
         <ModalBody>
-          <AutoForm
-            schema={EventsSchema}
-            model={model}
-            ref={ref => this.form = ref}
-            onChangeModel={this.saveModelToStorage}
-          >
-            {this.form ? <FormWizard currentStep={currentStep} form={this.form} />
-              : <div />
-            }
-          </AutoForm>
+          <FormWizard currentStep={currentStep} passFormRefToParent={this.getRef} />
         </ModalBody>
 
         <ModalFooter>
@@ -72,7 +63,7 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
-    this.form.validate()
+    this.state.form.validate()
       .then(() => {
         window.NProgress.set(0.4)
 
@@ -86,30 +77,10 @@ class NewEventModal extends Component {
         })
       })
       .catch(err => console.log(err))
-  };
-
-  saveModelToStorage (model) {
-    localStorage.setItem('new-event-model', JSON.stringify(model))
   }
 
-  loadModelFromStorage (context) {
-    const model = localStorage.getItem('new-event-model')
-
-    if (model != null) {
-      return EventsSchema.clean(JSON.parse(model))
-    }
-    return {}
-  }
-
-  ensureFormRef = () => {
-    if (!this.form) {
-      let interval = setInterval(() => {
-        if (this.form) {
-          clearInterval(interval)
-        }
-        this.forceUpdate()
-      }, 100)
-    }
+  getRef = (form) => {
+    this.setState({ form: form })
   }
 }
 

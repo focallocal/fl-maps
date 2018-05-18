@@ -15,7 +15,7 @@ export function formatCategories (categories) {
   }, '')
 }
 
-export function formatReactSelectOptions (options = [], labelKey) {
+export function formatReactSelectOptions (options = [], labelKey, labelMapper) {
   /*
     React-select expects an array of objects with the following format -> { value: '', label: '' }
     So we must ensure our array of options always match that format.
@@ -28,14 +28,14 @@ export function formatReactSelectOptions (options = [], labelKey) {
   */
 
   let options_ = options
-  if (!options.reduce) {
+  if (!options.reduce) { // it's a value!
     options_ = [options]
   }
 
   return options_.reduce(function (arr, option, index) {
     return arr.concat({
       value: index,
-      label: labelKey ? option[labelKey] : option
+      label: labelMapper ? labelMapper[option] : labelKey ? option[labelKey] : option
     })
   }, [])
 }

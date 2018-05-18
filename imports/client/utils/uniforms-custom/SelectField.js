@@ -2,6 +2,7 @@ import React from 'react'
 import connectField from 'uniforms/connectField'
 import Select from 'react-select'
 import PlacesSearchBox from '/imports/client/ui/components/PlacesSearchBox'
+import { formatReactSelectOptions } from '../format'
 
 import { FormGroup, Label } from 'reactstrap'
 
@@ -20,20 +21,29 @@ const Select_ = ({
   const {
     multi,
     labelKey,
+    labelMapper,
+    defaultValueIndex,
     googleMaps
   } = selectOptions
 
-  let options = allowedValues || []
+  let options = []
   if (allowedValues) {
-    options = formatOptions(allowedValues, labelKey)
+    options = formatReactSelectOptions(allowedValues, labelKey, labelMapper)
   }
+
+  let values = formatReactSelectOptions(value, labelKey, labelMapper)
+
+  // Due to how react-select works, we need to calculate the values (values are represented as indexes)
+  values.forEach((val, index) => {
+    values[index].value = options.findIndex(obj => obj.label === val.label)
+  })
 
   return (
     <FormGroup className={`select-field ${error ? 'error' : ''}`}>
       <Label>{label}</Label>
       {!googleMaps ? (
         <Select
-          value={formatOptions(value, labelKey)}
+          value={values}
           options={options}
           isMulti={multi}
           onChange={value => onChange(getValue(allowedValues, value, multi))}
@@ -72,10 +82,8 @@ function formatOptions (options = [], labelKey) {
   /*
     React-select expects an array of objects with the following format -> { value: '', label: '' }
     So we must ensure our array of options always match that format.
-
     # If valueKey and labelKey are undefined
       the options array we provide consist of primitive types.
-
     # We save the index of the option as the value so we can later retrieve it easily
       (react-select doesn't allow objects as values)
   */

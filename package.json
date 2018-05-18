@@ -15,7 +15,6 @@
     "meteor-node-stubs": "^0.3.2",
     "nprogress": "^0.2.0",
     "react": "^16.3.2",
-    "react-datepicker": "^1.4.1",
     "react-day-picker": "^7.1.9",
     "react-dom": "^16.3.2",
     "react-google-maps": "^9.4.5",

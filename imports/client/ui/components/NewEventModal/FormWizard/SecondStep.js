@@ -7,7 +7,7 @@ import Recurring from './DateTimeModule/Recurring'
 
 class SecondStep extends Component {
   state = {
-    dateType: 'oneDay' // oneDay, specificPeriod, recurring
+    dateType: 'recurring' // oneDay, specificPeriod, recurring
   }
 
   render () {
@@ -30,7 +30,7 @@ class SecondStep extends Component {
         <CheckBox label='Is it for a specific period?' id={'specificPeriod'} />
         <SpecificPeriod show={dateType === 'specificPeriod'} form={form} />
 
-        <CheckBox label='Is it repeating?' id={'recurring'} />
+        <CheckBox label='Is it recurring?' id={'recurring'} />
         <Recurring show={dateType === 'recurring'} form={form} />
       </div>
     )

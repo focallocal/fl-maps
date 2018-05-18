@@ -5,7 +5,7 @@ export const startingTime = {
   allowedValues: possibleEventHours,
   uniforms: {
     'customType': 'select',
-    'label': 'Starting Time'
+    'label': 'From'
   }
 }
 
@@ -14,6 +14,6 @@ export const endingTime = {
   allowedValues: possibleEventHours,
   uniforms: {
     'customType': 'select',
-    'label': 'Ending Time'
+    'label': 'Until'
   }
 }

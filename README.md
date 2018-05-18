@@ -28,7 +28,9 @@ npm run start // Dont forget to include the settings.json file
 
 There also might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
 
-*if you decide to work on an issue please add a "**work in progress**" label.*
+*look for issues with the [**"React Conversion"** ](https://github.com/focallocal/fl-maps/labels/React%20Conversion)* label
+
+*if you decide to work on an issue please add a **"work in progress"** label.*
 
 ---
 

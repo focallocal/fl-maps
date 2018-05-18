@@ -69,7 +69,7 @@ const EventsSchema = new SimpleSchema({
       selectOptions: {
         'googleMaps': true
       },
-      label: 'Select an Address',
+      label: 'Select an address',
       placeholder_: 'Ex: New York, USA'
     }
   },
@@ -87,7 +87,7 @@ const EventsSchema = new SimpleSchema({
     max: 250,
     uniforms: {
       customType: 'textarea',
-      label: 'How To Find You?'
+      label: 'How to find you?'
     }
   },
 
@@ -104,9 +104,9 @@ const EventsSchema = new SimpleSchema({
       // check if specificPeriod doesn't have date fields
       // if so, it is a regularHours
       if (this.value === 'specificPeriod') {
-        const { startingDate, endingDate } = this.field('when.specificPeriod')
+        const { startingDate, endingDate } = this.field('when.specificPeriod').value
 
-        if (!startingDate.isSet || endingDate.isSet) {
+        if (!startingDate || endingDate) {
           return 'regularHours'
         }
       }
@@ -149,7 +149,7 @@ const EventsSchema = new SimpleSchema({
     min: 0,
     uniforms: {
       customType: 'number',
-      label: 'Attendee Limit (leave empty if no limit)'
+      label: 'Attendee limit (leave empty if no limit)'
     }
   },
   'engagement.attendees': {

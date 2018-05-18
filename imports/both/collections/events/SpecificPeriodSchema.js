@@ -1,36 +1,30 @@
 import SimpleSchema from 'simpl-schema'
-import { startingTime, endingTime } from './helpers'
+import DaysSchema from './DaysSchema'
 
 SimpleSchema.extendOptions(['uniforms'])
 
 const SpecificPeriodSchema = new SimpleSchema({
   'startingDate': {
     type: Date,
-    optional: true, // if value is null than its a regular event
+    optional: true, // if value is null than it's a regularHours type of date
     uniforms: {
-      label: 'Starting Date'
+      label: 'Ending date'
     }
   },
   'endingDate': {
     type: Date,
     optional: true,
     uniforms: {
-      label: 'Ending Date'
+      label: 'Ending date'
     }
   },
   'days': {
     type: Array
   },
   'days.$': {
-    type: Object,
+    type: DaysSchema,
     optional: true
-  },
-  'days.$.day': {
-    type: String,
-    allowedValues: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-  },
-  'days.$.startingTime': startingTime,
-  'days.$.endingTime': endingTime
+  }
 })
 
 export default SpecificPeriodSchema

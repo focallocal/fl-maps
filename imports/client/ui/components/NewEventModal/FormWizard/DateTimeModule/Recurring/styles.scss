@@ -1,0 +1,31 @@
+
+#recurring {
+
+  .inline-fields {
+
+    .select-field {
+      display: inline-block;
+      position: relative;
+      top: 3px;
+      margin-left: 5px;
+      width: 130px;
+
+      &:first-child {
+        width: 65px;
+      }
+
+      label {
+        display: none;
+      }
+    }
+  }
+
+  .DayPicker-Month {
+    margin-left: 0;
+    margin-right: 0;
+
+    .DayPicker-Caption {
+      display: none;
+    }
+  }
+}
