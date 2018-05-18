@@ -2,30 +2,17 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import { CustomInput } from 'reactstrap'
-import WeekDays from '../WeekDays'
 import MonthlyPickDays from './MonthlyPickDays'
 import './styles.scss'
 
-const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-
 class Recurring extends Component {
-  state = {
-    recurType: 'monthly',
-    selectedDays: weekDays // all are checked by default
-  }
-
   render () {
     const {
-      recurType,
-      selectedDays
-    } = this.state
-
-    const {
-      show,
-      form
+      show
     } = this.props
 
     const CheckBox = this.CheckBox
+    const { forever } = this.props.form.getModel().when.recurring
 
     return (
       <div id='recurring' style={{ display: show ? 'block' : 'none' }}>
@@ -41,24 +28,40 @@ class Recurring extends Component {
         <MonthlyPickDays
           handleMonthlyDays={this.handleMonthlyDays}
         />
+
+        <div>For how long?</div>
+        <CheckBox
+          id='forever'
+          label='Forever'
+          checked={forever}
+        />
+        {!forever && (
+          <div>
+            <span className='inline-fields'>
+              Repeat
+              <AutoField name='when.recurring.repeat' />
+              <span>times, until</span>
+              <AutoField name='when.recurring.until' />
+            </span>
+          </div>
+        )}
       </div>
     )
   }
 
-  CheckBox = ({ label, id }) => (
+  CheckBox = ({ label, id, checked }) => (
     <CustomInput
       id={id}
       className='checkbox'
       type='checkbox'
       label={label}
-      checked={this.state.recurType === id}
-      onChange={() => this.handleCheckbox(id)}
+      checked={checked}
+      onChange={() => this.handleCheckbox(!checked)}
     />
   )
 
-  handleCheckbox = (id) => {
-    this.props.form.change('when.recurring.type', id)
-    this.setState({ recurType: id })
+  handleCheckbox = (checked) => {
+    this.props.form.change(`when.recurring.forever`, checked)
   }
 
   handleMonthlyDays = (days) => {

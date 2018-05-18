@@ -1,6 +1,4 @@
 import SimpleSchema from 'simpl-schema'
-import DaysSchema from './DaysSchema'
-import * as helpers from './helpers'
 
 SimpleSchema.extendOptions(['uniforms'])
 
@@ -38,6 +36,24 @@ const RecurringSchema = new SimpleSchema({
   'days.$': {
     type: Number,
     allowedValues: Array(31).fill(1).map((x, y) => x + y)
+  },
+  'forever': {
+    type: Boolean
+  },
+  'repeat': {
+    type: Number,
+    min: 1,
+    max: 1000,
+    allowedValues: Array(100).fill(1).map((x, y) => x + y),
+    uniforms: {
+      defaultValue: 1
+    }
+  },
+  'until': {
+    type: Date,
+    uniforms: {
+      label: 'Until'
+    }
   }
 })
 

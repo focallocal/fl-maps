@@ -3,12 +3,10 @@
 
   .inline-fields {
 
-    .select-field {
+    &>div {
       display: inline-block;
-      position: relative;
-      top: 3px;
       margin-left: 5px;
-      width: 130px;
+      width: 140px;
 
       &:first-child {
         width: 65px;
@@ -17,6 +15,10 @@
       label {
         display: none;
       }
+    }
+
+    &>span {
+      margin: 0 4px;
     }
   }
 

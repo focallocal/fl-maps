@@ -4,6 +4,7 @@ import {createElement} from 'react'
 
 import DateField from './DateField'
 import InputField from './InputField'
+import NumberField from './NumberField'
 import SelectField from './SelectField'
 
 export default class AutoField extends BaseField {
@@ -27,6 +28,7 @@ export default class AutoField extends BaseField {
         switch (fieldType) {
           case Date: props.component = DateField; break
           case String: props.component = InputField; break
+          case Number: props.component = NumberField; break
         }
 
         invariant(props.component, 'Unsupported field type: %s', props.fieldType.toString())
