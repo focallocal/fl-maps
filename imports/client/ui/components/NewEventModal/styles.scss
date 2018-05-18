@@ -2,7 +2,10 @@
 
   .modal-content {
     height: 598px;
-    overflow-y: auto;
+
+    .modal-body {
+      overflow-y: auto;
+    }
   }
 
   .inline-inputs {
@@ -16,6 +19,18 @@
         margin-right: 8px;
       }
     }
+  }
+
+  .inline-checkboxes {
+
+    &>div {
+      display: inline-block;
+      margin-right: 8px;  
+    }
+  }
+
+  .checkbox {
+    margin-bottom: 8px;
   }
 
   input[name="engagement.limit"] {

@@ -1,0 +1,33 @@
+
+#specific-period {
+
+  .form-text {
+    margin-top: -14px;
+    margin-bottom: 12px;
+
+    span {
+      margin-left: 4px;
+      cursor: pointer;
+    }
+  }
+
+  .set-same-hours {
+    margin-bottom: 8px;
+  }
+
+  #set-hours {
+    font-weight: bolder;
+  }
+}
+
+#select-new-hours {
+  width: 238px;
+
+  &>div {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 4px;
+    }
+  }
+}

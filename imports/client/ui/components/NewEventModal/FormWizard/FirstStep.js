@@ -1,24 +1,15 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 
-const FirstStep = () => (
-  <Fragment>
+const FirstStep = ({ show }) => (
+  <div style={{ display: show ? 'block' : 'none' }}>
 
     <AutoField name='name' />
     <AutoField name='address' />
     <AutoField name='categories' />
+    <AutoField name='engagement.limit' />
 
-    <div className='inline-inputs'>
-      <AutoField name='startingDate' />
-      <AutoField name='startingTime' />
-    </div>
-
-    <div className='inline-inputs'>
-      <AutoField name='endingDate' />
-      <AutoField name='endingTime' />
-    </div>
-
-  </Fragment>
+  </div>
 )
 
 export default FirstStep

@@ -1,8 +1,10 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
-import possibleCategories from './utils/possibleCategories.json'
-import possibleEventHours from './utils/possibleEventHours'
+import possibleCategories from './events/helpers/possibleCategories.json'
+import OneDaySchema from './events/OneDaySchema'
+import SpecificPeriodSchema from './events/SpecificPeriodSchema'
+import RecurringSchema from './events/RecurringSchema'
 
 SimpleSchema.extendOptions(['uniforms'])
 
@@ -67,7 +69,7 @@ const EventsSchema = new SimpleSchema({
       selectOptions: {
         'googleMaps': true
       },
-      label: 'Select an Address',
+      label: 'Select an address',
       placeholder_: 'Ex: New York, USA'
     }
   },
@@ -85,36 +87,41 @@ const EventsSchema = new SimpleSchema({
     max: 250,
     uniforms: {
       customType: 'textarea',
-      label: 'How To Find You?'
+      label: 'How to find you?'
     }
   },
-  'startingDate': {
-    type: Date,
-    uniforms: {
-      label: 'Starting Date'
-    }
+
+  // Date and Time
+  'when': {
+    type: Object
   },
-  'startingTime': {
+  'when.type': {
     type: String,
-    allowedValues: possibleEventHours,
-    uniforms: {
-      customType: 'select',
-      label: 'Starting Time'
+    allowedValues: ['oneDay', 'specificPeriod', 'regularHours', 'recurring'],
+    autoValue: function () {
+      if (!this.isSet) return
+
+      // check if specificPeriod doesn't have date fields
+      // if so, it is a regularHours
+      if (this.value === 'specificPeriod') {
+        const { startingDate, endingDate } = this.field('when.specificPeriod').value
+
+        if (!startingDate || endingDate) {
+          return 'regularHours'
+        }
+      }
     }
   },
-  'endingDate': {
-    type: Date,
-    uniforms: {
-      label: 'Ending Date'
-    }
+  'when.oneDay': {
+    type: OneDaySchema,
+    optional: true
   },
-  'endingTime': {
-    type: String,
-    allowedValues: possibleEventHours,
-    uniforms: {
-      customType: 'select',
-      label: 'Ending Time'
-    }
+  'when.specificPeriod': { // is the same like regularHours
+    type: SpecificPeriodSchema,
+    optional: true
+  },
+  'when.recurring': {
+    type: RecurringSchema
   },
 
   // Description and More
@@ -142,7 +149,7 @@ const EventsSchema = new SimpleSchema({
     min: 0,
     uniforms: {
       customType: 'number',
-      label: 'Attendee Limit (leave empty if no limit)'
+      label: 'Attendee limit (leave empty if no limit)'
     }
   },
   'engagement.attendees': {

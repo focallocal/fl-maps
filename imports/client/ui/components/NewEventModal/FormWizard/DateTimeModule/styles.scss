@@ -1,0 +1,33 @@
+
+#specific-period, #recurring {
+
+  .day {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+
+    &>.checkbox {
+      position: relative;
+      top: 6px;
+      width: 62.5px;
+      margin-right: 8px;
+    }
+
+    .hours {
+
+      .select-field {
+        display: inline-block;
+        width: 100px;
+        margin-bottom: 0;
+
+        label {
+          display: none;
+        }
+      }
+
+      &>span {
+        margin: 0 16px;
+      }
+    }
+  }
+}

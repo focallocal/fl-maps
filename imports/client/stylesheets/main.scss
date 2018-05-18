@@ -73,7 +73,7 @@ blockquote {
 // Uniforms
 
 .day-picker-modal {
-  max-width: 300px;
+  max-width: 300px !important;
 }
 
 .input-icon {
@@ -105,5 +105,18 @@ blockquote {
 
   .bar {
     background: $green !important;
+  }
+}
+
+//
+
+.small-letters-color-transition {
+  font-size: .8em;
+  cursor: pointer;
+  color: rgba(50, 50, 50, 1);
+  transition: color .2s ease;
+
+  &:hover {
+    color: rgba(0, 0, 0, 1);
   }
 }

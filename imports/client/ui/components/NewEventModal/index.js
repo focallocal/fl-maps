@@ -2,19 +2,24 @@ import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import PropTypes from 'prop-types'
 import router from '/imports/client/utils/history'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
-import AutoForm from '/imports/client/utils/uniforms-custom/AutoForm'
 import { EventsSchema } from '/imports/both/collections/events'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import FormWizard from './FormWizard'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
-const STEPS_COUNT = 1
-const { NewEventModal: i18n_ } = i18n
+const STEPS_COUNT = 2 // Number of form steps
+const { NewEventModal: i18n_ } = i18n // Strings from i18n
+
 class NewEventModal extends Component {
   state = {
-    currentStep: 0
-  };
+    currentStep: 1,
+    form: null
+  }
+
+  componentDidMount () {
+    this.setState({ currentStep: 1 })
+  }
 
   render () {
     const {
@@ -22,11 +27,7 @@ class NewEventModal extends Component {
       toggleModal
     } = this.props
 
-    const {
-      currentStep
-    } = this.state
-
-    const model = this.form ? this.form.getModel() : this.loadModelFromStorage()
+    const { currentStep } = this.state
 
     return (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={toggleModal} size='lg'>
@@ -35,14 +36,7 @@ class NewEventModal extends Component {
         </ModalHeader>
 
         <ModalBody>
-          <AutoForm
-            schema={EventsSchema}
-            model={model}
-            ref={form => this.form = form}
-            onChangeModel={this.saveModelToStorage}
-          >
-            <FormWizard currentStep={currentStep} />
-          </AutoForm>
+          <FormWizard currentStep={currentStep} passFormRefToParent={this.getRef} />
         </ModalBody>
 
         <ModalFooter>
@@ -69,7 +63,7 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
-    this.form.validate()
+    this.state.form.validate()
       .then(() => {
         window.NProgress.set(0.4)
 
@@ -83,19 +77,10 @@ class NewEventModal extends Component {
         })
       })
       .catch(err => console.log(err))
-  };
-
-  saveModelToStorage (model) {
-    localStorage.setItem('new-event-model', JSON.stringify(model))
   }
 
-  loadModelFromStorage (context) {
-    const model = localStorage.getItem('new-event-model')
-
-    if (model != null) {
-      return EventsSchema.clean(JSON.parse(model))
-    }
-    return {}
+  getRef = (form) => {
+    this.setState({ form: form })
   }
 }
 
