@@ -25,6 +25,10 @@ npm run start // Dont forget to include the settings.json file
 // Then just search for things which are implemented on the current version but not (or not fully completed) on the react-version.
 ```
 
+#### ** !if you encounter any errors related to sass-loader, run the following command! **
+
+`meteor npm rebuild node-sass --force`
+
 
 There also might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
 
