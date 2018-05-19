@@ -24,15 +24,15 @@ From the command line
 
 3. Set up git
 
-  - `git remote set-url upstream https://github.com/focallocal/fl-maps`
-  ```
-    // make sure there are 2 remotes (origin that points to your fork and upstream for the original repo)
-    git remote -v
-  ```
+      - `git remote set-url upstream https://github.com/focallocal/fl-maps`
+      ```
+        // make sure there are 2 remotes (origin that points to your fork and upstream for the original repo)
+        git remote -v
+      ```
 
-  - **everytime you start working on a new feature, run: `git pull upstream react-maps` which ensures you are always working with the most updated version of the project.**
+    - **everytime you start working on a new feature, run: `git pull upstream react-maps` which ensures you are always working with the most updated version of the project.**
 
-  - create a new branch `git checkout -b new-feature-name`
+    - create a new branch `git checkout -b new-feature-name`
 
 4. obtain the *settings.json* file from slack and place it in the project's folder
 
