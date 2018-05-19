@@ -1,0 +1,21 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#first-section {
+
+  &>.container {
+    position: relative;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .row {
+      width: 95%;
+    }
+  }
+
+  .logo {
+    height: 450px;
+  }
+}
