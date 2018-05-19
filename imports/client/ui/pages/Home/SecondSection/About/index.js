@@ -1,15 +1,13 @@
-import React, { Component, Fragment } from 'react'
-import { Meteor } from 'meteor/meteor'
-import { withTracker } from 'meteor/react-meteor-data'
+import React, { Component } from 'react'
 import i18n from '/imports/both/i18n/en'
-import SmileyLogo from '/imports/client/ui/components/Logos/SmileyLogo/SmileyLogo'
-import FriendsLogo from '/imports/client/ui/components/Logos/FriendsLogo/FriendsLogo'
-import ShareLogo from '/imports/client/ui/components/Logos/ShareLogo/ShareLogo'
+import SmileyLogo from './Logos/SmileyLogo/SmileyLogo'
+import FriendsLogo from './Logos/FriendsLogo/FriendsLogo'
+import ShareLogo from './Logos/ShareLogo/ShareLogo'
 import './styles.scss'
 
 const { Home } = i18n
 class About extends Component {
-    render () {
+  render () {
     return (
       <section id="about" className="content-section">
         <div>
@@ -22,7 +20,7 @@ class About extends Component {
               {Home.second_section.content.second}
             </p>
             <p>
-            {Home.second_section.content.third}
+              {Home.second_section.content.third}
             </p>
           </div>
           <div className="items">
@@ -39,8 +37,4 @@ class About extends Component {
   }
 }
 
-export default withTracker(() => {
-  return {
-    user: Meteor.user()
-  }
-})(About)
+export default About
