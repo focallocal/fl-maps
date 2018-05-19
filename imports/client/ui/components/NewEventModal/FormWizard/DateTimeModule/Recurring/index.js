@@ -12,7 +12,11 @@ class Recurring extends Component {
     } = this.props
 
     const CheckBox = this.CheckBox
-    const { forever } = this.props.form.getModel().when.recurring
+
+    let forever = false
+    try {
+      forever = this.props.form.getModel().when.recurring.forever
+    } catch (ex) {} // "when" key might be undefined if the user hasn't set any value on it yet.
 
     return (
       <div id='recurring' style={{ display: show ? 'block' : 'none' }}>

@@ -3,9 +3,9 @@ import { mount } from 'enzyme'
 import { BrowserRouter as Router } from 'react-router-dom'
 import About from '../SecondSection/About'
 import i18n from '/imports/both/i18n/en'
-import SmileyLogo from '../SecondSection/About/Logos/SmileyLogo/SmileyLogo'
-import FriendsLogo from '../SecondSection/About/Logos/FriendsLogo/FriendsLogo'
-import ShareLogo from '../SecondSection/About/Logos/ShareLogo/ShareLogo'
+import SmileyLogo from '../SecondSection/About/Logos/SmileyLogo'
+import FriendsLogo from '../SecondSection/About/Logos/FriendsLogo'
+import ShareLogo from '../SecondSection/About/Logos/ShareLogo'
 
 const { Home } = i18n
 describe('<About />', () => {

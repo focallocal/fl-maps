@@ -43,7 +43,11 @@ class FormWizard extends Component {
     if (model != null) {
       return EventsSchema.clean(JSON.parse(model))
     }
-    return {}
+    return {
+      address: {},
+      categories: {},
+      when: {}
+    }
   }
 
   setRef = ref => {

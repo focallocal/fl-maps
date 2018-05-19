@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import i18n from '/imports/both/i18n/en'
-import SmileyLogo from './Logos/SmileyLogo/SmileyLogo'
-import FriendsLogo from './Logos/FriendsLogo/FriendsLogo'
-import ShareLogo from './Logos/ShareLogo/ShareLogo'
+import SmileyLogo from './Logos/SmileyLogo'
+import FriendsLogo from './Logos/FriendsLogo'
+import ShareLogo from './Logos/ShareLogo'
 import './styles.scss'
 
 const { Home } = i18n
