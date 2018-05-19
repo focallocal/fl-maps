@@ -1,0 +1,45 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#first-section {
+
+  margin-bottom: 25%;
+
+  &>.container {
+    position: relative;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .row {
+      width: 95%;
+    }
+  }
+
+  .logo {
+    height: 450px;
+  }
+}
+
+#second-section {
+  background: #fffde7;
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    text-align: justify;
+  }
+
+  h2 {
+    font-size: 3.15em;
+    margin: 1.575em 0 1.26em;
+    text-align: center;
+  }
+
+}
