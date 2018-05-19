@@ -4,7 +4,7 @@ import About from './About'
 import './styles.scss'
 
 const SecondSection = () => (
-  <section id='first-section'>
+  <section id='second-section'>
     <Container>
       <Row>
         <Col>

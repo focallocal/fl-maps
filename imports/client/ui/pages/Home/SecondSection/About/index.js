@@ -9,7 +9,7 @@ class About extends Component {
     render () {
     return (
       <section id="about" className="content-section">
-        <div className="container">
+        <div>
           <h2>What is Focallocal?</h2>
           <div>
             <p>

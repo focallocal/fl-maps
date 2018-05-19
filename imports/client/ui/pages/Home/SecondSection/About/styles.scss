@@ -1,67 +1,48 @@
-#find-or-post {
-
-  .header {
-    margin-bottom: 32px;
-    text-align: center;
-    font-weight: bold;
-
-    &.sub {
-      margin-top: -32px;
-    }
-  }
-
-  .center {
-    text-align: center;
-  }
-
-  hr {
-    margin: 32px 0;
-  }
-
-  .btn {
-    width: 45%;
-    margin-left: 5px;
-  }
-
-  .find-wrapper {
-
-    label {
-      font-weight: bold;
-      margin-bottom: .2rem;
-    }
-
-    input {
-      border-radius: 10px;
-    }
-
-    .input-group {
-
-      .btn {
-        width: 70px;
+@import '/imports/client/stylesheets/variables.scss';
+#about {
+    .container {
+    > p {
+      padding: 0 50px;
+      @media screen and (max-width: 980px) {
+        padding: 0;
+      }
+      > span {
+        display: block;
+        margin-bottom: 0;
+        margin-left: 90px;
+        margin-right: 90px;
       }
     }
-
-    .divider {
-      margin: 16px 0;
+  }
+  .items {
+    display: flex;
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+    }
+    .item {
+      flex-grow: 1;
       text-align: center;
-      font-weight: bold;
-    }
-
-    .error-msg {
-      position: relative;
-      top: 3px;
-      color: #dc3545;
-      font-size: .9em;
-    }
-
-    .geolocation-help {
-      font-size: .8em;
-      color: rgba(50, 50, 50, 1);
-      cursor: pointer;
-      transition: color .2s ease;
-
-      &:hover {
-        color: rgba(0, 0, 0, 1);
+      .icon {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        background-size: 70%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        &.share {
+          background-image: url(https://raw.githubusercontent.com/focallocal/fl-maps/master/public/images/share.png);
+        }
+        &.friends {
+          background-image: url(https://raw.githubusercontent.com/focallocal/fl-maps/master/public/images/friends.png);
+        }
+        &.smiley {
+          background-image: url(https://raw.githubusercontent.com/focallocal/fl-maps/master/public/images/smiley.png);
+        }
+      }
+      h4 {
+        text-transform: uppercase;
+        padding: 0 50px;
+        font-size: 20px;
       }
     }
   }
