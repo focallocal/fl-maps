@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import i18n from '/imports/both/i18n/en'
-import SmileyLogo from './Items/SmileyLogo'
+import SmileyLogo from '/imports/client/ui/components/Logos/SmileyLogo/SmileyLogo'
+import FriendsLogo from '/imports/client/ui/components/Logos/FriendsLogo/FriendsLogo'
+import ShareLogo from '/imports/client/ui/components/Logos/ShareLogo/ShareLogo'
 import './styles.scss'
 
 const { Home } = i18n
@@ -25,14 +27,8 @@ class About extends Component {
           </div>
           <div className="items">
             <SmileyLogo />
-            <div className="item">
-              <div className="icon friends" />
-              <h4>{Home.second_section.content.items.friends}</h4>
-            </div>
-            <div className="item">
-              <div className="icon share" />
-              <h4>{Home.second_section.content.items.share} </h4>
-            </div>
+            <FriendsLogo />
+            <ShareLogo />
           </div>
           <p>
             <span>{Home.second_section.content.fourth}</span>
