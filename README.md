@@ -20,7 +20,7 @@ From the command line
 
 2. create a fork of this repository and then
 
-  `git clone -b react-maps https://github.com/your-github-username/fl-maps`
+    `git clone -b react-maps https://github.com/your-github-username/fl-maps`
 
 3. Set up git
 
@@ -38,10 +38,10 @@ From the command line
 
 5. run the project
 
-  ```javascript
-  meteor npm install
-  npm run start // see notes below if it fails to run
-  ```
+    ```javascript
+    meteor npm install
+    npm run start // see notes below if it fails to run
+    ```
 
 6. make changes
 
@@ -49,11 +49,11 @@ From the command line
 
 8. if all the tests have passed, run
 
-  ```
-    git add .
-    git commit -m 'description of what has changed'
-    git push origin react-maps
-  ```
+    ```
+      git add .
+      git commit -m 'description of what has changed'
+      git push origin react-maps
+    ```
 
 9. go to github and create a new pull request from your fork (make sure it's against the react-maps branch)
 
