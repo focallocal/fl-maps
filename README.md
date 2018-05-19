@@ -10,33 +10,72 @@ Let me know what you think!
 
 This application is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (*try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them*)
 
-## **important**
-This branch is currently just a basic migrated version of the main branch - it means that we should only focus on re-creating the pages of the main version.
+## Setting Up The Development Environment
 
-I suggest you to run this branch locally and open http://gather.focallocal.org/ on your browser - then just play with the browser, try different actions and look for pages/functionalities which are not implemented yet by the this branch's version.
+From the command line
 
-```javascript
-git clone -b react-maps https://github.com/focallocal/fl-maps
-cd fl-maps
-meteor npm install
-npm run start // Dont forget to include the settings.json file
+1. install meteor
 
-// Now open two tabs on your browser - localhost:3000 and http://gather.focallocal.org/
-// Then just search for things which are implemented on the current version but not (or not fully completed) on the react-version.
-```
+  https://www.meteor.com/install
+
+2. create a fork of this repository and then
+
+    `git clone -b react-maps https://github.com/your-github-username/fl-maps`
+
+3. Set up git
+
+      - `git remote set-url upstream https://github.com/focallocal/fl-maps`
+      ```
+        // make sure there are 2 remotes (origin that points to your fork and upstream for the original repo)
+        git remote -v
+      ```
+
+    - **everytime you start working on a new feature, run: `git pull upstream react-maps` which ensures you are always working with the most updated version of the project.**
+
+    - create a new branch `git checkout -b new-feature-name`
+
+4. obtain the *settings.json* file from slack and place it in the project's folder
+
+5. run the project
+
+    ```javascript
+    meteor npm install
+    npm run start // see notes below if it fails to run
+    ```
+
+6. make changes
+
+7. run `npm run test-ui` after you've finished
+
+8. if all the tests have passed, run
+
+    ```
+      git add .
+      git commit -m 'description of what has changed'
+      git push origin react-maps
+    ```
+
+9. go to github and create a new pull request from your fork (make sure it's against the react-maps branch)
 
 #### ** !if you encounter any errors related to sass-loader, run the following command! **
 
 `meteor npm rebuild node-sass --force`
 
+Currently you'll see a _**Compiled with warnings.**_ message, ignore it.
 
-There also might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
+## Working On Issues
+
+There might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
 
 *look for issues with the [**"React Conversion"** ](https://github.com/focallocal/fl-maps/labels/React%20Conversion)* label
 
-*if you decide to work on an issue please add a **"work in progress"** label.*
+*if you decide to work on an issue please mark it with a **"work in progress"** label.*
 
 ---
+
+<a name='guidelines' />
+
+## Guidelines
 
 The first thing you should know is that this is not a typical meteor app:
 
@@ -49,9 +88,38 @@ this allows us to take advantage over many great webpack-based tools like [react
 
 - We use [jest](https://facebook.github.io/jest/) as a test runner for most of the ui parts
 
+### Writing Components
+
+Our project is based on a library called [**reactstrap**](https://reactstrap.github.io/) which provides several react-components which are based on [**bootstrap**](https://getbootstrap.com/).
+That means that usually instead of writing plain html tags, you'll be able to just use one of the components provided by reactstrap.
+
+for example, instead of writing a button element like this
+```javascript
+// plain html
+
+<button className='primary'>My Button</button>
+```
+
+you can check on the documentation of reactstrap if it provides a button component, and since it does, you can just use
+```javascript
+import { Button } from 'reactstrap'
+
+<Button color="primary">primary</Button>
+```
+
+#### *Google Maps* Component
+
+We use the react-google-maps package for anything related to google-maps. if you need to work with it - please follow it's docs https://tomchentw.github.io/react-google-maps/
+
+#### *Select* Component
+
+We use the react-select package for *select* elements, you can learn how to use it here: https://deploy-preview-2289--react-select.netlify.com/
+
 ## Packages
 
 The following is a list of the packages that you should be familiar with:
+
+#You don't need to master them, learn them when you need to use them.
 
 #### Meteor Packages
 
@@ -79,9 +147,6 @@ This project uses the [**standard**](https://standardjs.com/) coding style guide
 
 ## **Gotchas**
 
-* Currently, the server will only reload itself when files **inside the server folder** are changed. (this is a bug in the current version of the meteor-webpack package).
-If you change something in a different folder and need the server to reload - just type and save a "dummy" character (space/tab...) into one of the files in the server folder.
-
 * React-hot-loader will only hot-reload for changes that are made inside the <App /> component. This is the default behavior but i've added this note just to make sure you are aware rof this.
 
-* Both of the maps (gathering and brightertomorrow) use the same code base - we differentiate their strings by using different i18n files for each.
+* Both of the maps (gathering and brightertomorrow) are using the same code base - we differentiate their strings by using different i18n files for each.
