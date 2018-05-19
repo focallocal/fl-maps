@@ -13,7 +13,7 @@ const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
 class NewEventModal extends Component {
   state = {
-    currentStep: 1,
+    currentStep: 0,
     form: null
   }
 

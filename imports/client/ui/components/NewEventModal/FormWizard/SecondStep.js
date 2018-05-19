@@ -7,7 +7,7 @@ import Recurring from './DateTimeModule/Recurring'
 
 class SecondStep extends Component {
   state = {
-    dateType: 'recurring' // oneDay, specificPeriod, recurring
+    dateType: 'oneDay' // oneDay, specificPeriod, recurring
   }
 
   render () {
