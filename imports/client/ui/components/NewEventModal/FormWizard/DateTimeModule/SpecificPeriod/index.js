@@ -6,12 +6,10 @@ import WeekDays from '../WeekDays'
 import SetSameHoursPopover from './SetSameHoursPopover'
 import './styles.scss'
 
-const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-
 class SpecificPeriod extends Component {
   state = {
     currentCheckbox: 0,
-    selectedDays: weekDays, // all are checked by default
+    selectedDays: [],
     setSameHours: false
   }
 

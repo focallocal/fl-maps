@@ -42,6 +42,7 @@ function handleDayChange (day, index, form, selectedDays, context) {
     form.change('when.specificPeriod.days', days)
   } else {
     // Check day
+    form.change(`when.specificPeriod.days.${index}.day`, day)
     selectedDays_[index] = day
   }
 

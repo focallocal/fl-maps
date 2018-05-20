@@ -20,7 +20,7 @@ const RecurringSchema = new SimpleSchema({
     }
   },
   'every': {
-    type: String,
+    type: Number,
     allowedValues: [1, 2, 3, 4, 5, 6],
     autoValue: () => 1,
     uniforms: {

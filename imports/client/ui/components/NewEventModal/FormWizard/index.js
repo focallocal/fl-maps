@@ -24,9 +24,9 @@ class FormWizard extends Component {
       >
         {this.form ? (
           <Fragment>
-            <FirstStep show={currentStep === 0}/>
-            <SecondStep show={currentStep === 1} form={this.form} />
-            <ThirdStep show={currentStep === 2} />
+            {currentStep === 0 && <FirstStep show />}
+            {currentStep === 1 && <SecondStep show form={this.form} />}
+            {currentStep === 2 && <ThirdStep show={currentStep === 2} />}
           </Fragment>
         ) : <div />}
       </AutoForm>
@@ -43,15 +43,12 @@ class FormWizard extends Component {
     if (model != null) {
       return EventsSchema.clean(JSON.parse(model))
     }
-    return {
-      address: {},
-      categories: {},
-      when: {}
-    }
+    return {}
   }
 
   setRef = ref => {
     this.form = ref
+    this.setState({ form: ref })
     this.props.passFormRefToParent(ref)
   }
 }

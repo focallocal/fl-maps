@@ -13,12 +13,8 @@ const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
 class NewEventModal extends Component {
   state = {
-    currentStep: 0,
+    currentStep: 1,
     form: null
-  }
-
-  componentDidMount () {
-    this.setState({ currentStep: 1 })
   }
 
   render () {
@@ -67,13 +63,14 @@ class NewEventModal extends Component {
       .then(() => {
         window.NProgress.set(0.4)
 
-        const model = EventsSchema.clean(this.form.getModel())
+        const model = EventsSchema.clean(this.state.form.getModel())
         Meteor.call('Events.newEvent', model, (err, res) => {
           if (!err) {
             localStorage.setItem('new-event-id', res)
             router.push('/thank-you')
           }
           window.NProgress.done()
+          console.log(err, res)
         })
       })
       .catch(err => console.log(err))

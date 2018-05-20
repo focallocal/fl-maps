@@ -6,10 +6,16 @@
     &>div {
       display: inline-block;
       margin-left: 5px;
+      margin-bottom: 0;
       width: 140px;
 
       &:first-child {
-        width: 65px;
+        width: 75px;
+
+        input[type~="number"] {
+          position: relative;
+          top: 14px;
+        }
       }
 
       label {

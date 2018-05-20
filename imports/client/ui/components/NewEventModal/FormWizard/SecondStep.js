@@ -6,52 +6,57 @@ import SpecificPeriod from './DateTimeModule/SpecificPeriod'
 import Recurring from './DateTimeModule/Recurring'
 
 class SecondStep extends Component {
-  state = {
-    dateType: 'oneDay' // oneDay, specificPeriod, recurring
-  }
-
   render () {
-    const {
-      dateType
-    } = this.state
-
     const {
       form
     } = this.props
 
     const CheckBox = this.CheckBox
+    let dateType = 'oneDay'
+    try {
+      dateType = form.getModel().when.type
+    } catch (ex) {}
 
     return (
       <div style={{ display: this.props.show ? 'block' : 'none' }}>
 
-        <CheckBox label='Is it just one day?' id={'oneDay'} />
+        <CheckBox
+          label='Is it just one day?'
+          id={'oneDay'}
+          checked={dateType === 'oneDay'}
+        />
         <JustOneDay show={dateType === 'oneDay'} />
 
-        <CheckBox label='Is it for a specific period?' id={'specificPeriod'} />
+        <CheckBox
+          label='Is it for a specific period?'
+          id={'specificPeriod'}
+          checked={dateType === 'specificPeriod'}
+        />
         <SpecificPeriod show={dateType === 'specificPeriod'} form={form} />
 
-        <CheckBox label='Is it recurring?' id={'recurring'} />
+        <CheckBox
+          label='Is it recurring?'
+          id={'recurring'}
+          checked={dateType === 'recurring'}
+        />
         <Recurring show={dateType === 'recurring'} form={form} />
       </div>
     )
   }
 
-  CheckBox = ({ label, id }) => (
+  CheckBox = ({ label, id, checked }) => (
     <CustomInput
       id={id}
       className='checkbox'
       type='radio'
       label={label}
-      checked={this.state.dateType === id}
+      checked={checked}
       onChange={() => this.handleCheckbox(id)}
     />
   )
 
   handleCheckbox = (id) => {
-    const { form } = this.props
-
-    form.change('when.type', id)
-    this.setState({ dateType: id })
+    this.props.form.change('when.type', id)
   }
 }
 

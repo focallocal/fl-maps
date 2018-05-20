@@ -8,14 +8,14 @@ const SpecificPeriodSchema = new SimpleSchema({
     type: Date,
     optional: true, // if value is null than it's a regularHours type of date
     uniforms: {
-      label: 'Ending date'
+      label: 'From'
     }
   },
   'endingDate': {
     type: Date,
     optional: true,
     uniforms: {
-      label: 'Ending date'
+      label: 'Until'
     }
   },
   'days': {

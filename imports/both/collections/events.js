@@ -100,13 +100,13 @@ const EventsSchema = new SimpleSchema({
     allowedValues: ['oneDay', 'specificPeriod', 'regularHours', 'recurring'],
     autoValue: function () {
       if (!this.isSet) return
-
       // check if specificPeriod doesn't have date fields
       // if so, it is a regularHours
+
       if (this.value === 'specificPeriod') {
         const { startingDate, endingDate } = this.field('when.specificPeriod').value
 
-        if (!startingDate || endingDate) {
+        if (!startingDate || !endingDate) {
           return 'regularHours'
         }
       }
@@ -116,12 +116,13 @@ const EventsSchema = new SimpleSchema({
     type: OneDaySchema,
     optional: true
   },
-  'when.specificPeriod': { // is the same like regularHours
+  'when.specificPeriod': { // is the same as regularHours
     type: SpecificPeriodSchema,
     optional: true
   },
   'when.recurring': {
-    type: RecurringSchema
+    type: RecurringSchema,
+    optional: true
   },
 
   // Description and More

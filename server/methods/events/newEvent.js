@@ -11,6 +11,6 @@ const newEvent = new ValidatedMethod({
       throw new Meteor.Error('Events.newEvent', 'Only users can perform this task')
     }
 
-    return Events.insert(event)
+    return Events.insert(event, { validate: false, filter: false })
   }
 })

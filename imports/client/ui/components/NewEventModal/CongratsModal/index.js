@@ -20,8 +20,6 @@ class CongratsModal extends Component {
     } = localStorage
 
     if (!event_) {
-      localStorage.removeItem('new-event-model')
-      localStorage.removeitem('new-event-id')
       return <Redirect to='/' />
     }
 
@@ -29,6 +27,8 @@ class CongratsModal extends Component {
     const {
       name
     } = event
+
+    console.log(event)
 
     return (
       <Modal isOpen={true} size='lg' id='congrats-modal'>
@@ -60,10 +60,15 @@ class CongratsModal extends Component {
         </ModalBody>
 
         <ModalFooter>
-          <Button tag={NavLink} to='/'>Done</Button>
+          <Button tag={NavLink} to='/' onClick={this.removeLocalStorage}>Done</Button>
         </ModalFooter>
       </Modal>
     )
+  }
+
+  removeLocalStorage () {
+    localStorage.removeItem('new-event-model')
+    localStorage.removeitem('new-event-id')
   }
 }
 
@@ -75,7 +80,7 @@ const SelectableText = ({ event }) => {
         <p>{formatCategories(event.categories)}</p>
         <p>Description: {event.description}</p>
         <p>Address: {event.address.name}</p>
-        <p>When: {`${formatDate(event.startingDate)}, ${event.startingTime} `}</p>
+        <p>When: {constructWhen(event.when)}</p>
         <p>How to find us: {event.findHints}</p>
         <p>Link: <a href={getUrl(event._id)} target='__blank'>{getUrl(event._id)}</a></p>
       </blockquote>
@@ -83,6 +88,63 @@ const SelectableText = ({ event }) => {
   )
 }
 
+
+// Dates
+function constructWhen (data) {
+  /* Format the "when" section based on the date type */
+
+  if (data.type === 'oneDay') {
+    const { startingTime, endingTime, startingDate } = data.oneDay
+    return `${formatDate(startingDate)} on ${startingTime} - ${endingTime}`
+  }
+
+  if (data.type === 'specificPeriod') {
+    const { startingDate, endingDate, days } = data.specificPeriod
+    return `every ${formatDaysAndHours(days)}, from ${formatDate(startingDate)} until ${formatDate(endingDate)}`
+  }
+
+  if (data.type === 'regularHours') {
+    return `every ${formatDaysAndHours(data.specificPeriod.days)}`
+  }
+
+  if (data.type === 'recurring') {
+    const { days, every, type, repeat, until, forever } = data.recurring
+
+    if (forever) {
+      return `every ${every} ${type} on ${getDaysNames(days)}`
+    } else {
+      return `every ${every} ${type} on ${getDaysNames(days)} for ${repeat} occasions (until ${formatDate(until)})`
+    }
+  }
+}
+
+function formatDaysAndHours (days) {
+  return days.reduce((str, day, index) => {
+    const last = !days[index + 1]
+    const lastNext = !days[index + 2]
+
+    return str += `
+      ${last ? 'and ' : ''}
+      ${day.day} (${day.startingTime} - ${day.endingTime})${(last || lastNext) ? '' : ', '}`
+  }, '')
+}
+
+function getDaysNames (days) {
+  let daysMapper = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday'
+  }
+  return days.reduce((str, day, index) => {
+    return str += daysMapper[day] + (days[index + 1] ? '/' : '')
+  }, '')
+}
+
+// Share Links
 function getUrl (_id) {
   return Meteor.absoluteUrl('events/' + _id)
 }
