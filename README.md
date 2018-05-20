@@ -2,17 +2,11 @@
 
 This is the base branch for the new react-based fl-maps.
 
-I'm aware of all the missiing features/styles etc, just wanted to share the work i've done so far.
-
-Let me know what you think!
-
 # Contribution Guide
 
-This application is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (*try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them*)
+The project is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (*try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them*)
 
 ## Setting Up The Development Environment
-
-From the command line
 
 1. install meteor
 
@@ -24,7 +18,7 @@ From the command line
 
 3. Set up git
 
-      - `git remote set-url upstream https://github.com/focallocal/fl-maps`
+      - `git remote add upstream https://github.com/focallocal/fl-maps`
       ```
         // make sure there are 2 remotes (origin that points to your fork and upstream for the original repo)
         git remote -v
