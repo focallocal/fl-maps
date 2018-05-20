@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import { NavLink, Redirect } from 'react-router-dom'
 import { EventsSchema } from '/imports/both/collections/events'
-import { formatCategories, formatDate } from '/imports/client/utils/format'
+import { formatCategories, formatWhenObject } from '/imports/client/utils/format'
 import './styles.scss'
 
 const socialButtons = [
@@ -13,6 +13,11 @@ const socialButtons = [
 ]
 
 class CongratsModal extends Component {
+  componentWillUnmount () {
+    localStorage.removeItem('new-event-model')
+    localStorage.removeItem('new-event-id')
+  }
+
   render () {
     const {
       'new-event-id': eventId,
@@ -24,11 +29,6 @@ class CongratsModal extends Component {
     }
 
     const event = { ...EventsSchema.clean(JSON.parse(event_)), _id: eventId }
-    const {
-      name
-    } = event
-
-    console.log(event)
 
     return (
       <Modal isOpen={true} size='lg' id='congrats-modal'>
@@ -50,7 +50,7 @@ class CongratsModal extends Component {
                   key={index}
                   tag={'a'}
                   href={href}
-                  className={`btn ${btn.icon}`}
+                  className={'btn ' + btn.icon}
                 />
               )
             })}
@@ -60,15 +60,10 @@ class CongratsModal extends Component {
         </ModalBody>
 
         <ModalFooter>
-          <Button tag={NavLink} to='/' onClick={this.removeLocalStorage}>Done</Button>
+          <Button tag={NavLink} to='/'>Done</Button>
         </ModalFooter>
       </Modal>
     )
-  }
-
-  removeLocalStorage () {
-    localStorage.removeItem('new-event-model')
-    localStorage.removeitem('new-event-id')
   }
 }
 
@@ -80,68 +75,12 @@ const SelectableText = ({ event }) => {
         <p>{formatCategories(event.categories)}</p>
         <p>Description: {event.description}</p>
         <p>Address: {event.address.name}</p>
-        <p>When: {constructWhen(event.when)}</p>
+        <p>When: {formatWhenObject(event.when)}</p>
         <p>How to find us: {event.findHints}</p>
         <p>Link: <a href={getUrl(event._id)} target='__blank'>{getUrl(event._id)}</a></p>
       </blockquote>
     </div>
   )
-}
-
-
-// Dates
-function constructWhen (data) {
-  /* Format the "when" section based on the date type */
-
-  if (data.type === 'oneDay') {
-    const { startingTime, endingTime, startingDate } = data.oneDay
-    return `${formatDate(startingDate)} on ${startingTime} - ${endingTime}`
-  }
-
-  if (data.type === 'specificPeriod') {
-    const { startingDate, endingDate, days } = data.specificPeriod
-    return `every ${formatDaysAndHours(days)}, from ${formatDate(startingDate)} until ${formatDate(endingDate)}`
-  }
-
-  if (data.type === 'regularHours') {
-    return `every ${formatDaysAndHours(data.specificPeriod.days)}`
-  }
-
-  if (data.type === 'recurring') {
-    const { days, every, type, repeat, until, forever } = data.recurring
-
-    if (forever) {
-      return `every ${every} ${type} on ${getDaysNames(days)}`
-    } else {
-      return `every ${every} ${type} on ${getDaysNames(days)} for ${repeat} occasions (until ${formatDate(until)})`
-    }
-  }
-}
-
-function formatDaysAndHours (days) {
-  return days.reduce((str, day, index) => {
-    const last = !days[index + 1]
-    const lastNext = !days[index + 2]
-
-    return str += `
-      ${last ? 'and ' : ''}
-      ${day.day} (${day.startingTime} - ${day.endingTime})${(last || lastNext) ? '' : ', '}`
-  }, '')
-}
-
-function getDaysNames (days) {
-  let daysMapper = {
-    0: 'Sunday',
-    1: 'Monday',
-    2: 'Tuesday',
-    3: 'Wednesday',
-    4: 'Thursday',
-    5: 'Friday',
-    6: 'Saturday'
-  }
-  return days.reduce((str, day, index) => {
-    return str += daysMapper[day] + (days[index + 1] ? '/' : '')
-  }, '')
 }
 
 // Share Links
@@ -152,7 +91,7 @@ function getUrl (_id) {
 function shareOnFacebookLink ({ _id, name, categories, description }) {
   const prodFbApiKey = Meteor.settings.public.facebook.oauth_key
   const url = getUrl(_id)
-  const categoriesString = categories.reduce((str, obj) => str += ` ${obj.name}`, '')
+  const categoriesString = categories.reduce((str, obj) => str += ' ' + obj.name, '')
 
   return 'http://www.facebook.com/dialog/feed?app_id=' + prodFbApiKey +
     '&link=' + url +

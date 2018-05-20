@@ -59,6 +59,7 @@ class MapComponent_ extends Component {
       <GoogleMap
         ref={ref => this.map = ref}
         center={center}
+        zoom={zoom}
         defaultZoom={zoom}
         defaultOptions={mapOptions()}
       >
@@ -72,9 +73,11 @@ class MapComponent_ extends Component {
         </SearchBox>
 
         <MarkerClusterer
+          // onClick={this.onMarkerClustererClick}
           averageCenter
           enableRetinaIcons
           gridSize={60}
+          maxZoom={8}
         >
           {events.map(event => {
             if (Meteor.isDevelopment && !event.address) { return } // react-hot-loader bug fix
@@ -85,7 +88,7 @@ class MapComponent_ extends Component {
                 key={event._id}
                 position={{ lat: event.address.lat, lng: event.address.lng }}
                 icon={{ ...circle, fillColor }}
-                onClick={() => this.toggleInfoWindow(event._id)}
+                onClick={e => this.toggleInfoWindow(e, event._id)}
               >
                 {currentEventInfo === event._id && (
                   <InfoWindow onCloseClick={() => this.toggleInfoWindow(null)}>
@@ -106,9 +109,19 @@ class MapComponent_ extends Component {
     )
   }
 
-  toggleInfoWindow = (_id) => {
-    this.setState({ currentEventInfo: _id || null })
+  toggleInfoWindow = (e, _id) => {
+    this.setState({
+      center: e.latLng.toJSON(),
+      zoom: 16,
+      currentEventInfo: _id || null
+    })
   }
+
+  // onMarkerClustererClick = () => {
+  //   setTimeout(() => {
+  //     this.setState({ zoom: this.map.getZoom() })
+  //   }, 6000) // wait for animation to end
+  // }
 
   handleBounds = () => {
     this.setState({
