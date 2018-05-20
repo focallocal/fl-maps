@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
-import { formatCategories, formatDate } from '/imports/client/utils/format'
+import { formatCategories, formatWhenObject } from '/imports/client/utils/format'
 import './styles.scss'
 
 class EventInfo extends Component {
@@ -11,6 +11,7 @@ class EventInfo extends Component {
       fillColor
     } = this.props
 
+    console.log(event)
     const categories = formatCategories(event.categories)
 
     return (
@@ -22,7 +23,7 @@ class EventInfo extends Component {
           <div>{event.overview}</div>
           <div><span>Where:</span> {event.address.name}</div>
           <div><span>Meeting point:</span> {event.findHints}</div>
-          <div><span>When:</span> {formatDate(event.startingDate)}, {event.startingTime}</div>
+          <div><span>When:</span> {formatWhenObject(event.when)}</div>
         </blockquote>
 
         <span className='report'>Report</span>

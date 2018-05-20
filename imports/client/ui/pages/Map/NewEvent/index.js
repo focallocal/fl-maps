@@ -18,7 +18,7 @@ class NewEvent extends Component {
         <Route path='/map' render={({ location }) => {
           const isOpen = location.search.startsWith(queryStringToOpenModal)
 
-          return (
+          return isOpen && (
             <NewEventModal
               isOpen={isOpen}
               toggleModal={this.closeModal}
