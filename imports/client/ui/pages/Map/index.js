@@ -73,7 +73,7 @@ class MapComponent_ extends Component {
         </SearchBox>
 
         <MarkerClusterer
-          // onClick={this.onMarkerClustererClick}
+          onClick={this.onMarkerClustererClick}
           averageCenter
           enableRetinaIcons
           gridSize={60}
@@ -117,11 +117,9 @@ class MapComponent_ extends Component {
     })
   }
 
-  // onMarkerClustererClick = () => {
-  //   setTimeout(() => {
-  //     this.setState({ zoom: this.map.getZoom() })
-  //   }, 6000) // wait for animation to end
-  // }
+  onMarkerClustererClick = () => {
+    this.setState({ zoom: this.map.getZoom() })
+  }
 
   handleBounds = () => {
     this.setState({
