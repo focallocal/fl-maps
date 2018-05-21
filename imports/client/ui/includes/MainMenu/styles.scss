@@ -74,7 +74,7 @@
 
     #user-item {
       height: 100%;
-      font-size: 1.9em;
+      font-size: 1.7em;
 
       .nav-link {
         cursor: default;
@@ -115,28 +115,36 @@
       }
     }
 
-    #call-to-action {
+    &#right-links {
       position: relative;
       left: 15px;
       font-size: 1.1em;
 
-      .nav-link {
-        cursor: default;
+      li:not(#user-item) {
 
-        &:hover, &.active {
-          background: transparent !important;
+        .nav-link {
+          padding: .5em .5em;
+          cursor: default;
+
+          &:hover, &.active {
+            background: transparent !important;
+          }
         }
       }
 
-      .add {
+      .add, .map {
         position: relative;
-        top: 14.5px;
+        top: 15px;
         transition: color .2s ease;
         cursor: pointer;
 
         &:hover {
           color: rgba(0,0,0,.6);
         }
+      }
+
+      .map {
+        font-size: 1.2em;
       }
     }
   }
@@ -188,13 +196,13 @@
       height: 55px;
       padding: 0 6px;
 
-      .nav-item {
+      #right-links {
 
-        &#call-to-action .add {
-          top: 10px !important;
+        .add, .map {
+          top: 11px !important;
         }
 
-        &#user-item .fa-user-circle {
+        #user-item .fa-user-circle {
           top: 2px !important;
         }
       }

@@ -38,7 +38,12 @@ class MainMenu extends Component {
               <LinkItem key={index} item={link} />
             )
           })} */}
-          <NavItem id='call-to-action'>
+          <NavItem>
+            <RouterNavLink to='/map' className='nav-link'>
+              <i className='fa fa-globe map' />
+            </RouterNavLink>
+          </NavItem>
+          <NavItem>
             <RouterNavLink to='/map?new=1' className='nav-link'>
               <i className='fas fa-plus add' />
             </RouterNavLink>
