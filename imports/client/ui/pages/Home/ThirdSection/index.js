@@ -3,8 +3,8 @@ import { Container, Row, Col } from 'reactstrap'
 import Adventures from './Adventures'
 import './styles.scss'
 
-const SecondSection = () => (
-  <section id='second-section'>
+const ThirdSection = () => (
+  <section id='third-section'>
     <Container>
       <Row>
         <Col>
@@ -15,4 +15,4 @@ const SecondSection = () => (
   </section>
 )
 
-export default SecondSection
+export default ThirdSection

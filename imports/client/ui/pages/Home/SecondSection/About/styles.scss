@@ -1,23 +1,16 @@
 @import '/imports/client/stylesheets/variables.scss';
 #about {
-    .container {
-    > p {
-      padding: 0 50px;
-      @media screen and (max-width: 980px) {
-        padding: 0;
-      }
-      > span {
-        display: block;
-        margin-bottom: 0;
-        margin-left: 90px;
-        margin-right: 90px;
-      }
-    }
-  }
+  
   .items {
     display: flex;
     @media screen and (max-width: 980px) {
       flex-direction: column;
     }
+  }
+
+  h2 {
+    font-size: 3.15em;
+    margin: 1.575em 0 1.26em;
+    text-align: center;
   }
 }

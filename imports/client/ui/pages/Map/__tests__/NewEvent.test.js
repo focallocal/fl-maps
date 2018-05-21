@@ -32,7 +32,7 @@ describe('<NewEvent />', () => {
     expect(component.find(Modal)).toHaveLength(0)
   })
 
-  xit('should show NewEventModal if /map route and querystring new=1', () => {
+  it('should show NewEventModal if /map route and querystring new=1', () => {
     const component_ = mountComponent(['/map?new=1'])
 
     expect(component_.find(Modal).at(0).props().isOpen).toBeTruthy()

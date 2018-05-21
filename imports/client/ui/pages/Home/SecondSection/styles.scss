@@ -1,7 +1,8 @@
 @import '/imports/client/stylesheets/variables.scss';
 
 #second-section {
-  background: #fffde7;
+  background: $light-yellow;
+  padding: 5%;  
 
   .container {
     position: relative;
@@ -13,11 +14,4 @@
     font-size: 20px;
     text-align: justify;
   }
-
-  h2 {
-    font-size: 3.15em;
-    margin: 1.575em 0 1.26em;
-    text-align: center;
-  }
-
 }
