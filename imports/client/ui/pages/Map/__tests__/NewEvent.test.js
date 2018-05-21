@@ -41,7 +41,7 @@ describe('<NewEvent />', () => {
   it('should hide NewEventModal if /map route and querystring new=0', () => {
     const component_ = mountComponent(['/map?new=0'])
 
-    expect(component_.find(Modal).at(0).props().isOpen).toBeFalsy()
+    expect(component_.find(Modal)).toHaveLength(0)
   })
 
   test('querystrings that controls the modal state', () => {

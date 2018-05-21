@@ -1,0 +1,56 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#filter-events {
+
+  #filter-button {
+    position: absolute;
+    right: 24px;
+    bottom: 95px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: $green-darker;
+  }
+
+  #filters-list {
+    position: absolute;
+    top: 0;
+    bottom: 50px;
+    right: 75px;
+    height: calc(100% - 100px);
+    width: 350px;
+    overflow: auto;
+
+    .title {
+      height: calc(100% + 20px);
+      position: relative;
+      text-align: center;
+
+      .close {
+        position: absolute;
+        top: 17px;
+        right: 18px;
+        font-size: .9em;
+      }
+
+      .custom-checkbox {
+        position: absolute;
+        top: -5px;
+        left: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #filter-events {
+
+    #filters-list {
+      right: 0;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
