@@ -74,7 +74,7 @@
 
     #user-item {
       height: 100%;
-      font-size: 1.9em;
+      font-size: 1.7em;
 
       .nav-link {
         cursor: default;
@@ -134,7 +134,7 @@
 
       .add, .map {
         position: relative;
-        top: 16px;
+        top: 15px;
         transition: color .2s ease;
         cursor: pointer;
 
@@ -196,13 +196,13 @@
       height: 55px;
       padding: 0 6px;
 
-      .nav-item {
+      #right-links {
 
-        &#call-to-action .add {
-          top: 10px !important;
+        .add, .map {
+          top: 11px !important;
         }
 
-        &#user-item .fa-user-circle {
+        #user-item .fa-user-circle {
           top: 2px !important;
         }
       }
