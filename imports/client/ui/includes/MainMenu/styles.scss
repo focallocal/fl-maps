@@ -20,7 +20,12 @@
       flex-flow: column;
       height: 100%;
       color: #fff !important;
-      transition: background .2s, ease-in;
+      transition: color .1s, ease-in;
+
+      &:hover {
+        color: rgba(0,0,0,.6) !important;
+      }
+
 
       & > * { // Link children (title and icon)
         position: relative;
@@ -31,9 +36,6 @@
         top: 2px;
       }
 
-      &.active, &:hover {
-        background: rgba(0,0,0,.1);
-      }
 
       &:active, &:focus {
         outline: 0;
@@ -72,7 +74,15 @@
 
     #user-item {
       height: 100%;
-      font-size: 1.6em;
+      font-size: 1.9em;
+
+      .nav-link {
+        cursor: default;
+
+        &:hover, &.active {
+          background: transparent !important;
+        }
+      }
 
       .dropdown {
         height: 100%;
@@ -82,7 +92,13 @@
 
           .fas {
             position: relative;
-            top: 9px;
+            top: 6px;
+            transition: color .2s ease;
+            cursor: pointer;
+
+            &:hover {
+              color: rgba(0,0,0,.6);
+            }
 
             &.fa-caret-down { // Hide caret for this item
               display: none;
@@ -95,6 +111,31 @@
           top: -2px !important;
           right: -20px;
           left: initial;
+        }
+      }
+    }
+
+    #call-to-action {
+      position: relative;
+      left: 15px;
+      font-size: 1.1em;
+
+      .nav-link {
+        cursor: default;
+
+        &:hover, &.active {
+          background: transparent !important;
+        }
+      }
+
+      .add {
+        position: relative;
+        top: 14.5px;
+        transition: color .2s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: rgba(0,0,0,.6);
         }
       }
     }
@@ -111,16 +152,6 @@
       font-family: 'Spicy Rice', cursive;
       color: #fff;
       text-decoration: none;
-    }
-  }
-
-  @media screen and (max-width: 1095px) {
-    & {
-      flex-direction: row-reverse;
-
-      #left-links {
-        display: none;
-      }
     }
   }
 
@@ -157,18 +188,20 @@
       height: 55px;
       padding: 0 6px;
 
-      .nav-link {
+      .nav-item {
 
-        .fas {
-          top: 0 !important
+        &#call-to-action .add {
+          top: 10px !important;
+        }
+
+        &#user-item .fa-user-circle {
+          top: 2px !important;
         }
       }
 
-      #user-item {
-
-        .fas {
-          top: 5px !important;
-        }
+      #brand-logo {
+        top: 1px;
+        left: 8px;
       }
     }
   }
