@@ -114,6 +114,16 @@
     }
   }
 
+  @media screen and (max-width: 1095px) {
+    & {
+      flex-direction: row-reverse;
+
+      #left-links {
+        display: none;
+      }
+    }
+  }
+
   @media screen and (max-width: 1004px) {
     & {
 
@@ -147,8 +157,18 @@
       height: 55px;
       padding: 0 6px;
 
-      #brand-logo {
-        display: none;
+      .nav-link {
+
+        .fas {
+          top: 0 !important
+        }
+      }
+
+      #user-item {
+
+        .fas {
+          top: 5px !important;
+        }
       }
     }
   }
