@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavbarBrand } from 'reactstrap'
+import { Navbar, Nav, NavbarBrand, NavItem } from 'reactstrap'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import DropDownItem from './DropDownItem'
 import LinkItem from './LinkItem'
@@ -33,11 +33,16 @@ class MainMenu extends Component {
 
         {/* Right Links  */}
         <Nav id='right-links'>
-          {MainMenu.rightLinks.map((link, index) => {
+          {/* {MainMenu.rightLinks.map((link, index) => {
             return (
               <LinkItem key={index} item={link} />
             )
-          })}
+          })} */}
+          <NavItem id='call-to-action'>
+            <RouterNavLink to='/map?new=1' className='nav-link'>
+              <i className='fas fa-plus add' />
+            </RouterNavLink>
+          </NavItem>
           <UserItem />
         </Nav>
       </Navbar>

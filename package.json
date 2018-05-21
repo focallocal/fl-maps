@@ -13,7 +13,6 @@
     "faker": "^4.1.0",
     "i18next": "^11.3.2",
     "meteor-node-stubs": "^0.3.2",
-    "npm": "^6.0.1",
     "nprogress": "^0.2.0",
     "react": "^16.3.2",
     "react-day-picker": "^7.1.9",
