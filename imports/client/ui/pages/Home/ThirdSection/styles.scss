@@ -1,23 +1,17 @@
 @import '/imports/client/stylesheets/variables.scss';
 
-#first-section {
+#third-section {
+  background: $gray-lighter;
+  padding: 5%;
 
-  margin-bottom: 25%;
-
-  &>.container {
+  .container {
     position: relative;
-    top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-
-    .row {
-      width: 95%;
-    }
-  }
-
-  .logo {
-    height: 450px;
+    width: 100%;
+    font-size: 20px;
+    text-align: justify;
   }
 }
