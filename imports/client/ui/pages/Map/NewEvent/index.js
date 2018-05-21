@@ -32,13 +32,7 @@ class NewEvent extends Component {
   openModal = () => {
     // Allow modal only for users
     const route = '/map' + queryStringToOpenModal
-
-    if (!Meteor.userId()) {
-      sessionStorage.setItem('redirect', route)
-      this.props.history.push('/sign-in')
-    } else {
-      this.props.history.push(route)
-    }
+    this.props.history.push(route)
   }
 
   closeModal = () => {

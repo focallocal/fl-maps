@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import PropTypes from 'prop-types'
 import router from '/imports/client/utils/history'
+import { Redirect } from 'react-router-dom'
 import { EventsSchema } from '/imports/both/collections/events'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import FormWizard from './FormWizard'
@@ -24,6 +25,11 @@ class NewEventModal extends Component {
     } = this.props
 
     const { currentStep } = this.state
+
+    if (!Meteor.userId()) {
+      sessionStorage.setItem('redirect', '/map?new=1')
+      return <Redirect to='/sign-in' />
+    }
 
     return (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={toggleModal} size='lg'>
