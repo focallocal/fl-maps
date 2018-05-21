@@ -1,0 +1,47 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#adventures {
+  background: $gray-lighter;
+
+  .text-content {
+    display: flex;
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .text-video {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+    }
+  }
+
+  iframe {
+    width: 60em;
+    height: 20em;
+    display: inline-block;
+    position: relative;
+    margin-right: 5%;
+    @media screen and (max-width: 980px) {
+      width: 20em;
+      height: 15em;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    text-align: justify;
+    margin: 5%;
+  }
+
+  h2 {
+    font-size: 3.15em;
+    margin: 1.575em 0 1.26em;
+    text-align: center;
+  }
+}
