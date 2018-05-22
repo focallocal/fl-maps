@@ -4,7 +4,7 @@ import Mission from './Mission'
 import './styles.scss'
 
 const FourthSection = () => (
-  <section id='third-section'>
+  <section id='fourth-section'>
     <Container>
       <Row>
         <Col>
