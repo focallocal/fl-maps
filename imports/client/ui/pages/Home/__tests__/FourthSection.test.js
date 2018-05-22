@@ -53,27 +53,27 @@ describe('<Mission />', () => {
   })
 
   it('should render with fourth_section content first', () => {
-    const actual = component.find('p').at(0)
+    const actual = component.find('p').at(4)
     expect(actual.text()).toBe(Home.fourth_section.content.first)
   })
 
   it('should render with fourth_section content second', () => {
-    const actual = component.find('p').at(1)
+    const actual = component.find('p').at(0)
     expect(actual.text()).toBe(Home.fourth_section.content.second)
   })
 
   it('should render with fourth_section content third', () => {
-    const actual = component.find('p').at(2)
+    const actual = component.find('p').at(1)
     expect(actual.text()).toBe(Home.fourth_section.content.third)
   })
 
   it('should render with fourth_section content fourth', () => {
-    const actual = component.find('p').at(3)
+    const actual = component.find('p').at(2)
     expect(actual.text()).toBe(Home.fourth_section.content.fourth)
   })
 
   it('should render with fourth_section content fifth', () => {
-    const actual = component.find('p').at(4)
+    const actual = component.find('p').at(3)
     expect(actual.text()).toBe(Home.fourth_section.content.fifth)
   })
 })
