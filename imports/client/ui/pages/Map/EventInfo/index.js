@@ -11,7 +11,6 @@ class EventInfo extends Component {
       fillColor
     } = this.props
 
-    console.log(event)
     const categories = formatCategories(event.categories)
 
     return (
