@@ -58,11 +58,12 @@ export function formatWhenObject (data) {
 
   if (data.type === 'specificPeriod') {
     const { startingDate, endingDate, days } = data.specificPeriod
-    return `every ${formatDaysAndHours(days)}, from ${formatDate(startingDate)} until ${formatDate(endingDate)}`
-  }
 
-  if (data.type === 'regularHours') {
-    return `every ${formatDaysAndHours(data.specificPeriod.days)}`
+    if (!startingDate || !endingDate) {
+      return `every ${formatDaysAndHours(data.specificPeriod.days)}`
+    }
+
+    return `every ${formatDaysAndHours(days)}, from ${formatDate(startingDate)} until ${formatDate(endingDate)}`
   }
 
   if (data.type === 'recurring') {
@@ -78,12 +79,13 @@ export function formatWhenObject (data) {
 
 function formatDaysAndHours (days) {
   return days.reduce((str, day, index) => {
+    const only = (index === 0) && !days[index + 1]
     const last = !days[index + 1]
     const lastNext = !days[index + 2]
 
     return str += `
-      ${last ? 'and ' : ''}
-      ${day.day} (${day.startingTime} - ${day.endingTime})${(last || lastNext) ? '' : ', '}`
+      ${(last && !only) ? 'and ' : ''}
+      ${day.day.toLowerCase()} (${day.startingTime} - ${day.endingTime})${(last || lastNext) ? '' : ', '}`
   }, '')
 }
 

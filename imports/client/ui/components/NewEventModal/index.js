@@ -78,23 +78,24 @@ class NewEventModal extends Component {
 
         const model = EventsSchema.clean(this.state.form.getModel())
         Meteor.call('Events.newEvent', model, (err, res) => {
+          window.NProgress.done()
           if (!err) {
             localStorage.setItem('new-event-id', res)
             router.push('/thank-you')
           }
-          window.NProgress.done()
-          console.log(err, res)
+          if (Meteor.isDevelopment) { console.log(err) }
         })
       })
       .catch(err => {
         this.setState({ hasErrors: true })
-        console.log(EventsSchema.clean(this.state.form.getModel()))
-        console.log(err.details)
+
+        if (Meteor.isDevelopment) { console.log(err.details) }
+
         setTimeout(() => {
           if (this.state.hasErrors) {
             this.setState({ hasErrors: false })
           }
-        }, 5000) // auto- remove hasErrors message after 3 seconds
+        }, 4000) // auto- remove hasErrors message after 3 seconds
       })
   }
 

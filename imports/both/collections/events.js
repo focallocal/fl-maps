@@ -111,41 +111,51 @@ const EventsSchema = new SimpleSchema({
 
   // Date and Time
   'when': {
-    type: Object
+    type: Object,
+    custom: function () {
+      const type = this.field('when.type')
+      const obj = !this.field('when.' + type)
+      // ensure we have a valid when object
+      if (!type || obj.value) {
+        return 'required'
+      }
+    }
   },
   'when.type': {
     type: String,
-    allowedValues: ['oneDay', 'specificPeriod', 'regularHours', 'recurring'],
+    allowedValues: ['oneDay', 'specificPeriod', 'recurring'],
     custom: function () {
       if (!this.value) {
         return 'required'
-      }
-    },
-    autoValue: function () {
-      if (!this.isSet) return
-      // check if specificPeriod doesn't have date fields
-      // if so, it is a regularHours
-
-      if (this.value === 'specificPeriod') {
-        const { startingDate, endingDate } = this.field('when.specificPeriod').value
-
-        if (!startingDate || !endingDate) {
-          return 'regularHours'
-        }
       }
     }
   },
   'when.oneDay': {
     type: OneDaySchema,
+    autoValue: function () {
+      if (this.field('when.type').value !== 'oneDay') {
+        return null
+      }
+    },
     optional: true
   },
   'when.specificPeriod': { // is the same as regularHours
     type: SpecificPeriodSchema,
-    optional: true
+    optional: true,
+    autoValue: function () {
+      if (this.field('when.type').value !== 'specificPeriod') {
+        return null
+      }
+    }
   },
   'when.recurring': {
     type: RecurringSchema,
-    optional: true
+    optional: true,
+    autoValue: function () {
+      if (this.field('when.type').value !== 'recurring') {
+        return null
+      }
+    }
   },
 
   // Description and More

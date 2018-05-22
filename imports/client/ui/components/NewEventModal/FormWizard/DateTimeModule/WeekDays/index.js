@@ -22,7 +22,7 @@ class WeekDays extends Component {
                 className='checkbox'
                 type='checkbox'
                 label={day.substr(0, 3)}
-                checked={!!selectedDays.find(d => d.day === day)}
+                checked={!!selectedDays[index]}
                 onChange={this.handleDayChange}
               />
               <div className='hours'>

@@ -30,11 +30,17 @@ class Recurring extends Component {
     return (
       <div id='recurring' style={{ display: show ? 'block' : 'none' }}>
 
-        <div className='inline-fields'>
-            Repeat every
-          <AutoField name='when.recurring.every' />
-          <AutoField name='when.recurring.type' />
-        </div>
+        {/*
+          We must render those fields only if the user chose this option
+          otherwise their default value will automatically be added to our model.
+        */}
+        {show &&
+          <div className='inline-fields'>
+              Repeat every
+            <AutoField name='when.recurring.every' />
+            <AutoField name='when.recurring.type' />
+          </div>
+        }
         <ErrorField
           name='when.recurring.days'
           customMessage='Please select at least 1 day'

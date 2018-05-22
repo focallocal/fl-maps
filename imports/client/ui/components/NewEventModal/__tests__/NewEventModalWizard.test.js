@@ -124,6 +124,9 @@ describe('<NewEventModal />', () => {
   })
 
   test('<Recurring /> should render 6 fields', () => {
+    component.find(SecondStep).instance().handleCheckbox('recurring')
+    component.update() // wait for a re-render
+
     const wrapper = component.find(Recurring)
 
     expect(wrapper.find(AutoField)).toHaveLength(4)

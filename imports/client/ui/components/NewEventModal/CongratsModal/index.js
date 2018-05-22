@@ -26,6 +26,8 @@ class CongratsModal extends Component {
 
     const event = { ...EventsSchema.clean(JSON.parse(event_)), _id: eventId }
 
+    console.log(event)
+
     return (
       <Modal isOpen={true} size='lg' id='congrats-modal'>
         <ModalHeader tag={'div'}>
@@ -46,6 +48,7 @@ class CongratsModal extends Component {
                   key={index}
                   tag={'a'}
                   href={href}
+                  target='__blank'
                   className={'btn ' + btn.icon}
                 />
               )
@@ -107,11 +110,14 @@ function shareOnFacebookLink ({ _id, name, categories, description }) {
 
 function shareOnTwitterLink ({ _id, name }) {
   const url = getUrl(_id)
-  const promoText = 'I\'ve just created new GatherUp!'
+  const promoText =
+`
+I've just created a new gathering called ${name}!
+for more info visit: ${url}
+`
 
-  return 'https://twitter.com/intent/tweet?url=' + url +
+  return 'https://twitter.com/intent/tweet?' +
     '&text=' + encodeURIComponent(promoText) +
-    encodeURIComponent(name) +
     '&hashtags=Focallocal'
 }
 
