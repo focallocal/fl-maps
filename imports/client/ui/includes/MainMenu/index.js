@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavbarBrand, NavItem } from 'reactstrap'
+import { Navbar, Nav, NavbarBrand, NavItem, Button } from 'reactstrap'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import DropDownItem from './DropDownItem'
 import LinkItem from './LinkItem'
@@ -38,14 +38,11 @@ class MainMenu extends Component {
               <LinkItem key={index} item={link} />
             )
           })} */}
-          <NavItem>
-            <RouterNavLink to='/map' className='nav-link'>
-              <i className='fa fa-globe map' />
-            </RouterNavLink>
-          </NavItem>
-          <NavItem>
-            <RouterNavLink to='/map?new=1' className='nav-link'>
-              <i className='fas fa-plus add' />
+          <NavItem id='add-event'>
+            <RouterNavLink to='/map?new=1'>
+              <Button>
+                {MainMenu.addEvent}
+              </Button>
             </RouterNavLink>
           </NavItem>
           <UserItem />

@@ -13,8 +13,8 @@ const LinkItem = ({ item }) => {
         <div>{item.title}</div>
       </RouterNavLink>
     </NavItem>
-  ) :
-    <NavItem>
+  )
+    : <NavItem>
       <NavLink href={item.link} target='__blank'>
         <i className={item.icon}></i>
         <div>{item.title}</div>

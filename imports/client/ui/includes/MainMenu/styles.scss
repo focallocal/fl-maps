@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Spicy+Rice');
 @import '/imports/client/stylesheets/variables.scss';
 
+$nav-item-hover-color: rgba(0,0,0,.6) !important;
+$nav-item-hover-transition: color .15s ease;
+
 #main-menu {
   height: $menu-height;
   padding: 0 16px;
@@ -9,7 +12,6 @@
   font-size: .9em;
   font-weight: 300;
   justify-content: space-between; // ensures there is a space between left and right navs
-  box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, .5);
 
   .nav {
     height: 100%; // get main-menu height
@@ -20,10 +22,10 @@
       flex-flow: column;
       height: 100%;
       color: #fff !important;
-      transition: color .1s, ease-in;
+      transition: $nav-item-hover-transition;
 
       &:hover {
-        color: rgba(0,0,0,.6) !important;
+        color: $nav-item-hover-color;
       }
 
 
@@ -72,32 +74,44 @@
       }
     }
 
-    #user-item {
-      height: 100%;
-      font-size: 1.7em;
+    &#right-links {
+      position: relative;
+      left: 15px;
 
-      .nav-link {
-        cursor: default;
+      #add-event {
+        position: relative;
+        top: 15px;
+        right: 15px;
 
-        &:hover, &.active {
+        button {
           background: transparent !important;
+          border: 1px solid #fff;
+          font-size: 1em;
+          transition: $nav-item-hover-transition;
+
+          &:hover {
+            color: $nav-item-hover-color;
+            border-color: $nav-item-hover-color;
+          }
         }
       }
 
-      .dropdown {
+      #user-item {
+        position: relative;
+        top: -1px;
         height: 100%;
+        font-size: 2.2em;
+        cursor: pointer;
 
         .nav-link {
-          height: 100%;
+          cursor: pointer;
 
           .fas {
-            position: relative;
-            top: 6px;
-            transition: color .2s ease;
-            cursor: pointer;
+            transition: $nav-item-hover-transition;
 
-            &:hover {
-              color: rgba(0,0,0,.6);
+            &:hover, &.active {
+              color: $nav-item-hover-color;
+              background: transparent !important;
             }
 
             &.fa-caret-down { // Hide caret for this item
@@ -112,39 +126,6 @@
           right: -20px;
           left: initial;
         }
-      }
-    }
-
-    &#right-links {
-      position: relative;
-      left: 15px;
-      font-size: 1.1em;
-
-      li:not(#user-item) {
-
-        .nav-link {
-          padding: .5em .5em;
-          cursor: default;
-
-          &:hover, &.active {
-            background: transparent !important;
-          }
-        }
-      }
-
-      .add, .map {
-        position: relative;
-        top: 15px;
-        transition: color .2s ease;
-        cursor: pointer;
-
-        &:hover {
-          color: rgba(0,0,0,.6);
-        }
-      }
-
-      .map {
-        font-size: 1.2em;
       }
     }
   }

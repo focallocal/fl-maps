@@ -9,7 +9,7 @@ const UserItem = ({ user }) => {
   const userStatus = user ? 'loggedIn' : 'loggedOut'
   const item = {
     'title': '',
-    'icon': 'fas fa-user-circle',
+    'icon': 'fas fa-user-circle user',
     'content': i18n.MainMenu.userLink[userStatus]
   }
 
