@@ -103,7 +103,7 @@ class MapComponent_ extends Component {
   toggleInfoWindow = (e, _id) => {
     this.setState({
       center: e.latLng.toJSON(),
-      zoom: 16,
+      zoom: 18,
       currentEventInfo: _id || null
     })
   }
