@@ -8,12 +8,21 @@ import ThirdStep from './ThirdStep'
 import './DateTimeModule/styles.scss'
 
 class FormWizard extends Component {
+  state = {
+    reset: false
+  }
+
   render () {
     const {
       currentStep
     } = this.props
 
-    const model = this.form ? this.form.getModel() : this.loadModelFromStorage()
+    let model = this.form ? this.form.getModel() : this.loadModelFromStorage()
+
+    if (this.state.reset) {
+      localStorage.removeItem('new-event-model')
+      model = this.loadModelFromStorage() // will return an initial model object
+    }
 
     return (
       <AutoForm
@@ -25,6 +34,7 @@ class FormWizard extends Component {
       >
         {this.form ? (
           <Fragment>
+            <span className='reset' onClick={this.resetForm}>reset fields</span>
             {currentStep === 0 && <FirstStep show />}
             {currentStep === 1 && <SecondStep show form={this.form} />}
             {currentStep === 2 && <ThirdStep show={currentStep === 2} />}
@@ -32,6 +42,15 @@ class FormWizard extends Component {
         ) : <div />}
       </AutoForm>
     )
+  }
+
+  resetForm = () => {
+    this.form.reset()
+    this.setState({ reset: true })
+
+    setTimeout(() => {
+      this.setState({ reset: false })
+    }, 500) // a hack to update the component's state so it doesn't reset on next re-renders.
   }
 
   saveModelToStorage (model) {

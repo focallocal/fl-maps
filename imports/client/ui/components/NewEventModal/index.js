@@ -86,8 +86,10 @@ class NewEventModal extends Component {
           console.log(err, res)
         })
       })
-      .catch(() => {
+      .catch(err => {
         this.setState({ hasErrors: true })
+        console.log(EventsSchema.clean(this.state.form.getModel()))
+        console.log(err.details)
         setTimeout(() => {
           if (this.state.hasErrors) {
             this.setState({ hasErrors: false })

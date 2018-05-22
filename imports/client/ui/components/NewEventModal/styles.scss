@@ -6,6 +6,13 @@
 
     .modal-body {
       overflow-y: auto;
+
+      .reset {
+        position: relative;
+        top: -12px;
+        font-size: .8em;
+        cursor: pointer;
+      }
     }
   }
 
