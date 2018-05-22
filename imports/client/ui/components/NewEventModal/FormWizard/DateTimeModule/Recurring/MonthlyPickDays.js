@@ -4,7 +4,17 @@ import DayPicker, { DateUtils } from 'react-day-picker'
 
 class MonthlyPickDays extends Component {
   state = {
-    selectedDays: []
+    selectedDays: null
+  }
+
+  static getDerivedStateFromProps (nextProps, prevState) {
+    if (nextProps.selectedDays && !prevState.selectedDays) {
+      return {
+        selectedDays: transformDaysToDates(nextProps.selectedDays)
+      }
+    }
+
+    return null
   }
 
   render () {
@@ -42,7 +52,12 @@ class MonthlyPickDays extends Component {
   }
 }
 
+function transformDaysToDates (days) {
+  return days.reduce((arr, day) => arr.concat(new Date('01/' + day + '/1989')), [])
+}
+
 MonthlyPickDays.propTypes = {
+  selectedDays: PropTypes.array.isRequired,
   handleMonthlyDays: PropTypes.func.isRequired
 }
 

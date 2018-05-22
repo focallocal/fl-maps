@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { FormText } from 'reactstrap'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
+import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
 import WeekDays from '../WeekDays'
 import SetSameHoursPopover from './SetSameHoursPopover'
 import './styles.scss'
@@ -9,21 +10,22 @@ import './styles.scss'
 class SpecificPeriod extends Component {
   state = {
     currentCheckbox: 0,
-    selectedDays: [],
     setSameHours: false
   }
 
   render () {
     const {
-      selectedDays
-    } = this.state
-
-    const {
-      form
+      form,
+      show
     } = this.props
 
+    let selectedDays = []
+    try {
+      selectedDays = form.getModel().when.specificPeriod.days || []
+    } catch (ex) {}
+
     return (
-      <div id='specific-period' style={{ display: this.props.show ? 'block' : 'none' }}>
+      <div id='specific-period' style={{ display: show ? 'block' : 'none' }}>
         <div className='inline-inputs'>
           <AutoField name='when.specificPeriod.startingDate' />
           <AutoField name='when.specificPeriod.endingDate' />
@@ -33,13 +35,16 @@ class SpecificPeriod extends Component {
           <span className='small-letters-color-transition' onClick={this.resetDates}>(reset)</span>
         </FormText>
 
+        <ErrorField
+          name='when.specificPeriod.days'
+          customMessage='Please select at least one day'
+        />
         <SetSameHoursPopover handleDefaults={this.handleDefaults} />
 
         <WeekDays
           schemaKey='when.specificPeriod.days'
           selectedDays={selectedDays}
           form={form}
-          context={this}
         />
       </div>
     )
@@ -49,9 +54,9 @@ class SpecificPeriod extends Component {
     // Update days with the same hours!
 
     const { form } = this.props
-    const { selectedDays } = this.state
+    const selectedDays = form.getModel().when.specificPeriod.days || []
 
-    let days = JSON.parse(JSON.stringify(form.getModel().when.specificPeriod.days))
+    let days = JSON.parse(JSON.stringify(form.getModel().when.specificPeriod.days || []))
     selectedDays.forEach((day, i) => {
       if (!day) { return } // null
 
@@ -72,6 +77,10 @@ class SpecificPeriod extends Component {
 
     form.change('when.specificPeriod.startingDate', null)
     form.change('when.specificPeriod.endingDate', null)
+  }
+
+  updateSelectedDays = (days) => {
+    this.setState({ days: days })
   }
 }
 

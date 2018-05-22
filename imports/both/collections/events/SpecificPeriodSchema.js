@@ -7,6 +7,13 @@ const SpecificPeriodSchema = new SimpleSchema({
   'startingDate': {
     type: Date,
     optional: true, // if value is null than it's a regularHours type of date
+    custom: function () {
+      const endingDate = this.field('when.specificPeriod.endingDate')
+
+      if (!this.value && endingDate.value) {
+        return 'required'
+      }
+    },
     uniforms: {
       label: 'From'
     }
@@ -14,16 +21,31 @@ const SpecificPeriodSchema = new SimpleSchema({
   'endingDate': {
     type: Date,
     optional: true,
+    custom: function () {
+      const startingDate = this.field('when.specificPeriod.startingDate')
+
+      if (!this.value && startingDate.value) {
+        return 'required'
+      }
+    },
     uniforms: {
       label: 'Until'
     }
   },
   'days': {
-    type: Array
+    type: Array,
+    custom: function () {
+      if (!this.value) {
+        return 'required'
+      }
+
+      if (!this.value[0]) {
+        return 'required'
+      }
+    }
   },
   'days.$': {
-    type: DaysSchema,
-    optional: true
+    type: DaysSchema
   }
 })
 

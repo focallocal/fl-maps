@@ -56,6 +56,7 @@ class Select_ extends Component {
             onSelect={onChange}
             address={value ? value.name : null}
             placeholder={placeholder_}
+            invalid={!!error}
           />
         )}
       </FormGroup>

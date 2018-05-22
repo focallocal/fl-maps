@@ -87,6 +87,10 @@ class MapComponent_ extends Component {
           })}
         </MarkerClusterer>
         <NewEvent />
+        <EventsFilter
+          events={this.props.events} // pass events from props not state!
+          onFiltersChanged={this.updateEventsAfterFilter}
+        />
         {userLocation && (
           <Marker
             position={userLocation}

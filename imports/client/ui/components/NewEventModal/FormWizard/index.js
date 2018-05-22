@@ -21,6 +21,7 @@ class FormWizard extends Component {
         model={model}
         ref={this.setRef}
         onChangeModel={this.saveModelToStorage}
+        modelTransform={this.modelTransform}
       >
         {this.form ? (
           <Fragment>
@@ -43,12 +44,17 @@ class FormWizard extends Component {
     if (model != null) {
       return EventsSchema.clean(JSON.parse(model))
     }
-    return {}
+
+    return {
+      when: { // This is important - it ensures that we start with a default value for the "when" object.
+        type: 'oneDay',
+        oneDay: {}
+      }
+    }
   }
 
   setRef = ref => {
     this.form = ref
-    this.setState({ form: ref })
     this.props.passFormRefToParent(ref)
   }
 }

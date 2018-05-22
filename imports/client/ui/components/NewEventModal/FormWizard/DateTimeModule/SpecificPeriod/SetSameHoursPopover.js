@@ -23,7 +23,7 @@ class SetSameHoursPopover extends Component {
     return (
       <div className='set-same-hours'>
         <span id='set-hours' className='small-letters-color-transition' onClick={this.togglePopover}>
-          Click here to set the same hours for all days
+          Click here to set the same hours for all selected days
         </span>
         <Popover placement='top' target='set-hours' isOpen={isOpen} toggle={this.togglePopover}>
           <PopoverBody id='select-new-hours'>

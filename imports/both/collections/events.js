@@ -32,6 +32,15 @@ const EventsSchema = new SimpleSchema({
   // Categories
   'categories': {
     type: Array,
+    custom: function () {
+      if (!this.value) {
+        return 'required'
+      }
+
+      if (!this.value[0]) {
+        return 'required'
+      }
+    },
     uniforms: {
       customType: 'select',
       selectOptions: {
@@ -64,6 +73,15 @@ const EventsSchema = new SimpleSchema({
   },
   'address': {
     type: Object,
+    custom: function () {
+      if (!this.value) {
+        return 'required'
+      }
+
+      if (!this.value.name) {
+        return 'required'
+      }
+    },
     uniforms: {
       customType: 'select',
       selectOptions: {
@@ -98,6 +116,11 @@ const EventsSchema = new SimpleSchema({
   'when.type': {
     type: String,
     allowedValues: ['oneDay', 'specificPeriod', 'regularHours', 'recurring'],
+    custom: function () {
+      if (!this.value) {
+        return 'required'
+      }
+    },
     autoValue: function () {
       if (!this.isSet) return
       // check if specificPeriod doesn't have date fields
@@ -143,11 +166,13 @@ const EventsSchema = new SimpleSchema({
     }
   },
   engagement: {
-    type: Object
+    type: Object,
+    defaultValue: {}
   },
   'engagement.limit': {
     type: Number,
     min: 0,
+    defaultValue: 0,
     uniforms: {
       customType: 'number',
       label: 'Attendee limit (leave empty if no limit)'
@@ -155,10 +180,11 @@ const EventsSchema = new SimpleSchema({
   },
   'engagement.attendees': {
     type: Array,
-    autoValue: () => []
+    defaultValue: []
   },
   'engagement.attendees.$': {
-    type: String
+    type: String,
+    optional: true
   }
 }, {
   clean: {

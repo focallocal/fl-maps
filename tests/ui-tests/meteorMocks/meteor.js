@@ -1,6 +1,7 @@
 
 const Meteor = {
   user: jest.fn(),
+  userId: jest.fn(),
   settings: {
     public: {
       gm: {

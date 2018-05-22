@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
-import { NavLink, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import router from '/imports/client/utils/history'
 import { EventsSchema } from '/imports/both/collections/events'
 import { formatCategories, formatWhenObject } from '/imports/client/utils/format'
 import './styles.scss'
@@ -13,11 +14,6 @@ const socialButtons = [
 ]
 
 class CongratsModal extends Component {
-  componentWillUnmount () {
-    localStorage.removeItem('new-event-model')
-    localStorage.removeItem('new-event-id')
-  }
-
   render () {
     const {
       'new-event-id': eventId,
@@ -60,10 +56,16 @@ class CongratsModal extends Component {
         </ModalBody>
 
         <ModalFooter>
-          <Button tag={NavLink} to='/'>Done</Button>
+          <Button onClick={this.onDone}>Done</Button>
         </ModalFooter>
       </Modal>
     )
+  }
+
+  onDone () {
+    router.push('/map')
+    localStorage.removeItem('new-event-model')
+    localStorage.removeItem('new-event-id')
   }
 }
 

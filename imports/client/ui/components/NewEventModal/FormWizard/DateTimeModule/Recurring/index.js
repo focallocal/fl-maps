@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
+import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
 import { CustomInput } from 'reactstrap'
 import MonthlyPickDays from './MonthlyPickDays'
 import './styles.scss'
@@ -14,22 +15,33 @@ class Recurring extends Component {
     const CheckBox = this.CheckBox
 
     let forever = false
+    let selectedDays = []
     try {
-      forever = this.props.form.getModel().when.recurring.forever
-    } catch (ex) {} // "when" key might be undefined if the user hasn't set any value on it yet.
+      const model = this.props.form.getModel()
+
+      selectedDays = model.when.recurring.days || []
+      forever = model.when.recurring.forever
+
+      if (forever === undefined) { // fix uncontrolled input error
+        forever = false
+      }
+    } catch (ex) {}
 
     return (
       <div id='recurring' style={{ display: show ? 'block' : 'none' }}>
 
-        <div>
-          <span className='inline-fields'>
+        <div className='inline-fields'>
             Repeat every
-            <AutoField name='when.recurring.every' />
-            <AutoField name='when.recurring.type' />
-          </span>
+          <AutoField name='when.recurring.every' />
+          <AutoField name='when.recurring.type' />
         </div>
+        <ErrorField
+          name='when.recurring.days'
+          customMessage='Please select at least 1 day'
+        />
         <div>Select the recurring days:</div>
         <MonthlyPickDays
+          selectedDays={selectedDays}
           handleMonthlyDays={this.handleMonthlyDays}
         />
 
@@ -40,13 +52,11 @@ class Recurring extends Component {
           checked={forever}
         />
         {!forever && (
-          <div>
-            <span className='inline-fields'>
-              Repeat
-              <AutoField name='when.recurring.repeat' />
-              <span>times, until</span>
-              <AutoField name='when.recurring.until' />
-            </span>
+          <div className='inline-fields'>
+            Repeat
+            <AutoField name='when.recurring.repeat' />
+            <span>times, until</span>
+            <AutoField name='when.recurring.until' />
           </div>
         )}
       </div>
