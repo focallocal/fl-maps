@@ -2,6 +2,7 @@
 #recurring {
 
   .inline-fields {
+    margin-bottom: 8px;
 
     &>div {
       display: inline-block;
@@ -11,11 +12,6 @@
 
       &:first-child {
         width: 75px;
-
-        input[type~="number"] {
-          position: relative;
-          top: 14px;
-        }
       }
 
       label {
@@ -28,12 +24,19 @@
     }
   }
 
-  .DayPicker-Month {
-    margin-left: 0;
-    margin-right: 0;
+  .error-message {
+    margin-bottom: 8px;
+  }
 
-    .DayPicker-Caption {
-      display: none;
+  .DayPicker {
+    margin-top: 8px;
+
+    .DayPicker-Month {
+      margin: 0;
+
+      .DayPicker-Caption {
+        display: none;
+      }
     }
   }
 }

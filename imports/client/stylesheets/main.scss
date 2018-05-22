@@ -109,6 +109,20 @@ blockquote {
   }
 }
 
+// DatePicker
+
+.DayPicker-Day {
+  height: 38px;
+  width: 38px;
+  padding: 0 !important;
+
+  // Selected days
+  &.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    height: 38px;
+    width: 38px;
+  }
+}
+
 //
 
 .small-letters-color-transition {

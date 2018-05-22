@@ -5,5 +5,9 @@ module.exports = {
     '^/imports/(.*)': '<rootDir>/imports/$1',
     '^/tests/(.*)': '<rootDir>/tests/$1',
     '^.+\\.(css|scss)$': 'identity-obj-proxy'
-  }
+  },
+  roots: [
+    '<rootDir>/imports',
+    '<rootDir>/server'
+  ]
 }

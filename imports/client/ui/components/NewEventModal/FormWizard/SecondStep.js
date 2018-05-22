@@ -12,34 +12,39 @@ class SecondStep extends Component {
     } = this.props
 
     const CheckBox = this.CheckBox
+
     let dateType = 'oneDay'
     try {
       dateType = form.getModel().when.type
     } catch (ex) {}
 
+    const isOneDay = dateType === 'oneDay'
+    const isSpecific = ['specificPeriod', 'regularHours'].includes(dateType)
+    const isRecurring = dateType === 'recurring'
+
     return (
-      <div style={{ display: this.props.show ? 'block' : 'none' }}>
+      <div id='second-step' style={{ display: this.props.show ? 'block' : 'none' }}>
 
         <CheckBox
           label='Is it just one day?'
           id={'oneDay'}
-          checked={dateType === 'oneDay'}
+          checked={isOneDay}
         />
-        <JustOneDay show={dateType === 'oneDay'} />
+        <JustOneDay show={isOneDay} />
 
         <CheckBox
           label='Is it for a specific period?'
           id={'specificPeriod'}
-          checked={dateType === 'specificPeriod'}
+          checked={isSpecific}
         />
-        <SpecificPeriod show={dateType === 'specificPeriod'} form={form} />
+        <SpecificPeriod show={isSpecific} form={form} />
 
         <CheckBox
           label='Is it recurring?'
           id={'recurring'}
-          checked={dateType === 'recurring'}
+          checked={isRecurring}
         />
-        <Recurring show={dateType === 'recurring'} form={form} />
+        <Recurring show={isRecurring} form={form} />
       </div>
     )
   }
@@ -55,8 +60,14 @@ class SecondStep extends Component {
     />
   )
 
-  handleCheckbox = (id) => {
-    this.props.form.change('when.type', id)
+  handleCheckbox = (type) => {
+    const { type: previousType } = this.props.form.getModel().when || {}
+
+    if (previousType) {
+      this.props.form.change(`when.${previousType}`, null) // remove previous data after change
+    }
+
+    this.props.form.change('when', { type, [type]: {} })
   }
 }
 

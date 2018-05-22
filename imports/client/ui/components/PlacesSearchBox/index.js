@@ -19,7 +19,8 @@ class SearchBox extends React.Component {
   render () {
     const { address } = this.state
     const {
-      placeholder
+      placeholder,
+      invalid
     } = this.props
 
     return (
@@ -35,7 +36,8 @@ class SearchBox extends React.Component {
                 ref={ref => this.searchInput = ref}
                 {...getInputProps({
                   placeholder,
-                  className: 'location-search-input'
+                  className: 'location-search-input',
+                  invalid: invalid
                 })}
               />
               <i className='fas fa-search' />

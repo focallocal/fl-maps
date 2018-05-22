@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import router from '/imports/client/utils/history'
 import { Redirect } from 'react-router-dom'
 import { EventsSchema } from '/imports/both/collections/events'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Alert } from 'reactstrap'
 import FormWizard from './FormWizard'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
@@ -15,7 +15,8 @@ const { NewEventModal: i18n_ } = i18n // Strings from i18n
 class NewEventModal extends Component {
   state = {
     currentStep: 0,
-    form: null
+    form: null,
+    hasErrors: false
   }
 
   render () {
@@ -24,7 +25,10 @@ class NewEventModal extends Component {
       toggleModal
     } = this.props
 
-    const { currentStep } = this.state
+    const {
+      currentStep,
+      hasErrors
+    } = this.state
 
     if (!Meteor.userId()) {
       sessionStorage.setItem('redirect', '/map?new=1')
@@ -38,6 +42,9 @@ class NewEventModal extends Component {
         </ModalHeader>
 
         <ModalBody>
+          <Alert color='danger' isOpen={hasErrors}>
+            Please check that you've filled all the necessary fields
+          </Alert>
           <FormWizard currentStep={currentStep} passFormRefToParent={this.getRef} />
         </ModalBody>
 
@@ -65,7 +72,7 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
-    this.state.form.validate()
+    this.state.form.validate({ clean: true })
       .then(() => {
         window.NProgress.set(0.4)
 
@@ -79,7 +86,14 @@ class NewEventModal extends Component {
           console.log(err, res)
         })
       })
-      .catch(err => console.log(err))
+      .catch(() => {
+        this.setState({ hasErrors: true })
+        setTimeout(() => {
+          if (this.state.hasErrors) {
+            this.setState({ hasErrors: false })
+          }
+        }, 5000) // auto- remove hasErrors message after 3 seconds
+      })
   }
 
   getRef = (form) => {
