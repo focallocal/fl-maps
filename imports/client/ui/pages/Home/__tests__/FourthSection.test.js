@@ -2,9 +2,9 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Mission from '../FourthSection/Mission'
-// import i18n from '/imports/both/i18n/en'
+import i18n from '/imports/both/i18n/en'
 
-// const { Home } = i18n
+const { Home } = i18n
 describe('<Mission />', () => {
   const mountComponent = (props) => (
     mount(
@@ -20,35 +20,33 @@ describe('<Mission />', () => {
     expect(component.exists()).toBeTruthy()
   })
 
-  // it('should render component', () => {
-  //   expect(component.find(Adventures)).toHaveLength(1)
-  // })
-  //
-  // it('should render section HTML tags', () => {
-  //   expect(component.find('section')).toHaveLength(1)
-  // })
-  //
-  // it('should render div with container selector', () => {
-  //   expect(component.find('.content-section').exists()).toBeTruthy()
-  // })
-  //
-  // it('should render div with text-content selector', () => {
-  //   expect(component.find('.text-content').exists()).toBeTruthy()
-  // })
-  //
-  // it('should render iframe tag', () => {
-  //   expect(component.find('iframe').exists()).toBeTruthy()
-  // })
-  //
-  // it('should render with h2 tags', () => {
-  //   const adventures = component.find(Adventures)
-  //   expect(adventures.find('h2')).toHaveLength(1)
-  // })
-  //
-  // it('should render with third_section title', () => {
-  //   const adventures = component.find(Adventures)
-  //   expect(adventures.find('h2').text()).toBe(Home.third_section.title)
-  // })
+  it('should render component', () => {
+    expect(component.find(Mission)).toHaveLength(1)
+  })
+
+  it('should render section HTML tags', () => {
+    expect(component.find('section')).toHaveLength(1)
+  })
+
+  it('should render section with content-section selector', () => {
+    expect(component.find('.content-section').exists()).toBeTruthy()
+  })
+
+  it('should render div with text-content selector', () => {
+    expect(component.find('.text-content').exists()).toBeTruthy()
+  })
+
+  it('should render iframe tag', () => {
+    expect(component.find('iframe').exists()).toBeTruthy()
+  })
+
+  it('should render with h2 tags', () => {
+    expect(component.find('h2')).toHaveLength(1)
+  })
+
+  it('should render with fourth_section title', () => {
+    expect(component.find('h2').text()).toBe(Home.fourth_section.title)
+  })
   //
   // it('should render with four p tags', () => {
   //   const adventures = component.find(Adventures)

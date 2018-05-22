@@ -28,7 +28,7 @@ describe('<Adventures />', () => {
     expect(component.find('section')).toHaveLength(1)
   })
 
-  it('should render div with container selector', () => {
+  it('should render div with content-section selector', () => {
     expect(component.find('.content-section').exists()).toBeTruthy()
   })
 
