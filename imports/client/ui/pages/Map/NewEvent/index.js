@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Meteor } from 'meteor/meteor'
 import { withRouter, Route } from 'react-router-dom'
 import { Button } from 'reactstrap'
 import NewEventModal from '/imports/client/ui/components/NewEventModal'
