@@ -1,0 +1,17 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#fourth-section {
+  background: $light-yellow;
+  padding: 5%;
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    text-align: justify;
+  }
+}

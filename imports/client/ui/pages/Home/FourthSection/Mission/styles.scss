@@ -1,0 +1,52 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#mission {
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .text-content {
+    // display: flex;
+    width: 100%;
+    margin-right: 5%;
+    flex-direction: row;
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .text-video {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+    }
+  }
+
+  iframe {
+    width: 30em;
+    height: 20em;
+    display: inline-block;
+    position: relative;
+    margin-right: 5%;
+    @media screen and (max-width: 980px) {
+      width: 20em;
+      height: 15em;
+    }
+  }
+
+  h2 {
+    font-size: 3em;
+    margin: 1.575em 0 1.26em;
+    text-align: center;
+  }
+}
