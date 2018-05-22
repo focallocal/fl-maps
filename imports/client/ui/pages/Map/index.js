@@ -101,11 +101,15 @@ class MapComponent_ extends Component {
   }
 
   toggleInfoWindow = (e, _id) => {
-    this.setState({
-      center: e.latLng.toJSON(),
-      zoom: 18,
-      currentEventInfo: _id || null
-    })
+    if (!e) {
+      this.setState({ currentEventInfo: null })
+    } else {
+      this.setState({
+        center: e.latLng.toJSON(),
+        zoom: 18,
+        currentEventInfo: _id
+      })
+    }
   }
 
   onMarkerClustererClick = () => {
