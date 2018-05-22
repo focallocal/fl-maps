@@ -11,7 +11,6 @@ class EventInfo extends Component {
       fillColor
     } = this.props
 
-    console.log(event)
     const categories = formatCategories(event.categories)
 
     return (
@@ -20,13 +19,13 @@ class EventInfo extends Component {
         <div className='title'>{event.name}</div>
 
         <blockquote>
-          <div>{event.overview}</div>
           <div><span>Where:</span> {event.address.name}</div>
           <div><span>Meeting point:</span> {event.findHints}</div>
           <div><span>When:</span> {formatWhenObject(event.when)}</div>
+          <div>{event.overview}</div>
         </blockquote>
 
-        <span className='report'>Report</span>
+        <span>Looks suspicious? <span className='report'>let us know!</span></span>
         <Button color='primary'>Show More!</Button>
       </div>
     )

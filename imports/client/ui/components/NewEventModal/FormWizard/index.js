@@ -20,7 +20,7 @@ class FormWizard extends Component {
     let model = this.form ? this.form.getModel() : this.loadModelFromStorage()
 
     if (this.state.reset) {
-      localStorage.removeItem('new-event-model')
+      localStorage.removeItem('new-event-model') // remove the draft
       model = this.loadModelFromStorage() // will return an initial model object
     }
 

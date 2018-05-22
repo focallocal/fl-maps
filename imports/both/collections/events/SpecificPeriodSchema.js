@@ -45,7 +45,8 @@ const SpecificPeriodSchema = new SimpleSchema({
     }
   },
   'days.$': {
-    type: DaysSchema
+    type: DaysSchema,
+    optional: true
   }
 })
 

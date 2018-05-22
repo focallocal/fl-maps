@@ -20,13 +20,12 @@ class CongratsModal extends Component {
       'new-event-model': event_
     } = localStorage
 
-    if (!event_) {
+    if (!eventId || !event_) {
       return <Redirect to='/' />
     }
 
+    // Using EventsSchema's clean function will automatically convert values to their type
     const event = { ...EventsSchema.clean(JSON.parse(event_)), _id: eventId }
-
-    console.log(event)
 
     return (
       <Modal isOpen={true} size='lg' id='congrats-modal'>
