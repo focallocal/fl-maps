@@ -1,12 +1,15 @@
 @import '/imports/client/stylesheets/variables.scss';
 
 #fifth-section {
-  background: $light-yellow;
-  padding: 5%;
+   background-image: linear-gradient(0deg,rgba(96,101,165,.91),rgba(255,0,150,0.3)), url(https://raw.githubusercontent.com/focallocal/fl-maps/master/public/images/friends.jpg);
+   background-size: cover;
+   background-position: center;
+   padding: 5%;
 
   .container {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;

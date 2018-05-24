@@ -1,4 +1,29 @@
 @import '/imports/client/stylesheets/variables.scss';
 
-#mission {
+#more-links {
+  
+  h2 {
+    font-size: 3em;
+    margin: 1.575em 0 .3em;
+    text-align: center;
+    color: white;
+  }
+
+  p {
+    text-align: center;
+    color: white;
+    font-size: 1.7em;
+    font-weight: -10;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .options {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    @media screen and (max-width: 980px) {
+      flex-direction: column;
+    }
+  }
 }
