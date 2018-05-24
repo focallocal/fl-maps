@@ -1,0 +1,46 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+.event-list-item {
+  position: relative;
+  min-height: 90px;
+  max-height: 90px;
+  border-radius: 0 !important;
+
+  &>div {
+    width: 90%;
+  }
+
+  .name, .categories, .distance {
+    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .name {
+    font-weight: bolder;
+    font-size: 1em;
+  }
+
+  .categories {
+    font-size: .87em;
+  }
+
+  .distance {
+    font-size: .8em
+  }
+
+  .go-to {
+    position: absolute;
+    top: 32px;
+    right: 18px;
+    font-size: 1.5em;
+    color: $primary-blue;
+    cursor: pointer;
+    transition: color .15s ease;
+
+    &:hover {
+      color: $primary-blue-hover;
+    }
+  }
+}

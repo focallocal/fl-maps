@@ -5,13 +5,13 @@ export default function options () {
   return {
     styles: mapStyles,
     zoomControlOptions: {
-      position: window.google.maps.ControlPosition.LEFT_BOTTOM
+      position: window.google.maps.ControlPosition.RIGHT_BOTTOM
     },
     streetViewControlOptions: {
-      position: google.maps.ControlPosition.LEFT_BOTTOM
+      position: google.maps.ControlPosition.RIGHT_BOTTOM
     },
     fullscreenControlOptions: {
-      position: google.maps.ControlPosition.LEFT_BOTTOM
+      position: google.maps.ControlPosition.RIGHT_BOTTOM
     },
     mapTypeControl: false
   }

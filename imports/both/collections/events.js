@@ -9,6 +9,7 @@ import RecurringSchema from './events/RecurringSchema'
 SimpleSchema.extendOptions(['uniforms'])
 
 const Events = new Mongo.Collection('events')
+
 const EventsSchema = new SimpleSchema({
 
   // Organiser
@@ -94,10 +95,20 @@ const EventsSchema = new SimpleSchema({
   'address.name': {
     type: String
   },
-  'address.lat': {
-    type: Number
+  'address.location': {
+    type: Object
   },
-  'address.lng': {
+  'address.location.type': {
+    type: String,
+    defaultValue: 'Point',
+    allowedValues: ['Point']
+  },
+  'address.location.coordinates': {
+    type: Array,
+    max: 2,
+    min: 2
+  },
+  'address.location.coordinates.$': {
     type: Number
   },
   'findHints': {
@@ -208,6 +219,10 @@ const EventsSchema = new SimpleSchema({
 })
 
 Events.attachSchema(EventsSchema)
+
+if (Meteor.isServer) {
+  Events._ensureIndex({ 'address.location': '2dsphere' })
+}
 
 export {
   Events as default,

@@ -25,7 +25,7 @@ describe('<NewEventModal />', () => {
     Meteor.userId = sinon.stub().returns(true)
     component = mount(
       <MemoryRouter initialEntries={['/']}>
-        <NewEventModal isOpen={true} toggleModal={jest.fn()}/>
+        <NewEventModal location={{ search: '?new=1' }}/>
       </MemoryRouter>
     )
     formRef = component.find(NewEventModal).instance().state.form

@@ -10,6 +10,7 @@ import MainMenu from './includes/MainMenu'
 import Home from './pages/Home'
 import Authentication from './pages/Authentication'
 import Map_ from './pages/Map'
+import NewEventModal from './components/NewEventModal'
 import CongratsModal from './components/NewEventModal/CongratsModal'
 
 class App extends Component {
@@ -22,6 +23,8 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/map' component={Map_} />
           <Route exact path='/thank-you' component={CongratsModal} />
+
+          <Route path='*' component={NewEventModal} />
           <Authentication />
         </Fragment>
       </Router>

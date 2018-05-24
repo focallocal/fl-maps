@@ -1,25 +1,22 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-
+import { NavLink as RouterNavLink } from 'react-router-dom'
+import { Button } from 'reactstrap'
 import MainMenu from '../index'
 import i18n from '/imports/both/i18n/en'
 
 describe('<MainMenu />', () => {
-  const menu = shallow(<MainMenu />)
+  const component = shallow(<MainMenu />)
 
   it('a menu component should render', () => {
-    expect(menu.exists()).toBeTruthy()
+    expect(component.exists()).toBeTruthy()
   })
 
-  it('the menu should render its element based on the english i18n file', () => {
-    const { rightLinks, leftLinks, userLink } = i18n.MainMenu
+  it('should render an add-event button from i18n file', () => {
+    const addEventButton = component.find('#add-event')
 
-    const leftLinksElement = menu.find('#left-links').children()
-    const rightLinksElement = menu.find('#right-links').children()
-
-    // Add the number of links which are not rendered by the i18n file
-    // Logo and UserLink for now.
-    expect(leftLinks.length + 1).toEqual(leftLinksElement.length)
-    // expect(rightLinks.length + 1).toEqual(rightLinksElement.length)
+    expect(addEventButton).toHaveLength(1)
+    expect(addEventButton.find(RouterNavLink).props().to).toEqual('?new=1')
+    expect(addEventButton.find(Button).children().text()).toEqual(i18n.MainMenu.addEvent)
   })
 })
