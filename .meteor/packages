@@ -27,3 +27,4 @@ accounts-facebook
 accounts-twitter
 aldeed:collection2@3.0.0
 mdg:validated-method
+ddp-rate-limiter

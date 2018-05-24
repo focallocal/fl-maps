@@ -53,7 +53,7 @@ class Select_ extends Component {
           />
         ) : (
           <PlacesSearchBox
-            onSelect={onChange}
+            onSelect={value => this.handlePlacesChange(value)}
             address={value ? value.name : null}
             placeholder={placeholder_}
             invalid={!!error}
@@ -86,6 +86,23 @@ class Select_ extends Component {
       onChange(allowedValues[value.value])
       this.setState({ indexes: [value.value] })
     }
+  }
+
+  handlePlacesChange = value => {
+    const { onChange } = this.props
+    const {
+      name,
+      lat,
+      lng
+    } = value
+
+    onChange({
+      name,
+      location: {
+        type: 'Point',
+        coordinates: [lng, lat]
+      }
+    })
   }
 
   getValues = (value) => {

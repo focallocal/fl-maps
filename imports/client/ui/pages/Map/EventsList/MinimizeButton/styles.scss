@@ -1,0 +1,21 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#minimize {
+  position: absolute;
+  top: 23px;
+  left: 325px;
+  width: 76.2px;
+  font-size: .7em;
+  background-color: $gray-lighter;
+  color: $black-lighter;
+  transform: rotateZ(90deg);
+  transition: left .2s ease;
+
+  &:hover, &:active {
+    background-color: $gray-stronger !important;
+  }
+
+  &.minimized {
+    left: -25px;
+  }
+}

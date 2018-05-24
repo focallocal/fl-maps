@@ -1,16 +1,14 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+body.overflow {
+  overflow: hidden;  
+}
+
 #map-container {
   position: relative;
-  height: calc(100vh - 64px);
+  height: calc(100vh - #{$menu-height});
 
   #map {
     height: 100%;
-  }
-
-  #google-maps-searchbox {
-    position: absolute !important;
-    top: 10px !important;
-    left: 10px !important;
-    height: 45px;
-    width: 350px;
   }
 }

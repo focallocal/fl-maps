@@ -1,8 +1,10 @@
+$modal-height: calc(100vh - 64px);
+
 #new-event-modal {
 
   .modal-content {
-    max-height: 598px;
-    min-height: 598px;
+    min-height: $modal-height;
+    max-height: $modal-height;
 
     .modal-body {
       overflow-y: auto;

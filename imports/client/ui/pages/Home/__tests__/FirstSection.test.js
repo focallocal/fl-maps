@@ -25,7 +25,7 @@ describe('<FindOrPost />', () => {
   })
 
   it('should render a route-link to new-event-modal view if user is logged in', () => {
-    const eventPostRoute = '/map?new=1'
+    const eventPostRoute = '?new=1'
 
     expect(component.find('.post-wrapper').find(Button).props().to).toBe(eventPostRoute)
   })

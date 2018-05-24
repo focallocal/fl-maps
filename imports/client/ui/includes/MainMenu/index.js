@@ -33,13 +33,8 @@ class MainMenu extends Component {
 
         {/* Right Links  */}
         <Nav id='right-links'>
-          {/* {MainMenu.rightLinks.map((link, index) => {
-            return (
-              <LinkItem key={index} item={link} />
-            )
-          })} */}
           <NavItem id='add-event'>
-            <RouterNavLink to='/map?new=1'>
+            <RouterNavLink to='?new=1'>
               <Button>
                 {MainMenu.addEvent}
               </Button>

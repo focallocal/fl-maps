@@ -1,1 +1,2 @@
 import './newEvent'
+import './getEvents'

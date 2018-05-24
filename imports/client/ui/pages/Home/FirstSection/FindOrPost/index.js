@@ -24,7 +24,7 @@ class FindOrPost extends Component {
           <h3 className='header'>{Home.post.first_title}</h3>
           {user ? (
             <div className='center'>
-              <Button tag={NavLink} to='/map?new=1'>{Home.post.button_loggedIn}</Button>
+              <Button tag={NavLink} to='?new=1'>{Home.post.button_loggedIn}</Button>
             </div>
           )
             : (
