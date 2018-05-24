@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
-// import i18n from '/imports/both/i18n/en'
+import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
-// const { Home } = i18n
+const { Home } = i18n
 class MoreLinks extends Component {
   render () {
     return (
-      <div></div>
+      <section id="more-links" className="content-section">
+        <div className="container">
+          <h2>{Home.fifth_section.title}</h2>
+          <p>{Home.fifth_section.content.first}</p>
+        </div>
+      </section>
     )
   }
 }
