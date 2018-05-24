@@ -2,6 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { BrowserRouter as Router } from 'react-router-dom'
 import MoreLinks from '../FifthSection/MoreLinks'
+import Option from '../FifthSection/MoreLinks/Option'
 import i18n from '/imports/both/i18n/en'
 
 const { Home } = i18n
@@ -57,19 +58,19 @@ describe('<MoreLinks />', () => {
     const actual = component.find(Option)
     expect(actual.length).toBe(3)
   })
-  //
-  // it('should render with fifth_section content third', () => {
-  //   const actual = component.find('p').at(1)
-  //   expect(actual.text()).toBe(Home.fifth_section.content.third)
-  // })
-  //
-  // it('should render with fifth_section content fifth', () => {
-  //   const actual = component.find('p').at(2)
-  //   expect(actual.text()).toBe(Home.fifth_section.content.fifth)
-  // })
-  //
-  // it('should render with fifth_section content fifth', () => {
-  //   const actual = component.find('p').at(3)
-  //   expect(actual.text()).toBe(Home.fifth_section.content.fifth)
-  // })
+
+  it('should render Option with fifth_section first option', () => {
+    const actual = component.find(Option).at(0)
+    expect(actual.props().text).toBe(Home.fifth_section.content.options.first)
+  })
+
+  it('should render Option with fifth_section first option', () => {
+    const actual = component.find(Option).at(1)
+    expect(actual.props().text).toBe(Home.fifth_section.content.options.second)
+  })
+
+  it('should render Option with fifth_section first option', () => {
+    const actual = component.find(Option).at(2)
+    expect(actual.props().text).toBe(Home.fifth_section.content.options.third)
+  })
 })
