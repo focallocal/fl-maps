@@ -10,6 +10,7 @@
   transition: transform .35s ease;
   will-change: transform;
   z-index: 1;
+  overflow-y: auto;
 
   &.show {
     transform: translateX(350px);
