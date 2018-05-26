@@ -107,6 +107,11 @@
           "link": "http://morehappiness.focallocal.org/"
         }
       ]
+    },
+    {
+      "title": "Map",
+      "icon": "fas fa-map",
+      "route": "/map"
     }
   ]
 }

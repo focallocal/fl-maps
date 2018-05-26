@@ -19,6 +19,7 @@ $nav-item-hover-transition: color .15s ease;
 
 
     .nav-link {
+      position: relative;
       display: flex;
       flex-flow: column;
       height: 100%;
@@ -26,7 +27,29 @@ $nav-item-hover-transition: color .15s ease;
       transition: $nav-item-hover-transition;
 
       &:hover {
-        color: $nav-item-hover-color;
+        // color: $nav-item-hover-color;
+      }
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-bottom: 3px solid #fff;
+        transform: scaleX(0);
+        transition: transform .15s ease-in-out;
+      }
+
+      &.active, &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
+
+        &.active {
+          font-weight: bold;
+        }
       }
 
 
