@@ -15,7 +15,8 @@ class Date_ extends Component {
       label,
       onChange,
       value,
-      error
+      error,
+      placeholder
     } = this.props
 
     const {
@@ -23,12 +24,11 @@ class Date_ extends Component {
     } = this.state
 
     return (
-      <FormGroup>
+      <FormGroup className='date-field'>
         <Label>{label}</Label>
         <Input
           id={id}
           value={formatDate(value)}
-          placeholder={`Ex: ${formatDate(new Date())}`}
           onFocus={e => this.toggleDayPicker(e, true)}
           invalid={Boolean(error)}
           onChange={() => {}}

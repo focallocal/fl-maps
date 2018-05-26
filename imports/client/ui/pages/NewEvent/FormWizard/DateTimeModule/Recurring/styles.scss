@@ -1,0 +1,84 @@
+
+#recurring {
+
+
+  #recurr-monthly {
+    width: 290px;
+    margin: 16px 0;
+  }
+
+  .inline-inputs {
+    margin-bottom: 8px;
+
+    &.every-type {
+
+      .select-field {
+        width: 140px !important;
+      }
+    }
+
+    &>div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      margin-left: 5px;
+      margin-bottom: 0;
+      width: auto;
+
+      .form-group {
+        margin: 0 4px;
+      }
+
+      &:first-child {
+
+        .form-group {
+          width: 70px;
+        }
+      }
+    }
+
+    &>span {
+      margin: 0 4px;
+    }
+  }
+
+  .error-message {
+    margin: 16px 0 0;
+  }
+
+  @media (max-width: 494px) {
+    & {
+
+      .inline-inputs {
+
+        & {
+          flex-flow: column;
+          align-items: baseline !important;
+        }
+
+        &>div {
+          margin-top: 8px;
+        }
+
+        &.every-type {
+
+          .form-group {
+            margin-left: 0;
+          }
+        }
+
+        &>div:first-child {
+          // margin-bottom: 8px;
+        }
+
+        &.every-type {
+
+          &>div {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

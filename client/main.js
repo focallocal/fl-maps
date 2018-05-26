@@ -16,7 +16,7 @@ Meteor.startup(() => {
 
   setTimeout(() => {
     if (!window.google) {
-      const url = 'https://maps.googleapis.com/maps/api/js?key=' + gm.key + '&v=3.exp&libraries=places'
+      const url = 'https://maps.googleapis.com/maps/api/js?key=' + gm.api_key + '&v=3.exp&libraries=places'
       let script = document.createElement('script')
       script.src = url
       script.defer = true

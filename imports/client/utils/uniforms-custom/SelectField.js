@@ -49,7 +49,7 @@ class Select_ extends Component {
             options={options}
             isMulti={multi}
             onChange={this.handleChange}
-            placeholder={placeholder_}
+            placeholder={''}
           />
         ) : (
           <PlacesSearchBox
@@ -117,7 +117,7 @@ class Select_ extends Component {
         value_ = [value]
       }
       value_ = value_.reduce((arr, val, index) => {
-        return arr.concat({ value: indexes[index], label: val[labelKey] || val })
+        return val ? arr.concat({ value: indexes[index], label: val[labelKey] || val }) : arr
       }, [])
     } else if (multi) {
       // If multi is true but indexes are null, we have to map the value/label from

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import router from '/imports/client/utils/history'
-import { Redirect } from 'react-router-dom'
 import { EventsSchema } from '/imports/both/collections/events'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Alert } from 'reactstrap'
 import FormWizard from './FormWizard'
@@ -13,26 +13,50 @@ const STEPS_COUNT = 2 // Number of form steps
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
 class NewEventModal extends Component {
-  state = {
-    currentStep: 0,
-    form: null,
-    hasErrors: false
+  constructor () {
+    super()
+    this.state = {
+      currentStep: 0,
+      form: null,
+      hasErrors: false,
+      googleLoaded: false
+    }
+
+    if (window.google) {
+      this.state.googleLoaded = true
+    }
+  }
+
+  static getDerivedStateFromProps (nextProps, prevState) {
+    return nextProps
+  }
+
+  componentDidMount () {
+    // ensure google maps is loaded
+    this.interval = setInterval(() => {
+      if (window.google) {
+        clearInterval(this.interval)
+        this.setState({ googleLoaded: true })
+      }
+    }, 1000) // 1 second
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.interval)
+    this.interval = null
   }
 
   render () {
     const {
       currentStep,
+      googleLoaded,
+      isOpen,
       hasErrors
     } = this.state
 
-    if (!Meteor.userId()) {
-      sessionStorage.setItem('redirect', '?new=1')
-      return <Redirect to='/sign-in' />
-    }
+    const hasGoogleMapsLoaded = window.google || googleLoaded
 
-    const isOpen = qs.parse(this.props.location.search).new === '1'
-
-    return (
+    return hasGoogleMapsLoaded && (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg'>
         <ModalHeader toggle={this.toggleModal}>
           {i18n_.modal_header}
@@ -108,8 +132,13 @@ class NewEventModal extends Component {
     queryStrings.new = '0'
 
     const url = pathname + '?' + qs.stringify(queryStrings)
-    this.props.history.push(url)
+    router.push(url)
   }
+}
+
+NewEventModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default NewEventModal

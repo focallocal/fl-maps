@@ -51,30 +51,66 @@ export function formatDate (date) {
 export function formatWhenObject (data) {
   /* Format the "when" section based on the date type */
 
-  if (data.type === 'oneDay') {
-    const { startingTime, endingTime, startingDate } = data.oneDay
-    return `${formatDate(startingDate)} on ${startingTime} - ${endingTime}`
+  const {
+    endingDate,
+    endingTime,
+    forever,
+    multipleDays,
+    recurring,
+    repeat,
+    startingDate,
+    startingTime
+  } = data
+
+  const {
+    days,
+    every,
+    type,
+    until
+  } = recurring
+
+  console.log(data)
+
+  // Handle multipleDays
+  if (multipleDays) {
+    return `every ${formatDaysAndHours(data.days)}`
   }
 
-  if (data.type === 'specificPeriod') {
-    const { startingDate, endingDate, days } = data.specificPeriod
-
-    if (!startingDate || !endingDate) {
-      return `every ${formatDaysAndHours(data.specificPeriod.days)}`
+  // Handle recurring
+  if (repeat) {
+    switch (type) {
+      case 'day':
+        return `
+          starting from ${formatDate(startingDate)},
+          every ${every} day${every > 1 ? 's' : ''}
+          between ${startingTime} - ${endingTime}`
+      case 'week':
+        return `
+          starting from ${formatDate(startingDate)},
+          every ${every} week${every > 1 ? 's' : ''}
+          on ${getDaysNames(days)}
+          between ${startingTime} - ${endingTime}
+        `
     }
 
-    return `every ${formatDaysAndHours(days)}, from ${formatDate(startingDate)} until ${formatDate(endingDate)}`
+    // if (forever) {
+    // return `every ${every} ${type} on ${getDaysNames(days)}`
+    // } else {
+    // return `every ${every} ${type} on ${getDaysNames(days)} for ${repeat} occasions (until ${formatDate(until)})`
+    // }
   }
 
-  if (data.type === 'recurring') {
-    const { days, every, type, repeat, until, forever } = data.recurring
+  return `from ${formatDate(startingDate)}, ${startingTime} until ${formatDate(endingDate)}, ${endingTime}`
 
-    if (forever) {
-      return `every ${every} ${type} on ${getDaysNames(days)}`
-    } else {
-      return `every ${every} ${type} on ${getDaysNames(days)} for ${repeat} occasions (until ${formatDate(until)})`
-    }
-  }
+  // if (data.type === 'oneDay') {
+  // const { startingTime, endingTime, startingDate } = data.oneDay
+  // return `${formatDate(startingDate)} on ${startingTime} - ${endingTime}`
+  // }
+
+  // if (data.type === 'recurring') {
+  // const { days, every, type, repeat, until, forever } = data.recurring
+
+  // }
 }
 
 function formatDaysAndHours (days) {
@@ -85,21 +121,23 @@ function formatDaysAndHours (days) {
 
     return str += `
       ${(last && !only) ? 'and ' : ''}
-      ${day.day.toLowerCase()} (${day.startingTime} - ${day.endingTime})${(last || lastNext) ? '' : ', '}`
+      ${day.day} (${day.startingTime} - ${day.endingTime})${(last || lastNext) ? '' : ', '}`
   }, '')
 }
 
 function getDaysNames (days) {
-  let daysMapper = {
-    0: 'Sunday',
-    1: 'Monday',
-    2: 'Tuesday',
-    3: 'Wednesday',
-    4: 'Thursday',
-    5: 'Friday',
-    6: 'Saturday'
-  }
+  // let daysMapper = {
+  //   0: 'Sunday',
+  //   1: 'Monday',
+  //   2: 'Tuesday',
+  //   3: 'Wednesday',
+  //   4: 'Thursday',
+  //   5: 'Friday',
+  //   6: 'Saturday'
+  // }
   return days.reduce((str, day, index) => {
-    return str += daysMapper[day] + (days[index + 1] ? '/' : '')
+    const notLastItem = days[index + 1]
+
+    return str += day + (notLastItem ? '/' : '')
   }, '')
 }

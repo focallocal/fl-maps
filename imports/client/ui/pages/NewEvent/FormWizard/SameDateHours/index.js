@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Popover, PopoverBody } from 'reactstrap'
 import Select from 'react-select'
 import possibleEventHours from '/imports/both/collections/events/helpers/possibleEventHours'
@@ -6,7 +7,7 @@ import { formatReactSelectOptions } from '/imports/client/utils/format'
 
 const options = formatReactSelectOptions(possibleEventHours)
 
-class SetSameHoursPopover extends Component {
+class SameDateHours extends Component {
   state = {
     isOpen: false,
     startingTime: null,
@@ -47,12 +48,37 @@ class SetSameHoursPopover extends Component {
 
   handleStartingTime = value => {
     this.setState({ startingTime: value })
-    this.props.handleDefaults('startingTime', value.label)
+    this.handleDefaults('startingTime', value.label)
   }
 
   handleEndingTime = value => {
     this.setState({ endingTime: value })
-    this.props.handleDefaults('endingTime', value.label)
+    this.handleDefaults('endingTime', value.label)
+  }
+
+  handleDefaults = (key, value) => {
+    // Update days with the same hours!
+
+    const {
+      form
+    } = this.props
+
+    const model = form.getModel()
+    const selectedDays = model.when.days
+
+    let days = JSON.parse(JSON.stringify(selectedDays || []))
+    selectedDays.forEach((day, i) => {
+      if (!day) { return } // null
+
+      if (days[i]) {
+        days[i][key] = value
+      } else {
+        days[i] = {
+          [key]: value
+        }
+      }
+    })
+    form.change('when.days', days)
   }
 
   togglePopover = () => {
@@ -60,4 +86,8 @@ class SetSameHoursPopover extends Component {
   }
 }
 
-export default SetSameHoursPopover
+SameDateHours.defaultProps = {
+  form: PropTypes.object.isRequired
+}
+
+export default SameDateHours

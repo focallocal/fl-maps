@@ -1,0 +1,35 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#recurr-weekly {
+  margin: 16px 0;
+
+  .weekdays {
+    margin-top: 8px;
+
+    &>div {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 30px;
+      margin-right: 5px;
+      background: $gray-stronger;
+      color: $black-lighter;
+      font-size: .9em;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+
+      &:hover {
+        color: #fff;
+        background: $primary-blue-hover;
+      }
+
+      &.active {
+        color: #fff;
+        background: $primary-blue-hover;
+      }
+    }
+
+  }
+}
