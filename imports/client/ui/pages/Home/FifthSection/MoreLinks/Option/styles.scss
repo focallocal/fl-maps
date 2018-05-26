@@ -1,0 +1,21 @@
+.link-item {
+  flex-grow: 1;
+  text-align: center;
+  color: white;
+  font-size: 1.7em;
+  font-weight: -10;
+  -webkit-font-smoothing: antialiased;
+  margin: 2%;
+  .link-button {
+    -moz-box-shadow:    3px 3px 5px 0px black;
+    -webkit-box-shadow: 3px 3px 5px 0px black;
+    box-shadow:         3px 3px 5px 0px black;
+    padding-top: 10%;
+    width: 100%;
+    background-color: #f57c00;
+    font-size: 24px;
+    display: inline-block;
+    height: 10vh;
+       text-transform: uppercase;
+  }
+}

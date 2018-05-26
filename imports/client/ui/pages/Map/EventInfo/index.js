@@ -25,7 +25,7 @@ class EventInfo extends Component {
           <div>{event.overview}</div>
         </blockquote>
 
-        <span>Looks suspicious? <span className='report'>let us know!</span></span>
+        <span>Report Issue. <span className='report'>let us know!</span></span>
         <Button color='primary'>Show More!</Button>
       </div>
     )
