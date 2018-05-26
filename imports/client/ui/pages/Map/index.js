@@ -152,9 +152,11 @@ class MapComponent_ extends Component {
     if (!e) {
       this.setState({ currentEventInfo: null })
     } else {
+      const currentZoom = this.map.getZoom()
+
       this.setState({
         center: center || e.latLng.toJSON(),
-        zoom: 18,
+        zoom: currentZoom < 18 ? 18 : currentZoom + 1,
         currentEventInfo: _id
       })
     }
