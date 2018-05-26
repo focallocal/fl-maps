@@ -12,6 +12,7 @@ class EventInfo extends Component {
     } = this.props
 
     const categories = formatCategories(event.categories)
+    console.log(event)
 
     return (
       <div id='event-info-window'>
@@ -25,7 +26,7 @@ class EventInfo extends Component {
           <div>{event.overview}</div>
         </blockquote>
 
-        <span>Report Issue. <span className='report'>let us know!</span></span>
+        <span className='report'>Report issue</span>
         <Button color='primary'>Show More!</Button>
       </div>
     )

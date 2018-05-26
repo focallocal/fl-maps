@@ -54,22 +54,12 @@ export function formatWhenObject (data) {
   const {
     endingDate,
     endingTime,
-    forever,
     multipleDays,
     recurring,
     repeat,
     startingDate,
     startingTime
   } = data
-
-  const {
-    days,
-    every,
-    type,
-    until
-  } = recurring
-
-  console.log(data)
 
   // Handle multipleDays
   if (multipleDays) {
@@ -78,6 +68,12 @@ export function formatWhenObject (data) {
 
   // Handle recurring
   if (repeat) {
+    const {
+      days,
+      every,
+      type
+    } = recurring
+
     switch (type) {
       case 'day':
         return `
@@ -92,12 +88,6 @@ export function formatWhenObject (data) {
           between ${startingTime} - ${endingTime}
         `
     }
-
-    // if (forever) {
-    // return `every ${every} ${type} on ${getDaysNames(days)}`
-    // } else {
-    // return `every ${every} ${type} on ${getDaysNames(days)} for ${repeat} occasions (until ${formatDate(until)})`
-    // }
   }
 
   return `from ${formatDate(startingDate)}, ${startingTime} until ${formatDate(endingDate)}, ${endingTime}`
