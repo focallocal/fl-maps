@@ -8,13 +8,15 @@ const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 class WeekDays extends Component {
   render () {
     const {
-      selectedDays,
-      schemaKey
+      schemaKey,
+      selectedDays
     } = this.props
 
     return (
       <div className='weekdays'>
         {weekDays.map((day, index) => {
+          const checked = !!selectedDays[index]
+
           return (
             <div key={index} className='day'>
               <CustomInput
@@ -22,7 +24,7 @@ class WeekDays extends Component {
                 className='checkbox'
                 type='checkbox'
                 label={day.substr(0, 3)}
-                checked={!!selectedDays[index]}
+                checked={checked}
                 onChange={this.handleDayChange}
               />
               <div className='hours'>
@@ -40,6 +42,7 @@ class WeekDays extends Component {
   handleDayChange = ({ target }) => {
     const {
       form,
+      schemaKey,
       selectedDays
     } = this.props
 
@@ -48,12 +51,12 @@ class WeekDays extends Component {
 
     if (selectedDays[index]) {
       let updatedDays = [...selectedDays]
-      updatedDays.splice(index, 1)
+      updatedDays.splice(index, 1, null)
 
-      form.change(`when.specificPeriod.days`, updatedDays)
+      form.change(schemaKey, updatedDays)
     } else {
       // Check day
-      form.change(`when.specificPeriod.days.${index}.day`, day)
+      form.change(`${schemaKey}.${index}.day`, day)
     }
   }
 }

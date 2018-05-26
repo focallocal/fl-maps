@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
+import { startingTime, endingTime, startingDate, endingDate, getHour } from './events/helpers'
 import possibleCategories from './events/helpers/possibleCategories.json'
-import OneDaySchema from './events/OneDaySchema'
-import SpecificPeriodSchema from './events/SpecificPeriodSchema'
 import RecurringSchema from './events/RecurringSchema'
+import DaySchema from './events/DaysSchema'
 
 SimpleSchema.extendOptions(['uniforms'])
 
@@ -34,11 +34,7 @@ const EventsSchema = new SimpleSchema({
   'categories': {
     type: Array,
     custom: function () {
-      if (!this.value) {
-        return 'required'
-      }
-
-      if (!this.value[0]) {
+      if (!this.value || !this.value[0]) {
         return 'required'
       }
     },
@@ -75,11 +71,7 @@ const EventsSchema = new SimpleSchema({
   'address': {
     type: Object,
     custom: function () {
-      if (!this.value) {
-        return 'required'
-      }
-
-      if (!this.value.name) {
+      if (!this.value || !this.value.name) {
         return 'required'
       }
     },
@@ -126,44 +118,90 @@ const EventsSchema = new SimpleSchema({
     custom: function () {
       const type = this.field('when.type')
       const obj = !this.field('when.' + type)
+
       // ensure we have a valid when object
       if (!type || obj.value) {
         return 'required'
       }
     }
   },
-  'when.type': {
-    type: String,
-    allowedValues: ['oneDay', 'specificPeriod', 'recurring'],
+  'when.startingDate': startingDate,
+  'when.endingDate': endingDate,
+  'when.startingTime': {
+    ...startingTime,
+    optional: true,
     custom: function () {
+      if (this.field('when.multipleDays').value) {
+        return undefined
+      }
+
       if (!this.value) {
         return 'required'
       }
+    },
+    autoValue: function () {
+      if (this.field('when.multipleDays').value) {
+        return null
+      }
+
+      return getHour()
     }
   },
-  'when.oneDay': {
-    type: OneDaySchema,
-    autoValue: function () {
-      if (this.field('when.type').value !== 'oneDay') {
-        return null
+  'when.endingTime': {
+    ...endingTime,
+    optional: true,
+    custom: function () {
+      if (this.field('when.multipleDays').value) {
+        return undefined
+      }
+
+      if (!this.value) {
+        return 'required'
       }
     },
-    optional: true
-  },
-  'when.specificPeriod': { // is the same as regularHours
-    type: SpecificPeriodSchema,
-    optional: true,
     autoValue: function () {
-      if (this.field('when.type').value !== 'specificPeriod') {
+      if (this.field('when.multipleDays').value) {
+        return null
+      }
+
+      return getHour(1)
+    }
+  },
+  'when.multipleDays': {
+    type: Boolean,
+    defaultValue: true
+  },
+  'when.repeat': {
+    type: Boolean,
+    defaultValue: false
+  },
+  'when.days': { // used with multipleDays
+    type: Array,
+    optional: true,
+    custom: function () {
+      if (!this.field('when.multipleDays').value) {
+        return undefined
+      }
+
+      if (!this.value || !this.value[0]) {
+        return 'required'
+      }
+    },
+    autoValue: function () {
+      if (!this.field('when.multipleDays').value) {
         return null
       }
     }
   },
-  'when.recurring': {
+  'when.days.$': {
+    type: DaySchema,
+    optional: true
+  },
+  'when.recurring': { // used with repeat
     type: RecurringSchema,
     optional: true,
     autoValue: function () {
-      if (this.field('when.type').value !== 'recurring') {
+      if (!this.field('when.repeat').value) {
         return null
       }
     }

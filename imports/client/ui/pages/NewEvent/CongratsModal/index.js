@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
@@ -13,7 +13,7 @@ const socialButtons = [
   { icon: 'fab fa-google-plus-g', onClick: shareOnGooglePlusLink }
 ]
 
-class CongratsModal extends Component {
+class CongratsModal extends PureComponent {
   render () {
     const {
       'new-event-id': eventId,

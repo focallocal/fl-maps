@@ -41,7 +41,11 @@ const handleChange = (e, onChange, max, min) => {
 
   // Prevent numbers lower than the minimum
   if (type === 'number' && value < min) {
-    return
+    return onChange(min)
+  }
+
+  if (type === 'number' && value > max) {
+    return onChange(max)
   }
 
   onChange(value.substr(0, max))

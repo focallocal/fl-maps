@@ -3,6 +3,7 @@ import connectField from 'uniforms/connectField'
 import { FormGroup, Label, Input } from 'reactstrap'
 
 const Text = ({
+  className,
   id,
   label,
   name,
@@ -16,7 +17,7 @@ const Text = ({
   error,
   ...props
 }) =>
-  <FormGroup>
+  <FormGroup className={className}>
     <Label>{label}</Label>
 
     <Input

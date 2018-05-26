@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import AutoForm from '/imports/client/utils/uniforms-custom/AutoForm'
 import { EventsSchema } from '/imports/both/collections/events'
+import { getHour } from '/imports/both/collections/events/helpers'
 import FirstStep from './FirstStep'
 import SecondStep from './SecondStep'
 import ThirdStep from './ThirdStep'
-import './DateTimeModule/styles.scss'
 
 class FormWizard extends Component {
   state = {
@@ -17,6 +17,7 @@ class FormWizard extends Component {
       currentStep
     } = this.props
 
+    // console.log(this.form)
     let model = this.form ? this.form.getModel() : this.loadModelFromStorage()
 
     if (this.state.reset) {
@@ -30,14 +31,13 @@ class FormWizard extends Component {
         model={model}
         ref={this.setRef}
         onChangeModel={this.saveModelToStorage}
-        modelTransform={this.modelTransform}
       >
         {this.form ? (
           <Fragment>
             <span className='reset' onClick={this.resetForm}>reset fields</span>
-            {currentStep === 0 && <FirstStep show />}
-            {currentStep === 1 && <SecondStep show form={this.form} />}
-            {currentStep === 2 && <ThirdStep show={currentStep === 2} />}
+            {currentStep === 0 && <FirstStep />}
+            {currentStep === 1 && <SecondStep form={this.form} />}
+            {currentStep === 2 && <ThirdStep />}
           </Fragment>
         ) : <div />}
       </AutoForm>
@@ -66,8 +66,10 @@ class FormWizard extends Component {
 
     return {
       when: { // This is important - it ensures that we start with a default value for the "when" object.
-        type: 'oneDay',
-        oneDay: {}
+        startingDate: new Date(),
+        endingDate: new Date(),
+        startingTime: getHour(),
+        endingTime: getHour(1)
       }
     }
   }
@@ -79,7 +81,8 @@ class FormWizard extends Component {
 }
 
 FormWizard.propTypes = {
-  currentStep: PropTypes.number.isRequired
+  currentStep: PropTypes.number.isRequired,
+  passFormRefToParent: PropTypes.func.isRequired
 }
 
 export default FormWizard

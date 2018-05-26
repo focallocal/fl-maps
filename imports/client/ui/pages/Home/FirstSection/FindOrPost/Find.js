@@ -121,8 +121,8 @@ class Find extends Component {
 
 function loadGoogleMaps () {
   // Load googlemaps-api
-  const { key } = Meteor.settings.public.gm
-  const url = `https://maps.googleapis.com/maps/api/js?key=${key}&v=3.exp&libraries=places`
+  const { api_key } = Meteor.settings.public.gm
+  const url = `https://maps.googleapis.com/maps/api/js?key=${api_key}&v=3.exp&libraries=places`
 
   var script = document.createElement('script')
   script.type = 'text/javascript'
