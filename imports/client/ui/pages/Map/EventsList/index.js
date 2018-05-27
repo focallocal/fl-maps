@@ -61,6 +61,8 @@ class EventsList extends Component {
       userLocation
     } = this.props
 
+    const hasData = !!events[0]
+
     return (
       <Fragment>
         <div id='events-list' className={minimized ? 'minimized' : ''}>
@@ -87,7 +89,7 @@ class EventsList extends Component {
               <div>looking for events near you...</div>
             </div>
           )}
-          {noData && (
+          {(noData && !hasData) && (
             <div className='no-near-events va-center'>
               <div>Sorry, we couldn't find anything</div>
               <div>around you...</div>
