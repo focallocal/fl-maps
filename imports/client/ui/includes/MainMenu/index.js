@@ -1,49 +1,71 @@
-import React, { Component } from 'react'
-import { Navbar, Nav, NavbarBrand, NavItem, Button } from 'reactstrap'
+import React, { Component, Fragment } from 'react'
+import { Navbar, Nav, NavItem, Button } from 'reactstrap'
 import { NavLink as RouterNavLink } from 'react-router-dom'
+import Sidebar from './Sidebar'
 import DropDownItem from './DropDownItem'
 import LinkItem from './LinkItem'
 import UserItem from './UserItem'
+import Logo from './Logo'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 class MainMenu extends Component {
+  state = {
+    sidebarOpen: true
+  }
+
   render () {
+    const {
+      sidebarOpen
+    } = this.state
+
     const { MainMenu } = i18n
 
     return (
-      <Navbar id='main-menu' expand='md'>
+      <Fragment>
+        <Navbar id='main-menu' expand='md'>
 
-        {/* Left Links */}
-        <Nav id='left-links'>
+          {/* Left Links */}
+          <Nav id='left-links'>
+            <NavItem id='sidebar-toggle' onClick={this.toggleSidebar}>
+              <i className='fas fa-bars' />
+            </NavItem>
 
-          {/* Logo */}
-          <NavbarBrand id='brand-logo' tag='div'>
-            <RouterNavLink to='/' exact>Focallocal</RouterNavLink>
-          </NavbarBrand>
+            <Logo />
 
-          {MainMenu.leftLinks.map((link, index) => {
-            const isDropDown = !!link.content
+            {MainMenu.leftLinks.map((link, index) => {
+              const isDropDown = !!link.content
 
-            return isDropDown
-              ? <DropDownItem key={index} item={link} />
-              : <LinkItem key={index} item={link} />
-          })}
-        </Nav>
+              return isDropDown
+                ? <DropDownItem key={index} item={link} />
+                : <LinkItem key={index} item={link} />
+            })}
+          </Nav>
 
-        {/* Right Links  */}
-        <Nav id='right-links'>
-          <NavItem id='add-event'>
-            <RouterNavLink to='?new=1'>
-              <Button>
-                {MainMenu.addEvent}
-              </Button>
-            </RouterNavLink>
-          </NavItem>
-          <UserItem />
-        </Nav>
-      </Navbar>
+          {/* Right Links  */}
+          <Nav id='right-links'>
+            <NavItem id='add-event'>
+              <RouterNavLink to='?new=1'>
+                <Button>
+                  {MainMenu.addEvent}
+                </Button>
+              </RouterNavLink>
+            </NavItem>
+            <UserItem />
+          </Nav>
+        </Navbar>
+
+        <Sidebar
+          isOpen={sidebarOpen}
+          i18nFile={MainMenu}
+          toggle={this.toggleSidebar}
+        />
+      </Fragment>
     )
+  }
+
+  toggleSidebar = () => {
+    this.setState({ sidebarOpen: !this.state.sidebarOpen })
   }
 }
 

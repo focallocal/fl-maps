@@ -41,16 +41,8 @@
       "icon": "fas fa-info-circle",
       "content": [
         {
-          "title": "About Us",
+          "title": "The Focallocal Community",
           "link": "http://about.focallocal.org"
-        },
-        {
-          "title": "Hire Us",
-          "link": "http://hire.focallocal.org"
-        },
-        {
-          "title": "Community Values",
-          "link": "http://news.focallocal.org/the-focallocal-community-values/"
         },
         {
           "title": "F.A.Q",
@@ -67,6 +59,24 @@
         {
           "title": "Focallocal In The News",
           "link": "http://news.focallocal.org/category/in-the-news/"
+        }
+      ]
+    },
+    {
+      "title": "Projects",
+      "icon": "fas fa-table",
+      "content": [
+        {
+          "title": "Public Happiness",
+          "link": "http://action.focallocal.org/"
+        },
+        {
+          "title": "Brighter Tomorrow Map",
+          "link": "http://brightertomorrowmap.com/"
+        },
+        {
+          "title": "More Happiness Movment",
+          "link": "http://morehappiness.focallocal.org/"
         }
       ]
     },
@@ -89,24 +99,6 @@
       "title": "Shop",
       "icon": "fas fa-shopping-cart",
       "link": "https://the-positive-action-shop.myshopify.com/"
-    },
-    {
-      "title": "Projects",
-      "icon": "fas fa-table",
-      "content": [
-        {
-          "title": "Public Happiness",
-          "link": "http://action.focallocal.org/"
-        },
-        {
-          "title": "Brighter Tomorrow Map",
-          "link": "http://brightertomorrowmap.com/"
-        },
-        {
-          "title": "More Happiness Movment",
-          "link": "http://morehappiness.focallocal.org/"
-        }
-      ]
     },
     {
       "title": "Map",
