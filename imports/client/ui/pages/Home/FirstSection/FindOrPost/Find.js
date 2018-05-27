@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Meteor } from 'meteor/meteor'
 import { Redirect } from 'react-router-dom'
 import { FormGroup, Label, InputGroup, Input, Button } from 'reactstrap'
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'

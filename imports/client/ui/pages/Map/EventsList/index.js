@@ -61,8 +61,6 @@ class EventsList extends Component {
       userLocation
     } = this.props
 
-    const hasData = !!events[0]
-
     return (
       <Fragment>
         <div id='events-list' className={minimized ? 'minimized' : ''}>
@@ -81,23 +79,31 @@ class EventsList extends Component {
               )
             })}
           </ListGroup>
-          {(!hasData && loading) && (
-            <div className='va-center loader'>
-              <div className='ball-beat'>
-                <div /><div /><div />
-              </div>
-              <div>looking for events near you...</div>
-            </div>
-          )}
-          {(!hasData && noData && !loading) && (
-            <div className='no-near-events va-center'>
-              <div>Sorry, we couldn't find anything</div>
-              <div>around you...</div>
-            </div>
-          )}
+          {(loading || !noData) && <this.Loading />}
+          {noData && <this.NoData />}
         </div>
         <MinimizeButton onMinimize={this.toggleMinimize} minimized={minimized} />
       </Fragment>
+    )
+  }
+
+  Loading () {
+    return (
+      <div className='va-center loader'>
+        <div className='ball-beat'>
+          <div /><div /><div />
+        </div>
+        <div>looking for events near you...</div>
+      </div>
+    )
+  }
+
+  NoData () {
+    return (
+      <div className='no-near-events va-center'>
+        <div>Sorry, we couldn't find anything</div>
+        <div>around you...</div>
+      </div>
     )
   }
 
