@@ -11,7 +11,7 @@ import './styles.scss'
 
 class MainMenu extends Component {
   state = {
-    sidebarOpen: true
+    sidebarOpen: false
   }
 
   render () {
