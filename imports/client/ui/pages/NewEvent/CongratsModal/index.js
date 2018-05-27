@@ -31,13 +31,22 @@ class CongratsModal extends Component {
     localStorage.removeItem('new-event-model')
   }
 
+  componentDidCatch (error, info) {
+    if (Meteor.isDevelopment) {
+      console.log(error, info)
+    }
+
+    this.setState({ hasErrors: true })
+  }
+
   render () {
     const {
       eventId,
+      hasErrors,
       model
     } = this.state
 
-    if (!eventId || !eventId) {
+    if (!eventId || !eventId || hasErrors) {
       return <Redirect to='/' />
     }
 
