@@ -45,7 +45,7 @@ describe('<EventsList />', () => {
     const component_ = shallowRender({ isFetching: true })
 
     expect(component_.find('.loader')).toHaveLength(1)
-    component_.setState({ loading: false })
+    component_.setState({ loading: false, noData: true })
     expect(component_.find('.loader')).toHaveLength(0)
   })
 

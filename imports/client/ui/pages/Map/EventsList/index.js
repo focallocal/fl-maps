@@ -79,31 +79,23 @@ class EventsList extends Component {
               )
             })}
           </ListGroup>
-          {(loading || !noData) && <this.Loading />}
-          {noData && <this.NoData />}
+          {(loading || !noData) && (
+            <div className='va-center loader'>
+              <div className='ball-beat'>
+                <div /><div /><div />
+              </div>
+              <div>looking for events near you...</div>
+            </div>
+          )}
+          {noData && (
+            <div className='no-near-events va-center'>
+              <div>Sorry, we couldn't find anything</div>
+              <div>around you...</div>
+            </div>
+          )}
         </div>
         <MinimizeButton onMinimize={this.toggleMinimize} minimized={minimized} />
       </Fragment>
-    )
-  }
-
-  Loading () {
-    return (
-      <div className='va-center loader'>
-        <div className='ball-beat'>
-          <div /><div /><div />
-        </div>
-        <div>looking for events near you...</div>
-      </div>
-    )
-  }
-
-  NoData () {
-    return (
-      <div className='no-near-events va-center'>
-        <div>Sorry, we couldn't find anything</div>
-        <div>around you...</div>
-      </div>
     )
   }
 
