@@ -28,7 +28,7 @@ The project is based on [Meteor](https://www.meteor.com/) and [React](https://re
 
     - create a new branch `git checkout -b new-feature-name`
 
-4. obtain the *settings.json* file from slack and place it in the project's folder
+4. obtain the *settings.json* file from slack, its pinned in the #meteor-maps thread, and place it in the project's folder
 
 5. run the project
 
