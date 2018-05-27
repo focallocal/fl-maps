@@ -91,16 +91,6 @@ export function formatWhenObject (data) {
   }
 
   return `from ${formatDate(startingDate)}, ${startingTime} until ${formatDate(endingDate)}, ${endingTime}`
-
-  // if (data.type === 'oneDay') {
-  // const { startingTime, endingTime, startingDate } = data.oneDay
-  // return `${formatDate(startingDate)} on ${startingTime} - ${endingTime}`
-  // }
-
-  // if (data.type === 'recurring') {
-  // const { days, every, type, repeat, until, forever } = data.recurring
-
-  // }
 }
 
 function formatDaysAndHours (days) {

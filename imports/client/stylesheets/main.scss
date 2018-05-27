@@ -40,21 +40,37 @@ body, h1, h2, h3, h4, h5, p, span {
 
 // Social Buttons
 
-.btn.fab {
+.btn.social {
+  height: 36px;
   width: 100px;
   border: none;
   margin-right: 5px;
 
   &.fa-facebook-f {
-    background-color: #3B5998;
+    background-color: #3B5998 !important;
   }
 
   &.fa-twitter {
-    background-color: #55ACEE;
+    background-color: #55ACEE !important;
   }
 
   &.fa-google-plus-g {
-    background-color: #DD4B39;
+    background-color: #DD4B39 !important;
+  }
+
+  &.btn-couchsurfing {
+    background-image: url('/images/icons/couchsurfing-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #d2480a !important;;
+  }
+
+  &.btn-eventbrite {
+    background-size: contain;
+    background-image: url('/images/icons/eventbrite-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb( 300, 111, 0) !important;
   }
 }
 

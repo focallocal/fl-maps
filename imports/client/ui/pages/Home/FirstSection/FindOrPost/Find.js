@@ -14,9 +14,17 @@ class Find extends Component {
   }
 
   componentDidMount () {
-    if (!window.google) { // ensure googleapi has been loaded!
-      loadGoogleMaps()
-    }
+    this.interval = setInterval(() => {
+      if (window.google) {
+        clearInterval(this.interval)
+        this.setState({})
+      }
+    }, 1000)
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.interval)
+    this.interval = null
   }
 
   UNSAFE_componentWillUpdate (nextProps, nextState) {
@@ -117,19 +125,6 @@ class Find extends Component {
   toggleGeolocationHelp = () => {
     this.setState(prevState => (this.setState({ geoHelp: !prevState.geoHelp })))
   }
-}
-
-function loadGoogleMaps () {
-  // Load googlemaps-api
-  const { api_key } = Meteor.settings.public.gm
-  const url = `https://maps.googleapis.com/maps/api/js?key=${api_key}&v=3.exp&libraries=places`
-
-  var script = document.createElement('script')
-  script.type = 'text/javascript'
-  script.src = url
-  script.async = true
-
-  document.head.appendChild(script)
 }
 
 export default Find
