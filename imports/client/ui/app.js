@@ -24,8 +24,8 @@ class App extends Component {
 
           <Route exact path='/' component={Home} />
           <Route path='/map' component={Map_} />
-          <Route exact path='/thank-you' component={CongratsModal} />
           <Route path='*' render={this.renderNewEvent} />
+          <Route exact path='/thank-you' component={CongratsModal} />
           <Authentication />
         </Fragment>
       </Router>

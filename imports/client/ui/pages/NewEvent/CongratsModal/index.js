@@ -1,54 +1,73 @@
-import React, { Component, PureComponent } from 'react'
+import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
 import router from '/imports/client/utils/history'
 import { EventsSchema } from '/imports/both/collections/events'
 import { formatCategories, formatWhenObject } from '/imports/client/utils/format'
+import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 const socialButtons = [
-  { icon: 'fab fa-facebook-f', onClick: shareOnFacebookLink },
-  { icon: 'fab fa-twitter', onClick: shareOnTwitterLink },
-  { icon: 'fab fa-google-plus-g', onClick: shareOnGooglePlusLink }
+  /* eslint-disable no-multi-spaces */
+  { type: 'facebook',     icon: 'fab fa-facebook-f' },
+  { type: 'twitter',      icon: 'fab fa-twitter' },
+  { type: 'google',       icon: 'fab fa-google-plus-g' },
+  { type: 'couchsurfing', icon: 'btn-couchsurfing' },
+  { type: 'eventbrite',   icon: 'btn-eventbrite' }
 ]
 
-class CongratsModal extends PureComponent {
+class CongratsModal extends Component {
+  constructor () {
+    super()
+    this.state = {
+      eventId: localStorage.getItem('new-event-id'),
+      model: localStorage.getItem('new-event-model')
+    }
+  }
+
+  componentDidMount () {
+    localStorage.removeItem('new-event-id')
+    localStorage.removeItem('new-event-model')
+  }
+
   render () {
     const {
-      'new-event-id': eventId,
-      'new-event-model': event_
-    } = localStorage
+      eventId,
+      model
+    } = this.state
 
-    if (!eventId || !event_) {
+    if (!eventId || !eventId) {
       return <Redirect to='/' />
     }
 
     // Using EventsSchema's clean function will automatically convert values to their type
-    const event = { ...EventsSchema.clean(JSON.parse(event_)), _id: eventId }
+    const event = { ...EventsSchema.clean(JSON.parse(model)), _id: eventId }
+
+    const {
+      first_sentence,
+      second_sentence
+    } = i18n.CongratsModal
 
     return (
       <Modal isOpen={true} size='lg' id='congrats-modal'>
         <ModalHeader tag={'div'}>
-          <h2>Congratulations!</h2>
-          <h4>We're one step closer to a happier and more connected World</h4>
+          <h4>Congratulations! We are one step closer to a happier and more connected world!</h4>
         </ModalHeader>
 
         <ModalBody>
-          <div className='bold'>We've made it super easy to share this and reach more people!</div>
-          <div className='bold'>Simply click the buttons below and then copy/paste the info.</div>
+          <div className='bold'>{first_sentence}</div>
+          {second_sentence && <div className='bold'>{second_sentence}</div>}
 
           <div className='social-links'>
             {socialButtons.map((btn, index) => {
-              const href = btn.onClick(event)
+              const onClick = getFunctionByMapType(btn, event)
 
-              return (
+              return onClick && (
                 <Button
                   key={index}
-                  tag={'a'}
-                  href={href}
-                  target='__blank'
-                  className={'btn ' + btn.icon}
+                  onClick={() => onClick(event)}
+                  className={'social ' + btn.icon}
                 />
               )
             })}
@@ -66,8 +85,6 @@ class CongratsModal extends PureComponent {
 
   onDone () {
     router.push('/map')
-    localStorage.removeItem('new-event-model')
-    localStorage.removeItem('new-event-id')
   }
 }
 
@@ -87,43 +104,85 @@ const SelectableText = ({ event }) => {
   )
 }
 
-// Share Links
+function getFunctionByMapType (btn, event) {
+  // window.__mapType is set on client/main.js
+  const isHomelessMap = window.__mapType === 'brightersidetomorrow'
+
+  switch (btn.type) {
+    case 'facebook':
+      return isHomelessMap ? shareFacebook : createEventFacebbok
+    case 'twitter':
+      return shareTwitter
+    case 'google':
+      return shareGooglePlus
+    case 'couchsurfing':
+      return isHomelessMap ? null : () => window.open('https://www.couchsurfing.com/events')
+    case 'eventbrite':
+      return isHomelessMap ? null : () => window.open('https://eventbrite.com/create')
+  }
+  return null
+}
+
+/* brightertomorrowmap */
+
+function shareFacebook ({ _id, name, categories, description }) {
+  const url = getUrl(_id)
+
+  window.FB.ui({
+    method: 'share_open_graph',
+    action_type: 'og.shares',
+    action_properties: JSON.stringify({
+      object: {
+        'og:url': url,
+        'og:title': name,
+        'og:description': description,
+        'og:image': 'https://focallocal.org/images/logo.png'
+      }
+    })
+  })
+}
+
+function shareTwitter ({ _id, name }) {
+  const url = getUrl(_id)
+  const promoText =
+`
+I've just posted on the Brighter Tomorrow Map to support people who are homeless living near me in building a brighter future
+For more info: ${url}
+
+`
+
+  // Construct twitter link
+  const tweet = 'https://twitter.com/intent/tweet?' +
+    '&text=' + encodeURIComponent(promoText) +
+    '&hashtags=brightertomorrowmap,focallocal,transformhomelessness,communityconnection'
+
+  // Open a new window
+  return window.open(tweet, '', _getWindowOptions(253, 600))
+}
+
+function shareGooglePlus ({ _id }) {
+  const url = getUrl(_id)
+  return window.open('https://plus.google.com/share?url=' + url, '', _getWindowOptions(350, 600))
+}
+
+/* gatherings */
+
+function createEventFacebbok () {
+  return window.open('https://www.facebook.com/groups/focallocal/events/')
+}
+
+// Url for sharing
 function getUrl (_id) {
   return Meteor.absoluteUrl('events/' + _id)
 }
 
-function shareOnFacebookLink ({ _id, name, categories, description }) {
-  const prodFbApiKey = Meteor.settings.public.facebook.oauth_key
-  const url = getUrl(_id)
-  const categoriesString = categories.reduce((str, obj) => str += ' ' + obj.name, '')
+// Popup window options
+function _getWindowOptions (height = 300, width = 300) {
+  const win = window
+  var x = win.top.outerWidth / 2 + win.top.screenX - (width / 2)
+  var y = win.top.outerHeight / 2 + win.top.screenY - (height / 2)
 
-  return 'http://www.facebook.com/dialog/feed?app_id=' + prodFbApiKey +
-    '&link=' + url +
-    '&picture=http://focallocal.org/assets/images/focallocal-logo.png' +
-    '&name=' + encodeURIComponent(name) +
-    '&caption=' + encodeURIComponent(categoriesString) +
-    '&description=' + encodeURIComponent(description) +
-    '&redirect_uri=' + Meteor.absoluteUrl() +
-    '&display=popup'
-}
-
-function shareOnTwitterLink ({ _id, name }) {
-  const url = getUrl(_id)
-  const promoText =
-`
-I've just created a new gathering called ${name}!
-for more info visit: ${url}
-`
-
-  return 'https://twitter.com/intent/tweet?' +
-    '&text=' + encodeURIComponent(promoText) +
-    '&hashtags=Focallocal'
-}
-
-function shareOnGooglePlusLink ({ _id }) {
-  const url = getUrl(_id)
-
-  return 'https://plus.google.com/share?url=' + url
+  return `width=${width}, height=${height}, top=${y}, left=${x}`
 }
 
 export default CongratsModal

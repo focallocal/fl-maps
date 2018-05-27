@@ -15,14 +15,15 @@
     "babel"
   ],
   "rules": {
-    'react/prop-types': 0,
-    'babel/semi': 0,
-    'no-return-assign': 0,
-    'camelcase': 0
+    "react/prop-types": 0,
+    "babel/semi": 0,
+    "no-return-assign": 0,
+    "no-multi-spaces": ["error", { "exceptions": { "ImportDeclaration": true, "Property": true } }],
+    "camelcase": 0
   },
   "globals": {
-    'google': 1,
-    'NProgress': 1,
-    'jest': 1
+    "google": 1,
+    "NProgress": 1,
+    "jest": 1
   }
 }

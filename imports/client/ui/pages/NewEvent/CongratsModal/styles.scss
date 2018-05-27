@@ -1,5 +1,27 @@
+@import '/imports/client/stylesheets/variables.scss';
 
 #congrats-modal {
+
+  .modal-header {
+    display: block;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+
+    h4 {
+      margin-bottom: 0;
+      font-weight: bolder;
+    }
+  }
+
+  .modal-content {
+    min-height: calc(100vh - #{$menu-height});
+    max-height: calc(100vh - #{$menu-height});
+  }
+
+  .modal-body {
+    overflow: auto;
+  }
 
   .bold {
     font-weight: bold;
@@ -7,5 +29,6 @@
 
   .social-links {
     margin: 8px 0 32px 0;
+    color: #fff;
   }
 }
