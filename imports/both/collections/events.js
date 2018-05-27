@@ -169,7 +169,7 @@ const EventsSchema = new SimpleSchema({
   },
   'when.multipleDays': {
     type: Boolean,
-    defaultValue: true
+    defaultValue: false
   },
   'when.repeat': {
     type: Boolean,
