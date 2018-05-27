@@ -88,39 +88,17 @@ const RecurringSchema = new SimpleSchema({
     max: 1000,
     allowedValues: Array(100).fill(1).map((x, y) => x + y),
     optional: true,
-    custom: function () {
-      if (this.field('when.recurring.forever').value) {
-        return undefined
-      }
-
-      if (!this.value) {
-        return 'required'
-      }
-    },
-    autoValue: function () {
-      if (this.field('when.recurring.forever').value) {
-        return null
-      }
-    }
-  },
-  'until': {
-    type: Date,
-    optional: true,
-    custom: function () {
-      if (this.field('when.recurring.forever').value) {
-        return undefined
-      }
-
-      if (!this.value) {
-        return 'required'
-      }
-    },
-    autoValue: function () {
-      if (this.field('when.recurring.forever').value) {
-        return null
-      }
-    }
+    custom: determineRepeatValue,
+    autoValue: determineRepeatValue
   }
 })
+
+function determineRepeatValue (returnValue) {
+  const forever = this.field('when.recurring.forever').value
+
+  if (forever) {
+    return returnValue
+  }
+}
 
 export default RecurringSchema

@@ -45,7 +45,7 @@ class SecondStep extends Component {
           <span className='between'>to</span>
 
           <div>
-            <AutoField name='when.endingDate' />
+            {!repeat_ && <AutoField name='when.endingDate' />}
             {!multipleDays_ && <AutoField name='when.endingTime' />}
           </div>
         </div>
