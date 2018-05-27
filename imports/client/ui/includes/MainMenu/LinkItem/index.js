@@ -1,13 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { NavItem, NavLink } from 'reactstrap'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 
-const LinkItem = ({ item }) => {
+const LinkItem = ({ item, onClick }) => {
   // Distingiush between link and route-link
   const isRouteLink = !!item.route
 
   return isRouteLink ? (
-    <NavItem>
+    <NavItem onClick={onClick}>
       <RouterNavLink to={item.route} exact className='nav-link'>
         <i className={item.icon}></i>
         <div>{item.title}</div>
@@ -20,6 +21,11 @@ const LinkItem = ({ item }) => {
         <div>{item.title}</div>
       </NavLink>
     </NavItem>
+}
+
+LinkItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  onClick: PropTypes.func
 }
 
 export default LinkItem

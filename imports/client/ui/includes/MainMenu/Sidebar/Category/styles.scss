@@ -1,0 +1,34 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#sidebar {
+
+  .category {
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      margin-bottom: 24px;
+      background: $primary-blue;
+      opacity: .4;
+    }
+
+    .nav {
+      margin-top: 0;
+
+      .title {
+        margin-bottom: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        opacity: .8;
+      }
+
+      .nav-item {
+        padding: 4px 0;
+      }
+
+      i {
+        display: none;
+      }
+    }
+  }
+}
