@@ -86,7 +86,7 @@ class Recurring extends Component {
             </div>
             <div>
               <span> or until</span>
-              <AutoField name='when.recurring.until' />
+              <AutoField name='when.endingDate' />
             </div>
           </div>
         )}
