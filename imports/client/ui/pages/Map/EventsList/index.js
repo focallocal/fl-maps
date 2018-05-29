@@ -81,7 +81,7 @@ class EventsList extends Component {
               )
             })}
           </ListGroup>
-          {(loading || !noData) && (
+          {(!hasData && (loading || !noData)) && (
             <div className='va-center loader'>
               <div className='ball-beat'>
                 <div /><div /><div />

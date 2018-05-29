@@ -252,11 +252,7 @@ const EventsSchema = new SimpleSchema({
   },
   'createdAt': {
     type: Date,
-    autoValue: function () {
-      if (this.isInsert) {
-        return new Date()
-      }
-    }
+    autoValue: () => new Date()
   }
 }, {
   clean: {
