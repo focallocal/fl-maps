@@ -1,3 +1,4 @@
+/* globals ServiceConfiguration: 1 */
 import { Meteor } from 'meteor/meteor'
 /*
   Set up oAuth for Google, Facebook and Twitter
@@ -24,18 +25,6 @@ if (settings !== undefined) {
       $set: {
         'appId': settings.facebook.oauth_key,
         'secret': settings.facebook.oauth_secret,
-        'loginStyle': 'popup'
-      }
-    }
-  )
-
-  // Twitter
-  ServiceConfiguration.configurations.upsert(
-    { service: 'twitter' },
-    {
-      $set: {
-        'consumerKey': settings.twitter.oauth_key,
-        'secret': settings.twitter.oauth_secret,
         'loginStyle': 'popup'
       }
     }

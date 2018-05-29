@@ -1,1 +1,2 @@
 import './location'
+import './validateSSO'

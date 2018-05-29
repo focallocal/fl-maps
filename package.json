@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "start": "meteor run --settings settings.json",
-    "test-ui": "jest",
-    "test-ui-watch": "jest --watchAll",
+    "test": "jest",
+    "test-watch": "jest --watchAll",
     "coverage": "jest --coverage"
   },
   "dependencies": {
