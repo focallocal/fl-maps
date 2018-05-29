@@ -15,11 +15,13 @@ const EventsSchema = new SimpleSchema({
   // Organiser
   'organiser': {
     type: Object,
-    autoValue: () => {
-      const { _id, profile } = Meteor.user() || { _id: '-', profile: { name: '-' } }
-      return {
-        _id,
-        name: profile.name
+    autoValue: function () {
+      if (!this.isUpdate) {
+        const { _id, profile } = Meteor.user() || { _id: '-', profile: { name: '-' } }
+        return {
+          _id,
+          name: profile.name
+        }
       }
     }
   },
@@ -143,8 +145,9 @@ const EventsSchema = new SimpleSchema({
       if (this.field('when.multipleDays').value) {
         return null
       }
-
-      return getHour()
+      if (!this.value) {
+        return getHour()
+      }
     }
   },
   'when.endingTime': {
@@ -164,14 +167,12 @@ const EventsSchema = new SimpleSchema({
         return null
       }
 
-      return getHour(1)
+      if (!this.value) {
+        return getHour(1)
+      }
     }
   },
   'when.multipleDays': {
-    type: Boolean,
-    defaultValue: false
-  },
-  'when.repeat': {
     type: Boolean,
     defaultValue: false
   },
@@ -196,6 +197,10 @@ const EventsSchema = new SimpleSchema({
   'when.days.$': {
     type: DaySchema,
     optional: true
+  },
+  'when.repeat': {
+    type: Boolean,
+    defaultValue: false
   },
   'when.recurring': { // used with repeat
     type: RecurringSchema,
@@ -244,6 +249,14 @@ const EventsSchema = new SimpleSchema({
   'engagement.attendees.$': {
     type: String,
     optional: true
+  },
+  'createdAt': {
+    type: Date,
+    autoValue: function () {
+      if (this.isInsert) {
+        return new Date()
+      }
+    }
   }
 }, {
   clean: {
@@ -251,8 +264,7 @@ const EventsSchema = new SimpleSchema({
     autoConvert: true,
     removeEmptyStrings: true,
     trimStrings: true,
-    getAutoValues: true,
-    removeNullsFromArrays: true
+    getAutoValues: true
   }
 })
 
