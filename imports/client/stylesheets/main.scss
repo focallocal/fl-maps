@@ -139,7 +139,12 @@ blockquote {
   }
 }
 
-//
+// Loaders
+
+.ball-beat > div {
+  background-color: rgba(0, 0, 0, .7) !important;
+  animation-duration: 1s;
+}
 
 .small-letters-color-transition {
   font-size: .8em;

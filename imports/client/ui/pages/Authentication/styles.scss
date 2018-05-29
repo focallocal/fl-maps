@@ -1,4 +1,9 @@
 
+.discourse-alert {
+  text-align: center;
+  margin-bottom: -10px;
+}
+
 #authentication {
   display: flex;
   flex-flow: column;
@@ -35,6 +40,7 @@
       }
 
       &.twitter {
+        display: none;
         background: #55ACEE;
       }
 
