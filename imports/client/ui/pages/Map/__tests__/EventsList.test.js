@@ -12,7 +12,7 @@ describe('<EventsList />', () => {
         events={[]}
         userLocation={{}}
         onFilter={() => {}}
-        toggleInfoWindow={() => {}}
+        onItemClick={() => {}}
         {...props}
       >
         <div>child</div>

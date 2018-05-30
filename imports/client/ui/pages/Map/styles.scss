@@ -1,7 +1,7 @@
 @import '/imports/client/stylesheets/variables.scss';
 
 body.overflow {
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 #map-container {
@@ -10,5 +10,12 @@ body.overflow {
 
   #map {
     height: 100%;
+    width: 100%;
+    float: right;
+    transition: width .2s ease;
+
+    &.minimized {
+      width: calc(100% - #{$map-events-list-width});
+    }
   }
 }

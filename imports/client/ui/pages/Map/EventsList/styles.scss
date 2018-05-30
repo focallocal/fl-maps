@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 350px;
+  width: $map-events-list-width;
   height: calc(100vh - #{$menu-height});
   background: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -13,7 +13,7 @@
   z-index: 2;
 
   &.minimized {
-    transform: translateX(-350px);
+    transform: translateX(-#{$map-events-list-width});
   }
 
   .header {

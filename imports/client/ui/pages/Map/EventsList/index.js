@@ -15,7 +15,6 @@ class EventsList extends Component {
 
   static getDerivedStateFromProps (nextProps, prevState) {
     // If we had an array of events but they were eith filtered/researched
-
     if (prevState.events[0] && !nextProps.events[0]) {
       return {
         events: [],
@@ -76,12 +75,12 @@ class EventsList extends Component {
                   key={index}
                   item={event}
                   userLocation={userLocation}
-                  onItemClick={this.props.toggleInfoWindow}
+                  onItemClick={this.props.onItemClick}
                 />
               )
             })}
           </ListGroup>
-          {(loading || !noData) && (
+          {(!hasData && (loading || !noData)) && (
             <div className='va-center loader'>
               <div className='ball-beat'>
                 <div /><div /><div />
@@ -89,7 +88,7 @@ class EventsList extends Component {
               <div>looking for events near you...</div>
             </div>
           )}
-          {(noData && !hasData) && (
+          {(noData && !hasData && !loading) && (
             <div className='no-near-events va-center'>
               <div>Sorry, we couldn't find anything</div>
               <div>around you...</div>
@@ -102,6 +101,7 @@ class EventsList extends Component {
   }
 
   toggleMinimize = () => {
+    document.querySelector('#map').classList.toggle('minimized')
     this.setState({ minimized: !this.state.minimized })
   }
 }
@@ -110,7 +110,7 @@ EventsList.propTypes = {
   events: PropTypes.array.isRequired,
   userLocation: PropTypes.object,
   isFetching: PropTypes.bool,
-  toggleInfoWindow: PropTypes.func.isRequired
+  onItemClick: PropTypes.func.isRequired
 }
 
 export default EventsList
