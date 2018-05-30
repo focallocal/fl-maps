@@ -28,22 +28,8 @@ class ListItem extends Component {
     )
   }
 
-  handleItemClick = e => {
-    const {
-      _id,
-      address: {
-        location: {
-          coordinates
-        }
-      }
-    } = this.props.item
-
-    const latLng = {
-      lng: coordinates[0],
-      lat: coordinates[1]
-    }
-
-    this.props.onItemClick(e, _id, latLng)
+  handleItemClick = () => {
+    this.props.onItemClick(this.props.item._id)
   }
 
   calculateDistance (userLocation, { location: { coordinates } }) {

@@ -6,11 +6,7 @@
 
     #map {
       height: calc(55vh - #{$menu-height});
-
-      #event-info-window {
-        min-width: 285px;
-        max-width: 285px;
-      }
+      width: 100% !important;
     }
 
     #events-list {
@@ -19,6 +15,7 @@
       bottom: 0;
       height: calc(55vh - #{$menu-height});
       width: 100%;
+      transform: translateX(0);
     }
 
     #minimize {

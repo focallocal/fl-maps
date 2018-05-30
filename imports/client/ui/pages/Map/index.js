@@ -1,14 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import { Meteor } from 'meteor/meteor'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import { Input } from 'reactstrap'
-import mapOptions, { circle } from './mapOptions'
-import EventInfo from './EventInfo'
+import mapOptions from './mapOptions'
 import EventsList from './EventsList'
 import FiltersList from './EventsFilter'
 import SearchButtons from './SearchButtons'
+import MarkerWrapper from './MarkerWrapper'
+import { ensureUniquePosition, getUserPosition } from './utils'
 import './styles.scss'
 import './mobile-styles.scss'
 
@@ -18,7 +19,7 @@ class MapComponent_ extends Component {
     this.state = {
       bounds: null,
       center: { lat: 46, lng: -43 },
-      currentEventInfo: null,
+      currentEvent: null,
       events: [],
       filteredEvents: null,
       isFetching: true,
@@ -28,24 +29,12 @@ class MapComponent_ extends Component {
     }
   }
 
+  memoizeLocations = {} // cache locations
+
   componentDidMount () {
     this.toggleBodyOverflow()
-    this.getUserPosition()
-
-    let startingTime = Date.now()
-    this.interval = setInterval(() => {
-      const { userLocation } = this.state
-
-      if (this.interval && userLocation) {
-        clearInterval(this.interval)
-        this.getEvents() // Fetch events from server
-        return
-      }
-
-      if (Date.now() - startingTime > 6000) {
-        clearInterval(this.interval)
-      }
-    }, 1500)
+    getUserPosition(this)
+    this.callGetEvents()
   }
 
   componentWillUnmount () {
@@ -56,12 +45,11 @@ class MapComponent_ extends Component {
 
   render () {
     const {
-      bounds,
       center,
-      currentEventInfo,
+      currentEvent,
       events,
-      isFetching,
       filteredEvents,
+      isFetching,
       showFilters,
       userLocation,
       zoom
@@ -84,30 +72,17 @@ class MapComponent_ extends Component {
           averageCenter
           enableRetinaIcons
           gridSize={60}
-          maxZoom={8}
+          maxZoom={20}
         >
-          {events_.map(event => {
-            if (Meteor.isDevelopment && !event.address) { return } // react-hot-loader bug fix
-            const fillColor = event.categories.length > 1 ? '#d09d7a' : event.categories[0].color
-            const {
-              coordinates
-            } = event.address.location
-
-            return (
-              <Marker
-                key={event._id}
-                position={{ lng: coordinates[0], lat: coordinates[1] }}
-                icon={{ ...circle, fillColor }}
-                onClick={e => this.toggleInfoWindow(e, event._id)}
-              >
-                {currentEventInfo === event._id && (
-                  <InfoWindow onCloseClick={() => this.toggleInfoWindow(null)}>
-                    <EventInfo event={event} fillColor={fillColor} />
-                  </InfoWindow>
-                )}
-              </Marker>
-            )
-          })}
+          {events_.map((event, i) =>
+            <MarkerWrapper
+              key={event._id}
+              event={event}
+              isCurrent={currentEvent === event._id}
+              onMarkerClick={this.onMarkerClick}
+              position={ensureUniquePosition(this.memoizeLocations, event, events_)}
+            />
+          )}
         </MarkerClusterer>
 
         <FiltersList
@@ -120,46 +95,43 @@ class MapComponent_ extends Component {
           events={events_}
           userLocation={userLocation}
           isFetching={isFetching}
-          toggleInfoWindow={this.toggleInfoWindow}
+          onItemClick={this.onMarkerClick}
         >
           <StandaloneSearchBox
             ref={ref => this.searchBox = ref}
-            bounds={bounds}
-            controlPosition={google.maps.ControlPosition.TOP_LEFT}
             onPlacesChanged={this.handlePlaces}
           >
-
             <Fragment>
               <Input id='google-maps-searchbox' type="text" placeholder="Search" />
               <SearchButtons
                 toggleFilters={this.toggleFiltersList}
               />
             </Fragment>
-
           </StandaloneSearchBox>
         </EventsList>
 
-        {userLocation && (
-          <Marker
-            position={userLocation}
-          />
-        )}
+        {userLocation && <Marker position={userLocation} />}
       </GoogleMap>
     )
   }
 
-  toggleInfoWindow = (e, _id, center) => {
-    if (!e) {
-      this.setState({ currentEventInfo: null })
-    } else {
-      const currentZoom = this.map.getZoom()
+  onMarkerClick = (_id) => {
+    const { latLng, overlapping: ol } = this.memoizeLocations[_id]
+    const cachedSet = this.memoizeLocations[`${latLng.lng}${latLng.lat}`]
 
-      this.setState({
-        center: center || e.latLng.toJSON(),
-        zoom: currentZoom < 18 ? 18 : currentZoom + 1,
-        currentEventInfo: _id
-      })
+    let overlapping = ol
+    if (cachedSet && cachedSet.size > 1) {
+      overlapping = true
     }
+
+    setTimeout(() => {
+      this.map.panTo(latLng)
+    }, 35)
+
+    this.setState({
+      zoom: overlapping ? 22 : 18,
+      currentEvent: _id
+    })
   }
 
   toggleFiltersList = () => {
@@ -167,7 +139,6 @@ class MapComponent_ extends Component {
   }
 
   setFilteredEvents = events => {
-    // console.log(events)
     this.setState({ filteredEvents: events })
   }
 
@@ -203,8 +174,7 @@ class MapComponent_ extends Component {
     const nextCenter = nextMarkers[0] ? nextMarkers[0].position : this.state.center
 
     this.setState({
-      center: nextCenter,
-      markers: nextMarkers
+      center: nextCenter
     })
 
     const latLng = {
@@ -221,42 +191,22 @@ class MapComponent_ extends Component {
     this.setState({ zoom: this.map.getZoom() })
   }
 
-  getUserPosition () {
-    // Get position from a different component that redirects to the map
-    let latLng
-    const position = sessionStorage.getItem('position')
-    if (position) {
-      try {
-        const { userLocation, ...coords } = JSON.parse(position)
-        latLng = {
-          lng: parseFloat(coords.lng),
-          lat: parseFloat(coords.lat)
-        }
-        return this.setState({
-          center: latLng,
-          zoom: 12,
-          userLocation: latLng
-        })
-      } catch (ex) { /* fail silently */ }
+  callGetEvents = () => {
+    let startingTime = Date.now()
 
-      sessionStorage.removeItem('position')
-    }
+    this.interval = setInterval(() => {
+      const { userLocation } = this.state
 
-    // Get location from geolcation api
-    if (!this.state.userLocation) {
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
-        latLng = {
-          lat: coords.latitude,
-          lng: coords.longitude
-        }
+      if (this.interval && userLocation) {
+        clearInterval(this.interval)
+        this.getEvents() // Fetch events from server
+        return
+      }
 
-        this.setState({
-          center: latLng,
-          zoom: 12,
-          userLocation: latLng
-        })
-      })
-    }
+      if (Date.now() - startingTime > 6000) { // after 6 seconds remove the interval
+        clearInterval(this.interval)
+      }
+    }, 1500) // run 4 times 6000 / 1500
   }
 
   getEvents = (location, skip = 0, limit = 20) => {
@@ -278,6 +228,7 @@ class MapComponent_ extends Component {
             events: res,
             filteredEvents: res
           })
+          this.memoizeLocations = {} // reset caching
         }
 
         this.setState({ isFetching: false })
@@ -301,7 +252,7 @@ class Map_ extends Component {
         googleMapURL={!window.google ? url : '-'}
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div id='map-container' />}
-        mapElement={<div id='map' />}
+        mapElement={<div id='map' className='minimized' />}
       />
     )
   }
