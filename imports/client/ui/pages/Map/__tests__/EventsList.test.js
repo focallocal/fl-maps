@@ -1,11 +1,41 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import EventsList from '../EventsList'
+import sinon from 'sinon'
+import EventsList, { Loading, NoResults } from '../EventsList'
 import EventsListItem from '../EventsList/EventsListItem'
-import { ListGroup } from 'reactstrap'
-import { formatCategories } from '/imports/client/utils/format'
+import EventInfo from '../EventsList/EventInfo'
+import MinimizeButton from '../EventsList/MinimizeButton'
+import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
+import { ListGroup, Button } from 'reactstrap'
+import { formatCategories, formatMilesFromLocation } from '/imports/client/utils/format'
+
+let eventItem = {
+  _id: '#1',
+  address: {
+    location: {
+      coordinates: [70.6156, -41.5551]
+    }
+  },
+  description: 'test description',
+  categories: [{ name: 'test category', color: '#fff' }],
+  name: 'test event',
+  when: {}
+}
 
 describe('<EventsList />', () => {
+  let ele
+
+  beforeAll(() => {
+    ele = document.createElement('div')
+    ele.setAttribute('id', 'map')
+
+    document.body.appendChild(ele)
+  })
+
+  afterAll(() => {
+    document.body.removeChild(ele)
+  })
+
   const shallowRender = (props) =>
     shallow(
       <EventsList
@@ -13,6 +43,8 @@ describe('<EventsList />', () => {
         userLocation={{}}
         onFilter={() => {}}
         onItemClick={() => {}}
+        currentEvent={null}
+        removeCurrentEvent={() => {}}
         {...props}
       >
         <div>child</div>
@@ -44,37 +76,57 @@ describe('<EventsList />', () => {
   it('should render a loader only while searching for events', () => {
     const component_ = shallowRender({ isFetching: true })
 
-    expect(component_.find('.loader')).toHaveLength(1)
+    expect(component_.find(Loading).props().show).toEqual(true)
     component_.setState({ loading: false, noData: true })
-    expect(component_.find('.loader')).toHaveLength(0)
+    expect(component_.find(Loading).props().show).toEqual(false)
   })
 
   it('should display a message if could not find events', () => {
     const component_ = shallowRender()
 
-    expect(component_.find('.no-near-events')).toHaveLength(0)
+    expect(component_.find(NoResults).props().show).toEqual(false)
     component_.setState({ noData: true, loading: false })
-    expect(component_.find('.no-near-events')).toHaveLength(1)
+    expect(component_.find(NoResults).props().show).toEqual(true)
+  })
+
+  it('should display the <EventInfo /> component', () => {
+    const wrapper_ = shallowRender({ events: [eventItem] })
+
+    expect(wrapper_.find(EventInfo)).toHaveLength(0)
+    wrapper_.setProps({ currentEvent: '#1' })
+
+    const component = wrapper_.find(EventInfo)
+    expect(component).toHaveLength(1)
+    expect(component.props()).toEqual({
+      event: eventItem,
+      minimized: false,
+      userLocation: {},
+      returnToList: wrapper_.instance().returnToList
+    })
+  })
+
+  test('MinimizeButton', () => {
+    const wrapper_ = shallowRender()
+    const btn = wrapper_.find(MinimizeButton)
+
+    expect(wrapper_.state().minimized).toEqual(false)
+    expect(btn.prop('minimized')).toEqual(false)
+    expect(ele.classList.contains('minimized')).toEqual(false)
+    btn.prop('onMinimize')()
+    expect(wrapper_.state().minimized).toEqual(true)
+    expect(ele.classList.contains('minimized')).toEqual(true)
   })
 })
 
 describe('<EventsListItem />', () => {
-  const eventItem = {
-    name: 'test event',
-    categories: [{ name: 'test category', color: '#fff' }],
-    address: {
-      location: {
-        coordinates: [70.6156, -41.5551]
-      }
-    }
-  }
-
   const shallowRender = (props) =>
     shallow(
       <EventsListItem
         item={eventItem}
         userLocation={null}
         onItemClick={() => {}}
+        isCurrent={false}
+        remove
         {...props}
       />
     )
@@ -101,5 +153,68 @@ describe('<EventsListItem />', () => {
     const component_ = shallowRender({ userLocation: { lat: 70.5, lng: -41.5 } })
 
     expect(component_.find('.distance').text()).toEqual('15122.5 miles away')
+  })
+})
+
+describe('<EventInfo />', () => {
+  const shallowRender = (props) =>
+    shallow(
+      <EventInfo
+        event={eventItem}
+        minimized={false}
+        userLocation={{}}
+        returnToList={() => {}}
+        {...props}
+      />
+    )
+
+  const wrapper = shallowRender()
+
+  it('should render', () => {
+    expect(wrapper.exists()).toBe(true)
+  })
+
+  it('should attach a "minimized" className to wrapper', () => {
+    const wrapper_ = shallowRender({ minimized: true })
+
+    expect(wrapper_.find('#event-info').props().className).toEqual('minimized')
+  })
+
+  it('should render a back button with arrow icon inside', () => {
+    expect(wrapper.find('.back-btn')).toHaveLength(1)
+    expect(wrapper.find('.back-btn i.fa-long-arrow-alt-left')).toHaveLength(1)
+  })
+
+  it('should call returnToList when clicking on the icon inside the back button', () => {
+    const spy = sinon.spy()
+    const wrapper_ = shallowRender({ returnToList: spy })
+
+    wrapper_.find('.back-btn i.fa-long-arrow-alt-left').simulate('click')
+    expect(spy.calledOnce).toEqual(true)
+  })
+
+  test('first section', () => {
+    const wrapper_ = wrapper.find('.first-section')
+    const categories = formatCategories(eventItem.categories)
+    const distance = formatMilesFromLocation({}, eventItem.address.location.coordinates)
+
+    expect(wrapper_.find('.title').text()).toEqual(eventItem.name)
+    expect(wrapper_.find('.categories').text()).toEqual(categories)
+    expect(wrapper_.find('.distance').text()).toEqual(distance)
+    expect(wrapper_.find(Button).render().text()).toEqual('Get Directions')
+  })
+
+  test('second section', () => {
+    const wrapper_ = wrapper.find('.second-section')
+
+    expect(wrapper_.find('.title').text()).toEqual('Date and Time')
+    expect(wrapper_.find(HoursFormatted).props().data).toEqual(eventItem.when)
+  })
+
+  test('third section', () => {
+    const wrapper_ = wrapper.find('.third-section')
+
+    expect(wrapper_.find('.title').text()).toEqual('About')
+    expect(wrapper_.find('.description').text()).toEqual(eventItem.description)
   })
 })

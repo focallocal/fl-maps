@@ -93,11 +93,11 @@ const RecurringSchema = new SimpleSchema({
   }
 })
 
-function determineRepeatValue (returnValue) {
+function determineRepeatValue () {
   const forever = this.field('when.recurring.forever').value
 
   if (forever) {
-    return returnValue
+    return undefined
   }
 }
 

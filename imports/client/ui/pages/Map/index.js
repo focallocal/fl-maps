@@ -92,10 +92,12 @@ class MapComponent_ extends Component {
           toggleFiltersList={this.toggleFiltersList}
         />
         <EventsList
+          currentEvent={currentEvent}
           events={events_}
-          userLocation={userLocation}
           isFetching={isFetching}
           onItemClick={this.onMarkerClick}
+          userLocation={userLocation}
+          removeCurrentEvent={this.removeCurrentEvent}
         >
           <StandaloneSearchBox
             ref={ref => this.searchBox = ref}
@@ -145,6 +147,8 @@ class MapComponent_ extends Component {
   onMarkerClustererClick = () => {
     this.setState({ zoom: this.map.getZoom() })
   }
+
+  removeCurrentEvent = () => this.setState({ currentEvent: null })
 
   /*
     handleBounds and handlePlaces code was taken from react-google-maps examples.

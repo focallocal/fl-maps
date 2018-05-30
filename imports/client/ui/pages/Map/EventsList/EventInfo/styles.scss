@@ -1,0 +1,88 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#event-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $map-events-list-width;
+  height: calc(100vh - #{$menu-height});
+  background: #fff;
+  color: $black-lighter;
+  overflow: auto;
+  transition: transform .25s ease;
+  z-index: 3;
+
+  &>div {
+    padding: 20px;
+  }
+
+  &.minimized {
+    transform: translateX(-#{$map-events-list-width});
+  }
+
+  .back-btn {
+    padding: 14px 20px 0 20px;
+    font-size: 1.3em;
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  .first-section {
+    padding-top: 0;
+
+    .title {
+      margin-top: 4px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .categories {
+      margin-bottom: 4px;
+      font-size: 1em;
+    }
+
+    .distance {
+      margin-bottom: 12px;
+      font-size: .9em;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    margin: 12px 0;
+    border-top: 1.5px solid rgba(0, 0, 0, 0.35);
+  }
+
+  .second-section {
+
+    .multiple-days {
+
+      .date {
+        margin-bottom: 16px;
+      }
+    }
+
+    .repeat {
+
+      .every-sentence {
+        margin-top: -4px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .second-section, .third-section {
+    .title {
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+  }
+
+  .report {
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

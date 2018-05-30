@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { ListGroup } from 'reactstrap'
 import EventsListItem from './EventsListItem'
 import MinimizeButton from './MinimizeButton'
+import EventInfo from './EventInfo'
 import './styles.scss'
 
 class EventsList extends Component {
@@ -15,25 +16,29 @@ class EventsList extends Component {
 
   static getDerivedStateFromProps (nextProps, prevState) {
     // If we had an array of events but they were eith filtered/researched
+    let state = {
+      events: nextProps.events,
+      loading: nextProps.isFetching,
+      currentEvent: nextProps.currentEvent
+    }
+
     if (prevState.events[0] && !nextProps.events[0]) {
-      return {
+      state = {
+        ...state,
         events: [],
         noData: true,
         loading: nextProps.isFetching
       }
     }
 
-    return {
-      events: nextProps.events,
-      loading: nextProps.isFetching
-    }
+    return state
   }
 
   componentDidMount () {
     const timeout = 5000 // try this for 5 seconds
     const startingTime = Date.now()
     this.interval = setInterval(() => {
-      // if more than 5 seconds have passed
+      // if more than 5 seconds have passed and no data, update the state to display a not-found message
       if (this.interval && Date.now() - startingTime > timeout) {
         this.setState({
           noData: true
@@ -57,10 +62,12 @@ class EventsList extends Component {
     } = this.state
 
     const {
-      userLocation
+      userLocation,
+      currentEvent
     } = this.props
 
     const hasData = !!events[0]
+    const showCurrentEventData = currentEvent !== null
 
     return (
       <Fragment>
@@ -80,37 +87,65 @@ class EventsList extends Component {
               )
             })}
           </ListGroup>
-          {(!hasData && (loading || !noData)) && (
-            <div className='va-center loader'>
-              <div className='ball-beat'>
-                <div /><div /><div />
-              </div>
-              <div>looking for events near you...</div>
-            </div>
-          )}
-          {(noData && !hasData && !loading) && (
-            <div className='no-near-events va-center'>
-              <div>Sorry, we couldn't find anything</div>
-              <div>around you...</div>
-            </div>
-          )}
+          <Loading show={!hasData && (loading || !noData)} />
+          <NoResults show={(noData && !hasData && !loading)} />
         </div>
         <MinimizeButton onMinimize={this.toggleMinimize} minimized={minimized} />
+        {showCurrentEventData &&
+          <EventInfo
+            event={events.find(event => event._id === currentEvent)}
+            minimized={minimized}
+            userLocation={userLocation}
+            returnToList={this.returnToList}
+          />
+        }
       </Fragment>
     )
   }
 
   toggleMinimize = () => {
-    document.querySelector('#map').classList.toggle('minimized')
+    document.body.querySelector('#map').classList.toggle('minimized')
     this.setState({ minimized: !this.state.minimized })
+  }
+
+  returnToList = () => {
+    this.props.removeCurrentEvent()
   }
 }
 
+const Loading = ({ show }) => (
+  show && (
+    <div className='va-center loader'>
+      <div className='ball-beat'>
+        <div /><div /><div />
+      </div>
+      <div>looking for events near you...</div>
+    </div>
+  )
+)
+
+const NoResults = ({ show }) => (
+  show && (
+    <div className='no-near-events va-center'>
+      <div>Sorry, we couldn't find anything</div>
+      <div>around you...</div>
+    </div>
+  )
+)
+
 EventsList.propTypes = {
+  currentEvent: PropTypes.string,
   events: PropTypes.array.isRequired,
-  userLocation: PropTypes.object,
   isFetching: PropTypes.bool,
-  onItemClick: PropTypes.func.isRequired
+  onItemClick: PropTypes.func.isRequired,
+  removeCurrentEvent: PropTypes.func.isRequired,
+  userLocation: PropTypes.object
 }
 
 export default EventsList
+
+// For testing
+export {
+  Loading,
+  NoResults
+}
