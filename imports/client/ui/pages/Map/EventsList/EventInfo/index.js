@@ -109,7 +109,6 @@ class EventInfo extends Component {
 
 EventInfo.propTypes = {
   event: PropTypes.object,
-  minimized: PropTypes.bool.isRequired,
   onDirections: PropTypes.func.isRequired,
   userLocation: PropTypes.object.isRequired,
   returnToList: PropTypes.func.isRequired

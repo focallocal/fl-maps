@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup } from 'reactstrap'
-import CSSTransition from 'react-transition-group/CSSTransition'
 import EventsListItem from './EventsListItem'
 import MinimizeButton from './MinimizeButton'
 import EventInfo from './EventInfo'
@@ -11,8 +10,7 @@ class EventsList extends Component {
   state = {
     events: [],
     loading: true,
-    noData: false,
-    minimized: false
+    noData: false
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
@@ -63,8 +61,7 @@ class EventsList extends Component {
       currentEvent,
       events,
       loading,
-      noData,
-      minimized
+      noData
     } = this.state
 
     const {
@@ -75,7 +72,7 @@ class EventsList extends Component {
 
     return (
       <Fragment>
-        <div id='events-list' className={minimized ? 'minimized' : ''}>
+        <div id='events-list'>
           <div className='header'>
             {this.props.children} {/* Search Box */}
           </div>
@@ -95,11 +92,10 @@ class EventsList extends Component {
           <NoResults show={(noData && !hasData && !loading)} />
         </div>
 
-        <MinimizeButton onMinimize={this.toggleMinimize} minimized={minimized} />
+        <MinimizeButton onMinimize={this.toggleMinimize} />
 
         <EventInfo
           event={events.find(event => event._id === currentEvent)}
-          minimized={minimized}
           onDirections={this.props.onDirections}
           userLocation={userLocation}
           returnToList={this.returnToList}
@@ -110,8 +106,6 @@ class EventsList extends Component {
 
   toggleMinimize = () => {
     document.body.querySelector('#map-container').classList.toggle('minimized')
-    // document.body.querySelector('#map').classList.toggle('minimized')
-    // this.setState({ minimized: !this.state.minimized })
   }
 
   returnToList = () => {

@@ -150,8 +150,7 @@ $nav-item-hover-transition: color .15s ease;
         .dropdown-menu {
           // a hack to prevent the dropdown from being cut by the edge of the screen.
           top: -2px !important;
-          right: -20px;
-          left: initial;
+          left: -35px !important;
         }
       }
     }

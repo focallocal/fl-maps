@@ -27,7 +27,7 @@ describe('<EventsList />', () => {
 
   beforeAll(() => {
     ele = document.createElement('div')
-    ele.setAttribute('id', 'map')
+    ele.setAttribute('id', 'map-container')
 
     document.body.appendChild(ele)
   })
@@ -41,6 +41,7 @@ describe('<EventsList />', () => {
       <EventsList
         events={[]}
         userLocation={{}}
+        onDirections={() => {}}
         onFilter={() => {}}
         onItemClick={() => {}}
         currentEvent={null}
@@ -91,15 +92,13 @@ describe('<EventsList />', () => {
 
   it('should display the <EventInfo /> component', () => {
     const wrapper_ = shallowRender({ events: [eventItem] })
-
-    expect(wrapper_.find(EventInfo)).toHaveLength(0)
     wrapper_.setProps({ currentEvent: '#1' })
 
     const component = wrapper_.find(EventInfo)
     expect(component).toHaveLength(1)
     expect(component.props()).toEqual({
       event: eventItem,
-      minimized: false,
+      onDirections: wrapper_.instance().props.onDirections,
       userLocation: {},
       returnToList: wrapper_.instance().returnToList
     })
@@ -109,11 +108,8 @@ describe('<EventsList />', () => {
     const wrapper_ = shallowRender()
     const btn = wrapper_.find(MinimizeButton)
 
-    expect(wrapper_.state().minimized).toEqual(false)
-    expect(btn.prop('minimized')).toEqual(false)
     expect(ele.classList.contains('minimized')).toEqual(false)
     btn.prop('onMinimize')()
-    expect(wrapper_.state().minimized).toEqual(true)
     expect(ele.classList.contains('minimized')).toEqual(true)
   })
 })
@@ -124,6 +120,7 @@ describe('<EventsListItem />', () => {
       <EventsListItem
         item={eventItem}
         userLocation={null}
+        onDirections={() => {}}
         onItemClick={() => {}}
         isCurrent={false}
         remove
@@ -161,7 +158,7 @@ describe('<EventInfo />', () => {
     shallow(
       <EventInfo
         event={eventItem}
-        minimized={false}
+        onDirections={() => {}}
         userLocation={{}}
         returnToList={() => {}}
         {...props}
@@ -172,17 +169,6 @@ describe('<EventInfo />', () => {
 
   it('should render', () => {
     expect(wrapper.exists()).toBe(true)
-  })
-
-  it('should attach a "minimized" className to wrapper', () => {
-    const wrapper_ = shallowRender({ minimized: true })
-
-    expect(wrapper_.find('#event-info').props().className).toEqual('minimized')
-  })
-
-  it('should render a back button with arrow icon inside', () => {
-    expect(wrapper.find('.back-btn')).toHaveLength(1)
-    expect(wrapper.find('.back-btn i.fa-long-arrow-alt-left')).toHaveLength(1)
   })
 
   it('should call returnToList when clicking on the icon inside the back button', () => {
