@@ -1,11 +1,14 @@
 import { Meteor } from 'meteor/meteor'
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
+import { logUserId, logUserIp } from '/server/security/rate-limiter'
 import querystring from 'query-string'
 import crypto from 'crypto'
 
-export const validateSSO = new ValidatedMethod({
-  name: 'General.validateSSO',
+const name = 'General.validateSSO'
+
+const validateSSO = new ValidatedMethod({
+  name,
   mixins: [],
   validate: null,
   run (data) {
@@ -64,15 +67,23 @@ export function findMail (user) {
 }
 
 DDPRateLimiter.addRule({
-  name: 'General.validateSSO',
-  type: 'method'
-}, 1, 1, () => {
+  name,
+  type: 'method',
+  userId (id) {
+    logUserId(id)
+    return true
+  },
+  connectionAddress (ip) {
+    logUserIp(ip)
+    return true
+  }
+}, 1, 10000, () => {
   DDPRateLimiter.setErrorMessage(() => {
-    return `Please wait at least 10 seconds between requests`
+    return `Passed the rate limit`
   })
 })
 
-// https://github.com/antofa/DiscourseSSO_node
+// was taken from https://github.com/antofa/DiscourseSSO_node
 
 class DiscourseSSO {
   constructor (secret) {

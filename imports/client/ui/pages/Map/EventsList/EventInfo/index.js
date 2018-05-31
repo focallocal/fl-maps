@@ -22,6 +22,8 @@ class EventInfo extends Component {
     if (pEvent && !nEvent) {
       return { animateOut: true }
     }
+
+    return { event: nEvent }
   }
 
   componentDidUpdate () {
@@ -110,7 +112,7 @@ class EventInfo extends Component {
 EventInfo.propTypes = {
   event: PropTypes.object,
   onDirections: PropTypes.func.isRequired,
-  userLocation: PropTypes.object.isRequired,
+  userLocation: PropTypes.object,
   returnToList: PropTypes.func.isRequired
 }
 

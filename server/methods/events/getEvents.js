@@ -1,10 +1,13 @@
-import { Meteor } from 'meteor/meteor'
+import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import Events from '/imports/both/collections/events'
+import { logUserId, logUserIp } from '/server/security/rate-limiter'
 import SimpleSchema from 'simpl-schema'
 
+const name = 'Events.getEvents'
+
 const getEvent = new ValidatedMethod({
-  name: 'Events.getEvents',
+  name,
   mixins: [],
   validate: new SimpleSchema({
     skip: Number,
@@ -40,4 +43,21 @@ const getEvent = new ValidatedMethod({
 
     return events.fetch()
   }
+})
+
+DDPRateLimiter.addRule({
+  name,
+  type: 'method',
+  userId (id) {
+    logUserId(name, id)
+    return true
+  },
+  clientAddress (ip) {
+    logUserIp(name, ip)
+    return true
+  }
+}, 2, 1000, function (matcher) {
+  DDPRateLimiter.setErrorMessage(() => {
+    return `Passed the rate limit`
+  })
 })

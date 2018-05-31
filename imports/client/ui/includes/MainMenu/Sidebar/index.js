@@ -50,7 +50,7 @@ class Sidebar extends Component {
       <Fragment>
         <div id='sidebar' className={className}>
           <header>
-            <i className='fas fa-bars'></i>
+            <i className='fas fa-bars' onClick={toggle}></i>
             <Logo />
           </header>
 

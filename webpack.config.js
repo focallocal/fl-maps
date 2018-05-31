@@ -55,7 +55,8 @@ const serverConfig = {
   target: 'node',
   resolve: {
     alias: {
-      '/imports': path.resolve(__dirname, 'imports')
+      '/imports': path.resolve(__dirname, 'imports'),
+      '/server': path.resolve(__dirname, 'server')
     }
   },
   externals: [

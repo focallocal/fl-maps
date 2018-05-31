@@ -2,9 +2,12 @@ import { Meteor } from 'meteor/meteor'
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import { HTTP } from 'meteor/http'
+import { logUserId, logUserIp } from '/server/security/rate-limiter'
+
+const name = 'General.getUserLocation'
 
 const getUserLocation = new ValidatedMethod({
-  name: 'General.getUserLocation',
+  name,
   mixins: [],
   validate: null,
   run () {
@@ -34,10 +37,18 @@ const getUserLocation = new ValidatedMethod({
 })
 
 DDPRateLimiter.addRule({
-  name: 'General.getUserLocation',
-  type: 'method'
-}, 1, Meteor.isDevelopment ? 1000 : 10000, () => {
+  name,
+  type: 'method',
+  userId (id) {
+    logUserId(name, id)
+    return true
+  },
+  connectionAddress (ip) {
+    logUserIp(name, ip)
+    return true
+  }
+}, 1, 1000, () => {
   DDPRateLimiter.setErrorMessage(() => {
-    return `Please wait at least 10 seconds between requests`
+    return `Passed the rate limit`
   })
 })
