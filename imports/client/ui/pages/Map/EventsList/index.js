@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup } from 'reactstrap'
+import CSSTransition from 'react-transition-group/CSSTransition'
 import EventsListItem from './EventsListItem'
 import MinimizeButton from './MinimizeButton'
 import EventInfo from './EventInfo'
@@ -31,6 +32,10 @@ class EventsList extends Component {
       }
     }
 
+    if (prevState.currentEvent && !nextProps.currentEvent) {
+      state.currentEvent = null
+    }
+
     return state
   }
 
@@ -55,6 +60,7 @@ class EventsList extends Component {
 
   render () {
     const {
+      currentEvent,
       events,
       loading,
       noData,
@@ -62,12 +68,10 @@ class EventsList extends Component {
     } = this.state
 
     const {
-      userLocation,
-      currentEvent
+      userLocation
     } = this.props
 
     const hasData = !!events[0]
-    const showCurrentEventData = currentEvent !== null
 
     return (
       <Fragment>
@@ -90,23 +94,24 @@ class EventsList extends Component {
           <Loading show={!hasData && (loading || !noData)} />
           <NoResults show={(noData && !hasData && !loading)} />
         </div>
+
         <MinimizeButton onMinimize={this.toggleMinimize} minimized={minimized} />
-        {showCurrentEventData &&
-          <EventInfo
-            event={events.find(event => event._id === currentEvent)}
-            minimized={minimized}
-            onDirections={this.props.onDirections}
-            userLocation={userLocation}
-            returnToList={this.returnToList}
-          />
-        }
+
+        <EventInfo
+          event={events.find(event => event._id === currentEvent)}
+          minimized={minimized}
+          onDirections={this.props.onDirections}
+          userLocation={userLocation}
+          returnToList={this.returnToList}
+        />
       </Fragment>
     )
   }
 
   toggleMinimize = () => {
-    document.body.querySelector('#map').classList.toggle('minimized')
-    this.setState({ minimized: !this.state.minimized })
+    document.body.querySelector('#map-container').classList.toggle('minimized')
+    // document.body.querySelector('#map').classList.toggle('minimized')
+    // this.setState({ minimized: !this.state.minimized })
   }
 
   returnToList = () => {

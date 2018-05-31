@@ -10,14 +10,17 @@
   color: $black-lighter;
   overflow: auto;
   transition: transform .25s ease;
+  transform: translateX(-#{$map-events-list-width});
+  will-change: transform;
   z-index: 3;
+
+
+  &.active:not(.before-in):not(.out) {
+    transform: translateX(0);
+  }
 
   &>div {
     padding: 20px;
-  }
-
-  &.minimized {
-    transform: translateX(-#{$map-events-list-width});
   }
 
   .back-btn {

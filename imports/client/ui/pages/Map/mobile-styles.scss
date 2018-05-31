@@ -24,11 +24,11 @@
 
     #filters-list {
       width: 100%;
-      transform: translateX(-100%);
+      transform: translateY(-100vh);
       z-index: 3;
 
       &.show {
-        transform: translateX(0);
+        transform: translateY(0);
       }
     }
 

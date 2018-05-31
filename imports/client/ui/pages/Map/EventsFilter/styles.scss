@@ -5,15 +5,15 @@
   top: 0;
   left: 0;
   height: calc(100vh - #{$menu-height});
-  transform: translateX(-350px);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  transition: transform .35s ease;
+  transform: translate(350px, calc(-100vh - #{$menu-height}));
+  transition: transform .3s ease;
   will-change: transform;
   z-index: 1;
   overflow-y: auto;
 
   &.show {
-    transform: translateX(350px);
+    transform: translate(350px, 0);
   }
 
   .list-group-item {

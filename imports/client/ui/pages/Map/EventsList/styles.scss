@@ -10,11 +10,8 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   overflow: auto;
   transition: transform .25s ease;
+  will-change: transform;
   z-index: 2;
-
-  &.minimized {
-    transform: translateX(-#{$map-events-list-width});
-  }
 
   .header {
     position: relative;

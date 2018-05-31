@@ -302,7 +302,7 @@ class Map_ extends Component {
         googleMapURL={!window.google ? url : '-'}
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div id='map-container' />}
-        mapElement={<div id='map' className='minimized' />}
+        mapElement={<div id='map' />}
       />
     )
   }
