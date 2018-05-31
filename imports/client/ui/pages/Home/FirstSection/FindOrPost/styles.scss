@@ -19,7 +19,7 @@
   }
 
   .btn {
-    width: 45%;
+    width: 220px;
     margin-left: 5px;
   }
 
@@ -31,12 +31,13 @@
     }
 
     input {
-      border-radius: 10px;
+      border-radius: .25rem;
     }
 
     .input-group {
 
       .btn {
+        position: relative;
         width: 70px;
       }
     }
