@@ -69,7 +69,7 @@ describe('<SecondStep />', () => {
     expect(multipleDays.props()).toEqual({
       id: 'multipleDays',
       label: 'More then one day',
-      value: false,
+      value: undefined,
       type: 'radio'
     })
   })

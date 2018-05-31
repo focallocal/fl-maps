@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
-import { Redirect } from 'react-router-dom'
-import router from '/imports/client/utils/history'
-import { EventsSchema } from '/imports/both/collections/events'
+import { Redirect, NavLink } from 'react-router-dom'
 import { formatCategories, formatWhenObject } from '/imports/client/utils/format'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
@@ -18,17 +16,16 @@ const socialButtons = [
 ]
 
 class CongratsModal extends Component {
-  constructor () {
-    super()
-    this.state = {
-      eventId: localStorage.getItem('new-event-id'),
-      model: localStorage.getItem('new-event-model')
-    }
+  state = {
+    event: null
   }
 
-  componentDidMount () {
-    localStorage.removeItem('new-event-id')
-    localStorage.removeItem('new-event-model')
+  static getDerivedStateFromProps (nextProps, prevState) {
+    if (!prevState.event) {
+      return {
+        event: { ...window.__recentEvent }
+      }
+    }
   }
 
   componentDidCatch (error, info) {
@@ -41,17 +38,12 @@ class CongratsModal extends Component {
 
   render () {
     const {
-      eventId,
-      hasErrors,
-      model
+      event
     } = this.state
 
-    if (!eventId || !eventId || hasErrors) {
+    if (!event) {
       return <Redirect to='/' />
     }
-
-    // Using EventsSchema's clean function will automatically convert values to their type
-    const event = { ...EventsSchema.clean(JSON.parse(model)), _id: eventId }
 
     const {
       first_sentence,
@@ -86,14 +78,10 @@ class CongratsModal extends Component {
         </ModalBody>
 
         <ModalFooter>
-          <Button onClick={this.onDone}>Done</Button>
+          <Button tag={NavLink} to='/map'>Done</Button>
         </ModalFooter>
       </Modal>
     )
-  }
-
-  onDone () {
-    router.push('/map')
   }
 }
 

@@ -53,19 +53,6 @@ describe('<Monthly />', () => {
     ).toBe(true)
   })
 
-  test('determinePosition method', () => {
-    const f = wrapper.instance().determinePosition
-
-    expect(f(1)).toEqual('1st')
-    expect(f(7)).toEqual('1st')
-    expect(f(8)).toEqual('2nd')
-    expect(f(14)).toEqual('2nd')
-    expect(f(15)).toEqual('3rd')
-    expect(f(21)).toEqual('3rd')
-    expect(f(22)).toEqual('4th')
-    expect(f(31)).toEqual('4th')
-  })
-
   test('getOptionsFromDate method', () => {
     const f = wrapper.instance().getOptionsFromDate
 

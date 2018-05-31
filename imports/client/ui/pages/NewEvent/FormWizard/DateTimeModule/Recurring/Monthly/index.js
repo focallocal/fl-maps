@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
+import { determinePosition } from '/imports/both/collections/events/helpers'
 
 class RecurrMonthly extends Component {
   render () {
@@ -37,7 +38,7 @@ class RecurrMonthly extends Component {
     if (value === 'byDayInMonth') {
       finalValue = dayInMonth
     } else {
-      finalValue = this.determinePosition(startingDate, dayInMonth)[0] // get first letter which represents the position
+      finalValue = determinePosition(startingDate)[0] // get first letter which represents the position
     }
 
     form.change('when.recurring.monthly', { type: value, value: finalValue })
@@ -45,28 +46,12 @@ class RecurrMonthly extends Component {
 
   getOptionsFromDate = (date) => {
     const dayInMonth = date.getDate()
-    const position = this.determinePosition(dayInMonth)
+    const position = determinePosition(dayInMonth)
 
     return [
       { value: 'byDayInMonth', label: 'Monthly on day ' + dayInMonth },
       { value: 'byPosition', label: 'Monthly on the ' + position + ' ' + weekdaysMap[date.getDay()] }
     ]
-  }
-
-  determinePosition (month) {
-    let position
-
-    if (month <= 7) {
-      position = '1st'
-    } else if (month > 7 && month <= 14) {
-      position = '2nd'
-    } else if (month > 14 && month <= 21) {
-      position = '3rd'
-    } else {
-      position = '4th'
-    }
-
-    return position
   }
 }
 

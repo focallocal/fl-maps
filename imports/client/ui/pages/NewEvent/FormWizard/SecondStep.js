@@ -15,22 +15,11 @@ class SecondStep extends Component {
 
     const CheckBox = this.CheckBox
 
-    let days_ = []
-    let multipleDays_ = false
-    let repeat_ = false
-
-    try {
-      const { when } = form.getModel()
-      const {
-        days,
-        multipleDays,
-        repeat
-      } = when
-
-      days_ = days || []
-      multipleDays_ = multipleDays || false
-      repeat_ = repeat || false
-    } catch (ex) { /* fail silently */ }
+    const {
+      days,
+      multipleDays,
+      repeat
+    } = form.getModel().when
 
     return (
       <div id='second-step'>
@@ -39,14 +28,14 @@ class SecondStep extends Component {
         <div className='dates-hours inline-inputs hide-labels'>
           <div>
             <AutoField name='when.startingDate' />
-            {!multipleDays_ && <AutoField name='when.startingTime' />}
+            {!multipleDays && <AutoField name='when.startingTime' />}
           </div>
 
           <span className='between'>to</span>
 
           <div>
-            {!repeat_ && <AutoField name='when.endingDate' />}
-            {!multipleDays_ && <AutoField name='when.endingTime' />}
+            {!repeat && <AutoField name='when.endingDate' />}
+            {!multipleDays && <AutoField name='when.endingTime' />}
           </div>
         </div>
 
@@ -54,10 +43,10 @@ class SecondStep extends Component {
         <CheckBox
           id='multipleDays'
           label='More then one day'
-          value={multipleDays_}
+          value={multipleDays}
           type='radio'
         />
-        {multipleDays_ && (
+        {multipleDays && (
           <div className='week-days'>
             <ErrorField name='when.days' errorMessage='Please select at least 1 day' />
             <SameDateHours
@@ -67,7 +56,7 @@ class SecondStep extends Component {
             <WeekDays
               form={form}
               schemaKey={'when.days'}
-              selectedDays={days_}
+              selectedDays={days}
             />
           </div>
         )}
@@ -76,10 +65,10 @@ class SecondStep extends Component {
         <CheckBox
           id='repeat'
           label='Custom recurrence'
-          value={repeat_}
+          value={repeat}
           type='radio'
         />
-        {repeat_ && <Recurring form={form} />}
+        {repeat && <Recurring form={form} />}
 
       </div>
     )
@@ -90,42 +79,20 @@ class SecondStep extends Component {
       id={id}
       type={type}
       label={label}
-      checked={value}
+      checked={value === undefined ? false : value}
       onChange={() => {}}
-      onClick={type === 'radio' ? () => this.handleCheckbox(id, !value) : null}
+      onClick={() => this.handleCheckbox(id, !value)}
     />
   )
 
   handleCheckbox = (type, value) => {
-    const {
-      form
-    } = this.props
+    const { when } = this.props.form.getModel()
 
-    const { when } = form.getModel()
-
-    // Handle multipleDays
-    if (type === 'multipleDays') {
-      if (value) { // reset values
-        form.change('when', {
-          ...when,
-          multipleDays: true,
-          repeat: false
-        })
-      } else { // restore previous values so users doesn't need to re-enter them
-        form.change('when.multipleDays', false)
-      }
-      return
-    }
-
-    // Handle repeat
-
-    if (value !== undefined) {
-      this.props.form.change('when', {
-        ...when,
-        multipleDays: false,
-        repeat: value
-      })
-    }
+    this.props.form.change('when', {
+      ...when,
+      multipleDays: type === 'multipleDays' ? value : false,
+      repeat: type === 'repeat' ? value : false
+    })
   }
 }
 

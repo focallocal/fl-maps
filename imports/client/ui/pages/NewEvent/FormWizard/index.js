@@ -17,12 +17,10 @@ class FormWizard extends Component {
       currentStep
     } = this.props
 
-    // console.log(this.form)
     let model = this.form ? this.form.getModel() : this.loadModelFromStorage()
 
     if (this.state.reset) {
-      localStorage.removeItem('new-event-model') // remove the draft
-      model = this.loadModelFromStorage() // will return an initial model object
+      model = this.loadModelFromStorage(true)
     }
 
     return (
@@ -30,7 +28,6 @@ class FormWizard extends Component {
         schema={EventsSchema}
         model={model}
         ref={this.setRef}
-        onChangeModel={this.saveModelToStorage}
       >
         {this.form ? (
           <Fragment>
@@ -53,25 +50,16 @@ class FormWizard extends Component {
     }, 500) // a hack to update the component's state so it doesn't reset on next re-renders.
   }
 
-  saveModelToStorage (model) {
-    localStorage.setItem('new-event-model', JSON.stringify(model))
-  }
-
-  loadModelFromStorage (context) {
-    const model = localStorage.getItem('new-event-model')
-
-    if (model != null) {
-      return EventsSchema.clean(JSON.parse(model))
+  loadModelFromStorage (empty) {
+    let initialObject = EventsSchema.clean({}, { mutate: true }) // get default values
+    initialObject.when = {
+      startingTime: getHour(),
+      endingTime: getHour(3),
+      recurring: { forever: true },
+      repeat: false
     }
 
-    return {
-      when: { // This is important - it ensures that we start with a default value for the "when" object.
-        startingDate: new Date(),
-        endingDate: new Date(),
-        startingTime: getHour(),
-        endingTime: getHour(1)
-      }
-    }
+    return initialObject
   }
 
   setRef = ref => {
