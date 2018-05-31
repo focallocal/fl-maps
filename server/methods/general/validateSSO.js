@@ -7,7 +7,7 @@ import crypto from 'crypto'
 
 const name = 'General.validateSSO'
 
-const validateSSO = new ValidatedMethod({
+export const validateSSO = new ValidatedMethod({
   name,
   mixins: [],
   validate: null,
