@@ -12,6 +12,7 @@
 
   &>div {
     width: 425px;
+    max-width: 100%;
     padding: 24px 32px 32px 32px;
     background: #fff;
     box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
@@ -56,6 +57,13 @@
 
     a { // redirect link
       margin-top: 16px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+
+    &>div {
+      margin-top: 20px;
     }
   }
 }

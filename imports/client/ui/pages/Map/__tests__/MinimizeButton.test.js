@@ -19,18 +19,6 @@ describe('<MinimizeButton />', () => {
     expect(component.props().id).toEqual('minimize')
   })
 
-  it('should not have class "minimized" and should have "minimize" text if prop is false', () => {
-    expect(component.props().className).toEqual('')
-    expect(component.render().text()).toEqual('minimize')
-  })
-
-  it('should have class "minimized" and "maximize" text if prop is ture', () => {
-    const component_ = shallowRender({ minimized: true })
-
-    expect(component_.props().className).toEqual('minimized')
-    expect(component_.render().text()).toEqual('maximize')
-  })
-
   it('should get an onMinimize prop to be called upon click event', () => {
     const spy = sinon.spy()
     const component_ = shallowRender({ onMinimize: spy })

@@ -19,5 +19,11 @@
 
   .logo {
     height: 450px;
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 540px) {
+    height: 300px;
+    max-width:250px
   }
 }

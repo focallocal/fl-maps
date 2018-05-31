@@ -3,9 +3,7 @@ $modal-height: calc(100vh - 64px);
 #new-event-modal {
 
   .modal-content {
-    min-height: $modal-height;
-    max-height: $modal-height;
-    min-width: 320px;
+    min-width: 300px;
 
     .modal-body {
       overflow-y: auto;
@@ -190,6 +188,6 @@ $modal-height: calc(100vh - 64px);
   }
 
   @media (min-width: 576px) {
-    max-width: 600px;
+    max-width: 556px;
   }
 }
