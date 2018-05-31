@@ -95,6 +95,7 @@ class EventsList extends Component {
           <EventInfo
             event={events.find(event => event._id === currentEvent)}
             minimized={minimized}
+            onDirections={this.props.onDirections}
             userLocation={userLocation}
             returnToList={this.returnToList}
           />
@@ -127,7 +128,7 @@ const Loading = ({ show }) => (
 const NoResults = ({ show }) => (
   show && (
     <div className='no-near-events va-center'>
-      <div>Sorry, we couldn't find anything</div>
+      <div>Sorry, we could not find anything</div>
       <div>around you...</div>
     </div>
   )
@@ -137,9 +138,10 @@ EventsList.propTypes = {
   currentEvent: PropTypes.string,
   events: PropTypes.array.isRequired,
   isFetching: PropTypes.bool,
+  onDirections: PropTypes.func.isRequired,
   onItemClick: PropTypes.func.isRequired,
-  removeCurrentEvent: PropTypes.func.isRequired,
-  userLocation: PropTypes.object
+  userLocation: PropTypes.object,
+  removeCurrentEvent: PropTypes.func.isRequired
 }
 
 export default EventsList

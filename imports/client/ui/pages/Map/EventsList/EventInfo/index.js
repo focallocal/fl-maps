@@ -27,7 +27,7 @@ class EventInfo extends Component {
           <div className='title'>{event.name}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
-          <Button color='primary'>Get Directions</Button>
+          <Button color='primary' onClick={this.getDirections}>Get Directions</Button>
         </div>
 
         <hr className='divider' />
@@ -46,11 +46,20 @@ class EventInfo extends Component {
       </div>
     )
   }
+
+  getDirections = () => {
+    const {
+      coordinates
+    } = this.props.event.address.location
+
+    this.props.onDirections({ lng: coordinates[0], lat: coordinates[1] })
+  }
 }
 
 EventInfo.propTypes = {
   event: PropTypes.object.isRequired,
   minimized: PropTypes.bool.isRequired,
+  onDirections: PropTypes.func.isRequired,
   userLocation: PropTypes.object.isRequired,
   returnToList: PropTypes.func.isRequired
 }

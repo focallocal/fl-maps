@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { Meteor } from 'meteor/meteor'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
-import { Input } from 'reactstrap'
+import { Alert, Input } from 'reactstrap'
 import mapOptions from './mapOptions'
 import EventsList from './EventsList'
 import FiltersList from './EventsFilter'
@@ -20,6 +20,8 @@ class MapComponent_ extends Component {
       bounds: null,
       center: { lat: 46, lng: -43 },
       currentEvent: null,
+      directions: null,
+      error: null,
       events: [],
       filteredEvents: null,
       isFetching: true,
@@ -47,6 +49,8 @@ class MapComponent_ extends Component {
     const {
       center,
       currentEvent,
+      directions,
+      error,
       events,
       filteredEvents,
       isFetching,
@@ -98,6 +102,7 @@ class MapComponent_ extends Component {
           onItemClick={this.onMarkerClick}
           userLocation={userLocation}
           removeCurrentEvent={this.removeCurrentEvent}
+          onDirections={this.setDirections}
         >
           <StandaloneSearchBox
             ref={ref => this.searchBox = ref}
@@ -113,6 +118,8 @@ class MapComponent_ extends Component {
         </EventsList>
 
         {userLocation && <Marker position={userLocation} />}
+        {directions && <DirectionsRenderer directions={directions} />}
+        <Alert id='map-error' color='danger' isOpen={!!error}>{error ? error.msg : ''}</Alert>
       </GoogleMap>
     )
   }
@@ -149,6 +156,45 @@ class MapComponent_ extends Component {
   }
 
   removeCurrentEvent = () => this.setState({ currentEvent: null })
+
+  setDirections = (destination) => {
+    const {
+      userLocation
+    } = this.state
+
+    if (!userLocation) {
+      this.setError('Could not get your location')
+    }
+
+    const DirectionsService = new google.maps.DirectionsService()
+
+    DirectionsService.route({
+      origin: new google.maps.LatLng(userLocation.lat, userLocation.lng),
+      destination: new google.maps.LatLng(destination.lat, destination.lng),
+      travelMode: google.maps.TravelMode.DRIVING
+    }, (result, status) => {
+      if (status === google.maps.DirectionsStatus.OK) {
+        this.setState({
+          directions: result
+        })
+      } else {
+        this.setError('Could not find any directions...')
+      }
+    })
+  }
+
+  setError = (msg) => {
+    const randomId = String(Math.random() * 100000)
+    this.setState({ error: { id: randomId, msg: 'Could not find directions...' } })
+
+    // Automatically remove the error
+    setTimeout(() => {
+      // Check that component still exists before trying to access it's state
+      if (this.map) {
+        this.setState({ error: null })
+      }
+    }, 4000) // 4 seconds
+  }
 
   /*
     handleBounds and handlePlaces code was taken from react-google-maps examples.
