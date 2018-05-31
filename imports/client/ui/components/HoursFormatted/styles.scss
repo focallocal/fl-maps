@@ -1,0 +1,12 @@
+
+.hours-formatted {
+
+  .day {
+
+    &>div:first-child {
+      display: inline-block;
+      width: 45px;
+      margin-right: 64px;
+    }
+  }
+}

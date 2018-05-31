@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroupItem } from 'reactstrap'
-import { formatCategories } from '/imports/client/utils/format'
-import haversine from 'haversine'
+import { formatMilesFromLocation, formatCategories } from '/imports/client/utils/format'
 import './styles.scss'
 
 class ListItem extends Component {
@@ -22,7 +21,7 @@ class ListItem extends Component {
       <ListGroupItem className='event-list-item'>
         <div className='name'>{name}</div>
         <div className='categories'>{formatCategories(categories)}</div>
-        <div className='distance'>{this.calculateDistance(userLocation, address)}</div>
+        <div className='distance'>{formatMilesFromLocation(userLocation, address.location.coordinates)}</div>
         <i className='fas fa-chevron-circle-right go-to' onClick={this.handleItemClick} />
       </ListGroupItem>
     )
@@ -30,19 +29,6 @@ class ListItem extends Component {
 
   handleItemClick = () => {
     this.props.onItemClick(this.props.item._id)
-  }
-
-  calculateDistance (userLocation, { location: { coordinates } }) {
-    if (!userLocation) {
-      return 'couldn\'t calculate distance to location'
-    }
-
-    const userPosition = { latitude: userLocation.lat, longitude: userLocation.lng }
-    const addressPosition = { longitude: coordinates[0], latitude: coordinates[1] }
-
-    const distance = haversine(userPosition, addressPosition, { unit: 'miles' }).toFixed(1)
-
-    return distance + ' miles away'
   }
 }
 

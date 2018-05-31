@@ -1,3 +1,17 @@
+import haversine from 'haversine'
+
+export function formatMilesFromLocation (userLocation, coordinates) {
+  if (!userLocation) {
+    return 'couldn\'t calculate distance to location'
+  }
+
+  const userPosition = { latitude: userLocation.lat, longitude: userLocation.lng }
+  const addressPosition = { longitude: coordinates[0], latitude: coordinates[1] }
+
+  const distance = haversine(userPosition, addressPosition, { unit: 'miles' }).toFixed(1)
+
+  return distance + ' miles away'
+}
 
 export function formatCategories (categories) {
   /*
@@ -46,6 +60,17 @@ export function formatDate (date) {
   }
 
   return new Date(date).toISOString().substring(0, 10).split('-').join('/')
+}
+
+export function formatDateWithWords (date) {
+  if (!date) {
+    throw new Error('please provide a valid date')
+  }
+
+  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  const day = days[date.getDay()]
+
+  return `${day}, ${formatDate(date)}`
 }
 
 export function formatWhenObject (data) {
@@ -106,15 +131,6 @@ function formatDaysAndHours (days) {
 }
 
 function getDaysNames (days) {
-  // let daysMapper = {
-  //   0: 'Sunday',
-  //   1: 'Monday',
-  //   2: 'Tuesday',
-  //   3: 'Wednesday',
-  //   4: 'Thursday',
-  //   5: 'Friday',
-  //   6: 'Saturday'
-  // }
   return days.reduce((str, day, index) => {
     const notLastItem = days[index + 1]
 

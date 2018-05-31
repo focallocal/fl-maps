@@ -61,6 +61,10 @@ class WeekDays extends Component {
   }
 }
 
+WeekDays.defaultProps = {
+  selectedDays: []
+}
+
 WeekDays.propTypes = {
   selectedDays: PropTypes.array.isRequired,
   schemaKey: PropTypes.string.isRequired,

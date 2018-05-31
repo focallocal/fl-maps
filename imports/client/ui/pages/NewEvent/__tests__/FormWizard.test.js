@@ -2,6 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import sinon from 'sinon'
 import AutoForm from '/imports/client/utils/uniforms-custom/AutoForm'
+import { getHour } from '/imports/both/collections/events/helpers'
 import FormWizard from '../FormWizard'
 
 describe('<FormWizard />', () => {
@@ -40,28 +41,30 @@ describe('<FormWizard />', () => {
     expect(spy.calledOnce).toBe(true)
   })
 
-  it('should call "loadModelFromStorage" on mount (before ref is set)', () => {
+  test('initial loadModelFromStorage', () => {
     const spy = jest.spyOn(FormWizard.prototype, 'loadModelFromStorage')
     const wrapper_ = mountRenderer()
 
     expect(spy).toHaveBeenCalled()
 
     const emptyModel = wrapper_.instance().loadModelFromStorage()
-    expect(emptyModel).toHaveProperty('when', 'endingDate', 'startingDate')
+    expect(emptyModel).toEqual({
+      createdAt: emptyModel.createdAt,
+      organiser: { _id: '-', name: '-' },
+      engagement: { limit: 0, attendees: [] },
+      when: {
+        recurring: {
+          forever: true
+        },
+        repeat: false,
+        startingTime: getHour(),
+        endingTime: getHour(3)
+      }
+    })
   })
 
   it('should render an AutoForm component', () => {
     expect(wrapper.find(AutoForm)).toHaveLength(1)
-  })
-
-  it('should save model to localStorage after each change to the form', () => {
-    const wrapper_ = mountRenderer()
-
-    expect(window.localStorage.store['new-event-model']).toBeFalsy()
-    wrapper_.instance().form.change('name', 'test-value')
-    expect(window.localStorage.store['new-event-model']).toBeTruthy()
-
-    window.localStorage.clear()
   })
 
   it('should render a reset button that resets the form on click', () => {

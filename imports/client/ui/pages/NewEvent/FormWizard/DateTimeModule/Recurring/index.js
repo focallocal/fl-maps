@@ -17,30 +17,17 @@ class Recurring extends Component {
       form
     } = this.props
 
-    let forever = true
-    let monthly
-    let selectedDays = []
-    let startingDate
-    let type
-    let repeat
+    const model = form.getModel()
+    const {
+      recurring
+    } = model.when
 
-    try {
-      const model = form.getModel()
-      const {
-        recurring
-      } = model.when
-
-      forever = recurring.forever
-      monthly = recurring.monthly
-      selectedDays = recurring.days || []
-      startingDate = model.when.startingDate || new Date()
-      type = recurring.type
-      repeat = recurring.repeat
-
-      if (forever === undefined) { // fix uncontrolled input error
-        forever = false
-      }
-    } catch (ex) {}
+    let forever = recurring.forever
+    let monthly = recurring.monthly
+    let selectedDays = recurring.days || []
+    let startingDate = model.when.startingDate || new Date()
+    let type = recurring.type
+    let occurences = recurring.occurences
 
     const CheckBox = this.CheckBox
 
@@ -48,7 +35,7 @@ class Recurring extends Component {
       <div id='recurring'>
 
         <div className='every-type inline-inputs hide-labels'>
-          Repeat every
+          <span>Repeat every</span>
           <div>
             <AutoField name='when.recurring.every' />
             <AutoField name='when.recurring.type' />
@@ -78,15 +65,15 @@ class Recurring extends Component {
           checked={forever}
         />
         {!forever && (
-          <div className='inline-inputs hide-labels'>
+          <div className='occurences-until inline-inputs hide-labels'>
             <div>
-              Repeat for
-              <AutoField name='when.recurring.repeat' />
-              <span>occurence{repeat > 1 ? 's' : ''}</span>
+              <span>Repeat for</span>
+              <AutoField name='when.recurring.occurences' />
+              <span>occurence{occurences > 1 ? 's' : ''}</span>
             </div>
             <div>
               <span> or until</span>
-              <AutoField name='when.endingDate' />
+              <AutoField name='when.recurring.until' />
             </div>
           </div>
         )}

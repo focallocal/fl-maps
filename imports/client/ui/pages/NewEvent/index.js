@@ -103,7 +103,12 @@ class NewEventModal extends Component {
           if (!err) {
             this.setState({ currentStep: 0 }) // return to first step
 
-            localStorage.setItem('new-event-id', res)
+            window.__recentEvent = { ...model, _id: res }
+
+            if (Meteor.isDevelopment) {
+              sessionStorage.setItem('recent-event', JSON.stringify(model))
+            }
+
             router.push('/thank-you')
           }
           if (Meteor.isDevelopment) { console.log(err) }

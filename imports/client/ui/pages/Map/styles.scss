@@ -18,4 +18,11 @@ body.overflow {
       width: calc(100% - #{$map-events-list-width});
     }
   }
+
+  #map-error {
+    position: absolute;
+    right: 0;
+    width: calc(100% - #{$map-events-list-width});
+    text-align: center;
+  }
 }
