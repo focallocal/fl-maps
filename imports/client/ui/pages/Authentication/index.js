@@ -6,7 +6,6 @@ import { withTracker } from 'meteor/react-meteor-data'
 import { AccountsReactComponent, AccountsReact } from 'meteor/meteoreact:accounts'
 import { Alert } from 'reactstrap'
 import qs from 'query-string'
-import routerHistory from '/imports/client/utils/history'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import './styles.scss'
 
@@ -96,8 +95,12 @@ class Authentication extends Component {
       // Redirect to home if already logged in.
       // Logged in users can enter only the change-password route
       // If isSSO is true, user has logged in and is now waiting to be redirected back to the forum
+      // check if a redirection route have been set
 
-      return isSSO ? <PageLoader /> : <Redirect to='/' />
+      let to = sessionStorage.getItem('redirect') || '/'
+      sessionStorage.removeItem('redirect')
+
+      return isSSO ? <PageLoader /> : <Redirect to={to} />
     }
 
     return (
@@ -107,9 +110,6 @@ class Authentication extends Component {
             history={history}
             route={path}
             token={params.token} // for the reset-password route
-            config={{
-              onLoginHook: onLoginHook
-            }}
           />
         </div>
       </div>
@@ -119,15 +119,6 @@ class Authentication extends Component {
   signOut = () => {
     AccountsReact.logout()
     return <Redirect to='/' />
-  }
-}
-
-function onLoginHook () {
-  const redirect = sessionStorage.getItem('redirect')
-
-  if (redirect) {
-    routerHistory.push(redirect)
-    sessionStorage.removeItem('redirect')
   }
 }
 
