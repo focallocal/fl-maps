@@ -78,15 +78,15 @@ describe('<EventsList />', () => {
     const component_ = shallowRender({ isFetching: true })
 
     expect(component_.find(Loading).props().show).toEqual(true)
-    component_.setState({ loading: false, noData: true })
+    component_.setProps({ isFetching: false })
     expect(component_.find(Loading).props().show).toEqual(false)
   })
 
   it('should display a message if could not find events', () => {
-    const component_ = shallowRender()
+    const component_ = shallowRender({ isFetching: true, events: [{}] })
 
     expect(component_.find(NoResults).props().show).toEqual(false)
-    component_.setState({ noData: true, loading: false })
+    component_.setProps({ isFetching: false, events: [] })
     expect(component_.find(NoResults).props().show).toEqual(true)
   })
 

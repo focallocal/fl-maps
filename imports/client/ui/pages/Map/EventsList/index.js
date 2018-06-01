@@ -8,26 +8,14 @@ import './styles.scss'
 
 class EventsList extends Component {
   state = {
-    events: [],
-    loading: true,
-    noData: false
+    events: []
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
     // If we had an array of events but they were eith filtered/researched
     let state = {
       events: nextProps.events,
-      loading: nextProps.isFetching,
       currentEvent: nextProps.currentEvent
-    }
-
-    if (prevState.events[0] && !nextProps.events[0]) {
-      state = {
-        ...state,
-        events: [],
-        noData: true,
-        loading: nextProps.isFetching
-      }
     }
 
     if (prevState.currentEvent && !nextProps.currentEvent) {
@@ -37,34 +25,14 @@ class EventsList extends Component {
     return state
   }
 
-  componentDidMount () {
-    const timeout = 5000 // try this for 5 seconds
-    const startingTime = Date.now()
-    this.interval = setInterval(() => {
-      // if more than 5 seconds have passed and no data, update the state to display a not-found message
-      if (this.interval && Date.now() - startingTime > timeout) {
-        this.setState({
-          noData: true
-        })
-        clearInterval(this.interval)
-      }
-    }, 1000)
-  }
-
-  componentWillUnmount () {
-    clearInterval(this.interval)
-    this.interval = null
-  }
-
   render () {
     const {
       currentEvent,
-      events,
-      loading,
-      noData
+      events
     } = this.state
 
     const {
+      isFetching,
       userLocation
     } = this.props
 
@@ -88,8 +56,8 @@ class EventsList extends Component {
               )
             })}
           </ListGroup>
-          <Loading show={!hasData && (loading || !noData)} />
-          <NoResults show={(noData && !hasData && !loading)} />
+          <Loading show={isFetching} />
+          <NoResults show={!hasData && !isFetching} />
         </div>
 
         <MinimizeButton onMinimize={this.toggleMinimize} />
