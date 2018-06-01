@@ -4,5 +4,10 @@
     "react",
     "stage-2"
   ],
-  "plugins": ["react-hot-loader/babel"]
+  "plugins": ["react-hot-loader/babel"],
+  "env": {
+    "test": {
+      "plugins": ["dynamic-import-node"]
+    }
+  }
 }
