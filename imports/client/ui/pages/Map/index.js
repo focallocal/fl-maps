@@ -9,7 +9,8 @@ import EventsList from './EventsList'
 import FiltersList from './EventsFilter'
 import SearchButtons from './SearchButtons'
 import MarkerWrapper from './MarkerWrapper'
-import { ensureUniquePosition, getUserPosition } from './utils'
+import { ensureUniquePosition } from './utils'
+import getUserPosition from '/imports/client/utils/location/getUserPosition'
 import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
 import './styles.scss'
 import './mobile-styles.scss'
@@ -37,12 +38,14 @@ class MapComponent_ extends Component {
   componentDidMount () {
     toggleBodyOverflow()
     this.callGetEvents()
+    this._isMounted = true
   }
 
   componentWillUnmount () {
     clearInterval(this.interval)
     this.interval = null
     toggleBodyOverflow()
+    this._isMounted = false
   }
 
   render () {
@@ -242,8 +245,9 @@ class MapComponent_ extends Component {
   }
 
   callGetEvents = () => {
-    let startingTime = Date.now()
+    getUserPosition(this) // will update state with the user's location
 
+    let startingTime = Date.now()
     this.interval = setInterval(() => {
       if (this.interval && this.state.userLocation) {
         clearInterval(this.interval)
@@ -261,8 +265,6 @@ class MapComponent_ extends Component {
   }
 
   getEvents = (location, skip = 0, limit = 20) => {
-    getUserPosition(this) // will update state with the user's location
-
     const {
       userLocation
     } = this.state

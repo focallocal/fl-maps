@@ -9,7 +9,7 @@ import EventsList from '../EventsList'
 import FiltersList from '../EventsFilter'
 import mapOptions from '../mapOptions'
 
-describe('<Mapwrapper_ />', () => {
+describe('<MapWrapper_ />', () => {
   afterEach(() => {
     document.querySelector('body').classList.remove('overflow')
   })
@@ -46,17 +46,19 @@ describe('<Mapwrapper_ />', () => {
 
     wrapper_.instance().componentDidMount()
 
+    expect(wrapper_.instance()._isMounted).toEqual(true)
     expect(spy.calledOnce).toBe(true)
   })
 
   test('componentWillUnmount', () => {
-    const spy = sinon.spy(window, 'clearInterval')
     const wrapper_ = shallowRenderer()
+    const spy = sinon.spy(window, 'clearInterval')
     const instance = wrapper_.instance()
     instance.interval = 'test_interval'
 
     wrapper_.unmount()
 
+    expect(instance._isMounted).toEqual(false)
     expect(document.querySelector('body').classList.contains('overflow')).toEqual(false)
     expect(instance.interval).toEqual(null)
     expect(spy.calledWith('test_interval')).toBe(true)
