@@ -51,15 +51,6 @@ describe('<Sidebar />', () => {
     expect(wrapper_.children()).toHaveLength(i18n.MainMenu.leftLinks.length)
   })
 
-  it('should set overflow="hidden" on body when "isOpen" is true and "scroll" when false', () => {
-    const wrapper_ = shallowRenderer()
-
-    wrapper_.setProps({ isOpen: true })
-    expect(document.body.style.overflowY).toEqual('hidden')
-    wrapper_.setProps({ isOpen: false })
-    expect(document.body.style.overflowY).toEqual('scroll')
-  })
-
   it('should (un)set an event listener on (un)mounting with "toggleSidebarFromOutside"', () => {
     const spy = jest.spyOn(document, 'addEventListener')
     const spy2 = jest.spyOn(document, 'removeEventListener')

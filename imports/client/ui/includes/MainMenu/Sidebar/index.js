@@ -16,16 +16,6 @@ class Sidebar extends Component {
     return nextProps
   }
 
-  componentDidUpdate (prevProps, prevState) {
-    if (!prevProps.isOpen && this.props.isOpen) {
-      document.body.style.overflowY = 'hidden'
-    }
-
-    if (prevProps.isOpen && !this.props.isOpen) {
-      document.body.style.overflowY = 'scroll'
-    }
-  }
-
   componentDidMount () {
     document.addEventListener('click', this.toggleSidebarFromOutside)
   }

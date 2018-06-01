@@ -1,7 +1,11 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const meteorExternals = require('webpack-meteor-externals')
 const path = require('path')
+const devMode = process.env.NODE_ENV !== 'production'
 
 const clientConfig = {
   entry: './client/main.js',
@@ -10,7 +14,7 @@ const clientConfig = {
       {
         test: /\.(css|scss)$/,
         use: [
-          'style-loader',
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
@@ -26,7 +30,10 @@ const clientConfig = {
     new HtmlWebpackPlugin({
       template: './client/main.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[hash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+    })
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx'],
@@ -63,5 +70,30 @@ const serverConfig = {
     meteorExternals()
   ]
 }
+
+if (!devMode) {
+  clientConfig.optimization = {
+    minimizer: [
+      new UglifyJsPlugin({
+        parallel: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ],
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+  }
+} else {
+  clientConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
+}
+
+console.log(devMode)
 
 module.exports = [clientConfig, serverConfig]
