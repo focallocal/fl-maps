@@ -1,12 +1,11 @@
 import { Meteor } from 'meteor/meteor'
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
-import { logUserId, logUserIp } from '/server/security/rate-limiter'
+import { logRateLimit } from '/server/security/rate-limiter'
 import querystring from 'query-string'
 import crypto from 'crypto'
 
 const name = 'General.validateSSO'
-
 export const validateSSO = new ValidatedMethod({
   name,
   mixins: [],
@@ -68,19 +67,11 @@ export function findMail (user) {
 
 DDPRateLimiter.addRule({
   name,
-  type: 'method',
-  userId (id) {
-    logUserId(id)
-    return true
-  },
-  connectionAddress (ip) {
-    logUserIp(ip)
-    return true
+  type: 'method'
+}, 2, 10000, ({ allowed }, { userId, clientAddress }) => { // 2 requests every 10 seconds
+  if (!allowed) {
+    logRateLimit(name, userId, clientAddress)
   }
-}, 1, 10000, () => {
-  DDPRateLimiter.setErrorMessage(() => {
-    return `Passed the rate limit`
-  })
 })
 
 // was taken from https://github.com/antofa/DiscourseSSO_node

@@ -1,12 +1,11 @@
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import Events from '/imports/both/collections/events'
-import { logUserId, logUserIp } from '/server/security/rate-limiter'
 import SimpleSchema from 'simpl-schema'
+import { logRateLimit } from '/server/security/rate-limiter'
 
 const name = 'Events.getEvents'
-
-const getEvent = new ValidatedMethod({
+const getEvents = new ValidatedMethod({
   name,
   mixins: [],
   validate: new SimpleSchema({
@@ -23,7 +22,7 @@ const getEvent = new ValidatedMethod({
       optional: true
     }
   }).validator(),
-  run ({ skip, limit, location, distance = 100000 }) {
+  run ({ skip, limit, location, distance = 100000 }) { // distance in meters, 100km
     const {
       lng,
       lat
@@ -33,8 +32,10 @@ const getEvent = new ValidatedMethod({
       'address.location': {
         $near: {
           $geometry: {
-            type: 'Point', coordinates: [lng, lat] },
-          $maxDistance: distance }
+            type: 'Point', coordinates: [lng, lat]
+          },
+          $maxDistance: distance
+        }
       }
     }, {
       skip,
@@ -47,17 +48,9 @@ const getEvent = new ValidatedMethod({
 
 DDPRateLimiter.addRule({
   name,
-  type: 'method',
-  userId (id) {
-    logUserId(name, id)
-    return true
-  },
-  clientAddress (ip) {
-    logUserIp(name, ip)
-    return true
+  type: 'method'
+}, 5, 1000, ({ allowed }, { userId, clientAddress }) => { // 5 requests every 1 second
+  if (!allowed) {
+    logRateLimit(name, userId, clientAddress)
   }
-}, 2, 1000, function (matcher) {
-  DDPRateLimiter.setErrorMessage(() => {
-    return `Passed the rate limit`
-  })
 })

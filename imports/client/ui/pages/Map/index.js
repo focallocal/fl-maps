@@ -10,6 +10,7 @@ import FiltersList from './EventsFilter'
 import SearchButtons from './SearchButtons'
 import MarkerWrapper from './MarkerWrapper'
 import { ensureUniquePosition, getUserPosition } from './utils'
+import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
 import './styles.scss'
 import './mobile-styles.scss'
 
@@ -34,15 +35,14 @@ class MapComponent_ extends Component {
   memoizeLocations = {} // cache locations
 
   componentDidMount () {
-    this.toggleBodyOverflow()
-    getUserPosition(this)
+    toggleBodyOverflow()
     this.callGetEvents()
   }
 
   componentWillUnmount () {
     clearInterval(this.interval)
     this.interval = null
-    this.toggleBodyOverflow()
+    toggleBodyOverflow()
   }
 
   render () {
@@ -245,21 +245,24 @@ class MapComponent_ extends Component {
     let startingTime = Date.now()
 
     this.interval = setInterval(() => {
-      const { userLocation } = this.state
-
-      if (this.interval && userLocation) {
+      if (this.interval && this.state.userLocation) {
         clearInterval(this.interval)
+        this.interval = null
+
         this.getEvents() // Fetch events from server
         return
       }
 
-      if (Date.now() - startingTime > 6000) { // after 6 seconds remove the interval
+      if (Date.now() - startingTime > 8000) { // after 8 seconds remove the interval
+        this.setState({ isFetching: false })
         clearInterval(this.interval)
       }
-    }, 1500) // run 4 times 6000 / 1500
+    }, 1000) // run 8 times 8000 / 1000
   }
 
   getEvents = (location, skip = 0, limit = 20) => {
+    getUserPosition(this) // will update state with the user's location
+
     const {
       userLocation
     } = this.state
@@ -284,10 +287,6 @@ class MapComponent_ extends Component {
         this.setState({ isFetching: false })
       })
     }
-  }
-
-  toggleBodyOverflow () {
-    document.querySelector('body').classList.toggle('overflow')
   }
 }
 const MapComponent = withScriptjs(withGoogleMap(MapComponent_))

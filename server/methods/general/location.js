@@ -2,16 +2,15 @@ import { Meteor } from 'meteor/meteor'
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import { HTTP } from 'meteor/http'
-import { logUserId, logUserIp } from '/server/security/rate-limiter'
+import { logRateLimit } from '/server/security/rate-limiter'
 
 const name = 'General.getUserLocation'
-
 const getUserLocation = new ValidatedMethod({
   name,
   mixins: [],
   validate: null,
   run () {
-    const { ipstack: api_key } = Meteor.settings.private
+    const { ipstack_api_key: key } = Meteor.settings.private
 
     let ip
     try {
@@ -23,7 +22,7 @@ const getUserLocation = new ValidatedMethod({
     } catch (ex) {}
 
     try {
-      const location = HTTP.get('http://api.ipstack.com/' + ip + '?access_key=' + api_key).data
+      const location = HTTP.get('http://api.ipstack.com/' + ip + '?access_key=' + key).data
       const lngLat = {
         lng: location.longitude,
         lat: location.latitude
@@ -38,17 +37,9 @@ const getUserLocation = new ValidatedMethod({
 
 DDPRateLimiter.addRule({
   name,
-  type: 'method',
-  userId (id) {
-    logUserId(name, id)
-    return true
-  },
-  connectionAddress (ip) {
-    logUserIp(name, ip)
-    return true
+  type: 'method'
+}, 1, 60000, ({ allowed }, { userId, clientAddress }) => { // 1 request every 60 seconds
+  if (!allowed) {
+    logRateLimit(name, userId, clientAddress)
   }
-}, 1, 1000, () => {
-  DDPRateLimiter.setErrorMessage(() => {
-    return `Passed the rate limit`
-  })
 })

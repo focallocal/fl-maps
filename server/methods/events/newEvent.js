@@ -1,11 +1,10 @@
 import { Meteor } from 'meteor/meteor'
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
-import { logUserId, logUserIp } from '/server/security/rate-limiter'
 import Events, { EventsSchema } from '/imports/both/collections/events'
+import { logRateLimit } from '/server/security/rate-limiter'
 
 const name = 'Events.newEvent'
-
 const newEvent = new ValidatedMethod({
   name,
   mixins: [],
@@ -21,17 +20,9 @@ const newEvent = new ValidatedMethod({
 
 DDPRateLimiter.addRule({
   name,
-  type: 'method',
-  userId (id) {
-    logUserId(id)
-    return true
-  },
-  clientAddress (ip) {
-    logUserIp(ip)
-    return true
+  type: 'method'
+}, 2, 10000, ({ allowed }, { userId, clientAddress }) => { // 2 requests every 10 seconds
+  if (!allowed) {
+    logRateLimit(name, userId, clientAddress)
   }
-}, 1, 10000, () => { // prevent span, allow only 1 call every 10 seconds
-  DDPRateLimiter.setErrorMessage(() => {
-    return `Please wait at least a second between requests`
-  })
 })

@@ -1,7 +1,6 @@
 
 export default function getUserPosition (context) {
-  // Get position from a different component that redirects to the map
-
+  // Get position from a different component that has redirected to the map
   const latLng = window.__savedUserLocation
   if (latLng) {
     context.setState({

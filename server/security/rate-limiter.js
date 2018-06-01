@@ -1,8 +1,4 @@
 
-export function logUserId (name, id, type = 'Method') {
-  console.log(`----------------- ${type}: "${name}", RateLimiter -> User ID: ${id}`)
-}
-
-export function logUserIp (name, ip, type = 'Method') {
-  console.log(`----------------- ${type}: "${name}", RateLimiter -> User IP: ${ip}`)
+export function logRateLimit (name, userId, clientAddress) {
+  console.log(`------ ${name} rate limit, userId ${userId}, userIp ${clientAddress} ------`)
 }
