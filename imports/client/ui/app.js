@@ -12,7 +12,7 @@ import MainMenu from './includes/MainMenu'
 import Home from './pages/Home'
 import Authentication from './pages/Authentication'
 import Map_ from './pages/Map'
-import NewEvent from './pages/NewEvent'
+import NewEventLoadable from './pages/NewEvent/loadable'
 import CongratsModal from './pages/NewEvent/CongratsModal'
 
 class App extends Component {
@@ -36,11 +36,11 @@ class App extends Component {
     const isOpen = qs.parse(location.search).new === '1'
 
     if (isOpen && !Meteor.userId()) {
-      sessionStorage.setItem('redirect', '?new=1')
+      sessionStorage.setItem('redirect', '/?new=1')
       return <Redirect to='/sign-in' />
     }
 
-    return <NewEvent isOpen={isOpen} location={location} />
+    return <NewEventLoadable isOpen={isOpen} location={location} />
   }
 }
 
