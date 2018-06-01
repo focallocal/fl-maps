@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import { Button } from 'reactstrap'
 import { BrowserRouter as Router } from 'react-router-dom'
 import FindOrPost from '../FirstSection/FindOrPost'

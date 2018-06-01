@@ -20,7 +20,6 @@ meteoreact:fix-unsupported-properties
 react-meteor-data
 accounts-password
 meteoreact:accounts
-meteoreact:accounts-unstyled
 service-configuration
 accounts-google
 accounts-facebook

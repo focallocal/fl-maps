@@ -94,6 +94,4 @@ if (!devMode) {
   clientConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
-console.log(devMode)
-
 module.exports = [clientConfig, serverConfig]

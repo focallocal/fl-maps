@@ -6,10 +6,11 @@ import GeolocationHelpModal from './GeolocationHelpModal'
 
 class Find extends Component {
   state = {
-    search: '',
     error: null,
+    geoHelp: false,
+    isGettingLocation: false,
     position: null,
-    geoHelp: false
+    search: ''
   }
 
   componentDidMount () {
@@ -26,20 +27,21 @@ class Find extends Component {
     this.interval = null
   }
 
-  UNSAFE_componentWillUpdate (nextProps, nextState) {
-    const { error, position } = nextState
+  componentDidUpdate (prevProps, prevState) {
+    const { error, position } = this.state
 
-    if (error || position) { // fetching completed
+    if (error || position) { // location retrieved
       NProgress.done()
     }
   }
 
   render () {
     const {
-      search,
       error,
-      position,
-      geoHelp
+      geoHelp,
+      isGettingLocation,
+      search,
+      position
     } = this.state
 
     if (position) {
@@ -59,7 +61,7 @@ class Find extends Component {
             onChange={this.handleSearch}
             onFocus={this.removeError}
           />
-          <Button onClick={this.findBySearch}>Find</Button>
+          <Button onClick={this.findBySearch} disabled={isGettingLocation}>Find</Button>
         </InputGroup>
         {error && <div className='error-msg'>Couldn't find anything..</div>}
 
@@ -86,36 +88,34 @@ class Find extends Component {
 
     if (search.trim().length > 0) {
       NProgress.set(0.4)
+      this.setState({ isGettingLocation: true })
 
       geocodeByAddress(search)
         .then(results => getLatLng(results[0]))
         .then(({ lat, lng }) => {
-          sessionStorage.setItem('position', JSON.stringify({ lat, lng }))
+          window.__savedUserLocation = { lat, lng }
           this.setState({ position: true })
         })
         .catch(() => {
-          this.setState({ error: true })
+          this.setState({ error: true, isGettingLocation: false })
         })
     } else {
+      // If search with empty value
       this.setState({ error: true })
     }
   }
 
   findByCurrentLocation = () => {
-    const { navigator } = window
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
+    if (window.navigator.geolocation) {
+      window.navigator.geolocation.getCurrentPosition(({ coords }) => {
         NProgress.set(0.4)
 
         // Save position and retrieve on map component
-        const position = {
+        window.__savedUserLocation = {
           lat: coords.latitude,
           lng: coords.longitude,
           userLocation: true
         }
-
-        sessionStorage.setItem('position', JSON.stringify(position))
         this.setState({ position: true })
       })
     }
