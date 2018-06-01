@@ -72,11 +72,11 @@ class MapComponent_ extends Component {
       >
 
         <MarkerClusterer
-          onClick={this.onMarkerClustererClick}
           averageCenter
           enableRetinaIcons
           gridSize={60}
           maxZoom={20}
+          onClick={this.onMarkerClustererClick}
         >
           {events_.map((event, i) =>
             <MarkerWrapper
@@ -308,3 +308,6 @@ class Map_ extends Component {
 }
 
 export default Map_
+export {
+  MapComponent_
+}

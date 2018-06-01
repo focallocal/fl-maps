@@ -50,6 +50,9 @@ const google = {
       REQUEST_DENIED: 'REQUEST_DENIED',
       UNKNOWN_ERROR: 'UNKNOWN_ERROR',
       ZERO_RESULTS: 'ZERO_RESULTS'
+    },
+    ControlPosition: {
+      RIGHT_BOTTOM: 9
     }
   }
 }
