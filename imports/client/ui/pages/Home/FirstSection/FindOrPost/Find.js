@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { FormGroup, Label, InputGroup, Input, Button } from 'reactstrap'
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
+import getUserPosition, { storeUserLocation } from '/imports/client/utils/location/getUserPosition'
 import GeolocationHelpModal from './GeolocationHelpModal'
 
 class Find extends Component {
@@ -14,17 +15,13 @@ class Find extends Component {
   }
 
   componentDidMount () {
-    this.interval = setInterval(() => {
-      if (window.google) {
-        clearInterval(this.interval)
-        this.setState({})
-      }
-    }, 1000)
+    this._isMounted = true
   }
 
   componentWillUnmount () {
-    clearInterval(this.interval)
-    this.interval = null
+    clearInterval(this.positionInterval)
+    this.positionInterval = null
+    this._isMounted = false
   }
 
   componentDidUpdate (prevProps, prevState) {
@@ -93,10 +90,12 @@ class Find extends Component {
       geocodeByAddress(search)
         .then(results => getLatLng(results[0]))
         .then(({ lat, lng }) => {
-          window.__savedUserLocation = { lat, lng }
+          NProgress.done()
+          storeUserLocation({ lat, lng })
           this.setState({ position: true })
         })
         .catch(() => {
+          NProgress.done()
           this.setState({ error: true, isGettingLocation: false })
         })
     } else {
@@ -106,19 +105,13 @@ class Find extends Component {
   }
 
   findByCurrentLocation = () => {
-    if (window.navigator.geolocation) {
-      window.navigator.geolocation.getCurrentPosition(({ coords }) => {
-        NProgress.set(0.4)
+    getUserPosition(this)
 
-        // Save position and retrieve on map component
-        window.__savedUserLocation = {
-          lat: coords.latitude,
-          lng: coords.longitude,
-          userLocation: true
-        }
-        this.setState({ position: true })
-      })
-    }
+    this.positionInterval = setInterval(() => { // clean on componentWillUnmount
+      if (window.__savedUserLocation) {
+        this.setState({ position: true }) // will redirect to /map
+      }
+    }, 1000) // run every 1 second
   }
 
   toggleGeolocationHelp = () => {
