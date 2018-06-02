@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor'
 
 export default function getUserPosition (context) {
   /*
@@ -13,11 +14,13 @@ export default function getUserPosition (context) {
   // Get from cache
   const savedLocation = sessionStorage.getItem('userLocation')
   if (savedLocation) {
-    updateState(context, JSON.parse(savedLocation, (k, v) => parseFloat(v))) // ensure values are float numbers
+    updateState(context, JSON.parse(savedLocation, (k, v) => {
+      return typeof v === 'number' ? parseFloat(v) : v // ensure values are float numbers
+    }))
   }
 
   // Get location from geolcation api
-  if (!context.state.userLocation) {
+  if (!context.state.userLocation && !savedLocation && !window.__savedUserLocation) {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       const latLng = {
         lat: coords.latitude,
@@ -29,7 +32,24 @@ export default function getUserPosition (context) {
       }
 
       storeUserLocation(latLng)
-    })
+    }, err => {
+      /*
+        code 1 - user clicked on "Block".
+        code 2 - a problem with the geolocation service
+        code 3 - timeout
+      */
+
+      if (err.code === 2) { // run only if there's a problem with the browser's ability to get location
+        Meteor.call('General.getUserLocation', (err, res) => {
+          if (!err) {
+            storeUserLocation(res)
+            updateState(context, res)
+          } else {
+            context.setState({ userLocationError: true })
+          }
+        })
+      }
+    }, { timeout: 7000 }) // if user didn't click "allow" after 7 seconds - timeout
   }
 }
 

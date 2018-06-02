@@ -44,8 +44,8 @@ class MapComponent_ extends Component {
   componentWillUnmount () {
     clearInterval(this.interval)
     this.interval = null
-    toggleBodyOverflow()
     this._isMounted = false
+    toggleBodyOverflow()
   }
 
   render () {
@@ -257,11 +257,11 @@ class MapComponent_ extends Component {
         return
       }
 
-      if (Date.now() - startingTime > 8000) { // after 8 seconds remove the interval
+      if (Date.now() - startingTime > 7000) { // after 7 seconds remove the interval
         this.setState({ isFetching: false })
         clearInterval(this.interval)
       }
-    }, 1000) // run 8 times 8000 / 1000
+    }, 1000) // run 7 times 7000 / 1000
   }
 
   getEvents = (location, skip = 0, limit = 20) => {

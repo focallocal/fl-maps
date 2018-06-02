@@ -10,7 +10,8 @@ class Find extends Component {
     error: null,
     geoHelp: false,
     isGettingLocation: false,
-    position: null,
+    userLocation: null,
+    userLocationError: false,
     search: ''
   }
 
@@ -19,17 +20,7 @@ class Find extends Component {
   }
 
   componentWillUnmount () {
-    clearInterval(this.positionInterval)
-    this.positionInterval = null
     this._isMounted = false
-  }
-
-  componentDidUpdate (prevProps, prevState) {
-    const { error, position } = this.state
-
-    if (error || position) { // location retrieved
-      NProgress.done()
-    }
   }
 
   render () {
@@ -37,13 +28,16 @@ class Find extends Component {
       error,
       geoHelp,
       isGettingLocation,
-      search,
-      position
+      userLocation,
+      userLocationError,
+      search
     } = this.state
 
-    if (position) {
+    if (userLocation) {
       return <Redirect to='/map' />
     }
+
+    const showGeoHelpModal = geoHelp || userLocationError
 
     return (
       <FormGroup className='find-wrapper'>
@@ -58,18 +52,27 @@ class Find extends Component {
             onChange={this.handleSearch}
             onFocus={this.removeError}
           />
-          <Button onClick={this.findBySearch} disabled={isGettingLocation}>Find</Button>
+          <Button onClick={this.findBySearch} disabled={isGettingLocation}>
+            Find
+          </Button>
         </InputGroup>
         {error && <div className='error-msg'>Couldn't find anything..</div>}
 
         <div className='divider'>Or</div>
 
         <div className='center'>
-          <Button onClick={this.findByCurrentLocation}>Use Current Location</Button>
-          <div className='geolocation-help' onClick={this.toggleGeolocationHelp}>Not working?</div>
+          <Button onClick={this.findByCurrentLocation}>
+            Use Current Location
+          </Button>
+          <div className='geolocation-help' onClick={this.toggleGeolocationHelp}>
+            Not working?
+          </div>
         </div>
 
-        <GeolocationHelpModal isOpen={geoHelp} toggle={this.toggleGeolocationHelp} />
+        <GeolocationHelpModal
+          isOpen={showGeoHelpModal}
+          toggle={this.toggleGeolocationHelp}
+        />
       </FormGroup>
     )
   }
@@ -92,7 +95,7 @@ class Find extends Component {
         .then(({ lat, lng }) => {
           NProgress.done()
           storeUserLocation({ lat, lng })
-          this.setState({ position: true })
+          this.setState({ userLocation: true })
         })
         .catch(() => {
           NProgress.done()
@@ -105,17 +108,21 @@ class Find extends Component {
   }
 
   findByCurrentLocation = () => {
-    getUserPosition(this)
-
-    this.positionInterval = setInterval(() => { // clean on componentWillUnmount
-      if (window.__savedUserLocation) {
-        this.setState({ position: true }) // will redirect to /map
-      }
-    }, 1000) // run every 1 second
+    getUserPosition(this) // will update state with latLng/error object
   }
 
   toggleGeolocationHelp = () => {
-    this.setState(prevState => (this.setState({ geoHelp: !prevState.geoHelp })))
+    // userLocationError might be set from '/imports/client/utils/location/getUserPosition'
+    // make sure you understand that mechanism before attempting to change/understand this code
+
+    const {
+      geoHelp,
+      userLocationError
+    } = this.state
+
+    let modalState = !geoHelp && !userLocationError
+
+    this.setState({ geoHelp: modalState, userLocationError: modalState })
   }
 }
 

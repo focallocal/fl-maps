@@ -30,6 +30,7 @@ const getUserLocation = new ValidatedMethod({
 
       return lngLat
     } catch (ex) {
+      console.log('------ General.getUserLocation threw error: ' + ex)
       return new Meteor.Error('General.getUserLocation', ex)
     }
   }

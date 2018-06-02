@@ -15,7 +15,8 @@ describe('<Find />', () => {
       error: null,
       geoHelp: false,
       isGettingLocation: false,
-      position: null,
+      userLocation: null,
+      userLocationError: false,
       search: ''
     })
   })
@@ -31,11 +32,9 @@ describe('<Find />', () => {
   test('componentWillUnmount', () => {
     const wrapper_ = shallowRenderer()
     const instance = wrapper_.instance()
-    instance.positionInterval = 'test-interval'
 
     instance.componentWillUnmount()
 
-    expect(instance.positionInterval).toEqual(null)
     expect(instance._isMounted).toEqual(false)
   })
 })

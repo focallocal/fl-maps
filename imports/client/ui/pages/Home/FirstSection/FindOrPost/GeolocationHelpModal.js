@@ -7,7 +7,10 @@ const GeolocationHelpModal = ({ isOpen, toggle }) => (
       Geolocation Support
     </ModalHeader>
     <ModalBody>
-      Todo -> Write this section!
+      <p>For some reason we could not get your location..</p>
+
+      <br />
+      <em>(TODO - provide solutions to common issues related to our location service)</em>
     </ModalBody>
   </Modal>
 )
