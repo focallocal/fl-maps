@@ -1,0 +1,28 @@
+language: node_js
+sudo: required
+node_js:
+- '8.11.1'
+cache:
+directories:
+- $HOME/.meteor
+- node_modules
+
+before_cache:
+- rm -f $HOME/.meteor/log/*.log
+
+before_install:
+# Remove cache if the project is upgraded to a newer version of meteor
+- export PATH="$HOME/.meteor:$PATH"
+- openssl aes-256-cbc -k "$encrypted_key_master_i" -in deployment.tar.enc -out deployment.tar -d
+- tar xvf deployment.tar
+- npm install -g mupx
+- curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
+- meteor npm install
+
+branches:
+only:
+- master
+- street-sleeper
+script:
+- npm test
+- mupx deploy

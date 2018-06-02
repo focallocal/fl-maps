@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+set timeout 1000
+set email "$env(METEOR_USER)"
+set password "$env(METEOR_PASSWORD)"
+
+#deploy master to prod
+#deploy every other branch to test environment
+if {$env(TRAVIS_BRANCH) == "master"} {
+    set deployUrl "$env(METEOR_PRODUCTION_URL)"
+} else {
+    set deployUrl "$env(METEOR_STAGING_URL)"
+}
+
+spawn meteor deploy $deployUrl
+
+expect -- "*Email:"
+send "$email\n"
+expect -- "*assword:"
+send -- "$password\n"
+expect -- "*Now serving at $deployUrl"
