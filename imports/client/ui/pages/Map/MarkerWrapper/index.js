@@ -21,7 +21,7 @@ class MarkerWrapper extends Component {
 
     const { latLng } = position
     const fillColor = event.categories.length > 1 ? '#d09d7a' : event.categories[0].color
-    const iconScale = hovered ? 0.065 : 0.06
+    const iconScale = hovered || isCurrent ? 0.55 : 0.5
     const hightlightIcon = isCurrent ? { strokeWeight: 3 } : null
     const zIndex = isCurrent ? 9999 : 1
 
