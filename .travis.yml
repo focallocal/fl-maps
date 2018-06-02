@@ -2,6 +2,7 @@ language: node_js
 sudo: required
 node_js:
 - '8.11.1'
+
 cache:
 directories:
 - $HOME/.meteor
@@ -23,6 +24,7 @@ branches:
 only:
 - master
 - street-sleeper
+
 script:
 - npm test
 - mupx deploy
