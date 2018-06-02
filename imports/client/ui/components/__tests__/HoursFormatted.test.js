@@ -4,9 +4,24 @@ import HoursFormatted from '../HoursFormatted'
 import { formatDateWithWords } from '/imports/client/utils/format'
 
 describe('<HoursFormatted />', () => {
+  const constantDate = new Date('2018-01-01T12:00:00')
+
+  beforeAll(() => {
+    global.Date = class extends Date {
+      constructor () {
+        super()
+        return constantDate
+      }
+    }
+  })
+
+  afterAll(() => {
+    global.Date = Date
+  })
+
   const obj = {
-    startingDate: new Date('02/15/2018'),
-    endingDate: new Date('02/16/2018'),
+    startingDate: new Date(),
+    endingDate: new Date(),
     startingTime: '16:00',
     endingTime: '17:00',
     multipleDays: false,
@@ -72,7 +87,7 @@ describe('<HoursFormatted />', () => {
 
     expect(component.props().className).toEqual('hours-formatted repeat')
     expect(component.find('.not-forever')).toHaveLength(1)
-    expect(component.text()).toEqual('Every 10 days, between 16:00 - 17:00 Available for 8 occurences or until 2019/02/10')
+    expect(component.text()).toEqual('Every 10 days, between 16:00 - 17:00 Available for 8 occurences or until 2018/01/01')
   })
 
   test('repeat=true, type="week", forever=true', () => {
@@ -120,6 +135,6 @@ describe('<HoursFormatted />', () => {
     const wrapper_ = shallowRender()
     const component = wrapper_.find('.regular-date')
 
-    expect(component.text()).toEqual('Thu, 2018/02/14, 16:00 - Fri, 2018/02/15, 17:00')
+    expect(component.text()).toEqual('Sat, 2018/01/01, 16:00 - 17:00')
   })
 })
