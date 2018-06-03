@@ -16,9 +16,8 @@ before_install:
 - export PATH="$HOME/.meteor:$PATH"
 - openssl aes-256-cbc -k "$encrypted_key_master_i" -in deployment.tar.enc -out deployment.tar -d
 - tar xvf deployment.tar
-- npm install -g mupx
+- npm install -g mup
 - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
-- meteor npm install
 
 branches:
 only:
@@ -27,4 +26,4 @@ only:
 
 script:
 - npm test
-- mupx deploy
+- mup deploy

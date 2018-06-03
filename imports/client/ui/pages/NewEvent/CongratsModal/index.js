@@ -102,8 +102,7 @@ const SelectableText = ({ event }) => {
 }
 
 function getFunctionByMapType (btn, event) {
-  // window.__mapType is set on client/main.js
-  const isHomelessMap = window.__mapType === 'brightersidetomorrow'
+  const isHomelessMap = window.__mapType === 'street-sleeper'
 
   switch (btn.type) {
     case 'facebook':
