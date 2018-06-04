@@ -4,8 +4,7 @@ settings.json
 mup.json
 deployment.tar
 .deploy
-.travis.yml
-
+.deploy/
 .idea/
 
 node_modules

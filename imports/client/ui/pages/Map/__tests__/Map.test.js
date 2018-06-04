@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import sinon from 'sinon'
-import { GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
+import { GoogleMap } from 'react-google-maps'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import MarkerWrapper from '../MarkerWrapper'
 import { MapComponent_ } from '../index'
@@ -145,7 +145,7 @@ describe('<MapWrapper_ />', () => {
   test('methods', () => {
     const methods = [
       'onMarkerClick', 'toggleFiltersList', 'setFilteredEvents', 'onMarkerClustererClick',
-      'removeCurrentEvent', 'setDirections', 'setError', 'handleBounds', 'handlePlaces',
+      'removeCurrentEvent', 'setDirections', 'setError', 'handlePlaces',
       'onZoomChanged', 'callGetEvents', 'getEvents'
     ]
     const instance = wrapper.instance()

@@ -200,15 +200,8 @@ class MapComponent_ extends Component {
   }
 
   /*
-    handleBounds and handlePlaces code was taken from react-google-maps examples.
+    handlePlaces code was taken from react-google-maps examples.
   */
-
-  handleBounds = () => {
-    this.setState({
-      bounds: this.map.getBounds(),
-      center: this.map.getCenter()
-    })
-  }
 
   handlePlaces = () => {
     const places = this.searchBox.getPlaces()
@@ -221,23 +214,24 @@ class MapComponent_ extends Component {
         bounds.extend(place.geometry.location)
       }
     })
+
     const nextMarkers = places.map(place => ({
       position: place.geometry.location
     }))
     const nextCenter = nextMarkers[0] ? nextMarkers[0].position : this.state.center
 
     this.setState({
-      center: nextCenter
+      center: nextCenter,
+      bounds
     })
 
     const latLng = {
       lat: nextCenter.lat(),
       lng: nextCenter.lng()
     }
+    this.map.fitBounds(bounds)
 
     this.getEvents(latLng)
-
-    this.map.fitBounds(bounds)
   }
 
   onZoomChanged = () => {
