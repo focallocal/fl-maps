@@ -134,7 +134,6 @@ describe('<HoursFormatted />', () => {
   test('if regular date', () => {
     const wrapper_ = shallowRender()
     const component = wrapper_.find('.regular-date')
-
-    expect(component.text()).toEqual('Sat, 2018/01/01, 16:00 - 17:00')
+    expect(component.text().substr(5)).toEqual('2018/01/01, 16:00 - 17:00')
   })
 })

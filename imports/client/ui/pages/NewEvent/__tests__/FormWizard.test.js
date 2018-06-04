@@ -96,7 +96,5 @@ describe('<FormWizard />', () => {
     expect(wrapper_.find('#first-step')).toHaveLength(1)
     wrapper_.setProps({ currentStep: 1 })
     expect(wrapper_.find('#second-step')).toHaveLength(1)
-    wrapper_.setProps({ currentStep: 2 })
-    expect(wrapper_.find('#third-step')).toHaveLength(1)
   })
 })

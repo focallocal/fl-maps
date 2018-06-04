@@ -16,6 +16,10 @@ $modal-height: calc(100vh - 64px);
         cursor: pointer;
       }
     }
+
+    .alert.error-general {
+      margin-bottom: 0;
+    }
   }
 
   .inline-checkboxes {
@@ -31,10 +35,10 @@ $modal-height: calc(100vh - 64px);
   }
 
   /* -----------------------------
-             Second Step
+             First Step
      ----------------------------- */
 
-  #second-step {
+  #first-step {
 
     .inline-inputs {
       display: flex;

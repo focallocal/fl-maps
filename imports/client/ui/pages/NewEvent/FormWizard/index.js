@@ -5,7 +5,6 @@ import { EventsSchema } from '/imports/both/collections/events'
 import { getHour } from '/imports/both/collections/events/helpers'
 import FirstStep from './FirstStep'
 import SecondStep from './SecondStep'
-import ThirdStep from './ThirdStep'
 
 class FormWizard extends Component {
   state = {
@@ -32,9 +31,8 @@ class FormWizard extends Component {
         {this.form ? (
           <Fragment>
             <span className='reset' onClick={this.resetForm}>reset fields</span>
-            {currentStep === 0 && <FirstStep />}
-            {currentStep === 1 && <SecondStep form={this.form} />}
-            {currentStep === 2 && <ThirdStep />}
+            {currentStep === 0 && <FirstStep form={this.form} />}
+            {currentStep === 1 && <SecondStep />}
           </Fragment>
         ) : <div />}
       </AutoForm>
