@@ -29,7 +29,11 @@ function ensureSettingsFile () {
 }
 
 function determineMapType () {
-  window.__mapType = 'brightersidetomorrow'
+  const { mapType } = Meteor.settings.public
+  if (!mapType) {
+    throw new Error("You've probably forgot to add a mapType field to settings.json file")
+  }
+  window.__mapType = mapType
 }
 
 function loadGoogleMaps () {
@@ -56,7 +60,7 @@ function loadFacebook () {
     document.body.appendChild(ele)
 
     window.fbAsyncInit = function () {
-      const appId = '196447867795092'
+      const { appId } = Meteor.settings.public.facebook
       window.FB.init({
         appId: appId,
         xfbml: true,

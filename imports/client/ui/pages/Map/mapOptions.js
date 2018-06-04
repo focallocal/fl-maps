@@ -13,7 +13,8 @@ export default function options () {
     fullscreenControlOptions: {
       position: google.maps.ControlPosition.RIGHT_BOTTOM
     },
-    mapTypeControl: false
+    mapTypeControl: false,
+    gestureHandling: 'greedy'
   }
 }
 

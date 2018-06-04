@@ -9,7 +9,7 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import './styles.scss'
 
-const STEPS_COUNT = 2 // Number of form steps
+const STEPS_COUNT = 1 // Number of form steps
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
 class NewEventModal extends Component {
@@ -63,10 +63,10 @@ class NewEventModal extends Component {
         </ModalHeader>
 
         <ModalBody>
-          <Alert color='danger' isOpen={hasErrors}>
+          <FormWizard currentStep={currentStep} passFormRefToParent={this.getRef} />
+          <Alert color='danger' isOpen={hasErrors} className='error-general'>
             Please check that you've filled all the necessary fields
           </Alert>
-          <FormWizard currentStep={currentStep} passFormRefToParent={this.getRef} />
         </ModalBody>
 
         <ModalFooter>
@@ -89,7 +89,7 @@ class NewEventModal extends Component {
   };
 
   moveBack = () => {
-    this.setState(prevState => ({ currentStep: prevState.currentStep - 1 }))
+    this.setState(prevState => ({ currentStep: prevState.currentStep - 1, hasErrors: false }))
   };
 
   submit = () => {
@@ -123,7 +123,7 @@ class NewEventModal extends Component {
           if (this.state.hasErrors) {
             this.setState({ hasErrors: false })
           }
-        }, 4000) // auto- remove hasErrors message after 3 seconds
+        }, 6000) // auto- remove hasErrors message after 6 seconds
       })
   }
 

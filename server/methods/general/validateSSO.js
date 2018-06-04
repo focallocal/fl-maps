@@ -19,7 +19,7 @@ export const validateSSO = new ValidatedMethod({
     const { discourse_sso_key } = Meteor.settings.private
 
     if (!discourse_sso_key) {
-      throw Error('Make "disourse_sso_key" key exists in the settings.json file')
+      throw Error('No Discourse key found in settings')
     }
 
     const sso = new DiscourseSSO(discourse_sso_key)
