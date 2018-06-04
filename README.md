@@ -14,7 +14,7 @@ The project is based on [Meteor](https://www.meteor.com/) and [React](https://re
 
 2. create a fork of this repository and then
 
-    `git clone -b react-maps https://github.com/your-github-username/fl-maps`
+    `git clone https://github.com/your-github-username/fl-maps`
 
 3. Set up git
 
@@ -39,14 +39,14 @@ The project is based on [Meteor](https://www.meteor.com/) and [React](https://re
 
 6. make changes
 
-7. run `npm run test-ui` after you've finished
+7. run tests (`npm test` or `npm run test-watch`)
 
 8. if all the tests have passed, run
 
     ```
       git add .
       git commit -m 'description of what has changed'
-      git push origin react-maps
+      git push origin your_working_branch_name
     ```
 
 9. go to github and create a new pull request from your fork (make sure it's against the react-maps branch)
@@ -60,8 +60,6 @@ Currently you'll see a _**Compiled with warnings.**_ message, ignore it.
 ## Working On Issues
 
 There might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
-
-*look for issues with the [**"React Conversion"** ](https://github.com/focallocal/fl-maps/labels/React%20Conversion)* label
 
 *if you decide to work on an issue please mark it with a **"work in progress"** label.*
 
