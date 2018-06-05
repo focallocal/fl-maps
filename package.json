@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run --settings settings.json",
-    "test": "jest",
+    "test": "jest --maxWorkers=4",
     "test-watch": "jest --watchAll",
     "coverage": "jest --coverage"
   },
