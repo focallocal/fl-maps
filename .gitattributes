@@ -1,4 +1,9 @@
+# Don't remove any of the following lines!
+
 .travis.yml merge=ours
 deployment.tar.enc merge=ours
 package.json merge=ours
 imports/both/i18n/* merge=ours
+imports/both/events/helpers/possibleCategories.json merge=ours
+imports/client/includes/MainMenu/* merge=ours
+imports/client/pages/Home/* merge=ours

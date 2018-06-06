@@ -1,11 +1,4 @@
 {
-  "rightLinks": [
-    {
-      "title": "Map",
-      "icon": "fas fa-map",
-      "route": "/map"
-    }
-  ],
   "addEvent": "Add Activity",
   "userLink": {
     "loggedIn": [
