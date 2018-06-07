@@ -3,15 +3,17 @@ import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
 import './styles.scss'
 
-class Home extends Component {
+class About extends Component {
   render () {
     return (
-      <main>
+      <div id='about'>
+        <h2>About Us</h2>
+        <div className='header-divider' />
         <FirstSection />
         <SecondSection />
-      </main>
+      </div>
     )
   }
 }
 
-export default Home
+export default About

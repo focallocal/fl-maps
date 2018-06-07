@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Link } from 'react-router-dom'
+import { Container, Row, Col, Button } from 'reactstrap'
 import Item from './Item'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
@@ -27,6 +28,7 @@ const SecondSection = () => (
         ))}
       </Row>
     </Container>
+    <Button className='read-more' tag={Link} to='/about'>Read More</Button>
   </section>
 )
 
