@@ -45,11 +45,6 @@ class Sidebar extends Component {
           </header>
 
           <Nav vertical>
-            <LinkItem
-              item={{ route: '/', icon: 'fas fa-home', title: 'Home' }}
-              onClick={toggle}
-            />
-
             <div className='items-from-i18n'>
               {i18nFile.leftLinks.map((link, index) => {
                 const isDropDown = !!link.content
