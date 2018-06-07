@@ -1,5 +1,5 @@
 {
-  "addEvent": "Gather",
+  "addEvent": "Add Resource",
   "userLink": {
     "loggedIn": [
       {
@@ -33,16 +33,6 @@
       "title": "About",
       "icon": "fas fa-info-circle",
       "route": "/about"
-    },
-    {
-      "title": "Happy News",
-      "icon": "fas fa-sun",
-      "link": "http://news.focallocal.org/"
-    },
-    {
-      "title": "Shop",
-      "icon": "fas fa-shopping-cart",
-      "link": "https://the-positive-action-shop.myshopify.com/"
     }
   ]
 }

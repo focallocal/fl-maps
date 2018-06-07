@@ -1,10 +1,11 @@
 {
-  "first_title": "Local Action for Global Change",
-  "find-events": "Meet positive people and find gatherings near me",
+  "first_title": "Connection is a Path to a Brighter Future",
+  "find_events": "See free resources available near you",
   "post": {
-    "first_title": "Create a Public Happiness Gathering",
-    "button": "Sign Up And Start!",
-    "button_loggedIn": "Post onto the Map"
+    "first_title": "What can i do to help people who are homeless near me?",
+    "second_title": "Post a free resource i've found nearby, or offer something i can do to help",
+    "button": "Log in to Post a Resource",
+    "button_loggedIn": "Post a Resource"
   },
   "second_section": {
     "title": "What is Focallocal?",
