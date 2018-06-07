@@ -4,9 +4,11 @@ import FindOrPost from './FindOrPost'
 import './styles.scss'
 
 const FirstSection = () => (
-  <Container id='first-section' tag='section'>
-    <FindOrPost />
-  </Container>
+  <section id='first-section'>
+    <Container>
+      <FindOrPost />
+    </Container>
+  </section>
 )
 
 export default FirstSection

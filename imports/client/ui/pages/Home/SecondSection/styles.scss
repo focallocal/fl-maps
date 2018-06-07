@@ -2,7 +2,7 @@
 
 #second-section {
   padding: 40px;
-  padding-top: 0;
+  background: $gray-lighter;
   text-align: center;
 
   .container {
@@ -13,6 +13,10 @@
   // Text Color
   .title, .item-title, .item-text {
     color: $black-lighter;
+  }
+
+  .read-more {
+    margin-top: 32px;
   }
 
   @media screen and (max-width: 850px) {
