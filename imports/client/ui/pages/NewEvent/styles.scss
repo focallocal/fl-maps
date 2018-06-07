@@ -1,13 +1,12 @@
-$modal-height: calc(100vh - 64px);
-
 #new-event-modal {
 
   .modal-content {
     min-width: 300px;
 
     .modal-body {
+      max-height: 455px;
       overflow-y: auto;
-      overflow-x: none;
+      overflow-x: hidden;
 
       .reset {
         position: relative;
@@ -182,12 +181,6 @@ $modal-height: calc(100vh - 64px);
     button:only-child {
       position: relative;
       right: 4px;
-    }
-  }
-
-  @media (max-width: 992px) {
-    .modal-content {
-      height: auto;
     }
   }
 

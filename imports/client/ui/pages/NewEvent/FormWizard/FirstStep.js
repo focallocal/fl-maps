@@ -100,8 +100,8 @@ class FirstStep extends Component {
 
     // Scroll to bottom of modal
     setTimeout(() => {
-      const modal = document.querySelector('.modal')
-      modal.scrollTo(modal, window.screen.height + 100000)
+      const modal = document.querySelector('.modal-body')
+      modal.scrollTo(modal, 375)
     }, 1)
   }
 }

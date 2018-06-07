@@ -1,15 +1,30 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import About from './About'
+import Item from './Item'
+import i18n from '/imports/both/i18n/en'
 import './styles.scss'
+
+const SecondSectionI18N = i18n.Home.second_section
+
+const {
+  title,
+  content
+} = SecondSectionI18N
+
+const {
+  items
+} = content
 
 const SecondSection = () => (
   <section id='second-section'>
     <Container>
-      <Row>
-        <Col>
-          <About />
-        </Col>
+      <div className='title'>{title}</div>
+      <Row className="items">
+        {items.map((item, i) => (
+          <Col key={i}>
+            <Item item={item} />
+          </Col>
+        ))}
       </Row>
     </Container>
   </section>

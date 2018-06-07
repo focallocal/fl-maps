@@ -9,15 +9,23 @@
   "second_section": {
     "title": "What is Focallocal?",
     "content": {
-      "first": "Focallocal is an open, welcoming community of thousands of positive people around the world.",
-      "second": "Since 2012 we have been coming together and targeting the root causes of any, and all societal issues.",
-      "third": "Sharing ideas, and using fun activities to empower people to build a friendlier, happier more connected future for everyone.",
-      "fourth": "Join us and turn Public Happiness into a daily habit to explore your power to change the world, and the happiness it'll bring into your life",
-      "items": {
-        "smiley": "make the world happier every day",
-        "friends": "make + meet positive friends all over the world",
-        "share": "share + learn skills for your career or building change"
-      }
+      "items": [
+        {
+          "title": "Community",
+          "text": "An open and welcoming community of thousand of positive people around the world.",
+          "icon": "smiley"
+        },
+        {
+          "title": "Movement",
+          "text": "Since 2012 we have been coming together and targeting the root causes of any, and all societal issues.",
+          "icon": "friends"
+        },
+        {
+          "title": "Platform",
+          "text": "Share ideas and join fun activities to empower people to build a friendlier, happier more connected future for everyone.",
+          "icon": "share"
+        }
+      ]
     }
   },
   "third_section": {

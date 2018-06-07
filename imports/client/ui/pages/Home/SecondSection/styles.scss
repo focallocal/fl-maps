@@ -1,17 +1,30 @@
 @import '/imports/client/stylesheets/variables.scss';
 
 #second-section {
-  background: $light-yellow;
-  padding: 5%;  
+  padding: 40px;
+  padding-top: 0;
+  text-align: center;
 
   .container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    font-size: 20px;
-    text-align: justify;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  // Text Color
+  .title, .item-title, .item-text {
+    color: $black-lighter;
+  }
+
+  @media screen and (max-width: 850px) {
+
+    .items {
+      flex-flow: column;
+
+      &>div {
+        flex: 1;
+        max-width: 480px;
+        margin-bottom: 24px;
+      }
+    }
   }
 }
