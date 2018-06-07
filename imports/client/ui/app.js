@@ -10,10 +10,13 @@ import MainMenu from './includes/MainMenu'
 
 // Pages
 import Home from './pages/Home'
+import About from './pages/About'
 import Authentication from './pages/Authentication'
 import Map_ from './pages/Map'
 import NewEventLoadable from './pages/NewEvent/loadable'
 import CongratsModal from './pages/NewEvent/CongratsModal'
+
+import ScrollToTop from './components/ScrollToTop'
 
 class App extends Component {
   render () {
@@ -22,11 +25,14 @@ class App extends Component {
         <Fragment>
           <MainMenu />
 
-          <Route exact path='/' component={Home} />
-          <Route path='/map' component={Map_} />
-          <Route path='*' render={this.renderNewEvent} />
-          <Route exact path='/thank-you' component={CongratsModal} />
-          <Authentication />
+          <ScrollToTop>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route path='/map' component={Map_} />
+            <Route path='*' render={this.renderNewEvent} />
+            <Route exact path='/thank-you' component={CongratsModal} />
+            <Authentication />
+          </ScrollToTop>
         </Fragment>
       </Router>
     )

@@ -1,6 +1,14 @@
 
 main {
 
+  section {
+    margin: 40px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .container { // Override bootstrap container defaults
     display: flex;
     padding-right: 0;
@@ -11,14 +19,6 @@ main {
     align-items: center;
     max-width: none;
     width: 92.5%;
-  }
-
-  .section-divider {
-    max-width: 1100px;
-    width: 75%;
-    display: block;
-    margin: 40px auto 30px;
-    border-top: 1px solid #eea849;
   }
 
   .title {
@@ -33,6 +33,16 @@ main {
 
       .title {
         font-size: 1.8em;
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+
+    & {
+
+      .title {
+        font-size: 1.6em;
       }
     }
   }

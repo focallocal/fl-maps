@@ -1,9 +1,11 @@
 @import '/imports/client/stylesheets/variables.scss';
 
 #first-section {
+  min-height: calc(92vh - #{$menu-height});
   display: flex;
-  height: 100%;
-  margin-top: 40px;
-  justify-content: center;
-  align-items: center;
+  margin-top: 0;
+
+  @media screen and (max-width: 570px) {
+    margin-top: 30px;
+  }
 }

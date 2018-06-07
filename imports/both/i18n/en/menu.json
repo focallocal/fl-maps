@@ -1,21 +1,4 @@
 {
-  "rightLinks": [
-    {
-      "title": "Home",
-      "icon": "fas fa-home",
-      "route": "/"
-    },
-    {
-      "title": "Map",
-      "icon": "fas fa-map",
-      "route": "/map"
-    },
-    {
-      "title": "Calendar",
-      "icon": "fas fa-calendar-alt",
-      "route": "/events/list"
-    }
-  ],
   "addEvent": "Add Resource",
   "userLink": {
     "loggedIn": [
@@ -37,73 +20,19 @@
   },
   "leftLinks": [
     {
-      "title": "About Us",
-      "icon": "fas fa-info-circle",
-      "content": [
-        {
-          "title": "The Focallocal Community",
-          "link": "http://about.focallocal.org"
-        },
-        {
-          "title": "F.A.Q",
-          "link": "http://news.focallocal.org/faqs"
-        },
-        {
-          "title": "The Road to Focallocal",
-          "link": "http://news.focallocal.org/about-andy-and-the-road-to-focallocal/"
-        },
-        {
-          "title": "Will we Succeed?",
-          "link": "http://news.focallocal.org/are-we-sure-of-success/"
-        },
-        {
-          "title": "Focallocal In The News",
-          "link": "http://news.focallocal.org/category/in-the-news/"
-        }
-      ]
-    },
-    {
-      "title": "Projects",
-      "icon": "fas fa-table",
-      "content": [
-        {
-          "title": "Public Happiness",
-          "link": "http://action.focallocal.org/"
-        },
-        {
-          "title": "Brighter Tomorrow Map",
-          "link": "http://brightertomorrowmap.com/"
-        },
-        {
-          "title": "More Happiness Movment",
-          "link": "http://morehappiness.focallocal.org/"
-        }
-      ]
-    },
-    {
-      "title": "Happy News",
-      "icon": "fas fa-sun",
-      "link": "http://news.focallocal.org/"
-    },
-    {
-      "title": "Action Center",
-      "icon": "fas fa-star",
-      "link": "http://action.focallocal.org/"
-    },
-    {
-      "title": "Activities",
-      "icon": "fas fa-walking",
-      "link": "http://activities.focallocal.org/"
-    },
-    {
-      "title": "Shop",
-      "icon": "fas fa-shopping-cart",
-      "link": "https://the-positive-action-shop.myshopify.com/"
+      "title": "Home",
+      "icon": "fas fa-home",
+      "route": "/"
     },
     {
       "title": "Map",
       "icon": "fas fa-map",
       "route": "/map"
+    },
+    {
+      "title": "About",
+      "icon": "fas fa-info-circle",
+      "route": "/about"
     }
   ]
 }
