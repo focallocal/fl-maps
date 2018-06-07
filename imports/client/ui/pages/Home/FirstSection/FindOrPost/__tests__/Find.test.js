@@ -10,13 +10,11 @@ describe('<Find />', () => {
 
   const wrapper = shallowRenderer()
 
-  test('defaults tate', () => {
+  test('defaults state', () => {
     expect(wrapper.state()).toEqual({
       error: null,
-      geoHelp: false,
       isGettingLocation: false,
       userLocation: null,
-      userLocationError: false,
       search: ''
     })
   })

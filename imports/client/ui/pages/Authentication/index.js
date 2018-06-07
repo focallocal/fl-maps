@@ -103,8 +103,11 @@ class Authentication extends Component {
       return isSSO ? <PageLoader /> : <Redirect to={to} />
     }
 
+    const title = mapTitles[path]
+
     return (
       <div id='authentication'>
+        <h2>{title}</h2>
         <div>
           <AccountsReactComponent
             history={history}
@@ -137,6 +140,12 @@ function validateDiscourseSSO () {
       }
     })
   }
+}
+
+const mapTitles = {
+  '/sign-in': 'Sign in',
+  '/sign-up': 'Sign up',
+  '/forgot-password': 'Forgot password'
 }
 
 export default withRouter(withTracker(() => {

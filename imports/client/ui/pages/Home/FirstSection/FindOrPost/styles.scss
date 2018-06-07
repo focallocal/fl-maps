@@ -1,9 +1,9 @@
 #find-or-post {
+  max-width: 720px;
 
   .header {
     margin-bottom: 32px;
     text-align: center;
-    font-weight: bold;
 
     &.sub {
       margin-top: -32px;
@@ -19,8 +19,7 @@
   }
 
   .btn {
-    width: 220px;
-    margin-left: 5px;
+    width: 240px;
   }
 
   .find-wrapper {

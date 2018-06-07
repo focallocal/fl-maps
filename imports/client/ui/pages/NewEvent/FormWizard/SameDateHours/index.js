@@ -4,6 +4,7 @@ import { Popover, PopoverBody } from 'reactstrap'
 import Select from 'react-select'
 import possibleEventHours from '/imports/both/collections/events/helpers/possibleEventHours'
 import { formatReactSelectOptions } from '/imports/client/utils/format'
+import './styles.scss'
 
 const options = formatReactSelectOptions(possibleEventHours)
 
@@ -33,12 +34,14 @@ class SameDateHours extends Component {
               value={startingTime}
               options={options}
               onChange={this.handleStartingTime}
+              isSearchable={false}
             />
 
             <Select
               value={endingTime}
               options={options}
               onChange={this.handleEndingTime}
+              isSearchable={false}
             />
           </PopoverBody>
         </Popover>
