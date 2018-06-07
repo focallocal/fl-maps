@@ -24,7 +24,6 @@ class Select_ extends Component {
 
     const {
       label,
-      onChange,
       placeholder_,
       value,
       selectOptions = {},
@@ -50,6 +49,7 @@ class Select_ extends Component {
             isMulti={multi}
             onChange={this.handleChange}
             placeholder={''}
+            isSearchable={false}
           />
         ) : (
           <PlacesSearchBox

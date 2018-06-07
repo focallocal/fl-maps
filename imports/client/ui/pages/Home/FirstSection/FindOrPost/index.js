@@ -29,7 +29,7 @@ class FindOrPost extends Component {
           )
             : (
               <Fragment>
-                <h3 className='header sub'>{Home.post.second_title}</h3>
+                {Home.post.second_title && <h3 className='header sub'>{Home.post.second_title}</h3>}
                 <div className='center'>
                   <Button tag={NavLink} to='/sign-up'>{Home.post.button}</Button>
                 </div>

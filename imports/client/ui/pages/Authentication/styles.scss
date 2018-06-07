@@ -10,18 +10,26 @@
   justify-content: center;
   align-items: center;
 
+  &>h2 {
+    margin-top: 25px;
+  }
+
   &>div {
     width: 425px;
     max-width: 100%;
     padding: 24px 32px 32px 32px;
-    background: #fff;
+    background: #f4f5f0;
+    border: 1px solid #c1c1ba;
     box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
-    margin-top: 65px;
+    margin-top: 25px;
 
     form {
       width: 100%;
       margin-bottom: 16px;
-      background: #fff;
+
+      input {
+        padding: 14px;
+      }
 
       h1 {
         display: none;
@@ -30,19 +38,24 @@
 
     button {
       width: 100%;
+      padding: 13px;
       margin-bottom: 6px;
+      text-transform: uppercase;
+
+      i {
+        display: none;
+      }
 
       &.google {
-        background: #DD4B39;
+        background: #DD4B39 !important;
       }
 
       &.facebook {
-        background: #3B5998;
+        background: #3B5998 !important;
       }
 
       &.twitter {
         display: none;
-        background: #55ACEE;
       }
 
       &.google, &.facebook, &.twitter {
@@ -56,13 +69,15 @@
     }
 
     a { // redirect link
-      margin-top: 16px;
+      margin-top: 8px;
+      margin-bottom: -8px;
     }
   }
 
   @media screen and (max-width: 520px) {
 
     &>div {
+      max-width: 340px;
       margin-top: 20px;
     }
   }
