@@ -162,10 +162,6 @@ $nav-item-hover-transition: color .15s ease;
     align-self: center;
     cursor: pointer;
     transition: color .2s ease;
-
-    &:hover {
-      color: $nav-item-hover-color;
-    }
   }
 
   @media screen and (max-width: 900px) {

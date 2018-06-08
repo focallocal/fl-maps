@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Nav } from 'reactstrap'
+import Swipeable from 'react-swipeable'
 import Category from './Category'
 import LinkItem from '../LinkItem'
 import Logo from '../Logo'
@@ -38,7 +39,7 @@ class Sidebar extends Component {
 
     return (
       <Fragment>
-        <div id='sidebar' className={className}>
+        <Swipeable id='sidebar' className={className} onSwipedLeft={toggle}>
           <header>
             <i className='fas fa-bars' onClick={toggle}></i>
             <Logo />
@@ -55,7 +56,7 @@ class Sidebar extends Component {
               })}
             </div>
           </Nav>
-        </div>
+        </Swipeable>
         <div id='sidebar-backdrop' className={isOpen ? '--show' : ''} />
       </Fragment>
     )
