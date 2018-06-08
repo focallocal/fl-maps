@@ -159,11 +159,11 @@ When users visit the map the should feel: **Connected to a Community**
 
 The platform should be: 
 
-**positive**
+* **positive**
 
-**action focused**
+* **action focused**
 
-**welcoming and cheerful**
+* **welcoming and cheerful**
 
 
 ## Vision for the Maps Platform
