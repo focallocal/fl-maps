@@ -151,14 +151,20 @@ This project uses the [**standard**](https://standardjs.com/) coding style guide
 
 ## Core Design Considerations
 
-Goal for users: **Posting something new onto the map
-Platform goal: **Growing a positive and active community focused on the subject chosen for that map 
+Goal for users: **Posting something new onto the map**
 
-When users visit the map the should feel: **Connected to a Community
+Platform goal: **Growing a positive and active community focused on the subject chosen for that map** 
+
+When users visit the map the should feel: **Connected to a Community**
+
 The platform should be: 
-**positive 
-**action focused
-**welcoming and cheerful
+
+**positive**
+
+**action focused**
+
+**welcoming and cheerful**
+
 
 ## Vision for the Maps Platform
 
