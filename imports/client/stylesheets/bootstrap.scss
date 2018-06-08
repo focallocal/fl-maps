@@ -26,3 +26,17 @@ input {
 .custom-control-label::after {
   cursor: pointer;
 }
+
+/* Container */
+
+#root .container {
+  display: flex;
+  padding-right: 0;
+  padding-left: 0;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: none;
+  width: 92.5%;
+}

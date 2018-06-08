@@ -20,7 +20,7 @@
   section {
     margin-top: 16px;
     margin-bottom: 32px;
-    padding: 48px 16px;
+    padding: 48px 32px;
 
     &.second-section {
       background: $gray-lighter;
@@ -50,6 +50,27 @@
     p {
       font-size: .9em;
       font-style: italic;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    & {
+
+      .container {
+
+        .row {
+          flex-flow: column;
+
+          &>div { // each column
+            width: 100%;
+            max-width: 100%;
+          }
+
+          .attachment-content {
+            margin-top: 32px;
+          }
+        }
+      }
     }
   }
 }

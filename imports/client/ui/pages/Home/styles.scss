@@ -9,18 +9,6 @@ main {
     }
   }
 
-  .container { // Override bootstrap container defaults
-    display: flex;
-    padding-right: 0;
-    padding-left: 0;
-    margin: auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: none;
-    width: 92.5%;
-  }
-
   .title {
     margin-bottom: 26px;
     font-size: 2.2em;
