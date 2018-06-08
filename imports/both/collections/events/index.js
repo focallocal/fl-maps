@@ -283,9 +283,14 @@ const EventsSchema = new SimpleSchema({
   },
   'when.recurring.every': {
     type: Number,
-    min: 1,
+    min: 0,
     max: 12,
-    defaultValue: 1
+    defaultValue: 1,
+    autoValue: function () {
+      if (!this.value || this.value < 1) {
+        return 1
+      }
+    }
   },
   'when.recurring.forever': {
     type: Boolean,
