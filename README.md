@@ -59,9 +59,13 @@ Currently you'll see a _**Compiled with warnings.**_ message, ignore it.
 
 ## Working On Issues
 
-There might be opened issues - please look for them over [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
+Issues can be found on our Trello board which gives a more visual representation of progress than Github. The two currently active lists on Trello will be the 1st version (example v0.1) reading from left to right, and also the Quick Bug Squashing List: [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
 
-*if you decide to work on an issue please mark it with a **"work in progress"** label.*
+*if you decide to work on an issue please click 'members' and add your name to it, then move it into the 'sprint' queue. You can also use filters to see Meteor only issues (missions). (Don't forget to move it into te 'complete' list when finished, and also close the issue in Github.
+
+### Outside Software
+
+The map utilises Discourse for its forums and SSO. It will likely also use Discourse Messaging for notifications/users setting how often they receive notifications. The idea has been floated of also using it for users profiles, but that needs more discussion.
 
 ---
 
@@ -142,3 +146,32 @@ This project uses the [**standard**](https://standardjs.com/) coding style guide
 * React-hot-loader will only hot-reload for changes that are made inside the <App /> component. This is the default behavior but i've added this note just to make sure you are aware rof this.
 
 * Both of the maps (gathering and brightertomorrow) are using the same code base - we differentiate their strings by using different i18n files for each.
+
+---
+
+## Core Design Considerations
+
+Goal for users: **Posting something new onto the map
+Platform goal: **Growing a positive and active community focused on the subject chosen for that map 
+
+When users visit the map the should feel: **Connected to a Community
+The platform should be: 
+**positive 
+**action focused
+**welcoming and cheerful
+
+## Vision for the Maps Platform
+
+We are building two maps together to ensure the platform remains focused on the Core Design Considerations, rather than wondering towards one specific issue. This keeps community at the center of our build, and ensures the map can become a useful opensource platform for others later
+
+Upon reaching v1: Our development of the Brighter Tomorrow Map will slow, the platform will be released as opensource for others to use. The Focallocal.org map build will continue and specialise to better integrate with the other areas of the Focallocal.org platform
+
+### Design Constraints 
+
+The Orange mainmenu and its text 'Focallocal' are used in all projects built by the Focallocal Public Happiness community, so members can easily identify the project, and to maintain the positive and cheerful atmosphere in all related projects. 
+
+## Other Areas of Focallocal.org
+
+Focallocal.org is building towards a dentralised community where anyone can join to work on projects and take action to build a friendlier happier and safer world around them. Its a hub for our volunteer community to coordinate, collaborate, and begin to grow. Its also a bit shit right now, i built most of it (Andy), and it is fragmented. 
+
+What it is, is a minimum functional platform which can support a community who will redesign and improve it to meet their needs as they grow, and also a pool of skills, like marketing experts, graphic desingers, etc, to contribute to both maps, and many other Public Happiness projects.
