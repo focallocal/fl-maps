@@ -32,7 +32,17 @@
     {
       "title": "Happy News",
       "icon": "fas fa-sun",
-      "link": "http://news.focallocal.org/"
+      "link": "https://news.focallocal.org/"
+    },
+    {
+      "title": "Action Center",
+      "icon": "fas fa-star",
+      "link": "https://action.focallocal.org"
+    },
+    {
+      "title": "Activities",
+      "icon": "fas fa-walking",
+      "link": "http://activities.focallocal.org/"
     },
     {
       "title": "Shop",
