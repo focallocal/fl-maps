@@ -40,10 +40,6 @@ describe('<Sidebar />', () => {
     expect(wrapper.find(Logo)).toHaveLength(1)
   })
 
-  it('should render a <Nav /> with constant (not from i18n) item "Home"', () => {
-    expect(wrapper.find(Nav).find(LinkItem).at(0).props().item.title).toEqual('Home')
-  })
-
   it('should render a <Nav /> with items from i18n file', () => {
     const wrapper_ = wrapper.find(Nav).find('.items-from-i18n')
 

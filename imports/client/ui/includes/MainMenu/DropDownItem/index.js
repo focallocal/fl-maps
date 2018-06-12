@@ -4,7 +4,6 @@ import { NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'r
 import { NavLink } from 'react-router-dom'
 
 class DropDownItem extends Component {
-
   state = {
     dropdownOpen: false
   }
@@ -35,11 +34,10 @@ class DropDownItem extends Component {
           {/* Menu  */}
           <DropdownMenu>
             {item.content.map((item_, index) => {
-
               // Distingiush between link and route-link
-              return item_.link ?
-                <DropdownItem key={index} tag='a' href={item_.link}>{item_.title}</DropdownItem>
-              : <DropdownItem key={index} tag={NavLink} to={item_.route}>{item_.title}</DropdownItem>
+              return item_.link
+                ? <DropdownItem key={index} tag='a' href={item_.link} target='__blank'>{item_.title}</DropdownItem>
+                : <DropdownItem key={index} tag={NavLink} to={item_.route}>{item_.title}</DropdownItem>
             })}
           </DropdownMenu>
 

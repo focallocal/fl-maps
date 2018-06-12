@@ -9,6 +9,5 @@ describe('<Logo />', () => {
 
     expect(wrapper.props().id).toEqual('brand-logo')
     expect(wrapper.find(NavLink).props().to).toEqual('/')
-    expect(wrapper.find(NavLink).children().text()).toEqual('Focallocal')
   })
 })

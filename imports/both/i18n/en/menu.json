@@ -1,4 +1,5 @@
 {
+  "logo": "BrighterTomorrowMap",
   "addEvent": "Add Resource",
   "userLink": {
     "loggedIn": [
@@ -19,11 +20,6 @@
     ]
   },
   "leftLinks": [
-    {
-      "title": "Home",
-      "icon": "fas fa-home",
-      "route": "/"
-    },
     {
       "title": "Map",
       "icon": "fas fa-map",
