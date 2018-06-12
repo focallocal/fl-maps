@@ -5,3 +5,4 @@ deployment.tar.enc merge=ours
 package.json merge=ours
 imports/both/i18n/* merge=ours
 imports/both/events/helpers/possibleCategories.json merge=ours
+public/images/categories/* merge=ours
