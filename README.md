@@ -178,6 +178,6 @@ The Orange mainmenu and its text 'Focallocal' are used in all projects built by 
 
 ## Other Areas of Focallocal.org
 
-Focallocal.org is building towards a dentralised community where anyone can join to work on projects and take action to build a friendlier happier and safer world around them. Its a hub for our volunteer community to coordinate, collaborate, and begin to grow. Its also a bit shit right now, i built most of it (Andy), and it is fragmented. 
+Focallocal.org is building towards a dentralised community where anyone can join to work on projects and take action to build a friendlier happier and safer world around them. Its a hub for our volunteer community to coordinate, collaborate, and begin to grow. Its also not very good right now (i built most of it (Andy)) and it is fragmented. 
 
-What it is, is a minimum functional platform which can support a community who will redesign and improve it to meet their needs as they grow, and also a pool of skills, like marketing experts, graphic desingers, etc, to contribute to both maps, and many other Public Happiness projects.
+What it is, is a minimum functional platform to support a community who will redesign and improve it to meet their needs as they grow; its also a pool of skills, like marketing experts, graphic desingers, etc, to contribute to both maps, and many other Public Happiness projects built by our community. Anyone joining in one of our projects to createa happier world is a member of the Focallocal Community and you're all also welcome to improve other areas of focallocal.org - it's your platform
