@@ -18,6 +18,7 @@ class Wrapper extends Component {
   componentDidMount () {
     const div = document.createElement('div')
     div.setAttribute('id', 'loader')
+    div.setAttribute('class', this.props.className || '')
     document.body.appendChild(div)
 
     ReactDOM.render(

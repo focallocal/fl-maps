@@ -1,0 +1,164 @@
+$titles-color: #fff;
+
+#page {
+
+  .header {
+    position: relative;
+    height: 300px;
+    background: #f79d00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #00c362, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #00c362, #ff8910); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    .title-wrapper {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      bottom: 15px;
+      color: #fff;
+      font-weight: bolder;
+    }
+
+    .title {
+      font-size: 2.2rem;
+    }
+
+    .sub-title-categories {
+      font-size: 1.4rem;
+    }
+  }
+
+  .body {
+    width: 80%;
+    margin: 24px auto;
+    font-size: 1.2rem;
+    color: #666A73;
+
+    .row {
+      justify-content: space-between;
+    }
+
+    .section-title {
+      margin-bottom: 8px;
+      font-weight: bolder;
+    }
+
+    /* ---------------
+        Right Column
+       --------------- */
+    .right {
+      width: 300px;
+      max-width: 300px;
+
+      .hours-formatted {
+
+        .date {
+          margin-bottom: 8px;
+        }
+
+        .day {
+          display: flex;
+          justify-content: space-between;
+
+          &>div:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .location {
+
+        .view-map {
+          color: #007bff;
+          font-size: .9em;
+          cursor: pointer;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+
+    }
+    /* ------------ End Right Column -------------- */
+  }
+
+  .divider {
+    height: 1px;
+    width: 95%;
+    margin: 24px auto;
+    background: rgba(0, 0, 0, 0.24);
+
+    &.sections {
+      width: 50%;
+    }
+  }
+
+  /* Google Maps IFrame */
+  .embedded-map {
+    display: block;
+    height: 300px;
+    width: 100%;
+    margin: 32px auto;
+  }
+
+  /* Disqus Embedded Comments */
+  #disqus_thread {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  @media screen and (max-width: 860px) {
+
+    & {
+
+      .body {
+        width: 95%;
+
+        /* --------------
+            Right Column
+           -------------- */
+        .right {
+          width: 350px;
+          max-width: 350px;
+          flex: 0 0 39%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+
+    & {
+
+      .body {
+
+        .left, .right {
+          max-width: 90%;
+          flex: 0 0 100%;
+          margin: 24px auto;
+        }
+
+        .hours-formatted {
+          width: 302px;
+        }
+
+        .divider {
+          height: 0 !important;
+        }
+      }
+
+      .embedded-map {
+        height: 200px;
+        margin: 16px auto 0 auto;
+        padding: 0 20px;
+      }
+
+      #disqus_thread {
+        margin: 16px auto;
+        padding: 0 20px;
+      }
+
+    }
+  }
+}

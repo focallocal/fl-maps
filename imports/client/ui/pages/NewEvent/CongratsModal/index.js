@@ -169,7 +169,7 @@ function createEventFacebbok () {
 
 // Url for sharing
 function getUrl (_id) {
-  return Meteor.absoluteUrl('events/' + _id)
+  return Meteor.absoluteUrl('page/' + _id)
 }
 
 // Popup window options
