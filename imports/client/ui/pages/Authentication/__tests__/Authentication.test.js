@@ -3,8 +3,8 @@ import { Meteor } from 'meteor/meteor'
 import { shallow } from 'enzyme'
 import sinon from 'sinon'
 import qs from 'query-string'
-import { Alert } from 'reactstrap'
 import { Authentication } from '../index'
+import RedirectMessage from '../RedirectMessage'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 
 describe('<Authentication />', () => {
@@ -59,16 +59,8 @@ describe('<Authentication />', () => {
     stub.restore()
   })
 
-  it('should render an alert message only if isSSO is true', () => {
-    const wrapper_ = shallowRenderer({
-      location: {
-        pathname: '/sso_auth',
-        search: 'sso=abcdef&sig=ghiklmno'
-      }
-    })
-
-    expect(wrapper.find(Alert)).toHaveLength(0) // notice underscore after "wrapper"
-    expect(wrapper_.find(Alert)).toHaveLength(1)
+  it('should render <RedirectMessage />', () => {
+    expect(wrapper.find(RedirectMessage)).toHaveLength(1)
   })
 
   it('should render <PageLoader /> if loading is true', () => {

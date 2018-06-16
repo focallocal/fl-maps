@@ -7,6 +7,7 @@ import { AccountsReactComponent, AccountsReact } from 'meteor/meteoreact:account
 import { Alert } from 'reactstrap'
 import qs from 'query-string'
 import PageLoader from '/imports/client/ui/components/PageLoader'
+import RedirectMessage from './RedirectMessage'
 import './styles.scss'
 
 class Authentication extends Component {
@@ -14,7 +15,8 @@ class Authentication extends Component {
     super()
 
     this.state = {
-      loading: false
+      loading: false,
+      redirect: false
     }
 
     const {
@@ -31,12 +33,6 @@ class Authentication extends Component {
         isSSO: true,
         loading: !!Meteor.userId()
       }
-    }
-
-    const redirect = sessionStorage.getItem('redirect')
-
-    if (redirect) {
-      this.state.redirect = mapRedirects[redirect]
     }
   }
 
@@ -64,13 +60,12 @@ class Authentication extends Component {
       loading
     } = this.state
 
+    const redirect = mapRedirects[sessionStorage.getItem('redirect')]
+
     return (
       <Fragment>
-        {isSSO &&
-          <Alert color='info' className='discourse-alert'>
-            You'll be redirected back to discourse after you login
-          </Alert>
-        }
+        <RedirectMessage redirect={redirect} isSSO={isSSO} />
+
         {loading ? <PageLoader />
           : <Switch>
             <Route exact path='/sign-in' component={arState} />
@@ -88,8 +83,7 @@ class Authentication extends Component {
 
   arState = ({ match, history, location }) => {
     const {
-      isSSO,
-      redirect
+      isSSO
     } = this.state
     const { path, params } = match
     const isLoggedIn = !!this.props.user
@@ -103,10 +97,13 @@ class Authentication extends Component {
       // Logged in users can enter only the change-password route
       // If isSSO is true, user has logged in and is now waiting to be redirected back to the forum
       // check if a redirection route have been set
+      const redirect = mapRedirects[sessionStorage.getItem('redirect')]
+
+      if (redirect) {
+        sessionStorage.removeItem('redirect')
+      }
 
       let to = redirect || '/'
-      sessionStorage.removeItem('redirect')
-
       return isSSO ? <PageLoader /> : <Redirect to={to} />
     }
 
@@ -140,6 +137,8 @@ function validateDiscourseSSO () {
     Meteor.call('General.validateSSO', JSON.parse(sso_data), (err, res) => {
       if (!err) {
         window.location = 'https://discuss.focallocal.org/session/sso_login?' + res
+      } else {
+        alert('error occured')
       }
 
       if (Meteor.isDevelopment) {
@@ -153,7 +152,8 @@ function validateDiscourseSSO () {
 const mapTitles = {
   '/sign-in': 'Sign in',
   '/sign-up': 'Sign up',
-  '/forgot-password': 'Forgot password'
+  '/forgot-password': 'Forgot password',
+  '/change-password': 'Change password'
 }
 
 const mapRedirects = {
