@@ -5,6 +5,18 @@ export default function getUserPosition (context) {
     Several methods to get the user's location
   */
 
+  /*
+    Indicate an error if location was not retrieved after 7 seconds
+  */
+
+  setTimeout(() => {
+    if (!context.state.userLocation) {
+      context.setState({
+        userLocationError: true
+      })
+    }
+  }, 7000)
+
   // Get from a different component that has redirected to the map
   if (window.__savedUserLocation) {
     updateState(context, window.__savedUserLocation)
@@ -14,9 +26,7 @@ export default function getUserPosition (context) {
   // Get from cache
   const savedLocation = sessionStorage.getItem('userLocation')
   if (savedLocation) {
-    updateState(context, JSON.parse(savedLocation, (k, v) => {
-      return typeof v === 'number' ? parseFloat(v) : v // ensure values are float numbers
-    }))
+    updateState(context, JSON.parse(savedLocation, castToFloat))
   }
 
   // Get location from geolcation api
@@ -53,13 +63,20 @@ export default function getUserPosition (context) {
   }
 }
 
-const updateState = (context, latLng) => context.setState({
-  center: latLng,
-  userLocation: latLng,
-  zoom: 12
-})
+const updateState = (context, latLng) => {
+  if (!context.state.userLocationError) {
+    context.setState({
+      center: latLng,
+      userLocation: latLng,
+      userLocationError: false,
+      zoom: 12
+    })
+  }
+}
 
-export function storeUserLocation (location) {
-  sessionStorage.setItem('userLocation', JSON.stringify(location))
+export function storeUserLocation (location, isUserLocation = true) {
+  if (isUserLocation) { sessionStorage.setItem('userLocation', JSON.stringify(location)) }
   window.__savedUserLocation = location
 }
+
+const castToFloat = (k, v) => typeof v === 'number' ? parseFloat(v) : v

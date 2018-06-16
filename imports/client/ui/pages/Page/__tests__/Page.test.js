@@ -2,26 +2,32 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import sinon from 'sinon'
 import { Meteor } from 'meteor/meteor'
-import { Col, Button } from 'reactstrap'
+import { Col } from 'reactstrap'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as DOMInteractions from '/imports/client/utils/DOMInteractions'
-import { Page } from '../index'
+import * as PageComponent from '../index'
+import AttendingButton from '../AttendingButton'
 
+const { Page } = PageComponent
 describe('Page', () => {
+  const fakeData = {
+    address: {
+      name: 'Location Test'
+    },
+    categories: [{ name: 'Category #1' }],
+    organiser: {
+      _id: ''
+    },
+    _id: '#testId'
+  }
+
   let wrapper
 
   beforeEach(() => {
-    window.cachedDataForPage = {
-      address: {
-        name: 'Location Test'
-      },
-      categories: [{ name: 'Category #1' }],
-      ograniser: {
-        _id: ''
-      }
-    }
+    window.cachedDataForPage = { ...fakeData }
 
     wrapper = shallowRenderer()
+    wrapper.setState({ loaded: true })
   })
 
   const shallowRenderer = (props) =>
@@ -65,8 +71,7 @@ describe('Page', () => {
 
     expect(rightCol.find(HoursFormatted)).toHaveLength(1)
     expect(rightCol.find('.location')).toHaveLength(1)
-    expect(rightCol.find(Button)).toHaveLength(1)
-    expect(rightCol.find(Button).children().text()).toEqual('Attend')
+    expect(rightCol.find(AttendingButton)).toHaveLength(1)
   })
 
   test('clicking on "view map" should call scroll to map function', () => {
@@ -77,10 +82,9 @@ describe('Page', () => {
     stub.restore()
   })
 
-  test('container should a diqus wrapper and googlemaps iframe', () => {
+  test('container should display a googlemaps iframe', () => {
     const body = wrapper.find('.body')
 
-    expect(body.find('#disqus_thread')).toHaveLength(1)
     expect(body.find('iframe.embedded-map')).toHaveLength(1)
   })
 
@@ -93,5 +97,28 @@ describe('Page', () => {
     wrapper_.instance().componentDidMount()
     expect(spy.calledOnce).toBe(true)
     expect(spy2).toHaveBeenCalledWith('Events.getEvent', { id: wrapper_.state().id }, expect.any(Function))
+  })
+
+  test('if window.__updatedData is set, the cached state from the map should be updated with updated data', () => {
+    window.__updatedData = { ...fakeData, _id: '#1', name: 'new data name' }
+    window.previousStateOfMap = { events: [{ _id: '#1', name: 'data name' }] }
+    const spy = sinon.spy(window, '__setDocumentTitle')
+
+    shallowRenderer()
+
+    expect(window.previousStateOfMap.events[0].name).toEqual('new data name')
+    expect(spy.calledTwice).toEqual(true)
+    spy.restore()
+  })
+
+  test('componentDidMount', () => {
+    window.cachedDataForPage = null
+    const wrapper_ = shallowRenderer()
+    const spy = sinon.spy(wrapper_.instance(), 'getEventData')
+
+    wrapper_.instance().componentDidMount()
+
+    expect(spy.calledOnce).toEqual(true)
+    spy.restore()
   })
 })

@@ -15,6 +15,15 @@ body, h1, h2, h3, h4, h5, p, span {
   color: $black-lighter;
 }
 
+#root {
+  opacity: 0;
+  transition: opacity .3s ease-in;
+
+  &.show {
+    opacity: 1 !important;
+  }
+}
+
 // Button
 
 .btn {
@@ -30,7 +39,7 @@ body, h1, h2, h3, h4, h5, p, span {
     background-color: $green;
     border: #00a955;
 
-    &:active, &:hover {
+    &:active, &:hover, &.active {
       background-color: $green-darker !important;
     }
   }

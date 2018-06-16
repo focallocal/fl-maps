@@ -72,9 +72,12 @@ class EventInfo extends Component {
 
     return (
       <div id='event-info' className={classes}>
-        <div className='back-btn'>
-          <i className='fas fa-long-arrow-alt-left' onClick={this.props.returnToList}/>
-        </div>
+        <header>
+          <div className='back-btn'>
+            <i className='fas fa-long-arrow-alt-left' onClick={this.props.returnToList}/>
+          </div>
+          <Button color='secondary' onClick={this.openMoreInfo}>More</Button>
+        </header>
 
         <div className='first-section'>
           <div className='title'>{event.name}</div>
@@ -107,11 +110,21 @@ class EventInfo extends Component {
 
     this.props.onDirections({ lng: coordinates[0], lat: coordinates[1] })
   }
+
+  openMoreInfo = () => {
+    const {
+      event,
+      openMoreInfo
+    } = this.props
+
+    openMoreInfo(event)
+  }
 }
 
 EventInfo.propTypes = {
   event: PropTypes.object,
   onDirections: PropTypes.func.isRequired,
+  openMoreInfo: PropTypes.func.isRequired,
   userLocation: PropTypes.object,
   returnToList: PropTypes.func.isRequired
 }

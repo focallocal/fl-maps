@@ -64,6 +64,7 @@ class EventsList extends Component {
 
         <EventInfo
           event={events.find(event => event._id === currentEvent)}
+          openMoreInfo={this.props.openMoreInfo}
           onDirections={this.props.onDirections}
           userLocation={userLocation}
           returnToList={this.returnToList}
@@ -107,6 +108,7 @@ EventsList.propTypes = {
   isFetching: PropTypes.bool,
   onDirections: PropTypes.func.isRequired,
   onItemClick: PropTypes.func.isRequired,
+  openMoreInfo: PropTypes.func.isRequired,
   userLocation: PropTypes.object,
   removeCurrentEvent: PropTypes.func.isRequired
 }

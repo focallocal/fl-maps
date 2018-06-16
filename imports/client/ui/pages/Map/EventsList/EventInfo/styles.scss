@@ -23,14 +23,25 @@
     padding: 20px;
   }
 
-  .back-btn {
+  header {
+    display: flex;
+    justify-content: space-between;
     padding: 14px 20px 0 20px;
-    font-size: 1.3em;
 
-    i {
-      cursor: pointer;
+    .back-btn {
+      line-height: 1.5;
+      font-size: 1.3em;
+
+      i {
+        cursor: pointer;
+      }
+    }
+
+    .btn {
+
     }
   }
+
 
   .first-section {
     padding-top: 0;

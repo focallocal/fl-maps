@@ -39,7 +39,7 @@ const getEvents = new ValidatedMethod({
       }
     }, {
       skip,
-      limit: 15
+      limit: 30
     })
 
     return events.fetch()
@@ -49,7 +49,7 @@ const getEvents = new ValidatedMethod({
 DDPRateLimiter.addRule({
   name,
   type: 'method'
-}, 5, 1000, ({ allowed }, { userId, clientAddress }) => { // 5 requests every 1 second
+}, 5, 2000, ({ allowed }, { userId, clientAddress }) => { // 5 requests every 2 seconds
   if (!allowed) {
     logRateLimit(name, userId, clientAddress)
   }

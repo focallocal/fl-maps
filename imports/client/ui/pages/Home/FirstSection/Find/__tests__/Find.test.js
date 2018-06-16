@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import Find from '../Find'
+import Find from '../index.js'
 
 describe('<Find />', () => {
   const shallowRenderer = () =>

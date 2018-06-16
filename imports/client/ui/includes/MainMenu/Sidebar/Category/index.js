@@ -3,7 +3,7 @@ import { Nav } from 'reactstrap'
 import LinkItem from '../../LinkItem'
 import './styles.scss'
 
-const Category = ({ item }) => {
+const Category = ({ item, onClick }) => {
   const {
     title,
     content
@@ -15,7 +15,7 @@ const Category = ({ item }) => {
       <Nav vertical>
         <div className='title'>{title}</div>
         {content.map((link, index) => (
-          <LinkItem key={index} item={link} />
+          <LinkItem key={index} item={link} onClick={onClick} />
         ))}
       </Nav>
     </li>

@@ -1,14 +1,6 @@
 
 #brand-logo {
-  position: relative;
-  top: 6px;
-  font-size: 2.1em;
-  line-height: 1.4;
-  margin-right: .5rem;
-
-  a {
-    font-family: 'Spicy Rice', cursive;
-    color: #fff;
-    text-decoration: none;
-  }
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
 }

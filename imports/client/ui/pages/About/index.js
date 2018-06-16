@@ -4,6 +4,10 @@ import SecondSection from './SecondSection'
 import './styles.scss'
 
 class About extends Component {
+  componentDidMount () {
+    window.__setDocumentTitle('About')
+  }
+
   render () {
     return (
       <div id='about'>

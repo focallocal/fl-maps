@@ -183,13 +183,17 @@ const EventsSchema = new SimpleSchema({
         return undefined
       }
 
-      if (!this.value || !this.value[0]) {
+      if (!this.value || this.value.length === 0) {
         return 'required'
       }
     },
     autoValue: function () {
       if (!this.field('when.multipleDays').value) {
         return null
+      }
+
+      if (this.value) {
+        return this.value.filter(d => !!d) // remove empty slots
       }
     }
   },
@@ -352,8 +356,16 @@ const EventsSchema = new SimpleSchema({
     defaultValue: []
   },
   'engagement.attendees.$': {
-    type: String,
+    type: Object,
     optional: true
+  },
+  'engagement.attendees.$.id': {
+    type: String,
+    max: 36
+  },
+  'engagement.attendees.$.name': {
+    type: String,
+    max: 120
   },
   'createdAt': {
     type: Date,

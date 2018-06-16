@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor'
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import Events from '/imports/both/collections/events'
@@ -9,13 +10,16 @@ const getEvents = new ValidatedMethod({
   name,
   mixins: [],
   validate: new SimpleSchema({
-    id: String
+    id: {
+      type: String,
+      max: 36
+    }
   }).validator(),
   run ({ id }) { // distance in meters, 100km
     const event = Events.find({
       _id: id
     }).fetch()[0]
-    
+
     if (!event) {
       throw new Meteor.Error('could not find anything...')
     }

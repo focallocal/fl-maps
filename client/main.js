@@ -11,9 +11,10 @@ Meteor.startup(() => {
   ensureSettingsFile()
   determineMapType()
   loadGoogleMaps()
-  loadFacebook()
 
   AccountsReact.style(AccountsReactstrap)
+
+  Meteor.subscribe('users.user') // subscribe to updated publication with custom fields
 
   ReactDOM.render(
     <App />,
@@ -51,21 +52,7 @@ function loadGoogleMaps () {
   }, 1500)
 }
 
-function loadFacebook () {
-  if (!window.FB) {
-    let ele = document.createElement('script')
-    ele.setAttribute('id', 'facebook-jssdk')
-    ele.src = '//connect.facebook.net/en_US/sdk.js'
-    ele.async = true
-    document.body.appendChild(ele)
-
-    window.fbAsyncInit = function () {
-      const { appId } = Meteor.settings.public.facebook
-      window.FB.init({
-        appId: appId,
-        xfbml: true,
-        version: 'v2.9'
-      })
-    }
-  }
+window.__setDocumentTitle = function (page) {
+  const mapTypeTitle = window.__mapType === 'gatherings' ? 'Focallocal' : 'BrighterTomorrowMap'
+  document.title = page + ' - ' + mapTypeTitle
 }

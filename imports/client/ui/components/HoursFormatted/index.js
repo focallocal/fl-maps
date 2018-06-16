@@ -22,7 +22,7 @@ const HoursFormatted = ({ data }) => {
         )}
 
         {data.days.map((day, index) => (
-          day &&
+          (day && day.day) &&
           <div key={index} className='day'>
             <div>{day.day.substr(0, 3)}</div>
             <span>{day.startingTime} - {day.endingTime}</span>

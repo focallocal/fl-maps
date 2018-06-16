@@ -29,6 +29,7 @@ class Find extends Component {
     } = this.state
 
     if (userLocation) {
+      window.previousStateOfMap = undefined
       return <Redirect to='/map' />
     }
 
@@ -44,7 +45,6 @@ class Find extends Component {
             placeholder='Enter city, state or zipcode'
             onChange={this.handleSearch}
             onFocus={this.removeError}
-            autoFocus
           />
           <InputGroupAddon addonType='append'>
             <Button onClick={this.findBySearch} disabled={isGettingLocation}>
@@ -62,20 +62,18 @@ class Find extends Component {
       </FormGroup>
     )
   }
-  handleSearch = ({ target }) => {
-    this.setState({ search: target.value })
-  }
-  removeError = () => this.setState({ error: false })
+
   findBySearch = () => {
     const { search } = this.state
     if (search.trim().length > 0) {
-      NProgress.set(0.4)
-      this.setState({ isGettingLocation: true })
+      NProgress.set(0.4) // set progressbar
+
+      this.setState({ isGettingLocation: true }) // activates loading indicator
       geocodeByAddress(search)
         .then(results => getLatLng(results[0]))
         .then(({ lat, lng }) => {
           NProgress.done()
-          storeUserLocation({ lat, lng })
+          storeUserLocation({ lat, lng }, false)
           this.setState({ userLocation: true })
         })
         .catch(() => {
@@ -87,9 +85,16 @@ class Find extends Component {
       this.setState({ error: true })
     }
   }
+
   findByCurrentLocation = () => {
     getUserPosition(this) // will update state with latLng/error object
   }
+
+  handleSearch = ({ target }) => {
+    this.setState({ search: target.value })
+  }
+
+  removeError = () => this.setState({ error: false })
 }
 
 export default Find

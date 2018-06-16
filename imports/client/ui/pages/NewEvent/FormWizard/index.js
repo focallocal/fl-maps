@@ -13,10 +13,16 @@ class FormWizard extends Component {
 
   render () {
     const {
-      currentStep
+      currentStep,
+      editMode
     } = this.props
 
     let model = this.form ? this.form.getModel() : this.loadModelFromStorage()
+
+    if (editMode && window.__editData) {
+      model = {...window.__editData}
+      delete window.__editData // only needed on 1st renderer, afterwards the data will be retrieved via getModel
+    }
 
     if (this.state.reset) {
       model = this.loadModelFromStorage(true)

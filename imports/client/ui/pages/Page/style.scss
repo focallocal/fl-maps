@@ -1,29 +1,38 @@
+@import '/imports/client/stylesheets/variables.scss';
 $titles-color: #fff;
 
 #page {
 
   .header {
     position: relative;
-    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 25vw;
+    min-height: 250px;
+    padding: 15px;
     background: #f79d00;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #00c362, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #00c362, #ff8910); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to top, #00c362, rgba(0, 0, 0, 0.35)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     .title-wrapper {
-      position: absolute;
-      left: 10%;
-      right: 10%;
-      bottom: 15px;
+      width: 80%;
       color: #fff;
       font-weight: bolder;
+      word-wrap: break-word;
+      overflow: auto;
     }
 
     .title {
+      max-height: 156px;
       font-size: 2.2rem;
+      overflow: auto;
     }
 
     .sub-title-categories {
+      max-height: 80px;
       font-size: 1.4rem;
+      overflow: auto;
     }
   }
 
@@ -34,6 +43,7 @@ $titles-color: #fff;
     color: #666A73;
 
     .row {
+      min-width: 100%;
       justify-content: space-between;
     }
 
@@ -94,6 +104,21 @@ $titles-color: #fff;
     }
   }
 
+  .fixed-bg {
+    background: $green !important;
+
+    &.active {
+      background: $green-darker !important
+    }
+  }
+
+  .err-msg {
+    margin-top: -5px;
+    font-size: .6em;
+    font-weight: bold;
+    text-align: center;
+  }
+
   /* Google Maps IFrame */
   .embedded-map {
     display: block;
@@ -104,13 +129,20 @@ $titles-color: #fff;
 
   /* Disqus Embedded Comments */
   #disqus_thread {
-    width: 100%;
+    overflow: auto;
+    max-height: 600px;
+    width: 97%;
     margin-top: 16px;
+    padding: 1.5%;
   }
 
   @media screen and (max-width: 860px) {
 
     & {
+
+      .header .title-wrapper {
+        width: 95%;
+      }
 
       .body {
         width: 95%;
@@ -131,12 +163,20 @@ $titles-color: #fff;
 
     & {
 
+      .title-wrapper {
+
+        .sub-title-categories {
+          font-size: 1.2em;
+        }
+      }
+
       .body {
 
+
         .left, .right {
-          max-width: 90%;
+          max-width: 95%;
           flex: 0 0 100%;
-          margin: 24px auto;
+          margin-bottom: 24px;
         }
 
         .hours-formatted {
@@ -158,7 +198,16 @@ $titles-color: #fff;
         margin: 16px auto;
         padding: 0 20px;
       }
+    }
+  }
 
+  @media screen and (max-width: 520px) {
+
+    & {
+
+      .body {
+        width: 90%;
+      }
     }
   }
 }

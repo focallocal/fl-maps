@@ -28,6 +28,10 @@ class CongratsModal extends Component {
     }
   }
 
+  componentDidMount () {
+    loadFacebook()
+  }
+
   componentDidCatch (error, info) {
     if (Meteor.isDevelopment) {
       console.log(error, info)
@@ -179,6 +183,25 @@ function _getWindowOptions (height = 300, width = 300) {
   var y = win.top.outerHeight / 2 + win.top.screenY - (height / 2)
 
   return `width=${width}, height=${height}, top=${y}, left=${x}`
+}
+
+function loadFacebook () {
+  if (!window.FB) {
+    let ele = document.createElement('script')
+    ele.setAttribute('id', 'facebook-jssdk')
+    ele.src = '//connect.facebook.net/en_US/sdk.js'
+    ele.async = true
+    document.body.appendChild(ele)
+
+    window.fbAsyncInit = function () {
+      const { appId } = Meteor.settings.public.facebook
+      window.FB.init({
+        appId: appId,
+        xfbml: true,
+        version: 'v2.9'
+      })
+    }
+  }
 }
 
 export default CongratsModal
