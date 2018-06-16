@@ -3,6 +3,7 @@ import { shallow } from 'enzyme'
 import sinon from 'sinon'
 import { GoogleMap } from 'react-google-maps'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
+import * as DOMInteractions from '/imports/client/utils/DOMInteractions'
 import MarkerWrapper from '../MarkerWrapper'
 import { MapComponent_ } from '../index'
 import EventsList from '../EventsList'
@@ -10,13 +11,14 @@ import FiltersList from '../EventsFilter'
 import mapOptions from '../mapOptions'
 
 describe('<MapWrapper_ />', () => {
-  afterEach(() => {
-    document.querySelector('body').classList.remove('overflow')
-  })
-
-  const shallowRenderer = () =>
+  const shallowRenderer = (props) =>
     shallow(
-      <MapComponent_ />
+      <MapComponent_
+        history={{
+          push: jest.fn()
+        }}
+        {...props}
+      />
     )
   const wrapper = shallowRenderer()
 
@@ -39,29 +41,33 @@ describe('<MapWrapper_ />', () => {
   })
 
   test('componentDidMount', () => {
+    const spy = sinon.spy(DOMInteractions, 'toggleBodyOverflow')
     const wrapper_ = shallowRenderer()
-    const spy = sinon.spy(wrapper_.instance(), 'callGetEvents')
-
-    expect(document.querySelector('body').classList.contains('overflow')).toEqual(true)
 
     wrapper_.instance().componentDidMount()
 
-    expect(wrapper_.instance()._isMounted).toEqual(true)
-    expect(spy.calledOnce).toBe(true)
+    expect(spy.calledOnce)
+    spy.restore()
   })
 
   test('componentWillUnmount', () => {
+    const spy = sinon.spy(DOMInteractions, 'toggleBodyOverflow')
     const wrapper_ = shallowRenderer()
-    const spy = sinon.spy(window, 'clearInterval')
-    const instance = wrapper_.instance()
-    instance.interval = 'test_interval'
 
     wrapper_.unmount()
 
-    expect(instance._isMounted).toEqual(false)
-    expect(document.querySelector('body').classList.contains('overflow')).toEqual(false)
-    expect(instance.interval).toEqual(null)
-    expect(spy.calledWith('test_interval')).toBe(true)
+    expect(spy.calledOnce)
+    spy.restore()
+  })
+
+  test('componentDidUpdate', () => {
+    const wrapper_ = shallowRenderer()
+    const spy = sinon.spy(wrapper_.instance(), 'getEvents')
+
+    wrapper_.setState({ userLocation: {}, userLocationError: true })
+
+    expect(wrapper_.instance().state.isFetching).toEqual(false)
+    expect(spy.calledOnce).toBe(true)
   })
 
   test('<GoogleMap />', () => {
@@ -145,13 +151,27 @@ describe('<MapWrapper_ />', () => {
   test('methods', () => {
     const methods = [
       'onMarkerClick', 'toggleFiltersList', 'setFilteredEvents', 'onMarkerClustererClick',
-      'removeCurrentEvent', 'setDirections', 'setError', 'handlePlaces',
-      'onZoomChanged', 'callGetEvents', 'getEvents'
+      'removeCurrentEvent', 'setDirections', 'openMoreInfo', 'setError', 'handlePlaces',
+      'onZoomChanged', 'getEvents'
     ]
     const instance = wrapper.instance()
 
     methods.forEach(method => {
       expect(typeof instance[method]).toEqual('function')
     })
+  })
+
+  test('openMoreInfo should store current event + snapshot of the state and move to /page/:id', () => {
+    const spy = sinon.spy()
+    const event = {
+      _id: '#eventId'
+    }
+    const instance = shallowRenderer({ history: { push: spy } }).instance()
+
+    instance.openMoreInfo(event)
+
+    expect(window.cachedDataForPage).toEqual(event)
+    expect(window.previousStateOfMap).toEqual(instance.state)
+    expect(spy.args[0][0]).toEqual('/page/' + event._id)
   })
 })

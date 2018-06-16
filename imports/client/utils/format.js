@@ -137,3 +137,15 @@ function getDaysNames (days) {
     return str += day + (notLastItem ? '/' : '')
   }, '')
 }
+
+export function parseStringifiedJSON (json) {
+  return JSON.parse(localStorage.getItem('data'), (k, v) => {
+    const date = Date.parse(v)
+
+    if (isNaN(v) && !isNaN(date)) {
+      return new Date(v)
+    }
+
+    return v
+  })
+}

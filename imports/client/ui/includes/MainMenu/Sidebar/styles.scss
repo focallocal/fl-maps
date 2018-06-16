@@ -20,20 +20,22 @@ $_nav-item-color: rgba(0, 0, 0, 0.7);
   }
 
   header {
-
-    #brand-logo a {
-      position: relative;
-      top: -4px;
-      color: $orange;
-    }
+    display: flex;
+    align-items: center;
 
     .fa-bars {
       width: 26px;
+      margin-left: 2px;
       margin-right: 32px;
       font-size: 1.2em;
       text-align: center;
       cursor: pointer;
     }
+
+    #brand-logo {
+      margin: 0;
+    }
+
   }
 
   .nav {

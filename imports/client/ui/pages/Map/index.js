@@ -4,14 +4,14 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } fr
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import { Alert, Input } from 'reactstrap'
+import getUserPosition from '/imports/client/utils/location/getUserPosition'
+import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
 import mapOptions from './mapOptions'
 import EventsList from './EventsList'
 import FiltersList from './EventsFilter'
 import SearchButtons from './SearchButtons'
 import MarkerWrapper from './MarkerWrapper'
 import { ensureUniquePosition } from './utils'
-import getUserPosition from '/imports/client/utils/location/getUserPosition'
-import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
 import './styles.scss'
 import './mobile-styles.scss'
 
@@ -36,16 +36,33 @@ class MapComponent_ extends Component {
   memoizeLocations = {} // cache locations
 
   componentDidMount () {
+    getUserPosition(this)
+
+    if (window.previousStateOfMap) {
+      this.setState({ ...window.previousStateOfMap })
+    }
+
+    window.__setDocumentTitle('Map')
     toggleBodyOverflow()
-    this.callGetEvents()
-    this._isMounted = true
   }
 
   componentWillUnmount () {
-    clearInterval(this.interval)
-    this.interval = null
-    this._isMounted = false
     toggleBodyOverflow()
+  }
+
+  componentDidUpdate (nextProps, prevState) {
+    const {
+      userLocation,
+      userLocationError
+    } = this.state
+
+    if (!prevState.userLocation && userLocation) {
+      this.getEvents()
+    }
+
+    if (!prevState.userLocationError && userLocationError) {
+      this.setState({ isFetching: false })
+    }
   }
 
   render () {
@@ -103,6 +120,7 @@ class MapComponent_ extends Component {
           events={events_}
           isFetching={isFetching}
           onItemClick={this.onMarkerClick}
+          openMoreInfo={this.openMoreInfo}
           userLocation={userLocation}
           removeCurrentEvent={this.removeCurrentEvent}
           onDirections={this.setDirections}
@@ -188,7 +206,7 @@ class MapComponent_ extends Component {
 
   setError = (msg) => {
     const randomId = String(Math.random() * 100000)
-    this.setState({ error: { id: randomId, msg: 'Could not find directions...' } })
+    this.setState({ error: { id: randomId, msg } })
 
     // Automatically remove the error
     setTimeout(() => {
@@ -238,36 +256,29 @@ class MapComponent_ extends Component {
     this.setState({ zoom: this.map.getZoom() })
   }
 
-  callGetEvents = () => {
-    getUserPosition(this) // will update state with the user's location
+  openMoreInfo = (event) => {
+    window.cachedDataForPage = event // store data in cache to prevent another call to the server.
+    window.previousStateOfMap = this.state // store state so users can easly return to his previous position
 
-    let startingTime = Date.now()
-    this.interval = setInterval(() => {
-      if (this.interval && this.state.userLocation) {
-        clearInterval(this.interval)
-        this.interval = null
+    // Reset
+    window.previousStateOfMap.showFilters = false
+    window.previousStateOfMap.filteredEvents = null
 
-        this.getEvents() // Fetch events from server
-        return
-      }
-
-      if (Date.now() - startingTime > 7000) { // after 7 seconds remove the interval
-        this.setState({ isFetching: false })
-        clearInterval(this.interval)
-      }
-    }, 1000) // run 7 times 7000 / 1000
+    this.props.history.push('/page/' + event._id)
   }
 
-  getEvents = (location, skip = 0, limit = 20) => {
+  getEvents = (location, skip = 0, limit = 30) => {
     const {
       userLocation
     } = this.state
 
-    if (location || userLocation) {
+    const location_ = location || userLocation
+
+    if (location_) {
       const data = {
         skip,
         limit,
-        location: location || userLocation
+        location: location_
       }
 
       this.setState({ isFetching: true })
@@ -298,6 +309,7 @@ class Map_ extends Component {
         loadingElement={<div style={{ height: '100%' }} />}
         containerElement={<div id='map-container' />}
         mapElement={<div id='map' />}
+        history={this.props.history}
       />
     )
   }

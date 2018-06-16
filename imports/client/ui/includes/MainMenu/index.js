@@ -26,13 +26,13 @@ class MainMenu extends Component {
         <Navbar id='main-menu' expand='md'>
 
           {/* Left Links */}
-          <Nav id='left-links'>
-            <NavItem id='sidebar-toggle' onClick={this.toggleSidebar}>
-              <i className='fas fa-bars' />
-            </NavItem>
+          <NavItem id='sidebar-toggle' onClick={this.toggleSidebar}>
+            <i className='fas fa-bars' />
+          </NavItem>
 
-            <Logo />
-
+          <Logo />
+          {/* Right Links  */}
+          <Nav id='menu-items'>
             {MainMenu.leftLinks.map((link, index) => {
               const isDropDown = !!link.content
 
@@ -41,8 +41,6 @@ class MainMenu extends Component {
                 : <LinkItem key={index} item={link} />
             })}
           </Nav>
-
-          {/* Right Links  */}
           <Nav id='right-links'>
             <NavItem id='add-event'>
               <RouterNavLink to='?new=1'>

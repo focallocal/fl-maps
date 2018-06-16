@@ -21,6 +21,11 @@
   },
   "leftLinks": [
     {
+      "title": "Home",
+      "icon": "fas fa-home",
+      "route": "/"
+    },
+    {
       "title": "Map",
       "icon": "fas fa-map",
       "route": "/map"

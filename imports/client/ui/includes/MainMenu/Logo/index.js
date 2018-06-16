@@ -1,13 +1,30 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { NavbarBrand } from 'reactstrap'
-import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
-const Logo = () => (
-  <NavbarBrand id='brand-logo' tag='div'>
-    <NavLink to='/' exact>{i18n.MainMenu.logo}</NavLink>
-  </NavbarBrand>
-)
+const Logo = ({ sidebar, onClick }) => {
+  let imgUrl
+
+  if (window.__mapType === 'gatherings') {
+    imgUrl = sidebar ? 'focallocal_logo_invert.png' : 'focallocal_logo.png'
+  } else {
+    imgUrl = sidebar ? 'btm_logo_invert.png' : 'btm_logo.png'
+  }
+
+  return (
+    <NavbarBrand id='brand-logo' tag='div' onClick={onClick}>
+      <NavLink to='/' exact>
+        <img src={'/images/' + imgUrl} />
+      </NavLink>
+    </NavbarBrand>
+  )
+}
+
+Logo.propTypes = {
+  sidebar: PropTypes.bool,
+  onClick: PropTypes.func
+}
 
 export default Logo

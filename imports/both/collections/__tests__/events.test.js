@@ -94,6 +94,19 @@ describe('Events', () => {
     expect(errors).toHaveLength(3)
   })
 
+  test('validating with "multipleDays=true" and days=[undefined, { ...day }]', () => {
+    const errors = validateTheWhenObject({
+      multipleDays: true,
+      days: [undefined, {
+        day: 'Sunday',
+        startingTime: '15:00',
+        endingTime: '16:00'
+      }, undefined]
+    })
+
+    expect(errors).toHaveLength(0)
+  })
+
   test('cleaning with "multipleDays=true" should enforce ending/starting time to be null', () => {
     const obj = EventsSchema.clean({
       when: {
@@ -311,6 +324,8 @@ describe('Events', () => {
         'engagement.limit',
         'engagement.attendees',
         'engagement.attendees.$',
+        'engagement.attendees.$.id',
+        'engagement.attendees.$.name',
         'createdAt'
       ]
     )

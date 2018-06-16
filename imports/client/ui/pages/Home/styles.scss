@@ -1,5 +1,10 @@
 
+
 main {
+
+  &.home {
+    background: #eee;
+  }
 
   section {
     margin: 40px 0;
@@ -12,26 +17,39 @@ main {
   .title {
     margin-bottom: 26px;
     font-size: 2.2em;
-    font-weight: 500;
+    font-weight: bold;
   }
+}
 
-  @media screen and (max-width: 480px) {
+#hero-bg {
+  height: 28vw;
+  min-height: 250px;
+  max-height: 365px;
+  width: 100%;
+  background-color: #ffffff;
+  background-image: url('/images/hero-bg.jpeg');
+  background-position: center;
+  background-size: cover;
+  transition: height .8s ease-in;
+}
 
-    & {
+@media screen and (max-width: 900px) {
 
-      .title {
-        font-size: 1.8em;
-      }
-    }
+  #hero-bg {
+    height: 30vw;
   }
+}
 
-  @media screen and (max-width: 400px) {
+@media screen and (max-width: 720px) {
 
-    & {
+  section {
+    padding: 8px !important;
+  }
+}
 
-      .title {
-        font-size: 1.6em;
-      }
-    }
+@media screen and (max-width: 460px) {
+
+  #hero-bg {
+    display: none;
   }
 }

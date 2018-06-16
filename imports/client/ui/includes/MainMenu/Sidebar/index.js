@@ -42,7 +42,7 @@ class Sidebar extends Component {
         <Swipeable id='sidebar' className={className} onSwipedLeft={toggle}>
           <header>
             <i className='fas fa-bars' onClick={toggle}></i>
-            <Logo />
+            <Logo sidebar onClick={toggle} />
           </header>
 
           <Nav vertical>
@@ -51,7 +51,7 @@ class Sidebar extends Component {
                 const isDropDown = !!link.content
 
                 return isDropDown
-                  ? <Category key={index} item={link} />
+                  ? <Category key={index} item={link} onClick={toggle} />
                   : <LinkItem key={index} item={link} onClick={toggle} />
               })}
             </div>

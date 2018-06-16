@@ -15,10 +15,18 @@ import Authentication from './pages/Authentication'
 import Map_ from './pages/Map'
 import NewEventLoadable from './pages/NewEvent/loadable'
 import CongratsModal from './pages/NewEvent/CongratsModal'
+import Page from './pages/Page'
 
+// Components
 import ScrollToTop from './components/ScrollToTop'
 
 class App extends Component {
+  componentDidMount () {
+    setTimeout(() => {
+      document.querySelector('#root').classList.toggle('show')
+    }, 100) // add a fading effect on the inital loading
+  }
+
   render () {
     return (
       <Router history={history}>
@@ -31,6 +39,7 @@ class App extends Component {
             <Route path='/map' component={Map_} />
             <Route path='*' render={this.renderNewEvent} />
             <Route exact path='/thank-you' component={CongratsModal} />
+            <Route exact path='/page/:id' component={Page} />
             <Authentication />
           </ScrollToTop>
         </Fragment>
@@ -38,15 +47,16 @@ class App extends Component {
     )
   }
 
-  renderNewEvent = ({ location }) => {
-    const isOpen = qs.parse(location.search).new === '1'
+  renderNewEvent = ({ location, history }) => {
+    const { new: new_, edit } = qs.parse(location.search)
+    const isOpen = new_ === '1' || (edit === '1' && window.__editData)
 
     if (isOpen && !Meteor.userId()) {
       sessionStorage.setItem('redirect', '/?new=1')
       return <Redirect to='/sign-in' />
     }
 
-    return <NewEventLoadable isOpen={isOpen} location={location} />
+    return <NewEventLoadable isOpen={isOpen} location={location} history={history} />
   }
 }
 

@@ -22,6 +22,8 @@ let eventItem = {
   when: {}
 }
 
+const fakeFunction = () => {}
+
 describe('<EventsList />', () => {
   let ele
 
@@ -41,11 +43,12 @@ describe('<EventsList />', () => {
       <EventsList
         events={[]}
         userLocation={{}}
-        onDirections={() => {}}
-        onFilter={() => {}}
-        onItemClick={() => {}}
+        onDirections={fakeFunction}
+        onFilter={fakeFunction}
+        onItemClick={fakeFunction}
+        openMoreInfo={fakeFunction}
         currentEvent={null}
-        removeCurrentEvent={() => {}}
+        removeCurrentEvent={fakeFunction}
         {...props}
       >
         <div>child</div>
@@ -99,6 +102,7 @@ describe('<EventsList />', () => {
     expect(component.props()).toEqual({
       event: eventItem,
       onDirections: wrapper_.instance().props.onDirections,
+      openMoreInfo: wrapper_.instance().props.openMoreInfo,
       userLocation: {},
       returnToList: wrapper_.instance().returnToList
     })
@@ -120,8 +124,9 @@ describe('<EventsListItem />', () => {
       <EventsListItem
         item={eventItem}
         userLocation={null}
-        onDirections={() => {}}
-        onItemClick={() => {}}
+        onDirections={fakeFunction}
+        onItemClick={fakeFunction}
+        openMoreInfo={fakeFunction}
         isCurrent={false}
         remove
         {...props}
@@ -158,9 +163,10 @@ describe('<EventInfo />', () => {
     shallow(
       <EventInfo
         event={eventItem}
-        onDirections={() => {}}
+        onDirections={fakeFunction}
+        openMoreInfo={fakeFunction}
         userLocation={{}}
-        returnToList={() => {}}
+        returnToList={fakeFunction}
         {...props}
       />
     )

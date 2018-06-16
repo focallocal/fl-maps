@@ -11,10 +11,10 @@ class SearchButtons extends Component {
           <i className='fa fa-filter' />
           Filter
         </Button>
-        <Button onClick={() => alert('not implemented yet')}>
+        {/* <Button>
           <i className='fas fa-cog' />
           Options
-        </Button>
+        </Button> */}
       </div>
     )
   }

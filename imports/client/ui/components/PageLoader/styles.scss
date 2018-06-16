@@ -1,3 +1,4 @@
+@import '/imports/client/stylesheets/variables.scss';
 
 #loader {
   display: flex;
@@ -13,5 +14,21 @@
 
   .ball-beat > div {
     // background-color: rgba(50, 50, 50, .5);
+  }
+
+  &.pages {
+    height: calc(100vh - #{$menu-height});
+    position: static;
+  }
+
+}
+
+.loader.button {
+  position: relative;
+  top: 3px;
+
+  .ball-beat > div {
+    height: 10px;
+    width: 10px;
   }
 }

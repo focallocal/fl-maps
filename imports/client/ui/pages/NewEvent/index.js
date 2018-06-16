@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
-import router from '/imports/client/utils/history'
 import { EventsSchema } from '/imports/both/collections/events'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Alert } from 'reactstrap'
 import FormWizard from './FormWizard'
@@ -9,7 +8,6 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import './styles.scss'
 
-const STEPS_COUNT = 1 // Number of form steps
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
 class NewEventModal extends Component {
@@ -17,9 +15,10 @@ class NewEventModal extends Component {
     super()
     this.state = {
       currentStep: 0,
+      editMode: false,
       form: null,
-      hasErrors: false,
-      googleLoaded: false
+      googleLoaded: false,
+      hasErrors: false
     }
 
     if (window.google) {
@@ -28,6 +27,12 @@ class NewEventModal extends Component {
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
+    if (window.__editData) {
+      return {
+        ...nextProps,
+        editMode: true
+      }
+    }
     return nextProps
   }
 
@@ -49,31 +54,38 @@ class NewEventModal extends Component {
   render () {
     const {
       currentStep,
+      editMode,
       googleLoaded,
-      isOpen,
-      hasErrors
+      hasErrors,
+      isOpen
     } = this.state
 
     const hasGoogleMapsLoaded = window.google || googleLoaded
 
+    const header = i18n_.modal_header
+
     return hasGoogleMapsLoaded && (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg'>
         <ModalHeader toggle={this.toggleModal}>
-          {i18n_.modal_header}
+          {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
 
+        <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
+          Please check that you've filled all the necessary fields
+        </Alert>
+
         <ModalBody>
-          <FormWizard currentStep={currentStep} passFormRefToParent={this.getRef} />
-          <Alert color='danger' isOpen={hasErrors} className='error-general'>
-            Please check that you've filled all the necessary fields
-          </Alert>
+          <FormWizard
+            currentStep={currentStep}
+            passFormRefToParent={this.getRef}
+            editMode={editMode} />
         </ModalBody>
 
         <ModalFooter>
-          {currentStep + 1 <= STEPS_COUNT &&
+          {currentStep + 1 <= 1 &&
             <Button color='primary' onClick={this.moveNext}>Next</Button>
           }
-          {currentStep === STEPS_COUNT &&
+          {currentStep === 1 &&
             <Button color='primary' onClick={this.submit} className='submit'>Submit</Button>
           }
           {currentStep > 0 &&
@@ -97,53 +109,69 @@ class NewEventModal extends Component {
       .then(() => {
         window.NProgress.set(0.4)
 
-        const model = EventsSchema.clean(this.state.form.getModel())
-        Meteor.call('Events.newEvent', model, (err, res) => {
-          window.NProgress.done()
-          if (!err) {
-            this.setState({ currentStep: 0 }) // return to first step
-
-            window.__recentEvent = { ...model, _id: res }
-
-            if (Meteor.isDevelopment) {
-              sessionStorage.setItem('recent-event', JSON.stringify(model))
-            }
-
-            router.push('/thank-you')
-          }
-          if (Meteor.isDevelopment) { console.log(err) }
-        })
+        let model = EventsSchema.clean(this.state.form.getModel())
+        if (this.state.editMode) {
+          model._id = this.state.form.getModel()._id
+          this.callEditEvent(model)
+        } else {
+          this.callNewEvent(model)
+        }
       })
       .catch(err => {
         this.setState({ hasErrors: true })
 
-        if (Meteor.isDevelopment) { console.log(err.details) }
-
-        setTimeout(() => {
-          if (this.state.hasErrors) {
-            this.setState({ hasErrors: false })
-          }
-        }, 6000) // auto- remove hasErrors message after 6 seconds
+        if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
   }
 
-  getRef = (form) => {
-    this.setState({ form: form })
+  callNewEvent = model => {
+    Meteor.call('Events.newEvent', model, (err, res) => {
+      if (!err) {
+        this.setState({ currentStep: 0 }) // return to first step
+        window.__recentEvent = { ...model, _id: res }
+        this.props.history.push('/thank-you')
+      }
+
+      window.NProgress.done()
+      if (Meteor.isDevelopment) { console.log(err) }
+    })
+  }
+
+  callEditEvent = (model) => {
+    Meteor.call('Events.editEvent', model, (err, res) => {
+      if (!err) {
+        window.__updatedData = model // update event page.
+        this.setState({ currentStep: 0 })
+        this.props.history.push('/page/' + model._id)
+      }
+
+      window.NProgress.done()
+      if (Meteor.isDevelopment) { console.log(err) }
+    })
   }
 
   toggleModal = () => {
     const { pathname, search } = this.props.location
     const queryStrings = qs.parse(search)
-    queryStrings.new = '0'
+
+    delete queryStrings.edit
+    delete queryStrings.new
 
     const url = pathname + '?' + qs.stringify(queryStrings)
-    router.push(url)
+    this.props.history.push(url)
+  }
+
+  toggleErrors = () => this.setState({ hasErrors: false })
+
+  getRef = (form) => {
+    this.setState({ form: form })
   }
 }
 
 NewEventModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 }
 
 export default NewEventModal

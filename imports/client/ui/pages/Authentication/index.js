@@ -32,6 +32,12 @@ class Authentication extends Component {
         loading: !!Meteor.userId()
       }
     }
+
+    const redirect = sessionStorage.getItem('redirect')
+
+    if (redirect) {
+      this.state.redirect = mapRedirects[redirect]
+    }
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
@@ -82,7 +88,8 @@ class Authentication extends Component {
 
   arState = ({ match, history, location }) => {
     const {
-      isSSO
+      isSSO,
+      redirect
     } = this.state
     const { path, params } = match
     const isLoggedIn = !!this.props.user
@@ -97,13 +104,14 @@ class Authentication extends Component {
       // If isSSO is true, user has logged in and is now waiting to be redirected back to the forum
       // check if a redirection route have been set
 
-      let to = sessionStorage.getItem('redirect') || '/'
+      let to = redirect || '/'
       sessionStorage.removeItem('redirect')
 
       return isSSO ? <PageLoader /> : <Redirect to={to} />
     }
 
     const title = mapTitles[path]
+    window.__setDocumentTitle(title)
 
     return (
       <div id='authentication'>
@@ -146,6 +154,10 @@ const mapTitles = {
   '/sign-in': 'Sign in',
   '/sign-up': 'Sign up',
   '/forgot-password': 'Forgot password'
+}
+
+const mapRedirects = {
+  '/?new=1': '/?new=1'
 }
 
 export default withRouter(withTracker(() => {

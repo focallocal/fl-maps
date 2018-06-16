@@ -6,12 +6,12 @@ $nav-item-hover-transition: color .15s ease;
 
 #main-menu {
   height: $menu-height;
-  padding: 0 16px;
+  padding: 0 24px;
   background: $menu-background;
   color: $menu-color;
   font-size: .9em;
   font-weight: 300;
-  justify-content: space-between; // ensures there is a space between left and right navs
+  justify-content: flex-end; // ensures there is a space between left and right navs
   z-index: 999;
 
   .nav {
@@ -24,10 +24,6 @@ $nav-item-hover-transition: color .15s ease;
       height: 100%;
       color: #fff !important;
       transition: $nav-item-hover-transition;
-
-      &:hover {
-        // color: $nav-item-hover-color;
-      }
 
       &::after {
         display: block;
@@ -99,8 +95,7 @@ $nav-item-hover-transition: color .15s ease;
     }
 
     &#right-links {
-      position: relative;
-      left: 15px;
+      margin-right: -12px;
 
       #add-event {
         display: flex;
@@ -154,32 +149,65 @@ $nav-item-hover-transition: color .15s ease;
         }
       }
     }
+
+    &#menu-items {
+      flex: 1;
+      padding-left: 8px;
+      border-left: 1px rgba(255, 255, 255, 0.25) solid;
+    }
   }
 
   #sidebar-toggle {
     display: none;
+    flex: .8;
     font-size: 1.4em;
     align-self: center;
     cursor: pointer;
     transition: color .2s ease;
   }
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1035px) {
     & {
 
-      #left-links {
+      #menu-items {
+        display: none;
+      }
 
-        .nav-item {
-          display: none;
-        }
+      #right-links {
+        padding-left: 0 !important;
+        border-left: 0 !important;
+      }
 
-        #sidebar-toggle {
-          display: block;
-        }
+      #sidebar-toggle {
+        display: block;
+      }
 
-        #brand-logo {
-          display: none;
-        }
+      #brand-logo {
+        flex: 1.1;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+
+    & {
+
+      #sidebar-toggle {
+        flex: .5;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+
+    & {
+
+      #brand-logo {
+        display: none;
+      }
+
+      #sidebar-toggle {
+        flex: 1;
       }
     }
   }

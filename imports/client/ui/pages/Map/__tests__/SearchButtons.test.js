@@ -14,8 +14,8 @@ describe('<SearchButtons />', () => {
 
   const component = shallowRender({ toggleFilters: () => {} })
 
-  it('should render 2 buttons', () => {
-    expect(component.find(Button)).toHaveLength(2)
+  it('should render 1 filter button', () => {
+    expect(component.find(Button)).toHaveLength(1)
   })
 
   it('should call toggleFilters on filters button click', () => {

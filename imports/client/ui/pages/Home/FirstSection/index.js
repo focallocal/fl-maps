@@ -1,14 +1,23 @@
 import React from 'react'
+import { Meteor } from 'meteor/meteor'
+import { withTracker } from 'meteor/react-meteor-data'
 import { Container } from 'reactstrap'
-import FindOrPost from './FindOrPost'
+import i18n from '/imports/both/i18n/en'
+import Find from './Find'
 import './styles.scss'
 
-const FirstSection = () => (
+const { Home } = i18n
+const FirstSection = ({ user }) => (
   <section id='first-section'>
     <Container>
-      <FindOrPost />
+      <div className='first-title'>{Home.first_title}</div>
+      <Find user={user} />
     </Container>
   </section>
 )
 
-export default FirstSection
+export default withTracker(() => {
+  return {
+    user: Meteor.user()
+  }
+})(FirstSection)
