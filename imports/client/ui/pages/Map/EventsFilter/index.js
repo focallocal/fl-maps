@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup, ListGroupItem, CustomInput } from 'reactstrap'
-import categories from '/imports/both/collections/events/helpers/possibleCategories.json'
+import possibleCategories from '/imports/both/i18n/en/categories.json'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 class FiltersList extends Component {
   state = {
     checkAll: true,
-    checkedFilters: Array(categories.length).fill(true) // all checked by default
+    checkedFilters: Array(possibleCategories.length).fill(true) // all checked by default
   }
 
   render () {
@@ -36,7 +36,7 @@ class FiltersList extends Component {
             />
           </ListGroupItem>
           <div className='categories-items'>
-            {categories.map((category, index) => {
+            {possibleCategories.map((category, index) => {
               return (
                 <ListGroupItem key={index} style={{ color: category.color }}>
                   <CustomInput
@@ -70,7 +70,7 @@ class FiltersList extends Component {
 
   toggleAllFilters = () => {
     const checkAll = !this.state.checkAll
-    const checkedFilters = Array(categories.length).fill(checkAll)
+    const checkedFilters = Array(possibleCategories.length).fill(checkAll)
 
     this.setState({ checkedFilters, checkAll })
     this.props.onFilter(this.applyFilter(checkedFilters))
@@ -91,7 +91,7 @@ class FiltersList extends Component {
       This function map those indexes to their corresponding categories names
     */
 
-    return categories.map((category, i) => indexes[i] ? category.name : null)
+    return possibleCategories.map((category, i) => indexes[i] ? category.name : null)
   }
 }
 

@@ -44,10 +44,12 @@ class MapComponent_ extends Component {
 
     window.__setDocumentTitle('Map')
     toggleBodyOverflow()
+    this._isMounted = true // don't remove that line
   }
 
   componentWillUnmount () {
     toggleBodyOverflow()
+    this._isMounted = false // don't remove that line
   }
 
   componentDidUpdate (nextProps, prevState) {

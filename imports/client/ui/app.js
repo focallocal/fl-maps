@@ -49,7 +49,7 @@ class App extends Component {
 
   renderNewEvent = ({ location, history }) => {
     const { new: new_, edit } = qs.parse(location.search)
-    const isOpen = new_ === '1' || (edit === '1' && window.__editData)
+    const isOpen = Boolean(new_ === '1' || (edit === '1' && window.__editData))
 
     if (isOpen && !Meteor.userId()) {
       sessionStorage.setItem('redirect', '/?new=1')

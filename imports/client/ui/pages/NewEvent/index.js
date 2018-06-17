@@ -146,7 +146,7 @@ class NewEventModal extends Component {
       }
 
       window.NProgress.done()
-      if (Meteor.isDevelopment) { console.log(err) }
+      if (Meteor.isDevelopment) { console.log(err, model) }
     })
   }
 
