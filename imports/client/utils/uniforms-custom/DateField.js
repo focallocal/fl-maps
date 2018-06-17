@@ -39,14 +39,20 @@ class Date_ extends Component {
             onDayClick={this.handleChange}
             placeholder={`${formatDate(new Date())}`}
           />
+          <div className='date-clear' onClick={this.clearDate}>Clear</div>
         </Modal>
       </FormGroup>
     )
   }
 
-  handleChange = (date) => {
+  handleChange = (date = null) => {
     this.toggleDayPicker()
     this.props.onChange(date)
+  }
+
+  clearDate = () => {
+    this.toggleDayPicker()
+    this.props.onChange(null)
   }
 
   toggleDayPicker = () => {
@@ -55,7 +61,11 @@ class Date_ extends Component {
 }
 
 const formatDate = date => {
-  return date ? date.toISOString().substring(0, 10).split('-').join('/') : ''
+  try {
+    return date.toISOString().substring(0, 10).split('-').join('/')
+  } catch (ex) {
+    return ''
+  }
 }
 
 export default connectField(Date_)

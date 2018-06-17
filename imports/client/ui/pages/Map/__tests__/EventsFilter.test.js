@@ -1,9 +1,9 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import sinon from 'sinon'
 import EventsFilter from '../EventsFilter'
 import { ListGroup, ListGroupItem, CustomInput } from 'reactstrap'
-import categories from '/imports/both/collections/events/helpers/possibleCategories.json'
+import categories from '/imports/both/i18n/en/categories.json'
 import i18n from '/imports/both/i18n/en'
 
 describe('<EventsFilter />', () => {

@@ -34,6 +34,8 @@ const newEvent = new ValidatedMethod({
       const newDoc = constructNewDocument(model, prevDoc)
       return Events.update({ _id: modelId }, {
         $set: newDoc
+      }, {
+        bypassCollection2: true
       })
     } else {
       throw new Meteor.Error('Events.editEvent', '?')

@@ -60,7 +60,7 @@ class FirstStep extends Component {
             <WeekDays
               form={form}
               schemaKey={'when.days'}
-              selectedDays={days}
+              selectedDays={days || []}
             />
           </div>
         )}

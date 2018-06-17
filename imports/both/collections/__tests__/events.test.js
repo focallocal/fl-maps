@@ -1,5 +1,5 @@
 import { EventsSchema } from '../events'
-import possibleCategories from '../events/helpers/possibleCategories.json'
+import possibleCategories from '/imports/both/i18n/en/categories.json'
 import { determinePosition } from '../events/helpers'
 
 describe('Events', () => {

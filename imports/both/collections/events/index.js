@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
 import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, determinePosition } from './helpers'
-import possibleCategories from './helpers/possibleCategories.json'
+import possibleCategories from '/imports/both/i18n/en/categories.json'
 import DaySchema from './DaysSchema'
 
 // Extend SimpleSchema to support the uniforms field.
@@ -193,13 +193,13 @@ const EventsSchema = new SimpleSchema({
       }
 
       if (this.value) {
-        return this.value.filter(d => !!d) // remove empty slots
+        return this.value.map(d => !d ? false : d) // remove empty slots
       }
     }
   },
   'when.days.$': {
-    type: DaySchema,
-    optional: true
+    type: SimpleSchema.oneOf(DaySchema, Boolean),
+    required: false
   },
   'when.repeat': {
     type: Boolean,
@@ -377,8 +377,7 @@ const EventsSchema = new SimpleSchema({
     autoConvert: true,
     removeEmptyStrings: true,
     trimStrings: true,
-    getAutoValues: true,
-    removeNullsFromArray: true
+    getAutoValues: true
   }
 })
 

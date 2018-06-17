@@ -1,0 +1,16 @@
+[
+  { "name": "Community Offers", "color":"red", "default":true },
+  { "name": "Shower", "color":"#14fffc" },
+  { "name": "Training Course", "color":"#181819" },
+  { "name": "Activity", "color":"#63be29" },
+  { "name": "Washing Clothes", "color":"#0afeb9" },
+  { "name": "Food", "color":"#e322e9" },
+  { "name": "Clothes", "color":"#e2fe2e" },
+  { "name": "Public Toilet", "color":"#63be29" },
+  { "name": "Shelters", "color":"#74fe6a" },
+  { "name": "Somewhere to Sleep", "color":"#6ab8fe" },
+  { "name": "Support Groups", "color":"#fe6a6a" },
+  { "name": "Computer or Wifi", "color":"#e4f81b" },
+  { "name": "Public Library", "color":"#09bc2b" },
+  { "name": "Medical", "color":"#fa0707" }
+]
