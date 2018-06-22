@@ -34,6 +34,8 @@ describe('Page', () => {
     shallow(
       <Page
         match={{ params: { id: '#1' } }}
+        history={{ push: jest.fn() }}
+        user={null}
         {...props}
       />
     )
@@ -72,6 +74,18 @@ describe('Page', () => {
     expect(rightCol.find(HoursFormatted)).toHaveLength(1)
     expect(rightCol.find('.location')).toHaveLength(1)
     expect(rightCol.find(AttendingButton)).toHaveLength(1)
+  })
+
+  test('AttendingButton props', () => {
+    const instance = wrapper.instance()
+    const btn = wrapper.find(AttendingButton)
+
+    expect(btn.props()).toEqual({
+      _id: '#testId',
+      isLoggedIn: false,
+      user: instance.props.user,
+      history: instance.props.history
+    })
   })
 
   test('clicking on "view map" should call scroll to map function', () => {

@@ -97,15 +97,14 @@ class AttendingButton extends Component {
   }
 
   redirectToLogin = () => {
-    const { id, data } = this.state
-    window.cachedDataForPage = data
-    sessionStorage.setItem('redirect', '/page/' + id)
+    sessionStorage.setItem('redirect', '/page/' + this.props._id)
     this.props.history.push('/sign-in')
   }
 }
 
 AttendingButton.propTypes = {
   _id: PropTypes.string.isRequired,
+  history: PropTypes.object.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
   user: PropTypes.object
 }
