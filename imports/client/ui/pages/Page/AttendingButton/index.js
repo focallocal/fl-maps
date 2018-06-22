@@ -3,6 +3,11 @@ import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { Button } from 'reactstrap'
 import { Loader } from '/imports/client/ui/components/PageLoader'
+import createHistory from "history/createBrowserHistory"
+
+// Imported history to update old implementation
+const history = createHistory();
+const location = history.location;
 
 class AttendingButton extends Component {
   state = {
@@ -30,7 +35,8 @@ class AttendingButton extends Component {
       user
     } = this.props
 
-    let isAttending
+    let isAttending;
+    console.log("isLoggedIn :",isLoggedIn);
     if (isLoggedIn) {
       isAttending = user.attendance ? user.attendance.find(a => a.id === _id) : false
     }
@@ -40,9 +46,8 @@ class AttendingButton extends Component {
         <Button
           className={'fixed-bg ' + (isAttending && !updating ? 'active' : '')}
           onClick={this.updateAttendance}
-          disabled={tooManyRequests}
-        >
-          {updating ? (<Loader className='button' />) : (isAttending ? 'Attending!' : 'Attend')}
+          disabled={tooManyRequests}>
+          {updating ? (<Loader className='button' />) : (!isLoggedIn ? 'Log In to Attend' : (isAttending ? 'Attending!' : 'Attend'))}
         </Button>
 
         {tooManyRequests && (
@@ -55,16 +60,16 @@ class AttendingButton extends Component {
   updateAttendance = () => {
     const {
       updating,
-      tooManyRequests
+      tooManyRequests,
     } = this.state
 
     const {
       _id,
-      user
+      user,
     } = this.props
 
     if (!user) {
-      this.redirectToLogin()
+      this.redirectToLogin();
     } else if (!updating && !tooManyRequests) {
       // Fetch with animation in the background, ensure enough time has passed between request/resolve
       // so animation is smooth
@@ -97,17 +102,20 @@ class AttendingButton extends Component {
   }
 
   redirectToLogin = () => {
-    const { id, data } = this.state
-    window.cachedDataForPage = data
-    sessionStorage.setItem('redirect', '/page/' + id)
-    this.props.history.push('/sign-in')
+    const { id, data } = this.state;
+    window.cachedDataForPage = data;
+    sessionStorage.setItem('redirect', '/page/' + id);
+    // push history to sign-in and go to force sign-in page loads
+    // Currently does not redirect back to event page but resolves a break in flow
+    history.push('/sign-in');
+    history.go('/sign-in');
   }
 }
 
 AttendingButton.propTypes = {
   _id: PropTypes.string.isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
-  user: PropTypes.object
+  user: PropTypes.object,
 }
 
 export default AttendingButton
