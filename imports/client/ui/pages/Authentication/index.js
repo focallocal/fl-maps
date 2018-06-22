@@ -4,7 +4,6 @@ import { Redirect } from 'react-router'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { withTracker } from 'meteor/react-meteor-data'
 import { AccountsReactComponent, AccountsReact } from 'meteor/meteoreact:accounts'
-import { Alert } from 'reactstrap'
 import qs from 'query-string'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import RedirectMessage from './RedirectMessage'
@@ -60,7 +59,7 @@ class Authentication extends Component {
       loading
     } = this.state
 
-    const redirect = mapRedirects[sessionStorage.getItem('redirect')]
+    const redirect = mapRedirects(sessionStorage.getItem('redirect'))
 
     return (
       <Fragment>
@@ -82,9 +81,7 @@ class Authentication extends Component {
   }
 
   arState = ({ match, history, location }) => {
-    const {
-      isSSO
-    } = this.state
+    const { isSSO } = this.state
     const { path, params } = match
     const isLoggedIn = !!this.props.user
 
@@ -97,7 +94,7 @@ class Authentication extends Component {
       // Logged in users can enter only the change-password route
       // If isSSO is true, user has logged in and is now waiting to be redirected back to the forum
       // check if a redirection route have been set
-      const redirect = mapRedirects[sessionStorage.getItem('redirect')]
+      const redirect = mapRedirects(sessionStorage.getItem('redirect'))
 
       if (redirect) {
         sessionStorage.removeItem('redirect')
@@ -156,8 +153,20 @@ const mapTitles = {
   '/change-password': 'Change password'
 }
 
-const mapRedirects = {
+const mapRedirectsObj = {
   '/?new=1': '/?new=1'
+}
+
+const mapRedirects = (url) => {
+  if (!url) {
+    return
+  }
+
+  if (url.startsWith('/page/')) { // dynamic url...
+    return url
+  } else {
+    return mapRedirectsObj[url]
+  }
 }
 
 export default withRouter(withTracker(() => {

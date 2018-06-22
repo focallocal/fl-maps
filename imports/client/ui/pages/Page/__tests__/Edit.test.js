@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import sinon from 'sinon'
 import { Button } from 'reactstrap'
 import Edit from '../Edit'
 

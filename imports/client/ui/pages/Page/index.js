@@ -128,7 +128,12 @@ class Page extends Component {
 
               <Divider />
 
-              <AttendingButton user={user} _id={_id} isLoggedIn={isLoggedIn} />
+              <AttendingButton
+                _id={_id}
+                history={history}
+                isLoggedIn={isLoggedIn}
+                user={user}
+              />
             </Col>
           </Row>
           <iframe
@@ -168,7 +173,8 @@ export function mutateCachedMapState (updatedEntry) {
 }
 
 Page.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
 }
 
 export default withTracker(() => {
