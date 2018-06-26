@@ -13,7 +13,7 @@ class Home extends Component {
       <main className='home'>
         <div id='hero-bg' />
         <FirstSection />
-        <SecondSection button = {true}/>
+        <SecondSection button/>
       </main>
     )
   }

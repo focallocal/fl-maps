@@ -14,7 +14,7 @@ class About extends Component {
       <div id='about'>
         <h2>About Us</h2>
         <div className='header-divider' />
-        <AboutSection button = {false} />
+        <AboutSection button= {false} />
         <FirstSection />
         <SecondSection />
       </div>

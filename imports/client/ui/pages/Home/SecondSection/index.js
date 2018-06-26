@@ -18,21 +18,8 @@ const {
 
 
 class SecondSection extends React.Component {
-  constructor(props){
-    super(props)
-
-  }
 
     render(props) {
-    const HasButton = (props) => {
-        const button = props.button;
-        if(button == true){
-          return <Button className='read-more' tag={Link} to='/about'>Read More</Button>
-        }else {
-          return null;
-        }
-      }
-
       return(
     <section id='second-section'>
       <Container>
@@ -45,7 +32,7 @@ class SecondSection extends React.Component {
           ))}
         </Row>
       </Container>
-      <HasButton button= {this.props.button} />
+      {this.props.button === true ? <Button className='read-more' tag={Link} to='/about'>Read More</Button> : null}
     </section>
     )
   }
