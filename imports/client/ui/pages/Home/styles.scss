@@ -27,11 +27,11 @@ main {
   max-height: 365px;
   width: 100%;
   background-color: #ffffff;
-  background-image: url('/images/hero-bg.jpeg');
   background-position: center;
   background-size: cover;
   transition: height .8s ease-in;
 }
+
 
 @media screen and (max-width: 900px) {
 
