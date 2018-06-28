@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Button } from 'reactstrap'
 import Item from './Item'
@@ -6,6 +7,9 @@ import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 const HowToHelpI18N = i18n.Home.how_to_help_section
+
+class HowToHelpSection extends Component{
+render(props){
 
 const {
   title,
@@ -16,7 +20,9 @@ const {
   items
 } = content
 
-const HowToHelpSection = () => (
+const isLoggedIn = this.props.isLoggedIn;
+
+  return(
   <section id='how_to_help_section'>
     <Container>
       <div className='title'>{title}</div>
@@ -28,8 +34,14 @@ const HowToHelpSection = () => (
         ))}
       </Row>
     </Container>
-    <Button className='sign-and-post' tag={Link} to='/sign-in'>Sign In and Post</Button>
+    {{isLoggedIn} ? <Button className='sign-and-post' tag={Link} to='/?new=1'>Post</Button> : <Button className='sign-and-post' tag={Link} to='/sign-in'>Post</Button>}
   </section>
-)
+    )
+  }
+}
+
+HowToHelpSection.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+}
 
 export default HowToHelpSection
