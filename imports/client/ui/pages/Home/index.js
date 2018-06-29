@@ -10,17 +10,11 @@ class Home extends Component {
   }
 
   render () {
-    const {
-      user
-    } = this.props
-    const isLoggedIn = !!user
-
     return (
       <main className='home'>
         <div id='hero-bg' />
         <FirstSection />
-        <HowToHelpSection
-          isLoggedIn={isLoggedIn}/>
+        <HowToHelpSection />
         <SecondSection />
       </main>
     )

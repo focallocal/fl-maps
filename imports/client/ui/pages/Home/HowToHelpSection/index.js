@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Button } from 'reactstrap'
 import Item from './Item'
@@ -41,10 +40,6 @@ class HowToHelpSection extends Component {
       </section>
     )
   }
-}
-
-HowToHelpSection.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
 }
 
 export default HowToHelpSection
