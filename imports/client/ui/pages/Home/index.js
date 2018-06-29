@@ -10,9 +10,7 @@ class Home extends Component {
   }
 
   render () {
-
     const {
-      history,
       user
     } = this.props
     const isLoggedIn = !!user
