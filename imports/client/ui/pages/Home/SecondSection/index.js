@@ -16,20 +16,26 @@ const {
   items
 } = content
 
-const SecondSection = () => (
-  <section id='second-section'>
-    <Container>
-      <div className='title'>{title}</div>
-      <Row className="items">
-        {items.map((item, i) => (
-          <Col key={i}>
-            <Item item={item} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
-    <Button className='read-more' tag={Link} to='/about'>Read More</Button>
-  </section>
-)
+
+class SecondSection extends React.Component {
+
+    render(props) {
+      return(
+    <section id='second-section'>
+      <Container>
+        <div className='title'>{title}</div>
+        <Row className="items">
+          {items.map((item, i) => (
+            <Col key={i}>
+              <Item item={item} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      {this.props.button === true ? <Button className='read-more' tag={Link} to='/about'>Read More</Button> : null}
+    </section>
+    )
+  }
+}
 
 export default SecondSection

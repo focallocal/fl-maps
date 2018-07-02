@@ -10,12 +10,21 @@ class Home extends Component {
   }
 
   render () {
+    let url;
+    let opacity;
+    if (window.__mapType === 'gatherings'){
+      url = "/images/focallocal-bg.jpg";
+      opacity = .5;
+    } else {
+      url = '/images/btm-bg.jpeg';
+    }
+    let backgroundImage = {backgroundImage: 'url(' + url + ')',opacity};
     return (
       <main className='home'>
-        <div id='hero-bg' />
+        <div id='hero-bg' style={backgroundImage} />
         <FirstSection />
         <HowToHelpSection />
-        <SecondSection />
+        <SecondSection button/>
       </main>
     )
   }
