@@ -1,0 +1,46 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#how_to_help_section {
+  margin-top: 0;
+  padding: 40px;
+  background: $gray-lighter;
+  text-align: left;
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  .title{
+    font-size: 2em;
+    margin-left: -15px;
+  }
+  .item-text {
+    font-size: 1.3em;
+  }
+
+  // Text Color
+  .title, .item-title, .item-text {
+    color: $black-lighter;
+  }
+  .item{
+    margin-bottom: 24px;
+  }
+
+  .sign-and-post {
+    width: 8em;
+    margin: 10px auto;
+  }
+
+  @media screen and (max-width: 850px) {
+
+    .items {
+      flex-flow: column;
+
+      &>div {
+        flex: 1;
+        max-width: 480px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
