@@ -56,5 +56,57 @@
         "third": "Find + Get actions tools"
       }
     }
+  },
+  "contributors_section":{
+    "title": "Built by a wonderful team of volunteers at the Focallocal Public Happiness community.",
+    "content":{
+      "items":[
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/3659502?s=60&v=4",
+          "name": "Mordka",
+          "link":"https://github.com/mordka"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/11820758?s=60&v=4",
+          "name": "ydaniel98",
+          "link":"https://github.com/ydaniel98"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/28781165?s=60&v=4",
+          "name": "royGil",
+          "link":"https://github.com/royGil"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/16229696?s=60&v=4",
+          "name": "Andy",
+          "link":"https://github.com/AndyatFocallocal"
+        },
+        {
+          "photo":"https://avatars0.githubusercontent.com/u/28017627?s=60&v=4",
+          "name": "HuascarMC",
+          "link":"https://github.com/HuascarMC"
+        },
+        {
+          "photo":"https://avatars2.githubusercontent.com/u/12023065?s=60&v=4",
+          "name": "iggelt",
+          "link":"https://github.com/iggelt"
+        },
+        {
+          "photo":"https://avatars2.githubusercontent.com/u/17742310?s=60&v=4",
+          "name": "Spartano",
+          "link":"https://github.com/Spartano"
+        },
+        {
+          "photo":"https://avatars1.githubusercontent.com/u/11193792?s=60&v=4",
+          "name": "distalx",
+          "link":"https://github.com/distalx"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/22714384?s=60&v=4",
+          "name": "Ziinc",
+          "link":"https://github.com/Ziinc"
+        }
+      ]
+    }
   }
 }
