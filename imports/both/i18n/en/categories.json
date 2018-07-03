@@ -1,6 +1,6 @@
 [
   { "name" : "Free Hugs", "color" : "#f82d2d" },
-  { "name" : "Pillow Fight 4Connection", "color" : "#70fc19" },
+  { "name" : "Community Resource", "color" : "#f82d2d" },
   { "name" : "Give a Bubble", "color" : "#19fcb3" },
   { "name" : "Take a Smile", "color" : "#19b9fc" },
   { "name" : "Public Dancing", "color" : "#8719fc" },
@@ -18,5 +18,6 @@
   { "name" : "Good Human Appreciation", "color" : "#4a0bff" },
   { "name" : "Eye Contact for Connection", "color" : "#e4f81b" },
   { "name" : "Health + Well-being Flash", "color" : "#9bfaae" },
-  { "name" : "Gather for More Happiness", "color" : "#74fe6a" }
+  { "name" : "Gather for More Happiness", "color" : "#74fe6a" },
+  { "name" : "Pillow Fight 4Connection", "color" : "#70fc19" }
 ]

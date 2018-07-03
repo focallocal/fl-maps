@@ -3,6 +3,7 @@ import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
 import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, determinePosition } from './helpers'
 import possibleCategories from '/imports/both/i18n/en/categories.json'
+import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
 
 // Extend SimpleSchema to support the uniforms field.
@@ -46,7 +47,7 @@ const EventsSchema = new SimpleSchema({
         labelKey: 'name'
       },
       allowedValues: possibleCategories, // keep it here so options will be rendered by react-select
-      label: 'Choose a Category',
+      label: labels.categories,
       placeholder_: 'Pick your event\'s categories'
     }
   },
@@ -59,14 +60,15 @@ const EventsSchema = new SimpleSchema({
   },
   'categories.$.color': {
     type: String,
-    allowedValues: possibleCategories.reduce((arr, obj) => (arr.concat(obj.color)), [])
+    allowedValues: possibleCategories.reduce((arr, obj) => (arr.concat(obj.color)), []),
+    defaultValue: '#f82d2d'
   },
 
   // Details
   'name': {
     type: String,
     uniforms: {
-      label: 'Name'
+      label: labels.event_name
     }
   },
   'address': {
@@ -109,7 +111,7 @@ const EventsSchema = new SimpleSchema({
     max: 250,
     uniforms: {
       customType: 'textarea',
-      label: 'How to find you?'
+      label: labels.contact_info
     }
   },
 
@@ -327,7 +329,7 @@ const EventsSchema = new SimpleSchema({
     max: 150,
     uniforms: {
       customType: 'textarea',
-      label: 'Overview'
+      label: labels.overview
     }
   },
   'description': {
@@ -335,7 +337,7 @@ const EventsSchema = new SimpleSchema({
     max: 400,
     uniforms: {
       customType: 'textarea',
-      label: 'Description'
+      label: labels.description
     }
   },
   engagement: {
