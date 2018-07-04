@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CustomInput, Row, Col } from 'reactstrap'
+import { CustomInput } from 'reactstrap'
 import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 
@@ -7,65 +7,51 @@ class FirstStep extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      categories: null}
+      categories: null,
+      foundResource: true,
+      offerResource: false,
+      resourceType: 'found'}
   }
   render () {
     const {
       form
     } = this.props
     const {
-      foundResource,
-      offerResource
+      resourceType
     } = form.getModel().when
 
     const RadioButton = this.RadioButton
     return (
       <div id='first-step'>
-        <Row>
-          <Col>
-            <RadioButton
-              id='foundResource'
-              label='I found a resource nearby'
-              value={foundResource}
-              type='radio'
-              click={this.setCategories}
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <RadioButton
-              id='offerResource'
-              label='I want to offer my own resource'
-              value={offerResource}
-              type='radio'
-              click={this.noCategories}
-            />
-          </Col>
-        </Row>
+        <RadioButton
+          id='foundResource'
+          label='I found a resource nearby'
+          value={this.state.foundResource}
+          type='radio'
+          click={this.setCategories}
+        />
+        <RadioButton
+          id='offerResource'
+          label='I want to offer my own resource'
+          value={this.state.offerResource}
+          type='radio'
+          click={this.noCategories}
+        />
         <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
-        {this.state.categories}
+        {this.state.resourceType === 'found' ? (
+          <AutoField name='categories' />
+        ) : null }
       </div>
     )
   }
   noCategories = (type, value) => {
-    const initComm = [
-      {'name': 'Community Resource', 'color': '#f82d2d'}
-    ]
-    const divStyle = {
-      display: 'none'
-    }
-    // Sets the category to "Community Resource and then hides Category selection"
-    this.setState({categories: <div style={divStyle}><AutoField name='categories' value={initComm} /></div>})
+    this.setState({resourceType: null, foundResource: false, offerResource: true})
   }
 
   setCategories = () => {
-    // Sets the category value to an empty object and allows for selection of new categories.
-    // ISSUE : Community Resource still shows if offerResource previously selected, no categories should show
-    this.setState({categories: <AutoField name='categories' value={[]}/>})
-    this.setState({categories: <AutoField name='categories'/>})
+    this.setState({resourceType: 'found', foundResource: true, offerResource: false})
   }
 
   RadioButton = ({ label, id, value, type, click }) => (
@@ -80,11 +66,9 @@ class FirstStep extends Component {
   )
   handleRadioButton = (type, value, click) => {
     const { when } = this.props.form.getModel()
-    console.log('called')
     this.props.form.change('when', {
       ...when,
-      foundResource: type === 'foundResource' ? value : false,
-      offerResource: type === 'offerResource' ? value : false
+      resourceType: type === 'foundResource' ? 'found' : null
     })
     click()
   }

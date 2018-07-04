@@ -40,6 +40,15 @@ const EventsSchema = new SimpleSchema({
         return 'required'
       }
     },
+    autoValue: function () {
+      if (this.field('resourceType') === 'found') {
+      }
+      if (!this.value) {
+        return [
+          { 'name': 'Community Resource', 'color': '#f82d2d' }
+        ]
+      }
+    },
     uniforms: {
       customType: 'select',
       selectOptions: {
