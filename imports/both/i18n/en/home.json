@@ -12,13 +12,13 @@
       "items":[
         {
           "text": "Put yourself on the Public Happiness Map.",
-          "subText":"So other positive and pro-active people nearby can contact you to plan Public Happiness Movement activities together, like; public music jams and dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
+          "subText":"For other positive and pro-active people nearby to contact you and plan Public Happiness Movement activities together, like; public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
         },
         {
           "text": "Create a Public Happiness Gathering.",
           "link": "https://action.focallocal.org/",
-          "linktext": "Explore and discuss",
-          "subText": "more tools and activities to create positive cultural change."
+          "linktext": "See more, suggest and discuss ",
+          "subText": "positive tools and activities to create positive cultural change."
         }
       ]
     }
