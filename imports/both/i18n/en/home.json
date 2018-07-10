@@ -7,18 +7,18 @@
     "button_loggedIn": "Post onto the Map"
   },
   "how_to_help_section":{
-    "title": "What can I do to help people living on the streets near me?",
+    "title": "How can I take action to make where i live a friendlier, safer and happier place?",
     "content":{
       "items":[
         {
-          "text": "Post a free resource you found.",
-          "subText":"Such as, food, shelters, clothing, showers, computer/wifi, public libraries, public toilets, support groups, activites, medical, or any other beneficial resource."
+          "text": "Put yourself on the Public Happiness Map.",
+          "subText":"So other positive and pro-active people nearby can contact you to plan Public Happiness Movement activities together, like; public music jams and dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
         },
         {
-          "text": "Post something you can offer to support people who are homeless nearby.",
-          "link": "https://discuss.focallocal.org",
-          "linktext": "Join the discussion ",
-          "subText": "to find and suggest effective ideas to offer."
+          "text": "Create a Public Happiness Gathering.",
+          "link": "https://action.focallocal.org/",
+          "linktext": "Explore and discuss",
+          "subText": "more tools and activities to create positive cultural change."
         }
       ]
     }
