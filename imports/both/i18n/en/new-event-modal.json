@@ -2,8 +2,8 @@
   "modal_header": "Add a Resource",
   "resource_type": {
     "title": "Where is the resource from?",
-    "nearby": "I found a resource nearby",
-    "community": "I want to offer my own resource"
+    "firstRadio": "I found a resource nearby",
+    "secondRadio": "I want to offer my own resource"
   },
   "overview":"What's being offered?",
   "event_name": "Name of place",

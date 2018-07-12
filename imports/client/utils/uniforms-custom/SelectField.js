@@ -123,7 +123,6 @@ class Select_ extends Component {
       // If multi is true but indexes are null, we have to map the value/label from
       // the allowedValues array (this usually happens after a refresh)
       // this might be slow but should happen only once (we usually want to use the indexes mapper)
-      console.log('VALUE IS ', value_)
       value_ = value_.reduce((arr, val) => {
         const valueIndex = allowedValues.findIndex(obj => obj[labelKey] === val[labelKey])
         return arr.concat({ value: valueIndex, label: val[labelKey] })

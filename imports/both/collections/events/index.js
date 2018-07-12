@@ -6,6 +6,9 @@ import possibleCategories from '/imports/both/i18n/en/categories.json'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
 
+// sets allowedValues to include Community Resource without it being in dropdown
+let allowedValues = possibleCategories.concat([{ 'name': 'Community Resource', 'color': '#f82d2d' }])
+
 // Extend SimpleSchema to support the uniforms field.
 SimpleSchema.extendOptions(['uniforms'])
 
@@ -36,17 +39,8 @@ const EventsSchema = new SimpleSchema({
   'categories': {
     type: Array,
     custom: function () {
-      if (!this.value || !this.value[0]) {
+      if (!this.value || this.value.length === 0) {
         return 'required'
-      }
-    },
-    autoValue: function () {
-      if (this.field('resourceType') === 'found') {
-      }
-      if (!this.value) {
-        return [
-          { 'name': 'Community Resource', 'color': '#f82d2d' }
-        ]
       }
     },
     uniforms: {
@@ -65,12 +59,16 @@ const EventsSchema = new SimpleSchema({
   },
   'categories.$.name': {
     type: String,
-    allowedValues: possibleCategories.reduce((arr, obj) => (arr.concat(obj.name)), [])
+    allowedValues: allowedValues.reduce((arr, obj) => (arr.concat(obj.name)), [])
   },
   'categories.$.color': {
     type: String,
-    allowedValues: possibleCategories.reduce((arr, obj) => (arr.concat(obj.color)), []),
+    allowedValues: allowedValues.reduce((arr, obj) => (arr.concat(obj.color)), []),
     defaultValue: '#f82d2d'
+  },
+  'categories.resourceType': {
+    type: String,
+    defaultValue: ''
   },
 
   // Details
