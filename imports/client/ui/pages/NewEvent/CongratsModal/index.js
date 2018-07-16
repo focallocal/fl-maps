@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
-import { Redirect, NavLink } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { formatCategories, formatWhenObject } from '/imports/client/utils/format'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
@@ -82,7 +82,7 @@ class CongratsModal extends Component {
         </ModalBody>
 
         <ModalFooter>
-          <Button tag={NavLink} to='/map'>Done</Button>
+          <Button href={getUrl(event._id)}>Done</Button>
         </ModalFooter>
       </Modal>
     )
