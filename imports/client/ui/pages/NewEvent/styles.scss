@@ -38,6 +38,9 @@
      ----------------------------- */
 
   #first-step {
+    .hidden {
+      display:none;
+    }
 
     .inline-inputs {
       display: flex;
@@ -118,7 +121,9 @@
         margin: 8px 0;
       }
     }
-
+    #radios {
+      margin-bottom: 8px;
+    }
     @media (max-width: 519px) {
       & {
 
@@ -187,4 +192,7 @@
   @media (min-width: 576px) {
     max-width: 556px;
   }
+}
+.pageDetails {
+    margin-top: 15px;
 }
