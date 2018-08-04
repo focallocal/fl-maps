@@ -69,18 +69,15 @@ class NewEventModal extends Component {
         <ModalHeader toggle={this.toggleModal}>
           {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
-
-        <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
-          Please check that you've filled all the necessary fields
-        </Alert>
-
         <ModalBody>
           <FormWizard
             currentStep={currentStep}
             passFormRefToParent={this.getRef}
             editMode={editMode} />
         </ModalBody>
-
+        <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
+          Please check that you've filled all the necessary fields
+        </Alert>
         <ModalFooter>
           {currentStep + 1 <= 1 &&
             <Button color='primary' onClick={this.moveNext}>Next</Button>
