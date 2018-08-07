@@ -34,7 +34,7 @@ class App extends Component {
           <MainMenu />
 
           <ScrollToTop>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/(home)?' component={Home} />
             <Route exact path='/about' component={About} />
             <Route path='/map' component={Map_} />
             <Route path='*' render={this.renderNewEvent} />
