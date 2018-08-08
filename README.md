@@ -176,7 +176,19 @@ Upon reaching v1: Our development of the Brighter Tomorrow Map will slow, the pl
 
 ### Design Constraints
 
-The Orange mainmenu and its text 'Focallocal' are used in all projects built by the Focallocal Public Happiness community, so members can easily identify the project, and to maintain the positive and cheerful atmosphere in all related projects.
+The Orange main menu and its text 'Focallocal' are used in all projects built by the Focallocal Public Happiness community, so members can easily identify the project, and to maintain the positive and cheerful atmosphere in all related projects.
+
+### Two Maps
+
+We have two maps based on the same codebase at the moment. We're keeping the code merged until v0.3 as it helps to keep them both focused on their core ethos 'community connection', and enables them both to launch at the same time. The Homelessness map, and the community hub that will push it out to help people around the world.
+
+Map 1 - The Brighter Tomorrow Map focuses on reducing homelessness through community connection.
+
+Map 2 - Focallocal.org focuses on connecting people to take action where they live and improve well-being, that includes by building projects like The Brighter Tomorrow Map, which is our flagship project
+
+In GitHub you'll find two main branches 'master' and 'fl-sleeper'. Any differences between the two are stated in our language plugin i18n. All text visible to users should be set in i18n so it can be changed easily between the two (at some point in the future we'll probably turn this into a user friendly backend).
+
+When code you are working on is/needs to be different in the two maps, the code to change can be found in i18n. This is generally text, links and images. (search i18n in the project to find its folder).
 
 ## Other Areas of Focallocal.org
 
