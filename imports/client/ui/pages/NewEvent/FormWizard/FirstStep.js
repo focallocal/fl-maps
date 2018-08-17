@@ -1,108 +1,85 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { CustomInput } from 'reactstrap'
+import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
-import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
-import Recurring from './DateTimeModule/Recurring'
-import WeekDays from './DateTimeModule/WeekDays'
-import SameDateHours from './SameDateHours'
+import labels from '/imports/both/i18n/en/new-event-modal.json'
+const defaultName = 'Community Resource'
+const defaultColor = '#f82d2d'
 
 class FirstStep extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      categories: null,
+      foundResource: true,
+      offerResource: false,
+      resourceType: 'found',
+      reset: false
+    }
+  }
   render () {
-    const {
-      form
-    } = this.props
-
     const RadioButton = this.RadioButton
-
-    const {
-      days,
-      multipleDays,
-      repeat
-    } = form.getModel().when
-
     return (
       <div id='first-step'>
+        <div id='radios'>
+          <label>{labels.resource_type.title}</label>
+          <RadioButton
+            id='foundResource'
+            label={labels.resource_type.firstRadio}
+            value={this.state.foundResource}
+            type='radio'
+            click={this.setCategories}
+          />
+          <RadioButton
+            id='offerResource'
+            label={labels.resource_type.secondRadio}
+            value={this.state.offerResource}
+            type='radio'
+            click={this.noCategories}
+          />
+        </div>
+        <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
-        <AutoField name='categories' />
-
-        <label>Dates and Hours</label>
-
-        <div className='dates-hours inline-inputs hide-labels'>
-          <div>
-            <AutoField name='when.startingDate' />
-            {!multipleDays && <AutoField name='when.startingTime' />}
-          </div>
-
-          <span className='between'>to</span>
-
-          <div>
-            {!repeat && <AutoField name='when.endingDate' />}
-            {!multipleDays && <AutoField name='when.endingTime' />}
-          </div>
-        </div>
-
-        {/* Weekdays  */}
-        <RadioButton
-          id='multipleDays'
-          label='More then one day'
-          value={multipleDays}
-          type='radio'
-        />
-        {multipleDays && (
-          <div className='week-days'>
-            <ErrorField name='when.days' errorMessage='Please select at least 1 day' />
-            <SameDateHours
-              form={form}
-              schemaKey={'when.days'}
-            />
-            <WeekDays
-              form={form}
-              schemaKey={'when.days'}
-              selectedDays={days || []}
-            />
-          </div>
-        )}
-
-        {/* Repetition */}
-        <RadioButton
-          id='repeat'
-          label='Custom recurrence'
-          value={repeat}
-          type='radio'
-        />
-        {repeat && <Recurring form={form} />}
+        {(this.state.resourceType === 'found') ? (
+          <AutoField name='categories'/>
+        ) : null }
 
       </div>
     )
   }
+  noCategories = (type, value) => {
+    this.setState({resourceType: null, foundResource: false, offerResource: true, reset: true})
+  }
 
-  RadioButton = ({ label, id, value, type }) => (
+  setCategories = () => {
+    this.setState({categories: [{}], resourceType: 'found', foundResource: true, offerResource: false})
+  }
+
+  RadioButton = ({ label, id, value, type, click }) => (
     <CustomInput
       id={id}
       type={type}
       label={label}
       checked={value === undefined ? false : value}
       onChange={() => {}}
-      onClick={() => this.handleRadioButton(id, !value)}
+      onClick={() => this.handleRadioButton(id, !value, click)}
     />
   )
-
-  handleRadioButton = (type, value) => {
-    const { when } = this.props.form.getModel()
-
-    this.props.form.change('when', {
-      ...when,
-      multipleDays: type === 'multipleDays' ? value : false,
-      repeat: type === 'repeat' ? value : false
-    })
-
-    // Scroll to bottom of modal
-    setTimeout(() => {
-      const modal = document.querySelector('.modal-body')
-      modal.scrollTo(modal, 375)
-    }, 1)
+  handleRadioButton = (type, value, click) => {
+    const { categories } = this.props.form.getModel()
+    if (type === 'offerResource') {
+      this.props.form.change('categories', [{
+        ...categories,
+        resourceType: type === 'offerResource' && 'found',
+        name: type === 'offerResource' && defaultName,
+        color: type === 'offerResource' && defaultColor
+      }])
+    } else {
+      // Empty array so that Community Resource never shows in the select field
+      this.props.form.change('categories', [])
+    }
+    click()
   }
 }
 
