@@ -24,13 +24,13 @@ class MainMenu extends Component {
     return (
       <Fragment>
         <Navbar id='main-menu' expand='md'>
-
+         
           {/* Left Links */}
+          <Logo />
           <NavItem id='sidebar-toggle' onClick={this.toggleSidebar}>
             <i className='fas fa-bars' />
           </NavItem>
 
-          <Logo />
           {/* Right Links  */}
           <Nav id='menu-items'>
             {MainMenu.leftLinks.map((link, index) => {
