@@ -148,10 +148,9 @@ class Page extends Component {
         <Helmet>
           {/* The embed web address will need updated depending on environment */}
           {/* Package.json port will need updated if you leave embed at 3000*/}
-          <div id="coral_talk_stream"></div>
-          <script src="http://104.238.186.173:3005/static/embed.js" async onload="
+          <script src="https://talk.focallocal.org/static/embed.js" async onload="
             Coral.Talk.render(document.getElementById('coral_talk_stream'), {
-              talk: 'http://104.238.186.173:3005/'
+              talk: 'https://talk.focallocal.org/'
             });
           "></script>
         </Helmet>
