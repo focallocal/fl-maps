@@ -1,5 +1,5 @@
 [
-  { "name": "Community OffersTest", "color":"red", "default":true }
+  { "name": "Community OffersTest", "color":"red", "default":true },
   { "name" : "Free Hugs", "color" : "#f82d2d" },
   { "name" : "Pillow Fight 4Connection", "color" : "#48a80d" },
   { "name" : "Give a Bubble", "color" : "#0ea575" },
