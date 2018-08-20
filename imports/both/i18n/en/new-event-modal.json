@@ -6,8 +6,8 @@
     "secondRadio": "I want to offer my own resource"
   },
   "overview":"What's being offered?",
-  "event_name": "Name of place",
+  "event_name": "Name",
   "categories": "What kind of resource is it?",
   "description": "Details",
-  "contact_info": "How can people contact you?"
+  "contact_info": "Availability details"
 }
