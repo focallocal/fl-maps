@@ -5,7 +5,7 @@ export const startingTime = {
   allowedValues: possibleEventHours,
   uniforms: {
     'customType': 'select',
-    'label': 'Times'
+    'label': ' '
   }
 }
 
