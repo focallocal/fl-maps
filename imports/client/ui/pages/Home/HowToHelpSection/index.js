@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Container, Row, Col, Button } from 'reactstrap'
 import Item from './Item'
 import i18n from '/imports/both/i18n/en'
 import ContributorsSection from '../ContributorsSection'
 import './styles.scss'
-import Authentication from '/imports/client/ui/pages/Authentication'
 
 const HowToHelpI18N = i18n.Home.how_to_help_section
 const { Home } = i18n
@@ -22,7 +22,7 @@ class HowToHelpSection extends Component {
    } = content
 
    //const isLoggedIn = !!this.props.user
-   const isLoggedIn = !!Authentication.user
+   const isLoggedIn = this.props.isLoggedIn;
 
    return (
      <section id='how_to_help_section'>
@@ -45,6 +45,9 @@ class HowToHelpSection extends Component {
      </section>
    )
  }
+}
+HowToHelpSection.propTypes = {
+isLoggedIn: PropTypes.bool.isRequired,
 }
 
 export default HowToHelpSection
