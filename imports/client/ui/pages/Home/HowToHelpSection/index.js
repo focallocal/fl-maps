@@ -5,6 +5,7 @@ import Item from './Item'
 import i18n from '/imports/both/i18n/en'
 import ContributorsSection from '../ContributorsSection'
 import './styles.scss'
+import Authentication from '/imports/client/ui/pages/Authentication'
 
 const HowToHelpI18N = i18n.Home.how_to_help_section
 const { Home } = i18n
@@ -20,7 +21,8 @@ class HowToHelpSection extends Component {
      items
    } = content
 
-   const isLoggedIn = !!this.props.user
+   //const isLoggedIn = !!this.props.user
+   const isLoggedIn = !!Authentication.user
 
    return (
      <section id='how_to_help_section'>
@@ -31,7 +33,7 @@ class HowToHelpSection extends Component {
              {items.map((item, i) => (
                <Row key={i}>
                  <Item item={item} />
-                 {(i === 1) ? <Button className='sign-and-post' tag={Link} to='/?new=1'>{isLoggedIn ? Home.post.button: Home.post.button_loggedIn}</Button> : null}
+                 {(i === 1) ? <Button className='sign-and-post' tag={Link} to='/?new=1'>{isLoggedIn ? Home.post.button_loggedIn: Home.post.button}</Button> : null}
                </Row>
              ))}
            </Col>
