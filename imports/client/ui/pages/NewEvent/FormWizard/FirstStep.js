@@ -3,8 +3,9 @@ import { CustomInput } from 'reactstrap'
 import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
-const defaultName = 'Community Resource'
-const defaultColor = '#f82d2d'
+import i18n from '/imports/both/i18n/en'
+const defaultName = i18n.categories[0].name
+const defaultColor = i18n.categories[0].color
 
 class FirstStep extends Component {
   constructor (props) {
