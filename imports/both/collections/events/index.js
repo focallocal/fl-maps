@@ -6,8 +6,8 @@ import possibleCategories from '/imports/both/i18n/en/categories.json'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
 
-// sets allowedValues to include Community Resource without it being in dropdown
-let allowedValues = possibleCategories.concat([{ 'name': 'Meet Me and Take #PublicHappiness to the Street', 'color': '#f82d2d' }])
+// let allowedValues = possibleCategories.concat([{ 'name': 'Meet Me and Take #PublicHappiness to the Street', 'color': '#f82d2d' }])
+let allowedValues = possibleCategories
 
 // Extend SimpleSchema to support the uniforms field.
 SimpleSchema.extendOptions(['uniforms'])
