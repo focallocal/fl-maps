@@ -190,6 +190,18 @@ In GitHub you'll find two main branches 'master' and 'fl-sleeper'. Any differenc
 
 When code you are working on is/needs to be different in the two maps, the code to change can be found in i18n. This is generally text, links and images. (search i18n in the project to find its folder).
 
+## Hosting
+
+we have three hosts;
+
+vultr.com
+wehostinghub.com
+digitalocean.com
+
+they are all being routed through cloudflare, but the nameservers for Vultr.com are the only ones pointing at cloudflare's nameservers.
+
+We have our domain registered at Hihosting.co.uk, and the nameservers point to cloudflare.
+
 ## Other Areas of Focallocal.org
 
 Focallocal.org is building towards a decentralized community where anyone can join to work on projects and take action to build a friendlier happier and safer world around them. Its a hub for our volunteer community to coordinate, collaborate, and begin to grow. Its also not very good right now (i built most of it (Andy)) and it is fragmented.
