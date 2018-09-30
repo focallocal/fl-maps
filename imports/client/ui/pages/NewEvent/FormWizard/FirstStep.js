@@ -49,7 +49,7 @@ class FirstStep extends Component {
       </div>
     )
   }
-  noCategories =(type, value) => {
+  noCategories = (type, value) => {
     this.setState({resourceType: null, foundResource: false, offerResource: true, reset: true})
   }
 
