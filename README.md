@@ -6,6 +6,28 @@ This is the base branch for the new react-based fl-maps. All edits to either map
 
 The project is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (*try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them*)
 
+## Getting Started:
+
+1) Head to our Slack channel and say Hi in the Introductions Slack channel, and give other devs there an intro to your background
+2) Read through the readme guide in our Github to get an idea of the project
+3) Set up a local dev enviroment, most of us use Atom.io. Settings.json is pinned to the #meteor-maps channel in Slack. (let us know if you have difficulties, a lot of people find set up fiddly)
+4) Once setup, jump into the workflow and pick your first mission
+
+## Workflow:
+
+1) I'm asking everyone to begin their work session by reviewing pull requests in Github and commenting to say if you don't find any issues. It helps to keep everyone up to date with whats going on. Once we've had 3 devs check the pull can be merged.
+2) Visit Trello and use the Meteor filter to hide Missions for other teams
+3) Please focus your attention on v0.1 and Quick Bug Squashing, once complete we will Alpha launch - it's very exciting!
+4) Grab a card, assign yourself to it and move it into correct 'Sprint' List - to prevent two people working on the same issue/mission
+5) When complete move it into 'Missions Complete', also click the link inside the card to close the issue in Github
+
+Issues are created on Github, and then get automatically posted on Trello (with a delay up to 15mins). Here's direct links, i suggest adding them to your browsers bookmarks to make navigation easy:
+https://github.com/focallocal/fl-maps/tree/react-maps
+https://trello.com/b/PFj7RlgM/focallocalorg
+https://focallocal.slack.com
+fl-master branch: https://focallocal.org
+fl-sleeper: https://brightertomorrowmap.com
+
 ## Setting Up The Development Environment
 
 1. install meteor
