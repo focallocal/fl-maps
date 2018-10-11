@@ -11,7 +11,7 @@ const TopImageSection = () => (
     <Container>
       <Row>
         <Col xs={12}>
-          <img className='top_image' src={top_image_url} />
+          <img className='top_image' src={top_image_url}/>
         </Col>
       </Row>
     </Container>
