@@ -6,12 +6,11 @@ import './styles.scss'
 
 	<div class="container">
 		<div class="hero">
-			<h1 class="name"><strong>Abbie</strong> Bradley</h1>
-			<span class="job-title">Developer</span>
-			<span class="email">abbie.bradley@gmail.com</span>
+			<h1 class="name"><strong>Hacking</strong> Homelessness</h1>
+			<span class="job-title">On the 20th and 21st October 2018 Join us for a Remote HAckathin to Launch The Brighter Tomorrow Map</span>
+			<span class="email">contact@focallocal.org</span>
 
-			<h2 class="lead">Development and design of web applications 
-for startups and large companies</h2>
+			<h2 class="lead">A volunteer led effort to transofrm Homelessness around the World through increased community connection</h2>
 		</div>
 	</div>
 
@@ -19,144 +18,87 @@ for startups and large companies</h2>
 	<div class="container">
 
 		<div class="sections">
-			<h2 class="section-title">Skills</h2>
+			<h2 class="section-title">Skills Needed</h2>
 
 			<div class="list-card">
-				<span class="exp">+ 5 years</span>
+				<span class="exp">Web Dev Team</span>
 				<div>
-					<h3>Object programming & frameworks</h3>
-					<span>PHP, Symfony, Laravel, Silex, …</span>
+					<h3>Platform building</h3>
+					<span>Meteor/Reactjs, Html, Css, Wordpress, Discourse, …</span>
 				</div>
 			</div>
 			
 			<div class="list-card">
-				<span class="exp">+ 3 years</span>
+				<span class="exp">Marketing Team</span>
 				<div>
-					<h3>Design integration</h3>
-					<span>Style and tools, JS Frameworks</span>
+					<h3>Inviting the world to use our Platform to help peole who are homeless nearby</h3>
+					<span>Social Media, Press/Media Relations, Graphic Design</span>
 				</div>
 			</div>	
 					
 			<div class="list-card">
-				<span class="exp">+ 6 years</span>
+				<span class="exp">Video Creation Team</span>
 				<div>
-					<h3>Linux</h3>
-					<span>Scripting, Servers management and protocols, Automation</span>
+					<h3>Antimated, or other Explainer Videos</h3>
+					<span>One explainer video on using the platform, One viral video telling users of a new tool they can use to support people who are homeless nearby</span>
 				</div>
 			</div>
 
 
 		</div>
 		<div class="sections">
-				<h2 class="section-title">Interests</h2>
+				<h2 class="section-title">Foot Soldiers and Activists</h2>
 				
 				<div class="list-card">
 					<div>
-						<h3>Scripting languages</h3>
-						<span>PHP, JS, Bash, Python</span>
+						<h3>Getting the Map to people who are Homeless</h3>
+						<span>Inviting Related Groups, Coordinating Teams to Put Posters up in Shelters and Public Places, Finding Free Resources to Poulate the Map</span>
 					</div>
 				</div>	
 
-				<div class="list-card">
-					<div>
-						<h3>Hacking</h3>
-						<span>Linux, Crawlers, Bots, Network</span>
-					</div>
-				</div>		
+				
 		</div>
 	</div>
 
 	<!-- Achievements -->
 
-	<div class="container cards">
-		
-		<div class="card">
-			<div class="skill-level">
-				<span>+</span>
-				<h2>60</h2>
-			</div>
-
-			<div class="skill-meta">
-				<h3>Projects</h3>
-				<span>Adapting and creating solutions for customer's needs</span>
-			</div>
-		</div>
-
-			
-		<div class="card">
-			<div class="skill-level">
-				<h2>50</h2>
-				<span>%</span>
-			</div>
-
-			<div class="skill-meta">
-				<h3>Web</h3>
-				<span>Applications development integrating third-party services and mobile client(s)</span>
-			</div>
-		</div>
-
-			
-		<div class="card">
-			<div class="skill-level">
-				<h2>30</h2>
-				<span>%</span>
-			</div>
-
-			<div class="skill-meta">
-				<h3>Technical solutions</h3>
-				<span>Such as web services, scripts, configurations</span>
-			</div>
-		</div>
-
-
-		<div class="card">
-			<div class="skill-level">
-				<h2>20</h2>
-				<span>%</span>
-			</div>
-
-			<div class="skill-meta">
-				<h3>Leading</h3>
-				<span>Web projects and ensure the quality of delivery</span>
-			</div>
-		</div>
-
-	</div>
 
 	<!-- Timeeline -->
 
 	<div class="container">
 		<ol class="timeline">
-		  <li>
-		    <p class="line">Experiences</p>
+			
+		<li>
 		    <span class="point"></span>
 		    <p class="description">
-		      Lead Developer @Geronimo
+		      Probably this sction should show how to join. Github, Trello, etc.
 		    </p>
-		    <span class="date">Today - Apr. 2016</span>
+		    <span class="date">something here</span>
+		  </li>
+			
+		  <li>
+		    <p class="line">Alternate Project</p>
+		    <span class="point"></span>
+		    <p class="description">
+		      Focallocal.org - The micro-volunteering platform that built the Brighter Tomorrow Map, and other similar projects
+		    </p>
+		    <span class="date">something here</span>
 		  </li>
 
-		  <li>
+
+		  		  <li>
+		    <p class="line">something here</p>
 		    <span class="point"></span>
 		    <p class="description">
-		      Freelance
+		      something here
 		    </p>
-		    <span class="date">Apr. 2016 - Sep. 2015</span>
+		    <span class="date">something here</span>
 		  </li>
 
 		  		  <li>
-		    <p class="line">Education</p>
 		    <span class="point"></span>
 		    <p class="description">
-		      DUT "Métiers du multimédia et de l'internet"
-		    </p>
-		    <span class="date">2015 - 2013</span>
-		  </li>
-
-		  		  <li>
-		    <span class="point"></span>
-		    <p class="description">
-		      Art & Design studies
+		     something here
 		    </p>
 		    <span class="date">2013 - 2008</span>
 		  </li>
