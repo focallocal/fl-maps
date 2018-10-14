@@ -16,6 +16,7 @@ import Map_ from './pages/Map'
 import NewEventLoadable from './pages/NewEvent/loadable'
 import CongratsModal from './pages/NewEvent/CongratsModal'
 import Page from './pages/Page'
+import HackDay from './pages/HackDay'
 
 // Components
 import ScrollToTop from './components/ScrollToTop'
@@ -40,6 +41,7 @@ class App extends Component {
             <Route path='*' render={this.renderNewEvent} />
             <Route exact path='/thank-you' component={CongratsModal} />
             <Route exact path='/page/:id' component={Page} />
+            <Route exact path='/hackday' component={HackDay} />
             <Authentication />
           </ScrollToTop>
         </Fragment>
