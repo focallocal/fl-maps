@@ -42,9 +42,9 @@ class FirstStep extends Component {
         <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
-        {(this.state.resourceType === 'found') ? (
-          <AutoField name='categories'/>
-        ) : null }
+        {/* {(this.state.resourceType === 'found') ? ( */}
+        <AutoField name='categories'/>
+        {/* ) : null } */}
 
       </div>
     )
