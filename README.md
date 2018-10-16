@@ -8,18 +8,19 @@ The project is based on [Meteor](https://www.meteor.com/) and [React](https://re
 
 ## Getting Started:
 
-1) Head to our Slack channel and say Hi in the Introductions Slack channel, and give other devs there an intro to your background
-2) Read through the readme guide in our Github to get an idea of the project
-3) Set up a local dev enviroment, most of us use Atom.io. Settings.json is pinned to the #meteor-maps channel in Slack. (let us know if you have difficulties, a lot of people find set up fiddly)
-4) Once setup, jump into the workflow and pick your first mission
+1) [Join our Google calendar](https://calendar.google.com/calendar?cid=dDFranFza2RmOXBzb2JpM291NnVmdjc4NXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ), and set yourself a regular reminder to visit it add the hours you want to work on this project this week, or month. This makes it much easier for the team to arrange collaborations, and most people find volunteer commitments always getting get put off if they aren't scheduled. Using these steps will help you keep with the commitment you want to make. 
+2) Head to our [Slack channel](https://focallocal.slack.com) and say Hi in the Introductions Slack channel, and give other devs there an intro to your background
+3) Read through this readme guide in our Github to get an idea of the project
+4) Set up a local dev enviroment (most of us use Atom.io). Settings.json is pinned to the #meteor-maps channel in Slack. (let us know if you have difficulties, a lot of people find setting up fiddly)
+5) Once setup, [jump onto Trello](https://trello.com/invite/b/PFj7RlgM/a12e9b4bdc6fff4a5e7439754c9a7e3b/focallocalorg), assign yourself your first mission and of you're ready to being move it into the sprint queue
 
 ## Workflow:
 
-1) I'm asking everyone to begin their work session by reviewing pull requests in Github and commenting to say if you don't find any issues. It helps to keep everyone up to date with whats going on. Once we've had 3 devs check the pull can be merged.
+1) Begin each work session by reviewing others pull requests in Github and commenting on your findings. It helps to keep everyone up to date with whats going on and create a self-checking community. If you're the 3rd dev commenting/checking please tag @AndyatFocallocal to merge the PR.
 2) Visit Trello and use the Meteor filter to hide Missions for other teams
 3) Please focus your attention on v0.1 and Quick Bug Squashing, once complete we will Alpha launch - it's very exciting!
 4) Grab a card, assign yourself to it and move it into correct 'Sprint' List - to prevent two people working on the same issue/mission
-5) When complete move it into 'Missions Complete', also click the link inside the card to close the issue in Github
+5) When complete and your PR is awaiting review, move the card into 'Missions Complete', also click the link inside the card to close the issue in Github
 
 Issues are created on Github, and then get automatically posted on Trello (with a delay up to 15mins). Here's direct links, i suggest adding them to your browsers bookmarks to make navigation easy:
 https://github.com/focallocal/fl-maps/tree/react-maps
