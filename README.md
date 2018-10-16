@@ -18,7 +18,7 @@ The project is based on [Meteor](https://www.meteor.com/) and [React](https://re
 
 1) Begin each work session by reviewing others pull requests in Github and commenting on your findings. It helps to keep everyone up to date with whats going on and create a self-checking community. If you're the 3rd dev commenting/checking please tag @AndyatFocallocal to merge the PR.
 2) Visit Trello and use the Meteor filter to hide Missions for other teams
-3) Please focus your attention on v0.1 and Quick Bug Squashing, once complete we will Alpha launch - it's very exciting!
+3) Use filters in Trello to see which Cards/Missions are most needing your attention, or grab a Mission from Quick Bug Squashing
 4) Grab a card, assign yourself to it and move it into correct 'Sprint' List - to prevent two people working on the same issue/mission
 5) When complete and your PR is awaiting review, move the card into 'Missions Complete', also click the link inside the card to close the issue in Github
 
