@@ -9,5 +9,7 @@
   "event_name": "Name/Title",
   "categories": "Public Happiness activity",
   "description": "Tell us more!",
-  "contact_info": "Meet Me Details (what for?/where?/why?)"
+  "contact_info": "Meet Me Details (what for?/where?/why?)",
+  "active_from": "Active from",
+  "active_until": "Active until"
 }
