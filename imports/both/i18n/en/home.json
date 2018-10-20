@@ -24,6 +24,75 @@
       ]
     }
   },
+  "how_to_help_section":{
+    "title": "How can I take action to make where i live a friendlier, safer and happier place?",
+    "content":{
+      "items":[
+        {
+          "text": "Put yourself on the Public Happiness Map.",
+          "subText":"For other positive and pro-active people nearby to contact you and plan Public Happiness Movement activities together, like; public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
+        },
+        {
+          "text": "Create a Public Happiness Gathering.",
+          "link": "https://action.focallocal.org/",
+          "linktext": "See more, suggest and discuss ",
+          "subText": "positive tools and activities to create positive cultural change."
+        }
+      ]
+    }
+  },
+  "contributors_section":{
+    "title": "Built by a wonderful team of volunteers at the Focallocal Public Happiness community.",
+    "content":{
+      "items":[
+        {
+          "photo":"https://avatars1.githubusercontent.com/u/3659502?s=460&v=4",
+          "name": "Mordka",
+          "link":"https://github.com/mordka"
+        },
+        {
+          "photo":"https://avatars2.githubusercontent.com/u/11820758?s=460&v=4",
+          "name": "ydaniel98",
+          "link":"https://github.com/ydaniel98"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/28781165?s=460&v=4",
+          "name": "royGil",
+          "link":"https://github.com/royGil"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+          "name": "Andy",
+          "link":"https://github.com/AndyatFocallocal"
+        },
+        {
+          "photo":"https://avatars0.githubusercontent.com/u/28017627?s=460&v=4",
+          "name": "HuascarMC",
+          "link":"https://github.com/HuascarMC"
+        },
+        {
+          "photo":"https://avatars1.githubusercontent.com/u/7775349?s=460&v=4",
+          "name": "cw00dw0rd",
+          "link":"https://github.com/cw00dw0rd"
+        },
+        {
+          "photo":"https://avatars2.githubusercontent.com/u/17742310?s=460&v=4",
+          "name": "Spartano",
+          "link":"https://github.com/Spartano"
+        },
+        {
+          "photo":"https://avatars1.githubusercontent.com/u/11193792?s=460&v=4",
+          "name": "distalx",
+          "link":"https://github.com/distalx"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/22714384?s=460&v=4",
+          "name": "Ziinc",
+          "link":"https://github.com/Ziinc"
+        }
+      ]
+    }
+  },
   "second_section": {
     "title": "What Is The Brighter Tomorrow Map?",
     "content": {
