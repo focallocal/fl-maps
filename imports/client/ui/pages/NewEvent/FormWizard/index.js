@@ -38,7 +38,7 @@ class FormWizard extends Component {
           <Fragment>
             <span className='reset' onClick={this.resetForm}>reset fields</span>
             {currentStep === 0 && <FirstStep form={this.form} />}
-            {currentStep === 1 && <SecondStep form={this.form} />}
+            {currentStep === 1 && <SecondStep />}
           </Fragment>
         ) : <div />}
       </AutoForm>

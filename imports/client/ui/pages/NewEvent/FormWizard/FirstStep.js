@@ -3,9 +3,8 @@ import { CustomInput } from 'reactstrap'
 import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
-import Categories from '/imports/both/i18n/en/categories.json'
-const defaultName = Categories[0].name
-const defaultColor = Categories[0].color
+const defaultName = 'Community Resource'
+const defaultColor = '#f82d2d'
 
 class FirstStep extends Component {
   constructor (props) {
@@ -42,9 +41,9 @@ class FirstStep extends Component {
         <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
-        {/* {(this.state.resourceType === 'found') ? ( */}
-        <AutoField name='categories'/>
-        {/* ) : null } */}
+        {(this.state.resourceType === 'found') ? (
+          <AutoField name='categories'/>
+        ) : null }
 
       </div>
     )

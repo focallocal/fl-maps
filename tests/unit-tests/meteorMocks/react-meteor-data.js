@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 
-const withTracker = (options) => {
-  let options_ = options
-  if (typeof options === 'function') {
-    options_ = options()
-  }
+const withTracker = (func) => {
 
   return (WrappedComponent) => (
     class WrappingComponents extends Component {
+
       render () {
-        return <WrappedComponent {...options_} />
+        return <WrappedComponent {...func()} {...this.props} />
       }
     }
   )
 }
+
 
 export {
   withTracker
