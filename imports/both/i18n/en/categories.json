@@ -1,10 +1,14 @@
 [
-  { "name" : "Meet me for action!", "color":"red", "default":true },
-  { "name" : "Focallocal", "color" : "#f82d2d" },
-  { "name" : "Global Flash Mobs", "color" : "#48a80d" },
-  { "name" : "Contact us to add your community here", "color" : "#0ea575" },
-  { "name" : "Supporting Skills", "color" : "#f57c00" },
-  { "name" : "Taking a Break", "color" : "#d7191c" }
+  { "name": "Community Offers", "color":"red", "default":true },
+  { "name": "Shower", "color":"#14fffc" },
+  { "name": "Training Course", "color":"#181819" },
+  { "name": "Activity", "color":"#63be29" },
+  { "name": "Food", "color":"#e322e9" },
+  { "name": "Clothes", "color":"#e2fe2e" },
+  { "name": "Public Toilet", "color":"#63be29" },
+  { "name": "Shelters", "color":"#74fe6a" },
+  { "name": "Somewhere to Sleep", "color":"#6ab8fe" },
+  { "name": "Computer or Wifi", "color":"#e4f81b" },
+  { "name": "Public Library", "color":"#09bc2b" },
+  { "name": "Medical", "color":"#fa0707" }
 ]
-
-
