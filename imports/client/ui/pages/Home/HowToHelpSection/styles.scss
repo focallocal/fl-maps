@@ -27,14 +27,11 @@
   }
 
   .sign-and-post {
-    width: 16em;
+    width: 8em;
     margin: 10px auto;
   }
 
   @media screen and (max-width: 850px) {
-    .title {
-      text-align: center;
-    }
 
     .items {
       flex-flow: column;

@@ -24,6 +24,7 @@ class MainMenu extends Component {
     return (
       <Fragment>
         <Navbar id='main-menu' expand='md'>
+
           {/* Left Links */}
           <NavItem id='sidebar-toggle' onClick={this.toggleSidebar}>
             <i className='fas fa-bars' />
