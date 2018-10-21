@@ -34,26 +34,33 @@ class App extends Component {
           <MainMenu />
 
           <ScrollToTop>
+
             <Route exact path='/(home)?' component={Home} />
             <Route exact path='/about' component={About} />
             <Route path='/map' component={Map_} />
             <Route path='*' render={this.renderNewEvent} />
             <Route exact path='/thank-you' component={CongratsModal} />
             <Route exact path='/page/:id' component={Page} />
+
+         
             <Authentication />
+
           </ScrollToTop>
         </Fragment>
       </Router>
     )
   }
 
-  renderNewEvent = ({ location, history }) => {
+ renderNewEvent = ({ location, history }) => {
     const { new: new_, edit } = qs.parse(location.search)
     const isOpen = Boolean(new_ === '1' || (edit === '1' && window.__editData))
 
     if (isOpen && !Meteor.userId()) {
       sessionStorage.setItem('redirect', '/?new=1')
       return <Redirect to='/sign-in' />
+    }
+    else if(!isOpen){
+      return <Redirect to='/home' />
     }
 
     return <NewEventLoadable isOpen={isOpen} location={location} history={history} />
