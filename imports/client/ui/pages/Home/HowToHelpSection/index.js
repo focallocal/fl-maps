@@ -21,8 +21,8 @@ class HowToHelpSection extends Component {
      items
    } = content
 
-   //const isLoggedIn = !!this.props.user
-   const isLoggedIn = this.props.isLoggedIn;
+   const isLoggedIn = !!Meteor.user()
+   //const isLoggedIn = this.props.isLoggedIn;
 
    return (
      <section id='how_to_help_section'>
@@ -46,8 +46,9 @@ class HowToHelpSection extends Component {
    )
  }
 }
+/*
 HowToHelpSection.propTypes = {
 isLoggedIn: PropTypes.bool.isRequired,
-}
+}*/
 
 export default HowToHelpSection
