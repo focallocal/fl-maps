@@ -7,14 +7,13 @@ import Find from './Find'
 import './styles.scss'
 
 const { Home } = i18n
-let color
-let titleColor = {color: color}
 
+let title = (window.__mapType === 'gatherings') ? 'first-title-gatherings' : 'first-title-btm'
 const FirstSection = ({ user }) => (
+
   <section id='first-section'>
     <Container>
-      <div className='first-title' style={
-        (window.__mapType === 'gatherings') ? titleColor = {color: 'rgba(0,0,0,.75)'} : titleColor = {color: '#ffffff'}}
+      <div className={`first-title ${title}`}
       >{Home.first_title}</div>
       <Find user={user} />
     </Container>
