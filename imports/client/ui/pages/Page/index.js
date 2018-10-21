@@ -10,7 +10,7 @@ import PageLoader from '/imports/client/ui/components/PageLoader'
 import EditPage from './Edit'
 import AttendingButton from './AttendingButton'
 import './style.scss'
-import {Helmet} from "react-helmet";
+import {Helmet} from 'react-helmet'
 
 class Page extends Component {
   constructor (props) {
@@ -147,8 +147,8 @@ class Page extends Component {
         <div id="coral_talk_stream"></div>
         <Helmet>
           {/* The embed web address will need updated depending on environment */}
-          {/* Package.json port will need updated if you leave embed at 3000*/}
-          <script src="https://talk.focallocal.org/static/embed.js" async onload="
+          {/* Package.json port will need updated if you leave embed at 3000 */}
+          <script src="https://talk.focallocal.org/static/embed.js" async onLoad="
             Coral.Talk.render(document.getElementById('coral_talk_stream'), {
               talk: 'https://talk.focallocal.org/'
             });
