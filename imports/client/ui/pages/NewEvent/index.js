@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { EventsSchema } from '/imports/both/collections/events'
@@ -18,7 +19,9 @@ class NewEventModal extends Component {
       editMode: false,
       form: null,
       googleLoaded: false,
-      hasErrors: false
+      hasErrors: false,
+      isRedirect: false,
+      isConfirmBtn: false,
     }
 
     if (window.google) {
@@ -30,10 +33,19 @@ class NewEventModal extends Component {
     if (window.__editData) {
       return {
         ...nextProps,
-        editMode: true
+        editMode: true,
+        isRedirect: false,
+        isConfirmBtn: false,
       }
     }
-    return nextProps
+    else{
+      return{
+        ...nextProps,
+        editMode: false,
+        isRedirect: false,
+        isConfirmBtn: false,
+      } 
+    }
   }
 
   componentDidMount () {
@@ -52,6 +64,11 @@ class NewEventModal extends Component {
   }
 
   render () {
+
+    if (this.state.isRedirect === true) {  
+      return <Redirect to='/map' />
+    }
+
     const {
       currentStep,
       editMode,
@@ -61,13 +78,16 @@ class NewEventModal extends Component {
     } = this.state
 
     const hasGoogleMapsLoaded = window.google || googleLoaded
-
     const header = i18n_.modal_header
+    const isConfirmBtn = this.state.isConfirmBtn;
 
+    const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn:  true})}>Delete</Button> : null  
+  
     return hasGoogleMapsLoaded && (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg'>
         <ModalHeader toggle={this.toggleModal}>
           {editMode ? header.replace('New', 'Edit') : header}
+          
         </ModalHeader>
         <ModalBody>
           <FormWizard
@@ -78,17 +98,27 @@ class NewEventModal extends Component {
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
           Please check that you've filled all the necessary fields
         </Alert>
-        <ModalFooter>
-          {currentStep + 1 <= 1 &&
-            <Button color='primary' onClick={this.moveNext}>Next</Button>
-          }
-          {currentStep === 1 &&
-            <Button color='primary' onClick={this.submit} className='submit'>Submit</Button>
-          }
-          {currentStep > 0 &&
-            <Button color='primary' onClick={this.moveBack}>Back</Button>
-          }
-        </ModalFooter>
+
+        {isConfirmBtn ?
+          <ModalFooter>
+            <Button color='primary' onClick={() => this.setState({ isConfirmBtn: false })}>Cancel</Button>
+            <Button color='danger' onClick={this.deletePage}>CONFIRM DELETE</Button>
+            
+          </ModalFooter>
+        :   
+          <ModalFooter>
+            {currentStep + 1 <= 1 &&
+              <Button color='primary' onClick={this.moveNext}>Next</Button>
+            }
+            {deleteBtn}
+            {currentStep === 1 &&
+              <Button color='primary' onClick={this.submit} className='submit'>Submit</Button>
+            }
+            {currentStep > 0 &&
+              <Button color='primary' onClick={this.moveBack}>Back</Button>
+            }
+          </ModalFooter>
+        }
       </Modal>
     )
   }
@@ -121,6 +151,12 @@ class NewEventModal extends Component {
       })
   }
 
+  deletePage = () => {
+    let model = EventsSchema.clean(this.state.form.getModel())
+    model._id = this.state.form.getModel()._id
+    this.callDeleteEvent(model);
+  }
+
   callNewEvent = model => {
     Meteor.call('Events.newEvent', model, (err, res) => {
       if (!err) {
@@ -145,6 +181,17 @@ class NewEventModal extends Component {
       window.NProgress.done()
       if (Meteor.isDevelopment) { console.log(err, model) }
     })
+  }
+
+  callDeleteEvent = (model) => {
+    Meteor.call('Events.deleteEvent', model, (err, res) => {
+      if (!err) {
+        this.setState({ isRedirect: true })
+      }
+
+      if (Meteor.isDevelopment) { console.log(err, model) }
+    })
+
   }
 
   toggleModal = () => {
