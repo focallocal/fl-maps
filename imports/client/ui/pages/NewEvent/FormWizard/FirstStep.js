@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import Categories from '/imports/both/i18n/en/categories.json'
+
 const defaultName = Categories[0].name
 const defaultColor = Categories[0].color
 
@@ -42,9 +43,11 @@ class FirstStep extends Component {
         <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
-        {(this.state.resourceType === 'found') ? (
-          <AutoField name='categories'/>
-        ) : null }
+        <span className='address-sub-label'>PS - for privacy reasons we strongly suggest you use a public location nearby
+           rather than your home address</span>
+        {/* {(this.state.resourceType === 'found') ? ( */}
+        <AutoField name='categories'/>
+        {/* ) : null } */}
 
       </div>
     )
