@@ -135,18 +135,8 @@ const EventsSchema = new SimpleSchema({
       }
     }
   },
-  'when.startingDate': {
-    ...startingDate,
-    uniforms: {
-      label: labels.active_from
-    }
-  },
-  'when.endingDate': {
-    ...endingDate,
-    uniforms: {
-      label: labels.active_until
-    }
-  },
+  'when.startingDate': startingDate,
+  'when.endingDate': endingDate,
   'when.startingTime': {
     ...startingTime,
     optional: true,

@@ -5,11 +5,9 @@
     "firstRadio": "I found a resource nearby",
     "secondRadio": "I want to offer my own resource"
   },
-  "overview":"Intro",
-  "event_name": "Name/Title",
-  "categories": "Public Happiness activity",
-  "description": "Tell us more!",
-  "contact_info": "Meet Me Details (what for?/where?/why?)",
-  "active_from": "Active from",
-  "active_until": "Active until"
+  "overview":"What's being offered?",
+  "event_name": "Name",
+  "categories": "What kind of resource is it?",
+  "description": "Details",
+  "contact_info": "Availability details"
 }
