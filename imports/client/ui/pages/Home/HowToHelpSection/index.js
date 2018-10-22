@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Container, Row, Col, Button } from 'reactstrap'
 import Item from './Item'
 import i18n from '/imports/both/i18n/en'
+import { withTracker } from 'meteor/react-meteor-data'
 import ContributorsSection from '../ContributorsSection'
 import './styles.scss'
 
@@ -21,8 +22,7 @@ class HowToHelpSection extends Component {
       items
     } = content
 
-    // const isLoggedIn = !!this.props.user
-    const isLoggedIn = this.props.isLoggedIn
+    const isLoggedIn = !!this.props.userId
 
     return (
       <section id='how_to_help_section'>
@@ -46,8 +46,9 @@ class HowToHelpSection extends Component {
     )
   }
 }
-HowToHelpSection.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
-}
 
-export default HowToHelpSection
+export default withTracker(() => {
+  return {
+    userId: Meteor.userId()
+  }
+})(HowToHelpSection)
