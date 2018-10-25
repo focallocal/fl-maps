@@ -18,7 +18,6 @@ before_install:
 - npm install -g mup
 - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
-
 # blocklist
 # branches:
 #   except:
@@ -45,8 +44,7 @@ jobs:
         - echo $TRAVIS_REPO_SLUG
     - stage: deploy
       name: "Deploying Focallocal"
-      script:
-        - mup deploy
+      script: mup deploy
   
 
 # script:
