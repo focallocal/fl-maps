@@ -3,10 +3,10 @@ sudo: required
 node_js:
 - '8.11.1'
 
-# stages:
-#   # - init
-#   # - test
-#   - deploy
+stages:
+  - init
+  - test
+  - deploy
 
 # safelist
 branches:
@@ -30,14 +30,17 @@ before_install:
 - npm install -g mup
 - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
-# jobs:  
-#   include:
-    # - stage: "init"  # naming the Init Build stage
-    #   name: "Init Test Build"            # names the Init Tests stage job
-    # - script:
-    #     - echo "Starting Init CI Build....TEST"
-    # - stage: "test"
-    # - stage: deploy
-    #   name: "Deploying Focallocal"
-script: 
-  - mup deploy
+jobs:  
+  include:
+    - stage: init  # naming the Init Build stage
+      name: "Init Test Build"            # names the Init Tests stage job
+    - script:
+        - echo "Starting Init CI Build....TEST"
+    - stage: test
+      name: "Test Stage"
+    - script:
+      - echo "Testing......."
+    - stage: deploy
+      name: "Deploying Focallocal"
+    - script: 
+      - mup deploy
