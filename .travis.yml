@@ -3,11 +3,10 @@ sudo: required
 node_js:
 - '8.11.1'
 
-# blocklist
-# branches:
-#   except:
-#   - legacy
-#   - experimental
+stages:
+  - init
+  - test
+  - deploy
 
 # safelist
 branches:
@@ -33,15 +32,11 @@ before_install:
 
 jobs:  
   include:
-    - stage: "InitBuild"  # naming the Init Build stage
+    - stage: "init"  # naming the Init Build stage
       name: "Init Test Build"            # names the Init Tests stage job
     - script:
         - echo "Starting Init CI Build....TEST"
-        - echo $TRAVIS_COMMIT
-        - echo $TRAVIS_TAG
-        - echo $TRAVIS_BRANCH
-        - echo $TRAVIS_BUILD_NUMBER
-        - echo $TRAVIS_REPO_SLUG
+    - stage: "test"
     - stage: deploy
       name: "Deploying Focallocal"
       script: mup deploy
