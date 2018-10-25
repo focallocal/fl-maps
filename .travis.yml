@@ -3,6 +3,18 @@ sudo: required
 node_js:
 - '8.11.1'
 
+# blocklist
+# branches:
+#   except:
+#   - legacy
+#   - experimental
+
+# safelist
+branches:
+  only:
+  - master
+  - fl-sleeper
+
 cache:
 directories:
 - $HOME/.meteor
@@ -13,16 +25,22 @@ before_cache:
 before_install:
 # Remove cache if the project is upgraded to a newer version of meteor
 - export PATH="$HOME/.meteor:$PATH"
-- openssl enc -d -aes-256-cbc -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_master"
+- openssl enc -d -aes-256-cbc -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_sleeper"
 - tar xvf deploy.tar
 - npm install -g mup
 - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
-branches:
-only:
-- master
-- street-sleeper
-
-script:
-- npm test
-- mup deploy
+jobs:  
+  include:
+    - stage: "InitBuild"  # naming the Init Build stage
+      name: "Init Test Build"            # names the Init Tests stage job
+    - script:
+        - echo "Starting Init CI Build....TEST"
+        - echo $TRAVIS_COMMIT
+        - echo $TRAVIS_TAG
+        - echo $TRAVIS_BRANCH
+        - echo $TRAVIS_BUILD_NUMBER
+        - echo $TRAVIS_REPO_SLUG
+    - stage: deploy
+      name: "Deploying Focallocal"
+      script: mup deploy
