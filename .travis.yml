@@ -3,10 +3,10 @@ sudo: required
 node_js:
 - '8.11.1'
 
-stages:
-  # - init
-  # - test
-  - deploy
+# stages:
+#   # - init
+#   # - test
+#   - deploy
 
 # safelist
 branches:
