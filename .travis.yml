@@ -13,7 +13,6 @@ branches:
   only:
   - master
   - fl-sleeper
-  - Main-About-Color-Changes
 
 cache:
 directories:
