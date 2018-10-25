@@ -4,8 +4,8 @@ node_js:
 - '8.11.1'
 
 stages:
-  - init
-  - test
+  # - init
+  # - test
   - deploy
 
 # safelist
@@ -32,11 +32,11 @@ before_install:
 
 jobs:  
   include:
-    - stage: "init"  # naming the Init Build stage
-      name: "Init Test Build"            # names the Init Tests stage job
-    - script:
-        - echo "Starting Init CI Build....TEST"
-    - stage: "test"
+    # - stage: "init"  # naming the Init Build stage
+    #   name: "Init Test Build"            # names the Init Tests stage job
+    # - script:
+    #     - echo "Starting Init CI Build....TEST"
+    # - stage: "test"
     - stage: deploy
       name: "Deploying Focallocal"
       script: mup deploy
