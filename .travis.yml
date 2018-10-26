@@ -3,17 +3,6 @@ sudo: required
 node_js:
 - '8.11.1'
 
-stages:
-  - init
-  - test
-  - deploy
-
-# safelist
-branches:
-  only:
-  - master
-  - fl-sleeper
-
 cache:
 directories:
 - $HOME/.meteor
@@ -29,18 +18,12 @@ before_install:
 - npm install -g mup
 - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
-jobs:  
-  include:
-    - stage: init                               # Init Build stage
-      name: "Init Test Build"                   # names the Init Tests stage job
-    - script:
-        - echo "Starting Init CI Build....TEST" # Send a log to the terminal 
-    - stage: test                               # Test build startd
-      name: "Test Stage"
-    - script:
-      - echo "Testing......."                   # Log to terminal, Need to push Test code here
-    - stage: deploy
-      name: "Deploying Focallocal"              # Deploy Job
-    - script: 
-      - mup deploy                              # CMD to deploy app
+branches:
+  only:
+    - master
+    - fl-sleeper
+
+script:
+#- npm test
+  - mup deploy
 
