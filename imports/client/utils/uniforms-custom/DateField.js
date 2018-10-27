@@ -40,10 +40,6 @@ function YearMonthForm({ date, localeUtils, onChange }) {
   );
 }
 
-const currentYear = new Date().getFullYear()
-const fromMonth = new Date(currentYear, 0)
-const toMonth = new Date(currentYear + 10, 11)
-
 function YearMonthForm ({ date, localeUtils, onChange }) {
   const months = localeUtils.getMonths()
 
