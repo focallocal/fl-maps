@@ -1,7 +1,8 @@
 [
   { "name" : "Meet me for Action!", "color":"red", "default":true },
   { "name" : "Global Flash Mobs", "color" : "#38a80d" },
-  { "name" : "Free Hugs", "color" : "#f82d2d" },
+  { "name" : "<a href="https://news.focallocal.org/free-hugs/" target="_blank">Free Hugs</a>
+", "color" : "#f82d2d" },
   { "name" : "Pillow Fight 4Connection", "color" : "#48a80d" },
   { "name" : "Give a Bubble", "color" : "#0ea575" },
   { "name" : "Take a Smile", "color" : "#0e77a3" },
