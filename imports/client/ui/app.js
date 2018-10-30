@@ -59,9 +59,11 @@ class App extends Component {
       sessionStorage.setItem('redirect', '/?new=1')
       return <Redirect to='/sign-in' />
     }
+    /*
     else if(!isOpen){
       return <Redirect to='/home' />
     }
+    */
 
     return <NewEventLoadable isOpen={isOpen} location={location} history={history} />
   }
