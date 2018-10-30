@@ -55,12 +55,23 @@ class FormWizard extends Component {
   }
 
   loadModelFromStorage (empty) {
-    let initialObject = EventsSchema.clean({}, { mutate: true }) // get default values
-    initialObject.when = {
-      startingTime: getHour(),
-      endingTime: getHour(3),
-      recurring: { forever: true },
-      repeat: false
+    // on fields reset, get rid of any previously unfinished New Event
+    if(empty === true){
+      delete window.__unfinishedNewEvent
+    }
+
+    let initialObject;
+
+    if('__unfinishedNewEvent' in window){
+      initialObject = window.__unfinishedNewEvent
+    } else {
+      initialObject = EventsSchema.clean({}, { mutate: true }) // get default values
+      initialObject.when = {
+        startingTime: getHour(),
+        endingTime: getHour(3),
+        recurring: { forever: true },
+        repeat: false
+      }
     }
 
     return initialObject
