@@ -21,6 +21,7 @@ class FirstStep extends Component {
   }
   render () {
     const RadioButton = this.RadioButton
+
     return (
       <div id='first-step'>
         <div id='radios'>
@@ -43,7 +44,7 @@ class FirstStep extends Component {
         <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
-        { offerResource && 
+        { this.state.offerResource && 
           <Alert 
             color='info' 
             className='address-sub-label'>
