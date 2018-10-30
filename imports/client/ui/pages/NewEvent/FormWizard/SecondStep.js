@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { CustomInput, Row, Col } from 'reactstrap'
+import labels from '/imports/both/i18n/en/new-event-modal.json'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
 import Recurring from './DateTimeModule/Recurring'
 import WeekDays from './DateTimeModule/WeekDays'
 import SameDateHours from './SameDateHours'
+
 
 class SecondStep extends Component {
   render () {
@@ -49,7 +51,7 @@ class SecondStep extends Component {
         {/* Weekdays  */}
         <RadioButton
           id='multipleDays'
-          label='More than one day'
+          label={labels.recurrence.thirdRadio}
           value={multipleDays}
           type='radio'
         />
@@ -71,7 +73,7 @@ class SecondStep extends Component {
         {/* Repetition */}
         <RadioButton
           id='repeat'
-          label='Custom recurrence'
+          label={labels.recurrence.fourthRadio}
           value={repeat}
           type='radio'
         />

@@ -11,5 +11,9 @@
   "description": "Tell us more!",
   "contact_info": "Meet Me Details (what for?/where?/why?)",
   "active_from": "Active from",
-  "active_until": "Active until"
+  "active_until": "Active until",
+  "recurrence": {
+    "thirdRadio": "Specific days of the week",
+    "fourthRadio": "Custom recurrence"
+  }
 }
