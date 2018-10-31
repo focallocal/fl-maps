@@ -38,8 +38,8 @@ class SecondStep extends Component {
               </Col>
             </Row>
           </div>
+          {/*
           <div>
-            {/*
             <Row>
               <Col>
                 {!multipleDays && <AutoField name='when.startingTime' />}
@@ -48,8 +48,8 @@ class SecondStep extends Component {
                 {!multipleDays && <AutoField name='when.endingTime' />}
               </Col>
             </Row>
-          */}
           </div>
+          */}
         </div>
 
         {/* Weekdays  */}
