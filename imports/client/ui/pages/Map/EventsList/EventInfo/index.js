@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
+import i18n_ from '/imports/both/i18n/en/map.json'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as formatUtils from '/imports/client/utils/format'
 import './styles.scss'
@@ -96,8 +97,8 @@ class EventInfo extends Component {
         <hr className='divider' />
 
         <div className='third-section'>
-          <div className='title'>Introduction</div>
-          <div className='description'>{event.overview}</div>
+          <div className='title'>{i18n_.eventInfo.introTitle}</div>
+          <div className='overview'>{event.overview}</div>
         </div>
       </div>
     )
