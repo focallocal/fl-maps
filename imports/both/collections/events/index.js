@@ -365,7 +365,7 @@ const EventsSchema = new SimpleSchema({
   'engagement.limit': {
     type: Number,
     min: 0,
-    defaultValue: label.attendee_limit,
+    defaultValue: labels.attendee_limit,
     uniforms: {
       customType: 'number',
       label: 'Attendee limit (leave as is, if no limit)'
