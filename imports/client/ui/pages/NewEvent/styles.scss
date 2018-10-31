@@ -10,8 +10,8 @@
 
       .reset {
         position: absolute;
-        top: -0.5em;
-        right: -1em;
+        right: 1em;
+        top: 0.75em;
         // bootstrap3 btn-xs
         padding: 1px 5px;
         font-size: 0.8em;
@@ -21,8 +21,8 @@
     }
 
     .modal-body > form{
-      padding-top: 1.2rem;
-      padding-bottom: 1.2rem;
+      padding-top: 1.25rem;
+      padding-bottom: 1.55rem;
     }
 
     .alert.error-general {
