@@ -43,8 +43,15 @@ class FirstStep extends Component {
         <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
-        <span className='address-sub-label'>PS - for privacy reasons we strongly suggest you use a public location nearby
-           rather than your home address</span>
+        { this.state.offerResource && 
+          <Alert 
+            color='info' 
+            className='address-sub-label'>
+            PS - for privacy reasons, we strongly suggest you use a public 
+            location nearby rather than your home address
+          </Alert>
+        }
+        
         {/* {(this.state.resourceType === 'found') ? ( */}
         <AutoField name='categories'/>
         {/* ) : null } */}
