@@ -45,7 +45,8 @@ class FirstStep extends Component {
         <AutoField name='address' />
         { this.state.offerResource && 
           <Alert 
-            color='info'>
+            color='info'
+            className='address-sub-label'>
             PS - for privacy reasons, we strongly suggest you use a public 
             location nearby rather than your home address
           </Alert>
