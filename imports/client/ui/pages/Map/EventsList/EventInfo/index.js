@@ -96,8 +96,8 @@ class EventInfo extends Component {
         <hr className='divider' />
 
         <div className='third-section'>
-          <div className='title'>About</div>
-          <div className='description'>{event.description}</div>
+          <div className='title'>Introduction</div>
+          <div className='description'>{event.overview}</div>
         </div>
       </div>
     )
