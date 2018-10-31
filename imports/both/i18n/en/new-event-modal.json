@@ -9,5 +9,10 @@
   "event_name": "Name",
   "categories": "What kind of resource is it?",
   "description": "Details",
-  "contact_info": "Availability details"
+  "contact_info": "Availability details",
+  "recurrence": {
+    "thirdRadio": "Specific days of the week",
+    "fourthRadio": "Custom recurrence"
+  },
+  "attendee_limit": "1000"
 }
