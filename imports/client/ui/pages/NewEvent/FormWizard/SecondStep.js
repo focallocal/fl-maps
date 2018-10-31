@@ -26,14 +26,17 @@ class SecondStep extends Component {
         <div className='dates-hours inline-inputs hide-labels'>
           <div>
             <Row>
-              <Col>
+              <Col className='date-hours-coupled'>
                 <AutoField name='when.startingDate' />
+                {!multipleDays && <AutoField name='when.startingTime' />}
               </Col>
-              <Col>
+              <Col className='date-hours-coupled'>
                 {!repeat && <AutoField name='when.endingDate' />}
+                {!multipleDays && <AutoField name='when.endingTime' />}
               </Col>
             </Row>
           </div>
+          {/*
           <div>
             <Row>
               <Col>
@@ -44,6 +47,7 @@ class SecondStep extends Component {
               </Col>
             </Row>
           </div>
+          */}
         </div>
 
         {/* Weekdays  */}
