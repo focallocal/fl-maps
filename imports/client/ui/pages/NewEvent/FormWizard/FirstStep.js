@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CustomInput } from 'reactstrap'
+import { CustomInput, Alert } from 'reactstrap'
 import PropTypes from 'prop-types'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
@@ -45,13 +45,12 @@ class FirstStep extends Component {
         <AutoField name='address' />
         { this.state.offerResource && 
           <Alert 
-            color='info' 
-            className='address-sub-label'>
+            color='info'>
             PS - for privacy reasons, we strongly suggest you use a public 
             location nearby rather than your home address
           </Alert>
         }
-        
+
         {/* {(this.state.resourceType === 'found') ? ( */}
         <AutoField name='categories'/>
         {/* ) : null } */}

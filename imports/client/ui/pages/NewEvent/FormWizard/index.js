@@ -39,7 +39,7 @@ class FormWizard extends Component {
           <Fragment>
             <Button 
               outline
-              color='primary'
+              color='secondary'
               className='reset'
               onClick={this.resetForm}>
               Clear all fields
