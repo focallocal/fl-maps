@@ -84,7 +84,7 @@ class NewEventModal extends Component {
         </ModalBody>
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
           Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>) 
-          <strong> are filled </strong>.
+          <strong> are filled out</strong>.
         </Alert>
         <ModalFooter>
           {currentStep + 1 <= 1 &&
