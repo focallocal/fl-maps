@@ -26,7 +26,6 @@
     }
 
     .alert.error-general {
-      font-size: 0.88em;
       margin-bottom: 0;
       margin-top: 0;
     }
@@ -53,12 +52,9 @@
       display:none;
     }
 
-    /* not used anymore
     .address-sub-label {
-      font-size: 0.75rem;
-      margin-top: -1rem;
+      font-size: 0.88em;
     }
-    */
 
     .inline-inputs {
       display: flex;
