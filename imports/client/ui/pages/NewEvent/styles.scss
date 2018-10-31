@@ -9,15 +9,26 @@
       overflow-x: hidden;
 
       .reset {
-        position: relative;
-        top: -12px;
-        font-size: .8em;
-        cursor: pointer;
+        position: absolute;
+        top: -0.5em;
+        right: -1em;
+        // bootstrap3 btn-xs
+        padding: 1px 5px;
+        font-size: 0.8em;
+        line-height: 1.5;
+        border-radius: 3px;
       }
     }
 
+    .modal-body > form{
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+    }
+
     .alert.error-general {
+      font-size: 0.88em;
       margin-bottom: 0;
+      margin-top: 0;
     }
   }
 
@@ -139,6 +150,19 @@
     }
   }
 
+
+  /* -----------------------------
+             Second Step
+     ----------------------------- */
+
+  #second-step{
+    .date-hours-coupled {
+      .select-field{
+        position: relative;
+        top: -1em;
+      }
+    }
+  }
 
   .checkbox {
     margin-bottom: 8px;
