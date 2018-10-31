@@ -1,3 +1,6 @@
 {
-  "filtersTitle": "Filter"
+  "filtersTitle": "Filter",
+  "eventInfo": {
+  	"introTitle": "Introduction"
+  }
 }

@@ -52,6 +52,16 @@ $titles-color: #fff;
       font-weight: bolder;
     }
 
+    /* --------------
+        Left Column 
+       -------------- */
+
+    .left{
+      .intro, .meet-me, .description{
+        margin: 20px 0;
+      }
+    }
+
     /* ---------------
         Right Column
        --------------- */
