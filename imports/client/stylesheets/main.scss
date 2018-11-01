@@ -4,6 +4,9 @@
 
 body {
   overflow-x: hidden;
+
+  // Prevent temporarily showing vertical scrollbar at startup
+  overflow-y: hidden;
 }
 
 * {
