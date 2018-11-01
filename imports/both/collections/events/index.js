@@ -365,10 +365,10 @@ const EventsSchema = new SimpleSchema({
   'engagement.limit': {
     type: Number,
     min: 0,
-    defaultValue: 0,
+    defaultValue: labels.attendee_limit,
     uniforms: {
       customType: 'number',
-      label: 'Attendee limit (leave empty if no limit)'
+      label: 'Attendee limit (leave as is, if no limit)'
     }
   },
   'engagement.attendees': {
