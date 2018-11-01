@@ -82,6 +82,9 @@ class App extends Component {
         }
       })
     })
+    dcs.onUserChange(user => {      
+      user && console.log('Unread notifications: ', user.unreadNotifications)
+    })
 
     // Update the Discourse route. DON'T DO THIS IMMEDIATELY, otherwise 
     // transitions won't trigger between the two states
