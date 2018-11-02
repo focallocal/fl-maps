@@ -2,13 +2,13 @@
 #dcs-root {
   display: flex;
   flex-direction: row;
+  height: 100vh;
 
   //----------------------------------------------------------------------------
 
   #dcs-left,
   #dcs-right {
     flex: 1 0 0;
-    height: 100vh;
     overflow-y: auto;
     transition: flex-grow 0s; // We use a transition only for the benefit of 'transition-delay'
   }
