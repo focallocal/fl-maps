@@ -2,6 +2,12 @@
 @import './bootstrap.scss';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   overflow-x: hidden;
 
