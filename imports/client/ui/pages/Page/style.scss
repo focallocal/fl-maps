@@ -61,7 +61,7 @@ $titles-color: #fff;
         margin: 20px 0;
       }
     }
-    
+
     /* ---------------
         Right Column
        --------------- */
@@ -101,6 +101,11 @@ $titles-color: #fff;
 
     }
     /* ------------ End Right Column -------------- */
+
+    // DOCUSS
+    .dcs-selected {
+      background-color: yellow;
+    }    
   }
 
   .divider {
