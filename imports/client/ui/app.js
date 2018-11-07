@@ -39,6 +39,12 @@ class App extends Component {
   }
 
   componentDidMount () {
+    // Add the touch-screen flag to the <html> tag
+    const touchScreen = !!('ontouchstart' in window) || window.navigator.msMaxTouchPoints > 0
+    if (touchScreen) {
+      document.documentElement.classList.add('touch-screen')
+    }
+
     setTimeout(() => {
       document.querySelector('#root').classList.toggle('show')
     }, 100) // add a fading effect on the inital loading
