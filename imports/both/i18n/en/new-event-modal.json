@@ -10,9 +10,11 @@
   "categories": "What kind of resource is it?",
   "description": "Details",
   "contact_info": "Availability details",
+  "active_from": "Active from",
+  "active_until": "Active until",
   "recurrence": {
-    "thirdRadio": "Specific days of the week",
-    "fourthRadio": "Custom recurrence"
+    "thirdRadio": "Specific days of each week",
+    "fourthRadio": "Other options for repeating"
   },
   "attendee_limit": "1000"
 }
