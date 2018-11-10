@@ -1,5 +1,6 @@
 // DOCUSS
 #dcs-root {
+  height: 100%;
   display: flex;
   flex-direction: row;
 
@@ -8,7 +9,6 @@
   #dcs-left,
   #dcs-right {
     flex: 1 0 0;
-    height: 100vh;
     overflow-y: auto;
     transition: flex-grow 0s; // We use a transition only for the benefit of 'transition-delay'
   }
@@ -46,11 +46,6 @@
       cursor: pointer;
       border-radius: 3px;
 
-      &:hover {
-        background-color: white;
-        border: 1px solid lightgray;
-      }
-
       #dcs-splitbar-btn-text {
         color: white;
         font-size: 28px;
@@ -59,9 +54,6 @@
         // Putting 1 instead of 0.9 causes a strange bug in Chrome, when hovering the right limit of the text
         transform: scale(0.9, 2.5);
         text-align: center;
-        &:hover {
-          color: rgb(0, 111, 81);
-        }
       }
     }
   }
@@ -114,4 +106,14 @@
   }
 
   //----------------------------------------------------------------------------
+}
+
+html:not(.touch-screen) {
+  #dcs-splitbar-btn:hover {
+    background-color: white;
+    border: 1px solid lightgray;
+    #dcs-splitbar-btn-text {
+      color: rgb(0, 111, 81) !important;
+    }
+  }
 }
