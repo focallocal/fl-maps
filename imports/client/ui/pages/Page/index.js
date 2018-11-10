@@ -103,6 +103,8 @@ class Page extends Component {
       _id,
       address,
       categories: c,
+      overview,
+      findHints,
       description,
       name,
       organiser,
@@ -138,6 +140,14 @@ class Page extends Component {
           <Row>
 
             <Col xs={7} className='left'>
+              <div className='intro'>
+                <SectionTitle title='Introduction' />
+                {overview}
+              </div>
+              <div className='meet-me'>
+                <SectionTitle title='Meet Me Details' />
+                {findHints}
+              </div>
               {this.dcsHeading('Photos', 'pho')}
               {this.dcsHeading('Videos', 'vid')}
               <div className='description'>
