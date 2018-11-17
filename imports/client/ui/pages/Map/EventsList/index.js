@@ -33,7 +33,8 @@ class EventsList extends Component {
 
     const {
       isFetching,
-      userLocation
+      userLocation,
+      history
     } = this.props
 
     const hasData = !!events[0]
@@ -68,6 +69,7 @@ class EventsList extends Component {
           onDirections={this.props.onDirections}
           userLocation={userLocation}
           returnToList={this.returnToList}
+          history={history}
         />
       </Fragment>
     )
