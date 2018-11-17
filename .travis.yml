@@ -11,6 +11,7 @@ before_cache:
   - rm -f $HOME/.meteor/log/*.log
 
 before_install:
+
   # Remove cache if the project is upgraded to a newer version of meteor
   - export PATH="$HOME/.meteor:$PATH"
   - openssl enc -d -aes-256-cbc -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_master"
@@ -22,6 +23,7 @@ branches:
   only:
     - new-master
     - street-sleeper
+
 
 script:
   #- npm test

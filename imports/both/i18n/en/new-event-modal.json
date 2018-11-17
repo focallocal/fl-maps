@@ -1,9 +1,9 @@
 {
-  "modal_header": "Gather",
+  "modal_header": "New Resource",
   "resource_type": {
-   "title": "I want to:",
-    "firstRadio": "Create a Public Happiness Activity",
-    "secondRadio": "Put myself on the Map!"
+    "title": "Where is the resource from?",
+    "firstRadio": "I found a resource nearby",
+    "secondRadio": "I want to offer my own resource"
   },
   "overview":"Intro",
   "event_name": "Name/Title",
