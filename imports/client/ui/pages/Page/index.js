@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Meteor } from "meteor/meteor";
@@ -11,6 +12,22 @@ import EditPage from "./Edit";
 import AttendingButton from "./AttendingButton";
 import "./style.scss";
 import { Helmet } from "react-helmet";
+=======
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Meteor } from 'meteor/meteor'
+import { withTracker } from 'meteor/react-meteor-data'
+import { Container, Row, Col } from 'reactstrap'
+import { formatCategories } from '/imports/client/utils/format'
+import { scrollToElement } from '/imports/client/utils/DOMInteractions'
+import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
+import PageLoader from '/imports/client/ui/components/PageLoader'
+import EditPage from './Edit'
+import AttendingButton from './AttendingButton'
+import './style.scss'
+import {Helmet} from "react-helmet";
+import qs from 'query-string'
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
 
 class Page extends Component {
   constructor(props) {
@@ -22,8 +39,17 @@ class Page extends Component {
     };
   }
 
+<<<<<<< HEAD
   componentDidMount() {
     const { data } = this.state;
+=======
+  componentDidMount () {
+    // THIS IS WRONG: if you fetch data in componentDidMount(), then any route
+    // change to the same component but with another id WON'T RELOAD THE DATA
+    // AND WON'T RE-RENDER THE PAGE. See this bug:
+    // https://github.com/focallocal/fl-maps/issues/742
+    const { data } = this.state
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
 
     if (!data) {
       this.getEventData();
@@ -33,9 +59,30 @@ class Page extends Component {
     }
   }
 
+<<<<<<< HEAD
   componentDidUpdate(nextProps, prevState) {
     if (this.state.data && !prevState.data) {
       window.__setDocumentTitle(this.state.data.name);
+=======
+  componentDidUpdate (nextProps, prevState) {
+    if (this.state.data && !prevState.data) {      
+      window.__setDocumentTitle(this.state.data.name)
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
+    }
+
+    // TO FIX THE RELOAD ISSUE STATED ABOVE, I GUESS YOU NEED SOMETHING LIKE:
+    // if (this.props.match.params.id !== prevProps.match.params.id) {    
+    //  this.getEventData()
+    //  this.setState(...)
+    //}    
+    
+    // DOCUSS
+    this.props.dcsSetPageId(this.state.id)
+    // We update selBalloonId here, so that we catch url changes triggered 
+    // in other components
+    const { b } = qs.parse(window.location.search)
+    if (this.state.selBalloonId !== b) {
+      this.setState({ selBalloonId: b })
     }
   }
 
@@ -58,8 +105,27 @@ class Page extends Component {
     return prevState;
   }
 
+<<<<<<< HEAD
   render() {
     const { data, loaded } = this.state;
+=======
+  // DOCUSS
+  dcsHeading(title, balloonId) {
+    return (
+      <div style={{ margin: '20px 0' }}>
+        <b className={balloonId === this.state.selBalloonId ? 'dcs-selected' : ''}>{title}</b>&nbsp;
+        <span className="dcs-icons">
+          <img src="/images/dcs-balloon.png" style={{ cursor: 'pointer' }} onClick={e => this.dcsClick(balloonId, e)} />
+        </span>
+      </div>)
+  }
+
+  render () {
+    const {
+      data,
+      loaded      
+    } = this.state
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
 
     if (!loaded) {
       return <PageLoader className="pages" />;
@@ -69,6 +135,8 @@ class Page extends Component {
       _id,
       address,
       categories: c,
+      overview,
+      findHints,
       description,
       name,
       organiser,
@@ -93,21 +161,48 @@ class Page extends Component {
     }
 
     return (
+<<<<<<< HEAD
       <div id="page">
         <div className="header">
           <div className="title-wrapper">
             <div className="title">{name}</div>
             <div className="sub-title-categories">{categories}</div>
+=======
+      <div id='page' onClick={e => this.dcsClick(null, e)}>
+        <div className='header'>
+          <div className='title-wrapper'>
+            <div className='title'>{name}</div>
+            <div className='sub-title-categories'>{categories}</div>
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
           </div>
         </div>
 
         <Container className="body">
           <Row>
+<<<<<<< HEAD
             <Col xs={7} className="left">
               <div className="description">
                 <SectionTitle title="About" />
+=======
+
+            <Col xs={7} className='left'>
+              <div className='intro'>
+                <SectionTitle title='Introduction' />
+                {overview}
+              </div>
+              <div className='meet-me'>
+                <SectionTitle title='Meet Me Details' />
+                {findHints}
+              </div>
+              {this.dcsHeading('Photos', 'pho')}
+              {this.dcsHeading('Videos', 'vid')}
+              <div className='description'>
+                <SectionTitle title='About' />
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
                 {description}
               </div>
+              {this.dcsHeading('Wall', 'wal')}
+              {this.dcsHeading('Experiences', 'exp')}
             </Col>
 
             <Col xs={4} className="right">
@@ -171,8 +266,18 @@ class Page extends Component {
       if (!err) {
         this.setState({ data: res, loaded: true });
       }
+<<<<<<< HEAD
     });
   };
+=======
+    })
+  }
+  
+  dcsClick(balloonId, e) {
+    this.props.dcsClick(balloonId)
+    e.stopPropagation() // Required for deselection
+  }
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
 }
 
 const SectionTitle = ({ title }) => (

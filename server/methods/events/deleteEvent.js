@@ -4,12 +4,12 @@ import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import Events, { EventsSchema } from '/imports/both/collections/events'
 import { logRateLimit } from '/server/security/rate-limiter'
 
-const name = 'Events.editEvent'
+const name = 'Events.deleteEvent'
 const newEvent = new ValidatedMethod({
   name,
   mixins: [],
   validate: ({ _id, ...model }) => {
-    
+
     try {
       EventsSchema.validate(model)
     } catch (ex) {
@@ -20,39 +20,23 @@ const newEvent = new ValidatedMethod({
       throw new Meteor.Error('?')
     }
   },
-  run (model) {
+  run(model) {
     const userId = this.userId
-   // console.log('edit event', this);
+ 
     if (!userId) {
       throw new Meteor.Error('not logged in')
     }
 
     const modelId = String(model._id) // ensure it's a string
 
-    const prevDoc = Events.find({ _id: modelId, 'organiser._id': userId }).fetch()[0]
-
-    if (prevDoc) {
-      const newDoc = constructNewDocument(model, prevDoc)
-      return Events.update({ _id: modelId }, {
-        $set: newDoc
-      }, {
-        bypassCollection2: true
-      })
-    } else {
-      throw new Meteor.Error('Events.editEvent', '?')
-    }
+     Events.remove({ _id: modelId, 'organiser._id': userId }, (err) =>{
+       if(err){
+         throw new Meteor.Error('Events.deleteEvent', err)
+       }
+     })
   }
 })
 
-export function constructNewDocument (model, prevDoc) {
-  return {
-    ...model,
-    _id: prevDoc._id,
-    createdAt: prevDoc.createdAt,
-    engagement: { limit: model.engagement.limit, attendees: prevDoc.engagement.attendees },
-    organiser: prevDoc.organiser
-  }
-}
 
 DDPRateLimiter.addRule({
   name,
