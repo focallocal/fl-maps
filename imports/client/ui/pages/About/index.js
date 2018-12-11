@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import TopImageSection from './TopImageSection'
 import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
 import AboutSection from '../Home/SecondSection'
@@ -12,12 +11,16 @@ class About extends Component {
   }
 
   render () {
+    const { content } = i18n.About.first_section
+    const {top_image_url} = content
 
     return (
       <div id='about'>
         <h2>About Us</h2>
         <div className='header-divider' />
-        <TopImageSection />
+        <div className='top_image_div'>
+          <img className='top_image' src={top_image_url}/>
+        </div>
         <AboutSection button= {false} />
         <FirstSection />
         <SecondSection />
