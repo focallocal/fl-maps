@@ -135,6 +135,31 @@ class App extends Component {
     }
 
     return (
+<<<<<<< HEAD
+      <Router history={history}>
+        <Fragment>
+          <MainMenu />
+
+          <ScrollToTop>
+
+            <Route exact path='/(home)?' component={Home} />
+            <Route exact path='/about' component={About} />
+            <Route path='/map' component={Map_} />
+            <Route path='*' render={this.renderNewEvent} />
+            <Route exact path='/thank-you' component={CongratsModal} />
+            <Route exact path='/page/:id' component={Page} />
+
+         
+            <Authentication />
+
+          </ScrollToTop>
+        </Fragment>
+      </Router>
+    )
+  }
+
+ renderNewEvent = ({ location, history }) => {
+=======
       <div id="dcs-root" className={dcsClass}>
         <div id="dcs-ghost" style={{ visibility: this.state.leftRightTransition ? 'visible' : 'hidden' }}>
           <div className="dcs-ghost-splitbar" />
@@ -206,6 +231,7 @@ class App extends Component {
   }
 
   renderNewEvent = ({ location, history }) => {    
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
     const { new: new_, edit } = qs.parse(location.search)
     const isOpen = Boolean(new_ === '1' || (edit === '1' && window.__editData))
 
@@ -213,11 +239,17 @@ class App extends Component {
       sessionStorage.setItem('redirect', '/?new=1')
       return <Redirect to='/sign-in' />
     }
+<<<<<<< HEAD
+    else if(!isOpen){
+      return <Redirect to='/home' />
+    }
+=======
     /*
     else if(!isOpen){
       return <Redirect to='/home' />
     }
     */
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
 
     return <NewEventLoadable isOpen={isOpen} location={location} history={history} />
   }

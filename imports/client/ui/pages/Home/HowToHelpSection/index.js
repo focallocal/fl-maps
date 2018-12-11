@@ -36,13 +36,6 @@ class HowToHelpSection extends Component {
                   {(i === 1) ? <Button className='sign-and-post' tag={Link} to='/?new=1'>{isLoggedIn ? Home.post.button_loggedIn : Home.post.button}</Button> : null}
                 </Row>
               ))}
-              <br />
-              <Row>
-                <span className='item-subText'>
-                Please don't use the platform to ask or offer donations.<br />
-                We are here to explore people and community powered alternatives
-                </span>
-              </Row>
             </Col>
             <Col>
               <div><ContributorsSection /></div>

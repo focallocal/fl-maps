@@ -21,6 +21,15 @@ before_install:
 
 branches:
   only:
+<<<<<<< HEAD
+    - master
+    - fl-sleeper
+
+script:
+#- npm test
+  - mup deploy
+
+=======
     - new-master
     - street-sleeper
 
@@ -28,3 +37,4 @@ branches:
 script:
   #- npm test
   - mup deploy
+>>>>>>> 056401a3ec67cb2bc12ca3b5d422a92204b48dab
