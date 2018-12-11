@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { CustomInput, Row, Col } from 'reactstrap'
+import labels from '/imports/both/i18n/en/new-event-modal.json'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
 import Recurring from './DateTimeModule/Recurring'
@@ -26,14 +27,17 @@ class SecondStep extends Component {
         <div className='dates-hours inline-inputs hide-labels'>
           <div>
             <Row>
-              <Col>
+              <Col className='date-hours-coupled'>
                 <AutoField name='when.startingDate' />
+                {!multipleDays && <AutoField name='when.startingTime' />}
               </Col>
-              <Col>
+              <Col className='date-hours-coupled'>
                 {!repeat && <AutoField name='when.endingDate' />}
+                {!multipleDays && <AutoField name='when.endingTime' />}
               </Col>
             </Row>
           </div>
+          {/*
           <div>
             <Row>
               <Col>
@@ -44,12 +48,13 @@ class SecondStep extends Component {
               </Col>
             </Row>
           </div>
+          */}
         </div>
 
         {/* Weekdays  */}
         <RadioButton
           id='multipleDays'
-          label='More than one day'
+          label={labels.recurrence.thirdRadio}
           value={multipleDays}
           type='radio'
         />
@@ -71,7 +76,7 @@ class SecondStep extends Component {
         {/* Repetition */}
         <RadioButton
           id='repeat'
-          label='Custom recurrence'
+          label={labels.recurrence.fourthRadio}
           value={repeat}
           type='radio'
         />

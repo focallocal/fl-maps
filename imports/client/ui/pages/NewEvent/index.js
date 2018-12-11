@@ -6,6 +6,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Alert } from 'react
 import FormWizard from './FormWizard'
 import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
+import cloneDeep from 'clone-deep'
 import './styles.scss'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
@@ -46,6 +47,12 @@ class NewEventModal extends Component {
     }, 1000) // 1 second
   }
 
+  componentDidUpdate(prevProps){
+    if(prevProps.location.pathname !== this.props.location.pathname){
+      delete window.__unfinishedNewEvent
+    }
+  }
+
   componentWillUnmount () {
     clearInterval(this.interval)
     this.interval = null
@@ -76,7 +83,8 @@ class NewEventModal extends Component {
             editMode={editMode} />
         </ModalBody>
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
-          Please check that you've filled all the necessary fields
+          Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>) 
+          <strong> are filled out</strong>. 
         </Alert>
         <ModalFooter>
           {currentStep + 1 <= 1 &&
@@ -119,6 +127,9 @@ class NewEventModal extends Component {
 
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
+
+      // get rid of any previously unfinished New Event
+      delete window.__unfinishedNewEvent
   }
 
   callNewEvent = model => {
@@ -156,6 +167,10 @@ class NewEventModal extends Component {
 
     const url = pathname + '?' + qs.stringify(queryStrings)
     this.props.history.push(url)
+
+    // toggleModal() closes modal, but it is not called after form submits  
+    // copy unfinished form to global window and check for it inside FormWizard 
+    window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
   }
 
   toggleErrors = () => this.setState({ hasErrors: false })

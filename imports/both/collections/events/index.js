@@ -135,8 +135,18 @@ const EventsSchema = new SimpleSchema({
       }
     }
   },
-  'when.startingDate': startingDate,
-  'when.endingDate': endingDate,
+  'when.startingDate': {
+    ...startingDate,
+    uniforms: {
+      label: labels.active_from
+    }
+  },
+  'when.endingDate': {
+    ...endingDate,
+    uniforms: {
+      label: labels.active_until
+    }
+  },
   'when.startingTime': {
     ...startingTime,
     optional: true,
@@ -354,10 +364,10 @@ const EventsSchema = new SimpleSchema({
   'engagement.limit': {
     type: Number,
     min: 0,
-    defaultValue: 0,
+    defaultValue: labels.attendee_limit,
     uniforms: {
       customType: 'number',
-      label: 'Attendee limit (leave empty if no limit)'
+      label: 'Attendee limit (leave as is, if no limit)'
     }
   },
   'engagement.attendees': {

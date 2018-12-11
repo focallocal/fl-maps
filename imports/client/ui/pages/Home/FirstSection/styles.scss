@@ -14,6 +14,14 @@
     font-weight: bold;
     text-align: center;
   }
+
+  .first-title-btm {
+    color: #ffffff;
+  }
+
+  .first-title-gatherings {
+    color: rgba(0,0,0,.75);
+  }
 }
 
 .find-wrapper {
@@ -111,6 +119,14 @@
       .first-title {
         margin: 0;
         margin-bottom: 24px;
+      }
+
+      .first-title-btm {
+        color: black;
+      }
+
+      .first-title-gatherings {
+        color: rgba(0,0,0,.75);
       }
     }
 
