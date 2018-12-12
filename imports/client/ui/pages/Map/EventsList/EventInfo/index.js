@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import { Meteor } from 'meteor/meteor'
-import { withTracker } from 'meteor/react-meteor-data'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import i18n_ from '/imports/both/i18n/en/map.json'
-import AttendingButton from './../../../Page/AttendingButton'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as formatUtils from '/imports/client/utils/format'
 import './styles.scss'
@@ -59,12 +56,8 @@ class EventInfo extends Component {
 
     const {
       minimized,
-      userLocation,
-      history,
-      user
+      userLocation
     } = this.props
-
-    const isLoggedIn = !!user 
 
     if (!event) { return null }
 
@@ -91,14 +84,7 @@ class EventInfo extends Component {
           <div className='title'>{event.name}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
-          {/*
           <Button color='primary' onClick={this.getDirections}>Get Directions</Button>
-          */}
-          <AttendingButton
-            _id={event._id}
-            history={history}
-            isLoggedIn={isLoggedIn}
-            user={user}/>
         </div>
 
         <hr className='divider' />
@@ -144,8 +130,4 @@ EventInfo.propTypes = {
   returnToList: PropTypes.func.isRequired
 }
 
-export default withTracker(props => {
-  return {
-    user: Meteor.user()
-  }
-})(EventInfo)
+export default EventInfo

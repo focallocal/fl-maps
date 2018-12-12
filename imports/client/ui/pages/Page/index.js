@@ -173,7 +173,6 @@ class Page extends Component {
                 isLoggedIn={isLoggedIn}
                 user={user}
               />
-
               <SectionTitle title="Date and Time" />
 
               <HoursFormatted data={when} />
@@ -189,6 +188,7 @@ class Page extends Component {
               </div>
 
               <Divider />
+
               {isAuthor && <EditPage data={data} history={history} />}
             </Col>
           </Row>
@@ -202,11 +202,11 @@ class Page extends Component {
         <div id="coral_talk_stream" />
         <Helmet>
           {/* The embed web address will need updated depending on environment */}
-          {/* Package.json port will need updated if you leave embed at 3000 */}
+          {/* Package.json port will need updated if you leave embed at 3000*/}
           <script
             src="https://talk.focallocal.org/static/embed.js"
             async
-            onLoad="
+            onload="
             Coral.Talk.render(document.getElementById('coral_talk_stream'), {
               talk: 'https://talk.focallocal.org/'
             });
