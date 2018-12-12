@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import connectField from 'uniforms/connectField'
-import DayPicker from 'react-day-picker/DayPicker'
+import React, { Component } from "react";
+import connectField from "uniforms/connectField";
+import DayPicker from "react-day-picker/DayPicker";
 import { FormGroup, Label, Input, Modal } from "reactstrap";
 
 const currentYear = new Date().getFullYear();
@@ -40,19 +40,19 @@ function YearMonthForm({ date, localeUtils, onChange }) {
   );
 }
 
-function YearMonthForm ({ date, localeUtils, onChange }) {
-  const months = localeUtils.getMonths()
+function YearMonthForm({ date, localeUtils, onChange }) {
+  const months = localeUtils.getMonths();
 
-  const years = []
+  const years = [];
   for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
-    years.push(i)
+    years.push(i);
   }
 
-  const handleChange = function handleChange (e) {
-    const { year, month } = e.target.form
-    console.log('Handle Change', [year.value, month.value])
-    onChange(new Date(year.value, month.value))
-  }
+  const handleChange = function handleChange(e) {
+    const { year, month } = e.target.form;
+    console.log("Handle Change", [year.value, month.value]);
+    onChange(new Date(year.value, month.value));
+  };
 
   return (
     <form className="DayPicker-Caption">
@@ -71,45 +71,7 @@ function YearMonthForm ({ date, localeUtils, onChange }) {
         ))}
       </select>
     </form>
-  )
-}
-
-const currentYear = new Date().getFullYear()
-const fromMonth = new Date(currentYear, 0)
-const toMonth = new Date(currentYear + 10, 11)
-
-function YearMonthForm ({ date, localeUtils, onChange }) {
-  const months = localeUtils.getMonths()
-
-  const years = []
-  for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
-    years.push(i)
-  }
-
-  const handleChange = function handleChange (e) {
-    const { year, month } = e.target.form
-    console.log('Handle Change', [year.value, month.value])
-    onChange(new Date(year.value, month.value))
-  }
-
-  return (
-    <form className="DayPicker-Caption">
-      <select name="month" onChange={handleChange} value={date.getMonth()}>
-        {months.map((month, i) => (
-          <option key={month} value={i}>
-            {month}
-          </option>
-        ))}
-      </select>
-      <select name="year" onChange={handleChange} value={date.getFullYear()}>
-        {years.map(year => (
-          <option key={year} value={year}>
-            {year}
-          </option>
-        ))}
-      </select>
-    </form>
-  )
+  );
 }
 
 class Date_ extends Component {
