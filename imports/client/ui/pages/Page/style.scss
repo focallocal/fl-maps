@@ -1,7 +1,8 @@
-@import "/imports/client/stylesheets/variables.scss";
+@import '/imports/client/stylesheets/variables.scss';
 $titles-color: #fff;
 
 #page {
+
   .header {
     position: relative;
     display: flex;
@@ -10,17 +11,9 @@ $titles-color: #fff;
     height: 25vw;
     min-height: 250px;
     padding: 15px;
-    background: #f79d00; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to top,
-      #00c362,
-      #f79d00
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to top,
-      #00c362,
-      rgba(0, 0, 0, 0.35)
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #f79d00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #00c362, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #00c362, rgba(0, 0, 0, 0.35)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     .title-wrapper {
       width: 80%;
@@ -47,7 +40,7 @@ $titles-color: #fff;
     width: 80%;
     margin: 24px auto;
     font-size: 1.2rem;
-    color: #666a73;
+    color: #666A73;
 
     .row {
       min-width: 100%;
@@ -77,6 +70,7 @@ $titles-color: #fff;
       max-width: 300px;
 
       .hours-formatted {
+
         .date {
           margin-bottom: 8px;
         }
@@ -85,16 +79,17 @@ $titles-color: #fff;
           display: flex;
           justify-content: space-between;
 
-          & > div:first-child {
+          &>div:first-child {
             margin-right: 0;
           }
         }
       }
 
       .location {
+
         .view-map {
           color: #007bff;
-          font-size: 0.9em;
+          font-size: .9em;
           cursor: pointer;
         }
       }
@@ -103,6 +98,7 @@ $titles-color: #fff;
         width: 100%;
         margin-bottom: 8px;
       }
+
     }
     /* ------------ End Right Column -------------- */
 
@@ -124,16 +120,16 @@ $titles-color: #fff;
   }
 
   .fixed-bg {
-    background: $primary-blue !important;
+    background: $green !important;
 
     &.active {
-      background: $primary-blue-darker !important;
+      background: $green-darker !important
     }
   }
 
   .err-msg {
     margin-top: -5px;
-    font-size: 0.6em;
+    font-size: .6em;
     font-weight: bold;
     text-align: center;
   }
@@ -156,7 +152,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 860px) {
+
     & {
+
       .header .title-wrapper {
         width: 95%;
       }
@@ -177,16 +175,20 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 640px) {
+
     & {
+
       .title-wrapper {
+
         .sub-title-categories {
           font-size: 1.2em;
         }
       }
 
       .body {
-        .left,
-        .right {
+
+
+        .left, .right {
           max-width: 95%;
           flex: 0 0 100%;
           margin-bottom: 24px;
@@ -215,7 +217,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 520px) {
+
     & {
+
       .body {
         width: 90%;
       }
