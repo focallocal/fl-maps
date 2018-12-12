@@ -11,6 +11,7 @@ import EditPage from "./Edit";
 import AttendingButton from "./AttendingButton";
 import "./style.scss";
 import { Helmet } from "react-helmet";
+import qs from "query-string";
 
 class Page extends Component {
   constructor(props) {
@@ -23,6 +24,10 @@ class Page extends Component {
   }
 
   componentDidMount() {
+    // THIS IS WRONG: if you fetch data in componentDidMount(), then any route
+    // change to the same component but with another id WON'T RELOAD THE DATA
+    // AND WON'T RE-RENDER THE PAGE. See this bug:
+    // https://github.com/focallocal/fl-maps/issues/742
     const { data } = this.state;
 
     if (!data) {
@@ -36,6 +41,21 @@ class Page extends Component {
   componentDidUpdate(nextProps, prevState) {
     if (this.state.data && !prevState.data) {
       window.__setDocumentTitle(this.state.data.name);
+    }
+
+    // TO FIX THE RELOAD ISSUE STATED ABOVE, I GUESS YOU NEED SOMETHING LIKE:
+    // if (this.props.match.params.id !== prevProps.match.params.id) {
+    //  this.getEventData()
+    //  this.setState(...)
+    //}
+
+    // DOCUSS
+    this.props.dcsSetPageId(this.state.id);
+    // We update selBalloonId here, so that we catch url changes triggered
+    // in other components
+    const { b } = qs.parse(window.location.search);
+    if (this.state.selBalloonId !== b) {
+      this.setState({ selBalloonId: b });
     }
   }
 
@@ -58,6 +78,28 @@ class Page extends Component {
     return prevState;
   }
 
+  // DOCUSS
+  dcsHeading(title, balloonId) {
+    return (
+      <div style={{ margin: "20px 0" }}>
+        <b
+          className={
+            balloonId === this.state.selBalloonId ? "dcs-selected" : ""
+          }
+        >
+          {title}
+        </b>&nbsp;
+        <span className="dcs-icons">
+          <img
+            src="/images/dcs-balloon.png"
+            style={{ cursor: "pointer" }}
+            onClick={e => this.dcsClick(balloonId, e)}
+          />
+        </span>
+      </div>
+    );
+  }
+
   render() {
     const { data, loaded } = this.state;
 
@@ -69,6 +111,8 @@ class Page extends Component {
       _id,
       address,
       categories: c,
+      overview,
+      findHints,
       description,
       name,
       organiser,
@@ -93,7 +137,7 @@ class Page extends Component {
     }
 
     return (
-      <div id="page">
+      <div id="page" onClick={e => this.dcsClick(null, e)}>
         <div className="header">
           <div className="title-wrapper">
             <div className="title">{name}</div>
@@ -104,10 +148,22 @@ class Page extends Component {
         <Container className="body">
           <Row>
             <Col xs={7} className="left">
+              <div className="intro">
+                <SectionTitle title="Introduction" />
+                {overview}
+              </div>
+              <div className="meet-me">
+                <SectionTitle title="Meet Me Details" />
+                {findHints}
+              </div>
+              {this.dcsHeading("Photos", "pho")}
+              {this.dcsHeading("Videos", "vid")}
               <div className="description">
                 <SectionTitle title="About" />
                 {description}
               </div>
+              {this.dcsHeading("Wall", "wal")}
+              {this.dcsHeading("Experiences", "exp")}
             </Col>
 
             <Col xs={4} className="right">
@@ -172,6 +228,11 @@ class Page extends Component {
       }
     });
   };
+
+  dcsClick(balloonId, e) {
+    this.props.dcsClick(balloonId);
+    e.stopPropagation(); // Required for deselection
+  }
 }
 
 const SectionTitle = ({ title }) => (

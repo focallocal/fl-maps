@@ -42,4 +42,21 @@
       left: 20px;
     }
   }
+
+  .categories-items{
+    .list-group-item{
+      display: flex;
+        align-items: flex-start;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    .list-group-item a{
+      color: $gray-stronger;
+
+      &:hover {
+        color: $primary-blue-hover;
+      };
+    }
+  }
 }

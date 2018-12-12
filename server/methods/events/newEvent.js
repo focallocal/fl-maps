@@ -17,7 +17,7 @@ const newEvent = new ValidatedMethod({
     return Events.insert(event, { validate: false, filter: false })
   }
 })
-
+  
 DDPRateLimiter.addRule({
   name,
   type: 'method'

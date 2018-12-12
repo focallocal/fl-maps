@@ -81,6 +81,8 @@ class MapComponent_ extends Component {
       zoom
     } = this.state
 
+    const { history } = this.props 
+    
     const events_ = filteredEvents || events
 
     return (
@@ -126,6 +128,7 @@ class MapComponent_ extends Component {
           userLocation={userLocation}
           removeCurrentEvent={this.removeCurrentEvent}
           onDirections={this.setDirections}
+          history={history}
         >
           <StandaloneSearchBox
             ref={ref => this.searchBox = ref}
