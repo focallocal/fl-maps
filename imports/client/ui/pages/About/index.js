@@ -13,7 +13,7 @@ class About extends Component {
   render () {
     const { content } = i18n.About.first_section
     const {top_image_url} = content
-
+  
     return (
       <div id='about'>
         <h2>About Us</h2>

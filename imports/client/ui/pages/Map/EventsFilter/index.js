@@ -46,6 +46,11 @@ class FiltersList extends Component {
                     checked={checkedFilters[index]}
                     onChange={this.handleFilterChange}
                   />
+                  { category.url && 
+                    <a href={category.url} target='_blank' rel='external' aria-label='Go to Page'>
+                      <i class="far fa-question-circle"></i>
+                    </a>
+                  }
                 </ListGroupItem>
               )
             })}
