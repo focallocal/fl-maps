@@ -1,97 +1,46 @@
 {
-  "first_title": "Local Action for Global Change",
-  "find_events": "Find the #PublicHappinessMovement near me!",
+  "first_title": "Connection is a Path to a Brighter Future",
+  "find_events": "See free resources available near you",
   "post": {
-    "first_title": "Create a Public Happiness Gathering",
-    "button": "Sign Up And Begin!",
-    "button_loggedIn": "Post onto the Map"
+    "first_title": "What can i do to help people who are homeless near me?",
+    "second_title": "Post a free resource i've found nearby, or offer something i can do to help",
+    "button": "Log in to Post a Resource",
+    "button_loggedIn": "Post a Resource"
   },
   "how_to_help_section":{
-    "title": "How can I take action to make where i live a friendlier, safer and happier place?",
+    "title": "What can I do to help people living on the streets near me?",
     "content":{
       "items":[
         {
-          "text": "Put yourself on the Public Happiness Map.",
-          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like; public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
+          "text": "Post a free resource you found.",
+          "subText":"Such as, food, shelters, clothing, showers, computer/wifi, public libraries, public toilets, support groups, activites, medical, or any other beneficial resource."
         },
         {
-          "text": "Create your Public Happiness Gathering now.",
-          "link": "https://activities.focallocal.org/",
-          "linktext": "Suggestions here!",
-          "subText": "Browse, suggest and discuss positive tools and activities to create a small positive change in our world in the Action Center."
-        }
-      ]
-    }
-  },
-  "contributors_section":{
-    "title": "Built for you by a wonderful team of volunteers at the Focallocal Public Happiness community.",
-    "content":{
-      "items":[
-        {
-          "photo":"https://avatars1.githubusercontent.com/u/3659502?s=460&v=4",
-          "name": "Mordka",
-          "link":"https://github.com/mordka"
-        },
-        {
-          "photo":"https://avatars2.githubusercontent.com/u/11820758?s=460&v=4",
-          "name": "ydaniel98",
-          "link":"https://github.com/ydaniel98"
-        },
-        {
-          "photo":"https://avatars3.githubusercontent.com/u/28781165?s=460&v=4",
-          "name": "royGil",
-          "link":"https://github.com/royGil"
-        },
-        {
-          "photo":"https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
-          "name": "Andy",
-          "link":"https://github.com/AndyatFocallocal"
-        },
-        {
-          "photo":"https://avatars0.githubusercontent.com/u/28017627?s=460&v=4",
-          "name": "HuascarMC",
-          "link":"https://github.com/HuascarMC"
-        },
-        {
-          "photo":"https://avatars1.githubusercontent.com/u/7775349?s=460&v=4",
-          "name": "cw00dw0rd",
-          "link":"https://github.com/cw00dw0rd"
-        },
-        {
-          "photo":"https://avatars2.githubusercontent.com/u/17742310?s=460&v=4",
-          "name": "Spartano",
-          "link":"https://github.com/Spartano"
-        },
-        {
-          "photo":"https://avatars1.githubusercontent.com/u/11193792?s=460&v=4",
-          "name": "distalx",
-          "link":"https://github.com/distalx"
-        },
-        {
-          "photo":"https://avatars3.githubusercontent.com/u/22714384?s=460&v=4",
-          "name": "Ziinc",
-          "link":"https://github.com/Ziinc"
+          "text": "Or, offer something I can do to support people who are homeless nearby.",
+          "link": "https://www.reddit.com/r/brightertomorrow/",
+          "linktext": "Join the discussion ",
+          "subText": "to find and suggest effective ideas to offer."
         }
       ]
     }
   },
   "second_section": {
-    "title": "What is Focallocal?",
+    "title": "What Is The Brighter Tomorrow Map?",
     "content": {
       "items": [
         {
           "title": "Community",
-          "text": "An open and welcoming community of thousand of positive people around the world.",
+          "text": "This map is a tool to reconnect our communities so we can effectivly support each other through difficult times",
           "icon": "smiley"
         },
         {
           "title": "Movement",
-          "text": "Since 2012 we have been coming together and targeting the root causes of any, and all societal issues.",
+          "text": "A global movement for anyone who has had enough of the issues troubling this world and are taking action to build change",
           "icon": "friends"
         },
         {
           "title": "Platform",
-          "text": "Share ideas and join fun activities to empower people to build a friendlier, happier more connected future for everyone.",
+          "text": "This map aims to help people who are homeless find the resources they need to meet their basic needs and begin a path to a brighter future",
           "icon": "share"
         }
       ]
@@ -106,6 +55,58 @@
         "second": "Write + Read articles",
         "third": "Find + Get actions tools"
       }
+    }
+  },
+  "contributors_section":{
+    "title": "Built by a wonderful team of volunteers at the Focallocal Public Happiness community.",
+    "content":{
+      "items":[
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/3659502?s=60&v=4",
+          "name": "Mordka",
+          "link":"https://github.com/mordka"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/11820758?s=60&v=4",
+          "name": "ydaniel98",
+          "link":"https://github.com/ydaniel98"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/28781165?s=60&v=4",
+          "name": "royGil",
+          "link":"https://github.com/royGil"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/16229696?s=60&v=4",
+          "name": "Andy",
+          "link":"https://github.com/AndyatFocallocal"
+        },
+        {
+          "photo":"https://avatars0.githubusercontent.com/u/28017627?s=60&v=4",
+          "name": "HuascarMC",
+          "link":"https://github.com/HuascarMC"
+        },
+        {
+          "photo":"https://avatars2.githubusercontent.com/u/12023065?s=60&v=4",
+          "name": "iggelt",
+          "link":"https://github.com/iggelt"
+        },
+        {
+          "photo":"https://avatars2.githubusercontent.com/u/17742310?s=60&v=4",
+          "name": "Spartano",
+          "link":"https://github.com/Spartano"
+        },
+        {
+          "photo":"https://avatars1.githubusercontent.com/u/11193792?s=60&v=4",
+          "name": "distalx",
+          "link":"https://github.com/distalx"
+        },
+        {
+          "photo":"https://avatars3.githubusercontent.com/u/22714384?s=60&v=4",
+          "name": "Ziinc",
+          "link":"https://github.com/Ziinc"
+        }
+      ]
     }
   }
 }
