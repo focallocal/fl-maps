@@ -1,6 +1,12 @@
 ![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
 
-This is the base branch for the new react-based fl-maps. All edits to either map are initially made in this master branch (fl-maps), and then pushed to the fl-sleeper branch after. All text and labels viewable to users must be defined in the i18n folder to be ready for multi-language support - this file is also used to define differences between both maps (focallocal.org and brightertomorrowmap.com)
+This is the base branch for the new react-based fl-maps project.
+
+All edits are initially made in this master branch (fl-maps), and then pushed to the fl-sleeper branch unless they are in the i18n folder to keep the codebase identical. 
+
+All text and labels viewable to users must be defined in the i18n folder to be ready for multi-language support - this file is also used to define differences between both maps, The Public Happiness Platform at focallocal.org and Our Homelessness project at brightertomorrowmap.com. 
+
+When the active team grows the two codebases can diverge, if you'd like to lead/support one side or advertise for more devs to join our build, let Andy know.
 
 # Contribution Guide
 
