@@ -20,8 +20,8 @@ before_install:
 
 branches:
   only:
-    - new-master
-    - street-sleeper
+    - master
+    - fl-sleeper
 
 script:
   #- npm test
