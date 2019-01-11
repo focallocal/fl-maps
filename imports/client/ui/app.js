@@ -33,9 +33,9 @@ class App extends Component {
     this.state = {
       showRightPanel: false,
       balloonId: false,
+      dcsTags: null,
       leftRightTransition: false
     }
-    this.dcsPageId = null
   }
 
   componentDidMount () {
@@ -61,11 +61,12 @@ class App extends Component {
       discourseOrigin: new URL(discourseUrl).origin,
       timeout: 15000
     }).catch(err => {
-      console.log('Connection to dcs-discourse-plugin failed:', err);
+        // Timeout error
+        console.log(err)
     })
     
-    // Setup a callback for when the route in Discourse changes because the 
-    // user has click on something (ex: his profile)
+    // Set up callbacks to handle Discourse route changes (when the user
+    // clicks on something (ex: his profile) in Discourse)
     dcs.onHome(() => {
       this.triggeredByDiscourse = true
       changeHistory({ params: { r: '1', b: null, t: null, d: null }, push: false })      
@@ -88,8 +89,13 @@ class App extends Component {
         }
       })
     })
+
+    // Setup callbacks to handle other Discourse events
     dcs.onUserChange(user => {
-      user && console.log('Unread notifications: ', user.unreadNotifications)
+      //user && console.log('Unread notifications: ', user.unreadNotifications)
+    })
+    dcs.onDcsTags(dcsTags => {      
+      this.setState({ dcsTags })
     })
     
     // Update the Discourse route. DON'T DO THIS IMMEDIATELY, otherwise 
@@ -104,8 +110,12 @@ class App extends Component {
       if (t) {
         dcs.gotoTopic(t)
       } else if (b) {
-        const tag = 'dcs-' + this.dcsPageId.substring(0, 12).toLowerCase() + '-' + b
+        const prefix = '/page/'
+        if (window.location.pathname.startsWith(prefix)) {
+          const pageId = window.location.pathname.substring(prefix.length)
+          const tag = 'dcs-' + pageId.substring(0, 12).toLowerCase() + '-' + b
         dcs.gotoTag(tag)
+        }
       } else if (d) {
         dcs.gotoPath(d)
       } else {
@@ -130,7 +140,7 @@ class App extends Component {
     }
 
     const dcsProps = {
-      dcsSetPageId: this.dcsSetPageId.bind(this),
+      dcsTags: this.state.dcsTags,      
       dcsClick: this.dcsClick.bind(this)
     }
 
@@ -190,10 +200,6 @@ class App extends Component {
     changeHistory({ params: { r: showRightPanel ? '1' : null }, push: true })
   }
 
-  dcsSetPageId(pageId) {
-    this.dcsPageId = pageId
-  }
-  
   dcsClick(balloonId) {
     if (balloonId) {
       if (balloonId.length > 3 || balloonId.toLowerCase() !== balloonId) {
