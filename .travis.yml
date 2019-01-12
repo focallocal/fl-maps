@@ -29,4 +29,5 @@ branches:
 script:
   #- npm test
   - mup init
-  - mup deploy
+  - mup setup
+  - mup deploy --config="/home/travis/build/focallocal/fl-maps/.deploy/mup.js" --settings="/home/travis/build/focallocal/fl-maps/.deploy/settings.json"
