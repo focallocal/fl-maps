@@ -16,7 +16,7 @@ before_install:
   - openssl enc -d -aes-256-cbc -md md5 -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_master"
   - tar xzf deploy.tar
   - npm install -g mup
-  - curl https://install.meteor.com/?release=1.6.1.1 | /bin/shd
+  - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
 branches:
   only:
