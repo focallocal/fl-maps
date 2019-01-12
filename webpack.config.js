@@ -23,6 +23,11 @@ const clientConfig = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        type: 'javascript/auto',
+        test: /\.mjs$/,
+        use: []
       }
     ]
   },
