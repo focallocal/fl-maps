@@ -31,5 +31,6 @@ branches:
     - fl-sleeper
 
 script:
-  - npm test
+  #- npm test
+  - mup init
   - mup deploy
