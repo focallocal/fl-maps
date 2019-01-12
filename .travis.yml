@@ -5,10 +5,6 @@ node_js:
   
 notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
-    template:
-      - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-      - "Change view : %{compare_url}"
-      - "Build details : %{build_url}"
       
 cache:
   directories:
