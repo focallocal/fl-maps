@@ -6,6 +6,9 @@ deployment.tar
 .deploy
 .deploy/
 .idea/
+*.tar
+mup.js
 
 node_modules
 *.log
+*.tar
