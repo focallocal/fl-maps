@@ -17,6 +17,8 @@ before_install:
   # Remove cache if the project is upgraded to a newer version of meteor
   - export PATH="$HOME/.meteor:$PATH"
   - openssl enc -d -aes-256-cbc -md md5 -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_master"
+  - openssl enc -d -aes-256-cbc -md md5 -in secrets.tar.enc -out secrets.tar -k "$encrypted_key"
+  - tar xzf secrets.tar
   - tar xzf deploy.tar
   - npm install -g mup
   - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
@@ -28,6 +30,4 @@ branches:
 
 script:
   #- npm test
-  - mup init
-  - mup setup --config="/home/travis/build/focallocal/fl-maps/.deploy/mup.js" --settings="/home/travis/build/focallocal/fl-maps/.deploy/settings.json"
-  - mup deploy --config="/home/travis/build/focallocal/fl-maps/.deploy/mup.js" --settings="/home/travis/build/focallocal/fl-maps/.deploy/settings.json"
+  - mup deploy
