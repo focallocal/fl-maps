@@ -21,6 +21,7 @@ before_install:
   - tar xf secrets.tar
   - tar xzf deploy.tar
   - head -n 1 id_rsa_focal_deploy.pem
+  - ssh deploy@focallocal.org -i ./id_rsa_focal_deploy.pem 'hostname'
   - ls -hal
   - npm install -g mup
   - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
