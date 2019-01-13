@@ -17,7 +17,7 @@ before_install:
   # Remove cache if the project is upgraded to a newer version of meteor
   - export PATH="$HOME/.meteor:$PATH"
   - openssl enc -d -aes-256-cbc -md md5 -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_master"
-  - openssl enc -d -aes-256-cbc -md md5 -in secrets.tar.enc -out secrets.tar -k "$encrypted_key"
+  - openssl enc -d -aes-256-cbc -md md5 -in secrets.tar.enc -out secrets.tar -k "$encrypted_key_master"
   - tar xzf secrets.tar
   - tar xzf deploy.tar
   - npm install -g mup
