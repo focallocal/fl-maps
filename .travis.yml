@@ -20,8 +20,6 @@ before_install:
   - openssl enc -d -aes-256-cbc -md md5 -in secrets.tar.enc -out secrets.tar -k "$encrypted_key_master"
   - tar xf secrets.tar
   - tar xzf deploy.tar
-  - mkdir .ssh
-  - mv id_rsa_focal_deploy .ssh/.
   - npm install -g mup
   - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
