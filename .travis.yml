@@ -30,4 +30,5 @@ branches:
 
 script:
   #- npm test
+  - mup setup
   - mup deploy
