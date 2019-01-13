@@ -20,9 +20,6 @@ before_install:
   - openssl enc -d -aes-256-cbc -md md5 -in secrets.tar.enc -out secrets.tar -k "$encrypted_key_master"
   - tar xf secrets.tar
   - tar xzf deploy.tar
-  - head -n 1 id_rsa_focal_deploy.pem
-  - ssh -o "StrictHostKeyChecking no" deploy@focallocal.org -i ./id_rsa_focal_deploy.pem 'hostname'
-  - ls -hal
   - npm install -g mup
   - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
