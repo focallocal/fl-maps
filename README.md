@@ -88,6 +88,50 @@ fl-sleeper: https://brightertomorrowmap.com
 
 Currently you'll see a _**Compiled with warnings.**_ message, ignore it.
 
+#### ** Step (5) Warnings **
+For step (5) be sure you don't run `meteor npm install` twice. Just do it once followed by `npm run start` and it will work.
+
+<details><summary>Detailed Explanation</summary>
+If run twice you may get several warnings such as these:
+
+```
+npm WARN bootstrap@4.1.1 requires a peer of jquery@1.9.1 - 3 but none is installed. You must install peer dependencies yourself.
+  npm WARN react-google-maps@9.4.5 requires a peer of @types/googlemaps@^3.0.0 but none is installed. You must install peer dependencies yourself.
+  npm WARN react-google-maps@9.4.5 requires a peer of @types/markerclustererplus@^2.1.29 but none is installed. You must install peer dependencies yourself.
+  npm WARN react-google-maps@9.4.5 requires a peer of @types/react@^15.0.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
+  npm WARN uniforms@1.24.3 requires a peer of graphql@>=0.8.2 <1.0.0 but none is installed. You must install peer dependencies yourself.
+  npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules/fsevents):
+  npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+```
+  
+If you try to install them by:
+```
+meteor npm install jquery @types/googlemaps@^3.0.0 @types/markerclustererplus@^2.1.29 @types/react@^16.0.0 graphql@0.13.2
+```
+
+... then during the `npm run start` step, compile will fail with errors such as these:
+```
+ERROR in ./imports/both/i18n/en/categories.json
+Module parse failed: Unexpected token < in JSON at position 149
+You may need an appropriate loader to handle this file type.
+SyntaxError: Unexpected token < in JSON at position 149
+...
+
+ERROR in chunk main [entry]
+...
+W20190111-19:03:18.261(8)? (STDERR)     ERROR in /home/sum/sum/job/remoteok/focallocal/fl-maps/node_modules/graphql/index.mjs
+2:0-49 Can't reexport the named export 'graphql' from non EcmaScript module (only default export is available)
+...
+W20190111-19:03:18.272(8)? (STDERR)     2:0-49 Can't reexport the named export 'graphqlSync' from non EcmaScript module (only default export is available)
+...
+W20190111-19:03:18.292(8)? (STDERR)     39:0-61:50 Can't reexport the named export 'DEFAULT_DEPRECATION_REASON' from non EcmaScript module (only default export is available)
+...
+W20190111-19:03:18.300(8)? (STDERR)     39:0-61:50 Can't reexport the named export 'GraphQLBoolean' from non EcmaScript module (only default export is available)
+
+```
+</details>
+
 ## Working On Issues
 
 Issues can be found on our Trello board which gives a more visual representation of progress than Github. The two currently active lists on Trello will be the 1st version (example v0.1) reading from left to right, and also the Quick Bug Squashing List: [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
