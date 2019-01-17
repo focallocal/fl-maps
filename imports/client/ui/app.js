@@ -8,7 +8,7 @@ import qs from 'query-string'
 // DOCUSS
 import './style.scss'
 import { dcs } from '/imports/client/utils/dcs-master'
-const discourseUrl = 'https://discuss.focallocal.org/'
+const discourseUrl = 'https://discuss.focallocal.org/c/hack-homelessness-and-happiness'
 //const discourseUrl = 'http://vps465971.ovh.net:3000'
 
 // Includes
