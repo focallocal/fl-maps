@@ -38,19 +38,19 @@
     {
       "title" : "More",
       "icon" : "fas fa-plus",
-      "content" : [
-        {
-        "title" : "Team",
-        "route" : "/team"
-        },
-        {
-          "title" : "Partners",
-          "route" : "/partners"
-        },
-        {
-          "title" : "Donate",
-          "route" : "/donate"
-          }
+    "content" : [
+      {
+      "title" : "Team",
+      "route" : "/team"
+      },
+      {
+        "title" : "Partners",
+        "route" : "/partners"
+      },
+      {
+        "title" : "Donate",
+        "route" : "/donate"
+        }
       ]
     }
 
