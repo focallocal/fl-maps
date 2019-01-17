@@ -1,9 +1,10 @@
-
+//Imports
+import i18n from "../../../../both/i18n/en";
 import React,{Component, Fragment } from "react";
 import 
 {
-Container,
 Row,
+Container,
 Col,
 Card, 
 CardImg,
@@ -14,47 +15,42 @@ CardSubtitle,
 Button 
 } from "reactstrap";
 
-
-const MappingMembers = () => (
-  <Col xs={12} md={4}> 
-  <Card>
-    <CardImg  src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-      <CardBody>
-        <CardTitle>Card title</CardTitle>
-        <CardSubtitle>Card subtitle</CardSubtitle>
-        <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-        <Button outline color="success" >Button</Button>
-        <Button>Button</Button>
-        <Button>Button</Button>
-    </CardBody>
-  </Card>     
-  </Col>
-);
-
-
-
+const teamData = i18n.Team.members;
 
 
 
 class Members extends Component {
-    render() {
-      return (
-          <Fragment>
-            <div className="mt-3">
-            <Row>
-            <MappingMembers />
-            <MappingMembers />
-            <MappingMembers />
-            <MappingMembers />
-            <MappingMembers />
-            </Row> 
-            </div> 
-        </Fragment>
-        
-      );
-    }
-  }
 
+render() {
+  return (
 
+    <Fragment >
+    <div className="mr-5 ml-4">
+    <Row>
+    {teamData.map((member, index)=>{
+    return (
+      <Col xs={12} md={3} className="mt-5"> 
+      <Card>
+      <CardImg key={index} width={"100%"} src={member.image} alt={`${member.title} Image`} />
+      <CardBody>
+      <CardTitle> { member.title } </CardTitle>
+      <CardSubtitle>{ member.subtitle }</CardSubtitle>
+      <CardText>{ member.text }</CardText>
+     
+      <Button className="ml-2 mt-2">{ member.title }</Button>
+      <Button className="ml-2 mt-2" >{ member.title }</Button>
+      <Button className="ml-2 mt-2">{ member.title }</Button>
+    
+      </CardBody>
+      </Card>
+      </Col>
+    )
+  })}      
+    </Row>
+    </div>  
+</Fragment>
+  )
+}
 
+}
 export default Members;
