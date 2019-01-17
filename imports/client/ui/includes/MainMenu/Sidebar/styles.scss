@@ -1,4 +1,4 @@
-@import '/imports/client/stylesheets/variables.scss';
+@import "/imports/client/stylesheets/variables.scss";
 
 $_nav-item-color: rgba(0, 0, 0, 0.7);
 
@@ -13,7 +13,7 @@ $_nav-item-color: rgba(0, 0, 0, 0.7);
   overflow-y: auto;
   z-index: 9999;
   transform: translateX(-300px);
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
 
   &.--open {
     transform: translateX(0);
@@ -35,7 +35,6 @@ $_nav-item-color: rgba(0, 0, 0, 0.7);
     #brand-logo {
       margin: 0;
     }
-
   }
 
   .nav {
@@ -51,14 +50,16 @@ $_nav-item-color: rgba(0, 0, 0, 0.7);
         padding: 0;
         color: $_nav-item-color;
         line-height: 0;
-        transition: color .1s ease;
+        transition: color 0.1s ease;
         cursor: pointer;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
           color: black;
         }
 
-        i { // Icons
+        i {
+          // Icons
           position: relative;
           top: -1.5px;
           width: 26px;
@@ -71,7 +72,7 @@ $_nav-item-color: rgba(0, 0, 0, 0.7);
 
     .items-from-i18n {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
 }
@@ -83,12 +84,12 @@ $_nav-item-color: rgba(0, 0, 0, 0.7);
   bottom: 0;
   left: 0;
   background-color: #000;
-  transition: opacity .15s linear;
+  transition: opacity 0.15s linear;
   opacity: 0;
   z-index: -50;
 
   &.--show {
-    opacity: .5;
+    opacity: 0.5;
     z-index: 1045;
   }
 }
