@@ -283,7 +283,7 @@ What it is, is a minimum functional platform to support a community who will red
 
 ## Docus
 
-if you have any need to edit Docus, most files including home directory can be found here: https://github.com/focallocal/fl-maps/blob/fl-sleeper/imports/client/ui/app.js
+if you have any need to edit Docus, most files including home directory can be found here: https://github.com/focallocal/fl-maps/blob/master/imports/client/ui/app.js
 
 Its repo is here: https://github.com/sylque/dcs-discourse-plugin/issues
 and you need to tag @sylque in the repo to discuss development
