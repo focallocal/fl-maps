@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Button } from "reactstrap";
-import "./styles.scss";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Button } from 'reactstrap';
+import './styles.scss';
 
 class EditPage extends Component {
-  render() {
+  render () {
     return (
-      <div id="edit-page">
+      <div id='edit-page'>
         <Button color="primary" onClick={this.openEditModal}>
           Edit Page
-          <i className="far fa-edit" />
+          <i className='far fa-edit' />
         </Button>
       </div>
-    );
+    )
   }
 
   openEditModal = () => {
     window.__editData = this.props.data;
-    this.props.history.push("?edit=1");
+    this.props.history.push('?edit=1');
   };
 }
 
