@@ -24,12 +24,12 @@ class Page extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     // THIS IS WRONG: if you fetch data in componentDidMount(), then any route
     // change to the same component but with another id WON'T RELOAD THE DATA
     // AND WON'T RE-RENDER THE PAGE. See this bug:
     // https://github.com/focallocal/fl-maps/issues/742
-    const { data } = this.state;
+    const { data } = this.state
 
     if (!data) {
       this.getEventData()
@@ -62,7 +62,7 @@ class Page extends Component {
           const balloonId = tag.id.substring(17)
           badges[balloonId] = tag.count
         }
-      });
+      })
       this.setState({ badges })
     }
   }
@@ -114,7 +114,10 @@ class Page extends Component {
   }
 
   render() {
-    const { data, loaded } = this.state;
+    const { 
+      data, 
+      loaded 
+    } = this.state
 
     if (!loaded) {
       return <PageLoader className='pages' />
@@ -135,7 +138,7 @@ class Page extends Component {
     const { 
       history, 
       user 
-    } = this.props;
+    } = this.props
 
     const categories = formatCategories(c)
     const { key } = Meteor.settings.public.gm
@@ -159,6 +162,7 @@ class Page extends Component {
 
         <Container className='body'>
           <Row>
+
             <Col xs={7} className='left'>
               <div className='intro'>
                 <SectionTitle title='Introduction' />
@@ -193,9 +197,7 @@ class Page extends Component {
               <div className='location'>
                 <SectionTitle title='Location' />
                 <div>{address.name}</div>
-                <a className='view-map' onClick={this.scrollToMap}>
-                  View Map
-                </a>
+                <a className='view-map' onClick={this.scrollToMap}>View Map</a>
               </div>
 
               <Divider />
@@ -209,7 +211,7 @@ class Page extends Component {
             src={mapUrl}
           />
         </Container>
-        <div id='coral_talk_stream' />
+        <div id='coral_talk_stream'></div>
         <Helmet>
           {/* The embed web address will need updated depending on environment */}
           {/* Package.json port will need updated if you leave embed at 3000*/}
@@ -242,7 +244,7 @@ class Page extends Component {
 }
 
 const SectionTitle = ({ title }) => <div className='section-title'>{title}</div>
-const Divider = () => <div className='divider' />;
+const Divider = () => <div className='divider' />
 
 export function mutateCachedMapState (updatedEntry) {
   /*
