@@ -1,9 +1,13 @@
-//Imports
-import React,{Fragment} from "react";
+import React from 'react'
+import { Container, Row, Col } from 'reactstrap'
+import i18n from '/imports/both/i18n/en'
 import Members from "./Members";
 
-export default () => (
-    <Fragment>
-        <Members />
-    </Fragment>
+const Index = () => (
+        <React.Fragment>
+            <Members /> 
+        </React.Fragment>
+       
 );
+
+export default Index;
