@@ -9,7 +9,7 @@ class EditPage extends Component {
       <div id='edit-page'>
         <Button color='primary' onClick={this.openEditModal}>
           Edit Page
-          <i className='far fa-edit' />
+          <i className="far fa-edit" />
         </Button>
       </div>
     )
