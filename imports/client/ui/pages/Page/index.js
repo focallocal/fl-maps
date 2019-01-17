@@ -211,7 +211,7 @@ class Page extends Component {
             src={mapUrl}
           />
         </Container>
-        <div id='coral_talk_stream'></div>
+        <div id="coral_talk_stream"></div>
         <Helmet>
           {/* The embed web address will need updated depending on environment */}
           {/* Package.json port will need updated if you leave embed at 3000*/}
