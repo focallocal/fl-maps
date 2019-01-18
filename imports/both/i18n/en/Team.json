@@ -5,20 +5,20 @@
             "image" : "https://avatars2.githubusercontent.com/u/42490951",
             "subtitle" : "Manager, developer & entrepreneur",
             "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
-            "linkedIn" : "",
-            "twitter": "",
-            "Github" : ""
+            "linkedIn" : "https://www.linkedin.com/in/sylvainquendez/",
+            "twitter": "https://twitter.com/squendez",
+            "github" : "https://github.com/sylque"
             
             
         },
         {
-            "title" : "Placeholder",
-            "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
-            "subtitle" : "Placeholder",
+            "title" : "Saud Tauqeer",
+            "image" : "https://avatars3.githubusercontent.com/u/42393962?s=400&u=45c46df26fb13a3b154c5edc55a23be6fc13b25f&v=4",
+            "subtitle" : "MERN stack & polyglot developer",
             "text" : "Placeholder",
-            "linkedIn" : "",
-            "twitter": "",
-            "Github" : ""
+            "linkedIn" : "https://www.linkedin.com/in/saud-tauqeer-16a305172/",
+            "twitter": "https://twitter.com/@Saud31023894",
+            "github" : "https://github.com/SaudTauqeer"
 
         },
         {
@@ -28,7 +28,7 @@
             "text" : "Placeholder",
             "linkedIn" : "",
             "twitter": "",
-            "Github" : ""
+            "github" : ""
             
 
         },
@@ -39,7 +39,7 @@
             "text" : "Placeholder",
             "linkedIn" : "",
             "twitter": "",
-            "Github" : ""
+            "github" : ""
             
         }
     ]
