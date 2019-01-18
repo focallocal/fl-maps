@@ -37,7 +37,7 @@ class Members extends Component {
                     <CardBody>
                       <CardTitle> {member.title} </CardTitle>
                       <CardSubtitle>{member.subtitle}</CardSubtitle>
-                      <CardText>{member.text}</CardText>
+                      <CardText className="pt-2">{member.text}</CardText>
 
                       <section className="contact">
                         <ul className="list-inline list-social">
