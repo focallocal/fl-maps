@@ -20,6 +20,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/TeamMembers";
 import Partners from "./pages/Partners";
+import Whitepaper from "./pages/WhitePaper";
 import Authentication from "./pages/Authentication";
 import Map_ from "./pages/Map";
 import NewEventLoadable from "./pages/NewEvent/loadable";
@@ -178,6 +179,7 @@ class App extends Component {
                 <Route exact path="/about" component={About} />
                 <Route exact path="/team" component={Team} />
                 <Route exact path="/partners" component={Partners} />
+                <Route exact path="/whitepaper" component={Whitepaper} />
                 <Route path="/map" component={Map_} />
                 <Route path="*" render={this.renderNewEvent} />
                 <Route exact path="/thank-you" component={CongratsModal} />
