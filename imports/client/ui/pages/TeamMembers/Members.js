@@ -41,51 +41,71 @@ class Members extends Component {
 
                       <section className="contact">
                         <ul className="list-inline list-social">
-                          <li className="list-inline-item social-linked-in">
-                            <a
-                              target="blank"
-                              href={member.linkedIn}
-                            >
+                          <li
+                            style={{
+                              display: member.linkedIn === "" ? "none" : "true"
+                            }}
+                            className="list-inline-item social-linked-in pt-1"
+                          >
+                            <a target="blank" href={member.linkedIn}>
                               <i className="fab fa-linkedin-in" />
                             </a>
                           </li>
 
-                          <li className="list-inline-item social-twitter">
-                            <a
-                              target="blank"
-                              href={member.twitter}
-                            >
+                          <li
+                            style={{
+                              display: member.twitter === "" ? "none" : "true"
+                            }}
+                            className="list-inline-item social-twitter pt-1"
+                          >
+                            <a target="blank" href={member.twitter}>
                               <i className="fab fa-twitter" />
                             </a>
                           </li>
 
-                          <li className="list-inline-item social-github">
-                            <a
-                              target="blank"
-                              href={member.github}
-                            >
+                          <li
+                            style={{
+                              display: member.website === "" ? "none" : "true"
+                            }}
+                            className="list-inline-item social-website pt-1"
+                          >
+                            <a target="blank" href={member.website}>
+                              <i className="fas fa-globe" />
+                            </a>
+                          </li>
+
+                          <li
+                            style={{
+                              display: member.github === "" ? "none" : "true"
+                            }}
+                            className="list-inline-item social-github pt-1"
+                          >
+                            <a target="blank" href={member.github}>
                               <i className="fab fa-github" />
                             </a>
                           </li>
 
-                          <li className="list-inline-item social-github">
-                            <a
-                              target="blank"
-                              href={member.github}
-                            >
-                              <i className="fab fa-github" />
+                          <li
+                            style={{
+                              display: member.facebook === "" ? "none" : "true"
+                            }}
+                            className="list-inline-item social-facebook pt-1"
+                          >
+                            <a target="blank" href={member.facebook}>
+                              <i className="fab fa-facebook" />
                             </a>
                           </li>
 
-                          <li className="list-inline-item social-github">
-                            <a
-                              target="blank"
-                              href={member.github}
-                            >
-                              <i className="fab fa-github" />
+                          <li
+                            style={{
+                              display: member.google === "" ? "none" : "true"
+                            }}
+                            className="list-inline-item social-google-plus pt-1"
+                          >
+                            <a target="blank" href={member.google}>
+                              <i className="fab fa-google" />
                             </a>
                           </li>
-
                         </ul>
                       </section>
                     </CardBody>
@@ -99,6 +119,5 @@ class Members extends Component {
     );
   }
 }
-
 
 export default Members;
