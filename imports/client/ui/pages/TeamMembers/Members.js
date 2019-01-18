@@ -1,19 +1,18 @@
 //Imports
 import i18n from "../../../../both/i18n/en";
-import React,{Component, Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import "./team.css";
-import 
-{
-Row,
-Container,
-Col,
-Card, 
-CardImg,
-CardText,
-CardBody,
-CardTitle,
-CardSubtitle,
-Button 
+import {
+  Row,
+  Container,
+  Col,
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button
 } from "reactstrap";
 
 const teamData = i18n.Team.members;
@@ -34,6 +33,7 @@ class Members extends Component {
                       src={member.image}
                       alt={`${member.title} Image`}
                     />
+
                     <CardBody>
                       <CardTitle> {member.title} </CardTitle>
                       <CardSubtitle>{member.subtitle}</CardSubtitle>
@@ -41,9 +41,8 @@ class Members extends Component {
 
                       <section className="contact">
                         <ul className="list-inline list-social">
-
                           <li className="list-inline-item social-linked-in">
-                            <a 
+                            <a
                               target="blank"
                               href={member.linkedIn}
                             >
@@ -57,6 +56,24 @@ class Members extends Component {
                               href={member.twitter}
                             >
                               <i className="fab fa-twitter" />
+                            </a>
+                          </li>
+
+                          <li className="list-inline-item social-github">
+                            <a
+                              target="blank"
+                              href={member.github}
+                            >
+                              <i className="fab fa-github" />
+                            </a>
+                          </li>
+
+                          <li className="list-inline-item social-github">
+                            <a
+                              target="blank"
+                              href={member.github}
+                            >
+                              <i className="fab fa-github" />
                             </a>
                           </li>
 

@@ -7,9 +7,9 @@
             "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
             "linkedIn" : "https://www.linkedin.com/in/sylvainquendez/",
             "twitter": "https://twitter.com/squendez",
-            "github" : "https://github.com/sylque"
-            
-            
+            "github" : "https://github.com/sylque",
+            "facebook": "",
+            "website" : ""
         },
         {
             "title" : "Saud Tauqeer",
@@ -18,7 +18,20 @@
             "text" : "MERN stack devloper with in-depth experience in developing, managing, scaling, full-stack web applications with highly performant back-end and smooth UI/UX. Eagerly adding more skills under my belt. ",
             "linkedIn" : "https://www.linkedin.com/in/saud-tauqeer-16a305172/",
             "twitter": "https://twitter.com/@Saud31023894",
-            "github" : "https://github.com/SaudTauqeer"
+            "github" : "https://github.com/SaudTauqeer",
+            "facebook": "",
+            "website" : ""
+        },
+        {
+            "title" : "Placeholder",
+            "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
+            "subtitle" : "Placeholder",
+            "text" : "Placeholder",
+            "linkedIn" : "",
+            "twitter": "",
+            "github" : "",
+            "facebook": "",
+            "website" : ""
 
         },
         {
@@ -28,18 +41,9 @@
             "text" : "Placeholder",
             "linkedIn" : "",
             "twitter": "",
-            "github" : ""
-            
-
-        },
-        {
-            "title" : "Placeholder",
-            "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
-            "subtitle" : "Placeholder",
-            "text" : "Placeholder",
-            "linkedIn" : "",
-            "twitter": "",
-            "github" : ""
+            "github" : "",
+            "facebook": "",
+            "website" : ""
             
         }
     ]
