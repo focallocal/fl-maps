@@ -4,26 +4,43 @@
             "title" : "Sylvain Quendez",
             "image" : "https://avatars2.githubusercontent.com/u/42490951",
             "subtitle" : "Manager, developer & entrepreneur",
-            "text" : "Very good developer and the best there is hello 123 123 123 this is text"
+            "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
+            "linkedIn" : "",
+            "twitter": "",
+            "Github" : ""
+            
+            
+        },
+        {
+            "title" : "Placeholder",
+            "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
+            "subtitle" : "Placeholder",
+            "text" : "Placeholder",
+            "linkedIn" : "",
+            "twitter": "",
+            "Github" : ""
 
         },
         {
             "title" : "Placeholder",
             "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
             "subtitle" : "Placeholder",
-            "text" : "Placeholder"
+            "text" : "Placeholder",
+            "linkedIn" : "",
+            "twitter": "",
+            "Github" : ""
+            
+
         },
         {
             "title" : "Placeholder",
             "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
             "subtitle" : "Placeholder",
-            "text" : "Placeholder"
-        },
-        {
-            "title" : "placeholder",
-            "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
-            "subtitle" : "placeholder",
-            "text" : "placeholder"
+            "text" : "Placeholder",
+            "linkedIn" : "",
+            "twitter": "",
+            "Github" : ""
+            
         }
     ]
 }
