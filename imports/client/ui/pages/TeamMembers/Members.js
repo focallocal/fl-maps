@@ -26,7 +26,7 @@ class Members extends Component {
           <Row>
             {teamData.map((member, index) => {
               return (
-                <Col xs={12} md={3} className="mt-5 mb-4">
+                <Col key={index} xs={12} md={3} className="mt-5 mb-4">
                   <Card>
                     <CardImg
                       key={index}
@@ -43,11 +43,11 @@ class Members extends Component {
                         <ul className="list-inline list-social">
 
                           <li className="list-inline-item social-linked-in">
-                            <a
+                            <a 
                               target="blank"
                               href={member.linkedIn}
                             >
-                              <i class="fab fa-linkedin-in" />
+                              <i className="fab fa-linkedin-in" />
                             </a>
                           </li>
 
@@ -56,7 +56,7 @@ class Members extends Component {
                               target="blank"
                               href={member.twitter}
                             >
-                              <i class="fab fa-twitter" />
+                              <i className="fab fa-twitter" />
                             </a>
                           </li>
 
@@ -65,7 +65,7 @@ class Members extends Component {
                               target="blank"
                               href={member.github}
                             >
-                              <i class="fab fa-github" />
+                              <i className="fab fa-github" />
                             </a>
                           </li>
 
