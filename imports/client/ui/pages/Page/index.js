@@ -106,7 +106,7 @@ class Page extends Component {
       >
         <b className={titleClass}>{title}</b>&nbsp;
         <span className="dcs-icons">
-          <img src="/images/dcs-balloon.png" />
+          <img src={`/images/dcs-balloon-${balloonId}.png`} />
         </span>
         {badgeCount ? badgeHtml : ''}
       </div>
