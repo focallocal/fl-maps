@@ -40,7 +40,7 @@ class Page extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.data && !prevState.data) {      
+    if (this.state.data && !prevState.data) {
       window.__setDocumentTitle(this.state.data.name)
     }
 
@@ -63,7 +63,7 @@ class Page extends Component {
           badges[balloonId] = tag.count
         }
       })
-      this.setState({ badges })      
+      this.setState({ badges })
     }
   }
 
@@ -113,10 +113,10 @@ class Page extends Component {
     )
   }
 
-  render () {
-    const {
-      data,
-      loaded      
+  render() {
+    const { 
+      data, 
+      loaded 
     } = this.state
 
     if (!loaded) {
@@ -135,9 +135,9 @@ class Page extends Component {
       when
     } = data
 
-    const {
-      history,
-      user
+    const { 
+      history, 
+      user 
     } = this.props
 
     const categories = formatCategories(c)
@@ -183,9 +183,13 @@ class Page extends Component {
             </Col>
 
             <Col xs={4} className='right'>
-              {isAuthor && <EditPage data={data} history={history} />}
               <SectionTitle title='Date and Time' />
-
+              <AttendingButton
+                _id={_id}
+                history={history}
+                isLoggedIn={isLoggedIn}
+                user={user}
+              />
               <HoursFormatted data={when} />
 
               <Divider />
@@ -197,13 +201,7 @@ class Page extends Component {
               </div>
 
               <Divider />
-
-              <AttendingButton
-                _id={_id}
-                history={history}
-                isLoggedIn={isLoggedIn}
-                user={user}
-              />
+              {isAuthor && <EditPage data={data} history={history} />}
             </Col>
           </Row>
           <iframe
@@ -227,7 +225,7 @@ class Page extends Component {
     )
   }
 
-  scrollToMap () {
+  scrollToMap() {
     scrollToElement('.embedded-map')
   }
 
@@ -238,7 +236,7 @@ class Page extends Component {
       }
     })
   }
-  
+
   dcsClick(balloonId, e) {
     this.props.dcsClick(balloonId)
     e.stopPropagation() // Required for deselection

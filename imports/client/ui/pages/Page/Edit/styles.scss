@@ -1,8 +1,13 @@
+@import "/imports/client/stylesheets/variables.scss";
 
 #edit-page {
   margin-bottom: 12px;
 
   i {
     margin-left: 8px;
+  }
+
+  button {
+    background-color: $green !important;
   }
 }
