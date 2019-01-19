@@ -15,7 +15,7 @@ before_install:
   - export PATH="$HOME/.meteor:$PATH"
   - openssl enc -d -aes-256-cbc -md md5 -in secrets.tar.enc -out secrets.tar -k "$encrypted_key_sleeper"
   - openssl enc -d -aes-256-cbc -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_sleeper"
-  - tar xzvf deploy.tar
+  - tar xzf deploy.tar
   - tar xf secrets.tar
   - npm install -g mup
   - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
