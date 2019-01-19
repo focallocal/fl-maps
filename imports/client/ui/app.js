@@ -20,6 +20,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Team from "./pages/TeamMembers";
 import Partners from "./pages/Partners";
+import Faq from "./pages/Faq";
 import Whitepaper from "./pages/WhitePaper";
 import Authentication from "./pages/Authentication";
 import Map_ from "./pages/Map";
@@ -177,6 +178,7 @@ class App extends Component {
               <ScrollToTop>
                 <Route exact path="/(home)?" component={Home} />
                 <Route exact path="/about" component={About} />
+                <Route exact path="/faq" component={Faq} />
                 <Route exact path="/team" component={Team} />
                 <Route exact path="/partners" component={Partners} />
                 <Route exact path="/whitepaper" component={Whitepaper} />
