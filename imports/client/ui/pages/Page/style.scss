@@ -2,7 +2,7 @@
 $titles-color: #fff;
 
 #page {
-
+  
   .header {
     position: relative;
     display: flex;
@@ -11,8 +11,8 @@ $titles-color: #fff;
     height: 25vw;
     min-height: 250px;
     padding: 15px;
-    background: #f79d00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #00c362, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #f79d00; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #00c362, #f79d00); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #00c362, rgba(0, 0, 0, 0.35)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     .title-wrapper {
@@ -53,11 +53,11 @@ $titles-color: #fff;
     }
 
     /* --------------
-        Left Column 
+        Left Column
        -------------- */
 
-    .left{
-      .intro, .meet-me, .description{
+    .left {
+      .intro, .meet-me, .description {
         margin: 20px 0;
       }
     }
@@ -70,7 +70,7 @@ $titles-color: #fff;
       max-width: 300px;
 
       .hours-formatted {
-
+        
         .date {
           margin-bottom: 8px;
         }
@@ -79,14 +79,14 @@ $titles-color: #fff;
           display: flex;
           justify-content: space-between;
 
-          &>div:first-child {
+          & > div:first-child {
             margin-right: 0;
           }
         }
       }
 
       .location {
-
+        
         .view-map {
           color: #007bff;
           font-size: .9em;
@@ -98,14 +98,14 @@ $titles-color: #fff;
         width: 100%;
         margin-bottom: 8px;
       }
-
+      
     }
     /* ------------ End Right Column -------------- */
 
     // DOCUSS
     .dcs-selected {
       background-color: yellow;
-    }    
+    }
     .dcs-badge {
       display: inline-block;
       border-radius: 10px;
@@ -141,7 +141,7 @@ $titles-color: #fff;
     background: $primary-blue !important;
 
     &.active {
-      background: $primary-blue !important;
+      background: $primary-blue-darker !important;
     }
   }
 
@@ -170,9 +170,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 860px) {
-
+    
     & {
-
+      
       .header .title-wrapper {
         width: 95%;
       }
@@ -193,19 +193,19 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 640px) {
-
+    
     & {
-
+      
       .title-wrapper {
-
+        
         .sub-title-categories {
           font-size: 1.2em;
         }
       }
 
       .body {
-
-
+        
+        
         .left, .right {
           max-width: 95%;
           flex: 0 0 100%;
@@ -235,9 +235,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 520px) {
-
+    
     & {
-
+      
       .body {
         width: 90%;
       }
