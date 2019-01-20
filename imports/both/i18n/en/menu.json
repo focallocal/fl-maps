@@ -42,7 +42,7 @@
       {
           "title" : "FAQs",
           "route" : "/faq"
-      }  
+      },  
       {
       "title" : "Team",
       "route" : "/team"
@@ -57,7 +57,7 @@
         "target_blank" : "true"
         },
         {
-          "title" : "Donate with crypto",
+          "title" : "Donate with Crypto",
           "route" : "https://commerce.coinbase.com/checkout/071b7e10-2a8f-47be-83e3-c194c47c6fd0",
           "target_blank" : "true"
         },
