@@ -1,16 +1,28 @@
 {
-    "members" : [
+    "members" : [	    
+	  {
+            "title" : "Andy Tulett",
+            "image" : "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+            "subtitle" : "Founder and Director of The Focallocal Public Happiness Community",
+            "text" : "As a Public Happiness Activist I bring people together around creative ideas, to build projects and Movements which bring a little more peace and well-being into this world.",
+            "linkedIn" : "https://www.linkedin.com/in/andytulett/",
+            "twitter": "https://twitter.com/focallocal",
+            "github" : "",
+            "facebook": "https://www.facebook.com/andyat.focallocal",
+            "google" : "",
+            "website" : "https://andytulett.focallocal.org"
+	},  
         {   
             "title" : "Sylvain Quendez",
             "image" : "https://avatars2.githubusercontent.com/u/42490951",
-            "subtitle" : "Manager, developer & entrepreneur",
+            "subtitle" : "Docuss Founder and Director",
             "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
             "linkedIn" : "https://www.linkedin.com/in/sylvainquendez/",
             "twitter": "",
             "github" : "https://github.com/sylque",
             "facebook": "",
             "google" : "",
-            "website" : "sadsa"
+            "website" : "http://www.docuss.org/"
         },
         {
             "title" : "Saud Tauqeer",
