@@ -23,6 +23,11 @@ const clientConfig = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+	test: /\.mjs$/,
+	include: /node_modules/,
+	type: "javascript/auto",
       }
     ]
   },
@@ -36,7 +41,7 @@ const clientConfig = {
     })
   ],
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', ".webpack.js", ".web.js", ".mjs", '.js', '.jsx', ".json"],
     alias: {
       '/imports': path.resolve(__dirname, 'imports')
     }

@@ -25,30 +25,16 @@
             "website" : ""
         },
         {
-            "title" : "Placeholder",
-            "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
-            "subtitle" : "Placeholder",
-            "text" : "Placeholder",
-            "linkedIn" : "",
+            "title" : "Tom McNulty",
+            "image" : "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
+            "subtitle" : "Site Reliabilty Engineer",
+            "text" : "Site Reliabilty and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
+            "linkedIn" : "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
             "twitter": "",
-            "github" : "",
+            "github" : "https://github.com/TLMcNulty",
             "facebook": "",
             "google" : "",
-            "website" : ""
-
-        },
-        {
-            "title" : "Placeholder",
-            "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
-            "subtitle" : "Placeholder",
-            "text" : "Placeholder",
-            "linkedIn" : "",
-            "twitter": "",
-            "github" : "",
-            "facebook": "",
-            "google" : "",
-            "website" : ""
-            
-        }
+            "website" : "https://tom.mcnulty.in"
+	}
     ]
 }
