@@ -40,10 +40,6 @@
       "icon" : "fas fa-plus",
     "content" : [
       {
-          "title" : "FAQs",
-          "route" : "/faq"
-      },  
-      {
       "title" : "Team",
       "route" : "/team"
       },
@@ -52,15 +48,19 @@
         "route" : "/partners"
       },
       {
-        "title" : "Donate",
+        "title" : "Donate with paypal",
         "route" : "https://paypal.me/publichappiness",
         "target_blank" : "true"
         },
         {
-          "title" : "Donate with Crypto",
+          "title" : "Donate with crypto",
           "route" : "https://commerce.coinbase.com/checkout/071b7e10-2a8f-47be-83e3-c194c47c6fd0",
           "target_blank" : "true"
         },
+        {
+          "title" : "FAQ",
+          "route" : "/faq"
+        }  
       ]
     }
 
