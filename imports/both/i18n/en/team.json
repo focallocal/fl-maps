@@ -1,6 +1,6 @@
 {
     "members" : [	    
-	  {
+         {
             "title" : "Andy Tulett",
             "image" : "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
             "subtitle" : "Founder and Director of The Focallocal Public Happiness Community",
@@ -11,7 +11,7 @@
             "facebook": "https://www.facebook.com/andyat.focallocal",
             "google" : "",
             "website" : "https://andytulett.focallocal.org"
-	},  
+        },
         {   
             "title" : "Sylvain Quendez",
             "image" : "https://avatars2.githubusercontent.com/u/42490951",
@@ -47,7 +47,7 @@
             "facebook": "",
             "google" : "",
             "website" : "https://tom.mcnulty.in"
-    	},
+        },
         {
             "title" : "Matias Forbord",
             "image" : "https://avatars3.githubusercontent.com/u/1154150?s=460&v=4",
