@@ -6,6 +6,7 @@ import Map from "./map.json";
 import NewEventModal from "./new-event-modal.json";
 import Team from "./team.json";
 import Partners from "./partners.json";
+import Faq from "./faq.json";
 
 export default {
   About,
@@ -15,5 +16,6 @@ export default {
   Map,
   NewEventModal,
   Team,
-  Partners
+  Partners,
+  Faq
 };

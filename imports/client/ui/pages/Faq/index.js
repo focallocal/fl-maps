@@ -1,14 +1,9 @@
 //Imports
 import React from "react";
-import i18n from "../../../../both/i18n/en";
-import { Container } from "reactstrap";
+import Content from "./Content";
 
 const Index = () => {
-  return (
-    <React.Fragment>
-      <Container>{console.log()}</Container>
-    </React.Fragment>
-  );
+  return <Content />;
 };
 
 export default Index;
