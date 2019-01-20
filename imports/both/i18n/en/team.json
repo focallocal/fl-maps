@@ -1,7 +1,6 @@
 {
-    "members" : [
-	    
-	        {
+    "members" : [	    
+	  {
             "title" : "Andy Tulett",
             "image" : "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
             "subtitle" : "Founder and Director of The Focallocal Public Happiness Community",
@@ -12,9 +11,7 @@
             "facebook": "https://www.facebook.com/andyat.focallocal",
             "google" : "",
             "website" : "https://andytulett.focallocal.org"
-	}
-	    
-	    
+	},  
         {   
             "title" : "Sylvain Quendez",
             "image" : "https://avatars2.githubusercontent.com/u/42490951",
