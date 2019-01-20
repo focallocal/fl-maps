@@ -12,6 +12,7 @@ import AttendingButton from './AttendingButton'
 import './style.scss'
 import {Helmet} from "react-helmet";
 import qs from 'query-string'
+import i18n from '/imports/both/i18n/en'
 
 class Page extends Component {
   constructor (props) {
@@ -87,7 +88,7 @@ class Page extends Component {
   }
 
   // DOCUSS
-  dcsHeading(title, balloonId) {
+  dcsHeading(title, subtitle, balloonId) {
     const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
     const badgeHtml = (
       <span
@@ -105,10 +106,16 @@ class Page extends Component {
         onClick={e => this.dcsClick(balloonId, e)}
       >
         <b className={titleClass}>{title}</b>&nbsp;
+
         <span className="dcs-icons">
           <img src={`/images/dcs-balloon-${balloonId}.png`} />
         </span>
         {badgeCount ? badgeHtml : ''}
+        <div>
+        <small style={{marginLeft: '5px', marginRight: '5px', fontSize: '60%'}}>
+          {subtitle}
+        </small>
+        </div>
       </div>
     )
   }
@@ -172,14 +179,15 @@ class Page extends Component {
                 <SectionTitle title='Meet Me Details' />
                 {findHints}
               </div>
-              {this.dcsHeading('Photos', 'pho')}
-              {this.dcsHeading('Videos', 'vid')}
+              {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
+              {this.dcsHeading(i18n.Map.eventInfo.videos.title, i18n.Map.eventInfo.photos.subtitle, 'vid')}
               <div className='description'>
                 <SectionTitle title='About' />
                 {description}
               </div>
-              {this.dcsHeading('Wall', 'wal')}
-              {this.dcsHeading('Experiences', 'exp')}
+              {this.dcsHeading(i18n.Map.eventInfo.wall.title, i18n.Map.eventInfo.wall.subtitle, 'wal')}
+              {this.dcsHeading(i18n.Map.eventInfo.experiences.title, i18n.Map.eventInfo.experiences.subtitle, 'exp')}
+
             </Col>
 
             <Col xs={4} className='right'>

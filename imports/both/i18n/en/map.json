@@ -1,6 +1,22 @@
 {
   "filtersTitle": "Filter",
   "eventInfo": {
-  	"introTitle": "Introduction"
+    "introTitle": "Introduction",
+    "photos": {
+      "title": "Photos",
+      "subtitle": "share links to your pics"
+    },
+    "videos": {
+      "title": "Videos",
+      "subtitle": "share links to your vids"
+    },
+    "wall": {
+      "title": "Page Wall",
+      "subtitle": "general discussion"
+    },
+    "experiences": {
+      "title": "Community Experiences",
+      "subtitle": "How was your Experience? (positive/negative)"
+    }
   }
 }
