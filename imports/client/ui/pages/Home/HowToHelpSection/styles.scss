@@ -31,6 +31,15 @@
     margin: 10px auto;
   }
 
+  .join {
+    width: 10em;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 0.8rem;
+    margin-right: 4px;
+    text-align: center;
+  }
+  
   @media screen and (max-width: 850px) {
     .title {
       text-align: center;
