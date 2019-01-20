@@ -27,16 +27,20 @@
   }
 
   .sign-and-post {
+    display: block;
     width: 16em;
-    margin: 10px auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
   }
 
   .join {
-    width: 10em;
-    padding-left: 2px;
-    padding-right: 2px;
+    width: 12em;
+    padding-left: 8px;
+    padding-right: 8px;
     font-size: 0.8rem;
-    margin-right: 4px;
+    margin-left: 4px;
     text-align: center;
   }
   
