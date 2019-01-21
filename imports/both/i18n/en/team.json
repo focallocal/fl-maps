@@ -59,6 +59,18 @@
             "facebook": "",
             "google" : "",
             "website" : "https://gifsplanation.com"
+        },
+        {
+            "title" : "Pawel Mordaszewski",
+            "image" : "https://avatars2.githubusercontent.com/u/3659502?s=400&v=4",
+            "subtitle" : "Technical utility player",
+            "text" : "Travelling software engineer with a passion for a better world. Recently busy working for the fourth industrial revolution by harnessing autonomous drones using AI analytics sent through IoT on 5G.",
+            "linkedIn" : "https://www.linkedin.com/in/pmordaszewski",
+            "twitter": "",
+            "github" : "https://github.com/mordka",
+            "facebook": "",
+            "google" : "",
+            "website" : ""
         }
     ]
 }
