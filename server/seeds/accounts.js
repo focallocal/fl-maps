@@ -1,7 +1,7 @@
 /* globals ServiceConfiguration: 1 */
 import { Meteor } from 'meteor/meteor'
 /*
-  Set up oAuth for Google, Facebook and Twitter
+  Set up oAuth for Google (others except Facebook are TODO)
 */
 
 var settings = Meteor.settings[process.env.NODE_ENV]
@@ -17,19 +17,6 @@ if (settings !== undefined) {
       }
     }
   )
-
-  // Facebook
-  ServiceConfiguration.configurations.upsert(
-    {'service': 'facebook'},
-    {
-      $set: {
-        'appId': settings.facebook.oauth_key,
-        'secret': settings.facebook.oauth_secret,
-        'loginStyle': 'popup'
-      }
-    }
-  )
-}
 
 Accounts.onCreateUser(function (options, user) {
   if (options.profile) user.profile = options.profile
@@ -48,7 +35,7 @@ Accounts.onCreateUser(function (options, user) {
 })
 
 function getDetailsFromService (services) {
-  const serviceName = services.google ? 'google' : 'facebook'
+  const serviceName = 'google'
   const service = services[serviceName]
 
   return {
