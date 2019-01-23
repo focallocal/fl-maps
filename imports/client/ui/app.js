@@ -21,7 +21,6 @@ import About from "./pages/About";
 import Team from "./pages/TeamMembers";
 import Partners from "./pages/Partners";
 import Faq from "./pages/Faq";
-import Whitepaper from "./pages/WhitePaper";
 import Authentication from "./pages/Authentication";
 import Map_ from "./pages/Map";
 import NewEventLoadable from "./pages/NewEvent/loadable";
@@ -40,7 +39,7 @@ class App extends Component {
       balloonId: false,
       dcsTags: null,
       leftRightTransition: false
-    }
+    };
   }
 
   componentDidMount() {
@@ -62,15 +61,17 @@ class App extends Component {
     });
 
     // Connect to the plugin in Discourse
-    dcs.connect({
-      discourseWindow: document.getElementById('dcs-right').contentWindow,
-      discourseOrigin: new URL(discourseUrl).origin,
-      timeout: 15000
-    }).catch(err => {
+    dcs
+      .connect({
+        discourseWindow: document.getElementById("dcs-right").contentWindow,
+        discourseOrigin: new URL(discourseUrl).origin,
+        timeout: 15000
+      })
+      .catch(err => {
         // Timeout error
-        console.log(err)
-    })
-    
+        console.log(err);
+      });
+
     // Set up callbacks to handle Discourse route changes (when the user
     // clicks on something (ex: his profile) in Discourse)
     dcs.onHome(() => {
@@ -99,18 +100,18 @@ class App extends Component {
             push: false
           });
         }
-      })
-    })
+      });
+    });
 
     // Setup callbacks to handle other Discourse events
     dcs.onUserChange(user => {
       //user && console.log('Unread notifications: ', user.unreadNotifications)
-    })
-    dcs.onDcsTags(dcsTags => {      
-      this.setState({ dcsTags })
-    })
-    
-    // Update the Discourse route. DON'T DO THIS IMMEDIATELY, otherwise 
+    });
+    dcs.onDcsTags(dcsTags => {
+      this.setState({ dcsTags });
+    });
+
+    // Update the Discourse route. DON'T DO THIS IMMEDIATELY, otherwise
     // transitions won't trigger between the two states
     setTimeout(() => {
       this.dcsUpdateFromUrl();
@@ -127,11 +128,11 @@ class App extends Component {
       if (t) {
         dcs.gotoTopic(t);
       } else if (b) {
-        const prefix = '/page/'
+        const prefix = "/page/";
         if (window.location.pathname.startsWith(prefix)) {
-          const pageId = window.location.pathname.substring(prefix.length)
-          const tag = 'dcs-' + pageId.substring(0, 12).toLowerCase() + '-' + b
-        dcs.gotoTag(tag)
+          const pageId = window.location.pathname.substring(prefix.length);
+          const tag = "dcs-" + pageId.substring(0, 12).toLowerCase() + "-" + b;
+          dcs.gotoTag(tag);
         }
       } else if (d) {
         dcs.gotoPath(d);
@@ -162,7 +163,7 @@ class App extends Component {
     }
 
     const dcsProps = {
-      dcsTags: this.state.dcsTags,      
+      dcsTags: this.state.dcsTags,
       dcsClick: this.dcsClick.bind(this)
     };
 
