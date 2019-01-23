@@ -181,7 +181,6 @@ class App extends Component {
                 <Route exact path="/faq" component={Faq} />
                 <Route exact path="/team" component={Team} />
                 <Route exact path="/partners" component={Partners} />
-                <Route exact path="/whitepaper" component={Whitepaper} />
                 <Route path="/map" component={Map_} />
                 <Route path="*" render={this.renderNewEvent} />
                 <Route exact path="/thank-you" component={CongratsModal} />
