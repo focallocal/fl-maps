@@ -186,6 +186,7 @@ class App extends Component {
                 <Route exact path="/(home)?" component={Home} />
                 <Route exact path="/team" component={Team} />
                 <Route exact path="/partners" component={Partners} />
+                <Route exact path="/whitepaper" component={Whitepaper} />
                 <Route exact path="/about" component={About} />
                 <Route path="/map" component={Map_} />
                 <Route path="*" render={this.renderNewEvent} />
