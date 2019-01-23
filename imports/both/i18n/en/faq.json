@@ -1,12 +1,20 @@
 {
   "faq" : [
     {
-      "heading" : "faq heading",
-      "text" : "This is always the 1st question asked. Actually you'd be amazed how many people living on the streets have a smart phone as people often donate their old phones to charities and shelters, and they all know where to find wifi<br />Public libraries and shelters are normally spaces with computers and wifi. They are warm and comfortable so people without a home often spend time there<br />It’s also possible to print our maps and hand them out on the streets or at a shelter as an invaluable guide to where to go to meet all your basic needs<br />Of course you could always use the map to arrange an ‘old phone’ collection and give-away yourself, and also arrange a with some local cafes to allow people who are homeless to drop them off for charging when needed"
+      "heading" : "First question",
+      "text" : "This is always the 1st question asked. Actually you'd be amazed how many people living on the streets have a smart phone as people often donate their old phones to charities and shelters, and they all know where to find wifi." 
     },
     {
-      "heading" : "faq heading",
-      "text" : "faq text"
+      "heading" : "Cozy sports for Wi-fi!",
+      "text" : "Public libraries and shelters are normally spaces with computers and wifi. They are warm and comfortable so people without a home often spend time there."
+    },
+    {
+      "heading" : "All these cozy spots are accessible easily with BTM (brightertomorrowmap.com)",
+      "text" : "It’s possible to find these spots near you as well print our maps and hand them out on the streets or at a shelter as an invaluable guide to where to go to meet all your basic needs."
+    },
+    {
+      "heading" : "Offer something yourself",
+      "text" : "Of course you could always use the map to arrange an ‘old phone’ collection and give-away yourself, and also arrange with some local cafes to allow people who are homeless to drop them off for charging when needed"
     }
     
   ]
