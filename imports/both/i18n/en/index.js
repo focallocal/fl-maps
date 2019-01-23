@@ -1,9 +1,12 @@
-import About from './about.json'
-import CongratsModal from './congrats-modal.json'
-import Home from './home.json'
-import MainMenu from './menu.json'
-import Map from './map.json'
-import NewEventModal from './new-event-modal.json'
+import About from "./about.json";
+import CongratsModal from "./congrats-modal.json";
+import Home from "./home.json";
+import MainMenu from "./menu.json";
+import Map from "./map.json";
+import NewEventModal from "./new-event-modal.json";
+import Team from "./team.json";
+import Partners from "./partners.json";
+import Faq from "./faq.json";
 
 export default {
   About,
@@ -11,5 +14,8 @@ export default {
   Home,
   MainMenu,
   Map,
-  NewEventModal
-}
+  NewEventModal,
+  Team,
+  Partners,
+  Faq
+};
