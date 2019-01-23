@@ -3,11 +3,18 @@
   "resource_type": {
     "title": "Where is the resource from?",
     "firstRadio": "I found a resource nearby",
-    "secondRadio": "I want to offer my own resource"
+    "secondRadio": "I want to offer my own resource"    
   },
-  "overview":"What's being offered?",
-  "event_name": "Name",
-  "categories": "What kind of resource is it?",
-  "description": "Details",
-  "contact_info": "Availability details"
+  "overview":"Intro",
+  "event_name": "Name/Title",
+  "categories": "Public Happiness activity",
+  "description": "Tell us more!",
+  "contact_info": "Meet Me Details (what for?/where?/why?)",
+  "active_from": "Active from",
+  "active_until": "Active until",
+  "recurrence": {
+    "thirdRadio": "Specific days of each week",
+    "fourthRadio": "Other options for repeating"
+  },
+  "attendee_limit": "1000"
 }

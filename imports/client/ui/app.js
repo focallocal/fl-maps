@@ -38,9 +38,9 @@ class App extends Component {
     this.state = {
       showRightPanel: false,
       balloonId: false,
+      dcsTags: null,
       leftRightTransition: false
-    };
-    this.dcsPageId = null;
+    }
   }
 
   componentDidMount() {
@@ -62,18 +62,17 @@ class App extends Component {
     });
 
     // Connect to the plugin in Discourse
-    dcs
-      .connect({
-        discourseWindow: document.getElementById("dcs-right").contentWindow,
-        discourseOrigin: new URL(discourseUrl).origin,
-        timeout: 15000
-      })
-      .catch(err => {
-        console.log("Connection to dcs-discourse-plugin failed:", err);
-      });
-
-    // Setup a callback for when the route in Discourse changes because the
-    // user has click on something (ex: his profile)
+    dcs.connect({
+      discourseWindow: document.getElementById('dcs-right').contentWindow,
+      discourseOrigin: new URL(discourseUrl).origin,
+      timeout: 15000
+    }).catch(err => {
+        // Timeout error
+        console.log(err)
+    })
+    
+    // Set up callbacks to handle Discourse route changes (when the user
+    // clicks on something (ex: his profile) in Discourse)
     dcs.onHome(() => {
       this.triggeredByDiscourse = true;
       changeHistory({
@@ -100,13 +99,18 @@ class App extends Component {
             push: false
           });
         }
-      });
-    });
-    dcs.onUserChange(user => {
-      user && console.log("Unread notifications: ", user.unreadNotifications);
-    });
+      })
+    })
 
-    // Update the Discourse route. DON'T DO THIS IMMEDIATELY, otherwise
+    // Setup callbacks to handle other Discourse events
+    dcs.onUserChange(user => {
+      //user && console.log('Unread notifications: ', user.unreadNotifications)
+    })
+    dcs.onDcsTags(dcsTags => {      
+      this.setState({ dcsTags })
+    })
+    
+    // Update the Discourse route. DON'T DO THIS IMMEDIATELY, otherwise 
     // transitions won't trigger between the two states
     setTimeout(() => {
       this.dcsUpdateFromUrl();
@@ -123,9 +127,12 @@ class App extends Component {
       if (t) {
         dcs.gotoTopic(t);
       } else if (b) {
-        const tag =
-          "dcs-" + this.dcsPageId.substring(0, 12).toLowerCase() + "-" + b;
-        dcs.gotoTag(tag);
+        const prefix = '/page/'
+        if (window.location.pathname.startsWith(prefix)) {
+          const pageId = window.location.pathname.substring(prefix.length)
+          const tag = 'dcs-' + pageId.substring(0, 12).toLowerCase() + '-' + b
+        dcs.gotoTag(tag)
+        }
       } else if (d) {
         dcs.gotoPath(d);
       } else {
@@ -155,7 +162,7 @@ class App extends Component {
     }
 
     const dcsProps = {
-      dcsSetPageId: this.dcsSetPageId.bind(this),
+      dcsTags: this.state.dcsTags,      
       dcsClick: this.dcsClick.bind(this)
     };
 
@@ -223,10 +230,6 @@ class App extends Component {
     const showRightPanel = !this.state.showRightPanel;
     changeHistory({ params: { r: showRightPanel ? "1" : null }, push: true });
   };
-
-  dcsSetPageId(pageId) {
-    this.dcsPageId = pageId;
-  }
 
   dcsClick(balloonId) {
     if (balloonId) {

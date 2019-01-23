@@ -19,7 +19,8 @@ class Page extends Component {
     this.state = {
       data: window.cachedDataForPage,
       id: props.match.params.id,
-      loaded: false
+      loaded: false,
+      badges: null
     }
   }
 
@@ -38,24 +39,31 @@ class Page extends Component {
     }
   }
 
-  componentDidUpdate (nextProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (this.state.data && !prevState.data) {      
       window.__setDocumentTitle(this.state.data.name)
     }
 
-    // TO FIX THE RELOAD ISSUE STATED ABOVE, I GUESS YOU NEED SOMETHING LIKE:
-    // if (this.props.match.params.id !== prevProps.match.params.id) {    
-    //  this.getEventData()
-    //  this.setState(...)
-    //}    
-    
     // DOCUSS
-    this.props.dcsSetPageId(this.state.id)
-    // We update selBalloonId here, so that we catch url changes triggered 
+    // Update selBalloonId here, so that we catch url changes triggered
     // in other components
     const { b } = qs.parse(window.location.search)
     if (this.state.selBalloonId !== b) {
       this.setState({ selBalloonId: b })
+    }
+
+    // DOCUSS
+    // Add badges (color circles with topic count)
+    if (!this.state.badges && this.props.dcsTags) {
+      const prefix = `dcs-${this.state.id.substring(0, 12).toLowerCase()}-`
+      const badges = {}
+      this.props.dcsTags.forEach(tag => {
+        if (tag.id.startsWith(prefix)) {
+          const balloonId = tag.id.substring(17)
+          badges[balloonId] = tag.count
+        }
+      })
+      this.setState({ badges })      
     }
   }
 
@@ -80,13 +88,29 @@ class Page extends Component {
 
   // DOCUSS
   dcsHeading(title, balloonId) {
+    const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
+    const badgeHtml = (
+      <span
+        className="dcs-badge"
+        title={`This section has ${badgeCount} topic(s)`}
+      >
+        {badgeCount}
+      </span>
+    )
+    const titleClass =
+      balloonId === this.state.selBalloonId ? 'dcs-selected' : ''
     return (
-      <div style={{ margin: '20px 0' }}>
-        <b className={balloonId === this.state.selBalloonId ? 'dcs-selected' : ''}>{title}</b>&nbsp;
+      <div
+        style={{ margin: '20px 0', cursor: 'pointer' }}
+        onClick={e => this.dcsClick(balloonId, e)}
+      >
+        <b className={titleClass}>{title}</b>&nbsp;
         <span className="dcs-icons">
-          <img src="/images/dcs-balloon.png" style={{ cursor: 'pointer' }} onClick={e => this.dcsClick(balloonId, e)} />
+          <img src="/images/dcs-balloon.png" />
         </span>
-      </div>)
+        {badgeCount ? badgeHtml : ''}
+      </div>
+    )
   }
 
   render () {
