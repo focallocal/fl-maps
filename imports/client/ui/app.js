@@ -18,6 +18,7 @@ import MainMenu from "./includes/MainMenu";
 import Home from "./pages/Home";
 import Whitepaper from "./pages/WhitePaper";
 import Team from "./pages/TeamMembers";
+import Faq from "./pages/Faq";
 import Partners from "./pages/Partners";
 import About from "./pages/About";
 import Authentication from "./pages/Authentication";
@@ -187,6 +188,7 @@ class App extends Component {
                 <Route exact path="/team" component={Team} />
                 <Route exact path="/partners" component={Partners} />
                 <Route exact path="/whitepaper" component={Whitepaper} />
+                <Route exact path="/faq" component={Faq} />
                 <Route exact path="/about" component={About} />
                 <Route path="/map" component={Map_} />
                 <Route path="*" render={this.renderNewEvent} />

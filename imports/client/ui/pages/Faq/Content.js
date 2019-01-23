@@ -12,11 +12,9 @@ const Content = () => {
       </Container>
       {i18n.Faq.faq.map((item, index) => {
         return (
-          <Col className="ml-5 pl-5 mt-5" xs={11}>
-            <h3 key={index}> {item.heading} </h3>
-            <li key={index} className="mb-3 text-left">
-              {item.text}
-            </li>
+          <Col key={index} className="ml-5 pl-5 mt-5" xs={11}>
+            <h3>{item.heading} </h3>
+            <li className="mb-3 text-left">{item.text}</li>
           </Col>
         );
       })}
