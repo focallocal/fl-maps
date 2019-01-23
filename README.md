@@ -2,7 +2,7 @@
 
 This is the base branch for the new react-based fl-maps project.
 
-All edits are initially made in this master branch (fl-maps), and then pushed to the fl-sleeper branch unless they are in the i18n folder to keep the codebase identical. 
+All edits are initially made in this master branch (fl-maps), and then <b>copy/pasted into the fl-sleeper branch, and a separate PR made to the fl-sleeper branch</b> unless they are in the i18n folder. We aim to keep the codebase identical as much as possible until the team expands. 
 
 All text and labels viewable to users must be defined in the i18n folder to be ready for multi-language support - this file is also used to define differences between both maps, The Public Happiness Platform at focallocal.org and Our Homelessness project at brightertomorrowmap.com. 
 

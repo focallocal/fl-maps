@@ -93,6 +93,7 @@ class MapComponent_ extends Component {
         defaultZoom={zoom}
         defaultOptions={mapOptions()}
         onZoomChanged={this.onZoomChanged}
+        onDragEnd={this.onDragEnd}
       >
 
         <MarkerClusterer
@@ -259,6 +260,20 @@ class MapComponent_ extends Component {
 
   onZoomChanged = () => {
     this.setState({ zoom: this.map.getZoom() })
+
+    const center = this.map.getCenter()
+    this.getEvents({
+      lat: center.lat(),
+      lng: center.lng()
+    })
+  }
+
+  onDragEnd = () => {
+    const center = this.map.getCenter()
+    this.getEvents({
+      lat: center.lat(),
+      lng: center.lng()
+    })
   }
 
   openMoreInfo = (event) => {

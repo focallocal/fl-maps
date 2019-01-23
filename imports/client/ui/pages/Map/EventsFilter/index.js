@@ -48,7 +48,7 @@ class FiltersList extends Component {
                   />
                   { category.url && 
                     <a href={category.url} target='_blank' rel='external' aria-label='Go to Page'>
-                      <i class="far fa-question-circle"></i>
+                      <i className="far fa-question-circle"></i>
                     </a>
                   }
                 </ListGroupItem>
