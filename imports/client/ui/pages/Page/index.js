@@ -183,9 +183,15 @@ class Page extends Component {
             </Col>
 
             <Col xs={4} className='right'>
-              {isAuthor && <EditPage data={data} history={history} />}
+              
               <SectionTitle title='Date and Time' />
 
+              <AttendingButton
+                 _id={_id}
+                 history={history}
+                 isLoggedIn={isLoggedIn}
+                 user={user}
+               />
               <HoursFormatted data={when} />
 
               <Divider />
@@ -198,12 +204,8 @@ class Page extends Component {
 
               <Divider />
 
-              <AttendingButton
-                _id={_id}
-                history={history}
-                isLoggedIn={isLoggedIn}
-                user={user}
-              />
+              {isAuthor && <EditPage data={data} history={history} />}
+            
             </Col>
           </Row>
           <iframe
