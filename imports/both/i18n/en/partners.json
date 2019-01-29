@@ -1,16 +1,16 @@
 {
   "members" : [
       {   
-          "title" : "Sylvain Quendez",
-          "image" : "https://avatars2.githubusercontent.com/u/42490951",
-          "subtitle" : "Manager, developer & entrepreneur",
-          "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
-          "linkedIn" : "https://www.linkedin.com/in/sylvainquendez/",
-          "twitter": "",
-          "github" : "https://github.com/sylque",
-          "facebook": "",
-          "google" : "",
-          "website" : "sadsa"
+        "title" : "Jacques Martiquet",
+        "image" : "https://party4health.org/author/jmartiq/",
+        "subtitle" : " Founder and Director at VYVIFY - Sparking Vitality into Humanity",
+        "text" : "VYVIFY is a social movement, a tribe of conscious partygoers, and an entertainment agency. Our mission is to spark vitality in humanity by creating electrifying social experiences centered on dance and cultivating connection and elation. We want to design a new party culture.",
+        "linkedIn" : "",
+        "twitter": "",
+        "github" : "",
+        "facebook": "https://www.facebook.com/party4health/",
+        "instagram" : "https://www.instagram.com/party4health_life/",
+        "website" : "https://party4health.org/"
       },
       {
           "title" : "Saud Tauqeer",
