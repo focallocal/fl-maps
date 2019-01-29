@@ -1,10 +1,18 @@
 {
   "faq" : [
     {
-      "heading" : "First question",
-      "text" : "This is always the 1st question asked. Actually you'd be amazed how many people living on the streets have a smart phone as people often donate their old phones to charities and shelters, and they all know where to find wifi." 
-    },
-    {
+      "heading" : "How will people who are homeless access the map?",
+      "text" : "This is always the 1st question asked. Actually you'd be amazed how many people living on the streets have a smart phone as people often donate their old phones to charities and shelters, and they all know where to find wifi<br />Public libraries and shelters are normally spaces with computers and wifi. They are warm and comfortable so people without a home often spend time there<br />It’s also possible to print our maps and hand them out on the streets or at a shelter as an invaluable guide to where to go to meet all your basic needs<br />Of course you could always use the map to arrange an ‘old phone’ collection and give-away yourself, and also arrange a with some local cafes to allow people who are homeless to drop them off for charging when needed"
+     },
+     {
+      "heading" : "How do you protect vulnerable people from people using the site to exploit them?",
+      "text" : "Much like a site offering ride sharing, or couch surfing, users give feedback on the experience they had interacting with other users. Someone feeling vulnerable can/should choose to interact with the many users who’ve already earned trust within the community<br />We recommend posting public meeting places, especially for newer users<br />Active members are invited to become Community Leaders who are available to offer guidance, and to encourage the growth of an aware and close-knit local community who will quickly spot anything that looks out of the ordinary and bring it to the attention of everyone"
+     },
+     {
+      "heading" : "If this is built by a community of volunteers, who pays for it all? Are you selling user data?",
+      "text" : "We are absolutely not selling your data to anyone, ever!<br />The Brighter Tomorrow Map was built by The Focallocal Public Happiness Community. People just coming together to create positive change, so there are no wages to pay and very few outgoings. Founder Andy has supported all Public Happiness projects like this one financially since 2012, which he affords by living in a van and spending money from freelancing on bringing more peace and well-being into the world. We try to get most things, like hosting, etc, free from companies corporate social responsibility fund, and recently as we grew and costs went up, a few community members have also begun chipping in to share the costs around.
+     },
+     {
       "heading" : "Cozy sports for Wi-fi!",
       "text" : "Public libraries and shelters are normally spaces with computers and wifi. They are warm and comfortable so people without a home often spend time there."
     },
@@ -13,9 +21,10 @@
       "text" : "It’s possible to find these spots near you as well print our maps and hand them out on the streets or at a shelter as an invaluable guide to where to go to meet all your basic needs."
     },
     {
-      "heading" : "Offer something yourself",
+      "heading" : "Use the map to organise getting people on the streets access to this platform",
       "text" : "Of course you could always use the map to arrange an ‘old phone’ collection and give-away yourself, and also arrange with some local cafes to allow people who are homeless to drop them off for charging when needed"
     }
     
   ]
 }
+    
