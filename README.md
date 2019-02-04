@@ -2,31 +2,31 @@
 
 This is the base branch for the new react-based fl-maps project.
 
-All edits are initially made in this master branch (fl-maps), and then <b>copy/pasted into the fl-sleeper branch, and a separate PR made to the fl-sleeper branch</b> unless they are in the i18n folder. We aim to keep the codebase identical as much as possible until the team expands. 
+All edits are initially made in this master branch (fl-maps), and then <b>copy/pasted into the fl-sleeper branch, and a separate PR made to the fl-sleeper branch</b> unless they are in the i18n folder. We aim to keep the codebase identical as much as possible until the team expands.
 
-All text and labels viewable to users must be defined in the i18n folder to be ready for multi-language support - this file is also used to define differences between both maps, The Public Happiness Platform at focallocal.org and Our Homelessness project at brightertomorrowmap.com. 
+All text and labels viewable to users must be defined in the i18n folder to be ready for multi-language support - this file is also used to define differences between both maps, The Public Happiness Platform at focallocal.org and Our Homelessness project at brightertomorrowmap.com.
 
 When the active team grows the two codebases can diverge, if you'd like to lead/support one side or advertise for more devs to join our build, let Andy know.
 
 # Contribution Guide
 
-The project is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (*try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them*)
+The project is based on [Meteor](https://www.meteor.com/) and [React](https://reactjs.org/). (_try a [**todo-list tutorial**](https://www.meteor.com/tutorials/react/creating-an-app) if you've never used one of them_)
 
 ## Getting Started:
 
-1) [Join our Google calendar](https://calendar.google.com/calendar?cid=dDFranFza2RmOXBzb2JpM291NnVmdjc4NXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ), and set yourself a regular reminder to visit it add the hours you want to work on this project this week, or month. This makes it much easier for the team to arrange collaborations, and most people find volunteer commitments always getting get put off if they aren't scheduled. Using these steps will help you keep with the commitment you want to make. 
-2) Head to our [Slack channel](https://focallocal.slack.com) and say Hi in the Introductions Slack channel, and give other devs there an intro to your background
-3) Read through this readme guide in our Github to get an idea of the project
-4) Set up a local dev enviroment (most of us use Atom.io). Settings.json is pinned to the #meteor-maps channel in Slack. (let us know if you have difficulties, a lot of people find setting up fiddly)
-5) Once setup, [jump onto Trello](https://trello.com/invite/b/PFj7RlgM/a12e9b4bdc6fff4a5e7439754c9a7e3b/focallocalorg), assign yourself your first mission and of you're ready to being move it into the sprint queue
+1. [Join our Google calendar](https://calendar.google.com/calendar?cid=dDFranFza2RmOXBzb2JpM291NnVmdjc4NXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ), and set yourself a regular reminder to visit it add the hours you want to work on this project this week, or month. This makes it much easier for the team to arrange collaborations, and most people find volunteer commitments always getting get put off if they aren't scheduled. Using these steps will help you keep with the commitment you want to make.
+2. Head to our [Slack channel](https://focallocal.slack.com) and say Hi in the Introductions Slack channel, and give other devs there an intro to your background
+3. Read through this readme guide in our Github to get an idea of the project
+4. Set up a local dev enviroment (most of us use Atom.io). Settings.json is pinned to the #meteor-maps channel in Slack. (let us know if you have difficulties, a lot of people find setting up fiddly)
+5. Once setup, [jump onto Trello](https://trello.com/invite/b/PFj7RlgM/a12e9b4bdc6fff4a5e7439754c9a7e3b/focallocalorg), assign yourself your first mission and of you're ready to being move it into the sprint queue
 
 ## Workflow:
 
-1) Begin each work session by reviewing others pull requests in Github and commenting on your findings. It helps to keep everyone up to date with whats going on and create a self-checking community. If you're the 3rd dev commenting/checking please tag @AndyatFocallocal to merge the PR.
-2) Visit Trello and use the Meteor filter to hide Missions for other teams
-3) Use filters in Trello to see which Cards/Missions are most needing your attention, or grab a Mission from Quick Bug Squashing
-4) Grab a card, assign yourself to it and move it into correct 'Sprint' List - to prevent two people working on the same issue/mission
-5) When complete and your PR is awaiting review, move the card into 'Missions Complete', also click the link inside the card to close the issue in Github
+1. Begin each work session by reviewing others pull requests in Github and commenting on your findings. It helps to keep everyone up to date with whats going on and create a self-checking community. If you're the 3rd dev commenting/checking please tag @AndyatFocallocal to merge the PR.
+2. Visit Trello and use the Meteor filter to hide Missions for other teams
+3. Use filters in Trello to see which Cards/Missions are most needing your attention, or grab a Mission from Quick Bug Squashing
+4. Grab a card, assign yourself to it and move it into correct 'Sprint' List - to prevent two people working on the same issue/mission
+5. When complete and your PR is awaiting review, move the card into 'Missions Complete', also click the link inside the card to close the issue in Github
 
 Issues are created on Github, and then get automatically posted on Trello (with a delay up to 15mins). Here's direct links, i suggest adding them to your browsers bookmarks to make navigation easy:
 https://github.com/focallocal/fl-maps/tree/react-maps
@@ -39,34 +39,36 @@ fl-sleeper: https://brightertomorrowmap.com
 
 1. install meteor
 
-  https://www.meteor.com/install
+https://www.meteor.com/install
 
 2. create a fork of this repository and then
 
-    `git clone https://github.com/your-github-username/fl-maps`
+   `git clone https://github.com/your-github-username/fl-maps`
 
 3. Set up git
 
-      - `git remote add upstream https://github.com/focallocal/fl-maps`
-      ```
-        // make sure there are 2 remotes (origin that points to your fork and upstream for the original repo)
-        git remote -v
-      ```
+   - `git remote add upstream https://github.com/focallocal/fl-maps`
 
-    - **every time you start working on a new feature, run: `git pull upstream master` which ensures you are always working with the most updated version of the project.**
+   ```
+     // make sure there are 2 remotes (origin that points to your fork and upstream for the original repo)
+     git remote -v
+   ```
 
-    - create a new branch `git checkout -b new-feature-name`
+   - **every time you start working on a new feature, run: `git pull upstream master` which ensures you are always working with the most updated version of the project.**
 
-4. obtain the most recent *settings.json* file from slack, its pinned in the #meteor-maps thread, and place it in the project's folder
-    - *settings.json* has a property named `'mapType': 'gatherings'` ,
+   - create a new branch `git checkout -b new-feature-name`
+
+4. obtain the most recent _settings.json_ file from slack, its pinned in the #meteor-maps thread, and place it in the project's folder
+
+   - _settings.json_ has a property named `'mapType': 'gatherings'` ,
      you can change 'gatherings' to 'btm' to work on Focallocal or Brighter Tomorrow
 
 5. run the project
 
-    ```javascript
-    meteor npm install
-    npm run start // see notes below if it fails to run
-    ```
+   ```javascript
+   meteor npm install
+   npm run start // see notes below if it fails to run
+   ```
 
 6. make changes
 
@@ -74,11 +76,11 @@ fl-sleeper: https://brightertomorrowmap.com
 
 8. if all the tests have passed, run
 
-    ```
-      git add .
-      git commit -m 'description of what has changed'
-      git push origin your_working_branch_name
-    ```
+   ```
+     git add .
+     git commit -m 'description of what has changed'
+     git push origin your_working_branch_name
+   ```
 
 9. go to github and create a new pull request from your fork (make sure it's against the fl-maps/master branch)
 
@@ -89,6 +91,7 @@ fl-sleeper: https://brightertomorrowmap.com
 Currently you'll see a _**Compiled with warnings.**_ message, ignore it.
 
 #### ** Step (5) Warnings **
+
 For step (5) be sure you don't run `meteor npm install` twice. Just do it once followed by `npm run start` and it will work.
 
 <details><summary>Detailed Explanation</summary>
@@ -104,13 +107,15 @@ npm WARN bootstrap@4.1.1 requires a peer of jquery@1.9.1 - 3 but none is install
   npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
 
 ```
-  
+
 If you try to install them by:
+
 ```
 meteor npm install jquery @types/googlemaps@^3.0.0 @types/markerclustererplus@^2.1.29 @types/react@^16.0.0 graphql@0.13.2
 ```
 
 ... then during the `npm run start` step, compile will fail with errors such as these:
+
 ```
 ERROR in ./imports/both/i18n/en/categories.json
 Module parse failed: Unexpected token < in JSON at position 149
@@ -130,13 +135,22 @@ W20190111-19:03:18.292(8)? (STDERR)     39:0-61:50 Can't reexport the named expo
 W20190111-19:03:18.300(8)? (STDERR)     39:0-61:50 Can't reexport the named export 'GraphQLBoolean' from non EcmaScript module (only default export is available)
 
 ```
+
 </details>
+
+#### ** Updating Node & npm **
+
+If you've tried the above, and things still aren't working you may need to update your version of node & npm. First, check your version of node by running `node -v`, and take note of it. The current version of node as of writing this is 11.9.0.
+
+To update node, install the package `n`, by running the command: `npm install -g n`. After the installation, run `n latest`. **note**: you may need to run `sudo n latest`, if on Mac or Linux.
+
+Updating npm is quite simple, the command being: `npm install -g npm`.
 
 ## Working On Issues
 
 Issues can be found on our Trello board which gives a more visual representation of progress than Github. The two currently active lists on Trello will be the 1st version (example v0.1) reading from left to right, and also the Quick Bug Squashing List: [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
 
-*if you decide to work on an issue please click 'members' and add your name to it, then move it into the 'sprint' queue. You can also use filters to see Meteor only issues (missions). (Don't forget to move it into the 'complete' list when finished, and also close the issue in Github.
+\*if you decide to work on an issue please click 'members' and add your name to it, then move it into the 'sprint' queue. You can also use filters to see Meteor only issues (missions). (Don't forget to move it into the 'complete' list when finished, and also close the issue in Github.
 
 ### Outside Software
 
@@ -154,8 +168,8 @@ The first thing you should know is that this is not a typical meteor app:
 
 - And also **npm modules** over **meteor's packages** (as much as possible)
 
-- We replace meteor's built in compiler with [`meteor-webpack`](https://github.com/ardatan/meteor-webpack).   
-this allows us to take advantage over many great webpack-based tools like [react-hot-loader](https://github.com/gaearon/react-hot-loader) among others..
+- We replace meteor's built in compiler with [`meteor-webpack`](https://github.com/ardatan/meteor-webpack).  
+  this allows us to take advantage over many great webpack-based tools like [react-hot-loader](https://github.com/gaearon/react-hot-loader) among others..
 
 - We use [jest](https://facebook.github.io/jest/) as a test runner for most of the ui parts
 
@@ -165,26 +179,28 @@ Our project is based on a library called [**reactstrap**](https://reactstrap.git
 That means that usually instead of writing plain html tags, you'll be able to just use one of the components provided by reactstrap.
 
 for example, instead of writing a button element like this
+
 ```javascript
 // plain html
 
-<button className='primary'>My Button</button>
+<button className="primary">My Button</button>
 ```
 
 you can check on the documentation of reactstrap if it provides a button component, and since it does, you can just use
-```javascript
-import { Button } from 'reactstrap'
 
-<Button color="primary">primary</Button>
+```javascript
+import { Button } from 'reactstrap';
+
+<Button color="primary">primary</Button>;
 ```
 
-#### *Google Maps* Component
+#### _Google Maps_ Component
 
 We use the react-google-maps package for anything related to google-maps. if you need to work with it - please follow it's docs https://tomchentw.github.io/react-google-maps/
 
-#### *Select* Component
+#### _Select_ Component
 
-We use the react-select package for *select* elements, you can learn how to use it here: https://deploy-preview-2289--react-select.netlify.com/
+We use the react-select package for _select_ elements, you can learn how to use it here: https://deploy-preview-2289--react-select.netlify.com/
 
 ## Packages
 
@@ -194,33 +210,33 @@ The following is a list of the packages that you should be familiar with:
 
 #### Meteor Packages
 
-* [react-meteor-data](https://github.com/meteor/react-packages/) - Get reactive updates from the server into components
-* [meteoreact:accounts](https://github.com/royGil/accounts-react/) - Automatic generation of user related forms
-* [mdg:validated-method](https://github.com/meteor/validated-method) - A powerful wrapper for meteor's methods
+- [react-meteor-data](https://github.com/meteor/react-packages/) - Get reactive updates from the server into components
+- [meteoreact:accounts](https://github.com/royGil/accounts-react/) - Automatic generation of user related forms
+- [mdg:validated-method](https://github.com/meteor/validated-method) - A powerful wrapper for meteor's methods
 
 #### Npm Packages
 
-* [Reactstrap](https://reactstrap.github.io/) - React components for bootstrap
-* [React Router v4](https://github.com/ReactTraining/react-router) - A router for react
-* [Simpl-schema](https://github.com/aldeed/simple-schema-js) - Schema definitions for our collections
-* [Uniforms](https://github.com/vazco/uniforms) - Automatic generation of forms in react
-* [NProgress](http://ricostacruz.com/nprogress/) - Display a progress bar between client-server requests
-* [react-google-maps](https://github.com/tomchentw/react-google-maps) - React components that wraps google-maps api
-* [Enzyme](https://github.com/airbnb/enzyme) - A testing utility for react
+- [Reactstrap](https://reactstrap.github.io/) - React components for bootstrap
+- [React Router v4](https://github.com/ReactTraining/react-router) - A router for react
+- [Simpl-schema](https://github.com/aldeed/simple-schema-js) - Schema definitions for our collections
+- [Uniforms](https://github.com/vazco/uniforms) - Automatic generation of forms in react
+- [NProgress](http://ricostacruz.com/nprogress/) - Display a progress bar between client-server requests
+- [react-google-maps](https://github.com/tomchentw/react-google-maps) - React components that wraps google-maps api
+- [Enzyme](https://github.com/airbnb/enzyme) - A testing utility for react
 
-*Please make sure you are familiar with those packages before attempting to use them*
+_Please make sure you are familiar with those packages before attempting to use them_
 
 ## Coding Style
 
 This project uses the [**standard**](https://standardjs.com/) coding style guidelines (enforced by [**eslint-standard-config**](https://github.com/standard/eslint-config-standard))
 
-*Please ensure your text editor is configured to use a linter so it can warn you about an incorrect code*
+_Please ensure your text editor is configured to use a linter so it can warn you about an incorrect code_
 
 ## **Gotchas**
 
-* React-hot-loader will only hot-reload for changes that are made inside the <App /> component. This is the default behavior but I've added this note just to make sure you are aware of this.
+- React-hot-loader will only hot-reload for changes that are made inside the <App /> component. This is the default behavior but I've added this note just to make sure you are aware of this.
 
-* Both of the maps (gathering and brightertomorrow) are using the same code base - we differentiate their strings by using different i18n files for each.
+- Both of the maps (gathering and brightertomorrow) are using the same code base - we differentiate their strings by using different i18n files for each.
 
 ---
 
@@ -234,12 +250,11 @@ When users visit the map the should feel: **Connected to a Community**
 
 The platform should be:
 
-* **positive**
+- **positive**
 
-* **action focused**
+- **action focused**
 
-* **welcoming and cheerful**
-
+- **welcoming and cheerful**
 
 ## Vision for the Maps Platform
 
