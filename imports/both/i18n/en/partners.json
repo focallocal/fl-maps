@@ -1,5 +1,20 @@
 {
   "members" : [
+     
+         {
+          "title" : "Emma Bradford",
+          "image" : "https://scontent.flcy1-1.fna.fbcdn.net/v/t1.0-9/36621819_10155568725430318_8586867860796604416_n.jpg?_nc_cat=111&_nc_ht=scontent.flcy1-1.fna&oh=cb17e92be399df81597e1d33cebd6f08&oe=5CF8104B",
+          "subtitle" : "Board of Directors at Good Vibes Barclona",
+          "text" : "Inspiring The World With Acts Of Kindness. A group of positive, fun, loving people who meet to spread the joy of life through the community of Barcelona. We 1) Spread happiness, hope and trust in the community. 2) Connect us with other fun loving people living in Barcelona. 3) Build lasting memories for life",
+          "linkedIn" : "",
+          "twitter": "",
+          "github" : "",
+          "facebook": "https://m.facebook.com/goodvibrationsbarcelona/",
+          "instagram" : "https://www.instagram.com/goodvibrationsbarcelona/",
+          "google" : "",
+          "youtube" : "http://www.youtube.com/goodvibrationsbcn"
+      },
+    
       {   
         "title" : "Jacques Martiquet",
         "image" : "https://party4health.org/author/jmartiq/",
@@ -12,6 +27,7 @@
         "instagram" : "https://www.instagram.com/party4health_life/",
         "website" : "https://party4health.org/"
       },
+     
       {
         "title" : "Alex Nunn",
         "image" : "https://drive.google.com/file/d/1lk3vMZ0IjODWogoCJbOA_b3QiA9A6gha/view?usp=sharing",
@@ -22,21 +38,9 @@
         "github" : " ",
         "facebook": "https://www.facebook.com/actionforhappiness/",
         "google" : " ",
-        "website" : "www.actionforhappiness.org"
+        "website" : "https://actionforhappiness.org"
       },
-      {
-          "title" : "Placeholder",
-          "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
-          "subtitle" : "Placeholder",
-          "text" : "Placeholder",
-          "linkedIn" : "",
-          "twitter": "",
-          "github" : "",
-          "facebook": "",
-          "google" : "",
-          "website" : ""
-
-      },
+    
       {
           "title" : "Placeholder",
           "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
