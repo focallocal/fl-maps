@@ -1,42 +1,46 @@
 {
   "members" : [
-      {   
-          "title" : "Sylvain Quendez",
-          "image" : "https://avatars2.githubusercontent.com/u/42490951",
-          "subtitle" : "Manager, developer & entrepreneur",
-          "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
-          "linkedIn" : "https://www.linkedin.com/in/sylvainquendez/",
-          "twitter": "",
-          "github" : "https://github.com/sylque",
-          "facebook": "",
-          "google" : "",
-          "website" : "sadsa"
-      },
-      {
-          "title" : "Saud Tauqeer",
-          "image" : "https://avatars3.githubusercontent.com/u/42393962?s=400&u=45c46df26fb13a3b154c5edc55a23be6fc13b25f&v=4",
-          "subtitle" : "MERN stack & polyglot developer",
-          "text" : "MERN stack devloper with in-depth experience in developing, managing, scaling, full-stack web applications with highly performant back-end and smooth UI/UX. Eagerly adding more skills under my belt. ",
-          "linkedIn" : "https://www.linkedin.com/in/saud-tauqeer-16a305172/",
-          "twitter": "https://twitter.com/@Saud31023894",
-          "github" : "https://github.com/SaudTauqeer",
-          "facebook": "",
-          "google" : "",
-          "website" : ""
-      },
-      {
-          "title" : "Placeholder",
-          "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
-          "subtitle" : "Placeholder",
-          "text" : "Placeholder",
+     
+         {
+          "title" : "Emma Bradford",
+          "image" : "https://scontent.flcy1-1.fna.fbcdn.net/v/t1.0-9/36621819_10155568725430318_8586867860796604416_n.jpg?_nc_cat=111&_nc_ht=scontent.flcy1-1.fna&oh=cb17e92be399df81597e1d33cebd6f08&oe=5CF8104B",
+          "subtitle" : "Board of Directors at Good Vibes Barclona",
+          "text" : "Inspiring The World With Acts Of Kindness. A group of positive, fun, loving people who meet to spread the joy of life through the community of Barcelona. We 1) Spread happiness, hope and trust in the community. 2) Connect us with other fun loving people living in Barcelona. 3) Build lasting memories for life",
           "linkedIn" : "",
           "twitter": "",
           "github" : "",
-          "facebook": "",
+          "facebook": "https://m.facebook.com/goodvibrationsbarcelona/",
+          "instagram" : "https://www.instagram.com/goodvibrationsbarcelona/",
           "google" : "",
-          "website" : ""
-
+          "youtube" : "http://www.youtube.com/goodvibrationsbcn"
       },
+    
+      {   
+        "title" : "Jacques Martiquet",
+        "image" : "https://party4health.org/author/jmartiq/",
+        "subtitle" : " Founder and Director at VYVIFY - Sparking Vitality into Humanity",
+        "text" : "VYVIFY is a social movement, a tribe of conscious partygoers, and an entertainment agency. Our mission is to spark vitality in humanity by creating electrifying social experiences centered on dance and cultivating connection and elation. We want to design a new party culture.",
+        "linkedIn" : "",
+        "twitter": "",
+        "github" : "",
+        "facebook": "https://www.facebook.com/party4health/",
+        "instagram" : "https://www.instagram.com/party4health_life/",
+        "website" : "https://party4health.org/"
+      },
+     
+      {
+        "title" : "Alex Nunn",
+        "image" : "https://drive.google.com/file/d/1lk3vMZ0IjODWogoCJbOA_b3QiA9A6gha/view?usp=sharing",
+        "subtitle" : "Head of Movement Building at Action for Happiness", 
+        "text" : " Facilitator and organiser inspiring folk to take action for a happier and kinder world. Believes in solution focused change and non-violent direct action. Student of the Buddha",
+        "linkedIn" : " ",
+        "twitter": "https://twitter.com/alxflxnun",
+        "github" : " ",
+        "facebook": "https://www.facebook.com/actionforhappiness/",
+        "google" : " ",
+        "website" : "https://actionforhappiness.org"
+      },
+    
       {
           "title" : "Placeholder",
           "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
