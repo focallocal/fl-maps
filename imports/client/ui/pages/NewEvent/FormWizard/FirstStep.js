@@ -41,14 +41,14 @@ class FirstStep extends Component {
             click={this.noCategories}
           />
         </div>
-        <AutoField name='overview' />
+        <AutoField name='overview' max={300}/>
         <AutoField name='name' />
         <AutoField name='address' />
-        { this.state.offerResource && 
-          <Alert 
+        { this.state.offerResource &&
+          <Alert
             color='info'
             className='address-sub-label'>
-            PS - for privacy reasons, we strongly suggest you use a public 
+            PS - for privacy reasons, we strongly suggest you use a public
             location nearby rather than your home address
           </Alert>
         }
