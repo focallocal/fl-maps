@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { FormGroup, Label, InputGroup, InputGroupAddon, Input, Button } from 'reactstrap'
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-import getUserPosition, { storeUserLocation } from '/imports/client/utils/location/getUserPosition'
+import getUserPosition, {getCurrentLocation, storeUserLocation} from '/imports/client/utils/location/getUserPosition'
 import i18n from '/imports/both/i18n/en'
 
 class Find extends Component {
@@ -88,7 +88,7 @@ class Find extends Component {
  }
 
  findByCurrentLocation = () => {
-   getUserPosition(this) // will update state with latLng/error object
+   getCurrentLocation(this) // will update state with latLng/error object
  }
 
  handleSearch = ({ target }) => {
