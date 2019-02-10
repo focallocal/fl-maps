@@ -82,6 +82,16 @@ fl-sleeper: https://brightertomorrowmap.com
 
 Currently you'll see a _**Compiled with warnings.**_ message, ignore it.
 
+#### ** Updating Node & npm **
+
+If you've tried the above, and things still aren't working you may need to update your version of node & npm. First, check your version of node by running `node -v`, and take note of it. The current version of node as of writing this is 11.9.0.
+
+To update node, install the package `n`, by running the command: `npm install -g n`. After the installation, run `n latest`. **note**: you may need to run `sudo n latest`, if on Mac or Linux.
+
+Updating npm is quite simple, the command being: `npm install -g npm`. 
+
+After updating the packages, close your current terminal and open a new one, so that the changes may take effect. Confirm the update by typing `node -v`.
+
 ## Working On Issues
 
 Issues can be found on our Trello board which gives a more visual representation of progress than Github. The two currently active lists on Trello will be the 1st version (example v0.1) reading from left to right, and also the Quick Bug Squashing List: [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
