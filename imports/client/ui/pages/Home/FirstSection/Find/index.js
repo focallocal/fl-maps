@@ -74,7 +74,7 @@ class Find extends Component {
        .then(results => getLatLng(results[0]))
        .then(({ lat, lng }) => {
          NProgress.done()
-         storeUserLocation({ lat, lng }, false)
+         storeUserLocation({ lat, lng })
          this.setState({ userLocation: true })
        })
        .catch(() => {

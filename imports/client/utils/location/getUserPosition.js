@@ -22,7 +22,6 @@ export default function getUserPosition (context) {
     updateState(context, window.__savedUserLocation)
     window.__savedUserLocation = undefined
   }
-
   // Get from cache
   const savedLocation = sessionStorage.getItem('userLocation')
   if (savedLocation) {
@@ -74,8 +73,8 @@ const updateState = (context, latLng) => {
   }
 }
 
-export function storeUserLocation (location, isUserLocation = true) {
-  if (isUserLocation) { sessionStorage.setItem('userLocation', JSON.stringify(location)) }
+export function storeUserLocation (location) {
+  sessionStorage.setItem('userLocation', JSON.stringify(location))
   window.__savedUserLocation = location
 }
 
