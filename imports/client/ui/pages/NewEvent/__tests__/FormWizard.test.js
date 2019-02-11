@@ -51,7 +51,7 @@ describe('<FormWizard />', () => {
     expect(emptyModel).toEqual({
       createdAt: emptyModel.createdAt,
       organiser: { _id: '-', name: '-' },
-      engagement: { limit: 0, attendees: [] },
+      engagement: { limit: '1000', attendees: [] },
       when: {
         recurring: {
           forever: true
