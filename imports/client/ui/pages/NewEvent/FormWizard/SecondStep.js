@@ -82,7 +82,7 @@ class SecondStep extends Component {
           type='radio'
         />
         {repeat && <Recurring form={form} />}
-        <AutoField className='pageDetails' name='description' max={800}/>
+        <AutoField className='pageDetails' name='description' />
         <AutoField name='engagement.limit' />
       </div>
     )
