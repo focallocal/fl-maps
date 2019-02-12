@@ -45,7 +45,19 @@
         {
           "title": "Focallocal In The News",
           "link": "http://news.focallocal.org/category/in-the-news/"
-        }
+        },
+        {
+          "title" : "Team",
+          "route" : "/team"
+          },
+          {
+            "title" : "Partners",
+            "route" : "/partners"
+          },
+          {
+            "title" : "FAQ",
+            "route" : "/faq"
+          }  
       ],
       "loginRequired": false
     },

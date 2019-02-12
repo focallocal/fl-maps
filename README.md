@@ -2,7 +2,7 @@
 
 This is the base branch for the new react-based fl-maps project.
 
-All edits are initially made in this master branch (fl-maps), and then pushed to the fl-sleeper branch unless they are in the i18n folder to keep the codebase identical. 
+All edits are initially made in this master branch (fl-maps), and then <b>copy/pasted into the fl-sleeper branch, and a separate PR made to the fl-sleeper branch</b> unless they are in the i18n folder. We aim to keep the codebase identical as much as possible until the team expands. 
 
 All text and labels viewable to users must be defined in the i18n folder to be ready for multi-language support - this file is also used to define differences between both maps, The Public Happiness Platform at focallocal.org and Our Homelessness project at brightertomorrowmap.com. 
 
@@ -131,6 +131,16 @@ W20190111-19:03:18.300(8)? (STDERR)     39:0-61:50 Can't reexport the named expo
 
 ```
 </details>
+
+#### ** Updating Node & npm **
+
+If you've tried the above, and things still aren't working you may need to update your version of node & npm. First, check your version of node by running `node -v`, and take note of it. The current version of node as of writing this is 11.9.0.
+
+To update node, install the package `n`, by running the command: `npm install -g n`. After the installation, run `n latest`. **note**: you may need to run `sudo n latest`, if on Mac or Linux.
+
+Updating npm is quite simple, the command being: `npm install -g npm`. 
+
+After updating the packages, close your current terminal and open a new one, so that the changes may take effect. Confirm the update by typing `node -v`.
 
 ## Working On Issues
 
@@ -280,3 +290,10 @@ We have our domain registered at Hihosting.co.uk, and the nameservers point to c
 Focallocal.org is building towards a decentralized community where anyone can join to work on projects and take action to build a friendlier happier and safer world around them. Its a hub for our volunteer community to coordinate, collaborate, and begin to grow. Its also not very good right now (i built most of it (Andy)) and it is fragmented.
 
 What it is, is a minimum functional platform to support a community who will redesign and improve it to meet their needs as they grow; its also a pool of skills, like marketing experts, graphic designers, etc, to contribute to both maps, and many other Public Happiness projects built by our community. Anyone joining in one of our projects to create a happier world is a member of the Focallocal Community and you're all also welcome to improve other areas of focallocal.org - it's your platform
+
+## Docus
+
+if you have any need to edit Docus, most files including home directory can be found here: https://github.com/focallocal/fl-maps/blob/master/imports/client/ui/app.js
+
+Its repo is here: https://github.com/sylque/dcs-discourse-plugin/issues
+and you need to tag @sylque in the repo to discuss development
