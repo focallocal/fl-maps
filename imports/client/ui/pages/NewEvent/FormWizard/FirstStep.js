@@ -41,7 +41,7 @@ class FirstStep extends Component {
             click={this.noCategories}
           />
         </div>
-        <AutoField name='overview' max={300} />
+        <AutoField name='overview' />
         <AutoField name='name' />
         <AutoField name='address' />
         { this.state.offerResource && 
