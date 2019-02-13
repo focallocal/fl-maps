@@ -140,13 +140,15 @@ const EventsSchema = new SimpleSchema({
     ...startingDate,
     uniforms: {
       label: labels.active_from
-    }
+    },
+    optional: false
   },
   'when.endingDate': {
     ...endingDate,
     uniforms: {
       label: labels.active_until
-    }
+    },
+    optional: false
   },
   'when.startingTime': {
     ...startingTime,
@@ -344,7 +346,7 @@ const EventsSchema = new SimpleSchema({
   // Description and More
   'overview': {
     type: String,
-    max: 150,
+    max: 300,
     uniforms: {
       customType: 'textarea',
       label: labels.overview
@@ -352,7 +354,7 @@ const EventsSchema = new SimpleSchema({
   },
   'description': {
     type: String,
-    max: 400,
+    max: 1000,
     uniforms: {
       customType: 'textarea',
       label: labels.description
