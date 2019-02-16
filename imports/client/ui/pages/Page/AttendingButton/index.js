@@ -1,3 +1,6 @@
+/*******************
+* CURRENTLY DISABLED - May be added back in future when works across both maps
+********************/
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'

@@ -8,7 +8,7 @@ import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import EditPage from './Edit'
-import AttendingButton from './AttendingButton'
+// import AttendingButton from './AttendingButton'  <-- currently disabled
 import './style.scss'
 import {Helmet} from "react-helmet";
 import qs from 'query-string'
@@ -40,7 +40,7 @@ class Page extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.data && !prevState.data) {      
+    if (this.state.data && !prevState.data) {
       window.__setDocumentTitle(this.state.data.name)
     }
 
@@ -63,7 +63,7 @@ class Page extends Component {
           badges[balloonId] = tag.count
         }
       })
-      this.setState({ badges })      
+      this.setState({ badges })
     }
   }
 
@@ -116,7 +116,7 @@ class Page extends Component {
   render () {
     const {
       data,
-      loaded      
+      loaded
     } = this.state
 
     if (!loaded) {
@@ -198,12 +198,8 @@ class Page extends Component {
 
               <Divider />
 
-              <AttendingButton
-                _id={_id}
-                history={history}
-                isLoggedIn={isLoggedIn}
-                user={user}
-              />
+              {/* attending button currently inactive until able to work with both maps:
+                <AttendingButton _id={_id} history={history} isLoggedIn={isLoggedIn} user={user} />*/}
             </Col>
           </Row>
           <iframe
@@ -238,7 +234,7 @@ class Page extends Component {
       }
     })
   }
-  
+
   dcsClick(balloonId, e) {
     this.props.dcsClick(balloonId)
     e.stopPropagation() // Required for deselection

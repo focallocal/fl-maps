@@ -4,7 +4,7 @@ import { withTracker } from 'meteor/react-meteor-data'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import i18n_ from '/imports/both/i18n/en/map.json'
-import AttendingButton from './../../../Page/AttendingButton'
+// import AttendingButton from './../../../Page/AttendingButton'  <-- currently disabled
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as formatUtils from '/imports/client/utils/format'
 import './styles.scss'
@@ -64,7 +64,7 @@ class EventInfo extends Component {
       user
     } = this.props
 
-    const isLoggedIn = !!user 
+    const isLoggedIn = !!user
 
     if (!event) { return null }
 
@@ -94,11 +94,8 @@ class EventInfo extends Component {
           {/*
           <Button color='primary' onClick={this.getDirections}>Get Directions</Button>
           */}
-          <AttendingButton
-            _id={event._id}
-            history={history}
-            isLoggedIn={isLoggedIn}
-            user={user}/>
+          {/* attending button currently inactive until able to work with both maps:
+            <AttendingButton _id={event._id} history={history} isLoggedIn={isLoggedIn} user={user}/> */}
         </div>
 
         <hr className='divider' />
