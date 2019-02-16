@@ -11,6 +11,11 @@ class SearchButtons extends Component {
           <i className='fa fa-filter' />
           Filter
         </Button>
+        <Button
+          onClick={this.props.togglePastEvents}
+        >
+          {this.props.showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
+        </Button>
         {/* <Button>
           <i className='fas fa-cog' />
           Options

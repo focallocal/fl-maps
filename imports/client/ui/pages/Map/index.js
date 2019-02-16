@@ -29,7 +29,8 @@ class MapComponent_ extends Component {
       isFetching: true,
       showFilters: false,
       userLocation: null,
-      zoom: 3
+      zoom: 3,
+      showPastEvents: false
     }
   }
 
@@ -139,6 +140,8 @@ class MapComponent_ extends Component {
               <Input id='google-maps-searchbox' type="text" placeholder="Search" />
               <SearchButtons
                 toggleFilters={this.toggleFiltersList}
+                togglePastEvents={this.togglePastEvents}
+                showPastEvents={this.state.showPastEvents}
               />
             </Fragment>
           </StandaloneSearchBox>
@@ -183,6 +186,14 @@ class MapComponent_ extends Component {
   }
 
   removeCurrentEvent = () => this.setState({ currentEvent: null })
+
+  togglePastEvents = () => {
+    console.log('setting state')
+    this.setState({ showPastEvents: !this.state.showPastEvents })
+    console.log('firing get event')
+    this.getEvents()
+    console.log('events retrieved')
+  }
 
   setDirections = (destination) => {
     const {
@@ -302,17 +313,31 @@ class MapComponent_ extends Component {
       }
 
       this.setState({ isFetching: true })
-      Meteor.call('Events.getEvents', data, (err, res) => {
-        if (!err) {
-          this.setState({
-            events: res,
-            filteredEvents: res
-          })
-          this.memoizeLocations = {} // reset caching
-        }
+      if (this.state.showPastEvents) {
+        Meteor.call('Events.getEvents', data, (err, res) => {
+          if (!err) {
+            this.setState({
+              events: res,
+              filteredEvents: res
+            })
+            this.memoizeLocations = {} // reset caching
+          }
 
-        this.setState({ isFetching: false })
-      })
+          this.setState({ isFetching: false })
+        })
+      } else {
+        Meteor.call('Events.getFutureEvents', data, (err, res) => {
+          if (!err) {
+            this.setState({
+              events: res,
+              filteredEvents: res
+            })
+            this.memoizeLocations = {} // reset caching
+          }
+
+          this.setState({ isFetching: false })
+        })
+      }
     }
   }
 }
