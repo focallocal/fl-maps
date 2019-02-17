@@ -84,7 +84,7 @@ class NewEventModal extends Component {
 
     const header = i18n_.modal_header
     const isConfirmBtn = this.state.isConfirmBtn
-    const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete</Button> : null
+    const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete Page</Button> : null
 
     return hasGoogleMapsLoaded && (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg'>
