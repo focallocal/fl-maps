@@ -8,7 +8,7 @@ import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import EditPage from './Edit'
-import AttendingButton from './AttendingButton'
+// import AttendingButton from './AttendingButton'  <-- currently disabled
 import './style.scss'
 import {Helmet} from "react-helmet";
 import qs from 'query-string'
@@ -121,9 +121,9 @@ class Page extends Component {
   }
 
   render() {
-    const { 
-      data, 
-      loaded 
+    const {
+      data,
+      loaded
     } = this.state
 
     if (!loaded) {
@@ -142,9 +142,9 @@ class Page extends Component {
       when
     } = data
 
-    const { 
-      history, 
-      user 
+    const {
+      history,
+      user
     } = this.props
 
     const categories = formatCategories(c)
@@ -192,12 +192,8 @@ class Page extends Component {
 
             <Col xs={4} className='right'>
               <SectionTitle title='Date and Time' />
-              <AttendingButton
-                _id={_id}
-                history={history}
-                isLoggedIn={isLoggedIn}
-                user={user}
-              />
+              {/* attending button currently inactive until able to work with both maps:
+                <AttendingButton _id={_id} history={history} isLoggedIn={isLoggedIn} user={user} />*/}
               <HoursFormatted data={when} />
 
               <Divider />
