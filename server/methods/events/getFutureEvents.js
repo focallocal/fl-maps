@@ -93,7 +93,7 @@ const getFutureEvents = new ValidatedMethod({
                         $multiply: [
                           'when.recurring.occurences',
                           'when.recurring.every',
-                          (365.25/12) * 24 * 60 * 60000
+                          (365.25 / 12) * 24 * 60 * 60000
                         ]
                       }
                     ]

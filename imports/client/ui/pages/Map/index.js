@@ -66,6 +66,10 @@ class MapComponent_ extends Component {
     if (!prevState.userLocationError && userLocationError) {
       this.setState({ isFetching: false })
     }
+
+    if (prevState.showPastEvents !== this.state.showPastEvents) {
+      this.getEvents()
+    }
   }
 
   render () {
@@ -188,11 +192,7 @@ class MapComponent_ extends Component {
   removeCurrentEvent = () => this.setState({ currentEvent: null })
 
   togglePastEvents = () => {
-    console.log('setting state')
-    this.setState({ showPastEvents: !this.state.showPastEvents })
-    console.log('firing get event')
-    this.getEvents()
-    console.log('events retrieved')
+    this.setState((state) => ({ showPastEvents: !state.showPastEvents }))
   }
 
   setDirections = (destination) => {
