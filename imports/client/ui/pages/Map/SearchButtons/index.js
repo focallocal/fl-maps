@@ -14,7 +14,7 @@ class SearchButtons extends Component {
         <Button
           onClick={this.props.togglePastEvents}
         >
-          {this.props.showPastEvents ? 'Hide Past Events' : 'Show Past Events'}
+          {this.props.showPastEvents ? 'Hide Past' : 'Show Past'}
         </Button>
         {/* <Button>
           <i className='fas fa-cog' />
