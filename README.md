@@ -35,6 +35,8 @@ https://focallocal.slack.com
 fl-master branch: https://focallocal.org
 fl-sleeper: https://brightertomorrowmap.com
 
+Making Suggestions: Please post suggested improvements in the meteor-maps channel in Slack so that other devs can comment their thoughts, suggestions, and keep track of changes in the codebase. If/when approved make an issue in Github ready for coding to begin.
+
 ## Setting Up The Development Environment
 
 1. install meteor
