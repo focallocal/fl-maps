@@ -41,68 +41,7 @@ const getFutureEvents = new ValidatedMethod({
         { 'when.endingDate': { $gte: new Date() } },
         { 'when.recurring.forever': { $eq: true } },
         { 'when.multipleDays': { $eq: true } },
-        { $and: [
-          { 'when.recurring.occurences': { $gte: 1 } },
-          { $or: [
-            { $and: [
-              { 'when.recurring.type': { $eq: 'day' } },
-              // compare effective end date: endingDate + # of occurences * every X days * # of milliseconds
-              {
-                'when.ending': {
-                  $gte: {
-                    $subtract: [
-                      new Date(), {
-                        $multiply: [
-                          'when.recurring.occurences',
-                          'when.recurring.every',
-                          24 * 60 * 60000
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
-            ] },
-            { $and: [
-              { 'when.recurring.type': { $eq: 'week' } },
-              // compare effective end date: endingDate + # of occurences * every X weeks * # of milliseconds
-              {
-                'when.ending': {
-                  $gte: {
-                    $subtract: [
-                      new Date(), {
-                        $multiply: [
-                          'when.recurring.occurences',
-                          'when.recurring.every',
-                          7 * 24 * 60 * 60000
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
-            ] },
-            { $and: [
-              { 'when.recurring.type': { $eq: 'month' } },
-              // compare effective end date: endingDate + # of occurences * every X months * # of milliseconds
-              {
-                'when.ending': {
-                  $gte: {
-                    $subtract: [
-                      new Date(), {
-                        $multiply: [
-                          'when.recurring.occurences',
-                          'when.recurring.every',
-                          (365.25 / 12) * 24 * 60 * 60000
-                        ]
-                      }
-                    ]
-                  }
-                }
-              }
-            ] }
-          ] }
-        ] },
+        { 'when.recurring.recurrenceEndDate': { $gte: new Date() } },
         { $and: [
           { 'when.repeat': { $eq: true } },
           { 'when.recurring.until': { $gte: new Date() } }

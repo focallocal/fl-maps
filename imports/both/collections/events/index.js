@@ -338,6 +338,21 @@ const EventsSchema = new SimpleSchema({
       }
     }
   },
+  'when.recurring.recurrenceEndDate': {
+    type: Date,
+    optional: true,
+    autoValue: function () {
+      const initialEndDate = Date.parse(this.field('when.endingDate').value)
+      const type = this.field('when.recurring.type').value
+      const skip = this.field('when.recurring.every').value
+      const occurences = this.field('when.recurring.occurences').value
+      let millisecondsPerPeriod = 24 * 60 * 60000
+      if (type === 'day') return new Date(initialEndDate + (skip * occurences * millisecondsPerPeriod))
+      else if (type === 'week') return new Date(initialEndDate + (skip * occurences * millisecondsPerPeriod * 7))
+      else if (type === 'month') return new Date(initialEndDate + (skip * occurences * millisecondsPerPeriod * 365.25 / 12))
+      else return new Date()
+    }
+  },
   'when.recurring.until': {
     type: Date,
     optional: true
