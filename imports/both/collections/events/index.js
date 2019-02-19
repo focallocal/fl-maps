@@ -338,6 +338,22 @@ const EventsSchema = new SimpleSchema({
       }
     }
   },
+  'when.recurring.recurrenceEndDate': {
+    type: Date,
+    optional: true,
+    autoValue: function () {
+      const initialEndDate = Date.parse(this.field('when.endingDate').value)
+      const type = this.field('when.recurring.type').value
+      const skip = this.field('when.recurring.every').value
+      const occurences = this.field('when.recurring.occurences').value
+      let millisecondsPerPeriod = 24 * 60 * 60000
+      // check type of recurrence, and that a number of repetitions has been set (rather than an "until" date)
+      if (type === 'day' && occurences >= 1) return new Date(initialEndDate + (skip * occurences * millisecondsPerPeriod))
+      else if (type === 'week' && occurences >= 1) return new Date(initialEndDate + (skip * occurences * millisecondsPerPeriod * 7))
+      else if (type === 'month' && occurences >= 1) return new Date(initialEndDate + (skip * occurences * millisecondsPerPeriod * 365.25 / 12))
+      else return null
+    }
+  },
   'when.recurring.until': {
     type: Date,
     optional: true
