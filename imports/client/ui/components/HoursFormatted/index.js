@@ -4,11 +4,15 @@ import './styles.scss'
 
 const HoursFormatted = ({ data }) => {
   const {
-    startingDate,
+    startingDate: startDate,
     endingDate,
     startingTime,
     endingTime
   } = data
+
+  //------------------- Quick Fix see PR #875 ---------------------
+  const startingDate = startDate === null ? new Date() : startDate
+  //---------------------------------------------------------------
 
   if (data.multipleDays) {
     const isEnding = !!endingDate
@@ -79,7 +83,10 @@ const HoursFormatted = ({ data }) => {
     }
   }
 
-  const isSameDay = startingDate.toDateString() === endingDate.toDateString()
+  //------------------- Quick Fix see PR #875 ------------------------------
+  //const isSameDay = startingDate.toDateString() === endingDate.toDateString()
+  const isSameDay = startingDate && endingDate ? startingDate.toDateString() === endingDate.toDateString() : true
+  //------------------------------------------------------------------------
 
   return (
     <div className='hours-formatted regular-date'>
