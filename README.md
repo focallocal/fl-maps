@@ -154,6 +154,27 @@ Issues can be found on our Trello board which gives a more visual representation
 
 The map utilizes Discourse for its forums and SSO. It will likely also use Discourse Messaging for notifications/users setting how often they receive notifications. The idea has been floated of also using it for users profiles, but that needs more discussion.
 
+Recently, the app layout has been changed so that the Discourse forum can be displayed side by side with the map (try the green vertical split bar). This has two advantages:
+1. Access to the forum is easier.
+2. A forum page can now be associated with a map element. For example, if you go to a map event and click "Photos", the right panel opens on a specific forum page where you can post photos. This feature is implemented using Docuss, a third-party software solution.
+<details>
+<summary>More About Docuss</summary>
+
+Docuss is composed of: 
+1. a [Discourse plugin](https://github.com/sylque/dcs-discourse-plugin), installed in our Discourse instance, and 
+2. a JavaScript library, for interacting with the plugin. 
+
+For example, this is how, from the Meteor app, you can change the forum url to the `dcs-foo` tag page:
+
+```js
+import { dcs } from "/imports/client/utils/dcs-master"
+dcs.gotoTag('dcs-foo')
+```
+
+Docuss is in prototype phase and lacks documentation. Please get in touch with @syl on Slack if you have any questions.
+
+</details>
+
 ---
 
 <a name='guidelines' />
