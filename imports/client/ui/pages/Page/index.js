@@ -12,6 +12,7 @@ import EditPage from './Edit'
 import './style.scss'
 import {Helmet} from "react-helmet";
 import qs from 'query-string'
+import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
 
 class Page extends Component {
@@ -147,6 +148,14 @@ class Page extends Component {
       user
     } = this.props
 
+    // set Linkify to replace URL strings with clickable link
+    // needs text string to be wrapped in Linkify component
+    const linkifyOption = {
+      format: (value, type) => {
+        if (type === 'url') return 'External Link'
+      }
+    }
+
     const categories = formatCategories(c)
     const { key } = Meteor.settings.public.gm
     const mapUrl = 'https://www.google.com/maps/embed/v1/place?key=' + key + '&q=' + address.name
@@ -173,17 +182,17 @@ class Page extends Component {
             <Col xs={7} className='left'>
               <div className='intro'>
                 <SectionTitle title='Introduction' />
-                {overview}
+                <Linkify options={linkifyOption}>{overview}</Linkify>
               </div>
               <div className='meet-me'>
                 <SectionTitle title='Meet Me Details' />
-                {findHints}
+                <Linkify options={linkifyOption}>{findHints}</Linkify>
               </div>
               {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
               {this.dcsHeading(i18n.Map.eventInfo.videos.title, i18n.Map.eventInfo.photos.subtitle, 'vid')}
               <div className='description'>
                 <SectionTitle title='About' />
-                {description}
+                <Linkify options={linkifyOption}>{description}</Linkify>
               </div>
               {this.dcsHeading(i18n.Map.eventInfo.wall.title, i18n.Map.eventInfo.wall.subtitle, 'wal')}
               {this.dcsHeading(i18n.Map.eventInfo.experiences.title, i18n.Map.eventInfo.experiences.subtitle, 'exp')}
