@@ -43,8 +43,9 @@ $titles-color: #fff;
     color: #666A73;
 
     .row {
-      min-width: 100%;
+      width: 100%;
       justify-content: space-between;
+      word-wrap: break-word;
     }
 
     .section-title {
