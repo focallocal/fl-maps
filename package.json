@@ -16,6 +16,7 @@
     "googleapis": "^36.0.0",
     "haversine": "^1.1.0",
     "haversine-offset": "^1.0.0",
+    "linkifyjs": "^2.1.8",
     "loaders.css": "^0.1.2",
     "meteor-node-stubs": "^0.3.2",
     "nprogress": "^0.2.0",
