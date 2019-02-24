@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
+import Linkify from 'linkifyjs/react'
 import i18n_ from '/imports/both/i18n/en/map.json'
 // import AttendingButton from './../../../Page/AttendingButton'  <-- currently disabled
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
@@ -64,6 +65,14 @@ class EventInfo extends Component {
       user
     } = this.props
 
+    // set Linkify to replace URL strings with clickable link
+    // needs text string to be wrapped in Linkify component
+    const linkifyOption = {
+      format: (value, type) => {
+        if (type === 'url') return 'External Link'
+      }
+    }
+
     const isLoggedIn = !!user
 
     if (!event) { return null }
@@ -109,7 +118,7 @@ class EventInfo extends Component {
 
         <div className='third-section'>
           <div className='title'>{i18n_.eventInfo.introTitle}</div>
-          <div className='overview'>{event.overview}</div>
+          <div className='overview'><Linkify options={linkifyOption}>{event.overview}</Linkify></div>
         </div>
       </div>
     )

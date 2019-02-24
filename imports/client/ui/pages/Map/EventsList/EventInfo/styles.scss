@@ -45,6 +45,7 @@
 
   .first-section {
     padding-top: 0;
+    word-wrap: break-word;
 
     .title {
       margin-top: 4px;
@@ -89,6 +90,8 @@
   }
 
   .second-section, .third-section {
+    word-wrap: break-word;
+
     .title {
       margin-bottom: 12px;
       font-weight: bold;
