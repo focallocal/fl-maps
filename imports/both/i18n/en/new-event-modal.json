@@ -3,13 +3,13 @@
   "resource_type": {
     "title": "Where is the resource from?",
     "firstRadio": "I found a resource nearby",
-    "secondRadio": "I want to offer my own resource"    
+    "secondRadio": "I want to offer something i can do"    
   },
   "overview":"Intro",
   "event_name": "Name/Title",
-  "categories": "Public Happiness activity",
+  "categories": "Resource Category",
   "description": "Tell us more!",
-  "contact_info": "Meet Me Details (what for?/where?/why?)",
+  "contact_info": "Details for accessing the resource",
   "active_from": "Active from",
   "active_until": "Active until",
   "recurrence": {
