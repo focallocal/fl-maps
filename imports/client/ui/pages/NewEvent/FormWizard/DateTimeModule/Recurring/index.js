@@ -22,10 +22,12 @@ class Recurring extends Component {
       recurring
     } = model.when
 
+    const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
     let forever = recurring.forever
     let monthly = recurring.monthly
-    let selectedDays = recurring.days || []
     let startingDate = model.when.startingDate || new Date()
+    let selectedDays = recurring.days || [weekDays[startingDate.getDay()]]
     let type = recurring.type
     let occurences = recurring.occurences
 
