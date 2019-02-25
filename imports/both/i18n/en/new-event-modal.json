@@ -10,8 +10,8 @@
   "categories": "Resource Category",
   "description": "Tell us more!",
   "contact_info": "Details for accessing the resource",
-  "active_from": "Active from",
-  "active_until": "Active until",
+  "active_from": "Available from",
+  "active_until": "Available until",
   "recurrence": {
     "thirdRadio": "Specific days of each week",
     "fourthRadio": "Other options for repeating"
