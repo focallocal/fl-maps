@@ -71,6 +71,18 @@
             "facebook": "",
             "google" : "",
             "website" : ""
+        },
+        {
+            "title": "Arty Sidorenko",
+            "image": "https://avatars2.githubusercontent.com/u/26905074",
+            "subtitle": "Trainee Developer/All-round Information Sponge",
+            "text": "Tech-enthusiast and frequent traveller based in London, UK. Recovering from a past life in financial analysis.",
+            "linkedIn": "https://www.linkedin.com/in/arty-sidorenko",
+            "twitter": "",
+            "github": "https://github.com/artysidorenko",
+            "facebook": "",
+            "google": "",
+            "website": "https://artysidorenko.github.io/Portfolio-Website/"
         }
     ]
 }
