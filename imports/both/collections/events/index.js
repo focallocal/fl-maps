@@ -264,8 +264,6 @@ const EventsSchema = new SimpleSchema({
       const type = this.siblingField('type')
       if (type.value !== 'week') {
         return null
-      } else if (!this.isSet) {
-        return [weekDays[this.field('when.startingDate').value.getDay()]]
       }
     }
   },
