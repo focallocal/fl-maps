@@ -4,9 +4,8 @@ import { Container } from "reactstrap";
 
 var Remarkable = require('remarkable');
 var md = new Remarkable();
-var markdown = 'Welcome to the 1st Draft';"
+var markdown = 'Welcome to the 1st Draft
 
-console.log(md.render('# Welcome to the 1st Draft
 
 **Foreword:**
 
@@ -1099,7 +1098,7 @@ Next Steps
 
 * Full review of platform UX/UI and tech stack, looking quick ways to make large usability improvements, improving access and scalability.
 
-Thank you for reading, have a wonderful day!
+Thank you for reading, have a wonderful day!';"
 
 '));
 // => <h1>Remarkable rulezz!</h1>
