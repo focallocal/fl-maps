@@ -1,12 +1,14 @@
 
 .hours-formatted {
+  padding: 0;
+  list-style-position: inside;
 
   .day {
+    justify-content: left!important;
+    display: inline!important;
+  }
 
-    &>div:first-child {
-      display: inline-block;
-      width: 45px;
-      margin-right: 64px;
-    }
+  .every-sentence{
+    text-align: left;
   }
 }
