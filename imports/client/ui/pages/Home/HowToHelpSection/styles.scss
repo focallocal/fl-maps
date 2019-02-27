@@ -27,8 +27,21 @@
   }
 
   .sign-and-post {
+    display: block;
     width: 16em;
-    margin: 10px auto;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .join {
+    width: 12em;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 0.8rem;
+    margin-left: 4px;
+    text-align: center;
   }
 
   @media screen and (max-width: 850px) {
