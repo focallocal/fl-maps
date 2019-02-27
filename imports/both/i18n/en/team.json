@@ -12,31 +12,7 @@
             "google" : "",
             "website" : "https://andytulett.focallocal.org"
         },
-        {   
-            "title" : "Sylvain Quendez",
-            "image" : "https://avatars2.githubusercontent.com/u/42490951",
-            "subtitle" : "Docuss Founder and Director",
-            "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
-            "linkedIn" : "https://www.linkedin.com/in/sylvainquendez/",
-            "twitter": "",
-            "github" : "https://github.com/sylque",
-            "facebook": "",
-            "google" : "",
-            "website" : "http://www.docuss.org/"
-        },
-        {
-            "title" : "Saud Tauqeer",
-            "image" : "https://avatars3.githubusercontent.com/u/42393962?s=400&u=45c46df26fb13a3b154c5edc55a23be6fc13b25f&v=4",
-            "subtitle" : "MERN stack & polyglot developer",
-            "text" : "MERN stack devloper with in-depth experience in developing, managing, scaling, full-stack web applications with highly performant back-end and smooth UI/UX. Eagerly adding more skills under my belt. ",
-            "linkedIn" : "https://www.linkedin.com/in/saud-tauqeer-16a305172/",
-            "twitter": "https://twitter.com/@Saud31023894",
-            "github" : "https://github.com/SaudTauqeer",
-            "facebook": "",
-            "google" : "",
-            "website" : ""
-        },
-        {
+                {
             "title" : "Tom McNulty",
             "image" : "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
             "subtitle" : "Site Reliabilty Engineer",
@@ -71,6 +47,43 @@
             "facebook": "",
             "google" : "",
             "website" : ""
+        },
+        {
+            "title": "Arty Sidorenko",
+            "image": "https://avatars2.githubusercontent.com/u/26905074",
+            "subtitle": "Trainee Developer/All-round Information Sponge",
+            "text": "Tech-enthusiast and frequent traveller based in London, UK. Recovering from a past life in financial analysis.",
+            "linkedIn": "https://www.linkedin.com/in/arty-sidorenko",
+            "twitter": "",
+            "github": "https://github.com/artysidorenko",
+            "facebook": "",
+            "google": "",
+            "website": "https://artysidorenko.github.io/Portfolio-Website/"
+        },
+        {   
+            "title" : "Sylvain Quendez",
+            "image" : "https://avatars2.githubusercontent.com/u/42490951",
+            "subtitle" : "Docuss Founder and Director",
+            "text" : "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
+            "linkedIn" : "https://www.linkedin.com/in/sylvainquendez/",
+            "twitter": "",
+            "github" : "https://github.com/sylque",
+            "facebook": "",
+            "google" : "",
+            "website" : "http://www.docuss.org/"
+        },
+        {
+            "title" : "Saud Tauqeer",
+            "image" : "https://avatars3.githubusercontent.com/u/42393962?s=400&u=45c46df26fb13a3b154c5edc55a23be6fc13b25f&v=4",
+            "subtitle" : "MERN stack & polyglot developer",
+            "text" : "MERN stack devloper with in-depth experience in developing, managing, scaling, full-stack web applications with highly performant back-end and smooth UI/UX. Eagerly adding more skills under my belt. ",
+            "linkedIn" : "https://www.linkedin.com/in/saud-tauqeer-16a305172/",
+            "twitter": "https://twitter.com/@Saud31023894",
+            "github" : "https://github.com/SaudTauqeer",
+            "facebook": "",
+            "google" : "",
+            "website" : ""
         }
+
     ]
 }
