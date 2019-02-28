@@ -1,20 +1,4 @@
-@media screen and (max-width: 900px) {
-
-  mt-5 {
-    padding: 8px !important;
-  }
-  
-@media screen and (max-width: 720px) {
-
-  mt-5 {
-    padding: 8px !important;
-  }
-}
-
-@media screen and (max-width: 460px) {
-
-  mt-5 {
-    padding: 8px !important;
-  }
- 
-}
+whitepaper { // each column
+            width: 95%;
+            max-width: 95%;
+          }
