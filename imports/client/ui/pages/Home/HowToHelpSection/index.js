@@ -23,17 +23,17 @@ class HowToHelpSection extends Component {
 
    //const isLoggedIn = !!this.props.user
    const isLoggedIn = this.props.isLoggedIn;
+   const loginButton = <Button className='sign-and-post' tag={Link} to='/?new=1'>{isLoggedIn ? Home.post.button_loggedIn: Home.post.button}</Button>
 
    return (
      <section id='how_to_help_section'>
        <Container>
          <Row className="items">
            <Col>
-             <div className='title'>{title}</div>
+            <div className='title'>{title}</div>
              {items.map((item, i) => (
                <Row key={i}>
-                 <Item item={item} />
-                 {(i === 1) ? <Button className='sign-and-post' tag={Link} to='/?new=1'>{isLoggedIn ? Home.post.button_loggedIn: Home.post.button}</Button> : null}
+                <Item item={item} loginButton={loginButton} />
                </Row>
              ))}
            </Col>
