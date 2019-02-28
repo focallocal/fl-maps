@@ -55,7 +55,7 @@ class RecurrMonthly extends Component {
     if (value === 'byDayInMonth') {
       finalValue = dayInMonth
     } else {
-      finalValue = determinePosition(startingDate)[0] // get first letter which represents the position
+      finalValue = determinePosition(dayInMonth)[0] // get first letter which represents the position
     }
 
     form.change('when.recurring.monthly', { type: value, value: finalValue })
