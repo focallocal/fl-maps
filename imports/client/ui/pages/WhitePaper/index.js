@@ -1,18 +1,20 @@
+
 import React from "react";
 import { Container } from "reactstrap";
+//import './white_paper.js';
+
+var Remarkable = require('remarkable');
+var md = new Remarkable();
+var markdown = '# Remarkable rulezz!';//"# Welcome to the 1st Draft"
+
+//console.log(md.render('# Remarkable rulezz!'));
+// => <h1>Remarkable rulezz!</h1>
 
 const index = () => {
   return (
     <Container className="mt-5">
       <h1> Whitepaper </h1>
-      <iframe
-        frameBorder={0}
-        style={{
-          height: "100vh",
-          width: "100vh"
-        }}
-        src="https://docs.google.com/document/d/e/2PACX-1vQWx3ggon6Mp_-L5-7AurRshF2-qQB-YRlh9hUn9VijFRNtoKtHgn5uiilqihFUKoyBCcE5Rj0U759k/pub?embedded=true"
-      />
+      <div dangerouslySetInnerHTML={{__html: md.render(markdown)}} />
     </Container>
   );
 };
