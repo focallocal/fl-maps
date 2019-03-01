@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Container } from "reactstrap";
+import './styles.scss'
 //import './white_paper.js';
 
 var Remarkable = require('remarkable');
