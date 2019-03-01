@@ -5,17 +5,13 @@ import './styles.scss'
 
 const HoursFormatted = ({ data }) => {
   const {
-    startingDate: startDate,
+    startingDate,
     endingDate,
     startingTime,
     endingTime
   } = data
 
-  //------------------- Quick Fixes see PR #875 ---------------------
-  const startingDate = startDate === null ? new Date() : startDate
-  //const isSameDay = startingDate.toDateString() === endingDate.toDateString()
-  const isSameDay = startingDate && endingDate ? startingDate.toDateString() === endingDate.toDateString() : true
-  //------------------------------------------------------------------------
+  const isSameDay = startingDate.toDateString() === endingDate.toDateString()
 
   if (data.multipleDays) {
     const isEnding = !!endingDate
@@ -50,7 +46,7 @@ const HoursFormatted = ({ data }) => {
       monthly,
       recurrenceEndDate
     } = data.recurring
-    
+
     const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     let daysOrdered = days
