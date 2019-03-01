@@ -255,7 +255,8 @@ const EventsSchema = new SimpleSchema({
     type: Array,
     optional: true,
     custom: function () {
-      if (this.siblingField('type') === 'week') {
+      const type = this.siblingField('type')
+      if (type.value === 'week') {
         const atLeastOneDay = !this.value || !this.value.join('')
         return atLeastOneDay ? 'required' : undefined
       }
@@ -264,8 +265,6 @@ const EventsSchema = new SimpleSchema({
       const type = this.siblingField('type')
       if (type.value !== 'week') {
         return null
-      } else if (!this.isSet) {
-        return [weekDays[this.field('when.startingDate').value.getDay()]]
       }
     }
   },
@@ -296,16 +295,8 @@ const EventsSchema = new SimpleSchema({
   'when.recurring.monthly.value': {
     type: Number,
     autoValue: function () {
-      const type = this.siblingField('type')
-      let value = this.value
-      let dayInMonth = new Date().getDate()
-
-      if (type.value === 'byDayInMonth') {
-        value = (typeof value) === 'number' && value >= 0 ? value : dayInMonth
-        return value > 31 ? 31 : value < 1 ? 1 : value
-      } else {
-        value = (typeof value) === 'number' && value >= 0 ? value : Number(determinePosition(dayInMonth)[0])
-        return value > 4 ? 4 : value < 1 ? 1 : value
+      if (!this.value) {
+        return this.field('when.startingDate').value.getDate()
       }
     }
   },
