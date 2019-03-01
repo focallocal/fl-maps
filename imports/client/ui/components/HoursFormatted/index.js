@@ -5,7 +5,7 @@ import './styles.scss'
 
 const HoursFormatted = ({ data }) => {
   const {
-    startingDate,
+    startingDate: startDate,
     endingDate,
     startingTime,
     endingTime
