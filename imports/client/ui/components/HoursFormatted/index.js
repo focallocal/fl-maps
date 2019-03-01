@@ -5,14 +5,14 @@ import './styles.scss'
 
 const HoursFormatted = ({ data }) => {
   const {
-    startingDate: startDate,
+    startingDate,
     endingDate,
     startingTime,
     endingTime
   } = data
 
   const isSameDay = startingDate.toDateString() === endingDate.toDateString()
-  
+
   if (data.multipleDays) {
     const isEnding = !!endingDate
 
