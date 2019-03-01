@@ -15,10 +15,11 @@ console.log(markdown);
 const index = () => {
   return (
     <Container className="mt-5">
-    <div id='whitepaper'>
-      <h1> Whitepaper </h1>
-      <div dangerouslySetInnerHTML={{__html: markdown}} />
-    </div>
+   
+     <h1> Whitepaper </h1>
+       <div id='whitepaper'>
+     <div dangerouslySetInnerHTML={{__html: markdown}} />
+       </div>
     </Container>
 
   );
