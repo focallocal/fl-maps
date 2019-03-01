@@ -1,10 +1,10 @@
    div.mt-5.container { 
             display: block !important;
-            width: 65%
+            width: 65% !important;
                       }
 
 @media screen and (max-width: 800px) {
     div.mt-5.container { 
-            width: 90%
+            width: 90% !important;
                       }
 }
