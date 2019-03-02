@@ -107,8 +107,9 @@ const HoursFormatted = ({ data }) => {
     if (type === 'day') {
       return (
         <ul className='hours-formatted repeat'>
-          {(forever == true) && nextOccurence}
+          {(forever === true) && nextOccurence}
           {(!forever && recurrenceEndDate && new Date() < recurrenceEndDate) && nextOccurence}
+          {(!forever && until && new Date() < until) && nextOccurence}
           <li>{repeatTitle} {repeatSchedule}, between {startingTime} - {endingTime} </li>
           {!forever && notForeverDay}
         </ul>
@@ -116,21 +117,22 @@ const HoursFormatted = ({ data }) => {
     } else if (type === 'week') {
       return (
         <ul className='hours-formatted repeat'>
-          {(forever == true) && nextOccurence}
+          {(forever === true) && nextOccurence}
           {(!forever && recurrenceEndDate && new Date() < recurrenceEndDate) && nextOccurence}
+          {(!forever && until && new Date() < until) && nextOccurence}
           <li>
             <span className='every-sentence'>{repeatTitle} {repeatSchedule}</span><br/>
             {daysOrdered.map((day, index) => (
               day &&
                 <div key={index} className='day'>
-                <span>on {day.substr(0, 3)}, {startingTime} - {endingTime}</span><br/>
+                  <span>on {day.substr(0, 3)}, {startingTime} - {endingTime}</span><br/>
                 </div>
             ))}
           </li>
           {!forever && notForeverWeek}
         </ul>
       )
-    } else if (type === 'month'){
+    } else if (type === 'month') {
       return (
         <ul className='hours-formatted repeat'>
           {nextOccurence}

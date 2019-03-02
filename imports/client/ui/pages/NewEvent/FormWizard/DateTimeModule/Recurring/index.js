@@ -18,9 +18,13 @@ class Recurring extends Component {
     } = this.props
 
     const model = form.getModel()
-    const {
+    let {
       recurring
     } = model.when
+
+    // NOTE: If this was previously a one-time event, being changed to recurring...
+    // ...then 'recurring' ibject is null, so we re-initialise:
+    if (!recurring) recurring = {}
 
     let forever = recurring.forever
     let monthly = recurring.monthly
