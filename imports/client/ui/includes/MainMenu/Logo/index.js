@@ -5,18 +5,22 @@ import { NavbarBrand } from 'reactstrap'
 import './styles.scss'
 
 const Logo = ({ sidebar, onClick }) => {
-  let imgUrl
+  let btmImgUrl
 
-  if (window.__mapType === 'gatherings') {
-    imgUrl = sidebar ? 'focallocal_logo_invert.png' : 'focallocal_logo.png'
-  } else {
-    imgUrl = sidebar ? 'btm_logo_invert.png' : 'btm_logo.png'
+  if (window.__mapType !== 'gatherings') {
+    btmImgUrl = sidebar ? 'btm_logo_invert.png' : 'btm_logo.png'
   }
 
   return (
     <NavbarBrand id='brand-logo' tag='div' onClick={onClick}>
       <NavLink to='/' exact>
-        <img src={'/images/' + imgUrl} />
+        {
+          window.__mapType === 'gatherings'
+            ? <a class="brand-logo brand-text" href="http://focallocal.org">
+                Focallocal
+              </a>
+            : <img src={'/images/' + imgUrl} />
+        }
       </NavLink>
     </NavbarBrand>
   )
