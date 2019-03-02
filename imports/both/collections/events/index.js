@@ -323,10 +323,15 @@ const EventsSchema = new SimpleSchema({
     custom: function () {
       if (this.siblingField('forever').value) {
         return undefined
+      } else if (!this.value && !this.siblingField('until').value) {
+        return 'required'
       }
     },
     autoValue: function () {
       if (this.siblingField('forever').value) {
+        return null
+      }
+      if (this.siblingField('until').value) {
         return null
       }
     }
@@ -349,7 +354,12 @@ const EventsSchema = new SimpleSchema({
   },
   'when.recurring.until': {
     type: Date,
-    optional: true
+    optional: true,
+    custom: function () {
+      if (!this.value && !this.siblingField('occurences').value && !this.siblingField('forever').value) {
+        return 'required'
+      }
+    }
   },
 
   // Description and More
