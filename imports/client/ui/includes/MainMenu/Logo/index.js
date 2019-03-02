@@ -16,7 +16,13 @@ const Logo = ({ sidebar, onClick }) => {
   return (
     <NavbarBrand id='brand-logo' tag='div' onClick={onClick}>
       <NavLink to='/' exact>
-        <img src={'/images/' + imgUrl} />
+        {
+          window.__mapType === 'gatherings'
+            ? <a class="brand-logo brand-text" href="http://focallocal.org">Focallocal</a>
+            : <img src={'/images/' + imgUrl} />
+        }
+
+
       </NavLink>
     </NavbarBrand>
   )

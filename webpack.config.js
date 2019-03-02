@@ -25,10 +25,11 @@ const clientConfig = {
         use: ['babel-loader']
       },
       {
-	test: /\.mjs$/,
-	include: /node_modules/,
-	type: "javascript/auto",
-      }
+        type: 'javascript/auto',
+        test: /\.mjs$/,
+        use: []
+      },
+      {test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,loader: 'url-loader?limit=100000'}
     ]
   },
   plugins: [
