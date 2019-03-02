@@ -15,7 +15,7 @@ import {
   Button
 } from "reactstrap";
 
-const teamData = i18n.Team.members;
+const teamData = i18n.Partners.partners;
 
 class Members extends Component {
   render() {
