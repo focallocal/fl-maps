@@ -2,7 +2,7 @@
 
 This is the base branch for the new react-based fl-maps project.
 
-All edits are initially made in this master branch (fl-maps), and then <b>copy/pasted into the fl-sleeper branch, and a separate PR made to the fl-sleeper branch</b> unless they are in the i18n folder. We aim to keep the codebase identical as much as possible until the team expands. 
+All edits are initially made in this master branch (fl-maps), and then <b>copy/pasted into the fl-sleeper branch, and a separate PR made to the fl-sleeper branch</b> _(refer to note "Copying changes with git cherry-pick" under the "Workflow" section below, for how to automatically copy the changes across)_ unless they are in the i18n folder. We aim to keep the codebase identical as much as possible until the team expands.
 
 All text and labels viewable to users must be defined in [the i18n folder](https://github.com/focallocal/fl-maps/tree/master/imports/both/i18n) to be ready for multi-language support - this file is also used to define differences between both maps, The Public Happiness Platform at focallocal.org and Our Homelessness project at brightertomorrowmap.com. 
 
@@ -35,7 +35,23 @@ https://focallocal.slack.com
 fl-master branch: https://focallocal.org
 fl-sleeper: https://brightertomorrowmap.com
 
-Making Suggestions: Please post suggested improvements in the meteor-maps channel in Slack so that other devs can comment their thoughts, suggestions, and keep track of changes in the codebase. If/when approved make an issue in Github ready for coding to begin.
+**Making Suggestions:** Please post suggested improvements in the meteor-maps channel in Slack so that other devs can comment their thoughts, suggestions, and keep track of changes in the codebase. If/when approved make an issue in Github ready for coding to begin.
+
+**Copying changes with git "git cherry-pick":** As mentioned above, changes to the codebase are done to the master branch and copy/pasted onto the fl-sleeper branch in a separate PR. Copy/pasting can be done directly through the CLI as follows:
+
+1. Make a note of your commit id in the master branch. Assuming the most recent commit is the one you want to copy:
+ 
+    `git log -1`
+
+2. Checkout the latest fl-sleeper branch onto which you want to copy across the changes
+
+    `git checkout <TARGET-BRANCH-NAME>`
+
+3. Use "git cherry-pick" to apply the exact insertions and deletions from your master branch commit, onto the target fl-sleeper branch that you have just checked out
+
+    `git cherry-pick <COMMIT ID>`
+
+4. This will copy across the changes without affecting any other files. In the very unlikely scenario there are conflicts you would need to resolve these before the cherry-pick executes. Note: if there is more than one commit to copy across, you need to include all relevant commit IDs in the command.
 
 ## Setting Up The Development Environment
 
