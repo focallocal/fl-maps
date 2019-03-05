@@ -91,18 +91,19 @@ class Date_ extends Component {
   }
 
   render() {
-    const { id, label, onChange, value, error, placeholder } = this.props;
-    const { showDayPicker } = this.state;
+    const { id, label, onChange, value, error, openEndDate, name, specialCat } = this.props
+    const { showDayPicker } = this.state
 
     return (
       <FormGroup className="date-field">
         <Label>{label}</Label>
         <Input
           id={id}
-          value={formatDate(value)}
+          value={this.dateValue(openEndDate, specialCat, name, value)}
           onFocus={e => this.toggleDayPicker(e, true)}
           invalid={Boolean(error)}
           onChange={onChange} // <------Input isn't being changed.
+          onClick={this.props.handleCalendarClick}
         />
         <Modal
           isOpen={showDayPicker}
@@ -130,6 +131,9 @@ class Date_ extends Component {
     );
   }
 
+  // NOTE: if openEnded is true => event defaults to ongoing/quasi-forever
+  dateValue = (openEndDate, specialCat, name, value) => openEndDate ? 'Leave Blank for Always' : formatDate(specialCat, name, value)
+
   handleChange = (date = null) => {
     this.toggleDayPicker();
     this.props.onChange(date);
@@ -145,9 +149,15 @@ class Date_ extends Component {
   };
 }
 
-const formatDate = date => {
+const formatDate = (specialCat, name, date) => {
+  // NOTE: if no default date object is passed => render blank space (eg. 'until' field)
+  // BUT: to prepopulate without default value from form => create local date obj
+  let prepopDate = name === 'when.recurring.until' || !!date ?
+    date : new Date(new Date().setHours(new Date().getHours() + 3))
+  // NOTE: if the field belongs to a special category, we leave it blank
+  if (specialCat && !date) prepopDate = ""
   try {
-    return date
+    return prepopDate
       .toISOString()
       .substring(0, 10)
       .split("-")
