@@ -115,6 +115,10 @@ export function formatWhenObject (data) {
     }
   }
 
+  if (endingDate.getFullYear() - startingDate.getFullYear() > 5) {
+    return `from ${formatDate(startingDate)}, ${startingTime} until further notice`
+  }
+
   return `from ${formatDate(startingDate)}, ${startingTime} until ${formatDate(endingDate)}, ${endingTime}`
 }
 
