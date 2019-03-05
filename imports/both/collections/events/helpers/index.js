@@ -26,7 +26,6 @@ export const startingDate = {
 
 export const endingDate = {
   type: Date,
-  defaultValue: getDate(3),
   optional: true
 }
 
@@ -51,7 +50,7 @@ export function getHour (hours, date = new Date()) {
   return '15:00'
 }
 
-function getDate (hours) {
+export function getDate (hours) {
   let date = new Date()
 
   if (hours) {

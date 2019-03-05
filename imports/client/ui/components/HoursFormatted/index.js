@@ -152,14 +152,18 @@ const HoursFormatted = ({ data }) => {
   }
 
   // DESCRIPTION: if !data.repeat then default view is start + end timestamp
+  const endFragment = (
+    isSameDay ? endingTime
+      : <div>
+        {formatDateWithWords(endingDate)}, {endingTime}
+      </div>
+  )
+  const ongoing = endingDate.getFullYear() - startingDate.getFullYear() > 5
+
   return (
     <div className='hours-formatted regular-date'>
-      <span>{formatDateWithWords(startingDate)}, {startingTime} - </span>
-      {isSameDay ? endingTime
-        : <div>
-          {formatDateWithWords(endingDate)}, {endingTime}
-        </div>
-      }
+      <span>{ongoing && `From`} {formatDateWithWords(startingDate)}, {startingTime} - </span>
+      {ongoing ? `until further notice` : endFragment}
     </div>
   )
 }
