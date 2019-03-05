@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
-import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, determinePosition } from './helpers'
+import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate } from './helpers'
 import possibleCategories from '/imports/both/i18n/en/categories.json'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
@@ -148,7 +148,25 @@ const EventsSchema = new SimpleSchema({
     uniforms: {
       label: labels.active_until
     },
-    optional: false
+    optional: false,
+    // NOTE: catch 22... autoValue will not pre-populate form UI as it fires after submit
+    // defaultValue would work BUT including it will also fire this.isSet()
+    // meaning autoValue will never trigger correctly
+    // Solution: omit defaultValue and pre-populate form client-side via React
+    autoValue: function () {
+      const categories = this.field('categories').value
+      const specialCat = categories.some(e => {
+        return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
+      })
+      if (!this.isSet && specialCat) {
+        let now = new Date()
+        return new Date(now.setFullYear(now.getFullYear() + 10))
+      } else if (!this.isSet && !specialCat) {
+        return getDate(3)
+      } else if (!this.isSet && this.siblingField('repeat').value) {
+        return getDate(3)
+      }
+    }
   },
   'when.startingTime': {
     ...startingTime,
@@ -340,7 +358,8 @@ const EventsSchema = new SimpleSchema({
     type: Date,
     optional: true,
     autoValue: function () {
-      const initialEndDate = Date.parse(this.field('when.endingDate').value)
+      const initialEndDate = this.field('when.endingDate').value
+        ? Date.parse(this.field('when.endingDate').value) : Date.parse(getDate(3))
       const type = this.field('when.recurring.type').value
       const skip = this.field('when.recurring.every').value
       const occurences = this.field('when.recurring.occurences').value

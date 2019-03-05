@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { CustomInput, Row, Col } from 'reactstrap'
+import { CustomInput, Row, Col, Input, Label } from 'reactstrap'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
@@ -10,6 +10,14 @@ import SameDateHours from './SameDateHours'
 
 
 class SecondStep extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      openEndDate: this.props.form.getModel().categories.some(e => {
+        return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
+      })
+    }
+  }
   render () {
     const {
       form
@@ -17,11 +25,14 @@ class SecondStep extends Component {
 
     const RadioButton = this.RadioButton
 
+    let { openEndDate } = this.state
+
     const {
       days,
       multipleDays,
       repeat
     } = form.getModel().when
+
     return (
       <div id='second-step'>
         <AutoField name='findHints' />
@@ -33,8 +44,20 @@ class SecondStep extends Component {
                 {!multipleDays && <AutoField name='when.startingTime' />}
               </Col>
               <Col className='date-hours-coupled'>
-                {!repeat && <AutoField name='when.endingDate' />}
-                {!multipleDays && <AutoField name='when.endingTime' />}
+                {(!repeat && !openEndDate) && <AutoField
+                  name='when.endingDate'
+                  specialCat={this.props.form.getModel().categories.some(e => {
+                    return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
+                  })}
+                />}
+                {(!multipleDays && !openEndDate) && <AutoField name='when.endingTime' />}
+                {(!repeat && openEndDate) && (
+                  <AutoField
+                    name='when.endingDate'
+                    openEndDate={true}
+                    handleCalendarClick={this.resetEndDate}
+                  />
+                )}
               </Col>
             </Row>
           </div>
@@ -87,6 +110,11 @@ class SecondStep extends Component {
       </div>
     )
   }
+
+resetEndDate = () => {
+  // NOTE: for special category events, this resets their ending date to standard
+  this.setState({ openEndDate: false })
+}
 
 RadioButton = ({ label, id, value, type }) => (
   <CustomInput
