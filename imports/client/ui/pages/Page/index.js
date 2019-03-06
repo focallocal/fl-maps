@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'reactstrap'
 import { formatCategories } from '/imports/client/utils/format'
 import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
+import VideoPlayer from '/imports/client/ui/components/VideoPlayer'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import EditPage from './Edit'
 // import AttendingButton from './AttendingButton'  <-- currently disabled
@@ -163,16 +164,19 @@ class Page extends Component {
     return (
       <div id='page' onClick={e => this.dcsClick(null, e)}>
         <div className='header'>
-          <div className='title-wrapper'>
-            <div className='title'>{name}</div>
-            <div className='sub-title-categories'>{categories}</div>
-          </div>
+          <VideoPlayer
+            categories={c}
+          />
         </div>
 
         <Container className='body'>
           <Row>
 
             <Col xs={7} className='left'>
+              <div className='title-wrapper'>
+                <div className='title'>{name}</div>
+                <div className='sub-title-categories'>{categories}</div>
+              </div>
               <div className='intro'>
                 <SectionTitle title='Introduction' />
                 <Linkify options={linkifyOption}>{overview}</Linkify>
