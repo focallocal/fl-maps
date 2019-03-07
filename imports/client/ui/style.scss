@@ -11,6 +11,7 @@
     flex: 1 0 0;
     overflow-y: auto;
     transition: flex-grow 0s; // We use a transition only for the benefit of 'transition-delay'
+    scrollbar-width: thin; // this is for FireFox browsers, to fix the white gap between scrollbar and main page
   }
   &:not(.dcs-show-right) #dcs-right {
     flex-grow: 0;
