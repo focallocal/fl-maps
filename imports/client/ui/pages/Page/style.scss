@@ -6,34 +6,11 @@ $titles-color: #fff;
   .header {
     position: relative;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     height: 25vw;
     min-height: 250px;
     padding: 15px;
-    background: #f79d00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #00c362, #f79d00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #00c362, rgba(0, 0, 0, 0.35)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    .title-wrapper {
-      width: 80%;
-      color: #fff;
-      font-weight: bolder;
-      word-wrap: break-word;
-      overflow: auto;
-    }
-
-    .title {
-      max-height: 156px;
-      font-size: 2.2rem;
-      overflow: auto;
-    }
-
-    .sub-title-categories {
-      max-height: 80px;
-      font-size: 1.4rem;
-      overflow: auto;
-    }
   }
 
   .body {
@@ -58,6 +35,27 @@ $titles-color: #fff;
        -------------- */
 
     .left{
+
+      .title-wrapper {
+        width: 100%;
+        color: rgb(50, 52, 56);
+        font-weight: bolder;
+        word-wrap: break-word;
+        overflow: auto;
+      }
+
+      .title {
+        max-height: 156px;
+        font-size: 2.2rem;
+        overflow: auto;
+      }
+
+      .sub-title-categories {
+        max-height: 80px;
+        font-size: 1.4rem;
+        overflow: auto;
+      }
+
       .intro, .meet-me, .description{
         margin: 20px 0;
       }
@@ -69,6 +67,7 @@ $titles-color: #fff;
     .right {
       width: 300px;
       max-width: 300px;
+      padding-top: 15px;
 
       .hours-formatted {
 
@@ -211,6 +210,7 @@ $titles-color: #fff;
           max-width: 95%;
           flex: 0 0 100%;
           margin-bottom: 24px;
+          padding-right: 0;
         }
 
         .hours-formatted {
