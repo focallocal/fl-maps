@@ -229,15 +229,7 @@ class Page extends Component {
           />
         </Container>
         <div id="coral_talk_stream"></div>
-        <Helmet>
-          {/* The embed web address will need updated depending on environment */}
-          {/* Package.json port will need updated if you leave embed at 3000*/}
-          <script src="https://talk.focallocal.org/static/embed.js" async onload="
-            Coral.Talk.render(document.getElementById('coral_talk_stream'), {
-              talk: 'https://talk.focallocal.org/'
-            });
-          "></script>
-        </Helmet>
+        {this.dcsHeading(i18n.Map.eventInfo.abuse.title, i18n.Map.eventInfo.abuse.subtitle, 'rep')}.
       </div>
     )
   }
