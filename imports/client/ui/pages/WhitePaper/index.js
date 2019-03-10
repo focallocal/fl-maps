@@ -23,9 +23,5 @@ const index = () => {
   );
 };
 
- {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
-
-
+ 
 export default index;
-
- {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
