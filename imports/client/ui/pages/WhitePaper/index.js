@@ -4,6 +4,83 @@ import { Container } from "reactstrap";
 import './styles.scss'
 //import './white_paper.js';
 
+// DOCUSS
+// Update selBalloonId here, so that we catch url changes triggered
+// in other components
+const { b } = qs.parse(window.location.search)
+if (this.state.selBalloonId !== b) {
+  this.setState({ selBalloonId: b })
+}
+
+// DOCUSS
+// Add badges (color circles with topic count)
+if (!this.state.badges && this.props.dcsTags) {
+  const prefix = `dcs-${this.state.id.substring(0, 12).toLowerCase()}-`
+  const badges = {}
+  this.props.dcsTags.forEach(tag => {
+if (tag.id.startsWith(prefix)) {
+  const balloonId = tag.id.substring(17)
+  badges[balloonId] = tag.count
+}
+  })
+  this.setState({ badges })
+}
+  }
+
+  static getDerivedStateFromProps (nextProps, prevState) {
+const updatedData = window.__updatedData
+
+if (updatedData) {
+  delete window.__updatedData
+
+  if (window.previousStateOfMap) {
+mutateCachedMapState(updatedData)
+window.__setDocumentTitle(updatedData.name)
+  }
+
+  return {
+data: updatedData
+  }
+}
+
+return prevState
+  }
+
+  // DOCUSS
+  dcsHeading(title, subtitle, balloonId) {
+const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
+const badgeHtml = (
+  <span
+className="dcs-badge"
+title={`This section has ${badgeCount} topic(s)`}
+  >
+{badgeCount}
+  </span>
+)
+const titleClass =
+  balloonId === this.state.selBalloonId ? 'dcs-selected' : ''
+return (
+  <div
+style={{ margin: '20px 0', cursor: 'pointer' }}
+onClick={e => this.dcsClick(balloonId, e)}
+  >
+<b className={titleClass}>{title}</b>&nbsp;
+
+<span className="dcs-icons">
+  <img src={`/images/dcs-balloon-${balloonId}.png`} />
+</span>
+{badgeCount ? badgeHtml : ''}
+<div>
+<small style={{marginLeft: '5px', marginRight: '5px', fontSize: '60%'}}>
+  {subtitle}
+</small>
+</div>
+  </div>
+)
+  }
+
+ {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
+
 var Remarkable = require('remarkable');
 var md = new Remarkable();
 md.set({
