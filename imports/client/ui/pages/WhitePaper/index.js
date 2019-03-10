@@ -25,7 +25,7 @@ if (tag.id.startsWith(prefix)) {
   })
   this.setState({ badges })
 }
-  }
+  
 
   static getDerivedStateFromProps (nextProps, prevState) {
 const updatedData = window.__updatedData
