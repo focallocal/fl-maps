@@ -4,6 +4,8 @@ import { Container } from "reactstrap";
 import './styles.scss'
 //import './white_paper.js';
 
+ {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
+
 
 var Remarkable = require('remarkable');
 var md = new Remarkable();
@@ -23,4 +25,9 @@ const index = () => {
   );
 };
 
+ {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
+
+
 export default index;
+
+ {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
