@@ -93,13 +93,13 @@ class EventInfo extends Component {
           <div className='back-btn'>
             <i className='fas fa-long-arrow-alt-left' onClick={this.props.returnToList}/>
           </div>
-          <Button color='secondary' onClick={this.openMoreInfo}>More</Button>
         </header>
 
         <div className='first-section'>
           <div className='title'>{event.name}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
+          <Button color='secondary' size="md" block onClick={this.openMoreInfo}>More</Button>
           {/*
           <Button color='primary' onClick={this.getDirections}>Get Directions</Button>
           */}
