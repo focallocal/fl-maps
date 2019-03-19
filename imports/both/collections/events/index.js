@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
-import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate } from './helpers'
+import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate, videoHosts } from './helpers'
 import possibleCategories from '/imports/both/i18n/en/categories.json'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
@@ -426,6 +426,50 @@ const EventsSchema = new SimpleSchema({
   'engagement.attendees.$.name': {
     type: String,
     max: 120
+  },
+  'video': {
+    type: Object,
+    defaultValue: {}
+  },
+  'video.total': {
+    type: Number,
+    defaultValue: 0
+  },
+  'video.links': {
+    type: Array,
+    optional: true,
+    custom: function () {
+      if (this.field('includesVideo').value === 0) {
+        return undefined
+      }
+
+      if (!this.value || this.value.length === 0) {
+        return 'required'
+      }
+    },
+    autoValue: function () {
+      if (this.field('includesVideo').value === 0) {
+        return null
+      }
+    }
+  },
+  'video.links.$': {
+    type: Object,
+    optional: true
+  },
+  'video.links.$.host': {
+    type: String,
+    allowedValues: videoHosts.map((e) => e.host),
+    uniforms: {
+      customType: 'select',
+      label: labels.video.host
+    }
+  },
+  'video.links.$.address': {
+    type: String,
+    uniforms: {
+      label: null
+    }
   },
   'createdAt': {
     type: Date,

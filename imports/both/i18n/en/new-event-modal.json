@@ -16,5 +16,12 @@
     "thirdRadio": "Specific days of each week",
     "fourthRadio": "Other options for repeating"
   },
+  "video": {
+    "title": {
+      "firstLine": "Add video to page banner",
+      "secondLine": "(if omitted, defaults to focallocal Youtube channel)"
+    },
+    "host": "Select host site and complete the URL"
+  },
   "attendee_limit": "1000"
 }
