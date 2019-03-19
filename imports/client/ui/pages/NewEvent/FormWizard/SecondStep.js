@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { CustomInput, Row, Col, Input, Label } from 'reactstrap'
+import { CustomInput, Row, Col, Button } from 'reactstrap'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
 import Recurring from './DateTimeModule/Recurring'
 import WeekDays from './DateTimeModule/WeekDays'
+import VideoLink from './VideoLink'
 import SameDateHours from './SameDateHours'
 
-
 class SecondStep extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       openEndDate: this.props.form.getModel().categories.some(e => {
         return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
-      })
+      }),
+      addVideoLink: false,
+      linkArray: []
     }
   }
   render () {
@@ -25,8 +27,7 @@ class SecondStep extends Component {
 
     const RadioButton = this.RadioButton
 
-    let { openEndDate } = this.state
-
+    let { openEndDate, addVideoLink, linkArray } = this.state
     const {
       days,
       multipleDays,
@@ -106,10 +107,76 @@ class SecondStep extends Component {
         />
         {repeat && <Recurring form={form} />}
         <AutoField className='pageDetails' name='description' />
-        <AutoField name='engagement.limit' />
+
+        {/* Add video link(s) */}
+        <CustomInput
+          className="videoToggle"
+          id='includesVideo'
+          type='radio'
+          label={`${labels.video.title.firstLine}
+                ${labels.video.title.secondLine}`}
+          checked={addVideoLink === undefined ? false : addVideoLink}
+          onClick={() => {
+            if (!addVideoLink) {
+              this.addLink()
+              this.setState({ addVideoLink: true })
+            } else {
+              this.setState({
+                addVideoLink: false,
+                linkArray: []
+              })
+            }
+          }}
+        />
+          {addVideoLink && (
+            <div className='videoButtons'>
+              <Button
+                outline
+                color='secondary'
+                className='addLink'
+                onClick={this.addLink}
+                disabled={this.state.linkArray.length > 2}
+              >
+                Add Another Link
+              </Button>
+              <Button
+                outline
+                color='secondary'
+                className='removeLink'
+                onClick={this.removeLink}
+              >
+                Remove Last Link
+              </Button>
+            </div>
+          )}
+        <ErrorField name='video.links' errorMessage='Unable to process link' />
+        {addVideoLink && linkArray.map((e, i) => <div key={i}>{e}</div>)}
+
+        <AutoField className='pageDetails' name='engagement.limit' />
       </div>
     )
   }
+
+addLink = () => {
+  const link = <VideoLink
+    form={this.props.form}
+    addLink={this.addLink}
+    linkId={this.state.linkArray.length}
+  />
+  this.setState({ linkArray: this.state.linkArray.concat(link) })
+}
+
+removeLink = () => {
+  const linkArray = this.state.linkArray
+  if (linkArray.length === 1) {
+    this.setState({
+      addVideoLink: false,
+      linkArray: []
+    })
+  } else {
+    this.setState({ linkArray: linkArray.slice(0, linkArray.length - 1) })
+  }
+}
 
 resetEndDate = () => {
   // NOTE: for special category events, this resets their ending date to standard
