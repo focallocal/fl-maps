@@ -8,31 +8,31 @@ import Recurring from './DateTimeModule/Recurring'
 import WeekDays from './DateTimeModule/WeekDays'
 import VideoLink from './VideoLink'
 import SameDateHours from './SameDateHours'
+import formModel from './VideoLink/utils'
 
 class SecondStep extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
+      videoLinksAdded: 0,
       openEndDate: this.props.form.getModel().categories.some(e => {
         return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
-      }),
-      addVideoLink: false,
-      linkArray: []
+      })
     }
   }
   render () {
-    const {
-      form
-    } = this.props
-
+    const { form } = this.props
+    
     const RadioButton = this.RadioButton
 
-    let { openEndDate, addVideoLink, linkArray } = this.state
+    let { openEndDate, videoLinksAdded } = this.state
     const {
       days,
       multipleDays,
       repeat
     } = form.getModel().when
+
+    console.log(form.getModel().video.links)
 
     return (
       <div id='second-step'>
@@ -115,27 +115,17 @@ class SecondStep extends Component {
           type='radio'
           label={`${labels.video.title.firstLine}
                 ${labels.video.title.secondLine}`}
-          checked={addVideoLink === undefined ? false : addVideoLink}
-          onClick={() => {
-            if (!addVideoLink) {
-              this.addLink()
-              this.setState({ addVideoLink: true })
-            } else {
-              this.setState({
-                addVideoLink: false,
-                linkArray: []
-              })
-            }
-          }}
+          checked={videoLinksAdded > 0}
+          onClick={this.toggleLinks}
         />
-          {addVideoLink && (
+          {videoLinksAdded > 0 && (
             <div className='videoButtons'>
               <Button
                 outline
                 color='secondary'
                 className='addLink'
                 onClick={this.addLink}
-                disabled={this.state.linkArray.length > 2}
+                disabled={videoLinksAdded > 2}
               >
                 Add Another Link
               </Button>
@@ -150,65 +140,75 @@ class SecondStep extends Component {
             </div>
           )}
         <ErrorField name='video.links' errorMessage='Unable to process link' />
-        {addVideoLink && linkArray.map((e, i) => <div key={i}>{e}</div>)}
+        {/* {addVideoLink && linkArray.map((e, i) => <div key={i}>{e}</div>)} */}
+        {videoLinksAdded > 0 && <VideoLink
+          form={this.props.form}
+          linkId={1}
+        />}
+        {videoLinksAdded > 1 && <VideoLink
+          form={this.props.form}
+          linkId={2}
+        />}
+        {videoLinksAdded > 2 && <VideoLink
+          form={this.props.form}
+          linkId={3}
+        />}
 
         <AutoField className='pageDetails' name='engagement.limit' />
       </div>
     )
   }
 
-addLink = () => {
-  const link = <VideoLink
-    form={this.props.form}
-    addLink={this.addLink}
-    linkId={this.state.linkArray.length}
-  />
-  this.setState({ linkArray: this.state.linkArray.concat(link) })
-}
-
-removeLink = () => {
-  const linkArray = this.state.linkArray
-  if (linkArray.length === 1) {
-    this.setState({
-      addVideoLink: false,
-      linkArray: []
-    })
-  } else {
-    this.setState({ linkArray: linkArray.slice(0, linkArray.length - 1) })
+  toggleLinks = () => {
+    if (this.state.videoLinksAdded === 0) {
+      this.setState({ videoLinksAdded: 1 })
+    } else {
+      this.setState({ videoLinksAdded: 0 })
+      formModel.resetVideoArray(this.props.form)
+    }
   }
-}
 
-resetEndDate = () => {
-  // NOTE: for special category events, this resets their ending date to standard
-  this.setState({ openEndDate: false })
-}
+  addLink = () => {
+    this.setState({ videoLinksAdded: this.state.videoLinksAdded + 1 })
+    formModel.pushVideoArray(this.props.form)
+  }
 
-RadioButton = ({ label, id, value, type }) => (
-  <CustomInput
-    id={id}
-    type={type}
-    label={label}
-    checked={value === undefined ? false : value}
-    onChange={() => {}}
-    onClick={() => this.handleRadioButton(id, !value)}
-  />
-)
+  removeLink = () => {
+    this.setState({ videoLinksAdded: this.state.videoLinksAdded - 1 })
+    formModel.popVideoArray(this.props.form)
+  }
 
-handleRadioButton = (type, value) => {
-  const { when } = this.props.form.getModel()
+  resetEndDate = () => {
+    // NOTE: for special category events, this resets their ending date to standard
+    this.setState({ openEndDate: false })
+  }
 
-  this.props.form.change('when', {
-    ...when,
-    multipleDays: type === 'multipleDays' ? value : false,
-    repeat: type === 'repeat' ? value : false
-  })
+  RadioButton = ({ label, id, value, type }) => (
+    <CustomInput
+      id={id}
+      type={type}
+      label={label}
+      checked={value === undefined ? false : value}
+      onChange={() => {}}
+      onClick={() => this.handleRadioButton(id, !value)}
+    />
+  )
 
-  // Scroll to bottom of modal
-  setTimeout(() => {
-    const modal = document.querySelector('.modal-body')
-    modal.scrollTo(modal, 375)
-  }, 1)
-}
+  handleRadioButton = (type, value) => {
+    const { when } = this.props.form.getModel()
+
+    this.props.form.change('when', {
+      ...when,
+      multipleDays: type === 'multipleDays' ? value : false,
+      repeat: type === 'repeat' ? value : false
+    })
+
+    // Scroll to bottom of modal
+    setTimeout(() => {
+      const modal = document.querySelector('.modal-body')
+      modal.scrollTo(modal, 375)
+    }, 1)
+  }
 }
 
 SecondStep.propTypes = {
