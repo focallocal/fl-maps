@@ -42,9 +42,7 @@ class VideoLink extends Component {
   }
 
   handleChange = (value) => {
-    this.setState({
-      address: value
-    })
+    this.setState({ address: value })
   }
 
   // componentDidUpdate (prevProps, prevState) {

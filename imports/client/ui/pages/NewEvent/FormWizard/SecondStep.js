@@ -8,7 +8,6 @@ import Recurring from './DateTimeModule/Recurring'
 import WeekDays from './DateTimeModule/WeekDays'
 import VideoLink from './VideoLink'
 import SameDateHours from './SameDateHours'
-import formModel from './VideoLink/utils'
 
 class SecondStep extends Component {
   constructor(props) {
@@ -31,8 +30,6 @@ class SecondStep extends Component {
       multipleDays,
       repeat
     } = form.getModel().when
-
-    console.log(form.getModel().video.links)
 
     return (
       <div id='second-step'>
@@ -139,7 +136,7 @@ class SecondStep extends Component {
               </Button>
             </div>
           )}
-        <ErrorField name='video.links' errorMessage='Unable to process link' />
+        {/* <ErrorField name='video.links' errorMessage='Unable to process link' /> */}
         {/* {addVideoLink && linkArray.map((e, i) => <div key={i}>{e}</div>)} */}
         {videoLinksAdded > 0 && <VideoLink
           form={this.props.form}
