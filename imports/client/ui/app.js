@@ -189,7 +189,10 @@ class App extends Component {
                 <Route exact path="/partners" component={Partners} />
                 <Route exact path="/whitepaper" component={Whitepaper} />
                 <Route exact path="/faq" component={Faq} />
-                <Route exact path="/about" component={About} />
+                <Route
+                  exact
+                  path="/about"
+                  render={props => <About {...props} {...dcsProps}/>} />
                 <Route path="/map" component={Map_} />
                 <Route path="*" render={this.renderNewEvent} />
                 <Route exact path="/thank-you" component={CongratsModal} />
