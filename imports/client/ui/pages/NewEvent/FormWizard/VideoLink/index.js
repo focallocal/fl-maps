@@ -19,13 +19,13 @@ class VideoLink extends Component {
     return (
       <div className='video'>
         <AutoField
-          name='video.links.$.host'
+          // name='video.links.$.host'
           value={host}
           onChange={value => this.selectHost(value)}
         />
         <AutoField
           className="videoAddress"
-          name='video.links.$.address'
+          name={this.props.name}
           value={address}
           onChange={value => this.handleChange(value)}
         />
@@ -47,14 +47,14 @@ class VideoLink extends Component {
     })
   }
 
-  componentDidUpdate (prevProps, prevState) {
-    if (prevState !== this.state) {
-      const { form, linkId } = this.props
-      let links = form.getModel().video.links || []
-      links[linkId] = this.state
-      form.change('video.links', links)
-    }
-  }
+  // componentDidUpdate (prevProps, prevState) {
+  //   if (prevState !== this.state) {
+  //     const { form, linkId } = this.props
+  //     let links = form.getModel().video.links || []
+  //     links[linkId] = this.state
+  //     form.change('video.links', links)
+  //   }
+  // }
 }
 
 VideoLink.propTypes = {
