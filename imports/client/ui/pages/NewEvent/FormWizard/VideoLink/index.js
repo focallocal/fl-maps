@@ -15,7 +15,6 @@ class VideoLink extends Component {
   }
   render () {
     const { host, address } = this.state
-    console.log(address)
 
     return (
       <div className='video'>
@@ -54,7 +53,6 @@ class VideoLink extends Component {
       let links = form.getModel().video.links || []
       links[linkId] = this.state
       form.change('video.links', links)
-      console.log(links)
     }
   }
 }
