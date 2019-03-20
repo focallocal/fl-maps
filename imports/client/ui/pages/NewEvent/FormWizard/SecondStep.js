@@ -144,14 +144,17 @@ class SecondStep extends Component {
         {videoLinksAdded > 0 && <VideoLink
           form={this.props.form}
           linkId={1}
+          name='video.link1'
         />}
         {videoLinksAdded > 1 && <VideoLink
           form={this.props.form}
           linkId={2}
+          name='video.link2'
         />}
         {videoLinksAdded > 2 && <VideoLink
           form={this.props.form}
           linkId={3}
+          name='video.link3'
         />}
 
         <AutoField className='pageDetails' name='engagement.limit' />
@@ -164,18 +167,16 @@ class SecondStep extends Component {
       this.setState({ videoLinksAdded: 1 })
     } else {
       this.setState({ videoLinksAdded: 0 })
-      formModel.resetVideoArray(this.props.form)
+      // formModel.resetVideoArray(this.props.form)
     }
   }
 
   addLink = () => {
     this.setState({ videoLinksAdded: this.state.videoLinksAdded + 1 })
-    formModel.pushVideoArray(this.props.form)
   }
 
   removeLink = () => {
     this.setState({ videoLinksAdded: this.state.videoLinksAdded - 1 })
-    formModel.popVideoArray(this.props.form)
   }
 
   resetEndDate = () => {

@@ -435,8 +435,8 @@ const EventsSchema = new SimpleSchema({
     type: Number,
     defaultValue: 0
   },
-  'video.links': {
-    type: Array,
+  'video.link1': {
+    type: String,
     optional: true,
     autoValue: function () {
       if (this.field('includesVideo').value === 0) {
@@ -444,29 +444,22 @@ const EventsSchema = new SimpleSchema({
       }
     }
   },
-  'video.links.$': {
-    type: Object,
+  'video.link2': {
+    type: String,
     optional: true,
     autoValue: function () {
-      if (this.value === undefined) return null
+      if (this.field('includesVideo').value === 0) {
+        return null
+      }
     }
   },
-  'video.links.$.host': {
+  'video.link3': {
     type: String,
     optional: true,
-    allowedValues: videoHosts.map((e) => e.host),
-    uniforms: {
-      customType: 'select',
-      label: labels.video.host
-    }
-  },
-  'video.links.$.address': {
-    type: String,
-    custom: function () {
-      if (this.siblingField('host').value && !this.value) return 'required'
-    },
-    uniforms: {
-      label: null
+    autoValue: function () {
+      if (this.field('includesVideo').value === 0) {
+        return null
+      }
     }
   },
   'createdAt': {
