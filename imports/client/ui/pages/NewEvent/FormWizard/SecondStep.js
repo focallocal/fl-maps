@@ -24,6 +24,7 @@ class SecondStep extends Component {
     const { form } = this.props
     
     const RadioButton = this.RadioButton
+    const VideoEntry = this.VideoEntry
 
     let { openEndDate, videoLinksAdded } = this.state
     const {
@@ -137,47 +138,9 @@ class SecondStep extends Component {
               </Button>
             </div>
           )}
-        {/* <ErrorField name='video.links' errorMessage='Unable to process link' /> */}
-        {/* {addVideoLink && linkArray.map((e, i) => <div key={i}>{e}</div>)} */}
-        {videoLinksAdded > 0 && (
-          <Fragment>
-            <VideoLink
-              form={this.props.form}
-              linkId={1}
-              name='video.link1'
-            />
-            <ErrorField
-              name='video.link1.address'
-              errorMessage='Invalid URL, please ensure it conforms to the example shown'
-            />
-          </Fragment>
-        )}
-        {videoLinksAdded > 1 && (
-          <Fragment>
-            <VideoLink
-              form={this.props.form}
-              linkId={2}
-              name='video.link2'
-            />
-            <ErrorField
-              name='video.link2.address'
-              errorMessage='Invalid URL, please ensure it conforms to the example shown'
-            />
-          </Fragment>
-        )}
-        {videoLinksAdded > 2 && (
-          <Fragment>
-            <VideoLink
-              form={this.props.form}
-              linkId={3}
-              name='video.link3'
-            />
-            <ErrorField
-              name='video.link3.address'
-              errorMessage='Invalid URL, please ensure it conforms to the example shown'
-            />
-          </Fragment>
-        )}
+        {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
+        {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
+        {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
 
         <AutoField className='pageDetails' name='engagement.limit' />
       </div>
@@ -205,6 +168,23 @@ class SecondStep extends Component {
     // NOTE: for special category events, this resets their ending date to standard
     this.setState({ openEndDate: false })
   }
+
+  // DESCRIPTION: Node fragment that point to VideoLink component
+  // This includes entry fields for hostname and url
+  // Also includes error that displays when url is incorrect on submit
+  VideoEntry = ({ id, form }) => (
+    <Fragment>
+      <VideoLink
+        form={form}
+        linkId={id}
+        name='video.link1'
+      />
+      <ErrorField
+        name='video.link1.address'
+        errorMessage='Invalid URL, please ensure it conforms to the example shown'
+      />
+    </Fragment>
+  )
 
   RadioButton = ({ label, id, value, type }) => (
     <CustomInput
