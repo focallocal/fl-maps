@@ -80,3 +80,15 @@ export function determinePosition (month) {
 
   return position
 }
+
+export const videoHosts = [
+  { host: 'Youtube', prefix: 'https://www.youtube.com/watch?v=' },
+  { host: 'Facebook', prefix: 'https://www.facebook.com/facebook/videos/' },
+  // { host: 'Soundcloud', prefix: '' }, <-- currently disabled as this is audio only
+  { host: 'Streamable', prefix: 'https://streamable.com/' },
+  { host: 'Vimeo', prefix: 'https://vimeo.com/' },
+  { host: 'Wistia', prefix: 'https://home.wistia.com/medias/' },
+  { host: 'Twitch', prefix: 'https://www.twitch.tv/videos/' },
+  { host: 'DailyMotion', prefix: 'https://www.dailymotion.com/video/' },
+  { host: 'Direct Link - mp4/ogv/webm/m3u8/mpd', prefix: '' }
+]

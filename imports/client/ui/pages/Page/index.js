@@ -141,7 +141,8 @@ class Page extends Component {
       description,
       name,
       organiser,
-      when
+      when,
+      video
     } = data
 
     const {
@@ -173,12 +174,12 @@ class Page extends Component {
         <div className='header'>
           <VideoPlayer
             categories={c}
+            video={video}
           />
         </div>
 
         <Container className='body'>
           <Row>
-
             <Col xs={7} className='left'>
               <div className='title-wrapper'>
                 <div className='title'>{name}</div>

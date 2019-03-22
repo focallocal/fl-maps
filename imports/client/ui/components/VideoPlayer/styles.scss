@@ -3,10 +3,18 @@
   height: 100%;
   padding-top: 56.25%;
   overflow: hidden;
+
   .videoPlayer {
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  #ytSubscribeBtn {
+    position: absolute;
+    z-index: 100;
+    left: 10px;
+    bottom: 10px;
   }
 
 }

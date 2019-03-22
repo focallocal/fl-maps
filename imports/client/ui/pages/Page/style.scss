@@ -11,6 +11,12 @@ $titles-color: #fff;
     height: 25vw;
     min-height: 250px;
     padding: 15px;
+
+    .subscribe {
+      align-self: flex-end;
+      z-index: 100;
+      right: 0;
+    }
   }
 
   .body {
