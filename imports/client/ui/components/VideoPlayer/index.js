@@ -1,12 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import ReactPlayer from 'react-player'
 import './styles.scss'
 import allPlaylists from '/imports/both/i18n/en/video.json'
+import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe'
 
 class VideoPlayer extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      // NOTE: this is the 'shuffle' toggle
+      // when set to true player will reload with new random video
       nextVideo: false
     }
   }
@@ -22,7 +25,7 @@ class VideoPlayer extends Component {
   }
 
   render () {
-    const { categories } = this.props
+    const { categories, video } = this.props
 
     return (
       <div
@@ -30,25 +33,31 @@ class VideoPlayer extends Component {
       >
         <ReactPlayer
           className="videoPlayer"
-          url={buildURL(categories)}
+          url={buildURL(categories, video)}
           width='100%'
           height='100%'
           volume={0.5}
           playing
-          // onEnded={this.setState({ nextVideo: true })}
           onEnded={() => {
             this.setState({ nextVideo: true })
           }}
         />
+        {!video && <Subscribe className="subscribe" />}
       </div>
     )
   }
 }
 
-function buildURL (categories) {
+function buildURL (categories, video) {
+  // if user has saved their own video(s)
+  if (video) {
+    const playlist = Object.values(video).map(e => e.address)
+    return getRandomVideo(playlist.filter(e => e !== undefined))
+  }
+  // else use focallocal videos
   const playlist = generatePlaylist(allPlaylists, categories, [])
-  const video = getRandomVideo(playlist)
-  const url = `https://www.youtube.com/watch?v=${video}&modestbranding=1&rel=0&disablekb=1`
+  const videoID = getRandomVideo(playlist)
+  const url = `https://www.youtube.com/watch?v=${videoID}&modestbranding=1&rel=0&disablekb=1`
   return url
 }
 
