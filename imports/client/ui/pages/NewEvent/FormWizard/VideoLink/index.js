@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-// import { FormGroup, Input, Label } from 'reactstrap'
+import { FormGroup, Input, Label } from 'reactstrap'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import { videoHosts } from '/imports/both/collections/events/helpers/index.js'
 import './styles.scss'
@@ -10,7 +10,8 @@ class VideoLink extends Component {
     super(props)
     this.state = {
       host: '',
-      address: ''
+      address: '',
+      open: false,
     }
   }
   render () {
@@ -19,15 +20,13 @@ class VideoLink extends Component {
     return (
       <div className='video'>
         <AutoField
-          // name='video.links.$.host'
-          value={host}
-          onChange={value => this.selectHost(value)}
+          name={`${this.props.name}.host`}
+          // onClick={this.setState({ open: !this.state.open})} <-- causes a loop
         />
         <AutoField
           className="videoAddress"
-          name={this.props.name}
-          value={address}
-          onChange={value => this.handleChange(value)}
+          name={`${this.props.name}.address`}
+          // placeholder={this.fetchVideoURL(1, this.props.form)} <-- not updating dynamically... force re-render on host select?
         />
       </div>
     )
@@ -39,6 +38,19 @@ class VideoLink extends Component {
       host: value,
       address: videoHostPrefix
     })
+  }
+
+  fetchVideoURL = (id, form) => {
+    const link = id === 1 ? form.getModel().video.link1 :
+      id === 2 ? form.getModel().video.link2 :
+        form.getModel().video.link3
+    if (link === undefined) {
+      return ''
+    }
+    if (videoHosts.find(e => e.host === link.host.value) === undefined) {
+      return ''
+    }
+    return videoHosts.find(e => e.host === link.host.value).prefix
   }
 
   handleChange = (value) => {

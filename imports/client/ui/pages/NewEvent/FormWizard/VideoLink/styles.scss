@@ -3,5 +3,17 @@
 
   div {
     margin-bottom: 0;
+
+    label {
+      display: none;
+    }
+
+    div {
+      font-size: 12px;
+    }
+
+    input {
+      font-size: 12px;
+    }
   }
 }
