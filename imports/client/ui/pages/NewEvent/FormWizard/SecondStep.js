@@ -177,10 +177,10 @@ class SecondStep extends Component {
       <VideoLink
         form={form}
         linkId={id}
-        name='video.link1'
+        name={`video.link${id}`}
       />
       <ErrorField
-        name='video.link1.address'
+        name={`video.link${id}.address`}
         errorMessage='Invalid URL, please ensure it conforms to the example shown'
       />
     </Fragment>
