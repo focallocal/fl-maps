@@ -8,6 +8,8 @@ class VideoPlayer extends Component {
   constructor (props) {
     super(props)
     this.state = {
+      // NOTE: this is the 'shuffle' toggle
+      // when set to true player will reload with new random video
       nextVideo: false
     }
   }
