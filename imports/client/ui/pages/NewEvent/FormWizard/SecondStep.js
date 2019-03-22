@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { CustomInput, Row, Col, Button } from 'reactstrap'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
@@ -8,6 +8,7 @@ import Recurring from './DateTimeModule/Recurring'
 import WeekDays from './DateTimeModule/WeekDays'
 import VideoLink from './VideoLink'
 import SameDateHours from './SameDateHours'
+import { videoHosts } from '/imports/both/collections/events/helpers'
 
 class SecondStep extends Component {
   constructor(props) {
@@ -138,21 +139,45 @@ class SecondStep extends Component {
           )}
         {/* <ErrorField name='video.links' errorMessage='Unable to process link' /> */}
         {/* {addVideoLink && linkArray.map((e, i) => <div key={i}>{e}</div>)} */}
-        {videoLinksAdded > 0 && <VideoLink
-          form={this.props.form}
-          linkId={1}
-          name='video.link1'
-        />}
-        {videoLinksAdded > 1 && <VideoLink
-          form={this.props.form}
-          linkId={2}
-          name='video.link2'
-        />}
-        {videoLinksAdded > 2 && <VideoLink
-          form={this.props.form}
-          linkId={3}
-          name='video.link3'
-        />}
+        {videoLinksAdded > 0 && (
+          <Fragment>
+            <VideoLink
+              form={this.props.form}
+              linkId={1}
+              name='video.link1'
+            />
+            <ErrorField
+              name='video.link1.address'
+              errorMessage='Invalid URL, please ensure it conforms to the example shown'
+            />
+          </Fragment>
+        )}
+        {videoLinksAdded > 1 && (
+          <Fragment>
+            <VideoLink
+              form={this.props.form}
+              linkId={2}
+              name='video.link2'
+            />
+            <ErrorField
+              name='video.link2.address'
+              errorMessage='Invalid URL, please ensure it conforms to the example shown'
+            />
+          </Fragment>
+        )}
+        {videoLinksAdded > 2 && (
+          <Fragment>
+            <VideoLink
+              form={this.props.form}
+              linkId={3}
+              name='video.link3'
+            />
+            <ErrorField
+              name='video.link3.address'
+              errorMessage='Invalid URL, please ensure it conforms to the example shown'
+            />
+          </Fragment>
+        )}
 
         <AutoField className='pageDetails' name='engagement.limit' />
       </div>
