@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import ReactPlayer from 'react-player'
 import './styles.scss'
 import allPlaylists from '/imports/both/i18n/en/video.json'
+import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe'
 
 class VideoPlayer extends Component {
   constructor (props) {
@@ -39,8 +40,7 @@ class VideoPlayer extends Component {
             this.setState({ nextVideo: true })
           }}
         />
-        {/* <SubscribeButton />
-        {!video && <SubscribeButton/>} */}
+        {!video && <Subscribe className="subscribe" />}
       </div>
     )
   }
