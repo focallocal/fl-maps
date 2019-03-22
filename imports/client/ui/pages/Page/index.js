@@ -7,7 +7,6 @@ import { formatCategories } from '/imports/client/utils/format'
 import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import VideoPlayer from '/imports/client/ui/components/VideoPlayer'
-import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import EditPage from './Edit'
 // import AttendingButton from './AttendingButton'  <-- currently disabled
@@ -181,9 +180,7 @@ class Page extends Component {
 
         <Container className='body'>
           <Row>
-
             <Col xs={7} className='left'>
-              <Subscribe />
               <div className='title-wrapper'>
                 <div className='title'>{name}</div>
                 <div className='sub-title-categories'>{categories}</div>
