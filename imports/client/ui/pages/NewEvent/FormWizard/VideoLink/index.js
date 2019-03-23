@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { FormGroup, Input, Label } from 'reactstrap'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import { videoHosts } from '/imports/both/collections/events/helpers/index.js'
+import labels from '/imports/both/i18n/en/new-event-modal.json'
 import './styles.scss'
 
 class VideoLink extends Component {
@@ -26,7 +27,7 @@ class VideoLink extends Component {
         <AutoField
           className="videoAddress"
           name={`${this.props.name}.address`}
-          // placeholder={this.fetchVideoURL(1, this.props.form)} <-- not updating dynamically... force re-render on host select?
+          placeholder={labels.video.address}
         />
       </div>
     )
