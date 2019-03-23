@@ -25,6 +25,7 @@ class SecondStep extends Component {
     
     const RadioButton = this.RadioButton
     const VideoEntry = this.VideoEntry
+    const VideoButtons = this.VideoButtons
 
     let { openEndDate, videoLinksAdded } = this.state
     const {
@@ -105,7 +106,10 @@ class SecondStep extends Component {
           type='radio'
         />
         {repeat && <Recurring form={form} />}
+
+        {/* Additional text description & attendee limit */}
         <AutoField className='pageDetails' name='description' />
+        <AutoField className='pageDetails' name='engagement.limit' />
 
         {/* Add video link(s) */}
         <CustomInput
@@ -117,32 +121,14 @@ class SecondStep extends Component {
           checked={videoLinksAdded > 0}
           onClick={this.toggleLinks}
         />
-          {videoLinksAdded > 0 && (
-            <div className='videoButtons'>
-              <Button
-                outline
-                color='secondary'
-                className='addLink'
-                onClick={this.addLink}
-                disabled={videoLinksAdded > 2}
-              >
-                Add Another Link
-              </Button>
-              <Button
-                outline
-                color='secondary'
-                className='removeLink'
-                onClick={this.removeLink}
-              >
-                Remove Last Link
-              </Button>
-            </div>
-          )}
         {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
         {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
         {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
-
-        <AutoField className='pageDetails' name='engagement.limit' />
+        {videoLinksAdded > 0 && <VideoButtons
+          videoLinksAdded={videoLinksAdded}
+          addLink={this.addLink}
+          removeLink={this.removeLink}
+        />}
       </div>
     )
   }
@@ -169,7 +155,7 @@ class SecondStep extends Component {
     this.setState({ openEndDate: false })
   }
 
-  // DESCRIPTION: Node fragment that point to VideoLink component
+  // DESC: Node fragment that point to VideoLink component
   // This includes entry fields for hostname and url
   // Also includes error that displays when url is incorrect on submit
   VideoEntry = ({ id, form }) => (
@@ -184,6 +170,29 @@ class SecondStep extends Component {
         errorMessage='Invalid URL, please ensure it conforms to the example shown'
       />
     </Fragment>
+  )
+
+  // DESC: Node fragment to add/remove video buttons
+  VideoButtons = ({ videoLinksAdded, addLink, removeLink }) => (
+    <div className='videoButtons'>
+      <Button
+        outline
+        color='secondary'
+        className='addLink'
+        onClick={addLink}
+        disabled={videoLinksAdded > 2}
+      >
+        Add Another Link
+      </Button>
+      <Button
+        outline
+        color='secondary'
+        className='removeLink'
+        onClick={removeLink}
+      >
+        Remove Last Link
+      </Button>
+    </div>
   )
 
   RadioButton = ({ label, id, value, type }) => (

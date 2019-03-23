@@ -443,19 +443,23 @@ const EventsSchema = new SimpleSchema({
     defaultValue: {}
   },
   'video.link1.host': {
+    optional: true,
     type: String,
-    // optional: true,
-    allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+    defaultValue: labels.video.host,
     uniforms: {
       customType: 'select',
-      label: null
-    },
-    defaultValue: labels.video.host
+      label: null,
+      allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+      selectOptions: {
+        url: true
+      },
+    }
   },
   'video.link1.address': {
+    optional: true,
     type: String,
     custom: function () {
-      if (this.siblingField('host').value && this.siblingField('host').value !== 'Select your video host from the dropdown') {
+      if (this.value && this.value !== "") {
         const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
         const prefixServer = videoHosts.find(e => e.host === host).prefix
         const prefixClient = this.value.slice(0, prefixServer.length)
@@ -464,27 +468,30 @@ const EventsSchema = new SimpleSchema({
     },
     uniforms: {
       label: null
-    },
-    defaultValue: labels.video.address
+    }
   },
   'video.link2': {
     type: Object,
     optional: true
   },
   'video.link2.host': {
+    optional: true,
     type: String,
-    // optional: true,
-    allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+    defaultValue: labels.video.host,
     uniforms: {
       customType: 'select',
-      label: null
-    },
-    defaultValue: labels.video.host
+      label: null,
+      allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+      selectOptions: {
+        url: true
+      },
+    }
   },
   'video.link2.address': {
+    optional: true,
     type: String,
     custom: function () {
-      if (this.siblingField('host').value && this.siblingField('host').value !== 'Select your video host from the dropdown') {
+      if (this.value && this.value !== "") {
         const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
         const prefixServer = videoHosts.find(e => e.host === host).prefix
         const prefixClient = this.value.slice(0, prefixServer.length)
@@ -493,27 +500,30 @@ const EventsSchema = new SimpleSchema({
     },
     uniforms: {
       label: null
-    },
-    defaultValue: labels.video.address
+    }
   },
   'video.link3': {
     type: Object,
     optional: true,
   },
   'video.link3.host': {
+    optional: true,
     type: String,
-    // optional: true,
-    allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+    defaultValue: labels.video.host,
     uniforms: {
       customType: 'select',
-      label: null
-    },
-    defaultValue: labels.video.host
+      label: null,
+      allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+      selectOptions: {
+        url: true
+      },
+    }
   },
   'video.link3.address': {
+    optional: true,
     type: String,
     custom: function () {
-      if (this.siblingField('host').value && this.siblingField('host').value !== 'Select your video host from the dropdown') {
+      if (this.value && this.value !== "") {
         const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
         const prefixServer = videoHosts.find(e => e.host === host).prefix
         const prefixClient = this.value.slice(0, prefixServer.length)
@@ -522,8 +532,7 @@ const EventsSchema = new SimpleSchema({
     },
     uniforms: {
       label: null
-    },
-    defaultValue: labels.video.address
+    }
   },
   'createdAt': {
     type: Date,
