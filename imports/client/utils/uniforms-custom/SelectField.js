@@ -32,17 +32,30 @@ class Select_ extends Component {
 
     const {
       googleMaps,
-      multi
+      multi,
+      url
     } = selectOptions
 
     const className = 'select-field ' + (error ? 'error' : '')
 
     let value_ = this.getValues(value)
-
+  
     return (
       <FormGroup className={className}>
         <Label>{label}</Label>
-        {!googleMaps ? (
+        {/* Displays a different kind of dropdown depending on the url and googleMaps props */}
+        {url && (
+          <Select
+            value={value_}
+            options={options}
+            isMulti={multi}
+            isSearchable={false}
+            onChange={this.handleChange}
+            placeholder={''}
+            menuPlacement='top'
+          />
+        )}
+        {!url && !googleMaps && (
           <Select
             value={value_}
             options={options}
@@ -50,8 +63,10 @@ class Select_ extends Component {
             onChange={this.handleChange}
             placeholder={''}
             isSearchable={false}
+            menuPlacement='auto'
           />
-        ) : (
+        )}
+        {googleMaps && (
           <PlacesSearchBox
             onSelect={value => this.handlePlacesChange(value)}
             address={value ? value.name : null}
