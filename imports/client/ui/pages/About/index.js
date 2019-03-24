@@ -3,19 +3,10 @@ import TopImageSection from './TopImageSection'
 import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
 import AboutSection from '../Home/SecondSection'
+import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 class About extends Component {
-  constructor(props) {
-    super()
-    this.state = {
-      data: window.cachedDataForPage,
-      id: props.match.params.id,
-      loaded: false,
-      badges: null
-    }
-  }
-
   componentDidMount () {
     window.__setDocumentTitle('About')
   }
