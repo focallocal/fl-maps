@@ -133,6 +133,12 @@ class App extends Component {
           const pageId = window.location.pathname.substring(prefix.length);
           const tag = "dcs-" + pageId.substring(0, 12).toLowerCase() + "-" + b;
           dcs.gotoTag(tag);
+        } else if (window.location.pathname.startsWith('/')) {
+          const pathname = window.location.pathname
+          const endIndex = pathname.search('\\?') > -1 ? pathname.search('\\?') : pathname.length
+          const tagLocation = pathname.slice(pathname.search('/') + 1, endIndex)
+          const tag = "dcs-" + tagLocation + "-" + b
+          dcs.gotoTag(tag)
         }
       } else if (d) {
         dcs.gotoPath(d);
