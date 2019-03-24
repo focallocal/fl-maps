@@ -133,6 +133,9 @@ class App extends Component {
           const pageId = window.location.pathname.substring(prefix.length);
           const tag = "dcs-" + pageId.substring(0, 12).toLowerCase() + "-" + b;
           dcs.gotoTag(tag);
+        } else if (window.location.pathname.startsWith('/about')) {
+          const tag = "dcs-about-" + b
+          dcs.gotoTag(tag)
         }
       } else if (d) {
         dcs.gotoPath(d);
