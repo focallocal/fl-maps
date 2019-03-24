@@ -17,6 +17,7 @@ import MainMenu from "./includes/MainMenu";
 
 // Pages
 import Home from "./pages/Home";
+import Whitepaper from "./pages/WhitePaper";
 import About from "./pages/About";
 import Team from "./pages/TeamMembers";
 import Partners from "./pages/Partners";
