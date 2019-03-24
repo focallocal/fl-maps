@@ -17,6 +17,7 @@ import MainMenu from "./includes/MainMenu";
 
 // Pages
 import Home from "./pages/Home";
+import Whitepaper from "./pages/WhitePaper";
 import About from "./pages/About";
 import Team from "./pages/TeamMembers";
 import Partners from "./pages/Partners";
@@ -133,6 +134,12 @@ class App extends Component {
           const pageId = window.location.pathname.substring(prefix.length);
           const tag = "dcs-" + pageId.substring(0, 12).toLowerCase() + "-" + b;
           dcs.gotoTag(tag);
+        } else if (window.location.pathname.startsWith('/')) {
+          const pathname = window.location.pathname
+          const endIndex = pathname.search('\\?') > -1 ? pathname.search('\\?') : pathname.length
+          const tagLocation = pathname.slice(pathname.search('/') + 1, endIndex)
+          const tag = "dcs-" + tagLocation + "-" + b
+          dcs.gotoTag(tag)
         }
       } else if (d) {
         dcs.gotoPath(d);
@@ -185,10 +192,11 @@ class App extends Component {
 
               <ScrollToTop>
                 <Route exact path="/(home)?" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/faq" component={Faq} />
                 <Route exact path="/team" component={Team} />
                 <Route exact path="/partners" component={Partners} />
+                <Route exact path="/whitepaper" component={Whitepaper} />
+                <Route exact path="/faq" component={Faq} />
+                <Route exact path="/about" component={About} />
                 <Route path="/map" component={Map_} />
                 <Route path="*" render={this.renderNewEvent} />
                 <Route exact path="/thank-you" component={CongratsModal} />
