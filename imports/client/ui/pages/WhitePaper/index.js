@@ -19,16 +19,34 @@ var markdown = md.render("# Public Happiness Movement Whitepaper \n  \n**Forewor
 
 
 <DCSBalloon balloonId={bal} display={inline} />
+var Remarkable = require('remarkable');
+var md = new Remarkable();
+md.set({
+  breaks: true,
+  linkify: true
+});
 var markdown = md.render("\n10.5 \  \n**Public Happiness Partners \  \n**There is am will also receive a larger share of tokens if they are using the Action Center in our ecosystem to incentivise building and publicising the project.  \n  \n[List of participating cities](https://www.eyecontactexperiment.com/participating-countries) for the 2017 Icountry where few people have joined (obviously this creates an avenue for potential voting abuse and will need to be monitored rigorously until the  \n  ");//"# Welcome to the 1st Draft"
 //console.log(markdown);
 
 
 <DCSBalloon title="12.5" balloonId={bal} display={inline} />
+var Remarkable = require('remarkable');
+var md = new Remarkable();
+md.set({
+  breaks: true,
+  linkify: true
+});
 var markdown = md.render("\n12.5 \  \n**Public Happiness Partners \  \n**There is am will also receive a larger share of tokens if they are using the Action Center in our ecosystem to incentivise building and publicising the project.  \n  \n[List of participating cities](https://www.eyecontactexperiment.com/participating-countries) for the 2017 Icountry where few people have joined (obviously this creates an avenue for potential voting abuse and will need to be monitored rigorously until the  \n  ");//"# Welcome to the 1st Draft"
 //console.log(markdown);
 
 
 <DCSBalloon title="12.5" subtitle="Public Happiness Partners" balloonId={bal} display={inline} />
+var Remarkable = require('remarkable');
+var md = new Remarkable();
+md.set({
+  breaks: true,
+  linkify: true
+});
 var markdown = md.render("There is am will also receive a larger share of tokens if they are using the Action Center in our ecosystem to incentivise building and publicising the project.  \n  \n[List of participating cities](https://www.eyecontactexperiment.com/participating-countries) for the 2017 Icountry where few people have joined (obviously this creates an avenue for potential voting abuse and will need to be monitored rigorously until the  \n  ");//"# Welcome to the 1st Draft"
 //console.log(markdown);
 
