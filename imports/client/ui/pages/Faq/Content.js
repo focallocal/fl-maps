@@ -11,7 +11,7 @@ const Content = () => {
         <h1>Looking for answers?</h1>
         <p>
           Take a look at frequently asked questions
-          <DCSBalloon title="Test Title" subtitle="Test Subtitle" balloonId="bal" display="inline" />
+          <DCSBalloon title="Test Title" subtitle="Test Subtitle" balloonId="bal1" display="inline" />
         </p>
       </Container>
       {i18n.Faq.faq.map((item, index) => {
