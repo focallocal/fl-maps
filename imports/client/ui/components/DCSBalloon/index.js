@@ -79,7 +79,7 @@ class DCSBalloon extends Component {
         <b className={titleClass}>{title}</b>&nbsp;
 
           <span className="dcs-icons">
-          <img src={`/images/dcs-balloon-${balloonId}.png`} />
+          <img src={`/images/dcs-balloon-${balloonId.replace(/[0-9]/g, '')}.png`} />
         </span>
         {badgeCount ? badgeHtml : ''}
         <div>
@@ -98,7 +98,7 @@ export default DCSBalloon
 
 function dcsClickApp(balloonId) {
   if (balloonId) {
-    if (balloonId.length > 3 || balloonId.toLowerCase() !== balloonId) {
+    if (balloonId.replace(/[0-9]/g, '').length > 3 || balloonId.toLowerCase() !== balloonId) {
       throw new Error(`Invalid balloonId "${balloonId}"`);
     }
     changeHistory({
