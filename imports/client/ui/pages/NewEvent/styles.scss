@@ -223,3 +223,30 @@
 .pageDetails {
     margin-top: 15px;
 }
+
+.videoToggle {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 12px;
+
+  label {
+    white-space: pre-line;
+  }
+}
+
+.videoButtons {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  padding: 0px 0px;
+
+    button {
+      margin: 0px 5px;
+      font-size: small;
+    }
+
+    button[disabled] {
+      background-color: white!important;
+      text-decoration: line-through!important;
+    }
+}

@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
-import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate } from './helpers'
+import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate, videoHosts } from './helpers'
 import possibleCategories from '/imports/both/i18n/en/categories.json'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
@@ -426,6 +426,113 @@ const EventsSchema = new SimpleSchema({
   'engagement.attendees.$.name': {
     type: String,
     max: 120
+  },
+  'video': {
+    type: Object,
+    optional: true,
+    // defaultValue: {}
+  },
+
+  // NOTE: Following fields relate to video links added to the event mongodb document
+  // Attempted to create via an Array, but ran into difficulties with uniforms connecting to SimplSchema
+  // Consequently these have been written out as individual numbered fields...
+  // Someone more experienced with SimplSchema may wish to refactor in the future to limit code re-use
+  'video.link1': {
+    type: Object,
+    optional: true,
+    defaultValue: {}
+  },
+  'video.link1.host': {
+    optional: true,
+    type: String,
+    defaultValue: labels.video.host,
+    uniforms: {
+      customType: 'select',
+      label: null,
+      allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+      selectOptions: {
+        url: true
+      },
+    }
+  },
+  'video.link1.address': {
+    optional: true,
+    type: String,
+    custom: function () {
+      if (this.value && this.value !== "") {
+        const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
+        const prefixServer = videoHosts.find(e => e.host === host).prefix
+        const prefixClient = this.value.slice(0, prefixServer.length)
+        if (prefixClient !== prefixServer) return 'required'
+      }
+    },
+    uniforms: {
+      label: null
+    }
+  },
+  'video.link2': {
+    type: Object,
+    optional: true
+  },
+  'video.link2.host': {
+    optional: true,
+    type: String,
+    defaultValue: labels.video.host,
+    uniforms: {
+      customType: 'select',
+      label: null,
+      allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+      selectOptions: {
+        url: true
+      },
+    }
+  },
+  'video.link2.address': {
+    optional: true,
+    type: String,
+    custom: function () {
+      if (this.value && this.value !== "") {
+        const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
+        const prefixServer = videoHosts.find(e => e.host === host).prefix
+        const prefixClient = this.value.slice(0, prefixServer.length)
+        if (prefixClient !== prefixServer) return 'required'
+      }
+    },
+    uniforms: {
+      label: null
+    }
+  },
+  'video.link3': {
+    type: Object,
+    optional: true,
+  },
+  'video.link3.host': {
+    optional: true,
+    type: String,
+    defaultValue: labels.video.host,
+    uniforms: {
+      customType: 'select',
+      label: null,
+      allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
+      selectOptions: {
+        url: true
+      },
+    }
+  },
+  'video.link3.address': {
+    optional: true,
+    type: String,
+    custom: function () {
+      if (this.value && this.value !== "") {
+        const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
+        const prefixServer = videoHosts.find(e => e.host === host).prefix
+        const prefixClient = this.value.slice(0, prefixServer.length)
+        if (prefixClient !== prefixServer) return 'required'
+      }
+    },
+    uniforms: {
+      label: null
+    }
   },
   'createdAt': {
     type: Date,

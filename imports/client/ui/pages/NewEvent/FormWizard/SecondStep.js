@@ -1,32 +1,33 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { CustomInput, Row, Col, Input, Label } from 'reactstrap'
+import { CustomInput, Row, Col, Button } from 'reactstrap'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
 import Recurring from './DateTimeModule/Recurring'
 import WeekDays from './DateTimeModule/WeekDays'
+import VideoLink from './VideoLink'
 import SameDateHours from './SameDateHours'
-
+import { videoHosts } from '/imports/both/collections/events/helpers'
 
 class SecondStep extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      videoLinksAdded: 0,
       openEndDate: this.props.form.getModel().categories.some(e => {
         return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
       })
     }
   }
   render () {
-    const {
-      form
-    } = this.props
-
+    const { form } = this.props
+    
     const RadioButton = this.RadioButton
+    const VideoEntry = this.VideoEntry
+    const VideoButtons = this.VideoButtons
 
-    let { openEndDate } = this.state
-
+    let { openEndDate, videoLinksAdded } = this.state
     const {
       days,
       multipleDays,
@@ -105,43 +106,121 @@ class SecondStep extends Component {
           type='radio'
         />
         {repeat && <Recurring form={form} />}
+
+        {/* Additional text description & attendee limit */}
         <AutoField className='pageDetails' name='description' />
-        <AutoField name='engagement.limit' />
+        <AutoField className='pageDetails' name='engagement.limit' />
+
+        {/* Add video link(s) */}
+        <CustomInput
+          className="videoToggle"
+          id='includesVideo'
+          type='radio'
+          label={`${labels.video.title.firstLine}
+                ${labels.video.title.secondLine}`}
+          checked={videoLinksAdded > 0}
+          onClick={this.toggleLinks}
+        />
+        {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
+        {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
+        {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
+        {videoLinksAdded > 0 && <VideoButtons
+          videoLinksAdded={videoLinksAdded}
+          addLink={this.addLink}
+          removeLink={this.removeLink}
+        />}
       </div>
     )
   }
 
-resetEndDate = () => {
-  // NOTE: for special category events, this resets their ending date to standard
-  this.setState({ openEndDate: false })
-}
+  toggleLinks = () => {
+    if (this.state.videoLinksAdded === 0) {
+      this.setState({ videoLinksAdded: 1 })
+    } else {
+      this.setState({ videoLinksAdded: 0 })
+      // formModel.resetVideoArray(this.props.form)
+    }
+  }
 
-RadioButton = ({ label, id, value, type }) => (
-  <CustomInput
-    id={id}
-    type={type}
-    label={label}
-    checked={value === undefined ? false : value}
-    onChange={() => {}}
-    onClick={() => this.handleRadioButton(id, !value)}
-  />
-)
+  addLink = () => {
+    this.setState({ videoLinksAdded: this.state.videoLinksAdded + 1 })
+  }
 
-handleRadioButton = (type, value) => {
-  const { when } = this.props.form.getModel()
+  removeLink = () => {
+    this.setState({ videoLinksAdded: this.state.videoLinksAdded - 1 })
+  }
 
-  this.props.form.change('when', {
-    ...when,
-    multipleDays: type === 'multipleDays' ? value : false,
-    repeat: type === 'repeat' ? value : false
-  })
+  resetEndDate = () => {
+    // NOTE: for special category events, this resets their ending date to standard
+    this.setState({ openEndDate: false })
+  }
 
-  // Scroll to bottom of modal
-  setTimeout(() => {
-    const modal = document.querySelector('.modal-body')
-    modal.scrollTo(modal, 375)
-  }, 1)
-}
+  // DESC: Node fragment that point to VideoLink component
+  // This includes entry fields for hostname and url
+  // Also includes error that displays when url is incorrect on submit
+  VideoEntry = ({ id, form }) => (
+    <Fragment>
+      <VideoLink
+        form={form}
+        linkId={id}
+        name={`video.link${id}`}
+      />
+      <ErrorField
+        name={`video.link${id}.address`}
+        errorMessage='Invalid URL, please ensure it conforms to the example shown'
+      />
+    </Fragment>
+  )
+
+  // DESC: Node fragment to add/remove video buttons
+  VideoButtons = ({ videoLinksAdded, addLink, removeLink }) => (
+    <div className='videoButtons'>
+      <Button
+        outline
+        color='secondary'
+        className='addLink'
+        onClick={addLink}
+        disabled={videoLinksAdded > 2}
+      >
+        Add Another Link
+      </Button>
+      <Button
+        outline
+        color='secondary'
+        className='removeLink'
+        onClick={removeLink}
+      >
+        Remove Last Link
+      </Button>
+    </div>
+  )
+
+  RadioButton = ({ label, id, value, type }) => (
+    <CustomInput
+      id={id}
+      type={type}
+      label={label}
+      checked={value === undefined ? false : value}
+      onChange={() => {}}
+      onClick={() => this.handleRadioButton(id, !value)}
+    />
+  )
+
+  handleRadioButton = (type, value) => {
+    const { when } = this.props.form.getModel()
+
+    this.props.form.change('when', {
+      ...when,
+      multipleDays: type === 'multipleDays' ? value : false,
+      repeat: type === 'repeat' ? value : false
+    })
+
+    // Scroll to bottom of modal
+    setTimeout(() => {
+      const modal = document.querySelector('.modal-body')
+      modal.scrollTo(modal, 375)
+    }, 1)
+  }
 }
 
 SecondStep.propTypes = {

@@ -1,0 +1,23 @@
+.video {
+  margin-bottom: 12px;
+
+  div {
+    margin-bottom: 0;
+
+    label {
+      display: none;
+    }
+
+    div {
+      font-size: 12px;
+    }
+
+    input {
+      font-size: 12px;
+    }
+    input::placeholder {
+      // color: gray
+      color: rgba(128,128,128, 0.7);
+    }
+  }
+}
