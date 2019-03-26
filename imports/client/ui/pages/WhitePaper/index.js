@@ -15,15 +15,15 @@ const markdownSection2 = md.render("INSERT SECTION 2 HERE")
 const markdownSection3 = md.render("INSERT SECTION 3 HERE")
 const markdownSection4 = md.render("INSERT SECTION 4 HERE")
 
-const index = () => {
+const index = (props) => {
   return (
     <Container className="mt-5">
       <div dangerouslySetInnerHTML={{ __html: markdownSection1 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal" display="inline"/>
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection2 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal" display="inline" />
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection3 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal" display="inline" />
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection4 }} />       
     </Container>
 
