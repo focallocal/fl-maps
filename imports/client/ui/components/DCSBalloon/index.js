@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import qs from 'query-string'
-import history from "../../../utils/history";
-import { dcs } from "../../../utils/dcs-master";
+import history from "../../../utils/history"
+import { dcs } from "../../../utils/dcs-master"
+import './style.scss'
 
 
 /*********************/
@@ -16,7 +17,7 @@ class DCSBalloon extends Component {
     super()
     this.state = {
       selBalloonId: null,
-      badges: null
+      topicCount: null
     }
   }
   
@@ -35,22 +36,19 @@ class DCSBalloon extends Component {
     }
 
     // DOCUSS
-    // Add badges (color circles with topic count)
-    if (!this.state.badges && this.props.dcsTags) {
-      const prefix = `dcs-${this.state.id.substring(0, 12).toLowerCase()}-`
-      const badges = {}
-      this.props.dcsTags.forEach(tag => {
-        if (tag.id.startsWith(prefix)) {
-          const balloonId = tag.id.substring(17)
-          badges[balloonId] = tag.count
-        }
-      })
-      this.setState({ badges })
+    // Add topic count to component state
+    if (prevProps.dcsTags !== this.props.dcsTags) {
+      const pathname = window.location.pathname
+      const endIndex = pathname.search('\\?') > -1 ? pathname.search('\\?') : pathname.length
+      const tagLocation = pathname.slice(pathname.search('/') + 1, endIndex)
+      const prefix = `dcs-${tagLocation}-${this.props.balloonId}`
+      const tag = this.props.dcsTags.find(tag => tag.id.startsWith(prefix))
+      const count = tag? tag.count : 0
+      this.setState({ topicCount: count })
     }
   }
     
   render() {
-
     const {
       title,
       subtitle,
@@ -58,13 +56,13 @@ class DCSBalloon extends Component {
       display
     } = this.props
 
-    const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
+    const topicCount = this.state.topicCount || 0
     const badgeHtml = (
       <span
         className="dcs-badge"
-        title={`This section has ${badgeCount} topic(s)`}
+        title={`This section has ${topicCount} topic(s)`}
       >
-        {badgeCount}
+        {topicCount}
       </span>
     )
 
@@ -81,7 +79,7 @@ class DCSBalloon extends Component {
           <span className="dcs-icons">
           <img src={`/images/dcs-balloon-${balloonId.replace(/[0-9]/g, '')}.png`} />
         </span>
-        {badgeCount ? badgeHtml : ''}
+        {topicCount ? badgeHtml : ''}
         <div>
           <small style={{ marginLeft: '5px', marginRight: '5px', fontSize: '60%' }}>
             {subtitle}
