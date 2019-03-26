@@ -8,6 +8,7 @@ import i18n_ from '/imports/both/i18n/en/map.json'
 // import AttendingButton from './../../../Page/AttendingButton'  <-- currently disabled
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as formatUtils from '/imports/client/utils/format'
+import * as Gravatar from '/imports/client/utils/Gravatar'
 import './styles.scss'
 
 class EventInfo extends Component {
@@ -79,6 +80,7 @@ class EventInfo extends Component {
 
     const categories = formatUtils.formatCategories(event.categories)
     const distance = formatUtils.formatMilesFromLocation(userLocation, event.address.location.coordinates)
+    const gravatar = Gravatar.getGravatar(user.profile.name, 80)
 
     const minimizedClass = minimized ? 'minimized' : ''
     const activeClass = event ? 'active' : ''
@@ -96,6 +98,7 @@ class EventInfo extends Component {
         </header>
 
         <div className='first-section'>
+          <img src={gravatar} class="rounded-circle float-right" alt=""/>
           <div className='title'>{event.name}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
