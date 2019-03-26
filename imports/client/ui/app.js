@@ -191,18 +191,15 @@ class App extends Component {
 
               <ScrollToTop>
                 <Route exact path="/(home)?" component={Home} />
-                <Route exact path="/team" component={Team} />
-                <Route exact path="/partners" component={Partners} />
-                <Route exact path="/whitepaper" component={Whitepaper} />
-                <Route exact path="/faq" component={Faq} />
-                <Route exact path="/about" component={About} />
+                <Route exact path="/team" render={props => <Team {...props} {...dcsProps} />} />
+                <Route exact path="/partners" render={props => <Partners {...props} {...dcsProps} />} />
+                <Route exact path="/whitepaper" render={props => <Whitepaper {...props} {...dcsProps} />} />
+                <Route exact path="/faq" render={props => <Faq {...props} {...dcsProps} />}/>
+                <Route exact path="/about" render={props => <About {...props} {...dcsProps} />}/>
                 <Route path="/map" component={Map_} />
                 <Route path="*" render={this.renderNewEvent} />
                 <Route exact path="/thank-you" component={CongratsModal} />
-                <Route
-                  exact
-                  path="/page/:id"
-                  render={props => <Page {...props} {...dcsProps} />}
+                <Route exact path="/page/:id" render={props => <Page {...props} {...dcsProps} />}
                 />
 
                 <Authentication />
