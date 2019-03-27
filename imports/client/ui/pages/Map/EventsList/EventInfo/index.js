@@ -93,7 +93,7 @@ class EventInfo extends Component {
           <div className='back-btn'>
             <i className='fas fa-long-arrow-alt-left' onClick={this.props.returnToList}/>
           </div>
-          <Button color='secondary' onClick={this.openMoreInfo}>More</Button>
+
         </header>
 
         <div className='first-section'>
@@ -101,6 +101,7 @@ class EventInfo extends Component {
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
           {/*
+            <Button color='secondary' onClick={this.openMoreInfo}>More</Button>
           <Button color='primary' onClick={this.getDirections}>Get Directions</Button>
           */}
           {/* attending button currently inactive until able to work with both maps:
