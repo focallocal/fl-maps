@@ -15,6 +15,7 @@ const getEvents = new ValidatedMethod({
       type: Object,
       optional: true
     },
+    distance: Number,
     'location.lat': Number,
     'location.lng': Number,
     count: {
