@@ -20,8 +20,8 @@ const Contents = () => (
 The World Needs This Because: (v1)<br/>
 The World Needs This Because: (v2)<br/>
 <br/>
-1. Abstract<br/>
-1.1. Background<br/>
+1. <a href="#Abstract">Abstract</a><br/>
+1.1. <a href="Background">Background</a><br/>
 	1.2. Public Happiness Movement Token Introduction<br/>
 <br/>
 2. Problem Statement <br/>
@@ -150,24 +150,21 @@ Note: This white paper is quite long. The most effective way to contribute is by
 
  
 const markdownSection2 = md.render(`
-# Markdown contents
-				   
-The World Needs This Because
-1. [Abstract](#test)
-	1.1. [Background](#test2)
-	1.2. [Public Happiness Movement Token Introduction](#test3)
+<h5><a id="Abstract"></a>Abstract</h5>text
 
-2. [Problem Statement](#test4) 
-	2.1. Issues we aim to solv
-	2.2. Primary Goa
-	2.3. Secondary Goa
-	2.4. Relation to Universal Basic Income
+text
 
-3. Educating the Public about Blockchain
-	3.1. Current State of Public Understanding
+text
 				   `)
 
-const markdownSection3 = md.render(`## test INSERT SECTION 3 HEre`)
+const markdownSection3 = md.render(`
+<h2><a id="Background"></a>Background</h5>text
+
+text
+
+text
+				   
+`)
 const markdownSection4 = md.render(`## test2 INSERT SECTION 3 HEre`)
 const markdownSection5 = md.render(`## test4 INSERT SECTION 3 HEre`)
 const markdownSection6 = md.render(`## Some paragraph <a name="test5"></a>INSERT SECTION 3 HEre`)
