@@ -121,8 +121,8 @@ The World Needs This Because: (v2)<br/>
   
 
 const markdownSection1 = md.render(`
-# Public Happiness Movement Token
-# Whitepaper
+<p style="text-align: center;"># Public Happiness Movement Token</p>
+<p style="text-align: center;"># Whitepaper</p>
 
 **Foreword:**
 
