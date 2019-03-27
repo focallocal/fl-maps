@@ -83,14 +83,14 @@ The World Needs This Because: (v2)<br/>
 	10.8. Collectables<br/>
 <br/>
 11.  Automated Token Distribution Matrix<br/>
-	11.1. Weighted Mining<br/>
-	11.2. Hard Cap<br/>
-	11.3. Adjusting the Balancing<br/>
-	11.4. Token Release<br/>
-	11.5. Mining Table<br/>
-	11.6. Experience Multipliers<br/>
-	11.7. Token Distribution<br/>
-	11.8. Further Matrix Considerations<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. Weighted Mining<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.2. Hard Cap<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.3. Adjusting the Balancing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. Token Release<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. Mining Table<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.6. Experience Multipliers<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.7. Token Distribution<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; 11.8. Further Matrix Considerations<br/>
  <br/>
 12. Team<br/>
 	12.1. Current Team Members<br/>
@@ -157,7 +157,7 @@ The World Needs This Because
 	1.1. [Background](#test2)
 	1.2. [Public Happiness Movement Token Introduction](#test3)
 
-2. Problem Statement 
+2. [Problem Statement](#test4) 
 	2.1. Issues we aim to solv
 	2.2. Primary Goa
 	2.3. Secondary Goa
@@ -167,9 +167,9 @@ The World Needs This Because
 	3.1. Current State of Public Understanding
 				   `)
 
-const markdownSection3 = md.render(`## Some paragraph <a name="test"></a>INSERT SECTION 3 HEre`)
-const markdownSection4 = md.render(`## Some paragraph <a name="test2"></a>INSERT SECTION 3 HEre`)
-const markdownSection5 = md.render(`## Some paragraph <a name="test4"></a>INSERT SECTION 3 HEre`)
+const markdownSection3 = md.render(`## test INSERT SECTION 3 HEre`)
+const markdownSection4 = md.render(`## test2 INSERT SECTION 3 HEre`)
+const markdownSection5 = md.render(`## test4 INSERT SECTION 3 HEre`)
 const markdownSection6 = md.render(`## Some paragraph <a name="test5"></a>INSERT SECTION 3 HEre`)
 const markdownSection7 = md.render(`## Some paragraph <a name="test6"></a>INSERT SECTION 3 HEre`)
 const markdownSection8 = md.render(`## Some paragraph <a name="test7"></a>INSERT SECTION 3 HEre`)
