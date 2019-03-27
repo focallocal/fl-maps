@@ -3,4 +3,14 @@ import { Container } from "reactstrap";
 
 
 
-export default index;
+ const index = () => {
+  return (
+    <Container className="mt-5">
+      <div>Just a Placeholder Page</div>
+    </Container>
+
+   );
+};
+
+
+ export default index; 
