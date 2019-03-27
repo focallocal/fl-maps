@@ -98,7 +98,7 @@ The World Needs This Because: (v2)<br/>
 	12.3. Remuneration
 	12.4. Facilities 
  
-13. Platform Technical's
+13. Platform Technicals
 	13.1. Crypto Linking Bridges
 	13.2. Trello vs Wekan vs Other Solutions
 	13.3. Leaflet.js vs Google Maps API
