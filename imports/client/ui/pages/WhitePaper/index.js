@@ -167,21 +167,21 @@ The World Needs This Because
 	3.1. Current State of Public Understanding
 				   `)
 
-const markdownSection3 = md.render(`## Some paragraph <a name="test"></a>"INSERT SECTION 3 HEre`)
-const markdownSection4 = md.render(`## Some paragraph <a name="test2"></a>"INSERT SECTION 3 HEre`)
-const markdownSection5 = md.render(`## Some paragraph <a name="test4"></a>"INSERT SECTION 3 HEre`)
-const markdownSection6 = md.render(`## Some paragraph <a name="test5"></a>"INSERT SECTION 3 HEre`)
-const markdownSection7 = md.render(`## Some paragraph <a name="test6"></a>"INSERT SECTION 3 HEre`)
-const markdownSection8 = md.render(`## Some paragraph <a name="test7"></a>"INSERT SECTION 3 HEre`)
-const markdownSection9 = md.render(`## Some paragraph <a name="test8"></a>"INSERT SECTION 3 HEre`)
-const markdownSection10 = md.render(`## Some paragraph <a name="test9"></a>"INSERT SECTION 3 HEre`)
-const markdownSection11 = md.render(`## Some paragraph <a name="test10"></a>"INSERT SECTION 3 HEre`)
-const markdownSection12 = md.render(`## Some paragraph <a name="test11"></a>"INSERT SECTION 3 HEre`)
-const markdownSection13 = md.render(`## Some paragraph <a name="test12"></a>"INSERT SECTION 3 HEre`)
-const markdownSection14 = md.render(`## Some paragraph <a name="test13"></a>"INSERT SECTION 3 HEre`)
-const markdownSection15 = md.render(`## Some paragraph <a name="test14"></a>"INSERT SECTION 3 HEre`)
-const markdownSection16 = md.render(`## Some paragraph <a name="test15"></a>"INSERT SECTION 3 HEre`)
-const markdownSection17 = md.render(`## Some paragraph <a name="test16"></a>"INSERT SECTION 3 HEre`)
+const markdownSection3 = md.render(`## Some paragraph <a name="test"></a>INSERT SECTION 3 HEre`)
+const markdownSection4 = md.render(`## Some paragraph <a name="test2"></a>INSERT SECTION 3 HEre`)
+const markdownSection5 = md.render(`## Some paragraph <a name="test4"></a>INSERT SECTION 3 HEre`)
+const markdownSection6 = md.render(`## Some paragraph <a name="test5"></a>INSERT SECTION 3 HEre`)
+const markdownSection7 = md.render(`## Some paragraph <a name="test6"></a>INSERT SECTION 3 HEre`)
+const markdownSection8 = md.render(`## Some paragraph <a name="test7"></a>INSERT SECTION 3 HEre`)
+const markdownSection9 = md.render(`## Some paragraph <a name="test8"></a>INSERT SECTION 3 HEre`)
+const markdownSection10 = md.render(`## Some paragraph <a name="test9"></a>INSERT SECTION 3 HEre`)
+const markdownSection11 = md.render(`## Some paragraph <a name="test10"></a>INSERT SECTION 3 HEre`)
+const markdownSection12 = md.render(`## Some paragraph <a name="test11"></a>INSERT SECTION 3 HEre`)
+const markdownSection13 = md.render(`## Some paragraph <a name="test12"></a>INSERT SECTION 3 HEre`)
+const markdownSection14 = md.render(`## Some paragraph <a name="test13"></a>INSERT SECTION 3 HEre`)
+const markdownSection15 = md.render(`## Some paragraph <a name="test14"></a>INSERT SECTION 3 HEre`)
+const markdownSection16 = md.render(`## Some paragraph <a name="test15"></a>INSERT SECTION 3 HEre`)
+const markdownSection17 = md.render(`## Some paragraph <a name="test16"></a>INSERT SECTION 3 HEre`)
 				   
 
 
@@ -192,15 +192,16 @@ const index = (props) => {
     <Container className="mt-5">
 			<Contents />
       <div dangerouslySetInnerHTML={{ __html: markdownSection1 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon title="The World Needs This Because V1" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection2 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="ba1" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection3 }} />
       <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection4 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="ba1" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection5 }} />      
     </Container>
+
 
   );
 };
