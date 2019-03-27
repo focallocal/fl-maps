@@ -42,6 +42,7 @@ class VideoPlayer extends Component {
             this.setState({ nextVideo: true })
           }}
         />
+        <div className="subscribeOverlay">Subscribe</div>
         {!video && <Subscribe className="subscribe" />}
       </div>
     )
