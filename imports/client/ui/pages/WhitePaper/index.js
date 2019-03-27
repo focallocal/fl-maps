@@ -12,7 +12,7 @@ md.set({
 });
 
 
-return (
+const Contents = () => (
    <React.Fragment>
        <h2 className='title'>Welcome to the 1st Draft!</h2>
        <div className="contentspage">
@@ -117,11 +117,10 @@ The World Needs This Because: (v2)<br/>
  </p>
   </div>
  </React.Fragment>
- );
-}
+ )
   
 
-const markdownSection1 = md.render("
+const markdownSection1 = md.render(`
 #Public Happiness Movement Token
 #Whitepaper
 
@@ -146,7 +145,7 @@ Our community of volunteers has been gradually building a platform to host this 
 
 It's provides a space for our individual networks to grow into something larger. A global movement for a world with more peace and happiness in it. We’ve reached the point where it is ready to begin hosting communities who will contribute to it governance and improving the platform. You can take a look here: [focallocal.org ](https://focallocal.org)
 
-Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons.")
+Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons.`)
 
  
 const markdownSection2 = md.render("INSERT SECTION 2 HERE")
@@ -156,6 +155,7 @@ const markdownSection4 = md.render("INSERT SECTION 4 HERE")
 const index = (props) => {
   return (
     <Container className="mt-5">
+			<Contents />
       <div dangerouslySetInnerHTML={{ __html: markdownSection1 }} />
       <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection2 }} />
