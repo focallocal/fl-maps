@@ -145,10 +145,11 @@ Our community of volunteers has been gradually building a platform to host this 
 
 It's provides a space for our individual networks to grow into something larger. A global movement for a world with more peace and happiness in it. We’ve reached the point where it is ready to begin hosting communities who will contribute to it governance and improving the platform. You can take a look here: [focallocal.org ](https://focallocal.org)
 
-Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons.`)
+Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons.
+`)
 
  
-const markdownSection2 = md.render("
+const markdownSection2 = md.render(`
 # Markdown contents
 				   
 The World Needs This Because
@@ -164,11 +165,27 @@ The World Needs This Because
 
 3. Educating the Public about Blockchain
 	3.1. Current State of Public Understanding
-				   ")
+				   `)
 
-const markdownSection3 = md.render("## Some paragraph <a name="test"></a>INSERT SECTION 3 HEre")
-const markdownSection4 = md.render("## Some paragraph <a name="test2"></a>INSERT SECTION 3 HEre"")
-const markdownSection5 = md.render("## Some paragraph <a name="test3"></a>INSERT SECTION 3 HEre"")
+const markdownSection3 = md.render(`## Some paragraph <a name="test"></a>"INSERT SECTION 3 HEre`)
+const markdownSection4 = md.render(`## Some paragraph <a name="test2"></a>"INSERT SECTION 3 HEre`)
+const markdownSection5 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection6 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection7 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection8 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection9 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection10 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection11 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection12 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection13 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection14 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection15 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection16 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+const markdownSection17 = md.render(`## Some paragraph <a name="test3"></a>"INSERT SECTION 3 HEre`)
+				   
+
+
+
 
 const index = (props) => {
   return (
@@ -177,11 +194,11 @@ const index = (props) => {
       <div dangerouslySetInnerHTML={{ __html: markdownSection1 }} />
       <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection2 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="ba1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection3 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection4 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="ba1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection5 }} />      
     </Container>
 
