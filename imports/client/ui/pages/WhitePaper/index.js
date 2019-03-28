@@ -738,6 +738,8 @@ Users are all welcome to comment their argument in the threads for and against, 
 Stage 4:
 After reading the topic users can vote on the topic ‘for’ or ‘against’ the change. If the ‘for’ topic receives more than 60% of votes, after weighting is applied, the change is agreed and will be implemented.
 
+
+
 Protection from Brigading: 
 Users votes are weighted based on the reputation they’ve built by contributing to our project, so those most closely aligned and invested to the vision laid out in the community values will have more influence on decision making as a counter to anyone seeking to manipulate voting. 
 
@@ -786,7 +788,6 @@ The culture of a community built from members focused on creating ‘social good
 Our ‘Bounty Hunting’ model incentivises users to monitor unusual behaviour patterns, and to find external groups coordinating action outside of the scrutiny of the wider community. Then to report it bringing it to everyone's attention. 
 
 3rd Line: 
-
 On-chain governance usually means influence can be bought. Instead a weighted governance model is created based on a users contributions to the mission and ecosystem. Thereby those most committed to the vision will become the ones with most influence in guiding it. Most of the platform and ecosystem will become open to redesign by community voting. 
 
 Some aspects should be protected by the founding members to safeguard from potential attacks and degradation of the initial vision, for example; the Core Values can be influenced by a vote calling for an improvement, but not changed directly. The founders would need to give an extremely strong reason for resisting a popular change, or risk undermining the trust of their community.
@@ -1005,7 +1006,9 @@ Collectables will be created for special activities a user joins in, and also la
 `)
 
 const markdownSection53 = md.render(`
-
+ 
+ 
+ 
 The platform automates rewards for completing tasks which work towards maintaining and improving the operation of our ecosystem. Advancing our Movement's mission of creating more friendliness, peace and happiness in this world. This requires the building of the Automated Token Distribution Matrix outlined below.
 
 `)
