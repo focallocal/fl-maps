@@ -135,8 +135,8 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 
 const markdownSection103 = md.render(`
-<br />
-<br />
+<br>
+<br>
 **Foreword:**
 I've lived about as frugal a life as is possible in the Western World because I've always disliked money.  It so often seems to have a negative effect on people and society.
 
@@ -565,8 +565,8 @@ The Focallocal Community built this ‘Public Happiness Movement’ platform and
 `)
 
 const markdownSection22 = md.render(` 
-<br />
-<br />
+<br>
+<br>
 The Public Happiness Movement platform currently exists as a website located at https://focallocal.org. If you’ve visited it you’ve probably noticed it is currently a highly fragmented site/platform. This is intentional, the platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective  decentralised Public Happiness platform. who will use the tools available to redesign and reshape the platform to better fit their collective needs.
 
 Focallocal.org, the platform, is also available as an iOS and Android app.
@@ -1006,8 +1006,8 @@ Collectables will be created for special activities a user joins in, and also la
 `)
 
 const markdownSection53 = md.render(`
-<br />
-<br />
+<br>
+<br>
 The platform automates rewards for completing tasks which work towards maintaining and improving the operation of our ecosystem. Advancing our Movement's mission of creating more friendliness, peace and happiness in this world. This requires the building of the Automated Token Distribution Matrix outlined below.
 
 `)
