@@ -263,10 +263,10 @@ Our Public Happiness activities and projects get people onto the streets reachin
 Educating the Public: 
 We demonstrate how cryptocurrencies can impact people’s daily lives and communities in a positive way, and teach them how they can engage with it. Using our network and platform we will lead new users on a journey of discovery, culminating in a greater understanding of the world of blockchain and decentralisation.
 ---
-Decentralising Governance:
+Decentralised Governance:
 Our platform creates a decentralised self-governing and evolving community focused on positive cultural change. Grandfathering in a reputation weighted community voting system and gradually opening up all areas of the project to decentralised governance, while maintaining a clear direction by guiding members to weigh all decisions against a [Community Values ](https://news.focallocal.org/the-focallocal-community-values/)statement which all users agree to upon joining the community. 
 
-Our ecosystem and mission rewards positive behaviour towards each other and society with a higher influence on voting, ensuring a governance culture rooted in that positivity which is resistant to attempts to subvert the token/original mission; as has befallen other decentralised projects.
+Our ecosystem and mission rewards positive behaviour towards each other and society with a higher influence on voting, ensuring a governance culture rooted in that positivity which is resistant to attempts to subvert the token and original mission; as has befallen other decentralised projects.
 ---
 Super-Charged Network Effect:
 Tokenizing massively accelerates the effects of a network. Happiness is a great candidate for the boost a crypto-economic model can provide. Tokenizing will rapidly advance our Movement’s effect on global public happiness and well-being.
