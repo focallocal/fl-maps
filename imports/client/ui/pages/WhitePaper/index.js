@@ -1118,7 +1118,7 @@ The mining total will include a small amount that will be ‘back-paid’ to not
 50 % = 4.85b
 40% = 3.88b
 100 year = 36500 Days
-Average release rate: 265753 tokens per day**
+Average release rate: 265753 tokens per day
 
 `)
  
@@ -1240,7 +1240,7 @@ Currently the system uses Trello as an external platform, with a layer built on 
 const markdownSection70 = md.render(`
 
 ## 13.3.
-**Leaflet.js vs Google Maps API 
+**Leaflet.js vs Google Maps API** 
 
 **The Public Happiness Gatherings system is currently build using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
 
@@ -1249,8 +1249,8 @@ const markdownSection70 = md.render(`
 const markdownSection71 = md.render(`
 
 ## 13.4.
-**Switching the Platform to the Dapps Network 
-(Decentralised App)**
+**Switching the Platform to the Dapps Network**
+(Decentralised Apps)
 
 The Map (Public Happiness Gatherings) and the Projects/Micro-volunteering (Missions) are built in Meteor JS and ReactJS, which is ideal for switching to host on Ethereum’s DAPP network, as it is built using reactive programming.
 
@@ -1315,7 +1315,7 @@ const markdownSection76 = md.render(`
 
 ## 14.4.
 
-**Zombie Apocalypse **
+**Zombie Apocalypse**
 If the inevitable finally occurs, we will convert the Public Happiness Bus into a ‘Public Happiness Buoat’ and retreat to a small uninhabited Greek island, where our new society will flourish and sparkle as a bastion to all Humanity's greatest achievements. Using Public Happiness Token to create a paradise where every economic interaction creates more harmony and a closer more caring community, while the rest of the world performs a perfect impression of today’s paparazzi for each others brains. 
 
 If the community has decided on having a fixed central base, for example renovating an abandoned village, it will built using the best off-grid technology today’s society has to offer - and also be zombie-proofed.
