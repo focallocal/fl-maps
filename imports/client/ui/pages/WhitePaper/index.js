@@ -16,71 +16,71 @@ const Contents = () => (
    <React.Fragment>
        <h2 className='title'>Welcome to the 1st Draft!</h2>
        <div className="contentspage">
-            <p>Contents<br/>
-The World Needs This Because: (v1)<br/>
+            <p style="text-align: center;">Contents<br/></p>
+<p> The World Needs This Because: (v1)<br/>
 The World Needs This Because: (v2)<br/>
 <br/>
 1. <a href="#Abstract">Abstract</a><br/>
-1.1. <a href="Background">Background</a><br/>
-	1.2. Public Happiness Movement Token Introduction<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.1. <a href="Background">Background</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.2. Public Happiness Movement Token Introduction<br/>
 <br/>
 2. Problem Statement <br/>
-	2.1. Issues we aim to solve<br/>
-	2.2. Primary Goal<br/>
-	2.3. Secondary Goal<br/>
-	2.4. Relation to Universal Basic Income<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.1. Issues we aim to solve<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.2. Primary Goal<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.3. Secondary Goal<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.4. Relation to Universal Basic Income<br/>
 <br/>
 3. Educating the Public about Blockchain<br/>
-	3.1. Current State of Public Understanding<br/>
-	3.2. Reaching a New Audience<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.1. Current State of Public Understanding<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.2. Reaching a New Audience<br/>
 <br/>
 4. The Public Happiness Movement Token<br/>
-	4.1. Token Overview<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	4.1. Token Overview<br/>
 <br/>
 5. Public Happiness Movement Token ICO<br/>
-	5.1. ICO Strategy<br/>
-	5.2. ICO Stages<br/>
-	5.3. Ongoing Funding for Specific Projects and Experts<br/>
-	5.4. ICO Marketing<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.1. ICO Strategy<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.2. ICO Stages<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.3. Ongoing Funding for Specific Projects and Experts<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.4. ICO Marketing<br/>
 <br/>
 6. Public Happiness – Background<br/>
-	6.1. Community Background<br/>
-	6.2. The Public Happiness Movement Community<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.1. Community Background<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.2. The Public Happiness Movement Community<br/>
 <br/>
 7. Platform Overview<br/>
-	7.1. The Public Happiness Map (public actions for increasing human and society well-being)<br/>
-	7.2. Action Center (Microvolunteering)<br/>
-	7.3. Community News<br/>
-	7.4. Active Happiness Shop<br/>
-	7.5. Who Defines What is Accepted as ‘Public Happiness’<br/>
-	7.6. Evidence Based and Peer Reviewed Actions<br/>
-	7.7. Who can Participate on the Platform<br/>
-	7.8. Pre-existing Communities with Similar Values<br/>
-	7.9. Languages<br/>
-	7.10. Decentralised Governance and Voting<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.1. The Public Happiness Map (public actions for increasing human and society well-being)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.2. Action Center (Microvolunteering)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.3. Community News<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.4. Active Happiness Shop<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.5. Who Defines What is Accepted as ‘Public Happiness’<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.6. Evidence Based and Peer Reviewed Actions<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.7. Who can Participate on the Platform<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.8. Pre-existing Communities with Similar Values<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.9. Languages<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.10. Decentralised Governance and Voting<br/>
 <br/>
 8. The Path to Decentralisation<br/>
-	8.1. Benevolent Dictatorship vs Complete Community Governance<br/>
-	8.2. Example Scenario: Outside Collusion<br/>
-	8.3. Lines of Defence<br/>
-	8.4. Conclusion<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.1. Benevolent Dictatorship vs Complete Community Governance<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.2. Example Scenario: Outside Collusion<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.3. Lines of Defence<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.4. Conclusion<br/>
 <br/>
 9. Security<br/>
-	9.1. Levels of Trust<br/>
-	9.2.. Community Administrators<br/>
-	9.3. Project Administrators<br/>
-	9.4. Mining Limits<br/>
-	9.5. Cold Storage and Key Holders<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.1. Levels of Trust<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.2.. Community Administrators<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.3. Project Administrators<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.4. Mining Limits<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.5. Cold Storage and Key Holders<br/>
 <br/>
 10. Marketing Strategy<br/>
-	10.1. A New Level of Hash Tagging<br/>
-	10.2. Bus Tour<br/>
-	10.3.. Public Happiness Channel<br/>
-	10.4. Happy Cam<br/>
-	10.5. Public Happiness Partners<br/>
-	10.6. Online Supporters<br/>
-	10.7. Contests<br/>
-	10.8. Collectables<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.1. A New Level of Hash Tagging<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.2. Bus Tour<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.3.. Public Happiness Channel<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.4. Happy Cam<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.5. Public Happiness Partners<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.6. Online Supporters<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.7. Contests<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.8. Collectables<br/>
 <br/>
 11.  Automated Token Distribution Matrix<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. Weighted Mining<br/>
@@ -89,26 +89,26 @@ The World Needs This Because: (v2)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. Token Release<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. Mining Table<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.6. Experience Multipliers<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.7. Token Distribution<br/>
-&nbsp;&nbsp;&nbsp;&nbsp; 11.8. Further Matrix Considerations<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.7. Token Distribution<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.8. Further Matrix Considerations<br/>
  <br/>
 12. Team<br/>
-	12.1. Current Team Members<br/>
-	12.2. Positions Open<br/>
-	12.3. Remuneration<br/>
-	12.4. Facilities<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.1. Current Team Members<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.2. Positions Open<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.3. Remuneration<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.4. Facilities<br/>
  <br/>
 13. Platform Technicals<br/>
-	13.1. Crypto Linking Bridges<br/>
-	13.2. Trello vs Wekan vs Other Solutions<br/>
-	13.3. Leaflet.js vs Google Maps API<br/>
-	13.4. Switching the Platform to the Dapps Network<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.1. Crypto Linking Bridges<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.2. Trello vs Wekan vs Other Solutions<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.3. Leaflet.js vs Google Maps API<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.4. Switching the Platform to the Dapps Network<br/>
 <br/>
 14. Doomsday Protocol<br/>
-	14.1. Huge Market Crash<br/>
-	14.2. Quantum Security<br/>
-	14.3. Massive Hack<br/>
-	14.4. Zombie Apocalypse<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.1. Huge Market Crash<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.2. Quantum Security<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.3. Massive Hack<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.4. Zombie Apocalypse<br/>
 <br/>
 15. Giving Back to Open-source<br/>
 16. Timeline<br/>
@@ -121,8 +121,8 @@ The World Needs This Because: (v2)<br/>
   
 
 const markdownSection1 = md.render(`
-<p style="text-align: center;"># Public Happiness Movement Token</p>
-<p style="text-align: center;"># Whitepaper</p>
+# Public Happiness Movement Token
+# Whitepaper
 
 **Foreword:**
 
@@ -148,37 +148,35 @@ It's provides a space for our individual networks to grow into something larger.
 Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons.
 `)
 
- 
-const markdownSection2 = md.render(`
 <h5><a id="Abstract"></a>Abstract</h5>text
+const markdownSection2 = md.render(`
 
 text
 
 text
 				   `)
-
-const markdownSection3 = md.render(`
 <h2><a id="Background"></a>Background</h5>text
+const markdownSection3 = md.render(`
 
 text
 
 text
 				   
 `)
-const markdownSection4 = md.render(`## test2 INSERT SECTION 3 HEre`)
-const markdownSection5 = md.render(`## test4 INSERT SECTION 3 HEre`)
-const markdownSection6 = md.render(`## Some paragraph <a name="test5"></a>INSERT SECTION 3 HEre`)
-const markdownSection7 = md.render(`## Some paragraph <a name="test6"></a>INSERT SECTION 3 HEre`)
-const markdownSection8 = md.render(`## Some paragraph <a name="test7"></a>INSERT SECTION 3 HEre`)
-const markdownSection9 = md.render(`## Some paragraph <a name="test8"></a>INSERT SECTION 3 HEre`)
-const markdownSection10 = md.render(`## Some paragraph <a name="test9"></a>INSERT SECTION 3 HEre`)
-const markdownSection11 = md.render(`## Some paragraph <a name="test10"></a>INSERT SECTION 3 HEre`)
-const markdownSection12 = md.render(`## Some paragraph <a name="test11"></a>INSERT SECTION 3 HEre`)
-const markdownSection13 = md.render(`## Some paragraph <a name="test12"></a>INSERT SECTION 3 HEre`)
-const markdownSection14 = md.render(`## Some paragraph <a name="test13"></a>INSERT SECTION 3 HEre`)
-const markdownSection15 = md.render(`## Some paragraph <a name="test14"></a>INSERT SECTION 3 HEre`)
-const markdownSection16 = md.render(`## Some paragraph <a name="test15"></a>INSERT SECTION 3 HEre`)
-const markdownSection17 = md.render(`## Some paragraph <a name="test16"></a>INSERT SECTION 3 HEre`)
+const markdownSection4 = md.render(` test2 INSERT SECTION 3 HEre`)
+const markdownSection5 = md.render(` test4 INSERT SECTION 3 HEre`)
+const markdownSection6 = md.render(` Some paragraph NSERT SECTION 3 HEre`)
+const markdownSection7 = md.render(` Some paragraph INSERT SECTION 3 HEre`)
+const markdownSection8 = md.render(` Some paragraph INSERT SECTION 3 HEre`)
+const markdownSection9 = md.render(` Some paragraph INSERT SECTION 3 HEre`)
+const markdownSection10 = md.render(` Some paragraphINSERT SECTION 3 HEre`)
+const markdownSection11 = md.render(` Some paragraphINSERT SECTION 3 HEre`)
+const markdownSection12 = md.render(` Some paragraph ERT SECTION 3 HEre`)
+const markdownSection13 = md.render(` Some paragraph NSERT SECTION 3 HEre`)
+const markdownSection14 = md.render(` Some paragraph NSERT SECTION 3 HEre`)
+const markdownSection15 = md.render(` Some paragraph SERT SECTION 3 HEre`)
+const markdownSection16 = md.render(` Some paragraph INSERT SECTION 3 HEre`)
+const markdownSection17 = md.render(` Some paragraph INSERT SECTION 3 HEre`)
 				   
 
 
@@ -189,13 +187,13 @@ const index = (props) => {
     <Container className="mt-5">
 			<Contents />
       <div dangerouslySetInnerHTML={{ __html: markdownSection1 }} />
-      <DCSBalloon title="The World Needs This Because V1" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon title="Click balloons to comment" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection2 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection3 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection4 }} />
-      <DCSBalloon title="Insert title" subtitle="Insert subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
+      <DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
       <div dangerouslySetInnerHTML={{ __html: markdownSection5 }} />      
     </Container>
 
