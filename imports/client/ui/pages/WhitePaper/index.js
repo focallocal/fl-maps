@@ -265,6 +265,7 @@ We demonstrate how cryptocurrencies can impact people’s daily lives and commun
 Decentralised Governance:
 Our platform creates a decentralised self-governing and evolving community focused on positive cultural change. Grandfathering in a reputation weighted community voting system and gradually opening up all areas of the project to decentralised governance, while maintaining a clear direction by guiding members to weigh all decisions against a [Community Values ](https://news.focallocal.org/the-focallocal-community-values/)statement which all users agree to upon joining the community. 
 
+
 Our ecosystem and mission rewards positive behaviour towards each other and society with a higher influence on voting, ensuring a governance culture rooted in that positivity which is resistant to attempts to subvert the token/original mission; as has befallen other decentralised projects.
 ---
 Super-Charged Network Effect:
@@ -1423,7 +1424,7 @@ const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}>Abst
 const Anchor2  = () => <Fragment><h2 id="Background" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection2 }} /></Fragment>
 const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
 const Anchor4  = () => <Fragment><h2 id="Problem Statement" style={{margin: 'auto'}}>Problem Statement</h2><div dangerouslySetInnerHTML={{ __html: markdownSection4 }} /></Fragment>
-const Anchor5  = () => <Fragment><h2 id="Issues we Aim to Solve" style={{margin: 'auto'}}>Issues we Aim to Solve</h2><div dangerouslySetInnerHTML={{ __html: markdownSection5 }} /></Fragment>
+const Anchor5  = () => <Fragment><h2 id="Issues we Aim to Solve" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection5 }} /></Fragment>
 const Anchor6  = () => <Fragment><h2 id="Primary Goal" style={{margin: 'auto'}}>Primary Goal</h2><div dangerouslySetInnerHTML={{ __html: markdownSection6 }} /></Fragment>
 const Anchor7  = () => <Fragment><h2 id="Secondary Goal" style={{margin: 'auto'}}>Secondary Goal</h2><div dangerouslySetInnerHTML={{ __html: markdownSection7 }} /></Fragment>
 const Anchor8  = () => <Fragment><h2 id="Relation to Universal Basic Income" style={{margin: 'auto'}}>Relation to Universal Basic Income</h2><div dangerouslySetInnerHTML={{ __html: markdownSection8 }} /></Fragment>
