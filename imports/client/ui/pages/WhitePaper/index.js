@@ -14,22 +14,22 @@ md.set({
 
 const Title = () => (
    <React.Fragment>
-       <h2 className='Title' style={{textAlign: 'center'}}>Public Happiness Movement<br />Token Whitepaper</h2>
+       <h2 className='Title' style={{textAlign: 'center'}}>Welcome to the 1st Draft!</h2>
  </React.Fragment>
  )
 
 
 const Contents = () => (
    <React.Fragment>
-       <h2 className='title' style={{textAlign: 'center'}}>Welcome to the 1st Draft!</h2>
+       <h2 className='title' style={{textAlign: 'center'}}>Public Happiness Movement<br />Token Whitepaper</h2>
        <div className="contentspage">
-            <p>Contents</p>
+            
 <p> 
-Foreword <br />
-Intro<br />
-Contents<br />
-<a href="#The World Needs This Because: (v1)">The World Needs This Because: (v1)</a><br />
-<a href="#The World Needs This Because: (v2)">The World Needs This Because: (v1)</a><br />
+i. Foreword <br />
+ii. Intro<br />
+iii. Contents<br />
+iv. <a href="#The World Needs This Because: (v1)">The World Needs This Because: (v1)</a><br />
+v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (v1)</a><br />
 <br />
 1. <a href="#Abstract">Abstract</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.1. <a href="#Background">Background</a><br />
@@ -59,8 +59,8 @@ Contents<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.2. <a href="#The Public Happiness Movement Community">The Public Happiness Movement Community</a><br />
 <br />
 7. <a href="#Platform Overview">Platform Overview</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.1. <a href="#The Public Happiness Map">The Public Happiness Map</a>(public actions for increasing human and society well-being)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.2. <a href="#Action Center">Action Center</a>(microvolunteering)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.1. <a href="#The Public Happiness Map">The Public Happiness Map</a> (public actions for increasing human and society well-being)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.2. <a href="#Action Center">Action Center</a> (microvolunteering)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.3. <a href="#Community News">Community News</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.4. <a href="#Active Happiness Shop">Active Happiness Shop</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.5. <a href="#Who Defines What is Accepted as ‘Public Happiness’">Who Defines What is Accepted as ‘Public Happiness’</a><br />
@@ -137,7 +137,6 @@ Contents<br />
 const markdownSection103 = md.render(`
 
 **Foreword:**
-
 I've lived about as frugal a life as is possible in the Western World because I've always disliked money.  It so often seems to have a negative effect on people and society.
 
 The crypto-world has me intensely curious, because money can be different there. I wanted to learn more and see if it's possible to design a form of money that is intrinsically tied to creating societal value.  Something to act as a band-aid on today’s ‘profit at all costs’ capitalism which has blind-spots for large areas critical to producing healthy, happy societies. This is caused by foundations measuring all progress and success as an increase in GDP. Anything which doesn’t is, by design, an after-thought.
@@ -146,8 +145,8 @@ GDP was designed by Simon Kuznets, in 1937 as a temporary post war recovery syst
 
 This token is an effort to create a new monetary and economic system. One which focuses energy onto these essential societal areas which are currently overlooked. An effort to create a healthier and happier world.
 
-**Intro:**
 
+**Intro:**
 If the right people get behind this it will have a profound effect on increasing peace, happiness, and reducing human-suffering across the world. If you’re reading this it because we believe that you have the skills to contribute, and a passion to create positive change for humanity.
 
 "Those who love peace must learn to organize as effectively as those who love war"  - Martin Luther King
@@ -168,55 +167,57 @@ const markdownSection100 = md.render(`
 
 1. Our ‘profit at all cost’ GDP based economy has failed to provide healthy communities to live in, and it has damaged our planet. It has borrowed from its children's wealth, creating nations where entire generations are largely unable to own a home. It has created a work/life balance where people are living under so much pressure that they push back basic human norms, like starting a family, because it's too expensive. 
 
-We aim to provide a balancing effect. Creating a new economic system where people are rewarded for doing the essential work needed to produce healthy and happy communities for us all to enjoy.
+> We aim to provide a balancing effect. Creating a new economic system where people are rewarded for doing the essential work needed to produce healthy and happy communities for us all to enjoy.
 
 2. Decentralised Governance in blockchain suffers because players can utilise fiat to buy influence over the ecosystem’s direction and decision making; or centralised founders hold onto power. Undermining the decentralised goals they were founded upon.
 
-We create reputation weighted governance earned through contributions to the ecosystem’s mission; also opening our governance model up to people outside of the fin-tech community
+> We create reputation weighted governance earned through contributions to the ecosystem’s mission; also opening our governance model up to people outside of the fin-tech community
 
 3. Volunteers by nature normally contribute a little, then move on. Leaving most volunteer projects constantly training new team members, at the heavy expense of efficiency. 
 
-We incentivise and increasingly reward long-term commitment. Creating micro-volunteering towards good causes, with the efficiency of the for-profit world. Platform users are rewarded for taking positive actions which benefit our local, and global societies. Supercharging the network effect of the Public Happiness Movement and its impact locally, and globally. Rapidly growing the community through an incentivised ecosystem, directing energy into finding more effective ways to achieve positive societal and cultural change, ideas that we can’t even imagine yet – but can’t wait to see!
+> We incentivise and increasingly reward long-term commitment. Creating micro-volunteering towards good causes, with the efficiency of the for-profit world. Platform users are rewarded for taking positive actions which benefit our local, and global societies. Supercharging the network effect of the Public Happiness Movement and its impact locally, and globally. Rapidly growing the community through an incentivised ecosystem, directing energy into finding more effective ways to achieve positive societal and cultural change, ideas that we can’t even imagine yet – but can’t wait to see!
 
 4. Those with beautiful and inspirational ideas for creating a change to benefit humanity lose far, far too much energy chasing funding so they can bring it to the world. Far too many ingenious ideas currently falter and fade out at the bitter expense of every human alive, because someone lacked the skills and connections to fund bringing their vision to life. 
 
-Our community debates the merits of ideas, shaping and strengthening them. The best are selected by voting to be funded and built in our micro-volunteering hub by our wider community, allowing a great idea to thrive, regardless of the experience, wealth and connections of the person who thought of it.
+> Our community debates the merits of ideas, shaping and strengthening them. The best are selected by voting to be funded and built in our micro-volunteering hub by our wider community, allowing a great idea to thrive, regardless of the experience, wealth and connections of the person who thought of it.
 
 5. Social media gave humanity a new power. It became a place where ideas could emerge from the crowd, take form and gain a following, in ways never before possible. Where creative ideas and solutions could emerge freely, gaining traction on their own merit, and grow into large scale social events and projects. Then, gradually, they took this tool away. Making it ever more difficult for those ideas to reach an audience unless there was money behind them. Business, celebrity and big charities began dominating reach in a 'pay to play' system. 
 
-Led by Facebook a ‘click and move-on’ culture was designed. Educating much of the world's population to ever-shorter attention spans, as faster clicks equals more ad revenue. Grass-roots change creators struggled to engage the communities they had built. Then Facebook, and others, began listening to our conversations online, and offline. Collecting our location data. Extrapolating and creating immense data sets of our most personal information to sell to the highest bidder. They used this to facilitate election hacking, undermining our democracies.
+> Led by Facebook a ‘click and move-on’ culture was designed. Educating much of the world's population to ever-shorter attention spans, as faster clicks equals more ad revenue. Grass-roots change creators struggled to engage the communities they had built. Then Facebook, and others, began listening to our conversations online, and offline. Collecting our location data. Extrapolating and creating immense data sets of our most personal information to sell to the highest bidder. They used this to facilitate election hacking, undermining our democracies.
 
-Enough is enough! Our platform returns this power to everyone, regardless of their financial backing. It brings back that ability for social movements to form freely around innovative ideas for change. It pushes back against this consumer culture, re-educating users to become active in the projects and activities they want to support. Empowering us all to realise the power we all have when uniting in mass around creative ideas for positive change. Our platform is 100% open source and will never sell users valuable personal data.
+> Enough is enough! Our platform returns this power to everyone, regardless of their financial backing. It brings back that ability for social movements to form freely around innovative ideas for change. It pushes back against this consumer culture, re-educating users to become active in the projects and activities they want to support. Empowering us all to realise the power we all have when uniting in mass around creative ideas for positive change. Our platform is 100% open source and will never sell users valuable personal data.
 
 6. There is an entire emerging industry, hidden and stifled. Rarely picked up by the media, because these not-for-profit projects can't afford to ‘pay-to-play’. Yet individually it's leaders are mobilising hundreds of thousands of people each year into action to meet society's need for increasing peace, community and human connection, understanding, kindness, and well-being. None of those things are recognised, or measured in capitalist, GDP, based societies; and so it goes under the radar. It's leaders living in poverty in order to try and meet society's unmet needs - it's rising stars are often faced with a choice of eating or quitting. This platform creates a ‘Happiness Economy’ rewarding anyone creating societal value, and benefiting our lives in unconventional, non-profit ways. 
 
-This platform allows this stifled, emerging economy to spread out its wings and take off. Opening the door for thousands, perhaps millions, to become active in improving societal well-being where they live. An economy open to anyone, not just the most stubborn who are driven to a calling regardless of the personal costs.
+> This platform allows this stifled, emerging economy to spread out its wings and take off. Opening the door for thousands, perhaps millions, to become active in improving societal well-being where they live. An economy open to anyone, not just the most stubborn who are driven to a calling regardless of the personal costs.
 
 7. The emerging Public Happiness Movement is fragmented. The people and communities aiming to bring around a local, or global shift in culture towards more peace, connection and well-being, mostly do so independently of each other. Each pushing in the same direction, to create the same changes.
 
-This platform combines and focuses each community's energy. Magnifying massively our combined message, amplifying our media, and reaching/inspiring a far larger audience. This platform allows that energy to stack and multiply, unleashing an unstoppable wave, as a global Movement bringing; kindness, understanding, individual and community empowerment to solve the issues we face, and human connection. Collaborations and information sharing also becomes easier, and individual dreams become a shared goal that we can reach together.
+> This platform combines and focuses each community's energy. Magnifying massively our combined message, amplifying our media, and reaching/inspiring a far larger audience. This platform allows that energy to stack and multiply, unleashing an unstoppable wave, as a global Movement bringing; kindness, understanding, individual and community empowerment to solve the issues we face, and human connection. Collaborations and information sharing also becomes easier, and individual dreams become a shared goal that we can reach together.
 
-8. Tokenizing massively accelerates the effects of a network. Happiness is a great candidate for the boost a crypto-economic model can provide. Tokenizing will rapidly advance our Movement’s effect on global public happiness and well-being.
+8. Tokenizing massively accelerates the effects of a network. Happiness is a great candidate for the boost a crypto-economic model can provide. 
+
+> Tokenizing will rapidly advance the effect on global public happiness and well-being of everyone aligned with, and taking action towards, our Public Happiness Movement’s aims.
 
 9. The Blockchain revolution is coming, but it remains inaccessible to the vast majority of the public. Those engaging in this new technology rarely come from outside the fin-tech, or investor/speculator sectors. It is boxed off by the technical skills and interest needed to understand it. It's a revolution that is only scratching the surface. 
 
-Our Token and Platform take Blockchain onto the streets to engage and interact with people in their everyday life, all across the world. It provides a gentle on-ramp to understand the world of Blockchain and Cryptocurrency requiring no special technical skills at all in the beginning. It is a desperately needed bridge to open the Blockchain community up to the wider world and begin teaching how it can impact their lives, and will shape our future.
+> Our Token and Platform take Blockchain onto the streets to engage and interact with people in their everyday life, all across the world. It provides a gentle on-ramp to understand the world of Blockchain and Cryptocurrency requiring no special technical skills at all in the beginning. It is a desperately needed bridge to open the Blockchain community up to the wider world and begin teaching how it can impact their lives, and will shape our future.
 
 10. Greedy founders are enriching themselves massively through ICO's, before, and unfortunately regularly, in place of, actually building a useful project. Whales coming in early often own significant percentages of their total tokens.
 
-Our project is a non-profit with our core team's reimbursement decided by outside adjudication firm. It is against our user terms for anyone to own more than 0.5% of our total released tokens, and if an individual is discovered to have done so they will be advised to sell part, or lose it. In a decentralised economy no-one individual should own more than that amount. There will be no pre-sale to angel investors
+> Our project is a non-profit with our core team's reimbursement decided by outside adjudication firm. It is against our user terms for anyone to own more than 0.5% of our total released tokens, and if an individual is discovered to have done so they will be advised to sell part, or lose it. In a decentralised economy no-one individual should own more than that amount. There will be no pre-sale to angel investors
 
 11. In a time and age where climate change is our 'cold war', with over 60% of our planets wildlife lost since 1970, we are facing down the barrel of potentially cataclysmic times. That certain Cryptocurrencies use more energy in mining than entire medium sized nations, is perhaps the biggest issue the industry faces. A global explosion in the industry would be damaging, perhaps even devastating to the world we live in, leading to heavy and needed regulation on the industry. This critical issue must be solved before that inevitable growth occurs.
 
-Our Token is pre-mined and then gradually released to create liquidity. The platform will be moved onto the DAPPS network when it scales, not requiring servers. Our proof-of-work is a conceptual construct which users perform mostly in the real world, rather than by performing power hungry mathematical problems on their computers/mining rigs. The Token is built upon Ethereum and will benefit from the upcoming change to Proof of Stake. Our project and token is designed to consume less power than most standard website of similar scale.
+> Our Token is pre-mined and then gradually released to create liquidity. The platform will be moved onto the DAPPS network when it scales, not requiring servers. Our proof-of-work is a conceptual construct which users perform mostly in the real world, rather than by performing power hungry mathematical problems on their computers/mining rigs. The Token is built upon Ethereum and will benefit from the upcoming change to Proof of Stake. Our project and token is designed to consume less power than most standard website of similar scale.
 
 12. Dangerous messages are being amplified on other media platforms, and used to divide communities for political aims, or to increase profits. Important movements for equality and respect for our shared human experience are being diverted and used to attack each other and drive a wedge in our communities. Misinformation is everywhere. Volume has come to be seen as equal to expertise by far too many people.
 
-We create an energetic space where all activities focus on what unites us as human beings, and are rooted in the peer reviewed science to direct action by the best of current human understanding.
+> We create an energetic space where all activities focus on what unites us as human beings, and are rooted in the peer reviewed science to direct action by the best of current human understanding.
 
 13. Many high profile projects and platforms, with multi-billion dollar market caps, average utterly embarrassing numbers of users daily, weekly, or monthly. It's like a dirty secret we aren't supposed to talk about.
 
-The platform you are here to read about on boards existing communities of hundreds of thousands of people, offering them far more effective tools than they use currently to pursue their existing positive missions. It also offers them shared ownership, and a stake in determining the future development of those tools.
+> The platform you are here to read about on boards existing communities of hundreds of thousands of people, offering them far more effective tools than they use currently to pursue their existing positive missions. It also offers them shared ownership, and a stake in determining the future development of those tools.
 
 This paper is an early non-technical outline of how this can be realised, to provide a foundation for discussion. The platform also already exists, built by a team of over 130 volunteer web developers who believe in our vision. It is built to the minimal stage to begin onboarding the community who will shape it.
 
@@ -226,12 +227,14 @@ If you've been invited to read this, and agree with what I've written so far, th
 Welcome into my dream of a brighter future. I hope it will become our dream, and then become reality for millions of others.
 
 Founder, Andy Tulett
+Public Happiness Creator
 
 
 `)
 
 				   
 const markdownSection101 = md.render(`
+
 
 **Public Happiness Token: 
 A New Cryptocurrency Intrinsically tied to Creating Societal Good**
@@ -241,7 +244,6 @@ Public Happiness Token is a currency which is intrinsically tied to creating soc
 **Problems the Public Happiness Token Aims to Solve:**
 
 Positive Societal and Cultural Change:
-
 Supercharging the network effect of the Public Happiness Movement. Rapidly growing the community through an incentivised ecosystem, directing energy into finding more effective ways to achieve positive societal and cultural change, ideas that we can’t even imagine yet – but can’t wait to see! 
 
 Currencies benefiting Communities:
@@ -249,7 +251,6 @@ Cryptocurrencies give us the ability to choose to use/support a currency because
 
 
 Human Well-being:
-
 Our crypto-enhanced ecosystem directs energy and creativity onto solving issues critical to a healthy local and global society, incentivising action on issues that reduce human well-being which are largely overlooked by today’s GDP based societies.
 
 Distribution: 
@@ -268,15 +269,12 @@ Super-Charged Network Effect:
 Tokenizing massively accelerates the effects of a network. Happiness is a great candidate for the boost a crypto-economic model can provide. Tokenizing will rapidly advance our Movement’s effect on global public happiness and well-being.
 
 An Evolving Platform:
-
 The platform is being built to a minimum usable product. After that users will direct and build the platform they need to maximise their effectiveness. Voting on the best plans to improve it.
 
 Culture and Foundations laid by Top Experts:
-
 Our ICO will be used to fund top-level staff to bring their skills in and lead the platforms 1st users. Facilitating a smooth growth, until the community is mature enough to self-govern.
 
 Reaching New Audiences:
-
 Teaching users core concepts of the crypto-economic model, our token can operate as a bridge between blockchain and other parts of the non-digital world, through its ability to reach a far broader, and less tech-savvy audience than other coins and tokens.
 
 Wider Acceptance of Blockchain:
@@ -1546,11 +1544,11 @@ const index = (props) => {
   return (
     <Container className="mt-5">
 			<Title />
-		<Anchor103  /><DCSBalloon balloonId="bal" display="inline" dcsTags={props.dcsTags} />	
+		<Anchor103  /><DCSBalloon title="click balloons to comment" balloonId="bal" display="inline" dcsTags={props.dcsTags} />	
 			<Contents /><DCSBalloon title="click balloons to comment" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
 		<Anchor100  /><DCSBalloon balloonId="bal" display="inline" dcsTags={props.dcsTags} />		
 		<Anchor101  /><DCSBalloon balloonId="bal" display="inline" dcsTags={props.dcsTags} />
-		<Anchor1  /><DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />    
+		<Anchor1  />    
 		<Anchor2  /><DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
 		<Anchor3  /><DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
 		
