@@ -156,7 +156,7 @@ Our community of volunteers has been gradually building a platform to host this 
 
 It's provides a space for our individual networks to grow into something larger. A global movement for a world with more peace and happiness in it. We’ve reached the point where it is ready to begin hosting communities who will contribute to it governance and improving the platform. You can take a look here: [focallocal.org ](https://focallocal.org)
 
-Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons.
+Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons underneath each section.
 
 `)
 
@@ -242,6 +242,7 @@ A New Cryptocurrency Intrinsically tied to Creating Societal Good**
 
 Public Happiness Token is a currency which is intrinsically tied to creating social good. The more its traded, mined and earned, the more our network benefits local communities around the world, building a friendlier, safer and happier future. 
 
+
 **Problems the Public Happiness Token Aims to Solve:**
 
 Positive Societal and Cultural Change:
@@ -249,7 +250,6 @@ Supercharging the network effect of the Public Happiness Movement. Rapidly growi
 
 Currencies benefiting Communities:
 Cryptocurrencies give us the ability to choose to use/support a currency because we agree with its ethical value and effects on society. Public Happiness Token aims to demonstrate this to the public by creating an alternative currency with its value distinctly and inseparably tied to positive impacts towards a healthier society where its used and mined.
-
 
 Human Well-being:
 Our crypto-enhanced ecosystem directs energy and creativity onto solving issues critical to a healthy local and global society, incentivising action on issues that reduce human well-being which are largely overlooked by today’s GDP based societies.
@@ -286,7 +286,9 @@ The paper below is a working first draft, intended to explain the direction and 
 `)				   
 				   
 
-const markdownSection1 = md.render(` `)
+const markdownSection1 = md.render(` 
+
+`)
 
 const markdownSection2 = md.render(`
 
@@ -331,7 +333,7 @@ Founder Andy has always built the Public Happiness Movement Public Happiness pro
 Blockchain creates a new and intriguing possibility to super-charge our positive impact by creating a currency which is intrinsically linked to creating individual, and societal well-being; bringing more peace and happiness to the world each and every time it is used. Public Happiness Token aims to be that currency.
 
 
-**Disclaimer: **Please note that this white paper does not create any legally binding obligations, it is presented here purely for informational purposes. For more information please read our terms of use
+*Disclaimer: Please note that this white paper does not create any legally binding obligations, it is presented here purely for informational purposes. For more information please read our terms of use*
 
 [Add link for terms of use]
 
@@ -359,8 +361,7 @@ const markdownSection6  = md.render(`
 
 ## 2.2.
 
-**Primary Goal
-**
+**Primary Goal**
 
 We live under a system which rewards actions which advance our society’s economic output, but largely ignores our societal well-being outside of that narrow spectrum. It increasingly pressurises humanity to focus on what advances GDP, leaving important work in the community for charities, and councils to try and patch over. 
 
@@ -1453,7 +1454,7 @@ Thank you for reading, have a wonderful day!
 
 
 				   
-const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}>Abstract</h2><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
+const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
 const Anchor2  = () => <Fragment><h2 id="Background" style={{margin: 'auto'}}>Background</h2><div dangerouslySetInnerHTML={{ __html: markdownSection2 }} /></Fragment>
 const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" style={{margin: 'auto'}}>Public Happiness Token Introduction</h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
 const Anchor4  = () => <Fragment><h2 id="Problem Statement" style={{margin: 'auto'}}>Problem Statement</h2><div dangerouslySetInnerHTML={{ __html: markdownSection4 }} /></Fragment>
@@ -1461,7 +1462,7 @@ const Anchor5  = () => <Fragment><h2 id="Issues we Aim to Solve" style={{margin:
 const Anchor6  = () => <Fragment><h2 id="Primary Goal" style={{margin: 'auto'}}>Primary Goal</h2><div dangerouslySetInnerHTML={{ __html: markdownSection6 }} /></Fragment>
 const Anchor7  = () => <Fragment><h2 id="Secondary Goal" style={{margin: 'auto'}}>Secondary Goal</h2><div dangerouslySetInnerHTML={{ __html: markdownSection7 }} /></Fragment>
 const Anchor8  = () => <Fragment><h2 id="Relation to Universal Basic Income" style={{margin: 'auto'}}>Relation to Universal Basic Income</h2><div dangerouslySetInnerHTML={{ __html: markdownSection8 }} /></Fragment>
-const Anchor9  = () => <Fragment><h2 id="Educating the Public about Blockchain" style={{margin: 'auto'}}></h2><div dangerouslySetInnerHTML={{ __html: markdownSection9 }} /></Fragment>
+const Anchor9  = () => <Fragment><h2 id="Educating the Public about Blockchain" style={{margin: 'auto'}}>Educating the Public about Blockchain</h2><div dangerouslySetInnerHTML={{ __html: markdownSection9 }} /></Fragment>
 const Anchor10 = () => <Fragment><h2 id="Current State of Public Understanding" style={{margin: 'auto'}}>Current State of Public Understanding</h2><div dangerouslySetInnerHTML={{ __html: markdownSection10 }} /></Fragment>
 const Anchor11 = () => <Fragment><h2 id="Reaching a New Audience" style={{margin: 'auto'}}>Reaching a New Audience</h2><div dangerouslySetInnerHTML={{ __html: markdownSection11 }} /></Fragment>
 const Anchor12 = () => <Fragment><h2 id="The Public Happiness Token" style={{margin: 'auto'}}>The Public Happiness Token</h2><div dangerouslySetInnerHTML={{ __html: markdownSection12 }} /></Fragment>
@@ -1545,8 +1546,8 @@ const index = (props) => {
   return (
     <Container className="mt-5">
 			<Title />
-		<Anchor103  /><DCSBalloon title="click balloons to comment" balloonId="bal" display="inline" dcsTags={props.dcsTags} />	
-			<Contents /><DCSBalloon title="click balloons to comment" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
+		<Anchor103  /><DCSBalloon title="click balloons to comment on section above" balloonId="bal" display="inline" dcsTags={props.dcsTags} />	
+			<Contents /><DCSBalloon title="click balloons to comment on section above" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
 		<Anchor100  /><DCSBalloon balloonId="bal" display="inline" dcsTags={props.dcsTags} />		
 		<Anchor101  /><DCSBalloon balloonId="bal" display="inline" dcsTags={props.dcsTags} />
 		<Anchor1  />    
