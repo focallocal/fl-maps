@@ -284,7 +284,7 @@ Wider Acceptance of Blockchain:
 Our platform aims to educate users as to how blockchain will change the world they live in, and how they can understand and interact with it. Attracting a wider community and an ecosystem to create positive societal change we can't even imagine yet.
 ---
 
-The paper below is a working first draft, intended to explain the direction and ethos of the Public Happiness Token to the experts joining the project to apply expertise from their specialist area and create a Whitepaper ready for public release. It is currently word heavy and technical expertise light, you’re here to improve that.
+The paper below is a working first draft. Intended to explain the direction and ethos of the Public Happiness Token to the experts joining the project to apply expertise from their specialist area and create a Whitepaper ready for public release. It is currently word heavy and technical expertise light, you’re here to improve that.
 
 `)				   
 				   
@@ -1425,84 +1425,84 @@ const Anchor2  = () => <Fragment><h2 id="Background" style={{margin: 'auto'}}> <
 const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
 const Anchor4  = () => <Fragment><h2 id="Problem Statement" style={{margin: 'auto'}}>Problem Statement</h2><div dangerouslySetInnerHTML={{ __html: markdownSection4 }} /></Fragment>
 const Anchor5  = () => <Fragment><h2 id="Issues we Aim to Solve" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection5 }} /></Fragment>
-const Anchor6  = () => <Fragment><h2 id="Primary Goal" style={{margin: 'auto'}}>Primary Goal</h2><div dangerouslySetInnerHTML={{ __html: markdownSection6 }} /></Fragment>
-const Anchor7  = () => <Fragment><h2 id="Secondary Goal" style={{margin: 'auto'}}>Secondary Goal</h2><div dangerouslySetInnerHTML={{ __html: markdownSection7 }} /></Fragment>
-const Anchor8  = () => <Fragment><h2 id="Relation to Universal Basic Income" style={{margin: 'auto'}}>Relation to Universal Basic Income</h2><div dangerouslySetInnerHTML={{ __html: markdownSection8 }} /></Fragment>
+const Anchor6  = () => <Fragment><h2 id="Primary Goal" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection6 }} /></Fragment>
+const Anchor7  = () => <Fragment><h2 id="Secondary Goal" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection7 }} /></Fragment>
+const Anchor8  = () => <Fragment><h2 id="Relation to Universal Basic Income" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection8 }} /></Fragment>
 const Anchor9  = () => <Fragment><h2 id="Educating the Public about Blockchain" style={{margin: 'auto'}}>Educating the Public about Blockchain</h2><div dangerouslySetInnerHTML={{ __html: markdownSection9 }} /></Fragment>
-const Anchor10 = () => <Fragment><h2 id="Current State of Public Understanding" style={{margin: 'auto'}}>Current State of Public Understanding</h2><div dangerouslySetInnerHTML={{ __html: markdownSection10 }} /></Fragment>
-const Anchor11 = () => <Fragment><h2 id="Reaching a New Audience" style={{margin: 'auto'}}>Reaching a New Audience</h2><div dangerouslySetInnerHTML={{ __html: markdownSection11 }} /></Fragment>
+const Anchor10 = () => <Fragment><h2 id="Current State of Public Understanding" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection10 }} /></Fragment>
+const Anchor11 = () => <Fragment><h2 id="Reaching a New Audience" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection11 }} /></Fragment>
 const Anchor12 = () => <Fragment><h2 id="The Public Happiness Token" style={{margin: 'auto'}}>The Public Happiness Token</h2><div dangerouslySetInnerHTML={{ __html: markdownSection12 }} /></Fragment>
-const Anchor13 = () => <Fragment><h2 id="Token Overview" style={{margin: 'auto'}}>Token Overview</h2><div dangerouslySetInnerHTML={{ __html: markdownSection13 }} /></Fragment>
+const Anchor13 = () => <Fragment><h2 id="Token Overview" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection13 }} /></Fragment>
 const Anchor14 = () => <Fragment><h2 id="Public Happiness Token ICO" style={{margin: 'auto'}}>Public Happiness Token ICO</h2><div dangerouslySetInnerHTML={{ __html: markdownSection14 }} /></Fragment>
-const Anchor15 = () => <Fragment><h2 id="ICO Strategy" style={{margin: 'auto'}}>ICO Strategy</h2><div dangerouslySetInnerHTML={{ __html: markdownSection15 }} /></Fragment>
-const Anchor16 = () => <Fragment><h2 id="ICO Stages" style={{margin: 'auto'}}>ICO Stages</h2><div dangerouslySetInnerHTML={{ __html: markdownSection16 }} /></Fragment>
+const Anchor15 = () => <Fragment><h2 id="ICO Strategy" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection15 }} /></Fragment>
+const Anchor16 = () => <Fragment><h2 id="ICO Stages" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection16 }} /></Fragment>
 const Anchor17 = () => <Fragment><h2 id="Ongoing Funding for Specific Projects and Experts" style={{margin: 'auto'}}>Ongoing Funding for Specific Projects and Experts</h2><div dangerouslySetInnerHTML={{ __html: markdownSection17 }} /></Fragment>
-const Anchor18 = () => <Fragment><h2 id="ICO Marketing" style={{margin: 'auto'}}>ICO Marketing</h2><div dangerouslySetInnerHTML={{ __html: markdownSection18 }} /></Fragment>
+const Anchor18 = () => <Fragment><h2 id="ICO Marketing" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection18 }} /></Fragment>
 const Anchor19 = () => <Fragment><h2 id="Public Happiness – Background" style={{margin: 'auto'}}>Public Happiness – Background</h2><div dangerouslySetInnerHTML={{ __html: markdownSection19 }} /></Fragment>
-const Anchor20 = () => <Fragment><h2 id="Community Background" style={{margin: 'auto'}}>Community Background</h2><div dangerouslySetInnerHTML={{ __html: markdownSection20 }} /></Fragment>
-const Anchor21 = () => <Fragment><h2 id="The Public Happiness Movement Community" style={{margin: 'auto'}}>The Public Happiness Movement Community</h2><div dangerouslySetInnerHTML={{ __html: markdownSection21 }} /></Fragment>
+const Anchor20 = () => <Fragment><h2 id="Community Background" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection20 }} /></Fragment>
+const Anchor21 = () => <Fragment><h2 id="The Public Happiness Movement Community" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection21 }} /></Fragment>
 const Anchor22 = () => <Fragment><h2 id="Platform Overview" style={{margin: 'auto'}}>Platform Overview</h2><div dangerouslySetInnerHTML={{ __html: markdownSection22 }} /></Fragment>
-const Anchor23 = () => <Fragment><h2 id="The Public Happiness Map" style={{margin: 'auto'}}>The Public Happiness Map (public actions for increasing human and society well-being)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection23 }} /></Fragment>
-const Anchor24 = () => <Fragment><h2 id="Action Center" style={{margin: 'auto'}}>Action Center (microvolunteering)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection24 }} /></Fragment>
-const Anchor25 = () => <Fragment><h2 id="Community News" style={{margin: 'auto'}}>Community News</h2><div dangerouslySetInnerHTML={{ __html: markdownSection25 }} /></Fragment>
-const Anchor26 = () => <Fragment><h2 id="Active Happiness Shop" style={{margin: 'auto'}}>Active Happiness Shop</h2><div dangerouslySetInnerHTML={{ __html: markdownSection26 }} /></Fragment>
-const Anchor27 = () => <Fragment><h2 id="Who Defines What is Accepted as ‘Public Happiness’" style={{margin: 'auto'}}>Who Defines What is Accepted as ‘Public Happiness’</h2><div dangerouslySetInnerHTML={{ __html: markdownSection27 }} /></Fragment>
-const Anchor28 = () => <Fragment><h2 id="Evidence Based and Peer Reviewed Actions" style={{margin: 'auto'}}>Evidence Based and Peer Reviewed Actions</h2><div dangerouslySetInnerHTML={{ __html: markdownSection28 }} /></Fragment>
-const Anchor29 = () => <Fragment><h2 id="Who can Participate on the Platform" style={{margin: 'auto'}}>Who can Participate on the Platform</h2><div dangerouslySetInnerHTML={{ __html: markdownSection29 }} /></Fragment>
-const Anchor30 = () => <Fragment><h2 id="Pre-existing Communities with Similar Values" style={{margin: 'auto'}}>Pre-existing Communities with Similar Values</h2><div dangerouslySetInnerHTML={{ __html: markdownSection30 }} /></Fragment>
-const Anchor31 = () => <Fragment><h2 id="Languages" style={{margin: 'auto'}}>Languages</h2><div dangerouslySetInnerHTML={{ __html: markdownSection31 }} /></Fragment>
+const Anchor23 = () => <Fragment><h2 id="The Public Happiness Map" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection23 }} /></Fragment>
+const Anchor24 = () => <Fragment><h2 id="Action Center" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection24 }} /></Fragment>
+const Anchor25 = () => <Fragment><h2 id="Community News" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection25 }} /></Fragment>
+const Anchor26 = () => <Fragment><h2 id="Active Happiness Shop" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection26 }} /></Fragment>
+const Anchor27 = () => <Fragment><h2 id="Who Defines What is Accepted as ‘Public Happiness’" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection27 }} /></Fragment>
+const Anchor28 = () => <Fragment><h2 id="Evidence Based and Peer Reviewed Actions" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection28 }} /></Fragment>
+const Anchor29 = () => <Fragment><h2 id="Who can Participate on the Platform" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection29 }} /></Fragment>
+const Anchor30 = () => <Fragment><h2 id="Pre-existing Communities with Similar Values" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection30 }} /></Fragment>
+const Anchor31 = () => <Fragment><h2 id="Languages" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection31 }} /></Fragment>
 const Anchor32 = () => <Fragment><h2 id="Decentralised Governance and Voting" style={{margin: 'auto'}}>Decentralised Governance and Voting</h2><div dangerouslySetInnerHTML={{ __html: markdownSection32 }} /></Fragment>
-const Anchor33 = () => <Fragment><h2 id="The Path to Decentralisation" style={{margin: 'auto'}}>The Path to Decentralisation</h2><div dangerouslySetInnerHTML={{ __html: markdownSection33 }} /></Fragment>
-const Anchor34 = () => <Fragment><h2 id="Benevolent Dictatorship vs Complete Community Governance" style={{margin: 'auto'}}>Benevolent Dictatorship vs Complete Community Governance</h2><div dangerouslySetInnerHTML={{ __html: markdownSection34 }} /></Fragment>
-const Anchor35 = () => <Fragment><h2 id="Example Scenario: Outside Collusion" style={{margin: 'auto'}}>Example Scenario: Outside Collusion</h2><div dangerouslySetInnerHTML={{ __html: markdownSection35 }} /></Fragment>
-const Anchor36 = () => <Fragment><h2 id="Lines of Defence" style={{margin: 'auto'}}>Lines of Defence</h2><div dangerouslySetInnerHTML={{ __html: markdownSection36 }} /></Fragment>
-const Anchor37 = () => <Fragment><h2 id="Conclusion" style={{margin: 'auto'}}>Conclusion</h2><div dangerouslySetInnerHTML={{ __html: markdownSection37 }} /></Fragment>
+const Anchor33 = () => <Fragment><h2 id="The Path to Decentralisation" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection33 }} /></Fragment>
+const Anchor34 = () => <Fragment><h2 id="Benevolent Dictatorship vs Complete Community Governance" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection34 }} /></Fragment>
+const Anchor35 = () => <Fragment><h2 id="Example Scenario: Outside Collusion" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection35 }} /></Fragment>
+const Anchor36 = () => <Fragment><h2 id="Lines of Defence" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection36 }} /></Fragment>
+const Anchor37 = () => <Fragment><h2 id="Conclusion" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection37 }} /></Fragment>
 const Anchor38 = () => <Fragment><h2 id="Security" style={{margin: 'auto'}}>Security</h2><div dangerouslySetInnerHTML={{ __html: markdownSection38 }} /></Fragment>
-const Anchor39 = () => <Fragment><h2 id="Levels of Trust" style={{margin: 'auto'}}>Levels of Trust</h2><div dangerouslySetInnerHTML={{ __html: markdownSection39 }} /></Fragment>
-const Anchor40 = () => <Fragment><h2 id="Community Administrators" style={{margin: 'auto'}}>Community Administrators</h2><div dangerouslySetInnerHTML={{ __html: markdownSection40 }} /></Fragment>
-const Anchor41 = () => <Fragment><h2 id="Project Administrators" style={{margin: 'auto'}}>Project Administrators</h2><div dangerouslySetInnerHTML={{ __html: markdownSection41 }} /></Fragment>
-const Anchor42 = () => <Fragment><h2 id="Mining Limits" style={{margin: 'auto'}}>Mining Limits</h2><div dangerouslySetInnerHTML={{ __html: markdownSection42 }} /></Fragment>
-const Anchor43 = () => <Fragment><h2 id="Cold Storage and Key Holders" style={{margin: 'auto'}}>Cold Storage and Key Holders</h2><div dangerouslySetInnerHTML={{ __html: markdownSection43 }} /></Fragment>
+const Anchor39 = () => <Fragment><h2 id="Levels of Trust" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection39 }} /></Fragment>
+const Anchor40 = () => <Fragment><h2 id="Community Administrators" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection40 }} /></Fragment>
+const Anchor41 = () => <Fragment><h2 id="Project Administrators" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection41 }} /></Fragment>
+const Anchor42 = () => <Fragment><h2 id="Mining Limits" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection42 }} /></Fragment>
+const Anchor43 = () => <Fragment><h2 id="Cold Storage and Key Holders" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection43 }} /></Fragment>
 const Anchor44 = () => <Fragment><h2 id="Marketing Strategy" style={{margin: 'auto'}}>Marketing Strategy</h2><div dangerouslySetInnerHTML={{ __html: markdownSection44 }} /></Fragment>
-const Anchor45 = () => <Fragment><h2 id="A New Level of Hash Tagging" style={{margin: 'auto'}}>A New Level of Hash Tagging</h2><div dangerouslySetInnerHTML={{ __html: markdownSection45 }} /></Fragment>
-const Anchor46 = () => <Fragment><h2 id="Bus Tour" style={{margin: 'auto'}}>Bus Tour</h2><div dangerouslySetInnerHTML={{ __html: markdownSection46 }} /></Fragment>
-const Anchor47 = () => <Fragment><h2 id="Public Happiness Channel" style={{margin: 'auto'}}>Public Happiness Channel</h2><div dangerouslySetInnerHTML={{ __html: markdownSection47 }} /></Fragment>
-const Anchor48 = () => <Fragment><h2 id="Happy Cam" style={{margin: 'auto'}}>Happy Cam</h2><div dangerouslySetInnerHTML={{ __html: markdownSection48 }} /></Fragment>
-const Anchor49 = () => <Fragment><h2 id="Public Happiness Partners" style={{margin: 'auto'}}>Public Happiness Partners</h2><div dangerouslySetInnerHTML={{ __html: markdownSection49 }} /></Fragment>
-const Anchor50 = () => <Fragment><h2 id="Online Supporters" style={{margin: 'auto'}}>Online Supporters</h2><div dangerouslySetInnerHTML={{ __html: markdownSection50 }} /></Fragment>
-const Anchor51 = () => <Fragment><h2 id="Contests" style={{margin: 'auto'}}>Contests</h2><div dangerouslySetInnerHTML={{ __html: markdownSection51 }} /></Fragment>
-const Anchor52 = () => <Fragment><h2 id="Collectables" style={{margin: 'auto'}}>Collectables</h2><div dangerouslySetInnerHTML={{ __html: markdownSection52 }} /></Fragment>
+const Anchor45 = () => <Fragment><h2 id="A New Level of Hash Tagging" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection45 }} /></Fragment>
+const Anchor46 = () => <Fragment><h2 id="Bus Tour" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection46 }} /></Fragment>
+const Anchor47 = () => <Fragment><h2 id="Public Happiness Channel" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection47 }} /></Fragment>
+const Anchor48 = () => <Fragment><h2 id="Happy Cam" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection48 }} /></Fragment>
+const Anchor49 = () => <Fragment><h2 id="Public Happiness Partners" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection49 }} /></Fragment>
+const Anchor50 = () => <Fragment><h2 id="Online Supporters" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection50 }} /></Fragment>
+const Anchor51 = () => <Fragment><h2 id="Contests" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection51 }} /></Fragment>
+const Anchor52 = () => <Fragment><h2 id="Collectables" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection52 }} /></Fragment>
 const Anchor53 = () => <Fragment><h2 id="Automated Token Distribution Matrix" style={{margin: 'auto'}}>Automated Token Distribution Matrix</h2><div dangerouslySetInnerHTML={{ __html: markdownSection53 }} /></Fragment>
-const Anchor54 = () => <Fragment><h2 id="Weighted Mining" style={{margin: 'auto'}}>Weighted Mining</h2><div dangerouslySetInnerHTML={{ __html: markdownSection54 }} /></Fragment>
-const Anchor55 = () => <Fragment><h2 id="Hard Cap" style={{margin: 'auto'}}>Hard Cap</h2><div dangerouslySetInnerHTML={{ __html: markdownSection55 }} /></Fragment>
-const Anchor56 = () => <Fragment><h2 id="Adjusting the Balancing" style={{margin: 'auto'}}>Adjusting the Balancing</h2><div dangerouslySetInnerHTML={{ __html: markdownSection56 }} /></Fragment>
-const Anchor57 = () => <Fragment><h2 id="Token Release" style={{margin: 'auto'}}>Token Release</h2><div dangerouslySetInnerHTML={{ __html: markdownSection57 }} /></Fragment>
-const Anchor58 = () => <Fragment><h2 id="Mining Table" style={{margin: 'auto'}}>Mining Table</h2><div dangerouslySetInnerHTML={{ __html: markdownSection58 }} /></Fragment>
-const Anchor59 = () => <Fragment><h2 id="Experience Multipliers" style={{margin: 'auto'}}>Experience Multipliers</h2><div dangerouslySetInnerHTML={{ __html: markdownSection59 }} /></Fragment>
-const Anchor60 = () => <Fragment><h2 id="Token Distribution" style={{margin: 'auto'}}>Token Distribution</h2><div dangerouslySetInnerHTML={{ __html: markdownSection60 }} /></Fragment>
-const Anchor61 = () => <Fragment><h2 id="Further Matrix Considerations" style={{margin: 'auto'}}>Further Matrix Considerations</h2><div dangerouslySetInnerHTML={{ __html: markdownSection61 }} /></Fragment>
+const Anchor54 = () => <Fragment><h2 id="Weighted Mining" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection54 }} /></Fragment>
+const Anchor55 = () => <Fragment><h2 id="Hard Cap" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection55 }} /></Fragment>
+const Anchor56 = () => <Fragment><h2 id="Adjusting the Balancing" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection56 }} /></Fragment>
+const Anchor57 = () => <Fragment><h2 id="Token Release" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection57 }} /></Fragment>
+const Anchor58 = () => <Fragment><h2 id="Mining Table" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection58 }} /></Fragment>
+const Anchor59 = () => <Fragment><h2 id="Experience Multipliers" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection59 }} /></Fragment>
+const Anchor60 = () => <Fragment><h2 id="Token Distribution" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection60 }} /></Fragment>
+const Anchor61 = () => <Fragment><h2 id="Further Matrix Considerations" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection61 }} /></Fragment>
 const Anchor62 = () => <Fragment><h2 id="Team" style={{margin: 'auto'}}>Team</h2><div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
-const Anchor63 = () => <Fragment><h2 id="Current Team Members" style={{margin: 'auto'}}>Current Team Members</h2><div dangerouslySetInnerHTML={{ __html: markdownSection63 }} /></Fragment>
-const Anchor64 = () => <Fragment><h2 id="Positions Open" style={{margin: 'auto'}}>Positions Open</h2><div dangerouslySetInnerHTML={{ __html: markdownSection64 }} /></Fragment>
-const Anchor65 = () => <Fragment><h2 id="Remuneration" style={{margin: 'auto'}}>Remuneration</h2><div dangerouslySetInnerHTML={{ __html: markdownSection65 }} /></Fragment>
-const Anchor66 = () => <Fragment><h2 id="Facilities" style={{margin: 'auto'}}>Facilities</h2><div dangerouslySetInnerHTML={{ __html: markdownSection66 }} /></Fragment>
+const Anchor63 = () => <Fragment><h2 id="Current Team Members" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection63 }} /></Fragment>
+const Anchor64 = () => <Fragment><h2 id="Positions Open" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection64 }} /></Fragment>
+const Anchor65 = () => <Fragment><h2 id="Remuneration" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection65 }} /></Fragment>
+const Anchor66 = () => <Fragment><h2 id="Facilities" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection66 }} /></Fragment>
 const Anchor67 = () => <Fragment><h2 id="Platform Technicals" style={{margin: 'auto'}}>Platform Technicals</h2><div dangerouslySetInnerHTML={{ __html: markdownSection67 }} /></Fragment>
-const Anchor68 = () => <Fragment><h2 id="Crypto Linking Bridges" style={{margin: 'auto'}}>Crypto Linking Bridges</h2><div dangerouslySetInnerHTML={{ __html: markdownSection68 }} /></Fragment>
-const Anchor69 = () => <Fragment><h2 id="Trello vs Wekan vs Other Solutions" style={{margin: 'auto'}}>Trello vs Wekan vs Other Solutions</h2><div dangerouslySetInnerHTML={{ __html: markdownSection69 }} /></Fragment>
-const Anchor70 = () => <Fragment><h2 id="Leafletjs vs Google Maps API" style={{margin: 'auto'}}>Leafletjs vs Google Maps API</h2><div dangerouslySetInnerHTML={{ __html: markdownSection70 }} /></Fragment>
-const Anchor71 = () => <Fragment><h2 id="Switching the Platform to the Dapps Network" style={{margin: 'auto'}}>Switching the Platform to the Dapps Network</h2><div dangerouslySetInnerHTML={{ __html: markdownSection71 }} /></Fragment>
+const Anchor68 = () => <Fragment><h2 id="Crypto Linking Bridges" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection68 }} /></Fragment>
+const Anchor69 = () => <Fragment><h2 id="Trello vs Wekan vs Other Solutions" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection69 }} /></Fragment>
+const Anchor70 = () => <Fragment><h2 id="Leafletjs vs Google Maps API" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection70 }} /></Fragment>
+const Anchor71 = () => <Fragment><h2 id="Switching the Platform to the Dapps Network" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection71 }} /></Fragment>
 const Anchor72 = () => <Fragment><h2 id="Doomsday Protocol" style={{margin: 'auto'}}>Doomsday Protocol</h2><div dangerouslySetInnerHTML={{ __html: markdownSection72 }} /></Fragment>
-const Anchor73 = () => <Fragment><h2 id="Huge Market Crash" style={{margin: 'auto'}}>Huge Market Crash</h2><div dangerouslySetInnerHTML={{ __html: markdownSection73 }} /></Fragment>
-const Anchor74 = () => <Fragment><h2 id="Quantum Security" style={{margin: 'auto'}}>Quantum Security</h2><div dangerouslySetInnerHTML={{ __html: markdownSection74 }} /></Fragment>
-const Anchor75 = () => <Fragment><h2 id="Massive Hack" style={{margin: 'auto'}}>Massive Hack</h2><div dangerouslySetInnerHTML={{ __html: markdownSection75 }} /></Fragment>
-const Anchor76 = () => <Fragment><h2 id="Zombie Apocalypse" style={{margin: 'auto'}}>Zombie Apocalypse</h2><div dangerouslySetInnerHTML={{ __html: markdownSection76 }} /></Fragment>
+const Anchor73 = () => <Fragment><h2 id="Huge Market Crash" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection73 }} /></Fragment>
+const Anchor74 = () => <Fragment><h2 id="Quantum Security" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection74 }} /></Fragment>
+const Anchor75 = () => <Fragment><h2 id="Massive Hack" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection75 }} /></Fragment>
+const Anchor76 = () => <Fragment><h2 id="Zombie Apocalypse" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection76 }} /></Fragment>
 const Anchor77 = () => <Fragment><h2 id="Giving Back to Open-source" style={{margin: 'auto'}}>Giving Back to Open-source</h2><div dangerouslySetInnerHTML={{ __html: markdownSection77 }} /></Fragment>
 const Anchor78 = () => <Fragment><h2 id="Timeline" style={{margin: 'auto'}}>Timeline</h2><div dangerouslySetInnerHTML={{ __html: markdownSection78 }} /></Fragment>
 const Anchor79 = () => <Fragment><h2 id="Key Supporters and Team" style={{margin: 'auto'}}>Key Supporters and Team</h2><div dangerouslySetInnerHTML={{ __html: markdownSection79 }} /></Fragment>
 const Anchor80 = () => <Fragment><h2 id="Questions to be Resolved" style={{margin: 'auto'}}>Questions to be Resolved</h2><div dangerouslySetInnerHTML={{ __html: markdownSection80 }} /></Fragment>
-const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" style={{margin: 'auto'}}>The World Needs This Because: (v1)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
-const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" style={{margin: 'auto'}}>The World Needs This Because: (v2)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
-const Anchor103 = () => <Fragment><h2 id="Foreword" style={{margin: 'auto'}}>Foreword</h2><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
+const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
+const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
+const Anchor103 = () => <Fragment><h2 id="Foreword" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
 
 
 
