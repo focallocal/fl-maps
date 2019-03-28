@@ -21,99 +21,99 @@ const Contents = () => (
 The World Needs This Because: (v2)<br/>
 <br/>
 1. <a href="#Abstract">Abstract</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.1. <a href="Background">Background</a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.2. Public Happiness Movement Token Introduction<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.1. <a href="#Background">Background</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.2. <a href="#Public Happiness Movement Token Introduction">Public Happiness Movement Token Introduction</a><br/>
 <br/>
-2. Problem Statement <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.1. Issues we aim to solve<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.2. Primary Goal<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.3. Secondary Goal<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.4. Relation to Universal Basic Income<br/>
+2. <a href="#Problem Statement">Problem Statement</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.1. <a href="#Issues we Aim to Solve">Issues we Aim to Solve</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.2. <a href="#Primary Goal">Primary Goal</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.3. <a href="#Secondary Goal">Secondary Goal</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.4. <a href="#Relation to Universal Basic Income">Relation to Universal Basic Income</a><br/>
 <br/>
-3. Educating the Public about Blockchain<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.1. Current State of Public Understanding<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.2. Reaching a New Audience<br/>
+3. <a href="#Educating the Public about Blockchain"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.1. <a href="#Current State of Public Understanding"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.2. <a href="#Reaching a New Audience"></a><br/>
 <br/>
-4. The Public Happiness Movement Token<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	4.1. Token Overview<br/>
+4. <a href="#The Public Happiness Movement Token"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	4.1. <a href="#Token Overview"></a><br/>
 <br/>
-5. Public Happiness Movement Token ICO<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.1. ICO Strategy<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.2. ICO Stages<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.3. Ongoing Funding for Specific Projects and Experts<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.4. ICO Marketing<br/>
+5. <a href="#Public Happiness Movement Token ICO"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.1. <a href="#ICO Strategy"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.2. <a href="#ICO Stages"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.3. <a href="#Ongoing Funding for Specific Projects and Experts"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.4. <a href="#ICO Marketing"></a><br/>
 <br/>
-6. Public Happiness – Background<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.1. Community Background<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.2. The Public Happiness Movement Community<br/>
+6. <a href="#Public Happiness – Background"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.1. <a href="#Community Background"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.2. <a href="#The Public Happiness Movement Community"></a><br/>
 <br/>
-7. Platform Overview<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.1. The Public Happiness Map (public actions for increasing human and society well-being)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.2. Action Center (Microvolunteering)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.3. Community News<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.4. Active Happiness Shop<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.5. Who Defines What is Accepted as ‘Public Happiness’<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.6. Evidence Based and Peer Reviewed Actions<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.7. Who can Participate on the Platform<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.8. Pre-existing Communities with Similar Values<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.9. Languages<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.10. Decentralised Governance and Voting<br/>
+7. <a href="#Platform Overview"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.1. <a href="#The Public Happiness Map"></a>(public actions for increasing human and society well-being)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.2. <a href="#Action Center (Microvolunteering)"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.3. <a href="#Community News"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.4. <a href="#Active Happiness Shop"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.5. <a href="#Who Defines What is Accepted as ‘Public Happiness’"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.6. <a href="#Evidence Based and Peer Reviewed Actions"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.7. <a href="#Who can Participate on the Platform"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.8. <a href="#Pre-existing Communities with Similar Values"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.9. <a href="#Languages"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.10. <a href="#Decentralised Governance and Voting"></a><br/>
 <br/>
-8. The Path to Decentralisation<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.1. Benevolent Dictatorship vs Complete Community Governance<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.2. Example Scenario: Outside Collusion<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.3. Lines of Defence<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.4. Conclusion<br/>
+8. <a href="#The Path to Decentralisation"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.1. <a href="#Benevolent Dictatorship vs Complete Community Governance"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.2. <a href="#Example Scenario: Outside Collusion"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.3. <a href="#Lines of Defence"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.4. <a href="#Conclusion"></a><br/>
 <br/>
-9. Security<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.1. Levels of Trust<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.2.. Community Administrators<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.3. Project Administrators<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.4. Mining Limits<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.5. Cold Storage and Key Holders<br/>
+9. Security"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.1. <a href="#Levels of Trust"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.2. <a href="#Community Administrators"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.3. <a href="#Project Administrators"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.4. <a href="#Mining Limits"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.5. <a href="#Cold Storage and Key Holders"></a><br/>
 <br/>
-10. Marketing Strategy<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.1. A New Level of Hash Tagging<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.2. Bus Tour<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.3.. Public Happiness Channel<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.4. Happy Cam<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.5. Public Happiness Partners<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.6. Online Supporters<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.7. Contests<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.8. Collectables<br/>
+10. <a href="#Marketing Strategy<br/>"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.1. <a href="#A New Level of Hash Tagging"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.2. <a href="#Bus Tour"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.3. <a href="#Public Happiness Channel"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.4. <a href="#Happy Cam"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.5. <a href="#Public Happiness Partners"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.6. <a href="#Online Supporters"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.7. <a href="#Contests"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.8. <a href="#Collectables"></a><br/>
 <br/>
-11.  Automated Token Distribution Matrix<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. Weighted Mining<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.2. Hard Cap<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.3. Adjusting the Balancing<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. Token Release<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. Mining Table<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.6. Experience Multipliers<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.7. Token Distribution<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.8. Further Matrix Considerations<br/>
+11. <a href="#Automated Token Distribution Matrix"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. <a href="#Weighted Mining"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.2. <a href="#Hard Cap"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.3. <a href="#Adjusting the Balancing"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. <a href="#Token Release"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. <a href="#Mining Table"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.6. <a href="#Experience Multipliers"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.7. <a href="#Token Distribution"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.8. <a href="#Further Matrix Considerations"></a><br/>
  <br/>
-12. Team<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.1. Current Team Members<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.2. Positions Open<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.3. Remuneration<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.4. Facilities<br/>
+12. <a href="#Team"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.1. <a href="#Current Team Members"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.2. <a href="#Positions Open"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.3. <a href="#Remuneration"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.4. <a href="#Facilities"></a><br/>
  <br/>
-13. Platform Technicals<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.1. Crypto Linking Bridges<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.2. Trello vs Wekan vs Other Solutions<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.3. Leaflet.js vs Google Maps API<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.4. Switching the Platform to the Dapps Network<br/>
+13. <a href="#Platform Technicals"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.1. <a href="#Crypto Linking Bridges"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.2. <a href="#Trello vs Wekan vs Other Solutions"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.3. <a href="#Leaflet.js vs Google Maps API"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.4. <a href="#Switching the Platform to the Dapps Network<br/>
 <br/>
-14. Doomsday Protocol<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.1. Huge Market Crash<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.2. Quantum Security<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.3. Massive Hack<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.4. Zombie Apocalypse<br/>
+14. <a href="#Doomsday Protocol"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.1. <a href="#Huge Market Crash"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.2. <a href="#Quantum Security"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.3. <a href="#Massive Hack"></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.4. <a href="#Zombie Apocalypse"></a><br/>
 <br/>
-15. Giving Back to Open-source<br/>
-16. Timeline<br/>
-17. White Paper Reviewed By<br/>
-18. Questions to be Resolved<br/>
+15. <a href="#Giving Back to Open-source"></a><br/>
+16. <a href="#Timeline"></a><br/>
+17. <a href="#Key Supporters and Team"></a><br/>
+18. <a href="#Questions to be Resolved"></a><br/>
  </p>
   </div>
  </React.Fragment>
