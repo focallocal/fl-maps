@@ -148,14 +148,14 @@ It's provides a space for our individual networks to grow into something larger.
 Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. To discuss a section and make suggestions, click on the red balloons.
 `)
 
-<h5><a id="Abstract"></a>Abstract</h5>text
+const element = <h5><a id="Abstract"></a>Abstract</h5>
 const markdownSection2 = md.render(`
 
 text
 
 text
 				   `)
-<h2><a id="Background"></a>Background</h5>text
+const element = <h2><a id="Background"></a>Background</h2>
 const markdownSection3 = md.render(`
 
 text
