@@ -239,54 +239,51 @@ const markdownSection101 = md.render(`
 
 **Public Happiness Token: 
 A New Cryptocurrency Intrinsically tied to Creating Societal Good**
-
 Public Happiness Token is a currency which is intrinsically tied to creating social good. The more its traded, mined and earned, the more our network benefits local communities around the world, building a friendlier, safer and happier future. 
 
 
-**Problems the Public Happiness Token Aims to Solve:**
-
+**Problems the Public Happiness Token Aims to Solve**
 Positive Societal and Cultural Change:
 Supercharging the network effect of the Public Happiness Movement. Rapidly growing the community through an incentivised ecosystem, directing energy into finding more effective ways to achieve positive societal and cultural change, ideas that we can’t even imagine yet – but can’t wait to see! 
-
+---
 Currencies benefiting Communities:
 Cryptocurrencies give us the ability to choose to use/support a currency because we agree with its ethical value and effects on society. Public Happiness Token aims to demonstrate this to the public by creating an alternative currency with its value distinctly and inseparably tied to positive impacts towards a healthier society where its used and mined.
-
+---
 Human Well-being:
 Our crypto-enhanced ecosystem directs energy and creativity onto solving issues critical to a healthy local and global society, incentivising action on issues that reduce human well-being which are largely overlooked by today’s GDP based societies.
-
+---
 Distribution: 
 Our Public Happiness activities and projects get people onto the streets reaching people in their daily life and engaging a much wider and more diversified audience into the world of blockchain. Our token is a big step forwards in mass-adoption outside of the current crypto markets. 
-
+---
 Educating the Public: 
 We demonstrate how cryptocurrencies can impact people’s daily lives and communities in a positive way, and teach them how they can engage with it. Using our network and platform we will lead new users on a journey of discovery, culminating in a greater understanding of the world of blockchain and decentralisation.
-
+---
 Decentralised Governance:
 Our platform creates a decentralised self-governing and evolving community focused on positive cultural change. Grandfathering in a reputation weighted community voting system and gradually opening up all areas of the project to decentralised governance, while maintaining a clear direction by guiding members to weigh all decisions against a [Community Values ](https://news.focallocal.org/the-focallocal-community-values/)statement which all users agree to upon joining the community. 
 
-
 Our ecosystem and mission rewards positive behaviour towards each other and society with a higher influence on voting, ensuring a governance culture rooted in that positivity which is resistant to attempts to subvert the token/original mission; as has befallen other decentralised projects.
-
+---
 Super-Charged Network Effect:
 Tokenizing massively accelerates the effects of a network. Happiness is a great candidate for the boost a crypto-economic model can provide. Tokenizing will rapidly advance our Movement’s effect on global public happiness and well-being.
-
+---
 An Evolving Platform:
 The platform is being built to a minimum usable product. After that users will direct and build the platform they need to maximise their effectiveness. Voting on the best plans to improve it.
-
+---
 Culture and Foundations laid by Top Experts:
 Our ICO will be used to fund top-level staff to bring their skills in and lead the platforms 1st users. Facilitating a smooth growth, until the community is mature enough to self-govern.
-
+---
 Reaching New Audiences:
 Teaching users core concepts of the crypto-economic model, our token can operate as a bridge between blockchain and other parts of the non-digital world, through its ability to reach a far broader, and less tech-savvy audience than other coins and tokens.
-
+---
 Wider Acceptance of Blockchain:
 Our platform aims to educate users as to how blockchain will change the world they live in, and how they can understand and interact with it. Attracting a wider community and an ecosystem to create positive societal change we can't even imagine yet.
-
+---
 The paper below is a working first draft, intended to explain the direction and ethos of the Public Happiness Token to the experts joining the project to apply expertise from their specialist area and create a Whitepaper ready for public release. It is currently word heavy and technical expertise light, you’re here to improve that.
 
 `)				   
 				   
 
-const markdownSection1 = md.render(` 
+const markdownSection1 = md.render(`
 
 `)
 
@@ -295,7 +292,6 @@ const markdownSection2 = md.render(`
 ## 1.1.
 
 **Background**
-
 Today’s society is based on GDP, with almost every political decision weighed against this to see if it should go ahead. The founder of GDP, Simon Kuznets campaigned against its use as a primary tool, arguing that it was never intended to be the base our societies were built upon. He designed GDP in 1937 solely for the post war recovery and believed it was entirely unsuitable as the main measure of societal success/well-being because it undervalued and ignored large areas that are critical to a healthy, functioning society. 
 
 *‘the welfare of a nation can scarcely be inferred from a measurement of national income as defined by the GDP’* - Simon Kuznets
@@ -317,7 +313,6 @@ const markdownSection3  = md.render(`
 ## 1.2.
 
 **Public Happiness Token: Introduction**
-
 Public Happiness Token is an ERC20 Token created from Ethereum blockchain. The Token itself will have few modifications, with its value to society, and for trading, coming from its unique use in engaging users in activities and projects to create a happier, safer and friendlier society for their local community.
 
 All Public Action is organised via our platform focallocal.org and app. Our web-based platform has been built entirely by volunteers who support the vision and is already operational in Beta, early-launch stage. 
@@ -335,18 +330,19 @@ Blockchain creates a new and intriguing possibility to super-charge our positive
 
 *Disclaimer: Please note that this white paper does not create any legally binding obligations, it is presented here purely for informational purposes. For more information please read our terms of use*
 
-[Add link for terms of use]
+[link for terms of use coming soon]
 
 `)
 
-const markdownSection4  = md.render(` `)
+const markdownSection4  = md.render(`
+
+`)
 
 const markdownSection5  = md.render(` 
 
 ## 2.1. 
 
 **Issues we aim to solve**
-
 1. Apathy towards issues troubling our society
 
 2. Empowering individuals through education on how powerful we can all can be in creating change when uniting together around a creative and effective plan
@@ -362,19 +358,17 @@ const markdownSection6  = md.render(`
 ## 2.2.
 
 **Primary Goal**
-
 We live under a system which rewards actions which advance our society’s economic output, but largely ignores our societal well-being outside of that narrow spectrum. It increasingly pressurises humanity to focus on what advances GDP, leaving important work in the community for charities, and councils to try and patch over. 
 
 We strongly believe that societal, and individual well-being should be treated as an equal, or even higher priority in our global society than economic. Public Happiness Token’s main goal is to provide people with an incentive to unite and work together in making their local community a happier, safer and friendlier place by tackling social issues that reduce well-being like homelessness, loneliness, crime rates, isolation, etc. 
 
- `)
+`)
 
 const markdownSection7  = md.render(` 
 
 ## 2.3.
 
 **Secondary Goal**
-
 This project also aims to empower ordinary, people regardless of their technological ability, to become fluent in cryptocurrency transactions, smart contracts and distributed ledger technology. Through their interactions with our platform and the Public Happiness Token they will gain an entry point of understanding of blockchain, the potential uses for blockchain technology, and its ability to transform society and the world they live in by building a world where creating social good is as important as manufacturing or banking. Their understanding of the fiat currencies they use daily will also be forever changed.
 
 `)
@@ -384,13 +378,14 @@ const markdownSection8 = md.render(`
 ## 2.4.
 
 **Relation to Universal Basic Income**
-
 Universal Basic Income is another concept which has the potential to create societies where many people use their increased freedom to focus on and tackle societal issues. 
 It's a sad situation when people want to do things to make their local community a better place to live, but feel too busy or too stressed about work. A situation Universal Basic Income has the potential to solve, yet UBI faces many hurdles to become accepted policy in all nations. It is likely to be a long and bumpy road and its implementation is likely to differ widely. Public Happiness Token can be considered as a step on the same path, and one which compliments UBI beautifully by incentivizing those living in societies who adopt it to utilize some of that increased freedom to focus on improving life where they live, and the human condition.
 
 `)
 
-const markdownSection9 = md.render(` `)
+const markdownSection9 = md.render(` 
+
+`)
 
 const markdownSection10 = md.render(` 
 
@@ -436,8 +431,8 @@ const markdownSection13 = md.render(`
 **Token Overview**
 7.6 Billion Public Happiness Tokens will be created as a new ERC20 token from the Ethereum Blockchain, this amount is fixed and will never change. In theory every human alive could hold one each. It's a nice thought anyway, and signals our intention of being decentralised and taking every effort to avoid whales owning large percentages of our token
 
-People new to blockchain can find the numbers of decimal places a challenge to grasp initially. Starting with a high number of tokens and low decimal limit of 4, we will make that 1st step a little easier for newcomers, whilst still taking a small step from the standard two decimal integer of Fiat currencies.**
-**
+People new to blockchain can find the numbers of decimal places a challenge to grasp initially. Starting with a high number of tokens and low decimal limit of 4, we will make that 1st step a little easier for newcomers, whilst still taking a small step from the standard two decimal integer of Fiat currencies.
+
 
 Public Happiness Token is given value through its initial ICO, later trading of the token on stock exchanges, and the ability to use it in place of Fiat currencies in the real world (either through creating partnerships with businesses, or guiding users onto token switching payments solutions)
 
@@ -473,17 +468,13 @@ const markdownSection16 = md.render(`
 ## 5.2.
 
 **ICO Stages**
-
 Stage 1: 
-
 Investors will have 30 days to register an Ethereum address. Once the ICO opens a preset number of tokens will be released. registered investors will be capped initially at 2 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
 
 Stage 2: 
-
 This stage will be held on a crowdfunding website to reach those who don’t understand how to join in a traditional ICO. Investors will be rewarded set amounts for donating at increasing intervals. The top threshold of reward for donations will be set at 2 ETH per user. Users may choose to invest more to support the project, but will not receive more tokens than stated.
 
 Stage 3: 
-
 Midway through the crowd funder the top limit will be raised to 5 ETH, and the traditional ICO will be reopened for a second round with a limit of 10 ETH, users may invest up to the respective limit on all of the platforms concurrently
 
 Email addresses will not be collected to prevent issues as seen in the Bee Token phishing scams during their ill-fated ICO
@@ -495,7 +486,6 @@ const markdownSection17 = md.render(`
 ## 5.3. 
 
 **Ongoing Funding for Specific Projects and Experts**
-
 Initially specialists will be employed to lead development in each area. As the community matures the allocation of funds will be opened up fully to decentralised voting on allocation. Users subscribed to the funding allocation channel will engage in discussion and voting around how to distribute funds released from our vault between issues like: 
 
 * specific projects
@@ -516,7 +506,6 @@ Team members/tasks reimbursement levels will be determined by a project finance 
 const markdownSection18 = md.render(`
 
 ## 5.4. 
-
 **ICO Marketing**
 
 Crowd-funding:
@@ -526,8 +515,8 @@ Those who purchase Tokens via crowdfunding will receive instructions in how to c
 
 
 
-Gifting Public Happiness Token:**
-**Part of the ICO marketing (and ongoing marketing afterwards) will have a focus on ‘gifting’ the token to friends and relatives. Accomplished by entering their email and a message for them when purchasing. This gifting may also be made possible over popular social media platforms. 
+Gifting Public Happiness Token:
+Part of the ICO marketing (and ongoing marketing afterwards) will have a focus on ‘gifting’ the token to friends and relatives. Accomplished by entering their email and a message for them when purchasing. This gifting may also be made possible over popular social media platforms. 
 
 Most people have now heard something about Cryptocurrencies, and are curious. By offering those donating the option to gift a token which benefits issues the receiver sees in their local community, we have introduced a simple way to tap into that curiosity.
 
@@ -545,7 +534,6 @@ const markdownSection20 = md.render(`
 ## 6.1.
 
 **Community Background**
-
 Founder Andy worked for the past 7 years building and running a non-profit volunteer community aiming to change the world by bringing people together to give their time voluntarily to solve global issues, on a local scale. Theorising that in many situations charities are massively limited in scale, and an unstoppable wave of change could be created if it became a normal habit to give a few hours a week on resolving issues in our local communities, using the most effective ideas collected from other users around the world (local action for global change).  Creating a proactive and empowered global community who want to meet and adapt these projects to fit their culture and then replicate them to target change to societal issues like homelessness, isolation, human connection, etc,  
 
 The past 6 years felt like swimming upstream. Many amazing people came in and did fabulous altruistic work, most were shortly pulled away by other commitments and general modern life pressures preventing momentum from really building - especially in London, the founding city. The struggle was against a world where good intentions are in constant strife against heavy pressure on our free time. 
@@ -559,7 +547,6 @@ const markdownSection21 = md.render(`
 ## 6.2. 
 
 **The Focallocal Community**
-
 Set up as a non-profit ‘charitable organisation’ in the UK, the Focallocal Community has been established since 2012. It is an open volunteer community for people wanting to take action and make the world they live in a happier, safer and friendlier place through creating public happiness activities and projects, which reach out a friendly hand to the wider community, and target issues which harm public well-being; like, homelessness, poverty, isolation. 
 
 The community is built on the motto ‘Local Action for Global Change’ due to the core belief that local people coming together and targeting a societal issue using creative and positive ideas collected from around the world, are far more effective in most situations than outsiders coming and making change for them. They can adapt ideas to fit the local culture, while teaching people how to come together and ‘do it ourselves’ empowers us all to understand that it is the local community is ours, and together we have the power to shape it into the place we dream of living in.
@@ -584,8 +571,8 @@ const markdownSection23 = md.render(`
 
 ## 7.1.
 
-**The ‘Public Happiness Movement Map’
-**[view live beta](https://focallocal.org/)
+**The ‘Public Happiness Movement Map’**
+[view live beta](https://focallocal.org/)
 An area of the platform to bring users together to connect and take our project and token to the streets. Users can create and join Public Happiness Gatherings from a list of pre-approved activities curated by the community; and contact other members nearby. Users can list themselves on the map (in an approximate location for privacy), and select all the public happiness activities they would like to be contacted for, creating a searchable map of people nearby who want to meet and take actions which bring more well-being into the world they live in.
 
 The Map also allows users to explore approved suggestions for Public Happiness Gatherings, along with; 
@@ -620,8 +607,8 @@ const markdownSection24 = md.render(`
 
 ## 7.2.
 
-**The Action Center
-**[view live beta](https://action.focallocal.org/)
+**The Action Center**
+[view live beta](https://action.focallocal.org/)
 An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. Each ‘Mission’ should take a user between 30 mins and one hour, if longer is needed then it needs to be divided into smaller chunks.
 
 Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
@@ -644,8 +631,7 @@ const markdownSection25 = md.render(`
 
 ## 7.3.
 
-**Community**** News (or Happy News)**
-
+**Community News (or Happy News)**
 [view live beta](https://news.focallocal.org/)
 A user generated ‘Community News’ online magazine. Open for all platform users to create their own articles or share video links. This incentives users to create, like and share content (articles, photos and videos), increasing reach and inspiring more people to join in the Movement. The user led and created media from around the world increases users sense of community, and being part of something bigger, a global Movement for positive change.
 
@@ -660,7 +646,6 @@ const markdownSection26 = md.render(`
 ## 7.4. 
 
 **The Active Happiness Shop**
-
 [view live beta](https://shop.focallocal.org/)
 
 An integrated Shopify store selling ‘Active Happiness Clothing’ which make a small positive change happen in the world around the wearer simply by putting the item on in the mornings. The clothing is an extension of our Public Happiness activities, with most items functioning as a passive way for each public happiness activity to occur outside of organised activities and gatherings. For example, a shirt informing others that the wearer is carrying bubbles, and inviting people around them to blow some.
@@ -677,7 +662,6 @@ const markdownSection27 = md.render(`
 ## 7.5.
 
 **Who defines what is accepted as ‘Public Happiness?’**
-
 The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. Users are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.focallocal.org/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform.
 
 Effective ideas for positive action will be incorporated into the platform and recommended to other users as tools they can use for creating positive  social and cultural change where they live. 
@@ -689,7 +673,6 @@ const markdownSection28 = md.render(`
 ## 7.6.
 
 **Evidence Based and Peer Reviewed**
-
 When users submit a new idea for a project or activity its recommended that they find peer reviewed studies to offer support for the benefits their idea will have on society. This promotes the core concept that all efforts to effect a positive cultural and societal change, should be rooted in the best current understanding of available evidence. Users will be guided to place where they are likely to find sources, as we want to build an informed and competent community. Those who are discussing and reviewing it for approval may add more sources. Part of our ecosystem will be ‘Research Bounty-Hunting’, where users are rewarded for finding new peer reviewed studies to add to already approved activities, or which lead to the removal of an outdated study. 
 
 `)
@@ -699,7 +682,6 @@ const markdownSection29 = md.render(`
 ## 7.7.
 
 **Who can Participate on the Platform**
-
 The platform is open to anyone wanting to create well-being and happiness where they live, or support the Movement. 
 
 Some users may choose to use it while travelling, as great way to meet positive local people. Users traveling are naturally guided towards ‘gathering’ with local people who understand the local customs and any adaptations necessary.
@@ -713,7 +695,6 @@ const markdownSection30 = md.render(`
 ## 7.8.
 
 **Pre-existing Communities with Similar Values**
-
 Groups and communities already doing excellent work in creating Public Happiness and well-being projects/activities where they live, are all welcomed to use our platform and ecosystem to supercharge their positive impact on society.
 
 They can create community pages, with tools for community building and engagement; and for guiding their members into actions which benefit their community and mission. For example, their own forum, the ability to contact their members (according to the users notification preferences) more effectively than existing community building platforms, or giving users tokens for sharing activities/created media on other social media platforms.
@@ -729,8 +710,8 @@ const markdownSection31 = md.render(`
 
 ## 7.9.
 
-**Languages
-**The platform will launch in English. Adding other languages has been designed as a simple task anyone speaking the required language can complete in around 30 mins.
+**Languages**
+The platform will launch in English. Adding other languages has been designed as a simple task anyone speaking the required language can complete in around 30 mins.
 
 `)
 
@@ -739,8 +720,6 @@ const markdownSection32 = md.render(`
 ## 7.10.
 
 **Decentralised Governance and Voting**
-
-
 Each area and section of the platform will have a discussion forum linked where users can discuss improvements to the operations and design of their community and platform, creating a mass decentralised governance system.
 
 Stage 1:
@@ -774,7 +753,6 @@ const markdownSection34 = md.render(`
 ## 8.1.
 
 **Benevolent Dictatorship vs Complete Community Governance**
-
 Primarily, we expect platform users/community members who rise to higher rankings through their actions to increase human and societal well-being, to be invested in the overall vision by the time they reach the upper levels. Their greater influence on decision making will lead the ecosystems culture, creating a force to protect the platform from abuse and actions which run against our Core Values. 
 
 It would be poor planning not to also consider more 'attack' scenarios, and ways to mitigate the risks, while assessing how our platform, ecosystem, and community could be impacted. Then to use this information in deciding on how we best to weigh the ideological value of complete decentralisation, against the importance of introducing our members to the concepts of community governance in measured stages to ensure the integrity of the vision. 
@@ -785,8 +763,8 @@ const markdownSection35 = md.render(`
 
 ## 8.2.
 
-**Example Scenario: Outside Collusion
-**A significantly sized outside group infiltrate our platform, operating as model members, or pretending to and avoiding detection. Once reaching a high enough rank to influence a vote they collude to state that ‘watching tv and drinking beer’ meets with our Core Values and should be approved as a Public Happiness Activity.
+**Example Scenario: Outside Collusion**
+A significantly sized outside group infiltrate our platform, operating as model members, or pretending to and avoiding detection. Once reaching a high enough rank to influence a vote they collude to state that ‘watching tv and drinking beer’ meets with our Core Values and should be approved as a Public Happiness Activity.
 
 Or more concerningly perhaps ‘Rallies supporting a religious hard-line political candidate’ meet the criteria.
 
@@ -796,9 +774,8 @@ const markdownSection36 = md.render(`
 
 ## 8.3.
 
-**Lines of Defence
-
-**1st Line: 
+**Lines of Defence**
+1st Line: 
 The culture of a community built from members focused on creating ‘social good’ will lead those reaching a higher level to be benevolent with their increased influence.
 
 2nd Line: 
@@ -810,13 +787,13 @@ On-chain governance usually means influence can be bought. Instead a weighted go
 
 Some aspects should be protected by the founding members to safeguard from potential attacks and degradation of the initial vision, for example; the Core Values can be influenced by a vote calling for an improvement, but not changed directly. The founders would need to give an extremely strong reason for resisting a popular change, or risk undermining the trust of their community.
 
-4th Line:** ** 
+4th Line: 
 In our terms and conditions we’re making it banned for any one person to amass more than 0.5% of our token. It's not possible to reach that through activity on the platform, or investing during the ICO. Only through a heavy investment of fiat.  Human greed has tainted all major decentralised projects so far, with reports that there are individuals owning more than 1% of both Ethereum and Bitcoin. Thus having a fail safe seems prudent to preserve a truly decentralised economy.
 
 If it can be proven that any one individual owns more than 0.5% of all tokens (outside of the central vault), our terms and conditions state that the excess tokens will be frozen, after every reasonable effort has been made to contact the owner advising them to sell.
 
-Last Line:** 
-**Founder Andy retains a veto vote. Intended never to be used, it serves as a last line of defence against subversion of the platform and community away from its core vision. 
+Last Line: 
+Founder Andy retains a veto vote. Intended never to be used, it serves as a last line of defence against subversion of the platform and community away from its core vision. 
 
 In the case Andy is unable to use it, the veto vote will pass to 7 secretly designated members. Their identities unknown even to each other. These members have been determined by a personal judgement on integrity, reliability, and commitment to both the mission, and it's values. 4 members are required to use the veto on a decision, and reasons it was used must be explained fully to the community.
  
@@ -856,8 +833,7 @@ const markdownSection40 = md.render(`
 
 ## 9.2.
 
-**Community Administrators **
-
+**Community Administrators**
 Experienced members who have contributed to the ecosystem will be invited to become a Community Admin, with extra tools available for supporting other platform users.
 
 Community Admins will receive tokens for performing critical oversight tasks within the platform, like being alerted to check issues by other members, step in to mitigate disputes, or begin the process of warning/removing members acting against the spirit required to maintain a positive and effective community. 
@@ -880,7 +856,6 @@ const markdownSection42 = md.render(`
 ## 9.4. 
 
 **Mining Limits**
-
 A hard limit exists on the amount of tokens one user can earn each week, set to a reasonable limit for how many activities or missions one user can realistically complete to prevent a large scale effort to scam the system. 
 
 The platform will guide users through creating an off-platform Hot Wallet (to avoid the added risks of holding tokens on our platform), which it will interact with and distribute their earned tokens into. The platform will guide users to manage their personal digital security in the world of blockchain; teaching them how and why to:
@@ -903,9 +878,8 @@ const markdownSection43 = md.render(`
 
 ## 9.5.
 
-**Cold Storage and Key Holders
-
-**Our Token:
+**Cold Storage and Key Holders**
+Our Token:
 In our model a large amount of the total Token’s created are held for future release creating obvious security concerns, and also safety concerns for our core team. To reduce these concerns we will be hiring a company who specialise in crypto security to ensure keys are split among the team, and none of our team is able to access the ‘vault’ without a set number of others, and an approved person from outside the project. We will fully automate the regular release of tokens into the platform.
 
 Funds raised through the ICO:
@@ -920,8 +894,8 @@ const markdownSection45 = md.render(`
 
 ## 10.1.
 
-**Hash****-****tagging
-**Requiring hash-tagging as proof of work creates a highly effective method of free marketing. Everyone receiving our token through the Public Happiness Activities side of the platform will also be Hash Tagging about the token, flooding all social media platforms with images and videos of happy people around the world engaging in our Movement to massively boost interest and awareness of Public Happiness Token.
+**Hash-Tagging**
+Requiring hash-tagging as proof of work creates a highly effective method of free marketing. Everyone receiving our token through the Public Happiness Activities side of the platform will also be Hash Tagging about the token, flooding all social media platforms with images and videos of happy people around the world engaging in our Movement to massively boost interest and awareness of Public Happiness Token.
 
 The proof of work bot will be searching for #PublicHappiness #PublicHappinessMovement #[miners location] #[activity name], and checking the connected social media profile against our database of connected user accounts.
 
@@ -931,8 +905,8 @@ const markdownSection46 = md.render(`
 
 ## 10.2.
 
-**Bus Tour
-**A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions.
+**Bus Tour**
+A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions.
 
 Towns, cities and villages:
 
@@ -956,7 +930,6 @@ const markdownSection47 = md.render(`
 ## 10.3.
 
 **Video Channel**
-
 A Public Happiness Movement YouTube channel has been created as a space where all platform members, and groups, can share videos of their activities in support of our Movement. Combining our energies and message. A randomised video will play each time users visit an activity on the map . Taken from each YouTube playlists related category on our platform (unless the creator has added their own video). 
 
 Combined with our coordinated hashtagging this will provide a huge boost across standard social media; both for our community, and also for each group that is a part of our ecosystem.
@@ -969,8 +942,8 @@ const markdownSection48 = md.render(`
 
 ## 10.4.
 
-**Happy Cam
-**The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Gopro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
+**Happy Cam**
+The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Gopro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
 
 Later a second camera dog may join, if we adopt a puppy.. because that would be lovely.
  
@@ -980,8 +953,8 @@ const markdownSection49 = md.render(`
 
 ## 10.5.
 
-**Public Happiness Partners
-**There is already a small movement of active Public Happiness creators around the World, just waiting to spark into life. Many are held back by the difficulties of balancing committing so much time towards increasing well-being for their community, against the pressures of needing to be paid for their work in today’s economy which doesn't value those contributions.
+**Public Happiness Partners**
+There is already a small movement of active Public Happiness creators around the World, just waiting to spark into life. Many are held back by the difficulties of balancing committing so much time towards increasing well-being for their community, against the pressures of needing to be paid for their work in today’s economy which doesn't value those contributions.
 
 Founder Andy has been a professional Public Happiness creator for the past 7 years and is well connected to the most active in the industry. Their leaders will be offered ‘back-pay’ for their previous unrewarded contributions towards creating a kinder world for us all to live in, and invited to join our platform. Using the platform offers them more effective tools to pursue their vision, and earning its token in our new economy, provides a fair reward for their efforts. This is designed to reduce, or even remove, the current heavy financial pressures to stop doing their excellent work for humanity. 
 
@@ -998,8 +971,8 @@ const markdownSection50 = md.render(`
 
 ## 10.6.
 
-**Online Supporters 
-**An open community is active on Reddit at reddit.com/r/focallocal where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
+**Online Supporters**
+An open community is active on Reddit at reddit.com/r/focallocal where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
 
 Members of our core team interested in public interaction will aim to engage blockchain enthusiasts on other popular online forums, for example, r/ethereum and r/cryptocurrency. Our aim is to seek feedback and involve existing communities in the building process, rather than to build hype and push marketing information out. 
 
@@ -1013,8 +986,8 @@ const markdownSection51 = md.render(`
 
 ## 10.7.
 
-**Contests
-**Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our ICO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
+**Contests**
+Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our ICO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
 
 `)
 
@@ -1022,8 +995,8 @@ const markdownSection52 = md.render(`
 
 ## 10.8.
 
-**Collectables
-**Collectables will be created for special activities a user joins in, and also landmarks they achieve within our ecosystem. This acts as a fun side game within the platform while giving milestone rewards to users, and using it to introduce them to collectables and other crypto-economic ideas. The collectables will be characters designed by the community and may feature logos, titles and names of the groups who coordinated large scale activities/projects 
+**Collectables**
+Collectables will be created for special activities a user joins in, and also landmarks they achieve within our ecosystem. This acts as a fun side game within the platform while giving milestone rewards to users, and using it to introduce them to collectables and other crypto-economic ideas. The collectables will be characters designed by the community and may feature logos, titles and names of the groups who coordinated large scale activities/projects 
 
 `)
 
@@ -1037,14 +1010,13 @@ const markdownSection54 = md.render(`
 
 ## 11.1.
 
-**Weighted Mining
-**
-Levels of trust:**
-**Users will go up in ranks as their total contribution to global happiness increases through our our platform. Each rank receives more tokens for each action on the platform. This reduces the incentive for scamming by making it less rewarding to automate new accounts. It also rewards the most active and loyal contributors to the ecosystem and the global Public Happiness Movement.
+**Weighted Mining**
+Levels of trust:
+Users will go up in ranks as their total contribution to global happiness increases through our our platform. Each rank receives more tokens for each action on the platform. This reduces the incentive for scamming by making it less rewarding to automate new accounts. It also rewards the most active and loyal contributors to the ecosystem and the global Public Happiness Movement.
 
-**
-**Levels of Scale:**
-**Some local activities are organised on an International Scale as a coordinated effort to create positive cultural change. Peter Sharp at the Liberators International, for example, organises a yearly Eye Contact Gathering promoting increased human and societal connection through sharing a minutes eye contact with passers-by. To remind us of our shared human experience beyond superficial differences such as age, gender, ethnicity, etc. Last year on one day he mobilised a gathering in over 350 cities around the world. Bringing action to the streets for more connected communities at a local level, while targeting a global increase in well-being. 
+
+Levels of Scale:
+Some local activities are organised on an International Scale as a coordinated effort to create positive cultural change. Peter Sharp at the Liberators International, for example, organises a yearly Eye Contact Gathering promoting increased human and societal connection through sharing a minutes eye contact with passers-by. To remind us of our shared human experience beyond superficial differences such as age, gender, ethnicity, etc. Last year on one day he mobilised a gathering in over 350 cities around the world. Bringing action to the streets for more connected communities at a local level, while targeting a global increase in well-being. 
 
 When an activity is tiered in this manner on our site over the course of a few days, the original organiser will receive 20% of the tokens awarded to all the Public Happiness Activities they led and supported. Their core team will also receive a larger share of tokens if they are using the Action Center in our ecosystem to incentivise building and publicising the project.
 
@@ -1063,8 +1035,8 @@ const markdownSection55 = md.render(`
 
 ## 11.2.
 
-**Hard Cap
-**A hard cap will be set on the amount that any one user can earn each reward period, at each different user level. Minimising the risk from abuse and fraud, and maintaining our core vision of Public Happiness Token allowing users increased economic freedom to give their time to resolving local societal issues, and increasing community connection and well-being. The hard cap will be a percentage of the tokens released in that period, modified as the user base increases. 
+**Hard Cap**
+A hard cap will be set on the amount that any one user can earn each reward period, at each different user level. Minimising the risk from abuse and fraud, and maintaining our core vision of Public Happiness Token allowing users increased economic freedom to give their time to resolving local societal issues, and increasing community connection and well-being. The hard cap will be a percentage of the tokens released in that period, modified as the user base increases. 
 
 For example, 80% of all tokens in that period might be reasonable when there are 100 active users, but would be unfair and likely indicate a loophole in the system, when there are 100,000 active users.
 
@@ -1077,7 +1049,6 @@ const markdownSection56 = md.render(`
 ## 11.3.
 
 **Adjusting the Balancing**
-
 The automated weighting and distribution system will apply a set level to the above metrics. These levels will be adjusted through community voting to find the most effective operating balances for maximising our network effect. These will constantly need adjusting during the Movements growth and evolution. 
 
 `)
@@ -1148,8 +1119,7 @@ const markdownSection61 = md.render(`
 
 ## 11.8.
 
-**Further Matrix Considerations
-**
+**Further Matrix Considerations**
 The matrix needs to consider: 
 The number of active users each week, from 10 to 100,000 to 100,000,000
 The number of actions per week by a user, plotted between 1, to a high of 400. With the average per user anticipated to be around 20, multiplied by the users experience rating. 
@@ -1181,7 +1151,6 @@ const markdownSection64 = md.render(`
 ## 12.2.
 
 **Positions Open**
-
 * Marketing Coordinator
 
 * Automated Token Distribution Systems Engineer/Data Scientists
@@ -1220,8 +1189,8 @@ const markdownSection65 = md.render(`
 
 ## 12.3.
 
-**Remuneration
-**The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happiness Tokens with the 1st payments coming shortly after the ICO launch, and covering all work towards the project prior to the ICO.
+**Remuneration**
+The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happiness Tokens with the 1st payments coming shortly after the ICO launch, and covering all work towards the project prior to the ICO.
 
 `)
 
@@ -1229,8 +1198,8 @@ const markdownSection66 = md.render(`
 
 ## 12.4.
 
-**Facilities
-**The team will either operate remotely using our online hub, or work from the road trip. (see Marketing in section 10.2. for more details about the road trip). 
+**Facilities**
+The team will either operate remotely using our online hub, or work from the road trip. (see Marketing in section 10.2. for more details about the road trip). 
 
 Not requiring fixed office space will enable us to keep overheads low, adding flexibility and the ability to weather crisis, alongside a sense of adventure matching our global ambitions.
 
@@ -1243,7 +1212,6 @@ const markdownSection68 = md.render(`
 ## 13.1.
 
 **Crypto Linking Bridges**
-
 Public Happiness Activities: Meteor Js/React to REST API 
 
 Projects (Missions): Currently Web-hooks from Trello (or Wekan). This system is scheduled for redesign
@@ -1255,7 +1223,6 @@ const markdownSection69 = md.render(`
 ## 13.2.
 
 **Trello vs Wekan vs Other Solutions**
-
 The Action Center is a Micro-volunteering Hub which breaks large projects down into 30 min – 1 hour ‘Missions’, enabling anyone to join in and help build the project and bring it into the world.
 
 
@@ -1266,7 +1233,6 @@ Currently the system uses Trello as an external platform, with a layer built on 
 const markdownSection70 = md.render(`
 
 ## 13.3.
-
 **Leaflet.js vs Google Maps API 
 
 **The Public Happiness Gatherings system is currently build using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
@@ -1276,10 +1242,8 @@ const markdownSection70 = md.render(`
 const markdownSection71 = md.render(`
 
 ## 13.4.
-
 **Switching the Platform to the Dapps Network 
 (Decentralised App)**
-
 
 The Map (Public Happiness Gatherings) and the Projects/Micro-volunteering (Missions) are built in Meteor JS and ReactJS, which is ideal for switching to host on Ethereum’s DAPP network, as it is built using reactive programming.
 
@@ -1297,8 +1261,8 @@ const markdownSection73 = md.render(`
 
 ## 14.1.
 
-**Huge Market Crash
-**Public Happiness Token is entirely secure from some major news crashing investors confidence in the entire blockchain, or global economic markets. Everything is designed with the ability to fall away, with the platform and community capable of running a skeleton site.
+**Huge Market Crash**
+Public Happiness Token is entirely secure from some major news crashing investors confidence in the entire blockchain, or global economic markets. Everything is designed with the ability to fall away, with the platform and community capable of running a skeleton site.
 
 We achieve this important safety buffer by transferring agreed fees and payments into a separate bank account and crypto wallets as soon as an outgoing can be predicted, so that money is put at the moment we assessed that it was a good use of funds. Preferring short term contracts as a project policy, meaning all future costs are safely stored away and ready to be paid when agreed. 
 
@@ -1316,8 +1280,8 @@ const markdownSection74 = md.render(`
 
 ## 14.2.
 
-**Quantum Security
-**To some extent we are tied to advancements in the Ethereum network. There are open pull requests such as pull request #208: Abstraction of transaction origin and signature.md. 
+**Quantum Security**
+To some extent we are tied to advancements in the Ethereum network. There are open pull requests such as pull request #208: Abstraction of transaction origin and signature.md. 
 
 On our end our entire system is being reviewed by quantum security experts. We will also host bounties and bounty hunting contests for anyone able to find flaws and vulnerabilities in our platform, so they can be identified and fixed. As much of the platform as possible will be open source, to benefit from many eyes searching for and flagging vulnerabilities.
 
@@ -1358,9 +1322,7 @@ const markdownSection77 = md.render(`
 
 ## 15.1.
 
-**Open Source Projects We Use
-**2% will be donated to the following projects we’ve used in creating our platform, Token, and Movement;
-
+**Open Source Projects We Use**
 * Discourse
 
 * Plugins our platform uses
@@ -1371,16 +1333,15 @@ const markdownSection77 = md.render(`
 ## 15.2.
 
 **Donations to Notable Other Open-source Projects**
+1% of the total raised will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
 
-1% will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
-
-The vote results will be non-binding, to mitigate against any obvious attempts to cheat the vote by outside groups. The platform and community will not yet be ready to protect itself from coordinated subversion efforts, without spending excess amounts of energy on securing the voting. Instead it can be used as an early pressure test on the integrity of certain areas of the platform, as this type of online contest invariably draws efforts to undermine fair voting.
-
+The vote results will be non-binding, to allow mitigatation against any uncovered attempts to cheat the vote by outside groups. The platform and community will not yet be ready to protect itself from coordinated subversion efforts, without spending excess amounts of energy on securing the voting. Instead it can be used as an early pressure test on the integrity of certain areas of the platform, as this type of online contest invariably draws efforts to undermine fair voting.
 
 `)
 
 const markdownSection78 = md.render(` 
 
+## 16.
 
 * 1st draft of the White Paper created by founder
 
@@ -1399,7 +1360,6 @@ const markdownSection78 = md.render(`
 * ICO Launch date announced
 
 Still to plan:
-
 * 1st Stage ICO
 
 * 2nd Stage ICO
@@ -1423,8 +1383,9 @@ const markdownSection79 = md.render(`
 
 const markdownSection80 = md.render(`
 
-* Open-source vs Closed Code Base
-Added security risks from allowing hackers to search for vulnerabilities, vs the crypto communities strong preference for open source projects
+## 17.
+
+* Open-source vs Closed Code Base. Added security risks from allowing hackers to search for vulnerabilities, vs the crypto communities strong preference for open source projects
 
 * Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
 
@@ -1436,8 +1397,7 @@ Added security risks from allowing hackers to search for vulnerabilities, vs the
 
 * How can we best compartmentalise voting to prevent overload on users, without pockets of influence forming? 
 
-Next Steps
-
+Next Steps:
 * Set up ICO plan within our Action Center
 
 * Full review of all content on focallocal.org to update content that has become outdated
@@ -1467,7 +1427,7 @@ const Anchor10 = () => <Fragment><h2 id="Current State of Public Understanding" 
 const Anchor11 = () => <Fragment><h2 id="Reaching a New Audience" style={{margin: 'auto'}}>Reaching a New Audience</h2><div dangerouslySetInnerHTML={{ __html: markdownSection11 }} /></Fragment>
 const Anchor12 = () => <Fragment><h2 id="The Public Happiness Token" style={{margin: 'auto'}}>The Public Happiness Token</h2><div dangerouslySetInnerHTML={{ __html: markdownSection12 }} /></Fragment>
 const Anchor13 = () => <Fragment><h2 id="Token Overview" style={{margin: 'auto'}}>Token Overview</h2><div dangerouslySetInnerHTML={{ __html: markdownSection13 }} /></Fragment>
-const Anchor14 = () => <Fragment><h2 id="Public Happiness Token ICO" style={{margin: 'auto'}}></h2><div dangerouslySetInnerHTML={{ __html: markdownSection14 }} /></Fragment>
+const Anchor14 = () => <Fragment><h2 id="Public Happiness Token ICO" style={{margin: 'auto'}}>Public Happiness Token ICO</h2><div dangerouslySetInnerHTML={{ __html: markdownSection14 }} /></Fragment>
 const Anchor15 = () => <Fragment><h2 id="ICO Strategy" style={{margin: 'auto'}}>ICO Strategy</h2><div dangerouslySetInnerHTML={{ __html: markdownSection15 }} /></Fragment>
 const Anchor16 = () => <Fragment><h2 id="ICO Stages" style={{margin: 'auto'}}>ICO Stages</h2><div dangerouslySetInnerHTML={{ __html: markdownSection16 }} /></Fragment>
 const Anchor17 = () => <Fragment><h2 id="Ongoing Funding for Specific Projects and Experts" style={{margin: 'auto'}}>Ongoing Funding for Specific Projects and Experts</h2><div dangerouslySetInnerHTML={{ __html: markdownSection17 }} /></Fragment>
@@ -1550,30 +1510,31 @@ const index = (props) => {
 			<Contents /><DCSBalloon title="click balloons to comment on section above" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
 		<Anchor100  /><DCSBalloon balloonId="bal" display="inline" dcsTags={props.dcsTags} />		
 		<Anchor101  /><DCSBalloon balloonId="bal" display="inline" dcsTags={props.dcsTags} />
+		
 		<Anchor1  />    
 		<Anchor2  /><DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
 		<Anchor3  /><DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor4  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
+		<Anchor4  />
 		<Anchor5  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
 		<Anchor6  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
 		<Anchor7  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
 		<Anchor8  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor9  /><DCSBalloon balloonId="bal3" display="inline" dcsTags={props.dcsTags} />
+		<Anchor9  />
 		<Anchor10 /><DCSBalloon balloonId="bal3" display="inline" dcsTags={props.dcsTags} />
 		<Anchor11 /><DCSBalloon balloonId="bal3" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor12 /><DCSBalloon balloonId="bal4" display="inline" dcsTags={props.dcsTags} />
+		<Anchor12 />
 		<Anchor13 /><DCSBalloon balloonId="bal4" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor14 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
+		<Anchor14 />
 		<Anchor15 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
 		<Anchor16 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
 		<Anchor17 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
 		<Anchor18 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor19 /><DCSBalloon balloonId="bal6" display="inline" dcsTags={props.dcsTags} />
+		<Anchor19 />
 		<Anchor20 /><DCSBalloon balloonId="bal6" display="inline" dcsTags={props.dcsTags} />
 		<Anchor21 /><DCSBalloon balloonId="bal6" display="inline" dcsTags={props.dcsTags} />
 		
@@ -1589,20 +1550,20 @@ const index = (props) => {
 		<Anchor31 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
 		<Anchor32 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor33 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
+		<Anchor33 />
 		<Anchor34 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
 		<Anchor35 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
 		<Anchor36 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
 		<Anchor37 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor38 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
+		<Anchor38 />
 		<Anchor39 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
 		<Anchor40 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
 		<Anchor41 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
 		<Anchor42 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
 		<Anchor43 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor44 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor44 />
 		<Anchor45 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		<Anchor46 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		<Anchor47 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
@@ -1628,7 +1589,7 @@ const index = (props) => {
 		<Anchor65 /><DCSBalloon balloonId="bal12" display="inline" dcsTags={props.dcsTags} />
 		<Anchor66 /><DCSBalloon balloonId="bal12" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor67 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
+		<Anchor67 />
 		<Anchor68 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
 		<Anchor69 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
 		<Anchor70 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
