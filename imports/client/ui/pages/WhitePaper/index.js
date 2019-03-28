@@ -220,6 +220,7 @@ const markdownSection100 = md.render(`
     The platform you are here to read about onboards existing communities of hundreds of thousands of people, offering them far more effective tools than they use currently to pursue their existing positive missions. It also offers them shared ownership, and a stake in determining the future development of those tools.
 ---
 
+
 This paper is an early non-technical outline of how this can be realised, to provide a foundation for discussion. The platform also already exists, built by a team of over 130 volunteer web developers who believe in our vision. It is built to the minimal stage to begin onboarding the community who will shape it.
 
 If you've been invited to read this, and agree with what I've written so far, then I invite you you to become a partner, or advisor, and to help shape what follows into a polished white paper ready for the rest of the world to see. 
@@ -235,14 +236,17 @@ Public Happiness Creator
 
 				   
 const markdownSection101 = md.render(`
-
-
+ 
+ 
+ 
 **Public Happiness Token: 
 A New Cryptocurrency Intrinsically tied to Creating Societal Good**
 Public Happiness Token is a currency which is intrinsically tied to creating social good. The more its traded, mined and earned, the more our network benefits local communities around the world, building a friendlier, safer and happier future. 
 
 
-**Problems the Public Happiness Token Aims to Solve**
+**Problems the Public Happiness Token Aims to Solve:**
+
+---
 Positive Societal and Cultural Change:
 Supercharging the network effect of the Public Happiness Movement. Rapidly growing the community through an incentivised ecosystem, directing energy into finding more effective ways to achieve positive societal and cultural change, ideas that we can’t even imagine yet – but can’t wait to see! 
 ---
@@ -278,6 +282,7 @@ Teaching users core concepts of the crypto-economic model, our token can operate
 Wider Acceptance of Blockchain:
 Our platform aims to educate users as to how blockchain will change the world they live in, and how they can understand and interact with it. Attracting a wider community and an ecosystem to create positive societal change we can't even imagine yet.
 ---
+
 The paper below is a working first draft, intended to explain the direction and ethos of the Public Happiness Token to the experts joining the project to apply expertise from their specialist area and create a Whitepaper ready for public release. It is currently word heavy and technical expertise light, you’re here to improve that.
 
 `)				   
@@ -1416,7 +1421,7 @@ Thank you for reading, have a wonderful day!
 				   
 const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}>Abstract</h2><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
 const Anchor2  = () => <Fragment><h2 id="Background" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection2 }} /></Fragment>
-const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" style={{margin: 'auto'}}>Public Happiness Token Introduction</h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
+const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
 const Anchor4  = () => <Fragment><h2 id="Problem Statement" style={{margin: 'auto'}}>Problem Statement</h2><div dangerouslySetInnerHTML={{ __html: markdownSection4 }} /></Fragment>
 const Anchor5  = () => <Fragment><h2 id="Issues we Aim to Solve" style={{margin: 'auto'}}>Issues we Aim to Solve</h2><div dangerouslySetInnerHTML={{ __html: markdownSection5 }} /></Fragment>
 const Anchor6  = () => <Fragment><h2 id="Primary Goal" style={{margin: 'auto'}}>Primary Goal</h2><div dangerouslySetInnerHTML={{ __html: markdownSection6 }} /></Fragment>
