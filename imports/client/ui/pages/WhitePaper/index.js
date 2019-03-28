@@ -135,7 +135,9 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 
 const markdownSection103 = md.render(`
-
+ 
+ 
+ 
 **Foreword:**
 I've lived about as frugal a life as is possible in the Western World because I've always disliked money.  It so often seems to have a negative effect on people and society.
 
@@ -239,8 +241,7 @@ const markdownSection101 = md.render(`
  
  
  
-**Public Happiness Token: 
-A New Cryptocurrency Intrinsically tied to Creating Societal Good**
+**A New Cryptocurrency Intrinsically tied to Creating Societal Good**
 Public Happiness Token is a currency which is intrinsically tied to creating social good. The more its traded, mined and earned, the more our network benefits local communities around the world, building a friendlier, safer and happier future. 
 
 
@@ -262,9 +263,8 @@ Our Public Happiness activities and projects get people onto the streets reachin
 Educating the Public: 
 We demonstrate how cryptocurrencies can impact people’s daily lives and communities in a positive way, and teach them how they can engage with it. Using our network and platform we will lead new users on a journey of discovery, culminating in a greater understanding of the world of blockchain and decentralisation.
 ---
-Decentralised Governance:
+Decentralising Governance:
 Our platform creates a decentralised self-governing and evolving community focused on positive cultural change. Grandfathering in a reputation weighted community voting system and gradually opening up all areas of the project to decentralised governance, while maintaining a clear direction by guiding members to weigh all decisions against a [Community Values ](https://news.focallocal.org/the-focallocal-community-values/)statement which all users agree to upon joining the community. 
-
 
 Our ecosystem and mission rewards positive behaviour towards each other and society with a higher influence on voting, ensuring a governance culture rooted in that positivity which is resistant to attempts to subvert the token/original mission; as has befallen other decentralised projects.
 ---
@@ -542,7 +542,7 @@ const markdownSection20 = md.render(`
 **Community Background**
 Founder Andy worked for the past 7 years building and running a non-profit volunteer community aiming to change the world by bringing people together to give their time voluntarily to solve global issues, on a local scale. Theorising that in many situations charities are massively limited in scale, and an unstoppable wave of change could be created if it became a normal habit to give a few hours a week on resolving issues in our local communities, using the most effective ideas collected from other users around the world (local action for global change).  Creating a proactive and empowered global community who want to meet and adapt these projects to fit their culture and then replicate them to target change to societal issues like homelessness, isolation, human connection, etc,  
 
-The past 6 years felt like swimming upstream. Many amazing people came in and did fabulous altruistic work, most were shortly pulled away by other commitments and general modern life pressures preventing momentum from really building - especially in London, the founding city. The struggle was against a world where good intentions are in constant strife against heavy pressure on our free time. 
+The past 7 years felt like swimming upstream. Many amazing people came in and did fabulous altruistic work, most were shortly pulled away by other commitments and general modern life pressures preventing momentum from really building - especially in London, the founding city. The struggle was against a world where good intentions are in constant strife against heavy pressure on our free time. 
 
 Blockchain is a chance to incentivise that action, allowing the modern world to refocus their attention on local issues important to a healthy society, which have been marginalised under our constantly pressured, GDP based societies. Modern technology also allows us to share effective ideas in a far more intelligent way than ever before, and achieve a much greater impact than previously possible.
 
@@ -577,8 +577,8 @@ const markdownSection23 = md.render(`
 
 ## 7.1.
 
-**The ‘Public Happiness Movement Map’**
 [view live beta](https://focallocal.org/)
+**The ‘Public Happiness Movement Map’**
 An area of the platform to bring users together to connect and take our project and token to the streets. Users can create and join Public Happiness Gatherings from a list of pre-approved activities curated by the community; and contact other members nearby. Users can list themselves on the map (in an approximate location for privacy), and select all the public happiness activities they would like to be contacted for, creating a searchable map of people nearby who want to meet and take actions which bring more well-being into the world they live in.
 
 The Map also allows users to explore approved suggestions for Public Happiness Gatherings, along with; 
@@ -613,8 +613,8 @@ const markdownSection24 = md.render(`
 
 ## 7.2.
 
-**The Action Center**
 [view live beta](https://action.focallocal.org/)
+**The Action Center**
 An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. Each ‘Mission’ should take a user between 30 mins and one hour, if longer is needed then it needs to be divided into smaller chunks.
 
 Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
@@ -637,8 +637,8 @@ const markdownSection25 = md.render(`
 
 ## 7.3.
 
-**Community News (or Happy News)**
 [view live beta](https://news.focallocal.org/)
+**Community News (or Happy News)**
 A user generated ‘Community News’ online magazine. Open for all platform users to create their own articles or share video links. This incentives users to create, like and share content (articles, photos and videos), increasing reach and inspiring more people to join in the Movement. The user led and created media from around the world increases users sense of community, and being part of something bigger, a global Movement for positive change.
 
 All articles submitted will be checked by experienced users who have earned a level of reputation to become moderators. Moderators will operate as copywriters with the ability to edit and improve the quality of content, guided by rules to balance quality with excess interference in content.
@@ -651,13 +651,11 @@ const markdownSection26 = md.render(`
 
 ## 7.4. 
 
-**The Active Happiness Shop**
 [view live beta](https://shop.focallocal.org/)
-
+**The Active Happiness Shop**
 An integrated Shopify store selling ‘Active Happiness Clothing’ which make a small positive change happen in the world around the wearer simply by putting the item on in the mornings. The clothing is an extension of our Public Happiness activities, with most items functioning as a passive way for each public happiness activity to occur outside of organised activities and gatherings. For example, a shirt informing others that the wearer is carrying bubbles, and inviting people around them to blow some.
 
 Materials and Public Happiness Action Packs are also available. Profits will cover basic costs operational costs, with any excess made available for users to vote on how best to use it in aid of advancing our projects and community.
-
 
 Currently hosted on shopify, this will be moved in-house shortly.
 
@@ -1451,8 +1449,8 @@ const Anchor28 = () => <Fragment><h2 id="Evidence Based and Peer Reviewed Action
 const Anchor29 = () => <Fragment><h2 id="Who can Participate on the Platform" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection29 }} /></Fragment>
 const Anchor30 = () => <Fragment><h2 id="Pre-existing Communities with Similar Values" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection30 }} /></Fragment>
 const Anchor31 = () => <Fragment><h2 id="Languages" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection31 }} /></Fragment>
-const Anchor32 = () => <Fragment><h2 id="Decentralised Governance and Voting" style={{margin: 'auto'}}>Decentralised Governance and Voting</h2><div dangerouslySetInnerHTML={{ __html: markdownSection32 }} /></Fragment>
-const Anchor33 = () => <Fragment><h2 id="The Path to Decentralisation" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection33 }} /></Fragment>
+const Anchor32 = () => <Fragment><h2 id="Decentralised Governance and Voting" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection32 }} /></Fragment>
+const Anchor33 = () => <Fragment><h2 id="The Path to Decentralisation" style={{margin: 'auto'}}>The Path to Decentralisation</h2><div dangerouslySetInnerHTML={{ __html: markdownSection33 }} /></Fragment>
 const Anchor34 = () => <Fragment><h2 id="Benevolent Dictatorship vs Complete Community Governance" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection34 }} /></Fragment>
 const Anchor35 = () => <Fragment><h2 id="Example Scenario: Outside Collusion" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection35 }} /></Fragment>
 const Anchor36 = () => <Fragment><h2 id="Lines of Defence" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection36 }} /></Fragment>
@@ -1500,8 +1498,8 @@ const Anchor77 = () => <Fragment><h2 id="Giving Back to Open-source" style={{mar
 const Anchor78 = () => <Fragment><h2 id="Timeline" style={{margin: 'auto'}}>Timeline</h2><div dangerouslySetInnerHTML={{ __html: markdownSection78 }} /></Fragment>
 const Anchor79 = () => <Fragment><h2 id="Key Supporters and Team" style={{margin: 'auto'}}>Key Supporters and Team</h2><div dangerouslySetInnerHTML={{ __html: markdownSection79 }} /></Fragment>
 const Anchor80 = () => <Fragment><h2 id="Questions to be Resolved" style={{margin: 'auto'}}>Questions to be Resolved</h2><div dangerouslySetInnerHTML={{ __html: markdownSection80 }} /></Fragment>
-const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
-const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
+const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" style={{margin: 'auto'}}>The World Needs This Because: (v1)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
+const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" style={{margin: 'auto'}}>The World Needs This Because: (v2)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
 const Anchor103 = () => <Fragment><h2 id="Foreword" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
 
 
