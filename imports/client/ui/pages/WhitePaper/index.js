@@ -149,7 +149,7 @@ This token is an effort to create a new monetary and economic system. One which 
 **Intro:**
 If the right people get behind this it will have a profound effect on increasing peace, happiness, and reducing human-suffering across the world. If you’re reading this it because we believe that you have the skills to contribute, and a passion to create positive change for humanity.
 
-"Those who love peace must learn to organize as effectively as those who love war"  - Martin Luther King
+*'Those who love peace must learn to organize as effectively as those who love war'*  - Martin Luther King
 
 
 Our community of volunteers has been gradually building a platform to host this vision for over 3 years now. The platform is for groups from around the world, anyone who is using positive actions to promote peace and wellbeing through building human and community connection. 
@@ -295,15 +295,15 @@ const markdownSection2 = md.render(`
 
 Today’s society is based on GDP, with almost every political decision weighed against this to see if it should go ahead. The founder of GDP, Simon Kuznets campaigned against its use as a primary tool, arguing that it was never intended to be the base our societies were built upon. He designed GDP in 1937 solely for the post war recovery and believed it was entirely unsuitable as the main measure of societal success/well-being because it undervalued and ignored large areas that are critical to a healthy, functioning society. 
 
-*‘the welfare of a nation can scarcely be inferred **from** a measurement of national income as defined by the GDP’* - Simon Kuznets
+*‘the welfare of a nation can scarcely be inferred from a measurement of national income as defined by the GDP’* - Simon Kuznets
 
-The Charity model exists largely to paper over these cracks, but has rarely been able to resolve a serious societal issue. That is because the fuel causing these issues is that our societies use GDP as their primary measure of success, and solving these issues rarely produces a direct GDP increase. Consider the issue of homelessness, where a vast amounts of money have been donated to charities doing excellent work supporting those who are homeless... yet people are still living on the streets in every major city in the World. GDP has a painfully obvious blind spot here which the charity model is unable to resolve. Our nations are getting ever more wealthy and yet people still regularly freeze to death on the streets.
+The Charity model exists largely to paper over these cracks, but has rarely been able to fully resolve a serious societal issue. That is because the fuel causing these issues is that our societies use GDP as their primary measure of success, and solving these issues rarely produces a direct GDP increase. Consider the issue of homelessness, where a vast amounts of money have been donated to charities doing excellent work supporting those who are homeless... yet people are still living on the streets in every major city in the World. GDP has a painfully obvious blind spot here which the charity model is unable to resolve. Our nations are getting ever more wealthy and yet people still regularly freeze to death on the streets.
 
 Crypto-economics is the golden opportunity to redress these economic imbalances and blind-spots. Preventing the hurt and misery they’ve caused to so many humans, all across the world from continuing.  
 
 The Public Happiness Token aims to be a pillar in beginning that essential re-balance, by incentivizing action. both globally, and locally. To identify to resolve these critical and overlooked areas essential to a healthy society – and by doing so from the people, upwards. Totally bypassing slow-moving, and too often corrupt governmental process.
 
-*‘We need to move beyond Gross Domestic Product (GDP) as our main measure of progress and fashion a sustainable development index that puts people first’* - at the time UN Secretary General, Ban Ki Moon
+*‘We need to move beyond Gross Domestic Product (GDP) as our main measure of progress and fashion a sustainable development index that puts people first’* - Ban Ki Moon, at the time UN Secretary General
 
 You can read more about [the token background here](https://news.focallocal.org/token-background/)
 				   
@@ -313,7 +313,7 @@ const markdownSection3  = md.render(`
 
 ## 1.2.
 
-**Public Happiness Token****: Introduction **
+**Public Happiness Token: Introduction**
 
 Public Happiness Token is an ERC20 Token created from Ethereum blockchain. The Token itself will have few modifications, with its value to society, and for trading, coming from its unique use in engaging users in activities and projects to create a happier, safer and friendlier society for their local community.
 
