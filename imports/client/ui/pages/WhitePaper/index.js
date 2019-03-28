@@ -1316,13 +1316,145 @@ As long as there is a positive community behind it the Token cannot fail. It wil
 
 `)
 
-const markdownSection74 = md.render(` INSERT SECTION HEre`)
-const markdownSection75 = md.render(` INSERT SECTION HEre`)
-const markdownSection76 = md.render(` INSERT SECTION HEre`)
-const markdownSection77 = md.render(` INSERT SECTION HEre`)
-const markdownSection78 = md.render(` INSERT SECTION HEre`)
-const markdownSection79 = md.render(` INSERT SECTION HEre`)
-const markdownSection80 = md.render(` INSERT SECTION HEre`)
+const markdownSection74 = md.render(` 
+
+## 14.2.
+
+**Quantum Security
+**To some extent we are tied to advancements in the Ethereum network. There are open pull requests such as pull request #208: Abstraction of transaction origin and signature.md. 
+
+On our end our entire system is being reviewed by quantum security experts. We will also host bounties and bounty hunting contests for anyone able to find flaws and vulnerabilities in our platform, so they can be identified and fixed. As much of the platform as possible will be open source, to benefit from many eyes searching for and flagging vulnerabilities.
+
+`)
+
+const markdownSection75 = md.render(`
+
+## 14.3.
+
+**Massive Hack**
+As a last resort in the case of a massive attack there is the possibility of a Hard Fork, resetting everything to a time before the hack on the public ledger.
+
+Our Tokens value is tied to its positive effect on wider society, raising the possibility of a hard fork at a set point before the hack, and switching the token used on the platform; isolated from its ability to create societal good the original would become worthless.
+
+All data of tokens earned on the system is held off-site in social media and gathered by our bots, or in provable work contributed by users in the Action Center, Community News Site and Forums. It would be a large task, but all tokens mined fairly between the time of the hack and the fork could be restored. Traded Tokens (outside of lost in the hack) would be visible on the public ledger and proof of ownership could be submitted to gain the new Token. 
+
+Project contributions in Wekan/Trello can be backed up off-site or recovered from the teams which created the projects. Token earned legitimately after the hack could easily be restored, leaving the thieves with worthless digital residue. 
+
+The implications of this option are obviously wide ranging and it would be an absolute last resort in a disaster mitigation strategy, with the case explained to the community before being voted on.
+
+`)
+
+const markdownSection76 = md.render(`
+
+## 14.4.
+
+**Zombie Apocalypse **
+If the inevitable finally occurs, we will convert the Public Happiness Bus into a ‘Public Happiness Buoat’ and retreat to a small uninhabited Greek island, where our new society will flourish and sparkle as a bastion to all Humanity's greatest achievements. Using Public Happiness Token to create a paradise where every economic interaction creates more harmony and a closer more caring community, while the rest of the world performs a perfect impression of today’s paparazzi for each others brains. 
+
+If the community has decided on having a fixed central base, for example renovating an abandoned village, it will built using the best off-grid technology today’s society has to offer - and also be zombie-proofed.
+
+`)
+
+const markdownSection77 = md.render(` 
+
+2% of all funds we raise from the ICO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
+
+
+## 15.1.
+
+**Open Source Projects We Use
+**2% will be donated to the following projects we’ve used in creating our platform, Token, and Movement;
+
+* Discourse
+
+* Plugins our platform uses
+
+* Click the balloon here to discuss others we should support
+
+
+## 15.2.
+
+**Donations to Notable Other Open-source Projects**
+
+1% will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
+
+The vote results will be non-binding, to mitigate against any obvious attempts to cheat the vote by outside groups. The platform and community will not yet be ready to protect itself from coordinated subversion efforts, without spending excess amounts of energy on securing the voting. Instead it can be used as an early pressure test on the integrity of certain areas of the platform, as this type of online contest invariably draws efforts to undermine fair voting.
+
+
+`)
+
+const markdownSection78 = md.render(` 
+
+
+* 1st draft of the White Paper created by founder
+
+* Experts invited to review and advise on improvements
+
+*  2nd draft of the White Paper
+
+* A team of experts wanting to see this ecosystem brought into this world forms
+
+* Witticism, fun and Focallocal flavour added to white paper
+
+* Provisional White Paper posted online to announce our token, and gather feedback for further improvements, and build team. 
+
+* Technical Details focused heavily around the Distribution Matrix added to the white paper
+
+* ICO Launch date announced
+
+Still to plan:
+
+* 1st Stage ICO
+
+* 2nd Stage ICO
+
+* 3rd Stage ICO
+
+* Apps launched
+
+* Multi Language adaptation pushed to the entire site
+
+* Open-source map replaces Google based map (if required)
+
+* blockchain on-ramp added into it platform to guide users to a better understanding of blockchain and crypto economics. Fulfilling our mission of taking crypto to people on the streets.
+
+`)
+
+const markdownSection79 = md.render(` 
+
+
+`)
+
+const markdownSection80 = md.render(`
+
+* Open-source vs Closed Code Base
+Added security risks from allowing hackers to search for vulnerabilities, vs the crypto communities strong preference for open source projects
+
+* Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
+
+* Which other crypto coins/tokens should we include in the platform to introduce our users into the crypto-economic ecosystem, for example, should our videos primarily be  hosted on Lbury? Is their platform ready?
+
+* Should the platform be hosted on the DAPPs network?
+
+* Should community governance voting be tokenized/on-chain? Or simply by using Discourse’s forum voting? Either would involve building a discourse plugin 
+
+* How can we best compartmentalise voting to prevent overload on users, without pockets of influence forming? 
+
+Next Steps
+
+* Set up ICO plan within our Action Center
+
+* Full review of all content on focallocal.org to update content that has become outdated
+
+* Token created
+
+* Full security review of all open-source plugins used in building the website
+
+* Full review of platform UX/UI and tech stack, looking quick ways to make large usability improvements, improving access and scalability.
+
+Thank you for reading, have a wonderful day!
+ 
+ `)
 
 
 				   
