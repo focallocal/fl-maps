@@ -1454,8 +1454,8 @@ Thank you for reading, have a wonderful day!
 
 
 				   
-const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
-const Anchor2  = () => <Fragment><h2 id="Background" style={{margin: 'auto'}}>Background</h2><div dangerouslySetInnerHTML={{ __html: markdownSection2 }} /></Fragment>
+const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}>Abstract</h2><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
+const Anchor2  = () => <Fragment><h2 id="Background" style={{margin: 'auto'}}> </h2><div dangerouslySetInnerHTML={{ __html: markdownSection2 }} /></Fragment>
 const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" style={{margin: 'auto'}}>Public Happiness Token Introduction</h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
 const Anchor4  = () => <Fragment><h2 id="Problem Statement" style={{margin: 'auto'}}>Problem Statement</h2><div dangerouslySetInnerHTML={{ __html: markdownSection4 }} /></Fragment>
 const Anchor5  = () => <Fragment><h2 id="Issues we Aim to Solve" style={{margin: 'auto'}}>Issues we Aim to Solve</h2><div dangerouslySetInnerHTML={{ __html: markdownSection5 }} /></Fragment>
