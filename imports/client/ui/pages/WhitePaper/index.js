@@ -1135,7 +1135,8 @@ Estimating the value of returns is speculative at this point. The core team, and
 `)
 
 const markdownSection62 = md.render(` 
-
+<br>
+<br>
 Some roles will be fixed for increased stability and an initial injection of experience and necessary skills. Others will be outsourced to the community via Microvolunteering in the Action Center 
 
 `)
@@ -1258,7 +1259,7 @@ This switch is not guaranteed at this point, but it is a logical step and will b
 `)
 
 const markdownSection72 = md.render(` 
-
+/
 The Crypto world is highly volatile at this point in time which will lead many projects to overstretch themselves, ending up in trouble if an event outside of their control hits. Here we consider how to protect our ecosystem from certain scenarios.
 
 `)
