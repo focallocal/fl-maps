@@ -1084,8 +1084,7 @@ The automated weighting and distribution system will apply a set level to the ab
 
 const markdownSection57 = md.render(`
 
-## 
-11.4.
+## 11.4.
 
 **Token Release**
 Initially a pre-set amount of tokens will be set to release each week for 100 years, divided between active contributors to the ecosystem and mission. The number of tokens released each week will be set on a graduated incline, balancing rewarding early contributors with greater rewards, against the exponential increase of users who the token will be divided amongst as the community grows.
@@ -1096,8 +1095,7 @@ This weekly token release makes our currency deflationary, which will be offset 
 
 const markdownSection58 = md.render(`
 
-## 
-11.5.
+## 11.5.
 
 **Mining Table**
 A table of actions contributing to the ecosystem which users are rewarded for will be created here shortly.
@@ -1106,8 +1104,7 @@ A table of actions contributing to the ecosystem which users are rewarded for wi
 
 const markdownSection59 = md.render(`
 
-## 
-11.6.
+## 11.6.
 
 **Experience Multipliers**
 A users total tokens earned/contribution to the ecosystem is recorded and used as a multiplier increasing their tokens earned and also the weight of their votes.
@@ -1230,8 +1227,7 @@ const markdownSection65 = md.render(`
 
 const markdownSection66 = md.render(`
 
-## 
-12.4.
+## 12.4.
 
 **Facilities
 **The team will either operate remotely using our online hub, or work from the road trip. (see Marketing in section 10.2. for more details about the road trip). 
@@ -1540,7 +1536,7 @@ const Anchor79 = () => <Fragment><h2 id="Key Supporters and Team" style={{margin
 const Anchor80 = () => <Fragment><h2 id="Questions to be Resolved" style={{margin: 'auto'}}>Questions to be Resolved</h2><div dangerouslySetInnerHTML={{ __html: markdownSection80 }} /></Fragment>
 const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" style={{margin: 'auto'}}>The World Needs This Because: (v1)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
 const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" style={{margin: 'auto'}}>The World Needs This Because: (v2)</h2><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
-const Anchor103 = () => <Fragment><h2 id="Foreword" style={{margin: 'auto'}}</h2><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
+const Anchor103 = () => <Fragment><h2 id="Foreword" style={{margin: 'auto'}}>Foreword</h2><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
 
 
 
