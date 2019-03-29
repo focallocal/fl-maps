@@ -268,6 +268,8 @@ Our ecosystem and mission rewards positive behaviour towards each other and soci
 ---
 Super-Charged Network Effect:
 Tokenizing massively accelerates the effects of a network. Happiness is a great candidate for the boost a crypto-economic model can provide. Tokenizing will rapidly advance our Movement’s effect on global public happiness and well-being.
+
+test para
 ---
 An Evolving Platform:
 The platform is being built to a minimum usable product. After that users will direct and build the platform they need to maximise their effectiveness. Voting on the best plans to improve it.
