@@ -138,7 +138,8 @@ class EventInfo extends Component {
       event,
       openMoreInfo
     } = this.props
-
+   
+    this.setState({ animateOut: false, event: null  });
     openMoreInfo(event)
   }
 }

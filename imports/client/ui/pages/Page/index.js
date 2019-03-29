@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 import { formatCategories } from '/imports/client/utils/format'
 import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
@@ -15,6 +16,12 @@ import {Helmet} from "react-helmet";
 import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
+//   
+//TODO
+// CHECK ARROW FUNCTION AS METHOD GET RID OF BIND
+// PUT BACK SCROLL FUNCTION
+// IMPLEMENT BUTTON TO CLOSE
+// CHECK BEHAVIRO WITH NEW GATHER
 
 class Page extends Component {
   constructor (props) {
@@ -23,9 +30,14 @@ class Page extends Component {
       data: window.cachedDataForPage,
       id: props.match.params.id,
       loaded: false,
-      badges: null
+      badges: null,
+      redirect: false,
+   //   history: this.props.history,
     }
+  // this.scrollToMap = this.scrollToMap.bind(this);
   }
+
+
 
   componentDidMount () {
     // THIS IS WRONG: if you fetch data in componentDidMount(), then any route
@@ -123,6 +135,12 @@ class Page extends Component {
   }
 
   render() {
+    if(this.state.redirect === true){
+     return <Redirect to='/map' />
+    }
+    // const { match, location, history } = this.props;
+    // console.log('location', location);
+ 
     const {
       data,
       loaded
@@ -149,6 +167,8 @@ class Page extends Component {
       history,
       user
     } = this.props
+
+    console.log('history', history);
 
     // set Linkify to replace URL strings with clickable link
     // needs text string to be wrapped in Linkify component
@@ -179,6 +199,7 @@ class Page extends Component {
         </div>
 
         <Container className='body'>
+         
           <Row>
             <Col xs={7} className='left'>
               <div className='title-wrapper'>
@@ -197,6 +218,7 @@ class Page extends Component {
               {this.dcsHeading(i18n.Map.eventInfo.videos.title, i18n.Map.eventInfo.photos.subtitle, 'vid')}
               <div className='description'>
                 <SectionTitle title='About' />
+            
                 <Linkify options={linkifyOption}>{description}</Linkify>
               </div>
               {this.dcsHeading(i18n.Map.eventInfo.wall.title, i18n.Map.eventInfo.wall.subtitle, 'wal')}
@@ -219,7 +241,8 @@ class Page extends Component {
               </div>
 
               <Divider />
-              {isAuthor && <EditPage data={data} history={history} />}
+              {isAuthor && <EditPage data={data} history={history} />} 
+              <Button color='danger' onClick={ () =>this.closePage()}>Close Page</Button>
             </Col>
           </Row>
           <iframe
@@ -243,7 +266,10 @@ class Page extends Component {
     )
   }
 
-  scrollToMap() {
+  closePage = () =>{
+    this.setState({ redirect: true });
+  }
+  scrollToMap(){
     scrollToElement('.embedded-map')
   }
 
@@ -283,6 +309,6 @@ export default withTracker(() => {
     user: Meteor.user()
   }
 })(Page)
-
+// withRouter(Page)
 // Testing
 export { Page }
