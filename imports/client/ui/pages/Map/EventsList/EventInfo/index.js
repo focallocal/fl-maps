@@ -19,12 +19,14 @@ class EventInfo extends Component {
   static getDerivedStateFromProps (nextProps, prevState) {
     const nEvent = nextProps.event
     const pEvent = prevState.event
-
+  //  debugger;
     if ((!pEvent || pEvent) && nEvent) {
       return { event: nEvent, animateIn: true }
     }
-
     if (pEvent && !nEvent) {
+      return { animateOut: true }
+    }
+    if (!pEvent && !nEvent){
       return { animateOut: true }
     }
 
@@ -138,8 +140,6 @@ class EventInfo extends Component {
       event,
       openMoreInfo
     } = this.props
-   
-    this.setState({ animateOut: false, event: null  });
     openMoreInfo(event)
   }
 }
