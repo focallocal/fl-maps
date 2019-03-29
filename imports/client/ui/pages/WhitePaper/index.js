@@ -135,8 +135,8 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 
 const markdownSection103 = md.render(`
-/
-/**Foreword:**
+** **
+**Foreword:**
 I've lived about as frugal a life as is possible in the Western World because I've always disliked money.  It so often seems to have a negative effect on people and society.
 
 The crypto-world has me intensely curious, because money can be different there. I wanted to learn more and see if it's possible to design a form of money that is intrinsically tied to creating societal value.  Something to act as a band-aid on today’s ‘profit at all costs’ capitalism which has blind-spots for large areas critical to producing healthy, happy societies. This is caused by foundations measuring all progress and success as an increase in GDP. Anything which doesn’t is, by design, an after-thought.
