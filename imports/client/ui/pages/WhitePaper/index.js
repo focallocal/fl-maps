@@ -135,8 +135,7 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 
 const markdownSection103 = md.render(`
-  
-  
+
 **Foreword:**
 I've lived about as frugal a life as is possible in the Western World because I've always disliked money.  It so often seems to have a negative effect on people and society.
 
@@ -263,14 +262,12 @@ Educating the Public:
 We demonstrate how cryptocurrencies can impact people’s daily lives and communities in a positive way, and teach them how they can engage with it. Using our network and platform we will lead new users on a journey of discovery, culminating in a greater understanding of the world of blockchain and decentralisation.
 ---
 Decentralised Governance:
-Our platform creates a decentralised self-governing and evolving community focused on positive cultural change. Grandfathering in a reputation weighted community voting system and gradually opening up all areas of the project to decentralised governance, while maintaining a clear direction by guiding members to weigh all decisions against a [Community Values ](https://news.focallocal.org/the-focallocal-community-values/)statement which all users agree to upon joining the community. 
+Our platform creates a decentralised self-governing and evolving community focused on positive cultural change. Grandfathering in a reputation weighted community voting system and gradually opening up all areas of the project to decentralised governance, while maintaining a clear direction by guiding members to weigh all decisions against a [Community Values ](https://news.focallocal.org/the-focallocal-community-values/)statement which all users agree to upon joining the community
 
 Our ecosystem and mission rewards positive behaviour towards each other and society with a higher influence on voting, ensuring a governance culture rooted in that positivity which is resistant to attempts to subvert the token and original mission; as has befallen other decentralised projects.
 ---
 Super-Charged Network Effect:
 Tokenizing massively accelerates the effects of a network. Happiness is a great candidate for the boost a crypto-economic model can provide. Tokenizing will rapidly advance our Movement’s effect on global public happiness and well-being.
-
-test para
 ---
 An Evolving Platform:
 The platform is being built to a minimum usable product. After that users will direct and build the platform they need to maximise their effectiveness. Voting on the best plans to improve it.
@@ -567,8 +564,7 @@ The Focallocal Community built this ‘Public Happiness Movement’ platform and
 `)
 
 const markdownSection22 = md.render(` 
-<br>
-<br>
+
 The Public Happiness Movement platform currently exists as a website located at https://focallocal.org. If you’ve visited it you’ve probably noticed it is currently a highly fragmented site/platform. This is intentional, the platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective  decentralised Public Happiness platform. who will use the tools available to redesign and reshape the platform to better fit their collective needs.
 
 Focallocal.org, the platform, is also available as an iOS and Android app.
@@ -1008,8 +1004,7 @@ Collectables will be created for special activities a user joins in, and also la
 `)
 
 const markdownSection53 = md.render(`
-<br>
-<br>
+
 The platform automates rewards for completing tasks which work towards maintaining and improving the operation of our ecosystem. Advancing our Movement's mission of creating more friendliness, peace and happiness in this world. This requires the building of the Automated Token Distribution Matrix outlined below.
 
 `)
@@ -1137,8 +1132,7 @@ Estimating the value of returns is speculative at this point. The core team, and
 `)
 
 const markdownSection62 = md.render(` 
-<br>
-<br>
+
 Some roles will be fixed for increased stability and an initial injection of experience and necessary skills. Others will be outsourced to the community via Microvolunteering in the Action Center 
 
 `)
@@ -1325,7 +1319,7 @@ If the community has decided on having a fixed central base, for example renovat
 `)
 
 const markdownSection77 = md.render(` 
-/
+
 2% of all funds we raise from the ICO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
 
 
@@ -1423,7 +1417,7 @@ Thank you for reading, have a wonderful day!
 
 
 				   
-const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}>Abstract</h2><br /><br /><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
+const Anchor1  = () => <Fragment><h2 id="Abstract" style={{margin: 'auto'}}>Abstract</h2><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
 const Anchor2  = () => <Fragment><h2 id="Background" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection2 }} /></Fragment>
 const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
 const Anchor4  = () => <Fragment><h2 id="Problem Statement" style={{margin: 'auto'}}>Problem Statement</h2><div dangerouslySetInnerHTML={{ __html: markdownSection4 }} /></Fragment>
