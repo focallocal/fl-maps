@@ -135,7 +135,7 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 
 const markdownSection103 = md.render(`
-** **
+<p></p>
 **Foreword:**
 I've lived about as frugal a life as is possible in the Western World because I've always disliked money.  It so often seems to have a negative effect on people and society.
 
