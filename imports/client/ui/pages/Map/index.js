@@ -15,7 +15,6 @@ import { ensureUniquePosition } from './utils'
 import './styles.scss'
 import './mobile-styles.scss'
 
-const defaultZoom = 3;
 class MapComponent_ extends Component {
   constructor () {
     super()
@@ -30,7 +29,7 @@ class MapComponent_ extends Component {
       isFetching: true,
       showFilters: false,
       userLocation: null,
-      zoom: defaultZoom,
+      zoom: 3,
       mapRadius: null,
       showPastEvents: false
     }
@@ -47,7 +46,7 @@ class MapComponent_ extends Component {
     window.__setDocumentTitle('Map')
     toggleBodyOverflow()
     this._isMounted = true // don't remove that line
-    
+
     // keep at bottom of componentDidMount so that the event list is displayed and 
     //correct zoom level  when individual page is closed
     this.returnToDefaultAfterPageClose(); 

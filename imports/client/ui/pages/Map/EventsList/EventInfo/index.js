@@ -32,7 +32,6 @@ class EventInfo extends Component {
   }
 
   componentDidUpdate() {
-
     /*
       Animation managment should probably be done by a dedicated library in the future.
     */
@@ -139,7 +138,6 @@ class EventInfo extends Component {
     const {
       event,
       openMoreInfo,
-    
     } = this.props
 
     openMoreInfo(event)
