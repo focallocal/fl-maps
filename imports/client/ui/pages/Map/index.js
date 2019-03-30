@@ -15,6 +15,7 @@ import { ensureUniquePosition } from './utils'
 import './styles.scss'
 import './mobile-styles.scss'
 
+const defaultZoom = 3;
 class MapComponent_ extends Component {
   constructor () {
     super()
@@ -29,7 +30,7 @@ class MapComponent_ extends Component {
       isFetching: true,
       showFilters: false,
       userLocation: null,
-      zoom: 3,
+      zoom: defaultZoom,
       mapRadius: null,
       showPastEvents: false
     }
@@ -38,8 +39,7 @@ class MapComponent_ extends Component {
   memoizeLocations = {} // cache locations
 
   componentDidMount () {
-    getUserPosition(this)
-
+    
     if (window.previousStateOfMap) {
       this.setState({ ...window.previousStateOfMap })
     }
@@ -47,6 +47,10 @@ class MapComponent_ extends Component {
     window.__setDocumentTitle('Map')
     toggleBodyOverflow()
     this._isMounted = true // don't remove that line
+    
+    // keep at bottom of componentDidMount so that the event list is displayed and 
+    //correct zoom level  when individual page is closed
+    this.returnToDefaultAfterPageClose(); 
   }
 
   componentWillUnmount () {
@@ -222,6 +226,11 @@ class MapComponent_ extends Component {
     })
   }
 
+  returnToDefaultAfterPageClose = () =>{
+    getUserPosition(this);
+    this.removeCurrentEvent();
+  }
+
   setError = (msg) => {
     const randomId = String(Math.random() * 100000)
     this.setState({ error: { id: randomId, msg } })
@@ -316,7 +325,8 @@ class MapComponent_ extends Component {
     window.previousStateOfMap.showFilters = false
     window.previousStateOfMap.filteredEvents = null
 
-    this.props.history.push('/page/' + event._id)
+    this.props.history.push('/page/' + event._id);
+    
   }
 
   getEvents = (location, skip = 0, limit = 30) => {

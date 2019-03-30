@@ -16,12 +16,6 @@ import {Helmet} from "react-helmet";
 import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
-//   
-//TODO
-// CHECK ARROW FUNCTION AS METHOD GET RID OF BIND
-// PUT BACK SCROLL FUNCTION
-// IMPLEMENT BUTTON TO CLOSE
-// CHECK BEHAVIRO WITH NEW GATHER
 
 class Page extends Component {
   constructor (props) {
@@ -32,9 +26,7 @@ class Page extends Component {
       loaded: false,
       badges: null,
       redirect: false,
-   //   history: this.props.history,
     }
-  // this.scrollToMap = this.scrollToMap.bind(this);
   }
 
 
@@ -138,9 +130,7 @@ class Page extends Component {
     if(this.state.redirect === true){
      return <Redirect to='/map' />
     }
-    // const { match, location, history } = this.props;
-    // console.log('location', location);
- 
+
     const {
       data,
       loaded
@@ -167,8 +157,6 @@ class Page extends Component {
       history,
       user
     } = this.props
-
-    console.log('history', history);
 
     // set Linkify to replace URL strings with clickable link
     // needs text string to be wrapped in Linkify component
@@ -242,7 +230,7 @@ class Page extends Component {
 
               <Divider />
               {isAuthor && <EditPage data={data} history={history} />} 
-              <Button color='danger' onClick={ () =>this.closePage()}>Close Page</Button>
+              <Button color='danger' onClick={ this.closePage}>Close Page</Button>
             </Col>
           </Row>
           <iframe
@@ -308,7 +296,7 @@ export default withTracker(() => {
   return {
     user: Meteor.user()
   }
-})(Page)
-// withRouter(Page)
+})(withRouter(Page))
+// 
 // Testing
 export { Page }
