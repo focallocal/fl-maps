@@ -8,6 +8,8 @@ import UserItem from './UserItem'
 import Logo from './Logo'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 import { createAdmin } from "./../../../utils/adminControl";
 class MainMenu extends Component {
   state = {
@@ -18,7 +20,9 @@ class MainMenu extends Component {
     const {
       sidebarOpen
     } = this.state
-
+    const{
+      user
+    } = this.props
     const { MainMenu } = i18n;
     console.log('userMenu', user);
     if (user){
@@ -71,4 +75,6 @@ class MainMenu extends Component {
   }
 }
 
-export default MainMenu
+export default withTracker(() => {
+  return { user: Meteor.user() };
+})(MainMenu);
