@@ -13,7 +13,7 @@ import './styles.scss'
 class EventInfo extends Component {
   state = {
     animateOut: false,
-    event: null
+    event: null,
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
@@ -23,15 +23,15 @@ class EventInfo extends Component {
     if ((!pEvent || pEvent) && nEvent) {
       return { event: nEvent, animateIn: true }
     }
-
     if (pEvent && !nEvent) {
       return { animateOut: true }
     }
 
     return { event: nEvent }
+
   }
 
-  componentDidUpdate () {
+  componentDidUpdate() {
     /*
       Animation managment should probably be done by a dedicated library in the future.
     */
@@ -49,6 +49,7 @@ class EventInfo extends Component {
         })
       }, 1)
     }
+
   }
 
   render () {
@@ -137,7 +138,7 @@ class EventInfo extends Component {
   openMoreInfo = () => {
     const {
       event,
-      openMoreInfo
+      openMoreInfo,
     } = this.props
 
     openMoreInfo(event)
