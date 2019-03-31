@@ -17,7 +17,19 @@
         "title": "Sign up",
         "route": "/sign-up"
       }
+    ],
+    "Admin": [
+      {
+        "title": "Admin",
+        "route": "/admin"
+      },
+      {
+        "title": "Sign out",
+        "route": "/sign-out"
+      }
     ]
+
+
   },
   "leftLinks": [
     {
