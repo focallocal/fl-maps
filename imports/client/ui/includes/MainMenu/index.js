@@ -8,7 +8,7 @@ import UserItem from './UserItem'
 import Logo from './Logo'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
-
+import { createAdmin } from "./../../../utils/adminControl";
 class MainMenu extends Component {
   state = {
     sidebarOpen: false
@@ -19,8 +19,12 @@ class MainMenu extends Component {
       sidebarOpen
     } = this.state
 
-    const { MainMenu } = i18n
-
+    const { MainMenu } = i18n;
+    console.log('userMenu', user);
+    if (user){
+      createAdmin(user);
+    }
+    
     return (
       <Fragment>
         <Navbar id='main-menu' expand='md'>

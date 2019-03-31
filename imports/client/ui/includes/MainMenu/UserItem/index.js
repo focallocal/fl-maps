@@ -3,10 +3,20 @@ import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import DropDownItem from '../DropDownItem'
 
-import i18n from '/imports/both/i18n/en'
-
+import i18n from "/imports/both/i18n/en";
+//import admin from './../../../../utils/adminControl';
 const UserItem = ({ user }) => {
-  const userStatus = user ? 'loggedIn' : 'loggedOut'
+  // add check for specific email for initial admin setup
+ 
+  //console.log('user', user._id);
+
+  // if (user.admin === true) {
+  //   userStatus = 'Admin'
+  // }
+  // else {
+  //   userStatus = user ? "loggedIn" : "loggedOut";
+  // }
+  const userStatus = user ? "loggedIn" : "loggedOut";
   const item = {
     'title': '',
     'icon': 'fas fa-user-circle user',
