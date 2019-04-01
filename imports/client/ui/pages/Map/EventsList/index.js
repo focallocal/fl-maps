@@ -4,6 +4,7 @@ import { ListGroup } from 'reactstrap'
 import EventsListItem from './EventsListItem'
 import MinimizeButton from './MinimizeButton'
 import EventInfo from './EventInfo'
+import * as Gravatar from '/imports/client/utils/Gravatar'
 import './styles.scss'
 
 class EventsList extends Component {
@@ -52,6 +53,7 @@ class EventsList extends Component {
                   key={index}
                   item={event}
                   userLocation={userLocation}
+                  userGravatar={Gravatar.isSpecialCategorySelected(event.categories) ? Gravatar.getGravatar(event.organiser.name, 50) : ''}
                   onItemClick={this.props.onItemClick}
                 />
               )
