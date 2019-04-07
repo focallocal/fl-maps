@@ -10,21 +10,41 @@ import UserItem from "./UserItem";
 import Logo from "./Logo";
 import i18n from "/imports/both/i18n/en";
 import "./styles.scss";
-import { createAdmin} from "./../../../utils/adminControl";
+
 class MainMenu extends Component {
   state = {
     sidebarOpen: false
   };
 
+  componentDidMount() {
+ 
+
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    // if (prevProps.user !== this.props.user && prevProps.user._id != this.props.user._id){
+    //   const { user } = this.props;
+
+    //   console.log('userMenu', user);
+    //   if (user) {
+    //     Meteor.call('Admin.createAdmin', {id: user._id}, (err, res) => {
+    //       if (!err) {
+    //         throw new Meteor.Error('could not find user...')
+    //       }
+
+  
+    //     })
+
+    //   }
+    // }
+  }
+
   render() {
     const { sidebarOpen } = this.state;
     const { user } = this.props;
-
+    
     const { MainMenu } = i18n;
-    console.log('userMenu', user);
-    if (user){
-      createAdmin(user);
-    }
+
     
     return (
       <Fragment>
