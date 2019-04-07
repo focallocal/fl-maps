@@ -14,7 +14,7 @@ class Admin extends Component {
       users : [],
       currentUser: {},
       events: [],
-      limit: 2,
+      limit: 25,
       skip: 0,
       isNoMoreUsers: false,
       alertNotAuthorized : false,
