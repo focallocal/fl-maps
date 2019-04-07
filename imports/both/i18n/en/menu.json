@@ -20,12 +20,12 @@
     ],
     "Admin": [
       {
-        "title": "Admin",
-        "route": "/admin"
-      },
-      {
         "title": "Sign out",
         "route": "/sign-out"
+      },
+      {
+        "title": "Admin",
+        "route": "/admin"
       }
     ]
 
