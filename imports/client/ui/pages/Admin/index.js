@@ -14,7 +14,7 @@ class Admin extends Component {
       users : [],
       currentUser: {},
       events: [],
-      limit: 25,
+      limit: 2,
       skip: 0,
       isNoMoreUsers: false,
       alertNotAuthorized : false,
@@ -68,7 +68,8 @@ class Admin extends Component {
           const index = users.findIndex((ele) => {
             return ele._id === id;
           })
-          users[index].roles[rolesDataKey] = [role];
+          const roles =  { [rolesDataKey]: [role]}
+          users[index].roles = roles;
           return {
             users
           }
