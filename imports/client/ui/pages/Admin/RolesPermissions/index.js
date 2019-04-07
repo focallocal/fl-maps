@@ -6,8 +6,7 @@ export const permissions = {
   adminPage: ["admin", "moderator"],
   changeRole: ["admin"],
   deleteUser: ["admin"],
-  deleteResource: ["admin", "moderator"],
-  editResource: ["admin", "moderator"],
+  deleteEditResource: ["admin", "moderator"],
 }
 
 export const rolesDataKey = "__global_roles__";

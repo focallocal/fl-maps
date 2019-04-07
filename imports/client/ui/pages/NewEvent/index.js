@@ -159,6 +159,7 @@ class NewEventModal extends Component {
   deletePage = () => {
     let model = EventsSchema.clean(this.state.form.getModel())
     model._id = this.state.form.getModel()._id
+   
     this.callDeleteEvent(model);
   }
 
@@ -176,6 +177,7 @@ class NewEventModal extends Component {
   }
 
   callEditEvent = (model) => {
+    console.log('model', model);
     Meteor.call('Events.editEvent', model, (err, res) => {
       if (!err) {
         window.__updatedData = model // update event page.

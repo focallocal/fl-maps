@@ -15,6 +15,7 @@ const changeRole = new ValidatedMethod({
   }).validator(),
   run({rolesAllowed }) {
     const id = this.userId
+
     if (!id || !rolesAllowed) {
       throw new Meteor.Error('could not find user...')
     }
