@@ -68,7 +68,7 @@ class Admin extends Component {
           const index = users.findIndex((ele) => {
             return ele._id === id;
           })
-          const roles =  { [rolesDataKey]: [role]}
+          const roles = { [rolesDataKey]: [role] }
           users[index].roles = roles;
           return {
             users
