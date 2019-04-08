@@ -22,43 +22,41 @@ class Admin extends Component {
      }
   
   componentDidMount(){
-    this.getUsers();
+    checkPermissions('adminPage').then((isPermision) => {
+
+      if (!isPermision) {//!
+        this.props.history.goBack()//!
+      }//!
+    
+      this.getUsers();
+    });
   }
 
   componentDidUpdate(prevProps,prevState){
     if (this.state.users !== prevState.users && prevState.users){
-     // do a component should update on this
       this.getEvents();
     }
  
     if (prevProps.currentUser !== this.props.currentUser) {
       this.setState({ currentUser: this.props.currentUser });
     }
-
-    if (prevState.currentUser !== this.state.currentUser && this.state.currentUser){    
-      checkPermissions('adminPage').then((isPermision)=>{    
-
-          // if (!isPermision){
-          //   this.props.history.goBack() 
-          //  }
-
-        });
-    }
   }
 
   changeUserRole = (e, id) => {
-   const role = e.target.value;
-    handleChangeUserRole(role, id,this);
-    checkPermissions('changeRole').then((isPermision) => {
+    const role = e.target.value;
+    
+    checkPermissions('changeRole').then((isPermision) => {        
 
-      // if (!isPermision) {
-      //  this.setState({ alertNotAuthorized: true });
-      // }
-
+      if (!isPermision) {//!
+        this.setState({ alertNotAuthorized: true });//!
+      }//!
+      else{//!
+        handleChangeUserRole(role, id, this);
+      }//!
+      
     });
 
     function handleChangeUserRole(role,id,context) {
-   
       Meteor.call('Admin.changeRole', { id, role }, (err, res) => {
         if (err) {
           throw new Meteor.Error('could not change user')
