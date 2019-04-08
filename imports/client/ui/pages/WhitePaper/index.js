@@ -567,9 +567,9 @@ The Focallocal Community built this ‘Public Happiness Movement’ platform and
 
 const markdownSection22 = md.render(` 
 
-The Public Happiness Movement platform currently exists as a website located at https://focallocal.org. If you’ve visited it you’ve probably noticed it is currently a highly fragmented site/platform. This is intentional, the platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective  decentralised Public Happiness platform. who will use the tools available to redesign and reshape the platform to better fit their collective needs.
+The Public Happiness Movement platform currently exists as a website located at https://focallocal.org. If you’ve visited it you’ve probably noticed it is currently a highly fragmented site/platform. This is intentional, the platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
-Focallocal.org, the platform, is also available as an iOS and Android app.
+The platform, is also available as an iOS and Android app. Its future is designed to e ready for a likely transformation to the DAPPs network.
 
 `)
 
