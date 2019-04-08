@@ -5,7 +5,7 @@ import SimpleSchema from 'simpl-schema'
 import { logRateLimit } from '/server/security/rate-limiter'
 
 const name = 'Admin.checkPermissions'
-const changeRole = new ValidatedMethod({
+const checkPermissions = new ValidatedMethod({
   name,
   mixins: [],
   validate: new SimpleSchema({
@@ -16,11 +16,18 @@ const changeRole = new ValidatedMethod({
   run({rolesAllowed }) {
     const id = this.userId
 
-    if (!id || !rolesAllowed) {
+    if ( !rolesAllowed) {
       throw new Meteor.Error('could not find user...')
     }
 
-  let permission = Roles.userIsInRole(id, rolesAllowed, Roles.GLOBAL_GROUP);
+  let permission 
+  if (id == null){
+      permission = false;
+  }
+  else{
+      permission = Roles.userIsInRole(id, rolesAllowed, Roles.GLOBAL_GROUP);
+  }
+   
   return permission;
   }
 })
