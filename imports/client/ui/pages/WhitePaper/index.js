@@ -615,11 +615,11 @@ const markdownSection24 = md.render(`
 
 [view live beta](https://action.focallocal.org/)
 **The Action Center**
-An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. Each ‘Mission’ should take a user between 30 mins and one hour, if longer is needed then it needs to be divided into smaller chunks.
+An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. The platform is being designed based on implementing Scrum and Agile project management principles to solve societal issues and create effient, flexible and effective teams. The Action Center (and rest of the site) is also being designed by teams using Scrum and Agile and so it will adapt and evolve to meet users needs. The current Action Center can be considered to be a working template to begin building from.
 
-Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
+Each ‘Mission’ should take a user between 30 mins and one hour, if longer is needed then it needs to be divided into smaller chunks. Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
 
-In the Action Center users select a due date within the next two weeks when ‘accepting a mission’ (assigning themselves a task). If they miss that target the Mission returns to the ‘to do list’ for others to claim and complete preventing projects being held up by well meaning, but unreliable people as is common in traditional volunteering and Microvolunteering systems.
+In the Action Center users move a 'mission' into the 'Doing' list to claim it (assign themselves a task). If it's not complete within the next two weeks the Mission is returned to the ‘to do list’ for others to claim and complete preventing projects being held up by well meaning, but unreliable people, as is common in traditional volunteering and Microvolunteering systems.
 
 Tokens are distributed for completed tasks, with a two week delay so other users, and moderators can monitor for any abuse of the system.
 
