@@ -19,9 +19,10 @@ class MainMenu extends Component {
   render() {
     const { sidebarOpen } = this.state;
     const { user } = this.props;
-
+    
     const { MainMenu } = i18n;
 
+    
     return (
       <Fragment>
         <Navbar id="main-menu" expand="md">
