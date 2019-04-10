@@ -24,9 +24,9 @@ class Admin extends Component {
   componentDidMount(){
     checkPermissions('adminPage').then((isPermision) => {
 
- //     if (!isPermision) {//!
- //       this.props.history.goBack()//!
- //     }//!
+      if (!isPermision) {//!
+        this.props.history.goBack()//!
+      }//!
     
       this.getUsers();
     });
@@ -47,12 +47,12 @@ class Admin extends Component {
     
     checkPermissions('changeRole').then((isPermision) => {        
 
- //     if (!isPermision) {//!
- //       this.setState({ alertNotAuthorized: true });//!
- //     }//!
- //     else{//!
+      if (!isPermision) {//!
+        this.setState({ alertNotAuthorized: true });//!
+      }//!
+      else{//!
         handleChangeUserRole(role, id, this);
- //     }//!
+      }//!
       
     });
 
