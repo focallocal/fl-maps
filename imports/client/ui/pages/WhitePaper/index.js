@@ -93,11 +93,11 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.7. <a href="#Contests">Contests</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.8. <a href="#Collectables">Collectables</a><br />
 <br />
-11. <a href="#Revenue Streams">Revenue Streams</a><br />
+11. <a href="#Revenue Streams and Token Price">Revenue Streams and Token Price</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. <a href="#Speculation">Speculation</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.2. <a href="#Shop">Active Happiness Clothing</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.3. <a href="#Corporate Social Responsibility">Corporate Social Responsibility</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. <a href="#Kindness Aucton">Kindness Auction</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. <a href="#Kindness Auction">Kindness Auction</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. <a href="#Community Projects">Community Projects</a><br />
 <br />
 12. <a href="#Automated Token Distribution Matrix">Automated Token Distribution Matrix</a><br />
@@ -127,7 +127,7 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.2. <a href="#Quantum Security">Quantum Security</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.3. <a href="#Massive Hack">Massive Hack</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.4. <a href="#Zombie Apocalypse">Zombie Apocalypse</a><br />
-<br /
+<br />
 16. <a href="#Giving Back to Open-source">Giving Back to Open-source</a><br />
 <br />
 17. <a href="#Timeline">Timeline</a><br />
@@ -146,6 +146,17 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 const markdownSection104 = md.render(`
 
+The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the eco-system will continue raising revenue in Fiat to enhance it's functionality. Revenue raised will be used for: 
+* operating costs 
+* supporting the team during the initial growth phase 
+* marketing purposes
+
+There will also be a pool created for the community to use. Members will vote on how they wish to assign it in order to create maximum value to the eco-system. This might include: 
+* buying back tokens to raise their price
+* outsourcing a much desired feature or task we currently lack the capacity to create internally
+* supporting a project being built in the Action Center which members believe can deliver great impact with a cash injection
+* donating to an external worthy cause
+
 `)
 
 
@@ -155,6 +166,10 @@ const markdownSection105 = md.render(`
 
 **Speculation**
 
+Speculation on exchanges is the main way the token's price will rise. Many people will want to add it to their portfolio to support the great work for well-being and peace in the world, or because someone just made their grandmother smile all day long. Others will want to invest as they expect the price to rise as awareness, followed by demand for our token, grows.
+
+Being listed on exchanges before the ICO's end is important to this strategy.
+
 `)
 
 
@@ -163,6 +178,11 @@ const markdownSection106 = md.render(`
 ## 11.2.
 
 **Active Happiness Clothing**
+
+[Active Happiness Clothing](https://shop.focallocal.org)
+The platform includes a store where users submit designs for, and purchase, clothing and Public Happiness supplies. 'Active Happiness Clothing' means that the designs encourage positive things to happen around you while wearing it, and so it is an extension of our Public Happiness Activities. For example, a tee that invites passers-by to share one minute of eye contact to explore human connection.
+
+See section 7.4. for more details.
 
 `)
 
@@ -1317,7 +1337,7 @@ This switch is not guaranteed at this point, but it is a logical step and will b
 `)
 
 const markdownSection72 = md.render(` 
-/
+
 The Crypto world is highly volatile at this point in time which will lead many projects to overstretch themselves, ending up in trouble if an event outside of their control hits. Here we consider how to protect our ecosystem from certain scenarios.
 
 `)
@@ -1562,11 +1582,11 @@ const Anchor80 = () => <Fragment><h2 id="Questions to be Resolved" className="ch
 const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" className="chapterHeading">The World Needs This Because: (v1)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
 const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" className="chapterHeading">The World Needs This Because: (v2)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
 const Anchor103 = () => <Fragment><h2 id="Foreword" > </h2><br /><br /><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
-const Anchor104 = () => <Fragment><h2 id="Revenue Streams" className="chapterHeading">Revenue Streams</h2><div dangerouslySetInnerHTML={{ __html: markdownSection104 }} /></Fragment>
+const Anchor104 = () => <Fragment><h2 id="Revenue Streams and Token Price" className="chapterHeading">Revenue Streams and Token Price and Token Price</h2><div dangerouslySetInnerHTML={{ __html: markdownSection104 }} /></Fragment>
 const Anchor105 = () => <Fragment><h2 id="Speculation" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection105 }} /></Fragment>
 const Anchor106 = () => <Fragment><h2 id="Shop" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection106 }} /></Fragment>
 const Anchor107 = () => <Fragment><h2 id="Corporate Social Responsibility" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection107 }} /></Fragment>
-const Anchor108 = () => <Fragment><h2 id="Kindness Aucton" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection108 }} /></Fragment>
+const Anchor108 = () => <Fragment><h2 id="Kindness Auction" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection108 }} /></Fragment>
 const Anchor109 = () => <Fragment><h2 id="Community Projects" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection109 }} /></Fragment>
 
 
