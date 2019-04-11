@@ -93,47 +93,109 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.7. <a href="#Contests">Contests</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.8. <a href="#Collectables">Collectables</a><br />
 <br />
-11. <a href="#Automated Token Distribution Matrix">Automated Token Distribution Matrix</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. <a href="#Weighted Mining">Weighted Mining</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.2. <a href="#Hard Cap">Hard Cap</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.3. <a href="#Adjusting the Balancing">Adjusting the Balancing</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. <a href="#Token Release">Token Release</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. <a href="#Mining Table">Mining Table</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.6. <a href="#Experience Multipliers">Experience Multipliers</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.7. <a href="#Token Distribution">Token Distribution</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.8. <a href="#Further Matrix Considerations">Further Matrix Considerations</a><br />
+11. <a href="#Revenue Streams">Revenue Streams</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. <a href="#Speculation">Speculation</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.2. <a href="#Shop">Active Happiness Clothing</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.3. <a href="#Corporate Social Responsibility">Corporate Social Responsibility</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. <a href="#Kindness Aucton">Kindness Auction</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. <a href="#Community Projects">Community Projects</a><br />
 <br />
-12. <a href="#Team">Team</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.1. <a href="#Current Team Members">Current Team Members</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.2. <a href="#Positions Open">Positions Open</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.3. <a href="#Remuneration">Remuneration</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.4. <a href="#Facilities">Facilities</a><br />
+12. <a href="#Automated Token Distribution Matrix">Automated Token Distribution Matrix</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.1. <a href="#Weighted Mining">Weighted Mining</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.2. <a href="#Hard Cap">Hard Cap</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.3. <a href="#Adjusting the Balancing">Adjusting the Balancing</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.4. <a href="#Token Release">Token Release</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.5. <a href="#Mining Table">Mining Table</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.6. <a href="#Experience Multipliers">Experience Multipliers</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.7. <a href="#Token Distribution">Token Distribution</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.8. <a href="#Further Matrix Considerations">Further Matrix Considerations</a><br />
+<br />
+13. <a href="#Team">Team</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.1. <a href="#Current Team Members">Current Team Members</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.2. <a href="#Positions Open">Positions Open</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.3. <a href="#Remuneration">Remuneration</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.4. <a href="#Facilities">Facilities</a><br />
 <br /> 
-13. <a href="#Platform Technicals">Platform Technicals</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.1. <a href="#Crypto Linking Bridges">Crypto Linking Bridges</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.2. <a href="#Trello vs Wekan vs Other Solutions">Trello vs Wekan vs Other Solutions</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.3. <a href="#Leaflet.js vs Google Maps API">Leaflet.js vs Google Maps API</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.4. <a href="#Switching the Platform to the Dapps Network">Switching the Platform to the Dapps Network</a><br />
+14. <a href="#Platform Technicals">Platform Technicals</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.1. <a href="#Crypto Linking Bridges">Crypto Linking Bridges</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.2. <a href="#Trello vs Wekan vs Other Solutions">Trello vs Wekan vs Other Solutions</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.3. <a href="#Leaflet.js vs Google Maps API">Leaflet.js vs Google Maps API</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.4. <a href="#Switching the Platform to the Dapps Network">Switching the Platform to the Dapps Network</a><br />
 <br />
-14. <a href="#Doomsday Protocol">Doomsday Protocol</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.1. <a href="#Huge Market Crash">Huge Market Crash</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.2. <a href="#Quantum Security">Quantum Security</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.3. <a href="#Massive Hack">Massive Hack</a><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.4. <a href="#Zombie Apocalypse">Zombie Apocalypse</a><br />
+15. <a href="#Doomsday Protocol">Doomsday Protocol</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.1. <a href="#Huge Market Crash">Huge Market Crash</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.2. <a href="#Quantum Security">Quantum Security</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.3. <a href="#Massive Hack">Massive Hack</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.4. <a href="#Zombie Apocalypse">Zombie Apocalypse</a><br />
+<br /
+16. <a href="#Giving Back to Open-source">Giving Back to Open-source</a><br />
 <br />
-15. <a href="#Giving Back to Open-source">Giving Back to Open-source</a><br />
+17. <a href="#Timeline">Timeline</a><br />
 <br />
-16. <a href="#Timeline">Timeline</a><br />
+18. <a href="#Key Supporters and Team">Key Supporters and Team</a><br />
 <br />
-17. <a href="#Key Supporters and Team">Key Supporters and Team</a><br />
-<br />
-18. <a href="#Questions to be Resolved">Questions to be Resolved</a><br />
+19. <a href="#Questions to be Resolved">Questions to be Resolved</a><br />
  </p>
   </div>
  </React.Fragment>
  )
+ 
+ 
+ 
+ 
   
+const markdownSection104 = md.render(`
 
+11. <a href="#Revenue Streams">Revenue Streams</a><br />
+
+`)
+
+
+const markdownSection105 = md.render(`
+
+## 11.1.
+
+**Speculation**
+
+`)
+
+
+const markdownSection106 = md.render(`
+
+## 11.2.
+
+**Active Happiness Clothing**
+
+`)
+
+
+const markdownSection107 = md.render(`
+
+## 11.3.
+
+**Corporate Social Responsibility**
+
+`)
+
+
+const markdownSection108 = md.render(`
+
+## 11.4.
+
+**Kindness Auction**
+
+`)
+
+
+const markdownSection109 = md.render(`
+
+## 11.5.
+
+**Community Projects**
+ 
+`)
+  
+  
 const markdownSection103 = md.render(`
 
 **Foreword:**
@@ -1013,7 +1075,7 @@ The platform automates rewards for completing tasks which work towards maintaini
 
 const markdownSection54 = md.render(`
 
-## 11.1.
+## 12.1.
 
 **Weighted Mining**
 Levels of trust:
@@ -1038,7 +1100,7 @@ Obviously allowing the community to vote on increasing a regions token rewards, 
 
 const markdownSection55 = md.render(`
 
-## 11.2.
+## 12.2.
 
 **Hard Cap**
 A hard cap will be set on the amount that any one user can earn each reward period, at each different user level. Minimising the risk from abuse and fraud, and maintaining our core vision of Public Happiness Token allowing users increased economic freedom to give their time to resolving local societal issues, and increasing community connection and well-being. The hard cap will be a percentage of the tokens released in that period, modified as the user base increases. 
@@ -1051,7 +1113,7 @@ The percentage earned from each sub-activity when coordinating large scale activ
 
 const markdownSection56 = md.render(`
 
-## 11.3.
+## 12.3.
 
 **Adjusting the Balancing**
 The automated weighting and distribution system will apply a set level to the above metrics. These levels will be adjusted through community voting to find the most effective operating balances for maximising our network effect. These will constantly need adjusting during the Movements growth and evolution. 
@@ -1060,7 +1122,7 @@ The automated weighting and distribution system will apply a set level to the ab
 
 const markdownSection57 = md.render(`
 
-## 11.4.
+## 12.4.
 
 **Token Release**
 Initially a pre-set amount of tokens will be set to release each week for 100 years, divided between active contributors to the ecosystem and mission. The number of tokens released each week will be set on a graduated incline, balancing rewarding early contributors with greater rewards, against the exponential increase of users who the token will be divided amongst as the community grows.
@@ -1071,7 +1133,7 @@ This weekly token release makes our currency deflationary, which will be offset 
 
 const markdownSection58 = md.render(`
 
-## 11.5.
+## 12.5.
 
 **Mining Table**
 A table of actions contributing to the ecosystem which users are rewarded for will be created here shortly.
@@ -1080,7 +1142,7 @@ A table of actions contributing to the ecosystem which users are rewarded for wi
 
 const markdownSection59 = md.render(`
 
-## 11.6.
+## 12.6.
 
 **Experience Multipliers**
 A users total tokens earned/contribution to the ecosystem is recorded and used as a multiplier increasing their tokens earned and also the weight of their votes.
@@ -1099,7 +1161,7 @@ A users total tokens earned/contribution to the ecosystem is recorded and used a
 
 const markdownSection60 = md.render(`
 
-## 11.7. 
+## 12.7. 
 
 **Token Distribution**
 50% (4.85 Billion Tokens) will be released during the initial 3 ICO launches and give the token value through trading on exchanges
@@ -1122,7 +1184,7 @@ Average release rate: 265753 tokens per day
  
 const markdownSection61 = md.render(` 
 
-## 11.8.
+## 12.8.
 
 **Further Matrix Considerations**
 The matrix needs to consider: 
@@ -1141,7 +1203,7 @@ Some roles will be fixed for increased stability and an initial injection of exp
 
 const markdownSection63 = md.render(` 
 
-## 12.1.
+## 13.1.
 
 **Current Team Members**
 
@@ -1153,7 +1215,7 @@ Degree in Business and Entrepreneurship from University of Portsmouth
 
 const markdownSection64 = md.render(` 
 
-## 12.2.
+## 13.2.
 
 **Positions Open**
 * Marketing Coordinator
@@ -1192,7 +1254,7 @@ Roles will be for a pre-agreed period to invigorate and lead the community as it
 
 const markdownSection65 = md.render(`
 
-## 12.3.
+## 13.3.
 
 **Remuneration**
 The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happiness Tokens with the 1st payments coming shortly after the ICO launch, and covering all work towards the project prior to the ICO.
@@ -1201,7 +1263,7 @@ The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happi
 
 const markdownSection66 = md.render(`
 
-## 12.4.
+## 13.4.
 
 **Facilities**
 The team will either operate remotely using our online hub, or work from the road trip. (see Marketing in section 10.2. for more details about the road trip). 
@@ -1214,7 +1276,7 @@ const markdownSection67 = md.render(` `)
 
 const markdownSection68 = md.render(`
 
-## 13.1.
+## 14.1.
 
 **Crypto Linking Bridges**
 Public Happiness Activities: Meteor Js/React to REST API 
@@ -1225,7 +1287,7 @@ Projects (Missions): Currently Web-hooks from Trello (or Wekan). This system is 
 
 const markdownSection69 = md.render(`
 
-## 13.2.
+## 14.2.
 
 **Trello vs Wekan vs Other Solutions**
 The Action Center is a Micro-volunteering Hub which breaks large projects down into 30 min – 1 hour ‘Missions’, enabling anyone to join in and help build the project and bring it into the world.
@@ -1237,7 +1299,7 @@ Currently the system uses Trello as an external platform, with a layer built on 
 
 const markdownSection70 = md.render(`
 
-## 13.3.
+## 14.3.
 **Leaflet.js vs Google Maps API** 
 
 **The Public Happiness Gatherings system is currently build using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
@@ -1246,7 +1308,7 @@ const markdownSection70 = md.render(`
 
 const markdownSection71 = md.render(`
 
-## 13.4.
+## 14.4.
 **Switching the Platform to the Dapps Network**
 (Decentralised Apps)
 
@@ -1264,7 +1326,7 @@ The Crypto world is highly volatile at this point in time which will lead many p
 
 const markdownSection73 = md.render(`
 
-## 14.1.
+## 15.1.
 
 **Huge Market Crash**
 Public Happiness Token is entirely secure from some major news crashing investors confidence in the entire blockchain, or global economic markets. Everything is designed with the ability to fall away, with the platform and community capable of running a skeleton site.
@@ -1283,7 +1345,7 @@ As long as there is a positive community behind it the Token cannot fail. It wil
 
 const markdownSection74 = md.render(` 
 
-## 14.2.
+## 15.2.
 
 **Quantum Security**
 To some extent we are tied to advancements in the Ethereum network. There are open pull requests such as pull request #208: Abstraction of transaction origin and signature.md. 
@@ -1294,7 +1356,7 @@ On our end our entire system is being reviewed by quantum security experts. We w
 
 const markdownSection75 = md.render(`
 
-## 14.3.
+## 15.3.
 
 **Massive Hack**
 As a last resort in the case of a massive attack there is the possibility of a Hard Fork, resetting everything to a time before the hack on the public ledger.
@@ -1311,7 +1373,7 @@ The implications of this option are obviously wide ranging and it would be an ab
 
 const markdownSection76 = md.render(`
 
-## 14.4.
+## 15.4.
 
 **Zombie Apocalypse**
 If the inevitable finally occurs, we will convert the Public Happiness Bus into a ‘Public Happiness Buoat’ and retreat to a small uninhabited Greek island, where our new society will flourish and sparkle as a bastion to all Humanity's greatest achievements. Using Public Happiness Token to create a paradise where every economic interaction creates more harmony and a closer more caring community, while the rest of the world performs a perfect impression of today’s paparazzi for each others brains. 
@@ -1325,7 +1387,7 @@ const markdownSection77 = md.render(`
 2% of all funds we raise from the ICO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
 
 
-## 15.1.
+## 16.1.
 
 **Open Source Projects We Use**
 * Discourse
@@ -1335,7 +1397,7 @@ const markdownSection77 = md.render(`
 * Click the balloon here to discuss others we should support
 
 
-## 15.2.
+## 16.2.
 
 **Donations to Notable Other Open-source Projects**
 1% of the total raised will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
@@ -1346,7 +1408,7 @@ The vote results will be non-binding, to allow mitigatation against any uncovere
 
 const markdownSection78 = md.render(` 
 
-## 16.
+## 17.
 
 * 1st draft of the White Paper created by founder
 
@@ -1388,7 +1450,7 @@ const markdownSection79 = md.render(`
 
 const markdownSection80 = md.render(`
 
-## 17.
+## 18.
 
 * Open-source vs Closed Code Base. Added security risks from allowing hackers to search for vulnerabilities, vs the crypto communities strong preference for open source projects
 
@@ -1480,7 +1542,7 @@ const Anchor58 = () => <Fragment><h2 id="Mining Table" > </h2><div dangerouslySe
 const Anchor59 = () => <Fragment><h2 id="Experience Multipliers" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection59 }} /></Fragment>
 const Anchor60 = () => <Fragment><h2 id="Token Distribution" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection60 }} /></Fragment>
 const Anchor61 = () => <Fragment><h2 id="Further Matrix Considerations" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection61 }} /></Fragment>
-const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
+const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team</h2><div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
 const Anchor63 = () => <Fragment><h2 id="Current Team Members" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection63 }} /></Fragment>
 const Anchor64 = () => <Fragment><h2 id="Positions Open" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection64 }} /></Fragment>
 const Anchor65 = () => <Fragment><h2 id="Remuneration" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection65 }} /></Fragment>
@@ -1502,6 +1564,12 @@ const Anchor80 = () => <Fragment><h2 id="Questions to be Resolved" className="ch
 const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" className="chapterHeading">The World Needs This Because: (v1)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
 const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" className="chapterHeading">The World Needs This Because: (v2)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
 const Anchor103 = () => <Fragment><h2 id="Foreword" > </h2><br /><br /><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
+const Anchor104 = () => <Fragment><h2 id="Revenue Streams" className="chapterHeading">Revenue Streams</h2><div dangerouslySetInnerHTML={{ __html: markdownSection104 }} /></Fragment>
+const Anchor105 = () => <Fragment><h2 id="Speculation" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection105 }} /></Fragment>
+const Anchor106 = () => <Fragment><h2 id="Shop" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection106 }} /></Fragment>
+const Anchor107 = () => <Fragment><h2 id="Corporate Social Responsibility" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection107 }} /></Fragment>
+const Anchor108 = () => <Fragment><h2 id="Kindness Aucton" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection108 }} /></Fragment>
+const Anchor109 = () => <Fragment><h2 id="Community Projects" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection109 }} /></Fragment>
 
 
 
@@ -1577,6 +1645,14 @@ const index = (props) => {
 		<Anchor50 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		<Anchor51 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		<Anchor52 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		
+		<Anchor104  />
+		<Anchor105  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor106  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor107  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor108  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor109  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		
 		
 		<Anchor53 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
 		<Anchor54 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
