@@ -1572,7 +1572,7 @@ const Anchor58 = () => <Fragment><h2 id="Mining Table" > </h2><div dangerouslySe
 const Anchor59 = () => <Fragment><h2 id="Experience Multipliers" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection59 }} /></Fragment>
 const Anchor60 = () => <Fragment><h2 id="Token Distribution" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection60 }} /></Fragment>
 const Anchor61 = () => <Fragment><h2 id="Further Matrix Considerations" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection61 }} /></Fragment>
-const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team</h2><div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
+const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team<br /></h2><div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
 const Anchor63 = () => <Fragment><h2 id="Current Team Members" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection63 }} /></Fragment>
 const Anchor64 = () => <Fragment><h2 id="Positions Open" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection64 }} /></Fragment>
 const Anchor65 = () => <Fragment><h2 id="Remuneration" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection65 }} /></Fragment>
@@ -1594,7 +1594,7 @@ const Anchor80 = () => <Fragment><h2 id="Questions to be Resolved" className="ch
 const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" className="chapterHeading">The World Needs This Because: (v1)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
 const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" className="chapterHeading">The World Needs This Because: (v2)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
 const Anchor103 = () => <Fragment><h2 id="Foreword" > </h2><br /><br /><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
-const Anchor104 = () => <Fragment><h2 id="Revenue Streams and Token Price" className="chapterHeading">Revenue Streams and Token Price and Token Price</h2><div dangerouslySetInnerHTML={{ __html: markdownSection104 }} /></Fragment>
+const Anchor104 = () => <Fragment><h2 id="Revenue Streams and Token Price" className="chapterHeading">Revenue Streams and Token Price<br /></h2><div dangerouslySetInnerHTML={{ __html: markdownSection104 }} /></Fragment>
 const Anchor105 = () => <Fragment><h2 id="Speculation" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection105 }} /></Fragment>
 const Anchor106 = () => <Fragment><h2 id="Shop" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection106 }} /></Fragment>
 const Anchor107 = () => <Fragment><h2 id="Corporate Social Responsibility" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection107 }} /></Fragment>
