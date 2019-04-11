@@ -1582,7 +1582,7 @@ const Anchor68 = () => <Fragment><h2 id="Crypto Linking Bridges" > </h2><div dan
 const Anchor69 = () => <Fragment><h2 id="Trello vs Wekan vs Other Solutions" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection69 }} /></Fragment>
 const Anchor70 = () => <Fragment><h2 id="Leafletjs vs Google Maps API" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection70 }} /></Fragment>
 const Anchor71 = () => <Fragment><h2 id="Switching the Platform to the Dapps Network" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection71 }} /></Fragment>
-const Anchor72 = () => <Fragment><h2 id="Doomsday Protocol" className="chapterHeading">Doomsday Protocol</h2><div dangerouslySetInnerHTML={{ __html: markdownSection72 }} /></Fragment>
+const Anchor72 = () => <Fragment><h2 id="Doomsday Protocol" className="chapterHeading">Doomsday Protocol<br /></h2><div dangerouslySetInnerHTML={{ __html: markdownSection72 }} /></Fragment>
 const Anchor73 = () => <Fragment><h2 id="Huge Market Crash" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection73 }} /></Fragment>
 const Anchor74 = () => <Fragment><h2 id="Quantum Security" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection74 }} /></Fragment>
 const Anchor75 = () => <Fragment><h2 id="Massive Hack" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection75 }} /></Fragment>
