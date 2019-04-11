@@ -146,8 +146,6 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 const markdownSection104 = md.render(`
 
-11. <a href="#Revenue Streams">Revenue Streams</a><br />
-
 `)
 
 
