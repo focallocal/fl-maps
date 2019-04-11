@@ -146,6 +146,7 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
   
 const markdownSection104 = md.render(`
 
+
 The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the eco-system will continue raising revenue in Fiat to enhance it's functionality. Revenue raised will be used for: 
 * operating costs 
 * supporting the team during the initial growth phase 
@@ -179,7 +180,7 @@ const markdownSection106 = md.render(`
 
 **Active Happiness Clothing**
 
-[Active Happiness Clothing](https://shop.focallocal.org)
+[Visit the shop](https://shop.focallocal.org)
 The platform includes a store where users submit designs for, and purchase, clothing and Public Happiness supplies. 'Active Happiness Clothing' means that the designs encourage positive things to happen around you while wearing it, and so it is an extension of our Public Happiness Activities. For example, a tee that invites passers-by to share one minute of eye contact to explore human connection.
 
 See section 7.4. for more details.
@@ -193,6 +194,11 @@ const markdownSection107 = md.render(`
 
 **Corporate Social Responsibility**
 
+Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in. Our platform is absolutely ideal for this purpose as they can offer funds to local people to target a specific issue, or one of their own choosing. They can then map progress and results the entire way through via our platform and social media hash-tags which user are encouraged to use on external social media sites. 
+
+Donating to our platform engages communities and creates an entire story for them and their stakeholders and staff to follow. This has the potential to be lucrative, boosting the tokens price and market value rapidly. This is also a great way for us to reach and engage with local communities. 
+
+
 `)
 
 
@@ -202,6 +208,10 @@ const markdownSection108 = md.render(`
 
 **Kindness Auction**
 
+[read more](https://news.focallocal.org/focallocal-kindness-auction/)
+
+A fun little project we've had good success with in our community over the years, with just a few people in one city at a time joining in it. Unleashed globally it will be a real powerhouse for fundraising, and one which everyone who joins in receives something great in return.
+
 `)
 
 
@@ -210,7 +220,9 @@ const markdownSection109 = md.render(`
 ## 11.5.
 
 **Community Projects**
- 
+
+The platform does allow for users to create their own creative fundraising projects, as long as they also fit with our community values statement. This doesn't mean standard fundraising like asking for sponsors to do a sky-dive. It's for creative projects which also bring happiness directly, for example [Queue Pimping](http://action.focallocal.org/) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects, is a challenge which the early community will be presented with as it grapples with decentralised decision making.
+
 `)
   
   
