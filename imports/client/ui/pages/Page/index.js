@@ -14,6 +14,8 @@ import './style.scss'
 import {Helmet} from "react-helmet";
 import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
+import i18n from '/imports/both/i18n/en'
+import { checkPermissions} from './../Admin/RolesPermissions/index'
 
 class Page extends Component {
   constructor (props) {
@@ -22,7 +24,9 @@ class Page extends Component {
       data: window.cachedDataForPage,
       id: props.match.params.id,
       loaded: false,
-      badges: null
+      badges: null,
+      redirect: false,
+      editDeletePermission: false,
     }
   }
 
@@ -39,11 +43,14 @@ class Page extends Component {
       this.setState({ loaded: true })
       window.__setDocumentTitle(data.name)
     }
+    this.deleteEditPermission();
+    
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.data && !prevState.data) {
       window.__setDocumentTitle(this.state.data.name)
+    
     }
 
     // DOCUSS
@@ -118,7 +125,8 @@ class Page extends Component {
   render () {
     const {
       data,
-      loaded
+      loaded,
+      editDeletePermission
     } = this.state
 
     if (!loaded) {
@@ -159,8 +167,12 @@ class Page extends Component {
     let isAuthor
 
     if (isLoggedIn) {
-      isAuthor = user._id === organiser._id
+      isAuthor = user._id === organiser._id 
     }
+    if (isLoggedIn && editDeletePermission){
+      isAuthor = editDeletePermission;
+    }
+
 
     return (
       <div id='page' onClick={e => this.dcsClick(null, e)}>
@@ -237,7 +249,17 @@ class Page extends Component {
     )
   }
 
-  scrollToMap () {
+  closePage = () =>{
+    this.setState({ redirect: true });
+  }
+
+  deleteEditPermission = () =>{
+    checkPermissions("deleteEditResource").then(response => {
+      this.setState({ editDeletePermission: response});
+    });
+  }
+
+  scrollToMap(){
     scrollToElement('.embedded-map')
   }
 

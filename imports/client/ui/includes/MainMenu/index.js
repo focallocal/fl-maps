@@ -8,6 +8,8 @@ import UserItem from './UserItem'
 import Logo from './Logo'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 
 class MainMenu extends Component {
   state = {
@@ -18,8 +20,7 @@ class MainMenu extends Component {
     const {
       sidebarOpen
     } = this.state
-
-    const { MainMenu } = i18n
+    const { MainMenu } = i18n;
 
     return (
       <Fragment>
@@ -67,4 +68,6 @@ class MainMenu extends Component {
   }
 }
 
-export default MainMenu
+export default withTracker(() => {
+  return { user: Meteor.user() };
+})(MainMenu);

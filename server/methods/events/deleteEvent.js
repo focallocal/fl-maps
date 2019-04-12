@@ -29,7 +29,7 @@ const newEvent = new ValidatedMethod({
 
     const modelId = String(model._id) // ensure it's a string
 
-     Events.remove({ _id: modelId, 'organiser._id': userId }, (err) =>{
+     Events.remove({ _id: modelId}, (err) =>{
        if(err){
          throw new Meteor.Error('Events.deleteEvent', err)
        }

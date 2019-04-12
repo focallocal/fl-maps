@@ -30,6 +30,7 @@ import Page from "./pages/Page";
 
 // Components
 import ScrollToTop from "./components/ScrollToTop";
+import Admin from "./pages/Admin/index"
 
 class App extends Component {
   constructor() {
@@ -198,6 +199,7 @@ class App extends Component {
                 <Route exact path="/faq" render={props => <Faq {...props} {...dcsProps} />}/>
                 <Route exact path="/about" render={props => <About {...props} {...dcsProps} />}/>
                 <Route path="/map" component={Map_} />
+                <Route exact path="/admin" render={props => <Admin {...props}/>} /> 
                 <Route path="*" render={this.renderNewEvent} />
                 <Route exact path="/thank-you" component={CongratsModal} />
                 <Route exact path="/page/:id" render={props => <Page {...props} {...dcsProps} />}

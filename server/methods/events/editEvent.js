@@ -28,7 +28,7 @@ const newEvent = new ValidatedMethod({
 
     const modelId = String(model._id) // ensure it's a string
 
-    const prevDoc = Events.find({ _id: modelId, 'organiser._id': userId }).fetch()[0]
+    const prevDoc = Events.find({ _id: modelId}).fetch()[0]
 
     if (prevDoc) {
       const newDoc = constructNewDocument(model, prevDoc)
