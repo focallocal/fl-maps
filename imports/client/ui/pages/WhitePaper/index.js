@@ -147,12 +147,12 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
 const markdownSection104 = md.render(`
 
 
-The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the eco-system will continue raising revenue in Fiat to enhance it's functionality. Revenue raised will be used for: 
+The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the ecosystem will continue raising revenue in Fiat to enhance it's functionality. Revenue raised will be used for: 
 * operating costs 
 * supporting the team during the initial growth phase 
 * marketing purposes
 
-There will also be a pool created for the community to use. Members will vote on how they wish to assign it in order to create maximum value to the eco-system. This might include: 
+There will also be a pool created for the community to use. Members will vote on how they wish to assign it in order to create maximum value to the ecosystem. This might include: 
 * buying back tokens to raise their price
 * outsourcing a much desired feature or task we currently lack the capacity to create internally
 * supporting a project being built in the Action Center which members believe can deliver great impact with a cash injection
@@ -210,7 +210,7 @@ const markdownSection108 = md.render(`
 
 [read more](https://news.focallocal.org/focallocal-kindness-auction/)
 
-A fun little project we've had good success with in our community over the years, with just a few people in one city at a time joining in it. Unleashed globally it will be a real powerhouse for fundraising, and one which everyone who joins in receives something great in return.
+A fun little project we've had good success with in our community over the years, with just a few people in one city at a time joining in it. Unleashed globally it will be a real powerhouse for fund-raising, and one which everyone who joins in receives something great in return.
 
 `)
 
@@ -221,7 +221,7 @@ const markdownSection109 = md.render(`
 
 **Community Projects**
 
-The platform does allow for users to create their own creative fundraising projects, as long as they also fit with our community values statement. This doesn't mean standard fundraising like asking for sponsors to do a sky-dive. It's for creative projects which also bring happiness directly, for example [Queue Pimping](http://action.focallocal.org/) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects, is a challenge which the early community will be presented with as it grapples with decentralised decision making.
+The platform does allow for users to create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative projects which also bring happiness directly, for example [Queue Pimping](http://action.focallocal.org/) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects, is a challenge which the early community will be presented with as it grapples with decentralised decision making.
 
 `)
   
@@ -251,6 +251,10 @@ It's provides a space for our individual networks to grow into something larger.
 Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. 
 
 To discuss a section and make suggestions, click on the red balloons underneath each section.
+
+You can also review all [recent discussion on all sections here](https://focallocal.org/page/undefined?d=%2Ftags%2Fwhitepaper&r=1)
+
+If you'd like a Google Doc version to download or put through an audio reader just tag Andy in the forum and ask.
 
 `)
 
@@ -1572,7 +1576,7 @@ const Anchor58 = () => <Fragment><h2 id="Mining Table" > </h2><div dangerouslySe
 const Anchor59 = () => <Fragment><h2 id="Experience Multipliers" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection59 }} /></Fragment>
 const Anchor60 = () => <Fragment><h2 id="Token Distribution" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection60 }} /></Fragment>
 const Anchor61 = () => <Fragment><h2 id="Further Matrix Considerations" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection61 }} /></Fragment>
-const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team<br /></h2><div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
+const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team</h2><br/<div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
 const Anchor63 = () => <Fragment><h2 id="Current Team Members" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection63 }} /></Fragment>
 const Anchor64 = () => <Fragment><h2 id="Positions Open" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection64 }} /></Fragment>
 const Anchor65 = () => <Fragment><h2 id="Remuneration" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection65 }} /></Fragment>
@@ -1582,7 +1586,7 @@ const Anchor68 = () => <Fragment><h2 id="Crypto Linking Bridges" > </h2><div dan
 const Anchor69 = () => <Fragment><h2 id="Trello vs Wekan vs Other Solutions" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection69 }} /></Fragment>
 const Anchor70 = () => <Fragment><h2 id="Leafletjs vs Google Maps API" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection70 }} /></Fragment>
 const Anchor71 = () => <Fragment><h2 id="Switching the Platform to the Dapps Network" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection71 }} /></Fragment>
-const Anchor72 = () => <Fragment><h2 id="Doomsday Protocol" className="chapterHeading">Doomsday Protocol<br /></h2><div dangerouslySetInnerHTML={{ __html: markdownSection72 }} /></Fragment>
+const Anchor72 = () => <Fragment><h2 id="Doomsday Protocol" className="chapterHeading">Doomsday Protocol</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection72 }} /></Fragment>
 const Anchor73 = () => <Fragment><h2 id="Huge Market Crash" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection73 }} /></Fragment>
 const Anchor74 = () => <Fragment><h2 id="Quantum Security" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection74 }} /></Fragment>
 const Anchor75 = () => <Fragment><h2 id="Massive Hack" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection75 }} /></Fragment>
@@ -1594,7 +1598,7 @@ const Anchor80 = () => <Fragment><h2 id="Questions to be Resolved" className="ch
 const Anchor100 = () => <Fragment><h2 id="The World Needs This Because: (v1)" className="chapterHeading">The World Needs This Because: (v1)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection100 }} /></Fragment>
 const Anchor101 = () => <Fragment><h2 id="The World Needs This Because: (v2)" className="chapterHeading">The World Needs This Because: (v2)</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection101 }} /></Fragment>
 const Anchor103 = () => <Fragment><h2 id="Foreword" > </h2><br /><br /><div dangerouslySetInnerHTML={{ __html: markdownSection103 }} /></Fragment>
-const Anchor104 = () => <Fragment><h2 id="Revenue Streams and Token Price" className="chapterHeading">Revenue Streams and Token Price<br /></h2><div dangerouslySetInnerHTML={{ __html: markdownSection104 }} /></Fragment>
+const Anchor104 = () => <Fragment><h2 id="Revenue Streams and Token Price" className="chapterHeading">Revenue Streams and Token Price</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection104 }} /></Fragment>
 const Anchor105 = () => <Fragment><h2 id="Speculation" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection105 }} /></Fragment>
 const Anchor106 = () => <Fragment><h2 id="Shop" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection106 }} /></Fragment>
 const Anchor107 = () => <Fragment><h2 id="Corporate Social Responsibility" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection107 }} /></Fragment>
