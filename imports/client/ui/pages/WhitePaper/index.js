@@ -1576,7 +1576,7 @@ const Anchor58 = () => <Fragment><h2 id="Mining Table" > </h2><div dangerouslySe
 const Anchor59 = () => <Fragment><h2 id="Experience Multipliers" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection59 }} /></Fragment>
 const Anchor60 = () => <Fragment><h2 id="Token Distribution" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection60 }} /></Fragment>
 const Anchor61 = () => <Fragment><h2 id="Further Matrix Considerations" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection61 }} /></Fragment>
-const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team</h2><br/<div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
+const Anchor62 = () => <Fragment><h2 id="Team" className="chapterHeading">Team</h2><br/><div dangerouslySetInnerHTML={{ __html: markdownSection62 }} /></Fragment>
 const Anchor63 = () => <Fragment><h2 id="Current Team Members" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection63 }} /></Fragment>
 const Anchor64 = () => <Fragment><h2 id="Positions Open" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection64 }} /></Fragment>
 const Anchor65 = () => <Fragment><h2 id="Remuneration" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection65 }} /></Fragment>
