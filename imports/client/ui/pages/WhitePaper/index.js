@@ -92,6 +92,7 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.6. <a href="#Online Supporters">Online Supporters</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.7. <a href="#Contests">Contests</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.8. <a href="#Collectables">Collectables</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.9. <a href="#Paid to Party">Paid to Party</a><br />
 <br />
 11. <a href="#Revenue Streams and Token Price">Revenue Streams and Token Price</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. <a href="#Speculation">Speculation</a><br />
@@ -222,6 +223,26 @@ const markdownSection109 = md.render(`
 **Community Projects**
 
 The platform does allow for users to create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative projects which also bring happiness directly, for example [Queue Pimping](http://action.focallocal.org/) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects, is a challenge which the early community will be presented with as it grapples with decentralised decision making.
+
+`)
+
+const markdownSection110 = md.render(`
+
+## 10.9. 
+
+**Paid to Party**
+
+A series of high energy clubs and parties organised by experienced party creators around the world, chosen because their usual offerings embody the positive and creative spirit we wish to create with the Public Happiness Token. These events will be branded 'Paid to Party' because users will be investing in our Token, rather than buying tickets. The tickets will be given free along with their token purchase at an amount of tokens estimated to be slightly above equivalent to the value of the tickets after 6 months (emphasis on the estimation will be avoided as it's very difficult to accurately determine the value of 1 token in 6 months time). 
+
+Party goers will be given the option to invest more while buying (investing in) the tickets, and guided into joining our platform and community. Token's given away during this can be considered to be akin to a standard air-drop, except far more effective in on-boarding and engaging a wider audience.
+
+This approach has the following benefits: 
+
+1) We create another path to reach audiences outside of the normal crypto-world's audience
+
+2) It's a fantastic way of bringing people into the platform, raising awareness, and setting the positive and energetic atmosphere we want to perpetuate
+
+3) Our platform and token become linked with an excellent experience, and we gather thousands more users who are now curious about their investment in The Public Happiness Token
 
 `)
   
@@ -1231,7 +1252,9 @@ Estimating the value of returns is speculative at this point. The core team, and
 
 const markdownSection62 = md.render(` 
 
-Some roles will be fixed for increased stability and an initial injection of experience and necessary skills. Others will be outsourced to the community via Microvolunteering in the Action Center 
+Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the ICO stage will be outsourced to industry experts. If you'd like to be in those postions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
+
+Much of the essential skills needed to build a successful blockchain project and commuity will be come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
 
 `)
 
@@ -1243,7 +1266,6 @@ const markdownSection63 = md.render(`
 
 Andy Tulett: Focallocal Community and Token Founder
 Professional Public Happiness Creator since 2012
-Degree in Business and Entrepreneurship from University of Portsmouth
 
 `)
 
@@ -1604,7 +1626,7 @@ const Anchor106 = () => <Fragment><h2 id="Shop" > </h2><div dangerouslySetInnerH
 const Anchor107 = () => <Fragment><h2 id="Corporate Social Responsibility" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection107 }} /></Fragment>
 const Anchor108 = () => <Fragment><h2 id="Kindness Auction" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection108 }} /></Fragment>
 const Anchor109 = () => <Fragment><h2 id="Community Projects" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection109 }} /></Fragment>
-
+const Anchor110 = () => <Fragment><h2 id="Paid to Party" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection110 }} /></Fragment>
 
 
 
@@ -1679,6 +1701,7 @@ const index = (props) => {
 		<Anchor50 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		<Anchor51 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		<Anchor52 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor110 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor104  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
 		<Anchor105  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
