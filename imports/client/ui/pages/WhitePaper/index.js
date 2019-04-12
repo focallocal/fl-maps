@@ -168,9 +168,9 @@ const markdownSection105 = md.render(`
 
 **Speculation**
 
-Speculation on exchanges is the main way the token's price will rise. Many people will want to add it to their portfolio to support the great work for well-being and peace in the world, or because someone just made their grandmother smile all day long. Others will want to invest as they expect the price to rise as awareness, followed by demand for our token, grows.
+Speculation on exchanges is the main way the token's price will rise. Many people will want to add it to their portfolio to support the great work they see being done for well-being and peace in the world, or just because one of our members made their grandmothers day with a kind act and she's still smiling. Others will want to invest expecting the price to rise as awareness grows, followed by increasing demand for our token.
 
-Being listed on exchanges before the ICO's end is important to this strategy.
+Being listed on one exchange before our ICO's end is important to this strategy.
 
 `)
 
@@ -180,9 +180,9 @@ const markdownSection106 = md.render(`
 ## 11.2.
 
 **Active Happiness Clothing**
-
 [Visit the shop](https://shop.focallocal.org)
-The platform includes a store where users submit designs for, and purchase, clothing and Public Happiness supplies. 'Active Happiness Clothing' means that the designs encourage positive things to happen around you while wearing it, and so it is an extension of our Public Happiness Activities. For example, a tee that invites passers-by to share one minute of eye contact to explore human connection.
+
+The platform includes a store where users submit designs for, and purchase, clothing and Public Happiness supplies. 'Active Happiness Clothing' means that the designs manifest positive things to happen around the wearer, and so it is an extension of our Public Happiness Activities. For example, a tee that invites passers-by to share one minute of eye contact with the person wearing it, to explore human connection together.
 
 See section 7.4. for more details.
 
@@ -195,10 +195,11 @@ const markdownSection107 = md.render(`
 
 **Corporate Social Responsibility**
 
-Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in. Our platform is absolutely ideal for this purpose as they can offer funds to local people to target a specific issue, or one of their own choosing. They can then map progress and results the entire way through via our platform and social media hash-tags which user are encouraged to use on external social media sites. 
+Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in to meet their CSR commitments. Our platform is absolutely ideal for this purpose as they can offer a set amount of funding to local people to target a specific issue, or one of their own choosing, in a creative and fun way. They can then map progress and results the entire way through via our platform and social media. 
 
-Donating to our platform engages communities and creates an entire story for them and their stakeholders and staff to follow. This has the potential to be lucrative, boosting the tokens price and market value rapidly. This is also a great way for us to reach and engage with local communities. 
+We will ask for one or two hashtags which the teams building the project can use to enable the group to piggy-back on our netowrk enhanced social media to help gain exposure to the excellent project which they supported and enabled with their kind offer.
 
+Donating to our platform engages communities and creates an entire story for them, their stakeholders and staff to follow. This has the potential to be lucrative, boosting the tokens price and market value rapidly. This is also a great way for us to reach and engage with local communities. 
 
 `)
 
@@ -208,10 +209,9 @@ const markdownSection108 = md.render(`
 ## 11.4.
 
 **Kindness Auction**
-
 [read more](https://news.focallocal.org/focallocal-kindness-auction/)
 
-A fun little project we've had good success with in our community over the years, with just a few people in one city at a time joining in it. Unleashed globally it will be a real powerhouse for fund-raising, and one which everyone who joins in receives something great in return.
+A fun little project we've had good success over the years in the Focallocal Community, even when just a few people in one city joined in. Unleashed globally it will be a real powerhouse for fund-raising, and one which everyone who joins in receives something great in return.
 
 `)
 
@@ -222,7 +222,7 @@ const markdownSection109 = md.render(`
 
 **Community Projects**
 
-The platform does allow for users to create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative projects which also bring happiness directly, for example [Queue Pimping](http://action.focallocal.org/) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects, is a challenge which the early community will be presented with as it grapples with decentralised decision making.
+The platform also allow for users to suggest and create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](http://action.focallocal.org/) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
 
 `)
 
@@ -1031,19 +1031,17 @@ const markdownSection46 = md.render(`
 A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions.
 
 Towns, cities and villages:
-
 On the tour the team will visit cities, towns and villages and demonstrate how people can earn a Public Happiness Token and what impact it can have on life in their local community. 
 
 Community members chosen for the bus tours will use their skills to target local issues with positive action in the places we visit, in partnership with local groups/charities. Issues like homelessness, loneliness, supporting the elderly, lack of urban green areas and gardens. Alongside our general Public Happiness activities.
 
 Conferences, Festivals, and Happiness Economy Events:
-
 We will be touring blockchain/fin-tech conferences, festivals, and happiness related events. The bus will carry equipment and team members to create exciting activities and flashmob style entertainment at these events. Both officially and unofficially. It will also serve as an office, meeting space, and sleeping rooms will often be available to select partners.
 
 Busses and Vans:
 How much funding is raised will determine whether we tour in a bus or a fleet of vans and minibuses. The ideal bus would be a 1960’s classic British Routemaster, due to the attention it would get outside of the UK boosting our marketing effort. The average price of these is £100,000+. A more likely choice is a Volvo B7TL Double Decker due to their renowned reliability. 
 
-If we go with van’s a fleet of Mercedes Sprinters will join ‘[Connie the Connector](https://www.facebook.com/connietheconnector/)’ again due to their reliability, and also founder Andy’s experience in repairing and maintaining them.  [Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). As it is arguably still the greenest form of fuelling a vehicle, all other vehicles will also be converted, giving us the ability to collect from people joining our activities and project in each location, and/or to partner with a major restaurant or hotel chain and collect their left over oils. 
+If we go with van’s a fleet of Mercedes Sprinters will join ‘[Connie the Connector](https://www.facebook.com/connietheconnector/)’ again due to their reliability, founder Andy’s experience in repairing and maintaining them, and the advantage of only needing to carry one set of commonly needed spare parts. [Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). As it is arguably still the greenest form of fuelling a vehicle, all other vehicles will also be converted, giving us the ability to collect from people joining our activities and project in each location, and/or to partner with a major restaurant or hotel chain and collect their left over oils. 
 
 `)
 
@@ -1483,6 +1481,7 @@ const markdownSection78 = md.render(`
 * ICO Launch date announced
 
 Still to plan:
+
 * 1st Stage ICO
 
 * 2nd Stage ICO
@@ -1521,6 +1520,7 @@ const markdownSection80 = md.render(`
 * How can we best compartmentalise voting to prevent overload on users, without pockets of influence forming? 
 
 Next Steps:
+
 * Set up ICO plan within our Action Center
 
 * Full review of all content on focallocal.org to update content that has become outdated
