@@ -1,1 +1,21 @@
-
+{
+  "faq" : [
+      {
+      "heading" : "Is it Focallocal, or The Public Happiness Movement?",
+      "text" : "This platform is the home of The Public Happiness Movement. It was built by the Focallocal Community as their new home, but then expanded when we realised the great need for all groups working towards creating a similar world change, to combine our energies and escape pay to play social media. We then opened the platform up to everyone to make it possible for a truly global Movement for positive change, connection and peace to form. Sometimes you'll find a page we haven't updated yet, it would be helpful to post a link in the forum"
+    },
+    {
+      "heading" : "Why is the focus on Local Action?",
+      "text" : "Our mission is to empower you and your community to create positive change yourselves. We do this by sharing the best ideas from our community, and giving everyone the tools needed to create positive change where they live. Our platform connects local people who want to take action. This approach teaches people and communities that they have the power to tackle their issues andcreate change. There are international projects planned on our platform, but it's always local people who understand the cultural situation who carry them out. There are ofcourse, excellent projects for those wanting to directly help those in need overseas, that just isn't what we're doing here. p.s. if that's what you are looking for you should research criticisms carefully as there is a growing awareness that voluntourism often harms, rather than helps communities in need."
+    },
+    {
+      "heading" : "Why not just use Facebook?",
+      "text" : "Social media made these kinds of projects possible. It offered a free tool where ideas could emerge from the crowds and some people began using that tool to expore their power to build communities and movements and create a positive difference in the world. Then Facebook, Youtube, Instagram, etc, took that free platform away, switching to a pay to play model for community builders and crushing the newly forming Public Happiness Movement. That and farming you for personal data to sell to marketing firms, or hacking elections around the world. It's time to break up with them. This platform is Opensource and will neer collect, or sell your data to anyone. Ever."
+    },
+    {
+      "heading" : "I suggested a project about Gender/Race/Sexuality/Age inequalities, and people told me it was against the Community Values",
+      "text" : "You absolutely can create a project to target improving all of those issues, they just need to be carefully thought out to fit with Community Value number 2: An Open Human Space where we treat all humans as equal. This means activities should avoid highlighting differences, and instead focus on promoting and celebrating our shared humanity. Our differences are superficial when compared with the human experience we share. Experienced members in the forums should be able to guide you into how to shape your idea to fit, if you want to create it on our platform"
+    }
+    
+  ]
+}
