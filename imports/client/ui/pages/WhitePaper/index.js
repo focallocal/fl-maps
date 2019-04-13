@@ -265,7 +265,7 @@ If the right people get behind this it will have a profound effect on increasing
 *'Those who love peace must learn to organize as effectively as those who love war'*  - Martin Luther King
 
 
-Our community of volunteers has been gradually building a platform to host this vision for over 3 years now. The platform is for groups from around the world, anyone who is using positive actions to promote peace and wellbeing through building human and community connection. 
+Our community of volunteers has been gradually building a platform to host this vision for over 3 years now. The platform is for groups from around the world, anyone who is using positive actions to promote peace and well-being through building human and community connection. 
 
 It's provides a space for our individual networks to grow into something larger. A global movement for a world with more peace and happiness in it. We’ve reached the point where it is ready to begin hosting communities who will contribute to it governance and improving the platform. You can take a look here: [focallocal.org ](https://focallocal.org)
 
@@ -720,9 +720,9 @@ Public Happiness Tokens will be distributed amongst those attending, sharing, an
 
 To receive tokens users are required to post their photos and videos to social media with the following hashtags:
 
-#publichappiness #publichappinessmovement #publichappinesstoken #[name of gathering] #[location]. 
+#publichappiness #publichappinessmovement #publichappinesstoken #[name of gathering] #[location] #[date of activity or project]. 
 
-This can be considered ‘proof of work’. Their posts will be located autonomously and pulled into an easy to view list to be checked for suspicious behaviour by others in the ecosystem. Token awards are delayed by 2 weeks to allow time for checking. Abuse and fraud is monitored by bounty hunters within the community, and a list of all past hashtags found will be recorded with links to the content, to allow bounty hunters to review suspicious accounts/activity easily. 
+This can be considered ‘proof of work’. Their posts will be located autonomously and pulled into an easy to view list to be checked for suspicious behaviour by others in the ecosystem. Token awards are delayed by 2 weeks to allow time for checking. Abuse and fraud is monitored by bounty hunters within the community, and a list of all past hashtags found will be recorded with links to the content, to allow these 'bounty hunters' to review suspicious accounts/activity easily. 
 
 `)
 
