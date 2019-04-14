@@ -90,19 +90,50 @@ class App extends Component {
       });
     });
     dcs.onTagOrTopic((tag, topicId) => {
-      Meteor.call("Events.getEventId", { discourseTag: tag }, (err, res) => {
-        if (err) {
-          console.log("Events.getEventId Error:", err);
-        } else {
-          this.triggeredByDiscourse = true;
-          changeHistory({
-            pathname: "/page/" + res,
-            params: { r: "1", b: tag.substring(17), t: topicId || null },
-            push: false
-          });
-        }
-      });
+      if (tag.includes('whitepaper')) {
+        changeHistory({
+          pathname: "/whitepaper",
+          params: { r: "1", b: tag.substring(17), t: topicId || null },
+          push: false
+        });
+      } else {
+        Meteor.call("Events.getEventId", { discourseTag: tag }, (err, res) => {
+          if (err) {
+            console.log("Events.getEventId Error:", err);
+          } else {
+            this.triggeredByDiscourse = true;
+            changeHistory({
+              pathname: "/page/" + res,
+              params: { r: "1", b: tag.substring(17), t: topicId || null },
+              push: false
+            });
+          }
+        });
+      }
     });
+
+  //   dcs.onTagOrTopic((tag, topicId) => {
+  //     if (isFromTheWhitepaperPage(tag)) { // Function to be designed
+  //       changeHistory({
+  //         pathname: "/whitepaper",
+  //         params: { r: "1", b: tag.substring(...), t: topicId || null },
+  //         push: false
+  //       });
+  // else {
+  //         Meteor.call("Events.getEventId", { discourseTag: tag }, (err, res) => {
+  //           if (err) {
+  //             console.log("Events.getEventId Error:", err);
+  //           } else {
+  //             this.triggeredByDiscourse = true;
+  //             changeHistory({
+  //               pathname: "/page/" + res,
+  //               params: { r: "1", b: tag.substring(...), t: topicId || null },
+  //               push: false
+  //             });
+  //           }
+  //         });
+  //       }
+  //     });
 
     // Setup callbacks to handle other Discourse events
     dcs.onUserChange(user => {
