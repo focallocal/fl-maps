@@ -125,10 +125,10 @@ function getRandomVideo (playlist) {
  * @param {*} outputArray This is the new custom youtube playlist for the event
  */
 function generatePlaylist (playlists, eventCategories, outputArray) {
-  playlists.forEach((playlist) => {
-    eventCategories.forEach((eventCategory) => {
+  playlists.forEach(playlist => {
+    eventCategories.forEach(eventCategory => {
       if (playlist.categories.includes(eventCategory.name)) {
-        playlist.videos.forEach((video) => {
+        playlist.videos.forEach(video => {
           if (!outputArray.includes(video)) {
             outputArray.push(video)
           }
@@ -137,7 +137,15 @@ function generatePlaylist (playlists, eventCategories, outputArray) {
     })
   })
 
-  // NOTE: if event category does not have a dedicated playlist then we generate default
+  // NOTE: if event category does not have a playlist then we take the parent category instead
+  if (outputArray.length === 0) {
+    parentCategories = eventCategories.map(eventCategory => {
+      return {name: eventCategory.parent}
+    })
+    generatePlaylist(playlists, parentCategories, outputArray)
+  }
+
+  // NOTE: if parent does not have a playlist either then we generate a grand default
   if (outputArray.length === 0) {
     generatePlaylist(playlists, [{ 'name': 'default' }], outputArray)
   }
