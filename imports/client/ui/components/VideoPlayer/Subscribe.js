@@ -26,11 +26,13 @@ class Subscribe extends Component {
    * @param {String} buttonsize size of rendered button default vs full (provided by componentDidMount())
    */
   renderYtSubscribeButton (channel, buttonsize) {
-    // NOTE: required use of external google api script, this was included in main.html root file
     const googleAPI = window.gapi
     const container = document.getElementById('ytSubscribeBtn');
+    /**
+     * Options passed to Google include the 'layout', and ONE out of 'channelid' OR 'channel' (id vs name)
+     */
     const options = {
-      'channel': channel,
+      'channelid': channel,
       'layout': buttonsize
     };
     googleAPI.ytsubscribe.render(container, options);
