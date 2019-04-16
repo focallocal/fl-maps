@@ -41,8 +41,8 @@ class DCSBalloon extends Component {
       const pathname = window.location.pathname
       const endIndex = pathname.search('\\?') > -1 ? pathname.search('\\?') : pathname.length
       const tagLocation = pathname.slice(pathname.search('/') + 1, endIndex)
-      const prefix = `dcs-${tagLocation}-${this.props.balloonId}`
-      const tag = this.props.dcsTags.find(tag => tag.id.startsWith(prefix))
+      const tagName = `dcs-${tagLocation}-${this.props.balloonId}`
+      const tag = this.props.dcsTags.find(tag => tag.id === tagName)
       const count = tag? tag.count : 0
       this.setState({ topicCount: count })
     }
