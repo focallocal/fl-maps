@@ -13,8 +13,15 @@ let allowedValues = possibleCategories
 // Extend SimpleSchema to support the uniforms field.
 SimpleSchema.extendOptions(['uniforms'])
 
+
 const Events = new Mongo.Collection('events')
 
+/**
+ * Instantiates a Schema for the events collection (aka events database).
+ * required to defined all the database fields
+ * and specify options such as default values/conditions for when they are required
+ * NOTE: these definitions feed through to the React forms so any changes should start here
+ */
 const EventsSchema = new SimpleSchema({
 
   // Organiser
