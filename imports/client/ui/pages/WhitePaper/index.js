@@ -324,7 +324,7 @@ const markdownSection100 = md.render(`
 ---
 10. Greedy founders are enriching themselves massively through ICO's, before, and unfortunately regularly, in place of, actually building a useful project. Whales coming in early often own significant percentages of their total tokens.
 
-    Our project is a non-profit with our core team's reimbursement decided by outside adjudication firm. It is against our user terms for anyone to own more than 0.5% of our total released tokens, and if an individual is discovered to have done so they will be advised to sell part, or lose it. In a decentralised economy no-one individual should own more than that amount. There will be no pre-sale to angel investors
+    Our project is a non-profit with our core team's reimbursement decided by outside adjudication firm. There will be no pre-sale to angel investors, and every possible effort made to prevent anyone getting near to owning 0.5% percent. No currency should have individuals who own that amount, but the majority of blockchain projects do.
 ---
 11. In a time and age where climate change is our 'cold war', with over 60% of our planets wildlife lost since 1970, we are facing down the barrel of potentially cataclysmic times. That certain Cryptocurrencies use more energy in mining than entire medium sized nations, is perhaps the biggest issue the industry faces. A global explosion in the industry would be damaging, perhaps even devastating to the world we live in, leading to heavy and needed regulation on the industry. This critical issue must be solved before that inevitable growth occurs.
 
@@ -908,11 +908,6 @@ Our ‘Bounty Hunting’ model incentivises users to monitor unusual behaviour p
 On-chain governance usually means influence can be bought. Instead a weighted governance model is created based on a users contributions to the mission and ecosystem. Thereby those most committed to the vision will become the ones with most influence in guiding it. Most of the platform and ecosystem will become open to redesign by community voting. 
 
 Some aspects should be protected by the founding members to safeguard from potential attacks and degradation of the initial vision, for example; the Core Values can be influenced by a vote calling for an improvement, but not changed directly. The founders would need to give an extremely strong reason for resisting a popular change, or risk undermining the trust of their community.
-
-4th Line: 
-In our terms and conditions we’re making it banned for any one person to amass more than 0.5% of our token. It's not possible to reach that through activity on the platform, or investing during the ICO. Only through a heavy investment of fiat.  Human greed has tainted all major decentralised projects so far, with reports that there are individuals owning more than 1% of both Ethereum and Bitcoin. Thus having a fail safe seems prudent to preserve a truly decentralised economy.
-
-If it can be proven that any one individual owns more than 0.5% of all tokens (outside of the central vault), our terms and conditions state that the excess tokens will be frozen, after every reasonable effort has been made to contact the owner advising them to sell.
 
 Last Line: 
 Founder Andy retains a veto vote. Intended never to be used, it serves as a last line of defence against subversion of the platform and community away from its core vision. 
