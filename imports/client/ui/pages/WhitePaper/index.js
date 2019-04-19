@@ -438,6 +438,8 @@ const markdownSection3  = md.render(`
 **Public Happiness Token: Introduction**
 Public Happiness Token is an ERC20 Token created from Ethereum blockchain. The Token itself will have few modifications, with its value to society, and for trading, coming from its unique use in engaging users in activities and projects to create a happier, safer and friendlier society for their local community.
 
+While we talk about 'Tokenising Happiness' and call our community 'The Public Happiness Movement', a more accurate definition of our mission would be 'to increase peace and well-being in the world, using localised positive action'. We use the term 'happy' because regardless of language it's easily recognisable, even though it's not very precise. 
+
 All Public Action is organised via our platform focallocal.org and app. Our web-based platform has been built entirely by volunteers who support the vision and is already operational in Beta, early-launch stage. 
 
 Integration of an ERC20 Token into the platform will fuel a rapidly growing community, using the platform and ecosystem to create projects and activities to bring positive change into the world that we can’t even imagine yet!
@@ -1091,7 +1093,7 @@ const markdownSection50 = md.render(`
 ## 10.6.
 
 **Online Supporters**
-An open community is active on Reddit at reddit.com/r/focallocal where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
+An open community is active on Reddit at reddit.com/r/tokenisinghappiness where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
 
 Members of our core team interested in public interaction will aim to engage blockchain enthusiasts on other popular online forums, for example, r/ethereum and r/cryptocurrency. Our aim is to seek feedback and involve existing communities in the building process, rather than to build hype and push marketing information out. 
 
