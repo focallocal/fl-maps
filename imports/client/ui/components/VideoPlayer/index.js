@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player'
 import './styles.scss'
 import allPlaylists from '/imports/both/i18n/en/video.json'
 import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe'
+import categoryTree from '/imports/both/i18n/en/categories.json'
 
 /**
  * @author Arty S
@@ -22,7 +23,7 @@ class VideoPlayer extends Component {
     /**
      * Refers to user submitted videos passed from the page, if any
      */
-    video: PropTypes.array,
+    video: PropTypes.object,
   }
 
   constructor (props) {
@@ -61,7 +62,8 @@ class VideoPlayer extends Component {
    */
   render () {
     const { categories, video } = this.props
-
+    console.log('categories in render func of video player:')
+    console.log(categories)
     return (
       <div
         className="videoContainer"
@@ -77,7 +79,7 @@ class VideoPlayer extends Component {
             this.setState({ nextVideo: true })
           }}
         />
-        <div className="subscribeOverlay">Subscribe</div>
+        {!video && <div className="subscribeOverlay">Subscribe</div>}
         {!video && <Subscribe className="subscribe" />}
       </div>
     )
@@ -137,15 +139,19 @@ function generatePlaylist (playlists, eventCategories, outputArray) {
     })
   })
 
-  // NOTE: if event category does not have a playlist then we take the parent category instead
+  // NOTE: if event category does not have a playlist then we take the parent category instead and re-run
   if (outputArray.length === 0) {
-    parentCategories = eventCategories.map(eventCategory => {
-      return {name: eventCategory.parent}
+    const parentCategories = categoryTree.filter(parent => {
+      // filter to include only parent groups, with at least 1 child present in the event's category array
+      const hasCategoryAsChild = parent.categories.some(category =>
+        eventCategories.some(eventCategory =>
+          eventCategory.name === category.name))
+      return hasCategoryAsChild
     })
     generatePlaylist(playlists, parentCategories, outputArray)
   }
 
-  // NOTE: if parent does not have a playlist either then we generate a grand default
+  // NOTE: if parent does not have a playlist either then we generate a grand default and re-run
   if (outputArray.length === 0) {
     generatePlaylist(playlists, [{ 'name': 'default' }], outputArray)
   }
