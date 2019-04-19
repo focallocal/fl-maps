@@ -1,7 +1,7 @@
 [
   {
     "name": "Art, Music, Dance and Poetry",
-    "categories": ["default", "Art and Dance"],
+    "categories": ["default", "Art, Music, Dance and Poetry"],
     "playlistID": "PLvOEMmVGDe1KRfFs4gtYKfkAQRQbWt_Rb",
     "videoCount": 7,
     "videos": ["1b2LA84Wc4I",
@@ -14,7 +14,7 @@
   },
   {
     "name": "Public Music Jam",
-    "categories": ["default", "Public Music Jam", "Art and Dance"],
+    "categories": ["default", "Public Music Jam", "Art, Music, Dance and Poetry"],
     "playlistID": "PLvOEMmVGDe1Isq6HzgrT4qTF_qnx9Evrz",
     "videoCount": 2,
     "videos": [
@@ -24,7 +24,7 @@
   },
   {
     "name": "Human and Community Connection",
-    "categories": ["default", "Humand and Community Connection"],
+    "categories": ["default", "Human and Community Connection"],
     "playlistID": "PLvOEMmVGDe1KbtfjqXemCorjH9g-AxHqd",
     "videoCount": 20,
     "videos": [
@@ -123,7 +123,7 @@
   },
   {
     "name": "Connecting Canvas",
-    "categories": ["default", "Connecting Canvas", "Art and Dance"],
+    "categories": ["default", "Connecting Canvas", "Art, Music, Dance and Poetry"],
     "playlistID": "PLvOEMmVGDe1LS3WuvzJjQrGnLjn3rF3GS",
     "videoCount": 1,
     "videos": [
@@ -169,7 +169,7 @@
   },
   {
     "name": "Public Sing Along",
-    "categories": ["default", "Art and Dance"],
+    "categories": ["default", "Art, Music, Dance and Poetry"],
     "playlistID": "PLvOEMmVGDe1J6r8Unr2UGpwI727Zuug2l",
     "videoCount": 2,
     "videos": [
@@ -211,7 +211,7 @@
   },
   {
     "name": "Public Dancing",
-    "categories": ["default", "Public Dancing", "Art and Dance"],
+    "categories": ["default", "Public Dancing", "Art, Music, Dance and Poetry"],
     "playlistID": "PLvOEMmVGDe1Jh9Sm725zqXsvQt4JJ5ha_",
     "videoCount": 2,
     "videos": [
