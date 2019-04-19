@@ -2,9 +2,14 @@ import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
 import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate, videoHosts } from './helpers'
-import possibleCategories from '/imports/both/i18n/en/categories.json'
+import categoryTree from '/imports/both/i18n/en/categories.json'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
+
+// categoryTree includes parent-child level categories, following operation build an all-child array of sub-categories
+let possibleCategories = categoryTree.reduce((tot, elem) => {
+  return tot.concat([{name: elem.name, parent: true}].concat(elem.categories))
+}, [])
 
 // sets allowedValues to include Community Resource without it being in dropdown
 // someone should refactor this in the future: let allowedValues = possibleCategories.concat([{ 'name': 'Meet Me and Take #PublicHappiness to the Street', 'color': '#f82d2d' }])
@@ -42,8 +47,8 @@ const EventsSchema = new SimpleSchema({
   'organiser.name': {
     type: String
   },
-
-  // Categories
+  
+  // Categories sub level
   'categories': {
     type: Array,
     custom: function () {
@@ -55,11 +60,12 @@ const EventsSchema = new SimpleSchema({
       customType: 'select',
       selectOptions: {
         multi: true,
-        labelKey: 'name'
+        labelKey: 'name',
+        catLevel: 'child'
       },
       allowedValues: possibleCategories, // keep it here so options will be rendered by react-select
-      label: labels.categories,
-      placeholder_: 'Pick your event\'s categories'
+      label: null,
+      placeholder_: 'Additional category detail'
     }
   },
   'categories.$': {
