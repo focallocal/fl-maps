@@ -26,8 +26,15 @@
   .title {
     height: calc(100% + 20px);
     position: relative;
-    text-align: center;
+    text-align: left;
     font-weight: bolder;
+
+    div {
+      position: relative;
+      span {
+        padding-left: 23px;
+      }
+    }
 
     .close {
       position: absolute;
@@ -46,13 +53,21 @@
   .categories-items{
     .list-group-item{
       display: flex;
-        align-items: flex-start;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+      align-items: flex-start;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    
+      position: relative;
+
+      div {
+        display: inline-block;
+      }
     }
 
     .list-group-item a{
       color: $gray-stronger;
+      position: absolute;
+      right: 20px;
 
       &:hover {
         color: $primary-blue-hover;
