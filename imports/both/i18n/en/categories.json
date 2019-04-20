@@ -1,15 +1,18 @@
-[
-  { "name": "Community Offers", "color":"red", "default":true, "url": "https://www.reddit.com/r/brightertomorrow/" },
-  { "name": "Let’s End Homelessness Coffee Meeting", "color":"#94be29", "url": "" },
-  { "name": "Shower", "color":"#14fffc", "url": "" },
-  { "name": "Training Course", "color":"#181819", "url": "" },
-  { "name": "Activity", "color":"#63be29", "url": "" },
-  { "name": "Food", "color":"#e322e9", "url": "" },
-  { "name": "Clothes", "color":"#e2fe2e", "url": ""},
-  { "name": "Public Toilet", "color":"#63be29", "url": "" },
-  { "name": "Shelters", "color":"#74fe6a", "url": "" },
-  { "name": "Somewhere to Sleep", "color":"#6ab8fe", "url": "" },
-  { "name": "Computer or Wifi", "color":"#e4f81b", "url": "" },
-  { "name": "Public Library", "color":"#09bc2b", "url": "" },
-  { "name": "Medical", "color":"#fa0707", "url": "" }
-]
+  [{
+    "name": "Communities Supporting People",
+    "categories": [
+      { "name": "Community Offers", "color":"red", "default":true, "url": "https://www.reddit.com/r/brightertomorrow/" },
+      { "name": "Let’s End Homelessness Coffee Meeting", "color":"#94be29", "url": "" },
+      { "name": "Shower", "color":"#14fffc", "url": "" },
+      { "name": "Training Course", "color":"#181819", "url": "" },
+      { "name": "Activity", "color":"#63be29", "url": "" },
+      { "name": "Food", "color":"#e322e9", "url": "" },
+      { "name": "Clothes", "color":"#e2fe2e", "url": ""},
+      { "name": "Public Toilet", "color":"#63be29", "url": "" },
+      { "name": "Shelters", "color":"#74fe6a", "url": "" },
+      { "name": "Somewhere to Sleep", "color":"#6ab8fe", "url": "" },
+      { "name": "Computer or Wifi", "color":"#e4f81b", "url": "" },
+      { "name": "Public Library", "color":"#09bc2b", "url": "" },
+      { "name": "Medical", "color":"#fa0707", "url": "" }
+    ]
+  }]

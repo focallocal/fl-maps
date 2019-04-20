@@ -38,7 +38,7 @@ class FiltersList extends Component {
       show,
       toggleFiltersList
     } = this.props
-
+    console.log(checkedFilters)
     return (
       <div id='filters-list' className={show ? 'show' : ''}>
         <ListGroup>
@@ -97,7 +97,7 @@ class FiltersList extends Component {
         // parent currently UNCHECKED: means you are CHECKING, so children should unhide (so set to false)
         possibleCategories[index].hidden = parentChecked? true: false
       }
-      while (!checkedFilters[index + 1].parent)
+      while (checkedFilters[index + 1] && !checkedFilters[index + 1].parent)
     }
   }
 
@@ -139,7 +139,7 @@ class FiltersList extends Component {
     do {
       tempIndex++
       checkedFilters[tempIndex].checked = parentChecked
-    } while (!checkedFilters[tempIndex + 1].parent)
+    } while (checkedFilters[tempIndex + 1] && !checkedFilters[tempIndex + 1].parent)
     return checkedFilters
   }
 
@@ -154,7 +154,7 @@ class FiltersList extends Component {
     do {
       tempIndex++
       if (checkedFilters[tempIndex].checked) allUnchecked = false
-    } while (!checkedFilters[tempIndex + 1].parent)
+    } while (checkedFilters[tempIndex + 1] && !checkedFilters[tempIndex + 1].parent)
     // if all are unchecked, set parent to unchecked and hide all the children
     if (allUnchecked) {
       checkedFilters[parentIndex].checked = false
@@ -162,7 +162,7 @@ class FiltersList extends Component {
       do {
         tempIndex++
         possibleCategories[tempIndex].hidden = true
-      } while (!checkedFilters[tempIndex + 1].parent)
+      } while (checkedFilters[tempIndex + 1] && !checkedFilters[tempIndex + 1].parent)
     }
     return {checkedFilters, possibleCategories}
   }
