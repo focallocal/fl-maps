@@ -38,7 +38,7 @@ class FiltersList extends Component {
       show,
       toggleFiltersList
     } = this.props
-    console.log(checkedFilters)
+    
     return (
       <div id='filters-list' className={show ? 'show' : ''}>
         <ListGroup>
