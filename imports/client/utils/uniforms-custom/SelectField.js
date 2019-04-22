@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 import connectField from 'uniforms/connectField'
 import Select from 'react-select'
 import PlacesSearchBox from '/imports/client/ui/components/PlacesSearchBox'
+import categoryTree from '/imports/both/i18n/en/categories.json'
 import { formatReactSelectOptions } from '../format'
 
 import { FormGroup, Label } from 'reactstrap'
+
+// We need the list of parent categories in order to disable them in the category dropdown
+// (because these are subheadings in the dropdown -> user selects the actual child category instead)
+const parentCategories = categoryTree.map(elem => elem.name)
 
 class Select_ extends Component {
   constructor (props) {
@@ -39,7 +44,7 @@ class Select_ extends Component {
     const className = 'select-field ' + (error ? 'error' : '')
 
     let value_ = this.getValues(value)
-  
+
     return (
       <FormGroup className={className}>
         <Label>{label}</Label>
@@ -58,12 +63,25 @@ class Select_ extends Component {
         {!url && !googleMaps && (
           <Select
             value={value_}
-            options={options}
+            // options={options}
+            options={options.map(elem => {
+              // NOTE: this adds custom styling to options that are in fact parent categories (style them as subheadings)
+              if (parentCategories.includes(elem.label)) {
+                return {
+                  value: elem.value,
+                  label: `---${elem.label}---`
+                }
+              } else return elem
+            })}
             isMulti={multi}
             onChange={this.handleChange}
             placeholder={''}
             isSearchable={false}
             menuPlacement='auto'
+            isOptionDisabled={(option) => {
+              // NOTE: this stops user from being able to select options that are in fact parent categories
+              return parentCategories.includes(option.label.slice(3, option.label.length-3))
+            }}
           />
         )}
         {googleMaps && (
