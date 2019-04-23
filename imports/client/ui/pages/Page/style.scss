@@ -19,6 +19,10 @@ $titles-color: #fff;
     }
   }
 
+  .body * {
+    white-space: pre-wrap;
+  }
+
   .body {
     width: 80%;
     margin: 24px auto;
