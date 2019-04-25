@@ -127,6 +127,7 @@ function getRandomVideo (playlist) {
  * @param {*} outputArray This is the new custom youtube playlist for the event
  */
 function generatePlaylist (playlists, eventCategories, outputArray) {
+  // STEP 1: Attempt to match lower level event category with video playlist category
   playlists.forEach(playlist => {
     eventCategories.forEach(eventCategory => {
       if (playlist.categories.includes(eventCategory.name)) {
@@ -139,7 +140,20 @@ function generatePlaylist (playlists, eventCategories, outputArray) {
     })
   })
 
-  // NOTE: if event category does not have a playlist then we take the parent category instead and re-run
+  // STEP 2a: BEFORE STEP 2b FIRST WE NEED TO CHECK IF THE MONGO DB EVENT CATEGORY IS OLD
+  // If no longer part of the i18n category tree there will be an inifinite loop in step 2b
+  // categoryTree includes parent-child level categories, following operation build an all-child array of sub-categories
+  if (outputArray.length === 0) {
+    let possibleCategories = categoryTree.reduce((tot, elem) => {
+      return tot.concat([{ name: elem.name, parent: true }].concat(elem.categories))
+    }, [])
+    const categoryStillValid = possibleCategories.some(category =>
+      eventCategories.some(eventCategory =>
+        eventCategory.name === category.name))
+    if (!categoryStillValid) generatePlaylist(playlists, [{ 'name': 'default' }], outputArray)
+  }
+
+  // STEP 2b: if event category does not have a playlist then we take the parent category instead and re-run
   if (outputArray.length === 0) {
     const parentCategories = categoryTree.filter(parent => {
       // filter to include only parent groups, with at least 1 child present in the event's category array
@@ -151,7 +165,7 @@ function generatePlaylist (playlists, eventCategories, outputArray) {
     generatePlaylist(playlists, parentCategories, outputArray)
   }
 
-  // NOTE: if parent does not have a playlist either then we generate a grand default and re-run
+  // STEP 3: if parent does not have a playlist either then we generate a grand default and re-run
   if (outputArray.length === 0) {
     generatePlaylist(playlists, [{ 'name': 'default' }], outputArray)
   }
