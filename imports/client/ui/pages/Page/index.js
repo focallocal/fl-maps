@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 import { formatCategories } from '/imports/client/utils/format'
 import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
@@ -16,6 +16,8 @@ import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
 import { checkPermissions} from './../Admin/RolesPermissions/index'
+import { Redirect, withRouter } from 'react-router-dom'
+
 
 class Page extends Component {
   constructor (props) {
@@ -123,6 +125,10 @@ class Page extends Component {
   }
 
   render () {
+    if (this.state.redirect === true) {
+      return <Redirect to='/map' />
+    }
+
     const {
       data,
       loaded,
@@ -210,6 +216,7 @@ class Page extends Component {
 
             <Col xs={4} className='right'>
               {isAuthor && <EditPage data={data} history={history} />}
+              <Button color='danger' onClick={this.closePage}>Close Page</Button>
               <SectionTitle title='Date and Time' />
 
               <HoursFormatted data={when} />
@@ -298,7 +305,7 @@ export default withTracker(() => {
   return {
     user: Meteor.user()
   }
-})(Page)
+})(withRouter(Page))
 
 // Testing
 export { Page }

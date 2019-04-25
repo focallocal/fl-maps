@@ -38,7 +38,7 @@ class MapComponent_ extends Component {
   memoizeLocations = {} // cache locations
 
   componentDidMount () {
-    getUserPosition(this)
+
 
     if (window.previousStateOfMap) {
       this.setState({ ...window.previousStateOfMap })
@@ -47,6 +47,10 @@ class MapComponent_ extends Component {
     window.__setDocumentTitle('Map')
     toggleBodyOverflow()
     this._isMounted = true // don't remove that line
+
+    // keep at bottom of componentDidMount so that the event list is displayed and 
+    //correct zoom level  when individual page is closed
+    this.returnToDefaultAfterPageClose(); 
   }
 
   componentWillUnmount () {
@@ -220,6 +224,11 @@ class MapComponent_ extends Component {
         this.setError('Could not find any directions...')
       }
     })
+  }
+  
+  returnToDefaultAfterPageClose = () => {
+    getUserPosition(this);
+    this.removeCurrentEvent();
   }
 
   setError = (msg) => {
