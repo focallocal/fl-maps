@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: focallocal.org
+Token: 7003a362abacb3ee4a8d041735b56c8308c9f2f99a678f29bacf4625bb25f29b
