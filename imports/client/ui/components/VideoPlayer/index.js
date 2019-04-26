@@ -62,8 +62,6 @@ class VideoPlayer extends Component {
    */
   render () {
     const { categories, video } = this.props
-    console.log('categories in render func of video player:')
-    console.log(categories)
     return (
       <div
         className="videoContainer"

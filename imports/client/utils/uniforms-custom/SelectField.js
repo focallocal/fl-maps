@@ -75,7 +75,7 @@ class Select_ extends Component {
             })}
             isMulti={multi}
             onChange={this.handleChange}
-            placeholder={''}
+            placeholder={placeholder_}
             isSearchable={false}
             menuPlacement='auto'
             isOptionDisabled={(option) => {

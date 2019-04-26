@@ -58,7 +58,7 @@ const EventsSchema = new SimpleSchema({
       },
       allowedValues: possibleCategories, // keep it here so options will be rendered by react-select
       label: null,
-      placeholder_: 'Additional category detail'
+      placeholder_: 'Event Categories'
     }
   },
   'categories.$': {
