@@ -50,8 +50,9 @@ class SharePanel extends Component {
     const hoursText = drillDownToText(hoursReactComponent, '')
 
     const url = 'https://focallocal.org/page/fGd8HuHZEv8QectPS'
-    const title = i18n.Map.eventInfo.socialMedia.messagePre + document.title + "\n" + hoursText + "\n"
-    console.log(title)
+    const string = i18n.Map.eventInfo.socialMedia.messagePre + document.title + "\n" + hoursText + "\n"
+    const title = string.replace(' Next:', 'Next:').replace(' Repeating:', '\nRepeating:')
+    
     return (
       <div className="sharePanel">
         <FacebookShareButton url={url} quote={title} hashtag="#Focallocal" children={<FacebookIcon size={32} round={true} />} />
@@ -65,13 +66,27 @@ class SharePanel extends Component {
   }
 }
 
-
+/**
+ * This function takes the html-formatted React output of the 'when' component (i.e. event calendar schedule)
+ * and returns a plain text string representing this schedule
+ * 
+ * @param {Object} node This is React component or child node (see below comments for different possible node types)
+ * @param {String} output This is a running total of the output string - the function adds to this as it drills recursively into the node
+ */
 function drillDownToText (node, output) {
   const children = node.props.children
   children.forEach(child => {
-    if (typeof child === 'string') output += child
-    else if (typeof child !== 'boolean') {
-      output = drillDownToText(child, output)
+    if (child) {
+      // Function has drilled down to the string? => add this to output 
+      if (typeof child === 'string') output += child
+      // Replace any <br> and <li> tags with whitespace (otherwise words on a newLine get mushed together)
+      else if (child.type === 'br' || child.type === 'li') {
+        output += ' '
+      }
+      // If the node has further children we continue drilling down until we get to the strings
+      if (child.props && child.props.children) {
+        output = drillDownToText(child, output)
+      }
     }
   })
   return output
