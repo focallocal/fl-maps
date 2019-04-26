@@ -254,11 +254,13 @@ const markdownSection111 = md.render(`
 
 ## 7.11. 
 
-The platform is designed to create a culture of qualitative engagement, rather than minimizing engagement to maximise the advertising revenue harvested from a user. The model today's main social media sites have switched to. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending, and creating a participatory community in this environment is increasingly difficult. The platform wants users to click, and move on. 
+**User Behaviour in UX Design**
 
-Teaching users to participate, rather than just consume, is going to be a challenge. Countless studies have shown attention spans of the general population reducing. This challenge is not one we shy away from, as it is a core component in our mission of increasing well-being and happiness. Creating a platform where users are an active and recognised part of our community and mission.
+The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from users. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organsiers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
 
-Users attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals, to compliment the tokenisation effect, rather than rely on it solely.
+Teaching users to participate rather than just consume is going to be a challenge. Countless studies have shown attention spans of the general population have reduced constantly over the past years. This challenge is not one we shy away from, as it is a core component in our mission of increasing well-being and happiness. Creating a platform where users are an active and recognised part of our community and mission is a core concept.
+
+Users attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals to compliment the tokenisation effect, rather than rely on it solely to change users expected online behaviour.
   
 `)
 
@@ -266,45 +268,52 @@ const markdownSection112 = md.render(`
 
 ## 7.12. 
 
-Logged in users will arrive at their profile page each time they visit. A users profile page contains three type of features:
+**User Wall and Plugin Module Ecosystem**
+
+Logged in users will arrive on their profile page and wall each time they visit. A users profile page contains three type of features:
 
 1. Community Communications - embedded in the main menu are notifications from communications across our site and forum.
 
-2. Actions - users are prompted to take the main actions which will the fuel the Movements growth, and its deliver its positive impact on society. Actions like, filling in a profile to add themselves to the map. creating a group. searching for users/activities nearby to create action with.
+2. Actions - users are prompted to take the main actions which will the fuel the Movements growth, and deliver its positive impact on society. Actions like; filling in a profile to add themselves to the map. Creating a group. Searching for users/activities nearby to meet and create positive actions with.
 
-3. Users Wall - the largest space where users have the ability to choose which components/information they'd like to see. This area will be open to plug-in creators allowing customisation and increased ownership over their profile. Also encouraging innovation to improve the user experience on our platform.
+3. Users Wall - the largest of these spaces, where users have the ability to choose which components/information they'd like to see. This area will be open to plug-in creators allowing customisation and increased ownership of users over their profile. Encouraging innovation will improve the user experience on our platform.
 
 
 **Expanding on the Users Wall**
 
-The easiest way to visualise this, for those who remember, is that this will be similar the ecosystem Facebook had before locking users into the only the behaviour they desired. A space for user and developer led customisation and integration. In many ways our entire platform could be described as this, but most areas will be designed and set by user voting. This section is to create more individual flexibility and a tailored experience to the individuals needs.  
+The easiest way to visualise this, for those who remember it, is that this will be similar to the ecosystem Facebook had before they locked users into only the behaviour the company desired. In many ways our entire platform could be described as user led design already due to the decentralised governance model, but most areas will be designed and set by the majority through user voting. The wall is a section to allow more individual flexibility and a tailored experience to the individuals needs and wants.  
 
-The users wall space will come pre-populated with default modules that the community has chosen as the most effective for beginners to get a grip on what is going on within the Public Happiness Movement, and how to engage. Users have the freedom to change these at any time. 
+The users wall space will come pre-populated with default modules which the community has chosen as the most effective to help beginners to get a grip on what is going on within the Public Happiness Movement, and how best to engage. Users have the freedom to change these at any time. 
 
-Developers will be free to create modules that fit any purpose, so long as their use isn't going against any of the Communities Core Values (something easily checked by other users by posting ideas in the forum before building them). Forum specific plug-ins can also be built easily through the Discourse architecture. 
+Developers will be free to create modules that fit any purpose, so long as their use isn't going against any of the Communities Core Values (something easily checked by other users by posting ideas in the forum before building them). 
 
 Default modules might include:
 
-- Getting started challenges, to guide users through a general understanding of what interesting things they can do within our ecosystem, with token and badge rewards for completing them
+- Getting started challenges, to guide users through a general understanding of what interesting things they can do within our ecosystem, plus with token and badge rewards for completing them
 - A calendar of upcoming gatherings they've subscribed to
 - A calendar of nearby gatherings, and international action days
-- Thumbnails of recently active users nearby to promote the feeling of a community
-- Charts showing levels of activity within the ecosystem, locally, in each section, and in their geographic areas (country and city)
-- Their wallet showing the amount of tokens they've earned for their actions to bring more peace and well-being into the world, and to complete tasks important to the healthy running of the ecosystem. This would include live tracking of the tokens price compared to other currencies/tokens
+- Thumbnails of recently active users nearby, to promote the feeling of a community
+- Charts showing levels of activity within the ecosystem; locally, in each section, and in their geographic areas (country and city)
+- Their wallet showing the amount of tokens they've earned for their actions to bring more peace and well-being into the world, and to complete tasks important to the healthy running of our ecosystem. This would include live tracking of the tokens price compared to other currencies/tokens
 - A voting tracker to show key votes/votes in areas they've subscribed to/all current votes
-- Courses for learning the basics of blockchain and 
+- Courses for learning the basics of blockchain and cryptocurrency
+- Modules with courses to improve your happiness
 
 Optional modules might include:
 
 - Charts showing activity and predicted completion dates for projects they've subscribed to in the Action Center
 - Recent news stories from our forum from categories they've subscribed to
 - Friends recent activity on the platform
-- News from communities they've joined
+- News from communities on our platform that they've joined
 - Recent videos or photo streams from action all across the world (pulled from social media via hashtags)
 - Challenges created by users
-- Stats about our Movement and projects trending on social media
+- Trending stats about our Movement and projects on social media
+- Habit tracking to help users form healthy habits
+- Portals to groups of users learning new skills by following online courses together, like marketing or web development
 
 The possibilities are endless and we can't wait to see what is created here!
+
+Forum specific plug-ins can also be built easily through the existing Discourse architecture. 
 
 `)
 
