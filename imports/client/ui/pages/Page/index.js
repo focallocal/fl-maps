@@ -9,6 +9,7 @@ import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import VideoPlayer from '/imports/client/ui/components/VideoPlayer'
 import PageLoader from '/imports/client/ui/components/PageLoader'
+import SharePanel from '/imports/client/ui/components/SharePanel'
 import EditPage from './Edit'
 // import AttendingButton from './AttendingButton'  <-- currently disabled
 import './style.scss'
@@ -186,7 +187,6 @@ class Page extends Component {
       isAuthor = editDeletePermission;
     }
 
-
     return (
       <div id='page' onClick={e => this.dcsClick(null, e)}>
         <div className='header'>
@@ -228,7 +228,7 @@ class Page extends Component {
               <SectionTitle title='Date and Time' />
               {/* attending button currently inactive until able to work with both maps:
                 <AttendingButton _id={_id} history={history} isLoggedIn={isLoggedIn} user={user} />*/}
-              <HoursFormatted data={when} />
+              <HoursFormatted data={when}/>
 
               <Divider />
 
@@ -239,6 +239,15 @@ class Page extends Component {
               </div>
 
               <Divider />
+
+              <div className='social'>
+                <SectionTitle title={i18n.Map.eventInfo.socialMedia.title} />
+                <p className='social__subheading'>{i18n.Map.eventInfo.socialMedia.subtitle}</p>
+                <SharePanel data={when}/>
+              </div>
+
+              <Divider />
+
               {isAuthor && <EditPage data={data} history={history} />} 
               <Button color='danger' onClick={ this.closePage}>Close Page</Button>
             </Col>
