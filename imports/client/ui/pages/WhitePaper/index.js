@@ -255,7 +255,6 @@ const markdownSection111 = md.render(`
 ## 7.11. 
 
 **User Behaviour in UX Design**
-
 The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from users. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organsiers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
 
 Teaching users to participate rather than just consume is going to be a challenge. Countless studies have shown attention spans of the general population have reduced constantly over the past years. This challenge is not one we shy away from, as it is a core component in our mission of increasing well-being and happiness. Creating a platform where users are an active and recognised part of our community and mission is a core concept.
@@ -264,12 +263,12 @@ Users attending a gathering on our platform are not passive. Everyone attending 
   
 `)
 
+
 const markdownSection112 = md.render(`
 
 ## 7.12. 
 
 **User Wall and Plugin Module Ecosystem**
-
 Logged in users will arrive on their profile page and wall each time they visit. A users profile page contains three type of features:
 
 1. Community Communications - embedded in the main menu are notifications from communications across our site and forum.
