@@ -1,6 +1,11 @@
 {
   "filtersTitle": "Filter",
   "eventInfo": {
-    "introTitle": "Introduction"
+    "introTitle": "Introduction",
+    "socialMedia": {
+      "title": "Social Media",
+      "subtitle": "Support Us By Sharing This Event",
+      "messagePre": "Check out this event: "
+    }
   }
 }
