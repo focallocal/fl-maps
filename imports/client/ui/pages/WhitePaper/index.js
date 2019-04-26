@@ -200,7 +200,7 @@ const markdownSection107 = md.render(`
 
 Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in to meet their CSR commitments. Our platform is absolutely ideal for this purpose as they can offer a set amount of funding to local people to target a specific issue, or one of their own choosing, in a creative and fun way. They can then map progress and results the entire way through via our platform and social media. 
 
-We will ask for one or two hashtags which the teams building the project can use to enable the group to piggy-back on our netowrk enhanced social media to help gain exposure to the excellent project which they supported and enabled with their kind offer.
+We will ask for one or two hashtags which the teams building the project can use to enable the group to piggy-back on our network enhanced social media to help gain exposure to the excellent project which they supported and enabled with their kind offer.
 
 Donating to our platform engages communities and creates an entire story for them, their stakeholders and staff to follow. This has the potential to be lucrative, boosting the tokens price and market value rapidly. This is also a great way for us to reach and engage with local communities. 
 
@@ -258,7 +258,7 @@ The platform is designed to create a culture of qualitative engagement, rather t
 
 Teaching users to participate, rather than just consume, is going to be a challenge. Countless studies have shown attention spans of the general population reducing. This challenge is not one we shy away from, as it is a core component in our mission of increasing well-being and happiness. Creating a platform where users are an active and recognised part of our community and mission.
 
-Users attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals, to compliment the tokenisation effect, rahter than rely on it solely.
+Users attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals, to compliment the tokenisation effect, rather than rely on it solely.
   
 `)
 
@@ -268,28 +268,28 @@ const markdownSection112 = md.render(`
 
 Logged in users will arrive at their profile page each time they visit. A users profile page contains three type of features:
 
-1. Community Communications - embeded in the main menu are notifications from communications across our site and forum.
+1. Community Communications - embedded in the main menu are notifications from communications across our site and forum.
 
 2. Actions - users are prompted to take the main actions which will the fuel the Movements growth, and its deliver its positive impact on society. Actions like, filling in a profile to add themselves to the map. creating a group. searching for users/activities nearby to create action with.
 
-3. Users Wall - the largest space where users have the ability to choose which components/information they'd like to see. This area will be open to plugin creators allowing customisation and increased ownsership over their profile. Also encouraging innovation to improve the user experience on our platform.
+3. Users Wall - the largest space where users have the ability to choose which components/information they'd like to see. This area will be open to plug-in creators allowing customisation and increased ownership over their profile. Also encouraging innovation to improve the user experience on our platform.
 
 
 **Expanding on the Users Wall**
 
-The easiest way to visualise this, for those who remember, is that this will be similar the ecosystem Facebook had before locking users into the only the behaviour they desired. A space for user and developer led customisation and integration. In many ways our entire platform could be described as this, but most areas will be designed and set by user voting. This section is to create more individual flexibility and a tailored exerience to the individuals needs.  
+The easiest way to visualise this, for those who remember, is that this will be similar the ecosystem Facebook had before locking users into the only the behaviour they desired. A space for user and developer led customisation and integration. In many ways our entire platform could be described as this, but most areas will be designed and set by user voting. This section is to create more individual flexibility and a tailored experience to the individuals needs.  
 
-The users wall space will come pre-populated with default modules that the community has chosen as the most effective for beginners to get a grip on whats going on within the Public Happiness Movement, and how to engage. Users have the freedom to change these at any time. 
+The users wall space will come pre-populated with default modules that the community has chosen as the most effective for beginners to get a grip on what is going on within the Public Happiness Movement, and how to engage. Users have the freedom to change these at any time. 
 
-Developers will be free to create modules that fit any purpose, so long as their use isn't going against any of the Communitities Core Values (something easily checked by other users by posting ideas in the forum before building them). Forum specific plugins can also be built easily through the Discourse architecture. 
+Developers will be free to create modules that fit any purpose, so long as their use isn't going against any of the Communities Core Values (something easily checked by other users by posting ideas in the forum before building them). Forum specific plug-ins can also be built easily through the Discourse architecture. 
 
-Default modules might inlcude:
+Default modules might include:
 
 - Getting started challenges, to guide users through a general understanding of what interesting things they can do within our ecosystem, with token and badge rewards for completing them
 - A calendar of upcoming gatherings they've subscribed to
 - A calendar of nearby gatherings, and international action days
-- Thumbnails of recently active users nearby to promoite the feeling of a community
-- Charts showing levels of activity within the eco-system, locally, in each section, and in their geographic areas (country and city)
+- Thumbnails of recently active users nearby to promote the feeling of a community
+- Charts showing levels of activity within the ecosystem, locally, in each section, and in their geographic areas (country and city)
 - Their wallet showing the amount of tokens they've earned for their actions to bring more peace and well-being into the world, and to complete tasks important to the healthy running of the ecosystem. This would include live tracking of the tokens price compared to other currencies/tokens
 - A voting tracker to show key votes/votes in areas they've subscribed to/all current votes
 - Courses for learning the basics of blockchain and 
@@ -316,7 +316,7 @@ I've lived about as frugal a life as is possible in the Western World because I'
 
 The crypto-world has me intensely curious, because money can be different there. I wanted to learn more and see if it's possible to design a form of money that is intrinsically tied to creating societal value.  Something to act as a band-aid on today’s ‘profit at all costs’ capitalism which has blind-spots for large areas critical to producing healthy, happy societies. This is caused by foundations measuring all progress and success as an increase in GDP. Anything which doesn’t is, by design, an after-thought.
 
-GDP was designed by Simon Kuznets, in 1937 as a temporary post war recovery system, but the beast got out of control. The damage caused to humanity by basing our decision making processes on measurements of GDP isn’t even contentious anymore. [Here’s a list](http://ec.europa.eu/environment/beyond_gdp/key_quotes_en.html) of global and economic leaders stating the need to move past it.
+GDP was designed by Simon Kuznets, in 1937 as a temporary post war recovery system, but the beast got out of control. The damage caused to humanity by basing our decision making processes on measurements of GDP isn’t even contentious any more. [Here’s a list](http://ec.europa.eu/environment/beyond_gdp/key_quotes_en.html) of global and economic leaders stating the need to move past it.
 
 This token is an effort to create a new monetary and economic system. One which focuses energy onto these essential societal areas which are currently overlooked. An effort to create a healthier and happier world.
 
@@ -398,11 +398,11 @@ const markdownSection100 = md.render(`
 ---
 13. Many high profile projects and platforms, with multi-billion dollar market caps, average utterly embarrassing numbers of users daily, weekly, or monthly. It's like a dirty secret we aren't supposed to talk about.
 
-    The platform you are here to read about onboards existing communities of hundreds of thousands of people, offering them far more effective tools than they use currently to pursue their existing positive missions. It also offers them shared ownership, and a stake in determining the future development of those tools.
+    The platform you are here to read about on-boards existing communities of hundreds of thousands of people, offering them far more effective tools than they use currently to pursue their existing positive missions. It also offers them shared ownership, and a stake in determining the future development of those tools.
 ---
 
 
-This paper is an early non-technical outline of how this can be realised, to provide a foundation for discussion. The platform also already exists, built by a team of over 130 volunteer web developers who believe in our vision. It is built to the minimal stage to begin onboarding the community who will shape it.
+This paper is an early non-technical outline of how this can be realised, to provide a foundation for discussion. The platform also already exists, built by a team of over 130 volunteer web developers who believe in our vision. It is built to the minimal stage to begin on-boarding the community who will shape it.
 
 If you've been invited to read this, and agree with what I've written so far, then I invite you you to become a partner, or advisor, and to help shape what follows into a polished white paper ready for the rest of the world to see. 
 
@@ -656,10 +656,10 @@ const markdownSection16 = md.render(`
 
 **ICO Stages**
 Stage 1: 
-Investors will have 30 days to register an Ethereum address. Once the ICO opens a preset number of tokens will be released. registered investors will be capped initially at 2 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
+Investors will have 30 days to register an Ethereum address. Once the ICO opens a pre-set number of tokens will be released. registered investors will be capped initially at 2 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
 
 Stage 2: 
-This stage will be held on a crowdfunding website to reach those who don’t understand how to join in a traditional ICO. Investors will be rewarded set amounts for donating at increasing intervals. The top threshold of reward for donations will be set at 2 ETH per user. Users may choose to invest more to support the project, but will not receive more tokens than stated.
+This stage will be held on a crowd funding website to reach those who don’t understand how to join in a traditional ICO. Investors will be rewarded set amounts for donating at increasing intervals. The top threshold of reward for donations will be set at 2 ETH per user. Users may choose to invest more to support the project, but will not receive more tokens than stated.
 
 Stage 3: 
 Midway through the crowd funder the top limit will be raised to 5 ETH, and the traditional ICO will be reopened for a second round with a limit of 10 ETH, users may invest up to the respective limit on all of the platforms concurrently
@@ -696,9 +696,9 @@ const markdownSection18 = md.render(`
 **ICO Marketing**
 
 Crowd-funding:
-The ICO will also be launched via a popular crowdfunding website, where those donating more than certain set amounts will receive a listed amount of Public Happiness Tokens as a reward. This makes our ICO more accessible than others before, to those with little understanding of Blockchain/Cryptocurrency, by using a format they are more likely to be familiar with.
+The ICO will also be launched via a popular crowd funding website, where those donating more than certain set amounts will receive a listed amount of Public Happiness Tokens as a reward. This makes our ICO more accessible than others before, to those with little understanding of Blockchain/Cryptocurrency, by using a format they are more likely to be familiar with.
 
-Those who purchase Tokens via crowdfunding will receive instructions in how to create a crypto wallet account and guide to storing their Public Happiness Movement ERC20 tokens – Likely the 1st steps into understanding how to interact with blockchain for many.
+Those who purchase Tokens via crowd funding will receive instructions in how to create a crypto wallet account and guide to storing their Public Happiness Movement ERC20 tokens – Likely the 1st steps into understanding how to interact with blockchain for many.
 
 
 
@@ -710,7 +710,7 @@ Most people have now heard something about Cryptocurrencies, and are curious. By
 Public Happiness Partners:
 Existing groups who are taking action for more peace and happiness in this world, in a manner currently neglected by today's economic system; and whose actions align with our [Community Values](https://news.focallocal.org/the-focallocal-community-values/), will be invited to use our ecosystem to supercharge their network effect. Drawing more members in to join their activities. Expanding the reach of their message and media through our enhanced tools. Offering more effective methods to coordinate their followers and community into desired actions on our platform. 
 
-They will now be rewarded financially for their continued efforts to improve human and societal well-being when it is in part, coordinated via our platform. This reward will also be selectively backdated, based upon numbers engaged in their activities and media over the past ten years. Rewarding those whose labours have made a consistent positive impact to society, and others lives, without any economic recognition for their great works. This backdated reward is not dependent upon joining our platform, but should increase onboarding by showing casing the benefits of tokenizing to create a new ‘Happiness Economy’. 
+They will now be rewarded financially for their continued efforts to improve human and societal well-being when it is in part, coordinated via our platform. This reward will also be selectively backdated, based upon numbers engaged in their activities and media over the past ten years. Rewarding those whose labours have made a consistent positive impact to society, and others lives, without any economic recognition for their great works. This backdated reward is not dependent upon joining our platform, but should increase on-boarding by showing casing the benefits of tokenizing to create a new ‘Happiness Economy’. 
 
 `)
 
@@ -798,7 +798,7 @@ const markdownSection24 = md.render(`
 
 [view live beta](https://action.focallocal.org/)
 **The Action Center**
-An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. The platform is being designed based on implementing Scrum and Agile project management principles to solve societal issues and create effient, flexible and effective teams. The Action Center (and rest of the site) is also being designed by teams using Scrum and Agile and so it will adapt and evolve to meet users needs. The current Action Center can be considered to be a working template to begin building from.
+An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. The platform is being designed based on implementing Scrum and Agile project management principles to solve societal issues and create efficient, flexible and effective teams. The Action Center (and rest of the site) is also being designed by teams using Scrum and Agile and so it will adapt and evolve to meet users needs. The current Action Center can be considered to be a working template to begin building from.
 
 Each ‘Mission’ should take a user between 30 mins and one hour, if longer is needed then it needs to be divided into smaller chunks. Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
 
@@ -871,7 +871,7 @@ const markdownSection29 = md.render(`
 **Who can Participate on the Platform**
 The platform is open to anyone wanting to create well-being and happiness where they live, or support the Movement. 
 
-Some users may choose to use it while travelling, as great way to meet positive local people. Users traveling are naturally guided towards ‘gathering’ with local people who understand the local customs and any adaptations necessary.
+Some users may choose to use it while travelling, as great way to meet positive local people. Users travelling are naturally guided towards ‘gathering’ with local people who understand the local customs and any adaptations necessary.
 
 Pre-existing communities may wish to join the ecosystem to take advantage of the network effect, or be part of a wider community. This is discussed further in 7.8.
 
@@ -1097,9 +1097,9 @@ On the tour the team will visit cities, towns and villages and demonstrate how p
 Community members chosen for the bus tours will use their skills to target local issues with positive action in the places we visit, in partnership with local groups/charities. Issues like homelessness, loneliness, supporting the elderly, lack of urban green areas and gardens. Alongside our general Public Happiness activities.
 
 Conferences, Festivals, and Happiness Economy Events:
-We will be touring blockchain/fin-tech conferences, festivals, and happiness related events. The bus will carry equipment and team members to create exciting activities and flashmob style entertainment at these events. Both officially and unofficially. It will also serve as an office, meeting space, and sleeping rooms will often be available to select partners.
+We will be touring blockchain/fin-tech conferences, festivals, and happiness related events. The bus will carry equipment and team members to create exciting activities and flash-mob style entertainment at these events. Both officially and unofficially. It will also serve as an office, meeting space, and sleeping rooms will often be available to select partners.
 
-Busses and Vans:
+Buses and Vans:
 How much funding is raised will determine whether we tour in a bus or a fleet of vans and minibuses. The ideal bus would be a 1960’s classic British Routemaster, due to the attention it would get outside of the UK boosting our marketing effort. The average price of these is £100,000+. A more likely choice is a Volvo B7TL Double Decker due to their renowned reliability. 
 
 If we go with van’s a fleet of Mercedes Sprinters will join ‘[Connie the Connector](https://www.facebook.com/connietheconnector/)’ again due to their reliability, founder Andy’s experience in repairing and maintaining them, and the advantage of only needing to carry one set of commonly needed spare parts. [Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). As it is arguably still the greenest form of fuelling a vehicle, all other vehicles will also be converted, giving us the ability to collect from people joining our activities and project in each location, and/or to partner with a major restaurant or hotel chain and collect their left over oils. 
@@ -1111,9 +1111,9 @@ const markdownSection47 = md.render(`
 ## 10.3.
 
 **Video Channel**
-A Public Happiness Movement YouTube channel has been created as a space where all platform members, and groups, can share videos of their activities in support of our Movement. Combining our energies and message. A randomised video will play each time users visit an activity on the map . Taken from each YouTube playlists related category on our platform (unless the creator has added their own video). 
+A Public Happiness Movement YouTube channel has been created as a space where all platform members, and groups, can share videos of their activities in support of our Movement. Combining our energies and message. A randomised video will play each time users visit an activity on the map . Taken from each YouTube play-lists related category on our platform (unless the creator has added their own video). 
 
-Combined with our coordinated hashtagging this will provide a huge boost across standard social media; both for our community, and also for each group that is a part of our ecosystem.
+Combined with our coordinated hash-tagging this will provide a huge boost across standard social media; both for our community, and also for each group that is a part of our ecosystem.
 
 The bus tour will also be filmed, with regular instalments of life on the road taking Public Happiness and our token into local communities and bringing more happiness and well-being to the world. As a ground-breaking and exciting project we anticipate attracting a large following, especially as it will be supported by all other marketing efforts.
 
@@ -1124,7 +1124,7 @@ const markdownSection48 = md.render(`
 ## 10.4.
 
 **Happy Cam**
-The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Gopro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
+The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Go pro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
 
 Later a second camera dog may join, if we adopt a puppy.. because that would be lovely.
  
@@ -1139,7 +1139,7 @@ There is already a global Movement of Public Happiness creators around the World
 
 Founder Andy has been a professional Public Happiness creator for the past 7 years and is well connected to the most active in the Public Happiness industry. A few select leaders will be offered ‘back-pay’ for their previous unrewarded contributions towards creating a kinder world for us all to live in, this also acts as an encouragement to join our ecosystem. Using the platform offers them more effective tools to pursue their vision. As high ranking members in our reputation system due to their past works, they'll also have a greater influence over shaping those tools to fit their needs. Our new economy, provides a fair reward for their efforts to benefit others lives in society. The tokenised system is designed to reduce, or even remove, the current heavy financial pressures to stop doing their excellent work for humanity. 
 
-The existing leaders of the Movement would then become leaders on our platform, due to their pre-earned reputation. Granting the ability to direct the new platform and communities evolution, protecting the vision of the Movement they founded and guiding the development of ever more effective tools to manage their communities and advance their mission. Their existing community retains its individual identity on our platform, having its own page with forums, photos, videos, external links to their existing online hubs, tools to guide users desired actions, and group hashtag. 
+The existing leaders of the Movement would then become leaders on our platform, due to their pre-earned reputation. Granting the ability to direct the new platform and communities evolution, protecting the vision of the Movement they founded and guiding the development of ever more effective tools to manage their communities and advance their mission. Their existing community retains its individual identity on our platform, having its own page with forums, photos, videos, external links to their existing online hubs, tools to guide users desired actions, and group hash-tag. 
 
 Our ecosystem makes it far easier for new groups to form and grow. They will instantly have access to a wide audience to join in their activities - organic reach which has become increasingly difficult on established social media platforms with the shift towards 'pay-to-play' models.
 
@@ -1315,9 +1315,9 @@ Estimating the value of returns is speculative at this point. The core team, and
 
 const markdownSection62 = md.render(` 
 
-Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the ICO stage will be outsourced to industry experts. If you'd like to be in those postions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
+Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the ICO stage will be outsourced to industry experts. If you'd like to be in those positions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
 
-Much of the essential skills needed to build a successful blockchain project and commuity will be come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
+Much of the essential skills needed to build a successful blockchain project and community will be come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
 
 `)
 
@@ -1349,7 +1349,7 @@ const markdownSection64 = md.render(`
 
 * ERC20 Developer to work on integration
 
-* Cryptocurrencies and Blockchain Educator, to integrate the on-ramp guiding users to an base understanding of crypto economics 
+* Cryptocurrencies and Blockchain Educator, to integrate the on-ramp guiding users to a base understanding of crypto economics 
 
 * PR Manager
 
@@ -1511,7 +1511,7 @@ const markdownSection77 = md.render(`
 **Open Source Projects We Use**
 * Discourse
 
-* Plugins our platform uses
+* Plug-ins our platform uses
 
 * Click the balloon here to discuss others we should support
 
@@ -1521,7 +1521,7 @@ const markdownSection77 = md.render(`
 **Donations to Notable Other Open-source Projects**
 1% of the total raised will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
 
-The vote results will be non-binding, to allow mitigatation against any uncovered attempts to cheat the vote by outside groups. The platform and community will not yet be ready to protect itself from coordinated subversion efforts, without spending excess amounts of energy on securing the voting. Instead it can be used as an early pressure test on the integrity of certain areas of the platform, as this type of online contest invariably draws efforts to undermine fair voting.
+The vote results will be non-binding, to allow mitigation against any uncovered attempts to cheat the vote by outside groups. The platform and community will not yet be ready to protect itself from coordinated subversion efforts, without spending excess amounts of energy on securing the voting. Instead it can be used as an early pressure test on the integrity of certain areas of the platform, as this type of online contest invariably draws efforts to undermine fair voting.
 
 `)
 
@@ -1580,7 +1580,7 @@ const markdownSection80 = md.render(`
 
 * Should the platform be hosted on the DAPPs network?
 
-* Should community governance voting be tokenized/on-chain? Or simply by using Discourse’s forum voting? Either would involve building a discourse plugin 
+* Should community governance voting be tokenized/on-chain? Or simply by using Discourse’s forum voting? Either would involve building a discourse plug-in 
 
 * How can we best compartmentalise voting to prevent overload on users, without pockets of influence forming? 
 
@@ -1592,7 +1592,7 @@ Next Steps:
 
 * Token created
 
-* Full security review of all open-source plugins used in building the website
+* Full security review of all open-source plug-ins used in building the website
 
 * Full review of platform UX/UI and tech stack, looking quick ways to make large usability improvements, improving access and scalability.
 
