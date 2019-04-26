@@ -36,7 +36,7 @@ import './styles.scss'
  */
 
 // NOTE: testing facebook share on local machine will lead to an error page if target domain is localhost
-// const url = window.location
+// const url = window.location <-- set this to a live www. url to test
 
 class SharePanel extends Component {
 
@@ -49,7 +49,7 @@ class SharePanel extends Component {
     const hoursReactComponent = HoursFormatted({ data: this.props.data })
     const hoursText = drillDownToText(hoursReactComponent, '')
 
-    const url = 'https://focallocal.org/page/fGd8HuHZEv8QectPS'
+    const url = window.location
     const string = i18n.Map.eventInfo.socialMedia.messagePre + document.title + "\n" + hoursText + "\n"
     const title = string.replace(' Next:', 'Next:').replace(' Repeating:', '\nRepeating:')
     
