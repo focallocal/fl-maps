@@ -69,6 +69,9 @@ v. <a href="#The World Needs This Because: (v2)">The World Needs This Because: (
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.8. <a href="#Pre-existing Communities with Similar Values">Pre-existing Communities with Similar Values</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.9. <a href="#Languages">Languages</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.10. <a href="#Decentralised Governance and Voting">Decentralised Governance and Voting</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.11. <a href="#User Behaviour in UX Design">User Behaviour in UX Design</a><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.12. <a href="#User Wall and Plugin Module Ecosystem">User Wall and Plugin Module Ecosystem</a><br />
+
 <br />
 8. <a href="#The Path to Decentralisation">The Path to Decentralisation</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.1. <a href="#Benevolent Dictatorship vs Complete Community Governance">Benevolent Dictatorship vs Complete Community Governance</a><br />
@@ -245,7 +248,66 @@ This approach has the following benefits:
 3) Our platform and token become linked with an excellent experience, and we gather thousands more users who are now curious about their investment in The Public Happiness Token
 
 `)
+
+
+const markdownSection111 = md.render(`
+
+## 7.11. 
+
+The platform is designed to create a culture of qualitative engagement, rather than minimizing engagement to maximise the advertising revenue harvested from a user. The model today's main social media sites have switched to. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending, and creating a participatory community in this environment is increasingly difficult. The platform wants users to click, and move on. 
+
+Teaching users to participate, rather than just consume, is going to be a challenge. Countless studies have shown attention spans of the general population reducing. This challenge is not one we shy away from, as it is a core component in our mission of increasing well-being and happiness. Creating a platform where users are an active and recognised part of our community and mission.
+
+Users attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals, to compliment the tokenisation effect, rahter than rely on it solely.
   
+`)
+
+const markdownSection112 = md.render(`
+
+## 7.12. 
+
+Logged in users will arrive at their profile page each time they visit. A users profile page contains three type of features:
+
+1. Community Communications - embeded in the main menu are notifications from communications across our site and forum.
+
+2. Actions - users are prompted to take the main actions which will the fuel the Movements growth, and its deliver its positive impact on society. Actions like, filling in a profile to add themselves to the map. creating a group. searching for users/activities nearby to create action with.
+
+3. Users Wall - the largest space where users have the ability to choose which components/information they'd like to see. This area will be open to plugin creators allowing customisation and increased ownsership over their profile. Also encouraging innovation to improve the user experience on our platform.
+
+
+**Expanding on the Users Wall**
+
+The easiest way to visualise this, for those who remember, is that this will be similar the ecosystem Facebook had before locking users into the only the behaviour they desired. A space for user and developer led customisation and integration. In many ways our entire platform could be described as this, but most areas will be designed and set by user voting. This section is to create more individual flexibility and a tailored exerience to the individuals needs.  
+
+The users wall space will come pre-populated with default modules that the community has chosen as the most effective for beginners to get a grip on whats going on within the Public Happiness Movement, and how to engage. Users have the freedom to change these at any time. 
+
+Developers will be free to create modules that fit any purpose, so long as their use isn't going against any of the Communitities Core Values (something easily checked by other users by posting ideas in the forum before building them). Forum specific plugins can also be built easily through the Discourse architecture. 
+
+Default modules might inlcude:
+
+- Getting started challenges, to guide users through a general understanding of what interesting things they can do within our ecosystem, with token and badge rewards for completing them
+- A calendar of upcoming gatherings they've subscribed to
+- A calendar of nearby gatherings, and international action days
+- Thumbnails of recently active users nearby to promoite the feeling of a community
+- Charts showing levels of activity within the eco-system, locally, in each section, and in their geographic areas (country and city)
+- Their wallet showing the amount of tokens they've earned for their actions to bring more peace and well-being into the world, and to complete tasks important to the healthy running of the ecosystem. This would include live tracking of the tokens price compared to other currencies/tokens
+- A voting tracker to show key votes/votes in areas they've subscribed to/all current votes
+- Courses for learning the basics of blockchain and 
+
+Optional modules might include:
+
+- Charts showing activity and predicted completion dates for projects they've subscribed to in the Action Center
+- Recent news stories from our forum from categories they've subscribed to
+- Friends recent activity on the platform
+- News from communities they've joined
+- Recent videos or photo streams from action all across the world (pulled from social media via hashtags)
+- Challenges created by users
+- Stats about our Movement and projects trending on social media
+
+The possibilities are endless and we can't wait to see what is created here!
+
+`)
+
   
 const markdownSection103 = md.render(`
 
@@ -686,9 +748,11 @@ The Focallocal Community built this ‘Public Happiness Movement’ platform and
 
 const markdownSection22 = md.render(` 
 
-The Public Happiness Movement platform currently exists as a website located at https://focallocal.org. If you’ve visited it you’ve probably noticed it is currently a highly fragmented site/platform. This is intentional, the platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
+The Public Happiness Movement platform currently exists as a website located at https://focallocal.org. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
-The platform, is also available as an iOS and Android app. Its future is designed to e ready for a likely transformation to the DAPPs network.
+
+Our platform, is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network.
+ 
 
 `)
 
@@ -697,7 +761,7 @@ const markdownSection23 = md.render(`
 ## 7.1.
 
 [view live beta](https://focallocal.org/)
-**The ‘Public Happiness Movement Map’**
+**The Public Happiness Movement Map**
 An area of the platform to bring users together to connect and take our project and token to the streets. Users can create and join Public Happiness Gatherings from a list of pre-approved activities curated by the community; and contact other members nearby. Users can list themselves on the map (in an approximate location for privacy), and select all the public happiness activities they would like to be contacted for, creating a searchable map of people nearby who want to meet and take actions which bring more well-being into the world they live in.
 
 The Map also allows users to explore approved suggestions for Public Happiness Gatherings, along with; 
@@ -1628,7 +1692,8 @@ const Anchor107 = () => <Fragment><h2 id="Corporate Social Responsibility" > </h
 const Anchor108 = () => <Fragment><h2 id="Kindness Auction" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection108 }} /></Fragment>
 const Anchor109 = () => <Fragment><h2 id="Community Projects" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection109 }} /></Fragment>
 const Anchor110 = () => <Fragment><h2 id="Paid to Party" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection110 }} /></Fragment>
-
+const Anchor111 = () => <Fragment><h2 id="User Behaviour in UX Design" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection111 }} /></Fragment>
+const Anchor112 = () => <Fragment><h2 id="User Wall and Plugin Module Ecosystem" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection112 }} /></Fragment>
 
 
 
@@ -1679,6 +1744,10 @@ const index = (props) => {
 		<Anchor30 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
 		<Anchor31 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
 		<Anchor32 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor111 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor112 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		
+		
 		
 		<Anchor33 />
 		<Anchor34 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
