@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: brightertomorrowmap.com
+Token: c866f0e2e06abb38d46e45e624a053930cba483c976a598df811a6d231948404
