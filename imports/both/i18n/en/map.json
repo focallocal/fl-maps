@@ -17,6 +17,11 @@
     "experiences": {
       "title": "Community Experiences",
       "subtitle": "How was your Experience? (positive/negative)"
+    },
+    "socialMedia": {
+      "title": "Social Media",
+      "subtitle": "Support Us By Sharing This Event",
+      "messagePre": "Check out this event: "
     }
   }
 }
