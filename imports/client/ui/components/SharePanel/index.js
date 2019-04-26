@@ -55,8 +55,8 @@ class SharePanel extends Component {
     
     return (
       <div className="sharePanel">
-        <FacebookShareButton url={url} quote={title} hashtag="#Focallocal" children={<FacebookIcon size={32} round={true} />} />
-        <TwitterShareButton url={url} title={title} hashtags={['Focallocal']} children={<TwitterIcon size={32} round={true} />} />
+        <FacebookShareButton url={url} quote={title} hashtag="#publichappinessmovement" children={<FacebookIcon size={32} round={true} />} />
+        <TwitterShareButton url={url} title={title} hashtags={['publichappinessmovement']} children={<TwitterIcon size={32} round={true} />} />
         <RedditShareButton url={url} title={title} children={<RedditIcon size={32} round={true} />} />
         <LinkedinShareButton url={url} title={title} description={title} children={<LinkedinIcon size={32} round={true} />} />
         <EmailShareButton url={url} subject={title} children={<EmailIcon size={32} round={true} />} />
