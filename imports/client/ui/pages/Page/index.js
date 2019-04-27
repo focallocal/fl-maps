@@ -194,12 +194,21 @@ class Page extends Component {
             categories={c}
             video={video}
           />
+          
         </div>
+        <Row>
 
+          <Col lg={{ size: 1, offset: 12 }}>
+            <Button color='danger' onClick={this.closePage}>Back To Map</Button>
+          </Col>
+         </Row>
+        
         <Container className='body'>
-         
+          
           <Row>
+            
             <Col xs={7} className='left'>
+              
               <div className='title-wrapper'>
                 <div className='title'>{name}</div>
                 <div className='sub-title-categories'>{categories}</div>
@@ -240,7 +249,7 @@ class Page extends Component {
 
               <Divider />
               {isAuthor && <EditPage data={data} history={history} />} 
-              <Button color='danger' onClick={ this.closePage}>Close Page</Button>
+              
             </Col>
           </Row>
           <iframe
