@@ -188,6 +188,11 @@ class Page extends Component {
             video={video}
           />
         </div>
+        <Row>
+          <Col lg={{ size: 1, offset: 12 }}>
+            <Button color='danger' onClick={this.closePage}>Back To Map</Button>
+          </Col>
+        </Row>
 
         <Container className='body'>
           <Row>
