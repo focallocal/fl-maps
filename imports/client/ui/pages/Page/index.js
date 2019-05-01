@@ -17,6 +17,8 @@ import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
 import { checkPermissions} from './../Admin/RolesPermissions/index'
+import { Redirect, withRouter } from 'react-router-dom'
+
 
 class Page extends Component {
   constructor (props) {
@@ -124,6 +126,10 @@ class Page extends Component {
   }
 
   render () {
+    if (this.state.redirect === true) {
+      return <Redirect to='/map' />
+    }
+
     const {
       data,
       loaded,
@@ -182,6 +188,11 @@ class Page extends Component {
             video={video}
           />
         </div>
+        <Row>
+          <Col lg={{ size: 1, offset: 12 }}>
+            <Button color='danger' onClick={this.closePage}>Back To Map</Button>
+          </Col>
+        </Row>
 
         <Container className='body'>
           <Row>
@@ -210,6 +221,7 @@ class Page extends Component {
 
             <Col xs={4} className='right'>
               {isAuthor && <EditPage data={data} history={history} />}
+              <Button color='danger' onClick={this.closePage}>Close Page</Button>
               <SectionTitle title='Date and Time' />
               {/* attending button currently inactive until able to work with both maps:
                 <AttendingButton _id={_id} history={history} isLoggedIn={isLoggedIn} user={user} />*/}
@@ -307,7 +319,7 @@ export default withTracker(() => {
   return {
     user: Meteor.user()
   }
-})(Page)
+})(withRouter(Page))
 
 // Testing
 export { Page }
