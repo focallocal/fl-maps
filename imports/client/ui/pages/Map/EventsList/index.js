@@ -63,7 +63,7 @@ class EventsList extends Component {
           <NoResults show={!hasData && !isFetching} />
         </div>
 
-        <MinimizeButton onMinimize={this.toggleMinimize} />
+        <MinimizeButton />
 
         <EventInfo
           event={events.find(event => event._id === currentEvent)}
@@ -75,10 +75,6 @@ class EventsList extends Component {
         />
       </Fragment>
     )
-  }
-
-  toggleMinimize = () => {
-    document.body.querySelector('#map-container').classList.toggle('minimized')
   }
 
   returnToList = () => {

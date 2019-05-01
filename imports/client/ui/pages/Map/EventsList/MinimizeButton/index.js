@@ -2,22 +2,29 @@ import React from 'react'
 import { Button } from 'reactstrap'
 import './styles.scss'
 
-const MinimizeButton = ({ onMinimize }) => {
-  let minimized = false
+export default class MinimizeButton extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      minimized: false
+    }
+  }
 
-  try {
-    minimized = document.body.querySelector('#map-container').classList.contains('minimized')
-  } catch (ex) {}
+  toggleMinimize = () => {
+    this.setState({ minimized: !this.state.minimized })
+    document.body.querySelector('#map-container').classList.toggle('minimized')
+  }
 
-  return (
-    <Button
-      id='minimize'
-      className={minimized ? 'minimized' : ''}
-      onClick={onMinimize}
-    >
-      {minimized ? 'maximize' : 'minimize'}
-    </Button>
-  )
+  render() {
+    const { minimized } = this.state
+    return (
+      <Button
+        id='minimize'
+        className={minimized ? 'minimized' : ''}
+        onClick={this.toggleMinimize}
+      >
+        {minimized ? 'maximize' : 'minimize'}
+      </Button>
+    )
+  }
 }
-
-export default MinimizeButton
