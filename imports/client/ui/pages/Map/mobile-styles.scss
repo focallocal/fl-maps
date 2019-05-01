@@ -4,9 +4,39 @@
 
   #map-container {
 
+    #minimize {
+      position: fixed;
+      top: calc(100vh - 30px - (55vh - #{$menu-height}));
+      left: 0px;
+      height: 30px;
+      width: 76.2px;
+      font-size: .7em;
+      background-color: $gray-lighter;
+      color: $black-lighter;
+      transform: rotateZ(0deg);
+      transition: top .2s ease;
+    }
+
+    &.minimized {
+
+      #events-list, #event-info {
+        transform: translateY(calc(55vh - #{$menu-height}));
+      }
+
+      #map {
+        height: 100%!important;
+      }
+
+      button#minimize {
+        top: calc(100vh - 30px);
+        left: 0px;
+      }
+    }
+
     #map {
       height: calc(55vh - #{$menu-height});
       width: 100% !important;
+      transition: height .2s ease;
     }
 
     #events-list {
@@ -16,10 +46,6 @@
       height: calc(55vh - #{$menu-height});
       width: 100%;
       transform: translateX(0);
-    }
-
-    #minimize {
-      display: none;
     }
 
     #filters-list {
