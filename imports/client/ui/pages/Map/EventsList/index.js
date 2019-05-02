@@ -38,8 +38,13 @@ class EventsList extends Component {
       history
     } = this.props
 
-    const hasData = !!events[0]
+    const currentEventProp = this.props.currentEvent
 
+    const hasData = !!events[0]
+    console.log('EventsList currentEventState:\n', currentEvent)
+    console.log('EventsList currentEventProp:\n', currentEventProp)
+    console.log('EventsList array of events', events)
+    console.log('EventsList event match', events.find(event => event._id === currentEvent))
     return (
       <Fragment>
         <div id='events-list'>
