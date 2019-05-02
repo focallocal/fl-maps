@@ -179,7 +179,6 @@ class MapComponent_ extends Component {
       zoom: overlapping ? 22 : 18,
       currentEvent: _id
     })
-    console.log('currentEvent:\n', this.state.currentEvent)
   }
 
   toggleFiltersList = () => {
