@@ -38,8 +38,9 @@ class EventsList extends Component {
       history
     } = this.props
 
-    const hasData = !!events[0]
+    const currentEventProp = this.props.currentEvent
 
+    const hasData = !!events[0]
     return (
       <Fragment>
         <div id='events-list'>

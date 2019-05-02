@@ -19,7 +19,7 @@
 
     &.minimized {
 
-      #events-list, #event-info {
+      #events-list {
         transform: translateY(calc(55vh - #{$menu-height}));
       }
 
@@ -61,6 +61,11 @@
     #event-info {
       top: 0;
       width: 100%;
+      transform: translate(0, 0)!important;
+
+      &:not(.active) {
+        transform: translateX(-#{$map-events-list-width})!important;
+      }
     }
   }
 }
