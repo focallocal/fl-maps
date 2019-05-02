@@ -19,7 +19,7 @@
 
     &.minimized {
 
-      #events-list, #event-infoa {
+      #events-list {
         transform: translateY(calc(55vh - #{$menu-height}));
       }
 
