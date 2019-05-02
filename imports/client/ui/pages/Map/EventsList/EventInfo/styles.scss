@@ -15,7 +15,7 @@
   z-index: 3;
 
 
-  &.active:not(.before-in):not(.out) {
+  &.active {
     transform: translateX(0);
   }
 
@@ -35,10 +35,6 @@
       i {
         cursor: pointer;
       }
-    }
-
-    .btn {
-
     }
   }
 

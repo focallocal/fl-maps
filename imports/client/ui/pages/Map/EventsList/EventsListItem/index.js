@@ -34,6 +34,7 @@ class ListItem extends Component {
   }
 
   handleItemClick = () => {
+    console.log('EventListItem click:\n', this.props.item._id)
     this.props.onItemClick(this.props.item._id)
   }
 }
