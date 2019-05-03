@@ -938,6 +938,11 @@ Users and the ecosystems bounty hunters are rewarded for finding any subversive 
 
 For more information on security, see Chapter 8.
 
+
+Off-chain Voting:
+The reason for separating voting from our token is to prevent whales from buying influence in deciding the direction of the community and ecosystem. Users influence should be based on their contribution to the vision and community, rather than their wealth. A case illustrated clearly by the issues currently faced by the Aragon community, where a single whale had a [massively out-sized impact on their second community vote](https://www.evanvanness.com/post/184616403861/aragon-vote-shows-the-perils-of-onchain-governance). There is no-way to know how much the whale had contributed to the network. 
+
+
 Lack of Understanding:
 Users aren’t all expected to be experts on blockchain or community governance. They will naturally gravitate to areas of their interests and expertise, leading to more people with an understanding on a topic being subscribed to that section when a vote is called. This gives them the ‘first mover’ advantage to get informed arguments in to give a greater understanding to those joining in from the main voting category in the forum.
  
