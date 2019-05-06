@@ -26,6 +26,7 @@ import Map_ from "./pages/Map";
 import NewEventLoadable from "./pages/NewEvent/loadable";
 import CongratsModal from "./pages/NewEvent/CongratsModal";
 import Page from "./pages/Page";
+import { Error404 } from "./pages/Errors";
 
 // Components
 import ScrollToTop from "./components/ScrollToTop";
@@ -182,6 +183,21 @@ class App extends Component {
       dcsClick: this.dcsClick.bind(this)
     };
 
+    const routePaths = {
+      root: "/",
+      home: "/home",
+      team: "/team",
+      partners: "/partners",
+      whitepaper: "/whitepaper",
+      faq: "/faq",
+      about: "/about",
+      map: "/map",
+      admin: "/admin",
+      thankyou: "/thank-you",
+      page: "/page",
+      signin: "/sign-in"
+    }
+
     return (
       <div id="dcs-root" className={dcsClass}>
         <div
@@ -199,18 +215,19 @@ class App extends Component {
               <MainMenu />
 
               <ScrollToTop>
-                <Route exact path="/(home)?" component={Home} />
-                <Route exact path="/team" render={props => <Team {...props} {...dcsProps} />} />
-                <Route exact path="/partners" render={props => <Partners {...props} {...dcsProps} />} />
-                <Route exact path="/whitepaper" render={props => <Whitepaper {...props} {...dcsProps} />} />
-                <Route exact path="/faq" render={props => <Faq {...props} {...dcsProps} />}/>
-                <Route exact path="/about" render={props => <About {...props} {...dcsProps} />}/>
-                <Route path="/map" component={Map_} />
-                <Route exact path="/admin" render={props => <Admin {...props}/>} /> 
-                <Route path="*" render={this.renderNewEvent} />
-                <Route exact path="/thank-you" component={CongratsModal} />
-                <Route exact path="/page/:id" render={props => <Page {...props} {...dcsProps} />}
-                />
+                <Route exact path={routePaths.root} component={Home} />
+                <Route exact path={routePaths.home} component={Home} />
+                <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />}/>
+                <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />}/>
+                <Route path={routePaths.map} component={Map_} />
+                <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
+                <Route exact path={routePaths.thankyou} component={CongratsModal} />
+                <Route exact path={`${routePaths.page}/:id`} render={props => <Page {...props} {...dcsProps} />}/>
+
+                <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
 
                 <Authentication />
               </ScrollToTop>
@@ -276,11 +293,30 @@ class App extends Component {
       return <Redirect to='/home' />
     }
     */
-
+    console.log('passed in loc:\n', location)
+    console.log('passed in hist:\n', history)
     return (
       <NewEventLoadable isOpen={isOpen} location={location} history={history} />
     );
   };
+
+  /**
+   * This function manages the 'catch-all' route, serving two purposes.
+   * (1) open a model to create/edit event when there is the appropriate search string in the URL
+   * (2) for all other routes not specified, it will redirect to a 404 page
+   * Ideally we should be using React-router Switch to create a fallback 404 page...
+   * But this would require opening the new event modal without using the URL as a hook
+   * And this may break interactions with Docus (e.g. editing an event directly from the forum)
+   */ 
+  check404Route = (routes) => {
+    if (window.location.search === '?new=1' || window.location.search === '?edit=1') {
+      return this.renderNewEvent({ location: window.location, history })
+    }
+    if (!routes.some(e => e === window.location.pathname) && !window.location.pathname.includes('/page/')) {
+      return <Error404 />
+    }
+    return null
+  }
 }
 
 export default hot(module)(App);
