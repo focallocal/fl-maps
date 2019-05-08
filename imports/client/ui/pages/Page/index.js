@@ -1,23 +1,29 @@
+// NPM Libraries
+
 import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Container, Row, Col, Button } from 'reactstrap'
-import { formatCategories } from '/imports/client/utils/format'
-import { scrollToElement } from '/imports/client/utils/DOMInteractions'
+import { Helmet } from "react-helmet"
+import qs from 'query-string'
+import Linkify from 'linkifyjs/react'
+
+// Includes/Fragments
+
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import VideoPlayer from '/imports/client/ui/components/VideoPlayer'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import SharePanel from '/imports/client/ui/components/SharePanel'
 import EditPage from './Edit'
-// import AttendingButton from './AttendingButton'  <-- currently disabled
+import { formatCategories } from '/imports/client/utils/format'
+import { scrollToElement } from '/imports/client/utils/DOMInteractions'
+import { checkPermissions } from './../Admin/RolesPermissions/index'
+
+// Styles and Other
 import './style.scss'
-import {Helmet} from "react-helmet";
-import qs from 'query-string'
-import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
-import { checkPermissions} from './../Admin/RolesPermissions/index'
 
 class Page extends Component {
   constructor (props) {
@@ -31,8 +37,6 @@ class Page extends Component {
       editDeletePermission: false,
     }
   }
-
-
 
   componentDidMount () {
     // THIS IS WRONG: if you fetch data in componentDidMount(), then any route
@@ -56,28 +60,6 @@ class Page extends Component {
       window.__setDocumentTitle(this.state.data.name)
     
     }
-
-    // DOCUSS
-    // Update selBalloonId here, so that we catch url changes triggered
-    // in other components
-    const { b } = qs.parse(window.location.search)
-    if (this.state.selBalloonId !== b) {
-      this.setState({ selBalloonId: b })
-    }
-
-    // DOCUSS
-    // Add badges (color circles with topic count)
-    if (!this.state.badges && this.props.dcsTags) {
-      const prefix = `dcs-${this.state.id.substring(0, 12).toLowerCase()}-`
-      const badges = {}
-      this.props.dcsTags.forEach(tag => {
-        if (tag.id.startsWith(prefix)) {
-          const balloonId = tag.id.substring(17)
-          badges[balloonId] = tag.count
-        }
-      })
-      this.setState({ badges })
-    }
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
@@ -97,39 +79,6 @@ class Page extends Component {
     }
 
     return prevState
-  }
-
-  // DOCUSS
-  dcsHeading(title, subtitle, balloonId) {
-    const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
-    const badgeHtml = (
-      <span
-        className="dcs-badge"
-        title={`This section has ${badgeCount} topic(s)`}
-      >
-        {badgeCount}
-      </span>
-    )
-    const titleClass =
-      balloonId === this.state.selBalloonId ? 'dcs-selected' : ''
-    return (
-      <div
-        style={{ margin: '20px 0', cursor: 'pointer' }}
-        onClick={e => this.dcsClick(balloonId, e)}
-      >
-        <b className={titleClass}>{title}</b>&nbsp;
-
-        <span className="dcs-icons">
-          <img src={`/images/dcs-balloon-${balloonId}.png`} />
-        </span>
-        {badgeCount ? badgeHtml : ''}
-        <div>
-        <small style={{marginLeft: '5px', marginRight: '5px', fontSize: '60%'}}>
-          {subtitle}
-        </small>
-        </div>
-      </div>
-    )
   }
 
   render() {
@@ -206,8 +155,7 @@ class Page extends Component {
           
           <Row>
             
-            <Col xs={7} className='left'>
-              
+            <Col xs={7} className='left'> 
               <div className='title-wrapper'>
                 <div className='title'>{name}</div>
                 <div className='sub-title-categories'>{categories}</div>
@@ -220,45 +168,31 @@ class Page extends Component {
                 <SectionTitle title='Meet Me Details' />
                 <Linkify options={linkifyOption}>{findHints}</Linkify>
               </div>
-              {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
-              {this.dcsHeading(i18n.Map.eventInfo.videos.title, i18n.Map.eventInfo.photos.subtitle, 'vid')}
               <div className='description'>
                 <SectionTitle title='About' />
-            
                 <Linkify options={linkifyOption}>{description}</Linkify>
               </div>
-              {this.dcsHeading(i18n.Map.eventInfo.wall.title, i18n.Map.eventInfo.wall.subtitle, 'wal')}
-              {this.dcsHeading(i18n.Map.eventInfo.experiences.title, i18n.Map.eventInfo.experiences.subtitle, 'exp')}
-
             </Col>
 
             <Col xs={4} className='right'>
               <SectionTitle title='Date and Time' />
-              {/* attending button currently inactive until able to work with both maps:
-                <AttendingButton _id={_id} history={history} isLoggedIn={isLoggedIn} user={user} />*/}
               <HoursFormatted data={when}/>
-
               <Divider />
-
               <div className='location'>
                 <SectionTitle title='Location' />
                 <div>{address.name}</div>
                 <a className='view-map' onClick={this.scrollToMap}>View Map</a>
               </div>
-
               <Divider />
-
               <div className='social'>
                 <SectionTitle title={i18n.Map.eventInfo.socialMedia.title} />
                 <p className='social__subheading'>{i18n.Map.eventInfo.socialMedia.subtitle}</p>
                 <SharePanel data={when}/>
               </div>
-
               <Divider />
-
               {isAuthor && <EditPage data={data} history={history} />} 
-              
             </Col>
+
           </Row>
           <iframe
             className='embedded-map'
@@ -267,16 +201,6 @@ class Page extends Component {
             src={mapUrl}
           />
         </Container>
-        <div id="coral_talk_stream"></div>
-        <Helmet>
-          {/* The embed web address will need updated depending on environment */}
-          {/* Package.json port will need updated if you leave embed at 3000*/}
-          <script src="https://talk.focallocal.org/static/embed.js" async onload="
-            Coral.Talk.render(document.getElementById('coral_talk_stream'), {
-              talk: 'https://talk.focallocal.org/'
-            });
-          "></script>
-        </Helmet>
       </div>
     )
   }
@@ -302,11 +226,6 @@ class Page extends Component {
       }
     })
   }
-
-  dcsClick(balloonId, e) {
-    this.props.dcsClick(balloonId)
-    e.stopPropagation() // Required for deselection
-  }
 }
 
 const SectionTitle = ({ title }) => <div className='section-title'>{title}</div>
@@ -331,6 +250,108 @@ export default withTracker(() => {
     user: Meteor.user()
   }
 })(withRouter(Page))
-// 
+ 
 // Testing
 export { Page }
+
+
+/**
+ * BELOW: Legacy DCS plugins and features, currently disconnected
+ 
+
+(1) VARIABLES BOUND TO render() inside the return statement PART 1:
+(after 'meet-me' section)
+
+{this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
+{this.dcsHeading(i18n.Map.eventInfo.videos.title, i18n.Map.eventInfo.photos.subtitle, 'vid')}
+
+(2) VARIABLES BOUND TO render() inside the return statement PART 2:
+(end of left Col section)
+
+{this.dcsHeading(i18n.Map.eventInfo.wall.title, i18n.Map.eventInfo.wall.subtitle, 'wal')}
+{this.dcsHeading(i18n.Map.eventInfo.experiences.title, i18n.Map.eventInfo.experiences.subtitle, 'exp')}
+
+(3) VARIABLES BOUND TO render() inside the return statement PART 3:
+(very end of component, before the closing div container)
+
+<div id="coral_talk_stream"></div>
+        <Helmet>
+          { The embed web address will need updated depending on environment }
+          { Package.json port will need updated if you leave embed at 3000}
+          <script src="https://talk.focallocal.org/static/embed.js" async onload="
+            Coral.Talk.render(document.getElementById('coral_talk_stream'), {
+              talk: 'https://talk.focallocal.org/'
+            });
+          "></script>
+        </Helmet>
+
+(4) FUNCTIONS INSIDE ComponentDidMount():
+
+// DOCUSS
+    // Update selBalloonId here, so that we catch url changes triggered
+    // in other components
+    const { b } = qs.parse(window.location.search)
+    if (this.state.selBalloonId !== b) {
+      this.setState({ selBalloonId: b })
+    }
+
+    // DOCUSS
+    // Add badges (color circles with topic count)
+    if (!this.state.badges && this.props.dcsTags) {
+      const prefix = `dcs-${this.state.id.substring(0, 12).toLowerCase()}-`
+      const badges = {}
+      this.props.dcsTags.forEach(tag => {
+        if (tag.id.startsWith(prefix)) {
+          const balloonId = tag.id.substring(17)
+          badges[balloonId] = tag.count
+        }
+      })
+      this.setState({ badges })
+    }
+
+(5) FUNCTIONS REDERED SEPARATELY IN Page CLASS:
+
+(5a) BEFORE render():
+
+// DOCUSS
+  dcsHeading(title, subtitle, balloonId) {
+    const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
+    const badgeHtml = (
+      <span
+        className="dcs-badge"
+        title={`This section has ${badgeCount} topic(s)`}
+      >
+        {badgeCount}
+      </span>
+    )
+    const titleClass =
+      balloonId === this.state.selBalloonId ? 'dcs-selected' : ''
+    return (
+      <div
+        style={{ margin: '20px 0', cursor: 'pointer' }}
+        onClick={e => this.dcsClick(balloonId, e)}
+      >
+        <b className={titleClass}>{title}</b>&nbsp;
+
+        <span className="dcs-icons">
+          <img src={`/images/dcs-balloon-${balloonId}.png`} />
+        </span>
+        {badgeCount ? badgeHtml : ''}
+        <div>
+        <small style={{marginLeft: '5px', marginRight: '5px', fontSize: '60%'}}>
+          {subtitle}
+        </small>
+        </div>
+      </div>
+    )
+  }
+
+(5b) AFTER render():
+
+dcsClick(balloonId, e) {
+    this.props.dcsClick(balloonId)
+    e.stopPropagation() // Required for deselection
+  }
+
+ */
+

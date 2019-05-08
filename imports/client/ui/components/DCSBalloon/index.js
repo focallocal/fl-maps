@@ -1,15 +1,28 @@
 import React, { Component, Fragment } from 'react'
 import qs from 'query-string'
 import history from "../../../utils/history"
-import { dcs } from "../../../utils/dcs-master"
 import './style.scss'
 
+
+const DCSBalloon = () => (
+  <div></div>
+)
+
+export default DCSBalloon
+
+/**
+ * BELOW: Legacy DCS plugins and features, currently disconnected
+ */
+
+// import { dcs } from "../../../utils/dcs-master"
 
 /*********************/
 /*
   Render Docuss Balloon that redirects to dedicated forum page
 */
 /*********************/
+
+/*
 
 class DCSBalloon extends Component {
   
@@ -90,7 +103,8 @@ class DCSBalloon extends Component {
   }
 }
 
-export default DCSBalloon
+// export default DCSBalloon
+export default {}
 
 // NOTE: BELOW IS COPIED DIRECTLY FROM APP.JS (function named dcsClick) - NEED TO REFACTOR TO PREVENT DUPLICATION
 
@@ -138,3 +152,5 @@ function changeHistory({ pathname = null, params, push }) {
     history.replace({ pathname, search });
   }
 }
+
+*/

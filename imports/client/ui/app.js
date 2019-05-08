@@ -1,3 +1,4 @@
+// NPM Libraries
 import { hot } from "react-hot-loader";
 import { Meteor } from "meteor/meteor";
 import React, { Component, Fragment } from "react";
@@ -5,13 +6,7 @@ import { Router, Route, Redirect } from "react-router-dom";
 import history from "../utils/history";
 import qs from "query-string";
 
-// DOCUSS
-import "./style.scss";
-import { dcs } from "/imports/client/utils/dcs-master";
-const discourseUrl = "https://discuss.focallocal.org/";
-//const discourseUrl = 'http://vps465971.ovh.net:3000'
-
-// Includes
+// Includes/Fragments
 import MainMenu from "./includes/MainMenu";
 
 // Pages
@@ -32,16 +27,12 @@ import { Error404 } from "./pages/Errors";
 import ScrollToTop from "./components/ScrollToTop";
 import Admin from "./pages/Admin/index"
 
+// Styles and Other
+import "./style.scss";
+
 class App extends Component {
   constructor() {
     super();
-    // DOCUSS
-    this.state = {
-      showRightPanel: false,
-      balloonId: false,
-      dcsTags: null,
-      leftRightTransition: false
-    };
   }
 
   componentDidMount() {
@@ -55,8 +46,204 @@ class App extends Component {
     setTimeout(() => {
       document.querySelector("#root").classList.toggle("show");
     }, 100); // add a fading effect on the inital loading
+  }
 
-    // Hide the ghost when transition is over
+  render() {
+
+    const routePaths = {
+      root: "/",
+      home: "/home",
+      team: "/team",
+      partners: "/partners",
+      whitepaper: "/whitepaper",
+      faq: "/faq",
+      about: "/about",
+      map: "/map",
+      admin: "/admin",
+      thankyou: "/thank-you",
+      page: "/page",
+      signin: "/sign-in"
+    }
+    const dcsProps = {}   // <-- replace this once dcs v2 is installed
+
+    return (
+      <div id="dcs-root">
+        <div id="dcs-left">
+          <Router history={history}>
+            <Fragment>
+              <MainMenu />
+              <ScrollToTop>
+                <Route exact path={routePaths.root} component={Home} />
+                <Route exact path={routePaths.home} component={Home} />
+                <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />}/>
+                <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />}/>
+                <Route path={routePaths.map} component={Map_} />
+                <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
+                <Route exact path={routePaths.thankyou} component={CongratsModal} />
+                <Route exact path={`${routePaths.page}/:id`} render={props => <Page {...props} {...dcsProps} />}/>
+                <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
+                <Authentication />
+              </ScrollToTop>
+            </Fragment>
+          </Router>
+        </div>
+      </div>
+    );
+  }
+
+  renderNewEvent = ({ location, history }) => {
+    const { new: new_, edit } = qs.parse(location.search);
+    const isOpen = Boolean(new_ === "1" || (edit === "1" && window.__editData));
+
+    if (isOpen && !Meteor.userId()) {
+      sessionStorage.setItem("redirect", "/?new=1");
+      return <Redirect to="/sign-in" />;
+    }
+    /*
+    else if(!isOpen){
+      return <Redirect to='/home' />
+    }
+    */
+    console.log('passed in loc:\n', location)
+    console.log('passed in hist:\n', history)
+    return (
+      <NewEventLoadable isOpen={isOpen} location={location} history={history} />
+    );
+  };
+
+  /**
+   * This function manages the 'catch-all' route, serving two purposes.
+   * (1) open a model to create/edit event when there is the appropriate search string in the URL
+   * (2) for all other routes not specified, it will redirect to a 404 page
+   * Ideally we should be using React-router Switch to create a fallback 404 page...
+   * But this would require opening the new event modal without using the URL as a hook
+   * And this may break interactions with Docus (e.g. editing an event directly from the forum)
+   */ 
+  check404Route = (routes) => {
+    if (window.location.search === '?new=1' || window.location.search === '?edit=1') {
+      return this.renderNewEvent({ location: window.location, history })
+    }
+    if (!routes.some(e => e === window.location.pathname) && !window.location.pathname.includes('/page/')) {
+      return <Error404 />
+    }
+    return null
+  }
+}
+
+export default hot(module)(App);
+
+// A falsy pathname means the pathname won't be changed
+// An undefined query params means the query param won't be changed
+// A null query params means the query param will be removed
+function changeHistory({ pathname = null, params, push }) {
+  const p = Object.assign(params);
+  Object.keys(p).forEach(key => p[key] === undefined && delete p[key]);
+  const s = qs.parse(window.location.search);
+  Object.assign(s, p);
+  Object.keys(s).forEach(key => s[key] === null && delete s[key]);
+  const search = qs.stringify(s);
+  //############################################################################
+  // TERRIBLE WORKAROUND FOR ISSUE https://github.com/focallocal/fl-maps/issues/742
+  if (pathname && pathname !== location.pathname) {
+    console.log("##########", pathname + "?" + search);
+    location.href = pathname + "?" + search;
+    return;
+  }
+  //############################################################################
+  pathname = pathname || window.location.pathname;
+  if (push) {
+    history.push({ pathname, search });
+  } else {
+    history.replace({ pathname, search });
+  }
+}
+
+
+
+
+
+
+
+/**
+ * BELOW: Legacy DCS plugins and features, currently disconnected
+
+(1) IMPORTS:
+
+// DOCUSS
+import { dcs } from "/imports/client/utils/dcs-master";
+const discourseUrl = "https://discuss.focallocal.org/";
+//const discourseUrl = 'http://vps465971.ovh.net:3000'
+
+(2) STATE DECLARATIONS:
+
+// DOCUSS
+    this.state = {
+      showRightPanel: false,
+      balloonId: false,
+      dcsTags: null,
+      leftRightTransition: false
+    };
+
+(3) VARIABLES BOUND TO render() outside the return statement:
+(directly above the route variable declarations)
+
+    // let dcsClass = "";
+    // if (this.state.showRightPanel) {
+    //   dcsClass += "dcs-show-right ";
+    // }
+    // if (this.state.balloonId) {
+    //   dcsClass += "dcs-sel ";
+    // }
+
+    // const dcsProps = {
+    //   dcsTags: this.state.dcsTags,
+    //   dcsClick: this.dcsClick.bind(this)
+    // };
+
+(4) VARIABLES BOUND TO render() inside the return statement PART 1:
+(this was the original opening div wrapper tag, replaced currently by a blank <div>)
+
+<div id="dcs-root" className={dcsClass}>
+   <div
+          id="dcs-ghost"
+          style={{
+            visibility: this.state.leftRightTransition ? "visible" : "hidden"
+          }}
+        >
+          <div className="dcs-ghost-splitbar" />
+        </div>
+
+(5) VARIABLES BOUND TO render() inside the return statement PART 2:
+(these were right before the closing div wrapper tag)
+
+<div id="dcs-splitbar">
+          <div id="dcs-logo">
+            <img src="/images/dcs-logo.png" />
+          </div>
+          <div style={{ flex: "1 0 0" }} />
+          <div id="dcs-splitbar-btn" onClick={this.onDcsSplitbarClick}>
+            <div style={{ flex: "1 0 0" }} />
+            <div id="dcs-splitbar-btn-text">&gt;</div>
+            <div style={{ flex: "1 0 0" }} />
+          </div>
+          <div style={{ flex: "1 0 0" }} />
+        </div>
+
+        <iframe
+          id="dcs-right"
+          width="0"
+          frameBorder="0"
+          style={{ minWidth: 0 }}
+          src={discourseUrl}
+        />
+
+
+(6) FUNCTIONS INSIDE ComponentDidMount():
+
+// Hide the ghost when transition is over
     const dcsGhost = document.getElementById("dcs-ghost");
     dcsGhost.addEventListener("transitionend", () => {
       this.setState({ leftRightTransition: false });
@@ -129,9 +316,17 @@ class App extends Component {
     history.listen(() => {
       this.dcsUpdateFromUrl();
     });
-  }
 
-  dcsUpdateFromUrl() {
+
+
+
+
+
+(7) FUNCTIONS DEFINED SEPARATELY IN APP CLASS:
+
+(7a) BEFORE render()
+
+dcsUpdateFromUrl() {
     const { r, b, t, d } = qs.parse(window.location.search);
     if (!this.triggeredByDiscourse) {
       // Required to no changing the route again
@@ -169,96 +364,9 @@ class App extends Component {
     }
   }
 
-  render() {
-    let dcsClass = "";
-    if (this.state.showRightPanel) {
-      dcsClass += "dcs-show-right ";
-    }
-    if (this.state.balloonId) {
-      dcsClass += "dcs-sel ";
-    }
+(7b) AFTER render()
 
-    const dcsProps = {
-      dcsTags: this.state.dcsTags,
-      dcsClick: this.dcsClick.bind(this)
-    };
-
-    const routePaths = {
-      root: "/",
-      home: "/home",
-      team: "/team",
-      partners: "/partners",
-      whitepaper: "/whitepaper",
-      faq: "/faq",
-      about: "/about",
-      map: "/map",
-      admin: "/admin",
-      thankyou: "/thank-you",
-      page: "/page",
-      signin: "/sign-in"
-    }
-
-    return (
-      <div id="dcs-root" className={dcsClass}>
-        <div
-          id="dcs-ghost"
-          style={{
-            visibility: this.state.leftRightTransition ? "visible" : "hidden"
-          }}
-        >
-          <div className="dcs-ghost-splitbar" />
-        </div>
-
-        <div id="dcs-left">
-          <Router history={history}>
-            <Fragment>
-              <MainMenu />
-
-              <ScrollToTop>
-                <Route exact path={routePaths.root} component={Home} />
-                <Route exact path={routePaths.home} component={Home} />
-                <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />}/>
-                <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />}/>
-                <Route path={routePaths.map} component={Map_} />
-                <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
-                <Route exact path={routePaths.thankyou} component={CongratsModal} />
-                <Route exact path={`${routePaths.page}/:id`} render={props => <Page {...props} {...dcsProps} />}/>
-
-                <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
-
-                <Authentication />
-              </ScrollToTop>
-            </Fragment>
-          </Router>
-        </div>
-        <div id="dcs-splitbar">
-          <div id="dcs-logo">
-            <img src="/images/dcs-logo.png" />
-          </div>
-          <div style={{ flex: "1 0 0" }} />
-          <div id="dcs-splitbar-btn" onClick={this.onDcsSplitbarClick}>
-            <div style={{ flex: "1 0 0" }} />
-            <div id="dcs-splitbar-btn-text">&gt;</div>
-            <div style={{ flex: "1 0 0" }} />
-          </div>
-          <div style={{ flex: "1 0 0" }} />
-        </div>
-
-        <iframe
-          id="dcs-right"
-          width="0"
-          frameBorder="0"
-          style={{ minWidth: 0 }}
-          src={discourseUrl}
-        />
-      </div>
-    );
-  }
-
-  onDcsSplitbarClick = () => {
+onDcsSplitbarClick = () => {
     const showRightPanel = !this.state.showRightPanel;
     changeHistory({ params: { r: showRightPanel ? "1" : null }, push: true });
   };
@@ -280,69 +388,5 @@ class App extends Component {
     }
   }
 
-  renderNewEvent = ({ location, history }) => {
-    const { new: new_, edit } = qs.parse(location.search);
-    const isOpen = Boolean(new_ === "1" || (edit === "1" && window.__editData));
 
-    if (isOpen && !Meteor.userId()) {
-      sessionStorage.setItem("redirect", "/?new=1");
-      return <Redirect to="/sign-in" />;
-    }
-    /*
-    else if(!isOpen){
-      return <Redirect to='/home' />
-    }
-    */
-    console.log('passed in loc:\n', location)
-    console.log('passed in hist:\n', history)
-    return (
-      <NewEventLoadable isOpen={isOpen} location={location} history={history} />
-    );
-  };
-
-  /**
-   * This function manages the 'catch-all' route, serving two purposes.
-   * (1) open a model to create/edit event when there is the appropriate search string in the URL
-   * (2) for all other routes not specified, it will redirect to a 404 page
-   * Ideally we should be using React-router Switch to create a fallback 404 page...
-   * But this would require opening the new event modal without using the URL as a hook
-   * And this may break interactions with Docus (e.g. editing an event directly from the forum)
-   */ 
-  check404Route = (routes) => {
-    if (window.location.search === '?new=1' || window.location.search === '?edit=1') {
-      return this.renderNewEvent({ location: window.location, history })
-    }
-    if (!routes.some(e => e === window.location.pathname) && !window.location.pathname.includes('/page/')) {
-      return <Error404 />
-    }
-    return null
-  }
-}
-
-export default hot(module)(App);
-
-// A falsy pathname means the pathname won't be changed
-// An undefined query params means the query param won't be changed
-// A null query params means the query param will be removed
-function changeHistory({ pathname = null, params, push }) {
-  const p = Object.assign(params);
-  Object.keys(p).forEach(key => p[key] === undefined && delete p[key]);
-  const s = qs.parse(window.location.search);
-  Object.assign(s, p);
-  Object.keys(s).forEach(key => s[key] === null && delete s[key]);
-  const search = qs.stringify(s);
-  //############################################################################
-  // TERRIBLE WORKAROUND FOR ISSUE https://github.com/focallocal/fl-maps/issues/742
-  if (pathname && pathname !== location.pathname) {
-    console.log("##########", pathname + "?" + search);
-    location.href = pathname + "?" + search;
-    return;
-  }
-  //############################################################################
-  pathname = pathname || window.location.pathname;
-  if (push) {
-    history.push({ pathname, search });
-  } else {
-    history.replace({ pathname, search });
-  }
-}
+ */
