@@ -360,7 +360,7 @@ const markdownSection100 = md.render(`
 ---
 2. Decentralised Governance in blockchain suffers because players can utilise fiat to buy influence over the ecosystem’s direction and decision making; or centralised founders hold onto power. Undermining the decentralised goals they were founded upon.
 
-   We create reputation weighted governance earned through contributions to the ecosystem’s mission; also opening our governance model up to people outside of the fin-tech community
+   We create reputation weighted governance earned through contributions to the ecosystem’s mission, with sectional voting to prevent users being innundated, all conducted with oversight from the full community, and notifications sent to all for important votes.
 ---
 3. Volunteers by nature normally contribute a little, then move on. Leaving most volunteer projects constantly training new team members, at the heavy expense of efficiency. 
 
@@ -915,20 +915,28 @@ const markdownSection32 = md.render(`
 ## 7.10.
 
 **Decentralised Governance and Voting**
+
+Earning Votes:
+Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the community values statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool begin teaching users Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that users cannot buy influence. 
+
+The points earned which give users their voting ranks are on a centralised autonomous system so they cannot be traded (this is also used to teach the difference between a centralised system and decentralised one). Each token distributed creates a mirror token which has no value and is used only for voting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
+
+
+How Voting Works:
 Each area and section of the platform will have a discussion forum linked where users can discuss improvements to the operations and design of their community and platform, creating a mass decentralised governance system.
 
-Stage 1:
-Users wanting to raise a vote on a platform or operational change can post in the attached form calling for a vote, and explaining the need. If their post receives likes from 20% of users subscribed to that thread who have been active in the past 6 months, then a vote on the proposed change takes place. The sections forum must have a minimum of 10 members subscribed, otherwise the proposer will need to encourage members to join it before suggesting a vote. (Figures will be updated as the systems norms and culture emerge).
+Users wanting to raise a vote on a platform or operational change can post in the attached form calling for a vote, and explaining the need. Others will vote for or against, with 60% needed to pass. 
 
-Stage 2: 
-Two threads are created in the section, and cross-posted into the forum’s voting section for community-wide visibility. One thread for arguments for, and one for arguments against the change. 
+Users are welcomed to comment their argument in the threads for, and against, to guide voting. The threads will be ordered by likes received so the strongest arguments float to the top.
 
-Stage 3:
-Users are all welcome to comment their argument in the threads for and against, the threads will be ordered by likes received so the strongest arguments float to the top.
 
-Stage 4:
-After reading the topic users can vote on the topic ‘for’ or ‘against’ the change. If the ‘for’ topic receives more than 60% of votes, after weighting is applied, the change is agreed and will be implemented.
+Sectional Voting:
+An issue faced by many decentralised voting systems is that users are either inundated with votes, or not consulted on smaller issues. Our wide-ranging ecosystem is designed for small groups to form around specific teams relating to skills (such as Marketing, Graphic Design, SEO, etc), and also around specific projects and activities. These groups need to be given autonomy to make decisions in their areas of interest/expertise, yet these decisions must have oversight of the whole community to prevent pockets operating their on a different agenda to the whole. 
 
+This is solved by creating streamlined voting system, where all votes are created and voted on in their specific area, but also appear in a central voting thread to create constant oversight from the wider community, who can join the vote and call wider attention, if something is occurring which flows upstream against the community values.
+
+Key Votes:
+Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
 
 
 Protection from Brigading: 
