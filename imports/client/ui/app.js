@@ -65,13 +65,14 @@ class App extends Component {
       signin: "/sign-in"
     }
     const dcsProps = {}   // <-- replace this once dcs v2 is installed
+    const standaloneMode = !this.checkiFrame()
 
     return (
       <div id="dcs-root">
         <div id="dcs-left">
           <Router history={history}>
             <Fragment>
-              <MainMenu />
+              {standaloneMode && <MainMenu />}
               <ScrollToTop>
                 <Route exact path={routePaths.root} component={Home} />
                 <Route exact path={routePaths.home} component={Home} />
@@ -92,6 +93,14 @@ class App extends Component {
         </div>
       </div>
     );
+  }
+
+  checkiFrame = () => {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
   }
 
   renderNewEvent = ({ location, history }) => {
