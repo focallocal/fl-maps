@@ -919,7 +919,7 @@ const markdownSection32 = md.render(`
 Earning Votes:
 Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the community values statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool begin teaching users Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that users cannot buy influence. 
 
-The points earned which give users their voting ranks are on a centralised autonomous system so they cannot be traded (the two separate sytems are also used to teach the difference between a centralised token and decentralised one). Each token distributed creates a mirror token which has no value and is used only for voting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
+The points earned which give users their voting ranks are on a centralised autonomous system so they cannot be traded (the two separate sytems are also used to teach the difference between a centralised token and decentralised one). The centralised ledger of every token mined (earned) is used to assign ranks for vote weighting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
 
 
 How Voting Works:
