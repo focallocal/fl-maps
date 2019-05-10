@@ -27,14 +27,7 @@ import { Error404 } from "./pages/Errors";
 import ScrollToTop from "./components/ScrollToTop";
 import Admin from "./pages/Admin/index"
 
-// Styles and Other
-import "./style.scss";
-
 class App extends Component {
-  constructor() {
-    super();
-  }
-
   componentDidMount() {
     // Add the touch-screen flag to the <html> tag
     const touchScreen =
@@ -68,30 +61,26 @@ class App extends Component {
     const standaloneMode = !this.checkiFrame()
 
     return (
-      <div id="dcs-root">
-        <div id="dcs-left">
-          <Router history={history}>
-            <Fragment>
-              {standaloneMode && <MainMenu />}
-              <ScrollToTop>
-                <Route exact path={routePaths.root} component={Home} />
-                <Route exact path={routePaths.home} component={Home} />
-                <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />}/>
-                <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />}/>
-                <Route path={routePaths.map} component={Map_} />
-                <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
-                <Route exact path={routePaths.thankyou} component={CongratsModal} />
-                <Route exact path={`${routePaths.page}/:id`} render={props => <Page {...props} {...dcsProps} />}/>
-                <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
-                <Authentication />
-              </ScrollToTop>
-            </Fragment>
-          </Router>
-        </div>
-      </div>
+      <Router history={history}>
+        <Fragment>
+          {standaloneMode && <MainMenu />}
+          <ScrollToTop>
+            <Route exact path={routePaths.root} component={Home} />
+            <Route exact path={routePaths.home} component={Home} />
+            <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
+            <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
+            <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
+            <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />}/>
+            <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />}/>
+            <Route path={routePaths.map} component={Map_} />
+            <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
+            <Route exact path={routePaths.thankyou} component={CongratsModal} />
+            <Route exact path={`${routePaths.page}/:id`} component={Page} />}/>
+            <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
+            <Authentication />
+          </ScrollToTop>
+        </Fragment>
+      </Router>
     );
   }
 
@@ -143,37 +132,6 @@ class App extends Component {
 }
 
 export default hot(module)(App);
-
-// A falsy pathname means the pathname won't be changed
-// An undefined query params means the query param won't be changed
-// A null query params means the query param will be removed
-function changeHistory({ pathname = null, params, push }) {
-  const p = Object.assign(params);
-  Object.keys(p).forEach(key => p[key] === undefined && delete p[key]);
-  const s = qs.parse(window.location.search);
-  Object.assign(s, p);
-  Object.keys(s).forEach(key => s[key] === null && delete s[key]);
-  const search = qs.stringify(s);
-  //############################################################################
-  // TERRIBLE WORKAROUND FOR ISSUE https://github.com/focallocal/fl-maps/issues/742
-  if (pathname && pathname !== location.pathname) {
-    console.log("##########", pathname + "?" + search);
-    location.href = pathname + "?" + search;
-    return;
-  }
-  //############################################################################
-  pathname = pathname || window.location.pathname;
-  if (push) {
-    history.push({ pathname, search });
-  } else {
-    history.replace({ pathname, search });
-  }
-}
-
-
-
-
-
 
 
 /**
@@ -397,5 +355,31 @@ onDcsSplitbarClick = () => {
     }
   }
 
+
+// A falsy pathname means the pathname won't be changed
+// An undefined query params means the query param won't be changed
+// A null query params means the query param will be removed
+function changeHistory({ pathname = null, params, push }) {
+  const p = Object.assign(params);
+  Object.keys(p).forEach(key => p[key] === undefined && delete p[key]);
+  const s = qs.parse(window.location.search);
+  Object.assign(s, p);
+  Object.keys(s).forEach(key => s[key] === null && delete s[key]);
+  const search = qs.stringify(s);
+  //############################################################################
+  // TERRIBLE WORKAROUND FOR ISSUE https://github.com/focallocal/fl-maps/issues/742
+  if (pathname && pathname !== location.pathname) {
+    console.log("##########", pathname + "?" + search);
+    location.href = pathname + "?" + search;
+    return;
+  }
+  //############################################################################
+  pathname = pathname || window.location.pathname;
+  if (push) {
+    history.push({ pathname, search });
+  } else {
+    history.replace({ pathname, search });
+  }
+}
 
  */
