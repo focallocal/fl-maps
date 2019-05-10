@@ -57,7 +57,6 @@ class App extends Component {
       page: "/page",
       signin: "/sign-in"
     }
-    const dcsProps = {}   // <-- replace this once dcs v2 is installed
     const standaloneMode = !this.checkiFrame()
 
     return (
@@ -67,13 +66,13 @@ class App extends Component {
           <ScrollToTop>
             <Route exact path={routePaths.root} component={Home} />
             <Route exact path={routePaths.home} component={Home} />
-            <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />}/>
-            <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />}/>
+            <Route exact path={routePaths.team} component={Team} />
+            <Route exact path={routePaths.partners} component={Partners} />
+            <Route exact path={routePaths.whitepaper} component={Whitepaper} />
+            <Route exact path={routePaths.faq} component={Faq}/>
+            <Route exact path={routePaths.about} component={About}/>
             <Route path={routePaths.map} component={Map_} />
-            <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
+            <Route exact path={routePaths.admin} component={Admin} /> 
             <Route exact path={routePaths.thankyou} component={CongratsModal} />
             <Route exact path={`${routePaths.page}/:id`} component={Page} />}/>
             <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
