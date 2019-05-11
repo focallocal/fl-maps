@@ -28,3 +28,5 @@ aldeed:collection2@3.0.0
 mdg:validated-method
 ddp-rate-limiter
 alanning:roles
+sylque:dcs-simple-route-matcher
+sylque:accounts-discourse
