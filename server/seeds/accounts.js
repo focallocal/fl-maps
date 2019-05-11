@@ -38,9 +38,11 @@ if (settings !== undefined) {
     const serviceName = "google";
     const service = services[serviceName];
 
-    return {
-      name: service.name,
-      picture: service.picture
-    };
+    return service 
+      ? {
+        name: service.name,
+        picture: service.picture
+      }
+      : undefined
   }
 }
