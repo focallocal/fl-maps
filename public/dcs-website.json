@@ -1,0 +1,13 @@
+{
+  "$schema": "https://sylque.github.io/dcs-website-schema/json/schema.json",
+
+  "websiteName": "fl_maps",
+
+  "dcsTag": {
+    "maxPageNameLength": 6,
+    "maxTriggerIdLength": 9,
+    "forceLowercase": true
+  },
+
+  "dynamicPages": { "url": "/", "namePrefix": "m_", "homePageName": "m_home" }
+}
