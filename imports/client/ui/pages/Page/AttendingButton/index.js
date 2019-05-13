@@ -100,8 +100,10 @@ class AttendingButton extends Component {
   }
 
   redirectToLogin = () => {
-    sessionStorage.setItem('redirect', '/page/' + this.props._id)
-    this.props.history.push('/sign-in')
+    // DOCUSS INTEGRATION - COMMENTED THE FOLLOWING:
+    //sessionStorage.setItem('redirect', '/page/' + this.props._id)
+    //this.props.history.push('/sign-in')
+    throw new Error('not implemented')
   }
 }
 

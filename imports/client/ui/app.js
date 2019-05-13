@@ -61,8 +61,7 @@ class App extends Component {
       map: "/map",
       admin: "/admin",
       thankyou: "/thank-you",
-      page: "/page",
-      signin: "/sign-in"
+      page: "/page"
     }
     const standaloneMode = !inIFrame()
 
@@ -89,20 +88,17 @@ class App extends Component {
     );
   }
 
-  /*
-  <Route exact path='/sign-in' component={arState} />
-  <Route exact path='/sign-up' component={arState} />
-  <Route exact path='/sign-out' component={signOut} />
-  */
-
-
   renderNewEvent = ({ location, history }) => {
     const { new: new_, edit } = qs.parse(location.search);
     const isOpen = Boolean(new_ === "1" || (edit === "1" && window.__editData));
 
     if (isOpen && !Meteor.userId()) {
+      /*
       sessionStorage.setItem("redirect", "/?new=1");
       return <Redirect to="/sign-in" />;
+      */
+      alert('You need to login before you can create an event')
+      return null
     }
     /*
     else if(!isOpen){
