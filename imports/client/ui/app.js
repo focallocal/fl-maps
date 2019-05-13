@@ -196,7 +196,11 @@ class App extends Component {
       admin: "/admin",
       thankyou: "/thank-you",
       page: "/page",
-      signin: "/sign-in"
+      signin: "/sign-in",
+      signup: "/sign-up",
+      change_password: "/change-password",
+      forgot_password: "/forgot-password",
+      sso_auth: "/sso_auth"
     }
 
     return (
@@ -313,8 +317,10 @@ class App extends Component {
     if (window.location.search === '?new=1' || window.location.search === '?edit=1') {
       return this.renderNewEvent({ location: window.location, history })
     }
-    if (!routes.some(e => e === window.location.pathname) && !window.location.pathname.includes('/page/')) {
-      return <Error404 />
+    if (!routes.some(e => e === window.location.pathname)
+      && !window.location.pathname.includes('/page/')
+      && !window.location.pathname.includes('reset-password')) {
+        return <Error404 />
     }
     return null
   }
