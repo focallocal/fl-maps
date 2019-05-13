@@ -16,7 +16,6 @@ import Team from "./pages/TeamMembers";
 import Faq from "./pages/Faq";
 import Partners from "./pages/Partners";
 import About from "./pages/About";
-import Authentication from "./pages/Authentication";
 import Map_ from "./pages/Map";
 import NewEventLoadable from "./pages/NewEvent/loadable";
 import CongratsModal from "./pages/NewEvent/CongratsModal";
@@ -27,14 +26,15 @@ import { Error404 } from "./pages/Errors";
 import ScrollToTop from "./components/ScrollToTop";
 import Admin from "./pages/Admin/index"
 
-// Styles and Other
-import "./style.scss";
+// Docuss
+import { comToPlugin, inIFrame } from 'dcs-client'
+import { SimpleRouteMatcher } from 'meteor/sylque:dcs-simple-route-matcher'
+import { runReactRouterSync } from 'dcs-react-router-sync'
+import websiteJSON from '../../../public/dcs-website.json'
+
+//------------------------------------------------------------------------------
 
 class App extends Component {
-  constructor() {
-    super();
-  }
-
   componentDidMount() {
     // Add the touch-screen flag to the <html> tag
     const touchScreen =
@@ -61,46 +61,31 @@ class App extends Component {
       map: "/map",
       admin: "/admin",
       thankyou: "/thank-you",
-      page: "/page",
-      signin: "/sign-in"
+      page: "/page"
     }
-    const dcsProps = {}   // <-- replace this once dcs v2 is installed
-    const standaloneMode = !this.checkiFrame()
+    const standaloneMode = !inIFrame()
 
     return (
-      <div id="dcs-root">
-        <div id="dcs-left">
-          <Router history={history}>
-            <Fragment>
-              {standaloneMode && <MainMenu />}
-              <ScrollToTop>
-                <Route exact path={routePaths.root} component={Home} />
-                <Route exact path={routePaths.home} component={Home} />
-                <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
-                <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />}/>
-                <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />}/>
-                <Route path={routePaths.map} component={Map_} />
-                <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
-                <Route exact path={routePaths.thankyou} component={CongratsModal} />
-                <Route exact path={`${routePaths.page}/:id`} render={props => <Page {...props} {...dcsProps} />}/>
-                <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
-                <Authentication />
-              </ScrollToTop>
-            </Fragment>
-          </Router>
-        </div>
-      </div>
+      <Router history={history}>
+        <Fragment>
+          {standaloneMode && <MainMenu />}
+          <ScrollToTop>
+            <Route exact path={routePaths.root} component={Home} />
+            <Route exact path={routePaths.home} component={Home} />
+            <Route exact path={routePaths.team} component={Team} />
+            <Route exact path={routePaths.partners} component={Partners} />
+            <Route exact path={routePaths.whitepaper} component={Whitepaper} />
+            <Route exact path={routePaths.faq} component={Faq}/>
+            <Route exact path={routePaths.about} component={About}/>
+            <Route path={routePaths.map} component={Map_} />
+            <Route exact path={routePaths.admin} component={Admin} /> 
+            <Route exact path={routePaths.thankyou} component={CongratsModal} />
+            <Route exact path={`${routePaths.page}/:id`} component={Page} />}/>
+            <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
+          </ScrollToTop>
+        </Fragment>
+      </Router>
     );
-  }
-
-  checkiFrame = () => {
-    try {
-      return window.self !== window.top;
-    } catch (e) {
-      return true;
-    }
   }
 
   renderNewEvent = ({ location, history }) => {
@@ -108,8 +93,12 @@ class App extends Component {
     const isOpen = Boolean(new_ === "1" || (edit === "1" && window.__editData));
 
     if (isOpen && !Meteor.userId()) {
+      /*
       sessionStorage.setItem("redirect", "/?new=1");
       return <Redirect to="/sign-in" />;
+      */
+      alert('You need to login before you can create an event')
+      return null
     }
     /*
     else if(!isOpen){
@@ -144,258 +133,24 @@ class App extends Component {
 
 export default hot(module)(App);
 
-// A falsy pathname means the pathname won't be changed
-// An undefined query params means the query param won't be changed
-// A null query params means the query param will be removed
-function changeHistory({ pathname = null, params, push }) {
-  const p = Object.assign(params);
-  Object.keys(p).forEach(key => p[key] === undefined && delete p[key]);
-  const s = qs.parse(window.location.search);
-  Object.assign(s, p);
-  Object.keys(s).forEach(key => s[key] === null && delete s[key]);
-  const search = qs.stringify(s);
-  //############################################################################
-  // TERRIBLE WORKAROUND FOR ISSUE https://github.com/focallocal/fl-maps/issues/742
-  if (pathname && pathname !== location.pathname) {
-    console.log("##########", pathname + "?" + search);
-    location.href = pathname + "?" + search;
-    return;
-  }
-  //############################################################################
-  pathname = pathname || window.location.pathname;
-  if (push) {
-    history.push({ pathname, search });
-  } else {
-    history.replace({ pathname, search });
-  }
+//------------------------------------------------------------------------------
+
+// Docuss
+
+if (inIFrame()) {
+  comToPlugin.connect({
+    discourseOrigin: '*',
+    timeout: 10000,
+    onTimeout: () => console.log('Could not connect to the Docuss plugin')
+  })
+
+  const routeMatcher = new SimpleRouteMatcher({
+    homePageName: websiteJSON.dynamicPages.homePageName,
+    pageNamePrefix: websiteJSON.dynamicPages.namePrefix,
+    maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength
+  })
+  
+  runReactRouterSync({ browserHistory: history, routeMatcher })  
 }
 
-
-
-
-
-
-
-/**
- * BELOW: Legacy DCS plugins and features, currently disconnected
-
-(1) IMPORTS:
-
-// DOCUSS
-import { dcs } from "/imports/client/utils/dcs-master";
-const discourseUrl = "https://discuss.focallocal.org/";
-//const discourseUrl = 'http://vps465971.ovh.net:3000'
-
-(2) STATE DECLARATIONS:
-
-// DOCUSS
-    this.state = {
-      showRightPanel: false,
-      balloonId: false,
-      dcsTags: null,
-      leftRightTransition: false
-    };
-
-(3) VARIABLES BOUND TO render() outside the return statement:
-(directly above the route variable declarations)
-
-    // let dcsClass = "";
-    // if (this.state.showRightPanel) {
-    //   dcsClass += "dcs-show-right ";
-    // }
-    // if (this.state.balloonId) {
-    //   dcsClass += "dcs-sel ";
-    // }
-
-    // const dcsProps = {
-    //   dcsTags: this.state.dcsTags,
-    //   dcsClick: this.dcsClick.bind(this)
-    // };
-
-(4) VARIABLES BOUND TO render() inside the return statement PART 1:
-(this was the original opening div wrapper tag, replaced currently by a blank <div>)
-
-<div id="dcs-root" className={dcsClass}>
-   <div
-          id="dcs-ghost"
-          style={{
-            visibility: this.state.leftRightTransition ? "visible" : "hidden"
-          }}
-        >
-          <div className="dcs-ghost-splitbar" />
-        </div>
-
-(5) VARIABLES BOUND TO render() inside the return statement PART 2:
-(these were right before the closing div wrapper tag)
-
-<div id="dcs-splitbar">
-          <div id="dcs-logo">
-            <img src="/images/dcs-logo.png" />
-          </div>
-          <div style={{ flex: "1 0 0" }} />
-          <div id="dcs-splitbar-btn" onClick={this.onDcsSplitbarClick}>
-            <div style={{ flex: "1 0 0" }} />
-            <div id="dcs-splitbar-btn-text">&gt;</div>
-            <div style={{ flex: "1 0 0" }} />
-          </div>
-          <div style={{ flex: "1 0 0" }} />
-        </div>
-
-        <iframe
-          id="dcs-right"
-          width="0"
-          frameBorder="0"
-          style={{ minWidth: 0 }}
-          src={discourseUrl}
-        />
-
-
-(6) FUNCTIONS INSIDE ComponentDidMount():
-
-// Hide the ghost when transition is over
-    const dcsGhost = document.getElementById("dcs-ghost");
-    dcsGhost.addEventListener("transitionend", () => {
-      this.setState({ leftRightTransition: false });
-    });
-
-    // Connect to the plugin in Discourse
-    dcs
-      .connect({
-        discourseWindow: document.getElementById("dcs-right").contentWindow,
-        discourseOrigin: new URL(discourseUrl).origin,
-        timeout: 15000
-      })
-      .catch(err => {
-        // Timeout error
-        console.log(err);
-      });
-
-    // Set up callbacks to handle Discourse route changes (when the user
-    // clicks on something (ex: his profile) in Discourse)
-    dcs.onHome(() => {
-      this.triggeredByDiscourse = true;
-      changeHistory({
-        params: { r: "1", b: null, t: null, d: null },
-        push: false
-      });
-    });
-    dcs.onPath(path => {
-      this.triggeredByDiscourse = true;
-      changeHistory({
-        params: { r: undefined, b: null, t: null, d: path },
-        push: false
-      });
-    });
-    dcs.onTagOrTopic((tag, topicId) => {
-      if (tag.includes('whitepaper')) {
-        changeHistory({
-          pathname: "/whitepaper",
-          params: { r: "1", b: tag.substring(17), t: topicId || null },
-          push: false
-        });
-      } else {
-        Meteor.call("Events.getEventId", { discourseTag: tag }, (err, res) => {
-          if (err) {
-            console.log("Events.getEventId Error:", err);
-          } else {
-            this.triggeredByDiscourse = true;
-            changeHistory({
-              pathname: "/page/" + res,
-              params: { r: "1", b: tag.substring(17), t: topicId || null },
-              push: false
-            });
-          }
-        });
-      }
-    });
-
-    // Setup callbacks to handle other Discourse events
-    dcs.onUserChange(user => {
-      //user && console.log('Unread notifications: ', user.unreadNotifications)
-    });
-    dcs.onDcsTags(dcsTags => {
-      this.setState({ dcsTags });
-    });
-
-    // Update the Discourse route. DON'T DO THIS IMMEDIATELY, otherwise
-    // transitions won't trigger between the two states
-    setTimeout(() => {
-      this.dcsUpdateFromUrl();
-    }, 0);
-    history.listen(() => {
-      this.dcsUpdateFromUrl();
-    });
-
-
-
-
-
-
-(7) FUNCTIONS DEFINED SEPARATELY IN APP CLASS:
-
-(7a) BEFORE render()
-
-dcsUpdateFromUrl() {
-    const { r, b, t, d } = qs.parse(window.location.search);
-    if (!this.triggeredByDiscourse) {
-      // Required to no changing the route again
-      if (t) {
-        dcs.gotoTopic(t);
-      } else if (b) {
-        const prefix = "/page/";
-        if (window.location.pathname.startsWith(prefix)) {
-          const pageId = window.location.pathname.substring(prefix.length);
-          const tag = "dcs-" + pageId.substring(0, 12).toLowerCase() + "-" + b;
-          dcs.gotoTag(tag);
-        } else if (window.location.pathname.startsWith('/')) {
-          const pathname = window.location.pathname
-          const endIndex = pathname.search('\\?') > -1 ? pathname.search('\\?') : pathname.length
-          const tagLocation = pathname.slice(pathname.search('/') + 1, endIndex)
-          const tag = "dcs-" + tagLocation + "-" + b
-          dcs.gotoTag(tag)
-        }
-      } else if (d) {
-        dcs.gotoPath(d);
-      } else {
-        dcs.gotoHome();
-      }
-    }
-    this.triggeredByDiscourse = false;
-    // Don't set leftRightTransition if you're not sure this will trigger a transition!
-    const layoutChange =
-      r !== this.state.showRightPanel || !!b !== !!this.state.balloonId;
-    if (layoutChange) {
-      this.setState({
-        showRightPanel: r,
-        balloonId: b,
-        leftRightTransition: true
-      });
-    }
-  }
-
-(7b) AFTER render()
-
-onDcsSplitbarClick = () => {
-    const showRightPanel = !this.state.showRightPanel;
-    changeHistory({ params: { r: showRightPanel ? "1" : null }, push: true });
-  };
-
-  dcsClick(balloonId) {
-    if (balloonId) {
-      if (balloonId.length > 3 || balloonId.toLowerCase() !== balloonId) {
-        throw new Error(`Invalid balloonId "${balloonId}"`);
-      }
-      changeHistory({
-        params: { r: "1", b: balloonId, t: null, d: null },
-        push: true
-      });
-    } else {
-      changeHistory({
-        params: { r: null, b: null, t: null, d: null },
-        push: true
-      });
-    }
-  }
-
-
- */
+//------------------------------------------------------------------------------

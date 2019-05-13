@@ -5,23 +5,25 @@
     "loggedIn": [
       {
         "title": "Sign out",
-        "route": "/sign-out"
+        "link": "javascript:Meteor.logout();"
       }
     ],
     "loggedOut": [
       {
         "title": "Sign in",
-        "route": "/sign-in"
+        "link": "?discourse-login=true",
+        "targetSelf": true
       },
       {
         "title": "Sign up",
-        "route": "/sign-up"
+        "link": "?discourse-login=true",
+        "targetSelf": true
       }
     ],
       "Admin": [
       {
         "title": "Sign out",
-        "route": "/sign-out"
+        "link": "javascript:Meteor.logout();"
       },
       {
         "title": "Admin",

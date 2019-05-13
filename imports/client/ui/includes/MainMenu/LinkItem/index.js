@@ -16,7 +16,7 @@ const LinkItem = ({ item, onClick }) => {
     </NavItem>
   )
     : <NavItem>
-      <NavLink href={item.link} target='__blank'>
+      <NavLink href={item.link} target={item.targetSelf ? '_self' : '_blank'}>
         <i className={item.icon}></i>
         <div>{item.title}</div>
       </NavLink>
