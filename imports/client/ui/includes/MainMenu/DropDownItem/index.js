@@ -36,7 +36,7 @@ class DropDownItem extends Component {
             {item.content.map((item_, index) => {
               // Distingiush between link and route-link
               return item_.link
-                ? <DropdownItem key={index} tag='a' href={item_.link} target='__blank'>{item_.title}</DropdownItem>
+                ? <DropdownItem key={index} tag='a' href={item_.link} target={item_.targetSelf ? '_self' : '_blank'}>{item_.title}</DropdownItem>
                 : <DropdownItem key={index} tag={NavLink} to={item_.route}>{item_.title}</DropdownItem>
             })}
           </DropdownMenu>

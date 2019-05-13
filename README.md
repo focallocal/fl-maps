@@ -244,7 +244,6 @@ The following is a list of the packages that you should be familiar with:
 #### Meteor Packages
 
 * [react-meteor-data](https://github.com/meteor/react-packages/) - Get reactive updates from the server into components
-* [meteoreact:accounts](https://github.com/royGil/accounts-react/) - Automatic generation of user related forms
 * [mdg:validated-method](https://github.com/meteor/validated-method) - A powerful wrapper for meteor's methods
 
 #### Npm Packages

@@ -16,7 +16,6 @@ import Team from "./pages/TeamMembers";
 import Faq from "./pages/Faq";
 import Partners from "./pages/Partners";
 import About from "./pages/About";
-import Authentication from "./pages/Authentication";
 import Map_ from "./pages/Map";
 import NewEventLoadable from "./pages/NewEvent/loadable";
 import CongratsModal from "./pages/NewEvent/CongratsModal";
@@ -84,12 +83,18 @@ class App extends Component {
             <Route exact path={routePaths.thankyou} component={CongratsModal} />
             <Route exact path={`${routePaths.page}/:id`} component={Page} />}/>
             <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
-            <Authentication />
           </ScrollToTop>
         </Fragment>
       </Router>
     );
   }
+
+  /*
+  <Route exact path='/sign-in' component={arState} />
+  <Route exact path='/sign-up' component={arState} />
+  <Route exact path='/sign-out' component={signOut} />
+  */
+
 
   renderNewEvent = ({ location, history }) => {
     const { new: new_, edit } = qs.parse(location.search);

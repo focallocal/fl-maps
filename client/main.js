@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Meteor } from 'meteor/meteor'
-import { AccountsReact } from 'meteor/meteoreact:accounts'
-import * as AccountsReactstrap from './accounts-reactstrap'
 import App from '/imports/client'
 
 import '/imports/client/stylesheets/main.scss'
@@ -11,8 +9,6 @@ Meteor.startup(() => {
   ensureSettingsFile()
   determineMapType()
   loadGoogleMaps()
-
-  AccountsReact.style(AccountsReactstrap)
 
   Meteor.subscribe('users.user') // subscribe to updated publication with custom fields
 

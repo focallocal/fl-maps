@@ -18,12 +18,7 @@ ardatan:webpack-dev-middleware
 meteoreact:fix-unsupported-properties
 
 react-meteor-data
-accounts-password
-meteoreact:accounts
 service-configuration
-accounts-google
-accounts-facebook
-accounts-twitter
 aldeed:collection2@3.0.0
 mdg:validated-method
 ddp-rate-limiter
