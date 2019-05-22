@@ -812,7 +812,17 @@ const markdownSection24 = md.render(`
 
 [view live beta](https://action.focallocal.org/)
 **The Action Center**
-An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. The platform is being designed based on implementing Scrum and Agile project management principles to solve societal issues and create efficient, flexible and effective teams. The Action Center (and rest of the site) is also being designed by teams using Scrum and Agile and so it will adapt and evolve to meet users needs. The current Action Center can be considered to be a working template to begin building from.
+An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. In today's GDP based world innovative ideas to benefit human socieity are heavily dependent on whether the person having them has the capacity and detrmination to either find funding and build them. This is an extremely inefficient system where the majority of great ideas to impact the world are lost. 
+
+Our Action Center creates a new path for ideas which benefit humanity to be built. Anyone can suggest an idea using our one page only form. Other users vote on the ones they believe will have the largest social impact. The winners will be built by our community using our Micro-Volunteering model. These projects have no owner, no set team building them, and require no funding. 
+
+They begin with a great idea, and are then built by our community who receive our tokens in reward for their efforts.
+
+The number of projects being worked on at any one time is limited based upon how many active users the Action Center had the previous month, to direct energy onto delivering projects rather than beginning them en-mass.
+
+The platform is being designed based on implementing Scrum and Agile project management principles to solve societal issues and create efficient, flexible and effective teams. The Action Center (and rest of the site) is also being designed by teams using Scrum and Agile and so it will adapt and evolve to meet users needs. The current Action Center can be considered to be a working template to begin building from.
+
+A core team of 9 users forms, creates a 'definition of done' and breaks the entire project build up into bite-sized chunks which anyone in the wider community can tackle (this list can be updated as the builds needs change).
 
 Each ‘Mission’ should take a user between 30 mins and one hour, if longer is needed then it needs to be divided into smaller chunks. Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
 
@@ -820,13 +830,14 @@ In the Action Center users move a 'mission' into the 'Doing' list to claim it (a
 
 Tokens are distributed for completed tasks, with a two week delay so other users, and moderators can monitor for any abuse of the system.
 
+Each month the Core Team of 9 members changes, based on who was most active on the project in the previous month (and who wants to be in the core team). Create a dynamic system of delievering projects.
+
 The Action Center helps users to browse projects, see all the resources available for each, and either find ‘Missions’, or ‘Discuss’ the project with others users in our Discourse forum.
 
-The number of currently active global projects is limited to focus attention onto the existing ones.
 
 New ideas for Public Happiness projects can be submitted by any user, to be discussed, improved, and voted onto the platform for others users to join in and build.
 
-Local projects are open for anyone to build/try out where they live, which may require gathering their own team early on.
+Localised projects are smaller and run on a mirrored version to the main Action Center where the entire global Public Happiness community focuses their energy on building projects. These are open for anyone to build/try out where they live, which may require gathering their own team early on.
 
 `)
 
