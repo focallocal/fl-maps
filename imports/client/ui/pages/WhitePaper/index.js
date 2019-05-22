@@ -320,13 +320,17 @@ Forum specific plug-ins can also be built easily through the existing Discourse 
 const markdownSection103 = md.render(`
 
 **Foreword:**
-I've lived about as frugal a life as is possible in the Western World because I've always disliked money.  It so often seems to have a negative effect on people and society.
+We are Tokenising Happiness to bring more peace and well-being into the World. 
 
-The crypto-world has me intensely curious, because money can be different there. I wanted to learn more and see if it's possible to design a form of money that is intrinsically tied to creating societal value.  Something to act as a band-aid on today’s ‘profit at all costs’ capitalism which has blind-spots for large areas critical to producing healthy, happy societies. This is caused by foundations measuring all progress and success as an increase in GDP. Anything which doesn’t is, by design, an after-thought.
+As a global community of volunteers our mission is to build positive projects, and get people into the streets, to tackle societal issues where they live using creative and positive ideas. Our actions are often global in scale, but always led by local people so as to empower communities to create change themselves. We call this 'Local Action for Global Change'. 
+
+We aren't charities, and we are also not social enterprises. These are organsiations who operate in today's economy, with most spending a significant portion of their energy and time chasing, or begging for funding. We are just people coming together to build positive change.
+
+The crypto-world has me intensely curious. I wanted to learn more and see if it's possible to design a new form of money that is intrinsically tied to creating societal value.  Something to act as a band-aid on today’s ‘profit at all costs’ capitalism which has blind-spots for large areas that are critical to producing healthy, happy societies. 
 
 GDP was designed by Simon Kuznets, in 1937 as a temporary post war recovery system, but the beast got out of control. The damage caused to humanity by basing our decision making processes on measurements of GDP isn’t even contentious any more. [Here’s a list](https://news.focallocal.org/beyond-gdp-key-quotes-from-economic-and-world-leaders/) of global and economic leaders stating the need to move past it.
 
-This token is an effort to create a new monetary and economic system. One which focuses energy onto these essential societal areas which are currently overlooked. An effort to create a healthier and happier world.
+This token is an effort to create an entirely new economic system. One which focuses energy onto these essential societal areas which are currently overlooked and ignored in GDP based economies. To create a healthier and happier world, where anyone benefitting their society is rewarded for their efforts - as this is what economic systems were designed for.
 
 
 **Intro:**
@@ -335,9 +339,9 @@ If the right people get behind this it will have a profound effect on increasing
 *'Those who love peace must learn to organize as effectively as those who love war'*  - Martin Luther King
 
 
-Our community of volunteers has been gradually building a platform to host this vision for over 3 years now. The platform is for groups from around the world, anyone who is using positive actions to promote peace and well-being through building human and community connection. 
+Our community of volunteers has been gradually building a platform to host this vision for over 3 years now. The platform is for groups from around the world, anyone who is using positive actions to promote peace and well-being through building human and community connection in a way that is not currently rewarded in our GDP based system (or for those who are but want to try out a new path to realise their vision). 
 
-It's provides a space for our individual networks to grow into something larger. A global movement for a world with more peace and happiness in it. We’ve reached the point where it is ready to begin hosting communities who will contribute to it governance and improving the platform. You can take a look here: [focallocal.org ](https://focallocal.org)
+It's provides a space for our existing Public Happiness networks to unite and grow into something larger than the sum of their parts, while retaining their unique and indiviual natures. A global movement for a world with more peace and happiness in it. We’ve reached the point where it is ready to begin hosting communities who will contribute to its governance and to improving the platform. You can take a look here: [focallocal.org ](https://focallocal.org)
 
 Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. 
 
@@ -352,7 +356,7 @@ If you'd like a Google Doc version to download or put through an audio reader ju
 
 const markdownSection100 = md.render(`
 
-[Version 1 - please discuss which version is best]
+[Version 1 - which do you prefer? The better version will become our pitch deck]
 
 1. Our ‘profit at all cost’ GDP based economy has failed to provide healthy communities to live in, and it has damaged our planet. It has borrowed from its children's wealth, creating nations where entire generations are largely unable to own a home. It has created a work/life balance where people are living under so much pressure that they push back basic human norms, like starting a family, because it's too expensive. 
 
@@ -433,6 +437,8 @@ Public Happiness Token is a currency which is intrinsically tied to creating soc
 
 
 **Problems the Public Happiness Token Aims to Solve:**
+
+[Version 2 - Which do you prefer? The better version will become our pitch deck]
 
 ---
 Positive Societal and Cultural Change:
