@@ -12,3 +12,4 @@ mup.js
 node_modules
 *.log
 *.tar
+*.cmd
