@@ -11,9 +11,12 @@ const Logo = ({ sidebar, onClick }) => {
   if (window.__mapType !== 'gatherings') {
     imgUrl = sidebar ? 'btm_logo_invert.png' : 'btm_logo.png'
   } else {
+    /*
     menuLogo = sidebar
       ? <a class="brand-logo brand-text-mobile" href="http://focallocal.org">Focallocal</a>
       : <a class="brand-logo brand-text" href="http://focallocal.org">Focallocal</a>
+    */
+    menuLogo = 'Focallocal'
   }
 
   return (
