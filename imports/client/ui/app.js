@@ -143,14 +143,14 @@ if (inIFrame()) {
     timeout: 10000,
     onTimeout: () => console.log('Could not connect to the Docuss plugin')
   })
-
-  const routeMatcher = new SimpleRouteMatcher({
-    homePageName: websiteJSON.dynamicPages.homePageName,
-    pageNamePrefix: websiteJSON.dynamicPages.namePrefix,
-    maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength
-  })
-  
-  runReactRouterSync({ browserHistory: history, routeMatcher })  
 }
+
+const routeMatcher = new SimpleRouteMatcher({
+  homePageName: websiteJSON.dynamicPages.homePageName,
+  pageNamePrefix: websiteJSON.dynamicPages.namePrefix,
+  maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength
+})
+
+runReactRouterSync({ browserHistory: history, routeMatcher })  
 
 //------------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import i18n from '/imports/both/i18n/en'
+import DCSBalloon from '/imports/client/ui/components/DCSBalloon/index.js'
 import './styles.scss'
 
 const { title, content } = i18n.About.second_section
@@ -18,7 +19,9 @@ const SecondSection = () => (
     <Container>
       <Row>
         <Col xs={6}>
-          <h2 className='title'>{title}</h2>
+          <h2 className='title'>
+            <DCSBalloon title={title} triggerId="section2" />
+          </h2>
           <div className="text-content">
             <p>{second}</p>
             <p>{third}</p>

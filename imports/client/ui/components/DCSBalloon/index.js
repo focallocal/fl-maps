@@ -1,14 +1,87 @@
 import React, { Component, Fragment } from 'react'
-import qs from 'query-string'
-import history from "../../../utils/history"
+//import qs from 'query-string'
+//import history from '../../../utils/history'
+import { withDcs } from 'dcs-react-router-sync'
+import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './style.scss'
 
+//------------------------------------------------------------------------------
 
-const DCSBalloon = () => (
-  <div></div>
-)
+let g_init = false
 
-export default DCSBalloon
+function initDeselectHandler(history) {
+  if (g_init) {
+    return
+  }
+
+  // Handle mouse clicks to deselect any Docuss trigger
+  window.addEventListener('click', ({ target }) => {
+    const url = new URL(location.href)
+    if (
+      url.searchParams.get('dcs-trigger-id') &&
+      !target.closest('.dcs-balloon-icons')
+    ) {
+      url.searchParams.delete('dcs-layout')
+      url.searchParams.delete('dcs-interact-mode')
+      url.searchParams.delete('dcs-trigger-id')
+      const path = url.pathname + url.search
+      history.push(path)
+    }
+  })
+
+  g_init = true
+}
+
+//------------------------------------------------------------------------------
+
+class DCSBalloon extends Component {
+  constructor(props) {
+    super(props)
+    const { history } = this.props
+    initDeselectHandler(history)
+  }
+
+  render() {
+    const { title, triggerId, dcsSelected, dcsCount, history } = this.props
+
+    const url = new URL(location.href)
+    url.searchParams.set('dcs-layout', 3)
+    url.searchParams.set('dcs-interact-mode', 'DISCUSS')
+    url.searchParams.set('dcs-trigger-id', triggerId)
+    const path = url.pathname + url.search
+
+    let badge = ''
+    if (dcsCount) {
+      badge = (
+        <span
+          className="dcs-badge"
+          title={`This section has ${dcsCount} topic(s)`}
+        >
+          {dcsCount}
+        </span>
+      )
+    }
+
+    return (
+      <span className={'dcs-balloon' + (dcsSelected ? ' dcs-selected' : '')}>
+        <span className="dcs-balloon-title">{title}</span>
+        <span className="dcs-balloon-icons" onClick={() => history.push(path)}>
+          <img src={`/images/dcs-balloon-bal.png`} />
+          {badge}
+        </span>
+      </span>
+    )
+  }
+}
+export default withRouter(withDcs(DCSBalloon))
+
+DCSBalloon.propTypes = {
+  title: PropTypes.string.isRequired,
+  triggerId: PropTypes.string.isRequired
+}
+
+//------------------------------------------------------------------------------
 
 /**
  * BELOW: Legacy DCS plugins and features, currently disconnected
