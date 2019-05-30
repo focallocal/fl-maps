@@ -339,7 +339,9 @@ This system is inefficient and unfair, yet we’ve come to accept it as the norm
 This token is an effort to create an entirely new economic system. One which focuses energy onto these essential societal areas, currently overlooked and ignored in GDP based economies. 
 
 Our platform facilitates two core functions
-** 1. Public Happiness Gatherings **
+
+
+**1. Public Happiness Gatherings**
 
 Our platform allows positive people to find positive ideas to create social impact, and gather with others nearby who want to join them bringing that impact to their local community.
 
@@ -355,7 +357,8 @@ Ourselves and our Public Happiness partners currently engage more than a million
 
 We can use these activities to take blockchain to the streets and engage the public in a way never done before, to teach the basics and demonstrate how this new tech can be used to directly impact their lives.
 
-** 2. Public Happiness Projects **
+
+**2. Public Happiness Projects**
 
 Our platform operates a Microvolunteering Platform to build global projects which empower local people to create positive change where they live. 
 
