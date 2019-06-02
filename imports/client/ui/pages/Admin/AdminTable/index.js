@@ -4,21 +4,27 @@ import { Table, Col  } from 'reactstrap';
 import RoleSelect from './../RoleSelect/index.js'
 import { Button } from 'reactstrap'
 import { rolesDataKey } from './../RolesPermissions/index'
-
-const display = {
-  User: ["profile", "name"],
-  Roles: ["roles", rolesDataKey],
-  Events: ["events"]
-}
+import i18n from './../../../../../../imports/both/i18n/en'
+const display = [
+  { title: i18n.Admin.titles["user"], dataBaseKeys: ["profile", "name"]},
+  { title: i18n.Admin.titles["role"], dataBaseKeys: ["roles", rolesDataKey] },
+  { title: i18n.Admin.titles["event"], dataBaseKeys: ["events"] },
+]
 
 const AdminTable = (props) => {
-  let titles = Object.keys(display);
-  const {users} = props;
- 
+
+  const { users } = props;
+  const titles = display.map((ele) => {
+    return ele.title;
+  })
+  const dataBaseKeys = display.map((ele) => {
+    return ele.dataBaseKeys;
+  })
+
   return (
     <Table>
       <Head titles={titles}/>
-      <Rows usersData={users} display={display} titles={titles} events={props.events}
+      <Rows usersData={users} dataBaseKeys={dataBaseKeys} titles={titles} events={props.events}
         changeUserRole={props.changeUserRole} deleteUser={props.deleteUser}/>
     </Table>
   )
@@ -41,17 +47,18 @@ function Head(props) {
 function Rows(props){
   const titles = props.titles;
   const usersData = props.usersData
-  const display = props.display;
+  const dataBaseKeys = props.dataBaseKeys;
 
   const tableRows = usersData.map(user => {
+      // create button wrapper component to take in cancel confirm or reagular and function
     let button = <Button style={{ "marginRight": "4px" }} color='danger' onClick={(e) => props.deleteUser(user._id)}>del</Button>;
-    
     return (
       <tr key={user._id}>
          {titles.map((title,i)=>{
-          let toDisplay = unpackDisplay(display[title], user) 
-          let isRoles = displayRoles(display[title], toDisplay, user, props.changeUserRole);
-          let isEvents = displayEvents(display[title], props.events, user);
+          
+          let toDisplay = getValueFromData(dataBaseKeys[i], user) 
+          let isRoles = displayRoles(dataBaseKeys[i], toDisplay, user, props.changeUserRole);
+          let isEvents = displayEvents(dataBaseKeys[i], props.events, user);
           if (isRoles){
             toDisplay = isRoles;
           }
@@ -59,6 +66,7 @@ function Rows(props){
             toDisplay = isEvents
           }
           if (title !== "User"){
+          
             button = null;
           }
           return <td key={i}>{button}{toDisplay}</td>
@@ -74,8 +82,8 @@ function Rows(props){
   )
 }
 
-function unpackDisplay(arrayKeys,userData){
-//Array.isArray(arrayKeys) && 
+function getValueFromData(arrayKeys,userData){
+
   if (userData[arrayKeys[0]] != null){
     let index = 0;
     let value = userData;
@@ -87,14 +95,11 @@ function unpackDisplay(arrayKeys,userData){
     return value;
   }
   return [];
-  // else{
-  //   
-  // }
 }
 
 function displayRoles(keys, roles, user, changeRole){
-  
-  let UserName = unpackDisplay(display['User'], user)
+  const userDataBaseKeys = display[0]["dataBaseKeys"];
+  let UserName = getValueFromData(userDataBaseKeys, user)
   if (keys.indexOf(rolesDataKey) !== -1 ){
 
     return <RoleSelect rolesData={roles} UserName={UserName} user={user} changeUserRole={changeRole}/>
