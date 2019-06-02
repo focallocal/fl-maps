@@ -13,7 +13,6 @@ import SharePanel from '/imports/client/ui/components/SharePanel'
 import EditPage from './Edit'
 // import AttendingButton from './AttendingButton'  <-- currently disabled
 import './style.scss'
-import {Helmet} from "react-helmet";
 import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
@@ -267,16 +266,6 @@ class Page extends Component {
             src={mapUrl}
           />
         </Container>
-        <div id="coral_talk_stream"></div>
-        <Helmet>
-          {/* The embed web address will need updated depending on environment */}
-          {/* Package.json port will need updated if you leave embed at 3000*/}
-          <script src="https://talk.focallocal.org/static/embed.js" async onload="
-            Coral.Talk.render(document.getElementById('coral_talk_stream'), {
-              talk: 'https://talk.focallocal.org/'
-            });
-          "></script>
-        </Helmet>
       </div>
     )
   }
