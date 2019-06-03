@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from "react";
-import { Roles } from 'meteor/alanning:roles';
+//import { Roles } from 'meteor/alanning:roles';
 import { Navbar, Nav, Alert , Button } from "reactstrap";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 import { withTracker } from "meteor/react-meteor-data";
 import {rolesDataKey, checkPermissions } from "./RolesPermissions/index"
 import AdminTable from "./AdminTable/index"
+import './style.scss'
 
 class Admin extends Component {
   constructor(props) {
@@ -166,12 +167,10 @@ class Admin extends Component {
   render() {
     const { isNoMoreUsers, events, alertNotAuthorized} = this.state;
     return ( 
-      <div>
+      <div id="admin">
         <AdminTable deleteUser={this.deleteUser} users={this.state.users} changeUserRole={this.changeUserRole} events={events}/>
         <Button onClick={this.displayMoreUsers}>More</Button> 
-        {isNoMoreUsers && <Alert color="secondary">
-          No More Users
-        </Alert>
+        {isNoMoreUsers && <Alert color="secondary">No More Users</Alert>
         }
         {alertNotAuthorized && <Alert color="secondary">
           Not Authorized
@@ -188,3 +187,7 @@ export default withTracker(() => {
   };
 
 })(Admin);
+
+export {
+  Admin
+};
