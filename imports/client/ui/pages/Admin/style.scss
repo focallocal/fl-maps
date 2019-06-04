@@ -1,9 +1,39 @@
 @import '/imports/client/stylesheets/variables.scss';
 
-
 #admin{
-  button{
-    border: 5px solid rgb(135, 133, 130);
+
+  .btn-container{
+    padding: 1px;
+    display: inline-block;
+    margin-right: 8px;
+
+    button{
+      margin-right: 2px;
+  
+    }
   }
 
+  td{
+    position: relative;
+  }
+
+  .test{
+     position:  absolute;
+  }
+
+  .form-group {
+  display: flex;
+    label{
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .form-check-label{
+      input{
+          margin-right: 1px;
+      }   
+
+    }
+   
+  }
+  
 }

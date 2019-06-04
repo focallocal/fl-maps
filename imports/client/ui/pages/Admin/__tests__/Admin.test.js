@@ -6,8 +6,6 @@ import qs from 'query-string'
 import { Admin } from '../index'
 import { Navbar, Nav, Alert, Button } from "reactstrap";
 
-// import PageLoader from '/imports/client/ui/components/PageLoader'
-
 describe('<Admin />', ()=> {
 
   const shallowRenderer = (props) =>
@@ -25,7 +23,5 @@ describe('<Admin />', ()=> {
     expect(wrapper.contains(<Alert color="secondary">No More Users</Alert>)).toEqual(true)
   })
 
-  it('a should be b', ()=> {
-    expect('a').toBe('a');
-  })
+ 
 })
