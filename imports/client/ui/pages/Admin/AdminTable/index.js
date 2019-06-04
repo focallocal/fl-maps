@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { Table, Col  } from 'reactstrap';
 import RoleSelect from './../RoleSelect/index.js'
-import { Button } from 'reactstrap'
 import { rolesDataKey } from './../RolesPermissions/index'
 import i18n from './../../../../../../imports/both/i18n/en'
+import CancelDeleteBtns from './../CancelDeleteBtns/CancelDeleteBtns'
 const display = [
   { title: i18n.Admin.titles["user"], dataBaseKeys: ["profile", "name"]},
   { title: i18n.Admin.titles["role"], dataBaseKeys: ["roles", rolesDataKey] },
@@ -12,7 +12,6 @@ const display = [
 ]
 
 const AdminTable = (props) => {
-
   const { users } = props;
   const titles = display.map((ele) => {
     return ele.title;
@@ -51,7 +50,7 @@ function Rows(props){
 
   const tableRows = usersData.map(user => {
       // create button wrapper component to take in cancel confirm or reagular and function
-    let button = <Button style={{ "marginRight": "4px" }} color='danger' onClick={(e) => props.deleteUser(user._id)}>del</Button>;
+    let button = <CancelDeleteBtns user={user} deleteUser={props.deleteUser}/>;
     return (
       <tr key={user._id}>
          {titles.map((title,i)=>{

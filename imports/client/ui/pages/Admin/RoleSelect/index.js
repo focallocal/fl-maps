@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {FormGroup, Label} from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 import { roleOptions} from "./../RolesPermissions/index"
 
 const RadioInput = (props) => {
@@ -14,11 +14,11 @@ const RadioInput = (props) => {
       let checked = (rolesData.indexOf(role) !== -1 || (rolesData.length == 0 && role == 'user')) ? "checked" :null;
 
       return (
-        <Label check key={i}>
-          <input type="radio" value={role} name={name} defaultChecked={checked} 
-            onClick={(e) => props.changeUserRole(e, props.user._id)} key={i+name} />
-          {role}
-        </Label>
+          <Label check key={i}>
+            <input type="radio" value={role} name={name} defaultChecked={checked}
+              onClick={(e) => props.changeUserRole(e, props.user._id)} key={i + name} />
+            <span>{role}</span>
+          </Label> 
       )
     })
 

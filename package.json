@@ -6,9 +6,7 @@
     "test": "jest --maxWorkers=4",
     "test-watch": "jest --watchAll",
     "coverage": "jest --coverage",
-    "specificT": "jest Authentication/__tests__ --collectCoverageFrom=**/test.js",
-    "specificA": "jest Admin/__tests__ --collectCoverageFrom=**/test.js",
-    "specific": "jest --coverage --collectCoverageFrom=/client/ui/pages/Authentication/**/*.js"
+    "specific": "jest Admin/__tests__"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.42",
