@@ -9,5 +9,10 @@
     "forceLowercase": true
   },
 
-  "dynamicPages": { "url": "/", "namePrefix": "m_", "homePageName": "m_home" }
+  "pages": [
+    { "name": "m_home", "url": "/" },
+    { "name": "m_abou", "url": "/about" }
+  ],
+
+  "webApp": { "otherPagesPrefix": "m_" }
 }

@@ -146,9 +146,13 @@ if (inIFrame()) {
 }
 
 const routeMatcher = new SimpleRouteMatcher({
-  homePageName: websiteJSON.dynamicPages.homePageName,
-  pageNamePrefix: websiteJSON.dynamicPages.namePrefix,
-  maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength
+  maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength,
+  forceLowercase: websiteJSON.dcsTag.forceLowercase,
+  predefinedPageNames: websiteJSON.pages.map(p => ({
+    pageName: p.name,
+    pathname: p.url // This works because we know our urls are all relative urls, i.e. pathname = url
+  })),
+  otherPagesPrefix: websiteJSON.webApp.otherPagesPrefix
 })
 
 runReactRouterSync({ browserHistory: history, routeMatcher })  
