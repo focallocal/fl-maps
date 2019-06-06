@@ -7,6 +7,8 @@ import { withTracker } from "meteor/react-meteor-data";
 import {rolesDataKey, checkPermissions } from "./RolesPermissions/index"
 import AdminTable from "./AdminTable/index"
 import './style.scss'
+import UserSearch from './UserSearch/UserSearch'
+
 
 class Admin extends Component {
   constructor(props) {
@@ -19,6 +21,7 @@ class Admin extends Component {
       skip: 0,
       isNoMoreUsers: false,
       alertNotAuthorized : false,
+      isSearching: false,
  
       }
      }
@@ -91,8 +94,8 @@ class Admin extends Component {
     function handledeleteUser(context) {
       Meteor.call('Admin.deleteUser', { id }, (err, res) => {
         if (err) {
-          console.log('err', err);
-          throw new Meteor.Error('could not change delet')
+
+          throw new Meteor.Error('could not change delete')
         }
         context.setState(currentState => {
           let userData = [...currentState.users];
@@ -111,7 +114,14 @@ class Admin extends Component {
   displayMoreUsers = () =>{
     let { skip, limit } = this.state;
     skip = skip + limit;
-    this.setState({skip},()=>{
+    let stateToSet = {skip}
+    if (this.state.isSearching === true){
+      //For reseting if users was previously searching
+      stateToSet.users = []
+      stateToSet.isSearching = false;
+      stateToSet.skip = 0;
+    }
+    this.setState(stateToSet,()=>{
       this.getUsers()
     });
   }
@@ -120,7 +130,7 @@ class Admin extends Component {
     const {skip, limit} = this.state;
     Meteor.call('Admin.getUsers', { skip, limit} , (err, res) => {
       if (err) {
-        console.error('error', err)
+        throw new Meteor.Error('could not find user...')
       }
 
       if (res && res.length > 0) {
@@ -155,6 +165,37 @@ class Admin extends Component {
     })
   }
 
+  searchForUser = (userToFind) => {
+    const changeToFoundUsers = (ele) => {
+      this.setState(currentState => {
+        let users = currentState.users.slice(currentState.users.length);
+        ele = this.nameOnly(ele);
+        users = users.concat(ele);
+        return { users, isSearching: true }
+      });
+    }
+
+    searchDatabase(userToFind).then(ele => {
+      changeToFoundUsers(ele);
+    }).catch(e=> {
+      throw new Meteor.Error('no user')
+    })
+
+    function searchDatabase(profileName){
+      const foundUser = new Promise ((resolve, reject) => {
+        Meteor.call('Admin.searchUsers', { profileName }, (err, res) => {
+          if (err) {
+            reject(err);
+            throw new Meteor.Error('could not grant action')
+          }
+          resolve(res);
+        })
+      })
+      return foundUser
+    }
+   
+  }
+
   nameOnly = (users) => { 
     for (let index = 0, length = users.length; index < length; index++) {
      let name = users[index].profile.name;
@@ -167,8 +208,12 @@ class Admin extends Component {
 
   render() {
     const { isNoMoreUsers, events, alertNotAuthorized} = this.state;
+    let isNoUsersFound = this.state.users.length <= 0 ? true: false
     return ( 
       <div id="admin">
+        <UserSearch searchForUser={this.searchForUser}/>
+        {isNoUsersFound && <Alert color="secondary">No Users found</Alert>
+        }
         <AdminTable deleteUser={this.deleteUser} users={this.state.users} changeUserRole={this.changeUserRole} events={events}/>
         <Button onClick={this.displayMoreUsers}>More</Button> 
         {isNoMoreUsers && <Alert color="secondary">No More Users</Alert>

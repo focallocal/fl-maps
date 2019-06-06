@@ -33,7 +33,6 @@ function Head(props) {
   let titles = props.titles.map(ele => {
     return <th key={ele}>{ele}</th>
   })
-
   return (
     <thead>
       <tr>
@@ -48,13 +47,11 @@ function Rows(props){
   const usersData = props.usersData
   const dataBaseKeys = props.dataBaseKeys;
 
-  const tableRows = usersData.map(user => {
-      // create button wrapper component to take in cancel confirm or reagular and function
+  const tableRows = usersData.map(user => { 
     let button = <CancelDeleteBtns user={user} deleteUser={props.deleteUser}/>;
     return (
       <tr key={user._id}>
-         {titles.map((title,i)=>{
-          
+         {titles.map((title,i)=>{        
           let toDisplay = getValueFromData(dataBaseKeys[i], user) 
           let isRoles = displayRoles(dataBaseKeys[i], toDisplay, user, props.changeUserRole);
           let isEvents = displayEvents(dataBaseKeys[i], props.events, user);
@@ -65,10 +62,9 @@ function Rows(props){
             toDisplay = isEvents
           }
           if (title !== "User"){
-          
             button = null;
           }
-          return <td key={i}>{button}{toDisplay}</td>
+          return <td key={i}>{button}<span className="username">{toDisplay}</span></td>
         })}
       </tr>
     )
@@ -82,12 +78,10 @@ function Rows(props){
 }
 
 function getValueFromData(arrayKeys,userData){
-
   if (userData[arrayKeys[0]] != null){
     let index = 0;
     let value = userData;
     while (index < arrayKeys.length  ) {    
-      
       value = value[arrayKeys[index]]
       index++;
     }
@@ -99,10 +93,9 @@ function getValueFromData(arrayKeys,userData){
 function displayRoles(keys, roles, user, changeRole){
   const userDataBaseKeys = display[0]["dataBaseKeys"];
   let UserName = getValueFromData(userDataBaseKeys, user)
+
   if (keys.indexOf(rolesDataKey) !== -1 ){
-
     return <RoleSelect rolesData={roles} UserName={UserName} user={user} changeUserRole={changeRole}/>
-
   }
   else{
     return false
@@ -110,23 +103,18 @@ function displayRoles(keys, roles, user, changeRole){
 }
 
 function displayEvents(key, eventData, user){
-    const userEvents = eventData.filter(ele => {
+  const userEvents = eventData.filter(ele => {
+    return ele.organiser._id === user._id;
+  })
 
-      return ele.organiser._id === user._id;
-    })
   if (userEvents.length > 0 && key.indexOf('events') != -1){
-
     return userEvents.map(ele => {
       let id = ele._id
       let name = ele.name;
       let url = `/page/${id}`
       return <Link key={ele._id} to={url}>{name} /</Link>
     })
-   
-
   }
-
- 
   return false;
 }
 

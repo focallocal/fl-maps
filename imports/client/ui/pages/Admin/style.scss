@@ -29,11 +29,20 @@
     }
     .form-check-label{
       input{
-          margin-right: 1px;
+          margin-right: 2px;
+          position: relative;
+          top: 1px;
       }   
-
     }
    
+  }
+
+  .search-container{
+    margin: 15px auto;
+    width: 350px;
+   button{
+    margin-left: 5px;
+    }
   }
   
 }

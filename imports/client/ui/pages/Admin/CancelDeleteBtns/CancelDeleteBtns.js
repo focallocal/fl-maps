@@ -28,9 +28,9 @@ class CancelDeleteBtns extends Component {
     let style = this.state.isCancelConfirm === true ? { "position":  "absolute"} : null;
 
     return ( 
-      <div style={style} className="btn-container">
-        {buttons}
-      </div>
+          <div style={style} className="btn-container">
+            {buttons}
+          </div>
      )
   }
 }
