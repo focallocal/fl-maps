@@ -5,8 +5,16 @@ import sinon from 'sinon'
 import qs from 'query-string'
 import { Admin } from '../index'
 import { Navbar, Nav, Alert, Button } from "reactstrap";
+// import { users} from './db/index';
 
 describe('<Admin />', ()=> {
+  const userEmailOnly = {
+    profile: { name: "RR@gmail.com" },
+  }
+  const userGoogleAuth = {
+    profile: { name: "Dan Man" },
+  }
+  const users = [userEmailOnly, userGoogleAuth]
 
   const shallowRenderer = (props) =>
     shallow(
@@ -22,6 +30,13 @@ describe('<Admin />', ()=> {
     wrapper.setState({ isNoMoreUsers: true });
     expect(wrapper.contains(<Alert color="secondary">No More Users</Alert>)).toEqual(true)
   })
+
+  it('should change user data profile.name cutting out everything after the @ symbol',()=>{
+    expect(wrapper.instance().nameOnly(users)).toEqual([{ profile: { name: "RR" }, }, { profile: { name: "Dan Man" },}])
+    //.toHaveLength(2);
+  });
+
+
 
  
 })

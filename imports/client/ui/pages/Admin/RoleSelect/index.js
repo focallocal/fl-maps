@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
 import { roleOptions} from "./../RolesPermissions/index"
 
-const RadioInput = (props) => {
+export const RadioInput = (props) => {
   const { rolesData } = props
 
   //profile name could have duplication potential for users that sign in through google or facebook.
@@ -10,7 +10,8 @@ const RadioInput = (props) => {
   // instead generate a unique id and use profile name/email
   let name = generateUniqueId() + props.UserName;
   return (
-    roleOptions.map((role,i) => {                                                 // check for default
+    roleOptions.map((role,i) => { 
+                       // if role found set check        //or no role set user to default
       let checked = (rolesData.indexOf(role) !== -1 || (rolesData.length == 0 && role == 'user')) ? "checked" :null;
 
       return (
