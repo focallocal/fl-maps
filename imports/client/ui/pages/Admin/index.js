@@ -1,14 +1,11 @@
 import React, { Component, Fragment } from "react";
-//import { Roles } from 'meteor/alanning:roles';
 import { Navbar, Nav, Alert , Button } from "reactstrap";
-import { NavLink as RouterNavLink } from "react-router-dom";
 import { Meteor } from "meteor/meteor";
 import { withTracker } from "meteor/react-meteor-data";
 import {rolesDataKey, checkPermissions } from "./RolesPermissions/index"
 import AdminTable from "./AdminTable/index"
 import './style.scss'
 import UserSearch from './UserSearch/UserSearch'
-
 
 class Admin extends Component {
   constructor(props) {
@@ -22,6 +19,7 @@ class Admin extends Component {
       isNoMoreUsers: false,
       alertNotAuthorized : false,
       isSearching: false,
+      isAllEvents: false,
  
       }
      }
@@ -32,8 +30,10 @@ class Admin extends Component {
       // if (!isPermision) {//!
       //   this.props.history.goBack()//!
       // }//!
-    
-      this.getUsers();
+      // else{//!
+        this.getUsers();
+      //}///!
+       
     });
   }
 
@@ -193,7 +193,38 @@ class Admin extends Component {
       })
       return foundUser
     }
-   
+  }
+
+  handleToggleEvents =() =>{
+    this.setState({ isAllEvents: !this.state.isAllEvents  });
+  }
+
+  deleteAllEvents = (eventIds) => {
+    const handleDeleteEvent = () => {
+      const remainingEvents = this.state.events.filter(ele => {
+        return eventIds.indexOf(ele._id) === -1;
+      })
+      const resetDefault = () => {
+        this.setState({ events: remainingEvents });
+      }
+      Meteor.call("Admin.deleteAllEvents", { eventIds }, (err, res) => {
+        if (err) {
+          throw new Meteor.Error('could not grant action')
+        }
+        else {
+          resetDefault();
+        }
+      })
+    }
+
+    checkPermissions('deleteEditResource').then((isPermision) => {
+      if (!isPermision) {
+        this.setState({ alertNotAuthorized: true });
+      }
+      else{
+        handleDeleteEvent();
+      }
+    });
   }
 
   nameOnly = (users) => { 
@@ -206,16 +237,23 @@ class Admin extends Component {
     return users
   }
 
+
   render() {
     const { isNoMoreUsers, events, alertNotAuthorized} = this.state;
+   
     let isNoUsersFound = this.state.users.length <= 0 ? true: false
     return ( 
       <div id="admin">
-        <UserSearch searchForUser={this.searchForUser}/>
+        <div className="admin-controls">
+          <UserSearch searchForUser={this.searchForUser} />
+          <Button onClick={this.handleToggleEvents}>Hippppppp</Button>
+        </div>
+          
         {isNoUsersFound && <Alert color="secondary">No Users found</Alert>
         }
-        <AdminTable deleteUser={this.deleteUser} users={this.state.users} changeUserRole={this.changeUserRole} events={events}/>
-        <Button onClick={this.displayMoreUsers}>More</Button> 
+        <AdminTable deleteUser={this.deleteUser} users={this.state.users} deleteAllEvents={this.deleteAllEvents}
+          isAllEvents={this.state.isAllEvents} changeUserRole={this.changeUserRole} events={events}/>
+        <Button onClick={this.displayMoreUsers} >More</Button> 
         {isNoMoreUsers && <Alert color="secondary">No More Users</Alert>
         }
         {alertNotAuthorized && <Alert color="secondary">

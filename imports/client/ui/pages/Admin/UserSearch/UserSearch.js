@@ -6,25 +6,23 @@ class UserSearch extends Component {
     this.state = {  a:""}
     this.userToSearch = React.createRef();
   }
+
   searchForUser = (e) => {
     e.preventDefault();
     this.setState({ a: this.userToSearch });
     this.props.searchForUser(this.userToSearch.current.value);
   }
+
   render() { 
     return ( 
       <div className="search-container">
         <Form onSubmit={this.searchForUser} action="">
-           <FormGroup>
-       
-              <input placeholder="profile name or email" type="text" ref={this.userToSearch} />
-              <Button>Search</Button>
+          <FormGroup>
+            <input placeholder="profile name or email" type="text" ref={this.userToSearch} />
+            <Button>Search</Button>
           </FormGroup>
         </Form>
-   
       </div>
-
-   
     )
   }
 }

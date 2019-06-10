@@ -16,8 +16,9 @@ const getEvents = new ValidatedMethod({
  
     const events = Events.find(
       { "organiser._id": { "$in": ids } }, 
-      { fields: { '_id': 1, "organiser._id": 1, 'name': 1 } }
+      { fields: { '_id': 1, "organiser._id": 1, 'name': 1, 'categories': 1 } }
     )
+   
     return events.fetch()
   }
 })

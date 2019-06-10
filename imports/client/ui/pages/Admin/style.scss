@@ -3,13 +3,11 @@
 #admin{
 
   .btn-container{
-    padding: 1px;
     display: inline-block;
     margin-right: 8px;
 
     button{
-      margin-right: 2px;
-  
+      margin-right: 2px; 
     }
   }
 
@@ -33,16 +31,17 @@
           position: relative;
           top: 1px;
       }   
-    }
-   
+    }   
   }
 
-  .search-container{
-    margin: 15px auto;
-    width: 350px;
+  .search-container{  
    button{
     margin-left: 5px;
     }
   }
-  
+
+  .admin-controls{
+    margin: 15px auto;
+    max-width: 350px;
+  }
 }

@@ -7,7 +7,6 @@ class CancelDeleteBtns extends Component {
     super(props);
     this.state = {
       isCancelConfirm: false
-
     }
   }
 
@@ -17,11 +16,12 @@ class CancelDeleteBtns extends Component {
   setCancelConfirmToTrue = () => {
     this.setState({ isCancelConfirm: true });
   }
-  render() { 
-    const userId = this.props.user._id;
-    const deleteUser = this.props.deleteUser;
-    const deleteBtn = <Button color='danger' onClick={this.setCancelConfirmToTrue} key={"del"}>del</Button>;
-    const confirmBtn = <Button color='success' onClick={(e) => deleteUser(userId)} key={"Confirm"}>Confirm</Button>;
+  render() {
+    const idToDelete = this.props.idToDelete;
+    const deleteDocument = this.props.deleteDocument;
+    const deleteText = this.props.deleteText;
+    const deleteBtn = <Button color='danger' onClick={this.setCancelConfirmToTrue} key={"del"}>{deleteText}</Button>;
+    const confirmBtn = <Button color='success' onClick={(e) => deleteDocument(idToDelete)} key={"Confirm"}>Confirm</Button>;
     const cancelBtn = <Button color='warning' onClick={this.setCancelConfirmToFalse} key={"Cancel"}>Cancel</Button>;
 
     const buttons = this.state.isCancelConfirm === true ? [confirmBtn, cancelBtn] : [deleteBtn];

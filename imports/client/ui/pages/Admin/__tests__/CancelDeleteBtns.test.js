@@ -8,7 +8,7 @@ describe('<CancelDeleteBtns/>', ()=>{
   const deleteUser = () => {
     return null;
   }
-  const wrapper = shallow(<CancelDeleteBtns user={user} deleteUser={deleteUser}/>)
+  const wrapper = shallow(<CancelDeleteBtns idToDelete={user._id} deleteDocument={deleteUser} deleteText={'del'}/>)
 
   it('should render both confirm and concel buttons when isCancelConfirm equals true', () => {
     wrapper.setState({ isCancelConfirm: true });
