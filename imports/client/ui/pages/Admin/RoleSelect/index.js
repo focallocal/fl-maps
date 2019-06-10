@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FormGroup, Label, Input } from 'reactstrap';
-import { roleOptions} from "./../RolesPermissions/index"
+import { roleOptions, user} from "./../RolesPermissions/index"
 
 export const RadioInput = (props) => {
   const { rolesData } = props
@@ -11,8 +11,8 @@ export const RadioInput = (props) => {
   let name = generateUniqueId() + props.UserName;
   return (
     roleOptions.map((role,i) => { 
-                       // if role found set check        //or no role set user to default
-      let checked = (rolesData.indexOf(role) !== -1 || (rolesData.length == 0 && role == 'user')) ? "checked" :null;
+                       // if role found set check        or no role set to default user
+      let checked = (rolesData.indexOf(role) !== -1 || (rolesData.length == 0 && role == user)) ? "checked" :null;
 
       return (
           <Label check key={i}>
@@ -25,7 +25,6 @@ export const RadioInput = (props) => {
 
   )
 }
-
 
 class RoleSelect extends Component {
   constructor(props) {
@@ -44,7 +43,6 @@ class RoleSelect extends Component {
      )
   }
 }
-
 
 function generateUniqueId() {
   // code found here https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript?rq=1
