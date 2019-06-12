@@ -10,7 +10,7 @@ const Content = (props) => {
       <Container className="mt-5">
         <h1>Looking for answers?</h1>
         <p>
-          Take a look at frequently asked questions
+          Take a look at frequently asked questions<br />
           <DCSBalloon title="Test Title" subtitle="Test Subtitle" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
         </p>
       </Container>
