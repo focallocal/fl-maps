@@ -18,7 +18,7 @@ const Content = (props) => {
           <Col key={index} className="ml-5 pl-5 mt-5" xs={11}>
             <h3>{item.heading} </h3>
             <li className="mb-3 text-left">{item.text}</li>
-            <DCSBalloon title=" " subtitle=" " balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
+            <DCSBalloon title=" " subtitle="discuss" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
           </Col>
         );
       })}
