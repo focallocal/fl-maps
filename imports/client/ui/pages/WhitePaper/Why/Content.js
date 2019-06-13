@@ -1,7 +1,7 @@
 //Imports
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import i18n from "../../../../../both/i18n/en";
+import i18n from "../../../../../both/i18n/en/why";
 import DCSBalloon from '/imports/client/ui/components/DCSBalloon/index.js'
 
 const Content = (props) => {
@@ -13,7 +13,7 @@ const Content = (props) => {
           Take a look at frequently asked questions          
         </p>
       </Container>
-      {i18n.Whitepaper.Faq.faq.map((item, index) => {
+      {i18n.Whitepaper.why.Faq.faq.map((item, index) => {
         return (
           <Col key={index} className="ml-5 pl-5 mt-5" xs={11}>
             <h3>{item.heading} </h3>
