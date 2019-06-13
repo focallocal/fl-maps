@@ -51,7 +51,6 @@ class EventsDropDown extends Component {
     const chosenEvents = categoryEvents.map(ele => {
       let id = ele._id
       let name = ele.name;
-      let url = `/page/${id}`
 
       return <DropdownItem key={id} onClick={(e) => {
               this.selectValue(e, id);

@@ -1,7 +1,6 @@
 import React, {  Component }  from 'react';
 import { Button } from 'reactstrap';
 
-
 class CancelDeleteBtns extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +8,6 @@ class CancelDeleteBtns extends Component {
       isCancelConfirm: false
     }
   }
-
   setCancelConfirmToFalse = () =>{
   this.setState({ isCancelConfirm : false });
   }

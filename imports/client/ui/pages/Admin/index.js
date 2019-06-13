@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component} from "react";
 import { Navbar, Nav, Alert , Button } from "reactstrap";
 import { Meteor } from "meteor/meteor";
 import { withTracker } from "meteor/react-meteor-data";

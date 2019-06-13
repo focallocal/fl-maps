@@ -1,11 +1,7 @@
 import React from 'react'
-import { Meteor } from 'meteor/meteor'
 import { shallow } from 'enzyme'
-import sinon from 'sinon'
-import qs from 'query-string'
 import { Admin } from '../index'
 import { Navbar, Nav, Alert, Button } from "reactstrap";
-// import { users} from './db/index';
 
 describe('<Admin />', ()=> {
   const userEmailOnly = {
@@ -33,10 +29,5 @@ describe('<Admin />', ()=> {
 
   it('should change user data profile.name cutting out everything after the @ symbol',()=>{
     expect(wrapper.instance().nameOnly(users)).toEqual([{ profile: { name: "RR" }, }, { profile: { name: "Dan Man" },}])
-    //.toHaveLength(2);
   });
-
-
-
- 
 })
