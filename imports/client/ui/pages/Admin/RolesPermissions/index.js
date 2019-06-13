@@ -1,5 +1,4 @@
 import { Meteor } from "meteor/meteor";
-
 export const rolesDataKey = "__global_roles__";
 export const admin = 'admin';
 export const moderator = 'moderator';

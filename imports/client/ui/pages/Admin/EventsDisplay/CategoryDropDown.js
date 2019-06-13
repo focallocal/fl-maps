@@ -4,7 +4,6 @@ class CategoryDropDown extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      catagory: 'All',
       value: "",
     };
     this.change = this.change.bind(this);
@@ -17,21 +16,21 @@ class CategoryDropDown extends Component {
   }
 
   change(event) {
-    const setValueAndToggle = {
+    const setValue = {
       value: event.target.value,
     }
-    this.setState(setValueAndToggle);
+    this.setState(setValue);
   }
 
   render() {
     const { allPosibleCategories} = this.props;
-    const categoriesForDropDown = [<option key={"Sort By Category"} selected disabled>Sort By Category</option>];
+    const categoriesForDropDown = [<option key={"Sort By Category"} disabled>Sort By Category</option>];
     allPosibleCategories.forEach(ele=>{
       categoriesForDropDown.push(<option key={ele} value={ele}>{ele}</option>);
     })
 
     return (
-      <select id="pet-select"  onChange={this.change}>
+      <select id="category-select"  onChange={this.change}>
         {categoriesForDropDown}
       </select>
     )

@@ -34,6 +34,7 @@ class EventsDisplay extends Component {
       })
       this.setState({ categoryEvents: chosenEvents});
     }
+    
     function matchCategory(element) {
       return element.name === category;
     };

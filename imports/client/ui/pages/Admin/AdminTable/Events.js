@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import React, { Component} from "react";
 import EventsDisplay from './../EventsDisplay/index'
   
@@ -7,7 +6,7 @@ class Events extends Component {
     super(props);
     this.state = {  }
   }
-
+  
   render() { 
     const { userEvents, user, isAllEvents, deleteAllEvents } = this.props;   
     const events = userEvents.filter(ele => {
