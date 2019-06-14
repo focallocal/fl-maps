@@ -9,6 +9,7 @@ class EventsDisplay extends Component {
     this.state = { 
       allEvents: [],
       categoryEvents: [],
+      currentCategory: "All",
       displayAllcategory: "All",
       allPosibleCategories: [],
      }
@@ -22,7 +23,7 @@ class EventsDisplay extends Component {
 
   changeCategory = (category) =>{
     if(category === this.state.displayAllcategory){
-      this.setState({ categoryEvents: this.state.allEvents });
+      this.setState({ categoryEvents: this.state.allEvents, currentCategory: category });
     }
     else{
       const chosenEvents = [];
@@ -32,7 +33,7 @@ class EventsDisplay extends Component {
           chosenEvents.push(ele);
         }
       })
-      this.setState({ categoryEvents: chosenEvents});
+      this.setState({ categoryEvents: chosenEvents, currentCategory: category });
     }
     
     function matchCategory(element) {
@@ -60,10 +61,10 @@ class EventsDisplay extends Component {
  
   render() { 
     const { isAllEvents, deleteAllEvents} = this.props
-    const { categoryEvents,allPosibleCategories} = this.state;
+    const { categoryEvents, allPosibleCategories, currentCategory} = this.state;
     const EventToDisplay = isAllEvents ?
       <LinkEvents categoryEvents={categoryEvents} allPosibleCategories={allPosibleCategories} 
-        deleteAllEvents={deleteAllEvents} changeCategory={this.changeCategory}/> :
+        deleteAllEvents={deleteAllEvents} changeCategory={this.changeCategory} currentCategory={currentCategory} />  :
       <EventsDropDown categoryEvents={categoryEvents} allPosibleCategories={allPosibleCategories} 
         changeCategory={this.changeCategory} deleteAllEvents={deleteAllEvents}/>;
                               

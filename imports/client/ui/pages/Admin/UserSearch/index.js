@@ -3,13 +3,11 @@ import {Form, FormGroup, Input, Button} from 'reactstrap'
 class UserSearch extends Component {
   constructor(props) {
     super(props);
-    this.state = {  a:""}
     this.userToSearch = React.createRef();
   }
 
   searchForUser = (e) => {
     e.preventDefault();
-    this.setState({ a: this.userToSearch });
     this.props.searchForUser(this.userToSearch.current.value);
   }
 

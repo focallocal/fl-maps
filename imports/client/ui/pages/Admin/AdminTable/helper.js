@@ -17,6 +17,11 @@ export const dataBaseKeys = {
   [eventKey]: {dataBaseKeys: ["events"]},
 }
 
+export function parseData(key,data){
+  let keys = dataBaseKeys[key].dataBaseKeys
+  return getValueFromData(keys, data);
+}
+
 export function getValueFromData(arrayKeys, userData) {
   if (userData[arrayKeys[0]] != null) {
     let index = 0;
