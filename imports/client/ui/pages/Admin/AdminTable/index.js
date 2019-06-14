@@ -15,7 +15,6 @@ export const Head = (props)=>{
   )
 }
 
-
 const AdminTable = ({ users, changeUserRole, deleteUser, events, isAllEvents, deleteAllEvents}) => {
   const titles = display.map((ele) => {
     return ele.title;
@@ -29,8 +28,6 @@ const AdminTable = ({ users, changeUserRole, deleteUser, events, isAllEvents, de
     </Table>
   )
 }
-
-
 
 export function Rows(props){
   const titles = props.titles;

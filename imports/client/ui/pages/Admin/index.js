@@ -5,14 +5,16 @@ import { withTracker } from "meteor/react-meteor-data";
 import {rolesDataKey, checkPermissions } from "./RolesPermissions/index"
 import AdminTable from "./AdminTable/index"
 import './style.scss'
-import UserSearch from './UserSearch/UserSearch'
+import UserSearch from './UserSearch/index'
+import UserDisplay from './UserDisplay/index'
+import { parseData} from  './AdminTable/helper'
 
 class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       users : [],
-      currentUser: {},
+      currentUserDisplay:{role: "", name:""},
       events: [],
       limit: 25,
       skip: 0,
@@ -25,25 +27,23 @@ class Admin extends Component {
      }
   
   componentDidMount(){
+   
     checkPermissions('adminPage').then((isPermision) => {
 
-      // if (!isPermision) {//!
-      //   this.props.history.goBack()//!
-      // }//!
-      // else{//!
+      if (!isPermision) {//!
+        this.props.history.goBack()//!
+      }//!
+      else{//!
+        this.displayCurrentUser(this.props.currentUser);
         this.getUsers();
-      //}///!
-       
+      }///!
+
     });
   }
 
   componentDidUpdate(prevProps,prevState){
     if (this.state.users !== prevState.users && prevState.users){
       this.getEvents();
-    }
- 
-    if (prevProps.currentUser !== this.props.currentUser) {
-      this.setState({ currentUser: this.props.currentUser });
     }
   }
 
@@ -52,12 +52,12 @@ class Admin extends Component {
     
     checkPermissions('changeRole').then((isPermision) => {        
 
-      // if (!isPermision) {//!
-      //   this.setState({ alertNotAuthorized: true });//!
-      // }//!
-      // else{//!
+      if (!isPermision) {//!
+        this.setState({ alertNotAuthorized: true });//!
+      }//!
+      else{//!
         handleChangeUserRole(role, id, this);
-      // }//!
+      }//!
       
     });
 
@@ -227,26 +227,41 @@ class Admin extends Component {
     });
   }
 
+  displayCurrentUser(currentUser){
+    this.setState(currentState => {
+      let name = parseData('user', currentUser);
+      let role = parseData('role', currentUser)[0]
+      name = this.nameOnly([name])
+      const currentUserDisplay = { name,role}
+      return { currentUserDisplay}
+    });
+  }
+
   nameOnly = (users) => { 
     for (let index = 0, length = users.length; index < length; index++) {
-     let name = users[index].profile.name;
-      name = name.split('@');
-      users[index].profile.name = name[0];
-      
+      let name;
+      if (typeof users[index] === 'object'){
+        name =  parseData('user', users[index])
+        name = name.split('@');
+        users[index].profile.name = name[0];
+      }
+      else{
+        users = users[index].split('@')[0];
+      }
     }
     return users
   }
 
-
   render() {
-    const { isNoMoreUsers, events, alertNotAuthorized} = this.state;
+    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay} = this.state;
    
     let isNoUsersFound = this.state.users.length <= 0 ? true: false
     return ( 
       <div id="admin">
+        <UserDisplay name={currentUserDisplay.name} role={currentUserDisplay.role}/>
         <div className="admin-controls">
           <UserSearch searchForUser={this.searchForUser} />
-          <Button onClick={this.handleToggleEvents}>Hippppppp</Button>
+          <Button color="primary" onClick={this.handleToggleEvents}>Toggle Events Display</Button>
         </div>
           
         {isNoUsersFound && <Alert color="secondary">No Users found</Alert>

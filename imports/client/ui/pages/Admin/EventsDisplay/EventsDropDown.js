@@ -63,7 +63,7 @@ class EventsDropDown extends Component {
        <div>    
           <CategoryDropDown changeCategory={changeCategory} allPosibleCategories={allPosibleCategories}/>
        </div>
-       <div>
+       <div className="eventdropdown-container">
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
             <DropdownToggle caret>
               {currentSelection}
@@ -76,8 +76,8 @@ class EventsDropDown extends Component {
         <Toggle isShow={isMatch} componentToToggle={({ isShow})=>(
         <div >
             {isShow && (
-              <div style={{"position": "relative" , "padding": "2px", "height": "50px"}}>
-                <a style={{ "height": "38x" }} href={`/page/${this.state.id}`}><Button style={{ "height": "38px" }}  >goto</Button></a>
+              <div className="eventdropdown-btns">
+                <a className="goto-dropdown" href={`/page/${this.state.id}`}><Button color="primary" style={{ "height": "38px" }}  >goto</Button></a>
                 <CancelDeleteBtns deleteText={'del'} idToDelete={[this.state.id]} deleteDocument={deleteAllEvents}/>
             </div>
             )}

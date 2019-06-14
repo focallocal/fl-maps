@@ -9,8 +9,6 @@ const newEvent = new ValidatedMethod({
   name,
   mixins: [],
   validate: ({ eventIds}) => {
-
-
     if (typeof eventIds === 'undefined') {
       throw new Meteor.Error('undefined')
     }

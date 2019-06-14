@@ -35,6 +35,7 @@
   }
 
   .search-container{  
+    margin-bottom: 20px;
    button{
     margin-left: 5px;
     }
@@ -44,4 +45,35 @@
     margin: 15px auto;
     max-width: 350px;
   }
+
+  .link-btns{
+    > * {
+      margin-bottom: 5px;
+    }
+  }
+
+  .deleteBtns{
+    position: relative;
+    height: $admin-btn-height;
+  }
+
+  .goto-dropdown{
+    height: $admin-btn-height;
+    margin-right: 2px;
+  }
+  .eventdropdown-btns{
+    position: relative;
+    padding: 2px;
+    height: 50px;
+  }
+  .eventdropdown-container{
+    margin-top: 5px;
+    margin-bottom: 2px;
+  }
+  .userDisplay-container{
+    margin: 10px auto 20px;
+    
+    width: 350px;
+  }
+
 }
