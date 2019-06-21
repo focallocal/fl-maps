@@ -1,7 +1,7 @@
 //Imports
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import i18n from "../../../../../both/i18n/en/whitepaper";
+import i18n from "/imports/both/i18n/en/";
 import DCSBalloon from '/imports/client/ui/components/DCSBalloon/index.js'
 
 const Content = (props) => {

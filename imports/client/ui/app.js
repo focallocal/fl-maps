@@ -28,6 +28,10 @@ import CongratsModal from "./pages/NewEvent/CongratsModal";
 import Page from "./pages/Page";
 import { Error404 } from "./pages/Errors";
 
+import WPIntro from "./pages/WhitePaper/Intro";
+import WPWhy from "./pages/WhitePaper/Why";
+import WPFAQs from "./pages/WhitePaper/faqs"; 
+
 // Components
 import ScrollToTop from "./components/ScrollToTop";
 import Admin from "./pages/Admin/index"
@@ -199,7 +203,11 @@ class App extends Component {
       signup: "/sign-up",
       change_password: "/change-password",
       forgot_password: "/forgot-password",
-      sso_auth: "/sso_auth"
+      sso_auth: "/sso_auth",
+
+      whitepaper_intro: "/whitepaper/intro",
+      whitepaper_why: "/whitepaper/why",
+      whitepaper_faqs: "/whitepaper/faqs"
     }
 
     return (
@@ -230,6 +238,10 @@ class App extends Component {
                 <Route exact path={routePaths.admin} render={props => <Admin {...props}/>} /> 
                 <Route exact path={routePaths.thankyou} component={CongratsModal} />
                 <Route exact path={`${routePaths.page}/:id`} render={props => <Page {...props} {...dcsProps} />}/>
+
+                <Route exact path={routePaths.whitepaper_intro} render={props => <WPIntro {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.whitepaper_why} render={props => <WPWhy {...props} {...dcsProps} />} />
+                <Route exact path={routePaths.whitepaper_faqs} render={props => <WPFAQs {...props} {...dcsProps} />} />
 
                 <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
 
