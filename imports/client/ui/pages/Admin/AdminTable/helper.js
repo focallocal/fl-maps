@@ -6,9 +6,9 @@ export const roleKey = 'role';
 export const eventKey = 'event';
 
 export const display = [
-  { title: i18n.Admin.titles[userKey] },
-  { title: i18n.Admin.titles[roleKey] },
-  { title: i18n.Admin.titles[eventKey]  },
+  { title: i18n.Admin.titles[userKey], tableDataType: userKey},
+  { title: i18n.Admin.titles[roleKey], tableDataType: roleKey },
+  { title: i18n.Admin.titles[eventKey], tableDataType: eventKey },
 ]
 
 export const dataBaseKeys = {
