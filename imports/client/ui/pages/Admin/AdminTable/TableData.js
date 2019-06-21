@@ -2,20 +2,16 @@ import React from 'react';
 import Users from './Users'
 import Roles from './Roles'
 import Events from './Events'
-import i18n from './../../../../../../imports/both/i18n/en'
 import {userKey, roleKey, eventKey } from './helper'
 
-const TableData = ({title,user, ...otherProps}) => {
-  const userTitle = i18n.Admin.titles[userKey]
-  const roleTitle = i18n.Admin.titles[roleKey]
-  const eventTitle = i18n.Admin.titles[eventKey]
+const TableData = ({tableDataType,user, ...otherProps}) => {
   const dataComponents = {
-    [userTitle]: Users,
-    [roleTitle]: Roles,
-    [eventTitle]: Events
+    [userKey]: Users,
+    [roleKey]: Roles,
+    [eventKey]: Events
   }
- 
-  const ChosenComponent = dataComponents[title]
+  const ChosenComponent = dataComponents[tableDataType]
+  debugger;    
   return (
     <td ><ChosenComponent user={user} {...otherProps} /></td>
   )

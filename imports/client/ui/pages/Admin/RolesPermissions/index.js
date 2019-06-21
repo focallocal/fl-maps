@@ -1,4 +1,5 @@
 import { Meteor } from "meteor/meteor";
+
 export const rolesDataKey = "__global_roles__";
 export const admin = 'admin';
 export const moderator = 'moderator';
@@ -15,7 +16,6 @@ export const permissions = {
 
 export const checkPermissions = (action) => {
   const rolesAllowed = permissions[action];
-
   const isPermission  = new Promise((resolve, reject) =>
       Meteor.call('Admin.checkPermissions', { rolesAllowed }, (err, res) => {
         if (err) {

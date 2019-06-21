@@ -1,10 +1,8 @@
 import React from 'react';
 import CancelDeleteBtns from './../CancelDeleteBtns/CancelDeleteBtns'
-import { getValueFromData, userKey, dataBaseKeys} from './helper'
+import { parseData} from './helper'
 const Users = ({ user, deleteUser }) => {
-  const userDataKeys = dataBaseKeys[userKey].dataBaseKeys
-  
-  const userName = getValueFromData(userDataKeys, user)
+  const userName = parseData('user', user );
   let button = <CancelDeleteBtns idToDelete={user._id} deleteDocument={deleteUser} deleteText={'del'} />;
   return (
     <React.Fragment>

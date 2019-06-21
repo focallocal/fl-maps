@@ -34,8 +34,10 @@ class Admin extends Component {
         this.props.history.goBack()//!
       }//!
       else{//!
+
         this.displayCurrentUser(this.props.currentUser);
         this.getUsers();
+
       }///!
 
     });
@@ -48,8 +50,7 @@ class Admin extends Component {
   }
 
   changeUserRole = (e, id) => {
-    const role = e.target.value;
-    
+    const role = e.target.value; 
     checkPermissions('changeRole').then((isPermision) => {        
 
       if (!isPermision) {//!
@@ -228,13 +229,11 @@ class Admin extends Component {
   }
 
   displayCurrentUser(currentUser){
-    this.setState(currentState => {
-      let name = parseData('user', currentUser);
-      let role = parseData('role', currentUser)[0]
-      name = this.nameOnly([name])
-      const currentUserDisplay = { name,role}
-      return { currentUserDisplay}
-    });
+    let name = parseData('user', currentUser);
+    let role = parseData('role', currentUser)[0]
+    name = this.nameOnly([name])
+    const currentUserDisplay = { name,role}
+    this.setState({ currentUserDisplay });
   }
 
   nameOnly = (users) => { 
@@ -263,17 +262,17 @@ class Admin extends Component {
           <UserSearch searchForUser={this.searchForUser} />
           <Button color="primary" onClick={this.handleToggleEvents}>Toggle Events Display</Button>
         </div>
-          
-        {isNoUsersFound && <Alert color="secondary">No Users found</Alert>
+        {isNoUsersFound && 
+          <Alert color="secondary">No Users found</Alert>
         }
         <AdminTable deleteUser={this.deleteUser} users={this.state.users} deleteAllEvents={this.deleteAllEvents}
           isAllEvents={this.state.isAllEvents} changeUserRole={this.changeUserRole} events={events}/>
         <Button onClick={this.displayMoreUsers} >More</Button> 
-        {isNoMoreUsers && <Alert color="secondary">No More Users</Alert>
+        {isNoMoreUsers && 
+          <Alert color="secondary">No More Users</Alert>
         }
-        {alertNotAuthorized && <Alert color="secondary">
-          Not Authorized
-        </Alert>
+        {alertNotAuthorized && 
+          <Alert color="secondary">Not Authorized</Alert>
         }
       </div>
      )

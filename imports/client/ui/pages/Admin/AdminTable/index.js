@@ -2,6 +2,7 @@ import React from 'react';
 import { Table, Col  } from 'reactstrap';
 import { display} from './helper'
 import TableData from './TableData'
+
 export const Head = (props)=>{
   let titles = props.titles.map(ele => {
     return <th key={ele}>{ele}</th>
@@ -23,20 +24,18 @@ const AdminTable = ({ users, changeUserRole, deleteUser, events, isAllEvents, de
   return (
     <Table>
       <Head titles={titles}/>
-      <Rows usersData={users} titles={titles} userEvents={events} deleteAllEvents={deleteAllEvents}
+      <Rows usersData={users} userEvents={events} deleteAllEvents={deleteAllEvents}
         changeUserRole={changeUserRole} deleteUser={deleteUser} isAllEvents={isAllEvents}/>
     </Table>
   )
 }
 
 export function Rows(props){
-  const titles = props.titles;
-  const usersData = props.usersData
-  const tableRows = usersData.map(user => { 
+  const tableRows = props.usersData.map(user => { 
     return (
       <tr key={user._id}>
-         {titles.map((title,i)=>{        
-          return <TableData title={title} user={user} key={i} {...props}/>
+        {display.map((ele,i)=>{
+          return <TableData tableDataType={ele.tableDataType} user={user} key={i} {...props}/>
         })}
       </tr>
     )
