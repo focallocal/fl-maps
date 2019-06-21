@@ -11,7 +11,7 @@ const TableData = ({tableDataType,user, ...otherProps}) => {
     [eventKey]: Events
   }
   const ChosenComponent = dataComponents[tableDataType]
-  debugger;    
+    
   return (
     <td ><ChosenComponent user={user} {...otherProps} /></td>
   )
