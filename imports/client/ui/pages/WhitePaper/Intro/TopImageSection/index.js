@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import i18n from '/imports/both/i18n/en/whitepaper'
-import '././styles.scss'
+import i18n from '/imports/both/i18n/en/'
+import './style.scss'
 
-const { content } = i18n.Intro.whitepaper.first_section
+console.log(i18n.Whitepaper)
+const { content } = i18n.Whitepaper.Intro.first_section
 const {top_image_url} = content
 
 const TopImageSection = () => (
