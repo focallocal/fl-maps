@@ -8,10 +8,7 @@ const Content = (props) => {
   return (
     <React.Fragment>
       <Container className="mt-5">
-        <h1>Looking for answers?</h1>
-        <p>
-          Take a look at frequently asked questions          
-        </p>
+        <h1>The World Needs a Public Happiness Economy Because:</h1>
       </Container>
       {i18n.Whitepaper.Why.faq.map((item, index) => {
         return (
