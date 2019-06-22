@@ -2,7 +2,7 @@
   {
     "name": "Positive People Nearby",
     "categories": [
-      {"name": "Meet me for Action!", "color": "red", "default": true, "url": ""}
+      {"name": "Meet Me to Create Happiness Together!", "color": "red", "default": true, "url": ""}
     ]
   },
   {
@@ -24,12 +24,6 @@
     ]
   },
   {
-    "name": "Bubbles",
-    "categories": [
-      {"name" : "Give a Bubble", "color" : "#0ea575", "url": "https://news.focallocal.org/give-a-bubble/"}
-    ]
-  },
-  {
     "name": "Health and Well-being",
     "categories": [
       { "name" : "Open Skills Sharing Day", "color" : "#52929b", "url": "https://news.focallocal.org/international-open-skills-sharing-day/"},
@@ -43,6 +37,7 @@
     "categories": [
       { "name" : "Free Hugs", "color" : "#f82d2d", "url": "https://news.focallocal.org/free-hugs/"},
       { "name" : "Pillow Fight 4Connection", "color" : "#48a80d", "url": "https://news.focallocal.org/pillow-fight4connection/"},
+      { "name" : "Give a Bubble", "color" : "#0ea575", "url": "https://news.focallocal.org/give-a-bubble/"}
       { "name" : "Eye Bombing", "color" : "#43a904", "url": ""}
     ]
   },
