@@ -37,7 +37,7 @@
     "categories": [
       { "name" : "Free Hugs", "color" : "#f82d2d", "url": "https://news.focallocal.org/free-hugs/"},
       { "name" : "Pillow Fight 4Connection", "color" : "#48a80d", "url": "https://news.focallocal.org/pillow-fight4connection/"},
-      { "name" : "Give a Bubble", "color" : "#0ea575", "url": "https://news.focallocal.org/give-a-bubble/"}
+      { "name" : "Give a Bubble", "color" : "#0ea575", "url": "https://news.focallocal.org/give-a-bubble/"},
       { "name" : "Eye Bombing", "color" : "#43a904", "url": ""}
     ]
   },
