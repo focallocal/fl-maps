@@ -12,3 +12,6 @@ mup.js
 node_modules
 *.log
 *.tar
+
+coverage
+.vscode
