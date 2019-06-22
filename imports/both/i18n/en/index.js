@@ -8,6 +8,8 @@ import Team from "./team.json";
 import Partners from "./partners.json";
 import Faq from "./faq.json";
 import Admin from "./admin.json";
+import Whitepaper from "./whitepaper";
+
 
 export default {
   About,
@@ -19,5 +21,6 @@ export default {
   Team,
   Partners,
   Faq,
-  Admin
+  Admin,
+  Whitepaper
 };

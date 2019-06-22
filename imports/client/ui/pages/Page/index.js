@@ -1,21 +1,26 @@
+// External Packages
 import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Container, Row, Col, Button } from 'reactstrap'
-import { formatCategories } from '/imports/client/utils/format'
-import { scrollToElement } from '/imports/client/utils/DOMInteractions'
+import qs from 'query-string'
+import Linkify from 'linkifyjs/react'
+
+// Components
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import VideoPlayer from '/imports/client/ui/components/VideoPlayer'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import SharePanel from '/imports/client/ui/components/SharePanel'
 import EditPage from './Edit'
-// import AttendingButton from './AttendingButton'  <-- currently disabled
+
+// Helpers
+import { formatCategories } from '/imports/client/utils/format'
+import { scrollToElement } from '/imports/client/utils/DOMInteractions'
+
+// Other
 import './style.scss'
-import {Helmet} from "react-helmet";
-import qs from 'query-string'
-import Linkify from 'linkifyjs/react'
 import i18n from '/imports/both/i18n/en'
 import { checkPermissions} from './../Admin/RolesPermissions/index'
 
@@ -267,16 +272,6 @@ class Page extends Component {
             src={mapUrl}
           />
         </Container>
-        <div id="coral_talk_stream"></div>
-        <Helmet>
-          {/* The embed web address will need updated depending on environment */}
-          {/* Package.json port will need updated if you leave embed at 3000*/}
-          <script src="https://talk.focallocal.org/static/embed.js" async onload="
-            Coral.Talk.render(document.getElementById('coral_talk_stream'), {
-              talk: 'https://talk.focallocal.org/'
-            });
-          "></script>
-        </Helmet>
       </div>
     )
   }
