@@ -20,7 +20,10 @@ const Content = (props) => {
             <li className="mb-3 text-left">{item.text}</li>
             <DCSBalloon title=" " subtitle="discuss" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
           </Col>
-          <p>&nbsp</p>
+        );
+      })}
+      {i18n.Whitepaper.Why.faq.map((item, index) => {
+        return (
           <h3>Longer</h3>
           <p>&nbsp</p>
           <Col key={index} className="ml-5 pl-5 mt-5" xs={11}>
