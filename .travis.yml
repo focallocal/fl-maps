@@ -2,10 +2,10 @@ language: node_js
 sudo: required
 node_js:
   - '8.11.1'
-  
+
 notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
-      
+
 cache:
   directories:
     - $HOME/.meteor
@@ -27,6 +27,7 @@ branches:
   only:
     - master
     - fl-sleeper
+    - master_withoutDCS
 
 script:
   #- npm test
