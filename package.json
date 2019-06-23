@@ -5,7 +5,8 @@
     "start": "meteor run --settings settings.json",
     "test": "jest --maxWorkers=4",
     "test-watch": "jest --watchAll",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "specific": "jest Admin/__tests__"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.42",

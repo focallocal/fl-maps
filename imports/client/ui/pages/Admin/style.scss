@@ -1,0 +1,79 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#admin{
+
+  .btn-container{
+    display: inline-block;
+    margin-right: 8px;
+
+    button{
+      margin-right: 2px; 
+    }
+  }
+
+  td{
+    position: relative;
+  }
+
+  .test{
+     position:  absolute;
+  }
+
+  .form-group {
+  display: flex;
+    label{
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+    .form-check-label{
+      input{
+          margin-right: 2px;
+          position: relative;
+          top: 1px;
+      }   
+    }   
+  }
+
+  .search-container{  
+    margin-bottom: 20px;
+   button{
+    margin-left: 5px;
+    }
+  }
+
+  .admin-controls{
+    margin: 15px auto;
+    max-width: 350px;
+  }
+
+  .link-btns{
+    > * {
+      margin-bottom: 5px;
+    }
+  }
+
+  .deleteBtns{
+    position: relative;
+    height: $admin-btn-height;
+  }
+
+  .goto-dropdown{
+    height: $admin-btn-height;
+    margin-right: 2px;
+  }
+  .eventdropdown-btns{
+    position: relative;
+    padding: 2px;
+    height: 50px;
+  }
+  .eventdropdown-container{
+    margin-top: 5px;
+    margin-bottom: 2px;
+  }
+  .userDisplay-container{
+    margin: 10px auto 20px;
+    
+    width: 350px;
+  }
+
+}
