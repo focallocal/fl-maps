@@ -9,3 +9,6 @@ deployment.tar
 
 node_modules
 *.log
+
+coverage
+.vscode

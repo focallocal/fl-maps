@@ -10,7 +10,7 @@ const UserItem = ({ user }) => {
   let isShowAdminLink = false;
   if (user){
     isShowAdminLink = Roles.userIsInRole(user._id, permissions['adminPage'])
-    console.log('isShowAdminLink', isShowAdminLink);
+    
   }
   if (isShowAdminLink) {
     userStatus = 'Admin'

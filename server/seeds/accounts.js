@@ -37,7 +37,7 @@ if (settings !== undefined) {
   function getDetailsFromService(services) {
     const serviceName = "google";
     const service = services[serviceName];
-
+    
     return {
       name: service.name,
       picture: service.picture
