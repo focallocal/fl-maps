@@ -7,11 +7,10 @@ import DCSBalloon from '/imports/client/ui/components/DCSBalloon/index.js'
 const Content = (props) => {
   return (
     <React.Fragment>
+    <div>
       <Container className="mt-5">
         <h1>The World Needs a Public Happiness Economy Because:</h1>
-        
-        <h3>Short</h3>
-        
+        <h3>Short</h3>        
       </Container>
       {i18n.Whitepaper.Why.faq.map((item, index) => {
         return (
@@ -33,6 +32,7 @@ const Content = (props) => {
           </Col>
         );
       })}
+    </div>
     </React.Fragment>
   );
 };
