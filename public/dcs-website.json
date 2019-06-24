@@ -4,8 +4,8 @@
   "websiteName": "fl_maps",
 
   "dcsTag": {
-    "maxPageNameLength": 26,
-    "maxTriggerIdLength": 19,
+    "maxPageNameLength": 20,
+    "maxTriggerIdLength": 15,
     "forceLowercase": true
   },
 
