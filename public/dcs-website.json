@@ -4,14 +4,14 @@
   "websiteName": "fl_maps",
 
   "dcsTag": {
-    "maxPageNameLength": 6,
-    "maxTriggerIdLength": 9,
+    "maxPageNameLength": 26,
+    "maxTriggerIdLength": 19,
     "forceLowercase": true
   },
 
   "pages": [
     { "name": "m_home", "url": "/" },
-    { "name": "m_abou", "url": "/about" }
+    { "name": "m_about", "url": "/about" }
   ],
 
   "webApp": { "otherPagesPrefix": "m_" }
