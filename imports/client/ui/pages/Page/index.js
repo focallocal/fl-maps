@@ -1,22 +1,21 @@
-// NPM Libraries
-
+// External Packages
 import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Container, Row, Col, Button } from 'reactstrap'
-import { Helmet } from "react-helmet"
 import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
 
-// Includes/Fragments
-
+// Components
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import VideoPlayer from '/imports/client/ui/components/VideoPlayer'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import SharePanel from '/imports/client/ui/components/SharePanel'
 import EditPage from './Edit'
+
+// Helpers
 import { formatCategories } from '/imports/client/utils/format'
 import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import { checkPermissions } from './../Admin/RolesPermissions/index'
