@@ -8,6 +8,7 @@ import './style.scss'
 import UserSearch from './UserSearch/index'
 import UserDisplay from './UserDisplay/index'
 import { parseData} from  './AdminTable/helper'
+import { Redirect } from 'react-router'
 
 class Admin extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Admin extends Component {
       alertNotAuthorized : false,
       isSearching: false,
       isAllEvents: false,
- 
+      isRedirect: false,
       }
      }
   
@@ -31,7 +32,7 @@ class Admin extends Component {
     checkPermissions('adminPage').then((isPermision) => {
 
       if (!isPermision) {//!
-        this.props.history.goBack()//!
+        this.setState({ isRedirect: true });//!
       }//!
       else{//!
 
@@ -252,9 +253,12 @@ class Admin extends Component {
   }
 
   render() {
-    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay} = this.state;
-   
+    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay, isRedirect} = this.state;
+    if (isRedirect) {
+      return <Redirect to="/" />
+    }
     let isNoUsersFound = this.state.users.length <= 0 ? true: false
+    
     return ( 
       <div id="admin">
         <UserDisplay name={currentUserDisplay.name} role={currentUserDisplay.role}/>
