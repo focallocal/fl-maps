@@ -1761,3 +1761,5 @@ const index = (props) => {
 
   );
 };
+
+export default index;

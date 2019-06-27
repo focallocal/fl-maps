@@ -1,7 +1,8 @@
 //Imports
-import i18n from "../../../../both/i18n/en";
-import React, { Component, Fragment } from "react";
-import "./team.css";
+import i18n from "../../../../both/i18n/en"
+import React, { Component, Fragment } from "react"
+import PropTypes from 'prop-types'
+import "./team.scss";
 import {
   Row,
   Container,
@@ -13,12 +14,12 @@ import {
   CardTitle,
   CardSubtitle,
   Button
-} from "reactstrap";
-
-const teamData = i18n.Team.members;
+} from "reactstrap"
 
 class Members extends Component {
   render() {
+    const teamData = i18n.Team[this.props.team]
+
     return (
       <Fragment>
         <div className="mr-5 ml-4">
@@ -118,6 +119,10 @@ class Members extends Component {
       </Fragment>
     );
   }
+}
+
+Members.propTypes = {
+  team: PropTypes.string.isRequired
 }
 
 export default Members;
