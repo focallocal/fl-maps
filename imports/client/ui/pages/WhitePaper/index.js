@@ -1759,5 +1759,7 @@ const index = (props) => {
     </Container>
 
 
-  );
-};
+  )
+}
+
+export default index

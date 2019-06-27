@@ -85,19 +85,19 @@ class App extends Component {
           <ScrollToTop>
             <Route exact path={routePaths.root} component={Home} />
             <Route exact path={routePaths.home} component={Home} />
-            <Route exact path={routePaths.team} render={props => <Team {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.partners} render={props => <Partners {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.whitepaper} render={props => <Whitepaper {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.faq} render={props => <Faq {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.about} render={props => <About {...props} {...dcsProps} />} />
+            <Route exact path={routePaths.team} component={Team} />
+            <Route exact path={routePaths.partners} component={Partners} />
+            <Route exact path={routePaths.whitepaper} component={Whitepaper} />
+            <Route exact path={routePaths.faq} component={Faq} />
+            <Route exact path={routePaths.about} component={About} />
             <Route path={routePaths.map} component={Map_} />
             <Route exact path={routePaths.admin} render={props => <Admin {...props} />} />
             <Route exact path={routePaths.thankyou} component={CongratsModal} />
-            <Route exact path={`${routePaths.page}/:id`} render={props => <Page {...props} {...dcsProps} />} />
+            <Route exact path={`${routePaths.page}/:id`} component={Page} />} />
 
-            <Route exact path={routePaths.whitepaper_intro} render={props => <WPIntro {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.whitepaper_why} render={props => <WPWhy {...props} {...dcsProps} />} />
-            <Route exact path={routePaths.whitepaper_faqs} render={props => <WPFAQs {...props} {...dcsProps} />} />
+            <Route exact path={routePaths.whitepaper_intro} render={WPIntro} />
+            <Route exact path={routePaths.whitepaper_why} render={WPWhy} />
+            <Route exact path={routePaths.whitepaper_faqs} render={WPFAQs} />
 
             <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
           </ScrollToTop>
