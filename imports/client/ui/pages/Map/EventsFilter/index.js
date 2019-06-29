@@ -59,9 +59,9 @@ class FiltersList extends Component {
                   key={index}
                   className="checkbox"
                   style={{
-                    marginLeft: category.parent !== true? '20px':'0px' ,
+                    marginLeft: category.parent !== true ? '20px' : '0px' ,
                     color: category.color,
-                    display: category.hidden === true? 'none':'block'
+                    display: category.hidden === true ? 'none' : 'block'
                   }}
                 >
                   <CustomInput
@@ -70,7 +70,7 @@ class FiltersList extends Component {
                     label={category.name}
                     checked={checkedFilters[index].checked}
                     onChange={this.handleFilterChange}
-                    onClick={category.parent === true && this.expandCategory}
+                    onClick={category.parent === true? this.expandCategory : null}
                   />
                   { category.url && 
                     <a href={category.url} target='_blank' rel='external' aria-label='Go to Page'>

@@ -22,6 +22,10 @@ import CongratsModal from "./pages/NewEvent/CongratsModal";
 import Page from "./pages/Page";
 import { Error404 } from "./pages/Errors";
 
+import WPIntro from "./pages/WhitePaper/Intro";
+import WPWhy from "./pages/WhitePaper/Why";
+import WPFAQs from "./pages/WhitePaper/faqs"; 
+
 // Components
 import ScrollToTop from "./components/ScrollToTop";
 import Admin from "./pages/Admin/index"
@@ -31,6 +35,9 @@ import { comToPlugin, inIFrame } from 'dcs-client'
 import { SimpleRouteMatcher } from 'meteor/sylque:dcs-simple-route-matcher'
 import { runReactRouterSync } from 'dcs-react-router-sync'
 import websiteJSON from '../../../public/dcs-website.json'
+
+// Styles and Other
+import './styles.scss'
 
 //------------------------------------------------------------------------------
 
@@ -61,7 +68,16 @@ class App extends Component {
       map: "/map",
       admin: "/admin",
       thankyou: "/thank-you",
-      page: "/page"
+      page: "/page",
+      signin: "/sign-in",
+      signup: "/sign-up",
+      change_password: "/change-password",
+      forgot_password: "/forgot-password",
+      sso_auth: "/sso_auth",
+
+      whitepaper_intro: "/whitepaper/intro",
+      whitepaper_why: "/whitepaper/why",
+      whitepaper_faqs: "/whitepaper/faqs"
     }
     const standaloneMode = !inIFrame()
 
@@ -75,12 +91,17 @@ class App extends Component {
             <Route exact path={routePaths.team} component={Team} />
             <Route exact path={routePaths.partners} component={Partners} />
             <Route exact path={routePaths.whitepaper} component={Whitepaper} />
-            <Route exact path={routePaths.faq} component={Faq}/>
-            <Route exact path={routePaths.about} component={About}/>
+            <Route exact path={routePaths.faq} component={Faq} />
+            <Route exact path={routePaths.about} component={About} />
             <Route path={routePaths.map} component={Map_} />
-            <Route exact path={routePaths.admin} component={Admin} /> 
+            <Route exact path={routePaths.admin} render={props => <Admin {...props} />} />
             <Route exact path={routePaths.thankyou} component={CongratsModal} />
-            <Route exact path={`${routePaths.page}/:id`} component={Page} />}/>
+            <Route exact path={`${routePaths.page}/:id`} component={Page} />} />
+
+            <Route exact path={routePaths.whitepaper_intro} render={WPIntro} />
+            <Route exact path={routePaths.whitepaper_why} render={WPWhy} />
+            <Route exact path={routePaths.whitepaper_faqs} render={WPFAQs} />
+
             <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
           </ScrollToTop>
         </Fragment>
@@ -124,8 +145,10 @@ class App extends Component {
     if (window.location.search === '?new=1' || window.location.search === '?edit=1') {
       return this.renderNewEvent({ location: window.location, history })
     }
-    if (!routes.some(e => e === window.location.pathname) && !window.location.pathname.includes('/page/')) {
-      return <Error404 />
+    if (!routes.some(e => e === window.location.pathname)
+      && !window.location.pathname.includes('/page/')
+      && !window.location.pathname.includes('reset-password')) {
+        return <Error404 />
     }
     return null
   }

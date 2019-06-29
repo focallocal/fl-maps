@@ -6,11 +6,12 @@ import Members from "./Members";
 const Index = () => (
   <React.Fragment>
     <Container className="mt-5">
-      <h1>Team</h1>
-      <p>Meet the amazing people who made BTM</p>
+      <h1>Dev Team</h1>
+      <p>Meet the amazing people building this platform and Movement</p>
     </Container>
     <Members />
   </React.Fragment>
 );
+
 
 export default Index;

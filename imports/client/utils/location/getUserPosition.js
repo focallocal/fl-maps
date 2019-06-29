@@ -1,35 +1,43 @@
 import { Meteor } from 'meteor/meteor'
 
 export function getCurrentLocation(context) {
-  navigator.geolocation.getCurrentPosition(({ coords }) => {
-    const latLng = {
-      lat: coords.latitude,
-      lng: coords.longitude
-    }
-
-    if (context._isMounted) { // set/remove on componentDidMount/componentWillUnmount
-      updateState(context, latLng)
-    }
-
-    storeUserLocation(latLng)
-  }, err => {
-    /*
-      code 1 - user clicked on "Block".
-      code 2 - a problem with the geolocation service
-      code 3 - timeout
-    */
-
-    if (err.code === 2) { // run only if there's a problem with the browser's ability to get location
-      Meteor.call('General.getUserLocation', (err, res) => {
-        if (!err) {
-          storeUserLocation(res)
-          updateState(context, res)
-        } else {
-          context.setState({ userLocationError: true })
+  if (navigator) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(({ coords }) => {
+        const latLng = {
+          lat: coords.latitude,
+          lng: coords.longitude
         }
-      })
+
+        if (context._isMounted) { // set/remove on componentDidMount/componentWillUnmount
+          updateState(context, latLng)
+        }
+
+        storeUserLocation(latLng)
+      }, err => {
+        /*
+          code 1 - user clicked on "Block".
+          code 2 - a problem with the geolocation service
+          code 3 - timeout
+        */
+
+        if (err.code === 2) { // run only if there's a problem with the browser's ability to get location
+          Meteor.call('General.getUserLocation', (err, res) => {
+            if (!err) {
+              storeUserLocation(res)
+              updateState(context, res)
+            } else {
+              context.setState({ userLocationError: true })
+            }
+          })
+        }
+      }, { timeout: 7000 }) // if user didn't click "allow" after 7 seconds - timeout
+    } else {
+      console.log('Unable to load geolocation object')
     }
-  }, { timeout: 7000 }) // if user didn't click "allow" after 7 seconds - timeout
+  } else {
+    console.log('Unable to load navigator')
+  }
 }
 
 export default function getUserPosition (context) {

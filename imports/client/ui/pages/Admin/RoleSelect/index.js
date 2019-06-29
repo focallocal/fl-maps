@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {FormGroup, Label} from 'reactstrap';
-import { roleOptions} from "./../RolesPermissions/index"
+import { FormGroup, Label, Input } from 'reactstrap';
+import { roleOptions, user} from "./../RolesPermissions/index"
 
-const RadioInput = (props) => {
+export const RadioInput = (props) => {
   const { rolesData } = props
 
   //profile name could have duplication potential for users that sign in through google or facebook.
@@ -10,21 +10,21 @@ const RadioInput = (props) => {
   // instead generate a unique id and use profile name/email
   let name = generateUniqueId() + props.UserName;
   return (
-    roleOptions.map((role,i) => {                                                 // check for default
-      let checked = (rolesData.indexOf(role) !== -1 || (rolesData.length == 0 && role == 'user')) ? "checked" :null;
+    roleOptions.map((role,i) => { 
+                       // if role found set check        or no role set to default user
+      let checked = (rolesData.indexOf(role) !== -1 || (rolesData.length == 0 && role == user)) ? "checked" :null;
 
       return (
-        <Label check key={i}>
-          <input type="radio" value={role} name={name} defaultChecked={checked} 
-            onClick={(e) => props.changeUserRole(e, props.user._id)} key={i+name} />
-          {role}
-        </Label>
+          <Label check key={i}>
+            <input type="radio" value={role} name={name} defaultChecked={checked}
+              onClick={(e) => props.changeUserRole(e, props.user._id)} key={i + name} />
+            <span>{role}</span>
+          </Label> 
       )
     })
 
   )
 }
-
 
 class RoleSelect extends Component {
   constructor(props) {
@@ -43,7 +43,6 @@ class RoleSelect extends Component {
      )
   }
 }
-
 
 function generateUniqueId() {
   // code found here https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript?rq=1
