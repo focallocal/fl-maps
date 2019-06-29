@@ -22,7 +22,7 @@ class ListItem extends Component {
 
     return (
       <ListGroupItem className='event-list-item'>
-        <img src={userGravatar} class="rounded-circle float-left mr-2" alt=""/>
+        <img src={userGravatar} className="rounded-circle float-left mr-2" alt=""/>
         <div>
          <div className='name'>{name}</div>
          <div className='categories'>{formatCategories(categories)}</div>

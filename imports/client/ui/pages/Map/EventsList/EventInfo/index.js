@@ -51,7 +51,7 @@ class EventInfo extends Component {
         </header>
 
         <div className='first-section'>
-          <img src={gravatar} class="rounded-circle float-right" alt=""/>
+          <img src={gravatar} className="rounded-circle float-right" alt=""/>
           <div className='title'>{event? event.name : ''}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
