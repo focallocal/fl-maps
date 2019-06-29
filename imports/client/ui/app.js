@@ -36,6 +36,9 @@ import { SimpleRouteMatcher } from 'meteor/sylque:dcs-simple-route-matcher'
 import { runReactRouterSync } from 'dcs-react-router-sync'
 import websiteJSON from '../../../public/dcs-website.json'
 
+// Styles and Other
+import './styles.scss'
+
 //------------------------------------------------------------------------------
 
 class App extends Component {
