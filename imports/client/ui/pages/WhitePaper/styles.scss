@@ -1,13 +1,19 @@
-   div.mt-5.container { 
+div.mt-5.container { 
             display: block !important;
             width: 60% !important;
             font-size: 1.1rem !important;
-                      }
+    }
 
 @media screen and (max-width: 800px) {
     div.mt-5.container { 
             width: 90% !important;
-                      }
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .wp-item { 
+            margin-left: 3rem!important;
+        }
 }
 
 .chapterHeading {
@@ -15,3 +21,4 @@
     text-align: center;
 
 }
+
