@@ -9,6 +9,7 @@ const devMode = process.env.NODE_ENV !== 'production'
 
 const clientConfig = {
   entry: './client/main.js',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
