@@ -46,7 +46,7 @@ class EventsDropDown extends Component {
   }
 
   render() { 
-    const { categoryEvents, changeCategory, allPosibleCategories, deleteAllEvents} = this.props;
+    const { categoryEvents, changeCategory, allPosibleCategories, deleteAllEvents, currentCategory} = this.props;
     const { currentSelection} = this.state;
     const chosenEvents = categoryEvents.map(ele => {
       let id = ele._id
@@ -61,7 +61,7 @@ class EventsDropDown extends Component {
     return ( 
       <React.Fragment>
        <div>    
-          <CategoryDropDown changeCategory={changeCategory} allPosibleCategories={allPosibleCategories}/>
+          <CategoryDropDown currentCategory={currentCategory} changeCategory={changeCategory} allPosibleCategories={allPosibleCategories}/>
        </div>
        <div className="eventdropdown-container">
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
