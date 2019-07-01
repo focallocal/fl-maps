@@ -12,12 +12,7 @@
   "pages": [
     { "name": "m_home", "url": "/" },
     { "name": "m_about", "url": "/about" },
-    { "name": "m_build", "url": "https://action.focallocal.org" },
     { "name": "m_gather", "url": "/map" },
-    { "name": "m_activities", "url": "https://activities.focallocal.org" },
-    { "name": "m_blog", "url": "https://news.focallocal.org" },
-    { "name": "m_browse", "url": "https://activities.focallocal.org" },
-    { "name": "m_shop", "url": "https://shop.focallocal.org" }
   ],
 
   "webApp": { "otherPagesPrefix": "m_" }
