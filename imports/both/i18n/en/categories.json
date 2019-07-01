@@ -3,16 +3,27 @@
     "name": "Positive People Nearby",
     "categories": [
       {"name": "Meet Me to Create Happiness Together!", "color": "red", "default": true, "url": ""}
+      { "name" : "I'm Supporting with my Skills", "color" : "#f57c00", "url": ""},
+      { "name" : "Currently Taking a Break", "color" : "#d7191c", "url": ""}
     ]
   },
   {
     "name": "Public Happiness Communities",
     "categories": [
       { "name" : "Gather for More Happiness", "color" : "#63d85b", "url": ""},
-      { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""},
-      { "name" : "Be Happier Community Meet", "color" : "#18a80d", "url": ""}
+      { "name" : "Be Happier Local Meetings", "color" : "#18a80d", "url": ""}
     ]
   },
+  { 
+    "name" : "Global Flash Mobs", 
+     "categories": [
+      {"name": "The Worlds Biggest Eye Contact Experiment", "color": "red", "url": ""},
+      {"name": "International Pillow Fight Day", "color": "#a711c4", "url": ""},
+      {"name": "World Dance Day", "color": "#6d65bc", "url": ""},
+      {"name": "No Pants/Trousers Tube Ride", "color": "#5e9e6b", "url": ""},
+    ]
+  },
+    "color" : "#38a80d", "url": ""}
   {
     "name": "Art, Music, Dance and Poetry",
     "categories": [
@@ -27,9 +38,7 @@
     "name": "Health and Well-being",
     "categories": [
       { "name" : "Open Skills Sharing Day", "color" : "#52929b", "url": "https://news.focallocal.org/international-open-skills-sharing-day/"},
-      { "name" : "Health + Well-being Flash", "color" : "#5e9b6b", "url": ""},
-      { "name" : "Supporting with my Skills", "color" : "#f57c00", "url": ""},
-      { "name" : "Taking a Break", "color" : "#d7191c", "url": ""}
+      { "name" : "Health + Well-being Flash Mob", "color" : "#5e9b6b", "url": ""},
     ]
   },
   {
