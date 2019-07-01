@@ -25,7 +25,6 @@
       {"name": "No Pants/Trousers Tube Ride", "color": "#5e9e6b", "url": ""}
     ]
   },
-    "color" : "#38a80d", "url": ""}
   {
     "name": "Art, Music, Dance and Poetry",
     "categories": [
@@ -40,7 +39,7 @@
     "name": "Health and Well-being",
     "categories": [
       { "name" : "Open Skills Sharing Day", "color" : "#52929b", "url": "https://news.focallocal.org/international-open-skills-sharing-day/"},
-      { "name" : "Health + Well-being Flash Mob", "color" : "#5e9b6b", "url": ""},
+      { "name" : "Health + Well-being Flash Mob", "color" : "#5e9b6b", "url": ""}
     ]
   },
   {
