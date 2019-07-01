@@ -10,6 +10,6 @@
   },
 
   "pages": [
-    { "name": "c_activities", "url": "https://activities.focallocal.org" },
+    { "name": "c_activities", "url": "https://activities.focallocal.org" }
   ]
 }
