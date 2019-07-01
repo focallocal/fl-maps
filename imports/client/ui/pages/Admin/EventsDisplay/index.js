@@ -1,5 +1,5 @@
 import { Meteor } from "meteor/meteor";
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import EventsDropDown from './EventsDropDown'
 import LinkEvents from "./LinkEvents";
 
@@ -18,6 +18,16 @@ class EventsDisplay extends Component {
   componentDidUpdate(prevProps,prevState){
     if (this.props.userEvents !== prevProps.userEvents ) {
       this.getCatagoriesInitializeEvents();
+    }
+    if (this.state.categoryEvents <= 0 && 
+      this.state.currentCategory !== this.state.displayAllcategory){
+      let isExist = this.state.categoryEvents.some(ele =>{
+       return ele.categories === this.state.currentCategory
+      })
+
+      if (!isExist ){
+        this.changeCategory(this.state.displayAllcategory);
+      }
     }
   }
 
@@ -44,7 +54,7 @@ class EventsDisplay extends Component {
     const seen = {};
     let categories = [];
     const distinctCategories = [this.state.displayAllcategory];
-    
+
    this.props.userEvents.forEach(ele=> {  
      categories = categories.concat(ele.categories);
    })
@@ -56,7 +66,9 @@ class EventsDisplay extends Component {
     }
   })
     this.setState({ allPosibleCategories: distinctCategories, 
-      allEvents: this.props.userEvents, categoryEvents: this.props.userEvents  });
+      allEvents: this.props.userEvents },()=>{
+        this.changeCategory(this.state.currentCategory);
+      });
  }
  
   render() { 
@@ -65,7 +77,7 @@ class EventsDisplay extends Component {
     const EventToDisplay = isAllEvents ?
       <LinkEvents categoryEvents={categoryEvents} allPosibleCategories={allPosibleCategories} 
         deleteAllEvents={deleteAllEvents} changeCategory={this.changeCategory} currentCategory={currentCategory} />  :
-      <EventsDropDown categoryEvents={categoryEvents} allPosibleCategories={allPosibleCategories} 
+      <EventsDropDown currentCategory={currentCategory} categoryEvents={categoryEvents} allPosibleCategories={allPosibleCategories} 
         changeCategory={this.changeCategory} deleteAllEvents={deleteAllEvents}/>;
                               
     return ( 

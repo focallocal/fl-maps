@@ -23,14 +23,14 @@ class CategoryDropDown extends Component {
   }
 
   render() {
-    const { allPosibleCategories} = this.props;
+    const { allPosibleCategories, currentCategory} = this.props;
     const categoriesForDropDown = [<option key={"Sort By Category"} disabled>Sort By Category</option>];
     allPosibleCategories.forEach(ele=>{
       categoriesForDropDown.push(<option key={ele} value={ele}>{ele}</option>);
     })
 
     return (
-      <select id="category-select"  onChange={this.change}>
+      <select id="category-select" value={currentCategory} onChange={this.change}>
         {categoriesForDropDown}
       </select>
     )
