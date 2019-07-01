@@ -2,7 +2,7 @@
   {
     "name": "Positive People Nearby",
     "categories": [
-      {"name": "Meet Me to Create Happiness Together!", "color": "red", "default": true, "url": ""}
+      { "name" : "Meet Me to Create Happiness Together!", "color": "red", "default": true, "url": ""}
       { "name" : "I'm Supporting with my Skills", "color" : "#f57c00", "url": ""},
       { "name" : "Currently Taking a Break", "color" : "#d7191c", "url": ""}
     ]
