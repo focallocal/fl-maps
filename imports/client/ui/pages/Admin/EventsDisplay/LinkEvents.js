@@ -20,7 +20,7 @@ const LinkEvents = (props) => {
     <div>
       <div className="link-btns">
         {deleteBtn} 
-        <CategoryDropDown changeCategory={changeCategory} allPosibleCategories={allPosibleCategories} />
+        <CategoryDropDown currentCategory={currentCategory} changeCategory={changeCategory} allPosibleCategories={allPosibleCategories} />
       </div>
      <div>
         {events}
