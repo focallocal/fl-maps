@@ -1,0 +1,15 @@
+{
+  "$schema": "https://sylque.github.io/dcs-website-schema/json/schema.json",
+
+  "websiteName": "fl_happiness",
+
+  "dcsTag": {
+    "maxPageNameLength": 20,
+    "maxTriggerIdLength": 15,
+    "forceLowercase": true
+  },
+
+  "pages": [
+    { "name": "h_news", "url": "https://morehappiness.focallocal.org" },
+  ]
+}
