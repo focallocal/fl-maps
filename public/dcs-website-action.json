@@ -10,6 +10,6 @@
   },
 
   "pages": [
-    { "name": "a_build", "url": "https://action.focallocal.org" },
+    { "name": "a_build", "url": "https://action.focallocal.org" }
   ]
 }
