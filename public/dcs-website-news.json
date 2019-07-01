@@ -10,6 +10,6 @@
   },
 
   "pages": [
-    { "name": "n_news", "url": "https://news.focallocal.org" },
+    { "name": "n_news", "url": "https://news.focallocal.org" }
   ]
 }
