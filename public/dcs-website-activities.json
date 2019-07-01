@@ -1,0 +1,15 @@
+{
+  "$schema": "https://sylque.github.io/dcs-website-schema/json/schema.json",
+
+  "websiteName": "fl_activities",
+
+  "dcsTag": {
+    "maxPageNameLength": 20,
+    "maxTriggerIdLength": 15,
+    "forceLowercase": true
+  },
+
+  "pages": [
+    { "name": "c_activities", "url": "https://activities.focallocal.org" },
+  ]
+}
