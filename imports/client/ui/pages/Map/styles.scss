@@ -6,7 +6,11 @@ body.overflow {
 
 #map-container {
   position: relative;
-  height: calc(100vh - #{$menu-height});
+  height: 100vh;
+
+  &.offset-standalone-menu {
+    height: calc(100vh - #{$menu-height})!important;
+  }
 
   &.minimized {
 

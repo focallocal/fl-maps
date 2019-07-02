@@ -1,17 +1,25 @@
+// External Libraries
 import React, { Component, Fragment } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import { Alert, Input } from 'reactstrap'
-import getUserPosition from '/imports/client/utils/location/getUserPosition'
-import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
-import mapOptions from './mapOptions'
+
+// Components and Pages
 import EventsList from './EventsList'
 import FiltersList from './EventsFilter'
 import SearchButtons from './SearchButtons'
 import MarkerWrapper from './MarkerWrapper'
+
+// Utils
+import mapOptions from './mapOptions'
 import { ensureUniquePosition } from './utils'
+import { inIFrame } from 'dcs-client'
+import getUserPosition from '/imports/client/utils/location/getUserPosition'
+import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
+
+// Styles and Other
 import './styles.scss'
 import './mobile-styles.scss'
 
@@ -380,6 +388,7 @@ const MapComponent = withScriptjs(withGoogleMap(MapComponent_))
 
 class Map_ extends Component {
   render () {
+    const standaloneMode = !inIFrame()
     const { key } = Meteor.settings.public.gm
     const url = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&v=3.exp&libraries=places'
 
@@ -387,7 +396,7 @@ class Map_ extends Component {
       <MapComponent
         googleMapURL={!window.google ? url : '-'}
         loadingElement={<div style={{ height: '100%' }} />}
-        containerElement={<div id='map-container' />}
+        containerElement={<div id='map-container' className={standaloneMode? 'offset-standalone-menu' : undefined}/>}
         mapElement={<div id='map' />}
         history={this.props.history}
       />

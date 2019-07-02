@@ -1,10 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup } from 'reactstrap'
+
 import EventsListItem from './EventsListItem'
 import MinimizeButton from './MinimizeButton'
 import EventInfo from './EventInfo'
+
+import { inIFrame } from 'dcs-client'
 import * as Gravatar from '/imports/client/utils/Gravatar'
+
 import './styles.scss'
 
 class EventsList extends Component {
@@ -39,11 +43,11 @@ class EventsList extends Component {
     } = this.props
 
     const currentEventProp = this.props.currentEvent
-
+    const standaloneMode = !inIFrame()
     const hasData = !!events[0]
     return (
       <Fragment>
-        <div id='events-list'>
+        <div id='events-list' className={standaloneMode ? 'offset-standalone-menu' : undefined}>
           <div className='header'>
             {this.props.children} {/* Search Box */}
           </div>
