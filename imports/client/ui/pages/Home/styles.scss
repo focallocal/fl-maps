@@ -1,6 +1,14 @@
 
 
 main {
+  position: relative;
+
+  .gather-button {
+    position: absolute;
+    z-index: 99;
+    left: 5px;
+    top: 5px;
+  }
 
   &.home {
     background: #FFF9EB;
