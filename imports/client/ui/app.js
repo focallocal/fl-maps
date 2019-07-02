@@ -96,7 +96,7 @@ class App extends Component {
             <Route path={routePaths.map} component={Map_} />
             <Route exact path={routePaths.admin} render={props => <Admin {...props} />} />
             <Route exact path={routePaths.thankyou} component={CongratsModal} />
-            <Route exact path={`${routePaths.page}/:id`} component={Page} />} />
+            <Route exact path={`${routePaths.page}/:id`} component={Page} />
 
             <Route exact path={routePaths.whitepaper_intro} render={WPIntro} />
             <Route exact path={routePaths.whitepaper_why} render={WPWhy} />
