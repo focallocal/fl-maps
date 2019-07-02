@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Container, Row, Col, Button } from 'reactstrap'
 
 import Item from './Item'
-import DCSAnchorLink from '/imports/client/ui/components/DCSAnchorLink'
 
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
