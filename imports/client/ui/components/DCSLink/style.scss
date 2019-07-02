@@ -1,7 +1,11 @@
-.dcs-selected .dcs-balloon-title {
+.dcs-selected .dcs-link-title {
   background-color: yellow;
+  font-weight: bold;
 }
-.dcs-balloon-icons {
+.text-title {  
+  font-weight: bold;
+}
+.dcs-link-icons {
   margin-left: 7px;
   cursor: pointer;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import i18n from '/imports/both/i18n/en'
-import DCSBalloon from '/imports/client/ui/components/DCSBalloon/index.js'
+import DCSLink from '/imports/client/ui/components/DCSLink/index.js'
 import './styles.scss'
 
 const { title, content } = i18n.About.first_section
@@ -20,7 +20,7 @@ const FirstSection = () => (
       <Row>
         <Col xs={6}>
           <h2 className='title'>
-            <DCSBalloon title={title} triggerId="section1" />
+            <DCSLink badge="true" format="speech-bubble" title={title} triggerId="section1" />
           </h2>
           <div className="text-content">
             <p>{second}</p>

@@ -2,7 +2,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import i18n from "/imports/both/i18n/en/";
-import DCSBalloon from '/imports/client/ui/components/DCSBalloon/index.js'
+import DCSLink from '/imports/client/ui/components/DCSLink/index.js'
 
 const Content = (props) => {
   return (
@@ -16,7 +16,7 @@ const Content = (props) => {
           <Col key={index} className="ml-5 pl-5 mt-5" xs={11}>
             <h5>{item.heading} </h5>
             <li className="mb-3 text-left">{item.text}</li>
-            <DCSBalloon title=" " subtitle="discuss" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
+            <DCSLink badge="true" format="speech-bubble" title=" " subtitle="discuss" balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
           </Col>
         );
 
@@ -25,7 +25,7 @@ const Content = (props) => {
             <h3>Longer</h3>
             <p>{item.heading2} </p>
             <li className="mb-3 text-left">{item.text2}</li>
-            <DCSBalloon title=" " subtitle="discuss" balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
+            <DCSLink badge="true" format="speech-bubble" title=" " subtitle="discuss" balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
           </Col>
         );
       })}
