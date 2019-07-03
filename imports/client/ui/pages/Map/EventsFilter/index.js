@@ -38,7 +38,7 @@ class FiltersList extends Component {
       show,
       toggleFiltersList
     } = this.props
-    
+
     return (
       <div id='filters-list' className={show ? 'show' : ''}>
         <ListGroup>
@@ -59,9 +59,9 @@ class FiltersList extends Component {
                   key={index}
                   className="checkbox"
                   style={{
-                    marginLeft: category.parent !== true? '20px':'0px' ,
+                    marginLeft: category.parent !== true ? '20px' : '0px' ,
                     color: category.color,
-                    display: category.hidden === true? 'none':'block'
+                    display: category.hidden === true ? 'none' : 'block'
                   }}
                 >
                   <CustomInput

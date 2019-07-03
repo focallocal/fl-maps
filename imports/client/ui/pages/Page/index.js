@@ -1,5 +1,6 @@
 // External Packages
 import React, { Component } from 'react'
+import { Redirect, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
@@ -22,8 +23,6 @@ import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import './style.scss'
 import i18n from '/imports/both/i18n/en'
 import { checkPermissions} from './../Admin/RolesPermissions/index'
-import { Redirect, withRouter } from 'react-router-dom'
-
 
 class Page extends Component {
   constructor (props) {
@@ -37,6 +36,8 @@ class Page extends Component {
       editDeletePermission: false,
     }
   }
+
+
 
   componentDidMount () {
     // THIS IS WRONG: if you fetch data in componentDidMount(), then any route
@@ -104,7 +105,7 @@ class Page extends Component {
   }
 
   // DOCUSS
-  dcsHeading(title, balloonId) {
+  dcsHeading(title, subtitle, balloonId) {
     const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
     const badgeHtml = (
       <span
@@ -122,17 +123,23 @@ class Page extends Component {
         onClick={e => this.dcsClick(balloonId, e)}
       >
         <b className={titleClass}>{title}</b>&nbsp;
+
         <span className="dcs-icons">
           <img src={`/images/dcs-balloon-${balloonId}.png`} />
         </span>
         {badgeCount ? badgeHtml : ''}
+        <div>
+        <small style={{marginLeft: '5px', marginRight: '5px', fontSize: '60%'}}>
+          {subtitle}
+        </small>
+        </div>
       </div>
     )
   }
 
-  render () {
-    if (this.state.redirect === true) {
-      return <Redirect to='/map' />
+  render() {
+    if(this.state.redirect === true){
+     return <Redirect to='/map' />
     }
 
     const {
@@ -192,16 +199,20 @@ class Page extends Component {
             categories={c}
             video={video}
           />
+          
         </div>
         <Row>
           <Col lg={{ size: 1, offset: 12 }}>
             <Button color='danger' onClick={this.closePage}>Back To Map</Button>
           </Col>
         </Row>
-
+    
         <Container className='body'>
+          
           <Row>
+            
             <Col xs={7} className='left'>
+              
               <div className='title-wrapper'>
                 <div className='title'>{name}</div>
                 <div className='sub-title-categories'>{categories}</div>
@@ -214,19 +225,19 @@ class Page extends Component {
                 <SectionTitle title='Meet Me Details' />
                 <Linkify options={linkifyOption}>{findHints}</Linkify>
               </div>
-              {this.dcsHeading('Photos', 'pho')}
-              {this.dcsHeading('Videos', 'vid')}
+              {this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
+              {this.dcsHeading(i18n.Map.eventInfo.videos.title, i18n.Map.eventInfo.photos.subtitle, 'vid')}
               <div className='description'>
                 <SectionTitle title='About' />
+            
                 <Linkify options={linkifyOption}>{description}</Linkify>
               </div>
-              {this.dcsHeading('Wall', 'wal')}
-              {this.dcsHeading('Experiences', 'exp')}
+              {this.dcsHeading(i18n.Map.eventInfo.wall.title, i18n.Map.eventInfo.wall.subtitle, 'wal')}
+              {this.dcsHeading(i18n.Map.eventInfo.experiences.title, i18n.Map.eventInfo.experiences.subtitle, 'exp')}
+
             </Col>
 
             <Col xs={4} className='right'>
-              {isAuthor && <EditPage data={data} history={history} />}
-              <Button color='danger' onClick={this.closePage}>Close Page</Button>
               <SectionTitle title='Date and Time' />
               {/* attending button currently inactive until able to work with both maps:
                 <AttendingButton _id={_id} history={history} isLoggedIn={isLoggedIn} user={user} />*/}
@@ -251,7 +262,7 @@ class Page extends Component {
               <Divider />
 
               {isAuthor && <EditPage data={data} history={history} />} 
-              <Button color='danger' onClick={ this.closePage}>Close Page</Button>
+              
             </Col>
           </Row>
           <iframe
@@ -315,6 +326,6 @@ export default withTracker(() => {
     user: Meteor.user()
   }
 })(withRouter(Page))
-
+// 
 // Testing
 export { Page }

@@ -6,17 +6,24 @@ import './styles.scss'
 
 const Logo = ({ sidebar, onClick }) => {
   let imgUrl
+  let menuLogo
 
-  if (window.__mapType === 'gatherings') {
-    imgUrl = sidebar ? 'focallocal_logo_invert.png' : 'focallocal_logo.png'
-  } else {
+  if (window.__mapType !== 'gatherings') {
     imgUrl = sidebar ? 'btm_logo_invert.png' : 'btm_logo.png'
+  } else {
+    menuLogo = sidebar
+      ? <a class="brand-logo brand-text-mobile" href="http://focallocal.org">Focallocal</a>
+      : <a class="brand-logo brand-text" href="http://focallocal.org">Focallocal</a>
   }
 
   return (
     <NavbarBrand id='brand-logo' tag='div' onClick={onClick}>
       <NavLink to='/' exact>
-        <img src={'/images/' + imgUrl} />
+        {
+          window.__mapType === 'gatherings'
+            ? menuLogo
+            : <img src={'/images/' + imgUrl} />
+        }
       </NavLink>
     </NavbarBrand>
   )

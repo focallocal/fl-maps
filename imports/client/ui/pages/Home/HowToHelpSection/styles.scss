@@ -12,6 +12,7 @@
   }
   .title{
     font-size: 2em;
+    line-height: 1.2em;
     margin-left: -15px;
   }
   .item-text {
@@ -30,23 +31,32 @@
     display: block;
     width: 16em;
     margin-left: auto;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .join {
+    display: block;
+
     width: 12em;
     padding-left: 8px;
     padding-right: 8px;
     font-size: 0.8rem;
-    margin-left: 4px;
+    margin: 2em auto;
     text-align: center;
   }
-  
+
   @media screen and (max-width: 850px) {
     .title {
-      text-align: center;
+      font-size: 1.4em;
+      line-height: 1.4em;
+      margin-left: 0;
+      text-align: left;
+    }
+
+    .item {
+      margin-left: 15px;
     }
 
     .items {
@@ -55,6 +65,7 @@
       &>div {
         flex: 1;
         max-width: 480px;
+        margin: 0 1em;
         margin-bottom: 24px;
       }
     }

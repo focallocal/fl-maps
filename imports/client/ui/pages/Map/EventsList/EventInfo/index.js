@@ -86,7 +86,7 @@ class EventInfo extends Component {
   openMoreInfo = () => {
     const {
       event,
-      openMoreInfo
+      openMoreInfo,
     } = this.props
 
     openMoreInfo(event)

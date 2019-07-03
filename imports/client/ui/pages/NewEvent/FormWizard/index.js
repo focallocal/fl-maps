@@ -37,7 +37,7 @@ class FormWizard extends Component {
       >
         {this.form ? (
           <Fragment>
-            <Button 
+            <Button
               outline
               color='secondary'
               className='reset'

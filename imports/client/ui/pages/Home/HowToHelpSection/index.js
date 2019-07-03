@@ -30,10 +30,10 @@ class HowToHelpSection extends Component {
        <Container>
          <Row className="items">
            <Col>
-             <div className='title'>{title}</div>
+            <div className='title'>{title}</div>
              {items.map((item, i) => (
                <Row key={i}>
-                 <Item item={item} loginButton={loginButton} />
+                <Item item={item} loginButton={loginButton} />
                </Row>
              ))}
            </Col>
@@ -46,9 +46,8 @@ class HowToHelpSection extends Component {
    )
  }
 }
-
 HowToHelpSection.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+isLoggedIn: PropTypes.bool.isRequired,
 }
 
 export default HowToHelpSection

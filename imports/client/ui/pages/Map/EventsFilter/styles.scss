@@ -53,7 +53,7 @@
   .categories-items{
     .list-group-item{
       display: flex;
-      align-items: flex-start;
+      align-items: center; //value before flex start
       flex-flow: row nowrap;
       justify-content: space-between;
     
@@ -65,9 +65,12 @@
     }
 
     .list-group-item a{
-      color: $gray-stronger;
+      color: rgb(200, 200, 200);
       position: absolute;
       right: 20px;
+      top: 6px;
+
+      font-size: 1.5em;
 
       &:hover {
         color: $primary-blue-hover;

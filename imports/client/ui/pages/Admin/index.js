@@ -8,7 +8,7 @@ import './style.scss'
 import UserSearch from './UserSearch/index'
 import UserDisplay from './UserDisplay/index'
 import { parseData} from  './AdminTable/helper'
-import {Redirect } from 'react-router'
+import { Redirect } from 'react-router'
 
 class Admin extends Component {
   constructor(props) {
@@ -24,7 +24,6 @@ class Admin extends Component {
       isSearching: false,
       isAllEvents: false,
       isRedirect: false,
- 
       }
      }
   
@@ -255,8 +254,8 @@ class Admin extends Component {
 
   render() {
     const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay, isRedirect} = this.state;
-    if (isRedirect){
-     return <Redirect to="/" />
+    if (isRedirect) {
+      return <Redirect to="/" />
     }
     let isNoUsersFound = this.state.users.length <= 0 ? true: false
     
