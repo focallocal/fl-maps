@@ -38,8 +38,7 @@ class MapComponent_ extends Component {
   memoizeLocations = {} // cache locations
 
   componentDidMount () {
-
-
+    
     if (window.previousStateOfMap) {
       this.setState({ ...window.previousStateOfMap })
     }
@@ -225,8 +224,8 @@ class MapComponent_ extends Component {
       }
     })
   }
-  
-  returnToDefaultAfterPageClose = () => {
+
+  returnToDefaultAfterPageClose = () =>{
     getUserPosition(this);
     this.removeCurrentEvent();
   }
@@ -325,7 +324,8 @@ class MapComponent_ extends Component {
     window.previousStateOfMap.showFilters = false
     window.previousStateOfMap.filteredEvents = null
 
-    this.props.history.push('/page/' + event._id)
+    this.props.history.push('/page/' + event._id);
+    
   }
 
   getEvents = (location, skip = 0, limit = 30) => {

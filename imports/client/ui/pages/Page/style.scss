@@ -2,7 +2,7 @@
 $titles-color: #fff;
 
 #page {
-
+  
   .header {
     position: relative;
     display: flex;
@@ -41,7 +41,7 @@ $titles-color: #fff;
     }
 
     /* --------------
-        Left Column 
+        Left Column
        -------------- */
 
     .left{
@@ -80,7 +80,7 @@ $titles-color: #fff;
       padding-top: 15px;
 
       .hours-formatted {
-
+        
         .date {
           margin-bottom: 8px;
         }
@@ -89,14 +89,14 @@ $titles-color: #fff;
           display: flex;
           justify-content: space-between;
 
-          &>div:first-child {
+          & > div:first-child {
             margin-right: 0;
           }
         }
       }
 
       .location {
-
+        
         .view-map {
           color: #007bff;
           font-size: .9em;
@@ -114,14 +114,14 @@ $titles-color: #fff;
         width: 100%;
         margin-bottom: 8px;
       }
-
+      
     }
     /* ------------ End Right Column -------------- */
 
     // DOCUSS
     .dcs-selected {
       background-color: yellow;
-    }    
+    }
     .dcs-badge {
       display: inline-block;
       border-radius: 10px;
@@ -154,10 +154,10 @@ $titles-color: #fff;
   }
 
   .fixed-bg {
-    background: $green !important;
+    background: $primary-blue !important;
 
     &.active {
-      background: $green-darker !important
+      background: $primary-blue-darker !important;
     }
   }
 
@@ -186,9 +186,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 860px) {
-
+    
     & {
-
+      
       .header .title-wrapper {
         width: 95%;
       }
@@ -209,19 +209,19 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 640px) {
-
+    
     & {
-
+      
       .title-wrapper {
-
+        
         .sub-title-categories {
           font-size: 1.2em;
         }
       }
 
       .body {
-
-
+        
+        
         .left, .right {
           max-width: 95%;
           flex: 0 0 100%;
@@ -252,9 +252,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 520px) {
-
+    
     & {
-
+      
       .body {
         width: 90%;
       }

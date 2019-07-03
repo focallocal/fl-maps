@@ -1,5 +1,3 @@
-import { Meteor } from 'meteor/meteor'
-import { withTracker } from 'meteor/react-meteor-data'
 import React from "react"
 import DropDownItem from "../DropDownItem"
 import i18n from "/imports/both/i18n/en"
@@ -19,23 +17,15 @@ const UserItem = ({ user }) => {
     userStatus = user ? "loggedIn" : "loggedOut";
   }
   const item = {
-    'title': '',
-    'icon': 'fas fa-user-circle user',
-    'content': i18n.MainMenu.userLink[userStatus]
-  }
+    title: "",
+    icon: "fas fa-user-circle user",
+    content: i18n.MainMenu.userLink[userStatus]
+  };
 
-  return (
-    <DropDownItem item={item} id='user-item' />
-  )
-}
+  return <DropDownItem item={item} id="user-item" />;
+};
 
-export default withTracker(() => {
-  return {
-    user: Meteor.user()
-  }
-})(UserItem)
+export default UserItem;
 
 // For testing
-export {
-  UserItem
-}
+export { UserItem };

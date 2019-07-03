@@ -37,13 +37,7 @@ class DropDownItem extends Component {
               // Distingiush between link and route-link
               return item_.link
                 ? <DropdownItem key={index} tag='a' href={item_.link} target='__blank'>{item_.title}</DropdownItem>
-                //Nested conditions that check target_blank = true
-                // Renders external links in new tabs and relative links on the same tab.
-                :
-                  (item_.target_blank ? 
-                  <DropdownItem key={index} tag={NavLink} target="blank" to={item_.route}>{item_.title}</DropdownItem> 
-                : <DropdownItem key={index} tag={NavLink} to={item_.route}>{item_.title}</DropdownItem> )
-                
+                : <DropdownItem key={index} tag={NavLink} to={item_.route}>{item_.title}</DropdownItem>
             })}
           </DropdownMenu>
 

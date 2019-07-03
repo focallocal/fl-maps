@@ -22,7 +22,7 @@ class NewEventModal extends Component {
       googleLoaded: false,
       hasErrors: false,
       isRedirect: false,
-      isConfirmBtn: false,
+      isConfirmBtn: false
     }
 
     if (window.google) {
@@ -36,7 +36,7 @@ class NewEventModal extends Component {
         ...nextProps,
         editMode: true,
         isRedirect: false,
-        isConfirmBtn: false,
+        isConfirmBtn: false
       }
     }
     return {
@@ -83,8 +83,7 @@ class NewEventModal extends Component {
     const hasGoogleMapsLoaded = window.google || googleLoaded
 
     const header = i18n_.modal_header
-    const isConfirmBtn = this.state.isConfirmBtn;
-
+    const isConfirmBtn = this.state.isConfirmBtn
     const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete Page</Button> : null
 
     return hasGoogleMapsLoaded && (
@@ -199,6 +198,7 @@ class NewEventModal extends Component {
 
       if (Meteor.isDevelopment) { console.log(err, model) }
     })
+
   }
 
   toggleModal = () => {

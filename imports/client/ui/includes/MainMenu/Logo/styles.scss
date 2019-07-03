@@ -8,3 +8,32 @@
     align-items: center;
   }
 }
+
+@font-face {
+  font-family: 'Hobo';
+  src: local('Hobo'), url(hobo.ttf) format('truetype');
+}
+
+.brand-text {
+  font-family: 'Hobo';
+  text-decoration: none !important;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+}
+
+.brand-text-mobile {
+  font-family: 'Hobo';
+  text-decoration: none !important;
+  color: #f57c00;
+  display: inline-block;
+  font-size: 2.1rem;
+}
+
+.brand-text:hover {
+  color:white;
+}
+
+.brand-text-mobile:hover {
+  color: #f57c00;
+}
