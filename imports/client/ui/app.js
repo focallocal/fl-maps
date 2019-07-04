@@ -166,6 +166,17 @@ if (inIFrame()) {
     timeout: 10000,
     onTimeout: () => console.log('Could not connect to the Docuss plugin')
   })
+
+  // Set Docuss-generated topic to have pre-populated category
+  comToPlugin.onDiscourseRoutePushed(({ route }) => {
+    const topicCategory =
+      route.pageName === 'm_about'? 'General' :
+      route.pageName === 'm_gather'? 'Hidden' :
+      route.pageName === 'm_wpaper'? 'Whitepaper' :
+      'General'
+    comToPlugin.postSetRouteProps({ category: topicCategory })
+  })
+
 }
 
 const routeMatcher = new SimpleRouteMatcher({
