@@ -79,6 +79,7 @@ class DCSLink extends Component {
         className={'dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
       >
         <span className="dcs-link-title text-title">{title}</span>
+        {/* {' '}<img src={`/images/dcs-balloon-bal.png`} /> */}
         {dcsCount > 0 && badge === 'true' && renderBadge}
       </span>
     )

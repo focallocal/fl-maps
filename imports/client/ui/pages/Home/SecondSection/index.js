@@ -27,7 +27,7 @@ class SecondSection extends React.Component {
           <Row className="items">
             {items.map((item, i) => (
               <Col key={i}>
-                <Item item={item} />
+                <Item item={item} index={i} />
               </Col>
             ))}
           </Row>
