@@ -170,10 +170,9 @@ if (inIFrame()) {
   // Set Docuss-generated topic to have pre-populated category
   comToPlugin.onDiscourseRoutePushed(({ route }) => {
     const topicCategory =
-      route.pageName === 'm_about'? 'General' :
+      route.pageName === 'm_about'? 'The About Page Discussion' :
       route.pageName === 'm_gather'? 'Hidden' :
-      route.pageName === 'm_wpaper'? 'Whitepaper' :
-      'General'
+      'General Discussion'
     comToPlugin.postSetRouteProps({ category: topicCategory })
   })
 

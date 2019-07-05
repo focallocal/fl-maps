@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run --settings settings.json",
+    "start:withDiscourse": "meteor run --settings settings.json --port 4000 & local-ssl-proxy --target 4000 --source 2000",
     "test": "jest --maxWorkers=4",
     "test-watch": "jest --watchAll",
     "coverage": "jest --coverage",
