@@ -14,6 +14,8 @@
     { "name": "m_about", "url": "/about" },
     { "name": "m_gather", "url": "/map" },
     { "name": "m_wpaper", "url": "/whitepaper" }
+    { "name": "m_wpaper_why", "url": "/whitepaper/why" }
+    { "name": "m_wpaper_intro", "url": "/whitepaper/intro" }
   ],
 
   "webApp": { "otherPagesPrefix": "m_" }
