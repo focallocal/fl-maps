@@ -13,6 +13,7 @@
     { "name": "m_home", "url": "/" },
     { "name": "m_about", "url": "/about" },
     { "name": "m_gather", "url": "/map" },
+    { "name": "m_team", "url": "/team" },
     { "name": "wp_paper", "url": "/whitepaper" },
     { "name": "wp_why", "url": "/whitepaper/why" },
     { "name": "wp_intro", "url": "/whitepaper/intro" }
