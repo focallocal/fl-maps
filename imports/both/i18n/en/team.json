@@ -1,6 +1,55 @@
-
 {
-    "members" : [	    
+    "project": [
+        {
+            "title": "Andy Tulett",
+            "image": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+            "subtitle": "Founder and Director of The Focallocal Public Happiness Community",
+            "text": "As a Public Happiness Activist I bring people together around creative ideas, to build projects and Movements which bring a little more peace and well-being into this world.",
+            "linkedIn": "https://www.linkedin.com/in/andytulett/",
+            "twitter": "https://twitter.com/focallocal",
+            "github": "",
+            "facebook": "https://www.facebook.com/andyat.focallocal",
+            "google": "",
+            "website": "https://andytulett.focallocal.org"
+        },
+        {
+            "title": "Tom McNulty",
+            "image": "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
+            "subtitle": "Site Reliabilty Engineer",
+            "text": "Site Reliabilty and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
+            "linkedIn": "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
+            "twitter": "",
+            "github": "https://github.com/TLMcNulty",
+            "facebook": "",
+            "google": "",
+            "website": "https://tom.mcnulty.in"
+        },
+        {
+            "title": "Matias Forbord",
+            "image": "https://avatars3.githubusercontent.com/u/1154150?s=460&v=4",
+            "subtitle": "DevOps/Full Stack Engineer",
+            "text": "Passionate humanist and engineer working to end poverty. Creating access to work in the Philippine slums.",
+            "linkedIn": "https://www.linkedin.com/in/matiasforbord",
+            "twitter": "https://twitter.com/MatiasForbord",
+            "github": "https://github.com/codeluggage",
+            "facebook": "",
+            "google": "",
+            "website": "https://gifsplanation.com"
+        },
+        {
+            "title": "Pawel Mordaszewski",
+            "image": "https://ca.slack-edge.com/T02D50FP9-U02ELQ3GQ-dac2ad348311-1024",
+            "subtitle": "Technical utility player",
+            "text": "Travelling software engineer with a passion for a better world. Recently busy working for the fourth industrial revolution by harnessing autonomous drones using AI analytics sent through IoT on 5G.",
+            "linkedIn": "https://www.linkedin.com/in/pmordaszewski",
+            "twitter": "",
+            "github": "https://github.com/mordka",
+            "facebook": "",
+            "google": "",
+            "website": ""
+        }
+    ],
+    "web" : [	    
          {
             "title" : "Andy Tulett",
             "image" : "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
@@ -86,5 +135,107 @@
             "website" : ""
         }
 
+    ],
+    "marketing": [
+        {
+            "title": "Andy Tulett",
+            "image": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+            "subtitle": "Founder and Director of The Focallocal Public Happiness Community",
+            "text": "As a Public Happiness Activist I bring people together around creative ideas, to build projects and Movements which bring a little more peace and well-being into this world.",
+            "linkedIn": "https://www.linkedin.com/in/andytulett/",
+            "twitter": "https://twitter.com/focallocal",
+            "github": "",
+            "facebook": "https://www.facebook.com/andyat.focallocal",
+            "google": "",
+            "website": "https://andytulett.focallocal.org"
+        },
+        {
+            "title": "Tom McNulty",
+            "image": "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
+            "subtitle": "Site Reliabilty Engineer",
+            "text": "Site Reliabilty and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
+            "linkedIn": "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
+            "twitter": "",
+            "github": "https://github.com/TLMcNulty",
+            "facebook": "",
+            "google": "",
+            "website": "https://tom.mcnulty.in"
+        },
+        {
+            "title": "Matias Forbord",
+            "image": "https://avatars3.githubusercontent.com/u/1154150?s=460&v=4",
+            "subtitle": "DevOps/Full Stack Engineer",
+            "text": "Passionate humanist and engineer working to end poverty. Creating access to work in the Philippine slums.",
+            "linkedIn": "https://www.linkedin.com/in/matiasforbord",
+            "twitter": "https://twitter.com/MatiasForbord",
+            "github": "https://github.com/codeluggage",
+            "facebook": "",
+            "google": "",
+            "website": "https://gifsplanation.com"
+        },
+        {
+            "title": "Pawel Mordaszewski",
+            "image": "https://ca.slack-edge.com/T02D50FP9-U02ELQ3GQ-dac2ad348311-1024",
+            "subtitle": "Technical utility player",
+            "text": "Travelling software engineer with a passion for a better world. Recently busy working for the fourth industrial revolution by harnessing autonomous drones using AI analytics sent through IoT on 5G.",
+            "linkedIn": "https://www.linkedin.com/in/pmordaszewski",
+            "twitter": "",
+            "github": "https://github.com/mordka",
+            "facebook": "",
+            "google": "",
+            "website": ""
+        }
+    ],
+    "token": [
+        {
+            "title": "Matias Forbord",
+            "image": "https://avatars3.githubusercontent.com/u/1154150?s=460&v=4",
+            "subtitle": "DevOps/Full Stack Engineer",
+            "text": "Passionate humanist and engineer working to end poverty. Creating access to work in the Philippine slums.",
+            "linkedIn": "https://www.linkedin.com/in/matiasforbord",
+            "twitter": "https://twitter.com/MatiasForbord",
+            "github": "https://github.com/codeluggage",
+            "facebook": "",
+            "google": "",
+            "website": "https://gifsplanation.com"
+        },
+        {
+            "title": "Pawel Mordaszewski",
+            "image": "https://ca.slack-edge.com/T02D50FP9-U02ELQ3GQ-dac2ad348311-1024",
+            "subtitle": "Technical utility player",
+            "text": "Travelling software engineer with a passion for a better world. Recently busy working for the fourth industrial revolution by harnessing autonomous drones using AI analytics sent through IoT on 5G.",
+            "linkedIn": "https://www.linkedin.com/in/pmordaszewski",
+            "twitter": "",
+            "github": "https://github.com/mordka",
+            "facebook": "",
+            "google": "",
+            "website": ""
+        }
+    ],
+    "advisors": [
+        {
+            "title": "Andy Tulett",
+            "image": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+            "subtitle": "Founder and Director of The Focallocal Public Happiness Community",
+            "text": "As a Public Happiness Activist I bring people together around creative ideas, to build projects and Movements which bring a little more peace and well-being into this world.",
+            "linkedIn": "https://www.linkedin.com/in/andytulett/",
+            "twitter": "https://twitter.com/focallocal",
+            "github": "",
+            "facebook": "https://www.facebook.com/andyat.focallocal",
+            "google": "",
+            "website": "https://andytulett.focallocal.org"
+        },
+        {
+            "title": "Tom McNulty",
+            "image": "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
+            "subtitle": "Site Reliabilty Engineer",
+            "text": "Site Reliabilty and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
+            "linkedIn": "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
+            "twitter": "",
+            "github": "https://github.com/TLMcNulty",
+            "facebook": "",
+            "google": "",
+            "website": "https://tom.mcnulty.in"
+        }
     ]
 }
