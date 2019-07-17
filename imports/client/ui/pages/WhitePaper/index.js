@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Container } from "reactstrap";
 import './styles.scss'
-import DCSLink from '/imports/client/ui/components/DCSLink/index.js'
+import DCSBalloon from '/imports/client/ui/components/DCSBalloon/index.js'
 
 const Remarkable = require('remarkable');
 
@@ -1646,120 +1646,120 @@ const index = (props) => {
   return (
     <Container className="mt-5">
 			<Title />
-		<Anchor103  /><DCSLink badge="true" format="speech-bubble" title="General Discussion" triggerId="bal" display="inline" />	
-			<Contents /><DCSLink badge="true" format="speech-bubble" title="click balloons to comment on section above" triggerId="bal" display="inline" />
+		<Anchor103  /><DCSBalloon title="General Discussion" balloonId="bal" display="inline" dcsTags={props.dcsTags} />	
+			<Contents /><DCSBalloon title="click balloons to comment on section above" balloonId="bal" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor1  />    
-		<Anchor2  /><DCSLink badge="true" format="speech-bubble" triggerId="bal1" display="inline" />
-		<Anchor3  /><DCSLink badge="true" format="speech-bubble" triggerId="bal1" display="inline" />
+		<Anchor2  /><DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
+		<Anchor3  /><DCSBalloon balloonId="bal1" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor4  />
-		<Anchor5  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
-		<Anchor6  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
-		<Anchor7  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
-		<Anchor8  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
+		<Anchor5  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
+		<Anchor6  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
+		<Anchor7  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
+		<Anchor8  /><DCSBalloon balloonId="bal2" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor9  />
-		<Anchor10 /><DCSLink badge="true" format="speech-bubble" triggerId="bal3" display="inline" />
-		<Anchor11 /><DCSLink badge="true" format="speech-bubble" triggerId="bal3" display="inline" />
+		<Anchor10 /><DCSBalloon balloonId="bal3" display="inline" dcsTags={props.dcsTags} />
+		<Anchor11 /><DCSBalloon balloonId="bal3" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor12 />
-		<Anchor13 /><DCSLink badge="true" format="speech-bubble" triggerId="bal4" display="inline" />
+		<Anchor13 /><DCSBalloon balloonId="bal4" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor14 />
-		<Anchor15 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
-		<Anchor16 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
-		<Anchor17 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
-		<Anchor18 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
+		<Anchor15 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
+		<Anchor16 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
+		<Anchor17 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
+		<Anchor18 /><DCSBalloon balloonId="bal5" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor19 />
-		<Anchor20 /><DCSLink badge="true" format="speech-bubble" triggerId="bal6" display="inline" />
-		<Anchor21 /><DCSLink badge="true" format="speech-bubble" triggerId="bal6" display="inline" />
+		<Anchor20 /><DCSBalloon balloonId="bal6" display="inline" dcsTags={props.dcsTags} />
+		<Anchor21 /><DCSBalloon balloonId="bal6" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor22 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor23 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor24 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor25 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor26 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor27 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor28 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor29 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor30 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor31 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor32 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor111 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor112 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+		<Anchor22 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor23 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor24 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor25 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor26 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor27 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor28 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor29 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor30 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor31 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor32 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor111 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
+		<Anchor112 /><DCSBalloon balloonId="bal7" display="inline" dcsTags={props.dcsTags} />
 		
 		
 		
 		<Anchor33 />
-		<Anchor34 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
-		<Anchor35 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
-		<Anchor36 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
-		<Anchor37 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
+		<Anchor34 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
+		<Anchor35 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
+		<Anchor36 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
+		<Anchor37 /><DCSBalloon balloonId="bal8" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor38 />
-		<Anchor39 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor40 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor41 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor42 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor43 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
+		<Anchor39 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
+		<Anchor40 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
+		<Anchor41 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
+		<Anchor42 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
+		<Anchor43 /><DCSBalloon balloonId="bal9" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor44 />
-		<Anchor45 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor46 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor47 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor48 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor49 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor50 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor51 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor52 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor110 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+		<Anchor45 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor46 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor47 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor48 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor49 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor50 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor51 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor52 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
+		<Anchor110 /><DCSBalloon balloonId="bal10" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor104  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor105  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor106  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor107  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor108  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor109  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
+		<Anchor104  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor105  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor106  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor107  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor108  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
+		<Anchor109  /><DCSBalloon balloonId="bal19" display="inline" dcsTags={props.dcsTags} />
 		
 		
-		<Anchor53 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor54 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor55 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor56 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor57 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor58 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor59 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor60 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor61 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+		<Anchor53 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor54 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor55 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor56 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor57 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor58 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor59 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor60 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
+		<Anchor61 /><DCSBalloon balloonId="bal11" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor62 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor63 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor64 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor65 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor66 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
+		<Anchor62 /><DCSBalloon balloonId="bal12" display="inline" dcsTags={props.dcsTags} />
+		<Anchor63 /><DCSBalloon balloonId="bal12" display="inline" dcsTags={props.dcsTags} />
+		<Anchor64 /><DCSBalloon balloonId="bal12" display="inline" dcsTags={props.dcsTags} />
+		<Anchor65 /><DCSBalloon balloonId="bal12" display="inline" dcsTags={props.dcsTags} />
+		<Anchor66 /><DCSBalloon balloonId="bal12" display="inline" dcsTags={props.dcsTags} />
 		
 		<Anchor67 />
-		<Anchor68 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
-		<Anchor69 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
-		<Anchor70 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
-		<Anchor71 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
+		<Anchor68 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
+		<Anchor69 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
+		<Anchor70 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
+		<Anchor71 /><DCSBalloon balloonId="bal13" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor72 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor73 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor74 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor75 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor76 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
+		<Anchor72 /><DCSBalloon balloonId="bal14" display="inline" dcsTags={props.dcsTags} />
+		<Anchor73 /><DCSBalloon balloonId="bal14" display="inline" dcsTags={props.dcsTags} />
+		<Anchor74 /><DCSBalloon balloonId="bal14" display="inline" dcsTags={props.dcsTags} />
+		<Anchor75 /><DCSBalloon balloonId="bal14" display="inline" dcsTags={props.dcsTags} />
+		<Anchor76 /><DCSBalloon balloonId="bal14" display="inline" dcsTags={props.dcsTags} />
 		
-		<Anchor77 /><DCSLink badge="true" format="speech-bubble" triggerId="bal15" display="inline" />
-		<Anchor78 /><DCSLink badge="true" format="speech-bubble" triggerId="bal16" display="inline" />
-		<Anchor79 /><DCSLink badge="true" format="speech-bubble" triggerId="bal17" display="inline" />
-		<Anchor80 /><DCSLink badge="true" format="speech-bubble" triggerId="bal18" display="inline" />
+		<Anchor77 /><DCSBalloon balloonId="bal15" display="inline" dcsTags={props.dcsTags} />
+		<Anchor78 /><DCSBalloon balloonId="bal16" display="inline" dcsTags={props.dcsTags} />
+		<Anchor79 /><DCSBalloon balloonId="bal17" display="inline" dcsTags={props.dcsTags} />
+		<Anchor80 /><DCSBalloon balloonId="bal18" display="inline" dcsTags={props.dcsTags} />
     </Container>
 
 
-  )
-}
+  );
+};
 
-export default index
+export default index;
