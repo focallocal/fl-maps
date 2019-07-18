@@ -23,7 +23,7 @@ export default class MinimizeButton extends React.Component {
         className={minimized ? 'minimized' : ''}
         onClick={this.toggleMinimize}
       >
-        {minimized ? 'maximize' : 'minimize'}
+        {minimized ? 'restore' : 'minimize'}
       </Button>
     )
   }

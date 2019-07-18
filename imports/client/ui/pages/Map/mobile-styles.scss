@@ -6,9 +6,9 @@
 
     #minimize {
       position: fixed;
-      top: calc(100vh - 30px - (55vh - #{$menu-height}));
+      top: calc(55vh - #{$minimize-button-height} - #{$menu-height-docus});
       left: 0px;
-      height: 30px;
+      height: $minimize-button-height;
       width: 76.2px;
       font-size: .7em;
       background-color: $gray-lighter;
@@ -20,7 +20,7 @@
     &.minimized {
 
       #events-list {
-        transform: translateY(calc(55vh - #{$menu-height}));
+        transform: translateY(100vh);
       }
 
       #map {
@@ -30,11 +30,12 @@
       button#minimize {
         top: calc(100vh - 30px);
         left: 0px;
+        z-index: 99;
       }
     }
 
     #map {
-      height: calc(55vh - #{$menu-height});
+      height: calc(55vh - #{$menu-height-docus});
       width: 100% !important;
       transition: height .2s ease;
     }
@@ -43,9 +44,13 @@
       position: absolute;
       top: auto;
       bottom: 0;
-      height: calc(55vh - #{$menu-height});
+      height: calc(55vh);
       width: 100%;
       transform: translateX(0);
+
+      &.offset-standalone-menu {
+        height: calc(55vh - #{$menu-height})!important;
+      }
     }
 
     #filters-list {
@@ -64,7 +69,7 @@
       transform: translate(0, 0)!important;
 
       &:not(.active) {
-        transform: translateX(-#{$map-events-list-width})!important;
+        transform: translateX(-100%)!important;
       }
     }
   }
