@@ -2,11 +2,17 @@
 
 @media screen and (max-width: 750px) {
 
+  .offset-standalone-menu {
+      #minimize {
+        top: calc(45vh - #{$minimize-button-height})!important;
+      }
+    }  
+
   #map-container {
 
     #minimize {
-      position: fixed;
-      top: calc(55vh - #{$minimize-button-height} - #{$menu-height-docus});
+      position: absolute;
+      bottom: 55vh;
       left: 0px;
       height: $minimize-button-height;
       width: 76.2px;
@@ -35,7 +41,7 @@
     }
 
     #map {
-      height: calc(55vh - #{$menu-height-docus});
+      height: 45vh;
       width: 100% !important;
       transition: height .2s ease;
     }
@@ -44,7 +50,7 @@
       position: absolute;
       top: auto;
       bottom: 0;
-      height: calc(55vh);
+      height: 55vh;
       width: 100%;
       transform: translateX(0);
 
