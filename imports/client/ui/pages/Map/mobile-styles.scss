@@ -13,7 +13,8 @@
     #minimize {
       display: block!important;
       position: absolute;
-      bottom: 55vh;
+      bottom: 55vh!important;
+      top: auto!important;
       left: 0px;
       height: $minimize-button-height;
       width: 76.2px;
