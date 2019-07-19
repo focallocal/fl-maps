@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Container, Row, Col, Button } from 'reactstrap'
-import qs from 'query-string'
 import Linkify from 'linkifyjs/react'
 
 // Components
@@ -33,7 +32,7 @@ class Page extends Component {
       loaded: false,
       badges: null,
       redirect: false,
-      editDeletePermission: false,
+      editDeletePermission: false
     }
   }
 
@@ -50,18 +49,16 @@ class Page extends Component {
       this.setState({ loaded: true })
       window.__setDocumentTitle(data.name)
     }
-    this.deleteEditPermission();
-    
+    this.deleteEditPermission()
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     if (this.state.data && !prevState.data) {
       window.__setDocumentTitle(this.state.data.name)
-    
     }
   }
 
-  static getDerivedStateFromProps (nextProps, prevState) {
+  static getDerivedStateFromProps (prevState) {
     const updatedData = window.__updatedData
 
     if (updatedData) {
@@ -80,9 +77,9 @@ class Page extends Component {
     return prevState
   }
 
-  render() {
-    if(this.state.redirect === true){
-     return <Redirect to='/map' />
+  render () {
+    if (this.state.redirect === true) {
+      return <Redirect to='/map' />
     }
 
     const {
@@ -96,7 +93,6 @@ class Page extends Component {
     }
 
     const {
-      _id,
       address,
       categories: c,
       overview,
@@ -129,10 +125,10 @@ class Page extends Component {
     let isAuthor
 
     if (isLoggedIn) {
-      isAuthor = user._id === organiser._id 
+      isAuthor = user._id === organiser._id
     }
-    if (isLoggedIn && editDeletePermission){
-      isAuthor = editDeletePermission;
+    if (isLoggedIn && editDeletePermission) {
+      isAuthor = editDeletePermission
     }
 
     return (
@@ -142,19 +138,19 @@ class Page extends Component {
             categories={c}
             video={video}
           />
-          
+
         </div>
         <Row>
           <Col lg={{ size: 1, offset: 12 }}>
             <Button color='danger' onClick={this.closePage}>Back To Map</Button>
           </Col>
         </Row>
-    
+
         <Container className='body'>
-          
+
           <Row>
-            
-            <Col xs={7} className='left'> 
+
+            <Col xs={7} className='left'>
               <div className='title-wrapper'>
                 <div className='title'>{name}</div>
                 <div className='sub-title-categories'>{categories}</div>
@@ -189,7 +185,7 @@ class Page extends Component {
                 <SharePanel data={when}/>
               </div>
               <Divider />
-              {isAuthor && <EditPage data={data} history={history} />} 
+              {isAuthor && <EditPage data={data} history={history} />}
             </Col>
 
           </Row>
@@ -204,17 +200,17 @@ class Page extends Component {
     )
   }
 
-  closePage = () =>{
-    this.setState({ redirect: true });
+  closePage = () => {
+    this.setState({ redirect: true })
   }
 
-  deleteEditPermission = () =>{
-    checkPermissions("deleteEditResource").then(response => {
-      this.setState({ editDeletePermission: response});
-    });
+  deleteEditPermission = () => {
+    checkPermissions('deleteEditResource').then(response => {
+      this.setState({ editDeletePermission: response })
+    })
   }
 
-  scrollToMap(){
+  scrollToMap () {
     scrollToElement('.embedded-map')
   }
 
@@ -249,108 +245,6 @@ export default withTracker(() => {
     user: Meteor.user()
   }
 })(withRouter(Page))
- 
+
 // Testing
 export { Page }
-
-
-/**
- * BELOW: Legacy DCS plugins and features, currently disconnected
- 
-
-(1) VARIABLES BOUND TO render() inside the return statement PART 1:
-(after 'meet-me' section)
-
-{this.dcsHeading(i18n.Map.eventInfo.photos.title, i18n.Map.eventInfo.photos.subtitle, 'pho')}
-{this.dcsHeading(i18n.Map.eventInfo.videos.title, i18n.Map.eventInfo.photos.subtitle, 'vid')}
-
-(2) VARIABLES BOUND TO render() inside the return statement PART 2:
-(end of left Col section)
-
-{this.dcsHeading(i18n.Map.eventInfo.wall.title, i18n.Map.eventInfo.wall.subtitle, 'wal')}
-{this.dcsHeading(i18n.Map.eventInfo.experiences.title, i18n.Map.eventInfo.experiences.subtitle, 'exp')}
-
-(3) VARIABLES BOUND TO render() inside the return statement PART 3:
-(very end of component, before the closing div container)
-
-<div id="coral_talk_stream"></div>
-        <Helmet>
-          { The embed web address will need updated depending on environment }
-          { Package.json port will need updated if you leave embed at 3000}
-          <script src="https://talk.focallocal.org/static/embed.js" async onload="
-            Coral.Talk.render(document.getElementById('coral_talk_stream'), {
-              talk: 'https://talk.focallocal.org/'
-            });
-          "></script>
-        </Helmet>
-
-(4) FUNCTIONS INSIDE ComponentDidMount():
-
-// DOCUSS
-    // Update selBalloonId here, so that we catch url changes triggered
-    // in other components
-    const { b } = qs.parse(window.location.search)
-    if (this.state.selBalloonId !== b) {
-      this.setState({ selBalloonId: b })
-    }
-
-    // DOCUSS
-    // Add badges (color circles with topic count)
-    if (!this.state.badges && this.props.dcsTags) {
-      const prefix = `dcs-${this.state.id.substring(0, 12).toLowerCase()}-`
-      const badges = {}
-      this.props.dcsTags.forEach(tag => {
-        if (tag.id.startsWith(prefix)) {
-          const balloonId = tag.id.substring(17)
-          badges[balloonId] = tag.count
-        }
-      })
-      this.setState({ badges })
-    }
-
-(5) FUNCTIONS REDERED SEPARATELY IN Page CLASS:
-
-(5a) BEFORE render():
-
-// DOCUSS
-  dcsHeading(title, subtitle, balloonId) {
-    const badgeCount = (this.state.badges && this.state.badges[balloonId]) || 0
-    const badgeHtml = (
-      <span
-        className="dcs-badge"
-        title={`This section has ${badgeCount} topic(s)`}
-      >
-        {badgeCount}
-      </span>
-    )
-    const titleClass =
-      balloonId === this.state.selBalloonId ? 'dcs-selected' : ''
-    return (
-      <div
-        style={{ margin: '20px 0', cursor: 'pointer' }}
-        onClick={e => this.dcsClick(balloonId, e)}
-      >
-        <b className={titleClass}>{title}</b>&nbsp;
-
-        <span className="dcs-icons">
-          <img src={`/images/dcs-balloon-${balloonId}.png`} />
-        </span>
-        {badgeCount ? badgeHtml : ''}
-        <div>
-        <small style={{marginLeft: '5px', marginRight: '5px', fontSize: '60%'}}>
-          {subtitle}
-        </small>
-        </div>
-      </div>
-    )
-  }
-
-(5b) AFTER render():
-
-dcsClick(balloonId, e) {
-    this.props.dcsClick(balloonId)
-    e.stopPropagation() // Required for deselection
-  }
-
- */
-

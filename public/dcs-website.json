@@ -14,6 +14,7 @@
     { "name": "m_about", "url": "/about" },
     { "name": "m_gather", "url": "/map" },
     { "name": "m_team", "url": "/team" },
+    { "name": "m_faq", "url": "/faq" },
     { "name": "whitepaper", "url": "/whitepaper" },
     { "name": "wp_why", "url": "/whitepaper/why" },
     { "name": "wp_intro", "url": "/whitepaper/intro" }

@@ -59,9 +59,9 @@ class DCSLink extends Component {
       </span>
     )
 
-    console.log(
-      title, ' has topic count ', dcsCount
-    )
+    // console.log(
+    //   title, ' has topic count ', dcsCount
+    // )
 
     if (format === 'speech-bubble') return (
       <span className={'dcs-link' + (dcsSelected ? ' dcs-selected' : '')}>
@@ -89,6 +89,7 @@ class DCSLink extends Component {
 export default withRouter(withDcs(DCSLink))
 
 DCSLink.propTypes = {
+  badge: PropTypes.string,
   title: PropTypes.string,
   triggerId: PropTypes.string.isRequired,
   format: PropTypes.string.isRequired
