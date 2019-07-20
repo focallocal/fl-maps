@@ -13,6 +13,7 @@ import VideoPlayer from '/imports/client/ui/components/VideoPlayer'
 import PageLoader from '/imports/client/ui/components/PageLoader'
 import SharePanel from '/imports/client/ui/components/SharePanel'
 import EditPage from './Edit'
+import DCSLink from '/imports/client/ui/components/DCSLink'
 
 // Helpers
 import { formatCategories } from '/imports/client/utils/format'
@@ -166,6 +167,12 @@ class Page extends Component {
               <div className='description'>
                 <SectionTitle title='About' />
                 <Linkify options={linkifyOption}>{description}</Linkify>
+              </div>
+              <div className='share'>
+                <SectionTitle title='Share Your Experience' />
+                <DCSLink className='share-btn' badge="true" format="text-link" title='Photos' triggerId="photos" />
+                <DCSLink className='share-btn' badge="true" format="text-link" title='Videos' triggerId="videos" />
+                <DCSLink className='share-btn' badge="true" format="text-link" title='Stories' triggerId="stories" />
               </div>
             </Col>
 

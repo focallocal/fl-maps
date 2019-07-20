@@ -42,7 +42,7 @@ class DCSLink extends Component {
   }
 
   render() {
-    const { title, triggerId, dcsSelected, dcsCount, history, format, badge } = this.props
+    const { title, triggerId, dcsSelected, dcsCount, history, format, badge, className } = this.props
 
     const url = new URL(location.href)
     url.searchParams.set('dcs-layout', 3)
@@ -64,7 +64,7 @@ class DCSLink extends Component {
     // )
 
     if (format === 'speech-bubble') return (
-      <span className={'dcs-link' + (dcsSelected ? ' dcs-selected' : '')}>
+      <span className={className + ' dcs-link' + (dcsSelected ? ' dcs-selected' : '')}>
         <span className="dcs-link-title">{title}</span>
         <span className="dcs-link-icons" onClick={() => history.push(path)}>
           <img src={`/images/dcs-balloon-bal.png`} />
@@ -76,7 +76,7 @@ class DCSLink extends Component {
     else if (format === 'text-link') return (
       <span
         onClick={() => history.push(path)}
-        className={'dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
+        className={className + ' dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
       >
         <span className="dcs-link-title text-title">{title}</span>
         {/* {' '}<img src={`/images/dcs-balloon-bal.png`} /> */}
