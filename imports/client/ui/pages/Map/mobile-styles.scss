@@ -36,7 +36,8 @@
       }
 
       button#minimize {
-        top: calc(100vh - 30px);
+        top: calc(100vh - 30px)!important;
+        bottom: auto!important;
         left: 0px;
         z-index: 99;
       }
