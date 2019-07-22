@@ -18,6 +18,7 @@
     { "name": "whitepaper", "url": "/whitepaper" },
     { "name": "wp_why", "url": "/whitepaper/why" },
     { "name": "wp_intro", "url": "/whitepaper/intro" }
+    { "name": "wp_faqs", "url": "/whitepaper/faqs" }
     
   ],
 
