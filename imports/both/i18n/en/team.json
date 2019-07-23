@@ -128,18 +128,18 @@
 			"text": "Helping find solutions and strategies to overcome all problems",
 			"linkedIn": "https://www.linkedin.com/in/sarbjit-klair",
 			"twitter": "",
-			"github": "https://www.xibc.co.uk",
+			"github": "",
 			"facebook": "",
 			"google": "",
-			"website": ""
+			"website": "https://www.xibc.co.uk"
 		},
 		{
 			"title": "Juliet Annerino",
-			"image": "https://www.linkedin.com/in/julietannerino/detail/photo",
+			"image": "https://cryptoprlab.com/wp-content/uploads/2018/12/2019-04-09-12.14.10-copy-copycoloryellow-940x940.png",
 			"subtitle": "Strategic Marketing Content",
 			"text": "Writer/editor of content for blockchain projects, including white papers, executive summaries, Medium articles, press releases and articles for ICO Crowd Magazine",
 			"linkedIn": "https://www.linkedin.com/in/julietannerino",
-			"twitter": "",
+			"twitter": "https://twitter.com/julietannerino",
 			"github": " ",
 			"facebook": "",
 			"google": "",
@@ -155,7 +155,7 @@
 			"github": " ",
 			"facebook": "",
 			"google": "",
-			"website": ""
+			"website": "http://dlii.org"
 		},
 		{
 			"title": "Allessandra Sollberger",
@@ -172,27 +172,27 @@
 	],
 	"documentary": [{
 			"title": "Julita Deka",
-			"image": "https://www.facebook.com/photo.php?fbid=1262036803845628&set=a.127075167341803&type=3&theater",
-			"subtitle": "Editor at Palm Tree Productions",
-			"text": " test ",
-			"linkedIn": "https://www.linkedin.com/in/andytulett/",
-			"twitter": "https://twitter.com/focallocal",
+			"image": "https://sphoto.nasza-klasa.pl/17475259/65/square/38f562e7c9.jpeg?v=2",
+			"subtitle": "Owner at Sunwave and cameraman/editor at Palm Tree Productions",
+			"text": " Dances with Elephants ",
+			"linkedIn": "https://www.linkedin.com/in/julita-deka-b11621128/",
+			"twitter": "",
 			"github": "",
-			"facebook": "https://www.facebook.com/andyat.focallocal",
+			"facebook": "https://www.facebook.com/profile.php?id=100001179623470",
 			"google": "",
-			"website": "https://andytulett.focallocal.org"
+			"website": "https://www.palmtreefilm.com/"
 		},
 		{
 			"title": "Robbie Moffat",
-			"image": "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
+			"image": "https://www.palmtreefilm.com/wpimages/wp7679a206_06.png",
 			"subtitle": "Producer/Director at Palm Tree Productions",
-			"text": " test ",
-			"linkedIn": "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
-			"twitter": "",
-			"github": "https://github.com/TLMcNulty",
+			"text": "I'm trying to make more meaningful pictures as I get older as time is getting shorter. Life does not give us enough time to sit and do nothing, so I try to keep busy. What I make is my own choice, it is a form of self expression. If I was a painter, would I paint what the client wanted or what I was happy with? That's the artist's biggest challenge - the juggling of self expression with the need to be commericial in order to be able to make the next piece of work. It is a conundrum that critics love to explore and audiences ignore",
+			"linkedIn": "https://www.linkedin.com/in/robbie-moffat-b3b7978/",
+			"twitter": "https://twitter.com/robbiemoffat",
+			"github": "",
 			"facebook": "",
 			"google": "",
-			"website": "https://tom.mcnulty.in"
+			"website": "https://www.palmtreefilm.com/"
 		}
 	]
 }
