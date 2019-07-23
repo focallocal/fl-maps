@@ -8,7 +8,7 @@ const Index = () => (
     <Container classid="mt-5">
       <h1>Meet the Team</h1>
       <p>Find out more about the amazing people building this platform and movement</p>
-      <a href="#project">Project and Community Management</a>
+      <a href="#project">Project and Community Leaders</a>
       <a href="#web">Web Development</a>
       <a href="#marketing">Marketing</a>
       <a href="#summit">The Public Happiness Economy World Summit</a>
@@ -20,7 +20,7 @@ const Index = () => (
     <div className='header-divider' />
 
     <Container classid="mt-5" id="project">
-      <h2>Project and Community Management</h2>
+      <h2>Project and Community Leaders</h2>
     </Container>
     <Members team="project" />
 
