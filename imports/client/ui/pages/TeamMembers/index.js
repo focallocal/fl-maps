@@ -11,8 +11,9 @@ const Index = () => (
       <a href="#project">Project and Community Management</a>
       <a href="#web">Web Development</a>
       <a href="#marketing">Marketing</a>
-      <a href="#token">Blockchain/Token Development</a>
-      <a href="#advisors">Project Advisors</a>
+      <a href="#token">Token Team and Advisors</a>
+      <a href="#documentary">Documentary about our Movement: Cannes Film Festival 2020 Launch</a>
+  
     </Container>
 
     <div className='header-divider' />
@@ -37,10 +38,10 @@ const Index = () => (
     </Container>
     <Members team="token" />
 
-    <Container classid="mt-5" id="advisors">
+    <Container classid="mt-5" id="documentary">
       <h2>Project Advisors</h2>
     </Container>
-    <Members team="advisors" />
+    <Members team="documentary" />
 
   </React.Fragment>
 );
