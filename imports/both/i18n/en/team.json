@@ -14,37 +14,37 @@
             "website": "https://andytulett.focallocal.org"
         },
         {
-            "title": "Tom McNulty",
-            "image": "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
-            "subtitle": "Site Reliabilty Engineer",
-            "text": "Site Reliabilty and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
-            "linkedIn": "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
-            "twitter": "",
-            "github": "https://github.com/TLMcNulty",
+            "title": " ",
+            "image": " ",
+            "subtitle": " ",
+            "text": " ",
+            "linkedIn": " ",
+            "twitter": " ",
+            "github": " ",
             "facebook": "",
             "google": "",
-            "website": "https://tom.mcnulty.in"
+            "website": " "
         },
         {
-            "title": "Matias Forbord",
-            "image": "https://avatars3.githubusercontent.com/u/1154150?s=460&v=4",
-            "subtitle": "DevOps/Full Stack Engineer",
-            "text": "Passionate humanist and engineer working to end poverty. Creating access to work in the Philippine slums.",
-            "linkedIn": "https://www.linkedin.com/in/matiasforbord",
-            "twitter": "https://twitter.com/MatiasForbord",
-            "github": "https://github.com/codeluggage",
+            "title": " ",
+            "image": " ",
+            "subtitle": " ",
+            "text": " ",
+            "linkedIn": " ",
+            "twitter": " ",
+            "github": " ",
             "facebook": "",
             "google": "",
-            "website": "https://gifsplanation.com"
+            "website": " "
         },
         {
-            "title": "Pawel Mordaszewski",
-            "image": "https://ca.slack-edge.com/T02D50FP9-U02ELQ3GQ-dac2ad348311-1024",
-            "subtitle": "Technical utility player",
-            "text": "Travelling software engineer with a passion for a better world. Recently busy working for the fourth industrial revolution by harnessing autonomous drones using AI analytics sent through IoT on 5G.",
-            "linkedIn": "https://www.linkedin.com/in/pmordaszewski",
-            "twitter": "",
-            "github": "https://github.com/mordka",
+            "title": " ",
+            "image": " ",
+            "subtitle": " ",
+            "text": " ",
+            "linkedIn": " ",
+            "twitter": " ",
+            "github": " ",
             "facebook": "",
             "google": "",
             "website": ""
@@ -123,17 +123,17 @@
             "google" : "",
             "website" : "http://www.docuss.org/"
         },
-        {
-            "title" : "Saud Tauqeer",
-            "image" : "https://avatars3.githubusercontent.com/u/42393962?s=400&u=45c46df26fb13a3b154c5edc55a23be6fc13b25f&v=4",
-            "subtitle" : "MERN stack & polyglot developer",
-            "text" : "MERN stack devloper with in-depth experience in developing, managing, scaling, full-stack web applications with highly performant back-end and smooth UI/UX. Eagerly adding more skills under my belt. ",
-            "linkedIn" : "https://www.linkedin.com/in/saud-tauqeer",
-            "twitter": "https://twitter.com/@Saud_Tauqeer",
-            "github" : "https://github.com/SaudTauqeer",
+          {
+            "title": " ",
+            "image": " ",
+            "subtitle": " ",
+            "text": " ",
+            "linkedIn": " ",
+            "twitter": " ",
+            "github": " ",
             "facebook": "",
-            "google" : "",
-            "website" : ""
+            "google": "",
+            "website": ""
         }
 
     ],
