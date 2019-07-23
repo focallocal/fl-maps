@@ -1,61 +1,64 @@
-import React, { Fragment } from "react";
-import { Container } from "reactstrap";
-import './styles.scss'
+// External Packages
+import React, { Fragment } from 'react'
+import { Container } from 'reactstrap'
+
+// Components
 import DCSLink from '/imports/client/ui/components/DCSLink/index.js'
+import NavMenu from './NavMenu'
 
-const Remarkable = require('remarkable');
+// Styles and Other
+import './styles.scss'
 
-const md = new Remarkable();
+const Remarkable = require('remarkable')
+const md = new Remarkable()
 md.set({
   breaks: true,
   linkify: true
-});
-
+})
 
 const Title = () => (
-   <React.Fragment>
-       <h2 className='Title' style={{textAlign: 'center'}}>Welcome to the 1st Draft!</h2>
- </React.Fragment>
- )
-
+  <React.Fragment>
+    <h2 className='Title' style={{ textAlign: 'center' }}>Welcome to the 1st Draft!</h2>
+  </React.Fragment>
+)
 
 const Contents = () => (
-   <React.Fragment>
-       <h2 className='title' style={{textAlign: 'center'}}>Public Happiness Movement<br />Token Whitepaper</h2>
-       <div className="contentspage">
-            
-<p> 
+  <React.Fragment>
+    <h2 className='title' style={{ textAlign: 'center' }}>Public Happiness Movement<br />Token Whitepaper</h2>
+    <div className="contentspage">
+
+      <p>
 i. Foreword <br />
 ii. Intro<br />
 iii. Contents<br />
-<br />
+        <br />
 1. <a href="#Abstract">Abstract</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.1. <a href="#Background">Background</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	1.2. <a href="#Public Happiness Token Introduction">Public Happiness Token Introduction</a><br />
-<br />
+        <br />
 2. <a href="#Problem Statement">Problem Statement</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.1. <a href="#Issues we Aim to Solve">Issues we Aim to Solve</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.2. <a href="#Primary Goal">Primary Goal</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.3. <a href="#Secondary Goal">Secondary Goal</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	2.4. <a href="#Relation to Universal Basic Income">Relation to Universal Basic Income</a><br />
-<br />
+        <br />
 3. <a href="#Educating the Public about Blockchain">Educating the Public about Blockchain</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.1. <a href="#Current State of Public Understanding">Current State of Public Understanding</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	3.2. <a href="#Reaching a New Audience">Reaching a New Audience</a><br />
-<br />
+        <br />
 4. <a href="#The Public Happiness Token">The Public Happiness Token</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	4.1. <a href="#Token Overview">Token Overview</a><br />
-<br />
+        <br />
 5. <a href="#Public Happiness Token ICO">Public Happiness Token ICO</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.1. <a href="#ICO Strategy">ICO Strategy</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.2. <a href="#ICO Stages">ICO Stages</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.3. <a href="#Ongoing Funding for Specific Projects and Experts">Ongoing Funding for Specific Projects and Experts</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	5.4. <a href="#ICO Marketing">ICO Marketing</a><br />
-<br />
+        <br />
 6. <a href="#Public Happiness – Background">Public Happiness – Background</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.1. <a href="#Community Background">Community Background</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	6.2. <a href="#The Public Happiness Movement Community">The Public Happiness Movement Community</a><br />
-<br />
+        <br />
 7. <a href="#Platform Overview">Platform Overview</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.1. <a href="#The Public Happiness Map">The Public Happiness Map</a> (public actions for increasing human and society well-being)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.2. <a href="#Action Center">Action Center</a> (microvolunteering)<br />
@@ -70,20 +73,20 @@ iii. Contents<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.11. <a href="#User Behaviour in UX Design">User Behaviour in UX Design</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	7.12. <a href="#User Wall and Plugin Module Ecosystem">User Wall and Plugin Module Ecosystem</a><br />
 
-<br />
+        <br />
 8. <a href="#The Path to Decentralisation">The Path to Decentralisation</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.1. <a href="#Benevolent Dictatorship vs Complete Community Governance">Benevolent Dictatorship vs Complete Community Governance</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.2. <a href="#Example Scenario: Outside Collusion">Example Scenario: Outside Collusion</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.3. <a href="#Lines of Defence">Lines of Defence</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	8.4. <a href="#Conclusion">Conclusion</a><br />
-<br />
+        <br />
 9. <a href="#Security">Security</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.1. <a href="#Levels of Trust">Levels of Trust</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.2. <a href="#Community Administrators">Community Administrators</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.3. <a href="#Project Administrators">Project Administrators</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.4. <a href="#Mining Limits">Mining Limits</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	9.5. <a href="#Cold Storage and Key Holders">Cold Storage and Key Holders</a><br />
-<br />
+        <br />
 10. <a href="#Marketing Strategy">Marketing Strategy</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.1. <a href="#A New Level of Hash Tagging">A New Level of Hash Tagging</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.2. <a href="#Bus Tour">Bus Tour</a><br />
@@ -94,14 +97,14 @@ iii. Contents<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.7. <a href="#Contests">Contests</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.8. <a href="#Collectables">Collectables</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	10.9. <a href="#Paid to Party">Paid to Party</a><br />
-<br />
+        <br />
 11. <a href="#Revenue Streams and Token Price">Revenue Streams and Token Price</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.1. <a href="#Speculation">Speculation</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.2. <a href="#Shop">Active Happiness Clothing</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.3. <a href="#Corporate Social Responsibility">Corporate Social Responsibility</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.4. <a href="#Kindness Auction">Kindness Auction</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	11.5. <a href="#Community Projects">Community Projects</a><br />
-<br />
+        <br />
 12. <a href="#Automated Token Distribution Matrix">Automated Token Distribution Matrix</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.1. <a href="#Weighted Mining">Weighted Mining</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.2. <a href="#Hard Cap">Hard Cap</a><br />
@@ -111,41 +114,37 @@ iii. Contents<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.6. <a href="#Experience Multipliers">Experience Multipliers</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.7. <a href="#Token Distribution">Token Distribution</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	12.8. <a href="#Further Matrix Considerations">Further Matrix Considerations</a><br />
-<br />
+        <br />
 13. <a href="#Team">Team</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.1. <a href="#Current Team Members">Current Team Members</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.2. <a href="#Positions Open">Positions Open</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.3. <a href="#Remuneration">Remuneration</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	13.4. <a href="#Facilities">Facilities</a><br />
-<br /> 
+        <br />
 14. <a href="#Platform Technicals">Platform Technicals</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.1. <a href="#Crypto Linking Bridges">Crypto Linking Bridges</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.2. <a href="#Trello vs Wekan vs Other Solutions">Trello vs Wekan vs Other Solutions</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.3. <a href="#Leaflet.js vs Google Maps API">Leaflet.js vs Google Maps API</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	14.4. <a href="#Switching the Platform to the Dapps Network">Switching the Platform to the Dapps Network</a><br />
-<br />
+        <br />
 15. <a href="#Doomsday Protocol">Doomsday Protocol</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.1. <a href="#Huge Market Crash">Huge Market Crash</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.2. <a href="#Quantum Security">Quantum Security</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.3. <a href="#Massive Hack">Massive Hack</a><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	15.4. <a href="#Zombie Apocalypse">Zombie Apocalypse</a><br />
-<br />
+        <br />
 16. <a href="#Giving Back to Open-source">Giving Back to Open-source</a><br />
-<br />
+        <br />
 17. <a href="#Timeline">Timeline</a><br />
-<br />
+        <br />
 18. <a href="#Key Supporters and Team">Key Supporters and Team</a><br />
-<br />
+        <br />
 19. <a href="#Questions to be Resolved">Questions to be Resolved</a><br />
- </p>
-  </div>
- </React.Fragment>
- )
- 
- 
- 
- 
-  
+      </p>
+    </div>
+  </React.Fragment>
+)
+
 const markdownSection104 = md.render(`
 
 
@@ -162,7 +161,6 @@ There will also be a pool created for the community to use. Members will vote on
 
 `)
 
-
 const markdownSection105 = md.render(`
 
 ## 11.1.
@@ -174,7 +172,6 @@ Speculation on exchanges is the main way the token's price will rise. Many peopl
 Being listed on one exchange before our ICO's end is important to this strategy.
 
 `)
-
 
 const markdownSection106 = md.render(`
 
@@ -188,7 +185,6 @@ The platform includes a store where users submit designs for, and purchase, clot
 See section 7.4. for more details.
 
 `)
-
 
 const markdownSection107 = md.render(`
 
@@ -204,7 +200,6 @@ Donating to our platform engages communities and creates an entire story for the
 
 `)
 
-
 const markdownSection108 = md.render(`
 
 ## 11.4.
@@ -215,7 +210,6 @@ const markdownSection108 = md.render(`
 A fun little project we've had good success over the years in the Focallocal Community, even when just a few people in one city joined in. Unleashed globally it will be a real powerhouse for fund-raising, and one which everyone who joins in receives something great in return.
 
 `)
-
 
 const markdownSection109 = md.render(`
 
@@ -247,7 +241,6 @@ This approach has the following benefits:
 
 `)
 
-
 const markdownSection111 = md.render(`
 
 ## 7.11. 
@@ -260,7 +253,6 @@ Teaching users to participate rather than just consume is going to be a challeng
 Users attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals to compliment the tokenisation effect, rather than rely on it solely to change users expected online behaviour.
   
 `)
-
 
 const markdownSection112 = md.render(`
 
@@ -314,7 +306,6 @@ Forum specific plug-ins can also be built easily through the existing Discourse 
 
 `)
 
-  
 const markdownSection103 = md.render(`
 
 **Foreword:**
@@ -387,9 +378,6 @@ You can also review all [recent discussion on all sections here](https://focallo
 
 
 `)
-
-
-
 
 const markdownSection1 = md.render(`
 
@@ -1246,7 +1234,7 @@ The mining total will include a small amount that will be ‘back-paid’ to not
 Average release rate: 265753 tokens per day
 
 `)
- 
+
 const markdownSection61 = md.render(` 
 
 ## 12.8.
@@ -1547,8 +1535,6 @@ Thank you for reading, have a wonderful day!
  
  `)
 
-
-				   
 const Anchor1  = () => <Fragment><h2 id="Abstract" className="chapterHeading">Abstract</h2><div dangerouslySetInnerHTML={{ __html: markdownSection1 }} /></Fragment>
 const Anchor2  = () => <Fragment><h2 id="Background" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection2 }} /></Fragment>
 const Anchor3  = () => <Fragment><h2 id="Public Happiness Token Introduction" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection3 }} /></Fragment>
@@ -1640,124 +1626,120 @@ const Anchor110 = () => <Fragment><h2 id="Paid to Party" > </h2><div dangerously
 const Anchor111 = () => <Fragment><h2 id="User Behaviour in UX Design" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection111 }} /></Fragment>
 const Anchor112 = () => <Fragment><h2 id="User Wall and Plugin Module Ecosystem" > </h2><div dangerouslySetInnerHTML={{ __html: markdownSection112 }} /></Fragment>
 
-
-
 const index = (props) => {
   return (
     <Container className="mt-5">
-			<Title />
-		<Anchor103  /><DCSLink badge="true" format="speech-bubble" title="General Discussion" triggerId="bal" display="inline" />	
-			<Contents /><DCSLink badge="true" format="speech-bubble" title="click balloons to comment on section above" triggerId="bal" display="inline" />
-		
-		<Anchor1  />    
-		<Anchor2  /><DCSLink badge="true" format="speech-bubble" triggerId="bal1" display="inline" />
-		<Anchor3  /><DCSLink badge="true" format="speech-bubble" triggerId="bal1" display="inline" />
-		
-		<Anchor4  />
-		<Anchor5  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
-		<Anchor6  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
-		<Anchor7  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
-		<Anchor8  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
-		
-		<Anchor9  />
-		<Anchor10 /><DCSLink badge="true" format="speech-bubble" triggerId="bal3" display="inline" />
-		<Anchor11 /><DCSLink badge="true" format="speech-bubble" triggerId="bal3" display="inline" />
-		
-		<Anchor12 />
-		<Anchor13 /><DCSLink badge="true" format="speech-bubble" triggerId="bal4" display="inline" />
-		
-		<Anchor14 />
-		<Anchor15 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
-		<Anchor16 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
-		<Anchor17 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
-		<Anchor18 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
-		
-		<Anchor19 />
-		<Anchor20 /><DCSLink badge="true" format="speech-bubble" triggerId="bal6" display="inline" />
-		<Anchor21 /><DCSLink badge="true" format="speech-bubble" triggerId="bal6" display="inline" />
-		
-		<Anchor22 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor23 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor24 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor25 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor26 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor27 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor28 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor29 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor30 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor31 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor32 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor111 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		<Anchor112 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
-		
-		
-		
-		<Anchor33 />
-		<Anchor34 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
-		<Anchor35 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
-		<Anchor36 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
-		<Anchor37 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
-		
-		<Anchor38 />
-		<Anchor39 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor40 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor41 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor42 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		<Anchor43 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
-		
-		<Anchor44 />
-		<Anchor45 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor46 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor47 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor48 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor49 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor50 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor51 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor52 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		<Anchor110 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
-		
-		<Anchor104  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor105  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor106  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor107  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor108  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		<Anchor109  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
-		
-		
-		<Anchor53 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor54 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor55 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor56 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor57 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor58 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor59 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor60 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		<Anchor61 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
-		
-		<Anchor62 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor63 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor64 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor65 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		<Anchor66 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
-		
-		<Anchor67 />
-		<Anchor68 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
-		<Anchor69 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
-		<Anchor70 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
-		<Anchor71 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
-		
-		<Anchor72 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor73 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor74 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor75 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		<Anchor76 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
-		
-		<Anchor77 /><DCSLink badge="true" format="speech-bubble" triggerId="bal15" display="inline" />
-		<Anchor78 /><DCSLink badge="true" format="speech-bubble" triggerId="bal16" display="inline" />
-		<Anchor79 /><DCSLink badge="true" format="speech-bubble" triggerId="bal17" display="inline" />
-		<Anchor80 /><DCSLink badge="true" format="speech-bubble" triggerId="bal18" display="inline" />
-    </Container>
+      <Title />
+      <NavMenu />
 
+      <Anchor103  /><DCSLink badge="true" format="speech-bubble" title="General Discussion" triggerId="bal" display="inline" />
+      <Contents /><DCSLink badge="true" format="speech-bubble" title="click balloons to comment on section above" triggerId="bal" display="inline" />
+
+      <Anchor1  />
+      <Anchor2  /><DCSLink badge="true" format="speech-bubble" triggerId="bal1" display="inline" />
+      <Anchor3  /><DCSLink badge="true" format="speech-bubble" triggerId="bal1" display="inline" />
+
+      <Anchor4  />
+      <Anchor5  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
+      <Anchor6  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
+      <Anchor7  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
+      <Anchor8  /><DCSLink badge="true" format="speech-bubble" triggerId="bal2" display="inline" />
+
+      <Anchor9  />
+      <Anchor10 /><DCSLink badge="true" format="speech-bubble" triggerId="bal3" display="inline" />
+      <Anchor11 /><DCSLink badge="true" format="speech-bubble" triggerId="bal3" display="inline" />
+
+      <Anchor12 />
+      <Anchor13 /><DCSLink badge="true" format="speech-bubble" triggerId="bal4" display="inline" />
+
+      <Anchor14 />
+      <Anchor15 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
+      <Anchor16 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
+      <Anchor17 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
+      <Anchor18 /><DCSLink badge="true" format="speech-bubble" triggerId="bal5" display="inline" />
+
+      <Anchor19 />
+      <Anchor20 /><DCSLink badge="true" format="speech-bubble" triggerId="bal6" display="inline" />
+      <Anchor21 /><DCSLink badge="true" format="speech-bubble" triggerId="bal6" display="inline" />
+
+      <Anchor22 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor23 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor24 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor25 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor26 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor27 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor28 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor29 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor30 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor31 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor32 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor111 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+      <Anchor112 /><DCSLink badge="true" format="speech-bubble" triggerId="bal7" display="inline" />
+
+      <Anchor33 />
+      <Anchor34 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
+      <Anchor35 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
+      <Anchor36 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
+      <Anchor37 /><DCSLink badge="true" format="speech-bubble" triggerId="bal8" display="inline" />
+
+      <Anchor38 />
+      <Anchor39 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
+      <Anchor40 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
+      <Anchor41 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
+      <Anchor42 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
+      <Anchor43 /><DCSLink badge="true" format="speech-bubble" triggerId="bal9" display="inline" />
+
+      <Anchor44 />
+      <Anchor45 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor46 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor47 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor48 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor49 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor50 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor51 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor52 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+      <Anchor110 /><DCSLink badge="true" format="speech-bubble" triggerId="bal10" display="inline" />
+
+      <Anchor104  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
+      <Anchor105  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
+      <Anchor106  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
+      <Anchor107  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
+      <Anchor108  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
+      <Anchor109  /><DCSLink badge="true" format="speech-bubble" triggerId="bal19" display="inline" />
+
+      <Anchor53 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor54 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor55 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor56 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor57 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor58 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor59 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor60 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+      <Anchor61 /><DCSLink badge="true" format="speech-bubble" triggerId="bal11" display="inline" />
+
+      <Anchor62 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
+      <Anchor63 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
+      <Anchor64 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
+      <Anchor65 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
+      <Anchor66 /><DCSLink badge="true" format="speech-bubble" triggerId="bal12" display="inline" />
+
+      <Anchor67 />
+      <Anchor68 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
+      <Anchor69 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
+      <Anchor70 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
+      <Anchor71 /><DCSLink badge="true" format="speech-bubble" triggerId="bal13" display="inline" />
+
+      <Anchor72 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
+      <Anchor73 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
+      <Anchor74 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
+      <Anchor75 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
+      <Anchor76 /><DCSLink badge="true" format="speech-bubble" triggerId="bal14" display="inline" />
+
+      <Anchor77 /><DCSLink badge="true" format="speech-bubble" triggerId="bal15" display="inline" />
+      <Anchor78 /><DCSLink badge="true" format="speech-bubble" triggerId="bal16" display="inline" />
+      <Anchor79 /><DCSLink badge="true" format="speech-bubble" triggerId="bal17" display="inline" />
+      <Anchor80 /><DCSLink badge="true" format="speech-bubble" triggerId="bal18" display="inline" />
+    </Container>
 
   )
 }

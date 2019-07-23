@@ -10,6 +10,15 @@
                       }
 }
 
+@media screen and (min-width: 751px) {
+    .menu {
+        margin-top: 50px!important;
+    }
+    .header-divider {
+        margin-bottom: 50px!important;
+    }
+}
+
 .chapterHeading {
     margin: auto;
     text-align: center;

@@ -1,24 +1,26 @@
-//Imports
-import i18n from "../../../../both/i18n/en"
+// External Packages
 import React, { Component, Fragment } from "react"
-import PropTypes from 'prop-types'
-import "./team.scss";
+import PropTypes from "prop-types"
 import {
-  Row,
-  Container,
-  Col,
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
+    Row,
+    Container,
+    Col,
+    Card,
+    CardImg,
+    CardText,
+    CardBody,
+    CardTitle,
+    CardSubtitle,
+    Button
 } from "reactstrap"
+
+// Styles and Other
+import "./styles.scss"
+import i18n from "../../../../both/i18n/en"
 
 class Members extends Component {
   render() {
-    const teamData = i18n.Team[this.props.team]
+    const teamData = i18n.Team[this.props.team].members
 
     return (
       <Fragment>

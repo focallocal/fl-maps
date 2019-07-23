@@ -3,6 +3,15 @@ h1, h2 {
     margin-top: 20px;
 }
 
+@media screen and (min-width: 751px) {
+    .intro-paragraph {
+        margin-bottom: 50px;
+    }
+    .header-divider {
+        margin-bottom: 50px!important;
+    }
+}
+
 .header-divider {
     height: 1px;
     width: 240px;

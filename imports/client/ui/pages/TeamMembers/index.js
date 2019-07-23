@@ -1,49 +1,42 @@
-import React from "react"
-import { Container, Row, Col } from "reactstrap"
-import i18n from "/imports/both/i18n/en"
-import Members from "./Members"
+// External Packages
+import React, { Fragment } from 'react'
+import { Container, Row, Col } from 'reactstrap'
+
+// Components
+import Members from './Members'
+
+// Styles and Other
+import './styles.scss'
+import i18n from '/imports/both/i18n/en'
 
 const Index = () => (
   <React.Fragment>
-    <Container classid="mt-5">
+    <Container>
       <h1>Meet the Team</h1>
-      <p>Find out more about the amazing people building this platform and movement</p>
-      <a href="#project">Project and Community Management</a>
-      <a href="#web">Web Development</a>
-      <a href="#marketing">Marketing</a>
-      <a href="#token">Blockchain/Token Development</a>
-      <a href="#advisors">Project Advisors</a>
+      <p className="intro-paragraph">Find out more about the amazing people building this platform and movement</p>
+      {Object.keys(i18n.Team).map(team => {
+        return (
+          <a href={`#${team}`} key={team} >
+            {i18n.Team[team].title}
+          </a>
+        )
+      })}
     </Container>
 
     <div className='header-divider' />
 
-    <Container classid="mt-5" id="project">
-      <h2>Project and Community Management</h2>
-    </Container>
-    <Members team="project" />
-
-    <Container classid="mt-5" id="web">
-      <h2>Web Development</h2>
-    </Container>
-    <Members team="web" />
-
-    <Container classid="mt-5" id="marketing">
-      <h2>Marketing</h2>
-    </Container>
-    <Members team="marketing" />
-
-    <Container classid="mt-5" id="token">
-      <h2>Blockchain/Token Development</h2>
-    </Container>
-    <Members team="token" />
-
-    <Container classid="mt-5" id="advisors">
-      <h2>Project Advisors</h2>
-    </Container>
-    <Members team="advisors" />
+    {Object.keys(i18n.Team).map(team => {
+      return (
+        <Fragment key={team}>
+          <Container id={team}>
+            <h2>{i18n.Team[team].title}</h2>
+          </Container>
+          <Members team={team} />
+        </Fragment>
+      )
+    })}
 
   </React.Fragment>
-);
+)
 
-
-export default Index;
+export default Index
