@@ -1,6 +1,6 @@
 // External Packages
 import React, { Fragment } from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container} from 'reactstrap'
 
 // Components
 import Members from './Members'
@@ -35,7 +35,6 @@ const Index = () => (
         </Fragment>
       )
     })}
-
   </React.Fragment>
 )
 
