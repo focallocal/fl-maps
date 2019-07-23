@@ -11,6 +11,7 @@ const Index = () => (
       <a href="#project">Project and Community Management</a>
       <a href="#web">Web Development</a>
       <a href="#marketing">Marketing</a>
+      <a href="#summit">The Public Happiness Economy World Summit</a>
       <a href="#token">Token Team and Advisors</a>
       <a href="#documentary">Documentary about our Movement: Cannes Film Festival 2020 Launch</a>
   
@@ -32,6 +33,11 @@ const Index = () => (
       <h2>Marketing</h2>
     </Container>
     <Members team="marketing" />
+  
+   <Container classid="mt-5" id="summit">
+      <h2>The Public Happiness Economy World Summit</h2>
+    </Container>
+    <Members team="summit" />
 
     <Container classid="mt-5" id="token">
       <h2>Blockchain/Token Development</h2>
