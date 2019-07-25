@@ -13,8 +13,12 @@
 @media screen and (min-width: 751px) {
     .menu {
         margin-top: 50px!important;
+        flex-direction: row!important;
+        justify-content: space-around!important;
+        max-width: 550px!important;
     }
     .header-divider {
+        margin-top: 10px!important;
         margin-bottom: 50px!important;
     }
 }
