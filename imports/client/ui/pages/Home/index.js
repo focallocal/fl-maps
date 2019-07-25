@@ -29,7 +29,6 @@ class Home extends Component {
     let backgroundImage = {backgroundImage: 'url(' + url + ')', opacity}
     return (
       <main className='home'>
-        <Button className="gather-button" tag={Link} to="?new=1">{MainMenu.addEvent}</Button>
         <div id='hero-bg' style={backgroundImage} />
         <FirstSection />
         <HowToHelpSection />

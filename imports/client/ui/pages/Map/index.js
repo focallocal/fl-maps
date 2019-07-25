@@ -4,7 +4,8 @@ import { Meteor } from 'meteor/meteor'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
-import { Alert, Input } from 'reactstrap'
+import { Alert, Input, Button } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 // Components and Pages
 import EventsList from './EventsList'
@@ -22,6 +23,7 @@ import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
 // Styles and Other
 import './styles.scss'
 import './mobile-styles.scss'
+import i18n from "/imports/both/i18n/en";
 
 class MapComponent_ extends Component {
   constructor () {
@@ -98,7 +100,9 @@ class MapComponent_ extends Component {
       zoom
     } = this.state
 
-    const { history } = this.props 
+    const { history } = this.props
+
+    const { MainMenu } = i18n
     
     const events_ = filteredEvents || events
 
@@ -112,6 +116,7 @@ class MapComponent_ extends Component {
         onZoomChanged={this.onZoomChanged}
         onDragEnd={this.onDragEnd}
       >
+        <Button className="gather-button" tag={Link} to="?new=1">{MainMenu.addEvent}</Button>
 
         <MarkerClusterer
           averageCenter

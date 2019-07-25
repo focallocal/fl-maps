@@ -34,10 +34,19 @@ body.overflow {
     transition: width .2s ease;
   }
 
+  
+
   #map-error {
     position: absolute;
     right: 0;
     width: calc(100% - #{$map-events-list-width});
     text-align: center;
   }
+}
+
+.gather-button {
+  position: absolute;
+  z-index: 3;
+  right: 10px;
+  top: 10px;
 }
