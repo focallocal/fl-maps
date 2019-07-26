@@ -3,6 +3,8 @@ export const Forword = `
 **Foreword:**
 We are Tokenising Happiness to bring more peace and well-being into the World. 
 
+This whitepaper is open to everyone to guide its development. Please contribute to its evolution by clicking on the balloons and adding your ideas to strenghten the final vision.
+
 Since 2012 we’ve been a global community of volunteers, our mission: to build positive projects and get people into the streets tackling societal issues where they live using creative and positive ideas. Our actions are both local and global in scale, but always led by local people so as to empower communities to create change themselves. We call this 'Local Action for Global Change'. 
 
 Today’s economic system is broken. This whitepaper sets out our vision to transition our community to an incentivised ecosystem and invite other groups to join it as an effort to rebalance it by creating an entirely new economic system.
