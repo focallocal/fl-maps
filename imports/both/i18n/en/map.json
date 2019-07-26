@@ -11,17 +11,17 @@
       "subtitle": "share links to your vids"
     },
     "wall": {
-      "title": "Engage",
-      "subtitle": "Let others know you're going, or invite someone for action"
+      "title": "Join in",
+      "subtitle": "Chat and Planning"
     },
     "experiences": {
-      "title": "Community Experiences",
-      "subtitle": "How was your Experience? (positive/negative)"
+      "title": "References",
+      "subtitle": "positive or negative experience?"
     },
     "socialMedia": {
       "title": "Social Media",
-      "subtitle": "Support Us By Sharing This Event",
-      "messagePre": "Check out this event: "
+      "subtitle": "Support by Sharing",
+      "messagePre": "Check out this: "
     }
   }
 }
