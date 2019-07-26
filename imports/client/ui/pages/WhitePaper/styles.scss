@@ -1,13 +1,13 @@
-   div.mt-5.container { 
-            display: block !important;
-            width: 60% !important;
-            font-size: 1.1rem !important;
-                      }
+div.mt-5.container { 
+    display: block !important;
+    width: 60% !important;
+    font-size: 1.1rem !important;
+}
 
 @media screen and (max-width: 800px) {
     div.mt-5.container { 
             width: 90% !important;
-                      }
+    }
 }
 
 @media screen and (min-width: 751px) {
@@ -27,4 +27,8 @@
     margin: auto;
     text-align: center;
 
+}
+
+h2 {
+    margin-top: 50px!important;
 }
