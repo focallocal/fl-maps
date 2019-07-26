@@ -12,12 +12,13 @@ Today’s economic system is broken. This whitepaper sets out our vision to tran
 GDP based economic systems were designed by Simon Kuznets, in 1937 as a temporary post war recovery system, but the beast got out of control. The damage caused to humanity by basing our decision making processes on measurements of GDP isn’t even contentious any more. [Here’s a list](https://news.focallocal.org/beyond-gdp-key-quotes-from-economic-and-world-leaders/) of global and economic leaders stating the need to move past it.
 
 
-**Charities and volunteering shouldn’t exist**
+**Most Charities, and volunteering shouldn’t exist**
 
 Sectors like Industry, Tech, Finance have lots of money behind them. Others like Education, Healthcare, Environment, by Kuznets design, have less. Other areas which are also essential to producing healthy, happy societies, have no value placed on them at all within a GDP based economy, leaving them for social enterprises, or charities who most spending a significant percent of their energy and time chasing, or begging for funding. Or for the kind hearted members of our society to volunteer to meet them. 
 
 This system is inefficient and unfair, yet we’ve come to accept it as the norm. If you benefit society you should be rewarded for it. That is what economic systems were designed for.
 
+Cryptoeconomics gives humaity the tools to design entirely new economic systems. No-longer are we locked into todays (Fiat) currencies and GDP based value and reward systems/metrics. 
 
 This token is an effort to create an entirely new economic system. One which focuses energy onto these essential societal areas, currently overlooked and ignored in GDP based economies. 
 
@@ -45,7 +46,7 @@ We can use these activities to take blockchain to the streets and engage the pub
 
 Our platform operates a Microvolunteering Platform to build global projects which empower local people to create positive change where they live. 
 
-In a GDP based system a great idea for positive change relies on the person who has it to have the skills, connections, ability, and often finances to deliver it. In our platform the most effective ideas, which can be recreated by local people anywhere, are suggested and voted on. Then community comes together to build the best ones in our [Action Center](https://action.focallocal.org). Offering a new route for creative sparks to build a brighter future to be delivered, which otherwise are often lost.
+In a GDP based system a great idea for positive change relies on the person who has it to have the skills, connections, ability, and often finances to deliver it. In our platform the most effective ideas, which can be recreated by local people anywhere, are suggested and voted on. Then community comes together to build the best ones in our [Building Section](https://publichappinessmovement.com/docuss/build). Offering a new route for creative sparks to build a brighter future to be delivered, which otherwise are often lost.
 
 For example; [The Brighter Tomorrow Map](https://brightertomorrowmap.com). 
 
@@ -55,20 +56,20 @@ An effort to empower local people to support those who are homeless nearby. Buil
 
 
 **Impact**
-If the right people get behind this it will have a profound effect on increasing peace, happiness, and reducing human-suffering across the world. If you’re reading this it because we believe that you have the skills to contribute, and a passion to create positive change for humanity.
+If the right people get behind this it will have a profound effect on increasing peace, happiness, and reducing human-suffering across the world. You are welcome to join us if you have skills to contribute, and a passion to create positive change for humanity.
 
 *'Those who love peace must learn to organize as effectively as those who love war'*  - Martin Luther King
 
 
 The new platform is open to all groups operating in a non-profit way towards similar aims - or those who want to explore switching to an economic model which rewards them. Today many.. In fact most, of the leaders and stars of this neglected economic sector end up leaving it due to the impoverishing nature of working in an economic sector where there are no financial rewards.
 
-Our platform provides a space for these existing Public Happiness networks to escape the ‘pay to play’ culture social media has shifted towards, and unite. Growing into something far larger than the sum of their parts - while retaining their unique and individual natures. To create an unstoppable worldwide Movement for a world with more peace and happiness. We’ve reached the point where the platform is ready to begin hosting communities who will become owners of their new home, contributing to its governance and evolution. You can take a look here: [focallocal.org ](https://focallocal.org)
+Our platform provides a space for these existing Public Happiness networks to escape the ‘pay to play’ culture social media has shifted towards, and unite - growing into something far larger than the sum of their parts, while retaining their unique and individual natures. Combining will multiply exponentially their efforts, unleashing an unstoppable worldwide Movement for a world with more community connection, happiness and well-being. We’ve reached the point where this platform is ready (although not currently optimised) to begin hosting communities who will become owners of their new home, contributing to its governance and evolution. 
 
 Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. 
 
 To discuss a section and make suggestions, click on the red balloons underneath each section.
 
-You can also review all [recent discussion on all sections here](https://focallocal.org/page/undefined?d=%2Ftags%2Fwhitepaper&r=1)
+You can also review all [recent discussion on all sections here](https://publichappinessmovement.com/page/undefined?d=%2Ftags%2Fwhitepaper&r=1)
 
 
 `
