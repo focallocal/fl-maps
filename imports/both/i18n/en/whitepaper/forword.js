@@ -1,4 +1,4 @@
-export const Forward = `
+export const Forword = `
 
 **Foreword:**
 We are Tokenising Happiness to bring more peace and well-being into the World. 

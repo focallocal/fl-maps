@@ -237,7 +237,6 @@ Email addresses will not be collected to prevent issues as seen in the Bee Token
     {
         title: "Ongoing Funding for Specific Projects and Experts",
         code: "OnFufo",
-        chapterHeading: true,
         fullText: ` 
 
 ## 5.3. 

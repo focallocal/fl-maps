@@ -6,7 +6,6 @@ import { Container } from 'reactstrap'
 import DCSLink from '/imports/client/ui/components/DCSLink/index.js'
 import NavMenu from './NavMenu'
 import { TableOfContents } from './TableOfContents'
-import { Forward } from './Forward'
 
 // Styles and Other
 import './styles.scss'
@@ -20,7 +19,7 @@ md.set({
 })
 
 const index = (props) => {
-  const wpForward = md.render(Forward)
+  const wpForword = md.render(i18n.Whitepaper.Forword)
   const fullText = i18n.Whitepaper.FullText
   const sectionCount = fullText.length
   const fullTextReversed = [...fullText].reverse()
@@ -35,8 +34,8 @@ const index = (props) => {
       <h2 id="Foreword"> </h2>
       <br />
       <br />
-      <div dangerouslySetInnerHTML={{ __html: wpForward }} />
-      <DCSLink badge="true" format="speech-bubble" title="General Discussion" triggerId="forward" display="inline" />
+      <div dangerouslySetInnerHTML={{ __html: wpForword }} />
+      <DCSLink badge="true" format="speech-bubble" title="General Discussion" triggerId="forword" display="inline" />
 
       <TableOfContents />
       <DCSLink badge="true" format="speech-bubble" title="click balloons to comment on section above" triggerId="bal" display="inline" />
