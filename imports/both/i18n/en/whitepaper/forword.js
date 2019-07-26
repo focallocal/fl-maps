@@ -18,7 +18,7 @@ Sectors like Industry, Tech, Finance have lots of money behind them. Others like
 
 This system is inefficient and unfair, yet we’ve come to accept it as the norm. If you benefit society you should be rewarded for it. That is what economic systems were designed for.
 
-Cryptoeconomics gives humaity the tools to design entirely new economic systems. No-longer are we locked into todays (Fiat) currencies and GDP based value and reward systems/metrics. 
+Crypto-economics gives humaity the tools to design entirely new economic systems. No-longer are we locked into todays (Fiat) currencies and GDP based value and reward systems/metrics. 
 
 This token is an effort to create an entirely new economic system. One which focuses energy onto these essential societal areas, currently overlooked and ignored in GDP based economies. 
 
