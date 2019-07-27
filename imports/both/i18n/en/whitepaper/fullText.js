@@ -20,7 +20,7 @@ The Public Happiness Token aims to be a pillar in beginning that essential re-ba
 
 *‘We need to move beyond Gross Domestic Product (GDP) as our main measure of progress and fashion a sustainable development index that puts people first’* - Ban Ki Moon, at the time UN Secretary General
 
-You can read more about [the token background here](https://news.focallocal.org/token-background/)
+You can read more about [the token background here](https://news.publichappinessmovement.com/token-background/)
        
 `
     },
@@ -34,19 +34,19 @@ You can read more about [the token background here](https://news.focallocal.org/
 **Public Happiness Token: Introduction**
 Public Happiness Token is an ERC20 Token created from Ethereum blockchain. The Token itself will have few modifications, with its value to society, and for trading, coming from its unique use in engaging users in activities and projects to create a happier, safer and friendlier society for their local community.
 
-While we talk about 'Tokenising Happiness' and call our community 'The Public Happiness Movement', a more accurate definition of our mission would be 'to increase peace and well-being in the world, using localised positive action'. We use the term 'happy' because regardless of language it's easily recognisable, even though it's not very precise. 
+While we talk about 'Tokenising Happiness' and call our community 'The Public Happiness Movement', a more accurate definition of our mission would be 'to increase peace and well-being in the world, using localised positive action'. We use the term 'happy' because regardless of language it's easily recognisable, even though it's not as precise as it could be. 
 
-All Public Action is organised via our platform focallocal.org and app. Our web-based platform has been built entirely by volunteers who support the vision and is already operational in Beta, early-launch stage. 
+All Public Action is organised via our platform publichappinessmovement.com and app. Our web-based platform has been built entirely by volunteers who support the vision and is already operational in Beta, early-launch stage. 
 
-Integration of an ERC20 Token into the platform will fuel a rapidly growing community, using the platform and ecosystem to create projects and activities to bring positive change into the world that we can’t even imagine yet!
+Integration of a token into the platform which rewards users for actions which support our mission, creates a fuel supporting our rapidly growing community, using the platform and ecosystem to create projects and activities to bring positive change into the world, more effective than anything we can imagine yet, because it will be the combined imagination of millions of users.
 
-The Public Happiness Token can be ‘mined’ by using our platform to take action on local societal issues to create greater well-being nearby. Action which occurs in the real world, is tracked through hash-tagging photos and videos on social media, and via feedback from other users. 
+The Public Happiness Token can be earned ('mined') by using our platform to take action on local societal issues to create greater well-being nearby. Action which occurs in the real world is tracked through hash-tagging photos and videos on social media, and via feedback from other users. 
 
-The Token is also mined by taking actions essential to the smooth functioning, and growth of the platform, crypto-economic network, and community (for example, bounty hunting for people trying to game the system, or by completing micro-volunteering tasks to build projects).
+The Token is also mined by taking actions essential to the smooth functioning, and growth of the platform, crypto-economic network, and community (for example, bounty hunting to catch users trying to cheat the system, or by completing micro-volunteering tasks to build projects).
 
-Founder Andy has always built the Public Happiness Movement Public Happiness project based upon people rather than money, because of the negative effect its presence and pressures often have on people, and societies. Choosing to live an extremely frugal lifestyle in order to focus full-time on Public Happiness; living in a van and working side jobs where needed to support it rather than applying for funding or running crowd-funders. The Focallocal Community was built and maintained for 7 years almost entirely on the concept of avoiding money wherever possible. 
+Founder Andy has always built the Public Happiness Movement based upon people rather than money, because of the negative effect its presence and pressures often have on people, and societies. Choosing to live an extremely frugal lifestyle in order to focus full-time on Public Happiness; living in a van and working side jobs where needed to support the vision rather than applying for funding or running crowd-funders. The Focallocal Community was built and maintained for 7 years almost entirely on the concept of kindness, avoiding money wherever possible. 
 
-Blockchain creates a new and intriguing possibility to super-charge our positive impact by creating a currency which is intrinsically linked to creating individual, and societal well-being; bringing more peace and happiness to the world each and every time it is used. Public Happiness Token aims to be that currency.
+Blockchain gives everyone the ability to create new economic systems and models, creating a new and intriguing possibility to super-charge our positive impact by creating a currency which is intrinsically linked to creating individual, and societal well-being; bringing more peace and happiness to the world each and every time it is used. Public Happiness Token aims to be that currency.
 
 
 *Disclaimer: Please note that this white paper does not create any legally binding obligations, it is presented here purely for informational purposes. For more information please read our terms of use*
@@ -222,13 +222,13 @@ There will be no pre-sale to big time investors. Guaranteed opportunities for ev
 
 **ICO Stages**
 Stage 1: 
-Investors will have 30 days to register an Ethereum address. Once the ICO opens a pre-set number of tokens will be released. registered investors will be capped initially at 2 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
+Investors will have 30 days to register an Ethereum address. Once the ICO opens a pre-set number of tokens will be released. registered investors will be capped initially at 100 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
 
 Stage 2: 
-This stage will be held on a crowd funding website to reach those who don’t understand how to join in a traditional ICO. Investors will be rewarded set amounts for donating at increasing intervals. The top threshold of reward for donations will be set at 2 ETH per user. Users may choose to invest more to support the project, but will not receive more tokens than stated.
+This stage will be held on a crowd funding website to reach those who don’t understand how to join in a traditional ICO. Investors will be rewarded set amounts for donating at increasing intervals. The top threshold of reward for donations will be set at 100 ETH per user. Users may choose to invest more to support the project, but will not receive more tokens than stated.
 
 Stage 3: 
-Midway through the crowd funder the top limit will be raised to 5 ETH, and the traditional ICO will be reopened for a second round with a limit of 10 ETH, users may invest up to the respective limit on all of the platforms concurrently
+Midway through the crowd funder the top limit will be raised to 200 ETH, and the traditional ICO will be reopened for a second round with a limit of 10 ETH, users may invest up to the respective limit on all of the platforms concurrently
 
 Email addresses will not be collected to prevent issues as seen in the Bee Token phishing scams during their ill-fated ICO
 
@@ -280,7 +280,7 @@ Part of the ICO marketing (and ongoing marketing afterwards) will have a focus o
 Most people have now heard something about Cryptocurrencies, and are curious. By offering those donating the option to gift a token which benefits issues the receiver sees in their local community, we have introduced a simple way to tap into that curiosity.
 
 Public Happiness Partners:
-Existing groups who are taking action for more peace and happiness in this world, in a manner currently neglected by today's economic system; and whose actions align with our [Community Values](https://news.focallocal.org/the-focallocal-community-values/), will be invited to use our ecosystem to supercharge their network effect. Drawing more members in to join their activities. Expanding the reach of their message and media through our enhanced tools. Offering more effective methods to coordinate their followers and community into desired actions on our platform. 
+Existing groups who are taking action for more peace and happiness in this world, in a manner currently neglected by today's economic system; and whose actions align with our [Community Values](https://news.publichappinessmovement.com/the-focallocal-community-values/), will be invited to use our ecosystem to supercharge their network effect. Drawing more members in to join their activities. Expanding the reach of their message and media through our enhanced tools. Offering more effective methods to coordinate their followers and community into desired actions on our platform. 
 
 They will now be rewarded financially for their continued efforts to improve human and societal well-being when it is in part, coordinated via our platform. This reward will also be selectively backdated, based upon numbers engaged in their activities and media over the past ten years. Rewarding those whose labours have made a consistent positive impact to society, and others lives, without any economic recognition for their great works. This backdated reward is not dependent upon joining our platform, but should increase on-boarding by showing casing the benefits of tokenizing to create a new ‘Happiness Economy’. 
 
@@ -328,7 +328,7 @@ The Focallocal Community built this ‘Public Happiness Movement’ platform and
         chapterHeading: true,
         fullText: ` 
 
-The Public Happiness Movement platform currently exists as a website located at https://focallocal.org. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
+The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
 Our platform, is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network.
@@ -343,7 +343,7 @@ Our platform, is also available as an iOS and Android app. Its building towards 
 
 ## 7.1.
 
-[view live beta](https://focallocal.org/)
+[view live beta](https://publichappinessmovement.com/)
 **The Public Happiness Movement Map**
 An area of the platform to bring users together to connect and take our project and token to the streets. Users can create and join Public Happiness Gatherings from a list of pre-approved activities curated by the community; and contact other members nearby. Users can list themselves on the map (in an approximate location for privacy), and select all the public happiness activities they would like to be contacted for, creating a searchable map of people nearby who want to meet and take actions which bring more well-being into the world they live in.
 
@@ -382,8 +382,8 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 
 ## 7.2.
 
-[view live beta](https://action.focallocal.org/)
-**The Action Center**
+[view live beta](https://publichappinessmovement.com/docuss/build)
+**Build/The Action Center**
 An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. In today's GDP based world innovative ideas to benefit human socieity are heavily dependent on whether the person having them has the capacity and detrmination to either find funding and build them. This is an extremely inefficient system where the majority of great ideas to impact the world are lost. 
 
 Our Action Center creates a new path for ideas which benefit humanity to be built. Anyone can suggest an idea using our one page only form. Other users vote on the ones they believe will have the largest social impact. The winners will be built by our community using our Micro-Volunteering model. These projects have no owner, no set team building them, and require no funding. 
@@ -420,7 +420,7 @@ Localised projects are smaller and run on a mirrored version to the main Action 
 
 ## 7.3.
 
-[view live beta](https://news.focallocal.org/)
+[view live beta](https://news.publichappinessmovement.com/)
 **Community News (or Happy News)**
 A user generated ‘Community News’ online magazine. Open for all platform users to create their own articles or share video links. This incentives users to create, like and share content (articles, photos and videos), increasing reach and inspiring more people to join in the Movement. The user led and created media from around the world increases users sense of community, and being part of something bigger, a global Movement for positive change.
 
@@ -437,7 +437,7 @@ Moderators will mine tokens by approving content. Users will mine tokens either 
 
 ## 7.4. 
 
-[view live beta](https://shop.focallocal.org/)
+[view live beta](https://the-positive-action-shop.myshopify.com/collections/)
 **The Active Happiness Shop**
 An integrated Shopify store selling ‘Active Happiness Clothing’ which make a small positive change happen in the world around the wearer simply by putting the item on in the mornings. The clothing is an extension of our Public Happiness activities, with most items functioning as a passive way for each public happiness activity to occur outside of organised activities and gatherings. For example, a shirt informing others that the wearer is carrying bubbles, and inviting people around them to blow some.
 
@@ -455,18 +455,102 @@ Currently hosted on shopify, this will be moved in-house shortly.
 ## 7.5.
 
 **Who defines what is accepted as ‘Public Happiness?’**
-The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. Users are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.focallocal.org/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform.
+The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. Users are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.publichappinessmovement.com/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform.
 
 Effective ideas for positive action will be incorporated into the platform and recommended to other users as tools they can use for creating positive  social and cultural change where they live. 
 
 `
+    },
+	{
+        title: "Community Values",
+        code: "ComVal",
+        fullText: `
+
+	
+## 7.6.
+	
+**Community Values**
+	
+
+1. Welcoming
+
+Our community is based upon an open environment of connection and positivity. All causes and opinions are valid and respected as people agree to put aside their affiliations for a while, allowing us to be open to everyone in our community, as a human, apart from our passionately held points of view which so often divide us
+
+By focusing on what connects us instead of what divides us, we create a safe space where we teach the important skill of learning how to come together, as humans, around a project or activity which benefits the local communities we live in
+
+
+2. An Open Human Space
+
+Leave all political leanings, religions and spiritual beliefs at the door. Our positive action based community is open to everyone, simply as human-beings together. Everyone at a gathering may agree that the Flying-Spaghetti Monster is the way forwards, while those passing-by may be strictly Dudeists and not feel welcomed to join. It is an intensely liberating experience to just see, and be seen as a human exploring the many paths in life, just as everyone else is
+
+Projects focusing on issues may appear to side with one political leaning or another, but our sole focus is on the root issue causing harm in society, and not on political bickering
+
+
+3. Evidence Based
+
+Every activity and action is based on peer reviewed scientific studies. Action must be anchored to humanity’s best current understanding of reality to ensure that energies are focused on making legitimate change in the world as effectively as possible. This differentiates the Public Happiness Movement from a hippie revival, or new age spiritualist/religious community
+
+As a side benefit this teaches people to critically examine today’s flood of social media pushed anti-intellectualism, helping to act efficiently in life, and in supporting their local community
+
+4. People and Innovative Technology Grounded
+
+The Public Happiness Movement is grounded in technological innovation, and exploring their use to coordinate locally, while sharing the most effective ideas for creating positive societal change globally. Innovative technology should be harnessed to empower people and communities, giving everyone the tools to transform the world around them into a friendlier, safer, and happier place to live our lives in
+
+5. Comfortable
+
+Activities should be comfortable for anyone to attend. This means striking a balance between what is considered local cultural norms for children, while pushing society towards greater acceptance of each other. As a rule of thumb our mantra is ‘your rights end where someone else’s begin’. So a Tantra, nudism, or bdsm group doing a free hug event advertising their group name or ideologies, would be inappropriate through association. Their members would all be welcome without discussing the group/lifestyle where young people can hear it.
+
+6. Encouraging
+
+We are all on a journey of exploration and we support and encourage all of our fellow adventurers. Some may not get it right away, so please guide their ideas and suggestions to fit with these Community Values, using plenty of positive encouragement
+
+
+7. Smiling
+
+You’ve found a home for your lovely smile, positivity and enthusiasm. Please bring it along to our activities and projects, especially those targeting serious issues. All smiles are beautiful! Please share yours with the world, and with each other
+
+
+8. Sharing
+
+Our community is about sharing – sharing ideas, experiences, success stories, talents and smiles!
+
+As a world-wide network – our whole is so vastly greater than the sum of our parts. When we come together with a shared vision, and an organised plan of the steps needed to achieve it, we as a collective of individuals, are powerful beyond imagination!
+
+ 
+
+9. Empowering
+
+Our community is focused on providing you with the tools and support needed to create change on social issues you care about through uniting with other positive and proactive people nearby and using the most effective ideas collected worldwide from our community.
+
+Consider the issue of involuntary homelessness, where endless money has been given to charities around the world, and yet most countries are no closer to ending homelessness than they were in the 60’s. If people in a town simply came together around effective ideas and a determination to resolve the issue ourselves, it would be gone forever in no time
+
+10. Rippling
+
+How can helping a few homeless folk feel less isolated in a small town in Hungary, or creating greater connection between folk in a community in Dorset, really change the wider world in any way?
+
+The activities and projects you create locally through our platform may seem small when we talk about making an impact on a global scale. Your energy and positivity is an essential part of growing an interconnected community of people, all exploring positive new ways to affect issues troubling their local community.
+
+By sharing our small successes, each successful activity can be recreated thousands and thousands of times by other community members across the globe, and together those ripples combine into an unstoppable wave of positive action that can have a real impact for positive societal change, globally!
+
+11. Locally Lead
+
+Our main mission is to empower individuals and communities to create positive change themselves. While many of our projects and activities occur on a global scale, they are always implemented by local people who understand cultural differences where they live, and will be there to keep the ball rolling afterwards.
+
+One caveat is that some members use our platform to pimp their travelling experience, as the most positive and amazing people are also the local people wanting to be contacted to meet (‘gather’) and take positive action to the streets where they live. Local people using our platform are still central even when initiated by a member who is travelling, so using the platform while travelling fits with this value.
+
+12. Snowballing
+
+All of your positive actions on our platform help spread awareness of the Public Happiness Movement. Reaching more people who want to live in a happier world with our message that it is possible, and they have the power to build it, today!
+
+As more people are drawn into our mission, the effects of your actions that reached them are magnified far beyond what you can see. Each new member who joins in adds more positive energy as our Movement grows into an unquenchable force of change for a friendlier, happier world – at peace with each other, for all of humanity to enjoy!!
+	`
     },
     {
         title: "Evidence Based and Peer Reviewed Actions",
         code: "EvBaan",
         fullText: `
 
-## 7.6.
+## 7.7.
 
 **Evidence Based and Peer Reviewed**
 When users submit a new idea for a project or activity its recommended that they find peer reviewed studies to offer support for the benefits their idea will have on society. This promotes the core concept that all efforts to effect a positive cultural and societal change, should be rooted in the best current understanding of available evidence. Users will be guided to place where they are likely to find sources, as we want to build an informed and competent community. Those who are discussing and reviewing it for approval may add more sources. Part of our ecosystem will be ‘Research Bounty-Hunting’, where users are rewarded for finding new peer reviewed studies to add to already approved activities, or which lead to the removal of an outdated study. 
@@ -478,14 +562,14 @@ When users submit a new idea for a project or activity its recommended that they
         code: "WhcaPa",
         fullText: `
 
-## 7.7.
+## 7.8.
 
 **Who can Participate on the Platform**
 The platform is open to anyone wanting to create well-being and happiness where they live, or support the Movement. 
 
 Some users may choose to use it while travelling, as great way to meet positive local people. Users travelling are naturally guided towards ‘gathering’ with local people who understand the local customs and any adaptations necessary.
 
-Pre-existing communities may wish to join the ecosystem to take advantage of the network effect, or be part of a wider community. This is discussed further in 7.8.
+Pre-existing communities may wish to join the ecosystem to take advantage of the network effect, or be part of a wider community.
 
 `
     },
@@ -494,7 +578,7 @@ Pre-existing communities may wish to join the ecosystem to take advantage of the
         code: "PrCowi",
         fullText: `
 
-## 7.8.
+## 7.9.
 
 **Pre-existing Communities with Similar Values**
 Groups and communities already doing excellent work in creating Public Happiness and well-being projects/activities where they live, are all welcomed to use our platform and ecosystem to supercharge their positive impact on society.
@@ -513,7 +597,7 @@ Platform users can join groups to be informed about their activities and project
         code: "Langua",
         fullText: `
 
-## 7.9.
+## 7.10.
 
 **Languages**
 The platform will launch in English. Adding other languages has been designed as a simple task anyone speaking the required language can complete in around 30 mins.
@@ -525,7 +609,7 @@ The platform will launch in English. Adding other languages has been designed as
         code: "DeGoan",
         fullText: `
 
-## 7.10.
+## 7.11.
 
 **Decentralised Governance and Voting**
 
@@ -574,7 +658,7 @@ Users aren’t all expected to be experts on blockchain or community governance.
         code: "UsBein",
         fullText: `
 
-## 7.11. 
+## 7.12. 
 
 **User Behaviour in UX Design**
 The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from users. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organsiers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
@@ -590,7 +674,7 @@ Users attending a gathering on our platform are not passive. Everyone attending 
         code: "UsWaan",
         fullText: `
 
-## 7.12. 
+## 7.13. 
 
 **User Wall and Plugin Module Ecosystem**
 Logged in users will arrive on their profile page and wall each time they visit. A users profile page contains three type of features:
@@ -688,10 +772,17 @@ On-chain governance usually means influence can be bought. Instead a weighted go
 
 Some aspects should be protected by the founding members to safeguard from potential attacks and degradation of the initial vision, for example; the Core Values can be influenced by a vote calling for an improvement, but not changed directly. The founders would need to give an extremely strong reason for resisting a popular change, or risk undermining the trust of their community.
 
-Last Line: 
-Founder Andy retains a veto vote. Intended never to be used, it serves as a last line of defence against subversion of the platform and community away from its core vision. 
+Voting: 
+We use a captcha when voting to protect against machine/bot voting. (definitely not the awful Google click all the tiles with X in them captchas!!)
 
-In the case Andy is unable to use it, the veto vote will pass to 7 secretly designated members. Their identities unknown even to each other. These members have been determined by a personal judgement on integrity, reliability, and commitment to both the mission, and it's values. 4 members are required to use the veto on a decision, and reasons it was used must be explained fully to the community.
+Last Line: 
+Founder Andy retains a 'pause' vote. Intended never to be used, it serves as a last line of defence against subversion of the platform and community away from its core vision.
+
+On initiaton of a pause vote 21 members are selected at random (making it functional impossible to corrupt selected members) from the recently active top ranking members. The vote itself will at the same time be posted as a priority issue in the bounty hunting team who will seek anything which could effect the integrity of the vote, or any abnormal patterns. Once the bounty hunting team's report is complete, the 21 random senior members then vote on whether the decision 'paused' to protect the community should be reversed. 11 votes are needed to pass a decison over-ruling.
+
+The 21 members will have the tools to remove members if needed - for example a lot of new members recently joined and all voted in just one way. 
+
+At an unspecified point in the future, or in the case that Andy is no longer able to use this last line community protection tool, the pause vote will pass to 7 secretly designated members. Their identities unknown even to each other. These members have been determined by a personal judgement on integrity, reliability, and commitment to both the mission, and it's values. Any of these members have the power to begin the pause process on any decision recently voted on by the community. The function for calling a pause requires that the member fully explains why it was used, and this explaination is then posted anonymously to the wider-community for urgent discussion.
 
 `
     },
@@ -857,12 +948,44 @@ The bus tour will also be filmed, with regular instalments of life on the road t
 
 `
     },
+	
+	{
+        title: "Documentary",
+        code: "Doco",
+        fullText: `
+
+## 10.4.
+
+**Documentary**
+
+Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a documentary filmed following Andy over the past 2 years, his life travelling, and his effort to grow a vision for a more at peace and connected future for humanity - The Public Happiness Movement and Economy. The central theme is the token, and the journey of uniting the leaders of the Public Happiness and transformative economic worlds.
+
+
+`
+    },
+	{
+        title: "The Public Happiness Economy World Summit",
+        code: "Summit",
+        fullText: `
+
+## 10.5.
+
+**The Public Happiness Economy World Summit**
+A Global Summit at the same time, and on the same street as The World Economic Forum in Davos, which combines industry leaders from the Public Happiness, and New Economics worlds to discuss and create new and better economic systems to base our society on. 
+
+A Summit next-door to those focused on protecting today's broken economic model, where solutions will emerge to refocus our global and local economies on incentivising people to take regular positive action on resolving all issues reducing well-being where they live. Empowering us all to take ownership for the well-being of our local community, and everyone in it. Designing and growing the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide.
+
+`
+    },
+	
+	
+	
     {
         title: "Happy Cam",
         code: "HapCam",
         fullText: `
 
-## 10.4.
+## 10.6.
 
 **Happy Cam**
 The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Go pro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
@@ -876,7 +999,7 @@ Later a second camera dog may join, if we adopt a puppy.. because that would be 
         code: "PuHaPa",
         fullText: ` 
 
-## 10.5.
+## 10.7.
 
 **Public Happiness Partners and Pre-existing Communities**
 There is already a global Movement of Public Happiness creators around the World. Our platform creates a space for the individual energy of all our communities to unite, exponentially magnifying the energy of each, and their impact on the world. The difficulties of balancing committing the time needed to manage and grow their community, against the pressures of needing to be paid for their work in today’s economy, which doesn't financially value those contributions.
@@ -892,7 +1015,7 @@ On-boarding existing communities is extremely easy and effective. There are mill
 You can read further details about existing partners in section 5.4.
 
 
-If comfortable operating within our [Community Values](https://news.focallocal.org/the-focallocal-community-values/), new groups operating for similar goals will be invited to join our ecosystem. Massively boost their growth and good work through our enhanced network effect, while also retaining their identity.
+If comfortable operating within our [Community Values](https://news.publichappinessmovement.com/the-focallocal-community-values/), new groups operating for similar goals will be invited to join our ecosystem. Massively boost their growth and good work through our enhanced network effect, while also retaining their identity.
 
 `
     },
@@ -901,7 +1024,7 @@ If comfortable operating within our [Community Values](https://news.focallocal.o
         code: "OnlSup",
         fullText: `
 
-## 10.6.
+## 10.8.
 
 **Online Supporters**
 An open community is active on Reddit at reddit.com/r/tokenisinghappiness where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
@@ -919,7 +1042,7 @@ The latter is simply a cheap marketing exercise which has been saturated by the 
         code: "Contes",
         fullText: `
 
-## 10.7.
+## 10.9.
 
 **Contests**
 Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our ICO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
@@ -931,7 +1054,7 @@ Building a core group of enthusiasts plays a big role in gaining the energy need
         code: "Collec",
         fullText: `
 
-## 10.8.
+## 10.10.
 
 **Collectables**
 Collectables will be created for special activities a user joins in, and also landmarks they achieve within our ecosystem. This acts as a fun side game within the platform while giving milestone rewards to users, and using it to introduce them to collectables and other crypto-economic ideas. The collectables will be characters designed by the community and may feature logos, titles and names of the groups who coordinated large scale activities/projects 
@@ -943,7 +1066,7 @@ Collectables will be created for special activities a user joins in, and also la
         code: "PatoPa",
         fullText: `
 
-## 10.9. 
+## 10.11. 
 
 **Paid to Party**
 
@@ -1004,7 +1127,7 @@ Being listed on one exchange before our ICO's end is important to this strategy.
 ## 11.2.
 
 **Active Happiness Clothing**
-[Visit the shop](https://shop.focallocal.org)
+[Visit the shop](https://shop.publichappinessmovement.com)
 
 The platform includes a store where users submit designs for, and purchase, clothing and Public Happiness supplies. 'Active Happiness Clothing' means that the designs manifest positive things to happen around the wearer, and so it is an extension of our Public Happiness Activities. For example, a tee that invites passers-by to share one minute of eye contact with the person wearing it, to explore human connection together.
 
@@ -1023,9 +1146,11 @@ See section 7.4. for more details.
 
 Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in to meet their CSR commitments. Our platform is absolutely ideal for this purpose as they can offer a set amount of funding to local people to target a specific issue, or one of their own choosing, in a creative and fun way. They can then map progress and results the entire way through via our platform and social media. 
 
-We will ask for one or two hashtags which the teams building the project can use to enable the group to piggy-back on our network enhanced social media to help gain exposure to the excellent project which they supported and enabled with their kind offer.
+Companies, and philantopists can create bounties to target a local, or gloabal in our platform. These challenges go into our Build section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our communtiy fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
 
-Donating to our platform engages communities and creates an entire story for them, their stakeholders and staff to follow. This has the potential to be lucrative, boosting the tokens price and market value rapidly. This is also a great way for us to reach and engage with local communities. 
+If the project is realised in the physical world, as most will be, experiences of the day are gathered for those who put forward the funding for the challenge via one or two extra hashtags, suggested by the funders, to enable them to piggy-back on our networks enhanced social media effect, to gain exposure for the excellent project which they supported and enabled with their kind offer.
+
+Running CSR through our platform creates an entire story for them, their stakeholders and staff to follow. This story also leaves a permanent trail for those curious or grateful in the local communities effected by the project they funded. If good-will or marketing was their aim, the story we create has a long legacy. This CSR route has the potential to be lucrative, boosting the tokens price and market value rapidly. Its also providing a regualar boost for us to reach, engage with local communities, and further achieve our mission. 
 
 `
     },
@@ -1037,7 +1162,7 @@ Donating to our platform engages communities and creates an entire story for the
 ## 11.4.
 
 **Kindness Auction**
-[read more](https://news.focallocal.org/focallocal-kindness-auction/)
+[read more](https://news.publichappinessmovement.com/focallocal-kindness-auction/)
 
 A fun little project we've had good success over the years in the Focallocal Community, even when just a few people in one city joined in. Unleashed globally it will be a real powerhouse for fund-raising, and one which everyone who joins in receives something great in return.
 
@@ -1052,7 +1177,7 @@ A fun little project we've had good success over the years in the Focallocal Com
 
 **Community Projects**
 
-The platform also allow for users to suggest and create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](http://action.focallocal.org/) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
+The platform also allow for users to suggest and create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
 
 `
     },
@@ -1233,8 +1358,61 @@ Much of the essential skills needed to build a successful blockchain project and
 
 **Current Team Members**
 
+
+Community Leaders:
+
 Andy Tulett: Focallocal Community and Token Founder
 Professional Public Happiness Creator since 2012
+
+Marina Onopriichuk
+Future Humanity Mission
+
+
+Web Development:
+
+Gary Lanchance
+Founder of The Decentralised Dance Party
+
+Tom McNulty
+Site Reliabilty Engineer
+
+Matias Forbord
+DevOps/Full Stack Engineer
+
+
+Pawel Mordaszewski
+Technical utility player
+
+Arty Sidorenko
+Developer/All-round Information Sponge
+
+Sylvain Quendez
+Docuss Founder and Director
+
+
+Token:
+
+Sarbjit Klair
+Founder of the International Blockchain Centre
+
+Juliet Annerino
+Strategic Marketing Content
+
+Liliana Carillo
+R&D&I Director at the Digital Leadership Institute
+
+Allessandra Sollberger
+Chairman of The Maverick Group
+
+
+Documentary about the Movement - Cannes Film Festival 2020 Launch:
+
+Julita Deka
+Owner at Sunwave and cameraman/editor at Palm Tree Productions
+
+Robbie Moffat",
+Producer/Director at Palm Tree Productions
+
 
 `
     },
@@ -1530,7 +1708,7 @@ Still to plan:
 
 ## 18.
 
-* Open-source vs Closed Code Base. Added security risks from allowing hackers to search for vulnerabilities, vs the crypto communities strong preference for open source projects
+* Open-sourcing. The vast majority of the system will be open-sourced 6 months afer launch. We need to determine any sections which are too sensitive to open-source.
 
 * Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
 
@@ -1546,7 +1724,7 @@ Next Steps:
 
 * Set up ICO plan within our Action Center
 
-* Full review of all content on focallocal.org to update content that has become outdated
+* Full review of all content on news.publichappinessmovement.com to update content that has become outdated
 
 * Token created
 
