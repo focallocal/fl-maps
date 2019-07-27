@@ -1,13 +1,49 @@
 export const FullText = [
     { title: "Abstract", code: "Abstra", fullText: ` `, chapterHeading: true },
-    {
-        title: "Background",
-        code: "Backgr",
+
+	    {
+        title: "Movement Background",
+        code: "MovBac",
         fullText: `
 
 ## 1.1.
 
-**Background**
+**Movement Background**
+Founder Andy worked for the past 7 years building and running a non-profit volunteer community aiming to change the world by bringing people together to give their time voluntarily to solve global issues, on a local scale. Theorising that in many situations charities are massively limited in scale, and an unstoppable wave of change could be created if it became a normal habit to give a few hours a week on resolving issues in our local communities, using the most effective ideas collected from other users around the world (local action for global change).  Creating a proactive and empowered global community who want to meet and adapt these projects to fit their culture and then replicate them to target change to societal issues like homelessness, isolation, human connection, etc,  
+
+The past 7 years felt like swimming upstream. Many amazing people came in and did fabulous altruistic work, most were shortly pulled away by other commitments and general modern life pressures preventing momentum from really building - especially in London, the founding city. The struggle was against a world where good intentions are in constant strife against heavy pressure on our free time. 
+
+Blockchain is a chance to incentivise that action, allowing the modern world to refocus their attention on local issues important to a healthy society, which have been marginalised under our constantly pressured, GDP based societies. Modern technology also allows us to share effective ideas in a far more intelligent way than ever before, and achieve a much greater impact than previously possible.
+`
+    },
+    {
+        title: "The Focallocal Community",
+        code: "ThPuHa",
+        fullText: `
+
+## 1.2. 
+
+**The Focallocal Community**
+Set up as a non-profit ‘charitable organisation’ in the UK, the Focallocal Community has been established since 2012. It is an open volunteer community for people wanting to take action and make the world they live in a happier, safer and friendlier place through creating public happiness activities and projects, which reach out a friendly hand to the wider community, and target issues which harm public well-being; like, homelessness, poverty, isolation. 
+
+The community is built on the motto ‘Local Action for Global Change’ due to the core belief that local people coming together and targeting a societal issue using creative and positive ideas collected from around the world, are far more effective in most situations than outsiders coming and making change for them. They can adapt ideas to fit the local culture, while teaching people how to come together and ‘do it ourselves’ empowers us all to understand that it is the local community is ours, and together we have the power to shape it into the place we dream of living in.
+
+Actions are always based on positivity. There are times in the world when anger and forceful action is necessary. They are fortunately rare, while action based around a clear goal, plan and built upon positivity often becomes irrepressible. Like 'Gay Pride Parades’. Action that is adaptive, agreeable, and incites more people to follow it can become impossible to argue against like swimming against a river, with nothing to grab onto. Eventually there is no other option than to give up and go with the flow.
+
+The Public Happiness Movement was created because Facebook, and other social media platforms, made it increasingly difficult for groups engaged in trying to incite positive action for positive societal change. Maintain their efforts became ever more difficult and their reach minimised, as social media switched to a ‘pay to play’ model. This is the perfect time, and opportunity, to unite everyone working for a positive cultural shift to a society based on well-being and peace - offering. For a global movement to occur a new platform is needed, where enhanced tools and a powerful ecosystem is used to combine and magnify their message for a brighter future. 
+
+The Focallocal Community built this ‘Public Happiness Movement’ platform and is offering it to all other groups with a shared/similar mission.
+
+`
+    },
+	    {
+        title: "Economic Background",
+        code: "Backgr",
+        fullText: `
+
+## 1.3.
+
+**Economic Background**
 Today’s society is based on GDP, with almost every political decision weighed against this to see if it should go ahead. The founder of GDP, Simon Kuznets campaigned against its use as a primary tool, arguing that it was never intended to be the base our societies were built upon. He designed GDP in 1937 solely for the post war recovery and believed it was entirely unsuitable as the main measure of societal success/well-being because it undervalued and ignored large areas that are critical to a healthy, functioning society. 
 
 *‘the welfare of a nation can scarcely be inferred from a measurement of national income as defined by the GDP’* - Simon Kuznets
@@ -29,7 +65,7 @@ You can read more about [the token background here](https://news.publichappiness
         code: "PuHaTo",
         fullText: ` 
 
-## 1.2.
+## 1.4.
 
 **Public Happiness Token: Introduction**
 Public Happiness Token is an ERC20 Token created from Ethereum blockchain. The Token itself will have few modifications, with its value to society, and for trading, coming from its unique use in engaging users in activities and projects to create a happier, safer and friendlier society for their local community.
@@ -286,53 +322,17 @@ They will now be rewarded financially for their continued efforts to improve hum
 
 `
     },
-    { title: "Public Happiness – Background", code: "PuHaBa", fullText: ` `, chapterHeading: true },
-    {
-        title: "Community Background",
-        code: "ComBac",
-        fullText: `
-
-## 6.1.
-
-**Community Background**
-Founder Andy worked for the past 7 years building and running a non-profit volunteer community aiming to change the world by bringing people together to give their time voluntarily to solve global issues, on a local scale. Theorising that in many situations charities are massively limited in scale, and an unstoppable wave of change could be created if it became a normal habit to give a few hours a week on resolving issues in our local communities, using the most effective ideas collected from other users around the world (local action for global change).  Creating a proactive and empowered global community who want to meet and adapt these projects to fit their culture and then replicate them to target change to societal issues like homelessness, isolation, human connection, etc,  
-
-The past 7 years felt like swimming upstream. Many amazing people came in and did fabulous altruistic work, most were shortly pulled away by other commitments and general modern life pressures preventing momentum from really building - especially in London, the founding city. The struggle was against a world where good intentions are in constant strife against heavy pressure on our free time. 
-
-Blockchain is a chance to incentivise that action, allowing the modern world to refocus their attention on local issues important to a healthy society, which have been marginalised under our constantly pressured, GDP based societies. Modern technology also allows us to share effective ideas in a far more intelligent way than ever before, and achieve a much greater impact than previously possible.
-`
-    },
-    {
-        title: "The Public Happiness Movement Community",
-        code: "ThPuHa",
-        fullText: `
-
-## 6.2. 
-
-**The Focallocal Community**
-Set up as a non-profit ‘charitable organisation’ in the UK, the Focallocal Community has been established since 2012. It is an open volunteer community for people wanting to take action and make the world they live in a happier, safer and friendlier place through creating public happiness activities and projects, which reach out a friendly hand to the wider community, and target issues which harm public well-being; like, homelessness, poverty, isolation. 
-
-The community is built on the motto ‘Local Action for Global Change’ due to the core belief that local people coming together and targeting a societal issue using creative and positive ideas collected from around the world, are far more effective in most situations than outsiders coming and making change for them. They can adapt ideas to fit the local culture, while teaching people how to come together and ‘do it ourselves’ empowers us all to understand that it is the local community is ours, and together we have the power to shape it into the place we dream of living in.
-
-Actions are always based on positivity. There are times in the world when anger and forceful action is necessary. They are fortunately rare, while action based around a clear goal, plan and built upon positivity often becomes irrepressible. Like 'Gay Pride Parades’. Action that is adaptive, agreeable, and incites more people to follow it can become impossible to argue against like swimming against a river, with nothing to grab onto. Eventually there is no other option than to give up and go with the flow.
-
-The Public Happiness Movement was created because Facebook, and other social media platforms, made it increasingly difficult for groups engaged in trying to incite positive action for positive societal change. Maintain their efforts became ever more difficult and their reach minimised, as social media switched to a ‘pay to play’ model. This is the perfect time, and opportunity, to unite everyone working for a positive cultural shift to a society based on well-being and peace - offering. For a global movement to occur a new platform is needed, where enhanced tools and a powerful ecosystem is used to combine and magnify their message for a brighter future. 
-
-The Focallocal Community built this ‘Public Happiness Movement’ platform and is offering it to all other groups with a shared/similar mission.
-
-`
-    },
     {
         title: "Platform Overview",
         code: "PlaOve",
         chapterHeading: true,
-        image: "/images/Proposed_New_Site.png",
+		image: "/images/Proposed_New_Site.png",
         fullText: ` 
 
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
-Our platform, is also available as an iOS and Android app. It's building towards a likely switch to the DAPPs network.
+Our platform, is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network.
 
 
 `
