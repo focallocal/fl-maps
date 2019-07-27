@@ -326,12 +326,13 @@ The Focallocal Community built this ‘Public Happiness Movement’ platform and
         title: "Platform Overview",
         code: "PlaOve",
         chapterHeading: true,
+        image: "/images/Proposed_New_Site.png",
         fullText: ` 
 
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
-Our platform, is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network.
+Our platform, is also available as an iOS and Android app. It's building towards a likely switch to the DAPPs network.
 
 
 `

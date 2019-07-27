@@ -4,6 +4,27 @@ div.mt-5.container {
     font-size: 1.1rem !important;
 }
 
+.image-container-outer {
+    width: 300px; 
+    margin: 0 auto;
+    overflow: visible;
+    height: 102px;  /* for demo since child is floated */ 
+
+    .image-container-inner {
+        position:relative;
+        float: right;
+        right: 50%;
+    
+        .whitepaper-image {
+            position: relative; 
+            right:-50%;
+            width: 70vw;
+            margin: 50px 0px;
+            cursor: pointer;
+        }
+    }
+}
+
 @media screen and (max-width: 800px) {
     div.mt-5.container { 
             width: 90% !important;
@@ -30,6 +51,9 @@ div.mt-5.container {
         margin-top: 60px;
         padding: 10px!important;
         word-wrap: break-word;
+    }
+    .whitepaper-image {
+        width: 90vw!important;
     }
 }
 

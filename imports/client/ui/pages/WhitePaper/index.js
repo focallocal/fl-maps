@@ -1,6 +1,7 @@
 // External Packages
 import React, { Fragment } from 'react'
 import { Container } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 // Components
 import DCSLink from '/imports/client/ui/components/DCSLink/index.js'
@@ -51,6 +52,13 @@ const index = (props) => {
             </h2>
             <div dangerouslySetInnerHTML={{ __html: text }} />
             {elem.fullText.match(/[a-z]/i) && <DCSLink badge="true" format="speech-bubble" triggerId={chapterCode} display="inline" />}
+            {elem.image && (
+              <div className='image-container-outer'>
+                <div className='image-container-inner'>
+                  <Link to={elem.image} target="_blank"><img className='whitepaper-image' src={elem.image}/></Link>
+                </div>
+              </div>
+            )}
           </Fragment>
         )
       })}
