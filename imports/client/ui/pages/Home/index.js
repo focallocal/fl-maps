@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
-import { Container, Button } from 'reactstrap'
-import { Link } from 'react-router-dom'
-
 import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
 import HowToHelpSection from './HowToHelpSection'
-
-import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 class Home extends Component {
@@ -15,9 +10,6 @@ class Home extends Component {
   }
 
   render () {
-
-    const { MainMenu } = i18n
-
     let url
     let opacity
     if (window.__mapType === 'gatherings') {
@@ -26,7 +18,7 @@ class Home extends Component {
     } else {
       url = '/images/btm-bg.jpeg'
     }
-    let backgroundImage = {backgroundImage: 'url(' + url + ')', opacity}
+    let backgroundImage = { backgroundImage: 'url(' + url + ')', opacity }
     return (
       <main className='home'>
         <div id='hero-bg' style={backgroundImage} />

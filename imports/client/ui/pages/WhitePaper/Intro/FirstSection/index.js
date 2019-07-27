@@ -17,7 +17,7 @@ const FirstSection = () => (
   <section className='first-section'>
     <Container>
       <Row>
-        <Col xs={6}>
+        <Col md={6}>
           <h2 className='title'>{title}</h2>
           <div className="text-content">
             <p>{second}</p>
@@ -26,7 +26,7 @@ const FirstSection = () => (
             <p>{fifth}</p>
           </div>
         </Col>
-        <Col xs={6} className='attachment-content'>
+        <Col md={6} className='attachment-content'>
           <iframe src={youtubeLink} frameBorder="0" allowFullScreen></iframe>
           <p>{first}</p>
         </Col>

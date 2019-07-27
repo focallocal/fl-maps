@@ -19,12 +19,11 @@ class Intro extends Component {
   render () {
     return (
       <div id="intro">
+        <NavMenu />
         <Container>
           <h2>Introduction</h2>
         </Container>
-        <NavMenu />
         <TopImageSection />
-        {/* <AboutSection button= {false} /> */}
         <FirstSection />
         <SecondSection />
       </div>

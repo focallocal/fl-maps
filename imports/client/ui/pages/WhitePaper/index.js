@@ -27,9 +27,9 @@ const index = (props) => {
   return (
     <Container className="mt-5">
 
-      <h2 className='Title' style={{ textAlign: 'center' }}>Welcome to the 1st Draft!</h2>
-
       <NavMenu />
+
+      <h2 className='Title' style={{ textAlign: 'center' }}>Welcome to the 1st Draft!</h2>
 
       <h2 id="Foreword"> </h2>
       <br />

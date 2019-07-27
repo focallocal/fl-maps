@@ -11,7 +11,7 @@ import i18n from '/imports/both/i18n/en'
 
 const Index = () => (
   <React.Fragment>
-    <Container>
+    <Container className="team-menu">
       <h1>Meet the Team</h1>
       <p className="intro-paragraph">Find out more about the amazing people building this platform and movement</p>
       {Object.keys(i18n.Team).map(team => {
