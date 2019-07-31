@@ -170,9 +170,9 @@ class Page extends Component {
               </div>
               <div className='share'>
                 <SectionTitle title='Share Your Experience' />
-                <DCSLink className='share-btn' badge="true" format="text-link" title='Photos' triggerId="photos" />
-                <DCSLink className='share-btn' badge="true" format="text-link" title='Videos' triggerId="videos" />
-                <DCSLink className='share-btn' badge="true" format="text-link" title='Stories' triggerId="stories" />
+                <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.photos.title} triggerId={i18n.Map.eventInfo.photos.title.toLowerCase()} />
+                <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.videos.title} triggerId={i18n.Map.eventInfo.videos.title.toLowerCase()} />
+                <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId={i18n.Map.eventInfo.stories.title.toLowerCase()} />
               </div>
             </Col>
 

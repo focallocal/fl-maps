@@ -22,6 +22,9 @@
       "title": "Social Media",
       "subtitle": "Support by Sharing",
       "messagePre": "Check out this: "
+    },
+    "stories": {
+      "title": "Stories"
     }
   }
 }
