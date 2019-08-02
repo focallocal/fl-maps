@@ -1,9 +1,10 @@
 export const Forword = `
 
+This whitepaper is open to everyone’s ideas. Please contribute to its evolution by clicking on the balloons and adding your thoughts and experience on how each section of our plan can better transform human society into one focused on improving well-being for people, societies and our planet.
+
+
 **Foreword:**
 We are Tokenising Happiness to bring more peace and well-being into the World. 
-
-This whitepaper is open to everyone to guide its development. Please contribute to its evolution by clicking on the balloons and adding your ideas to strenghten the final vision.
 
 Since 2012 we’ve been a global community of volunteers, our mission: to build positive projects and get people into the streets tackling societal issues where they live using creative and positive ideas. Our actions are both local and global in scale, but always led by local people so as to empower communities to create change themselves. We call this 'Local Action for Global Change'. 
 
@@ -19,7 +20,7 @@ Sectors like Industry, Tech, Finance have lots of money behind them. Others like
 
 This system is inefficient and unfair, yet we’ve come to accept it as the norm. If you benefit society you should be rewarded for it. That is what economic systems were designed for.
 
-Crypto-economics gives humaity the tools to design entirely new economic systems. No-longer are we locked into todays (Fiat) currencies and GDP based value and reward systems/metrics. 
+Crypto-economics gives humanity the tools to design entirely new economic systems. No-longer are we locked into today’s (Fiat) currencies and GDP based value and reward systems/metrics. 
 
 This token is an effort to create an entirely new economic system. One which focuses energy onto these essential societal areas, currently overlooked and ignored in GDP based economies. 
 
