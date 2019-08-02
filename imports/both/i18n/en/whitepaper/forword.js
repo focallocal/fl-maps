@@ -21,11 +21,14 @@ Sectors like Industry, Tech, Finance have lots of money behind them. Others like
 
 This system is inefficient and unfair, yet we’ve come to accept it as the norm. If you benefit society you should be rewarded for it. That is what economic systems were designed for.
 
-Crypto-economics gives humanity the tools to design entirely new economic systems. No-longer are we locked into today’s (Fiat) currencies and GDP based value and reward systems/metrics. 
+Crypto-economics gives humanity, all of us, the ability to design new economic systems. No-longer are we locked into today’s (Fiat) currencies and GDP based value and reward systems/metrics which are perpetuating this unbalanced and unfair society. 
 
-This token is an effort to create an entirely new economic system. One which focuses energy onto these essential societal areas, currently overlooked and ignored in GDP based economies. 
+This token creates a new economic system. One which focuses energy onto these essential societal areas which are currently overlooked and ignored in today's GDP based economies. Refocusing our energy on how best we can increase the well-being of people, societies, and out planet - rather than how best to earn profit. 
 
-Our platform facilitates two core functions
+
+&nbsp;
+
+The Public Happiness Platform is designed around two core functions:
 
 &nbsp;
 
@@ -55,22 +58,21 @@ In a GDP based system a great idea for positive change relies on the person who 
 
 For example; [The Brighter Tomorrow Map](https://brightertomorrowmap.com). 
 
-An effort to empower local people to support those who are homeless nearby. Built with no-funding needed, just kindness. Tokenising this existing process will massively increase the capacity of amazing projects being built to benefit humanity and society. 
+An effort to empower local people to support those who are homeless nearby. Built with no-funding needed, just kindness. Tokenising this existing process we've been using will massively increase the capacity and velocity of amazing projects built to benefit humanity and society, giving humanity new tools to achieve positive change. 
 
 &nbsp;
 
 **Impact**
+
 If the right people get behind this it will have a profound effect on increasing peace, happiness, and reducing human-suffering across the world. You are welcome to join us if you have skills to contribute, and a passion to create positive change for humanity.
 
 *'Those who love peace must learn to organize as effectively as those who love war'*  - Martin Luther King
-
-&nbsp;
 
 Our new platform is open to all groups operating in a non-profit way towards similar aims - or those who want to explore switching to an economic model which rewards them. Today many.. In fact most, of the leaders and stars of this neglected economic sector end up leaving it due to the impoverishing nature of working in an economic sector where there are no financial rewards.
 
 Our platform provides a space for these existing Public Happiness networks to escape the ‘pay to play’ culture social media has shifted towards, and unite - growing into something far larger than the sum of their parts, while retaining their unique and individual natures. Combining will multiply exponentially their efforts, unleashing an unstoppable worldwide Movement for a world with more community connection, happiness and well-being. We’ve reached the point where this platform is ready (although not currently optimised) to begin hosting communities who will become owners of their new home, contributing to its governance and evolution. 
 
-Note: This white paper is quite long. The most effective way to contribute is by reading the intro and why ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. 
+Note: This white paper is quite long. The most effective way to contribute is by reading the [intro](https://publichappinessmovement.com/docuss/wp_intro) and [why](https://publichappinessmovement.com/docuss/wp_why) ‘the world needs this’, and then clicking the sections in the contents page which you’d most like to contribute to. 
 
 To discuss a section and make suggestions, click on the red balloons underneath each section.
 
