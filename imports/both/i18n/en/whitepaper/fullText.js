@@ -230,43 +230,89 @@ Our token is immutable, and will create a permanent record of the effort everyon
 
 `
     },
-    { title: "Public Happiness Token ICO", code: "PuHaTo", fullText: ` `, chapterHeading: true },
+	
+  { title: "The Public Happiness Token", code: "ThPuHa", fullText: ` `, chapterHeading: true },
     {
-        title: "ICO Strategy",
+        title: "Token Overview",
+        code: "TokOve",
+        fullText: `
+
+## 4.2.
+
+**Criteria**
+
+The Public Happiness Movement targets it positive action on the following categories: 
+
+- Public Playfulness
+- Environment and Sustainability
+- Art, Music, Dance and Poetry
+- Health and Well-being
+- Human and Community Connection
+(which all have subcategories)
+
+If a great idea comes up which advances our mission and doesn't fit into one of these categories then there is room to expland. 
+
+
+The community is asked to weighs global projects against:
+
+- Deliverability (estimated time to complete)
+- Estimated Impact on the targeted issue
+
+Users can vote on these to give it an 'estimated project' score using Scrum's value estimation model
+
+1, 2 ,3 ,5 ,8 ,13 ,21
+
+A vote from a user is still weighed as their one single vote mulitplied by their community contribution score. So giving a higher score doesn't change the weight of their vote. 
+ 
+The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://news.focallocal.org/the-focallocal-community-values/)
+	
+	
+    { title: "Public Happiness Token ICO", code: "ToIco", fullText: ` `, chapterHeading: true },
+    {
+        title: "IEO Strategy",
         code: "ICOStr",
         fullText: ` 
 
 ## 5.1.
 
-**ICO Strategy**
+**IEO Strategy**
 To raise funds to build/improve our network a portion of tokens will be sold off in an initial coin offering.
 
 Many tokens limit their early sales to a small group of large investors, creating centralised tokens which are easily, and often manipulated by their wealthy ‘whale’ investors to game the system and increase their wealth, this also leads to a centralised collection of the wealth, something fundamentally against the ethos blockchain technology was founded upon. 
 
-ICO’s have also become a hotbed for scams, junk tokens, and projects that have no need to be on blockchain at all. To avoid being in that category and to create a token which is widely and evenly distributed amongst both those engaged in crypto, and new people who haven’t yet engaged in the blockchain revolution, we will hold an ICO spread across three stages, limiting initial investments allowed per person and using platforms easily accessible to a wide audience, regardless of previous exposure to cryptocurrencies.
+ICO’s have also become a hotbed for scams, junk tokens, and projects that have no need to be on blockchain at all. To avoid being in that category and to create a token which is widely and evenly distributed amongst both those engaged in crypto, and new people who haven’t yet engaged in the blockchain revolution, we will hold an IEO spread across three stages, limiting initial investments allowed per person and using platforms easily accessible to a wide audience, regardless of previous exposure to cryptocurrencies.
 
 There will be no pre-sale to big time investors. Guaranteed opportunities for everyone to get involved, and every possible effort made to prevent whales from eating up large amounts of our token and undermining the decentralised mission of this project.
 
 `
     },
     {
-        title: "ICO Stages",
+        title: "IEO Stages",
         code: "ICOSta",
         fullText: ` 
 
 ## 5.2.
 
-**ICO Stages**
-Stage 1: 
-Investors will have 30 days to register an Ethereum address. Once the ICO opens a pre-set number of tokens will be released. registered investors will be capped initially at 100 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
-
-Stage 2: 
+**IEO Stages**
+Stage 1: Crowd Funding
 This stage will be held on a crowd funding website to reach those who don’t understand how to join in a traditional ICO. Investors will be rewarded set amounts for donating at increasing intervals. The top threshold of reward for donations will be set at 100 ETH per user. Users may choose to invest more to support the project, but will not receive more tokens than stated.
 
-Stage 3: 
-Midway through the crowd funder the top limit will be raised to 200 ETH, and the traditional ICO will be reopened for a second round with a limit of 10 ETH, users may invest up to the respective limit on all of the platforms concurrently
+Stage 2: IEO 
+Having demonstrated to the crypto savy world our ability to raise funds and reach those outside the normal circles, a second IEO will be held using the traditional industry tools. Investors will have 30 days to register an Ethereum address. Once the IEO opens a pre-set number of tokens will be released. registered investors will be capped initially at 100 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
 
-Email addresses will not be collected to prevent issues as seen in the Bee Token phishing scams during their ill-fated ICO
+Stage 3: Crowd Funding and IEO 
+A third IEO will be held a few months later on both platforms above. The initial seed funding will have increased the skills, resources and energy available, and these will have led to some 1st major progressive steps in the project build, greatly increasing the capacity of this ICO.  
+
+Email addresses will not be collected at any stage to prevent issues as seen in the Bee Token phishing scams during their ill-fated ICO
+
+Burning unpurchased tokens:
+If all of the tokens have not been purchased we will burn the ones that have not been sold. This will increase the value of the token in line with the demand of the IEO and the supply of our token. For example:
+
+50% - 4.85 Billion Tokens are offered for purchase by the public with the number availble for purchase increasing at each stage, to reward our earliest backers.
+
+When IEO ends if 3 billion tokens have been purchased, and the price of the token is valued at £0.20.
+Burning the tokens that were unsold, will lead to a value increase of 24% for those who purchased during the IEO (price is an example).
+
 
 `
     },
@@ -296,22 +342,22 @@ Team members/tasks reimbursement levels will be determined by a project finance 
 `
     },
     {
-        title: "ICO Marketing",
+        title: "IEO Marketing",
         code: "ICOMar",
         fullText: `
 
 ## 5.4. 
-**ICO Marketing**
+**IEO Marketing**
 
 Crowd-funding:
-The ICO will also be launched via a popular crowd funding website, where those donating more than certain set amounts will receive a listed amount of Public Happiness Tokens as a reward. This makes our ICO more accessible than others before, to those with little understanding of Blockchain/Cryptocurrency, by using a format they are more likely to be familiar with.
+The IEO will also be launched via a popular crowd funding website, where those donating more than certain set amounts will receive a listed amount of Public Happiness Tokens as a reward. This makes our IEO more accessible than others before, to those with little understanding of Blockchain/Cryptocurrency, by using a format they are more likely to be familiar with.
 
 Those who purchase Tokens via crowd funding will receive instructions in how to create a crypto wallet account and guide to storing their Public Happiness Movement ERC20 tokens – Likely the 1st steps into understanding how to interact with blockchain for many.
 
 
 
 Gifting Public Happiness Token:
-Part of the ICO marketing (and ongoing marketing afterwards) will have a focus on ‘gifting’ the token to friends and relatives. Accomplished by entering their email and a message for them when purchasing. This gifting may also be made possible over popular social media platforms. 
+Part of the IEO  marketing (and ongoing marketing afterwards) will have a focus on ‘gifting’ the token to friends and relatives. Accomplished by entering their email and a message for them when purchasing. This gifting may also be made possible over popular social media platforms. 
 
 Most people have now heard something about Cryptocurrencies, and are curious. By offering those donating the option to gift a token which benefits issues the receiver sees in their local community, we have introduced a simple way to tap into that curiosity.
 
@@ -385,32 +431,73 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 
 [view live beta](https://publichappinessmovement.com/docuss/build)
 **Build/The Action Center**
+
+Overview:
 An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. In today's GDP based world innovative ideas to benefit human socieity are heavily dependent on whether the person having them has the capacity and detrmination to either find funding and build them. This is an extremely inefficient system where the majority of great ideas to impact the world are lost. 
 
-Our Action Center creates a new path for ideas which benefit humanity to be built. Anyone can suggest an idea using our one page only form. Other users vote on the ones they believe will have the largest social impact. The winners will be built by our community using our Micro-Volunteering model. These projects have no owner, no set team building them, and require no funding. 
+Our Action Center creates a new path for ideas which benefit humanity to be built. Anyone can suggest an idea using our one page only form. Other users vote on the ones they believe will have the largest social impact. The winners will be built by our community using our Micro-Volunteering model. These projects have no owner, no set team building them, and require no funding other than our token rewarding those who work on delivering them.
 
-They begin with a great idea, and are then built by our community who receive our tokens in reward for their efforts.
+That might be a fairly brief idea, or a full plan they’ve been working on for a while outside of our community and have struggled to get off the ground. The submission to our community should be a singe A4 page with the outline of the project as we want to avoid creating a system which rewards those who put in months of preparation and have access to skills and resources which the average person doesn’t - which would just recreate the existing system of applying for funding to get a project of the ground.
 
-The number of projects being worked on at any one time is limited based upon how many active users the Action Center had the previous month, to direct energy onto delivering projects rather than beginning them en-mass.
-
-The platform is being designed based on implementing Scrum and Agile project management principles to solve societal issues and create efficient, flexible and effective teams. The Action Center (and rest of the site) is also being designed by teams using Scrum and Agile and so it will adapt and evolve to meet users needs. The current Action Center can be considered to be a working template to begin building from.
-
-A core team of 9 users forms, creates a 'definition of done' and breaks the entire project build up into bite-sized chunks which anyone in the wider community can tackle (this list can be updated as the builds needs change).
-
-Each ‘Mission’ should take a user between 30 mins and one hour, if longer is needed then it needs to be divided into smaller chunks. Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
-
-In the Action Center users move a 'mission' into the 'Doing' list to claim it (assign themselves a task). If it's not complete within the next two weeks the Mission is returned to the ‘to do list’ for others to claim and complete preventing projects being held up by well meaning, but unreliable people, as is common in traditional volunteering and Microvolunteering systems.
-
-Tokens are distributed for completed tasks, with a two week delay so other users, and moderators can monitor for any abuse of the system.
-
-Each month the Core Team of 9 members changes, based on who was most active on the project in the previous month (and who wants to be in the core team). Create a dynamic system of delievering projects.
-
-The Action Center helps users to browse projects, see all the resources available for each, and either find ‘Missions’, or ‘Discuss’ the project with others users in our Discourse forum.
+Our system is for quickly identifying a great idea which can advance human and societal well-being, and then together building it.
 
 
-New ideas for Public Happiness projects can be submitted by any user, to be discussed, improved, and voted onto the platform for others users to join in and build.
+How Selecting a New Project Works:
 
-Localised projects are smaller and run on a mirrored version to the main Action Center where the entire global Public Happiness community focuses their energy on building projects. These are open for anyone to build/try out where they live, which may require gathering their own team early on.
+1) It begins with a great idea from a community member for a project to target an societal benefit in one of our categories:
+
+- Public Playfulness
+- Environment and Sustainability
+- Art, Music, Dance and Poetry
+- Health and Well-being
+- Human and Community Connection
+
+2) The idea goes into a period of discussion, where the community positively debates the idea suggesting improvements, or ways to avoid potential pitfalls.
+
+3) A vote is held 
+
+The community is asked to weighs global projects against:
+
+- Deliverability (estimated time to complete)
+- Estimated Impact on the targeted issue
+
+Users can vote on these to give it an 'estimated value' score using Scrum's value estimation model
+
+1, 2 ,3 ,5 ,8 ,13 ,21
+
+4) If selected by the Community, the idea moves into the Build list to be built by our community, who receive our tokens in reward for their efforts.
+
+
+How Projects Are Built:
+
+1) Once selected by the community vote a core team of 9 users forms to plan the build. Members can be invited by the ideas originator, any spaces left will be filled by the the highest ranking members who joined the voting/discussion and wish to be in the 1st project leaders team, who will be automatically invited. 
+
+2) This 1st group of project leaders creates a 'definition of done' and breaks the entire project build up into its core components. Using Scrum's fibonacci voting system the core team will vote on the importance of each of these core components.
+
+3) Each project is awarded a pot of tokens at the beginning from our vault. These tokens are divided into each core component section based on its importance to delivering the project as defined by the 1st project leaders team
+
+4) Any user can suggest a task which needs to be completed to reach the definition of done. These tasks go into our Backlog List. Each month the current team leaders move the tasks which will advance the project most into the Sprint list. Users are advised to complete tasks from this list, although they might choose to take one from the backlog list, for example, if they have previous experience so can complete it to a high level. The tasks can be discussed by any other community member
+
+5) All tasks are broken into specific bite-sized chunks which anyone in the wider community can tackle, the tasks should take no longer than an hour; for example, 'create an intro video' would be a bad task as its a likely to take longer and involve many smaller specific tasks. 'Review the video script and post feedback to Briony', would be a specific task that should take under an hour for a short video. It won't be possible for this to be precise, but other team members can discuss issues and suggest improvements. Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
+
+6) The team will have use of Burn Up and Velocity charts which the team leaders can use to judge how many tasks should go into the Sprint list this period. They can also move cards over on the fly, so there will never be nothing waiting for a community member wanting to take positive action.
+
+7) Community Members move a task into the 'Doing' list to claim it (assign themselves a task). If it's not complete within the a week the task can be returned to the ‘to do list’ for others to claim and complete preventing projects being held up by well meaning, but unreliable people, as is common in traditional volunteering and Microvolunteering systems.
+
+8) Tokens are distributed for completed tasks, with a two week delay so other users, and moderators can monitor for any abuse of the system.
+
+9) The initial team should aim to plan as complete of a picture of all tasks that will be needed during the project and they will set how many tokens are avialble for each task. They should keep 30% of the tokens unassigned ready for imporant new tasks which were overlooked at the beginning, and any unspent at the end are released as a celebrations reward, divided amoung everyone who contributed to delivering the project to the world.
+
+10) Each month the Core Team of 9 members changes, based on who was most active on the project in the previous month (and who wants to be in the core team). Creating a dynamic, decentralised system for managing and delivering projects, based on users reputation and activitiy levels.
+
+
+Teams and Projects:
+In the Action center are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world. 
+
+Local vs Global:
+The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gather section. 
+
+The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. 
 
 `
     },
@@ -889,7 +976,11 @@ In our model a large amount of the total Token’s created are held for future r
 
 Funds raised through the ICO:
 
-Funds raised through the ICO funds will be stored in ETH, BAT, IOTA, BITCOIN (50%), held in cold storage, and EURO’s (50%). Both funds will be managed by one than one industry leading cold storage and security company.   
+Funds raised through the IEO  funds will be stored: 
+- in a spread across the top 20 tokens (with small sums in one or two high potential outliers) and held in cold storage (50%)
+- EURO’s (50%). 
+
+Both funds will be divided and managed by mulitple industry leading cold storage and security company. To spread the risks to our funding across multiple markets and trusted companies.
 
 `
     },
@@ -904,7 +995,11 @@ Funds raised through the ICO funds will be stored in ETH, BAT, IOTA, BITCOIN (50
 **Hash-Tagging**
 Requiring hash-tagging as proof of work creates a highly effective method of free marketing. Everyone receiving our token through the Public Happiness Activities side of the platform will also be Hash Tagging about the token, flooding all social media platforms with images and videos of happy people around the world engaging in our Movement to massively boost interest and awareness of Public Happiness Token.
 
+The bot will be cross referencing these social media posts against date, activity and location from activities posted on our platform by the user/s who the tokens will be released to.
+
 The proof of work bot will be searching for #PublicHappiness #PublicHappinessMovement #[miners location] #[activity name], and checking the connected social media profile against our database of connected user accounts.
+
+For example: The activity was scheduled for the 8th April 2020, when created on our platform. The images with the hashtags should be posted on the same date with a +7 days leniency for late uploads. The system will then check the hashtags with the details posted on our platform. Late posts can be submitted by users for review by adding links to their posts and activity into the queue manually.
 
 `
     },
@@ -965,16 +1060,16 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
 `
     },
 	{
-        title: "The Public Happiness Economy World Summit",
+        title: "Happier World Economies Summit",
         code: "Summit",
         fullText: `
 
 ## 10.5.
 
-**The Public Happiness Economy World Summit**
-A Global Summit at the same time, and on the same street as The World Economic Forum in Davos, which combines industry leaders from the Public Happiness, and New Economics worlds to discuss and create new and better economic systems to base our society on. 
+**Happier World Economies Summit**
+A Global Summit hosted by Focallocal at The World Economic Forum in Davos. A forum to combine industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
 
-A Summit next-door to those focused on protecting today's broken economic model, where solutions will emerge to refocus our global and local economies on incentivising people to take regular positive action on resolving all issues reducing well-being where they live. Empowering us all to take ownership for the well-being of our local community, and everyone in it. Designing and growing the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide.
+A Summit where solutions will emerge to refocus our global and local economies on incentivising many more people in each community to take regular positive action with their neighbours to resolve any and all issues reducing well-being where they live. The goal is to empowering people and communities, all of us, to take ownership for the well-being of our local community and everyone in it. industry leaders will be invited to discuss, design and grow the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide through implementing new economic systems - like the Public Happiness Token, which will be launching at the Summit.
 
 `
     },
@@ -1046,7 +1141,7 @@ The latter is simply a cheap marketing exercise which has been saturated by the 
 ## 10.9.
 
 **Contests**
-Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our ICO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
+Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our IEO  and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
 
 `
     },
@@ -1304,7 +1399,7 @@ A users total tokens earned/contribution to the ecosystem is recorded and used a
 ## 12.7. 
 
 **Token Distribution**
-50% (4.85 Billion Tokens) will be released during the initial 3 ICO launches and give the token value through trading on exchanges
+50% (4.85 Billion Tokens) will be released during the initial 3 IEO launches and give the token value through trading on exchanges
 
 10% will be retained to pay for hiring experts who will  lead the development of the ecosystem, while the community grows a capacity to self-govern, promote and evolve effectively.
 
@@ -1344,7 +1439,7 @@ Estimating the value of returns is speculative at this point. The core team, and
         chapterHeading: true,
         fullText: ` 
 
-Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the ICO stage will be outsourced to industry experts. If you'd like to be in those positions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
+Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the IEO stage will be outsourced to industry experts. If you'd like to be in those positions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
 
 Much of the essential skills needed to build a successful blockchain project and community will be come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
 
@@ -1467,7 +1562,7 @@ Roles will be for a pre-agreed period to invigorate and lead the community as it
 ## 13.3.
 
 **Remuneration**
-The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happiness Tokens with the 1st payments coming shortly after the ICO launch, and covering all work towards the project prior to the ICO.
+The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happiness Tokens with the 1st payments coming shortly after the IEO launch, and covering all work towards the project prior to the ICO.
 
 `
     },
@@ -1628,7 +1723,7 @@ If the community has decided on having a fixed central base, for example renovat
         chapterHeading: true,
         fullText: ` 
 
-2% of all funds we raise from the ICO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
+2% of all funds we raise from the IEO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
 
 
 ## 16.1.
@@ -1668,73 +1763,4 @@ The vote results will be non-binding, to allow mitigation against any uncovered 
 
 * Witticism, fun and Focallocal flavour added to white paper
 
-* Provisional White Paper posted online to announce our token, and gather feedback for further improvements, and build team. 
-
-* Technical Details focused heavily around the Distribution Matrix added to the white paper
-
-* ICO Launch date announced
-
-Still to plan:
-
-* 1st Stage ICO
-
-* 2nd Stage ICO
-
-* 3rd Stage ICO
-
-* Apps launched
-
-* Multi Language adaptation pushed to the entire site
-
-* Open-source map replaces Google based map (if required)
-
-* blockchain on-ramp added into it platform to guide users to a better understanding of blockchain and crypto economics. Fulfilling our mission of taking crypto to people on the streets.
-
-`
-    },
-    {
-        title: "Key Supporters and Team",
-        code: "KeSuan",
-        chapterHeading: true,
-        fullText: ` 
-
-
-`
-    },
-    {
-        title: "Questions to be Resolved",
-        code: "Qutobe",
-        chapterHeading: true,
-        fullText: `
-
-## 18.
-
-* Open-sourcing. The vast majority of the system will be open-sourced 6 months afer launch. We need to determine any sections which are too sensitive to open-source.
-
-* Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
-
-* Which other crypto coins/tokens should we include in the platform to introduce our users into the crypto-economic ecosystem, for example, should our videos primarily be  hosted on Lbury? Is their platform ready?
-
-* Should the platform be hosted on the DAPPs network?
-
-* Should community governance voting be tokenized/on-chain? Or simply by using Discourse’s forum voting? Either would involve building a discourse plug-in 
-
-* How can we best compartmentalise voting to prevent overload on users, without pockets of influence forming? 
-
-Next Steps:
-
-* Set up ICO plan within our Action Center
-
-* Full review of all content on news.publichappinessmovement.com to update content that has become outdated
-
-* Token created
-
-* Full security review of all open-source plug-ins used in building the website
-
-* Full review of platform UX/UI and tech stack, looking quick ways to make large usability improvements, improving access and scalability.
-
-Thank you for reading, have a wonderful day!
-
- `
-    }
-];
+* Provisional White Paper posted online to announce our token, and gather feedback for fu
