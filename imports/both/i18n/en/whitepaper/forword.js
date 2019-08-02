@@ -12,6 +12,7 @@ Today’s economic system is broken. This whitepaper sets out our vision to tran
 GDP based economic systems were designed by Simon Kuznets, in 1937 as a temporary post war recovery system, but the beast got out of control. The damage caused to humanity by basing our decision making processes on measurements of GDP isn’t even contentious any more. [Here’s a list](https://news.focallocal.org/beyond-gdp-key-quotes-from-economic-and-world-leaders/) of global and economic leaders stating the need to move past it.
 
 
+
 **Most Charities, and volunteering shouldn’t exist**
 
 Sectors like Industry, Tech, Finance have lots of money behind them. Others like Education, Healthcare, Environment, by Kuznets design, have less. Other areas which are also essential to producing healthy, happy societies, have no value placed on them at all within a GDP based economy, leaving them for social enterprises, or charities who most spending a significant percent of their energy and time chasing, or begging for funding. Or for the kind hearted members of our society to volunteer to meet them. 
@@ -23,6 +24,7 @@ Crypto-economics gives humaity the tools to design entirely new economic systems
 This token is an effort to create an entirely new economic system. One which focuses energy onto these essential societal areas, currently overlooked and ignored in GDP based economies. 
 
 Our platform facilitates two core functions
+
 
 
 **1. Public Happiness Gatherings**
@@ -42,6 +44,7 @@ Ourselves and our Public Happiness partners currently engage more than a million
 We can use these activities to take blockchain to the streets and engage the public in a way never done before, to teach the basics and demonstrate how this new tech can be used to directly impact their lives.
 
 
+
 **2. Public Happiness Projects**
 
 Our platform operates a Microvolunteering Platform to build global projects which empower local people to create positive change where they live. 
@@ -51,7 +54,6 @@ In a GDP based system a great idea for positive change relies on the person who 
 For example; [The Brighter Tomorrow Map](https://brightertomorrowmap.com). 
 
 An effort to empower local people to support those who are homeless nearby. Built with no-funding needed, just kindness. Tokenising this existing process will massively increase the capacity of amazing projects being built to benefit humanity and society. 
-
 
 
 
