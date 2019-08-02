@@ -2,6 +2,7 @@ export const Forword = `
 
 This whitepaper is open to everyone’s ideas. Please contribute to its evolution by clicking on the balloons and adding your thoughts and experience on how each section of our plan can better transform human society into one focused on improving well-being for people, societies and our planet.
 
+&nbsp;
 
 **Foreword:**
 We are Tokenising Happiness to bring more peace and well-being into the World. 
@@ -12,7 +13,7 @@ Today’s economic system is broken. This whitepaper sets out our vision to tran
 
 GDP based economic systems were designed by Simon Kuznets, in 1937 as a temporary post war recovery system, but the beast got out of control. The damage caused to humanity by basing our decision making processes on measurements of GDP isn’t even contentious any more. [Here’s a list](https://news.focallocal.org/beyond-gdp-key-quotes-from-economic-and-world-leaders/) of global and economic leaders stating the need to move past it.
 
-
+&nbsp;
 
 **Most Charities, and volunteering shouldn’t exist**
 
@@ -26,7 +27,7 @@ This token is an effort to create an entirely new economic system. One which foc
 
 Our platform facilitates two core functions
 
-
+&nbsp;
 
 **1. Public Happiness Gatherings**
 
@@ -44,7 +45,7 @@ Ourselves and our Public Happiness partners currently engage more than a million
 
 We can use these activities to take blockchain to the streets and engage the public in a way never done before, to teach the basics and demonstrate how this new tech can be used to directly impact their lives.
 
-
+&nbsp;
 
 **2. Public Happiness Projects**
 
@@ -56,15 +57,16 @@ For example; [The Brighter Tomorrow Map](https://brightertomorrowmap.com).
 
 An effort to empower local people to support those who are homeless nearby. Built with no-funding needed, just kindness. Tokenising this existing process will massively increase the capacity of amazing projects being built to benefit humanity and society. 
 
-
+&nbsp;
 
 **Impact**
 If the right people get behind this it will have a profound effect on increasing peace, happiness, and reducing human-suffering across the world. You are welcome to join us if you have skills to contribute, and a passion to create positive change for humanity.
 
 *'Those who love peace must learn to organize as effectively as those who love war'*  - Martin Luther King
 
+&nbsp;
 
-The new platform is open to all groups operating in a non-profit way towards similar aims - or those who want to explore switching to an economic model which rewards them. Today many.. In fact most, of the leaders and stars of this neglected economic sector end up leaving it due to the impoverishing nature of working in an economic sector where there are no financial rewards.
+Our new platform is open to all groups operating in a non-profit way towards similar aims - or those who want to explore switching to an economic model which rewards them. Today many.. In fact most, of the leaders and stars of this neglected economic sector end up leaving it due to the impoverishing nature of working in an economic sector where there are no financial rewards.
 
 Our platform provides a space for these existing Public Happiness networks to escape the ‘pay to play’ culture social media has shifted towards, and unite - growing into something far larger than the sum of their parts, while retaining their unique and individual natures. Combining will multiply exponentially their efforts, unleashing an unstoppable worldwide Movement for a world with more community connection, happiness and well-being. We’ve reached the point where this platform is ready (although not currently optimised) to begin hosting communities who will become owners of their new home, contributing to its governance and evolution. 
 
