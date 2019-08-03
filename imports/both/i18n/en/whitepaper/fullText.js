@@ -265,7 +265,9 @@ Users can vote on these to give it an 'estimated project' score using Scrum's va
 A vote from a user is still weighed as their one single vote mulitplied by their community contribution score. So giving a higher score doesn't change the weight of their vote. 
  
 The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://news.focallocal.org/the-focallocal-community-values/)
-	
+
+`
+    },
 	
     { title: "Public Happiness Token ICO", code: "ToIco", fullText: ` `, chapterHeading: true },
     {
