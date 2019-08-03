@@ -1747,22 +1747,56 @@ The vote results will be non-binding, to allow mitigation against any uncovered 
 
 `
     },
-    {
+   {
         title: "Timeline",
         code: "Timeli",
         chapterHeading: true,
         fullText: ` 
-
 ## 17.
-
 * 1st draft of the White Paper created by founder
-
 * Experts invited to review and advise on improvements
-
 *  2nd draft of the White Paper
-
 * A team of experts wanting to see this ecosystem brought into this world forms
-
 * Witticism, fun and Focallocal flavour added to white paper
-
-* Provisional White Paper posted online to announce our token, and gather feedback for fu
+* Provisional White Paper posted online to announce our token, and gather feedback for further improvements, and build team. 
+* Technical Details focused heavily around the Distribution Matrix added to the white paper
+* ICO Launch date announced
+Still to plan:
+* 1st Stage ICO
+* 2nd Stage ICO
+* 3rd Stage ICO
+* Apps launched
+* Multi Language adaptation pushed to the entire site
+* Open-source map replaces Google based map (if required)
+* blockchain on-ramp added into it platform to guide users to a better understanding of blockchain and crypto economics. Fulfilling our mission of taking crypto to people on the streets.
+`
+    },
+    {
+        title: "Key Supporters and Team",
+        code: "KeSuan",
+        chapterHeading: true,
+        fullText: ` 
+`
+    },
+    {
+        title: "Questions to be Resolved",
+        code: "Qutobe",
+        chapterHeading: true,
+        fullText: `
+## 18.
+* Open-sourcing. The vast majority of the system will be open-sourced 6 months afer launch. We need to determine any sections which are too sensitive to open-source.
+* Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
+* Which other crypto coins/tokens should we include in the platform to introduce our users into the crypto-economic ecosystem, for example, should our videos primarily be  hosted on Lbury? Is their platform ready?
+* Should the platform be hosted on the DAPPs network?
+* Should community governance voting be tokenized/on-chain? Or simply by using Discourse’s forum voting? Either would involve building a discourse plug-in 
+* How can we best compartmentalise voting to prevent overload on users, without pockets of influence forming? 
+Next Steps:
+* Set up ICO plan within our Action Center
+* Full review of all content on news.publichappinessmovement.com to update content that has become outdated
+* Token created
+* Full security review of all open-source plug-ins used in building the website
+* Full review of platform UX/UI and tech stack, looking quick ways to make large usability improvements, improving access and scalability.
+Thank you for reading, have a wonderful day!
+ `
+    }
+];
