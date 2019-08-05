@@ -21,7 +21,7 @@ before_install:
   - tar xf secrets.tar
   - tar xzf deploy.tar
   - npm install -g mup
-  - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
+  - curl https://install.meteor.com/?release=1.8.1 | /bin/sh
 
 branches:
   only:
