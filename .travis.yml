@@ -1,7 +1,7 @@
 language: node_js
 sudo: required
 node_js:
-  - '8.11.1'
+  - '10.16.1'
 
 notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
