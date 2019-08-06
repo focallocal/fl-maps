@@ -1,7 +1,7 @@
 language: node_js
 sudo: required
 node_js:
-  - '10.16.1'
+  - '8.11.1'
 
 notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
@@ -21,7 +21,7 @@ before_install:
   - tar xf secrets.tar
   - tar xzf deploy.tar
   - npm install -g mup
-  - curl https://install.meteor.com/?release=1.8.1 | /bin/sh
+  - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
 branches:
   only:
