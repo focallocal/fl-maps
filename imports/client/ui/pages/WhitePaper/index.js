@@ -43,7 +43,7 @@ const index = (props) => {
 
       {fullText.map((elem, index) => {
         const text = md.render(elem.fullText)
-        const chapterCode = findChaperCode(fullTextReversed, sectionCount, index)
+        // const chapterCode = findChaperCode(fullTextReversed, sectionCount, index)
 
         return (
           <Fragment key={elem.title}>
@@ -51,7 +51,8 @@ const index = (props) => {
               {elem.chapterHeading && elem.title}
             </h2>
             <div dangerouslySetInnerHTML={{ __html: text }} />
-            {elem.fullText.match(/[a-z]/i) && <DCSLink badge="true" format="speech-bubble" triggerId={chapterCode} display="inline" />}
+            {/* {elem.fullText.match(/[a-z]/i) && <DCSLink badge="true" format="speech-bubble" triggerId={chapterCode} display="inline" />} */}
+            {elem.fullText.match(/[a-z]/i) && <DCSLink badge="true" format="speech-bubble" triggerId={elem.code} display="inline" />}
             {elem.image && (
               <div className='image-container-outer'>
                 <div className='image-container-inner'>
