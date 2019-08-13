@@ -489,7 +489,7 @@ const markdownSection8 = md.render(`
 
 **Relation to Universal Basic Income**
 Universal Basic Income is another concept which has the potential to create societies where many people use their increased freedom to focus on and tackle societal issues. 
-It's a sad situation when people want to do things to make their local community a better place to live, but feel too busy or too stressed about work. A situation Universal Basic Income has the potential to solve, yet UBI faces many hurdles to become accepted policy in all nations. It is likely to be a long and bumpy road and its implementation is likely to differ widely. Public Happiness Token can be considered as a step on the same path, and one which compliments UBI beautifully by incentivizing those living in societies who adopt it to utilize some of that increased freedom to focus on improving life where they live, and the human condition.
+It's a sad situation when people want to do things to make their local community a better place to live, but the current system creates a situation where most feel too busy or too stressed about work and the rapid pace of life to consistently engage in this important action. A situation Universal Basic Income has the potential to change, yet UBI faces many hurdles to become accepted policy in all nations. It is likely to be a long and bumpy road and its implementation is likely to differ widely. Public Happiness Token can be considered as a step on a similar path, and one which would compliment UBI by incentivizing those living in societies who adopt it to utilize some of that increased freedom to focus on improving life where they live, and the human condition.
 
 `)
 
@@ -596,13 +596,21 @@ const markdownSection17 = md.render(`
 ## 5.3. 
 
 **Ongoing Funding for Specific Projects and Experts**
-Initially specialists will be employed to lead development in each area. As the community matures the allocation of funds will be opened up fully to decentralised voting on allocation. Users subscribed to the funding allocation channel will engage in discussion and voting around how to distribute funds released from our vault between issues like: 
+Initially specialists will be recuited to lead development in each area. To do this we will reward them in our tokens, so everyone on the eco-system is rewarded in the same way, and at the same level (based on their reputation). Many of the most talented specialists will be understandably unwilling to be rewarded in a new token. This will be navigated by creating a contract with them that we will buy back their tokens at a set rate on a specific date - if they choose to.
+
+Although this could seem to be a pointless complication, it; 
+- Provides a seemless transition from paid specialists leading teams, to our members taking over. 
+- Makes it easier for those specialists to remain involved after their initial contracted period, if they wish.
+- Before the token is launched and becomes valuable, it smoothes potential friction between those being paid for their contributions, and those receiving our tokens.
+- Probably makes it more liekly that some will choose to keep a percentage in our tokens and thus stay more engaged in the growth of the community.
+
+As the community matures the allocation of funds will be opened up fully to decentralised voting on allocation. Users subscribed to the funding allocation channel will engage in discussion and voting around how to distribute funds released from our vault between issues like: 
 
 * specific projects
 
 * platform improvements
 
-* experts to resolve an issue facing the community
+* further contracts with experts to resolve an issue facing the community
 
 * buying back tokens to increase their value
 
