@@ -380,7 +380,7 @@ They will now be rewarded financially for their continued efforts to improve hum
         chapterHeading: true,
 		image: "/images/Proposed_New_Site.png",
         fullText: ` 
-
+&nbsp,
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
@@ -394,7 +394,7 @@ Our platform, is also available as an iOS and Android app. Its building towards 
         code: "ThPuHa",
         fullText: `
 
-## 7.1.
+## 6.1.
 
 [view live beta](https://publichappinessmovement.com/docuss/m_gather)
 **The Public Happiness Movement Map**
@@ -433,7 +433,7 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
         code: "ActCen",
         fullText: `
 
-## 7.2.
+## 6.2.
 
 [view live beta](https://publichappinessmovement.com/docuss/build)
 **Build/The Action Center**
@@ -514,7 +514,7 @@ The same tools are available to community members creating a localised project, 
         code: "ComNew",
         fullText: ` 
 
-## 7.3.
+## 6.3.
 
 [view live beta](https://news.publichappinessmovement.com/)
 **Community News (or Happy News)**
@@ -531,7 +531,7 @@ Moderators will mine tokens by approving content. Community members will mine to
         code: "AcHaSh",
         fullText: `
 
-## 7.4. 
+## 6.4. 
 
 [view live beta](https://the-positive-action-shop.myshopify.com/collections/)
 **The Active Happiness Shop**
@@ -548,7 +548,7 @@ Currently hosted on shopify, this will be moved in-house shortly.
         code: "WhDeWh",
         fullText: `
 
-## 7.5.
+## 6.5.
 
 **Who defines what is accepted as ‘Public Happiness?’**
 The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.publichappinessmovement.com/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform.
@@ -563,7 +563,7 @@ Effective ideas for positive action will be incorporated into the platform and r
         fullText: `
 
 	
-## 7.6.
+## 6.6.
 	
 **Community Values**
 	
@@ -646,7 +646,7 @@ As more people are drawn into our mission, the effects of your actions that reac
         code: "EvBaan",
         fullText: `
 
-## 7.7.
+## 6.7.
 
 **Evidence Based and Peer Reviewed**
 When community members submit a new idea for a project or activity its recommended that they find peer reviewed studies to offer support for the benefits their idea will have on society. This promotes the core concept that all efforts to effect a positive cultural and societal change, should be rooted in the best current understanding of available evidence. Community members will be guided to place where they are likely to find sources, as we want to build an informed and competent community. Those who are discussing and reviewing it for approval may add more sources. Part of our ecosystem will be ‘Research Bounty-Hunting’, where community members are rewarded for finding new peer reviewed studies to add to already approved activities, or which lead to the removal of an outdated study. 
@@ -658,7 +658,7 @@ When community members submit a new idea for a project or activity its recommend
         code: "WhcaPa",
         fullText: `
 
-## 7.8.
+## 6.8.
 
 **Who can Participate on the Platform**
 The platform is open to anyone wanting to create well-being and happiness where they live, or support the Movement. 
@@ -674,7 +674,7 @@ Pre-existing communities may wish to join the ecosystem to take advantage of the
         code: "PrCowi",
         fullText: `
 
-## 7.9.
+## 6.9.
 
 **Pre-existing Communities with Similar Values**
 Groups and communities already doing excellent work in creating Public Happiness and well-being projects/activities where they live, are all welcomed to use our platform and ecosystem to supercharge their positive impact on society.
@@ -693,7 +693,7 @@ Platform users can join groups to be informed about their activities and project
         code: "Langua",
         fullText: `
 
-## 7.10.
+## 6.10.
 
 **Languages**
 The platform will launch in English. Adding other languages has been designed as a simple task anyone speaking the required language can complete in around 30 mins.
@@ -705,7 +705,7 @@ The platform will launch in English. Adding other languages has been designed as
         code: "DeGoan",
         fullText: `
 
-## 7.11.
+## 6.11.
 
 **Decentralised Governance and Voting**
 
@@ -756,7 +756,7 @@ Community members aren’t all expected to be experts on blockchain or community
         code: "UsBein",
         fullText: `
 
-## 7.12. 
+## 6.12. 
 
 **User Behaviour in UX Design**
 The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from community members. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organsiers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
@@ -772,7 +772,7 @@ Community members attending a gathering on our platform are not passive. Everyon
         code: "UsWaan",
         fullText: `
 
-## 7.13. 
+## 6.13. 
 
 **User Wall and Plugin Module Ecosystem**
 Logged in community members will arrive on their profile page and wall each time they visit. A community members profile page contains three type of features:
@@ -828,7 +828,7 @@ Forum specific plug-ins can also be built easily through the existing Discourse 
         code: "BeDivs",
         fullText: `
 
-## 8.1.
+## 7.1.
 
 **Benevolent Dictatorship vs Complete Community Governance**
 Primarily, we expect platform users/community members who rise to higher rankings through their actions to increase human and societal well-being, to be invested in the overall vision by the time they reach the upper levels. Their greater influence on decision making will lead the ecosystems culture, creating a force to protect the platform from abuse and actions which run against our Core Values. 
@@ -842,7 +842,7 @@ It would be poor planning not to also consider more 'attack' scenarios, and ways
         code: "ExScOu",
         fullText: ` 
 
-## 8.2.
+## 7.2.
 
 **Example Scenario: Outside Collusion**
 A significantly sized outside group infiltrate our platform, operating as model members, or pretending to and avoiding detection. Once reaching a high enough rank to influence a vote they collude to state that ‘watching tv and drinking beer’ meets with our Core Values and should be approved as a Public Happiness Activity.
@@ -856,7 +856,7 @@ Or more concerningly perhaps ‘Rallies supporting a religious hard-line politic
         code: "LiofDe",
         fullText: `
 
-## 8.3.
+## 7.3.
 
 **Lines of Defence**
 1st Line: 
@@ -889,7 +889,7 @@ At an unspecified point in the future, or in the case that Andy is no longer abl
         code: "Conclu",
         fullText: `
 
-## 8.4.
+## 7.4.
 
 **Conclusion**
 To meet our goals and teach community members the core concepts crypto-economics and blockchain, our community needs to move towards a culture of decentralised decision making. Doing so immediately, or fully, would open the platform up to abuse and security risks. For that reason decentralisation will be grandfathered in as the community grows, with the founding team assessing it’s current ability to protect itself from abuse while working towards increasing decentralisation and allowing greater community led governance. 
@@ -904,7 +904,7 @@ Some core areas of the project will always remain closed to change via community
         code: "LeofTr",
         fullText: `
 
-## 9.1.
+## 8.1.
 
 **Levels of Trust**
 Implementing levels of trust, where platform users rise in ranks by performing tasks to maintain and grow the Public Happiness network and ecosystem, means that scammers would be receiving a small sum, unless they first put in much work beneficial to the community to reach to a higher level.  (See section 11.1. for more info on weighted mining).
@@ -924,7 +924,7 @@ Our network is designed to make cheating the system more difficult than actually
         code: "ComAdm",
         fullText: `
 
-## 9.2.
+## 8.2.
 
 **Community Administrators**
 Experienced members who have contributed to the ecosystem will be invited to become a Community Admin, with extra tools available for supporting other platform users.
@@ -938,7 +938,7 @@ Community Admins will receive tokens for performing critical oversight tasks wit
         code: "ProAdm",
         fullText: `
 
-## 9.3.
+## 8.3.
 
 **Team and Project Administrators**
 Each team and project has a leadership team made up of the nine highest scoring active members within it. Their overall contribution score within our ecosystem is added to their overall contribution the team or project and then multiplied by how active they were in that team in the previous month. This ensures there is always oversight from experienced users who are passionate about each team, and bad actors would need to show a sustained commitment to the team before being able to harm it.
@@ -952,7 +952,7 @@ Tasks completed will need to be approved by admins of each board before rewards 
         code: "MinLim",
         fullText: `
 
-## 9.4. 
+## 8.4. 
 
 **Mining Limits**
 A hard limit exists on the amount of tokens one user can earn each week, set to a reasonable limit for how many activities or missions one user can realistically complete to prevent a large scale effort to scam the system. 
@@ -978,7 +978,7 @@ The platform will guide community members through creating an off-platform Hot W
         code: "CoStan",
         fullText: `
 
-## 9.5.
+## 8.5.
 
 **Cold Storage and Key Holders**
 Our Token:
@@ -1000,7 +1000,7 @@ Both funds will be divided and managed by mulitple industry leading cold storage
         code: "ANewLe",
         fullText: `
 
-## 10.1.
+## 9.1.
 
 **Hash-Tagging**
 Requiring hash-tagging as proof of work creates a highly effective method of free marketing. Everyone receiving our token through the Public Happiness Activities side of the platform will also be Hash Tagging about the token, flooding all social media platforms with images and videos of happy people around the world engaging in our Movement to massively boost interest and awareness of Public Happiness Token.
@@ -1018,7 +1018,7 @@ For example: The activity was scheduled for the 8th April 2020, when created on 
         code: "BusTou",
         fullText: `
 
-## 10.2.
+## 9.2.
 
 **Bus Tour**
 A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions.
@@ -1043,7 +1043,7 @@ If we go with van’s a fleet of Mercedes Sprinters will join ‘[Connie the Con
         code: "PuHaCh",
         fullText: `
 
-## 10.3.
+## 9.3.
 
 **Video Channel**
 A Public Happiness Movement YouTube channel has been created as a space where all platform members, and groups, can share videos of their activities in support of our Movement. Combining our energies and message. A randomised video will play each time community members visit an activity on the map . Taken from each YouTube play-lists related category on our platform (unless the creator has added their own video). 
@@ -1060,7 +1060,7 @@ The bus tour will also be filmed, with regular instalments of life on the road t
         code: "Doco",
         fullText: `
 
-## 10.4.
+## 9.4.
 
 **Documentary**
 
@@ -1074,7 +1074,7 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
         code: "Summit",
         fullText: `
 
-## 10.5.
+## 9.5.
 
 **Happier World Economies Summit**
 A Global Summit hosted by Focallocal at The World Economic Forum in Davos. A forum to combine industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
@@ -1093,7 +1093,7 @@ A 'lean in' Summit will be created, where attendees are invited to bring their s
         code: "HapCam",
         fullText: `
 
-## 10.6.
+## 9.6.
 
 **Happy Cam**
 The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Go pro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
@@ -1107,7 +1107,7 @@ Later a second camera dog may join, if we adopt a puppy.. because that would be 
         code: "PuHaPa",
         fullText: ` 
 
-## 10.7.
+## 9.7.
 
 **Public Happiness Partners and Pre-existing Communities**
 There is already a global Movement of Public Happiness creators around the World. Our platform creates a space for the individual energy of all our communities to unite, exponentially magnifying the energy of each, and their impact on the world. The difficulties of balancing committing the time needed to manage and grow their community, against the pressures of needing to be paid for their work in today’s economy, which doesn't financially value those contributions.
@@ -1132,7 +1132,7 @@ If comfortable operating within our [Community Values](https://news.publichappin
         code: "OnlSup",
         fullText: `
 
-## 10.8.
+## 9.8.
 
 **Online Supporters**
 An open community is active on Reddit at reddit.com/r/tokenisinghappiness where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
@@ -1150,7 +1150,7 @@ The latter is simply a cheap marketing exercise which has been saturated by the 
         code: "Contes",
         fullText: `
 
-## 10.9.
+## 9.9.
 
 **Contests**
 Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our IEO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
@@ -1162,7 +1162,7 @@ Building a core group of enthusiasts plays a big role in gaining the energy need
         code: "Collec",
         fullText: `
 
-## 10.10.
+## 9.10.
 
 **Collectables**
 Collectables will be created for special activities a user joins in, and also landmarks they achieve within our ecosystem. This acts as a fun side game within the platform while giving milestone rewards to community members, and using it to introduce them to collectables and other crypto-economic ideas. The collectables will be characters designed by the community and may feature logos, titles and names of the groups who coordinated large scale activities/projects 
@@ -1174,7 +1174,7 @@ Collectables will be created for special activities a user joins in, and also la
         code: "PatoPa",
         fullText: `
 
-## 10.11. 
+## 9.11. 
 
 **Paid to Party**
 
@@ -1217,7 +1217,7 @@ There will also be a pool created for the community to use. Members will vote on
         code: "Specul",
         fullText: `
 
-## 11.1.
+## 10.1.
 
 **Speculation**
 
@@ -1232,7 +1232,7 @@ Being listed on one exchange before our ICO's end is important to this strategy.
         code: "Shop",
         fullText: `
 
-## 11.2.
+## 10.2.
 
 **Active Happiness Clothing**
 [Visit the shop](https://shop.publichappinessmovement.com)
@@ -1248,7 +1248,7 @@ See section 7.4. for more details.
         code: "CoSoRe",
         fullText: `
 
-## 11.3.
+## 10.3.
 
 **Corporate Social Responsibility**
 
@@ -1267,7 +1267,7 @@ Running CSR through our platform creates an entire story for them, their stakeho
         code: "KinAuc",
         fullText: `
 
-## 11.4.
+## 10.4.
 
 **Kindness Auction**
 [read more](https://news.publichappinessmovement.com/focallocal-kindness-auction/)
@@ -1281,7 +1281,7 @@ A fun little project we've had good success over the years in the Focallocal Com
         code: "ComPro",
         fullText: `
 
-## 11.5.
+## 10.5.
 
 **Community Projects**
 
@@ -1304,7 +1304,7 @@ The platform automates rewards for completing tasks which work towards maintaini
         code: "WeiMin",
         fullText: `
 
-## 12.1.
+## 11.1.
 
 **Weighted Mining**
 Levels of trust:
@@ -1349,7 +1349,7 @@ By backdating the tokens awarded based on a members previous contributions to hu
         code: "HarCap",
         fullText: `
 
-## 12.2.
+## 11.2.
 
 **Hard Cap**
 A hard cap will be set on the amount that any one user can earn each reward period, at each different user level. Minimising the risk from abuse and fraud, and maintaining our core vision of Public Happiness Token allowing community members increased economic freedom to give their time to resolving local societal issues, and increasing community connection and well-being. The hard cap will be a percentage of the tokens released in that period, modified as the user base increases. 
@@ -1365,7 +1365,7 @@ The percentage earned from each sub-activity when coordinating large scale activ
         code: "AdthBa",
         fullText: `
 
-## 12.3.
+## 11.3.
 
 **Adjusting the Balancing**
 The automated weighting and distribution system will apply a set level to the above metrics. These levels will be adjusted through community voting to find the most effective operating balances for maximising our network effect. These will constantly need adjusting during the Movements growth and evolution. 
@@ -1377,7 +1377,7 @@ The automated weighting and distribution system will apply a set level to the ab
         code: "TokRel",
         fullText: `
 
-## 12.4.
+## 11.4.
 
 **Token Release**
 Initially a pre-set amount of tokens will be set to release each week for 100 years, divided between active contributors to the ecosystem and mission. The number of tokens released each week will be set on a graduated incline, balancing rewarding early contributors with greater rewards, against the exponential increase of users who the token will be divided amongst, as the community grows.
@@ -1392,7 +1392,7 @@ This weekly token release makes our currency deflationary, which will be offset 
         code: "TokDis",
         fullText: `
 
-## 12.5. 
+## 11.5. 
 
 **Token Distribution**
 50% (4.85 Billion Tokens) will be released during the initial 3 IEO launches and give the token value through trading on exchanges
@@ -1418,7 +1418,7 @@ Average release rate: 265753 tokens per day
         code: "FuMaCo",
         fullText: ` 
 
-## 12.6.
+## 11.6.
 
 **Further Matrix Considerations**
 The matrix needs to consider: 
@@ -1446,7 +1446,7 @@ Much of the essential skills needed to build a successful blockchain project and
         code: "CuTeMe",
         fullText: ` 
 
-## 13.1.
+## 12.1.
 
 **Current Team Members**
 
@@ -1459,18 +1459,16 @@ Professional Public Happiness Creator since 2012
 Marina Onopriichuk
 Future Humanity Mission
 
-
-Web Development:
-
 Gary Lanchance
 Founder of The Decentralised Dance Party
+
+Web Development:
 
 Tom McNulty
 Site Reliabilty Engineer
 
 Matias Forbord
 DevOps/Full Stack Engineer
-
 
 Pawel Mordaszewski
 Technical utility player
@@ -1513,7 +1511,7 @@ Producer/Director at Palm Tree Productions
         code: "PosOpe",
         fullText: ` 
 
-## 13.2.
+## 12.2.
 
 **Positions Open**
 * Marketing Coordinator
@@ -1555,10 +1553,10 @@ Roles will be for a pre-agreed period to invigorate and lead the community as it
         code: "Remune",
         fullText: `
 
-## 13.3.
+## 12.3.
 
 **Remuneration**
-The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happiness Tokens with the 1st payments coming shortly after the IEO launch, and covering all work towards the project prior to the ICO.
+The team of experts will be remunerated in our token, with a contracted buy-back at a set rate - if they choose to. This keeps everyone in the eco-system being rewarded in the same way, amongst other benefits mentioned earlier. Giving the experts the choice to be paid in cash, or to keep a percentage, or all, in our token.
 
 `
     },
@@ -1567,7 +1565,7 @@ The team of experts will be remunerated 50% in Ethereum, and 50% in Public Happi
         code: "Facili",
         fullText: `
 
-## 13.4.
+## 12.4.
 
 **Facilities**
 The team will either operate remotely using our online hub, or work from the road trip. (see Marketing in section 10.2. for more details about the road trip). 
@@ -1582,7 +1580,7 @@ Not requiring fixed office space will enable us to keep overheads low, adding fl
         code: "CrLiBr",
         fullText: `
 
-## 14.1.
+## 13.1.
 
 **Crypto Linking Bridges**
 Public Happiness Activities: Meteor Js/React to REST API 
@@ -1596,7 +1594,7 @@ Projects (Missions): Currently Web-hooks from Trello (or Wekan). This system is 
         code: "TrvsWe",
         fullText: `
 
-## 14.2.
+## 13.2.
 
 **Trello vs Wekan vs Other Solutions**
 The Action Center is a Micro-volunteering Hub which breaks large projects down into 30 min – 1 hour ‘Missions’, enabling anyone to join in and help build the project and bring it into the world.
@@ -1611,7 +1609,7 @@ Currently the system uses Trello as an external platform, with a layer built on 
         code: "LevsGo",
         fullText: `
 
-## 14.3.
+## 13.3.
 **Leaflet.js vs Google Maps API** 
 
 **The Public Happiness Gatherings system is currently build using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
@@ -1623,7 +1621,7 @@ Currently the system uses Trello as an external platform, with a layer built on 
         code: "SwthPl",
         fullText: `
 
-## 14.4.
+## 13.4.
 **Switching the Platform to the Dapps Network**
 (Decentralised Apps)
 
@@ -1648,7 +1646,7 @@ The Crypto world is highly volatile at this point in time which will lead many p
         code: "HuMaCr",
         fullText: `
 
-## 15.1.
+## 14.1.
 
 **Huge Market Crash**
 Public Happiness Token is entirely secure from some major news crashing investors confidence in the entire blockchain, or global economic markets. Everything is designed with the ability to fall away, with the platform and community capable of running a skeleton site.
@@ -1670,7 +1668,7 @@ As long as there is a positive community behind it the Token cannot fail. It wil
         code: "QuaSec",
         fullText: ` 
 
-## 15.2.
+## 14.2.
 
 **Quantum Security**
 To some extent we are tied to advancements in the Ethereum network. There are open pull requests such as pull request #208: Abstraction of transaction origin and signature.md. 
@@ -1684,7 +1682,7 @@ On our end our entire system is being reviewed by quantum security experts. We w
         code: "MasHac",
         fullText: `
 
-## 15.3.
+## 14.3.
 
 **Massive Hack**
 As a last resort in the case of a massive attack there is the possibility of a Hard Fork, resetting everything to a time before the hack on the public ledger.
@@ -1704,7 +1702,7 @@ The implications of this option are obviously wide ranging and it would be an ab
         code: "ZomApo",
         fullText: `
 
-## 15.4.
+## 14.4.
 
 **Zombie Apocalypse**
 If the inevitable finally occurs, we will convert the Public Happiness Bus into a ‘Public Happiness Buoat’ and retreat to a small uninhabited Greek island, where our new society will flourish and sparkle as a bastion to all Humanity's greatest achievements. Using Public Happiness Token to create a paradise where every economic interaction creates more harmony and a closer more caring community, while the rest of the world performs a perfect impression of today’s paparazzi for each others brains. 
@@ -1722,7 +1720,7 @@ If the community has decided on having a fixed central base, for example renovat
 2% of all funds we raise from the IEO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
 
 
-## 16.1.
+## 15.1.
 
 **Open Source Projects We Use**
 * Discourse
@@ -1732,7 +1730,7 @@ If the community has decided on having a fixed central base, for example renovat
 * Click the balloon here to discuss others we should support
 
 
-## 16.2.
+## 15.2.
 
 **Donations to Notable Other Open-source Projects**
 1% of the total raised will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
@@ -1746,7 +1744,7 @@ The vote results will be non-binding, to allow mitigation against any uncovered 
         code: "Timeli",
         chapterHeading: true,
         fullText: ` 
-## 17.
+## 16.
 * 1st draft of the White Paper created by founder
 * Experts invited to review and advise on improvements
 *  2nd draft of the White Paper
@@ -1777,7 +1775,7 @@ Still to plan:
         code: "Qutobe",
         chapterHeading: true,
         fullText: `
-## 18.
+## 17.
 * Open-sourcing. The vast majority of the system will be open-sourced 6 months afer launch. We need to determine any sections which are too sensitive to open-source.
 * Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
 * Which other crypto coins/tokens should we include in the platform to introduce our community members into the crypto-economic ecosystem, for example, should our videos primarily be  hosted on Lbury? Is their platform ready?
