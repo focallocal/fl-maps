@@ -230,17 +230,16 @@ Our token is immutable, and will create a permanent record of the effort everyon
 `
     },
 	
-  { title: "The Public Happiness Token", code: "ThPuHa", fullText: ` `, chapterHeading: true },
     {
-        title: "Token Overview",
-        code: "TokOve",
+        title: "Token Criteria",
+        code: "TokCrit",
         fullText: `
 
 ## 4.2.
 
 **Criteria**
 
-The Public Happiness Movement targets it positive action on the following categories: 
+The Public Happiness Movement targets its positive action on the following categories: 
 
 - Public Playfulness
 - Environment and Sustainability
@@ -268,7 +267,7 @@ The community is also asked to ensure the project keeps with the founding vision
 `
     },
 	
-    { title: "Public Happiness Token ICO", code: "ToIco", fullText: ` `, chapterHeading: true },
+    { title: "Public Happiness Token IEO", code: "ToIco", fullText: ` `, chapterHeading: true },
     {
         title: "IEO Strategy",
         code: "ICOStr",
@@ -506,7 +505,7 @@ In the Action center are Teams and Projects. Teams are our meta, they refer to o
 Local vs Global:
 The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gather section. 
 
-The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. 
+The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
 
 `
     },
@@ -732,6 +731,8 @@ This is solved by creating streamlined voting system, where all votes are create
 Key Votes:
 Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
 
+Gather vs Build/Local vs Global:
+The Governance of the global (Build) side, and the platform/ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
 
 Protection from Brigading: 
 Community members votes are weighted based on the reputation they’ve built by contributing to our project, so those most closely aligned and invested to the vision laid out in the community values will have more influence on decision making as a counter to anyone seeking to manipulate voting. 
@@ -1079,6 +1080,8 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
 A Global Summit hosted by Focallocal at The World Economic Forum in Davos. A forum to combine industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
 
 A Summit where solutions will emerge to refocus our global and local economies on incentivising many more people in each community to take regular positive action with their neighbours to resolve any and all issues reducing well-being where they live. The goal is to empowering people and communities, all of us, to take ownership for the well-being of our local community and everyone in it. industry leaders will be invited to discuss, design and grow the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide through implementing new economic systems - like the Public Happiness Token, which will be launching at the Summit.
+
+A 'lean in' Summit will be created, where attendees are invited to bring their skills and experience, and apply them to challenges threaded into the event to create real world, immediately actionable outcomes.
 
 `
     },
