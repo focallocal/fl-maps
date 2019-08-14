@@ -1430,11 +1430,11 @@ Estimating the value of returns is speculative at this point. The core team, and
 `
     },
     {
-        title: "Team",
+        title: "Key Supporters and Team",
         code: "Team",
         chapterHeading: true,
         fullText: ` 
-
+&nbsp;
 Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the IEO stage will be outsourced to industry experts. If you'd like to be in those positions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
 
 Much of the essential skills needed to build a successful blockchain project and community will be come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
@@ -1761,13 +1761,6 @@ Still to plan:
 * Multi Language adaptation pushed to the entire site
 * Open-source map replaces Google based map (if required)
 * blockchain on-ramp added into it platform to guide community members to a better understanding of blockchain and crypto economics. Fulfilling our mission of taking crypto to people on the streets.
-`
-    },
-    {
-        title: "Key Supporters and Team",
-        code: "KeSuan",
-        chapterHeading: true,
-        fullText: ` 
 `
     },
     {
