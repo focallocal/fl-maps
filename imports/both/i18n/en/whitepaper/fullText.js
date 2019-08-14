@@ -380,7 +380,7 @@ They will now be rewarded financially for their continued efforts to improve hum
         chapterHeading: true,
 		image: "/images/Proposed_New_Site.png",
         fullText: ` 
-&nbsp,
+&nbsp;
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
@@ -1198,7 +1198,7 @@ This approach has the following benefits:
         chapterHeading: true,
         fullText: `
 
-
+&nbsp;
 The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the ecosystem will continue raising revenue in Fiat to enhance it's functionality. Revenue raised will be used for: 
 * operating costs 
 * supporting the team during the initial growth phase 
@@ -1294,7 +1294,7 @@ The platform also allows for community members to suggest and create their own c
         code: "AuToDi",
         chapterHeading: true,
         fullText: `
-
+&nbsp;
 The platform automates rewards for completing tasks which work towards maintaining and improving the operation of our ecosystem. Advancing our Movement's mission of creating more friendliness, peace and happiness in this world. This requires the building of the Automated Token Distribution Matrix outlined below.
 
 `
@@ -1636,7 +1636,7 @@ This switch is not guaranteed at this point, but it is a logical step and will b
         code: "DooPro",
         chapterHeading: true,
         fullText: ` 
-
+&nbsp;
 The Crypto world is highly volatile at this point in time which will lead many projects to overstretch themselves, ending up in trouble if an event outside of their control hits. Here we consider how to protect our ecosystem from certain scenarios.
 
 `
@@ -1716,7 +1716,7 @@ If the community has decided on having a fixed central base, for example renovat
         code: "GiBato",
         chapterHeading: true,
         fullText: ` 
-
+&nbsp;
 2% of all funds we raise from the IEO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
 
 
