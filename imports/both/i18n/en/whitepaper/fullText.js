@@ -1083,6 +1083,140 @@ A Summit where solutions will emerge to refocus our global and local economies o
 
 A 'lean in' Summit will be created, where attendees are invited to bring their skills and experience, and apply them to challenges threaded into the event to create real world, immediately actionable outcomes.
 
+## Slide 1: What is the problem?
+
+Today's irresponsible economic model is destroying the earth and perpetuating human suffering. GDP based capitalism has lifted many out of poverty, but in its current form it will never solve poverty the, or many of the issues caused by poverty.
+
+## Slide 2: Where is the problem?
+
+The World Economic Forum brings together the leaders of the economic world. A world which is heavily focused on top-down economic discussion, and heavily locked into the current GDP based system which is failing to produce healthy, happy societies. Now its time for new economic systems and we need to create a space at the worlds leading economic summit for those exploring and creating radical forward thinking economic solutions. 
+
+## Slide 3: What is the solution?
+
+The Happier World Economies Summit
+(slide shows logo which features an upwards arrow and 'People, Communities and Planet' written in a heart shaped earth between 'Happier' and 'World'.
+
+## Slide 4: Our Summit
+
+The Happier World Economies Summit combines: 
+
+- the best ideas to engage people in tackling societal issues, and creating more peace and well-being where they live. 
+- with the economic experts and society leaders in WEF, especially those interested in creating new economic systems focused on people, communities and the planet ahead of profits. 
+
+The underlying theme we set for the day is 'how can we create economic systems to better support these amazing ideas for a brighter future'
+
+## Slide 5: Overview
+
+The summit will engage attendees at WEF in suggesting and voting for the best 
+events, projects, ideas and people who they want to hear from which fit the criteria. Our Summit will then host those which receive the most votes at venues across Davos and Klosters, using money raised from sponsors. An open invite is sent out for anyone to find a sponsor, in exchange for a finders cut.
+
+## Slide 6: Why Should Stakeholders Join In?
+
+**Investors:** 
+Increased exposure: We engage a wide audience to make sure the most impactful ideas are presented at, and alongside, the World's leading yearly economic event. The voting phase for their funding spots will bring a lot more attention to their company/group (if desired), than standard sponsorship deals where sponsors are often reduced to a few logos and thank you messages - which most people ignore. 
+
+Increased real-world impact: All attendees at the events they sponsor, in planning real world projects on our platform which target the issues they want to fund solutions to. The event then becomes a staging point where action is initiated, and sponsors can follow (and further support) the projects which will have the biggest impact on each issue they chose to fund, which are voted on, funded using our token, and built by our global community - a model which is far more economical than other existing models.
+
+Any events or projects which target SDG issues are given a badge on our platform, to open up funding from SDG pools.
+
+**W.E.F Attendees:**
+Many will attend because the concept resonates with them, that guiding WEF and thereby the economic world, down a path which prioritises people, communities and our planet; is a change which humanity needs to see. 
+
+Others will join in because they enjoy being engaged in choosing the Summit's program, designing real world solutions during it and the idea that those ideas will be created and make a change in the world. Many will come because the vibrant, positive and fun energy coming from our Summit is attractive and refreshing, so they naturally are pulled in to see what we're building.
+
+Fun: Our Summit will feature exhilarating and enjoyable events, like public dance parties,  because creating change is easier when its fun. 
+
+**Speakers, Organisers and Events:**
+Its a new way to get onto the program at a high profile global event, and one which usually wouldn't have space for their messages and vision, because, although they sometimes overlap, there is a big difference between events grounded in GDP economics, and those grounded in benefiting people, communities and the planet.
+
+
+**Venues:**
+Our flexible funding model adapts around their schedule so slots can be filled which may have been empty beforehand. Some organisations will want to show support for the idea, and be seen to be part of a new, novel side-economic summit, by offering space. 
+
+We also believe the message will resonate with many organisers as its something different and exciting. If it pays the same, why wouldn't they want to try hosting events working for a life for all humanity?
+
+
+**unDavos**
+The main counter-culture social group set up to attract disruptive and alternative ideas and change makers. Our message is in-line with a significant portion of their aims, and we hope to foster a good relationship and become a central part of their community and mission.
+
+## Slide 7: Criteria
+
+Focus: 
+
+- Fantastic ideas, communities and projects for bringing more peace and well-being to people, communities and the planet.
+- Economic solutions to support these ideas, and economists calling for them.
+- A bottom up summit: Events should focus on how these ideas are actionable by local people at a grass-roots level, and have an impact daily lives in communities around the world
+
+
+Themes for each day: 
+- 1: Personal Growth
+- 2: Community Connection
+- 3: Innovative Economic Systems 
+- 4: Environment and Sustainability
+- 5: Art, Dance, Music and Poetry
+- 6: Anything else. Mix it up!
+
+Underlying Question: 
+How can we build economic systems to support these better, and allow everyone in the world to be rewarded for benefiting the community in one of these categories.
+
+Question for all attendees during the Summit: 
+Suggest, discuss, collaborate and vote on new projects and ideas in our platform. The top ideas will be built after the summit by The Public Happiness Community using our unique system (and everyone is invited to join in the build process). This is how we demonstrate the difference our token, platform and community can create in the world. 
+
+## Slide 8: Pre-Summit Selecting Events
+
+Events to be hosted at Davos are suggested, discussed and voted on by those attending. This will include speakers, panels, workshops. This engages a wide audience in helping to publicise our Happier World Economies Summit and boosts the interest behind each event, and the project as a whole. The original suggester will also suggest/update a budget and equipment required to deliver it.
+
+Venues and Funding Pools, and their requirements and facilities (square foot, equipment, required theme, cost), are posted in cards above the comments and voting in the top half of the Build section, so people can see what's available and shape their ideas to target it.
+
+On set dates, the highest voted events are offered the 1st pick of available venues and funding pools that match the topic of their event and their stated requirements.
+
+If they decide to accept then their event is moved from the suggestion, voting and comment section (Build section) into the map (Gather) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
+
+## Slide 9: Funding and Venues
+
+An open invite is put out for anyone to join in and participate in finding sponsors for the Summit, by offering a 10% finders fee. 
+
+Anyone who wants to support a progressive humanistic and environmental economic agenda at the Summit is also welcome to donate directly.
+
+Venue's are approached to join in and become a part of the Summit by offering a space at any time during W.E.F
+
+10% of donations goes to support the Summit's wider vision and help cover operational costs.
+
+The events are run on a 'pay what you feel its worth to you model', mostly because people have a tendency to value things which are free lower than things which are paid, so this is avoiding that 'cheap' feeling, whilst also providing an extra source of income. 50% will go towards improving the next Happier World Economies Summit, and 50% will go to the event organiser. 
+
+## Slide 10: Example
+- 10k funding is offered for sustainability projects at W.E.F and goes into a card on the platform.
+- A venue offers 30 square meters between 14:00 - 18:00 for 8k. This goes into a card on the platform.
+- Briana see's the funding pool and decides to design an environmental round table on things local communities can do to mitigate climate change, to match it. 
+- She creates a three scenarios for her plan matched to different levels of funding and space, so she'll have a better chance of matching whats available. 
+- At 'voting deadline #2' Briana's event is ranked 1st by community voting
+- Briana's event wins nomination, and she is offered 1st pick of chooses the funding pool and location which meets the requirements she stated in the event plan.
+
+## Slide 11: Buses!
+
+Our fleet of modified buses will provide novel and mobile event venues, and also provide sleeping space in the evenings for many of the nominated events and speakers who aren't able to find affordable accommodation near Davos and would otherwise be excluded.
+
+The bus fleet will then travel to all major fin-tech and economic events in and near Europe, creating a 'people, communities and planet' supplementary add-on summit.
+
+
+## Slide 12: Attendees During the Summit
+
+After pre-Summit voting is finishes new funding pools will be created from the Public Happiness Token and the discussion and voting will revert to our normal model of projects which empower local people and communities to tackle societal issues, and create more well-being in the world 
+
+Sponsors, companies and philanthropists can still donate to create extra specialised funding pools (see our whitepaper for more info)
+
+All attendees at the Summit will be engaged in suggesting, discussing, collaborating and voting on new projects to empower local people and communities to create more peace and well-being in the world around them on the Public Happiness Movement platform which will be built by our global community, who are rewarded in The Public Happiness Token.
+
+## Slide 13: Real World Outcomes After the Summit
+
+The highest voted ideas for empowering local communities to tackle societal issues and create more well-being and peace where they live, are now moved into the build list on the Public Happiness Movement platform, and will be created by our global community who are incentivised by earning Public Happiness Tokens, to ensure real world impact in the daily lives of people around the world. 
+
+This will include economic models and specific actions, on both local and global levels. All actions must be implemented by local people as the underlying aim is empowering individuals and communities, rather than solving their problems for them. 
+
+## Questions:
+- Should we crowd-fund this to engage an ever wider audience? Will that interfere with our Token crowd funder?
+- We need something more firm than just having the platform to engage people in discussing and suggesting new ideas. There should be some kind of pull system supporting the platforms mechanism of creating post Summit activities.
+
 `
     },
 	
