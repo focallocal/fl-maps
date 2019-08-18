@@ -1396,14 +1396,14 @@ A legally binding contract will be signed by both the company and charity, to pr
 `
     },
 	{
-        title: "Conforming to International Law",
+        title: "Conforming to International Laws",
         code: "IntLaw",
         fullText: `
 
 ## 10.2.
 
-**Conforming to International Law**
-....
+**Conforming to International Laws**
+..needs more discussion..
 
 `
     },					
