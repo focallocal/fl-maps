@@ -142,12 +142,25 @@ This project also aims to empower ordinary, people regardless of their technolog
 
 `
     },
+	{
+        title: "Underlying Theme",
+        code: "Theme",
+        fullText: `
+
+## 2.4.
+
+**Community and Human Connection**	
+
+Those seeking power at the expense of others liberty throughout history have always prioritized stoking divisions, intolerance, and nativism to prevent any organised social movements from building up and moving society forward in any way. Community and human connection is the key to progress on all societal issues facing humanity, and the key to resisting oppressive forces seeking to divide us for their own selfish aims. The foundation of our movement is connection. 
+
+`
+    },	
     {
         title: "Relation to Universal Basic Income",
         code: "RetoUn",
         fullText: `
 
-## 2.4.
+## 2.5.
 
 **Relation to Universal Basic Income**
 Universal Basic Income is another concept which has the potential to create societies where many people use their increased freedom to focus on and tackle societal issues. 
@@ -390,7 +403,7 @@ Our platform, is also available as an iOS and Android app. Its building towards 
 `
     },
     {
-        title: "The Public Happiness Map",
+        title: "The Public Happiness Map: Gather",
         code: "ThPuHa",
         fullText: `
 
@@ -429,7 +442,7 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 `
     },
     {
-        title: "Action Center",
+        title: "Action Center: Build",
         code: "ActCen",
         fullText: `
 
@@ -458,9 +471,9 @@ How Selecting a New Project Works:
 - Health and Well-being
 - Human and Community Connection
 
-2) The idea goes into a period of discussion, where the community positively debates the idea suggesting improvements, or ways to avoid potential pitfalls.
+2) The idea goes into a period of discussion and voting, where the community positively debates the idea suggesting improvements, or ways to avoid potential pitfalls.
 
-3) A vote is held 
+3) The vote continues until a spot opens up in the 'build list'. This happens either because an existing project has been launched, or because the Build section has more activity and can support an extra project being built. 
 
 The community is asked to weighs global projects against:
 
@@ -473,7 +486,14 @@ Community members can vote on these to give it an 'estimated value' score using 
 
 The community will also ensure the project keeps with the founding vision by checking it meets with all of our Community Values
 
-4) If selected by the Community, the idea moves into the Build list to be built by our community, who receive our tokens in reward for their efforts.
+4) The highest voted project idea moves into the Build list to be built by our community, who receive our tokens in reward for their efforts.
+
+
+Alternate Routes onto the Build List:
+
+1) Companies or altruistic donors can create a new spot to target specific issues they want to see our Public Happiness Community tackle. For example, a company might want an educational community garden built as part of their Corporate Social Responsibility, or marketing budget. Or a philantropist might put up the money needed to create a new spot in the build list, and specifiy that it is for Sustainability projects. 
+
+2) Community members can 'stake' their tokens behind an idea to show support. Their stake goes into the funding pool when/if it reaches the build list, where the increased tokens available will attract more community members and increase the speed of the project build. If enough community members stake their tokens behind a project to reach the threshold for creating a new spot on the build list, then that project will take the new spot. 
 
 
 How Projects Are Built:
@@ -551,7 +571,7 @@ Currently hosted on shopify, this will be moved in-house shortly.
 ## 6.5.
 
 **Who defines what is accepted as ‘Public Happiness?’**
-The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.publichappinessmovement.com/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform.
+The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.publichappinessmovement.com/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform. Note: this doesn't prevent communities joining our platform from having their own governance structure internally.
 
 Effective ideas for positive action will be incorporated into the platform and recommended to other community members as tools they can use for creating positive  social and cultural change where they live. 
 
@@ -715,12 +735,18 @@ Votes can only be earned on our platform, not bought. Completing tasks related t
 The points earned which give community members their voting ranks are on a centralised autonomous system so they cannot be traded (the two separate sytems are also used to teach the difference between a centralised token and decentralised one). The centralised ledger of every token mined (earned) is used to assign ranks for vote weighting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
 
 
-How Voting Works:
-Each area and section of the platform will have a discussion forum linked where community members can discuss improvements to the operations and design of their community and platform, creating a mass decentralised governance system.
+How Voting Works on the Ecosystem:
+Each area and section of the platform has a discussion forum linked where community members can discuss improvements to the operations and design of their community and platform, creating a mass decentralised governance system for The Public Happiness Movement.
 
-Community members wanting to raise a vote on a platform or operational change can post in the attached form calling for a vote, and explaining the need. Others will vote for or against, with 60% needed to pass. 
+Community members wanting to raise a vote on a platform or operational change can post in the attached forum calling for a vote, and explaining the need. Others will vote for or against, with 60% needed to pass. 
 
-Community members are welcomed to comment their argument in the threads for, and against, to guide voting. The threads will be ordered by likes received so the strongest arguments float to the top.
+Community members are welcomed to comment their thoughts in the threads for, and against, to guide voting. The threads will be ordered by likes received so the strongest arguments float to the top.
+
+How Voting Works to Choose New Projects:
+All community members can suggest a new project by filling in a structured form on our platform. The form limits users to roughtly a single A4 page, to avoid recreating systems where to get an idea funded someone has to commit considerable time and resources. Other community members then can discuss, and vote on this idea. When a space opens up in the build list (either because another project is complete, or because capacity increases within the eco-system creating a new spot) the project moves into the build list where it is built and delivered by our community.
+
+Staking:
+Community members are also welcome to 'stake' their tokens behind a project they really want to see delivered and changing lives in the real world. Staked tokens go into the pool used to create the project should the project be voted into the Build list by the community, increasing the rewards available and therefore the speed its built. It also has some influence in the voting process as other community members can see that project will be created faster if they support it. This mechanism can also be utilised to push through an idea with a small but passionate following. If a group of members pool their resources and staje enough tokens to reach the set threshold required to open a new spot in the build list, then the project will take the new spot without needing to win the popular vote.
 
 
 Sectional Voting:
@@ -1021,7 +1047,8 @@ For example: The activity was scheduled for the 8th April 2020, when created on 
 ## 9.2.
 
 **Bus Tour**
-A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions.
+A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions and structure. The buses will also aim to attend and create a human, communities and planet focused sideshow at all major fin-tech events creating portable event spaces with our own vision aligned speakers and events - for more details see section 9.5.
+
 
 Towns, cities and villages:
 On the tour the team will visit cities, towns and villages and demonstrate how people can earn a Public Happiness Token and what impact it can have on life in their local community. 
@@ -1031,10 +1058,8 @@ Community members chosen for the bus tours will use their skills to target local
 Conferences, Festivals, and Happiness Economy Events:
 We will be touring blockchain/fin-tech conferences, festivals, and happiness related events. The bus will carry equipment and team members to create exciting activities and flash-mob style entertainment at these events. Both officially and unofficially. It will also serve as an office, meeting space, and sleeping rooms will often be available to select partners.
 
-Buses and Vans:
-How much funding is raised will determine whether we tour in a bus or a fleet of vans and minibuses. The ideal bus would be a 1960’s classic British Routemaster, due to the attention it would get outside of the UK boosting our marketing effort. The average price of these is £100,000+. A more likely choice is a Volvo B7TL Double Decker due to their renowned reliability. 
-
-If we go with van’s a fleet of Mercedes Sprinters will join ‘[Connie the Connector](https://www.facebook.com/connietheconnector/)’ again due to their reliability, founder Andy’s experience in repairing and maintaining them, and the advantage of only needing to carry one set of commonly needed spare parts. [Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). As it is arguably still the greenest form of fuelling a vehicle, all other vehicles will also be converted, giving us the ability to collect from people joining our activities and project in each location, and/or to partner with a major restaurant or hotel chain and collect their left over oils. 
+Green Fuel:
+[Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). At the time it was carbon positive travel as the cooking oil needed to be disposed of. Whilst this is rarely true now as most used cooking oil is collected by large bio-diesel companies, it is arguably still the greenest form of fuelling a vehicle and older diesel buses will require minimal conversions to run on it. Partnerships with hotel and resteraunt chains will be sought to see if its possible to run our bus fleet on the oil thrown out by their kitchens. 
 
 `
     },
@@ -1079,9 +1104,9 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
 **Happier World Economies Summit**
 A Global Summit hosted by Focallocal at The World Economic Forum in Davos. A forum to combine industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
 
-A Summit where solutions will emerge to refocus our global and local economies on incentivising many more people in each community to take regular positive action with their neighbours to resolve any and all issues reducing well-being where they live. The goal is to empowering people and communities, all of us, to take ownership for the well-being of our local community and everyone in it. industry leaders will be invited to discuss, design and grow the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide through implementing new economic systems - like the Public Happiness Token, which will be launching at the Summit.
+A Summit where solutions will emerge to refocus our global and local economies on incentivising many more people in each community to take regular positive action with their neighbours to resolve any and all issues reducing well-being where they live. The goal is to empowering people and communities, all of us, to take ownership for the well-being of our local community and everyone in it. Industry leaders will be invited to discuss, design and grow the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide through implementing new economic systems - like the Public Happiness Token, which will be launching at the Summit.
 
-A 'lean in' Summit will be created, where attendees are invited to bring their skills and experience, and apply them to challenges threaded into the event to create real world, immediately actionable outcomes.
+We will create a 'lean in' and bottom up Summit, where attendees are invited to bring their skills and experience, and apply them to challenges threaded into the event to create real world outcomes which are immediately actionable by local people in the communities where they live.
 
 ## Slide 1: What is the problem?
 
@@ -1089,7 +1114,7 @@ Today's irresponsible economic model is destroying the earth and perpetuating hu
 
 ## Slide 2: Where is the problem?
 
-The World Economic Forum brings together the leaders of the economic world. A world which is heavily focused on top-down economic discussion, and heavily locked into the current GDP based system which is failing to produce healthy, happy societies. Now its time for new economic systems and we need to create a space at the worlds leading economic summit for those exploring and creating radical forward thinking economic solutions. 
+The World Economic Forum brings together the leaders of the economic world. A world which is heavily focused on top-down economic discussion, and heavily locked into the current GDP based system which is failing to produce healthy, happy societies. Now is the time to explore new economic systems, and we need to create a space at the worlds leading economic summit for those creating radical forward thinking economic solutions which empower humanity to solve the many societal issues reducing well-being and damaging our communities and planet. 
 
 ## Slide 3: What is the solution?
 
@@ -1100,10 +1125,10 @@ The Happier World Economies Summit
 
 The Happier World Economies Summit combines: 
 
-- the best ideas to engage people in tackling societal issues, and creating more peace and well-being where they live. 
-- with the economic experts and society leaders in WEF, especially those interested in creating new economic systems focused on people, communities and the planet ahead of profits. 
+- the best ideas engaging people and communities in tackling societal issues, and creating more peace and well-being where they live. 
+- with the economic experts, society and thought leaders in WEF, especially those interested in creating new economic systems focused on people, communities and the planet ahead of profits. 
 
-The underlying theme we set for the day is 'how can we create economic systems to better support these amazing ideas for a brighter future'
+The Summit's is focused on bottom-up grass-roots action, and 'how can we create economic systems to better support these empowering ideas to build a brighter future for humanity'
 
 ## Slide 5: Overview
 
@@ -1117,7 +1142,7 @@ Increased exposure: We engage a wide audience to make sure the most impactful id
 
 Increased real-world impact: All attendees at the events they sponsor, in planning real world projects on our platform which target the issues they want to fund solutions to. The event then becomes a staging point where action is initiated, and sponsors can follow (and further support) the projects which will have the biggest impact on each issue they chose to fund, which are voted on, funded using our token, and built by our global community - a model which is far more economical than other existing models.
 
-Any events or projects which target SDG issues are given a badge on our platform, to open up funding from SDG pools.
+Many events and projects on our platform will be targeting SDG issues. we give these an easy to see badge stating on our platform so people can see at a glance which issue is being targeted. This opens up funding from SDG pools. We chose not to limit our actions to just SDG challenges, as there are a many important areas for improving the health of humanities socieites which would be excluded.
 
 **W.E.F Attendees:**
 Many will attend because the concept resonates with them, that guiding WEF and thereby the economic world, down a path which prioritises people, communities and our planet; is a change which humanity needs to see. 
@@ -1210,6 +1235,8 @@ All attendees at the Summit will be engaged in suggesting, discussing, collabora
 ## Slide 13: Real World Outcomes After the Summit
 
 The highest voted ideas for empowering local communities to tackle societal issues and create more well-being and peace where they live, are now moved into the build list on the Public Happiness Movement platform, and will be created by our global community who are incentivised by earning Public Happiness Tokens, to ensure real world impact in the daily lives of people around the world. 
+
+This process will be boosted with a Societal Good Hackathon hosted in Davos in the two weeks after WEF. Where teams will come in to build the top voted ideas suggested during our Summit, so everyone who attended the Happier World Economies Summit can see significant instant action on their suggestions.
 
 This will include economic models and specific actions, on both local and global levels. All actions must be implemented by local people as the underlying aim is empowering individuals and communities, rather than solving their problems for them. 
 
@@ -1326,6 +1353,58 @@ This approach has the following benefits:
 
 `
     },
+	{
+        title: "Legals",
+        code: "LeStru",
+        chapterHeading: true,
+        fullText: `
+		&nbsp;
+
+The eco-system and token need to take every possible effort conform to national laws. Many of which are not perfectly suited for decentralised, community owned and led collectives, or cross border currencies.
+
+`
+    },
+	
+	{
+        title: "Company Structure",
+        code: "Specul",
+        fullText: `
+
+## 10.1.
+
+**Company Structure**
+
+As the blockchain projects grows and progress, the founding team will be faced with many hurdles financially and personal, making it prudent to minimise the potential liability and distinguish personal positions from company positions. 
+
+We intend to mitigate this by setting up a company and charitable entity.  A limited liability company will be founded with distinguished duties between the company and the charity. 
+
+
+The company will be used to limit and offset individual liability regarding any unintetional omissions and/or inactions, and be used for profit gaining activities which are used to advance the token and vision. The charitable arm will be used to maximise any incentives available from governments, philantropists, and institutions such as the UN and EU (such as gift aid and EU cultural funding).
+
+
+Setting up as a UK charitable company gives the following benefits: 
+
+- Receiving tax relief and reduced business rates. 
+- Gaining access to grants and bursaries from the UK government. 
+
+Trustees will act as the governing body of the charity. The trustees will make the decisions about how to run the charity once it is set up, and are responsible for the general control and management of the charity. 
+
+A legally binding contract will be signed by both the company and charity, to prevent them from interferring in the decentralised governance model, outside of occasions mentioned elsewhere in this whitepaper.
+
+`
+    },
+	{
+        title: "Conforming to International Law",
+        code: "IntLaw",
+        fullText: `
+
+## 10.2.
+
+**Conforming to International Law**
+....
+
+`
+    },					
     {
         title: "Revenue Streams and Token Price",
         code: "ReStan",
@@ -1351,7 +1430,7 @@ There will also be a pool created for the community to use. Members will vote on
         code: "Specul",
         fullText: `
 
-## 10.1.
+## 11.1.
 
 **Speculation**
 
@@ -1366,7 +1445,7 @@ Being listed on one exchange before our ICO's end is important to this strategy.
         code: "Shop",
         fullText: `
 
-## 10.2.
+## 11.2.
 
 **Active Happiness Clothing**
 [Visit the shop](https://shop.publichappinessmovement.com)
@@ -1382,7 +1461,7 @@ See section 7.4. for more details.
         code: "CoSoRe",
         fullText: `
 
-## 10.3.
+## 11.3.
 
 **Corporate Social Responsibility**
 
@@ -1390,9 +1469,9 @@ Corporates and local businesses are all looking for ways to positively impact th
 
 Companies, and philantopists can create bounties to target a local, or gloabal in our platform. These challenges go into our Build section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our communtiy fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
 
-If the project is realised in the physical world, as most will be, experiences of the day are gathered for those who put forward the funding for the challenge via one or two extra hashtags, suggested by the funders, to enable them to piggy-back on our networks enhanced social media effect, to gain exposure for the excellent project which they supported and enabled with their kind offer.
+If the project is realised in the physical world, as most will be, experiences of the day are gathered for those who put forward the funding for the challenge via one or two extra hashtags, suggested by the funders, to enable them to piggy-back on our networks enhanced social media effect, to gain exposure for the excellent project which they supported and enabled with their kind offer. 
 
-Running CSR through our platform creates an entire story for them, their stakeholders and staff to follow. This story also leaves a permanent trail for those curious or grateful in the local communities effected by the project they funded. If good-will or marketing was their aim, the story we create has a long legacy. This CSR route has the potential to be lucrative, boosting the tokens price and market value rapidly. Its also providing a regualar boost for us to reach, engage with local communities, and further achieve our mission. 
+Running CSR through our platform creates an entire story of their for them, their stakeholders and staff to follow. This story also leaves a permanent trail for those curious or grateful in the local communities effected by the project they funded. If good-will or marketing was their aim, the story we create has a long legacy. This CSR route has the potential to be lucrative, boosting the tokens price and market value rapidly. Its also providing a regualar boost for us to reach, engage with local communities, and further achieve our mission. 
 
 `
     },
@@ -1401,7 +1480,7 @@ Running CSR through our platform creates an entire story for them, their stakeho
         code: "KinAuc",
         fullText: `
 
-## 10.4.
+## 11.4.
 
 **Kindness Auction**
 [read more](https://news.publichappinessmovement.com/focallocal-kindness-auction/)
@@ -1415,7 +1494,7 @@ A fun little project we've had good success over the years in the Focallocal Com
         code: "ComPro",
         fullText: `
 
-## 10.5.
+## 11.5.
 
 **Community Projects**
 
@@ -1438,7 +1517,7 @@ The platform automates rewards for completing tasks which work towards maintaini
         code: "WeiMin",
         fullText: `
 
-## 11.1.
+## 12.1.
 
 **Weighted Mining**
 Levels of trust:
@@ -1483,7 +1562,7 @@ By backdating the tokens awarded based on a members previous contributions to hu
         code: "HarCap",
         fullText: `
 
-## 11.2.
+## 12.2.
 
 **Hard Cap**
 A hard cap will be set on the amount that any one user can earn each reward period, at each different user level. Minimising the risk from abuse and fraud, and maintaining our core vision of Public Happiness Token allowing community members increased economic freedom to give their time to resolving local societal issues, and increasing community connection and well-being. The hard cap will be a percentage of the tokens released in that period, modified as the user base increases. 
@@ -1499,7 +1578,7 @@ The percentage earned from each sub-activity when coordinating large scale activ
         code: "AdthBa",
         fullText: `
 
-## 11.3.
+## 12.3.
 
 **Adjusting the Balancing**
 The automated weighting and distribution system will apply a set level to the above metrics. These levels will be adjusted through community voting to find the most effective operating balances for maximising our network effect. These will constantly need adjusting during the Movements growth and evolution. 
@@ -1511,7 +1590,7 @@ The automated weighting and distribution system will apply a set level to the ab
         code: "TokRel",
         fullText: `
 
-## 11.4.
+## 12.4.
 
 **Token Release**
 Initially a pre-set amount of tokens will be set to release each week for 100 years, divided between active contributors to the ecosystem and mission. The number of tokens released each week will be set on a graduated incline, balancing rewarding early contributors with greater rewards, against the exponential increase of users who the token will be divided amongst, as the community grows.
@@ -1526,7 +1605,7 @@ This weekly token release makes our currency deflationary, which will be offset 
         code: "TokDis",
         fullText: `
 
-## 11.5. 
+## 12.5. 
 
 **Token Distribution**
 50% (4.85 Billion Tokens) will be released during the initial 3 IEO launches and give the token value through trading on exchanges
@@ -1552,7 +1631,7 @@ Average release rate: 265753 tokens per day
         code: "FuMaCo",
         fullText: ` 
 
-## 11.6.
+## 12.6.
 
 **Further Matrix Considerations**
 The matrix needs to consider: 
@@ -1580,7 +1659,7 @@ Much of the essential skills needed to build a successful blockchain project and
         code: "CuTeMe",
         fullText: ` 
 
-## 12.1.
+## 13.1.
 
 **Current Team Members**
 
@@ -1645,7 +1724,7 @@ Producer/Director at Palm Tree Productions
         code: "PosOpe",
         fullText: ` 
 
-## 12.2.
+## 13.2.
 
 **Positions Open**
 * Marketing Coordinator
@@ -1687,7 +1766,7 @@ Roles will be for a pre-agreed period to invigorate and lead the community as it
         code: "Remune",
         fullText: `
 
-## 12.3.
+## 13.3.
 
 **Remuneration**
 The team of experts will be remunerated in our token, with a contracted buy-back at a set rate - if they choose to. This keeps everyone in the eco-system being rewarded in the same way, amongst other benefits mentioned earlier. Giving the experts the choice to be paid in cash, or to keep a percentage, or all, in our token.
@@ -1699,7 +1778,7 @@ The team of experts will be remunerated in our token, with a contracted buy-back
         code: "Facili",
         fullText: `
 
-## 12.4.
+## 13.4.
 
 **Facilities**
 The team will either operate remotely using our online hub, or work from the road trip. (see Marketing in section 10.2. for more details about the road trip). 
@@ -1714,7 +1793,7 @@ Not requiring fixed office space will enable us to keep overheads low, adding fl
         code: "CrLiBr",
         fullText: `
 
-## 13.1.
+## 14.1.
 
 **Crypto Linking Bridges**
 Public Happiness Activities: Meteor Js/React to REST API 
@@ -1724,26 +1803,11 @@ Projects (Missions): Currently Web-hooks from Trello (or Wekan). This system is 
 `
     },
     {
-        title: "Trello vs Wekan vs Other Solutions",
-        code: "TrvsWe",
-        fullText: `
-
-## 13.2.
-
-**Trello vs Wekan vs Other Solutions**
-The Action Center is a Micro-volunteering Hub which breaks large projects down into 30 min – 1 hour ‘Missions’, enabling anyone to join in and help build the project and bring it into the world.
-
-
-Currently the system uses Trello as an external platform, with a layer built on top of it. This creates a vulnerability where malicious users can damage altruistic projects by moving cards around, or deleting them. As the user-base grows an improved project management system will need to be added, or built into our platform.
-
-`
-    },
-    {
         title: "Leafletjs vs Google Maps API",
         code: "LevsGo",
         fullText: `
 
-## 13.3.
+## 14.2.
 **Leaflet.js vs Google Maps API** 
 
 **The Public Happiness Gatherings system is currently build using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
@@ -1755,7 +1819,7 @@ Currently the system uses Trello as an external platform, with a layer built on 
         code: "SwthPl",
         fullText: `
 
-## 13.4.
+## 14.4.
 **Switching the Platform to the Dapps Network**
 (Decentralised Apps)
 
@@ -1780,7 +1844,7 @@ The Crypto world is highly volatile at this point in time which will lead many p
         code: "HuMaCr",
         fullText: `
 
-## 14.1.
+## 15.1.
 
 **Huge Market Crash**
 Public Happiness Token is entirely secure from some major news crashing investors confidence in the entire blockchain, or global economic markets. Everything is designed with the ability to fall away, with the platform and community capable of running a skeleton site.
@@ -1802,7 +1866,7 @@ As long as there is a positive community behind it the Token cannot fail. It wil
         code: "QuaSec",
         fullText: ` 
 
-## 14.2.
+## 15.2.
 
 **Quantum Security**
 To some extent we are tied to advancements in the Ethereum network. There are open pull requests such as pull request #208: Abstraction of transaction origin and signature.md. 
@@ -1816,7 +1880,7 @@ On our end our entire system is being reviewed by quantum security experts. We w
         code: "MasHac",
         fullText: `
 
-## 14.3.
+## 15.3.
 
 **Massive Hack**
 As a last resort in the case of a massive attack there is the possibility of a Hard Fork, resetting everything to a time before the hack on the public ledger.
@@ -1836,7 +1900,7 @@ The implications of this option are obviously wide ranging and it would be an ab
         code: "ZomApo",
         fullText: `
 
-## 14.4.
+## 15.4.
 
 **Zombie Apocalypse**
 If the inevitable finally occurs, we will convert the Public Happiness Bus into a ‘Public Happiness Buoat’ and retreat to a small uninhabited Greek island, where our new society will flourish and sparkle as a bastion to all Humanity's greatest achievements. Using Public Happiness Token to create a paradise where every economic interaction creates more harmony and a closer more caring community, while the rest of the world performs a perfect impression of today’s paparazzi for each others brains. 
@@ -1854,7 +1918,7 @@ If the community has decided on having a fixed central base, for example renovat
 2% of all funds we raise from the IEO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
 
 
-## 15.1.
+## 16.1.
 
 **Open Source Projects We Use**
 * Discourse
@@ -1864,7 +1928,7 @@ If the community has decided on having a fixed central base, for example renovat
 * Click the balloon here to discuss others we should support
 
 
-## 15.2.
+## 16.2.
 
 **Donations to Notable Other Open-source Projects**
 1% of the total raised will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
@@ -1878,7 +1942,7 @@ The vote results will be non-binding, to allow mitigation against any uncovered 
         code: "Timeli",
         chapterHeading: true,
         fullText: ` 
-## 16.
+## 17
 * 1st draft of the White Paper created by founder
 * Experts invited to review and advise on improvements
 *  2nd draft of the White Paper
@@ -1902,7 +1966,7 @@ Still to plan:
         code: "Qutobe",
         chapterHeading: true,
         fullText: `
-## 17.
+## 18
 * Open-sourcing. The vast majority of the system will be open-sourced 6 months afer launch. We need to determine any sections which are too sensitive to open-source.
 * Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
 * Which other crypto coins/tokens should we include in the platform to introduce our community members into the crypto-economic ecosystem, for example, should our videos primarily be  hosted on Lbury? Is their platform ready?
