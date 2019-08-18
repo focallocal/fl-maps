@@ -1108,6 +1108,8 @@ A Summit where solutions will emerge to refocus our global and local economies o
 
 We will create a 'lean in' and bottom up Summit, where attendees are invited to bring their skills and experience, and apply them to challenges threaded into the event to create real world outcomes which are immediately actionable by local people in the communities where they live.
 
+**Slides currently underconstruction**
+
 ## Slide 1: What is the problem?
 
 Today's irresponsible economic model is destroying the earth and perpetuating human suffering. GDP based capitalism has lifted many out of poverty, but in its current form it will never solve poverty the, or many of the issues caused by poverty.
