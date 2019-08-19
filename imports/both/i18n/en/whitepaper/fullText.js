@@ -142,8 +142,8 @@ This project also aims to empower ordinary, people regardless of their technolog
 
 `
     },
-	{
-        title: "Underlying Theme",
+    {
+        title: "Underlining Theme",
         code: "Theme",
         fullText: `
 
