@@ -144,7 +144,7 @@ This project also aims to empower ordinary, people regardless of their technolog
     },
     {
         title: "Underlining Theme",
-        code: "Theme",
+        code: "UTheme",
         fullText: `
 
 ## 2.4.
