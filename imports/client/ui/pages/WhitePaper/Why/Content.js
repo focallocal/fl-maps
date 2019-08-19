@@ -24,7 +24,7 @@ const Content = (props) => {
               format="speech-bubble"
               title=" "
               subtitle="discuss"
-              triggerId={`Short${index + 1}`}
+              triggerId={`short${index + 1}`}
               display="inline"
             />
           </Col>
@@ -44,7 +44,7 @@ const Content = (props) => {
               format="speech-bubble"
               title=" "
               subtitle="discuss"
-              triggerId={`Longer${index + 1}`}
+              triggerId={`longer${index + 1}`}
               display="inline"
             />
           </Col>
