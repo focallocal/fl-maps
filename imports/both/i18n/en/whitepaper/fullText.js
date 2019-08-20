@@ -397,7 +397,19 @@ They will now be rewarded financially for their continued efforts to improve hum
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
-Our platform, is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network.
+Our platform, is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and eco-system.
+
+
+Teams, Projects, People and Communities:
+In the Action Center (Build) are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world.
+In the maps (Gather) are People and Communities. Existing communities with a similar vision can join the platform to take advantage of our ecosystems advanced tools to support their mission and community. People can post themselves for others to contact and arrange positive actions together to target local issues.
+
+Local vs Global:
+The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gather section.
+
+The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
+
+
 
 
 `
