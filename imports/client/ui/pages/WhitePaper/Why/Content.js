@@ -14,7 +14,7 @@ const Content = (props) => {
         <br/>
         <h3>Short</h3>
       </Container>
-      {i18n.Whitepaper.Why.short.map((item, index) => {
+      {i18n.Whitepaper.Why.concise.map((item, index) => {
         return (
           <Col key={index} className="pl-5 mt-5 wp-item" xs={11}>
             <h5>{item.heading} </h5>
@@ -33,7 +33,7 @@ const Content = (props) => {
       <Container className="mt-5">
         <h3>Longer</h3>
       </Container>
-      {i18n.Whitepaper.Why.longer.map((item, index) => {
+      {i18n.Whitepaper.Why['more depth'].map((item, index) => {
         return (
           <Col key={index} className="pl-5 mt-5 wp-item" xs={11}>
             <h5>{item.heading} </h5>
