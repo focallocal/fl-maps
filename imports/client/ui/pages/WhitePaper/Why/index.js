@@ -4,6 +4,7 @@ import Content from './Content'
 import NavMenu from '../NavMenu'
 import './styles.scss'
 
+
 const Index = (props) => (
   <Fragment>
     <NavMenu />
