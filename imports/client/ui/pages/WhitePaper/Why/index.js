@@ -2,7 +2,6 @@
 import React, { Fragment } from 'react'
 import Content from './Content'
 import NavMenu from '../NavMenu'
-import '../styles.scss'
 
 const Index = (props) => (
   <Fragment>
