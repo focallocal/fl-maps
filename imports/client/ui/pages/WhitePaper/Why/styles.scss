@@ -1,5 +1,10 @@
     
-
+summary {
+    display: inline;
+    h5 {
+        display: inline;
+    }
+}
 
 @media screen and (min-width: 751px) {
     .pl-5, .px-5 {
