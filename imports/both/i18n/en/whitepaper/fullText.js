@@ -1372,8 +1372,8 @@ This approach has the following benefits:
         code: "LeStru",
         chapterHeading: true,
         fullText: `
-		&nbsp;
-
+		
+&nbsp;
 The eco-system and token need to take every possible effort conform to national laws. Many of which are not perfectly suited for decentralised, community owned and led collectives, or cross border currencies.
 
 `
@@ -1521,6 +1521,7 @@ The platform also allows for community members to suggest and create their own c
         code: "AuToDi",
         chapterHeading: true,
         fullText: `
+
 &nbsp;
 The platform automates rewards for completing tasks which work towards maintaining and improving the operation of our ecosystem. Advancing our Movement's mission of creating more friendliness, peace and happiness in this world. This requires the building of the Automated Token Distribution Matrix outlined below.
 
