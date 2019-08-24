@@ -10,7 +10,6 @@ import Faq from "./faq.json";
 import Admin from "./admin.json";
 import Whitepaper from "./whitepaper";
 
-
 export default {
   About,
   CongratsModal,

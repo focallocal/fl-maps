@@ -1,114 +1,80 @@
 {
-  "logo": "Focallocal",
-  "addEvent": "Gather",
+  "logo": "BrighterTomorrowMap",
+  "addEvent": "Add Resource",
   "userLink": {
     "loggedIn": [
       {
         "title": "Sign out",
-        "link": "javascript:Meteor.logout();"
+        "route": "/sign-out"
       }
     ],
     "loggedOut": [
       {
         "title": "Sign in",
-        "link": "?discourse-login=true",
-        "targetSelf": true
+        "route": "/sign-in"
       },
       {
         "title": "Sign up",
-        "link": "?discourse-login=true",
-        "targetSelf": true
+        "route": "/sign-up"
       }
     ],
-      "Admin": [
+    "Admin": [
       {
         "title": "Sign out",
-        "link": "javascript:Meteor.logout();"
+        "route": "/sign-out"
       },
       {
         "title": "Admin",
         "route": "/admin"
       }
-      ]
+    ]
+
+
   },
   "leftLinks": [
     {
       "title": "Home",
       "icon": "fas fa-home",
-      "route": "/",
-      "loginRequired": false
+      "route": "/"
     },
     {
-      "title": "About Us",
+      "title": "Map",
+      "icon": "fas fa-map",
+      "route": "/map"
+    },
+    {
+      "title": "About",
       "icon": "fas fa-info-circle",
-      "content": [
-        {
-          "title": "The Focallocal Community",
-          "route": "/about"
-        },
-        {
-          "title": "The Road to Focallocal",
-          "link": "http://news.focallocal.org/about-andy-and-the-road-to-focallocal/"
-        },
-        {
-          "title": "Will we Succeed?",
-          "link": "http://news.focallocal.org/are-we-sure-of-success/"
-        },
-        {
-          "title": "Focallocal In The News",
-          "link": "http://news.focallocal.org/category/in-the-news/"
-        },
-        {
-          "title" : "Team",
-          "route" : "/team"
-          },
-          {
-            "title" : "Partners",
-            "route" : "/partners"
-          },
-          {
-            "title" : "FAQ",
-            "route" : "/faq"
-          }  
-      ],
-      "loginRequired": false
+      "route": "/about"
     },
     {
-      "title": "Action",
-      "icon": "fas fa-star",
-      "content": [
-        {
-          "title": "Action Center",
-          "link": "https://action.focallocal.org"
+      "title" : "More",
+      "icon" : "fas fa-plus",
+    "content" : [
+      {
+      "title" : "Team",
+      "route" : "/team"
+      },
+      {
+        "title" : "Partners",
+        "route" : "/partners"
+      },
+      {
+        "title" : "Donate with paypal",
+        "route" : "https://paypal.me/publichappiness",
+        "target_blank" : "true"
         },
         {
-          "title": "Discuss",
-          "link": "https://discuss.focallocal.org"
+          "title" : "Donate with crypto",
+          "route" : "https://commerce.coinbase.com/checkout/071b7e10-2a8f-47be-83e3-c194c47c6fd0",
+          "target_blank" : "true"
         },
         {
-          "title": "Missions",
-          "link": "https://trello.com/focallocal"
-        }
-      ],
-      "loginRequired": true
-    },
-    {
-      "title": "News",
-      "icon": "fas fa-sun",
-      "link": "https://news.focallocal.org/",
-      "loginRequired": true
-    },
-    {
-      "title": "Activities",
-      "icon": "fas fa-walking",
-      "link": "http://activities.focallocal.org/",
-      "loginRequired": true
-    },
-    {
-      "title": "Shop",
-      "icon": "fas fa-shopping-cart",
-      "link": "https://the-positive-action-shop.myshopify.com/",
-      "loginRequired": true
+          "title" : "FAQ",
+          "route" : "/faq"
+        }  
+      ]
     }
+
   ]
 }
