@@ -230,7 +230,7 @@ Users of our platform’s 1st step to owning a cryptocurrency will via the world
 People new to blockchain can find the numbers of decimal places a challenge to grasp initially. Starting with a high number of tokens and low decimal limit of 4, we will make that 1st step a little easier for newcomers, whilst still taking a small step from the standard two decimal integer of Fiat currencies.
 
 
-Public Happiness Token is given value through its initial ICO, later trading of the token on stock exchanges, and the ability to use it in place of Fiat currencies in the real world (either through creating partnerships with businesses, or guiding community members onto token switching payments solutions)
+Public Happiness Token is given value through its initial IEO, later trading of the token on stock exchanges, and the ability to use it in place of Fiat currencies in the real world (either through creating partnerships with businesses, or guiding community members onto token switching payments solutions)
 
 ‘Mining’ Public Happiness Token is a process of earning it through agreed behaviours which increase happiness and well-being in the users local community, coordinating collaborative global efforts at local level change, or performing tasks essential to running and building our ecosystem.
 
@@ -314,7 +314,7 @@ Stage 2: IEO
 Having demonstrated to the crypto savy world our ability to raise funds and reach those outside the normal circles, a second IEO will be held using the traditional industry tools. Investors will have 30 days to register an Ethereum address. Once the IEO opens a pre-set number of tokens will be released. registered investors will be capped initially at 100 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
 
 Stage 3: Crowd Funding and IEO 
-A third IEO will be held a few months later on both platforms above. The initial seed funding will have increased the skills, resources and energy available, and these will have led to some 1st major progressive steps in the project build, greatly increasing the capacity of this ICO.  
+A third IEO will be held a few months later on both platforms above. The initial seed funding will have increased the skills, resources and energy available, and these will have led to some 1st major progressive steps in the project build, greatly increasing the capacity of this IEO.  
 
 Email addresses will not be collected at any stage to prevent issues as seen in the Bee Token phishing scams during their ill-fated ICO
 
@@ -1022,7 +1022,7 @@ The platform will guide community members through creating an off-platform Hot W
 Our Token:
 In our model a large amount of the total Token’s created are held for future release creating obvious security concerns, and also safety concerns for our core team. To reduce these concerns we will be hiring a company who specialise in crypto security to ensure keys are split among the team, and none of our team is able to access the ‘vault’ without a set number of others, and an approved person from outside the project. We will fully automate the regular release of tokens into the platform.
 
-Funds raised through the ICO:
+Funds raised through the IEO:
 
 Funds raised through the IEO funds will be stored: 
 - in a spread across the top 20 tokens (with small sums in one or two high potential outliers) and held in cold storage (50%)
@@ -1450,7 +1450,7 @@ There will also be a pool created for the community to use. Members will vote on
 
 Speculation on exchanges is the main way the token's price will rise. Many people will want to add it to their portfolio to support the great work they see being done for well-being and peace in the world, or just because one of our members made their grandmothers day with a kind act and she's still smiling. Others will want to invest expecting the price to rise as awareness grows, followed by increasing demand for our token.
 
-Being listed on one exchange before our ICO's end is important to this strategy.
+Being listed on one exchange before our IEO's end is important to this strategy.
 
 `
     },
@@ -1946,7 +1946,7 @@ If the community has decided on having a fixed central base, for example renovat
 ## 16.2.
 
 **Donations to Notable Other Open-source Projects**
-1% of the total raised will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the ICO, for example, Wikipedia, and Libre Office 
+1% of the total raised will be donated to other notable open-source projects which are positive forces within this world, as chosen by our community through voting during the IEO, for example, Wikipedia, and Libre Office 
 
 The vote results will be non-binding, to allow mitigation against any uncovered attempts to cheat the vote by outside groups. The platform and community will not yet be ready to protect itself from coordinated subversion efforts, without spending excess amounts of energy on securing the voting. Instead it can be used as an early pressure test on the integrity of certain areas of the platform, as this type of online contest invariably draws efforts to undermine fair voting.
 
@@ -1965,11 +1965,11 @@ The vote results will be non-binding, to allow mitigation against any uncovered 
 * Witticism, fun and Focallocal flavour added to white paper
 * Provisional White Paper posted online to announce our token, and gather feedback for further improvements, and build team. 
 * Technical Details focused heavily around the Distribution Matrix added to the white paper
-* ICO Launch date announced
+* IEO Launch date announced
 Still to plan:
-* 1st Stage ICO
-* 2nd Stage ICO
-* 3rd Stage ICO
+* 1st Stage IEO
+* 2nd Stage IEO
+* 3rd Stage IEO
 * Apps launched
 * Multi Language adaptation pushed to the entire site
 * Open-source map replaces Google based map (if required)
@@ -1983,13 +1983,13 @@ Still to plan:
         fullText: `
 ## 18
 * Open-sourcing. The vast majority of the system will be open-sourced 6 months afer launch. We need to determine any sections which are too sensitive to open-source.
-* Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the ICO finishes
+* Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the IEO finishes
 * Which other crypto coins/tokens should we include in the platform to introduce our community members into the crypto-economic ecosystem, for example, should our videos primarily be  hosted on Lbury? Is their platform ready?
 * Should the platform be hosted on the DAPPs network?
 * Should community governance voting be tokenized/on-chain? Or simply by using Discourse’s forum voting? Either would involve building a discourse plug-in 
 * How can we best compartmentalise voting to prevent overload on community members, without pockets of influence forming? 
 Next Steps:
-* Set up ICO plan within our Action Center
+* Set up IEO plan within our Action Center
 * Full review of all content on news.publichappinessmovement.com to update content that has become outdated
 * Token created
 * Full security review of all open-source plug-ins used in building the website
