@@ -86,7 +86,28 @@ class DCSLink extends Component {
   }
 }
 
-export default withRouter(withDcs(DCSLink))
+// old:
+// export default withRouter(withDcs(DCSLink))
+
+const BaseComponent = withRouter(withDcs(DCSLink))
+
+export default class ExtendedComponent extends React.Component {
+  render() {
+    return (
+      <BaseComponent {...this.props} dcsScrollIntoView={dcsScrollIntoView} />
+    )
+  }
+}
+
+// enables scrolling to have DCS balloon at bottom of screen (instead of top) so that preceeding content is on-screen
+function dcsScrollIntoView(node, route) {
+  // https://stackoverflow.com/a/22480938/3567351
+  const rect = node.getBoundingClientRect()
+  const partiallyVisible = rect.top < window.innerHeight && rect.bottom >= 0
+  if (!partiallyVisible) {
+    node.scrollIntoView({ block: 'end', inline: 'nearest' })
+  }
+}
 
 DCSLink.propTypes = {
   badge: PropTypes.string,
