@@ -15,7 +15,7 @@ const Content = (props) => {
           Take a look at frequently asked questions
         </p>
       </Container>
-      {i18n.Whitepaper.faqs.faq.map((item, index) => {
+      {i18n.Whitepaper.Faqs.faq.map((item, index) => {
         return (
           <Col key={index} className="ml-5 pl-5 mt-5 FAQ-list" xs={11}>
             <details>
