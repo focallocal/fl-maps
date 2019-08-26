@@ -171,10 +171,10 @@ if (inIFrame()) {
   comToPlugin.onDiscourseRoutePushed(({ route }) => {
     const topicCategory =
       route.pageName === 'm_about'? 'The About Page Discussion' :
-      route.pageName === 'whitepaper'? 'Whitepaper' :
-      route.pageName === 'wp_why'? 'Whitepaper' :
-      route.pageName === 'wp_intro'? 'Whitepaper' :
-      route.pageName === 'wp_faqs'? 'Whitepaper' :
+      route.pageName === 'whitepaper'? 'Public Happiness Token' :
+      route.pageName === 'wp_why'? 'Public Happiness Token' :
+      route.pageName === 'wp_intro'? 'Public Happiness Token' :
+      route.pageName === 'wp_faqs'? 'Public Happiness Token' :
       route.pageName === 'm_gather'? 'Hidden' :
       'General Discussion'
     comToPlugin.postSetRouteProps({ category: topicCategory })
