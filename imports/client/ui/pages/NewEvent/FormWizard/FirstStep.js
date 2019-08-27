@@ -5,8 +5,9 @@ import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import labels from '/imports/both/i18n/en/new-event-modal.json'
 import Categories from '/imports/both/i18n/en/categories.json'
 
-const defaultName = Categories[0].name
-const defaultColor = Categories[0].color
+let category = findDefaultCategory();
+const defaultName = category.name
+const defaultColor = category.color
 
 class FirstStep extends Component {
   constructor (props) {
@@ -93,6 +94,18 @@ class FirstStep extends Component {
     }
     click()
   }
+}
+
+function findDefaultCategory(){
+  let category;
+  Categories.forEach(ele => {
+    if (category == null){
+      category = ele.categories.find(ele => {
+        return ele.default === true
+      })
+    }
+  })
+  return category;
 }
 
 FirstStep.propTypes = {

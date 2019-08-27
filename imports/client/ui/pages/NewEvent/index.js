@@ -72,6 +72,7 @@ class NewEventModal extends Component {
     if (this.state.isRedirect === true) {
       return <Redirect to='/map' />
     }
+    
     const {
       currentStep,
       editMode,
@@ -134,10 +135,12 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
+    let model = EventsSchema.clean(this.state.form.getModel())
+
     this.state.form.validate({ clean: true })
       .then(() => {
         window.NProgress.set(0.4)
-
+     
         let model = EventsSchema.clean(this.state.form.getModel())
         if (this.state.editMode) {
           model._id = this.state.form.getModel()._id
