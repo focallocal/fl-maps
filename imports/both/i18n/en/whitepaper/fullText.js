@@ -1114,7 +1114,8 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
 ## 9.5.
 
 **Happier World Economies Summit**
-A Global Summit hosted by Focallocal at The World Economic Forum in Davos. A forum to combine industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
+
+An alternative global economic Summit hosted by Focallocal in Davos at the same time as The World Economic Forum. Combining industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
 
 A Summit where solutions will emerge to refocus our global and local economies on incentivising many more people in each community to take regular positive action with their neighbours to resolve any and all issues reducing well-being where they live. The goal is to empowering people and communities, all of us, to take ownership for the well-being of our local community and everyone in it. Industry leaders will be invited to discuss, design and grow the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide through implementing new economic systems - like the Public Happiness Token, which will be launching at the Summit.
 
@@ -1140,14 +1141,13 @@ The Happier World Economies Summit
 The Happier World Economies Summit combines: 
 
 - the best ideas engaging people and communities in tackling societal issues, and creating more peace and well-being where they live. 
-- with the economic experts, society and thought leaders in WEF, especially those interested in creating new economic systems focused on people, communities and the planet ahead of profits. 
+- with the economic experts, society and thought leaders, especially those interested in creating new economic systems focused on people, communities and the planet ahead of profits. 
 
 The Summit's is focused on bottom-up grass-roots action, and 'how can we create economic systems to better support these empowering ideas to build a brighter future for humanity'
 
 ## Slide 5: Overview
 
-The summit will engage attendees at WEF in suggesting and voting for the best 
-events, projects, ideas and people who they want to hear from which fit the criteria. Our Summit will then host those which receive the most votes at venues across Davos and Klosters, using money raised from sponsors. An open invite is sent out for anyone to find a sponsor, in exchange for a finders cut.
+The summit will reach out to everyone interested beforehand and invite them to paticpate in suggesting and voting for the events, projects, ideas and speakers which they want to attend during our Summit (who fit with our criteria). Our Summit will then host those which receive the most votes at venues across Davos and Klosters, using money raised from sponsors. An open invite is sent out for anyone to find a sponsor, in exchange for a finders cut.
 
 ## Slide 6: Why Should Stakeholders Join In?
 
@@ -1159,7 +1159,7 @@ Increased real-world impact: All attendees at the events they sponsor, in planni
 Many events and projects on our platform will be targeting SDG issues. we give these an easy to see badge stating on our platform so people can see at a glance which issue is being targeted. This opens up funding from SDG pools. We chose not to limit our actions to just SDG challenges, as there are a many important areas for improving the health of humanities socieites which would be excluded.
 
 **W.E.F Attendees:**
-Many will attend because the concept resonates with them, that guiding WEF and thereby the economic world, down a path which prioritises people, communities and our planet; is a change which humanity needs to see. 
+Many will choose to come and join what we're doing because the concept resonates with them of guiding events in Davos during the week, and thereby the economic world, down a path which prioritises people, communities and our planet; is a change which humanity needs to see. 
 
 Others will join in because they enjoy being engaged in choosing the Summit's program, designing real world solutions during it and the idea that those ideas will be created and make a change in the world. Many will come because the vibrant, positive and fun energy coming from our Summit is attractive and refreshing, so they naturally are pulled in to see what we're building.
 
@@ -1250,14 +1250,13 @@ All attendees at the Summit will be engaged in suggesting, discussing, collabora
 
 The highest voted ideas for empowering local communities to tackle societal issues and create more well-being and peace where they live, are now moved into the build list on the Public Happiness Movement platform, and will be created by our global community who are incentivised by earning Public Happiness Tokens, to ensure real world impact in the daily lives of people around the world. 
 
-This process will be boosted with a Societal Good Hackathon hosted in Davos in the two weeks after WEF. Where teams will come in to build the top voted ideas suggested during our Summit, so everyone who attended the Happier World Economies Summit can see significant instant action on their suggestions.
+This process will be boosted with a Societal Good Hackathon hosted in Davos immediately after WEF week. Teams will be invited to come in to build the top voted ideas suggested by attendees during our Summit, so everyone who attended our Happier World Economies Summit can see significant instant action on delivering their favourite suggestions to the world.
 
 This will include economic models and specific actions, on both local and global levels. All actions must be implemented by local people as the underlying aim is empowering individuals and communities, rather than solving their problems for them. 
 
 ## Questions:
 - Should we crowd-fund this to engage an ever wider audience? Will that interfere with our Token crowd funder?
 - We need something more firm than just having the platform to engage people in discussing and suggesting new ideas. There should be some kind of pull system supporting the platforms mechanism of creating post Summit activities.
-
 `
     },
 	
