@@ -1380,43 +1380,6 @@ This approach has the following benefits:
 &nbsp;
 The eco-system and token need to take every possible effort conform to national laws. Many of which are not perfectly suited for decentralised, community owned and led collectives, or cross border currencies.
 
-`
-    },
-	
-	{
-        title: "Company Structure",
-        code: "Specul",
-        fullText: `
-
-## 10.1.
-
-**Company Structure**
-
-As the blockchain projects grows and progress, the founding team will be faced with many hurdles financially and personal, making it prudent to minimise the potential liability and distinguish personal positions from company positions. 
-
-We intend to mitigate this by setting up a company and charitable entity.  A limited liability company will be founded with distinguished duties between the company and the charity. 
-
-
-The company will be used to limit and offset individual liability regarding any unintetional omissions and/or inactions, and be used for profit gaining activities which are used to advance the token and vision. The charitable arm will be used to maximise any incentives available from governments, philantropists, and institutions such as the UN and EU (such as gift aid and EU cultural funding).
-
-
-Setting up as a UK charitable company gives the following benefits: 
-
-- Receiving tax relief and reduced business rates. 
-- Gaining access to grants and bursaries from the UK government. 
-
-Trustees will act as the governing body of the charity. The trustees will make the decisions about how to run the charity once it is set up, and are responsible for the general control and management of the charity. 
-
-A legally binding contract will be signed by both the company and charity, to prevent them from interferring in the decentralised governance model, outside of occasions mentioned elsewhere in this whitepaper.
-
-`
-    },
-	{
-        title: "Conforming to International Laws",
-        code: "IntLaw",
-        fullText: `
-
-## 10.2.
 
 **Conforming to International Laws**
 ..needs more discussion..
@@ -1771,8 +1734,6 @@ Producer/Director at Palm Tree Productions
 * Accounts and Finances Manager
 
 * Youtube/Video Channel Manager
-
-* Crypto/Securities Legal Expert to ensure our token makes every effort to meet all required national and regional laws
 
 * Release Manager
 
