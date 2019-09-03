@@ -1113,7 +1113,7 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
 
 ## 9.5.
 
-**Happier World Economies Summit**
+## Happier World Economies Summit
 
 An alternative global economic Summit hosted by Focallocal in Davos at the same time as The World Economic Forum. Combining industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
 
@@ -1147,7 +1147,7 @@ The Summit's is focused on bottom-up grass-roots action, and 'how can we create 
 
 ## Slide 5: Overview
 
-The summit will reach out to everyone interested beforehand and invite them to paticpate in suggesting and voting for the events, projects, ideas and speakers which they want to attend during our Summit (who fit with our criteria). Our Summit will then host those which receive the most votes at venues across Davos and Klosters, using money raised from sponsors. An open invite is sent out for anyone to find a sponsor, in exchange for a finders cut.
+The summit will reach out to everyone interested beforehand and invite them to participate in suggesting and voting for the events, projects, ideas and speakers which they want to attend during our Summit (who fit with our criteria). Our Summit will then host those which receive the most votes at venues across Davos and Klosters, matching money raised from sponsors with the costs of each top voted project. An open invite is sent out for anyone to find a sponsor, in exchange for a finders fee.
 
 ## Slide 6: Why Should Stakeholders Join In?
 
@@ -1170,9 +1170,9 @@ Its a new way to get onto the program at a high profile global event, and one wh
 
 
 **Venues:**
-Our flexible funding model adapts around their schedule so slots can be filled which may have been empty beforehand. Some organisations will want to show support for the idea, and be seen to be part of a new, novel side-economic summit, by offering space. 
+Our flexible model adapts around their schedule so any available time slots at a venue can be filled, drawing a crowd to their venue. This will be especially effective for those a little off the main street who much of the WEF crowds pass by. 
 
-We also believe the message will resonate with many organisers as its something different and exciting. If it pays the same, why wouldn't they want to try hosting events working for a life for all humanity?
+We also believe the message will resonate with many organisers as its something different and interesting, with a potential to create rapid real world changes at a local level.
 
 
 **unDavos**
@@ -1205,9 +1205,13 @@ Suggest, discuss, collaborate and vote on new projects and ideas in our platform
 
 Events to be hosted at Davos are suggested, discussed and voted on by those attending. This will include speakers, panels, workshops. This engages a wide audience in helping to publicise our Happier World Economies Summit and boosts the interest behind each event, and the project as a whole. The original suggester will also suggest/update a budget and equipment required to deliver it.
 
-Venues and Funding Pools, and their requirements and facilities (square foot, equipment, required theme, cost), are posted in cards above the comments and voting in the top half of the Build section, so people can see what's available and shape their ideas to target it.
+Available venues are placed on our maps and calendar so projects can aim for specific slots. 
 
-On set dates, the highest voted events are offered the 1st pick of available venues and funding pools that match the topic of their event and their stated requirements.
+Funding Pools are collected in each category. Allowing funders to target specific issues and so users can see where funding is available and shape their project ideas to target it.
+
+Project ideas state their requirements in the project plan and facilities needed for it (square foot, equipment, required theme, cost).
+
+On set dates, the highest voted events are offered the 1st pick of available venues and matched by our team with funding available for the topic of their event.
 
 If they decide to accept then their event is moved from the suggestion, voting and comment section (Build section) into the map (Gather) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
 
@@ -1215,21 +1219,20 @@ If they decide to accept then their event is moved from the suggestion, voting a
 
 An open invite is put out for anyone to join in and participate in finding sponsors for the Summit, by offering a 10% finders fee. 
 
-Anyone who wants to support a progressive humanistic and environmental economic agenda at the Summit is also welcome to donate directly.
+Anyone who wants to support a progressive humanistic and environmental economic agenda at the Summit is also welcome to donate directly via crowd funding.
 
 Venue's are approached to join in and become a part of the Summit by offering a space at any time during W.E.F
 
-10% of donations goes to support the Summit's wider vision and help cover operational costs.
+80% of donations goes to the project, with 20% going to support the Summit's wider vision, help cover operational costs, and create a bigger follow up Happier World Economies Summit later in the year. 
 
-The events are run on a 'pay what you feel its worth to you model', mostly because people have a tendency to value things which are free lower than things which are paid, so this is avoiding that 'cheap' feeling, whilst also providing an extra source of income. 50% will go towards improving the next Happier World Economies Summit, and 50% will go to the event organiser. 
+The events are run on a 'pay what you feel its worth to you model', mostly because people have a tendency to value things which are free lower than things which are paid, so this is avoiding that 'cheap' feeling, whilst also providing an extra source of income. 50% of money received at the gate will go towards improving the next Happier World Economies Summit, and 50% will go to the event organiser. 
 
 ## Slide 10: Example
 - 10k funding is offered for sustainability projects at W.E.F and goes into a card on the platform.
 - A venue offers 30 square meters between 14:00 - 18:00 for 8k. This goes into a card on the platform.
 - Briana see's the funding pool and decides to design an environmental round table on things local communities can do to mitigate climate change, to match it. 
-- She creates a three scenarios for her plan matched to different levels of funding and space, so she'll have a better chance of matching whats available. 
 - At 'voting deadline #2' Briana's event is ranked 1st by community voting
-- Briana's event wins nomination, and she is offered 1st pick of chooses the funding pool and location which meets the requirements she stated in the event plan.
+- Briana's event wins nomination, she receives funding for her project, and has 1st pick of locations available.
 
 ## Slide 11: Buses!
 
@@ -1254,8 +1257,10 @@ This process will be boosted with a Societal Good Hackathon hosted in Davos imme
 
 This will include economic models and specific actions, on both local and global levels. All actions must be implemented by local people as the underlying aim is empowering individuals and communities, rather than solving their problems for them. 
 
+## Slide 14: Token Launch
+All attendees who contribute to discussing and voting on real-world projects which can be built after the Summit, will be rewarded in The Public Happiness Token, which will be launching at the platform. This demonstrates how the token can be used to create and deliver creative projects to better humanity.
+
 ## Questions:
-- Should we crowd-fund this to engage an ever wider audience? Will that interfere with our Token crowd funder?
 - We need something more firm than just having the platform to engage people in discussing and suggesting new ideas. There should be some kind of pull system supporting the platforms mechanism of creating post Summit activities.
 `
     },
