@@ -37,7 +37,7 @@ The Public Happiness Platform is designed around two core functions:
 
 Our platform allows positive people to find positive ideas to create social impact, and gather with others nearby who want to join them bringing that impact to their local community.
 
-Ourselves and our Public Happiness partners currently engage more than a million people on the streets all around the world every year in activities designed to that bring more peace and well-being to where they live. Our token will incentivise that behaviour allowing it to scale exponentially. We give an economic reward to those using positive projects and activities to target societal issues including: 
+Ourselves and our Public Happiness partners currently engage more than a million people on the streets all around the world every year in activities designed to bring more peace and well-being to where they live. Our token will incentivise that behaviour allowing it to scale exponentially. We give an economic reward to those using positive projects and activities to target societal issues including: 
 
 * community and human connection
 * homelessness
