@@ -2,6 +2,7 @@ export const Forword = `
 
 This whitepaper is open to everyone’s ideas. Please contribute to its evolution by clicking on the balloons and adding your thoughts and experience on how each section of our plan can better transform human society into one focused on improving well-being for people, societies and our planet.
 
+A Google Doc version [is available here](https://docs.google.com/document/d/1nMZKK8reDk-C3sHJ2w2p3S4ybRksA51UFPWAiP3yUoI/edit?usp=sharing). It may be a version or two behind this one.
 &nbsp;
 
 **Foreword:**
