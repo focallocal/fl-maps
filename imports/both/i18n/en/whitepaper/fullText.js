@@ -138,7 +138,7 @@ We strongly believe that societal, and individual well-being should be treated a
 ## 2.3.
 
 **Secondary Goal**
-This project also aims to empower ordinary, people regardless of their technological ability, to become fluent in cryptocurrency transactions, smart contracts and distributed ledger technology. Through their interactions with our platform and the Public Happiness Token they will gain an entry point of understanding of blockchain, the potential uses for blockchain technology, and its ability to transform society and the world they live in by building a world where creating social good is as important as manufacturing or banking. Their understanding of the fiat currencies they use daily will also be forever changed.
+This project also aims to empower ordinary people regardless of their technological ability, to become fluent in cryptocurrency transactions, smart contracts and distributed ledger technology. Through their interactions with our platform and the Public Happiness Token they will gain an entry point of understanding of blockchain, the potential uses for blockchain technology, and its ability to transform society and the world they live in by building a world where creating social good is as important as manufacturing or banking. Their understanding of the fiat currencies they use daily will also be forever changed.
 
 `
     },
@@ -183,7 +183,7 @@ It's a sad situation when people want to do things to make their local community
 ## 3.1. 
 
 **Current State of Public Understanding**
-The general public’s current understanding of cryptocurrency is overwhelmingly narrow. Most have heard of Bitcoin and understand it’s something like an alternative currency to Fiat. The narrative pushed by the news is rarely about the multitude of exciting technologies being built upon blockchain and smart contracts, or the ethos of decentralisation which crypto-economics was founded upon. which will shape the future of our society.  They might have heard something about a hack, Ethereum, or perhaps something about some cyber-kitties ..most people simply don’t really understand what all the fuss is about as it’s not a recognisable part of their world yet.
+The general public’s current understanding of cryptocurrency is overwhelmingly narrow. Most have heard of Bitcoin and understand it’s something like an alternative currency to Fiat. The narrative pushed by the news is rarely about the multitude of exciting technologies being built upon blockchain and smart contracts, or the ethos of decentralisation which crypto-economics was founded upon, which will shape the future of our society.  They might have heard something about a hack, Ethereum, or perhaps something about some cyber-kitties ..most people simply don’t really understand what all the fuss is about as it’s not a recognisable part of their world yet.
 
 `
     },
@@ -195,7 +195,7 @@ The general public’s current understanding of cryptocurrency is overwhelmingly
 ## 3.2.
 
 **Reaching a New Audience**
-Public Happiness Token reaches an entirely new audience, as well as taking our token onto the streets to interact with the wider public and positively impact their daily lives. We aim to use this as an opportunity to introduce more people, across all different areas of society to an understanding of the basics of blockchain technology, that it has real world uses, and how it can impact the world they live in.
+Public Happiness Token reaches an entirely new audience, as well as taking our token onto the streets to interact with the wider public and positively impact their daily lives. We aim to use this as an opportunity to introduce more people, across all the different areas of society to an understanding of the basics of blockchain technology, that it has real world uses, and how it can impact the world they live in.
 
 We intend to offer:
 
@@ -238,7 +238,7 @@ This mining process means that the currency is naturally deflationary as set amo
 
 Mining is built on real world action, creating a soft upper limit on how much can realistically be earned. This is designed in a way that minimises the risk of token centralisation. 
 
-Our token is immutable, and will create a permanent record of the effort everyone has put into improve life in their local community.
+Our token is immutable, and will create a permanent record of the effort everyone has put into improving life in their local community.
 
 `
     },
@@ -261,10 +261,10 @@ The Public Happiness Movement targets its positive action on the following categ
 - Human and Community Connection
 (which all have subcategories)
 
-If a great idea comes up which advances our mission and doesn't fit into one of these categories then there is room to expland. 
+If a great idea comes up which advances our mission and doesn't fit into one of these categories then there is room to expand. 
 
 
-The community is asked to weighs global projects against:
+The community is asked to weigh global projects against:
 
 - Deliverability (estimated time to complete)
 - Estimated Impact on the targeted issue
@@ -273,7 +273,7 @@ Community members can vote on these to give it an 'estimated project' score usin
 
 1, 2 ,3 ,5 ,8 ,13 ,21
 
-A vote from a user is still weighed as their one single vote mulitplied by their community contribution score. So giving a higher score doesn't change the weight of their vote. 
+A vote from a user is still weighed as their one single vote multiplied by their community contribution score. So giving a higher score doesn't change the weight of their vote. 
  
 The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://news.focallocal.org/the-focallocal-community-values/)
 
@@ -311,7 +311,7 @@ Stage 1: Crowd Funding
 This stage will be held on a crowd funding website to reach those who don’t understand how to join in a traditional ICO. Investors will be rewarded set amounts for donating at increasing intervals. The top threshold of reward for donations will be set at 100 ETH per user. Investors may choose to invest more to support the project, but will not receive more tokens than stated.
 
 Stage 2: IEO 
-Having demonstrated to the crypto savy world our ability to raise funds and reach those outside the normal circles, a second IEO will be held using the traditional industry tools. Investors will have 30 days to register an Ethereum address. Once the IEO opens a pre-set number of tokens will be released. registered investors will be capped initially at 100 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
+Having demonstrated to the crypto savvy world our ability to raise funds and reach those outside the normal circles, a second IEO will be held using the traditional industry tools. Investors will have 30 days to register an Ethereum address. Once the IEO opens a pre-set number of tokens will be released. registered investors will be capped initially at 100 ETH that can be invested in the first 24 hours. This way, everyone that registers has 24 hours to get in, and the token should from the beginning, be decentralised among a wide crowd rather than being owned by a few big whales. 
 
 Stage 3: Crowd Funding and IEO 
 A third IEO will be held a few months later on both platforms above. The initial seed funding will have increased the skills, resources and energy available, and these will have led to some 1st major progressive steps in the project build, greatly increasing the capacity of this IEO.  
@@ -321,7 +321,7 @@ Email addresses will not be collected at any stage to prevent issues as seen in 
 Burning unpurchased tokens:
 If all of the tokens have not been purchased we will burn the ones that have not been sold. This will increase the value of the token in line with the demand of the IEO and the supply of our token. For example:
 
-50% - 4.85 Billion Tokens are offered for purchase by the public with the number availble for purchase increasing at each stage, to reward our earliest backers.
+50% - 4.85 Billion Tokens are offered for purchase by the public with the number available for purchase increasing at each stage, to reward our earliest backers.
 
 When IEO ends if 3 billion tokens have been purchased, and the price of the token is valued at £0.20.
 Burning the tokens that were unsold, will lead to a value increase of 24% for those who purchased during the IEO (price is an example).
@@ -337,12 +337,12 @@ Burning the tokens that were unsold, will lead to a value increase of 24% for th
 ## 5.3. 
 
 **Ongoing Funding for Specific Projects and Experts**
-Initially specialists will be recuited to lead development in each area. To do this we will reward them in our tokens, so everyone on the eco-system is rewarded in the same way, and at the same level (based on their reputation). Many of the most talented specialists will be understandably unwilling to be rewarded in a new token. This will be navigated by creating a contract with them that we will buy back their tokens at a set rate on a specific date - if they choose to.
+Initially specialists will be recruited to lead development in each area. To do this we will reward them in our tokens, so everyone on the ecosystem is rewarded in the same way, and at the same level (based on their reputation). Many of the most talented specialists will be understandably unwilling to be rewarded in a new token. This will be navigated by creating a contract with them that we will buy back their tokens at a set rate on a specific date - if they choose to.
  Although this could seem to be a pointless complication, it; 
-- Provides a seemless transition from paid specialists leading teams, to our members taking over. 
+- Provides a seamless transition from paid specialists leading teams, to our members taking over. 
 - Makes it easier for those specialists to remain involved after their initial contracted period, if they wish.
 - Before the token is launched and becomes valuable, it smoothes potential friction between those being paid for their contributions, and those receiving our tokens.
-- Probably makes it more liekly that some will choose to keep a percentage in our tokens and thus stay more engaged in the growth of the community.
+- Probably makes it more likely that some will choose to keep a percentage in our tokens and thus stay more engaged in the growth of the community.
  As the community matures the allocation of funds will be opened up fully to decentralised voting on allocation. Users subscribed to the funding allocation channel will engage in discussion and voting around how to distribute funds released from our vault between issues like: 
 
 * specific projects
@@ -371,7 +371,7 @@ Team members/tasks reimbursement levels will be determined by a project finance 
 Crowd-funding:
 The IEO will also be launched via a popular crowd funding website, where those donating more than certain set amounts will receive a listed amount of Public Happiness Tokens as a reward. This makes our IEO more accessible than others before, to those with little understanding of Blockchain/Cryptocurrency, by using a format they are more likely to be familiar with.
 
-Those who purchase Tokens via crowd funding will receive instructions in how to create a crypto wallet account and guide to storing their Public Happiness Movement ERC20 tokens – Likely the 1st steps into understanding how to interact with blockchain for many.
+Those who purchase Tokens via crowd funding will receive instructions on how to create a crypto wallet account and guide to storing their Public Happiness Movement ERC20 tokens – Likely the 1st steps into understanding how to interact with blockchain for many.
 
 
 
@@ -397,7 +397,7 @@ They will now be rewarded financially for their continued efforts to improve hum
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
-Our platform, is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and eco-system.
+Our platform is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
 
 
 Teams, Projects, People and Communities:
@@ -443,7 +443,7 @@ The Map also allows community members to explore approved suggestions for Public
 
 * Leave ‘positive experience’ or ‘negative experience’ feedback on other community members to offer protection from unwanted uses of the platform
 
-Public Happiness Tokens will be distributed amongst those attending, sharing, and the organising Public Happiness Gatherings by the Token Distribution Matrix.
+Public Happiness Tokens will be distributed amongst those attending, sharing, and organising Public Happiness Gatherings by the Token Distribution Matrix.
 
 To receive tokens community members are required to post their photos and videos to social media with the following hashtags:
 
@@ -464,18 +464,18 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 **Build/The Action Center**
 
 Overview:
-An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. In today's GDP based world innovative ideas to benefit human socieity are heavily dependent on whether the person having them has the capacity and detrmination to either find funding and build them. This is an extremely inefficient system where the majority of great ideas to impact the world are lost. 
+An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. In today's GDP based world innovative ideas to benefit human society are heavily dependent on whether the person having them has the capacity and determination to either find funding and build them. This is an extremely inefficient system where the majority of great ideas to impact the world are lost. 
 
 Our Action Center creates a new path for ideas which benefit humanity to be built. Anyone can suggest an idea using our one page only form. Other community members vote on the ones they believe will have the largest social impact. The winners will be built by our community using our Micro-Volunteering model. These projects have no owner, no set team building them, and require no funding other than our token rewarding those who work on delivering them.
 
-That might be a fairly brief idea, or a full plan they’ve been working on for a while outside of our community and have struggled to get off the ground. The submission to our community should be a singe A4 page with the outline of the project as we want to avoid creating a system which rewards those who put in months of preparation and have access to skills and resources which the average person doesn’t - which would just recreate the existing system of applying for funding to get a project of the ground.
+That might be a fairly brief idea, or a full plan they’ve been working on for a while outside of our community and have struggled to get off the ground. The submission to our community should be a single A4 page with the outline of the project as we want to avoid creating a system which rewards those who put in months of preparation and have access to skills and resources which the average person doesn’t - which would just recreate the existing system of applying for funding to get a project off the ground.
 
 Our system is for quickly identifying a great idea which can advance human and societal well-being, and then together building it.
 
 
 How Selecting a New Project Works:
 
-1) It begins with a great idea from a community member for a project to target an societal benefit in one of our categories:
+1) It begins with a great idea from a community member for a project to target a societal benefit in one of our categories:
 
 - Public Playfulness
 - Environment and Sustainability
@@ -487,7 +487,7 @@ How Selecting a New Project Works:
 
 3) The vote continues until a spot opens up in the 'build list'. This happens either because an existing project has been launched, or because the Build section has more activity and can support an extra project being built. 
 
-The community is asked to weighs global projects against:
+The community is asked to weigh global projects against:
 
 - Deliverability (estimated time to complete)
 - Estimated Impact on the targeted issue
@@ -503,14 +503,14 @@ The community will also ensure the project keeps with the founding vision by che
 
 Alternate Routes onto the Build List:
 
-1) Companies or altruistic donors can create a new spot to target specific issues they want to see our Public Happiness Community tackle. For example, a company might want an educational community garden built as part of their Corporate Social Responsibility, or marketing budget. Or a philantropist might put up the money needed to create a new spot in the build list, and specifiy that it is for Sustainability projects. 
+1) Companies or altruistic donors can create a new spot to target specific issues they want to see our Public Happiness Community tackle. For example, a company might want an educational community garden built as part of their Corporate Social Responsibility, or marketing budget. Or a philanthropist might put up the money needed to create a new spot in the build list, and specify that it is for Sustainability projects. 
 
 2) Community members can 'stake' their tokens behind an idea to show support. Their stake goes into the funding pool when/if it reaches the build list, where the increased tokens available will attract more community members and increase the speed of the project build. If enough community members stake their tokens behind a project to reach the threshold for creating a new spot on the build list, then that project will take the new spot. 
 
 
 How Projects Are Built:
 
-1) Once selected by the community vote a core team of 9 community members forms to plan the build. Members can be invited by the ideas originator, any spaces left will be filled by the the highest ranking members who joined the voting/discussion and wish to be in the 1st project leaders team, who will be automatically invited. 
+1) Once selected by the community vote a core team of 9 community members forms to plan the build. Members can be invited by the ideas originator, any spaces left will be filled by the highest ranking members who joined the voting/discussion and wish to be in the 1st project leaders team, who will be automatically invited. 
 
 2) This 1st group of project leaders creates a 'definition of done' and breaks the entire project build up into its core components. Using Scrum's fibonacci voting system the core team will vote on the importance of each of these core components.
 
@@ -518,17 +518,17 @@ How Projects Are Built:
 
 4) Any user can suggest a task which needs to be completed to reach the definition of done. These tasks go into our Backlog List. Each month the current team leaders move the tasks which will advance the project most into the Sprint list. Community members are advised to complete tasks from this list, although they might choose to take one from the backlog list, for example, if they have previous experience so can complete it to a high level. The tasks can be discussed by any other community member
 
-5) All tasks are broken into specific bite-sized chunks which anyone in the wider community can tackle, the tasks should take no longer than an hour; for example, 'create an intro video' would be a bad task as its a likely to take longer and involve many smaller specific tasks. 'Review the video script and post feedback to Briony', would be a specific task that should take under an hour for a short video. It won't be possible for this to be precise, but other team members can discuss issues and suggest improvements. Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
+5) All tasks are broken into specific bite-sized chunks which anyone in the wider community can tackle. Tasks should take no longer than an hour; for example, 'create an intro video' would be a bad task as its likely to take longer and involve many smaller specific tasks. 'Review the video script and post feedback to Briony', would be a specific task that should take under an hour for a short video. It won't be possible for this to be precise, but other team members can discuss issues and suggest improvements. Our system of breaking tasks into smaller parts removes one of the biggest problems faced by volunteer communities – well meaning people offering to complete large tasks and not following through, often leading projects to fail as others wait and wait, momentum is lost, and as frustration grows it leads to other volunteers giving up and dropping out also. 
 
 6) The team will have use of Burn Up and Velocity charts which the team leaders can use to judge how many tasks should go into the Sprint list this period. They can also move cards over on the fly, so there will never be nothing waiting for a community member wanting to take positive action.
 
-7) Community Members move a task into the 'Doing' list to claim it (assign themselves a task). If it's not complete within the a week the task can be returned to the ‘to do list’ for others to claim and complete preventing projects being held up by well meaning, but unreliable people, as is common in traditional volunteering and Microvolunteering systems.
+7) Community Members move a task into the 'Doing' list to claim it (assign themselves a task). If it's not complete within a week the task can be returned to the ‘to do list’ for others to claim and complete preventing projects being held up by well meaning, but unreliable people, as is common in traditional volunteering and Microvolunteering systems.
 
 8) Tokens are distributed for completed tasks, with a two week delay so other community members, and moderators can monitor for any abuse of the system.
 
-9) The initial team should aim to plan as complete of a picture of all tasks that will be needed during the project and they will set how many tokens are avialble for each task. They should keep 30% of the tokens unassigned ready for imporant new tasks which were overlooked at the beginning, and any unspent at the end are released as a celebrations reward, divided amoung everyone who contributed to delivering the project to the world.
+9) The initial team should aim to plan as complete of a picture of all tasks that will be needed during the project and they will set how many tokens are available for each task. They should keep 30% of the tokens unassigned ready for important new tasks which were overlooked at the beginning, and any unspent at the end are released as a celebrations reward, divided among everyone who contributed to delivering the project to the world.
 
-10) Each month the Core Team of 9 members changes, based on who was most active on the project in the previous month (and who wants to be in the core team). Creating a dynamic, decentralised system for managing and delivering projects, based on community members reputation and activitiy levels.
+10) Each month the Core Team of 9 members changes, based on who was most active on the project in the previous month (and who wants to be in the core team). Creating a dynamic, decentralised system for managing and delivering projects, based on community members reputation and activity levels.
 
 
 Teams and Projects:
@@ -695,7 +695,7 @@ When community members submit a new idea for a project or activity its recommend
 **Who can Participate on the Platform**
 The platform is open to anyone wanting to create well-being and happiness where they live, or support the Movement. 
 
-Some community members may choose to use it while travelling, as great way to meet positive local people. Community members travelling are naturally guided towards ‘gathering’ with local people who understand the local customs and any adaptations necessary.
+Some community members may choose to use it while travelling, as a great way to meet positive local people. Community members travelling are naturally guided towards ‘gathering’ with local people who understand the local customs and any adaptations necessary.
 
 Pre-existing communities may wish to join the ecosystem to take advantage of the network effect, or be part of a wider community.
 
@@ -742,9 +742,9 @@ The platform will launch in English. Adding other languages has been designed as
 **Decentralised Governance and Voting**
 
 Earning Votes:
-Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the community values statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool begin teaching community members Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that community members cannot buy influence. 
+Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the community values statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool to begin teaching community members Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that community members cannot buy influence. 
 
-The points earned which give community members their voting ranks are on a centralised autonomous system so they cannot be traded (the two separate sytems are also used to teach the difference between a centralised token and decentralised one). The centralised ledger of every token mined (earned) is used to assign ranks for vote weighting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
+The points earned which give community members their voting ranks are on a centralised autonomous system so they cannot be traded (the two separate systems are also used to teach the difference between a centralised token and decentralised one). The centralised ledger of every token mined (earned) is used to assign ranks for vote weighting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
 
 
 How Voting Works on the Ecosystem:
@@ -755,7 +755,7 @@ Community members wanting to raise a vote on a platform or operational change ca
 Community members are welcomed to comment their thoughts in the threads for, and against, to guide voting. The threads will be ordered by likes received so the strongest arguments float to the top.
 
 How Voting Works to Choose New Projects:
-All community members can suggest a new project by filling in a structured form on our platform. The form limits users to roughtly a single A4 page, to avoid recreating systems where to get an idea funded someone has to commit considerable time and resources. Other community members then can discuss, and vote on this idea. When a space opens up in the build list (either because another project is complete, or because capacity increases within the eco-system creating a new spot) the project moves into the build list where it is built and delivered by our community.
+All community members can suggest a new project by filling in a structured form on our platform. The form limits users to roughly a single A4 page, to avoid recreating systems where to get an idea funded someone has to commit considerable time and resources. Other community members then can discuss, and vote on this idea. When a space opens up in the build list (either because another project is complete, or because capacity increases within the ecosystem creating a new spot) the project moves into the build list where it is built and delivered by our community.
 
 Staking:
 Community members are also welcome to 'stake' their tokens behind a project they really want to see delivered and changing lives in the real world. Staked tokens go into the pool used to create the project should the project be voted into the Build list by the community, increasing the rewards available and therefore the speed its built. It also has some influence in the voting process as other community members can see that project will be created faster if they support it. This mechanism can also be utilised to push through an idea with a small but passionate following. If a group of members pool their resources and staje enough tokens to reach the set threshold required to open a new spot in the build list, then the project will take the new spot without needing to win the popular vote.
@@ -775,7 +775,7 @@ The Governance of the global (Build) side, and the platform/ecosystem itself is 
 Protection from Brigading: 
 Community members votes are weighted based on the reputation they’ve built by contributing to our project, so those most closely aligned and invested to the vision laid out in the community values will have more influence on decision making as a counter to anyone seeking to manipulate voting. 
 
-The eco-system's bounty hunters (a team open to all members to join) receive rewards for finding subversive coordination and general misuse of the platform. They also receive rewards for the number of desired platform actions which they review and approve. All votes in our ecosystem are cross posted into voting threads where anything out of the ordinary can be spotted easily and brought to the attention of the wider community. 
+The ecosystem's bounty hunters (a team open to all members to join) receive rewards for finding subversive coordination and general misuse of the platform. They also receive rewards for the number of desired platform actions which they review and approve. All votes in our ecosystem are cross posted into voting threads where anything out of the ordinary can be spotted easily and brought to the attention of the wider community. 
 
 For more information on security, see Chapter 8.
 
@@ -785,7 +785,7 @@ The reason for separating voting from our token is to prevent whales from buying
 
 
 Lack of Understanding:
-Community members aren’t all expected to be experts on blockchain or community governance. They will naturally gravitate to areas of their interests and expertise, leading to more people with an understanding on a topic being subscribed to that section when a vote is called. This gives them the ‘first mover’ advantage to get informed arguments in to give a greater understanding to those joining in from the main voting category in the forum.
+Community members aren’t all expected to be experts on blockchain or community governance. They will naturally gravitate to areas of their interests and expertise, leading to more people with an understanding of a topic being subscribed to that section when a vote is called. This gives them the ‘first mover’ advantage to get informed arguments in to give a greater understanding to those joining in from the main voting category in the forum.
 
 `
     },
@@ -797,7 +797,7 @@ Community members aren’t all expected to be experts on blockchain or community
 ## 6.12. 
 
 **User Behaviour in UX Design**
-The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from community members. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organsiers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
+The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from community members. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organisers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
 
 Teaching community members to participate rather than just consume is going to be a challenge. Countless studies have shown attention spans of the general population have reduced constantly over the past years. This challenge is not one we shy away from, as it is a core component in our mission of increasing well-being and happiness. Creating a platform where users are an active and recognised part of our community and mission is a core concept.
 
@@ -813,11 +813,11 @@ Community members attending a gathering on our platform are not passive. Everyon
 ## 6.13. 
 
 **User Wall and Plugin Module Ecosystem**
-Logged in community members will arrive on their profile page and wall each time they visit. A community members profile page contains three type of features:
+Logged in community members will arrive on their profile page and wall each time they visit. A community members profile page contains three types of features:
 
 1. Community Communications - embedded in the main menu are notifications from communications across our site and forum.
 
-2. Actions - community members are prompted to take the main actions which will the fuel the Movements growth, and deliver its positive impact on society. Actions like; filling in a profile to add themselves to the map. Creating a group. Searching for community members/activities nearby to meet and create positive actions with.
+2. Actions - community members are prompted to take the main actions which will fuel the Movements growth, and deliver its positive impact on society. Actions like; filling in a profile to add themselves to the map. Creating a group. Searching for community members/activities nearby to meet and create positive actions with.
 
 3. Members Wall - the largest of these spaces, where community members have the ability to choose which components/information they'd like to see. This area will be open to plug-in creators allowing customisation and increased ownership of users over their profile. Encouraging innovation will improve the user experience on our platform.
 
@@ -914,11 +914,11 @@ We use a captcha when voting to protect against machine/bot voting. (definitely 
 Last Line: 
 Founder Andy retains a 'pause' vote. Intended never to be used, it serves as a last line of defence against subversion of the platform and community away from its core vision.
 
-On initiaton of a pause vote 21 members are selected at random (making it functional impossible to corrupt selected members) from the recently active top ranking members. The vote itself will at the same time be posted as a priority issue in the bounty hunting team who will seek anything which could effect the integrity of the vote, or any abnormal patterns. Once the bounty hunting team's report is complete, the 21 random senior members then vote on whether the decision 'paused' to protect the community should be reversed. 11 votes are needed to pass a decison over-ruling.
+On initiation of a pause vote 21 members are selected at random (making it functional impossible to corrupt selected members) from the recently active top ranking members. The vote itself will at the same time be posted as a priority issue in the bounty hunting team who will seek anything which could affect the integrity of the vote, or any abnormal patterns. Once the bounty hunting team's report is complete, the 21 random senior members then vote on whether the decision 'paused' to protect the community should be reversed. 11 votes are needed to pass a decision overruling.
 
 The 21 members will have the tools to remove members if needed - for example a lot of new members recently joined and all voted in just one way. 
 
-At an unspecified point in the future, or in the case that Andy is no longer able to use this last line community protection tool, the pause vote will pass to 7 secretly designated members. Their identities unknown even to each other. These members have been determined by a personal judgement on integrity, reliability, and commitment to both the mission, and it's values. Any of these members have the power to begin the pause process on any decision recently voted on by the community. The function for calling a pause requires that the member fully explains why it was used, and this explaination is then posted anonymously to the wider-community for urgent discussion.
+At an unspecified point in the future, or in the case that Andy is no longer able to use this last line community protection tool, the pause vote will pass to 7 secretly designated members. Their identities unknown even to each other. These members have been determined by a personal judgement on integrity, reliability, and commitment to both the mission, and it's values. Any of these members have the power to begin the pause process on any decision recently voted on by the community. The function for calling a pause requires that the member fully explains why it was used, and this explanation is then posted anonymously to the wider-community for urgent discussion.
 
 `
     },
@@ -979,7 +979,7 @@ Community Admins will receive tokens for performing critical oversight tasks wit
 ## 8.3.
 
 **Team and Project Administrators**
-Each team and project has a leadership team made up of the nine highest scoring active members within it. Their overall contribution score within our ecosystem is added to their overall contribution the team or project and then multiplied by how active they were in that team in the previous month. This ensures there is always oversight from experienced users who are passionate about each team, and bad actors would need to show a sustained commitment to the team before being able to harm it.
+Each team and project has a leadership team made up of the nine highest scoring active members within it. Their overall contribution score within our ecosystem is added to their overall contribution to the team or project and then multiplied by how active they were in that team in the previous month. This ensures there is always oversight from experienced users who are passionate about each team, and bad actors would need to show a sustained commitment to the team before being able to harm it.
 
 Tasks completed will need to be approved by admins of each board before rewards are released. 
 
@@ -1028,7 +1028,7 @@ Funds raised through the IEO funds will be stored:
 - in a spread across the top 20 tokens (with small sums in one or two high potential outliers) and held in cold storage (50%)
 - EURO’s (50%). 
 
-Both funds will be divided and managed by mulitple industry leading cold storage and security company. To spread the risks to our funding across multiple markets and trusted companies.
+Both funds will be divided and managed by multiple industry leading cold storage and security company. To spread the risks to our funding across multiple markets and trusted companies.
 
 `
     },
@@ -1071,7 +1071,7 @@ Conferences, Festivals, and Happiness Economy Events:
 We will be touring blockchain/fin-tech conferences, festivals, and happiness related events. The bus will carry equipment and team members to create exciting activities and flash-mob style entertainment at these events. Both officially and unofficially. It will also serve as an office, meeting space, and sleeping rooms will often be available to select partners.
 
 Green Fuel:
-[Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). At the time it was carbon positive travel as the cooking oil needed to be disposed of. Whilst this is rarely true now as most used cooking oil is collected by large bio-diesel companies, it is arguably still the greenest form of fuelling a vehicle and older diesel buses will require minimal conversions to run on it. Partnerships with hotel and resteraunt chains will be sought to see if its possible to run our bus fleet on the oil thrown out by their kitchens. 
+[Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). At the time it was carbon positive travel as the cooking oil needed to be disposed of. Whilst this is rarely true now as most used cooking oil is collected by large biodiesel companies, it is arguably still the greenest form of fuelling a vehicle and older diesel buses will require minimal conversions to run on it. Partnerships with hotel and restaurant chains will be sought to see if its possible to run our bus fleet on the oil thrown out by their kitchens. 
 
 `
     },
@@ -1117,19 +1117,19 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
 
 An alternative global economic Summit hosted by Focallocal in Davos at the same time as The World Economic Forum. Combining industry leaders in the Public Happiness world, with Economic leaders exploring new economic systems which place people, communities and our planet; rightfully as the most important metric and goal to base the success of our societies on. 
 
-A Summit where solutions will emerge to refocus our global and local economies on incentivising many more people in each community to take regular positive action with their neighbours to resolve any and all issues reducing well-being where they live. The goal is to empowering people and communities, all of us, to take ownership for the well-being of our local community and everyone in it. Industry leaders will be invited to discuss, design and grow the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide through implementing new economic systems - like the Public Happiness Token, which will be launching at the Summit.
+A Summit where solutions will emerge to refocus our global and local economies on incentivising many more people in each community to take regular positive action with their neighbours to resolve any and all issues reducing well-being where they live. The goal is empowering people and communities, all of us, to take ownership for the well-being of our local community and everyone in it. Industry leaders will be invited to discuss, design and grow the economic systems needed to scale projects and make have out-sized, and dramatic impacts on improving societal and mental health worldwide through implementing new economic systems - like the Public Happiness Token, which will be launching at the Summit.
 
 We will create a 'lean in' and bottom up Summit, where attendees are invited to bring their skills and experience, and apply them to challenges threaded into the event to create real world outcomes which are immediately actionable by local people in the communities where they live.
 
-**Slides currently underconstruction**
+**Slides currently under construction**
 
 ## Slide 1: What is the problem?
 
-Today's irresponsible economic model is destroying the earth and perpetuating human suffering. GDP based capitalism has lifted many out of poverty, but in its current form it will never solve poverty the, or many of the issues caused by poverty.
+Today's irresponsible economic model is destroying the earth and perpetuating human suffering. GDP based capitalism has lifted many out of poverty, but in its current form it will never solve poverty, or many of the issues caused by poverty.
 
 ## Slide 2: Where is the problem?
 
-The World Economic Forum brings together the leaders of the economic world. A world which is heavily focused on top-down economic discussion, and heavily locked into the current GDP based system which is failing to produce healthy, happy societies. Now is the time to explore new economic systems, and we need to create a space at the worlds leading economic summit for those creating radical forward thinking economic solutions which empower humanity to solve the many societal issues reducing well-being and damaging our communities and planet. 
+The World Economic Forum brings together the leaders of the economic world. A world which is heavily focused on top-down economic discussion, and heavily locked into the current GDP based system which is failing to produce healthy, happy societies. Now is the time to explore new economic systems, and we need to create a space at the world's leading economic summit for those creating radical forward thinking economic solutions which empower humanity to solve the many societal issues reducing well-being and damaging our communities and planet. 
 
 ## Slide 3: What is the solution?
 
@@ -1156,7 +1156,7 @@ Increased exposure: We engage a wide audience to make sure the most impactful id
 
 Increased real-world impact: All attendees at the events they sponsor, in planning real world projects on our platform which target the issues they want to fund solutions to. The event then becomes a staging point where action is initiated, and sponsors can follow (and further support) the projects which will have the biggest impact on each issue they chose to fund, which are voted on, funded using our token, and built by our global community - a model which is far more economical than other existing models.
 
-Many events and projects on our platform will be targeting SDG issues. we give these an easy to see badge stating on our platform so people can see at a glance which issue is being targeted. This opens up funding from SDG pools. We chose not to limit our actions to just SDG challenges, as there are a many important areas for improving the health of humanities socieites which would be excluded.
+Many events and projects on our platform will be targeting SDG issues. we give these an easy to see badge stating on our platform so people can see at a glance which issue is being targeted. This opens up funding from SDG pools. We chose not to limit our actions to just SDG challenges, as there are many important areas for improving the health of humanity's socieites which would be excluded.
 
 **W.E.F Attendees:**
 Many will choose to come and join what we're doing because the concept resonates with them of guiding events in Davos during the week, and thereby the economic world, down a path which prioritises people, communities and our planet; is a change which humanity needs to see. 
@@ -1166,7 +1166,7 @@ Others will join in because they enjoy being engaged in choosing the Summit's pr
 Fun: Our Summit will feature exhilarating and enjoyable events, like public dance parties,  because creating change is easier when its fun. 
 
 **Speakers, Organisers and Events:**
-Its a new way to get onto the program at a high profile global event, and one which usually wouldn't have space for their messages and vision, because, although they sometimes overlap, there is a big difference between events grounded in GDP economics, and those grounded in benefiting people, communities and the planet.
+It's a new way to get onto the program at a high profile global event, and one which usually wouldn't have space for their messages and vision, because, although they sometimes overlap, there is a big difference between events grounded in GDP economics, and those grounded in benefiting people, communities and the planet.
 
 
 **Venues:**
@@ -1230,7 +1230,7 @@ The events are run on a 'pay what you feel its worth to you model', mostly becau
 ## Slide 10: Example
 - 10k funding is offered for sustainability projects at W.E.F and goes into a card on the platform.
 - A venue offers 30 square meters between 14:00 - 18:00 for 8k. This goes into a card on the platform.
-- Briana see's the funding pool and decides to design an environmental round table on things local communities can do to mitigate climate change, to match it. 
+- Briana sees the funding pool and decides to design an environmental round table on things local communities can do to mitigate climate change, to match it. 
 - At 'voting deadline #2' Briana's event is ranked 1st by community voting
 - Briana's event wins nomination, she receives funding for her project, and has 1st pick of locations available.
 
@@ -1378,7 +1378,7 @@ This approach has the following benefits:
         fullText: `
 		
 &nbsp;
-The eco-system and token need to take every possible effort conform to national laws. Many of which are not perfectly suited for decentralised, community owned and led collectives, or cross border currencies.
+The ecosystem and token need to take every possible effort to conform to national laws. Many of which are not perfectly suited for decentralised, community owned and led collectives, or cross border currencies.
 
 
 **Conforming to International Laws**
@@ -1448,11 +1448,11 @@ See section 7.4. for more details.
 
 Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in to meet their CSR commitments. Our platform is absolutely ideal for this purpose as they can offer a set amount of funding to local people to target a specific issue, or one of their own choosing, in a creative and fun way. They can then map progress and results the entire way through via our platform and social media. 
 
-Companies, and philantopists can create bounties to target a local, or gloabal in our platform. These challenges go into our Build section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our communtiy fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
+Companies, and philanthropists can create bounties to target a local, or global in our platform. These challenges go into our Build section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our community fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
 
-If the project is realised in the physical world, as most will be, experiences of the day are gathered for those who put forward the funding for the challenge via one or two extra hashtags, suggested by the funders, to enable them to piggy-back on our networks enhanced social media effect, to gain exposure for the excellent project which they supported and enabled with their kind offer. 
+If the project is realised in the physical world (as most will be) experiences of the day are gathered for those who put forward the funding for the challenge via one or two extra hashtags, suggested by the funders, to enable them to piggy-back on our networks enhanced social media effect, to gain exposure for the excellent project which they supported and enabled with their kind offer. 
 
-Running CSR through our platform creates an entire story of their for them, their stakeholders and staff to follow. This story also leaves a permanent trail for those curious or grateful in the local communities effected by the project they funded. If good-will or marketing was their aim, the story we create has a long legacy. This CSR route has the potential to be lucrative, boosting the tokens price and market value rapidly. Its also providing a regualar boost for us to reach, engage with local communities, and further achieve our mission. 
+Running CSR through our platform creates an entire story of their for them, their stakeholders and staff to follow. This story also leaves a permanent trail for those curious or grateful in the local communities affected by the project they funded. If good-will or marketing was their aim, the story we create has a long legacy. This CSR route has the potential to be lucrative, boosting the tokens price and market value rapidly. Its also providing a regular boost for us to reach, engage with local communities, and further achieve our mission. 
 
 `
     },
@@ -1507,7 +1507,7 @@ Community members will go up in ranks as their total contribution to global happ
 
 
 Levels of Scale:
-Some local activities are organised on an International Scale as a coordinated effort to create positive cultural change. Peter Sharp at the Liberators International, for example, organises a yearly Eye Contact Gathering promoting increased human and societal connection through sharing a minutes eye contact with passers-by. To remind us of our shared human experience beyond superficial differences such as age, gender, ethnicity, etc. Last year on one day he mobilised a gathering in over 350 cities around the world. Bringing action to the streets for more connected communities at a local level, while targeting a global increase in well-being. 
+Some local activities are organised on an International Scale as a coordinated effort to create positive cultural change. Peter Sharp at the Liberators International, for example, organises a yearly Eye Contact Gathering promoting increased human and societal connection through sharing a minute of eye contact with passers-by. To remind us of our shared human experience beyond superficial differences such as age, gender, ethnicity, etc. Last year on one day he mobilised a gathering in over 350 cities around the world. Bringing action to the streets for more connected communities at a local level, while targeting a global increase in well-being. 
 
 When an activity is tiered in this manner on our site over the course of a few days, the original organiser will receive 20% of the tokens awarded to all the Public Happiness Activities they led and supported. Their core team will also receive a larger share of tokens if they are using the Action Center in our ecosystem to incentivise building and publicising the project.
 
@@ -1518,7 +1518,7 @@ The token earnings from creating activities or completing project missions will 
 
 In special occasions the community may choose to vote on increasing the incentive in a specific country above its cost of living, for example, to offer support during hyperinflation, such as Venezuela has recently been experiencing; and other situations where increased community connection is of significant urgency. Or perhaps simply to target a country where few people have joined.
 
-Obviously allowing the community to vote on increasing a regions token rewards, creates an avenue for potential voting abuse and will need to be monitored rigorously, until the communities self-governance is mature and thoroughly pressure tested.
+Obviously allowing the community to vote on increasing a regions token rewards, creates an avenue for potential voting abuse and will need to be monitored rigorously, until our community'd self-governance is mature and thoroughly pressure tested.
 
 
 Experience Multipliers:
@@ -1632,7 +1632,7 @@ Estimating the value of returns is speculative at this point. The core team, and
 &nbsp;
 Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the IEO stage will be outsourced to industry experts. If you'd like to be in those positions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
 
-Much of the essential skills needed to build a successful blockchain project and community will be come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
+Much of the essential skills needed to build a successful blockchain project and community will come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
 
 `
     },
@@ -1660,7 +1660,7 @@ Founder of The Decentralised Dance Party
 Web Development:
 
 Tom McNulty
-Site Reliabilty Engineer
+Site Reliability Engineer
 
 Matias Forbord
 DevOps/Full Stack Engineer
@@ -1686,16 +1686,12 @@ Strategic Marketing Content
 Liliana Carillo
 R&D&I Director at the Digital Leadership Institute
 
-Allessandra Sollberger
-Chairman of The Maverick Group
-
-
 Documentary about the Movement - Cannes Film Festival 2020 Launch:
 
 Julita Deka
 Owner at Sunwave and cameraman/editor at Palm Tree Productions
 
-Robbie Moffat",
+Robbie Moffat
 Producer/Director at Palm Tree Productions
 
 
@@ -1749,7 +1745,7 @@ Roles will be for a pre-agreed period to invigorate and lead the community as it
 ## 13.3.
 
 **Remuneration**
-The team of experts will be remunerated in our token, with a contracted buy-back at a set rate - if they choose to. This keeps everyone in the eco-system being rewarded in the same way, amongst other benefits mentioned earlier. Giving the experts the choice to be paid in cash, or to keep a percentage, or all, in our token.
+The team of experts will be remunerated in our token, with a contracted buy-back at a set rate - if they choose to. This keeps everyone in the ecosystem being rewarded in the same way, amongst other benefits mentioned earlier. Giving the experts the choice to be paid in cash, or to keep a percentage, or all, in our token.
 
 `
     },
@@ -1790,7 +1786,7 @@ Projects (Missions): Currently Web-hooks from Trello (or Wekan). This system is 
 ## 14.2.
 **Leaflet.js vs Google Maps API** 
 
-**The Public Happiness Gatherings system is currently build using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
+**The Public Happiness Gatherings system is currently built using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
 
 `
     },
@@ -1885,7 +1881,7 @@ The implications of this option are obviously wide ranging and it would be an ab
 **Zombie Apocalypse**
 If the inevitable finally occurs, we will convert the Public Happiness Bus into a ‘Public Happiness Buoat’ and retreat to a small uninhabited Greek island, where our new society will flourish and sparkle as a bastion to all Humanity's greatest achievements. Using Public Happiness Token to create a paradise where every economic interaction creates more harmony and a closer more caring community, while the rest of the world performs a perfect impression of today’s paparazzi for each others brains. 
 
-If the community has decided on having a fixed central base, for example renovating an abandoned village, it will built using the best off-grid technology today’s society has to offer - and also be zombie-proofed.
+If the community has decided on having a fixed central base, for example renovating an abandoned village, it will be built using the best off-grid technology today’s society has to offer - and also be zombie-proofed.
 
 `
     },
@@ -1947,7 +1943,7 @@ Still to plan:
         chapterHeading: true,
         fullText: `
 ## 18
-* Open-sourcing. The vast majority of the system will be open-sourced 6 months afer launch. We need to determine any sections which are too sensitive to open-source.
+* Open-sourcing. The vast majority of the system will be open-sourced 6 months after launch. We need to determine any sections which are too sensitive to open-source.
 * Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the IEO finishes
 * Which other crypto coins/tokens should we include in the platform to introduce our community members into the crypto-economic ecosystem, for example, should our videos primarily be  hosted on Lbury? Is their platform ready?
 * Should the platform be hosted on the DAPPs network?
