@@ -10,6 +10,7 @@
     "specific": "jest Admin/__tests__"
   },
   "dependencies": {
+    "googleapis": "^36.0.0",
     "@babel/runtime": "^7.0.0-beta.42",
     "@types/googlemaps": "^3.30.16",
     "@types/markerclustererplus": "^2.1.33",

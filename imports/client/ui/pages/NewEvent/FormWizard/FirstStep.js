@@ -3,16 +3,34 @@ import { CustomInput, Alert } from 'reactstrap'
 import PropTypes from 'prop-types'
 
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
-// import labels from '/imports/both/i18n/en/new-event-modal.json'
-// import Categories from '/imports/both/i18n/en/categories.json'
 
 import i18n from '/imports/both/i18n/en'
 
 let labels = i18n.NewEventModal
 let Categories = i18n.Categories
+let defaultName
+let defaultColor
 
-const defaultName = Categories[0].name
-const defaultColor = Categories[0].color
+if (window.__mapType = 'gatherings') {
+  defaultName = Categories[0].name
+  defaultColor = Categories[0].color
+} else if ((window.__mapType = 'btm')) {
+  let defaultCategory = findDefaultCategory(Categories)
+  defaultName = defaultCategory.name;
+  defaultColor = defaultCategory.color;
+}
+
+function findDefaultCategory(C) {
+  let category;
+  C.forEach(ele => {
+    if (category == null) {
+      category = ele.categories.find(ele => {
+        return ele.default === true;
+      });
+    }
+  });
+  return category;
+}
 
 class FirstStep extends Component {
   constructor (props) {
