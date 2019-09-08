@@ -4,11 +4,15 @@ import { withTracker } from 'meteor/react-meteor-data'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import Linkify from 'linkifyjs/react'
-import i18n_ from '/imports/both/i18n/en/map.json'
+// import i18n_ from '/imports/both/i18n/en/map.json'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as formatUtils from '/imports/client/utils/format'
 import * as Gravatar from '/imports/client/utils/Gravatar'
+
 import './styles.scss'
+import i18n from '/imports/both/i18n/en'
+
+let i18n_ = i18n.Map
 
 class EventInfo extends Component {
 

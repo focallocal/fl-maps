@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import { CustomInput, Alert } from 'reactstrap'
 import PropTypes from 'prop-types'
+
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
-import labels from '/imports/both/i18n/en/new-event-modal.json'
-import Categories from '/imports/both/i18n/en/categories.json'
+// import labels from '/imports/both/i18n/en/new-event-modal.json'
+// import Categories from '/imports/both/i18n/en/categories.json'
+
+import i18n from '/imports/both/i18n/en'
+
+let labels = i18n.NewEventModal
+let Categories = i18n.Categories
 
 const defaultName = Categories[0].name
 const defaultColor = Categories[0].color

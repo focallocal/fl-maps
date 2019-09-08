@@ -2,9 +2,14 @@ import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
 import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate, videoHosts } from './helpers'
-import categoryTree from '/imports/both/i18n/en/categories.json'
-import labels from '/imports/both/i18n/en/new-event-modal.json'
+// import categoryTree from '/imports/both/i18n/en/categories.json'
+// import labels from '/imports/both/i18n/en/new-event-modal.json'
 import DaySchema from './DaysSchema'
+
+import i18n from '/imports/both/i18n/en'
+
+let categoryTree = i18n.Categories
+let labels = i18n.NewEventModal
 
 // categoryTree includes parent-child level categories, following operation build an all-child array of sub-categories
 let possibleCategories = categoryTree.reduce((tot, elem) => {

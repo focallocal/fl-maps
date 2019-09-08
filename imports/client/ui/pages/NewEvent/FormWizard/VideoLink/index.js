@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { FormGroup, Input, Label } from 'reactstrap'
+
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import { videoHosts } from '/imports/both/collections/events/helpers/index.js'
-import labels from '/imports/both/i18n/en/new-event-modal.json'
+
 import './styles.scss'
+import i18n from '/imports/both/i18n/en'
+
+let labels = i18n.NewEventModal
+// import labels from '/imports/both/i18n/en/new-event-modal.json';
 
 class VideoLink extends Component {
   constructor (props) {

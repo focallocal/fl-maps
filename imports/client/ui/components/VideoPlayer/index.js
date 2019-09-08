@@ -1,10 +1,17 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
+
+import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe';
+
 import './styles.scss'
-import allPlaylists from '/imports/both/i18n/en/video.json'
-import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe'
-import categoryTree from '/imports/both/i18n/en/categories.json'
+import i18n from '/imports/both/i18n/en'
+
+let allPlaylists = i18n.Video
+let categoryTree = i18n.Categories
+
+// import allPlaylists from '/imports/both/i18n/en/video.json'
+// import categoryTree from '/imports/both/i18n/en/categories.json'
 
 /**
  * @author Arty S

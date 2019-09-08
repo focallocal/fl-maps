@@ -1,26 +1,12 @@
-import About from "./about.json";
-import CongratsModal from "./congrats-modal.json";
-import Home from "./home.json";
-import MainMenu from "./menu.json";
-import Map from "./map.json";
-import NewEventModal from "./new-event-modal.json";
-import Team from "./team.json";
-import Partners from "./partners.json";
-import Faq from "./faq.json";
-import Admin from "./admin.json";
-import Whitepaper from "./whitepaper";
+import BrighterTomorrowContent from './btm'
+import PublicHappinessMovementContent from './phm'
 
+const { mapType } = Meteor.settings.public
+console.log(mapType)
+let content;
 
-export default {
-  About,
-  CongratsModal,
-  Home,
-  MainMenu,
-  Map,
-  NewEventModal,
-  Team,
-  Partners,
-  Faq,
-  Admin,
-  Whitepaper
-};
+if (mapType === 'gatherings') content = PublicHappinessMovementContent
+else if (mapType === 'btm') content = BrighterTomorrowContent
+else throw new Error('Unknown mapType provided in settings: unable to export the appropriate content')
+
+export default content

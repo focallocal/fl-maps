@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import connectField from 'uniforms/connectField'
 import Select from 'react-select'
+import { FormGroup, Label } from 'reactstrap';
+
 import PlacesSearchBox from '/imports/client/ui/components/PlacesSearchBox'
-import categoryTree from '/imports/both/i18n/en/categories.json'
+// import categoryTree from '/imports/both/i18n/en/categories.json'
 import { formatReactSelectOptions } from '../format'
 
-import { FormGroup, Label } from 'reactstrap'
+import i18n from '/imports/both/i18n/en'
+let categoryTree = i18n.Categories
+
 
 // We need the list of parent categories in order to disable them in the category dropdown
 // (because these are subheadings in the dropdown -> user selects the actual child category instead)

@@ -1,0 +1,225 @@
+
+{
+    "project": {
+        "title": "Project and Community Leaders",
+        "members": [
+            {
+                "title": "Andy Tulett",
+                "image": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+                "subtitle": "Founder and Director of The Focallocal Public Happiness Community",
+                "text": "As a Public Happiness Activist I bring people together around creative ideas, to build projects and Movements which bring a little more peace and well-being into this world.",
+                "linkedIn": "https://www.linkedin.com/in/andytulett/",
+                "twitter": "https://twitter.com/focallocal",
+                "github": "",
+                "facebook": "https://www.facebook.com/andyat.focallocal",
+                "google": "",
+                "website": "https://andytulett.focallocal.org"
+            },
+            {
+                "title": "Marina Onopriichuk",
+                "image": "https://avatars2.githubusercontent.com/u/54589505?s=400&u=75e791f9c09045186839453f7da02a74994e61ca&v=4",
+                "subtitle": "Founding Member",
+                "text": "Connecting people and creating an environment for them to make this world a better place",
+                "linkedIn": "https://be.linkedin.com/in/marynao",
+                "twitter": "",
+                "github": "",
+                "facebook": "https://www.facebook.com/marina.onopriichuk",
+                "google": "",
+                "website": "http://futurehumanitymission.com/"
+            },
+            {
+                "title": "Gary Lanchance",
+                "image": "https://cryptopsychedelic.com/wp-content/uploads/2018/01/gary-lachance.jpg",
+                "subtitle": "Founder of The Decentralised Dance Party",
+                "text": "World peace is a dance move waiting to be discovered",
+                "linkedIn": "",
+                "twitter": "https://twitter.com/ddpftw?lang=en",
+                "github": "",
+                "facebook": "https://www.facebook.com/theddp/",
+                "google": "",
+                "website": "http://www.decentralizeddanceparty.com/"
+            }
+        ]
+    },
+    "web": {
+        "title": "Web Development",
+        "members": [
+            {
+                "title": "Tom McNulty",
+                "image": "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
+                "subtitle": "Site Reliabilty Engineer",
+                "text": "Site Reliabilty and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
+                "linkedIn": "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
+                "twitter": "",
+                "github": "https://github.com/TLMcNulty",
+                "facebook": "",
+                "google": "",
+                "website": "https://tom.mcnulty.in"
+            },
+            {
+                "title": "Matias Forbord",
+                "image": "https://avatars3.githubusercontent.com/u/1154150?s=460&v=4",
+                "subtitle": "DevOps/Full Stack Engineer",
+                "text": "Passionate humanist and engineer working to end poverty. Creating access to work in the Philippine slums.",
+                "linkedIn": "https://www.linkedin.com/in/matiasforbord",
+                "twitter": "https://twitter.com/MatiasForbord",
+                "github": "https://github.com/codeluggage",
+                "facebook": "",
+                "google": "",
+                "website": "https://gifsplanation.com"
+            },
+            {
+                "title": "Pawel Mordaszewski",
+                "image": "https://ca.slack-edge.com/T02D50FP9-U02ELQ3GQ-dac2ad348311-1024",
+                "subtitle": "Technical utility player",
+                "text": "Travelling software engineer with a passion for a better world. Recently busy working for the fourth industrial revolution by harnessing autonomous drones using AI analytics sent through IoT on 5G.",
+                "linkedIn": "https://www.linkedin.com/in/pmordaszewski",
+                "twitter": "",
+                "github": "https://github.com/mordka",
+                "facebook": "",
+                "google": "",
+                "website": ""
+            },
+            {
+                "title": "Arty Sidorenko",
+                "image": "https://avatars2.githubusercontent.com/u/26905074",
+                "subtitle": "Senior Developer/All-round Information Sponge",
+                "text": "Tech-enthusiast and frequent traveller based in London, UK. Recovering from a past life in financial analysis.",
+                "linkedIn": "https://www.linkedin.com/in/arty-sidorenko",
+                "twitter": "",
+                "github": "https://github.com/artysidorenko",
+                "facebook": "",
+                "google": "",
+                "website": "https://artysidorenko.github.io/Portfolio-Website/"
+            },
+            {
+                "title": "Sylvain Quendez",
+                "image": "https://avatars2.githubusercontent.com/u/42490951",
+                "subtitle": "Docuss Founder and Director",
+                "text": "Manager and entrepreneur with broad international experience and wide-ranging technical background. Proven track record in building and directing high performance engineering teams.",
+                "linkedIn": "https://www.linkedin.com/in/sylvainquendez/",
+                "twitter": "",
+                "github": "https://github.com/sylque",
+                "facebook": "",
+                "google": "",
+                "website": "http://www.docuss.org/"
+            }
+        ]
+    },
+    "marketing": {
+        "title": "Marketing",
+        "members": [
+            {
+                "title": "Placeholder",
+                "image": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+                "subtitle": ".",
+                "text": ".",
+                "linkedIn": "https://www.linkedin.com/in/andytulett/",
+                "twitter": "https://twitter.com/focallocal",
+                "github": "",
+                "facebook": "https://www.facebook.com/andyat.focallocal",
+                "google": "",
+                "website": "https://andytulett.focallocal.org"
+            }
+        ]
+    },
+    "summit": {
+        "title": "The Public Happiness Economy World Summit",
+        "members": [
+            {
+                "title": "Placeholder",
+                "image": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+                "subtitle": ".",
+                "text": ".",
+                "linkedIn": "https://www.linkedin.com/in/andytulett/",
+                "twitter": "https://twitter.com/focallocal",
+                "github": "",
+                "facebook": "https://www.facebook.com/andyat.focallocal",
+                "google": "",
+                "website": "https://andytulett.focallocal.org"
+            }
+        ]
+    },
+    "token": {
+        "title": "Token Team and Advisors",
+        "members": [
+            {
+                "title": "Andy Tulett",
+                "image": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+                "subtitle": "Founder and Director of The Focallocal Public Happiness Community",
+                "text": "As a Public Happiness Activist I bring people together around creative ideas, to build projects and Movements which bring a little more peace and well-being into this world.",
+                "linkedIn": "https://www.linkedin.com/in/andytulett",
+                "twitter": "https://twitter.com/focallocal",
+                "github": "",
+                "facebook": "https://www.facebook.com/andyat.focallocal",
+                "google": "",
+                "website": "https://andytulett.focallocal.org"
+            },
+            {
+                "title": "Sarbjit Klair",
+                "image": "https://media.licdn.com/dms/image/C4D03AQGk1HxUc6N9gg/profile-displayphoto-shrink_200_200/0?e=1568246400&v=beta&t=OUmVU-jR-t_CF2KsgWZyCwDw5BTBOYM-eTJIwIyOMUw",
+                "subtitle": "Founder of the International Blockchain Centre",
+                "text": "Helping find solutions and strategies to overcome all problems",
+                "linkedIn": "https://www.linkedin.com/in/sarbjit-klair",
+                "twitter": "",
+                "github": "",
+                "facebook": "",
+                "google": "",
+                "website": "https://www.xibc.co.uk"
+            },
+            {
+                "title": "Juliet Annerino",
+                "image": "http://www.rockeramagazine.com/mag/media/k2/items/cache/e67ec824afbc9f855ad850f1b49c5b05_XL.jpg",
+                "subtitle": "Strategic Marketing Content",
+                "text": "Writer/editor of content for blockchain projects, including white papers, executive summaries, Medium articles, press releases and articles for ICO Crowd Magazine",
+                "linkedIn": "https://www.linkedin.com/in/julietannerino",
+                "twitter": "https://twitter.com/julietannerino",
+                "github": "",
+                "facebook": "",
+                "google": "",
+                "website": "http://www.decentralizedpr.com"
+            },
+            {
+                "title": "Liliana Carillo",
+                "image": "http://www.dottoressacomputer.be/wp-content/uploads/2013/08/lili_black_small.jpg",
+                "subtitle": "R&D&I Director at the Digital Leadership Institute",
+                "text": "To create awareness of new technologies and methodologies that can bring societal improvements, and increase the sense of co-responsibility of success/failure of our communities",
+                "linkedIn": "https://www.linkedin.com/in/carrilloliliana",
+                "twitter": "https://twitter.com/DLIIorg",
+                "github": "",
+                "facebook": "",
+                "google": "",
+                "website": "http://dlii.org"
+            }
+        ]
+    },
+    "documentary": {
+        "title": "Movement Documentary: Cannes Film Festival 2020 Launch",
+        "members": [
+            {
+                "title": "Julita Deka",
+                "image": "https://sphoto.nasza-klasa.pl/17475259/65/square/38f562e7c9.jpeg?v=2",
+                "subtitle": "Owner at Sunwave and cameraman/editor at Palm Tree Productions",
+                "text": " Dances with Elephants ",
+                "linkedIn": "https://www.linkedin.com/in/julita-deka-b11621128/",
+                "twitter": "",
+                "github": "",
+                "facebook": "https://www.facebook.com/profile.php?id=100001179623470",
+                "google": "",
+                "website": "https://www.palmtreefilm.com/"
+            },
+            {
+                "title": "Robbie Moffat",
+                "image": "https://www.palmtreefilm.com/wpimages/wp7679a206_06.png",
+                "subtitle": "Producer/Director at Palm Tree Productions",
+                "text": "I'm trying to make more meaningful pictures as I get older as time is getting shorter. Life does not give us enough time to sit and do nothing, so I try to keep busy. What I make is my own choice, it is a form of self expression.",
+                "linkedIn": "https://www.linkedin.com/in/robbie-moffat-b3b7978/",
+                "twitter": "https://twitter.com/robbiemoffat",
+                "github": "",
+                "facebook": "",
+                "google": "",
+                "website": "https://www.palmtreefilm.com/"
+            }
+        ]
+    }
+}

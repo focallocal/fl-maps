@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ListGroup, ListGroupItem, CustomInput } from 'reactstrap'
-import categoryTree from '/imports/both/i18n/en/categories.json'
-import i18n from '/imports/both/i18n/en'
+// import categoryTree from '/imports/both/i18n/en/categories.json'
+
 import './styles.scss'
+import i18n from '/imports/both/i18n/en';
+
+let categoryTree = i18n.Categories
 
 // categoryTree includes parent-child level categories, following operation build an all-child array of sub-categories
 // the last function elem.categories.map(...) adds an additional 'hidden' field to each subscategory for UI purposes

@@ -1,0 +1,30 @@
+{
+  "filtersTitle": "Select All",
+  "eventInfo": {
+    "introTitle": "Introduction",
+    "photos": {
+      "title": "Photos",
+      "subtitle": "share links to your pics"
+    },
+    "videos": {
+      "title": "Videos",
+      "subtitle": "share links to your vids"
+    },
+    "wall": {
+      "title": "Engage",
+      "subtitle": "Let others know you're going, or invite someone for action"
+    },
+    "experiences": {
+      "title": "Community Experiences",
+      "subtitle": "How was your Experience? (positive/negative)"
+    },
+    "socialMedia": {
+      "title": "Social Media",
+      "subtitle": "Support Us By Sharing This Event",
+      "messagePre": "Check out this event: "
+    },
+    "stories": {
+      "title": "Stories"
+    }
+  }
+}

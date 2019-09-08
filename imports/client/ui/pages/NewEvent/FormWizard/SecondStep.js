@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { CustomInput, Row, Col, Button } from 'reactstrap'
-import labels from '/imports/both/i18n/en/new-event-modal.json'
+// import labels from '/imports/both/i18n/en/new-event-modal.json'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
 import Recurring from './DateTimeModule/Recurring'
@@ -9,6 +9,11 @@ import WeekDays from './DateTimeModule/WeekDays'
 import VideoLink from './VideoLink'
 import SameDateHours from './SameDateHours'
 import { videoHosts } from '/imports/both/collections/events/helpers'
+
+import i18n from '/imports/both/i18n/en'
+
+let labels = i18n.NewEventModal
+
 
 class SecondStep extends Component {
   constructor(props) {
