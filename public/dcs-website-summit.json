@@ -1,0 +1,47 @@
+{
+  "$schema": "https://sylque.github.io/dcs-website-schema/json/schema.json",
+
+  "websiteName": "Happier World Economies Summit",
+
+  "dcsTag": {
+    "maxPageNameLength": 6,
+    "maxTriggerIdLength": 9,
+    "forceLowercase": true
+  },
+
+  "pages": [
+    { "name": "summit", "url": "index.html" }
+  ],
+
+  "clientData": {
+    "decorator": {
+      "injectTriggers": [
+        {
+          "pageNames": ["summit"],
+          "ids": ["photos"],
+          "interactMode": "COMMENT",
+          "ui": {
+            "cssSelector": ".article th:nth-of-type(1)"
+          },
+          "discourseTitle": "Photos"
+        },
+        {
+          "pageNames": ["summit"],
+          "ids": ["videos"],
+          "interactMode": "COMMENT",
+          "ui": {
+            "cssSelector": ".article th:nth-of-type(2)"
+          },
+          "discourseTitle": "Videos"
+        },
+        {
+          "pageNames": ["summit"],
+          "ids": ["stories"],
+          "interactMode": "DISCUSS",
+          "ui": { "cssSelector": ".article th:nth-of-type(3)" },
+          "discourseTitle": "Stories"
+        }
+      ]
+    }
+  }
+}
