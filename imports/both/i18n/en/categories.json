@@ -2,7 +2,6 @@
     "name": "Communities Supporting People",
     "categories": [
       { "name": "Community Offers", "color":"red", "default":true, "url": "https://www.reddit.com/r/brightertomorrow/" },
-      { "name": "Let’s End Homelessness Coffee Meeting", "color":"#94be29", "url": "" },
       { "name": "Shower", "color":"#14fffc", "url": "" },
       { "name": "Training Course", "color":"#181819", "url": "" },
       { "name": "Activity", "color":"#63be29", "url": "" },
