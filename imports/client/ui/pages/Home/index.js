@@ -13,10 +13,10 @@ class Home extends Component {
     let url
     let opacity
     if (window.__mapType === 'gatherings') {
-      url = '/images/focallocal-bgOG.jpg'
+      url = '/images/focallocal-bg.jpg'
       opacity = 0.5
     } else {
-      url = '/images/btm-bg.jpeg'
+      url = '/images/focallocal-bgOG.jpg'
     }
     let backgroundImage = { backgroundImage: 'url(' + url + ')', opacity }
     return (
