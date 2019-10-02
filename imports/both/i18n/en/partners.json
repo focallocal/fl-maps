@@ -1,10 +1,10 @@
 {
   "partners" : [
-     
+
          {
           "title" : "Emma Bradford",
           "image" : "https://scontent.fmad7-1.fna.fbcdn.net/v/t1.0-9/36621819_10155568725430318_8586867860796604416_n.jpg?_nc_cat=111&_nc_ht=scontent.fmad7-1.fna&oh=68d23844ec65292ba4b794d790907ca4&oe=5D1F9D4B",
-          "subtitle" : "Board of Directors at Good Vibes Barclona",
+          "subtitle" : "Board of Directors at Good Vibes Barcelona",
           "text" : "Inspiring The World With Acts Of Kindness. A group of positive, fun, loving people who meet to spread the joy of life through the community of Barcelona. We 1) Spread happiness, hope and trust in the community. 2) Connect us with other fun loving people living in Barcelona. 3) Build lasting memories for life",
           "linkedIn" : "",
           "twitter": "",
@@ -14,8 +14,8 @@
           "google" : "",
           "youtube" : "https://www.youtube.com/goodvibrationsbcn"
       },
-    
-      {   
+
+      {
         "title" : "Jacques Martiquet",
         "image" : "https://scontent.fbcn9-1.fna.fbcdn.net/v/t1.0-9/48365492_10217876691372096_2398852866765750272_n.jpg?_nc_cat=111&_nc_ht=scontent.fbcn9-1.fna&oh=96d5c497cb3bd2f9bf0c87c6bca1f1ae&oe=5D207F72",
         "subtitle" : "Founder and Director at VYVIFY - Sparking Vitality into Humanity",
@@ -27,11 +27,11 @@
         "instagram" : "https://www.instagram.com/party4health_life/",
         "website" : "https://vyvify.life/"
       },
-     
+
       {
         "title" : "Alex Nunn",
         "image" : "https://i.imgur.com/Ph2I0fp.jpg",
-        "subtitle" : "Head of Movement Building at Action for Happiness", 
+        "subtitle" : "Head of Movement Building at Action for Happiness",
         "text" : " Facilitator and organiser inspiring folk to take action for a happier and kinder world. Believes in solution focused change and non-violent direct action. Student of the Buddha",
         "linkedIn" : "",
         "twitter": "https://twitter.com/alxflxnun",
@@ -40,7 +40,7 @@
         "google" : "",
         "website" : "https://actionforhappiness.org"
       },
-    
+
       {
           "title" : "Placeholder",
           "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
@@ -52,7 +52,7 @@
           "facebook": "",
           "google" : "",
           "website" : ""
-          
+
       }
   ]
 }

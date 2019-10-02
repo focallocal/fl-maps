@@ -50,7 +50,7 @@
             "website": ""
         }
     ],
-    "web" : [	    
+    "web" : [
          {
             "title" : "Andy Tulett",
             "image" : "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
@@ -111,7 +111,7 @@
             "google": "",
             "website": "https://artysidorenko.github.io/Portfolio-Website/"
         },
-        {   
+        {
             "title" : "Sylvain Quendez",
             "image" : "https://avatars2.githubusercontent.com/u/42490951",
             "subtitle" : "Docuss Founder and Director",
@@ -154,7 +154,7 @@
             "title": "Tom McNulty",
             "image": "https://avatars2.githubusercontent.com/u/8993166?s=460&v=1",
             "subtitle": "Site Reliabilty Engineer",
-            "text": "Site Reliabilty and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
+            "text": "Site Reliability and DevOps Engineer in the Boston, MA area. Tom keeps corners of the internet on and clears the brush to help lay the foundation for projects to be built there.",
             "linkedIn": "https://www.linkedin.com/in/tom-mcnulty-90a9b946/",
             "twitter": "",
             "github": "https://github.com/TLMcNulty",
