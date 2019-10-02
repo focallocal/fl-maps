@@ -14,28 +14,17 @@ The project is based on [Meteor](https://www.meteor.com/) and [React](https://re
 
 ## Getting Started:
 
-1) [Join our Google calendar](https://calendar.google.com/calendar?cid=dDFranFza2RmOXBzb2JpM291NnVmdjc4NXNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ), and set yourself a regular reminder to visit it add the hours you want to work on this project this week, or month. This makes it much easier for the team to arrange collaborations, and most people find volunteer commitments always getting get put off if they aren't scheduled. Using these steps will help you keep with the commitment you want to make. 
-2) Head to our [Slack channel](https://focallocal.slack.com) and say Hi in the Introductions Slack channel, and give other devs there an intro to your background
-3) Read through this readme guide in our Github to get an idea of the project
-4) Set up a local dev enviroment (most of us use Atom.io). Settings.json is pinned to the #meteor-maps channel in Slack. (let us know if you have difficulties, a lot of people find setting up fiddly)
-5) Once setup, [jump onto Trello](https://trello.com/invite/b/PFj7RlgM/a12e9b4bdc6fff4a5e7439754c9a7e3b/focallocalorg), assign yourself your first mission and of you're ready to being move it into the sprint queue
+1) [Join our platform](https://publichappinessmovement.com/c/web-developers/React-and-Meteor), and make your way through the 'getting started guide' which superseeds this Readme
+2) Set up a local dev enviroment (most of us use Atom.io). Settings.json is pinned to the #meteor-maps channel in Slack. (let us know if you have difficulties, a lot of people find setting up fiddly)
+3) Set your intentions. Click the 'calendar' tab in the forum and plan how often and when you want to contribute (we find people are far more liklely to drop the commitment they want to make without setting themselves this reminder)
+4) [Assign yourself a task](https://publichappinessmovement.com/c/web-developers/React-and-Meteor/l/latest?board=default)
+
 
 ## Workflow:
 
 1) Begin each work session by reviewing others pull requests in Github and commenting on your findings. It helps to keep everyone up to date with whats going on and create a self-checking community. If you're the 3rd dev commenting/checking please tag @AndyatFocallocal to merge the PR.
-2) Visit Trello and use the Meteor filter to hide Missions for other teams
-3) Use filters in Trello to see which Cards/Missions are most needing your attention, or grab a Mission from Quick Bug Squashing
-4) Grab a card, assign yourself to it and move it into correct 'Sprint' List - to prevent two people working on the same issue/mission
-5) When complete and your PR is awaiting review, move the card into 'Missions Complete', also click the link inside the card to close the issue in Github
 
-Issues are created on Github, and then get automatically posted on Trello (with a delay up to 15mins). Here's direct links, i suggest adding them to your browsers bookmarks to make navigation easy:
-https://github.com/focallocal/fl-maps/tree/react-maps
-https://trello.com/b/PFj7RlgM/focallocalorg
-https://focallocal.slack.com
-fl-master branch: https://focallocal.org
-fl-sleeper: https://brightertomorrowmap.com
 
-**Making Suggestions:** Please post suggested improvements in the meteor-maps channel in Slack so that other devs can comment their thoughts, suggestions, and keep track of changes in the codebase. If/when approved make an issue in Github ready for coding to begin.
 
 **Copying changes with git "git cherry-pick":** As mentioned above, changes to the codebase are done to the master branch and copy/pasted onto the fl-sleeper branch in a separate PR. Copy/pasting can be done directly through the CLI as follows:
 
@@ -160,11 +149,6 @@ Updating npm is quite simple, the command being: `npm install -g npm`.
 
 After updating the packages, close your current terminal and open a new one, so that the changes may take effect. Confirm the update by typing `node -v`.
 
-## Working On Issues
-
-Issues can be found on our Trello board which gives a more visual representation of progress than Github. The two currently active lists on Trello will be the 1st version (example v0.1) reading from left to right, and also the Quick Bug Squashing List: [**Trello**](https://trello.com/b/PFj7RlgM/focallocalorg) and not github (use github only to open issues!).
-
-*if you decide to work on an issue please click 'members' and add your name to it, then move it into the 'sprint' queue. You can also use filters to see Meteor only issues (missions). (Don't forget to move it into the 'complete' list when finished, and also close the issue in Github.
 
 ### Outside Software
 
