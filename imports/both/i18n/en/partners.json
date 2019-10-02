@@ -1,6 +1,6 @@
 {
   "partners" : [
-     
+
          {
           "title" : "Emma Bradford",
           "image" : "https://scontent.fmad7-1.fna.fbcdn.net/v/t1.0-9/36621819_10155568725430318_8586867860796604416_n.jpg?_nc_cat=111&_nc_ht=scontent.fmad7-1.fna&oh=68d23844ec65292ba4b794d790907ca4&oe=5D1F9D4B",
@@ -31,7 +31,7 @@
       {
         "title" : "Alex Nunn",
         "image" : "https://i.imgur.com/Ph2I0fp.jpg",
-        "subtitle" : "Head of Movement Building at Action for Happiness", 
+        "subtitle" : "Head of Movement Building at Action for Happiness",
         "text" : " Facilitator and organiser inspiring folk to take action for a happier and kinder world. Believes in solution focused change and non-violent direct action. Student of the Buddha",
         "linkedIn" : "",
         "twitter": "https://twitter.com/alxflxnun",
@@ -40,7 +40,7 @@
         "google" : "",
         "website" : "https://actionforhappiness.org"
       },
-    
+
       {
           "title" : "Placeholder",
           "image" : "https://www.bristolgate.com/wp-content/uploads/2018/09/orionthemes-placeholder-image.png",
@@ -52,7 +52,7 @@
           "facebook": "",
           "google" : "",
           "website" : ""
-          
+
       }
   ]
 }

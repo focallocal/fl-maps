@@ -3,16 +3,16 @@
   "find_events": "Find the #PublicHappinessMovement near me!",
   "post": {
     "first_title": "Create a Public Happiness Gathering",
-    "button": "Sign Up And Begin!",
+    "button": "Sign Up and Begin!",
     "button_loggedIn": "Post onto the Map"
   },
   "how_to_help_section":{
-    "title": "How can I take action to make where i live a friendlier, safer and happier place?",
+    "title": "How can I take action to make where I live a friendlier, safer and happier place?",
     "content":{
       "items":[
         {
           "text": "Put yourself on the Public Happiness Map.",
-          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like; public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
+          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
         },
         {
           "text": "Create your Public Happiness Gathering now.",
