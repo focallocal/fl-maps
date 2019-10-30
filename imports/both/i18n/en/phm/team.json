@@ -102,7 +102,19 @@
                 "facebook": "",
                 "google": "",
                 "website": "http://www.docuss.org/"
-            }
+            },
+            {
+                "title": "Kyle Chapman",
+                "image": "https://avatars2.githubusercontent.com/u/12535513",
+                "subtitle": "Open Source Developer/Full Time Teacher",
+                "text": "Passionate teacher/learner of tech and Non-stop builder of web apps.",
+                "linkedIn": "https://www.linkedin.com/in/kyle-chapman10/",
+                "twitter": "",
+                "github": "https://github.com/KRChapman",
+                "facebook": "",
+                "google": "",
+                "website": "https://kyle-chapman.me/"
+              }
         ]
     },
     "marketing": {
