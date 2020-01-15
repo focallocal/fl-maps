@@ -1387,19 +1387,19 @@ The ecosystem and token need to take every possible effort to conform to nationa
 `
     },					
     {
-        title: "Revenue Streams and Token Price",
+        title: "Financial Feed-In and Token Value",
         code: "ReStan",
         chapterHeading: true,
         fullText: `
 
 &nbsp;
-The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the ecosystem will continue raising revenue in Fiat to enhance it's functionality. Revenue raised will be used for: 
+The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the ecosystem will have financial (Fiat) feed-in streams to continually grow our economy. The stronger our economy becomes, the means more power to all of the functions we exist to faciliatate in the world. Also allowing us to cover:
 * operating costs 
 * supporting the team during the initial growth phase 
-* marketing purposes
+* marketing campaigns until we are strong enough to run them all internally
 
 There will also be a pool created for the community to use. Members will vote on how they wish to assign it in order to create maximum value to the ecosystem. This might include: 
-* buying back tokens to raise their price
+* buying back and burning tokens to raise their price
 * outsourcing a much desired feature or task we currently lack the capacity to create internally
 * supporting a project being built in the Action Center which members believe can deliver great impact with a cash injection
 * donating to an external worthy cause
@@ -1415,9 +1415,44 @@ There will also be a pool created for the community to use. Members will vote on
 
 **Speculation**
 
-Speculation on exchanges is the main way the token's price will rise. Many people will want to add it to their portfolio to support the great work they see being done for well-being and peace in the world, or just because one of our members made their grandmothers day with a kind act and she's still smiling. Others will want to invest expecting the price to rise as awareness grows, followed by increasing demand for our token.
+Speculation on exchanges is the main way the token's value will rise. Many people will want to add it to their portfolio to support the great work they see being done for well-being and peace in the world, or just because one of our members made their grandmothers day with a kind act and she's still smiling. Others will want to invest expecting the price to rise as awareness grows, followed by increasing demand for our token. Our strategy is to focus mainly on Decentralised Exchanges, and point of sale hot swapping.
 
-Being listed on one exchange before our IEO's end is important to this strategy.
+Being listed on at least one trust-worthy exchange before our IEO's finish is important to have a simple way users can begin trading the token immediately.
+
+`
+    },
+    {
+        title: "Local Happiness Hubs",
+        code: "Gym",
+        fullText: `
+
+## 11.2.
+
+**Local Happiness Hubs**
+
+Local Happiness Hubs are like gyms, except instead of lifting weights or jumping on a treadmill you will drop in to exercise your happiness and well-being. 
+ 
+They operate outside of our economic system and feed in to it, just like a gym members pay a monthly fee and receive access to all the activities, courses, and equipment available to improve their well-being.
+ 
+The hubs operate as franchises giving us access to global markets, and the ability to onboard existing community centers, and buildings that have regular empty space, who want to join the scheme and movement. Finances need to be assessed in more detail, but a rough estimate would be that we take 6% of the total income from monthly subscriptions, and allow the franchisee to set prices that fit their local area.
+ 
+The hubs use the systems already built into our platform so that users can choose by voting what activities will be conducted in the space each month to create their own schedule and taylor our community hub to their needs. The platform allows users to suggest new ideas which if approved by the wider community to meet our community vision and values, will then go into the suggestions page for other hubs members to see and suggest at their local Happiness Hub.
+ 
+An example of activities on offer:
+ 
+- A pillow fight work-out class
+- Morning dance parties
+- Group life goals setting and support meetings
+- Habit forming workshops
+- A compliments circle where people take turns to be in the middle
+- A Nerf gun battle
+- Training courses on improving your well-being and happiness like the free Yale online course
+- A massage circle
+- Community benefiting projects planning sessions
+- Art therapy
+- Youtube based ‘learn a new skill’ sessions
+
+
 
 `
     },
@@ -1426,7 +1461,7 @@ Being listed on one exchange before our IEO's end is important to this strategy.
         code: "Shop",
         fullText: `
 
-## 11.2.
+## 11.3.
 
 **Active Happiness Clothing**
 [Visit the shop](https://shop.publichappinessmovement.com)
@@ -1442,7 +1477,7 @@ See section 7.4. for more details.
         code: "CoSoRe",
         fullText: `
 
-## 11.3.
+## 11.4.
 
 **Corporate Social Responsibility**
 
@@ -1461,7 +1496,7 @@ Running CSR through our platform creates an entire story of their for them, thei
         code: "KinAuc",
         fullText: `
 
-## 11.4.
+## 11.5.
 
 **Kindness Auction**
 [read more](https://news.publichappinessmovement.com/focallocal-kindness-auction/)
@@ -1475,7 +1510,7 @@ A fun little project we've had good success over the years in the Focallocal Com
         code: "ComPro",
         fullText: `
 
-## 11.5.
+## 11.6.
 
 **Community Projects**
 
