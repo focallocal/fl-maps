@@ -86,15 +86,15 @@ class App extends Component {
         <Fragment>
           {standaloneMode && <MainMenu />}
           <ScrollToTop>
-            <Route exact path={routePaths.root} component={Home} />
-            <Route exact path={routePaths.home} component={Home} />
+            <Route exact path={routePaths.root} render={props => <Home {...props} {...dcsProps} />} />
+            <Route exact path={routePaths.home} render={props => <Home {...props} {...dcsProps} />} />
             <Route exact path={routePaths.team} component={Team} />
             <Route exact path={routePaths.partners} component={Partners} />
             <Route exact path={routePaths.whitepaper} component={Whitepaper} />
             <Route exact path={routePaths.faq} component={Faq} />
             <Route exact path={routePaths.about} component={About} />
             <Route path={routePaths.map} component={Map_} />
-            <Route exact path={routePaths.admin} render={props => <Admin {...props} />} />
+            <Route exact path={routePaths.admin} render={props => <Admin {...props}  {...dcsProps} />} /> 
             <Route exact path={routePaths.thankyou} component={CongratsModal} />
             <Route exact path={`${routePaths.page}/:id`} component={Page} />
 
