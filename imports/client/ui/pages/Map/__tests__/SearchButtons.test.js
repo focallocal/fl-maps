@@ -5,17 +5,18 @@ import SearchButtons from '../SearchButtons'
 import { Button } from 'reactstrap'
 
 describe('<SearchButtons />', () => {
-  const shallowRender = (props) =>
-    shallow(
+  const shallowRender = (props) => {
+    return shallow(
       <SearchButtons
         {...props}
       />
     )
+  }
 
   const component = shallowRender({ toggleFilters: () => {} })
 
-  it('should render 1 filter button', () => {
-    expect(component.find(Button)).toHaveLength(1)
+  it('should render 2 button', () => {
+    expect(component.find(Button)).toHaveLength(2)
   })
 
   it('should call toggleFilters on filters button click', () => {

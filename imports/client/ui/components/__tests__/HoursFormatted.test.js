@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import HoursFormatted from '../HoursFormatted'
 import { formatDateWithWords } from '/imports/client/utils/format'
 
-describe('<HoursFormatted />', () => {
+describe.only('<HoursFormatted />', () => {
   const constantDate = new Date('2018-01-01T12:00:00')
 
   beforeAll(() => {
@@ -32,13 +32,15 @@ describe('<HoursFormatted />', () => {
     }]
   }
 
-  const shallowRender = (props) =>
-    shallow(
+  const shallowRender = (props) => {
+    return shallow(
       <HoursFormatted
         data={obj}
         {...props}
       />
     )
+  }
+    
 
   test('if multipleDays', () => {
     const wrapper_ = shallowRender({ data: { ...obj, multipleDays: true } })
@@ -65,7 +67,7 @@ describe('<HoursFormatted />', () => {
     })
     const component = wrapper_.find('.repeat')
 
-    expect(component.text()).toEqual('Every 5 days, between 16:00 - 17:00 ')
+    expect(component.text()).toEqual('Next:Mon, 2018/01/0116:00 - 17:00Repeating: every 5 days, between 16:00 - 17:00 ')
   })
 
   test('repeat=true, type="day", forever=false', () => {
@@ -87,7 +89,7 @@ describe('<HoursFormatted />', () => {
 
     expect(component.props().className).toEqual('hours-formatted repeat')
     expect(component.find('.not-forever')).toHaveLength(1)
-    expect(component.text()).toEqual('Every 10 days, between 16:00 - 17:00 Available for 8 occurences or until 2018/01/01')
+    expect(component.text()).toEqual('Repeating: every 10 days, between 16:00 - 17:00 until Mon, 2018/01/01')
   })
 
   test('repeat=true, type="week", forever=true', () => {
@@ -107,7 +109,7 @@ describe('<HoursFormatted />', () => {
     const component = wrapper_.find('.repeat')
 
     expect(component.find('.every-sentence')).toHaveLength(1)
-    expect(component.text()).toEqual('Every 10 weeks onSun16:00 - 17:00Mon16:00 - 17:00Tue16:00 - 17:00Fri16:00 - 17:00')
+    expect(component.text()).toEqual('Next:Mon, 2018/01/0116:00 - 17:00Repeating: every 10 weekson Sun, 16:00 - 17:00on Mon, 16:00 - 17:00on Tue, 16:00 - 17:00on Fri, 16:00 - 17:00')
   })
 
   test('repeat=true, type="week", forever=false', () => {
@@ -128,12 +130,12 @@ describe('<HoursFormatted />', () => {
     const component = wrapper_.find('.repeat')
 
     expect(component.find('.every-sentence')).toHaveLength(1)
-    expect(component.text()).toEqual('Every 10 weeks onSun16:00 - 17:00Mon16:00 - 17:00Tue16:00 - 17:00Fri16:00 - 17:00Available for 8 occurences')
+    expect(component.text()).toEqual('Repeating: every 10 weekson Sun, 16:00 - 17:00on Mon, 16:00 - 17:00on Tue, 16:00 - 17:00on Fri, 16:00 - 17:00')
   })
 
   test('if regular date', () => {
     const wrapper_ = shallowRender()
     const component = wrapper_.find('.regular-date')
-    expect(component.text().substr(5)).toEqual('2018/01/01, 16:00 - 17:00')
+    expect(component.text().substr(5)).toEqual(' 2018/01/01, 16:00 - 17:00')
   })
 })

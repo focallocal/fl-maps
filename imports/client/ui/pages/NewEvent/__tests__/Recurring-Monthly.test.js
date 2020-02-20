@@ -10,14 +10,15 @@ describe('<Monthly />', () => {
     { label: 'Monthly on day 12', value: 'byDayInMonth' },
     { label: 'Monthly on the 2nd Wednesday', value: 'byPosition' }
   ]
-  const mountRenderer = (props) =>
-    mount(
+  const mountRenderer = (props) => {
+    return mount(
       <Monthly
         form={{}}
         startingDate={date}
         {...props}
       />
     )
+  }
 
   const wrapper = mountRenderer()
 
@@ -49,7 +50,7 @@ describe('<Monthly />', () => {
     wrapper_.find(Select).simulate('change', expectedOptions[1])
     expect(spy.calledWith(
       'when.recurring.monthly',
-      { type: 'byPosition', value: '4' })
+      { type: 'byPosition', value: '2' })
     ).toBe(true)
   })
 
