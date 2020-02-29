@@ -2,7 +2,7 @@
 $titles-color: #fff;
 
 #page {
-  
+
   .header {
     position: relative;
     display: flex;
@@ -10,7 +10,7 @@ $titles-color: #fff;
     justify-content: center;
     height: 25vw;
     min-height: 250px;
-    padding: 15px;
+    margin: 0 0 15px 0;
 
     .subscribe {
       align-self: flex-end;
@@ -44,7 +44,7 @@ $titles-color: #fff;
         Left Column
        -------------- */
 
-    .left{
+    .left {
 
       .title-wrapper {
         width: 100%;
@@ -55,32 +55,31 @@ $titles-color: #fff;
       }
 
       .title {
-        max-height: 156px;
-        font-size: 2.2rem;
-        overflow: auto;
+        font-size: 2rem;
+        margin: 5px 0 10px;
       }
 
       .sub-title-categories {
-        max-height: 80px;
         font-size: 1.4rem;
-        overflow: auto;
       }
 
-      .intro, .meet-me, .description{
+      .intro,
+      .meet-me,
+      .description {
         margin: 20px 0;
       }
 
       .share {
-        
+
         .share-btn {
           .text-title {
             margin-left: 5px;
-            font-weight: normal!important;
-            color: rgb(0, 123, 255)!important;
+            font-weight: normal !important;
+            color: rgb(0, 123, 255) !important;
           }
         }
       }
-      
+
     }
 
     /* ---------------
@@ -92,7 +91,7 @@ $titles-color: #fff;
       padding-top: 15px;
 
       .hours-formatted {
-        
+
         .date {
           margin-bottom: 8px;
         }
@@ -101,14 +100,14 @@ $titles-color: #fff;
           display: flex;
           justify-content: space-between;
 
-          & > div:first-child {
+          &>div:first-child {
             margin-right: 0;
           }
         }
       }
 
       .location {
-        
+
         .view-map {
           color: #007bff;
           font-size: .9em;
@@ -126,8 +125,9 @@ $titles-color: #fff;
         width: 100%;
         margin-bottom: 8px;
       }
-      
+
     }
+
     /* ------------ End Right Column -------------- */
   }
 
@@ -175,9 +175,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 860px) {
-    
+
     & {
-      
+
       .header .title-wrapper {
         width: 95%;
       }
@@ -198,24 +198,24 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 640px) {
-    
     & {
-      
-      .title-wrapper {
-        
-        .sub-title-categories {
-          font-size: 1.2em;
-        }
-      }
-
       .body {
-        
-        
-        .left, .right {
+        .left,
+        .right {
           max-width: 95%;
           flex: 0 0 100%;
           margin-bottom: 24px;
           padding-right: 0;
+        }
+
+        .left {
+          .title {
+            font-size: 1.5rem;
+          }
+    
+          .sub-title-categories {
+            font-size: 1em;
+          }
         }
 
         .hours-formatted {
@@ -241,9 +241,9 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 520px) {
-    
+
     & {
-      
+
       .body {
         width: 90%;
       }
