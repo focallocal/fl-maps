@@ -157,6 +157,18 @@
   #second-step  {
 
     @media (max-width: 575px) {
+      .large-only {
+        display: none;
+      }
+      .conditional-time {
+        &::before {
+          width: 45%;
+          content: ""
+        }
+        .select-field::before {
+          width: 45%;
+        }
+      }
       .date-hours-box {
         flex-direction: column;
         .date-field, .select-field {

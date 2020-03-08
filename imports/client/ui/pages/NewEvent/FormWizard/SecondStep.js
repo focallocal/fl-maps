@@ -83,6 +83,17 @@ class SecondStep extends Component {
                         </div>
                       </Fragment>
                     )}
+                    {repeat && (
+                      <Fragment>
+                        <Label className="large-only">&nbsp;</Label>
+                        <div className="date-hours-single conditional-time">
+                          <AutoField
+                            name="when.endingTime"
+                            customType="timePicker"
+                          />
+                        </div>
+                      </Fragment>
+                    )}
                   </Fragment>
                 )}
                 {!repeat && openEndDate && (
