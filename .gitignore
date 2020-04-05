@@ -8,6 +8,7 @@ deployment.tar
 .deploy/
 .idea/
 *.tar
+travis-ssh-key
 
 node_modules
 *.log
