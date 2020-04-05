@@ -2,12 +2,12 @@
 .meteor/meteorite
 settings.json
 mup.json
+mup-secrets.json
 deployment.tar
 .deploy
 .deploy/
 .idea/
 *.tar
-mup.js
 
 node_modules
 *.log

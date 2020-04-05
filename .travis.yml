@@ -16,10 +16,9 @@ before_cache:
 before_install:
   # Remove cache if the project is upgraded to a newer version of meteor
   - export PATH="$HOME/.meteor:$PATH"
-  - openssl enc -d -aes-256-cbc -md md5 -in deploy.tar.enc -out deploy.tar -k "$encrypted_key_master"
-  - openssl enc -d -aes-256-cbc -md md5 -base64 -in secrets.tar.enc -out secrets.tar -k "$encrypted_key_master"
-  - tar xf secrets.tar
-  - tar xzf deploy.tar
+  - echo "$sops_gpg_key" | base64 -d | gpg --batch --import
+  - cd deployment/$(./deployment/branch-to-dir.sh "$TRAVIS_BRANCH")
+  - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
   - npm install -g mup
   - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
@@ -28,6 +27,8 @@ branches:
     - master
     - fl-sleeper
     - master_withoutDCS
+    - deploy-btm
+    - deploy-phm
 
 script:
   #- npm test
