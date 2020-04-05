@@ -10,7 +10,7 @@ module.exports = {
   },
   app: {
     name: 'publichappinessmovement',
-    path: './',
+    path: '../../.',
     docker: {
       image: 'abernix/meteord:node-8.4.0-base'
     },
