@@ -16,6 +16,8 @@ before_cache:
 before_install:
   # Remove cache if the project is upgraded to a newer version of meteor
   - export PATH="$HOME/.meteor:$PATH"
+  - curl -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb"
+  - sudo dpkg -i sops.deb
   - echo "$sops_gpg_key" | base64 -d | gpg --batch --import
   - cd deployment/$(./deployment/branch-to-dir.sh "$TRAVIS_BRANCH")
   - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
