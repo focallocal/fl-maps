@@ -1,0 +1,96 @@
+{
+	"production": {
+		"meetup": {
+			"oauth_key": "ENC[AES256_GCM,data:ucJ7PfD7g2uDdS/IzXvwnVM2E7z31b+g8WP6Cg5Fzg==,iv:faU8K4M87C4jeLcsMjeYtlGovkXQxzpDwVAD6x9JARw=,tag:NX4YZ7Hzfj3wDLoYmmOg9A==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:rZJCbDCueVjkD9aRAt+/os11RBe9ncAjRu4=,iv:aRHC99z3e2ekfPxsqUP9vW9eAKYLO1OOvRdb5CufMuA=,tag:8FmTlwKN9W7952oGhgbuyQ==,type:str]"
+		},
+		"facebook": {
+			"oauth_key": "ENC[AES256_GCM,data:bV5Nk/FiUGHGBBd7cIL+,iv:s+yPh4oI4hCo2EuZbPxjHbZTOPsnIZD73ve3Ux46Nv4=,tag:BTkFXnMcStHh46TvVmsLDA==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:m4wSiRD/qIOLBoUK8m5qMHTsobf/pyijfJGnKXCEe7Y=,iv:ltmpOJrxjm5V7o/KkbSuUq68I9gpPvNy8dcp0tfyRdQ=,tag:uJPOSgDt6PuRczvTDP451g==,type:str]"
+		},
+		"google": {
+			"oauth_key": "ENC[AES256_GCM,data:C7ybwTJa9Z5gTRwPQb5MuNHojdYdxVBLQ17seZwXWK4YIPAFIZGj2GdtlI315uYYyxRNJRUeUnWBsrcvjNz4BdsKXLO5lpoz,iv:0cxDOcoCvhq5VLh8gh94FBtRnMhY6uhMnJMzsl5ppAo=,tag:FzqCaZndtYj70+65FNv++g==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:870pLnzein1VF15PeK0Cgj3Jz0KOaT+z,iv:hK2CaZtGKXyLc9vDYNh2sTsDGwzxbc4Nw2Zeh7ly0OQ=,tag:3pIngfmYW7kPW+GVWQi7LQ==,type:str]"
+		},
+		"twitter": {
+			"oauth_key": "ENC[AES256_GCM,data:RTqiy8CMMn2NjSumU/aW66cB/tYn7Pil/w==,iv:2Xq0GNUDfH2tfiWhjg/cwqJWnMFXsXm8RvRwU/bgW9g=,tag:QuTLQEBXTPaihP7vz4iioQ==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:j7zV/tJOqWgkq6DEqxUYTXR9dGkdrQ4KD8dNWH+D0f2t/uRjfWpveZ7uPX/uU696iLY=,iv:8rJo6E20TVuYb2xtnSU6NJ/+DGRj36glpgXYi/4IfCY=,tag:BOZFX5QvXrsF7LouPDLPEA==,type:str]"
+		},
+		"wordpress": {
+			"oauth_key": "ENC[AES256_GCM,data:4A0ETt9Dr7Fr/GHz8p9e4ZSOOpRH8iKDsWC2yHWm,iv:Lak1AjwATJEdAVk4EeEeuhmYTNxBgt0vUtZGgGpakbc=,tag:QoCSYLwKvNh4Sc/doaQSyg==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:85mFCp+mlfA8TZAM44NekHZg8d57h4AgOfM/oeKY,iv:SszxVWQ14G4VyRtDI+h9BwjMp3ZH+8TwplTyGhlrWnE=,tag:DzuENYjprlOPZaBheFT4Iw==,type:str]",
+			"oauth_server_url": "https://focallocal.org"
+		}
+	},
+	"development": {
+		"meetup": {
+			"oauth_key": "ENC[AES256_GCM,data:V9usWeSCvQfVWF/4LIbuoi4aQNCTyQsQTnA=,iv:wSr4xBxw1X18aCUV+Irp9sNTy6MWnY4yZawZYEXRm9c=,tag:bQ/3XTL857VTN4Bn8fF72w==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:TyQH21HiroEtRp3/KTfs3Q4nnHCZhpzdqtI=,iv:aLiis5jnodLvYWflOoleTyWs13YG9abocL+EIAacMZM=,tag:TwYiWesMR4V5c3DXCImSww==,type:str]"
+		},
+		"facebook": {
+			"oauth_key": "ENC[AES256_GCM,data:I5BYr7sBrQisxbQLiPcT,iv:dmrq9HN02YC2GLDlr1XSsOkUu5Llxxie0r/i9UzFYb8=,tag:sQDdnIiier5s1v22C1+ouw==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:KBJoACo3aUZpfuHGybJ9vSg60sfqgHyS3EYBafc9FKY=,iv:sHzR3NmDYedQ9QupakqulMCd0tNMeFgwEENG0BJi2Q0=,tag:mLo8pvP9gsuIv9thTQpPkQ==,type:str]"
+		},
+		"google": {
+			"oauth_key": "ENC[AES256_GCM,data:otwrGXRnese5O+KQjStS+mYgmAH/fEr1huHy5cfe/+7oOc5ekZnEPNNCpREL7d6USYoEI6Wm6pbbUnRcbbuplMfF3lFZk8Ay,iv:6mxUWmXxD2JD0W7Po3o3FLYFzm/7M1OgzWEW7ibywYc=,tag:SIasELmrreMg6vcSkq4wnw==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:DGdjWC/ebU5+0YMdgz/jiNL9FJJNsA1R,iv:U4DYacG5R6fb1fJvODdHktW9hx8Ava6l0N4O6MUS+6Y=,tag:cGX06pUlIpZJXbf+BUoEZw==,type:str]"
+		},
+		"twitter": {
+			"oauth_key": "ENC[AES256_GCM,data:12eg+mPS/vvyKS12lglHK4hKfQjcbcykXw==,iv:IN6T8bGfY0HGfbsPZN38JVn8VuSytsJyhrDBkYEuyg8=,tag:Z4jdupm7vNGvo1qd9AMBhg==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:tZHg9xAQMae4aVcE4Y8lQFSlspAzc1BElUU9alTQaCBFk7OzQvMmFRvN7nOOUhfA2nU=,iv:loKGPYEY1V0/KRxgbWJf65gDuMCNMSbm+S7rbjZiNfI=,tag:lrpgqsqymXLQDVtr6gyY4Q==,type:str]"
+		},
+		"wordpress": {
+			"oauth_key": "ENC[AES256_GCM,data:8jdG45NKgHT6rxfejcM9+l4uOCnp0DqqctZqC2/U,iv:79SVJS1pJjF7jozoUiRqC/jZjL6qqYh48U+JGCchv/A=,tag:EIkn5WwwiU33YlFaSCaRKw==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:PiDzVUHfUFD8saubkOYkS13R6TVSLZcUA+uRUAsY,iv:Ok3tIpveSyEqwISuD+W1jhxR46ItqRJZt8afPjJlPCA=,tag:FQAiykcFLDDSsVxaq2G0Vg==,type:str]",
+			"oauth_server_url": "https://focallocal.org"
+		}
+	},
+	"private": {
+		"google_api_key": "ENC[AES256_GCM,data:gVC5dzN5fxNXI51IVYfV1sJ4u+5qU9djr6QH6+LPlsd3MD/ByVvA,iv:Uwn7dQRdSbRRSTHmPNg6i3BtKqqezKeNQ8eJwWSKaj4=,tag:rV40lQ6BT4bHPGf5Y21NGg==,type:str]",
+		"discourse": {
+			"url": "https://publichappinessmovement.com/",
+			"secret": "ENC[AES256_GCM,data:BYwqOVz/yJ61dJ9gAej3x2t5PNVVDAQzWcMgeqE=,iv:iS+hG53+rqae00o15XXrlvGj3r7V410qRCdh4DlpRRQ=,tag:rw+9fB6tiiejxBpXMgtZYA==,type:str]"
+		}
+	},
+	"public": {
+		"facebook": {
+			"oauth_key": "ENC[AES256_GCM,data:Ck93bAO3c2effezgxPMX,iv:vcOXhfoFFPnqvl97gfMtnZXGONic1SkPyoROx33VH9o=,tag:NzbigmxolDbzQgtR9+AmHQ==,type:str]"
+		},
+		"houston_root_route": "/godmode",
+		"houston_documents_per_page": 50,
+		"ga": {
+			"account": "UA-68970741-1"
+		},
+		"gm": {
+			"key": "ENC[AES256_GCM,data:PEv3QdqZV3N5khUYSRz2y2j5Z4ABXkDsF22UpAfUTSAJkQEp+QPe,iv:KYKNcjeSiJWXF4zBzHq7yQ9uslj+XW2lFHgFOTD7k1c=,tag:PdIwi+9by+mKgqNmDAdBEQ==,type:str]"
+		},
+		"mapType": "gatherings"
+	},
+	"wp_oauth_accept_invalid_certs": "true",
+	"kadira": {
+		"appId": "bw79vW7NEjEMX9Xxd",
+		"appSecret": "ENC[AES256_GCM,data:m5Gd64JCXue6OFjjupE2euoyjYhJMsribm8k6fZ4nKwSBGF/,iv:Fc5V9s7Vlr/JzwTe79T2rg63RfBo/HjX5UGWEA9DjIc=,tag:Ks+HYfVWIEx7ZeloQsuYHQ==,type:str]",
+		"options": {}
+	},
+	"sops": {
+		"kms": null,
+		"gcp_kms": null,
+		"azure_kv": null,
+		"lastmodified": "2020-04-05T14:25:44Z",
+		"mac": "ENC[AES256_GCM,data:woOX7hJc+/uXaz899Tq3d2tZWSJ149SUYyZDF30qTZq+4npZ2d0b/wNjCRgiBF37dQ3Gzoy8qGsnPogUDtWFVxHbPxIg7R1X4Tk0b3S0aJ5fhpbtgaPIhc1kRM6rV7QUjpdoiqudFQSySfJrSiA/uvPikTxsqzKDi9rpqYFMWMU=,iv:4f7sDXNwHdUPzAcpXmQspZp45N6y7qIBEKY/vSJ419k=,tag:/D0zroQkb/GKufwn7cFs6Q==,type:str]",
+		"pgp": [
+			{
+				"created_at": "2020-04-05T14:25:34Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nwcBMA9iKTJUod6vdAQgAOau70PkvMRCDQKjddPBNUFLTKyQORsf82TFARJl2mRhK\nd3rQ7d1T3o6qp9j5farg2PEW87xSlIZqVlEt9hXPxryoiCV13KGHqqR4e9D0xfmf\n74oMHBB2mZ/Qg6+8gkzd4U4QKKuV8t5Rx3jtrOCuo7I6y5IuFqy00mB63q2jBSgd\n7Q7jZm00YBmCZQdX6/h7Rg44h3QQMydb3xucuNuThqKnpGo9bqlBsHiUxJySc6wi\nU5N0R8lfTyXjKlZC72SKNA/G+KD/MMeYRqCHUPYWKOlTHDOQbFGCnJ6sx2yTb4Vh\n+FcTfQ+00OLqPlkd6YJ9VVKwS61V7TgGYT6mw+ORPNLgAeS8h28NyobX5Iqc7mpI\nZCvQ4VFD4FHgWuE7N+Bj4oxaiefgruUj23csOPimJPj1yLaKlX0ig+xIeQWqRSc/\n2WxY1kJ0z+Dl5AH0XnehM5pS3+cjL9kH0ivi2VHLc+GpaQA=\n=ZhQ4\n-----END PGP MESSAGE-----",
+				"fp": "CCE5435177838EBB3B0BBFC718E885F096A4A3F2"
+			},
+			{
+				"created_at": "2020-04-05T14:25:34Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nwcBMA5PCgedWIh8GAQgAxS3R02PJhMnjrnxlVfeZpDD7MLDk/wr/qbzkku6d+Ccv\nkoDMs/sieFZ5MUpTEvKhoCc+jtARGfBxNUjV3F8ulGsoCwQ52QnjdfkTIRIT5FmQ\n4GHzF+WxMUjAatrwIv3pPmicCmVnifWPXVbnY1kcJdtQJexoHnWVFLWsudoqgMiK\n2o2uBc0H1QYCGtNKp1CLUc58us+ZOC9z6JOVYfOGo4oOH4sWd58nIwBC8KOUgvGO\njlLWGnbnYy/2K3ba6vy6ZFDHvFzEhGWRIir9l5wrnKOjScF65c7El6D2mj0lxeoi\nWXQ88QSZaG1LAYj18ZbG4Wh5icPn2VaTdQ4F0QmpoNLgAeRD2mUEK7XJ7AeB2Ie1\ntCKn4Wdq4Kvgt+HWeeCc4tjzA/LgE+V4ZPa9ZvLF0hWXq+peM4jR2lRQOSt8YlEE\nnRQFJh4uWeCA5MV2zf34HXmyXMQlFhQJaZHi+WXNpeF8kgA=\n=e08R\n-----END PGP MESSAGE-----",
+				"fp": "AC7E7C66AC708F04578DD0E293C281E756221F06"
+			}
+		],
+		"encrypted_regex": "([kK][eE][yY]|[sS][eE][cC][rR][eE][tT])$",
+		"version": "3.5.0"
+	}
+}
