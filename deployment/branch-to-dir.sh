@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
+# This file is used by Travis to map branch names to deployment settings
+# See `deploying.md` for more details
+
 branch_name="${1?Expected branch name as 1st parameter}"
 
 case "$branch_name" in
