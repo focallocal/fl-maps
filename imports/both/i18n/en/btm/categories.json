@@ -8,7 +8,7 @@
   {
     "name": "Homeless Community Support",
     "categories": [
-      {"name": "Kind Offers", "color": "red", "default": true, "url": ""}
+      {"name": "Kind Offers", "color": "red", "default": true, "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"}
     ]
   },
   {
@@ -18,7 +18,7 @@
       { "name" : "Training Course", "color" : "#38a80d", "url": ""},
       { "name" : "Activity", "color" : "#18a80d", "url": ""},
       { "name": "Food", "color": "#a711c4", "url": ""},
-      { "name": "Clothes", "color": "#ce1ca4", "url": "https://news.focallocal.org/connecting-canvas/"},
+      { "name": "Clothes", "color": "#ce1ca4", "url": ""},
       { "name": "Public Toilet", "color":"#63be29", "url": "" },
       { "name": "Shelters", "color":"#74fe6a", "url": "" },
       { "name": "Somewhere to Sleep", "color":"#6ab8fe", "url": "" },
