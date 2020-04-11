@@ -1,6 +1,6 @@
 creation_rules:
   # Only encrypt items ending in "key" or "secret" in settings.enc.json
-  - path_regex: settings\.enc\.json
+  - path_regex: settings(\.enc)?\.json
     pgp: CCE5435177838EBB3B0BBFC718E885F096A4A3F2,AC7E7C66AC708F04578DD0E293C281E756221F06
     encrypted_regex: "([kK][eE][yY]|[sS][eE][cC][rR][eE][tT])$"
 
