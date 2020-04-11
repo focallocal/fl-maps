@@ -1,13 +1,19 @@
-  [{
-    "name": "Communities Supporting People",
+[
+  {
+    "name": "Community Support",
     "categories": [
-      { "name": "Community Offers", "color":"#f82d2d", "default": true,  "url": "https://www.reddit.com/r/brightertomorrow/" },
-      { "name": "Let’s End Homelessness Coffee Meeting", "color":"#94be29", "url": "" },
-      { "name": "Shower", "color":"#14fffc", "url": "" },
-      { "name": "Training Course", "color":"#181819", "url": "" },
-      { "name": "Activity", "color":"#63be29", "url": "" },
-      { "name": "Food", "color":"#e322e9", "url": "" },
-      { "name": "Clothes", "color":"#e2fe2e", "url": ""},
+      { "name" : "Shopping for people who cant", "color" : "#52929b", "url": ""},
+      { "name" : "For people who are homeless", "color": "red", "default": true, "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"}
+    ]
+  },  
+  {
+    "name": "Existing Resources",
+    "categories": [
+      { "name" : "Shower", "color" : "#63d85b", "url": ""},
+      { "name" : "Training Course", "color" : "#38a80d", "url": ""},
+      { "name" : "Activity", "color" : "#18a80d", "url": ""},
+      { "name": "Food", "color": "#a711c4", "url": ""},
+      { "name": "Clothes", "color": "#ce1ca4", "url": ""},
       { "name": "Public Toilet", "color":"#63be29", "url": "" },
       { "name": "Shelters", "color":"#74fe6a", "url": "" },
       { "name": "Somewhere to Sleep", "color":"#6ab8fe", "url": "" },
@@ -15,5 +21,14 @@
       { "name": "Public Library", "color":"#09bc2b", "url": "" },
       { "name": "Medical", "color":"#fa0707", "url": "" }
     ]
+  },
+  {
+    "name": "Charities and Groups",
+    "categories": [
+      {"name": "Charities and Groups", "color": "#6512bc", "url": ""}    
+    ]
   }
 ]
+ 
+  
+
