@@ -11,8 +11,6 @@ const HoursFormatted = ({ data }) => {
     endingTime
   } = data
 
-  const isSameDay = startingDate.toDateString() === endingDate.toDateString()
-
   if (data.multipleDays) {
     const isEnding = !!endingDate
 
@@ -34,6 +32,8 @@ const HoursFormatted = ({ data }) => {
       </div>
     )
   }
+
+  const isSameDay = startingDate.toDateString() === endingDate.toDateString();
 
   if (data.repeat) {
     const {
