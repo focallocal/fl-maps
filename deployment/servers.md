@@ -158,28 +158,50 @@ Discourse largely sets itself up via the default Docker installation method.
     $ useradd -s /bin/bash -m -G sudo,docker deploy
     ```
 
-13. ```
+13. Allow sudo to be used without a password (necessary for mup to use it). Edit the sudoers file:
+
+    ```
+    $ visudo
+    ```
+
+    This command will open the sudoers file in an editor. Change the line:
+
+    ```
+    %sudo  ALL=(ALL) ALL
+    ```
+
+    To:
+
+    ```
+    %sudo ALL=(ALL) NOPASSWD:ALL
+    ```
+
+    Save the file, and exit the editor.
+
+14. Create an SSH config dir for the deploy user:
+
+    ```
     $ mkdir /home/deploy/.ssh
     ```
 
-14. Copy the contents of Travis's public key that you created (`travis-ssh-key.pub`) into `/home/deploy/.ssh/authorized_keys`:
+15. Copy the contents of Travis's public key that you created (`travis-ssh-key.pub`) into `/home/deploy/.ssh/authorized_keys`:
 
     ```
     $ nano /home/deploy/.ssh/authorized_keys
     ```
 
-15. ```
+16. ```
     $ chown -R deploy:deploy /home/deploy/.ssh
     $ chmod -R go-rwx /home/deploy/.ssh
     ```
 
-16. Back on your machine, verify that you can sign in as the `deploy` user using Travis's SSH key:
+17. Back on your machine, verify that you can sign in as the `deploy` user using Travis's SSH key:
 
     ```
     ssh -i travis-ssh-key deploy@134.122.58.242
     ```
 
-17. Encrypt all the sensitive files using `sop`: (Read [secrets.md](./secrets.md) for more information on using `sops` in this project.)
+18. Encrypt all the sensitive files using `sop`: (Read [secrets.md](./secrets.md) for more information on using `sops` in this project.)
 
     ```
     $ sops --encrypt --output travis-ssh-key.enc travis-ssh-key
@@ -189,7 +211,7 @@ Discourse largely sets itself up via the default Docker installation method.
     $ sops --encrypt --output mup-secrets.enc.json mup-secrets.json
     ```
 
-18. Delete all the unencrypted sensitive files (and the no-longer needed public key):
+19. Delete all the unencrypted sensitive files (and the no-longer needed public key):
 
     ```
     $ rm settings.json travis-ssh-key travis-ssh-key.pub
@@ -198,7 +220,7 @@ Discourse largely sets itself up via the default Docker installation method.
     $ rm mup-secrets.json
     ```
 
-19. Change `mup.js` to change the user from "root" to "deploy" and to specify the Travis SSH key:
+20. Change `mup.js` to change the user from "root" to "deploy" and to specify the Travis SSH key:
 
     ```
         one: {
@@ -208,6 +230,6 @@ Discourse largely sets itself up via the default Docker installation method.
         }
     ```
 
-20. Add the new environment directory you've created to `branch-to-dir.sh`
+21. Add the new environment directory you've created to `branch-to-dir.sh`
 
-21. Add the branch for deploying this environment to `.travis.yml`
+22. Add the branch for deploying this environment to `.travis.yml`
