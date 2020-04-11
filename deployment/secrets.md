@@ -23,10 +23,8 @@ You can also decrypt the files more permanently via:
 $ sops --output settings.json --decrypt settings.enc.json
 ```
 
-## Adding a new person to sops
+## Adding / removing people
 
-// TODO
+Update [.sops.yaml](./.sops.yaml) to add/remove the PGP keys in question. Inside this file there are multiple lists of PGP keys, they should all be kept the same so you should add/remove your key to/from each of them. The lists are comma-separated.
 
-## Removing a person from sops
-
-// TODO
+Once you've done that, run the [update-keys.sh](./update-keys.sh) script. It should re-encrypt all the files and rotate the master encryption keys.
