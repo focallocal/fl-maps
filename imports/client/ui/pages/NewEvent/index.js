@@ -9,7 +9,7 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import cloneDeep from 'clone-deep'
 import './styles.scss'
-import { dcs } from "/imports/client/utils/dcs-master"
+import { comToPlugin } from 'dcs-client'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
@@ -171,7 +171,7 @@ class NewEventModal extends Component {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
         this.props.history.push('/thank-you')
-        dcs.postCreateDcsTags({
+        comToPlugin.postCreateDcsTags({
           pageName: 'lastev',
           triggerIds: ['photos', 'videos', 'stories'],
           notificationLevel: 3
