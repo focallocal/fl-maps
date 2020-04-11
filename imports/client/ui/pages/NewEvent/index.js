@@ -9,6 +9,7 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import cloneDeep from 'clone-deep'
 import './styles.scss'
+import websiteJSON from '../../../public/dcs-website.json'
 import { comToPlugin } from 'dcs-client'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
@@ -164,6 +165,19 @@ class NewEventModal extends Component {
    
     this.callDeleteEvent(model);
   }
+  
+  onCreateEvent = eventId => {
+    const pageNamePrefix = websiteJSON.webApp.otherPagesPrefix
+    const pageName = pageNamePrefix + eventId
+
+    // Create the Discourse tags with notificationLevel=Watching. See doc here:
+    // https://github.com/sylque/dcs-client/blob/master/comToPlugin.md#create-docuss-tags-in-advance
+    comToPlugin.postCreateDcsTags({
+      pageName,
+      triggerIds: ['photos', 'videos', 'stories'],
+      notificationLevel: 3
+    })
+  }
 
   callNewEvent = model => {
     Meteor.call('Events.newEvent', model, (err, res) => {
@@ -171,11 +185,7 @@ class NewEventModal extends Component {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
         this.props.history.push('/thank-you')
-         comToPlugin.postCreateDcsTags({
-          pageName: 'lastev',
-          triggerIds: ['photos', 'videos', 'stories'],
-          notificationLevel: 3
-        })
+        this.onCreateEvent(res)
       }
 
       window.NProgress.done()
