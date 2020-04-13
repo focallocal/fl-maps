@@ -9,7 +9,7 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import cloneDeep from 'clone-deep'
 import './styles.scss'
-import websiteJSON from '../../../../../public/dcs-website.json'
+import routeMatcher from '../../app'
 import { comToPlugin } from 'dcs-client'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
@@ -167,8 +167,7 @@ class NewEventModal extends Component {
   }
 
   onCreateEvent = eventId => {
-    const pageNamePrefix = websiteJSON.webApp.otherPagesPrefix
-    const pageName = pageNamePrefix + eventId
+    const pageName = routeMatcher.getPageName('/page/' + eventId)
     console.log(pageName)
     // Create the Discourse tags with notificationLevel=Watching. See doc here:
     // https://github.com/sylque/dcs-client/blob/master/comToPlugin.md#create-docuss-tags-in-advance
