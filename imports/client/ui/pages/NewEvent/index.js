@@ -169,7 +169,7 @@ class NewEventModal extends Component {
   onCreateEvent = eventId => {
     const pageNamePrefix = websiteJSON.webApp.otherPagesPrefix
     const pageName = pageNamePrefix + eventId
-
+    console.log(pageName)
     // Create the Discourse tags with notificationLevel=Watching. See doc here:
     // https://github.com/sylque/dcs-client/blob/master/comToPlugin.md#create-docuss-tags-in-advance
     comToPlugin.postCreateDcsTags({
@@ -184,9 +184,8 @@ class NewEventModal extends Component {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        this.props.history.push('/thank-you')
-        console.log(res)
         this.onCreateEvent(res)
+        this.props.history.push('/thank-you')
       }
 
       window.NProgress.done()
