@@ -181,6 +181,8 @@ class NewEventModal extends Component {
   callNewEvent = model => {
     Meteor.call('Events.newEvent', model, (err, res) => {
       if (!err) {
+        window.__recentEvent = { ...model, _id: res }
+        window.__url = window.location
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
         this.onCreateEvent('gather')
