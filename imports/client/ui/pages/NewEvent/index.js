@@ -183,8 +183,8 @@ class NewEventModal extends Component {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        this.onCreateEvent(model._id)
-        this.props.history.push('/thank-you')
+        //this.onCreateEvent(model._id)
+        //this.props.history.push('/thank-you')
       }
 
       window.NProgress.done()
