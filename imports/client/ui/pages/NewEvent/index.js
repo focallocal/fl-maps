@@ -181,17 +181,10 @@ class NewEventModal extends Component {
   callNewEvent = model => {
     Meteor.call('Events.newEvent', model, (err, res) => {
       if (!err) {
-        console.log('location', this.props.location)
-        console.log('window location', window.location)
-        console.log('model', model);
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        console.log('res', res);
         this.onCreateEvent(model._id)
         this.props.history.push('/thank-you')
-        console.log('location2', this.props.location)
-        console.log('window location2', window.location)
-        console.log('history', this.props.history)
       }
 
       window.NProgress.done()
