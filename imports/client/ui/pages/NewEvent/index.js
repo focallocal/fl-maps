@@ -185,8 +185,8 @@ class NewEventModal extends Component {
         window.__url = window.location
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        this.onCreateEvent(window.location.href.split('m_').pop())
         this.props.history.push('/thank-you')
+        this.onCreateEvent(window.location.href.split('m_').pop())
       }
 
       window.NProgress.done()
