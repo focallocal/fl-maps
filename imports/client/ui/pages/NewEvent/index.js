@@ -181,10 +181,11 @@ class NewEventModal extends Component {
   callNewEvent = model => {
     Meteor.call('Events.newEvent', model, (err, res) => {
       if (!err) {
+        console.log('model', model);
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        //this.onCreateEvent(model._id)
-        //this.props.history.push('/thank-you')
+        this.onCreateEvent(model._id)
+        this.props.history.push('/thank-you')
       }
 
       window.NProgress.done()
