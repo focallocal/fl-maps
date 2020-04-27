@@ -9,7 +9,7 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import cloneDeep from 'clone-deep'
 import './styles.scss'
-import routeMatcher from '../../app'
+import { routeMatcher } from '../../app'
 import { comToPlugin } from 'dcs-client'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
