@@ -183,7 +183,7 @@ if (inIFrame()) {
 
 }
 
-const routeMatcher = new SimpleRouteMatcher({
+export const routeMatcher = new SimpleRouteMatcher({
   maxPageNameLength: websiteJSON.dcsTag.maxPageNameLength,
   forceLowercase: websiteJSON.dcsTag.forceLowercase,
   predefinedPageNames: websiteJSON.pages.map(p => ({
@@ -192,8 +192,6 @@ const routeMatcher = new SimpleRouteMatcher({
   })),
   otherPagesPrefix: websiteJSON.webApp.otherPagesPrefix
 })
-
-export default routeMatcher
 
 runReactRouterSync({ browserHistory: history, routeMatcher })  
 
