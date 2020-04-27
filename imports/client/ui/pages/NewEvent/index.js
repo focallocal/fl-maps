@@ -169,7 +169,7 @@ class NewEventModal extends Component {
   onCreateEvent = eventId => {
     console.log('routes', routeMatcher);
     const pageName = routeMatcher.getPageName('/page/' + eventId)
-    console.log('pagename', pagename);
+    console.log('pagename', pageName);
     // Create the Discourse tags with notificationLevel=Watching. See doc here:
     // https://github.com/sylque/dcs-client/blob/master/comToPlugin.md#create-docuss-tags-in-advance
     comToPlugin.postCreateDcsTags({
