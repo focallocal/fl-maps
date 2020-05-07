@@ -167,11 +167,11 @@ class NewEventModal extends Component {
   }
 
   onCreateEvent = eventId => {
-    console.log('routes', routeMatcher);
+    console.log('routes', routeMatcher, eventId);
     routeMatcher.getPageName('/page/' + eventId).then((result) => {
       console.log('result', result);
       comToPlugin.postCreateDcsTags({
-        result,
+        pageName: result,
         triggerIds: ['photos', 'videos', 'stories'],
         notificationLevel: 3
       })
