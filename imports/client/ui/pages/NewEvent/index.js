@@ -167,10 +167,7 @@ class NewEventModal extends Component {
   }
 
   onCreateEvent = (eventId) => {
-    console.log('event id', eventId);
-    console.log('routes', routeMatcher);
     routeMatcher.getPageName('/page/' + eventId).then((result) => {
-      console.log('result', result);
       comToPlugin.postCreateDcsTags({
         pageName: result,
         triggerIds: ['photos', 'videos', 'stories'],
@@ -184,8 +181,6 @@ class NewEventModal extends Component {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        console.log('recent event', window._recentEvent);
-        console.log('model', model);
         this.onCreateEvent(res)
         this.props.history.push('/thank-you')
       }
@@ -196,7 +191,6 @@ class NewEventModal extends Component {
   }
 
   callEditEvent = (model) => {
-    console.log('model', model);
     Meteor.call('Events.editEvent', model, (err, res) => {
       if (!err) {
         window.__updatedData = model // update event page.
