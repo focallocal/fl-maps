@@ -166,8 +166,9 @@ class NewEventModal extends Component {
     this.callDeleteEvent(model);
   }
 
-  onCreateEvent = eventId => {
-    console.log('routes', routeMatcher, eventId);
+  onCreateEvent = (eventId) => {
+    console.log('event id', eventId);
+    console.log('routes', routeMatcher);
     routeMatcher.getPageName('/page/' + eventId).then((result) => {
       console.log('result', result);
       comToPlugin.postCreateDcsTags({
@@ -183,6 +184,7 @@ class NewEventModal extends Component {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
+        console.log('model id', model._id);
         this.onCreateEvent(model._id)
         this.props.history.push('/thank-you')
       }
