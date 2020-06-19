@@ -166,14 +166,12 @@ class NewEventModal extends Component {
     this.callDeleteEvent(model);
   }
 
-  onCreateEvent = eventId => {
-    console.log('routes', routeMatcher);
+  onCreateEvent = (eventId) => {
     routeMatcher.getPageName('/page/' + eventId).then((result) => {
-      console.log('result', result);
       // Create the Discourse tags with notificationLevel=Watching. See doc here:
       // https://github.com/sylque/dcs-client/blob/master/comToPlugin.md#create-docuss-tags-in-advance
       comToPlugin.postCreateDcsTags({
-        result,
+        pageName: result,
         triggerIds: ['photos', 'videos', 'stories'],
         notificationLevel: 3
       })
@@ -185,7 +183,7 @@ class NewEventModal extends Component {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        this.onCreateEvent(model._id)
+        this.onCreateEvent(res)
         this.props.history.push('/thank-you')
       }
 
@@ -195,7 +193,6 @@ class NewEventModal extends Component {
   }
 
   callEditEvent = (model) => {
-    console.log('model', model);
     Meteor.call('Events.editEvent', model, (err, res) => {
       if (!err) {
         window.__updatedData = model // update event page.
