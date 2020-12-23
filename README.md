@@ -1,5 +1,7 @@
 ![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
 
+Test
+
 This is the base branch for the new react-based fl-maps project.
 
 All edits are initially made in this master branch (fl-maps), and then <b>copy/pasted into the fl-sleeper branch, and a separate PR made to the fl-sleeper branch</b> _(refer to note "Copying changes with git cherry-pick" under the "Workflow" section below, for how to automatically copy the changes across)_ unless they are in the i18n folder. We aim to keep the codebase identical as much as possible until the team expands.
