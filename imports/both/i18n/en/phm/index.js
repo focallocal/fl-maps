@@ -11,8 +11,6 @@ import Admin from "./admin.json";
 import Whitepaper from "./whitepaper";
 import Categories from './categories.json';
 import Video from './video.json';
-import EmergencyNewEventModal from "./emergency-new-event-modal.json";
-import EmergencyCategories from "./emergency-categories.json";
 
 export default {
   About,
@@ -27,7 +25,5 @@ export default {
   Admin,
   Whitepaper,
   Categories,
-  Video,
-  EmergencyNewEventModal,
-  EmergencyCategories
+  Video
 };
