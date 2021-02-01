@@ -5,7 +5,7 @@
       { "name" : "Shopping for people who cant", "color" : "#52929b", "url": ""},
       { "name" : "For people who are homeless", "color": "red", "default": true, "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"}
     ]
-  },  
+  },
   {
     "name": "Existing Resources",
     "categories": [
@@ -25,10 +25,7 @@
   {
     "name": "Charities and Groups",
     "categories": [
-      {"name": "Charities and Groups", "color": "#6512bc", "url": ""}    
+      {"name": "Charities and Groups", "color": "#6512bc", "url": ""}
     ]
   }
 ]
- 
-  
-

@@ -9,6 +9,7 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import cloneDeep from 'clone-deep'
 import './styles.scss'
+import websiteJSON from '../../../../../public/dcs-website.json'
 import { routeMatcher } from '../../app'
 import { comToPlugin } from 'dcs-client'
 

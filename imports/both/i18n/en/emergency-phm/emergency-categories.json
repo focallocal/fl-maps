@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Positive People Nearby",
+    "categories": [
+      {"name": "Meet Me to Create Happiness Together!", "color": "red", "default": true, "url": ""}
+    ]
+  },
+  {
+    "name": "Public Happiness Communities",
+    "categories": [
+      { "name" : "Gather for More Happiness", "color" : "#63d85b", "url": ""},
+      { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""},
+      { "name" : "Be Happier Community Meet", "color" : "#18a80d", "url": ""}
+    ]
+  },
+  {
+    "name": "Art, Music, Dance and Poetry",
+    "categories": [
+      {"name": "Public Dancing", "color": "#6512bc", "url": ""},
+      {"name": "Public Music Jam", "color": "#a711c4", "url": ""},
+      {"name": "Connecting Canvas", "color": "#ce1ca4", "url": "https://news.focallocal.org/connecting-canvas/"},
+      {"name": "Pick-me-up Public Poetry", "color": "#6d65bc", "url": ""},
+      {"name": "Busker Dance Party", "color": "#5e9e6b", "url": ""}
+    ]
+  },
+  {
+    "name": "Health and Well-being",
+    "categories": [
+      { "name" : "Open Skills Sharing Day", "color" : "#52929b", "url": "https://news.focallocal.org/international-open-skills-sharing-day/"},
+      { "name" : "Health + Well-being Flash", "color" : "#5e9b6b", "url": ""},
+      { "name" : "Supporting with my Skills", "color" : "#f57c00", "url": ""},
+      { "name" : "Taking a Break", "color" : "#d7191c", "url": ""}
+    ]
+  },
+  {
+    "name": "Public Playfulness",
+    "categories": [
+      { "name" : "Free Hugs", "color" : "#f82d2d", "url": "https://news.focallocal.org/free-hugs/"},
+      { "name" : "Pillow Fight 4Connection", "color" : "#48a80d", "url": "https://news.focallocal.org/pillow-fight4connection/"},
+      { "name" : "Give a Bubble", "color" : "#0ea575", "url": "https://news.focallocal.org/give-a-bubble/"},
+      { "name" : "Eye Bombing", "color" : "#43a904", "url": ""}
+    ]
+  },
+  {
+    "name": "Human and Community Connection",
+    "categories": [
+      { "name" : "I've Got a Message for YOU!", "color" : "#fc1976", "url": "https://news.focallocal.org/ive-got-a-message-for-you-the-positive-thinking-jar/"},
+      { "name" : "The Positivity Facilitator", "color" : "#080fba", "url": "https://news.focallocal.org/the-positivity-facilitator/"},
+      { "name" : "Something Else", "color" : "#1a61ef", "url": ""},
+      { "name" : "Good Human Appreciation", "color" : "#4a0bff", "url": ""},
+      { "name" : "Eye Contact for Connection", "color" : "#adbc12", "url": "https://news.focallocal.org/eye-contact-gathering/"}
+    ]
+  },
+  {
+    "name": "Environment and Sustainability",
+    "categories": [
+      { "name" : "Inspire MY City", "color" : "#e5a20b", "url": "https://news.focallocal.org/musical-connection/transport-jam/"},
+      { "name" : "Guerrilla Urban Beautification", "color" : "#1f482d", "url": "https://news.focallocal.org/community-guerrilla-gardening/"}
+    ]
+  }
+]
