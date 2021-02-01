@@ -1,6 +1,6 @@
 ![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
 
-Test 2
+The main resorce for developers on this codebase is in the forums at Publichappinessmovement.com under the Web-dev, Reactjs and Documentation tags.
 
 This is the base branch for the new react-based fl-maps project.
 

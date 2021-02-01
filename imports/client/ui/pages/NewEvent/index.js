@@ -10,6 +10,7 @@ import qs from 'query-string'
 import cloneDeep from 'clone-deep'
 import './styles.scss'
 import websiteJSON from '../../../../../public/dcs-website.json'
+import { routeMatcher } from '../../app'
 import { comToPlugin } from 'dcs-client'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
@@ -181,8 +182,8 @@ class NewEventModal extends Component {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
         window.__recentEvent = { ...model, _id: res }
-        this.onCreateEvent(res);
-        this.props.history.push('/thank-you');
+        this.onCreateEvent(res)
+        this.props.history.push('/thank-you')
       }
 
       window.NProgress.done()
