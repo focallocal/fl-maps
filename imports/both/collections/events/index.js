@@ -568,9 +568,9 @@ const EventsSchema = new SimpleSchema({
 
 Events.attachSchema(EventsSchema)
 
-if (Meteor.isServer) {
-  Events._ensureIndex({ 'address.location': '2dsphere' })
-}
+// if (Meteor.isServer) {
+//  Events._ensureIndex({ 'address.location': '2dsphere' })
+// }
 
 export {
   Events as default,
