@@ -7,7 +7,8 @@ import { WebApp } from 'meteor/webapp'
 // WE SHOULD LIMIT THIS TO public/*.json
 // https://enable-cors.org/server_meteor.html
 WebApp.rawConnectHandlers.use(function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Authorization,Content-Type");
+  console.log('WebApp.rawConnectHandlers');
+  res.setHeader("Access-Control-Allow-Origin", "*"); // DUMMY
+  res.setHeader("Access-Control-Allow-Headers", "Authorization,Content-Type"); // DUMMY
   return next();
 });
