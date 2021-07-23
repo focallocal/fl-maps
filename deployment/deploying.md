@@ -1,3 +1,8 @@
+Caution: this information is likely to be outdated.
+
+Updated version available here: https://publichappinessmovement.com/t/topic/1880/
+
+
 # Deploying
 
 ## Overview

@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Community Support",
+    "categories": [
+      { "name" : "Shopping for people who cant", "color" : "#52929b", "url": ""},
+      { "name" : "For people who are homeless", "color": "red", "default": true, "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"}
+    ]
+  },
+  {
+    "name": "Existing Resources",
+    "categories": [
+      { "name" : "Shower", "color" : "#63d85b", "url": ""},
+      { "name" : "Training Course", "color" : "#38a80d", "url": ""},
+      { "name" : "Activity", "color" : "#18a80d", "url": ""},
+      { "name": "Food", "color": "#a711c4", "url": ""},
+      { "name": "Clothes", "color": "#ce1ca4", "url": ""},
+      { "name": "Public Toilet", "color":"#63be29", "url": "" },
+      { "name": "Shelters", "color":"#74fe6a", "url": "" },
+      { "name": "Somewhere to Sleep", "color":"#6ab8fe", "url": "" },
+      { "name": "Computer or Wifi", "color":"#e4f81b", "url": "" },
+      { "name": "Public Library", "color":"#09bc2b", "url": "" },
+      { "name": "Medical", "color":"#fa0707", "url": "" }
+    ]
+  },
+  {
+    "name": "Charities and Groups",
+    "categories": [
+      {"name": "Charities and Groups", "color": "#6512bc", "url": ""}
+    ]
+  }
+]

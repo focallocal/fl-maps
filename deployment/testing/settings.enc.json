@@ -1,0 +1,79 @@
+{
+	"production": {
+		"meetup": {
+			"oauth_key": "ENC[AES256_GCM,data:SbrUFSYdpSNYHG3Vst2UGKn46Pz40sgh33M=,iv:mBWjl44xxOtbD25pbjz9jyo6O/9tRhql3yUKu28C3B4=,tag:jJtNIm1OGwuSrH4HyCvO1w==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:H77C1Jt+KvcNs9J5hPNWc/VHX/fcAg0hpeg=,iv:srNxEktbyaU/d5b9LLl54gVSTY6abshXVoQHt0JMH7E=,tag:kDL06l2gchjfuJWswspaZQ==,type:str]"
+		},
+		"facebook": {
+			"oauth_key": "ENC[AES256_GCM,data:bQM7UYykn4DVp/vFT387,iv:Ezzi4c2QCGYZOJRmcJJh/TvajhoKJlYzb+NwR4GdrLM=,tag:7iTvPcZF50VbS1nAEP3uXA==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:L1Zr1XWioKXh7lDq1QI/a/j5UxhND7J3sqO/G8Ksm40=,iv:W0UedOiob+1cttzJPMExvvZvVdtHBeSdznfzW2jfbbM=,tag:dubowG7bAidEcjL5qPh1Pg==,type:str]"
+		},
+		"google": {
+			"oauth_key": "ENC[AES256_GCM,data:HOt1LnjR4oBquGT1Oj1a22wUEVJd3Gji6bdvnb2pYaT4UOb/HDMaLhlJaQnKzU5CAdpy3VM02OSfbu2ymqojkwVT/7eI+CH7,iv:E1CYMV4+ARUWcjExgxZr62r8gcBXKrM7D2imUs0fSts=,tag:UWn/PxVr0SQKH8mVR+1cqw==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:nD0RH/8h+3IfJdDirPJcAXngeX18Astd,iv:RX4C3J9BNS4wsIEQWEKuYPklQNKrhf+zGmNi01PFDgI=,tag:FNeVfvsOBsA2UwGxGBq9tQ==,type:str]"
+		},
+		"twitter": {
+			"oauth_key": "ENC[AES256_GCM,data:NVPx1LsJGouNjAUd+HryqPzLBEcJKe/FCg==,iv:FpOB/0rYs4yy1vi+cD/Rckro+IgD7yfLGtOB2uSP69E=,tag:6pdNEWgyj6R9K8XgBnUkxw==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:UL5p3awGJs4HGAJ6wSBklS0Ss1GQ9QDFtCyoBLOcVq999aKZ+Pz+PgqQxs1lBozZQTo=,iv:WdxA6cb1q2AgecS6poCQf0/EJ07CGwptEQZ2A0heWMY=,tag:R1lGlXcShWH6Ilsbh1XiCA==,type:str]"
+		},
+		"wordpress": {
+			"oauth_key": "ENC[AES256_GCM,data:xFpBe33cnuyZgDuQkgEXbQt8dpxst89rb5PtmGBB,iv:l8A8nOJGdqkc6t06sZcLf6XcM5tw9fETqTfcEL/O598=,tag:GR7P+0+xrI+F9aeXkg84ig==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:VXf6/l8wSpNuMxWnKPctcJ1/sU6bb2U0Yhs9EKwg,iv:lxVqbsu/RzBuq0jEyY6nb5/1A7F/o4wSzVNop4SftlM=,tag:nzflIeamUVeMMfOv5M1EAw==,type:str]",
+			"oauth_server_url": "https://focallocal.org"
+		}
+	},
+	"private": {
+		"google_api_key": "ENC[AES256_GCM,data:H4yUJn0VU5O+bSkuWDGp5131AlHTK12IGpD/1yCAhB6Ou1aa+p22,iv:0sFAs0gRIfB53/X90AJSGZzHdyTp4bwESU3gA9kkh9Y=,tag:lDJqgdPM7kIsWQwZkOV5iA==,type:str]",
+		"discourse": {
+			"url": "https://testing-happiness.ga/",
+			"secret": ""
+		}
+	},
+	"public": {
+		"facebook": {
+			"oauth_key": "ENC[AES256_GCM,data:LW4OBZWv/6tVK7xnBpHk,iv:BOHXFSfB8n8+irf7aALGQie8OHby6XHH7Cs+JcmVJVo=,tag:isYzuO3r4kPg4teh60TiOQ==,type:str]"
+		},
+		"houston_root_route": "/godmode",
+		"houston_documents_per_page": 50,
+		"ga": {
+			"account": "UA-68970741-1"
+		},
+		"gm": {
+			"key": "ENC[AES256_GCM,data:YT2Km6zPWBcJnABQmDmjjjwjM8aPoEdPLuhZFhO9E8giiikbLZ6f,iv:qB7QRvAXAvVQ2fBZjE5ELA6bXSCKdBOqni1XXTx8Mrk=,tag:4L3ah0WygiRy/fd3olry2g==,type:str]"
+		},
+		"mapType": "gatherings"
+	},
+	"wp_oauth_accept_invalid_certs": "true",
+	"kadira": {
+		"appId": "bw79vW7NEjEMX9Xxd",
+		"appSecret": "ENC[AES256_GCM,data:r83vIgOQiUe5JIPa7kSyo9ctV8H9s+GQkFYEXb6m5r/v+tmF,iv:hHz1rCLtQisvcL6RDPkmGd7z520gTgfNvoh0JAqd+5U=,tag:QgeTGIzftiwePNO6Rtxafw==,type:str]",
+		"options": {}
+	},
+	"sops": {
+		"kms": null,
+		"gcp_kms": null,
+		"azure_kv": null,
+		"hc_vault": null,
+		"lastmodified": "2021-05-20T08:10:45Z",
+		"mac": "ENC[AES256_GCM,data:SwS3dGjmS/SI8tOttia+g+D6aC4odP1gg7YwLn6hkuabht0a3ZPkB3qFVA8rKAwArXpaXgflMunNNuydq/pROVmk58Jkdf0LdBSe6Dr0H2BljuqSbWlOZa2SslgoPiY6DwqUYUYPctLbuLiqZ59Y1CK025axIXxHG3oGdYKG3XE=,iv:Vj5nKDLhnRem7dcsHV3QUw+LFB6REcFiEsEUf7nD7QA=,tag:FaNzdipnhcers5himlRR1w==,type:str]",
+		"pgp": [
+			{
+				"created_at": "2021-05-20T08:10:43Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhQEMA5PCgedWIh8GAQgAhzjCTucD5snqgbcUNsGOKhH3y2/vBFChPfz/IGeuEcp4\nejJwVOjLAy00Zq7RjswhVpPjjV6EHTCwPEkcVQHq30NxoZ8kXKERPsXhF+343/nB\nVtnUyV/a9+yrGL4QmGf78N+Ah1o6ONh6eW26kdoS2g3yr88uDXoj3Nvurb2qEFhb\ntk8lrh5BJ/6dDuKakt3ULcXmhk2ftcAM0jTN4uH/hLh0ToUZ6Rp0m4N1mPmY+9mS\nA3IjdzZBRspMOCSPnHTp4/QyMVhxi+qXgtA3s4NCVA199Cw5D+5pHVGSA6ivEKk0\nAuOXOVdC7j/ljxw+20OWkTqWmgNvYTBpLlkG5NXAbNJcAbz/Ks9f4EWVTepfAL6n\ndlQEZO1YWk6pzMmpILrJEVM79W6btDzatupGcu0yQwTUg8XnLNJSTpIIoHJnEgzs\nIfAM3L1EpKeJKjfPqcc4CnAR9gzsiT1sNcQGb/0=\n=c8tx\n-----END PGP MESSAGE-----\n",
+				"fp": "AC7E7C66AC708F04578DD0E293C281E756221F06"
+			},
+			{
+				"created_at": "2021-05-20T08:10:43Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhQIMAxAw3RVz8iZTARAA1i5JvHZSBcjPdnaN8pKR0RPelrXx1UxEQf97nBWMcgwf\nLgIl0jtMu+E9n1Kzoo39na68PLXOGs9TVm0PxzvxG1HpVfHvFUVwKCHxm2CYKwtU\noMqIt1BKEgycYeXspY3w3JPza+VyToygqk4RyIlTOy0KVXhYHyBL1jVVsn5QixmP\nmN8CU/SLbd9fenxNoKcV39WDYu0V0aEu9jmbTYnJniQjlDI+wAlRVhTktdEi+rnD\nToaZKajH1JZc4znMpGVVPECmNbWiQXet6dhixLdrRXVqOLvUsUQUbrJ/zWcOhtU+\ncQPlFuFwTOfA2vwiqY5GGsQYHokAd6PeP3/akG6OT8ghA5daiBElEyhB546706sN\nJjzaLy0LP5w4Aji8lyh21usC5HSpkO9o61K3GEhHf9m10x0RaUvYN7weNpF9NhTC\ngaSWIpSiWz66RuNkViORDU6RpPtAa8+vSNDzUshhNDj+RA1LMNtQaEmRcAdw89z8\nT9Sj7MGzLbmtJgPySVQJfVL/BInIExwSAHPwGLnoAjQd+MPhl3tXGI5iVZ8C/31w\n7dSB6d/QKxfsFfVsYCarwELD4+TcG/aeEkumGRWAALqHq8vEipFH5KxoXtFBD3tK\nQMrtM3FKTKgIcmMxomK5YjojKRYYDK6a8xzBVJVj012/eq1zX7NIduBZlFJc/v3S\nXAHyIpGsHNZvGFeLADTBSFiw3f8yyYOJooj49k+wSAVSx2jmeZtL9xGKDT5FO95N\nZzDHshWOl0yzhArtwDw8IWRi2OXtTMwv68D8V1hZwycAbV23JobCvo6vBVW2\n=FBw7\n-----END PGP MESSAGE-----\n",
+				"fp": "840E6CCDC1624525E9EF8A4E07995D8B7A79AFE2"
+			},
+			{
+				"created_at": "2021-05-20T08:10:43Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhF4DA2H7W1sR9ZESAQdAVOeX75nBj1fR58VCs5cN/Vr5+IphHxRJvN3YiE9rlnUw\n31wAfHYLpYM+dXpw1yejwSpTnrbLPY0QJplX/XvN+B5rs0ptEUxCgbKX2zMVhIsN\n0lwB9lYkUbtCLnopEtMCqdqLm8j3wvvXZ9U3GxQYWrwektMuVZ3CQ3JLeE8kChVn\nrPHFOMC5EFs6krXMBb0E8cxYA5yHs2Sif2Iky3Xhk5IY3UKb6r4YEUN2RtIG0A==\n=Lh58\n-----END PGP MESSAGE-----\n",
+				"fp": "45114EAAF0B75C9BEEDB075820A4FCFC521C4EEB"
+			}
+		],
+		"encrypted_regex": "([kK][eE][yY]|[sS][eE][cC][rR][eE][tT])$",
+		"version": "3.5.0"
+	}
+}

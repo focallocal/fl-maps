@@ -9,6 +9,7 @@ import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
 import cloneDeep from 'clone-deep'
 import './styles.scss'
+import websiteJSON from '../../../../../public/dcs-website.json'
 import { routeMatcher } from '../../app'
 import { comToPlugin } from 'dcs-client'
 
@@ -168,8 +169,6 @@ class NewEventModal extends Component {
 
   onCreateEvent = (eventId) => {
     routeMatcher.getPageName('/page/' + eventId).then((result) => {
-      // Create the Discourse tags with notificationLevel=Watching. See doc here:
-      // https://github.com/sylque/dcs-client/blob/master/comToPlugin.md#create-docuss-tags-in-advance
       comToPlugin.postCreateDcsTags({
         pageName: result,
         triggerIds: ['photos', 'videos', 'stories'],
