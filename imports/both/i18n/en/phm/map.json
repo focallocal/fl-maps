@@ -3,16 +3,16 @@
   "eventInfo": {
     "introTitle": "Introduction",
     "photos": {
-      "title": "Photos",
-      "subtitle": "share links to your pics"
+      "title": "Tasks",
+      "subtitle": "Help Building and Growing"
     },
     "videos": {
-      "title": "Videos",
-      "subtitle": "share links to your vids"
+      "title": "Media",
+      "subtitle": "Vids and Photos"
     },
     "wall": {
-      "title": "Chat and Planning",
-      "subtitle": " "
+      "title": "Wall",
+      "subtitle": "Chat with others joining in"
     },
     "experiences": {
       "title": "References",
