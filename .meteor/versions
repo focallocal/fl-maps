@@ -65,7 +65,7 @@ shim-common@0.1.0
 socket-stream-client@0.1.0
 standard-minifier-css@1.4.1
 standard-minifier-js@2.3.4
-sylque:accounts-discourse@0.0.7
+sylque:accounts-discourse@0.0.5
 sylque:dcs-simple-route-matcher@0.0.6
 tmeasday:check-npm-versions@0.3.2
 tracker@1.1.3
