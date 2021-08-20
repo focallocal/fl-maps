@@ -1,7 +1,7 @@
 language: node_js
 sudo: required
 node_js:
-  - '16.7.0'
+  - '8.11.1'
 
 notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
@@ -14,7 +14,6 @@ before_install:
   - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
   - npm install -g mup
   - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
-  - meteor npm rebuild node-sass --force
 
 branches:
   only:
