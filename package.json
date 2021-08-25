@@ -51,6 +51,7 @@
     "reactstrap": "^6.0.1",
     "remarkable": "^1.7.1",
     "simpl-schema": "^1.5.0",
+    "sass": "1.38.1",
     "uniforms": "^1.30.0",
     "xmlhttprequest": "^1.8.0"
   },
@@ -77,8 +78,8 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
     "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
+    "sass": "1.38.1",
     "sass-loader": "^7.0.1",
     "sinon": "^5.0.7",
     "style-loader": "^0.21.0",
