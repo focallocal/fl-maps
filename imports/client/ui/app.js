@@ -177,7 +177,7 @@ if (inIFrame()) {
       route.pageName === 'wp_faqs'? 'Public Happiness Token' :
       route.pageName === 'm_gather'? 'Hidden' :
       route.pageName === 'summit'? 'The Happier World Economies Summit' :
-      'General Discussion'
+      'Hidden'
     comToPlugin.postSetRouteProps({ category: topicCategory })
   })
 
