@@ -12,7 +12,7 @@ module.exports = {
     name: 'brightertomorrowmap',
     path: '../../.',
     docker: {
-      image: 'abernix/meteord:node-8-onbuild'
+      image: 'abernix/meteord:base'
     },
     servers: {
       one: {}
