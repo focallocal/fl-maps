@@ -24,5 +24,11 @@ module.exports = {
       ROOT_URL: 'https://fl-maps.brightertomorrowmap.com',
       MONGO_URL: secret.mongo_url,
     }
+  },
+  proxy: {
+    domains: 'fl-maps.brightertomorrowmap.com',
+    ssl: {
+      letsEncryptEmail: 'contact@focallocal.org'
+    }
   }
 };
