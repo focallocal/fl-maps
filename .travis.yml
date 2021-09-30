@@ -13,7 +13,7 @@ before_install:
   - cd deployment/$(./deployment/branch-to-dir.sh "$TRAVIS_BRANCH")
   - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
   - npm install -g mup
-  - curl https://install.meteor.com/?release=1.6.1.1 | /bin/sh
+  - curl -k https://install.meteor.com/?release=1.6.1.1 | /bin/sh
 
 branches:
   only:
