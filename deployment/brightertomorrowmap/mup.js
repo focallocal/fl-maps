@@ -12,7 +12,7 @@ module.exports = {
     name: 'brightertomorrowmap',
     path: '../../.',
     docker: {
-      image: 'abernix/meteord:node-8-base'
+      image: 'abernix/meteord:node-8.4.0-base'
     },
     servers: {
       one: {}
@@ -26,9 +26,10 @@ module.exports = {
     }
   },
   proxy: {
-    domains: 'fl-maps.brightertomorrowmap.com',
+    domains: 'brightertomorrowmap.com,www.brightertomorrowmap.com',
     ssl: {
-      letsEncryptEmail: 'contact@focallocal.org'
+      letsEncryptEmail: 'contact@focallocal.org',
+      forceSSL: true
     }
   }
 };
