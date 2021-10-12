@@ -26,7 +26,7 @@ module.exports = {
     }
   },
   proxy: {
-    domains: 'brightertomorrowmap.com,www.brightertomorrowmap.com',
+    domains: 'fl-maps.brightertomorrowmap.com',
     ssl: {
       letsEncryptEmail: 'contact@focallocal.org',
       forceSSL: true
