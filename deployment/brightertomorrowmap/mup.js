@@ -3,9 +3,9 @@ var secret = require('./mup-secrets.json');
 module.exports = {
   servers: {
     one: {
-      host: '178.62.233.44',
-      username: 'deploy',
-      pem: './travis-ssh-key',
+      host: 'localhost',
+      username: 'townson',
+      password: 'townson',
     }
   },
   app: {
@@ -26,7 +26,11 @@ module.exports = {
     }
   },
   proxy: {
-    domains: 'brightertomorrowmap.com,www.brightertomorrowmap.com',
+    domains: 'fl-maps.brightertomorrowmap.com',
+    shared: {
+      httpPort: 80,
+      httpsPort: 443
+    },
     ssl: {
       letsEncryptEmail: 'contact@focallocal.org',
       forceSSL: true
