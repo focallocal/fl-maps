@@ -460,7 +460,7 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 
 ## 6.2.
 
-[view live beta](https://publichappinessmovement.com/docuss/build)
+[view live beta](https://publichappinessmovement.com/categories)
 **Build/The Action Center**
 
 Overview:
