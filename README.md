@@ -1,6 +1,15 @@
 ![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
 
+**Please note this guide is depreciated**
+
 The main resorce for developers on this codebase is in the forums at Publichappinessmovement.com under the Web-dev, Reactjs and Documentation tags.
+
+The most likely page you are looking for is the Getting Started Guide here: https://publichappinessmovement.com/t/topic/1370
+
+__________
+
+
+
 
 This is the base branch for the new react-based fl-maps project.
 
