@@ -807,8 +807,7 @@ Community members attending a gathering on our platform are not passive. Everyon
     },
 	
     {
-        title: "Maintaining productivity in an open forum (Our coloured threads)
-",
+        title: "Maintaining productivity in an open forum (Our coloured threads)",
         code: "Colored",
         fullText: `
 
