@@ -460,7 +460,7 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 
 ## 6.2.
 
-[view live beta](https://publichappinessmovement.com/docuss/build)
+[view live beta](https://publichappinessmovement.com/categories)
 **Build/The Action Center**
 
 Overview:
@@ -548,7 +548,7 @@ The same tools are available to community members creating a localised project, 
 
 ## 6.3.
 
-[view live beta](https://news.publichappinessmovement.com/)
+[view live beta](https://publichappinessmovement.com/c/hero-hub/)
 **Community News (or Happy News)**
 A user generated ‘Community News’ online magazine. Open for all platform users to create their own articles or share video links. This incentives community members to create, like and share content (articles, photos and videos), increasing reach and inspiring more people to join in the Movement. This user created media from around the world increases the sense of community on our platform, and the feeling of being part of something bigger, a global Movement for positive change.
 
@@ -805,12 +805,49 @@ Community members attending a gathering on our platform are not passive. Everyon
 
 `
     },
+	
+    {
+        title: "Maintaining productivity in an open forum (Our coloured threads)
+",
+        code: "Colored",
+        fullText: `
+
+## 6.13. 
+One of the major challenges faced by open communities, where anyone around the world can join the team and begin contributing, is that focus is constantly interrupted. When a group forms into a team to take action on a task they go through distinct phases: 
+
+1 White. They begin by discussing the task and presenting as many ideas to tackle it as possible. 
+
+2 Yellow. Next the team evaluates and improves the most promising suggestions through debate. 
+
+3 Green. Thirdly the team chooses or votes on the most effective course of action from the most promising plans they’ve created.
+
+4 Orange. Finally the team embarks on the work needed to complete that plan
+
+The issue in an open-world style platform is that new people can join in at any phase with new ideas and interrupt progress, setting the team back to an earlier stage and greatly reducing the efficiency of the overall system. 
+
+To prevent that constant interruption, allowing teams on our platform to reach a flow state of efficiency, our ‘Global’ forum colours each discussion thread based on which stage its in so that new users know how to interact with that team and task in a beneficial way.
+
+Examples: 
+
+- If a community member enters a discussion thread in stage 1 they know that all their ideas are welcome
+
+- If its already at stage two then they can best support the task by discussing the ideas already presented
+
+- Coloured for green and they should be commenting or voting on one of the two or three most popular plans
+
+- Teams in an orange build phase really don’t want new members coming in and saying ‘wait, stop what you’re doing and lets do this instead’, so entering an orange thread members will know that their comments should be made in relation to completing the already agreed upon plan.
+
+
+Anyone can still present a new idea for solving a task at any time, by creating a new thread. New ideas are never not welcome and the team working on it can still discuss the new idea, but without slowing momentum in the original thread. If that new idea gains traction then someone could call a vote to gauge which one to continue with, or it will naturally draw others away from the main thread and there will be two competing attempts to solve the issue, with the best one decided by which functions best on completion. 
+`
+    },	
+	
     {
         title: "User Wall and Plugin Module Ecosystem",
         code: "UsWaan",
         fullText: `
 
-## 6.13. 
+## 6.14. 
 
 **User Wall and Plugin Module Ecosystem**
 Logged in community members will arrive on their profile page and wall each time they visit. A community members profile page contains three types of features:
