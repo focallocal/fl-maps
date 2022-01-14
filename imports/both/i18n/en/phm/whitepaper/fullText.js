@@ -548,7 +548,7 @@ The same tools are available to community members creating a localised project, 
 
 ## 6.3.
 
-[view live beta](https://news.publichappinessmovement.com/)
+[view live beta](https://publichappinessmovement.com/c/hero-hub/)
 **Community News (or Happy News)**
 A user generated ‘Community News’ online magazine. Open for all platform users to create their own articles or share video links. This incentives community members to create, like and share content (articles, photos and videos), increasing reach and inspiring more people to join in the Movement. This user created media from around the world increases the sense of community on our platform, and the feeling of being part of something bigger, a global Movement for positive change.
 
