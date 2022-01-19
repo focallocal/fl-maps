@@ -812,32 +812,31 @@ Community members attending a gathering on our platform are not passive. Everyon
         fullText: `
 
 ## 6.13. 
-One of the major challenges faced by open communities, where anyone around the world can join the team and begin contributing, is that focus is constantly interrupted. When a group forms into a team to take action on a task they go through distinct phases: 
 
-1 White. They begin by discussing the task and presenting as many ideas to tackle it as possible. 
+**Maintaining productivity in an open forum (Our coloured threads)**
+One of the major challenges faced by open communities, where anyone around the world can join a team and begin contributing, is that the teams focus is constantly interrupted when new members join in and drop new ideas which need addressing before the team can continue with the work or discussion they were focused on. This makes it difficult for teams to maintain momentum and reach an efficient flow state for efficient progress on tasks they are working on.
 
-2 Yellow. Next the team evaluates and improves the most promising suggestions through debate. 
+When a group forms into a team to take action on a task they go through distinct phases: 
 
-3 Green. Thirdly the team chooses or votes on the most effective course of action from the most promising plans they’ve created.
+1 (White). Members begin by discussing the task and presenting as many ideas to tackle it as possible. 
+2 (Yellow). The team evaluates and improves the most promising of the suggestions through debate. 
+3 (Green). Team chooses through obvious consensus, or voting, which plan suggested will be most effective at solving the task.
+4 (Orange).  Team members agree individual tasks and embark on the work needed to complete that plan
 
-4 Orange. Finally the team embarks on the work needed to complete that plan
+The issue in an open-world style platform is that new people can join in at any phase and often have  new ideas, which may or may not be valid, but they require the team to interrupt progress and address them, setting discussion back to an earlier stage which greatly reduces the efficiency of the overall system when it occurs often. 
 
-The issue in an open-world style platform is that new people can join in at any phase with new ideas and interrupt progress, setting the team back to an earlier stage and greatly reducing the efficiency of the overall system. 
-
-To prevent that constant interruption, allowing teams on our platform to reach a flow state of efficiency, our ‘Global’ forum colours each discussion thread based on which stage its in so that new users know how to interact with that team and task in a beneficial way.
+To prevent this and allow teams on our platform to reach a flow state of efficiency, each discussion I n our ‘Global’ forum has a different background colour which corresponds to the stage the discussion is currently in. With this system new team members know, or are quickly told, how they can interact with that team and task in a beneficial way.
 
 Examples: 
+Stage 1 (White) - If a community member enters a discussion thread in stage 1 they know that all their ideas are welcome
+Stage 2 (Yellow) – Now at stage two they can best support the task by discussing and contributing to the ideas already presented
+Stage 3 (Green) - Members should be commenting or voting on one of the two or three most popular plans
+Stage 4 (Orange) - Teams in an orange build phase really don’t want new members coming in and saying ‘wait, stop what you’re doing and lets do this instead’, so entering an orange thread members will know that their comments should be made in relation to completing the already agreed upon plan.
 
-- If a community member enters a discussion thread in stage 1 they know that all their ideas are welcome
+Breaking the chain - New ideas are always welcome and anyone can still present their new idea for solving a task at any time if they believe its significantly better than the plan(s) currently being worked on. Members do this by creating a completely new thread for their idea where the team currently working on the task can address the new idea, but without slowing momentum in the original thread. If that new idea gains traction then someone could call a discussion and vote to determine which one members want to continue with. Occasionally a significant number of members may choose not to abide by the vote meaning there will be two competing attempts to solve the task. In this scenario the best one will be decided by which functions best on completion, decided by a community wide vote.
 
-- If its already at stage two then they can best support the task by discussing the ideas already presented
+(see section 6.11 for more information on voting).
 
-- Coloured for green and they should be commenting or voting on one of the two or three most popular plans
-
-- Teams in an orange build phase really don’t want new members coming in and saying ‘wait, stop what you’re doing and lets do this instead’, so entering an orange thread members will know that their comments should be made in relation to completing the already agreed upon plan.
-
-
-Anyone can still present a new idea for solving a task at any time, by creating a new thread. New ideas are never not welcome and the team working on it can still discuss the new idea, but without slowing momentum in the original thread. If that new idea gains traction then someone could call a vote to gauge which one to continue with, or it will naturally draw others away from the main thread and there will be two competing attempts to solve the issue, with the best one decided by which functions best on completion. 
 `
     },	
 	
