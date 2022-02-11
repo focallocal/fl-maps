@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
 import HowToHelpSection from './HowToHelpSection'
-import MovementSection from './MovementSection';
 import './styles.scss'
 
 class Home extends Component {
@@ -14,26 +13,18 @@ class Home extends Component {
     let url
     let opacity
     if (window.__mapType === 'gatherings') {
-      url = '/images/Public-happiness-movement-new-banner.jpg'
-      // opacity = 0.5
+      url = '/images/focallocal-bg.jpg'
+      opacity = 0.5
     } else {
       url = '/images/focallocal-bgOG.jpg'
     }
     let backgroundImage = { backgroundImage: 'url(' + url + ')', opacity }
-    let imgStyle = { width: '100%' }
     return (
       <main className='home'>
-        {/*<div id='hero-bg' style={backgroundImage} />*/}
-        <div>
-          <img src={url} style={imgStyle} />
-        </div>
+        <div id='hero-bg' style={backgroundImage} />
         <FirstSection />
-        <MovementSection />
-        <MovementSection />
-        {/*
-          <HowToHelpSection />
-          <SecondSection button/>
-        */}
+        <HowToHelpSection />
+        <SecondSection button/>
       </main>
     )
   }

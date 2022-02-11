@@ -1,0 +1,73 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#movement_section {
+  margin-top: -25rem;
+  padding: 40px;
+  background: $gray-lighter;
+  text-align: left;
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  .title{
+    font-size: 2em;
+    line-height: 1.2em;
+    margin-left: -15px;
+  }
+  .item-text {
+    font-size: 1.3em;
+  }
+
+  // Text Color
+  .title, .item-title, .item-text {
+    color: $black-lighter;
+  }
+  .item{
+    margin-bottom: 24px;
+  }
+
+  .sign-and-post {
+    display: block;
+    width: 16em;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+
+  .join {
+    display: block;
+
+    width: 12em;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 0.8rem;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 850px) {
+    .title {
+      font-size: 1.4em;
+      line-height: 1.4em;
+      margin-left: 0;
+      text-align: left;
+    }
+
+    .item {
+      margin-left: 15px;
+    }
+
+    .items {
+      flex-flow: column;
+
+      &>div {
+        flex: 1;
+        max-width: 480px;
+        margin: 0 1em;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

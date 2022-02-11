@@ -36,52 +36,31 @@ class Find extends Component {
 
     return (
       <FormGroup className='find-wrapper'>
-        {/*<Label for='find'>{i18n.Home.find_events}</Label>*/}
+        <Label for='find'>{i18n.Home.find_events}</Label>
         <InputGroup>
           <Input
             id='find'
             type='text'
             value={search}
             invalid={error}
-            placeholder='Search Skills, Projects and/or Causes'
+            placeholder='Enter city, state or zipcode'
             onChange={this.handleSearch}
             onFocus={this.removeError}
             onKeyPress={this.handleKeyPress}
           />
           <InputGroupAddon addonType='append'>
             <Button onClick={this.findBySearch} disabled={isGettingLocation}>
-              GLOBAL
-            </Button>
+              Find
+           </Button>
           </InputGroupAddon>
         </InputGroup>
         {error && <div className='error-msg'>Couldn't find anything..</div>}
-
-        <InputGroup>
-          <Input
-            id='find'
-            type='text'
-            value={search}
-            invalid={error}
-            placeholder='Search City, Town, Village or Nation'
-            onChange={this.handleSearch}
-            onFocus={this.removeError}
-            onKeyPress={this.handleKeyPress}
-          />
-          <InputGroupAddon addonType='append'>
-            <Button onClick={this.findBySearch} disabled={isGettingLocation}>
-              LOCAL
-            </Button>
-          </InputGroupAddon>
-        </InputGroup>
-
-        {/*
         <div className='divider'>Or</div>
         <div className='center'>
           <Button onClick={this.findByCurrentLocation}>
             Use Current Location
-          </Button>
+         </Button>
         </div>
-        */}
       </FormGroup>
     )
   }
@@ -121,10 +100,6 @@ class Find extends Component {
 
   handleKeyPress = (event) => {
     if (event.key === "Enter") this.findBySearch()
-  }
-
-  globalSearch = () => {
-
   }
 }
 

@@ -6,6 +6,23 @@
     "button": "Sign Up and Begin!",
     "button_loggedIn": "Post onto the Map"
   },
+  "movement_section":{
+    "title": "Movement",
+    "content":{
+      "items":[
+        {
+          "text": "Put yourself on the Public Happiness Map.",
+          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
+        },
+        {
+          "text": "Create your Public Happiness Gathering now.",
+          "link": "https://activities.focallocal.org/",
+          "linktext": "Suggestions here!",
+          "subText": "Browse, suggest and discuss positive tools and activities to create a small positive change in our world in the Action Center."
+        }
+      ]
+    }
+  },
   "how_to_help_section":{
     "title": "How can I take action to make where I live a friendlier, safer and happier place?",
     "content":{

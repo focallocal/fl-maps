@@ -3,7 +3,8 @@
 #first-section {
   position: relative;
   display: flex;
-  margin-top: -160px;
+  // margin-top: -160px;
+  top: -200px;
   margin-bottom: 0;
 
   .first-title {
@@ -17,12 +18,21 @@
 }
 
 .find-wrapper {
-  width: 100%;
+  /*width: 100%;
   max-width: 720px;
   padding: 32px 24px;
   background: #fff;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
-  border-radius: 4px;
+  border-radius: 4px;*/
+
+  width: 100%;
+  max-width: 720px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 170px;
+  /*box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .3);*/
 
   .btn {
     width: 240px;
@@ -64,10 +74,133 @@
 
 }
 
+@media screen and (min-width: 900px) {
+
+  #first-section {
+    top: -610px;
+
+    .first-title {
+      font-size: 2.2em;
+    }
+  }
+
+
+  .find-wrapper {
+    width: 98%;
+
+    .header {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 901px) {
+
+  #first-section {
+    top: -590px;
+
+    .first-title {
+      font-size: 2.2em;
+    }
+  }
+
+
+  .find-wrapper {
+    width: 98%;
+
+    .header {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 935px) {
+
+  #first-section {
+    top: -610px;
+
+    .first-title {
+      font-size: 2.2em;
+    }
+  }
+
+
+  .find-wrapper {
+    width: 98%;
+
+    .header {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 1090px) {
+
+  #first-section {
+    top: -680px;
+
+    .first-title {
+      font-size: 2.2em;
+    }
+  }
+
+
+  .find-wrapper {
+    width: 70%;
+
+    .header {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+
+  #first-section {
+    top: -800px;
+
+    .first-title {
+      font-size: 2.2em;
+    }
+  }
+
+
+  .find-wrapper {
+    // width: 98%;
+
+    .header {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 1880px) {
+
+  #first-section {
+    top: -960px;
+
+    .first-title {
+      font-size: 2.2em;
+    }
+  }
+
+
+  .find-wrapper {
+    // width: 98%;
+
+    .header {
+      font-size: 2em;
+    }
+  }
+}
+
+/*
 @media screen and (max-width: 900px) {
 
   #first-section {
-    margin-top: -130px;
+    // margin-top: -130px;
+    position: relative;
+    // top: -479px;
 
     .first-title {
       font-size: 2.2em;
@@ -122,3 +255,4 @@
     }
   }
 }
+*/
