@@ -11,6 +11,122 @@
     "content":{
       "items":[
         {
+          "title": "Global",
+          "text": "Put yourself on the Public Happiness Map.",
+          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights.",
+          "subItems": [
+            {
+              "title": "Members",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Projects",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Teams",
+              "values": [
+                {
+                  "title": "Active",
+                  "value": "23"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Local",
+          "text": "Find a Public Happiness Gathering near you.",
+          "subText":"Find a Public Happiness Gathering near you and join the movement.",
+          "subItems": [
+            {
+              "title": "Gatherings",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Estimated Reach",
+              "value": "23.9M"
+            }
+          ]
+        },
+        {
+          "title": "Media",
+          "text": "Take action to make a difference.",
+          "subText":"Take action to make a difference in your community.",
+          "subItems": [
+            {
+              "title": "Followers",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Estimated Reach",
+              "value": "21,200"
+            }
+          ]
+        },
+        {
+          "title": "Economy",
+          "text": "Connect with others.",
+          "subText":"Connect with others in your community.",
+          "subItems": [
+            {
+              "title": "Market Cap",
+              "value": "854M"
+            },
+            {
+              "title": "Change",
+              "value": "+21M"
+            },
+            {
+              "title": "Per Token",
+              "value": "$3.4"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "projects_section":{
+    "title": "Projects",
+    "content":{
+      "items":[
+        {
           "text": "Put yourself on the Public Happiness Map.",
           "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
         },

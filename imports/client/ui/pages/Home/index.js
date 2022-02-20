@@ -3,6 +3,7 @@ import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
 import HowToHelpSection from './HowToHelpSection'
 import MovementSection from './MovementSection';
+import ProjectsSection from './ProjectsSection';
 import './styles.scss'
 
 class Home extends Component {
@@ -29,7 +30,7 @@ class Home extends Component {
         </div>
         <FirstSection />
         <MovementSection />
-        <MovementSection />
+        <ProjectsSection />
         {/*
           <HowToHelpSection />
           <SecondSection button/>

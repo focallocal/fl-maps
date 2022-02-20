@@ -33,34 +33,11 @@ class MovementSection extends Component {
        <Container>
          <div className='title'>{title}</div>
          <Row className="items">
-           <Col>
              {items.map((item, i) => (
-               <Row key={i}>
-                <Item item={item} loginButton={loginButton} />
-               </Row>
+                <Col key={i} lg="3">
+                  <Item item={item} />
+                </Col>
              ))}
-           </Col>
-           <Col>
-             {items.map((item, i) => (
-               <Row key={i}>
-                 <Item item={item} loginButton={loginButton} />
-               </Row>
-             ))}
-           </Col>
-           <Col>
-             {items.map((item, i) => (
-               <Row key={i}>
-                 <Item item={item} loginButton={loginButton} />
-               </Row>
-             ))}
-           </Col>
-           <Col>
-             {items.map((item, i) => (
-               <Row key={i}>
-                 <Item item={item} loginButton={loginButton} />
-               </Row>
-             ))}
-           </Col>
          </Row>
        </Container>
      </section>

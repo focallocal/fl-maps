@@ -1,7 +1,7 @@
 @import '/imports/client/stylesheets/variables.scss';
 
-#movement_section {
-  margin-top: -25rem;
+#projects_section {
+  margin-top: -5rem;
   padding: 40px;
   // background: $gray-lighter;
   text-align: left;
@@ -17,7 +17,6 @@
   }
   .item-text {
     font-size: 1.3em;
-    font-weight: bolder;
   }
 
   // Text Color
@@ -26,17 +25,6 @@
   }
   .item{
     margin-bottom: 24px;
-  }
-
-  .subItems {
-    .subItemIitle {
-      font-weight: bolder;
-      font-size: 1rem;
-    }
-    .value {
-      color: green;
-      font-weight: bold;
-    }
   }
 
   .sign-and-post {
