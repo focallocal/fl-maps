@@ -15,9 +15,9 @@ let titleColor = {color: color}
 const FirstSection = ({ user }) => (
   <section id='first-section'>
     <Container>
-      {/*<div className='first-title' style={
+      <div className='first-title' style={
         (window.__mapType === 'gatherings') ? titleColor = {color: 'rgba(0,0,0,.75)'} : titleColor = {color: '#ffffff'}}
-      >{Home.first_title}</div>*/}
+      >{Home.first_title}</div>
       <Find user={user} />
     </Container>
   </section>
