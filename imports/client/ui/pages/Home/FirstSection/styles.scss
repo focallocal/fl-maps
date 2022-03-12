@@ -5,7 +5,7 @@
   display: flex;
   // margin-top: -160px;
   top: -200px;
-  margin-bottom: 0;
+  margin-bottom: 14rem;
 
   .first-title {
     margin-top: -30px;
@@ -74,10 +74,67 @@
 
 }
 
+@media screen and (min-width: 250px) {
+  #first-section {
+    top: -240px;
+    margin-bottom: 12rem;
+  }
+}
+
+@media screen and (min-width: 280px) {
+  .find-wrapper {
+    width: 125%;
+    padding: 44px 24px;
+  }
+
+  #first-section {
+    top: -230px;
+    margin-bottom: 12rem;
+  }
+}
+
+@media screen and (min-width: 325px) {
+  .find-wrapper {
+    width: 100%;
+    padding: 32px 24px;
+  }
+
+  #first-section {
+    top: -270px;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  #first-section {
+    top: -300px;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  #first-section {
+    top: -308px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #first-section {
+    top: -377px;
+    margin-bottom: 12rem;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  #first-section {
+    top: -458px;
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (min-width: 900px) {
 
   #first-section {
     top: -610px;
+    margin-bottom: 1rem;
 
     .first-title {
       font-size: 2.2em;
@@ -227,32 +284,5 @@
   }
 }
 
-@media screen and (max-width: 520px) {
 
-  #hero-bg {
-    display: none;
-  }
-
-  #first-section {
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding: 0;
-
-    .container {
-      margin-top: 40px;
-
-      .first-title {
-        margin: 0;
-        margin-bottom: 24px;
-      }
-    }
-
-    .find-wrapper {
-      background: transparent;
-      box-shadow: none;
-      width: 100%;
-      padding: 0;
-    }
-  }
-}
 */

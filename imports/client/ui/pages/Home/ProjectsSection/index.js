@@ -11,7 +11,8 @@ import {
   CardTitle,
   CardText,
   CardSubtitle,
-  CardLink
+  CardLink,
+  CardDeck
 } from 'reactstrap'
 import Item from './Item'
 import i18n from '/imports/both/i18n/en'
@@ -45,65 +46,11 @@ class ProjectsSection extends Component {
        <Container>
          <div className='title'>{title}</div>
          <Row className="items">
-           <Col lg="6">
-              <Card>
-                <img
-                  alt="Card image cap"
-                  src="https://picsum.photos/318/180"
-                  width="40%"
-                />
-                <CardBody>
-                  <CardTitle tag="h5">
-                    Card title
-                  </CardTitle>
-                  <CardSubtitle
-                    className="mb-2 text-muted"
-                    tag="h6"
-                  >
-                    Card subtitle
-                  </CardSubtitle>
-                </CardBody>
-
-                <CardBody>
-                  <CardText>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </CardText>
-                  <CardLink href="#">
-                    Card Link
-                  </CardLink>
-                  <CardLink href="#">
-                    Another Link
-                  </CardLink>
-                </CardBody>
-              </Card>
-              
-             {items.map((item, i) => (
-               <Row key={i}>
+           <CardDeck>
+              {items.map((item, i) => (
                 <Item item={item} loginButton={loginButton} />
-               </Row>
-             ))}
-           </Col>
-           <Col lg="6">
-             {items.map((item, i) => (
-               <Row key={i}>
-                 <Item item={item} loginButton={loginButton} />
-               </Row>
-             ))}
-           </Col>
-           <Col lg="6">
-             {items.map((item, i) => (
-               <Row key={i}>
-                 <Item item={item} loginButton={loginButton} />
-               </Row>
-             ))}
-           </Col>
-           <Col lg="6">
-             {items.map((item, i) => (
-               <Row key={i}>
-                 <Item item={item} loginButton={loginButton} />
-               </Row>
-             ))}
-           </Col>
+              ))}
+           </CardDeck>
          </Row>
        </Container>
      </section>

@@ -61,7 +61,7 @@
 
   @media screen and (max-width: 850px) {
     .title {
-      font-size: 1.4em;
+      font-size: 1.8em;
       line-height: 1.4em;
       margin-left: 0;
       text-align: left;
@@ -72,12 +72,12 @@
     }
 
     .items {
-      flex-flow: column;
+      // flex-flow: column;
 
       &>div {
-        flex: 1;
-        max-width: 480px;
-        margin: 0 1em;
+        // flex: 1;
+        // max-width: 480px;
+        // margin: 0 1em;
         margin-bottom: 24px;
       }
     }
