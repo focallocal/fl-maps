@@ -1,0 +1,35 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#second-section {
+  margin-top: 0;
+  padding: 40px;
+  background: $gray-lighter;
+  text-align: center;
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  // Text Color
+  .title, .item-title, .item-text {
+    color: $black-lighter;
+  }
+
+  .read-more {
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: 850px) {
+
+    .items {
+      flex-flow: column;
+
+      &>div {
+        flex: 1;
+        max-width: 480px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

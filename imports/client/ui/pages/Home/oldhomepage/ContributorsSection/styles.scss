@@ -1,0 +1,28 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+#contributors_section {
+  margin-bottom: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  background: $gray-lighter;
+  text-align: center;
+
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  // Text Color
+  .title, .item-title, .c-item-title {
+    color: $black-lighter;
+  }
+  .c-item-title {
+    margin-bottom: 26px;
+    font-weight: bold;
+    font-size: 1.6em;
+  }
+  .allContButton {
+    margin: 0 auto;
+    text-align: center;
+  }
+}

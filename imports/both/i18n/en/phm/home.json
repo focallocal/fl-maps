@@ -6,6 +6,180 @@
     "button": "Sign Up and Begin!",
     "button_loggedIn": "Post onto the Map"
   },
+  "movement_section":{
+    "title": "Movement",
+    "content":{
+      "items":[
+        {
+          "title": "Global",
+          "text": "Put yourself on the Public Happiness Map.",
+          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights.",
+          "subItems": [
+            {
+              "title": "Members",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Projects",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Teams",
+              "values": [
+                {
+                  "title": "Active",
+                  "value": "23"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Local",
+          "text": "Find a Public Happiness Gathering near you.",
+          "subText":"Find a Public Happiness Gathering near you and join the movement.",
+          "subItems": [
+            {
+              "title": "Gatherings",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Estimated Reach",
+              "value": "23.9M"
+            }
+          ]
+        },
+        {
+          "title": "Media",
+          "text": "Take action to make a difference.",
+          "subText":"Take action to make a difference in your community.",
+          "subItems": [
+            {
+              "title": "Followers",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "21,200"
+                },
+                {
+                  "title": "Active",
+                  "value": "7,321"
+                }
+              ]
+            },
+            {
+              "title": "Estimated Reach",
+              "value": "21,200"
+            }
+          ]
+        },
+        {
+          "title": "Economy",
+          "text": "Connect with others.",
+          "subText":"Connect with others in your community.",
+          "subItems": [
+            {
+              "title": "Market Cap",
+              "value": "854M"
+            },
+            {
+              "title": "Change",
+              "value": "+21M"
+            },
+            {
+              "title": "Per Token",
+              "value": "$3.4"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "projects_section":{
+    "title": "Projects",
+    "__IMAGE_PROPERTIES__": {
+      "__COMMENT_DESCRIPTION": "This comment is about the 'image' fields",
+      "__DIMENSION__": "550 x 350",
+      "__SIZE__": "274 KB or les would be great."
+    },
+    "content":{
+      "items":[
+        {
+          "color": "red",
+          "title": "#Token",
+          "url": "https://www.token.com",
+          "image": "/images/test-project.png",
+          "description": "Put yourself on the Public Happiness Map.",
+          "categories": [
+            {
+              "title": "UX Team",
+              "url": "#"
+            },
+            {
+              "title": "SEO",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "color": "blue",
+          "title": "#Media",
+          "url": "https://www.media.com",
+          "image": "/images/test-project.png",
+          "description": "Create your Public Happiness Gathering now.",
+          "categories": [
+            {
+              "title": "UX Team",
+              "url": "/ux-team"
+            },
+            {
+              "title": "SEO",
+              "url": "#"
+            },
+            {
+              "title": "Test",
+              "url": "#"
+            },
+            {
+              "title": "Test",
+              "url": "#"
+            },
+            {
+              "title": "Test",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    }
+  },
   "how_to_help_section":{
     "title": "How can I take action to make where I live a friendlier, safer and happier place?",
     "content":{
