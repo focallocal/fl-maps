@@ -34,7 +34,7 @@ class MovementSection extends Component {
          <div className='title'>{title}</div>
          <Row className="items">
              {items.map((item, i) => (
-                <Col key={i} lg="3">
+                <Col key={i} xs="6" sm="6" md="6" lg="3">
                   <Item item={item} />
                 </Col>
              ))}
