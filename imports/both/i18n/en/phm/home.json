@@ -22,25 +22,10 @@
                   "title": "Total",
                   "value": "21,200"
                 },
-
-// PHM: 216
-// https://publichappinessmovement.com/admin/reports/users_by_trust_level?end_date=2022-03-14&start_date=2022-03-14 or https://publichappinessmovement.com/admin/users/list/active
-
-
-// Github: 116
-// https://github.com/orgs/focallocal/people
-
-
                 {
-                  "title": "Active This Week",
-                  "value": "31"
+                  "title": "Active",
+                  "value": "7,321"
                 }
-
-
-// On PHM: 
-// https://publichappinessmovement.com/admin/reports/visits?end_date=2022-03-14&start_date=2022-02-14
-
-
               ]
             },
             {
@@ -51,7 +36,7 @@
                   "value": "21,200"
                 },
                 {
-                  "title": "Activity",
+                  "title": "Active",
                   "value": "7,321"
                 }
               ]
@@ -60,7 +45,7 @@
               "title": "Teams",
               "values": [
                 {
-                  "title": "Activity",
+                  "title": "Active",
                   "value": "23"
                 }
               ]
@@ -77,28 +62,18 @@
               "values": [
                 {
                   "title": "Total",
-                  "value": "721"
+                  "value": "21,200"
                 },
                 {
                   "title": "Active",
-                  "value": "23"
+                  "value": "7,321"
                 }
               ]
             },
             {
-              "title": "Estimated Direct Reach",
-              "value": "793,100"
+              "title": "Estimated Reach",
+              "value": "23.9M"
             }
-            {
-              "title": "Estimated Butterfly Effect",
-              "value": "158,620,000"
-            }
-
-// Average number of people at an activity: 5
-// Average number of people who have a happier because of direct interaction with our activity: 220
-// (5*220)*721: 793,100
-// Estimated positive interactions created by people who are having a better day because of interaction with our activity (*200): 158,620,000
-
           ]
         },
         {
@@ -111,72 +86,17 @@
               "values": [
                 {
                   "title": "Total",
-                  "value": "52,091"
+                  "value": "21,200"
                 },
-                
-// Facebook 1: 2274
-// https://www.facebook.com/Focallocal
-
-// Facebook 2: 2300
-// https://www.facebook.com/groups/focallocal/
-
-// Facebook 3: 1900
-// https://www.facebook.com/publichappinessandy/
-
-// Facebook 4: 6
-// https://www.facebook.com/PublicHappiness/
-
-// Facebook 5: 4600
-// https://www.facebook.com/groups/527549263925221
-
-// Facebook 6: 3
-// https://www.facebook.com/groups/1341548706343833
-
-// Reddit 1: 28900
-// https://www.reddit.com/r/randomactsofkindness/
-
-// Reddit 2: 9400
-// https://www.reddit.com/r/happiness/
-
-// Reddit 3: 569
-// https://www.reddit.com/r/brightertomorrow/
-
-// Instagram: 620
-// https://www.instagram.com/publichappinesswiggles/
-
-// Instagram 2: 17
-// https://www.instagram.com/publichappinessmovement/
-
-// Youtube: 122
-// https://www.youtube.com/channel/UCV5vm0mYy3VM-I461q7QfcQ
-
-// Youtube 2: 6
-// https://www.youtube.com/channel/UCkYVBetdxHE5juw7SPMvOGg
-
-// Twitter: 294
-// https://twitter.com/Focallocal
-                
-// LinkedIn: 57
-// https://www.linkedin.com/company/10032698/        
-
-// LinkedIn 2: 1053
-// https://www.linkedin.com/in/andytulett/        
-
-// Tiktok: 0
-// coming soon
                 {
-                  "title": "Activity This Week",
+                  "title": "Active",
                   "value": "7,321"
                 }
-
-// Posts on all sources
-// New sign ups or follows on all sources
-// New likes on all sources
               ]
             },
             {
-              "title": "Growth this week",
-              "value": "452"
+              "title": "Estimated Reach",
+              "value": "21,200"
             }
           ]
         },
