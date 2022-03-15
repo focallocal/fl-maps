@@ -190,18 +190,19 @@
           "title": "Economy",
           "text": "Connect with others.",
           "subText":"Connect with others in your community.",
+// Token values: https://rinkeby.etherscan.io/token/0xb213fb13b7eefb02df67496af78398c298fa1546
           "subItems": [
             {
               "title": "Market Cap",
-              "value": "854M"
+              "value": "0"
             },
             {
               "title": "Change",
-              "value": "+21M"
+              "value": "+0"
             },
             {
               "title": "Per Token",
-              "value": "$3.4"
+              "value": "$0"
             }
           ]
         }
