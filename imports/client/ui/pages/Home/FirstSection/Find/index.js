@@ -5,6 +5,8 @@ import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import getUserPosition, { getCurrentLocation, storeUserLocation } from '/imports/client/utils/location/getUserPosition'
 import i18n from '/imports/both/i18n/en'
 
+const FirstI18N = i18n.Home.first_section
+
 class Find extends Component {
   state = {
     error: null,
@@ -29,6 +31,9 @@ class Find extends Component {
       search
     } = this.state
 
+    const {
+      form
+    } = FirstI18N
     if (userLocation) {
       window.previousStateOfMap = undefined
       return <Redirect to='/map' />
@@ -39,18 +44,11 @@ class Find extends Component {
         {/*<Label for='find'>{i18n.Home.find_events}</Label>*/}
         <InputGroup>
           <Input
-            id='find'
-            type='text'
-            value={search}
-            invalid={error}
-            placeholder='Search Skills, Projects and/or Causes'
-            onChange={this.handleSearch}
-            onFocus={this.removeError}
-            onKeyPress={this.handleKeyPress}
+            placeholder={form.global_search.text_input.placeholder}
           />
           <InputGroupAddon addonType='append'>
-            <Button onClick={this.findBySearch} disabled={isGettingLocation}>
-              GLOBAL
+            <Button>
+              {form.global_search.button.text}
             </Button>
           </InputGroupAddon>
         </InputGroup>
@@ -62,14 +60,14 @@ class Find extends Component {
             type='text'
             value={search}
             invalid={error}
-            placeholder='Search City, Town, Village or Nation'
+            placeholder={form.local_search.text_input.placeholder}
             onChange={this.handleSearch}
             onFocus={this.removeError}
             onKeyPress={this.handleKeyPress}
           />
           <InputGroupAddon addonType='append'>
             <Button onClick={this.findBySearch} disabled={isGettingLocation}>
-              LOCAL
+              {form.local_search.button.text}
             </Button>
           </InputGroupAddon>
         </InputGroup>
