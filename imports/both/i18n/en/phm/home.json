@@ -51,6 +51,7 @@
           ]
         },
 	
+	
 	"__LINKS_AND_SOURCES__": {
       "__COMMENT_DESCRIPTION__": "This comment gives links to the sources where the data for the values in this section come from",
 	  
@@ -134,81 +135,53 @@
 	  "__Facebook 5__": "4600: https://www.facebook.com/groups/527549263925221"
 	  "__Facebook 6__": "3: https://www.facebook.com/groups/1341548706343833"
 
+	"__Reddit__": "28900",
+      "__LINK_1__": "28900 - Randomactsofkindness: https://www.reddit.com/r/randomactsofkindness/"
+	  "__LINK_2__": "9400 - Happiness: https://www.reddit.com/r/happiness"
+	  "__LINK_3__": "569 - Brightertomorrow: https://www.reddit.com/r/brightertomorrow/"
 
-Below here is still being worked on
-
-	"__Github__": "116",
-      "__LINK_1__": "https://github.com/orgs/focallocal/people"
-	  "__LINK_2__": ""
-
-	"__Github__": "116",
-      "__LINK_1__": "https://github.com/orgs/focallocal/people"
-	  "__LINK_2__": ""
+	"__Instagram__": "637",
+      "__LINK_1__": "620 - Publichappinesswiggles: https://www.instagram.com/publichappinesswiggles/"
+	  "__LINK_2__": "17 - PublicHappinessMovement: https://www.instagram.com/publichappinessmovement/"
 	  
-	"__Github__": "116",
-      "__LINK_1__": "https://github.com/orgs/focallocal/people"
-	  "__LINK_2__": ""	  
+	"__Youtube__": "128",
+      "__LINK_1__": "122 - Focallocal: https://www.youtube.com/channel/UCV5vm0mYy3VM-I461q7QfcQ"
+	  "__LINK_2__": "6 - PublicHappinessMovement: https://www.youtube.com/channel/UCkYVBetdxHE5juw7SPMvOGg"	  
 
-	"__Github__": "116",
-      "__LINK_1__": "https://github.com/orgs/focallocal/people"
-	  "__LINK_2__": ""               
+	"__Twitter__": "284",
+      "__LINK_1__": "https://twitter.com/Focallocal"
+
+	"__LinkedIn__": "1110",
+      "__LINK_1__": "57 - Focallocal: https://www.linkedin.com/company/10032698/"
+	  "__LINK_2__": "1053 - Andy Tulett: https://www.linkedin.com/in/andytulett/ "	  
+	  
+	"__Tiktok__": "Coming Soon",
 
 
-
-
-// Reddit 1: 28900
-// https://www.reddit.com/r/randomactsofkindness/
-
-// Reddit 2: 9400
-// https://www.reddit.com/r/happiness/
-
-// Reddit 3: 569
-// https://www.reddit.com/r/brightertomorrow/
-
-// Instagram: 620
-// https://www.instagram.com/publichappinesswiggles/
-
-// Instagram 2: 17
-// https://www.instagram.com/publichappinessmovement/
-
-// Youtube: 122
-// https://www.youtube.com/channel/UCV5vm0mYy3VM-I461q7QfcQ
-
-// Youtube 2: 6
-// https://www.youtube.com/channel/UCkYVBetdxHE5juw7SPMvOGg
-
-// Twitter: 294
-// https://twitter.com/Focallocal
-                
-// LinkedIn: 57
-// https://www.linkedin.com/company/10032698/        
-
-// LinkedIn 2: 1053
-// https://www.linkedin.com/in/andytulett/        
-
-// Tiktok: 0
-// coming soon
                 {
                   "title": "Activity This Week",
                   "value": "7,321"
                 }
 
-// Posts on all sources
-// New sign ups or follows on all sources
-// New likes on all sources
+"__DATA_SOURCES__": {
+      "__COMMENT_DESCRIPTION": "Under Construction, this number is not accurate. Here will be data for posts this month on all of our social media network. New sign ups, follows, likes on all sources",
               ]
             },
             {
-              "title": "Growth this week",
-              "value": "452"
+              "title": "Monthly Growth",
+              "value": "+1237"
             }
           ]
         },
+		
+"__DATA_SOURCES__": {
+      "__COMMENT_DESCRIPTION": "Under Construction, this figure is not accurate. The increase in our reach this month (this month minus last months total)",
+	  
+	  
         {
           "title": "Economy",
           "text": "Connect with others.",
           "subText":"Connect with others in your community.",
-// Token numbers: https://rinkeby.etherscan.io/token/0xb213fb13b7eefb02df67496af78398c298fa1546
           "subItems": [
             {
               "title": "Market Cap",
@@ -227,6 +200,13 @@ Below here is still being worked on
       ]
     }
   },
+  
+  
+  "__DATA_SOURCES__": {
+      "__COMMENT_DESCRIPTION": "Under Construction, this number is not accurate. Here will be data for posts this month on all of our social media network. New sign ups, follows, likes on all sources",
+      "__LINK_1_Token_figures__": "https://rinkeby.etherscan.io/token/0xb213fb13b7eefb02df67496af78398c298fa1546"
+	  
+  
   "projects_section":{
     "title": "Projects",
     "__IMAGE_PROPERTIES__": {
