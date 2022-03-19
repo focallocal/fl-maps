@@ -1,8 +1,3 @@
-"__IMAGE_PROPERTIES__": {
-      "__COMMENT_DESCRIPTION": "This comment is about the 'image' fields",
-      "__DIMENSION__": "550 x 350",
-      "__SIZE__": "274 KB or less is recomended."
-    },
 	
 	{
   "first_title": "Local Action for Global Change",
@@ -26,53 +21,57 @@
               "values": [
                 {
                   "title": "Total",
-                  "value": "21,200"
+                  "value": "216"
                 },
-
-// PHM: 216
-// https://publichappinessmovement.com/admin/reports/users_by_trust_level?end_date=2022-03-14&start_date=2022-03-14 or https://publichappinessmovement.com/admin/users/list/active
-
-
-// Github: 116
-// https://github.com/orgs/focallocal/people
-
-
-                {
-                  "title": "Active This Week",
-                  "value": "31"
+				 {
+                  "title": "New",
+                  "value": "4"
                 }
-
-
-// On PHM: 
-// https://publichappinessmovement.com/admin/reports/visits?end_date=2022-03-14&start_date=2022-02-14
-
-
+				
               ]
             },
             {
-              "title": "Projects",
+              "title": "Developers",
               "values": [
                 {
                   "title": "Total",
-                  "value": "21,200"
-                },
-                {
-                  "title": "Activity",
-                  "value": "7,321"
+                  "value": "116"
                 }
               ]
             },
             {
-              "title": "Teams",
+              "title": "Visitors",
               "values": [
                 {
-                  "title": "Activity",
-                  "value": "23"
+                  "title": "Unique",
+                  "value": "9650"
                 }
               ]
             }
           ]
         },
+	
+	"__LINKS_AND_SOURCES__": {
+      "__COMMENT_DESCRIPTION__": "This comment gives links to the sources where the data for the values in this section come from",
+	  
+    "__Members:Publichappinessmovement.com__": "216",
+	  "__LINK_1_Total_Users__": "https://publichappinessmovement.com/admin/reports/users_by_trust_level"
+      "__LINK_2_Total_Visits__": "https://publichappinessmovement.com/admin/reports/visits"
+	  "__LINK_3_Active_This_Week__": "https://publichappinessmovement.com/admin/users/list/active"
+	  "__LINK_4_New_Members__": "https://publichappinessmovement.com/admin/reports/new_contributors"
+	  "__LINK_5_Tasks_Completed_This_Week__": "https://publichappinessmovement.com/search?q=after%3A2022-02-19%20tags%3Adone"
+	 
+	  
+	"__Github__": "116",
+      "__LINK_1_Developers__": "https://github.com/orgs/focallocal/people"
+	  
+	"__Cloudflare__": "9,650",
+      "__LINK_1_Unique_Visitors__": "https://dash.cloudflare.com/888e58a3790b3081538de77a6ce6d1f8/publichappinessmovement.com"
+	  "__LINK_2_Unique_Visitors__": "https://dash.cloudflare.com/888e58a3790b3081538de77a6ce6d1f8/focallocal.org"
+	  
+    },
+	
+	
         {
           "title": "Local",
           "text": "Find a Public Happiness Gathering near you.",
@@ -100,10 +99,14 @@
               "value": "158,620,000"
             }
 
-// Average number of people at an activity: 5
-// Average number of people who have a happier because of direct interaction with our activity: 220
-// (5*220)*721: 793,100
-// Estimated positive interactions created by people who are having a better day because of interaction with our activity (*200): 158,620,000
+
+"__DATA_SOURCES__": {
+      "__COMMENT_DESCRIPTION": "This data will be pulled direct from our database and the static data here comes from our social media where the community operated before this platform was built",
+	  "__LINKS__": "https://www.facebook.com/Focallocal/events",
+	  "__Average_number_of_people_at_an_activity__": "5",
+	  "__Average_number_of_people_who_have_a_happier_day_because_of_direct_interaction_with_our_activity": "220",
+	  "__WORKING_OUT__": "(5*220)*721: 793,100",
+	  "__Estimated_positive_interactions_created_by_people_who_are_having_a_better_day_because_of_interaction_with_our_activity (*200)": "158,620,000",
 
           ]
         },
@@ -119,24 +122,39 @@
                   "title": "Total",
                   "value": "52,091"
                 },
-                
-// Facebook 1: 2274
-// https://www.facebook.com/Focallocal
+ 
 
-// Facebook 2: 2300
-// https://www.facebook.com/groups/focallocal/
+"__DATA_SOURCES_AND_LINKS__": {
+      "__COMMENT_DESCRIPTION": "This data will be pulled direct from our database and the static data here comes from our social media where the community operated before this platform was built",
+	"__Facebook__": "11,083",
+      "__Facebook 1__": "2274: https://www.facebook.com/Focallocal"
+	  "__Facebook 2__": "2300: https://www.facebook.com/groups/focallocal/"	
+	  "__Facebook 3__": "1900: https://www.facebook.com/publichappinessandy/"
+	  "__Facebook 4__": "6: https://www.facebook.com/PublicHappiness/"
+	  "__Facebook 5__": "4600: https://www.facebook.com/groups/527549263925221"
+	  "__Facebook 6__": "3: https://www.facebook.com/groups/1341548706343833"
 
-// Facebook 3: 1900
-// https://www.facebook.com/publichappinessandy/
 
-// Facebook 4: 6
-// https://www.facebook.com/PublicHappiness/
+Below here is still being worked on
 
-// Facebook 5: 4600
-// https://www.facebook.com/groups/527549263925221
+	"__Github__": "116",
+      "__LINK_1__": "https://github.com/orgs/focallocal/people"
+	  "__LINK_2__": ""
 
-// Facebook 6: 3
-// https://www.facebook.com/groups/1341548706343833
+	"__Github__": "116",
+      "__LINK_1__": "https://github.com/orgs/focallocal/people"
+	  "__LINK_2__": ""
+	  
+	"__Github__": "116",
+      "__LINK_1__": "https://github.com/orgs/focallocal/people"
+	  "__LINK_2__": ""	  
+
+	"__Github__": "116",
+      "__LINK_1__": "https://github.com/orgs/focallocal/people"
+	  "__LINK_2__": ""               
+
+
+
 
 // Reddit 1: 28900
 // https://www.reddit.com/r/randomactsofkindness/
@@ -190,7 +208,7 @@
           "title": "Economy",
           "text": "Connect with others.",
           "subText":"Connect with others in your community.",
-// Token values: https://rinkeby.etherscan.io/token/0xb213fb13b7eefb02df67496af78398c298fa1546
+// Token numbers: https://rinkeby.etherscan.io/token/0xb213fb13b7eefb02df67496af78398c298fa1546
           "subItems": [
             {
               "title": "Market Cap",
