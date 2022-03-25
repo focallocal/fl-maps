@@ -46,14 +46,7 @@
                   "title": "New",
                   "value": "4"
                 }
-              ],
-              "dropdown": {
-
-                "title": "Members",
-                "new": "",
-                "active": "",
-                "tasks_completed": ""
-              }
+              ]
             },
             {
               "title": "Developers",
@@ -114,10 +107,6 @@
                 {
                   "title": "Total",
                   "value": "52,091"
-                },
-                {
-                  "title": "Activity This Week",
-                  "value": "7,321"
                 }
               ]
             },
@@ -134,11 +123,11 @@
           "subItems": [
             {
               "title": "Market Cap",
-              "value": "0"
+              "value": "$0"
             },
             {
               "title": "Change",
-              "value": "+0"
+              "value": "+0%"
             },
             {
               "title": "Per Token",
@@ -153,11 +142,6 @@
 
   "projects_section":{
     "title": "Projects",
-    "__IMAGE_PROPERTIES__": {
-      "__COMMENT_DESCRIPTION": "This comment is about the 'image' fields",
-      "__DIMENSION__": "550 x 350",
-      "__SIZE__": "274 KB or les would be great."
-    },
     "content":{
       "items":[
         {
