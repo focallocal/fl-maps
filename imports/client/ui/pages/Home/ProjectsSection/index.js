@@ -45,12 +45,10 @@ class ProjectsSection extends Component {
      <section id='projects_section'>
        <Container>
          <div className='title'>{title}</div>
-         <Row className="items">
-           <CardDeck>
+         <Row className="items justify-content-center">
               {items.map((item, i) => (
                 <Item item={item} loginButton={loginButton} />
               ))}
-           </CardDeck>
          </Row>
        </Container>
      </section>

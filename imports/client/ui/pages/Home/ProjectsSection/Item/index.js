@@ -16,7 +16,8 @@ import {
 } from 'reactstrap'
 
 const Item = ({ item, loginButton }) =>
-    <Card style={{borderColor: item.color, borderBottom: `8px solid ${item.color}` }}>
+  <Col className="mb-3" sm='12' md='6' lg='6'>
+    <Card style={{borderColor: item.color, borderBottom: `8px solid ${item.color}`}} className="h-100">
       <div style={{margin: '1.25rem 1.25rem'}}>
         <img
           alt="Card image cap"
@@ -45,4 +46,5 @@ const Item = ({ item, loginButton }) =>
         </div>
       </CardBody>
     </Card>
+  </Col>
 export default Item

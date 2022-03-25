@@ -1,5 +1,4 @@
-	
-	{
+{
   "first_title": "Local Action for Global Change",
   "find_events": "Find the #PublicHappinessMovement near me!",
   "first_section": {
@@ -43,12 +42,18 @@
                   "title": "Total",
                   "value": "216"
                 },
-				 {
+				        {
                   "title": "New",
                   "value": "4"
                 }
-				
-              ]
+              ],
+              "dropdown": {
+
+                "title": "Members",
+                "new": "",
+                "active": "",
+                "tasks_completed": ""
+              }
             },
             {
               "title": "Developers",
@@ -64,35 +69,12 @@
               "values": [
                 {
                   "title": "Unique",
-                  "value": "9650"
+                  "value": "9,650"
                 }
               ]
             }
           ]
         },
-	
-	
-	"__LINKS_AND_SOURCES__": {
-      "__COMMENT_DESCRIPTION__": "This comment gives links to the sources where the data for the values in this section come from",
-	  
-    "__Members:Publichappinessmovement.com__": "216",
-	  "__LINK_1_Total_Users__": "https://publichappinessmovement.com/admin/reports/users_by_trust_level"
-      "__LINK_2_Total_Visits__": "https://publichappinessmovement.com/admin/reports/visits"
-	  "__LINK_3_Active_This_Week__": "https://publichappinessmovement.com/admin/users/list/active"
-	  "__LINK_4_New_Members__": "https://publichappinessmovement.com/admin/reports/new_contributors"
-	  "__LINK_5_Tasks_Completed_This_Week__": "https://publichappinessmovement.com/search?q=after%3A2022-02-19%20tags%3Adone"
-	 
-	  
-	"__Github__": "116",
-      "__LINK_1_Developers__": "https://github.com/orgs/focallocal/people"
-	  
-	"__Cloudflare__": "9,650",
-      "__LINK_1_Unique_Visitors__": "https://dash.cloudflare.com/888e58a3790b3081538de77a6ce6d1f8/publichappinessmovement.com"
-	  "__LINK_2_Unique_Visitors__": "https://dash.cloudflare.com/888e58a3790b3081538de77a6ce6d1f8/focallocal.org"
-	  
-    },
-	
-	
         {
           "title": "Local",
           "text": "Find a Public Happiness Gathering near you.",
@@ -114,21 +96,11 @@
             {
               "title": "Estimated Direct Reach",
               "value": "793,100"
-            }
+            },
             {
               "title": "Estimated Butterfly Effect",
               "value": "158,620,000"
             }
-
-
-"__DATA_SOURCES__": {
-      "__COMMENT_DESCRIPTION": "This data will be pulled direct from our database and the static data here comes from our social media where the community operated before this platform was built",
-	  "__LINKS__": "https://www.facebook.com/Focallocal/events",
-	  "__Average_number_of_people_at_an_activity__": "5",
-	  "__Average_number_of_people_who_have_a_happier_day_because_of_direct_interaction_with_our_activity": "220",
-	  "__WORKING_OUT__": "(5*220)*721: 793,100",
-	  "__Estimated_positive_interactions_created_by_people_who_are_having_a_better_day_because_of_interaction_with_our_activity (*200)": "158,620,000",
-
           ]
         },
         {
@@ -143,61 +115,18 @@
                   "title": "Total",
                   "value": "52,091"
                 },
- 
-
-"__DATA_SOURCES_AND_LINKS__": {
-      "__COMMENT_DESCRIPTION": "This data will be pulled direct from our database and the static data here comes from our social media where the community operated before this platform was built",
-	"__Facebook__": "11,083",
-      "__Facebook 1__": "2274: https://www.facebook.com/Focallocal"
-	  "__Facebook 2__": "2300: https://www.facebook.com/groups/focallocal/"	
-	  "__Facebook 3__": "1900: https://www.facebook.com/publichappinessandy/"
-	  "__Facebook 4__": "6: https://www.facebook.com/PublicHappiness/"
-	  "__Facebook 5__": "4600: https://www.facebook.com/groups/527549263925221"
-	  "__Facebook 6__": "3: https://www.facebook.com/groups/1341548706343833"
-
-	"__Reddit__": "28900",
-      "__LINK_1__": "28900 - Randomactsofkindness: https://www.reddit.com/r/randomactsofkindness/"
-	  "__LINK_2__": "9400 - Happiness: https://www.reddit.com/r/happiness"
-	  "__LINK_3__": "569 - Brightertomorrow: https://www.reddit.com/r/brightertomorrow/"
-
-	"__Instagram__": "637",
-      "__LINK_1__": "620 - Publichappinesswiggles: https://www.instagram.com/publichappinesswiggles/"
-	  "__LINK_2__": "17 - PublicHappinessMovement: https://www.instagram.com/publichappinessmovement/"
-	  
-	"__Youtube__": "128",
-      "__LINK_1__": "122 - Focallocal: https://www.youtube.com/channel/UCV5vm0mYy3VM-I461q7QfcQ"
-	  "__LINK_2__": "6 - PublicHappinessMovement: https://www.youtube.com/channel/UCkYVBetdxHE5juw7SPMvOGg"	  
-
-	"__Twitter__": "284",
-      "__LINK_1__": "https://twitter.com/Focallocal"
-
-	"__LinkedIn__": "1110",
-      "__LINK_1__": "57 - Focallocal: https://www.linkedin.com/company/10032698/"
-	  "__LINK_2__": "1053 - Andy Tulett: https://www.linkedin.com/in/andytulett/ "	  
-	  
-	"__Tiktok__": "Coming Soon",
-
-
                 {
                   "title": "Activity This Week",
                   "value": "7,321"
                 }
-
-"__DATA_SOURCES__": {
-      "__COMMENT_DESCRIPTION": "Under Construction, this number is not accurate. Here will be data for posts this month on all of our social media network. New sign ups, follows, likes on all sources",
               ]
             },
             {
               "title": "Monthly Growth",
-              "value": "+1237"
+              "value": "+1,237"
             }
           ]
         },
-		
-"__DATA_SOURCES__": {
-      "__COMMENT_DESCRIPTION": "Under Construction, this figure is not accurate. The increase in our reach this month (this month minus last months total)",
-	  
-	  
         {
           "title": "Economy",
           "text": "Connect with others.",
@@ -220,13 +149,8 @@
       ]
     }
   },
-  
-  
-  "__DATA_SOURCES__": {
-      "__COMMENT_DESCRIPTION": "Under Construction, this number is not accurate. Here will be data for posts this month on all of our social media network. New sign ups, follows, likes on all sources",
-      "__LINK_1_Token_figures__": "https://rinkeby.etherscan.io/token/0xb213fb13b7eefb02df67496af78398c298fa1546"
-	  
-  
+
+
   "projects_section":{
     "title": "Projects",
     "__IMAGE_PROPERTIES__": {
@@ -237,47 +161,107 @@
     "content":{
       "items":[
         {
-          "color": "red",
-          "title": "#Token",
-          "url": "https://www.token.com",
-          "image": "/images/test-project.png",
-          "description": "Put yourself on the Public Happiness Map.",
+          "color": "green",
+          "title": "#Brighter Tomorrow Map",
+          "url": "https://www.brightertomorrowmap.com",
+          "image": "/images/Image_Community_Connection_Homelessness.png",
+          "description": "An effort to end world involuntary homelessness by bringing communities together and providing them with the tools to help people help people who are homeless nearby walk a path to a brighter future",
           "categories": [
             {
-              "title": "UX Team",
-              "url": "#"
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2840"
+            },
+			      {
+              "title": "Kind Suggestions",
+              "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"
             },
             {
-              "title": "SEO",
-              "url": "#"
+              "title": "Reddit Community",
+              "url": "https://www.old.reddit.com/r/brightertomorrow/"
             }
           ]
         },
         {
           "color": "blue",
-          "title": "#Media",
-          "url": "https://www.media.com",
-          "image": "/images/test-project.png",
+          "title": "#Community Climate Action Platform",
+          "url": "https://publichappinessmovement.com/c/climate-action",
+          "image": "/images/the_OB_small.png",
           "description": "Create your Public Happiness Gathering now.",
           "categories": [
             {
-              "title": "UX Team",
-              "url": "/ux-team"
+              "title": "Launch Hack 1: Fort Kuddelstaart in Amsterdam",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1/167"
             },
             {
-              "title": "SEO",
+              "title": "Launch Hack 2: Fort Kuddelstaart in Amsterdam",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack2/168"
+            }
+          ]
+        },
+		    {
+          "color": "red",
+          "title": "#PHM Token",
+          "url": "https://publichappinessmovement.com/c/focallocal-token/",
+          "image": "/images/PHM-small",
+          "description": "We are transitioning our community into an ecosystem which rewards members for taking positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
+          "categories": [
+            {
+              "title": "Whitepaper",
+              "url": "https://publichappinessmovement.com/docuss/whitepaper"
+            },
+            {
+              "title": "Why?",
+              "url": "https://publichappinessmovement.com/docuss/wp_why"
+            },
+            {
+              "title": "FAQs",
+              "url": "https://publichappinessmovement.com/docuss/wp_faqs"
+            }
+          ]
+        },
+        {
+          "color": "yellow",
+          "title": "#PHM Base",
+          "url": "https://publichappinessmovement.com/c/homebase/",
+          "image": "/images/test-project.png",
+          "description": "A community and project center we’re building in Setubal, Portugal where members of our community can come and build a kinder world together",
+          "categories": [
+            {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2783"
+            },
+			      {
+              "title": "Why Setubal",
+              "url": "https://publichappinessmovement.com/t/topic/2842"
+            }
+          ]
+        },
+		    {
+          "color": "orange",
+          "title": "#We Are Building a Religion",
+          "url": "https://publichappinessmovement.com/c/wiggles/",
+          "image": "/images/Wiggles_by_Lol33ta.png",
+          "description": "An endless stream of people ask to create religious or spiritual activities here, which doesn't fit with our Community Values, so we decided to create a place for them. This is a silly fun side project to turn our mascot Wiggles into a deity. A space for everyone, religious, spiritual, or atheist to explore the meaning of life together based on the one golden rule 'don't listen to anyone who tells you they know the answer'",
+          "categories": [
+            {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2261"
+            }
+          ]
+        },
+        {
+          "color": "purple",
+          "title": "#Events Coming Soon",
+          "url": "#",
+          "image": "/images/test-project.png",
+          "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
+          "categories": [
+            {
+              "title": "Tempate",
               "url": "#"
             },
             {
-              "title": "Test",
-              "url": "#"
-            },
-            {
-              "title": "Test",
-              "url": "#"
-            },
-            {
-              "title": "Test",
+              "title": "Template",
               "url": "#"
             }
           ]
