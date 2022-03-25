@@ -91,7 +91,7 @@
               "value": "793,100"
             },
             {
-              "title": "Estimated Butterfly Effect",
+              "title": "Estimated Happy Butterfly Effect",
               "value": "158,620,000"
             }
           ]
@@ -113,6 +113,10 @@
             {
               "title": "Monthly Growth",
               "value": "+1,237"
+            },
+	    {
+              "title": "Estimated Happy Butterfly Effect",
+              "value": "Coming when we get a bigger calculator"
             }
           ]
         },
