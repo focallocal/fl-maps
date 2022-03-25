@@ -142,7 +142,7 @@
       ]
     }
   },
-  "projects_section":{
+"projects_section":{
     "title": "Projects",
     "__IMAGE_PROPERTIES__": {
       "__COMMENT_DESCRIPTION": "This comment is about the 'image' fields",
@@ -152,51 +152,111 @@
     "content":{
       "items":[
         {
-          "color": "red",
-          "title": "#Token",
-          "url": "https://www.token.com",
-          "image": "/images/test-project.png",
-          "description": "Put yourself on the Public Happiness Map.",
+          "color": "green",
+          "title": "#Brighter Tomorrow Map",
+          "url": "https://www.brightertomorrowmap.com",
+          "image": "/images/Image_Community_Connection_Homelessness.png",
+          "description": "An effort to end world involuntary homelessness by bringing communities together and providing them with the tools to help people help people who are homeless nearby walk a path to a brighter future",
           "categories": [
             {
-              "title": "UX Team",
-              "url": "#"
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2840"
+            },
+			{
+              "title": "Kind Suggestions",
+              "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"
             },
             {
-              "title": "SEO",
-              "url": "#"
+              "title": "Reddit Community",
+              "url": "https://www.old.reddit.com/r/brightertomorrow/"
             }
           ]
         },
         {
           "color": "blue",
-          "title": "#Media",
-          "url": "https://www.media.com",
-          "image": "/images/test-project.png",
+          "title": "#Community Climate Action Platform",
+          "url": "https://publichappinessmovement.com/c/climate-action",
+          "image": "/images/the_OB_small.png",
           "description": "Create your Public Happiness Gathering now.",
           "categories": [
             {
-              "title": "UX Team",
-              "url": "/ux-team"
+              "title": "Launch Hack 1: Fort Kuddelstaart in Amsterdam",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1/167"
             },
             {
-              "title": "SEO",
-              "url": "#"
+              "title": "Launch Hack 2: Fort Kuddelstaart in Amsterdam",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack2/168"
+            }
+          ]
+        },
+		{
+          "color": "red",
+          "title": "#PHM Token",
+          "url": "https://publichappinessmovement.com/c/focallocal-token/",
+          "image": "/images/PHM-small",
+          "description": "We are transitioning our community into an ecosystem which rewards members for taking positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
+          "categories": [
+            {
+              "title": "Whitepaper",
+              "url": "https://publichappinessmovement.com/docuss/whitepaper"
             },
             {
-              "title": "Test",
-              "url": "#"
+              "title": "Why?",
+              "url": "https://publichappinessmovement.com/docuss/wp_why"
             },
             {
-              "title": "Test",
-              "url": "#"
-            },
+              "title": "FAQs",
+              "url": "https://publichappinessmovement.com/docuss/wp_faqs"
+            }
+          ]
+        },
+        {
+          "color": "yellow",
+          "title": "#PHM Base",
+          "url": "https://publichappinessmovement.com/c/homebase/",
+          "image": "/images/test-project.png",
+          "description": "A community and project center we’re building in Setubal, Portugal where members of our community can come and build a kinder world together",
+          "categories": [
             {
-              "title": "Test",
-              "url": "#"
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2783"
+            },
+			{
+              "title": "Why Setubal",
+              "url": "https://publichappinessmovement.com/t/topic/2842"
             }
           ]
         }
+		 {
+          "color": "orange",
+          "title": "#We Are Building a Religion",
+          "url": "https://publichappinessmovement.com/c/wiggles/",
+          "image": "/images/Wiggles_by_Lol33ta.png",
+          "description": "An endless stream of people ask to create religious or spiritual activities here, which doesn't fit with our Community Values, so we decided to create a place for them. This is a silly fun side project to turn our mascot Wiggles into a deity. A space for everyone, religious, spiritual, or atheist to explore the meaning of life together based on the one golden rule 'don't listen to anyone who tells you they know the answer'",
+          "categories": [
+            {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2261"
+            }
+          ]
+        },
+        {
+          "color": "purple",
+          "title": "#Events Coming Soon",
+          "url": "#",
+          "image": "/images/test-project.png",
+          "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
+          "categories": [
+            {
+              "title": "Tempate",
+              "url": "#"
+            },
+            {
+              "title": "Template",
+              "url": "#"
+            }
+          ]
+        },
       ]
     }
   },
