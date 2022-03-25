@@ -40,33 +40,29 @@
               "values": [
                 {
                   "title": "Total",
-                  "value": "21,200"
+                  "value": "216"
                 },
-                {
-                  "title": "Active",
-                  "value": "7,321"
+				        {
+                  "title": "New",
+                  "value": "4"
                 }
               ]
             },
             {
-              "title": "Projects",
+              "title": "Developers",
               "values": [
                 {
                   "title": "Total",
-                  "value": "21,200"
-                },
-                {
-                  "title": "Active",
-                  "value": "7,321"
+                  "value": "116"
                 }
               ]
             },
             {
-              "title": "Teams",
+              "title": "Visitors",
               "values": [
                 {
-                  "title": "Active",
-                  "value": "23"
+                  "title": "Unique",
+                  "value": "9,650"
                 }
               ]
             }
@@ -82,17 +78,21 @@
               "values": [
                 {
                   "title": "Total",
-                  "value": "21,200"
+                  "value": "721"
                 },
                 {
                   "title": "Active",
-                  "value": "7,321"
+                  "value": "23"
                 }
               ]
             },
             {
-              "title": "Estimated Reach",
-              "value": "23.9M"
+              "title": "Estimated Direct Reach",
+              "value": "793,100"
+            },
+            {
+              "title": "Estimated Butterfly Effect",
+              "value": "158,620,000"
             }
           ]
         },
@@ -106,17 +106,13 @@
               "values": [
                 {
                   "title": "Total",
-                  "value": "21,200"
-                },
-                {
-                  "title": "Active",
-                  "value": "7,321"
+                  "value": "52,091"
                 }
               ]
             },
             {
-              "title": "Estimated Reach",
-              "value": "21,200"
+              "title": "Monthly Growth",
+              "value": "+1,237"
             }
           ]
         },
@@ -127,28 +123,25 @@
           "subItems": [
             {
               "title": "Market Cap",
-              "value": "854M"
+              "value": "$0"
             },
             {
               "title": "Change",
-              "value": "+21M"
+              "value": "+0%"
             },
             {
               "title": "Per Token",
-              "value": "$3.4"
+              "value": "$0"
             }
           ]
         }
       ]
     }
   },
-"projects_section":{
+
+
+  "projects_section":{
     "title": "Projects",
-    "__IMAGE_PROPERTIES__": {
-      "__COMMENT_DESCRIPTION": "This comment is about the 'image' fields",
-      "__DIMENSION__": "550 x 350",
-      "__SIZE__": "274 KB or les would be great."
-    },
     "content":{
       "items":[
         {
@@ -162,7 +155,7 @@
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2840"
             },
-			{
+			      {
               "title": "Kind Suggestions",
               "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"
             },
@@ -189,7 +182,7 @@
             }
           ]
         },
-		{
+		    {
           "color": "red",
           "title": "#PHM Token",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
@@ -221,13 +214,13 @@
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2783"
             },
-			{
+			      {
               "title": "Why Setubal",
               "url": "https://publichappinessmovement.com/t/topic/2842"
             }
           ]
-        }
-		 {
+        },
+		    {
           "color": "orange",
           "title": "#We Are Building a Religion",
           "url": "https://publichappinessmovement.com/c/wiggles/",
@@ -256,7 +249,7 @@
               "url": "#"
             }
           ]
-        },
+        }
       ]
     }
   },
