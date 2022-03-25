@@ -13,7 +13,7 @@
       },
       "local_search": {
         "text_input": {
-          "placeholder": "Search for events, organizations, or people"
+          "placeholder": "Events and locations"
         },
         "button": {
           "text": "LOCAL"
@@ -173,7 +173,7 @@
           "color": "blue",
           "title": "#Community Climate Action Platform",
           "url": "https://publichappinessmovement.com/c/climate-action",
-          "image": "/images/cover_climate_hack.jpg",
+          "image": "/images/cover_climate_hack.png",
           "description": "A platform which brings people and communities together around effective action we as individuals can take to fight climate catastrophe, and a token which incentivises the most important fight humanity faces today",
           "categories": [
             {
@@ -241,7 +241,7 @@
           "color": "purple",
           "title": "#Events Coming Soon",
           "url": "#",
-          "image": "/images/cover-events.jpg",
+          "image": "/images/cover-events.png",
           "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
           "categories": [
             {
