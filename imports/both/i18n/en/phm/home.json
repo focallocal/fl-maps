@@ -5,7 +5,7 @@
     "form": {
       "global_search": {
         "text_input": {
-          "placeholder": "Search for events, organizations, or people"
+          "placeholder": "Skills, causes and projects"
         },
         "button": {
           "text": "GLOBAL"
@@ -225,7 +225,7 @@
           "title": "#We Are Building a Religion",
           "url": "https://publichappinessmovement.com/c/wiggles/",
           "image": "/images/Wiggles_by_Lol33ta.png",
-          "description": "An endless stream of people ask to create religious or spiritual activities here, which doesn't fit with our Community Values, so we decided to create a place for them. This is a silly fun side project to turn our mascot Wiggles into a deity. A space for everyone, religious, spiritual, or atheist to explore the meaning of life together based on the one golden rule 'don't listen to anyone who tells you they know the answer'",
+          "description": "This is a silly fun side project to turn our mascot Wiggles into a deity. A space for everyone, religious, spiritual, or atheist to explore the meaning of life together based on the one golden rule 'don't listen to anyone who tells you they know the answer'",
           "categories": [
             {
               "title": "Project Brief",
