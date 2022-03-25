@@ -169,7 +169,7 @@
           "color": "blue",
           "title": "#Community Climate Action Platform",
           "url": "https://publichappinessmovement.com/c/climate-action",
-          "image": "/images/the_OB_small.png",
+          "image": "/images/cover_climate_hack.jpg",
           "description": "Create your Public Happiness Gathering now.",
           "categories": [
             {
@@ -186,7 +186,7 @@
           "color": "red",
           "title": "#PHM Token",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
-          "image": "/images/PHM-small",
+          "image": "/images/PHM-small.png",
           "description": "We are transitioning our community into an ecosystem which rewards members for taking positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
           "categories": [
             {
@@ -237,7 +237,7 @@
           "color": "purple",
           "title": "#Events Coming Soon",
           "url": "#",
-          "image": "/images/test-project.png",
+          "image": "/images/cover-events.jpg",
           "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
           "categories": [
             {
