@@ -172,17 +172,21 @@
         {
           "color": "blue",
           "title": "#Community Climate Action Platform",
-          "url": "https://publichappinessmovement.com/c/climate-action",
+          "url": "https://publichappinessmovement.com/c/climate-action/",
           "image": "/images/cover_climate_hack.png",
           "description": "A platform which brings people and communities together around effective action we as individuals can take to fight climate catastrophe, and a token which incentivises the most important fight humanity faces today",
           "categories": [
-            {
-              "title": "Launch Hack 1: Fort Kuddelstaart in Amsterdam",
-              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1/167"
+	    {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2753/"
+            },
+	    {
+              "title": "Hack 1: Mid-May Location coming soon",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1"
             },
             {
-              "title": "Launch Hack 2: Fort Kuddelstaart in Amsterdam",
-              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack2/168"
+              "title": "Launch Hack 2: 4th - 17th July at Fort Kuddelstaart in Amsterdam",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack2/"
             }
           ]
         },
