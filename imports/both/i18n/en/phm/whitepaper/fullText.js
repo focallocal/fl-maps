@@ -275,7 +275,7 @@ Community members can vote on these to give it an 'estimated project' score usin
 
 A vote from a user is still weighed as their one single vote multiplied by their community contribution score. So giving a higher score doesn't change the weight of their vote. 
  
-The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://news.focallocal.org/the-focallocal-community-values/)
+The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://publichappinessmovement.com/t/topic/2844)
 
 `
     },
@@ -381,7 +381,7 @@ Part of the IEO marketing (and ongoing marketing afterwards) will have a focus o
 Most people have now heard something about Cryptocurrencies, and are curious. By offering those donating the option to gift a token which benefits issues the receiver sees in their local community, we have introduced a simple way to tap into that curiosity.
 
 Public Happiness Partners:
-Existing groups who are taking action for more peace and happiness in this world, in a manner currently neglected by today's economic system; and whose actions align with our [Community Values](https://news.publichappinessmovement.com/the-focallocal-community-values/), will be invited to use our ecosystem to supercharge their network effect. Drawing more members in to join their activities. Expanding the reach of their message and media through our enhanced tools. Offering more effective methods to coordinate their followers and community into desired actions on our platform. 
+Existing groups who are taking action for more peace and happiness in this world, in a manner currently neglected by today's economic system; and whose actions align with our [Community Values](https://publichappinessmovement.com/t/topic/2844), will be invited to use our ecosystem to supercharge their network effect. Drawing more members in to join their activities. Expanding the reach of their message and media through our enhanced tools. Offering more effective methods to coordinate their followers and community into desired actions on our platform. 
 
 They will now be rewarded financially for their continued efforts to improve human and societal well-being when it is in part, coordinated via our platform. This reward will also be selectively backdated, based upon numbers engaged in their activities and media over the past ten years. Rewarding those whose labours have made a consistent positive impact to society, and others lives, without any economic recognition for their great works. This backdated reward is not dependent upon joining our platform, but should increase on-boarding by showing casing the benefits of tokenizing to create a new ‘Happiness Economy’. 
 
@@ -496,7 +496,7 @@ Community members can vote on these to give it an 'estimated value' score using 
 
 1, 2 ,3 ,5 ,8 ,13 ,21
 
-The community will also ensure the project keeps with the founding vision by checking it meets with all of our Community Values
+The community will also ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://publichappinessmovement.com/t/topic/2844)
 
 4) The highest voted project idea moves into the Build list to be built by our community, who receive our tokens in reward for their efforts.
 
@@ -583,7 +583,7 @@ Currently hosted on shopify, this will be moved in-house shortly.
 ## 6.5.
 
 **Who defines what is accepted as ‘Public Happiness?’**
-The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.publichappinessmovement.com/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform. Note: this doesn't prevent communities joining our platform from having their own governance structure internally.
+The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](https://publichappinessmovement.com/t/topic/2844), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform. Note: this doesn't prevent communities joining our platform from having their own governance structure internally.
 
 Effective ideas for positive action will be incorporated into the platform and recommended to other community members as tools they can use for creating positive  social and cultural change where they live. 
 
@@ -742,7 +742,7 @@ The platform will launch in English. Adding other languages has been designed as
 **Decentralised Governance and Voting**
 
 Earning Votes:
-Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the community values statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool to begin teaching community members Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that community members cannot buy influence. 
+Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the [Community Values](https://publichappinessmovement.com/t/topic/2844) statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool to begin teaching community members Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that community members cannot buy influence. 
 
 The points earned which give community members their voting ranks are on a centralised autonomous system so they cannot be traded (the two separate systems are also used to teach the difference between a centralised token and decentralised one). The centralised ledger of every token mined (earned) is used to assign ranks for vote weighting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
 
@@ -764,7 +764,7 @@ Community members are also welcome to 'stake' their tokens behind a project they
 Sectional Voting:
 An issue faced by many decentralised voting systems is that community members are either inundated with votes, or not consulted on smaller issues. Our wide-ranging ecosystem is designed for small groups to form around specific teams relating to skills (such as Marketing, Graphic Design, SEO, etc), and also around specific projects and activities. These groups need to be given autonomy to make decisions in their areas of interest/expertise, yet these decisions must have oversight of the whole community to prevent pockets operating their on a different agenda to the whole. 
 
-This is solved by creating streamlined voting system, where all votes are created and voted on in their specific area, but also appear in a central voting thread to create constant oversight from the wider community, who can join the vote and call wider attention, if something is occurring which flows upstream against the community values.
+This is solved by creating streamlined voting system, where all votes are created and voted on in their specific area, but also appear in a central voting thread to create constant oversight from the wider community, who can join the vote and call wider attention, if something is occurring which flows upstream against the [Community Values](https://publichappinessmovement.com/t/topic/2844).
 
 Key Votes:
 Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
@@ -1337,7 +1337,7 @@ On-boarding existing communities is extremely easy and effective. There are mill
 You can read further details about existing partners in section 5.4.
 
 
-If comfortable operating within our [Community Values](https://news.publichappinessmovement.com/the-focallocal-community-values/), new groups operating for similar goals will be invited to join our ecosystem. Massively boost their growth and good work through our enhanced network effect, while also retaining their identity.
+If comfortable operating within our [Community Values](https://publichappinessmovement.com/t/topic/2844), new groups operating for similar goals will be invited to join our ecosystem. Massively boost their growth and good work through our enhanced network effect, while also retaining their identity.
 
 `
     },
@@ -1549,7 +1549,7 @@ A fun little project we've had good success over the years in the Focallocal Com
 
 **Community Projects**
 
-The platform also allows for community members to suggest and create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
+The platform also allows for community members to suggest and create their own creative fund-raising projects, as long as they also fit with our [Community Values](https://publichappinessmovement.com/t/topic/2844) statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
 
 `
     },
