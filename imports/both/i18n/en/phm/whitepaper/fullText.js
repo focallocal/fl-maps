@@ -393,15 +393,22 @@ They will now be rewarded financially for their continued efforts to improve hum
         chapterHeading: true,
 		image: "/images/Proposed_New_Site.png",
         fullText: ` 
-&nbsp;
+
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
+The platform is build as an Open Source project which brings people and communities together, both locally and globally, to target an issue they care about. Users of each platform are then rewarded with tokens for their efforts towards the cause that platform is focused on, and for carrying out work which is essential for the overall health of their community/platform/eco-system. 
 
-Our platform is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
+This means that we can create spin-off platforms which unite humanity around positive action on key issues troubling todays society. It prevents the Meta platform from becoming too cluttered, so it can focus on its mission 'to create more peace and well-being in our world'. It also allows other communities to grow up who will add energy to building and improving the platform. 
+
+
+**Meta (Publichappinessmovement.com=**
+
+
+Often referred to as simply 'PHM' our meta platform is also available as an iOS and [Android app](https://play.google.com/store/apps/details?id=tohu.phmapp&hl=en&gl=US). Its long term goal is to grow large enough to switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
 
 
 Teams, Projects, People and Communities:
-In the Action Center (Build) are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world.
+In the Action Center (Global) are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world.
 In the maps (Gather) are People and Communities. Existing communities with a similar vision can join the platform to take advantage of our ecosystems advanced tools to support their mission and community. People can post themselves for others to contact and arrange positive actions together to target local issues.
 
 Local vs Global:
@@ -454,14 +461,14 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 `
     },
     {
-        title: "Action Center: Build",
+        title: "Action Center: Global",
         code: "ActCen",
         fullText: `
 
 ## 6.2.
 
 [view live beta](https://publichappinessmovement.com/categories)
-**Build/The Action Center**
+**Global/The Action Center**
 
 Overview:
 An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. In today's GDP based world innovative ideas to benefit human society are heavily dependent on whether the person having them has the capacity and determination to either find funding and build them. This is an extremely inefficient system where the majority of great ideas to impact the world are lost. 
@@ -769,8 +776,9 @@ This is solved by creating streamlined voting system, where all votes are create
 Key Votes:
 Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
 
-Gatherings vs Build/Local vs Global:
-The Governance of the global (Build) side, and the platform/ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
+
+Gatherings vs Action Center/Local vs Global:
+The Governance of the Action Center (Global) side, the platform and ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
 
 Protection from Brigading: 
 Community members votes are weighted based on the reputation they’ve built by contributing to our project, so those most closely aligned and invested to the vision laid out in the community values will have more influence on decision making as a counter to anyone seeking to manipulate voting. 
@@ -1086,12 +1094,37 @@ For example: The activity was scheduled for the 8th April 2020, when created on 
 
 `
     },
+	{
+        title: "Launch Party Hacks",
+        code: "Hack",
+        fullText: `
+
+## 9.2.
+
+**Launch Party Hacks**
+To launch the Public Happiness Movement and PHM Token, and our other spin-off platforms we will be bringing together teams of approximately 30 skilled and talented professionals, with a focus on marketing and social media. The hacks will be 1 week long and held in beautiful venues where we will split time between pushing each platform and token out to the world, and partying. This approach allows us to attract skilled people who want to be around others who are passionate about creating positive change and want to have fun while doing it. 
+
+Rewarding their efforts at the hack with the tokens they are working on creates buy-in to the community and ensures the key people setting the vibe at the beginning are pro-active, kind hearted, and understand the need to make creating change fun.
+
+Two of the spin-off platforms and tokens will launch before our meta Public Happiness Movement platform and token. This way we can show the world what we can build and its power to create positive change before launching the meta hub where we build projects. When Public Happiness Movement launches we will be able to answer the question 'how do we know it'll work' by showing the projects already built, already working and having an impact on key issues troubling humanity and our planet. 
+
+Each will launch with two initial week-long Launch Party Hacks, with the possibility to repeat these as often as is beneficial. 
+
+**Launch Order**
+
+1) [Community Climate Action Platform](https://publichappinessmovement.com/t/topic/2841)
+2) [Brighter Tomorrow Map](https://brightertomorrowmap.com)
+3) [Public Happiness Movement](https://publichappinessmovement.com] (meta)
+
+
+`
+    },
     {
         title: "Bus Tour",
         code: "BusTou",
         fullText: `
 
-## 9.2.
+## 9.3.
 
 **Bus Tour**
 A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions and structure. The buses will also aim to attend and create a human, communities and planet focused sideshow at all major fin-tech events creating portable event spaces with our own vision aligned speakers and events - for more details see section 9.5.
@@ -1115,7 +1148,7 @@ Green Fuel:
         code: "PuHaCh",
         fullText: `
 
-## 9.3.
+## 9.4.
 
 **Video Channel**
 A Public Happiness Movement YouTube channel has been created as a space where all platform members, and groups, can share videos of their activities in support of our Movement. Combining our energies and message. A randomised video will play each time community members visit an activity on the map . Taken from each YouTube play-lists related category on our platform (unless the creator has added their own video). 
@@ -1126,17 +1159,16 @@ The bus tour will also be filmed, with regular instalments of life on the road t
 
 `
     },
-	
 	{
         title: "Documentary",
         code: "Doco",
         fullText: `
 
-## 9.4.
+## 9.5.
 
 **Documentary**
 
-Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a documentary filmed following Andy over the past 2 years, his life travelling, and his effort to grow a vision for a more at peace and connected future for humanity - The Public Happiness Movement and Economy. The central theme is the token, and the journey of uniting the leaders of the Public Happiness and transformative economic worlds.
+Launching in Cannes Film Festival: 'A Happy Path' (provisional title) is a documentary filmed following Andy over the past 2 years, his life travelling, and his effort to grow a vision for a more at peace and connected future for humanity - The Public Happiness Movement and Economy. The central theme is the token, and the journey of uniting the leaders of the Public Happiness and transformative economic worlds.
 
 
 `
@@ -1146,7 +1178,7 @@ Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a 
         code: "Summit",
         fullText: `
 
-## 9.5.
+## 9.6.
 
 ## Happier World Economies Summit
 
@@ -1248,7 +1280,8 @@ Project ideas state their requirements in the project plan and facilities needed
 
 On set dates, the highest voted events are offered the 1st pick of available venues and matched by our team with funding available for the topic of their event.
 
-If they decide to accept then their event is moved from the suggestion, voting and comment section (Build section) into the map (Gatherings) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
+
+If they decide to accept then their event is moved from the suggestion, voting and comment section (Global) into the map (Local) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
 
 ## Slide 9: Funding and Venues
 
@@ -1299,15 +1332,12 @@ All attendees who contribute to discussing and voting on real-world projects whi
 - We need something more firm than just having the platform to engage people in discussing and suggesting new ideas. There should be some kind of pull system supporting the platforms mechanism of creating post Summit activities.
 `
     },
-	
-	
-	
     {
         title: "Happy Cam",
         code: "HapCam",
         fullText: `
 
-## 9.6.
+## 9.8.
 
 **Happy Cam**
 The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Go pro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
@@ -1321,7 +1351,7 @@ Later a second camera dog may join, if we adopt a puppy.. because that would be 
         code: "PuHaPa",
         fullText: ` 
 
-## 9.7.
+## 9.9.
 
 **Public Happiness Partners and Pre-existing Communities**
 There is already a global Movement of Public Happiness creators around the World. Our platform creates a space for the individual energy of all our communities to unite, exponentially magnifying the energy of each, and their impact on the world. The difficulties of balancing committing the time needed to manage and grow their community, against the pressures of needing to be paid for their work in today’s economy, which doesn't financially value those contributions.
@@ -1346,7 +1376,7 @@ If comfortable operating within our [Community Values](https://publichappinessmo
         code: "OnlSup",
         fullText: `
 
-## 9.8.
+## 9.10.
 
 **Online Supporters**
 An open community is active on Reddit at reddit.com/r/tokenisinghappiness where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
@@ -1364,7 +1394,7 @@ The latter is simply a cheap marketing exercise which has been saturated by the 
         code: "Contes",
         fullText: `
 
-## 9.9.
+## 9.11.
 
 **Contests**
 Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our IEO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
@@ -1372,11 +1402,11 @@ Building a core group of enthusiasts plays a big role in gaining the energy need
 `
     },
     {
-        title: "Collectables",
+        title: "Collectable NFTs",
         code: "Collec",
         fullText: `
 
-## 9.10.
+## 9.12.
 
 **Collectables**
 Collectables will be created for special activities a user joins in, and also landmarks they achieve within our ecosystem. This acts as a fun side game within the platform while giving milestone rewards to community members, and using it to introduce them to collectables and other crypto-economic ideas. The collectables will be characters designed by the community and may feature logos, titles and names of the groups who coordinated large scale activities/projects 
@@ -1388,7 +1418,7 @@ Collectables will be created for special activities a user joins in, and also la
         code: "PatoPa",
         fullText: `
 
-## 9.11. 
+## 9.13. 
 
 **Paid to Party**
 
@@ -1518,7 +1548,7 @@ See section 7.4. for more details.
 
 Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in to meet their CSR commitments. Our platform is absolutely ideal for this purpose as they can offer a set amount of funding to local people to target a specific issue, or one of their own choosing, in a creative and fun way. They can then map progress and results the entire way through via our platform and social media. 
 
-Companies, and philanthropists can create bounties to target a local, or global in our platform. These challenges go into our Build section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our community fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
+Companies, and philanthropists can create bounties to target a local, or global in our platform. These challenges go into our Global section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our community fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
 
 If the project is realised in the physical world (as most will be) experiences of the day are gathered for those who put forward the funding for the challenge via one or two extra hashtags, suggested by the funders, to enable them to piggy-back on our networks enhanced social media effect, to gain exposure for the excellent project which they supported and enabled with their kind offer. 
 
@@ -1756,7 +1786,7 @@ Strategic Marketing Content
 Liliana Carillo
 R&D&I Director at the Digital Leadership Institute
 
-Documentary about the Movement - Cannes Film Festival 2020 Launch:
+Documentary about the Movement - Cannes Film Festival Launch:
 
 Julita Deka
 Owner at Sunwave and cameraman/editor at Palm Tree Productions

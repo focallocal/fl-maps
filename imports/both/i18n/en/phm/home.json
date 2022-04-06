@@ -1,10 +1,265 @@
 {
   "first_title": "Local Action for Global Change",
   "find_events": "Find the #PublicHappinessMovement near me!",
+  "first_section": {
+    "form": {
+      "global_search": {
+        "text_input": {
+          "placeholder": "Skills, causes and projects"
+        },
+        "button": {
+          "text": "GLOBAL"
+        }
+      },
+      "local_search": {
+        "text_input": {
+          "placeholder": "Events and locations"
+        },
+        "button": {
+          "text": "LOCAL"
+        }
+      }
+    }
+  },
   "post": {
     "first_title": "Create a Public Happiness Gathering",
     "button": "Sign Up and Begin!",
     "button_loggedIn": "Post onto the Map"
+  },
+  "movement_section":{
+    "title": "Movement",
+    "content":{
+      "items":[
+        {
+          "title": "Global",
+          "text": "Put yourself on the Public Happiness Map.",
+          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights.",
+          "subItems": [
+            {
+              "title": "Members",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "216"
+                },
+				        {
+                  "title": "New",
+                  "value": "4"
+                }
+              ]
+            },
+            {
+              "title": "Developers",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "116"
+                }
+              ]
+            },
+            {
+              "title": "Visitors",
+              "values": [
+                {
+                  "title": "Unique",
+                  "value": "9,650"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Local",
+          "text": "Find a Public Happiness Gathering near you.",
+          "subText":"Find a Public Happiness Gathering near you and join the movement.",
+          "subItems": [
+            {
+              "title": "Gatherings",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "721"
+                },
+                {
+                  "title": "Active",
+                  "value": "23"
+                }
+              ]
+            },
+            {
+              "title": "Estimated Direct Reach",
+              "value": "793,100"
+            },
+            {
+              "title": "Estimated Happy Butterfly Effect",
+              "value": "158,620,000"
+            }
+          ]
+        },
+        {
+          "title": "Media",
+          "text": "Take action to make a difference.",
+          "subText":"Take action to make a difference in your community.",
+          "subItems": [
+            {
+              "title": "Followers",
+              "values": [
+                {
+                  "title": "Total",
+                  "value": "54,248"
+                }
+              ]
+            },
+            {
+              "title": "Monthly Growth",
+              "value": "+1,237"
+            },
+	    {
+              "title": "Estimated Happy Butterfly Effect",
+              "value": "Coming when we get a bigger calculator"
+            }
+          ]
+        },
+        {
+          "title": "Economy",
+          "text": "Connect with others.",
+          "subText":"Connect with others in your community.",
+          "subItems": [
+            {
+              "title": "Market Cap",
+              "value": "$0"
+            },
+            {
+              "title": "Change",
+              "value": "+0%"
+            },
+            {
+              "title": "Per Token",
+              "value": "$0"
+            }
+          ]
+        }
+      ]
+    }
+  },
+
+
+  "projects_section":{
+    "title": "Projects",
+    "content":{
+      "items":[
+        {
+          "color": "green",
+          "title": "#Brighter Tomorrow Map",
+          "url": "https://www.brightertomorrowmap.com",
+          "image": "/images/Image_Community_Connection_Homelessness.png",
+          "description": "An effort to end world involuntary homelessness by bringing communities together and providing them with the tools to help people help people who are homeless nearby walk a path to a brighter future",
+          "categories": [
+            {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2840"
+            },
+			      {
+              "title": "Kind Suggestions",
+              "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"
+            },
+            {
+              "title": "Reddit Community",
+              "url": "https://www.old.reddit.com/r/brightertomorrow/"
+            }
+          ]
+        },
+        {
+          "color": "blue",
+          "title": "#Community Climate Action Platform",
+          "url": "https://publichappinessmovement.com/c/climate-action/",
+          "image": "/images/cover_climate_hack.png",
+          "description": "A platform which brings people and communities together around effective action we as individuals can take to fight climate catastrophe, and a token which incentivises the most important fight humanity faces today",
+          "categories": [
+	    {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2753/"
+            },
+	    {
+              "title": "Hack 1: Mid-May Location coming soon",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1"
+            },
+            {
+              "title": "Hack 2: 4th - 17th July at Fort Kuddelstaart in Amsterdam",
+              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack2/"
+            }
+          ]
+        },
+		    {
+          "color": "red",
+          "title": "#PHM Token",
+          "url": "https://publichappinessmovement.com/c/focallocal-token/",
+          "image": "/images/PHM-small.png",
+          "description": "We are transitioning our community into an ecosystem which rewards members for taking positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
+          "categories": [
+            {
+              "title": "Whitepaper",
+              "url": "https://publichappinessmovement.com/docuss/whitepaper"
+            },
+            {
+              "title": "Why?",
+              "url": "https://publichappinessmovement.com/docuss/wp_why"
+            },
+            {
+              "title": "FAQs",
+              "url": "https://publichappinessmovement.com/docuss/wp_faqs"
+            }
+          ]
+        },
+        {
+          "color": "yellow",
+          "title": "#PHM Base",
+          "url": "https://publichappinessmovement.com/c/homebase/",
+          "image": "/images/test-project.png",
+          "description": "A community and project center we’re building in Setubal, Portugal where members of our community can come and build a kinder world together",
+          "categories": [
+            {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2783"
+            },
+			      {
+              "title": "Why Setubal",
+              "url": "https://publichappinessmovement.com/t/topic/2842"
+            }
+          ]
+        },
+		    {
+          "color": "orange",
+          "title": "#We Are Building a Religion",
+          "url": "https://publichappinessmovement.com/c/wiggles/",
+          "image": "/images/Wiggles_logo.png",
+          "description": "This is a silly fun side project to turn our mascot Wiggles into a deity and create a space for everyone, religious, spiritual, or atheist to explore the meaning of life themselves, and together. For self-exploration and based on kindness, community connection, partying, and one golden rule: 'don't listen to anyone who tells you they know the answers'",
+          "categories": [
+            {
+              "title": "Project Brief",
+              "url": "https://publichappinessmovement.com/t/topic/2261"
+            }
+          ]
+        },
+        {
+          "color": "purple",
+          "title": "#Events Coming Soon",
+          "url": "#",
+          "image": "/images/cover-events.png",
+          "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
+          "categories": [
+            {
+              "title": "Tempate",
+              "url": "#"
+            },
+            {
+              "title": "Template",
+              "url": "#"
+            }
+          ]
+        }
+      ]
+    }
   },
   "how_to_help_section":{
     "title": "How can I take action to make where I live a friendlier, safer and happier place?",

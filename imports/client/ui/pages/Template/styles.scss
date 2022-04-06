@@ -1,0 +1,77 @@
+@import '/imports/client/stylesheets/variables.scss';
+
+
+#template {
+
+  &>h2 {
+    margin: 25px 0;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  &>.header-divider {
+    height: 1px;
+    width: 240px;
+    margin: -25px auto 0 auto;
+    text-align: center;
+    background: #007bff;
+    opacity: .4;
+  }
+
+  section {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    padding: 48px 32px;
+
+    &.second-section {
+      background: $gray-lighter;
+    }
+  }
+
+  .title {
+    margin-bottom: 16px;
+    font-size: 26px;
+  }
+
+  .text-content {
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .attachment-content {
+
+    iframe {
+      height: 85%;
+      width: 100%;
+      min-height: 300px;
+    }
+
+    p {
+      font-size: .9em;
+      font-style: italic;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    & {
+
+      .container {
+
+        .row {
+          flex-flow: column;
+
+          &>div { // each column
+            width: 100%;
+            max-width: 100%;
+          }
+
+          .attachment-content {
+            margin-top: 32px;
+          }
+        }
+      }
+    }
+  }
+}
