@@ -393,11 +393,18 @@ They will now be rewarded financially for their continued efforts to improve hum
         chapterHeading: true,
 		image: "/images/Proposed_New_Site.png",
         fullText: ` 
-&nbsp;
+
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
+The platform is build as an Open Source project which brings people and communities together, both locally and globally, to target an issue they care about. Users of each platform are then rewarded with tokens for their efforts towards the cause that platform is focused on, and for carrying out work which is essential for the overall health of their community/platform/eco-system. 
 
-Our platform is also available as an iOS and [Android app](https://play.google.com/store/apps/details?id=tohu.phmapp&hl=en&gl=US). Its building towards a likely switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
+This means that we can create spin-off platforms which unite humanity around positive action on key issues troubling todays society. It prevents the Meta platform from becoming too cluttered, so it can focus on its mission 'to create more peace and well-being in our world'. It also allows other communities to grow up who will add energy to building and improving the platform. 
+
+
+**Meta (Publichappinessmovement.com=**
+
+
+Often referred to as simply 'PHM' our meta platform is also available as an iOS and [Android app](https://play.google.com/store/apps/details?id=tohu.phmapp&hl=en&gl=US). Its long term goal is to grow large enough to switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
 
 
 Teams, Projects, People and Communities:
@@ -1087,26 +1094,27 @@ For example: The activity was scheduled for the 8th April 2020, when created on 
 `
     },
 	{
-        title: "Hackaparty",
+        title: "Launch Party Hacks",
         code: "Hack",
         fullText: `
 
 ## 9.2.
 
-**Bus Tour**
-A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions and structure. The buses will also aim to attend and create a human, communities and planet focused sideshow at all major fin-tech events creating portable event spaces with our own vision aligned speakers and events - for more details see section 9.5.
+**Launch Party Hacks**
+To launch the Public Happiness Movement and PHM Token, and our other spin-off platforms we will be bringing together teams of approximately 30 skilled and talented professionals, with a focus on marketing and social media. The hacks will be 1 week long and held in beautiful venues where we will split time between pushing each platform and token out to the world, and partying. This approach allows us to attract skilled people who want to be around others who are passionate about creating positive change and want to have fun while doing it. 
 
+Rewarding their efforts at the hack with the tokens they are working on creates buy-in to the community and ensures the key people setting the vibe at the beginning are pro-active, kind hearted, and understand the need to make creating change fun.
 
-Towns, cities and villages:
-On the tour the team will visit cities, towns and villages and demonstrate how people can earn a Public Happiness Token and what impact it can have on life in their local community. 
+Two of the spin-off platforms and tokens will launch before our meta Public Happiness Movement platform and token. This way we can show the world what we can build and its power to create positive change before launching the meta hub where we build projects. When Public Happiness Movement launches we will be able to answer the question 'how do we know it'll work' by showing the projects already built, already working and having an impact on key issues troubling humanity and our planet. 
 
-Community members chosen for the bus tours will use their skills to target local issues with positive action in the places we visit, in partnership with local groups/charities. Issues like homelessness, loneliness, supporting the elderly, lack of urban green areas and gardens. Alongside our general Public Happiness activities.
+Each will launch with two initial week-long Launch Party Hacks, with the possibility to repeat these as often as is beneficial. 
 
-Conferences, Festivals, and Happiness Economy Events:
-We will be touring blockchain/fin-tech conferences, festivals, and happiness related events. The bus will carry equipment and team members to create exciting activities and flash-mob style entertainment at these events. Both officially and unofficially. It will also serve as an office, meeting space, and sleeping rooms will often be available to select partners.
+**Launch Order**
 
-Green Fuel:
-[Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). At the time it was carbon positive travel as the cooking oil needed to be disposed of. Whilst this is rarely true now as most used cooking oil is collected by large biodiesel companies, it is arguably still the greenest form of fuelling a vehicle and older diesel buses will require minimal conversions to run on it. Partnerships with hotel and restaurant chains will be sought to see if its possible to run our bus fleet on the oil thrown out by their kitchens. 
+1) [Community Climate Action Platform](https://publichappinessmovement.com/t/topic/2841)
+2) [Brighter Tomorrow Map](https://brightertomorrowmap.com)
+3) [Public Happiness Movement](https://publichappinessmovement.com] (meta)
+
 
 `
     },
@@ -1115,7 +1123,7 @@ Green Fuel:
         code: "BusTou",
         fullText: `
 
-## 9.2.
+## 9.3.
 
 **Bus Tour**
 A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions and structure. The buses will also aim to attend and create a human, communities and planet focused sideshow at all major fin-tech events creating portable event spaces with our own vision aligned speakers and events - for more details see section 9.5.
@@ -1139,7 +1147,7 @@ Green Fuel:
         code: "PuHaCh",
         fullText: `
 
-## 9.3.
+## 9.4.
 
 **Video Channel**
 A Public Happiness Movement YouTube channel has been created as a space where all platform members, and groups, can share videos of their activities in support of our Movement. Combining our energies and message. A randomised video will play each time community members visit an activity on the map . Taken from each YouTube play-lists related category on our platform (unless the creator has added their own video). 
@@ -1150,13 +1158,12 @@ The bus tour will also be filmed, with regular instalments of life on the road t
 
 `
     },
-	
 	{
         title: "Documentary",
         code: "Doco",
         fullText: `
 
-## 9.4.
+## 9.5.
 
 **Documentary**
 
@@ -1170,7 +1177,7 @@ Launching in Cannes Film Festival: 'A Happy Path' (provisional title) is a docum
         code: "Summit",
         fullText: `
 
-## 9.5.
+## 9.6.
 
 ## Happier World Economies Summit
 
@@ -1323,15 +1330,12 @@ All attendees who contribute to discussing and voting on real-world projects whi
 - We need something more firm than just having the platform to engage people in discussing and suggesting new ideas. There should be some kind of pull system supporting the platforms mechanism of creating post Summit activities.
 `
     },
-	
-	
-	
     {
         title: "Happy Cam",
         code: "HapCam",
         fullText: `
 
-## 9.6.
+## 9.8.
 
 **Happy Cam**
 The project’s adopted rescue dog will be entering a life full of travel,  happy faces, and fun public events to enjoy. Not only will he/she become a superstar for the cameras, they will also become a video creator, wearing a camera harness with a stabilised Go pro mounted. Viewers can tune in to The Public Happiness channel to watch life travelling the world with a community in a bus/van fleet, teaching about the Public Have Movement, and the findings of Blockchain. All from the perspective of a very happy and loved dog. 
@@ -1345,7 +1349,7 @@ Later a second camera dog may join, if we adopt a puppy.. because that would be 
         code: "PuHaPa",
         fullText: ` 
 
-## 9.7.
+## 9.9.
 
 **Public Happiness Partners and Pre-existing Communities**
 There is already a global Movement of Public Happiness creators around the World. Our platform creates a space for the individual energy of all our communities to unite, exponentially magnifying the energy of each, and their impact on the world. The difficulties of balancing committing the time needed to manage and grow their community, against the pressures of needing to be paid for their work in today’s economy, which doesn't financially value those contributions.
@@ -1370,7 +1374,7 @@ If comfortable operating within our [Community Values](https://publichappinessmo
         code: "OnlSup",
         fullText: `
 
-## 9.8.
+## 9.10.
 
 **Online Supporters**
 An open community is active on Reddit at reddit.com/r/tokenisinghappiness where people can interact with other supporters of the project. Our internal community will communicate through our integrated Discourse forum on our platform, creating different levels and a space for both close supporters and a wider circle for the public who are following.
@@ -1388,7 +1392,7 @@ The latter is simply a cheap marketing exercise which has been saturated by the 
         code: "Contes",
         fullText: `
 
-## 9.9.
+## 9.11.
 
 **Contests**
 Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our IEO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
@@ -1396,11 +1400,11 @@ Building a core group of enthusiasts plays a big role in gaining the energy need
 `
     },
     {
-        title: "Collectables",
+        title: "Collectable NFTs",
         code: "Collec",
         fullText: `
 
-## 9.10.
+## 9.12.
 
 **Collectables**
 Collectables will be created for special activities a user joins in, and also landmarks they achieve within our ecosystem. This acts as a fun side game within the platform while giving milestone rewards to community members, and using it to introduce them to collectables and other crypto-economic ideas. The collectables will be characters designed by the community and may feature logos, titles and names of the groups who coordinated large scale activities/projects 
@@ -1412,7 +1416,7 @@ Collectables will be created for special activities a user joins in, and also la
         code: "PatoPa",
         fullText: `
 
-## 9.11. 
+## 9.13. 
 
 **Paid to Party**
 
