@@ -776,8 +776,9 @@ This is solved by creating streamlined voting system, where all votes are create
 Key Votes:
 Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
 
+
 Gatherings vs Action Center/Local vs Global:
-The Governance of the Action Center (Global) side, and the platform/ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
+The Governance of the Action Center (Global) side, the platform and ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
 
 Protection from Brigading: 
 Community members votes are weighted based on the reputation they’ve built by contributing to our project, so those most closely aligned and invested to the vision laid out in the community values will have more influence on decision making as a counter to anyone seeking to manipulate voting. 
@@ -1278,6 +1279,7 @@ Funding Pools are collected in each category. Allowing funders to target specifi
 Project ideas state their requirements in the project plan and facilities needed for it (square foot, equipment, required theme, cost).
 
 On set dates, the highest voted events are offered the 1st pick of available venues and matched by our team with funding available for the topic of their event.
+
 
 If they decide to accept then their event is moved from the suggestion, voting and comment section (Global) into the map (Local) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
 
