@@ -25,9 +25,12 @@ const Item = ({ item, loginButton }) =>
           className="images"
         />
           <CardTitle tag="h5">
-            <CardLink href={item.url}>
+            {/*<CardLink href={item.url}>
               {item.title}
-            </CardLink>
+            </CardLink>*/}
+            <Link to={item.url}>
+              {item.title}
+            </Link>
           </CardTitle>
           <CardText style={{marginTop: '1rem'}}>
             {item.description}
@@ -36,12 +39,18 @@ const Item = ({ item, loginButton }) =>
       <CardBody>
         <div style={{display: 'flex', flexFlow: 'wrap'}}>
           {item.categories.map((category, i) => (
-            <CardLink href={category.url}>
+            /*<CardLink href={category.url}>
               <span style={{display: 'flex', alignItems: 'center', marginRight: '12px'}}>
                 <span style={{backgroundColor: item.color, display: 'inline-block', width: '9px', height: '9px', marginRight: '5px', border: `5.6px solid ${item.color}`}}>&nbsp;</span>
                 {category.title}
               </span>
-            </CardLink>
+            </CardLink>*/
+            <Link to={item.url}>
+              <span style={{display: 'flex', alignItems: 'center', marginRight: '12px'}}>
+                <span style={{backgroundColor: item.color, display: 'inline-block', width: '9px', height: '9px', marginRight: '5px', border: `5.6px solid ${item.color}`}}>&nbsp;</span>
+                {category.title}
+              </span>
+            </Link>
           ))}
         </div>
       </CardBody>
