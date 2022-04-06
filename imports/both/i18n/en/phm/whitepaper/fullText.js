@@ -405,9 +405,9 @@ In the Action Center (Build) are Teams and Projects. Teams are our meta, they re
 In the maps (Gather) are People and Communities. Existing communities with a similar vision can join the platform to take advantage of our ecosystems advanced tools to support their mission and community. People can post themselves for others to contact and arrange positive actions together to target local issues.
 
 Local vs Global:
-The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gather section.
+The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gathering section.
 
-The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
+The same tools are available to community members creating a localised project, as for those working in the Action Center. Gatherings and the Action Center are mirrors of each other, the difference being that the Gatherings side is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
 
 
 
@@ -535,9 +535,9 @@ Teams and Projects:
 In the Action center are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world. 
 
 Local vs Global:
-The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gather section. 
+The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gatherings section. 
 
-The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
+The same tools are available to community members creating a localised project, as for those working in the Action Center. The Gatherings side and the Action Center are mirrors of each other, the difference being that Gathering is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
 
 `
     },
@@ -769,7 +769,7 @@ This is solved by creating streamlined voting system, where all votes are create
 Key Votes:
 Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
 
-Gather vs Build/Local vs Global:
+Gatherings vs Build/Local vs Global:
 The Governance of the global (Build) side, and the platform/ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
 
 Protection from Brigading: 
@@ -825,7 +825,7 @@ When a group forms into a team to take action on a task they go through distinct
 
 The issue in an open-world style platform is that new people can join in at any phase and often have  new ideas, which may or may not be valid, but they require the team to interrupt progress and address them, setting discussion back to an earlier stage which greatly reduces the efficiency of the overall system when it occurs often. 
 
-To prevent this and allow teams on our platform to reach a flow state of efficiency, each discussion I n our ‘Global’ forum has a different background colour which corresponds to the stage the discussion is currently in. With this system new team members know, or are quickly told, how they can interact with that team and task in a beneficial way.
+To prevent this and allow teams on our platform to reach a flow state of efficiency, each discussion In our ‘Global’ forum has a different background colour which corresponds to the stage the discussion is currently in. With this system new team members know, or are quickly told, how they can interact with that team and task in a beneficial way.
 
 Examples: 
 Stage 1 (White) - If a community member enters a discussion thread in stage 1 they know that all their ideas are welcome
@@ -879,7 +879,7 @@ Default modules might include:
 
 Optional modules might include:
 
-- Charts showing activity and predicted completion dates for projects they've subscribed to in the Action Center
+- Charts showing activity with predicted completion (burn up/burn down) dates for projects they've subscribed to
 - Recent news stories from our forum from categories they've subscribed to
 - Friends recent activity on the platform
 - News from communities on our platform that they've joined
@@ -1248,7 +1248,7 @@ Project ideas state their requirements in the project plan and facilities needed
 
 On set dates, the highest voted events are offered the 1st pick of available venues and matched by our team with funding available for the topic of their event.
 
-If they decide to accept then their event is moved from the suggestion, voting and comment section (Build section) into the map (Gather) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
+If they decide to accept then their event is moved from the suggestion, voting and comment section (Build section) into the map (Gatherings) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
 
 ## Slide 9: Funding and Venues
 
@@ -1436,7 +1436,7 @@ The Token Price will initially reflect the amount raised in the Initial Coin Off
 There will also be a pool created for the community to use. Members will vote on how they wish to assign it in order to create maximum value to the ecosystem. This might include: 
 * buying back and burning tokens to raise their price
 * outsourcing a much desired feature or task we currently lack the capacity to create internally
-* supporting a project being built in the Action Center which members believe can deliver great impact with a cash injection
+* supporting a project being built in the which members believe can deliver great impact with a cash injection
 * donating to an external worthy cause
 
 `
@@ -1549,7 +1549,7 @@ A fun little project we've had good success over the years in the Focallocal Com
 
 **Community Projects**
 
-The platform also allows for community members to suggest and create their own creative fund-raising projects, as long as they also fit with our [Community Values](https://publichappinessmovement.com/t/topic/2844) statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
+The platform also allows for community members to suggest and create their own creative fund-raising projects, as long as they also fit with our [Community Values](https://publichappinessmovement.com/t/topic/2844) statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build). Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
 
 `
     },
