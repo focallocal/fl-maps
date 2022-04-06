@@ -275,7 +275,7 @@ Community members can vote on these to give it an 'estimated project' score usin
 
 A vote from a user is still weighed as their one single vote multiplied by their community contribution score. So giving a higher score doesn't change the weight of their vote. 
  
-The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://news.focallocal.org/the-focallocal-community-values/)
+The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://publichappinessmovement.com/t/topic/2844)
 
 `
     },
@@ -381,7 +381,7 @@ Part of the IEO marketing (and ongoing marketing afterwards) will have a focus o
 Most people have now heard something about Cryptocurrencies, and are curious. By offering those donating the option to gift a token which benefits issues the receiver sees in their local community, we have introduced a simple way to tap into that curiosity.
 
 Public Happiness Partners:
-Existing groups who are taking action for more peace and happiness in this world, in a manner currently neglected by today's economic system; and whose actions align with our [Community Values](https://news.publichappinessmovement.com/the-focallocal-community-values/), will be invited to use our ecosystem to supercharge their network effect. Drawing more members in to join their activities. Expanding the reach of their message and media through our enhanced tools. Offering more effective methods to coordinate their followers and community into desired actions on our platform. 
+Existing groups who are taking action for more peace and happiness in this world, in a manner currently neglected by today's economic system; and whose actions align with our [Community Values](https://publichappinessmovement.com/t/topic/2844), will be invited to use our ecosystem to supercharge their network effect. Drawing more members in to join their activities. Expanding the reach of their message and media through our enhanced tools. Offering more effective methods to coordinate their followers and community into desired actions on our platform. 
 
 They will now be rewarded financially for their continued efforts to improve human and societal well-being when it is in part, coordinated via our platform. This reward will also be selectively backdated, based upon numbers engaged in their activities and media over the past ten years. Rewarding those whose labours have made a consistent positive impact to society, and others lives, without any economic recognition for their great works. This backdated reward is not dependent upon joining our platform, but should increase on-boarding by showing casing the benefits of tokenizing to create a new ‘Happiness Economy’. 
 
@@ -397,17 +397,17 @@ They will now be rewarded financially for their continued efforts to improve hum
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 
-Our platform is also available as an iOS and Android app. Its building towards a likely switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
+Our platform is also available as an iOS and [Android app](https://play.google.com/store/apps/details?id=tohu.phmapp&hl=en&gl=US). Its building towards a likely switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
 
 
 Teams, Projects, People and Communities:
-In the Action Center (Build) are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world.
+In the Action Center (Global) are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world.
 In the maps (Gather) are People and Communities. Existing communities with a similar vision can join the platform to take advantage of our ecosystems advanced tools to support their mission and community. People can post themselves for others to contact and arrange positive actions together to target local issues.
 
 Local vs Global:
-The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gather section.
+The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gathering section.
 
-The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
+The same tools are available to community members creating a localised project, as for those working in the Action Center. Gatherings and the Action Center are mirrors of each other, the difference being that the Gatherings side is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
 
 
 
@@ -454,14 +454,14 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
 `
     },
     {
-        title: "Action Center: Build",
+        title: "Action Center: Global",
         code: "ActCen",
         fullText: `
 
 ## 6.2.
 
 [view live beta](https://publichappinessmovement.com/categories)
-**Build/The Action Center**
+**Global/The Action Center**
 
 Overview:
 An open micro-volunteering hub, and project management suite where complex projects are broken down into small tasks, or ‘Missions’ anyone can complete. In today's GDP based world innovative ideas to benefit human society are heavily dependent on whether the person having them has the capacity and determination to either find funding and build them. This is an extremely inefficient system where the majority of great ideas to impact the world are lost. 
@@ -496,7 +496,7 @@ Community members can vote on these to give it an 'estimated value' score using 
 
 1, 2 ,3 ,5 ,8 ,13 ,21
 
-The community will also ensure the project keeps with the founding vision by checking it meets with all of our Community Values
+The community will also ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://publichappinessmovement.com/t/topic/2844)
 
 4) The highest voted project idea moves into the Build list to be built by our community, who receive our tokens in reward for their efforts.
 
@@ -535,9 +535,9 @@ Teams and Projects:
 In the Action center are Teams and Projects. Teams are our meta, they refer to our communities internal operations and growth. Projects are ideas our community has agreed to deliver to the world. 
 
 Local vs Global:
-The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gather section. 
+The Action Center focused on Global projects (and our community operations). Localised projects are smaller and run in the other of the two main sections of our platform, the Gatherings section. 
 
-The same tools are available to community members creating a localised project, as for those working in the Action Center. Gather and the Action Center are mirrors of each other, the difference being that Gather is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
+The same tools are available to community members creating a localised project, as for those working in the Action Center. The Gatherings side and the Action Center are mirrors of each other, the difference being that Gathering is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
 
 `
     },
@@ -583,7 +583,7 @@ Currently hosted on shopify, this will be moved in-house shortly.
 ## 6.5.
 
 **Who defines what is accepted as ‘Public Happiness?’**
-The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](http://news.publichappinessmovement.com/the-focallocal-community-values/), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform. Note: this doesn't prevent communities joining our platform from having their own governance structure internally.
+The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](https://publichappinessmovement.com/t/topic/2844), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform. Note: this doesn't prevent communities joining our platform from having their own governance structure internally.
 
 Effective ideas for positive action will be incorporated into the platform and recommended to other community members as tools they can use for creating positive  social and cultural change where they live. 
 
@@ -742,7 +742,7 @@ The platform will launch in English. Adding other languages has been designed as
 **Decentralised Governance and Voting**
 
 Earning Votes:
-Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the community values statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool to begin teaching community members Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that community members cannot buy influence. 
+Votes can only be earned on our platform, not bought. Completing tasks related to creating more peace and well-being in the ways defined in the [Community Values](https://publichappinessmovement.com/t/topic/2844) statement, or carrying out tasks essential for the smooth operation and growth of the ecosystem is considered 'mining', as it is the energy put in to validate our collective mission (also as a tool to begin teaching community members Cryptocurrency basics). This 'mining' earns tokens, and also voting rights. These are separate, so that community members cannot buy influence. 
 
 The points earned which give community members their voting ranks are on a centralised autonomous system so they cannot be traded (the two separate systems are also used to teach the difference between a centralised token and decentralised one). The centralised ledger of every token mined (earned) is used to assign ranks for vote weighting. The central database is open to public scrutiny to create trust that it's not being manipulated by anyone. 
 
@@ -764,13 +764,13 @@ Community members are also welcome to 'stake' their tokens behind a project they
 Sectional Voting:
 An issue faced by many decentralised voting systems is that community members are either inundated with votes, or not consulted on smaller issues. Our wide-ranging ecosystem is designed for small groups to form around specific teams relating to skills (such as Marketing, Graphic Design, SEO, etc), and also around specific projects and activities. These groups need to be given autonomy to make decisions in their areas of interest/expertise, yet these decisions must have oversight of the whole community to prevent pockets operating their on a different agenda to the whole. 
 
-This is solved by creating streamlined voting system, where all votes are created and voted on in their specific area, but also appear in a central voting thread to create constant oversight from the wider community, who can join the vote and call wider attention, if something is occurring which flows upstream against the community values.
+This is solved by creating streamlined voting system, where all votes are created and voted on in their specific area, but also appear in a central voting thread to create constant oversight from the wider community, who can join the vote and call wider attention, if something is occurring which flows upstream against the [Community Values](https://publichappinessmovement.com/t/topic/2844).
 
 Key Votes:
 Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
 
-Gather vs Build/Local vs Global:
-The Governance of the global (Build) side, and the platform/ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
+Gatherings vs Action Center/Local vs Global:
+The Governance of the Action Center (Global) side, and the platform/ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
 
 Protection from Brigading: 
 Community members votes are weighted based on the reputation they’ve built by contributing to our project, so those most closely aligned and invested to the vision laid out in the community values will have more influence on decision making as a counter to anyone seeking to manipulate voting. 
@@ -825,7 +825,7 @@ When a group forms into a team to take action on a task they go through distinct
 
 The issue in an open-world style platform is that new people can join in at any phase and often have  new ideas, which may or may not be valid, but they require the team to interrupt progress and address them, setting discussion back to an earlier stage which greatly reduces the efficiency of the overall system when it occurs often. 
 
-To prevent this and allow teams on our platform to reach a flow state of efficiency, each discussion I n our ‘Global’ forum has a different background colour which corresponds to the stage the discussion is currently in. With this system new team members know, or are quickly told, how they can interact with that team and task in a beneficial way.
+To prevent this and allow teams on our platform to reach a flow state of efficiency, each discussion In our ‘Global’ forum has a different background colour which corresponds to the stage the discussion is currently in. With this system new team members know, or are quickly told, how they can interact with that team and task in a beneficial way.
 
 Examples: 
 Stage 1 (White) - If a community member enters a discussion thread in stage 1 they know that all their ideas are welcome
@@ -879,7 +879,7 @@ Default modules might include:
 
 Optional modules might include:
 
-- Charts showing activity and predicted completion dates for projects they've subscribed to in the Action Center
+- Charts showing activity with predicted completion (burn up/burn down) dates for projects they've subscribed to
 - Recent news stories from our forum from categories they've subscribed to
 - Friends recent activity on the platform
 - News from communities on our platform that they've joined
@@ -1086,6 +1086,30 @@ For example: The activity was scheduled for the 8th April 2020, when created on 
 
 `
     },
+	{
+        title: "Hackaparty",
+        code: "Hack",
+        fullText: `
+
+## 9.2.
+
+**Bus Tour**
+A team of our community will be touring in a bus/minibuses and taking the Public Happiness Movement and Token to the streets. Initially beginning with Europe. Other prominent groups on the platform may be invited to tour their continent, mirroring the main tour groups actions and structure. The buses will also aim to attend and create a human, communities and planet focused sideshow at all major fin-tech events creating portable event spaces with our own vision aligned speakers and events - for more details see section 9.5.
+
+
+Towns, cities and villages:
+On the tour the team will visit cities, towns and villages and demonstrate how people can earn a Public Happiness Token and what impact it can have on life in their local community. 
+
+Community members chosen for the bus tours will use their skills to target local issues with positive action in the places we visit, in partnership with local groups/charities. Issues like homelessness, loneliness, supporting the elderly, lack of urban green areas and gardens. Alongside our general Public Happiness activities.
+
+Conferences, Festivals, and Happiness Economy Events:
+We will be touring blockchain/fin-tech conferences, festivals, and happiness related events. The bus will carry equipment and team members to create exciting activities and flash-mob style entertainment at these events. Both officially and unofficially. It will also serve as an office, meeting space, and sleeping rooms will often be available to select partners.
+
+Green Fuel:
+[Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). At the time it was carbon positive travel as the cooking oil needed to be disposed of. Whilst this is rarely true now as most used cooking oil is collected by large biodiesel companies, it is arguably still the greenest form of fuelling a vehicle and older diesel buses will require minimal conversions to run on it. Partnerships with hotel and restaurant chains will be sought to see if its possible to run our bus fleet on the oil thrown out by their kitchens. 
+
+`
+    },
     {
         title: "Bus Tour",
         code: "BusTou",
@@ -1136,7 +1160,7 @@ The bus tour will also be filmed, with regular instalments of life on the road t
 
 **Documentary**
 
-Launching in Cannes Film Festival 2020: 'A Happy Path' (provisional title) is a documentary filmed following Andy over the past 2 years, his life travelling, and his effort to grow a vision for a more at peace and connected future for humanity - The Public Happiness Movement and Economy. The central theme is the token, and the journey of uniting the leaders of the Public Happiness and transformative economic worlds.
+Launching in Cannes Film Festival: 'A Happy Path' (provisional title) is a documentary filmed following Andy over the past 2 years, his life travelling, and his effort to grow a vision for a more at peace and connected future for humanity - The Public Happiness Movement and Economy. The central theme is the token, and the journey of uniting the leaders of the Public Happiness and transformative economic worlds.
 
 
 `
@@ -1248,7 +1272,7 @@ Project ideas state their requirements in the project plan and facilities needed
 
 On set dates, the highest voted events are offered the 1st pick of available venues and matched by our team with funding available for the topic of their event.
 
-If they decide to accept then their event is moved from the suggestion, voting and comment section (Build section) into the map (Gather) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
+If they decide to accept then their event is moved from the suggestion, voting and comment section (Global) into the map (Local) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
 
 ## Slide 9: Funding and Venues
 
@@ -1337,7 +1361,7 @@ On-boarding existing communities is extremely easy and effective. There are mill
 You can read further details about existing partners in section 5.4.
 
 
-If comfortable operating within our [Community Values](https://news.publichappinessmovement.com/the-focallocal-community-values/), new groups operating for similar goals will be invited to join our ecosystem. Massively boost their growth and good work through our enhanced network effect, while also retaining their identity.
+If comfortable operating within our [Community Values](https://publichappinessmovement.com/t/topic/2844), new groups operating for similar goals will be invited to join our ecosystem. Massively boost their growth and good work through our enhanced network effect, while also retaining their identity.
 
 `
     },
@@ -1436,7 +1460,7 @@ The Token Price will initially reflect the amount raised in the Initial Coin Off
 There will also be a pool created for the community to use. Members will vote on how they wish to assign it in order to create maximum value to the ecosystem. This might include: 
 * buying back and burning tokens to raise their price
 * outsourcing a much desired feature or task we currently lack the capacity to create internally
-* supporting a project being built in the Action Center which members believe can deliver great impact with a cash injection
+* supporting a project being built in the which members believe can deliver great impact with a cash injection
 * donating to an external worthy cause
 
 `
@@ -1518,7 +1542,7 @@ See section 7.4. for more details.
 
 Corporates and local businesses are all looking for ways to positively impact the world, and local communities they operate in to meet their CSR commitments. Our platform is absolutely ideal for this purpose as they can offer a set amount of funding to local people to target a specific issue, or one of their own choosing, in a creative and fun way. They can then map progress and results the entire way through via our platform and social media. 
 
-Companies, and philanthropists can create bounties to target a local, or global in our platform. These challenges go into our Build section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our community fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
+Companies, and philanthropists can create bounties to target a local, or global in our platform. These challenges go into our Global section to be solved as standard - the community suggest ideas, vote on one, then come together to deliver it. The reward goes into our community fund where the best way to use it to advance the mission will be chosen, and tokens equal to the reward split fairly between everyone who joined in, based on their contribution.
 
 If the project is realised in the physical world (as most will be) experiences of the day are gathered for those who put forward the funding for the challenge via one or two extra hashtags, suggested by the funders, to enable them to piggy-back on our networks enhanced social media effect, to gain exposure for the excellent project which they supported and enabled with their kind offer. 
 
@@ -1549,7 +1573,7 @@ A fun little project we've had good success over the years in the Focallocal Com
 
 **Community Projects**
 
-The platform also allows for community members to suggest and create their own creative fund-raising projects, as long as they also fit with our community values statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build) in the Action Center. Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
+The platform also allows for community members to suggest and create their own creative fund-raising projects, as long as they also fit with our [Community Values](https://publichappinessmovement.com/t/topic/2844) statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build). Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
 
 `
     },
@@ -1756,7 +1780,7 @@ Strategic Marketing Content
 Liliana Carillo
 R&D&I Director at the Digital Leadership Institute
 
-Documentary about the Movement - Cannes Film Festival 2020 Launch:
+Documentary about the Movement - Cannes Film Festival Launch:
 
 Julita Deka
 Owner at Sunwave and cameraman/editor at Palm Tree Productions
