@@ -18,7 +18,9 @@
     { "name": "whitepaper", "url": "/whitepaper" },
     { "name": "wp_why", "url": "/whitepaper/why" },
     { "name": "wp_intro", "url": "/whitepaper/intro" },
-    { "name": "wp_faqs", "url": "/whitepaper/faqs" }
+    { "name": "wp_faqs", "url": "/whitepaper/faqs" },
+    { "name": "m_1s", "url": "./c/proj-management/122" },
+    { "name": "m_1t", "url": "./c/general-discussion" }
     
   ],
 
