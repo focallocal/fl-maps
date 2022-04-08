@@ -417,19 +417,17 @@ The Action Center focused on Global projects (and our community operations). Loc
 The same tools are available to community members creating a localised project, as for those working in the Action Center. Gatherings and the Action Center are mirrors of each other, the difference being that the Gatherings side is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
 
 
-
-
 `
     },
     {
-        title: "The Public Happiness Map: Gather",
+        title: "The Public Happiness Map: Gatherings",
         code: "ThPuHa",
         fullText: `
 
 ## 6.1.
 
 [view live beta](https://publichappinessmovement.com/docuss/m_gather)
-**The Public Happiness Movement Map**
+**The Public Happiness Map**
 An area of the platform showing community members the Public Happiness Movement in their local community. Bringing our members, and existing communities and groups, together to connect and take our vision and token to the streets. Community members can create and join in Public Happiness Gatherings from a list of pre-approved activities actively curated by the community; and contact other members nearby to invite them to join them creating happiness in their local community. Community members can list themselves on the map (in an approximate location for privacy), and select all the public happiness activities they would like to be contacted for, creating a searchable map of people nearby who want to meet and take actions which bring more well-being into the world they live in.
 
 The Map also allows community members to explore approved suggestions for Public Happiness Gatherings, along with; 
@@ -596,90 +594,7 @@ Effective ideas for positive action will be incorporated into the platform and r
 
 `
     },
-	{
-        title: "Community Values",
-        code: "ComVal",
-        fullText: `
 
-	
-## 6.6.
-	
-**Community Values**
-	
-
-1. Welcoming
-
-Our community is based upon an open environment of connection and positivity. All causes and opinions are valid and respected as people agree to put aside their affiliations for a while, allowing us to be open to everyone in our community, as a human, apart from our passionately held points of view which so often divide us
-
-By focusing on what connects us instead of what divides us, we create a safe space where we teach the important skill of learning how to come together, as humans, around a project or activity which benefits the local communities we live in
-
-
-2. An Open Human Space
-
-Leave all political leanings, religions and spiritual beliefs at the door. Our positive action based community is open to everyone, simply as human-beings together. Everyone at a gathering may agree that the Flying-Spaghetti Monster is the way forwards, while those passing-by may be strictly Dudeists and not feel welcomed to join. It is an intensely liberating experience to just see, and be seen as a human exploring the many paths in life, just as everyone else is
-
-Projects focusing on issues may appear to side with one political leaning or another, but our sole focus is on the root issue causing harm in society, and not on political bickering
-
-
-3. Evidence Based
-
-Every activity and action is based on peer reviewed scientific studies. Action must be anchored to humanity’s best current understanding of reality to ensure that energies are focused on making legitimate change in the world as effectively as possible. This differentiates the Public Happiness Movement from a hippie revival, or new age spiritualist/religious community
-
-As a side benefit this teaches people to critically examine today’s flood of social media pushed anti-intellectualism, helping to act efficiently in life, and in supporting their local community
-
-4. People and Innovative Technology Grounded
-
-The Public Happiness Movement is grounded in technological innovation, and exploring their use to coordinate locally, while sharing the most effective ideas for creating positive societal change globally. Innovative technology should be harnessed to empower people and communities, giving everyone the tools to transform the world around them into a friendlier, safer, and happier place to live our lives in
-
-5. Comfortable
-
-Activities should be comfortable for anyone to attend. This means striking a balance between what is considered local cultural norms for children, while pushing society towards greater acceptance of each other. As a rule of thumb our mantra is ‘your rights end where someone else’s begin’. So a Tantra, nudism, or bdsm group doing a free hug event advertising their group name or ideologies, would be inappropriate through association. Their members would all be welcome without discussing the group/lifestyle where young people can hear it.
-
-6. Encouraging
-
-We are all on a journey of exploration and we support and encourage all of our fellow adventurers. Some may not get it right away, so please guide their ideas and suggestions to fit with these Community Values, using plenty of positive encouragement
-
-
-7. Smiling
-
-You’ve found a home for your lovely smile, positivity and enthusiasm. Please bring it along to our activities and projects, especially those targeting serious issues. All smiles are beautiful! Please share yours with the world, and with each other
-
-
-8. Sharing
-
-Our community is about sharing – sharing ideas, experiences, success stories, talents and smiles!
-
-As a world-wide network – our whole is so vastly greater than the sum of our parts. When we come together with a shared vision, and an organised plan of the steps needed to achieve it, we as a collective of individuals, are powerful beyond imagination!
-
- 
-
-9. Empowering
-
-Our community is focused on providing you with the tools and support needed to create change on social issues you care about through uniting with other positive and proactive people nearby and using the most effective ideas collected worldwide from our community.
-
-Consider the issue of involuntary homelessness, where endless money has been given to charities around the world, and yet most countries are no closer to ending homelessness than they were in the 60’s. If people in a town simply came together around effective ideas and a determination to resolve the issue ourselves, it would be gone forever in no time
-
-10. Rippling
-
-How can helping a few homeless folk feel less isolated in a small town in Hungary, or creating greater connection between folk in a community in Dorset, really change the wider world in any way?
-
-The activities and projects you create locally through our platform may seem small when we talk about making an impact on a global scale. Your energy and positivity is an essential part of growing an interconnected community of people, all exploring positive new ways to affect issues troubling their local community.
-
-By sharing our small successes, each successful activity can be recreated thousands and thousands of times by other community members across the globe, and together those ripples combine into an unstoppable wave of positive action that can have a real impact for positive societal change, globally!
-
-11. Locally Lead
-
-Our main mission is to empower individuals and communities to create positive change themselves. While many of our projects and activities occur on a global scale, they are always implemented by local people who understand cultural differences where they live, and will be there to keep the ball rolling afterwards.
-
-One caveat is that some members use our platform to pimp their travelling experience, as the most positive and amazing people are also the local people wanting to be contacted to meet (‘gather’) and take positive action to the streets where they live. Local people using our platform are still central even when initiated by a member who is travelling, so using the platform while travelling fits with this value.
-
-12. Snowballing
-
-All of your positive actions on our platform help spread awareness of the Public Happiness Movement. Reaching more people who want to live in a happier world with our message that it is possible, and they have the power to build it, today!
-
-As more people are drawn into our mission, the effects of your actions that reached them are magnified far beyond what you can see. Each new member who joins in adds more positive energy as our Movement grows into an unquenchable force of change for a friendlier, happier world – at peace with each other, for all of humanity to enjoy!!
-	`
-    },
     {
         title: "Evidence Based and Peer Reviewed Actions",
         code: "EvBaan",
@@ -697,7 +612,7 @@ When community members submit a new idea for a project or activity its recommend
         code: "WhcaPa",
         fullText: `
 
-## 6.8.
+## 6.7.
 
 **Who can Participate on the Platform**
 The platform is open to anyone wanting to create well-being and happiness where they live, or support the Movement. 
@@ -713,7 +628,7 @@ Pre-existing communities may wish to join the ecosystem to take advantage of the
         code: "PrCowi",
         fullText: `
 
-## 6.9.
+## 6.8.
 
 **Pre-existing Communities with Similar Values**
 Groups and communities already doing excellent work in creating Public Happiness and well-being projects/activities where they live, are all welcomed to use our platform and ecosystem to supercharge their positive impact on society.
@@ -732,7 +647,7 @@ Platform users can join groups to be informed about their activities and project
         code: "Langua",
         fullText: `
 
-## 6.10.
+## 6.9.
 
 **Languages**
 The platform will launch in English. Adding other languages has been designed as a simple task anyone speaking the required language can complete in around 30 mins.
@@ -744,7 +659,7 @@ The platform will launch in English. Adding other languages has been designed as
         code: "DeGoan",
         fullText: `
 
-## 6.11.
+## 6.10.
 
 **Decentralised Governance and Voting**
 
@@ -776,9 +691,8 @@ This is solved by creating streamlined voting system, where all votes are create
 Key Votes:
 Higher ranking community members can send out notifications to all members when important votes occur. This flexibility means that a vote can begin in the UX/UI team, and be escalated to a site-wide vote as soon as wider implications become clear and members deem it to be of interest to everyone.
 
-
 Gatherings vs Action Center/Local vs Global:
-The Governance of the Action Center (Global) side, the platform and ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
+The Governance of the Action Center (Global) side, and the platform/ecosystem itself is Decentralised. Communities on the local side will bring their own governance structures which they should be able to use on our forums perfectly well. Many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model in order to join us. 
 
 Protection from Brigading: 
 Community members votes are weighted based on the reputation they’ve built by contributing to our project, so those most closely aligned and invested to the vision laid out in the community values will have more influence on decision making as a counter to anyone seeking to manipulate voting. 
@@ -802,7 +716,7 @@ Community members aren’t all expected to be experts on blockchain or community
         code: "UsBein",
         fullText: `
 
-## 6.12. 
+## 6.11. 
 
 **User Behaviour in UX Design**
 The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from community members. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organisers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
@@ -819,7 +733,7 @@ Community members attending a gathering on our platform are not passive. Everyon
         code: "Colored",
         fullText: `
 
-## 6.13. 
+## 6.12. 
 
 **Maintaining productivity in an open forum (Our coloured threads)**
 One of the major challenges faced by open communities, where anyone around the world can join a team and begin contributing, is that the teams focus is constantly interrupted when new members join in and drop new ideas which need addressing before the team can continue with the work or discussion they were focused on. This makes it difficult for teams to maintain momentum and reach an efficient flow state for efficient progress on tasks they are working on.
@@ -853,7 +767,7 @@ Breaking the chain - New ideas are always welcome and anyone can still present t
         code: "UsWaan",
         fullText: `
 
-## 6.14. 
+## 6.13. 
 
 **User Wall and Plugin Module Ecosystem**
 Logged in community members will arrive on their profile page and wall each time they visit. A community members profile page contains three types of features:
@@ -903,13 +817,328 @@ Forum specific plug-ins can also be built easily through the existing Discourse 
 
 `
     },
+    { title: "Community Overview", code: "CommVw", fullText: ` `, chapterHeading: true },
+    {
+        title: "Where Did The Community Start?",
+        code: "WhereCm",
+        fullText: `
+
+## 7.1.	
+	
+**Where did the Community Start?**
+The original Focallocal community began on Facebook in London in 2012, and spread out through our Global events and [Andy's Road Trips](https://news.focallocal.org/about-andy-and-the-road-to-focallocal/). Facebook became an increasingly difficult place to build meaningful action as the platform shifted from allowing group participation around ideas and events, to an ever increasing philosophy of maximising the amount of content users see while minimizing their engagement with that content. Making viral events and collaborating on projects more reliant on one individual and leading to the rise of 'Influencers'. 
+
+Since accepting Facebook was no-longer capable of facilitating our mission the community has floated around multiple platforms inlcuding Whatsapp, Slack, Asana, Trello, Wordpress, Reddit and others. None were set up to meet our needs and so we began building our [own platform](https://github.com/focallocal/), which after many long years of arduous work is just about ready to launch. 
+
+`
+    },
+    {
+        title: "Where is the Community Now?",
+        code: "WhereNow"
+        fullText: `
+
+## 7.2.
+
+**Where is the Community Now?**
+
+Those on our platform are considered to be 'community members', while those on platforms and social media sites we previously organised on are considered to be 'followers' as they aren't actively participating in the new eco-system.
+
+As of 29/03/2022 there were:
+
+216 Community Members
+54,248 Followers
+
+The low number of community members is to be expected as the meta platform hasn't yet launched and so very few of the previous community have been invited over. 
+
+A more detailed breakdown can be [found here](https://publichappinessmovement.com/t/topic/2858)
+
+
+`
+    }, 
+	{
+        title: "Community Values",
+        code: "ComVal",
+        fullText: `
+
+	
+## 7.3.
+	
+**Community Values**
+	
+
+1. Welcoming
+
+Our community is based upon an open environment of connection and positivity. All causes and opinions are valid and respected as people agree to put aside their affiliations for a while, allowing us to be open to everyone in our community, as a human, apart from our passionately held points of view which so often divide us
+
+By focusing on what connects us instead of what divides us, we create a safe space where we teach the important skill of learning how to come together, as humans, around a project or activity which benefits the local communities we live in
+
+
+2. An Open Human Space
+
+Leave all political leanings, religions and spiritual beliefs at the door. Our positive action based community is open to everyone, simply as human-beings together. Everyone at a gathering may agree that the Flying-Spaghetti Monster is the way forwards, while those passing-by may be strictly Dudeists and not feel welcomed to join. It is an intensely liberating experience to just see, and be seen as a human exploring the many paths in life, just as everyone else is
+
+Projects focusing on issues may appear to side with one political leaning or another, but our sole focus is on the root issue causing harm in society, and not on political bickering
+
+
+3. Evidence Based
+
+Every activity and action is based on peer reviewed scientific studies. Action must be anchored to humanity’s best current understanding of reality to ensure that energies are focused on making legitimate change in the world as effectively as possible. This differentiates the Public Happiness Movement from a hippie revival, or new age spiritualist/religious community
+
+As a side benefit this teaches people to critically examine today’s flood of social media pushed anti-intellectualism, helping to act efficiently in life, and in supporting their local community
+
+
+4. People and Innovative Technology Grounded
+
+The Public Happiness Movement is grounded in technological innovation, and exploring their use to coordinate locally, while sharing the most effective ideas for creating positive societal change globally. Innovative technology should be harnessed to empower people and communities, giving everyone the tools to transform the world around them into a friendlier, safer, and happier place to live our lives in
+
+
+5. Comfortable
+
+Activities should be comfortable for anyone to attend. This means striking a balance between what is considered local cultural norms for children, while pushing society towards greater acceptance of each other. As a rule of thumb our mantra is ‘your rights end where someone else’s begin’. So a Tantra, nudism, or bdsm group doing a free hug event advertising their group name or ideologies, would be inappropriate through association. Their members would all be welcome without discussing the group/lifestyle where young people can hear it.
+
+
+6. Encouraging
+
+We are all on a journey of exploration and we support and encourage all of our fellow adventurers. Some may not get it right away, so please guide their ideas and suggestions to fit with these Community Values, using plenty of positive encouragement
+
+
+7. Positive
+
+You’ve found a home for your positivity and enthusiasm. Please bring these tools with you when part of our activities and projects, especially those targeting serious issues. All smiles are beautiful! Please share yours with the world, and with each other
+
+
+8. Sharing
+
+Our community is about sharing – sharing ideas, experiences, success stories, talents and smiles!
+
+As a world-wide network – our whole is so vastly greater than the sum of our parts. When we come together with a shared vision, and an organised plan of the steps needed to achieve it, we as a collective of individuals, are powerful beyond imagination!
+ 
+
+9. Empowering
+
+Our community is focused on providing you with the tools and support needed to create change on social issues you care about through uniting with other positive and proactive people nearby and using the most effective ideas collected worldwide from our community.
+
+Consider the issue of involuntary homelessness, where endless money has been given to charities around the world, and yet most countries are no closer to ending homelessness than they were in the 60’s. If people in a town simply came together around effective ideas and a determination to resolve the issue ourselves, it would be gone forever in no time
+
+
+10. Rippling
+
+How can helping a few homeless folk feel less isolated in a small town in Hungary, or creating greater connection between folk in a community in Dorset, really change the wider world in any way?
+
+The activities and projects you create locally through our platform may seem small when we talk about making an impact on a global scale. Your energy and positivity is an essential part of growing an interconnected community of people, all exploring positive new ways to affect issues troubling their local community.
+
+By sharing our small successes, each successful activity can be recreated thousands and thousands of times by other community members across the globe, and together those ripples combine into an unstoppable wave of positive action that can have a real impact for positive societal change, globally!
+
+
+11. Locally Led
+
+Our main mission is to empower individuals and communities to create positive change themselves. While many of our projects and activities occur on a global scale, they are always implemented by local people who understand cultural differences where they live, and will be there to keep the ball rolling afterwards.
+
+One caveat is that some members use our platform to pimp their travelling experience, as the most positive and inspiring people you want to meet while travelling are also the local people who are likely to want to meet and take positive action to the streets where they live with you. Local people being invited to gather are reminded to take the lead in guiding any activities to fit with the local culture, so using the platform while travelling still fits with our Locally Led value.
+
+
+12. Snowballing
+
+All of your positive actions on our platform help spread awareness of the Public Happiness Movement. Reaching more people who want to live in a happier, kinder world with our message that it is possible, and they have the power to build it, today.
+
+As more people are drawn into our mission, the effects of your actions that reached them are magnified far beyond what you can see. Each new member who joins in adds more positive energy as our Movement grows into an unquenchable force of change for a friendlier, happier world – at peace with each other, for all of humanity to enjoy!!
+
+
+13. Slow and Engaging
+
+Social Media has trained humanity to have ever shorter attention spans, because the faster you click around their platforms, the more adverts you see and the more advertising money they earn. This has harmed societies ability to come together and find solutions to the issues around us. Our design philosophy is to slow down and join in with whats going on. In an age where everyone has been trained to click and move on, this might be quite jarring to some. We are happy to have less users if that means an active community collaborating and creating change together. We value a high quality community over a high quantity community.
+
+
+14. Everyone’s Rights Stop where Someone Else’s Start
+
+As a rule of thumb, your rights stop where someone else’s start. Rights are respected if they are not doing harm to others, communities, or the planet. As an example, someone can claim their personal freedom gives them a right to throw litter out their car window, but we don’t respect that right as it is damaging to the environment and others rights to enjoy a trash free nature.
+
+These values are not presented in any specific order.
+
+
+**Changing the Community Values**
+
+By design it is extremely difficult to change the Community Values which direct the culture and all action in this eco-system. Changing the community values requires both: 
+
+- An open discussion and then an open vote which everyone in the community is invited to, using our reputation weighted voting system and requiring 75% to approve the change.
+
+- A consensus of all five community members who have earned the most reputation from their contributions to the eco-system.
+
+All community members agreed to the stated Community Values when joining. Requiring both of the above and making changes difficult protects users from sudden shifts in a community they have contributed to growing and feel ownership towards, preventing them from being alientated by changes they don't agree with, unless those changes are clearly in the best interests of the health and effectiveness of that community. Under this system a small change would be far more likely to be approved than a large re-shaping change.
+
+	`
+    },
+    {
+        title: "Inclusivity Policy",
+        code: "IncPol"
+        fullText: `
+
+## 7.4.
+
+**Inclusivity Policy**
+
+The second Community Value captures the spirit of our inclusivity policy:
+
+2. An Open Human Space
+
+    Leave all political leanings, religions and spiritual beliefs at the door. Our positive action based community is open to everyone, simply as human-beings together. Everyone at a gathering may agree that the Flying-Spaghetti Monster is the way forwards, while those passing-by may be strictly Dudeists and not feel welcomed to join. It is an intensely liberating experience to just see, and be seen as a human exploring the many paths in life, just as everyone else is
+
+    Projects focusing on issues may appear to side with one political leaning or another, but our sole focus is on the root issue causing harm in society, and not on political bickering
+
+Being a space focused on our shared human experience rather than differences does not discount the important work being done by others within society on increasing diversity or equality. It simply means that this is a community where people can come and be seen as simply a human-being. Our online hub allows us to explore the kind of community humanity hopes to achieve after the hurt surrounding identity based inequality has been solved. On our platform users can present themselves as a cat or unicorn and give their online persona any sfw name and identifier they choose. 
+
+In much the same way that 'blind auditions' helped orchestras overcome the gender bias (conscious or unconscious) which led to a much higher percentage of women being picked for an orchestra when all auditions were held behind a screen so the judges couldn't be influenced by anything other than the music being played. On our platform people are judged on their words and actions, everything else is irrelevant and only available to others if that users chooses to share it. 
+
+Advantages of this approach include; providing an oasis of calm and warm acceptance in today's sea of emotive and hotly debated issues, which is often exhausting. Avoiding adopting the anger that often comes with important progress on these issues into our community. We are creating a space for humanity's future, not one weighed down with a distant past. An easy way to prevent political groups joining our community to push their agendas loosly hidden behind identity politics.
+
+
+**Activities and Projects**
+Targeting of action on identity based issues on our platform is fine, with rule that its based on 'what unites us' rather than our divisions. An activity focusing on empowering people based on our individual divisions would not be in the right place, regardless of how good a cause it is. As an example a 'Womans/Gay/Black/Trans/etc Pride event wouldn't be organised on our platform as it is focused on the differences between humans. A group of members might choose to organsie a float or event in support of that parade on our platform promoting the message of our shared humanity. 
+
+An Eye Contact event would be ideal as when you share eye contact the inexcapable truth is that they are as human as you. Their race, gender, age, fashion choices and other identifiers our society enjoys highlighting all melt away and just a human is left. 
+ 
+
+**Online**
+Language: In the online space language still remains as a potential barier to inclusivity. Our policy is to seek a technological solution through the best available translation software, available with a click on a button. 
+Audio/visual: Our developers are focused on making the platform equally accessible to all ranges of audio/visual impairments. 
+
+**Offline**
+Mobility: As gatherings happen in public spaces we are largely at the whim of the council or government who set the policies regarding accessibility of public spaces. 
+
+
+`
+    },
+    {
+        title: "Member Safety",
+        code: "MemSaf"
+        fullText: `
+
+## 7.5.
+
+**Member Safety**
+
+- When listing themselves on our map users are advised in the modal window to use a public location nearby rather than their address. This means that they are as much at risk of giving away where they live as they are using a hashtag on any social media platform. Those wanting more anonymity can choose not to list their location at all, or to use a landmark at a distance from their address that they feel comfortable with.  
+
+- Our bounty hunters team are actively seeking our scams and scammers and can be called with a simple @ command to check anything suspicious.
+
+- As with any platform which invites people to meet up in person, there will be some who join for their own motives which run counter to our Community Values. Users can report or leave feedback, and are advised when joining gatherings to avoid events with few attendees organised by with those who have not yet built up trust and reputation within the eco-system if they are uncomfortable doing so. Meaning someone with harmful intentions would have to swim upstream for a long time before being in a position to cause harm, giving comparative safety as there are many alternative platforms which would require far less work. For example couchsurfing, meetup.com, citysocialiser.
+
+- Risky activities will be flagged as all new in-person activities have to be tested, discussed and approved by the wider community before going onto our Activities list for others to try. During this process many voices will join in looking for potential safety risks. 
+
+- With all activities being created with, or by local people, members should all be aware of the cultural norms and risks associated with breaking them. At this point it is up to them whether or not to proceed. The social benefits of all of our activities are backed by peer-reviewed science, if it is important enough to someone to risk those consequences, while aware of them, then that is their personal prerogative. One such example is this [brave Saudi Arabian guy who keeps on being arrested by the religious police for offering Free Hugs](https://english.newstracklive.com/news/religion-police-arrest-man-for-giving-free-hugs-to-strangers-18539-1.html). Although we would never encourage someone to take those risks, the change he's fighting for is wonderful and we fully support it. 
+
+`
+    },	
+	{
+        title: "Conflict Resolution",
+        code: "ConfRs"
+        fullText: `
+
+## 7.6.
+
+**Conflict Resolution**
+
+In conflict scenarios it is highly likely that someone, or multiple parties will have acted in ways which violate our agreed Community Values. In this case the member to have broken those will receive a warning. 3 warnings leads to permanent ban, although an admin may decide that a member warrants a permanent ban immediately if their actions are really not something we want to have around our community. 
+
+To prevent admins abusing this power all calls for admin intervention are open to the entire admin community, so everyone can see what occured and what decision the admin who dealt with it made. 
+
+As it is still possible that power hungry admins could form groups to protect each other in the admin group, a single appeal can be lodged by sending a message to the highest trust group. The members ban message informs them of this, and provides a link so their email will go directly into a thread on the forum called 'ban appeals' which is only open to the highest trust level of members. 
+
+This means that those who understand the eco-system and community best all have open access to all appeals making abuses of power by admins very difficult as their peers will be able to see and investigate. 
+
+`
+    },
+    {
+        title: "Home Base: Community Center in Portugal",
+        code: "HomeB"
+        fullText: `
+
+## 7.7.
+
+**Home Base: Community Center in Portugal**
+
+We are building a community base in Setubal, Portugal. A space where upto 30 members can visit in person to build or boost projects, flash mobs, activities and our wider eco-system at a beautiful coworking space/project space on a private beach and lake. You can see photos and more details in the [Project Brief](https://publichappinessmovement.com/t/topic/2783). 
+
+To avoid the regular conflict that always comes when groups live together people (outside of the caretakers) will not be living there regularly, but come to the center for set periods of time, depending on the project being worked on. Mostly this will be less than a month. Keeping a flow of fresh energy which is never allowed to stagnate, the center is always in motion with motivation to drive forwards on a project or cause. Also allowing as many people to come and connect with the physical core of the eco-system and building strong bonds within our community. 
+
+The community center is being funded personally by a few of our founding members rather than coming from the token sale. 
+
+`
+    },
+
+   { title: "Projects in our Ecosystem", code: "Projet", fullText: ` `, chapterHeading: true },
+    {
+        title: "Intro",
+        code: "BeDivs",
+        fullText: `
+
+## 8.1.
+
+**Intro**
+The Global side of the [Public Happiness Movement platform](https://publichappinessmovement.com) unites people around the world. It directs their skills and ideas into building projects which create change through effective positive action. Their energy is focused on causes which they care about that are troubling humanity and our planet. 
+
+Many of these projects are centered around [the Open Source platform](https://github.com/focallocal/fl-maps) we've built as its design brief is to bring people together, both locally and globally, to take action on a cause. It rewards users in tokens for taking action which benefits that cause and its stated mission, or supports and grows the eco-system which is birthed on that platform. It was designed to be able to spin up crypto-fuelled eco-systems which can build a community based upon taking effective action on any cause. 
+
+**How Many Projects?**
+As the community on our Meta platform (publichappinessmovement.com) grows it reaches pre-determined thresholds which open more slots for project builds. The new projects to be built are suggested and voted on by members using our reputation weighted voting system. The benefit of this is that it focuses all energy on completing a few projects, rather than having hundreds or thousands start and few finish. The projects below are ones that have already been built, or are being built by the Public Happiness Community on our Meta platform. 
+
+Global Flash Mobs like The Worlds Biggest Eye Contact Experiment, International Pillow Fight Day, are not considered to be 'Projects' as they live on our meta site rather than growing into their own separate entity at launch. 
+
+**Differences**
+The tokenomics and eco-systems for each project built on our opensource codebase are largely identical to this whitepaper, the main differences are outlined in the section below.
+
+The founding members of each platform need to create their own Community Values and Mission Statement in order to set the direction their new eco-system.
+
+`
+    },
+	
+    {
+        title: "Community Climate Action Platform",
+        code: "Climat",
+        fullText: `
+
+## 8.2.
+
+**Community Climate Action Platform**
+
+
+`
+    },	
+	
+    {
+        title: "Brighter Tomorrow Map (Homelessness)",
+        code: "BTMmap",
+        fullText: `
+
+## 8.3.
+
+**Brighter Tomorrow Map**
+
+
+`
+    },		
+	
+    {
+        title: "House of The Golden Potato",
+        code: "CasaWg",
+        fullText: `
+
+## 8.4.
+
+**House of The Golden Potato**
+
+
+`
+    },		
+		
+	
     { title: "The Path to Decentralisation", code: "ThPato", fullText: ` `, chapterHeading: true },
     {
         title: "Benevolent Dictatorship vs Complete Community Governance",
         code: "BeDivs",
         fullText: `
 
-## 7.1.
+## 8.1.
 
 **Benevolent Dictatorship vs Complete Community Governance**
 Primarily, we expect platform users/community members who rise to higher rankings through their actions to increase human and societal well-being, to be invested in the overall vision by the time they reach the upper levels. Their greater influence on decision making will lead the ecosystems culture, creating a force to protect the platform from abuse and actions which run against our Core Values. 
@@ -923,7 +1152,7 @@ It would be poor planning not to also consider more 'attack' scenarios, and ways
         code: "ExScOu",
         fullText: ` 
 
-## 7.2.
+## 8.2.
 
 **Example Scenario: Outside Collusion**
 A significantly sized outside group infiltrate our platform, operating as model members, or pretending to and avoiding detection. Once reaching a high enough rank to influence a vote they collude to state that ‘watching tv and drinking beer’ meets with our Core Values and should be approved as a Public Happiness Activity.
@@ -937,7 +1166,7 @@ Or more concerningly perhaps ‘Rallies supporting a religious hard-line politic
         code: "LiofDe",
         fullText: `
 
-## 7.3.
+## 8.3.
 
 **Lines of Defence**
 1st Line: 
@@ -959,7 +1188,7 @@ Founder Andy retains a 'pause' vote. Intended never to be used, it serves as a l
 
 On initiation of a pause vote 21 members are selected at random (making it functional impossible to corrupt selected members) from the recently active top ranking members. The vote itself will at the same time be posted as a priority issue in the bounty hunting team who will seek anything which could affect the integrity of the vote, or any abnormal patterns. Once the bounty hunting team's report is complete, the 21 random senior members then vote on whether the decision 'paused' to protect the community should be reversed. 11 votes are needed to pass a decision overruling.
 
-The 21 members will have the tools to remove members if needed - for example a lot of new members recently joined and all voted in just one way. 
+The 21 members will have the tools to remove members if needed - for example a lot of new members recently joined and all voted suspiciously in the same way. 
 
 At an unspecified point in the future, or in the case that Andy is no longer able to use this last line community protection tool, the pause vote will pass to 7 secretly designated members. Their identities unknown even to each other. These members have been determined by a personal judgement on integrity, reliability, and commitment to both the mission, and it's values. Any of these members have the power to begin the pause process on any decision recently voted on by the community. The function for calling a pause requires that the member fully explains why it was used, and this explanation is then posted anonymously to the wider-community for urgent discussion.
 
@@ -970,12 +1199,12 @@ At an unspecified point in the future, or in the case that Andy is no longer abl
         code: "Conclu",
         fullText: `
 
-## 7.4.
+## 8.4.
 
 **Conclusion**
 To meet our goals and teach community members the core concepts crypto-economics and blockchain, our community needs to move towards a culture of decentralised decision making. Doing so immediately, or fully, would open the platform up to abuse and security risks. For that reason decentralisation will be grandfathered in as the community grows, with the founding team assessing it’s current ability to protect itself from abuse while working towards increasing decentralisation and allowing greater community led governance. 
 
-Some core areas of the project will always remain closed to change via community voting as a final line of defence from abuse, for example, the ‘Core Values’ which the community is based upon. To trigger a necessary change to these protected areas community members could create a vote to bring attention of the core team and put pressure on them to initiate the change, or to engage in further public discussions. 
+Some core areas of the project have a deliberately high bar for change via community voting, for example, the ‘Core Values’ which the community is based upon. You can read about that in the Community Values section in chapter 7.3. 
 
 `
     },
@@ -1110,11 +1339,11 @@ Two of the spin-off platforms and tokens will launch before our meta Public Happ
 
 Each will launch with two initial week-long Launch Party Hacks, with the possibility to repeat these as often as is beneficial. 
 
-**Launch Order**
+**Launch Party Hacks**
 
-1) [Community Climate Action Platform](https://publichappinessmovement.com/t/topic/2841)
-2) [Brighter Tomorrow Map](https://brightertomorrowmap.com)
-3) [Public Happiness Movement](https://publichappinessmovement.com] (meta)
+1) Hack 1 and 2: [Community Climate Action Platform](https://publichappinessmovement.com/t/topic/2841)
+2) Hack 3 and 5: [Brighter Tomorrow Map](https://brightertomorrowmap.com)
+3) Hack 4 and 6: [Public Happiness Movement](https://publichappinessmovement.com) (meta)
 
 
 `
@@ -1279,7 +1508,6 @@ Funding Pools are collected in each category. Allowing funders to target specifi
 Project ideas state their requirements in the project plan and facilities needed for it (square foot, equipment, required theme, cost).
 
 On set dates, the highest voted events are offered the 1st pick of available venues and matched by our team with funding available for the topic of their event.
-
 
 If they decide to accept then their event is moved from the suggestion, voting and comment section (Global) into the map (Local) section and added to the calendar of events occurring under the Happier World Economies Summit banner, where attendees can search sign up, and begin (/continue) talking chatting and engaging with each other and the creator.
 
