@@ -821,20 +821,15 @@ Forum specific plug-ins can also be built easily through the existing Discourse 
     {
         title: "Where Did The Community Start?",
         code: "WhereCm",
-        fullText: `
-
-## 7.1.	
+        fullText: `## 7.1.	
 	
 **Where did the Community Start?**
 The original Focallocal community began on Facebook in London in 2012, and spread out through our Global events and [Andy's Road Trips](https://news.focallocal.org/about-andy-and-the-road-to-focallocal/). Facebook became an increasingly difficult place to build meaningful action as the platform shifted from allowing group participation around ideas and events, to an ever increasing philosophy of maximising the amount of content users see while minimizing their engagement with that content. Making viral events and collaborating on projects more reliant on one individual and leading to the rise of 'Influencers'. 
-
-Since accepting Facebook was no-longer capable of facilitating our mission the community has floated around multiple platforms inlcuding Whatsapp, Slack, Asana, Trello, Wordpress, Reddit and others. None were set up to meet our needs and so we began building our [own platform](https://github.com/focallocal/), which after many long years of arduous work is just about ready to launch. 
-
-`
+Since accepting Facebook was no-longer capable of facilitating our mission the community has floated around multiple platforms inlcuding Whatsapp, Slack, Asana, Trello, Wordpress, Reddit and others. None were set up to meet our needs and so we began building our [own platform](https://github.com/focallocal/), which after many long years of arduous work is just about ready to launch. `
     },
     {
         title: "Where is the Community Now?",
-        code: "WhereNow"
+        code: "WhereNow",
         fullText: `
 
 ## 7.2.
@@ -970,7 +965,7 @@ All community members agreed to the stated Community Values when joining. Requir
     },
     {
         title: "Inclusivity Policy",
-        code: "IncPol"
+        code: "IncPol",
         fullText: `
 
 ## 7.4.
@@ -1010,7 +1005,7 @@ Mobility: As gatherings happen in public spaces we are largely at the whim of th
     },
     {
         title: "Member Safety",
-        code: "MemSaf"
+        code: "MemSaf",
         fullText: `
 
 ## 7.5.
@@ -1031,7 +1026,7 @@ Mobility: As gatherings happen in public spaces we are largely at the whim of th
     },	
 	{
         title: "Conflict Resolution",
-        code: "ConfRs"
+        code: "ConfRs",
         fullText: `
 
 ## 7.6.
@@ -1050,7 +1045,7 @@ This means that those who understand the eco-system and community best all have 
     },
     {
         title: "Home Base: Community Center in Portugal",
-        code: "HomeB"
+        code: "HomeB",
         fullText: `
 
 ## 7.7.
