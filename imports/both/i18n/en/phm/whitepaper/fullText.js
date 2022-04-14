@@ -680,7 +680,7 @@ How Voting Works to Choose New Projects:
 All community members can suggest a new project by filling in a structured form on our platform. The form limits users to roughly a single A4 page, to avoid recreating systems where to get an idea funded someone has to commit considerable time and resources. Other community members then can discuss, and vote on this idea. When a space opens up in the build list (either because another project is complete, or because capacity increases within the ecosystem creating a new spot) the project moves into the build list where it is built and delivered by our community.
 
 Staking:
-Community members are also welcome to 'stake' their tokens behind a project they really want to see delivered and changing lives in the real world. Staked tokens go into the pool used to create the project should the project be voted into the Build list by the community, increasing the rewards available and therefore the speed its built. It also has some influence in the voting process as other community members can see that project will be created faster if they support it. This mechanism can also be utilised to push through an idea with a small but passionate following. If a group of members pool their resources and staje enough tokens to reach the set threshold required to open a new spot in the build list, then the project will take the new spot without needing to win the popular vote.
+Community members are also welcome to 'stake' their tokens behind a project they really want to see delivered and changing lives in the real world. Staked tokens go into the pool used to create the project should the project be voted into the Build list by the community, increasing the rewards available and therefore the speed its built. It also has some influence in the voting process as other community members can see that project will be created faster if they support it. This mechanism can also be utilised to push through an idea with a small but passionate following. If a group of members pool their resources and stake enough tokens to reach the set threshold required to open a new spot in the build list, then the project will take the new spot without needing to win the popular vote.
 
 
 Sectional Voting:
@@ -1710,7 +1710,7 @@ The ecosystem and token need to take every possible effort to conform to nationa
         fullText: `
 
 &nbsp;
-The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the ecosystem will have financial (Fiat) feed-in streams to continually grow our economy. The stronger our economy becomes, the means more power to all of the functions we exist to faciliatate in the world. Also allowing us to cover:
+The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the ecosystem will have financial (Fiat) feed-in streams to continually grow our economy. The stronger our economy becomes, the means more power to all of the functions we exist to facilitate in the world. Also allowing us to cover:
 * operating costs 
 * supporting the team during the initial growth phase 
 * marketing campaigns until we are strong enough to run them all internally
@@ -1870,7 +1870,7 @@ The token earnings from creating activities or completing project missions will 
 
 In special occasions the community may choose to vote on increasing the incentive in a specific country above its cost of living, for example, to offer support during hyperinflation, such as Venezuela has recently been experiencing; and other situations where increased community connection is of significant urgency. Or perhaps simply to target a country where few people have joined.
 
-Obviously allowing the community to vote on increasing a regions token rewards, creates an avenue for potential voting abuse and will need to be monitored rigorously, until our community'd self-governance is mature and thoroughly pressure tested.
+Obviously allowing the community to vote on increasing a regions token rewards, creates an avenue for potential voting abuse and will need to be monitored rigorously, until our community's self-governance is mature and thoroughly pressure tested.
 
 
 Experience Multipliers:
@@ -1886,7 +1886,7 @@ A users total tokens earned/contribution to the ecosystem is recorded and used a
 
 * Public Happiness Legend
 
-By backdating the tokens awarded based on a members previous contributions to humanity through their public happiness endevours, we create a system where experienced community leaders instantly become the leaders of our ecosystem. By having only 5 levels we can create a system where everyone can become a leader within our ecosystem, keeping it within reach of all members once they have contributed enough to understand the culture and values which drive our mission.
+By backdating the tokens awarded based on a members previous contributions to humanity through their public happiness endeavours, we create a system where experienced community leaders instantly become the leaders of our ecosystem. By having only 5 levels we can create a system where everyone can become a leader within our ecosystem, keeping it within reach of all members once they have contributed enough to understand the culture and values which drive our mission.
 
 
 `
