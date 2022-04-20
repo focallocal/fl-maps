@@ -394,6 +394,9 @@ They will now be rewarded financially for their continued efforts to improve hum
 		image: "/images/Proposed_New_Site.png",
         fullText: ` 
 
+## 6.1.
+
+
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
 The platform is build as an Open Source project which brings people and communities together, both locally and globally, to target an issue they care about. Users of each platform are then rewarded with tokens for their efforts towards the cause that platform is focused on, and for carrying out work which is essential for the overall health of their community/platform/eco-system. 
@@ -401,7 +404,8 @@ The platform is build as an Open Source project which brings people and communit
 This means that we can create spin-off platforms which unite humanity around positive action on key issues troubling todays society. It prevents the Meta platform from becoming too cluttered, so it can focus on its mission 'to create more peace and well-being in our world'. It also allows other communities to grow up who will add energy to building and improving the platform. 
 
 
-**Meta (Publichappinessmovement.com=**
+
+**Meta (Publichappinessmovement.com)**
 
 
 Often referred to as simply 'PHM' our meta platform is also available as an iOS and [Android app](https://play.google.com/store/apps/details?id=tohu.phmapp&hl=en&gl=US). Its long term goal is to grow large enough to switch to the DAPPs network where the architecture will be hosted by the community members in a peer to peer model, to further the decentralisation of our community and ecosystem.
@@ -424,7 +428,7 @@ The same tools are available to community members creating a localised project, 
         code: "ThPuHa",
         fullText: `
 
-## 6.1.
+## 6.2.
 
 [view live beta](https://publichappinessmovement.com/docuss/m_gather)
 **The Public Happiness Map**
@@ -463,7 +467,7 @@ This can be considered ‘proof of work’. Their posts will be located autonomo
         code: "ActCen",
         fullText: `
 
-## 6.2.
+## 6.3.
 
 [view live beta](https://publichappinessmovement.com/categories)
 **Global/The Action Center**
@@ -551,7 +555,7 @@ The same tools are available to community members creating a localised project, 
         code: "ComNew",
         fullText: ` 
 
-## 6.3.
+## 6.4.
 
 [view live beta](https://publichappinessmovement.com/c/hero-hub/)
 **Community News (or Happy News)**
@@ -568,7 +572,7 @@ Moderators will mine tokens by approving content. Community members will mine to
         code: "AcHaSh",
         fullText: `
 
-## 6.4. 
+## 6.5. 
 
 [view live beta](https://the-positive-action-shop.myshopify.com/collections/)
 **The Active Happiness Shop**
@@ -585,7 +589,7 @@ Currently hosted on shopify, this will be moved in-house shortly.
         code: "WhDeWh",
         fullText: `
 
-## 6.5.
+## 6.6.
 
 **Who defines what is accepted as ‘Public Happiness?’**
 The platform is pre-populated with projects, missions and pre-approved Public Happiness Activities. community members are invited to suggest their own ideas, or bring pre existing projects/activities. These will be discussed by other members in the forums to explore potential issues, and ways to strengthen the impact. Then reviewed by the community to make sure it aligns with our [Community Values](https://publichappinessmovement.com/t/topic/2844), before being voted on, using our reputation weighted community governance model, and then approved or not. This ensures the original vision is maintained, while providing space for members creativity and ability to shape their platform. Note: this doesn't prevent communities joining our platform from having their own governance structure internally.
@@ -612,7 +616,7 @@ When community members submit a new idea for a project or activity its recommend
         code: "WhcaPa",
         fullText: `
 
-## 6.7.
+## 6.8.
 
 **Who can Participate on the Platform**
 The platform is open to anyone wanting to create well-being and happiness where they live, or support the Movement. 
@@ -628,7 +632,7 @@ Pre-existing communities may wish to join the ecosystem to take advantage of the
         code: "PrCowi",
         fullText: `
 
-## 6.8.
+## 6.9.
 
 **Pre-existing Communities with Similar Values**
 Groups and communities already doing excellent work in creating Public Happiness and well-being projects/activities where they live, are all welcomed to use our platform and ecosystem to supercharge their positive impact on society.
@@ -647,7 +651,7 @@ Platform users can join groups to be informed about their activities and project
         code: "Langua",
         fullText: `
 
-## 6.9.
+## 6.10.
 
 **Languages**
 The platform will launch in English. Adding other languages has been designed as a simple task anyone speaking the required language can complete in around 30 mins.
@@ -659,7 +663,7 @@ The platform will launch in English. Adding other languages has been designed as
         code: "DeGoan",
         fullText: `
 
-## 6.10.
+## 6.11.
 
 **Decentralised Governance and Voting**
 
@@ -716,7 +720,7 @@ Community members aren’t all expected to be experts on blockchain or community
         code: "UsBein",
         fullText: `
 
-## 6.11. 
+## 6.12. 
 
 **User Behaviour in UX Design**
 The platform is designed to create a culture of qualitative engagement, rather than maximising quantitative engagement to increase advertising revenue harvested from community members. The model today's main social media sites have switched to wants users to click and move on, rather than engage - this comes at the expense of communities or events organisers seeking to build a community in the online world. For example, on Facebook events the event description is now hidden from users, requiring them to actively seek it out. FB doesn't want users to slow down and read what they are actually attending or joining, and creating a participatory community in this environment is increasingly difficult. Today's social media wants users to click, and move on as quick as possible. 
@@ -726,14 +730,13 @@ Teaching community members to participate rather than just consume is going to b
 Community members attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals to compliment the tokenisation effect, rather than rely on it solely to change users expected online behaviour.
 
 `
-    },
-	
+    },	
     {
         title: "Maintaining productivity in an open forum (Our coloured threads)",
         code: "Colored",
         fullText: `
 
-## 6.12. 
+## 6.13. 
 
 **Maintaining productivity in an open forum (Our coloured threads)**
 One of the major challenges faced by open communities, where anyone around the world can join a team and begin contributing, is that the teams focus is constantly interrupted when new members join in and drop new ideas which need addressing before the team can continue with the work or discussion they were focused on. This makes it difficult for teams to maintain momentum and reach an efficient flow state for efficient progress on tasks they are working on.
@@ -762,66 +765,13 @@ Breaking the chain - New ideas are always welcome and anyone can still present t
 `
     },	
 	
-    {
-        title: "User Wall and Plugin Module Ecosystem",
-        code: "UsWaan",
-        fullText: `
-
-## 6.13. 
-
-**User Wall and Plugin Module Ecosystem**
-Logged in community members will arrive on their profile page and wall each time they visit. A community members profile page contains three types of features:
-
-1. Community Communications - embedded in the main menu are notifications from communications across our site and forum.
-
-2. Actions - community members are prompted to take the main actions which will fuel the Movements growth, and deliver its positive impact on society. Actions like; filling in a profile to add themselves to the map. Creating a group. Searching for community members/activities nearby to meet and create positive actions with.
-
-3. Members Wall - the largest of these spaces, where community members have the ability to choose which components/information they'd like to see. This area will be open to plug-in creators allowing customisation and increased ownership of users over their profile. Encouraging innovation will improve the user experience on our platform.
-
-
-**Expanding on the Members Wall**
-
-The easiest way to visualise this, for those who remember it, is that this will be similar to the ecosystem Facebook had before they locked users into only the behaviour the company desired. In many ways our entire platform could be described as user led design already due to the decentralised governance model, but most areas will be designed and set by the majority through user voting. The wall is a section to allow more individual flexibility and a tailored experience to the individuals needs and wants.  
-
-The community members wall space will come pre-populated with default modules which the community has chosen as the most effective to help beginners to get a grip on what is going on within the Public Happiness Movement, and how best to engage. Community members have the freedom to change these at any time. 
-
-Developers will be free to create modules that fit any purpose, so long as their use isn't going against any of the Communities Core Values (something easily checked by other community members by posting ideas in the forum before building them). 
-
-Default modules might include:
-
-- Getting started challenges, to guide community members through a general understanding of what interesting things they can do within our ecosystem, plus with token and badge rewards for completing them
-- A calendar of upcoming gatherings they've subscribed to
-- A calendar of nearby gatherings, and international action days
-- Thumbnails of recently active community members nearby, to promote the feeling of a community
-- Charts showing levels of activity within the ecosystem; locally, in each section, and in their geographic areas (country and city)
-- Their wallet showing the amount of tokens they've earned for their actions to bring more peace and well-being into the world, and to complete tasks important to the healthy running of our ecosystem. This would include live tracking of the tokens price compared to other currencies/tokens
-- A voting tracker to show key votes/votes in areas they've subscribed to/all current votes
-- Courses for learning the basics of blockchain and cryptocurrency
-- Modules with courses to improve your happiness
-
-Optional modules might include:
-
-- Charts showing activity with predicted completion (burn up/burn down) dates for projects they've subscribed to
-- Recent news stories from our forum from categories they've subscribed to
-- Friends recent activity on the platform
-- News from communities on our platform that they've joined
-- Recent videos or photo streams from action all across the world (pulled from social media via hashtags)
-- Challenges created by community members
-- Trending stats about our Movement and projects on social media
-- Habit tracking to help community members form healthy habits
-- Portals to groups of community members learning new skills by following online courses together, like marketing or web development
-
-The possibilities are endless and we can't wait to see what is created here!
-
-Forum specific plug-ins can also be built easily through the existing Discourse architecture. 
-
-`
-    },
     { title: "Community Overview", code: "CommVw", fullText: ` `, chapterHeading: true },
     {
         title: "Where Did The Community Start?",
         code: "WhereCm",
-        fullText: `## 7.1.	
+        fullText: `
+	
+## 7.1.	
 	
 **Where did the Community Start?**
 The original Focallocal community began on Facebook in London in 2012, and spread out through our Global events and [Andy's Road Trips](https://news.focallocal.org/about-andy-and-the-road-to-focallocal/). Facebook became an increasingly difficult place to build meaningful action as the platform shifted from allowing group participation around ideas and events, to an ever increasing philosophy of maximising the amount of content users see while minimizing their engagement with that content. Making viral events and collaborating on projects more reliant on one individual and leading to the rise of 'Influencers'. 
@@ -1136,7 +1086,7 @@ Project Brief: [Brighter Tomorrow Map](https://publichappinessmovement.com/t/top
 **House of The Golden Potato**
 
 We are Building a Religion.  
-[Project Brief](https://publichappinessmovement.com/t/topic/2261)**
+[Project Brief](https://publichappinessmovement.com/t/topic/2261)
 
 
 This is a silly fun side project to turn our mascot Wiggles into a deity, but also has a serious message and mission. 
