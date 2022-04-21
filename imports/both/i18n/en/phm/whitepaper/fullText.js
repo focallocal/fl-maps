@@ -387,11 +387,12 @@ They will now be rewarded financially for their continued efforts to improve hum
 
 `
     },
+
+   { title: "Platform Overview", code: "PlaOve", fullText: ` `, chapterHeading: true, image: "/images/Proposed_New_Site.png" },
+ 
     {
-        title: "Platform Overview",
-        code: "PlaOve",
-        chapterHeading: true,
-		image: "/images/Proposed_New_Site.png",
+        title: "Platform Intro",
+        code: "PlaInt",
         fullText: ` 
 
 ## 6.1.
