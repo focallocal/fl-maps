@@ -396,7 +396,7 @@ They will now be rewarded financially for their continued efforts to improve hum
         fullText: ` 
 
 ## 6.1.
-
+**Platform Intro**
 
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
