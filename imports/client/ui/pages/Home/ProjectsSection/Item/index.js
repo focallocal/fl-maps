@@ -25,7 +25,7 @@ const Item = ({ item, loginButton }) =>
           className="images"
         />
           <CardTitle tag="h5">
-            <CardLink href={item.url}>
+            <CardLink href={item.url} target="_top">
               {item.title}
             </CardLink>
             {/*<Link to={item.url}>
