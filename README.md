@@ -12,7 +12,7 @@ Or comment with your skills and what you want to gain from working on our kinder
 __________
 
 
-**Please note this guide is depreciated**
+**Please note this guide is depreciated** The current Getting Started Guide is linked above.
 
 
 This is the base branch for the new react-based fl-maps project.
