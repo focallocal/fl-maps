@@ -59,6 +59,26 @@
     text-align: center;
   }
 
+  .more-stats {
+    outline: none;
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    border-radius: 5px;
+    padding-block: 6px;
+    padding-inline: 12px;
+    transition: color 0.15s ease;
+    &:hover{
+      color: black;
+      border: 1px solid black;
+    }
+    &:focus{
+      border: 1px solid green;
+    }
+    &:active{
+      transform: translateY(4px);
+    }
+  }
   @media screen and (max-width: 850px) {
     .title {
       font-size: 1.8em;

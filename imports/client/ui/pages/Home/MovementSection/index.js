@@ -11,7 +11,22 @@ const MovementI18N = i18n.Home.movement_section
 const { Home } = i18n
 
 class MovementSection extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      isMoreStats: true,
+    }
+  }
+
+
+componentDidMount(){
+
+}
+
+
  render (props) {
+   console.log(this.state.isMoreStats)
    const {
      title,
      content
@@ -39,7 +54,9 @@ class MovementSection extends Component {
                 </Col>
              ))}
          </Row>
+         <button className='more-stats'>More Stats</button>
        </Container>
+       
      </section>
    )
  }

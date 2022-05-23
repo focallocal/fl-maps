@@ -3,6 +3,7 @@
 settings.json
 mup.json
 mup-secrets.json
+start
 deployment.tar
 .deploy
 .deploy/
@@ -17,3 +18,4 @@ node_modules
 
 coverage
 .vscode
+
