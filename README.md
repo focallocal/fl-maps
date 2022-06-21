@@ -1,13 +1,37 @@
 ![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
 
-**Please note this guide is depreciated**
+**Intro**
 
-The main resorce for developers on this codebase is in the forums at Publichappinessmovement.com under the Web-dev, Reactjs and Documentation tags.
+This is an opensource project which brings people and communities together to take action on causes they care about, both in-person locally and also globally. Locally the platform collects and rates the most effective ways people can take action on that cause. Globally it allows users to discuss, vote on, and then use their skills to build projects together which target positive action on that issue. 
 
-The most likely page you are looking for is the Getting Started Guide here: https://publichappinessmovement.com/t/topic/1370
+The project also rewards users with a blockchain token to incentivise and reward action which benefits the each platforms mission, or the health and growth of the community built on it. 
+
+
+**Main causes and branches**
+
+- Testing **Master**
+- Peace and Well-being (Meta) **deploy-phm** 
+- Homelessness **deploy-btm**
+- Climate **coming soon**
+
+The codebase for all projects is identical as its purpose is the same, to unite people to take action on a cause they care about. All differences are coded in a language app (i18n) which loads them for each different site. 
+
+
+**To join in**
+
+Tasks, issues, documentation and bugs are on our Meta platform at Publichappinessmovement.com in the Web-dev, Reactjs and Documentation categories.
+
+Want to get coding? The most likely page you are looking for is the Getting Started Guide here: https://publichappinessmovement.com/t/topic/1370
+
+Or comment with your skills and what you want to gain from working on our kinder-world open source mission and one of the other team members will guide you to getting started: https://publichappinessmovement.com/c/web-developers/
+
+
+
 
 __________
 
+
+**Please note the guide below is depreciated** The current Getting Started Guide is linked above.
 
 
 
