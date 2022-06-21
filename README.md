@@ -1,4 +1,5 @@
-![Focallocal logo](http://news.focallocal.org/wp-content/uploads/2015/02/focallocal-very-low-res1-min.png)
+![Focallocal logo](https://github.com/focallocal/fl-maps/blob/master/PHM-small.png)
+
 
 **Intro**
 
