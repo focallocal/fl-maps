@@ -10,10 +10,11 @@ The project also rewards users with a blockchain token to incentivise and reward
 
 **Main causes and branches**
 
-- Testing **Master**
-- Peace and Well-being (Meta) **deploy-phm** 
-- Homelessness **deploy-btm**
-- Climate **coming soon**
+- Testing : **Master**
+- Peace and Well-being (Meta): **deploy-phm** 
+- Homelessness : **deploy-btm**
+- Climate : **coming soon**
+- Public Art : **coming soon**
 
 The codebase for all projects is identical as its purpose is the same, to unite people to take action on a cause they care about. All differences are coded in a language app (i18n) which loads them for each different site. 
 
@@ -27,6 +28,8 @@ Want to get coding? The most likely page you are looking for is the Getting Star
 Or comment with your skills and what you want to gain from working on our kinder-world open source mission and one of the other team members will guide you to getting started: https://publichappinessmovement.com/c/web-developers/
 
 
+
+[Main org and all project files](https://github.com/focallocal/)
 
 
 __________
