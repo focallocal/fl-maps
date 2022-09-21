@@ -2,9 +2,9 @@
   {
     "name": "PHM Community",
     "categories": [
-      { "name" : "Positive People Nearby", "color" : "#18a80d", "url": ""}
+      { "name" : "Positive People Nearby", "color" : "#18a80d", "url": ""},
       { "name" : "Random Acts of Kindness Communities", "color": "#6d65bc", "url": ""},
-      { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""},     
+      { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""}     
     ]
   },
   {
