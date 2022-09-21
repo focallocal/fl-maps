@@ -1,16 +1,9 @@
 [
   {
-    "name": "Positive People Nearby",
+    "name": "PHM Community",
     "categories": [
-      {"name": "Meet Me to Create Happiness Together!", "color": "red", "default": true, "url": ""}
-    ]
-  },
-  {
-    "name": "Public Happiness Communities",
-    "categories": [
-      { "name" : "Gather for More Happiness", "color" : "#63d85b", "url": ""},
-      { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""},
-      { "name" : "Be Happier Community Meet", "color" : "#18a80d", "url": ""}
+      { "name" : "Positive People Nearby", "color" : "#18a80d", "url": ""}
+      { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""},     
     ]
   },
   {
@@ -27,9 +20,7 @@
     "name": "Health and Well-being",
     "categories": [
       { "name" : "Open Skills Sharing Day", "color" : "#52929b", "url": "https://news.focallocal.org/international-open-skills-sharing-day/"},
-      { "name" : "Health + Well-being Flash", "color" : "#5e9b6b", "url": ""},
-      { "name" : "Supporting with my Skills", "color" : "#f57c00", "url": ""},
-      { "name" : "Taking a Break", "color" : "#d7191c", "url": ""}
+      { "name" : "Health + Well-being Flash", "color" : "#5e9b6b", "url": ""}
     ]
   },
   {
@@ -46,7 +37,7 @@
     "categories": [
       { "name" : "I've Got a Message for YOU!", "color" : "#fc1976", "url": "https://news.focallocal.org/ive-got-a-message-for-you-the-positive-thinking-jar/"},
       { "name" : "The Positivity Facilitator", "color" : "#080fba", "url": "https://news.focallocal.org/the-positivity-facilitator/"},
-      { "name" : "Something Else", "color" : "#1a61ef", "url": ""},
+      { "name" : "Take a Smile", "color" : "#4a0bff", "url": "https://publichappinessmovement.com/t/topic/3084"},
       { "name" : "Good Human Appreciation", "color" : "#4a0bff", "url": ""},
       { "name" : "Eye Contact for Connection", "color" : "#adbc12", "url": "https://news.focallocal.org/eye-contact-gathering/"}
     ]
