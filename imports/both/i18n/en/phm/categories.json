@@ -3,6 +3,7 @@
     "name": "PHM Community",
     "categories": [
       { "name" : "Positive People Nearby", "color" : "#18a80d", "url": ""}
+      { "name" : "Random Acts of Kindness Communities", "color": "#6d65bc", "url": ""},
       { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""},     
     ]
   },
@@ -47,6 +48,12 @@
     "categories": [
       { "name" : "Inspire MY City", "color" : "#e5a20b", "url": "https://news.focallocal.org/musical-connection/transport-jam/"},
       { "name" : "Guerrilla Urban Beautification", "color" : "#1f482d", "url": "https://news.focallocal.org/community-guerrilla-gardening/"}
+    ]
+  },
+  {
+    "name": "Suggest Something New",
+    "categories": [
+      { "name" : "Suggest a New Gathering", "color" : "#e5a20b", "url": "https://publichappinessmovement.com/c/suggested-activities/activitysuggestions"}
     ]
   }
 ]
