@@ -29,7 +29,7 @@ Or comment with your skills and what you want to gain from working on our kinder
 
 
 
-[Main org and all project files](https://github.com/focallocal/)
+**[Main org and all project files](https://github.com/focallocal/)**
 
 
 __________
