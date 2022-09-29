@@ -59,7 +59,7 @@ class EventInfo extends Component {
           <div className='title'>{event? event.name : ''}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
-          <Button color='secondary' onClick={this.openMoreInfo} block>More</Button>
+          <Button color='secondary' onClick={this.openMoreInfo} block>{i18n_.openEventDetailsBtn}</Button>
         </div>
 
         <hr className='divider' />
