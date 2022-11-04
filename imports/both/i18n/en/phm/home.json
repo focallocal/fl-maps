@@ -5,7 +5,7 @@
     "form": {
       "global_search": {
         "text_input": {
-          "placeholder": "Skills, causes and projects"
+          "placeholder": "Build kind projects together"
         },
         "button": {
           "text": "GLOBAL"
@@ -13,7 +13,7 @@
       },
       "local_search": {
         "text_input": {
-          "placeholder": "Events and locations"
+          "placeholder": "Find happy activities and people near you"
         },
         "button": {
           "text": "LOCAL"
