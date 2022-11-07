@@ -74,6 +74,12 @@
 
   .link:hover {
     text-decoration: none;
+    cursor: pointer;
+  }
+
+  .link input:hover {
+    text-decoration: none;
+    cursor: pointer;
   }
 }
 
