@@ -72,6 +72,15 @@
     text-align: center;
   }
 
+  .link:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .link input:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 @media screen and (min-width: 250px) {

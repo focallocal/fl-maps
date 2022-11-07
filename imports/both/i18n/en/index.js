@@ -1,5 +1,6 @@
 import BrighterTomorrowContent from './btm'
 import PublicHappinessMovementContent from './phm'
+import { Meteor } from 'meteor/meteor'
 
 const { mapType } = Meteor.settings.public
 console.log(mapType)
