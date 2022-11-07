@@ -5,7 +5,7 @@
     "form": {
       "global_search": {
         "text_input": {
-          "placeholder": "T Build kind projects together"
+          "placeholder": "Build kind projects together"
         },
         "button": {
           "text": "GLOBAL"
