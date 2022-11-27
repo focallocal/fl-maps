@@ -42,7 +42,7 @@ class Find extends Component {
     return (
       <FormGroup className='find-wrapper'>
         {/*<Label for='find'>{i18n.Home.find_events}</Label>*/}
-        <Link to="/categories" className="link">
+        <Link to="https://publichappinessmovement.com/categories" className="link">
           <InputGroup>
             <Input
               placeholder={form.global_search.text_input.placeholder}
@@ -56,7 +56,7 @@ class Find extends Component {
           {error && <div className='error-msg'>Couldn't find anything..</div>}
         </Link>
 
-        <Link to="/docuss/m_gather" className="link">
+        <Link to="https://publichappinessmovement.com/docuss/m_gather" className="link">
           <InputGroup>
               <Input
                 id='find'
