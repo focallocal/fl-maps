@@ -2,7 +2,7 @@
   "name": "fl-maps-react",
   "private": true,
   "scripts": {
-    "start": "meteor run --settings settings.json",
+    "start": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && meteor run --settings settings.json",
     "start:withDiscourse": "meteor run --settings settings.json --port 4000 & local-ssl-proxy --target 4000 --source 2000",
     "test": "jest --maxWorkers=4",
     "test-watch": "jest --watchAll",
@@ -10,7 +10,6 @@
     "specific": "jest Admin/__tests__"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.1",
     "@types/googlemaps": "^3.30.16",
     "@types/markerclustererplus": "^2.1.33",
     "@types/react": "^16.7.18",
@@ -29,7 +28,7 @@
     "jsdoc": "^3.6.3",
     "linkifyjs": "^2.1.8",
     "loaders.css": "^0.1.2",
-    "meteor-node-stubs": "^1.2.1",
+    "meteor-node-stubs": "^0.3.2",
     "mup": "^1.0.2",
     "node-gyp": "^8.1.0",
     "nprogress": "^0.2.0",
@@ -50,13 +49,14 @@
     "react-swipeable": "^4.3.0",
     "reactstrap": "^6.0.1",
     "remarkable": "^1.7.1",
-    "sass": "^1.22.10",
-    "sass-loader": "^7.2.0",
     "simpl-schema": "^1.5.0",
+    "sass-loader": "^7.2.0",
+    "sass": "^1.22.10",
     "uniforms": "^1.30.0",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.0.0-beta.47",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
