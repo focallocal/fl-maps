@@ -169,7 +169,7 @@ class Page extends Component {
                 <Linkify options={linkifyOption}>{description}</Linkify>
               </div>
               <div className='share'>
-                <SectionTitle title='Share Your Experience' />
+                <SectionTitle title={i18n.Map.eventInfo.shareExpTitle} />
                 <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.photos.title} triggerId={i18n.Map.eventInfo.photos.title.toLowerCase()} />
                 <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.videos.title} triggerId={i18n.Map.eventInfo.videos.title.toLowerCase()} />
                 <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId={i18n.Map.eventInfo.stories.title.toLowerCase()} />
