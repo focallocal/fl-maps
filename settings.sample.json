@@ -1,0 +1,18 @@
+{
+  "public": {
+    "mapType": "gatherings",
+    "gm": {
+      "key": ""
+    },
+    "facebook": {
+      "appId": ""
+    }
+  },
+  "private": {
+    "ipstack_api_key": "",
+    "discourse": {
+      "url": "",
+      "secret": ""
+    }
+  }
+}
