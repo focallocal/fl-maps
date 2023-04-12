@@ -1,25 +1,25 @@
 // External Packages
-import React, { Component, Fragment } from "react"
-import PropTypes from "prop-types"
+import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import {
-    Row,
-    Container,
-    Col,
-    Card,
-    CardImg,
-    CardText,
-    CardBody,
-    CardTitle,
-    CardSubtitle,
-    Button
-} from "reactstrap"
+  Row,
+  Container,
+  Col,
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button
+} from 'reactstrap'
 
 // Styles and Other
-import "./styles.scss"
-import i18n from "../../../../both/i18n/en"
+import './styles.scss'
+import i18n from '../../../../both/i18n/en'
 
 class Members extends Component {
-  render() {
+  render () {
     const teamData = i18n.Team[this.props.team].members
 
     return (
@@ -32,7 +32,7 @@ class Members extends Component {
                   <Card>
                     <CardImg
                       key={index}
-                      width={"100%"}
+                      width={'100%'}
                       src={member.image}
                       alt={`${member.title} Image`}
                     />
@@ -46,7 +46,7 @@ class Members extends Component {
                         <ul className="list-inline list-social">
                           <li
                             style={{
-                              display: member.linkedIn === "" ? "none" : "true"
+                              display: member.linkedIn === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-linked-in pt-1"
                           >
@@ -57,7 +57,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.twitter === "" ? "none" : "true"
+                              display: member.twitter === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-twitter pt-1"
                           >
@@ -68,7 +68,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.website === "" ? "none" : "true"
+                              display: member.website === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-website pt-1"
                           >
@@ -79,7 +79,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.github === "" ? "none" : "true"
+                              display: member.github === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-github pt-1"
                           >
@@ -90,7 +90,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.facebook === "" ? "none" : "true"
+                              display: member.facebook === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-facebook pt-1"
                           >
@@ -101,7 +101,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.google === "" ? "none" : "true"
+                              display: member.google === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-google-plus pt-1"
                           >
@@ -114,12 +114,12 @@ class Members extends Component {
                     </CardBody>
                   </Card>
                 </Col>
-              );
+              )
             })}
           </Row>
         </div>
       </Fragment>
-    );
+    )
   }
 }
 
@@ -127,4 +127,4 @@ Members.propTypes = {
   team: PropTypes.string.isRequired
 }
 
-export default Members;
+export default Members

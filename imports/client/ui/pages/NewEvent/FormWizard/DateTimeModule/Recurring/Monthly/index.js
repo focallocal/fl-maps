@@ -3,21 +3,20 @@ import PropTypes from 'prop-types'
 import Select from 'react-select'
 import { determinePosition } from '/imports/both/collections/events/helpers'
 
-function getOrdinalIndicator(dayInMonth) { 
-  //dayInMonth outputs a number from 1-31
-  //add endings to number (nth,rd,th,st)
-  if(dayInMonth>3 && dayInMonth<21) return `${dayInMonth}th`
-    switch(dayInMonth%10){
-    case 1:
-     return `${dayInMonth}st`
-    case 2:
-     return `${dayInMonth}nd`
-    case 3:
-     return `${dayInMonth}rd`
-    default: 
-     return `${dayInMonth}th`
-}
-
+function getOrdinalIndicator (dayInMonth) {
+  // dayInMonth outputs a number from 1-31
+  // add endings to number (nth,rd,th,st)
+  if (dayInMonth > 3 && dayInMonth < 21) return `${dayInMonth}th`
+  switch (dayInMonth % 10) {
+  case 1:
+    return `${dayInMonth}st`
+  case 2:
+    return `${dayInMonth}nd`
+  case 3:
+    return `${dayInMonth}rd`
+  default:
+    return `${dayInMonth}th`
+  }
 }
 
 class RecurrMonthly extends Component {

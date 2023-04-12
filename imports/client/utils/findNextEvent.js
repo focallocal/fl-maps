@@ -96,8 +96,8 @@ function jumpToNextMonth (eventInstance, periodSkip, selectionType, selectionVal
     modifiedDate.setDate(1)
     const actualWeekdayIndex = modifiedDate.getDay()
     const desiredWeekdayIndex = firstDate.getDay()
-    const weekdayShift = desiredWeekdayIndex - actualWeekdayIndex >= 0 ?
-      desiredWeekdayIndex - actualWeekdayIndex
+    const weekdayShift = desiredWeekdayIndex - actualWeekdayIndex >= 0
+      ? desiredWeekdayIndex - actualWeekdayIndex
       : 7 + desiredWeekdayIndex - actualWeekdayIndex
     modifiedDate = new Date(modifiedDate.setDate(modifiedDate.getDate() + weekdayShift + (7 * (selectionValue - 1))))
   } else {

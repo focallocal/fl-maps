@@ -16,20 +16,20 @@ if (window.__mapType = 'gatherings') {
   defaultColor = Categories[0].color
 } else if ((window.__mapType = 'btm')) {
   let defaultCategory = findDefaultCategory(Categories)
-  defaultName = defaultCategory.name;
-  defaultColor = defaultCategory.color;
+  defaultName = defaultCategory.name
+  defaultColor = defaultCategory.color
 }
 
-function findDefaultCategory(C) {
-  let category;
+function findDefaultCategory (C) {
+  let category
   C.forEach(ele => {
     if (category == null) {
       category = ele.categories.find(ele => {
-        return ele.default === true;
-      });
+        return ele.default === true
+      })
     }
-  });
-  return category;
+  })
+  return category
 }
 
 class FirstStep extends Component {
@@ -85,11 +85,11 @@ class FirstStep extends Component {
     )
   }
   noCategories = (type, value) => {
-    this.setState({resourceType: null, foundResource: false, offerResource: true, reset: true})
+    this.setState({ resourceType: null, foundResource: false, offerResource: true, reset: true })
   }
 
   setCategories = () => {
-    this.setState({categories: [{}], resourceType: 'found', foundResource: true, offerResource: false})
+    this.setState({ categories: [{}], resourceType: 'found', foundResource: true, offerResource: false })
   }
 
   RadioButton = ({ label, id, value, type, click }) => (

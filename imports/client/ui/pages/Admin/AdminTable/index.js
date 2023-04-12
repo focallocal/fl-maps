@@ -1,9 +1,9 @@
-import React from 'react';
-import { Table, Col  } from 'reactstrap';
-import { display} from './helper'
+import React from 'react'
+import { Table, Col  } from 'reactstrap'
+import { display } from './helper'
 import TableData from './TableData'
 
-export const Head = (props)=>{
+export const Head = (props) => {
   let titles = props.titles.map(ele => {
     return <th key={ele}>{ele}</th>
   })
@@ -16,9 +16,9 @@ export const Head = (props)=>{
   )
 }
 
-const AdminTable = ({ users, changeUserRole, deleteUser, events, isAllEvents, deleteAllEvents}) => {
+const AdminTable = ({ users, changeUserRole, deleteUser, events, isAllEvents, deleteAllEvents }) => {
   const titles = display.map((ele) => {
-    return ele.title;
+    return ele.title
   })
 
   return (
@@ -30,22 +30,22 @@ const AdminTable = ({ users, changeUserRole, deleteUser, events, isAllEvents, de
   )
 }
 
-export function Rows(props){
-  const tableRows = props.usersData.map(user => { 
+export function Rows (props) {
+  const tableRows = props.usersData.map(user => {
     return (
       <tr key={user._id}>
-        {display.map((ele,i)=>{
+        {display.map((ele, i) => {
           return <TableData tableDataType={ele.tableDataType} user={user} key={i} {...props}/>
         })}
       </tr>
     )
   })
 
-  return(
+  return (
     <tbody>
       {tableRows}
     </tbody>
   )
 }
 
-export default AdminTable;
+export default AdminTable

@@ -32,7 +32,7 @@ const Content = (props) => {
               <li className="mb-1 mt-2 text-left">{item.text}</li>
             </details>
           </Col>
-        );
+        )
       })}
       <Container className="mt-5  mb-4">
         <h3>Longer</h3>
@@ -56,10 +56,10 @@ const Content = (props) => {
               <li className="mb-1 text-left">{item.answer}</li>
             </details>
           </Col>
-        );
+        )
       })}
     </React.Fragment>
-  );
+  )
 }
 
 export default Content

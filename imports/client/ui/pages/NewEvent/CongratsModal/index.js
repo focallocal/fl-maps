@@ -109,16 +109,16 @@ function getFunctionByMapType (btn, event) {
   const isHomelessMap = window.__mapType === 'street-sleeper'
 
   switch (btn.type) {
-    case 'facebook':
-      return isHomelessMap ? shareFacebook : createEventFacebbok
-    case 'twitter':
-      return shareTwitter
-    case 'google':
-      return shareGooglePlus
-    case 'couchsurfing':
-      return isHomelessMap ? null : () => window.open('https://www.couchsurfing.com/events')
-    case 'eventbrite':
-      return isHomelessMap ? null : () => window.open('https://eventbrite.com/create')
+  case 'facebook':
+    return isHomelessMap ? shareFacebook : createEventFacebbok
+  case 'twitter':
+    return shareTwitter
+  case 'google':
+    return shareGooglePlus
+  case 'couchsurfing':
+    return isHomelessMap ? null : () => window.open('https://www.couchsurfing.com/events')
+  case 'eventbrite':
+    return isHomelessMap ? null : () => window.open('https://eventbrite.com/create')
   }
   return null
 }

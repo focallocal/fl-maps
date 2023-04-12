@@ -6,27 +6,27 @@ const Item = ({ item, loginButton }) =>
     <h3 className='item-text'>{item.title}</h3>
     {item.link !== undefined ? loginButton : null}
     <br/>
-    {item.subItems !== undefined ?
-      item.subItems.map((subItem, i) => (
+    {item.subItems !== undefined
+      ? item.subItems.map((subItem, i) => (
         <div key={i} className='subItems'>
           <span className='subItemIitle'>{subItem.title}</span>
           {
-            typeof subItem.values == "object" ? 
-              subItem.values.map((value, i) => (
+            typeof subItem.values === 'object'
+              ? subItem.values.map((value, i) => (
                 <div key={i}>
                   <span>{value.title}</span>: <span className='value'>{value.value}</span>
                 </div>
               ))
-            : <span>
+              : <span>
                 <span className='value'>: </span>
                 <span className='value'>{subItem.value}</span>
                 <br/>
               </span>
-          } 
+          }
           <br/>
         </div>
       ))
-    : null}
+      : null}
   </div>
 
 export default Item

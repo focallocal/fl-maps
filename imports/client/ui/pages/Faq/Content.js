@@ -12,7 +12,7 @@ const Content = (props) => {
       <Container className="mt-5">
         <h1>Looking for answers?</h1>
         <p>
-          Take a look at frequently asked questions          
+          Take a look at frequently asked questions
         </p>
       </Container>
       {i18n.Faq.faq.map((item, index) => {
@@ -22,10 +22,10 @@ const Content = (props) => {
             <li className="mb-3 text-left">{item.text}</li>
             <DCSLink badge="true" format="speech-bubble" title=" " subtitle="discuss" triggerId={`question${index + 1}`} />
           </Col>
-        );
+        )
       })}
     </React.Fragment>
-  );
-};
+  )
+}
 
 export default Content

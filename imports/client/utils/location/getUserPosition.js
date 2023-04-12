@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 
-export function getCurrentLocation(context) {
+export function getCurrentLocation (context) {
   if (navigator) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(({ coords }) => {

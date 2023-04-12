@@ -1,5 +1,5 @@
 import { Roles } from 'meteor/alanning:roles'
-import { Meteor } from "meteor/meteor";
+import { Meteor } from 'meteor/meteor'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import SimpleSchema from 'simpl-schema'
 import { logRateLimit } from '/server/security/rate-limiter'
@@ -10,25 +10,24 @@ const checkPermissions = new ValidatedMethod({
   mixins: [],
   validate: new SimpleSchema({
 
-    rolesAllowed: [String],
- 
+    rolesAllowed: [String]
+
   }).validator(),
-  run({rolesAllowed }) {
+  run ({ rolesAllowed }) {
     const id = this.userId
 
-    if ( !rolesAllowed) {
+    if (!rolesAllowed) {
       throw new Meteor.Error('could not find user...')
     }
 
-  let permission 
-  if (id == null){
-      permission = false;
-  }
-  else{
-      permission = Roles.userIsInRole(id, rolesAllowed, Roles.GLOBAL_GROUP);
-  }
-   
-  return permission;
+    let permission
+    if (id == null) {
+      permission = false
+    } else {
+      permission = Roles.userIsInRole(id, rolesAllowed, Roles.GLOBAL_GROUP)
+    }
+
+    return permission
   }
 })
 

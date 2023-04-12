@@ -1,4 +1,4 @@
-import { Meteor } from "meteor/meteor";
+import { Meteor } from 'meteor/meteor'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import SimpleSchema from 'simpl-schema'
 import { logRateLimit } from '/server/security/rate-limiter'
@@ -9,20 +9,18 @@ const getUsers = new ValidatedMethod({
   mixins: [],
   validate: new SimpleSchema({
     skip: {
-      type: Number,
+      type: Number
     },
     limit: {
       type: Number
     }
   }).validator(),
-  run({ skip, limit }) {
-
-   return Meteor.users.find({},
-     {
-       skip,
-       limit
-     }).fetch();
-
+  run ({ skip, limit }) {
+    return Meteor.users.find({},
+      {
+        skip,
+        limit
+      }).fetch()
   }
 })
 

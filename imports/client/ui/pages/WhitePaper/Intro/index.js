@@ -27,7 +27,7 @@ class Intro extends Component {
         <FirstSection />
         <SecondSection />
       </div>
-    );
+    )
   }
 }
 

@@ -1,31 +1,29 @@
-import React from "react"
-import DropDownItem from "../DropDownItem"
-import i18n from "/imports/both/i18n/en"
+import React from 'react'
+import DropDownItem from '../DropDownItem'
+import i18n from '/imports/both/i18n/en'
 import { Roles } from 'meteor/alanning:roles'
-import { permissions} from './../../../pages/Admin/RolesPermissions/index'
+import { permissions } from './../../../pages/Admin/RolesPermissions/index'
 const UserItem = ({ user }) => {
-  let userStatus;
-  let isShowAdminLink = false;
-  if (user){
+  let userStatus
+  let isShowAdminLink = false
+  if (user) {
     isShowAdminLink = Roles.userIsInRole(user._id, permissions['adminPage'])
-    
   }
   if (isShowAdminLink) {
     userStatus = 'Admin'
-  }
-  else {
-    userStatus = user ? "loggedIn" : "loggedOut";
+  } else {
+    userStatus = user ? 'loggedIn' : 'loggedOut'
   }
   const item = {
-    title: "",
-    icon: "fas fa-user-circle user",
+    title: '',
+    icon: 'fas fa-user-circle user',
     content: i18n.MainMenu.userLink[userStatus]
-  };
+  }
 
-  return <DropDownItem item={item} id="user-item" />;
-};
+  return <DropDownItem item={item} id="user-item" />
+}
 
-export default UserItem;
+export default UserItem
 
 // For testing
-export { UserItem };
+export { UserItem }

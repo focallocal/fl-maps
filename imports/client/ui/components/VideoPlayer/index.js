@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 
-import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe';
+import Subscribe from '/imports/client/ui/components/VideoPlayer/Subscribe'
 
 import './styles.scss'
 import i18n from '/imports/both/i18n/en'
@@ -21,7 +21,6 @@ let categoryTree = i18n.Categories
  */
 
 class VideoPlayer extends Component {
-
   static propTypes = {
     /**
      * List of categories linked to the event: determines what default video plays
@@ -30,7 +29,7 @@ class VideoPlayer extends Component {
     /**
      * Refers to user submitted videos passed from the page, if any
      */
-    video: PropTypes.object,
+    video: PropTypes.object
   }
 
   constructor (props) {
@@ -93,7 +92,7 @@ class VideoPlayer extends Component {
 
 /**
  * Function called by video player to obtain a valid URL to play
- * 
+ *
  * @param {Array} categories Array of this event's categories (prop originally from db)
  * @param {Array} video Array of external videos if user has added (prop originally from db)
  */
@@ -113,7 +112,7 @@ function buildURL (categories, video) {
 /**
  * Function called by buildURL()
  * to randomly select a video from an array
- * 
+ *
  * @param {Array} playlist Array of videos to be randomized
  */
 function getRandomVideo (playlist) {
@@ -126,7 +125,7 @@ function getRandomVideo (playlist) {
  * Function called by buildURL() when user has no submitted videos to play
  * cycles through top level "playlist of playlists" to select appropriate one(s) that match event category(s)
  * populates output array of videos with any videos from the above cycle not already pushed to the array
- * 
+ *
  * @param {*} playlists Top-level "playlist of playlists" from i18n
   * @param {*} eventCategories Event categories used to filter out inappropriate playlists
  * @param {*} outputArray This is the new custom youtube playlist for the event

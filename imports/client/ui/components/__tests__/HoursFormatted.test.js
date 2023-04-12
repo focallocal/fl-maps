@@ -40,7 +40,6 @@ describe.only('<HoursFormatted />', () => {
       />
     )
   }
-    
 
   test('if multipleDays', () => {
     const wrapper_ = shallowRender({ data: { ...obj, multipleDays: true } })

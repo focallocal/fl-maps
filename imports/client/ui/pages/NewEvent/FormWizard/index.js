@@ -21,7 +21,7 @@ class FormWizard extends Component {
     let model = this.form ? this.form.getModel() : this.loadModelFromStorage()
 
     if (editMode && window.__editData) {
-      model = {...window.__editData}
+      model = { ...window.__editData }
       delete window.__editData // only needed on 1st renderer, afterwards the data will be retrieved via getModel
     }
 
@@ -63,13 +63,13 @@ class FormWizard extends Component {
 
   loadModelFromStorage (empty) {
     // on fields reset, get rid of any previously unfinished New Event
-    if(empty === true){
+    if (empty === true) {
       delete window.__unfinishedNewEvent
     }
 
-    let initialObject;
+    let initialObject
 
-    if('__unfinishedNewEvent' in window){
+    if ('__unfinishedNewEvent' in window) {
       initialObject = window.__unfinishedNewEvent
     } else {
       initialObject = EventsSchema.clean({}, { mutate: true }) // get default values

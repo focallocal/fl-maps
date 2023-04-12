@@ -17,7 +17,7 @@ class VideoLink extends Component {
     this.state = {
       host: '',
       address: '',
-      open: false,
+      open: false
     }
   }
   render () {
@@ -47,9 +47,9 @@ class VideoLink extends Component {
   }
 
   fetchVideoURL = (id, form) => {
-    const link = id === 1 ? form.getModel().video.link1 :
-      id === 2 ? form.getModel().video.link2 :
-        form.getModel().video.link3
+    const link = id === 1 ? form.getModel().video.link1
+      : id === 2 ? form.getModel().video.link2
+        : form.getModel().video.link3
     if (link === undefined) {
       return ''
     }

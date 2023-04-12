@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 
 import './style.scss'
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 let g_init = false
 
-function initDeselectHandler(history) {
+function initDeselectHandler (history) {
   if (g_init) {
     return
   }
@@ -32,16 +32,16 @@ function initDeselectHandler(history) {
   g_init = true
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 class DCSLink extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     const { history } = this.props
     initDeselectHandler(history)
   }
 
-  render() {
+  render () {
     const { title, triggerId, dcsSelected, dcsCount, history, format, badge, className } = this.props
 
     const url = new URL(location.href)
@@ -63,26 +63,28 @@ class DCSLink extends Component {
     //   title, ' has topic count ', dcsCount
     // )
 
-    if (format === 'speech-bubble') return (
-      <span className={className + ' dcs-link' + (dcsSelected ? ' dcs-selected' : '')}>
-        <span className="dcs-link-title">{title}</span>
-        <span className="dcs-link-icons" onClick={() => history.push(path)}>
-          <img src={`/images/dcs-balloon-bal.png`} />
+    if (format === 'speech-bubble') {
+      return (
+        <span className={className + ' dcs-link' + (dcsSelected ? ' dcs-selected' : '')}>
+          <span className="dcs-link-title">{title}</span>
+          <span className="dcs-link-icons" onClick={() => history.push(path)}>
+            <img src={`/images/dcs-balloon-bal.png`} />
+            {dcsCount > 0 && badge === 'true' && renderBadge}
+          </span>
+        </span>
+      )
+    } else if (format === 'text-link') {
+      return (
+        <span
+          onClick={() => history.push(path)}
+          className={className + ' dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
+        >
+          <span className="dcs-link-title text-title">{title}</span>
+          {/* {' '}<img src={`/images/dcs-balloon-bal.png`} /> */}
           {dcsCount > 0 && badge === 'true' && renderBadge}
         </span>
-      </span>
-    )
-
-    else if (format === 'text-link') return (
-      <span
-        onClick={() => history.push(path)}
-        className={className + ' dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
-      >
-        <span className="dcs-link-title text-title">{title}</span>
-        {/* {' '}<img src={`/images/dcs-balloon-bal.png`} /> */}
-        {dcsCount > 0 && badge === 'true' && renderBadge}
-      </span>
-    )
+      )
+    }
   }
 }
 
@@ -92,7 +94,7 @@ class DCSLink extends Component {
 const BaseComponent = withRouter(withDcs(DCSLink))
 
 export default class ExtendedComponent extends React.Component {
-  render() {
+  render () {
     return (
       <BaseComponent {...this.props} dcsScrollIntoView={dcsScrollIntoView} />
     )
@@ -100,7 +102,7 @@ export default class ExtendedComponent extends React.Component {
 }
 
 // enables scrolling to have DCS balloon at bottom of screen (instead of top) so that preceeding content is on-screen
-function dcsScrollIntoView(node, route) {
+function dcsScrollIntoView (node, route) {
   // https://stackoverflow.com/a/22480938/3567351
   const rect = node.getBoundingClientRect()
   const partiallyVisible = rect.top < window.innerHeight && rect.bottom >= 0

@@ -3,14 +3,14 @@ import { Button } from 'reactstrap'
 import './styles.scss'
 
 export default class MinimizeButton extends React.Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       minimized: false
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     //  Comment this out for test failing(MinimizeButton.test). Not sure if will still need?
     // document.body.querySelector('#minimize').classList.toggle('minimized')
   }
@@ -19,7 +19,7 @@ export default class MinimizeButton extends React.Component {
     this.setState({ minimized: !this.state.minimized })
   }
 
-  render() {
+  render () {
     const { minimized } = this.state
     return (
       <Button

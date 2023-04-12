@@ -1,8 +1,8 @@
 const Accounts = {
-  call: jest.fn(),
+  call: jest.fn()
 }
 
 export {
-  Accounts as default,
+  Accounts as default
 
 }

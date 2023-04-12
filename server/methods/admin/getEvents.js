@@ -9,16 +9,15 @@ const getEvents = new ValidatedMethod({
   name,
   mixins: [],
   validate: new SimpleSchema({
-    ids: [String],
-   
+    ids: [String]
+
   }).validator(),
-  run({ ids }) { 
- 
+  run ({ ids }) {
     const events = Events.find(
-      { "organiser._id": { "$in": ids } }, 
-      { fields: { '_id': 1, "organiser._id": 1, 'name': 1, 'categories': 1 } }
+      { 'organiser._id': { '$in': ids } },
+      { fields: { '_id': 1, 'organiser._id': 1, 'name': 1, 'categories': 1 } }
     )
-   
+
     return events.fetch()
   }
 })
@@ -32,6 +31,4 @@ DDPRateLimiter.addRule({
   }
 })
 
-
-
-//{ "_id" : { "$in" : [ObjectId("55880c251df42d0466919268"), ObjectId("55bf528e69b70ae79be35006")] } }
+// { "_id" : { "$in" : [ObjectId("55880c251df42d0466919268"), ObjectId("55bf528e69b70ae79be35006")] } }

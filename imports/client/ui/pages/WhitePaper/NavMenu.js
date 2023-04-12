@@ -22,7 +22,7 @@ const NavMenu = () => (
           <Link to={links[route]} key={route}>
             {route}
           </Link>
-        );
+        )
       })}
     </Container>
 

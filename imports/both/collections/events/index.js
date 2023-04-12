@@ -13,7 +13,7 @@ let labels = i18n.NewEventModal
 
 // categoryTree includes parent-child level categories, following operation build an all-child array of sub-categories
 let possibleCategories = categoryTree.reduce((tot, elem) => {
-  return tot.concat([{name: elem.name, parent: true}].concat(elem.categories))
+  return tot.concat([{ name: elem.name, parent: true }].concat(elem.categories))
 }, [])
 
 // sets allowedValues to include Community Resource without it being in dropdown
@@ -22,7 +22,6 @@ let allowedValues = possibleCategories
 
 // Extend SimpleSchema to support the uniforms field.
 SimpleSchema.extendOptions(['uniforms'])
-
 
 const Events = new Mongo.Collection('events')
 
@@ -52,7 +51,7 @@ const EventsSchema = new SimpleSchema({
   'organiser.name': {
     type: String
   },
-  
+
   // Categories sub level
   'categories': {
     type: Array,
@@ -447,7 +446,7 @@ const EventsSchema = new SimpleSchema({
   },
   'video': {
     type: Object,
-    optional: true,
+    optional: true
     // defaultValue: {}
   },
 
@@ -470,15 +469,15 @@ const EventsSchema = new SimpleSchema({
       allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
       selectOptions: {
         url: true
-      },
+      }
     }
   },
   'video.link1.address': {
     optional: true,
     type: String,
     custom: function () {
-      if (this.value && this.value !== "") {
-        const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
+      if (this.value && this.value !== '') {
+        const host = this.siblingField('host').value.split(' (eg.')[0] // <-- split out the 'example' at the end of host field text
         const prefixServer = videoHosts.find(e => e.host === host).prefix
         const prefixClient = this.value.slice(0, prefixServer.length)
         if (prefixClient !== prefixServer) return 'required'
@@ -502,15 +501,15 @@ const EventsSchema = new SimpleSchema({
       allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
       selectOptions: {
         url: true
-      },
+      }
     }
   },
   'video.link2.address': {
     optional: true,
     type: String,
     custom: function () {
-      if (this.value && this.value !== "") {
-        const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
+      if (this.value && this.value !== '') {
+        const host = this.siblingField('host').value.split(' (eg.')[0] // <-- split out the 'example' at the end of host field text
         const prefixServer = videoHosts.find(e => e.host === host).prefix
         const prefixClient = this.value.slice(0, prefixServer.length)
         if (prefixClient !== prefixServer) return 'required'
@@ -522,7 +521,7 @@ const EventsSchema = new SimpleSchema({
   },
   'video.link3': {
     type: Object,
-    optional: true,
+    optional: true
   },
   'video.link3.host': {
     optional: true,
@@ -534,15 +533,15 @@ const EventsSchema = new SimpleSchema({
       allowedValues: videoHosts.map((e) => `${e.host} (eg. ${e.prefix}<VIDEO_ID>)`),
       selectOptions: {
         url: true
-      },
+      }
     }
   },
   'video.link3.address': {
     optional: true,
     type: String,
     custom: function () {
-      if (this.value && this.value !== "") {
-        const host = this.siblingField('host').value.split(' (eg.')[0]  // <-- split out the 'example' at the end of host field text
+      if (this.value && this.value !== '') {
+        const host = this.siblingField('host').value.split(' (eg.')[0] // <-- split out the 'example' at the end of host field text
         const prefixServer = videoHosts.find(e => e.host === host).prefix
         const prefixClient = this.value.slice(0, prefixServer.length)
         if (prefixClient !== prefixServer) return 'required'
@@ -568,9 +567,9 @@ const EventsSchema = new SimpleSchema({
 
 Events.attachSchema(EventsSchema)
 
- if (Meteor.isServer) {
+if (Meteor.isServer) {
   Events._ensureIndex({ 'address.location': '2dsphere' })
- }
+}
 
 export {
   Events as default,

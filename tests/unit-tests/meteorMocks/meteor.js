@@ -13,8 +13,7 @@ const Meteor = {
   }
 }
 
-
 export {
   Meteor as default,
-  Meteor,
+  Meteor
 }

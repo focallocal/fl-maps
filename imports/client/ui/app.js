@@ -1,34 +1,34 @@
 // NPM Libraries
-import { hot } from "react-hot-loader";
-import { Meteor } from "meteor/meteor";
-import React, { Component, Fragment } from "react";
-import { Router, Route, Redirect } from "react-router-dom";
-import history from "../utils/history";
-import qs from "query-string";
+import { hot } from 'react-hot-loader'
+import { Meteor } from 'meteor/meteor'
+import React, { Component, Fragment } from 'react'
+import { Router, Route, Redirect } from 'react-router-dom'
+import history from '../utils/history'
+import qs from 'query-string'
 
 // Includes/Fragments
-import MainMenu from "./includes/MainMenu";
+import MainMenu from './includes/MainMenu'
 
 // Pages
-import Home from "./pages/Home";
-import Whitepaper from "./pages/WhitePaper";
-import Team from "./pages/TeamMembers";
-import Faq from "./pages/Faq";
-import Partners from "./pages/Partners";
-import About from "./pages/About";
-import Map_ from "./pages/Map";
-import NewEventLoadable from "./pages/NewEvent/loadable";
-import CongratsModal from "./pages/NewEvent/CongratsModal";
-import Page from "./pages/Page";
-import { Error404 } from "./pages/Errors";
+import Home from './pages/Home'
+import Whitepaper from './pages/WhitePaper'
+import Team from './pages/TeamMembers'
+import Faq from './pages/Faq'
+import Partners from './pages/Partners'
+import About from './pages/About'
+import Map_ from './pages/Map'
+import NewEventLoadable from './pages/NewEvent/loadable'
+import CongratsModal from './pages/NewEvent/CongratsModal'
+import Page from './pages/Page'
+import { Error404 } from './pages/Errors'
 
-import WPIntro from "./pages/WhitePaper/Intro";
-import WPWhy from "./pages/WhitePaper/Why";
-import WPFAQs from "./pages/WhitePaper/faqs"; 
+import WPIntro from './pages/WhitePaper/Intro'
+import WPWhy from './pages/WhitePaper/Why'
+import WPFAQs from './pages/WhitePaper/faqs'
 
 // Components
-import ScrollToTop from "./components/ScrollToTop";
-import Admin from "./pages/Admin/index"
+import ScrollToTop from './components/ScrollToTop'
+import Admin from './pages/Admin/index'
 
 // Docuss
 import { comToPlugin, inIFrame } from 'dcs-client'
@@ -39,45 +39,44 @@ import websiteJSON from '../../../public/dcs-website.json'
 // Styles and Other
 import './styles.scss'
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 class App extends Component {
-  componentDidMount() {
+  componentDidMount () {
     // Add the touch-screen flag to the <html> tag
     const touchScreen =
-      !!("ontouchstart" in window) || window.navigator.msMaxTouchPoints > 0;
+      !!('ontouchstart' in window) || window.navigator.msMaxTouchPoints > 0
     if (touchScreen) {
-      document.documentElement.classList.add("touch-screen");
+      document.documentElement.classList.add('touch-screen')
     }
 
     setTimeout(() => {
-      document.querySelector("#root").classList.toggle("show");
-    }, 100); // add a fading effect on the inital loading
+      document.querySelector('#root').classList.toggle('show')
+    }, 100) // add a fading effect on the inital loading
   }
 
-  render() {
-
+  render () {
     const routePaths = {
-      root: "/",
-      home: "/home",
-      team: "/team",
-      partners: "/partners",
-      whitepaper: "/whitepaper",
-      faq: "/faq",
-      about: "/about",
-      map: "/map",
-      admin: "/admin",
-      thankyou: "/thank-you",
-      page: "/page",
-      signin: "/sign-in",
-      signup: "/sign-up",
-      change_password: "/change-password",
-      forgot_password: "/forgot-password",
-      sso_auth: "/sso_auth",
+      root: '/',
+      home: '/home',
+      team: '/team',
+      partners: '/partners',
+      whitepaper: '/whitepaper',
+      faq: '/faq',
+      about: '/about',
+      map: '/map',
+      admin: '/admin',
+      thankyou: '/thank-you',
+      page: '/page',
+      signin: '/sign-in',
+      signup: '/sign-up',
+      change_password: '/change-password',
+      forgot_password: '/forgot-password',
+      sso_auth: '/sso_auth',
 
-      whitepaper_intro: "/whitepaper/intro",
-      whitepaper_why: "/whitepaper/why",
-      whitepaper_faqs: "/whitepaper/faqs"
+      whitepaper_intro: '/whitepaper/intro',
+      whitepaper_why: '/whitepaper/why',
+      whitepaper_faqs: '/whitepaper/faqs'
     }
     const standaloneMode = !inIFrame()
 
@@ -85,7 +84,7 @@ class App extends Component {
       <Router history={history}>
         <Fragment>
           {standaloneMode && <MainMenu />}
-                    <ScrollToTop>
+          <ScrollToTop>
             <Route exact path={routePaths.root} component={Home} />
             <Route exact path={routePaths.home} component={Home} />
             <Route exact path={routePaths.team} component={Team} />
@@ -106,12 +105,12 @@ class App extends Component {
           </ScrollToTop>
         </Fragment>
       </Router>
-    );
+    )
   }
 
   renderNewEvent = ({ location, history }) => {
-    const { new: new_, edit } = qs.parse(location.search);
-    const isOpen = Boolean(new_ === "1" || (edit === "1" && window.__editData));
+    const { new: new_, edit } = qs.parse(location.search)
+    const isOpen = Boolean(new_ === '1' || (edit === '1' && window.__editData))
 
     if (isOpen && !Meteor.userId()) {
       /*
@@ -130,7 +129,7 @@ class App extends Component {
     console.log('passed in hist:\n', history)
     return (
       <NewEventLoadable isOpen={isOpen} location={location} history={history} />
-    );
+    )
   };
 
   /**
@@ -140,23 +139,23 @@ class App extends Component {
    * Ideally we should be using React-router Switch to create a fallback 404 page...
    * But this would require opening the new event modal without using the URL as a hook
    * And this may break interactions with Docus (e.g. editing an event directly from the forum)
-   */ 
+   */
   check404Route = (routes) => {
     if (window.location.search === '?new=1' || window.location.search === '?edit=1') {
       return this.renderNewEvent({ location: window.location, history })
     }
-    if (!routes.some(e => e === window.location.pathname)
-      && !window.location.pathname.includes('/page/')
-      && !window.location.pathname.includes('reset-password')) {
-        return <Error404 />
+    if (!routes.some(e => e === window.location.pathname) &&
+      !window.location.pathname.includes('/page/') &&
+      !window.location.pathname.includes('reset-password')) {
+      return <Error404 />
     }
     return null
   }
 }
 
-export default hot(module)(App);
+export default hot(module)(App)
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 // Docuss
 
@@ -170,17 +169,16 @@ if (inIFrame()) {
   // Set Docuss-generated topic to have pre-populated category
   comToPlugin.onDiscourseRoutePushed(({ route }) => {
     const topicCategory =
-      route.pageName === 'm_about'? 'The About Page Discussion' :
-      route.pageName === 'whitepaper'? 'Public Happiness Token' :
-      route.pageName === 'wp_why'? 'Public Happiness Token' :
-      route.pageName === 'wp_intro'? 'Public Happiness Token' :
-      route.pageName === 'wp_faqs'? 'Public Happiness Token' :
-      route.pageName === 'm_gather'? 'Hidden' :
-      route.pageName === 'summit'? 'The Happier World Economies Summit' :
-      'Hidden'
+      route.pageName === 'm_about' ? 'The About Page Discussion'
+        : route.pageName === 'whitepaper' ? 'Public Happiness Token'
+          : route.pageName === 'wp_why' ? 'Public Happiness Token'
+            : route.pageName === 'wp_intro' ? 'Public Happiness Token'
+              : route.pageName === 'wp_faqs' ? 'Public Happiness Token'
+                : route.pageName === 'm_gather' ? 'Hidden'
+                  : route.pageName === 'summit' ? 'The Happier World Economies Summit'
+                    : 'Hidden'
     comToPlugin.postSetRouteProps({ category: topicCategory })
   })
-
 }
 
 export const routeMatcher = new SimpleRouteMatcher({
@@ -193,6 +191,6 @@ export const routeMatcher = new SimpleRouteMatcher({
   otherPagesPrefix: websiteJSON.webApp.otherPagesPrefix
 })
 
-runReactRouterSync({ browserHistory: history, routeMatcher })  
+runReactRouterSync({ browserHistory: history, routeMatcher })
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
