@@ -23,7 +23,7 @@ import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
 // Styles and Other
 import './styles.scss'
 import './mobile-styles.scss'
-import i18n from "/imports/both/i18n/en";
+import i18n from '/imports/both/i18n/en'
 
 class MapComponent_ extends Component {
   constructor () {
@@ -48,7 +48,6 @@ class MapComponent_ extends Component {
   memoizeLocations = {} // cache locations
 
   componentDidMount () {
-    
     if (window.previousStateOfMap) {
       this.setState({ ...window.previousStateOfMap })
     }
@@ -57,9 +56,9 @@ class MapComponent_ extends Component {
     toggleBodyOverflow()
     this._isMounted = true // don't remove that line
 
-    // keep at bottom of componentDidMount so that the event list is displayed and 
-    //correct zoom level  when individual page is closed
-    this.returnToDefaultAfterPageClose(); 
+    // keep at bottom of componentDidMount so that the event list is displayed and
+    // correct zoom level  when individual page is closed
+    this.returnToDefaultAfterPageClose()
   }
 
   componentWillUnmount () {
@@ -103,7 +102,7 @@ class MapComponent_ extends Component {
     const { history } = this.props
 
     const { MainMenu } = i18n
-    
+
     const events_ = filteredEvents || events
 
     return (
@@ -238,9 +237,9 @@ class MapComponent_ extends Component {
     })
   }
 
-  returnToDefaultAfterPageClose = () =>{
-    getUserPosition(this);
-    this.removeCurrentEvent();
+  returnToDefaultAfterPageClose = () => {
+    getUserPosition(this)
+    this.removeCurrentEvent()
   }
 
   setError = (msg) => {
@@ -337,8 +336,7 @@ class MapComponent_ extends Component {
     window.previousStateOfMap.showFilters = false
     window.previousStateOfMap.filteredEvents = null
 
-    this.props.history.push('/page/' + event._id);
-    
+    this.props.history.push('/page/' + event._id)
   }
 
   getEvents = (location, skip = 0, limit = 30) => {
@@ -401,7 +399,7 @@ class Map_ extends Component {
       <MapComponent
         googleMapURL={!window.google ? url : '-'}
         loadingElement={<div style={{ height: '100%' }} />}
-        containerElement={<div id='map-container' className={standaloneMode? 'offset-standalone-menu' : undefined}/>}
+        containerElement={<div id='map-container' className={standaloneMode ? 'offset-standalone-menu' : undefined}/>}
         mapElement={<div id='map' />}
         history={this.props.history}
       />

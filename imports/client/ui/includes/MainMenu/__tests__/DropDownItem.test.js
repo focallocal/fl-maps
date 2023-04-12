@@ -16,12 +16,10 @@ describe('<DropDownItem />', () => {
   const component = shallow(<DropDownItem item={item} />)
 
   it('should render', () => {
-
     expect(component.exists()).toBeTruthy()
   })
 
   it('should render dropdown items from the "content" key', () => {
-
     expect(component.find(DropdownMenu).children()).toHaveLength(2)
   })
 

@@ -1,5 +1,5 @@
 import { Roles } from 'meteor/alanning:roles'
-import { Meteor } from "meteor/meteor";
+import { Meteor } from 'meteor/meteor'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import SimpleSchema from 'simpl-schema'
 import { logRateLimit } from '/server/security/rate-limiter'
@@ -10,20 +10,18 @@ const changeRole = new ValidatedMethod({
   mixins: [],
   validate: new SimpleSchema({
     id: {
-      type: String,
+      type: String
     },
     role: {
-      type: String,
+      type: String
     }
   }).validator(),
-  run({ id, role }) {
-
+  run ({ id, role }) {
     if (!id) {
       throw new Meteor.Error('could not find user...')
     }
 
-   Roles.setUserRoles(id, `${role}`, Roles.GLOBAL_GROUP);
-
+    Roles.setUserRoles(id, `${role}`, Roles.GLOBAL_GROUP)
   }
 })
 

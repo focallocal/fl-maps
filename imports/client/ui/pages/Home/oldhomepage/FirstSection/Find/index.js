@@ -13,15 +13,15 @@ class Find extends Component {
     search: ''
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this._isMounted = true
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this._isMounted = false
   }
 
-  render() {
+  render () {
     const {
       error,
       isGettingLocation,
@@ -51,7 +51,7 @@ class Find extends Component {
           <InputGroupAddon addonType='append'>
             <Button onClick={this.findBySearch} disabled={isGettingLocation}>
               Find
-           </Button>
+            </Button>
           </InputGroupAddon>
         </InputGroup>
         {error && <div className='error-msg'>Couldn't find anything..</div>}
@@ -59,7 +59,7 @@ class Find extends Component {
         <div className='center'>
           <Button onClick={this.findByCurrentLocation}>
             Use Current Location
-         </Button>
+          </Button>
         </div>
       </FormGroup>
     )
@@ -99,10 +99,8 @@ class Find extends Component {
   removeError = () => this.setState({ error: false })
 
   handleKeyPress = (event) => {
-    if (event.key === "Enter") this.findBySearch()
+    if (event.key === 'Enter') this.findBySearch()
   }
 }
-
-
 
 export default Find

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
 import HowToHelpSection from './HowToHelpSection'
-import MovementSection from './MovementSection';
-import ProjectsSection from './ProjectsSection';
+import MovementSection from './MovementSection'
+import ProjectsSection from './ProjectsSection'
 import './styles.scss'
 
 class Home extends Component {
@@ -24,7 +24,7 @@ class Home extends Component {
     let imgStyle = { width: '100%' }
     return (
       <main className='home'>
-        {/*<div id='hero-bg' style={backgroundImage} />*/}
+        {/* <div id='hero-bg' style={backgroundImage} /> */}
         <div>
           <img src={url} style={imgStyle} />
         </div>

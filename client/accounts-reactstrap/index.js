@@ -11,7 +11,7 @@ const Title = ({ text }) => (
 export {
   Button as SubmitField,
   Errors as ErrorsField,
-  Form   as FormField,
-  Input  as InputField,
-  Title  as TitleField
+  Form as FormField,
+  Input as InputField,
+  Title as TitleField
 }

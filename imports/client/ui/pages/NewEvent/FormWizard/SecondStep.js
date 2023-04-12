@@ -14,9 +14,8 @@ import i18n from '/imports/both/i18n/en'
 
 let labels = i18n.NewEventModal
 
-
 class SecondStep extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       videoLinksAdded: 0,
@@ -27,7 +26,7 @@ class SecondStep extends Component {
   }
   render () {
     const { form } = this.props
-    
+
     const RadioButton = this.RadioButton
     const VideoEntry = this.VideoEntry
     const VideoButtons = this.VideoButtons

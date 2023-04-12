@@ -12,7 +12,6 @@ class About extends Component {
   }
 
   render () {
-
     return (
       <div id='Template'>
         <h2>Template Page</h2>

@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
 import connectField from 'uniforms/connectField'
 import DayPicker from 'react-day-picker/DayPicker'
-import { FormGroup, Label, Input, Modal } from "reactstrap";
+import { FormGroup, Label, Input, Modal } from 'reactstrap'
 
-const currentYear = new Date().getFullYear();
-const fromMonth = new Date(currentYear, 0);
-const toMonth = new Date(currentYear + 10, 11);
+const currentYear = new Date().getFullYear()
+const fromMonth = new Date(currentYear, 0)
+const toMonth = new Date(currentYear + 10, 11)
 
-function YearMonthForm({ date, localeUtils, onChange }) {
-  const months = localeUtils.getMonths();
+function YearMonthForm ({ date, localeUtils, onChange }) {
+  const months = localeUtils.getMonths()
 
-  const years = [];
+  const years = []
   for (let i = fromMonth.getFullYear(); i <= toMonth.getFullYear(); i += 1) {
-    years.push(i);
+    years.push(i)
   }
 
-  const handleChange = function handleChange(e) {
-    const { year, month } = e.target.form;
-    onChange(new Date(year.value, month.value));
-  };
+  const handleChange = function handleChange (e) {
+    const { year, month } = e.target.form
+    onChange(new Date(year.value, month.value))
+  }
 
   return (
     <form className="DayPicker-Caption">
@@ -37,7 +37,7 @@ function YearMonthForm({ date, localeUtils, onChange }) {
         ))}
       </select>
     </form>
-  );
+  )
 }
 
 function YearMonthForm ({ date, localeUtils, onChange }) {
@@ -75,22 +75,22 @@ function YearMonthForm ({ date, localeUtils, onChange }) {
 }
 
 class Date_ extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    this.handleYearMonthChange = this.handleYearMonthChange.bind(this);
-    this.toggleDayPicker = this.toggleDayPicker.bind(this);
+    this.handleYearMonthChange = this.handleYearMonthChange.bind(this)
+    this.toggleDayPicker = this.toggleDayPicker.bind(this)
     this.state = {
       showDayPicker: false,
       month: new Date(currentYear, new Date().getMonth())
-    };
+    }
   }
 
-  handleYearMonthChange(month) {
-    this.setState({ month });
+  handleYearMonthChange (month) {
+    this.setState({ month })
   }
 
-  render() {
+  render () {
     const { id, label, onChange, value, error, openEndDate, name, specialCat } = this.props
     const { showDayPicker } = this.state
 
@@ -128,43 +128,43 @@ class Date_ extends Component {
           </div>
         </Modal>
       </FormGroup>
-    );
+    )
   }
 
   // NOTE: if openEnded is true => event defaults to ongoing/quasi-forever
   dateValue = (openEndDate, specialCat, name, value) => openEndDate ? 'Leave Blank for Always' : formatDate(specialCat, name, value)
 
   handleChange = (date = null) => {
-    this.toggleDayPicker();
-    this.props.onChange(date);
+    this.toggleDayPicker()
+    this.props.onChange(date)
   };
 
   clearDate = () => {
-    this.toggleDayPicker();
-    this.props.onChange(null);
+    this.toggleDayPicker()
+    this.props.onChange(null)
   };
 
   toggleDayPicker = () => {
-    this.setState(prevState => ({ showDayPicker: !prevState.showDayPicker }));
+    this.setState(prevState => ({ showDayPicker: !prevState.showDayPicker }))
   };
 }
 
 const formatDate = (specialCat, name, date) => {
   // NOTE: if no default date object is passed => render blank space (eg. 'until' field)
   // BUT: to prepopulate without default value from form => create local date obj
-  let prepopDate = name === 'when.recurring.until' || !!date ?
-    date : new Date(new Date().setHours(new Date().getHours() + 3))
+  let prepopDate = name === 'when.recurring.until' || !!date
+    ? date : new Date(new Date().setHours(new Date().getHours() + 3))
   // NOTE: if the field belongs to a special category, we leave it blank
-  if (specialCat && !date) prepopDate = ""
+  if (specialCat && !date) prepopDate = ''
   try {
     return prepopDate
       .toISOString()
       .substring(0, 10)
-      .split("-")
-      .join("/");
+      .split('-')
+      .join('/')
   } catch (ex) {
-    return "";
+    return ''
   }
-};
+}
 
-export default connectField(Date_);
+export default connectField(Date_)

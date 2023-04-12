@@ -12,7 +12,6 @@ class About extends Component {
   }
 
   render () {
-
     return (
       <div id='about'>
         <h2>About Us</h2>

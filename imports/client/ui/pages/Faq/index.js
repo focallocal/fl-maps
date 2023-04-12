@@ -1,9 +1,9 @@
-//Imports
-import React from "react";
-import Content from "./Content";
+// Imports
+import React from 'react'
+import Content from './Content'
 
 const Index = (props) => {
-  return <Content dcsTags={props.dcsTags}/>;
-};
+  return <Content dcsTags={props.dcsTags}/>
+}
 
-export default Index;
+export default Index

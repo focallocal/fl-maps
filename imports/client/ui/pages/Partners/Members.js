@@ -1,7 +1,7 @@
-//Imports
-import i18n from "../../../../both/i18n/en";
-import React, { Component, Fragment } from "react";
-import "./team.css";
+// Imports
+import i18n from '../../../../both/i18n/en'
+import React, { Component, Fragment } from 'react'
+import './team.css'
 import {
   Row,
   Container,
@@ -13,12 +13,12 @@ import {
   CardTitle,
   CardSubtitle,
   Button
-} from "reactstrap";
+} from 'reactstrap'
 
-const teamData = i18n.Partners.partners;
+const teamData = i18n.Partners.partners
 
 class Members extends Component {
-  render() {
+  render () {
     return (
       <Fragment>
         <div className="mr-5 ml-4">
@@ -29,7 +29,7 @@ class Members extends Component {
                   <Card>
                     <CardImg
                       key={index}
-                      width={"100%"}
+                      width={'100%'}
                       src={member.image}
                       alt={`${member.title} Image`}
                     />
@@ -43,7 +43,7 @@ class Members extends Component {
                         <ul className="list-inline list-social">
                           <li
                             style={{
-                              display: member.linkedIn === "" ? "none" : "true"
+                              display: member.linkedIn === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-linked-in pt-1"
                           >
@@ -54,7 +54,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.twitter === "" ? "none" : "true"
+                              display: member.twitter === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-twitter pt-1"
                           >
@@ -65,7 +65,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.website === "" ? "none" : "true"
+                              display: member.website === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-website pt-1"
                           >
@@ -76,7 +76,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.github === "" ? "none" : "true"
+                              display: member.github === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-github pt-1"
                           >
@@ -87,7 +87,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.facebook === "" ? "none" : "true"
+                              display: member.facebook === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-facebook pt-1"
                           >
@@ -98,7 +98,7 @@ class Members extends Component {
 
                           <li
                             style={{
-                              display: member.google === "" ? "none" : "true"
+                              display: member.google === '' ? 'none' : 'true'
                             }}
                             className="list-inline-item social-google-plus pt-1"
                           >
@@ -111,13 +111,13 @@ class Members extends Component {
                     </CardBody>
                   </Card>
                 </Col>
-              );
+              )
             })}
           </Row>
         </div>
       </Fragment>
-    );
+    )
   }
 }
 
-export default Members;
+export default Members

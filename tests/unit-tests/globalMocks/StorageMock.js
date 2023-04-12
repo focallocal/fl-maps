@@ -18,7 +18,7 @@ class LocalStorageMock {
   removeItem (key) {
     delete this.store[key]
   }
-};
+}
 
 class SessionStorageMock {
   constructor () {
@@ -40,7 +40,7 @@ class SessionStorageMock {
   removeItem (key) {
     delete this.store[key]
   }
-};
+}
 
 global.localStorage = new LocalStorageMock()
 global.sessionStorage = new SessionStorageMock()

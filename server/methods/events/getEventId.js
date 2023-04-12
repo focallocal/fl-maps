@@ -12,10 +12,10 @@ const getEventId = new ValidatedMethod({
   validate: new SimpleSchema({
     discourseTag: { type: String, max: 20 }
   }).validator(),
-  run({ discourseTag }) {
+  run ({ discourseTag }) {
     const eventIds = Events.find({}, { fields: { _id: 1 } }).map(e => e._id)
     const lowerCaseShorterId = discourseTag.substring(4, 16)
-    return eventIds.find(id => 
+    return eventIds.find(id =>
       id.substring(0, 12).toLowerCase() === lowerCaseShorterId
     )
   }

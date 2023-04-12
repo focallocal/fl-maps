@@ -4,7 +4,7 @@ import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
 const { content } = i18n.Template.first_section
-const {top_image_url} = content
+const { top_image_url } = content
 
 const TopImageSection = () => (
   <section id='top-image-section'>

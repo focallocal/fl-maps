@@ -15,7 +15,6 @@ import i18n from '/imports/both/i18n/en'
 let i18n_ = i18n.Map
 
 class EventInfo extends Component {
-
   render () {
     const {
       userLocation,
@@ -36,8 +35,8 @@ class EventInfo extends Component {
     // predefine some variables that will be left blank when no event is selected
     // (need to render blank component in order to animate it)
     let categories,
-        distance,
-        gravatar
+      distance,
+      gravatar
 
     if (event) {
       categories = formatUtils.formatCategories(event.categories)
@@ -46,7 +45,7 @@ class EventInfo extends Component {
     }
 
     return (
-      <div id='event-info' className={event? 'active' : ''}>
+      <div id='event-info' className={event ? 'active' : ''}>
         <header>
           <div className='back-btn'>
             <i className='fas fa-long-arrow-alt-left' onClick={this.props.returnToList}/>
@@ -56,7 +55,7 @@ class EventInfo extends Component {
 
         <div className='first-section'>
           <img src={gravatar} className="rounded-circle float-right" alt=""/>
-          <div className='title'>{event? event.name : ''}</div>
+          <div className='title'>{event ? event.name : ''}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
           <Button color='secondary' onClick={this.openMoreInfo} block>{i18n_.openEventDetailsBtn}</Button>
@@ -73,7 +72,7 @@ class EventInfo extends Component {
 
         <div className='third-section'>
           <div className='title'>{i18n_.eventInfo.introTitle}</div>
-          <div className='overview'><Linkify options={linkifyOption}>{event? event.overview : ''}</Linkify></div>
+          <div className='overview'><Linkify options={linkifyOption}>{event ? event.overview : ''}</Linkify></div>
         </div>
       </div>
     )
@@ -90,7 +89,7 @@ class EventInfo extends Component {
   openMoreInfo = () => {
     const {
       event,
-      openMoreInfo,
+      openMoreInfo
     } = this.props
 
     openMoreInfo(event)

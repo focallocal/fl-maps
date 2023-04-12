@@ -20,7 +20,7 @@ describe('<MinimizeButton />', () => {
     expect(component.props().id).toEqual('minimize')
   })
 
-  //// Not sure why this test is not working
+  /// / Not sure why this test is not working
   // it('should get an onMinimize prop to be called upon click event', () => {
   //   const spy = sinon.spy()
   //     const component_ = shallowRender({ onMinimize: spy })

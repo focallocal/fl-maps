@@ -2,7 +2,7 @@ import { Accounts } from 'meteor/accounts-base'
 import { ServiceConfiguration } from 'meteor/service-configuration'
 import { Tracker } from 'meteor/tracker'
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 // Get the sso query params
 const parsedUrl = new URL(location.href)
@@ -26,7 +26,7 @@ if (sso && sig) {
   history.replaceState(null, null, parsedUrl.href)
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 const oneTimeLogin = new Promise(resolve => {
   Tracker.autorun(computation => {
@@ -52,4 +52,4 @@ Accounts.onLogin(data => {
   }
 })
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 // External Packages
 import React, { Fragment } from 'react'
-import { Container} from 'reactstrap'
+import { Container } from 'reactstrap'
 
 // Components
 import Members from './Members'

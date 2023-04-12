@@ -9,4 +9,4 @@ const Error = ({ error, errorMessage, children, customMessage }) =>
     </Alert>
   )
 
-export default connectField(Error, {initialValue: false})
+export default connectField(Error, { initialValue: false })
