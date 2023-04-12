@@ -33,10 +33,10 @@ const Content = (props) => {
               <li className="mb-1 mt-2 text-left">{item.text}</li>
             </details>
           </Col>
-        );
+        )
       })}
     </React.Fragment>
   )
-};
+}
 
 export default Content

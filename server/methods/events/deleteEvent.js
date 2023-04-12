@@ -9,7 +9,6 @@ const newEvent = new ValidatedMethod({
   name,
   mixins: [],
   validate: ({ _id, ...model }) => {
-
     try {
       EventsSchema.validate(model)
     } catch (ex) {
@@ -20,23 +19,22 @@ const newEvent = new ValidatedMethod({
       throw new Meteor.Error('?')
     }
   },
-  run(model) {
+  run (model) {
     const userId = this.userId
- 
+
     if (!userId) {
       throw new Meteor.Error('not logged in')
     }
 
     const modelId = String(model._id) // ensure it's a string
 
-     Events.remove({ _id: modelId}, (err) =>{
-       if(err){
-         throw new Meteor.Error('Events.deleteEvent', err)
-       }
-     })
+    Events.remove({ _id: modelId }, (err) => {
+      if (err) {
+        throw new Meteor.Error('Events.deleteEvent', err)
+      }
+    })
   }
 })
-
 
 DDPRateLimiter.addRule({
   name,

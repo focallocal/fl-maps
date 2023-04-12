@@ -100,13 +100,13 @@ export function formatWhenObject (data) {
     } = recurring
 
     switch (type) {
-      case 'day':
-        return `
+    case 'day':
+      return `
           starting from ${formatDate(startingDate)},
           every ${every} day${every > 1 ? 's' : ''}
           between ${startingTime} - ${endingTime}`
-      case 'week':
-        return `
+    case 'week':
+      return `
           starting from ${formatDate(startingDate)},
           every ${every} week${every > 1 ? 's' : ''}
           on ${getDaysNames(days)}

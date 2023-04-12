@@ -46,8 +46,8 @@ class NewEventModal extends Component {
       ...nextProps,
       editMode: false,
       isRedirect: false,
-      isConfirmBtn: false,
-    } 
+      isConfirmBtn: false
+    }
   }
 
   componentDidMount () {
@@ -60,8 +60,8 @@ class NewEventModal extends Component {
     }, 1000) // 1 second
   }
 
-  componentDidUpdate(prevProps){
-    if(prevProps.location.pathname !== this.props.location.pathname){
+  componentDidUpdate (prevProps) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
       delete window.__unfinishedNewEvent
     }
   }
@@ -101,17 +101,16 @@ class NewEventModal extends Component {
             editMode={editMode} />
         </ModalBody>
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
-          Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>) 
+          Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>)
           <strong> are filled out</strong>.
         </Alert>
-        {isConfirmBtn ?
-          <ModalFooter>
+        {isConfirmBtn
+          ? <ModalFooter>
             <Button color='primary' onClick={() => this.setState({ isConfirmBtn: false })}>Cancel</Button>
             <Button color='danger' onClick={this.deletePage}>CONFIRM DELETE</Button>
 
           </ModalFooter>
-          :
-          <ModalFooter>
+          : <ModalFooter>
             {currentStep + 1 <= 1 &&
               <Button color='primary' onClick={this.moveNext}>Next</Button>
             }
@@ -137,7 +136,6 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
-
     this.state.form.validate({ clean: true })
       .then(() => {
         window.NProgress.set(0.4)
@@ -156,15 +154,15 @@ class NewEventModal extends Component {
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
 
-      // get rid of any previously unfinished New Event
-      delete window.__unfinishedNewEvent
+    // get rid of any previously unfinished New Event
+    delete window.__unfinishedNewEvent
   }
 
   deletePage = () => {
     let model = EventsSchema.clean(this.state.form.getModel())
     model._id = this.state.form.getModel()._id
-   
-    this.callDeleteEvent(model);
+
+    this.callDeleteEvent(model)
   }
 
   onCreateEvent = (eventId) => {
@@ -212,7 +210,6 @@ class NewEventModal extends Component {
 
       if (Meteor.isDevelopment) { console.log(err, model) }
     })
-
   }
 
   toggleModal = () => {
@@ -225,8 +222,8 @@ class NewEventModal extends Component {
     const url = pathname + '?' + qs.stringify(queryStrings)
     this.props.history.push(url)
 
-    // toggleModal() closes modal, but it is not called after form submits  
-    // copy unfinished form to global window and check for it inside FormWizard 
+    // toggleModal() closes modal, but it is not called after form submits
+    // copy unfinished form to global window and check for it inside FormWizard
     window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
   }
 

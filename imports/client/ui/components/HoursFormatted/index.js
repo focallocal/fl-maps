@@ -33,7 +33,7 @@ const HoursFormatted = ({ data }) => {
     )
   }
 
-  const isSameDay = startingDate.toDateString() === endingDate.toDateString();
+  const isSameDay = startingDate.toDateString() === endingDate.toDateString()
 
   if (data.repeat) {
     const {
@@ -86,10 +86,10 @@ const HoursFormatted = ({ data }) => {
     )
     const notForeverWeek = (
       <div className='not-forever'>
-        {(data.repeat && occurences && startingWeekday === endingWeekday)
-          && `until ${formatDateWithWords(recurrenceEndDate)}`}
-        {(data.repeat && occurences && startingWeekday !== endingWeekday)
-          && `until ${formatDateWithWords(adjustedEndDate)}`}
+        {(data.repeat && occurences && startingWeekday === endingWeekday) &&
+          `until ${formatDateWithWords(recurrenceEndDate)}`}
+        {(data.repeat && occurences && startingWeekday !== endingWeekday) &&
+          `until ${formatDateWithWords(adjustedEndDate)}`}
         {(data.repeat && until) && `until ${formatDateWithWords(until)}`}
       </div>
     )

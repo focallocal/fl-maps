@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor'
 
 const { mapType } = Meteor.settings.public
 console.log(mapType)
-let content;
+let content
 
 if (mapType === 'gatherings') content = PublicHappinessMovementContent
 else if (mapType === 'btm') content = BrighterTomorrowContent

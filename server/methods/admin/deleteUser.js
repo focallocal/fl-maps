@@ -1,5 +1,5 @@
 import { Roles } from 'meteor/alanning:roles'
-import { Meteor } from "meteor/meteor";
+import { Meteor } from 'meteor/meteor'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
 import SimpleSchema from 'simpl-schema'
 import { logRateLimit } from '/server/security/rate-limiter'
@@ -10,11 +10,10 @@ const createAdmin = new ValidatedMethod({
   mixins: [],
   validate: new SimpleSchema({
     id: {
-      type: String,
+      type: String
     }
   }).validator(),
-  run({ id}) {
-
+  run ({ id }) {
     if (!id) {
       throw new Meteor.Error('could not find user...')
     }

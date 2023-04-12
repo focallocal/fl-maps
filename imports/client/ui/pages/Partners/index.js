@@ -1,7 +1,7 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
-import i18n from "/imports/both/i18n/en";
-import Members from "./Members";
+import React from 'react'
+import { Container, Row, Col } from 'reactstrap'
+import i18n from '/imports/both/i18n/en'
+import Members from './Members'
 
 const Index = () => (
   <React.Fragment>
@@ -11,6 +11,6 @@ const Index = () => (
     </Container>
     <Members />
   </React.Fragment>
-);
+)
 
-export default Index;
+export default Index

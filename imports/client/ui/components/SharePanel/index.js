@@ -39,20 +39,18 @@ import './styles.scss'
 // const url = window.location <-- set this to a live www. url to test
 
 class SharePanel extends Component {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
   }
 
-  render() {
-
+  render () {
     const hoursReactComponent = HoursFormatted({ data: this.props.data })
     const hoursText = drillDownToText(hoursReactComponent, '')
 
     const url = window.location
-    const string = i18n.Map.eventInfo.socialMedia.messagePre + document.title + "\n" + hoursText + "\n"
+    const string = i18n.Map.eventInfo.socialMedia.messagePre + document.title + '\n' + hoursText + '\n'
     const title = string.replace(' Next:', 'Next:').replace(' Repeating:', '\nRepeating:')
-    
+
     return (
       <div className="sharePanel">
         <FacebookShareButton url={url} quote={title} hashtag="#publichappinessmovement" children={<FacebookIcon size={32} round={true} />} />
@@ -62,14 +60,13 @@ class SharePanel extends Component {
         <EmailShareButton url={url} subject={title} children={<EmailIcon size={32} round={true} />} />
       </div>
     )
-
   }
 }
 
 /**
  * This function takes the html-formatted React output of the 'when' component (i.e. event calendar schedule)
  * and returns a plain text string representing this schedule
- * 
+ *
  * @param {Object} node This is React component or child node (see below comments for different possible node types)
  * @param {String} output This is a running total of the output string - the function adds to this as it drills recursively into the node
  */
@@ -77,7 +74,7 @@ function drillDownToText (node, output) {
   const children = node.props.children
   children.forEach(child => {
     if (child) {
-      // Function has drilled down to the string? => add this to output 
+      // Function has drilled down to the string? => add this to output
       if (typeof child === 'string') output += child
       // Replace any <br> and <li> tags with whitespace (otherwise words on a newLine get mushed together)
       else if (child.type === 'br' || child.type === 'li') {

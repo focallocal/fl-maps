@@ -4,7 +4,7 @@ import { ListGroup, ListGroupItem, CustomInput } from 'reactstrap'
 // import categoryTree from '/imports/both/i18n/en/categories.json'
 
 import './styles.scss'
-import i18n from '/imports/both/i18n/en';
+import i18n from '/imports/both/i18n/en'
 
 let categoryTree = i18n.Categories
 
@@ -25,7 +25,7 @@ class FiltersList extends Component {
   state = {
     checkAll: false,
     checkedFilters: possibleCategories.map(elem => {
-      elem.checked = false; // all unchecked by default
+      elem.checked = false // all unchecked by default
       return elem
     })
     // checkedFilters: Array(possibleCategories.length).fill(true) // all checked by default
@@ -62,7 +62,7 @@ class FiltersList extends Component {
                   key={index}
                   className="checkbox"
                   style={{
-                    marginLeft: category.parent !== true ? '20px' : '0px' ,
+                    marginLeft: category.parent !== true ? '20px' : '0px',
                     color: category.color,
                     display: category.hidden === true ? 'none' : 'block'
                   }}
@@ -73,10 +73,10 @@ class FiltersList extends Component {
                     label={category.name}
                     checked={checkedFilters[index].checked}
                     onChange={this.handleFilterChange}
-                    onClick={category.parent === true? this.expandCategory : null}
+                    onClick={category.parent === true ? this.expandCategory : null}
                   />
-                  { category.url && 
-                    <a href={category.url} target='_blank' rel='external' aria-label='Go to Page'>
+                  { category.url &&
+                    <a href={category.url} target='_blank' rel="external noreferrer" aria-label='Go to Page'>
                       <i className="far fa-question-circle"></i>
                     </a>
                   }
@@ -98,7 +98,7 @@ class FiltersList extends Component {
         index++
         // parent currently CHECKED: means you are UNCHECKING, means children should become hidden (so set to true)
         // parent currently UNCHECKED: means you are CHECKING, so children should unhide (so set to false)
-        possibleCategories[index].hidden = parentChecked? true: false
+        possibleCategories[index].hidden = !!parentChecked
       }
       while (checkedFilters[index + 1] && !checkedFilters[index + 1].parent)
     }
@@ -167,13 +167,13 @@ class FiltersList extends Component {
         possibleCategories[tempIndex].hidden = true
       } while (checkedFilters[tempIndex + 1] && !checkedFilters[tempIndex + 1].parent)
     }
-    return {checkedFilters, possibleCategories}
+    return { checkedFilters, possibleCategories }
   }
 
   toggleAllFilters = () => {
     const checkAll = !this.state.checkAll
     const checkedFilters = possibleCategories.map(elem => {
-      elem.checked = checkAll; // all checked by default
+      elem.checked = checkAll // all checked by default
       return elem
     })
 

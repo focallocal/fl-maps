@@ -1,4 +1,3 @@
-const URL = require('url').URL
 import crypto from 'crypto'
 import { parse, stringify } from 'querystring'
 
@@ -8,17 +7,18 @@ import { Accounts } from 'meteor/accounts-base'
 import { ServiceConfiguration } from 'meteor/service-configuration'
 import { WebApp } from 'meteor/webapp'
 import { check } from 'meteor/check'
+const URL = require('url').URL
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 const Nonces = new Mongo.Collection('discourse-sso-consumer-nonces')
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 const SERVICE_ERROR_MSG =
   'service not found or invalid service settings. Did you properly initialize the package?'
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 WebApp.connectHandlers.use('/', (req, res, next) => {
   const queryParams = req._parsedUrl.search
@@ -55,8 +55,8 @@ WebApp.connectHandlers.use('/', (req, res, next) => {
       fwdHost && fwdProt
         ? `${fwdProt}://${fwdHost}${pathname}${queryParamsStr2}`
         : Meteor.absoluteUrl(pathname.substring(1), {
-            secure: !!req.connection.encrypted
-          }) + queryParamsStr2
+          secure: !!req.connection.encrypted
+        }) + queryParamsStr2
 
     // Compute the sso payload
     const payload = `nonce=${nonce}&return_sso_url=${returnUrl}`
@@ -82,7 +82,7 @@ WebApp.connectHandlers.use('/', (req, res, next) => {
   }
 })
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
 Accounts.registerLoginHandler(loginRequest => {
   // Only process Discourse login requests
@@ -130,16 +130,16 @@ Accounts.registerLoginHandler(loginRequest => {
   })
 })
 
-function errorObj(msg) {
+function errorObj (msg) {
   return {
     type: 'discourse',
     error: new Meteor.Error(Accounts.LoginCancelledError.numericError, msg)
   }
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 
-function getService() {
+function getService () {
   const service = 'discourse'
   const res = ServiceConfiguration.configurations.findOne({ service })
   if (!res || !res.secret || !res.url) {
@@ -153,4 +153,4 @@ function getService() {
   return res
 }
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------

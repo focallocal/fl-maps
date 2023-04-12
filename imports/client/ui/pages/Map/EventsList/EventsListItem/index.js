@@ -18,15 +18,13 @@ class ListItem extends Component {
       address
     } = item
 
-
-
     return (
       <ListGroupItem className='event-list-item'>
         <img src={userGravatar} className="rounded-circle float-left mr-2" alt=""/>
         <div>
-         <div className='name'>{name}</div>
-         <div className='categories'>{formatCategories(categories)}</div>
-         <div className='distance'>{formatMilesFromLocation(userLocation, address.location.coordinates)}</div>
+          <div className='name'>{name}</div>
+          <div className='categories'>{formatCategories(categories)}</div>
+          <div className='distance'>{formatMilesFromLocation(userLocation, address.location.coordinates)}</div>
         </div>
         <i className='fas fa-chevron-circle-right go-to' onClick={this.handleItemClick} />
       </ListGroupItem>

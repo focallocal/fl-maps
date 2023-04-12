@@ -3,14 +3,14 @@ module.exports = {
     one: {
       host: '134.122.58.242',
       username: 'deploy',
-      pem: './travis-ssh-key',
+      pem: './travis-ssh-key'
     }
   },
   app: {
     name: 'testing-happiness.ga',
     path: '../../.',
     docker: {
-      image: 'abernix/meteord:node-8.4.0-base'
+      image: 'zodern/meteor:latest'
     },
     servers: {
       one: {}
@@ -19,7 +19,7 @@ module.exports = {
       serverOnly: true
     },
     env: {
-      ROOT_URL: 'https://fl-maps.testing-happiness.ga',
+      ROOT_URL: 'https://fl-maps.testing-happiness.ga'
     }
   },
   mongo: {
@@ -34,4 +34,4 @@ module.exports = {
       letsEncryptEmail: 'contact@focallocal.org'
     }
   }
-};
+}

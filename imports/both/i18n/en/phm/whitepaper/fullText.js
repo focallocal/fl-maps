@@ -1,10 +1,10 @@
 export const FullText = [
-    { title: "Abstract", code: "Abstra", fullText: ` `, chapterHeading: true },
+  { title: 'Abstract', code: 'Abstra', fullText: ` `, chapterHeading: true },
 
 	    {
-        title: "Movement Background",
-        code: "MovBac",
-        fullText: `
+    title: 'Movement Background',
+    code: 'MovBac',
+    fullText: `
 
 ## 1.1.
 
@@ -15,11 +15,11 @@ The past 7 years felt like swimming upstream. Many amazing people came in and di
 
 Blockchain is a chance to incentivise that action, allowing the modern world to refocus their attention on local issues important to a healthy society, which have been marginalised under our constantly pressured, GDP based societies. Modern technology also allows us to share effective ideas in a far more intelligent way than ever before, and achieve a much greater impact than previously possible.
 `
-    },
-    {
-        title: "The Focallocal Community",
-        code: "ThPuHa",
-        fullText: `
+  },
+  {
+    title: 'The Focallocal Community',
+    code: 'ThPuHa',
+    fullText: `
 
 ## 1.2. 
 
@@ -35,11 +35,11 @@ The Public Happiness Movement was created because Facebook, and other social med
 The Focallocal Community built this ‘Public Happiness Movement’ platform and is offering it to all other groups with a shared/similar mission.
 
 `
-    },
+  },
 	    {
-        title: "Economic Background",
-        code: "Backgr",
-        fullText: `
+    title: 'Economic Background',
+    code: 'Backgr',
+    fullText: `
 
 ## 1.3.
 
@@ -59,11 +59,11 @@ The Public Happiness Token aims to be a pillar in beginning that essential re-ba
 You can read more about [the token background here](https://news.publichappinessmovement.com/token-background/)
        
 `
-    },
-    {
-        title: "Public Happiness Token Introduction",
-        code: "PuHaTo",
-        fullText: ` 
+  },
+  {
+    title: 'Public Happiness Token Introduction',
+    code: 'PuHaTo',
+    fullText: ` 
 
 ## 1.4.
 
@@ -89,19 +89,19 @@ Blockchain gives everyone the ability to create new economic systems and models,
 
 [link for terms of use coming soon]
 `
-    },
-    {
-        title: "Problem Statement",
-        code: "ProSta",
-        chapterHeading: true,
-        fullText: `
+  },
+  {
+    title: 'Problem Statement',
+    code: 'ProSta',
+    chapterHeading: true,
+    fullText: `
 
 `
-    },
-    {
-        title: "Issues we Aim to Solve",
-        code: "IsweAi",
-        fullText: ` 
+  },
+  {
+    title: 'Issues we Aim to Solve',
+    code: 'IsweAi',
+    fullText: ` 
 
 ## 2.1. 
 
@@ -115,11 +115,11 @@ Blockchain gives everyone the ability to create new economic systems and models,
 4. Giving everyone an opportunity to use their time, passion and know-how to create a better world, through globally coordinated localised action
 
 `
-    },
-    {
-        title: "Primary Goal",
-        code: "PriGoa",
-        fullText: `
+  },
+  {
+    title: 'Primary Goal',
+    code: 'PriGoa',
+    fullText: `
 
 ## 2.2.
 
@@ -129,11 +129,11 @@ We live under a system which rewards actions which advance our society’s econo
 We strongly believe that societal, and individual well-being should be treated as an equal, or even higher priority in our global society than economic. Public Happiness Token’s main goal is to provide people with an incentive to unite and work together in making their local community a happier, safer and friendlier place by tackling social issues that reduce well-being like homelessness, loneliness, crime rates, isolation, etc. 
 
 `
-    },
-    {
-        title: "Secondary Goal",
-        code: "SecGoa",
-        fullText: ` 
+  },
+  {
+    title: 'Secondary Goal',
+    code: 'SecGoa',
+    fullText: ` 
 
 ## 2.3.
 
@@ -141,11 +141,11 @@ We strongly believe that societal, and individual well-being should be treated a
 This project also aims to empower ordinary people regardless of their technological ability, to become fluent in cryptocurrency transactions, smart contracts and distributed ledger technology. Through their interactions with our platform and the Public Happiness Token they will gain an entry point of understanding of blockchain, the potential uses for blockchain technology, and its ability to transform society and the world they live in by building a world where creating social good is as important as manufacturing or banking. Their understanding of the fiat currencies they use daily will also be forever changed.
 
 `
-    },
-    {
-        title: "Underlining Theme",
-        code: "UTheme",
-        fullText: `
+  },
+  {
+    title: 'Underlining Theme',
+    code: 'UTheme',
+    fullText: `
 
 ## 2.4.
 
@@ -154,11 +154,11 @@ This project also aims to empower ordinary people regardless of their technologi
 Those seeking power at the expense of others liberty throughout history have always prioritized stoking divisions, intolerance, and nativism to prevent any organised social movements from building up and moving society forward in any way. Community and human connection is the key to progress on all societal issues facing humanity, and the key to resisting oppressive forces seeking to divide us for their own selfish aims. The foundation of our movement is connection. 
 
 `
-    },	
-    {
-        title: "Relation to Universal Basic Income",
-        code: "RetoUn",
-        fullText: `
+  },
+  {
+    title: 'Relation to Universal Basic Income',
+    code: 'RetoUn',
+    fullText: `
 
 ## 2.5.
 
@@ -166,19 +166,19 @@ Those seeking power at the expense of others liberty throughout history have alw
 Universal Basic Income is another concept which has the potential to create societies where many people use their increased freedom to focus on and tackle societal issues. 
 It's a sad situation when people want to do things to make their local community a better place to live, but the current system creates a situation where most feel too busy or too stressed about work and the rapid pace of life to consistently engage in this important action. A situation Universal Basic Income has the potential to change, yet UBI faces many hurdles to become accepted policy in all nations. It is likely to be a long and bumpy road and its implementation is likely to differ widely. Public Happiness Token can be considered as a step on a similar path, and one which would compliment UBI by incentivizing those living in societies who adopt it to utilize some of that increased freedom to focus on improving life where they live, and the human condition.
 `
-    },
-    {
-        title: "Educating the Public about Blockchain",
-        code: "EdthPu",
-        chapterHeading: true,
-        fullText: ` 
+  },
+  {
+    title: 'Educating the Public about Blockchain',
+    code: 'EdthPu',
+    chapterHeading: true,
+    fullText: ` 
 
 `
-    },
-    {
-        title: "Current State of Public Understanding",
-        code: "CuStof",
-        fullText: ` 
+  },
+  {
+    title: 'Current State of Public Understanding',
+    code: 'CuStof',
+    fullText: ` 
 
 ## 3.1. 
 
@@ -186,11 +186,11 @@ It's a sad situation when people want to do things to make their local community
 The general public’s current understanding of cryptocurrency is overwhelmingly narrow. Most have heard of Bitcoin and understand it’s something like an alternative currency to Fiat. The narrative pushed by the news is rarely about the multitude of exciting technologies being built upon blockchain and smart contracts, or the ethos of decentralisation which crypto-economics was founded upon, which will shape the future of our society.  They might have heard something about a hack, Ethereum, or perhaps something about some cyber-kitties ..most people simply don’t really understand what all the fuss is about as it’s not a recognisable part of their world yet.
 
 `
-    },
-    {
-        title: "Reaching a New Audience",
-        code: "ReaNew",
-        fullText: ` 
+  },
+  {
+    title: 'Reaching a New Audience',
+    code: 'ReaNew',
+    fullText: ` 
 
 ## 3.2.
 
@@ -215,12 +215,12 @@ Our team firmly believes the future of our society will be built on the blockcha
 Users of our platform’s 1st step to owning a cryptocurrency will via the world they already understand - public events, project building and social media - rather than purchasing on an exchange, which is difficult for those with less interest in tech or financial markets. We will then guide them to a more complete understanding.
 
 `
-    },
-    { title: "The Public Happiness Token", code: "ThPuHa", fullText: ` `, chapterHeading: true },
-    {
-        title: "Token Overview",
-        code: "TokOve",
-        fullText: `
+  },
+  { title: 'The Public Happiness Token', code: 'ThPuHa', fullText: ` `, chapterHeading: true },
+  {
+    title: 'Token Overview',
+    code: 'TokOve',
+    fullText: `
 
 ## 4.1.
 
@@ -241,12 +241,12 @@ Mining is built on real world action, creating a soft upper limit on how much ca
 Our token is immutable, and will create a permanent record of the effort everyone has put into improving life in their local community.
 
 `
-    },
-	
-    {
-        title: "Token Criteria",
-        code: "TokCrit",
-        fullText: `
+  },
+
+  {
+    title: 'Token Criteria',
+    code: 'TokCrit',
+    fullText: `
 
 ## 4.2.
 
@@ -278,13 +278,13 @@ A vote from a user is still weighed as their one single vote multiplied by their
 The community is also asked to ensure the project keeps with the founding vision by checking it meets with all of our [Community Values](https://publichappinessmovement.com/t/topic/2844)
 
 `
-    },
-	
-    { title: "Public Happiness Token IEO", code: "ToIco", fullText: ` `, chapterHeading: true },
-    {
-        title: "IEO Strategy",
-        code: "ICOStr",
-        fullText: ` 
+  },
+
+  { title: 'Public Happiness Token IEO', code: 'ToIco', fullText: ` `, chapterHeading: true },
+  {
+    title: 'IEO Strategy',
+    code: 'ICOStr',
+    fullText: ` 
 
 ## 5.1.
 
@@ -298,11 +298,11 @@ ICO’s have also become a hotbed for scams, junk tokens, and projects that have
 There will be no pre-sale to big time investors. Guaranteed opportunities for everyone to get involved, and every possible effort made to prevent whales from eating up large amounts of our token and undermining the decentralised mission of this project.
 
 `
-    },
-    {
-        title: "IEO Stages",
-        code: "ICOSta",
-        fullText: ` 
+  },
+  {
+    title: 'IEO Stages',
+    code: 'ICOSta',
+    fullText: ` 
 
 ## 5.2.
 
@@ -328,11 +328,11 @@ Burning the tokens that were unsold, will lead to a value increase of 24% for th
 
 
 `
-    },
-    {
-        title: "Ongoing Funding for Specific Projects and Experts",
-        code: "OnFufo",
-        fullText: ` 
+  },
+  {
+    title: 'Ongoing Funding for Specific Projects and Experts',
+    code: 'OnFufo',
+    fullText: ` 
 
 ## 5.3. 
 
@@ -359,11 +359,11 @@ Reimbursements:
 Team members/tasks reimbursement levels will be determined by a project finance specialist at the 1st stage of the decentralisation process - this means that the early community and specialists building it aren’t able to vote to give themselves a larger share of the token, as happened recently with the EOS community. This kind of selfish grabbing of resources by the initial team members undermines the decentralised nature, and ability to build a reputation of trust, for any blockchain community.
 
 `
-    },
-    {
-        title: "IEO Marketing",
-        code: "ICOMar",
-        fullText: `
+  },
+  {
+    title: 'IEO Marketing',
+    code: 'ICOMar',
+    fullText: `
 
 ## 5.4. 
 **IEO Marketing**
@@ -386,13 +386,13 @@ Existing groups who are taking action for more peace and happiness in this world
 They will now be rewarded financially for their continued efforts to improve human and societal well-being when it is in part, coordinated via our platform. This reward will also be selectively backdated, based upon numbers engaged in their activities and media over the past ten years. Rewarding those whose labours have made a consistent positive impact to society, and others lives, without any economic recognition for their great works. This backdated reward is not dependent upon joining our platform, but should increase on-boarding by showing casing the benefits of tokenizing to create a new ‘Happiness Economy’. 
 
 `
-    },
-    {
-        title: "Platform Overview",
-        code: "PlaOve",
-        chapterHeading: true,
-		image: "/images/Proposed_New_Site.png",
-        fullText: ` 
+  },
+  {
+    title: 'Platform Overview',
+    code: 'PlaOve',
+    chapterHeading: true,
+    image: '/images/Proposed_New_Site.png',
+    fullText: ` 
 
 The Public Happiness Movement platform currently exists as a website located at https://publichappinessmovement.com. If you’ve visited it you’ve probably noticed it is currently a fragmented site/platform. This is intentional. The platform has been built as a ‘minimal functional platform’ capable of supporting a community who will transform it into an effective decentralised Public Happiness platform; using the tools available to redesign and reshape the platform as it evolves to better fit their collective needs.
 
@@ -420,11 +420,11 @@ The same tools are available to community members creating a localised project, 
 
 
 `
-    },
-    {
-        title: "The Public Happiness Map: Gather",
-        code: "ThPuHa",
-        fullText: `
+  },
+  {
+    title: 'The Public Happiness Map: Gather',
+    code: 'ThPuHa',
+    fullText: `
 
 ## 6.1.
 
@@ -459,11 +459,11 @@ To receive tokens community members are required to post their photos and videos
 This can be considered ‘proof of work’. Their posts will be located autonomously and pulled into an easy to view list to be checked for suspicious behaviour by others in the ecosystem. Token awards are delayed by 2 weeks to allow time for checking. Abuse and fraud is monitored by bounty hunters within the community, and a list of all past hashtags found will be recorded with links to the content, to allow these 'bounty hunters' to review suspicious accounts/activity easily. 
 
 `
-    },
-    {
-        title: "Action Center: Global",
-        code: "ActCen",
-        fullText: `
+  },
+  {
+    title: 'Action Center: Global',
+    code: 'ActCen',
+    fullText: `
 
 ## 6.2.
 
@@ -547,11 +547,11 @@ The Action Center focused on Global projects (and our community operations). Loc
 The same tools are available to community members creating a localised project, as for those working in the Action Center. The Gatherings side and the Action Center are mirrors of each other, the difference being that Gathering is set up to highlight the community and social aspects within a members local community, while the Action Center places greater emphasis on the project management side as community members will be joining in from all around the world. The Governance of the global side, and the platform itself is Decentralised. Communities on the local side will bring their own governance structures, as many will be pre-existing and it would be a high bar to force them all to adopt our decentralised governance model.
 
 `
-    },
-    {
-        title: "Community News",
-        code: "ComNew",
-        fullText: ` 
+  },
+  {
+    title: 'Community News',
+    code: 'ComNew',
+    fullText: ` 
 
 ## 6.3.
 
@@ -564,11 +564,11 @@ All articles submitted will be checked by experienced community members who have
 Moderators will mine tokens by approving content. Community members will mine tokens either by sharing content, or creating it and receiving likes.
 
 `
-    },
-    {
-        title: "Active Happiness Shop",
-        code: "AcHaSh",
-        fullText: `
+  },
+  {
+    title: 'Active Happiness Shop',
+    code: 'AcHaSh',
+    fullText: `
 
 ## 6.4. 
 
@@ -581,11 +581,11 @@ Materials and Public Happiness Action Packs are also available. Profits will cov
 Currently hosted on shopify, this will be moved in-house shortly.
 
 `
-    },
-    {
-        title: "Who Defines What is Accepted as ‘Public Happiness’",
-        code: "WhDeWh",
-        fullText: `
+  },
+  {
+    title: 'Who Defines What is Accepted as ‘Public Happiness’',
+    code: 'WhDeWh',
+    fullText: `
 
 ## 6.5.
 
@@ -595,11 +595,11 @@ The platform is pre-populated with projects, missions and pre-approved Public Ha
 Effective ideas for positive action will be incorporated into the platform and recommended to other community members as tools they can use for creating positive  social and cultural change where they live. 
 
 `
-    },
-	{
-        title: "Community Values",
-        code: "ComVal",
-        fullText: `
+  },
+  {
+    title: 'Community Values',
+    code: 'ComVal',
+    fullText: `
 
 	
 ## 6.6.
@@ -679,11 +679,11 @@ All of your positive actions on our platform help spread awareness of the Public
 
 As more people are drawn into our mission, the effects of your actions that reached them are magnified far beyond what you can see. Each new member who joins in adds more positive energy as our Movement grows into an unquenchable force of change for a friendlier, happier world – at peace with each other, for all of humanity to enjoy!!
 	`
-    },
-    {
-        title: "Evidence Based and Peer Reviewed Actions",
-        code: "EvBaan",
-        fullText: `
+  },
+  {
+    title: 'Evidence Based and Peer Reviewed Actions',
+    code: 'EvBaan',
+    fullText: `
 
 ## 6.7.
 
@@ -691,11 +691,11 @@ As more people are drawn into our mission, the effects of your actions that reac
 When community members submit a new idea for a project or activity its recommended that they find peer reviewed studies to offer support for the benefits their idea will have on society. This promotes the core concept that all efforts to effect a positive cultural and societal change, should be rooted in the best current understanding of available evidence. Community members will be guided to place where they are likely to find sources, as we want to build an informed and competent community. Those who are discussing and reviewing it for approval may add more sources. Part of our ecosystem will be ‘Research Bounty-Hunting’, where community members are rewarded for finding new peer reviewed studies to add to already approved activities, or which lead to the removal of an outdated study. 
 
 `
-    },
-    {
-        title: "Who can Participate on the Platform",
-        code: "WhcaPa",
-        fullText: `
+  },
+  {
+    title: 'Who can Participate on the Platform',
+    code: 'WhcaPa',
+    fullText: `
 
 ## 6.8.
 
@@ -707,11 +707,11 @@ Some community members may choose to use it while travelling, as a great way to 
 Pre-existing communities may wish to join the ecosystem to take advantage of the network effect, or be part of a wider community.
 
 `
-    },
-    {
-        title: "Pre-existing Communities with Similar Values",
-        code: "PrCowi",
-        fullText: `
+  },
+  {
+    title: 'Pre-existing Communities with Similar Values',
+    code: 'PrCowi',
+    fullText: `
 
 ## 6.9.
 
@@ -726,11 +726,11 @@ Their existing activities and projects will need to be submitted in the usual wa
 Platform users can join groups to be informed about their activities and projects, and to be an active part of  contributing to their mission.
 
 `
-    },
-    {
-        title: "Languages",
-        code: "Langua",
-        fullText: `
+  },
+  {
+    title: 'Languages',
+    code: 'Langua',
+    fullText: `
 
 ## 6.10.
 
@@ -738,11 +738,11 @@ Platform users can join groups to be informed about their activities and project
 The platform will launch in English. Adding other languages has been designed as a simple task anyone speaking the required language can complete in around 30 mins.
 
 `
-    },
-    {
-        title: "Decentralised Governance and Voting",
-        code: "DeGoan",
-        fullText: `
+  },
+  {
+    title: 'Decentralised Governance and Voting',
+    code: 'DeGoan',
+    fullText: `
 
 ## 6.11.
 
@@ -796,11 +796,11 @@ Lack of Understanding:
 Community members aren’t all expected to be experts on blockchain or community governance. They will naturally gravitate to areas of their interests and expertise, leading to more people with an understanding of a topic being subscribed to that section when a vote is called. This gives them the ‘first mover’ advantage to get informed arguments in to give a greater understanding to those joining in from the main voting category in the forum.
 
 `
-    },
-    {
-        title: "User Behaviour in UX Design",
-        code: "UsBein",
-        fullText: `
+  },
+  {
+    title: 'User Behaviour in UX Design',
+    code: 'UsBein',
+    fullText: `
 
 ## 6.12. 
 
@@ -812,12 +812,12 @@ Teaching community members to participate rather than just consume is going to b
 Community members attending a gathering on our platform are not passive. Everyone attending is an organiser and expected to contribute, even if that is as quick as simply saying hello in the forum and sharing with their friends on other platforms. A pro-active, participatory community is essential, and that is included in our design goals to compliment the tokenisation effect, rather than rely on it solely to change users expected online behaviour.
 
 `
-    },
-	
-    {
-        title: "Maintaining productivity in an open forum (Our coloured threads)",
-        code: "Colored",
-        fullText: `
+  },
+
+  {
+    title: 'Maintaining productivity in an open forum (Our coloured threads)',
+    code: 'Colored',
+    fullText: `
 
 ## 6.13. 
 
@@ -846,12 +846,12 @@ Breaking the chain - New ideas are always welcome and anyone can still present t
 (see section 6.11 for more information on voting).
 
 `
-    },	
-	
-    {
-        title: "User Wall and Plugin Module Ecosystem",
-        code: "UsWaan",
-        fullText: `
+  },
+
+  {
+    title: 'User Wall and Plugin Module Ecosystem',
+    code: 'UsWaan',
+    fullText: `
 
 ## 6.14. 
 
@@ -902,12 +902,12 @@ The possibilities are endless and we can't wait to see what is created here!
 Forum specific plug-ins can also be built easily through the existing Discourse architecture. 
 
 `
-    },
-    { title: "The Path to Decentralisation", code: "ThPato", fullText: ` `, chapterHeading: true },
-    {
-        title: "Benevolent Dictatorship vs Complete Community Governance",
-        code: "BeDivs",
-        fullText: `
+  },
+  { title: 'The Path to Decentralisation', code: 'ThPato', fullText: ` `, chapterHeading: true },
+  {
+    title: 'Benevolent Dictatorship vs Complete Community Governance',
+    code: 'BeDivs',
+    fullText: `
 
 ## 7.1.
 
@@ -917,11 +917,11 @@ Primarily, we expect platform users/community members who rise to higher ranking
 It would be poor planning not to also consider more 'attack' scenarios, and ways to mitigate the risks, while assessing how our platform, ecosystem, and community could be impacted. Then to use this information in deciding on how we best to weigh the ideological value of complete decentralisation, against the importance of introducing our members to the concepts of community governance in measured stages to ensure the integrity of the vision. 
 
 `
-    },
-    {
-        title: "Example Scenario: Outside Collusion",
-        code: "ExScOu",
-        fullText: ` 
+  },
+  {
+    title: 'Example Scenario: Outside Collusion',
+    code: 'ExScOu',
+    fullText: ` 
 
 ## 7.2.
 
@@ -931,11 +931,11 @@ A significantly sized outside group infiltrate our platform, operating as model 
 Or more concerningly perhaps ‘Rallies supporting a religious hard-line political candidate’ meet the criteria.
 
 `
-    },
-    {
-        title: "Lines of Defence",
-        code: "LiofDe",
-        fullText: `
+  },
+  {
+    title: 'Lines of Defence',
+    code: 'LiofDe',
+    fullText: `
 
 ## 7.3.
 
@@ -964,11 +964,11 @@ The 21 members will have the tools to remove members if needed - for example a l
 At an unspecified point in the future, or in the case that Andy is no longer able to use this last line community protection tool, the pause vote will pass to 7 secretly designated members. Their identities unknown even to each other. These members have been determined by a personal judgement on integrity, reliability, and commitment to both the mission, and it's values. Any of these members have the power to begin the pause process on any decision recently voted on by the community. The function for calling a pause requires that the member fully explains why it was used, and this explanation is then posted anonymously to the wider-community for urgent discussion.
 
 `
-    },
-    {
-        title: "Conclusion",
-        code: "Conclu",
-        fullText: `
+  },
+  {
+    title: 'Conclusion',
+    code: 'Conclu',
+    fullText: `
 
 ## 7.4.
 
@@ -978,12 +978,12 @@ To meet our goals and teach community members the core concepts crypto-economics
 Some core areas of the project will always remain closed to change via community voting as a final line of defence from abuse, for example, the ‘Core Values’ which the community is based upon. To trigger a necessary change to these protected areas community members could create a vote to bring attention of the core team and put pressure on them to initiate the change, or to engage in further public discussions. 
 
 `
-    },
-    { title: "Security", code: "Securi", fullText: ` `, chapterHeading: true },
-    {
-        title: "Levels of Trust",
-        code: "LeofTr",
-        fullText: `
+  },
+  { title: 'Security', code: 'Securi', fullText: ` `, chapterHeading: true },
+  {
+    title: 'Levels of Trust',
+    code: 'LeofTr',
+    fullText: `
 
 ## 8.1.
 
@@ -999,11 +999,11 @@ Miners creating public activities where much of the work is conducted offline wi
 Our network is designed to make cheating the system more difficult than actually doing the required work.
 
 `
-    },
-    {
-        title: "Community Administrators",
-        code: "ComAdm",
-        fullText: `
+  },
+  {
+    title: 'Community Administrators',
+    code: 'ComAdm',
+    fullText: `
 
 ## 8.2.
 
@@ -1013,11 +1013,11 @@ Experienced members who have contributed to the ecosystem will be invited to bec
 Community Admins will receive tokens for performing critical oversight tasks within the platform, like being alerted to check issues by other members, step in to mitigate disputes, or begin the process of warning/removing members acting against the spirit required to maintain a positive and effective community. 
 
 `
-    },
-    {
-        title: "Team and Project Leaders",
-        code: "ProAdm",
-        fullText: `
+  },
+  {
+    title: 'Team and Project Leaders',
+    code: 'ProAdm',
+    fullText: `
 
 ## 8.3.
 
@@ -1027,11 +1027,11 @@ Each team and project has a leadership team made up of the nine highest scoring 
 Tasks completed will need to be approved by admins of each board before rewards are released. 
 
 `
-    },
-    {
-        title: "Mining Limits",
-        code: "MinLim",
-        fullText: `
+  },
+  {
+    title: 'Mining Limits',
+    code: 'MinLim',
+    fullText: `
 
 ## 8.4. 
 
@@ -1053,11 +1053,11 @@ The platform will guide community members through creating an off-platform Hot W
 * create a secure hot wallet and back up their keys safely
 
 `
-    },
-    {
-        title: "Cold Storage and Key Holders",
-        code: "CoStan",
-        fullText: `
+  },
+  {
+    title: 'Cold Storage and Key Holders',
+    code: 'CoStan',
+    fullText: `
 
 ## 8.5.
 
@@ -1074,12 +1074,12 @@ Funds raised through the IEO funds will be stored:
 Both funds will be divided and managed by multiple industry leading cold storage and security company. To spread the risks to our funding across multiple markets and trusted companies.
 
 `
-    },
-    { title: "Marketing Strategy", code: "MarStr", fullText: ` `, chapterHeading: true },
-    {
-        title: "A New Level of Hash Tagging",
-        code: "ANewLe",
-        fullText: `
+  },
+  { title: 'Marketing Strategy', code: 'MarStr', fullText: ` `, chapterHeading: true },
+  {
+    title: 'A New Level of Hash Tagging',
+    code: 'ANewLe',
+    fullText: `
 
 ## 9.1.
 
@@ -1093,11 +1093,11 @@ The proof of work bot will be searching for #PublicHappiness #PublicHappinessMov
 For example: The activity was scheduled for the 8th April 2020, when created on our platform. The images with the hashtags should be posted on the same date with a +7 days leniency for late uploads. The system will then check the hashtags with the details posted on our platform. Late posts can be submitted by community members for review by adding links to their posts and activity into the queue manually.
 
 `
-    },
-	{
-        title: "Launch Party Hacks",
-        code: "Hack",
-        fullText: `
+  },
+  {
+    title: 'Launch Party Hacks',
+    code: 'Hack',
+    fullText: `
 
 ## 9.2.
 
@@ -1118,11 +1118,11 @@ Each will launch with two initial week-long Launch Party Hacks, with the possibi
 
 
 `
-    },
-    {
-        title: "Bus Tour",
-        code: "BusTou",
-        fullText: `
+  },
+  {
+    title: 'Bus Tour',
+    code: 'BusTou',
+    fullText: `
 
 ## 9.3.
 
@@ -1142,11 +1142,11 @@ Green Fuel:
 [Connie the Connector](https://www.facebook.com/connietheconnector/) was converted by Andy and another community member in 2014 to switch back and forth between regular Diesel and running on Waste Vegetable Oil - leftover cooking oil (WVO). At the time it was carbon positive travel as the cooking oil needed to be disposed of. Whilst this is rarely true now as most used cooking oil is collected by large biodiesel companies, it is arguably still the greenest form of fuelling a vehicle and older diesel buses will require minimal conversions to run on it. Partnerships with hotel and restaurant chains will be sought to see if its possible to run our bus fleet on the oil thrown out by their kitchens. 
 
 `
-    },
-    {
-        title: "Public Happiness Channel",
-        code: "PuHaCh",
-        fullText: `
+  },
+  {
+    title: 'Public Happiness Channel',
+    code: 'PuHaCh',
+    fullText: `
 
 ## 9.4.
 
@@ -1158,11 +1158,11 @@ Combined with our coordinated hash-tagging this will provide a huge boost across
 The bus tour will also be filmed, with regular instalments of life on the road taking Public Happiness and our token into local communities and bringing more happiness and well-being to the world. As a ground-breaking and exciting project we anticipate attracting a large following, especially as it will be supported by all other marketing efforts.
 
 `
-    },
-	{
-        title: "Documentary",
-        code: "Doco",
-        fullText: `
+  },
+  {
+    title: 'Documentary',
+    code: 'Doco',
+    fullText: `
 
 ## 9.5.
 
@@ -1172,11 +1172,11 @@ Launching in Cannes Film Festival: 'A Happy Path' (provisional title) is a docum
 
 
 `
-    },
-	{
-        title: "Happier World Economies Summit",
-        code: "Summit",
-        fullText: `
+  },
+  {
+    title: 'Happier World Economies Summit',
+    code: 'Summit',
+    fullText: `
 
 ## 9.6.
 
@@ -1331,11 +1331,11 @@ All attendees who contribute to discussing and voting on real-world projects whi
 ## Questions:
 - We need something more firm than just having the platform to engage people in discussing and suggesting new ideas. There should be some kind of pull system supporting the platforms mechanism of creating post Summit activities.
 `
-    },
-    {
-        title: "Happy Cam",
-        code: "HapCam",
-        fullText: `
+  },
+  {
+    title: 'Happy Cam',
+    code: 'HapCam',
+    fullText: `
 
 ## 9.8.
 
@@ -1345,11 +1345,11 @@ The project’s adopted rescue dog will be entering a life full of travel,  happ
 Later a second camera dog may join, if we adopt a puppy.. because that would be lovely.
 
 `
-    },
-    {
-        title: "Public Happiness Partners",
-        code: "PuHaPa",
-        fullText: ` 
+  },
+  {
+    title: 'Public Happiness Partners',
+    code: 'PuHaPa',
+    fullText: ` 
 
 ## 9.9.
 
@@ -1370,11 +1370,11 @@ You can read further details about existing partners in section 5.4.
 If comfortable operating within our [Community Values](https://publichappinessmovement.com/t/topic/2844), new groups operating for similar goals will be invited to join our ecosystem. Massively boost their growth and good work through our enhanced network effect, while also retaining their identity.
 
 `
-    },
-    {
-        title: "Online Supporters",
-        code: "OnlSup",
-        fullText: `
+  },
+  {
+    title: 'Online Supporters',
+    code: 'OnlSup',
+    fullText: `
 
 ## 9.10.
 
@@ -1388,11 +1388,11 @@ The former approach brings valuable feedback and criticism from knowledgeable ho
 The latter is simply a cheap marketing exercise which has been saturated by the deluge of new projects last year. It would likely lead to excess cynicism.
 
 `
-    },
-    {
-        title: "Contests",
-        code: "Contes",
-        fullText: `
+  },
+  {
+    title: 'Contests',
+    code: 'Contes',
+    fullText: `
 
 ## 9.11.
 
@@ -1400,11 +1400,11 @@ The latter is simply a cheap marketing exercise which has been saturated by the 
 Building a core group of enthusiasts plays a big role in gaining the energy needed to provide momentum to a project. A strategy of finding creative and exciting ways to reward and engage those most active in promoting our IEO and Token, will be developed. Ensure our most passionate backers benefit from future successes and remain meet members of the community.
 
 `
-    },
-    {
-        title: "Collectable NFTs",
-        code: "Collec",
-        fullText: `
+  },
+  {
+    title: 'Collectable NFTs',
+    code: 'Collec',
+    fullText: `
 
 ## 9.12.
 
@@ -1412,11 +1412,11 @@ Building a core group of enthusiasts plays a big role in gaining the energy need
 Collectables will be created for special activities a user joins in, and also landmarks they achieve within our ecosystem. This acts as a fun side game within the platform while giving milestone rewards to community members, and using it to introduce them to collectables and other crypto-economic ideas. The collectables will be characters designed by the community and may feature logos, titles and names of the groups who coordinated large scale activities/projects 
 
 `
-    },
-    {
-        title: "Paid to Party",
-        code: "PatoPa",
-        fullText: `
+  },
+  {
+    title: 'Paid to Party',
+    code: 'PatoPa',
+    fullText: `
 
 ## 9.13. 
 
@@ -1435,12 +1435,12 @@ This approach has the following benefits:
 3) Our platform and token become linked with an excellent experience, and we gather thousands more community members who are now curious about their investment in The Public Happiness Token
 
 `
-    },
-	{
-        title: "Legals",
-        code: "LeStru",
-        chapterHeading: true,
-        fullText: `
+  },
+  {
+    title: 'Legals',
+    code: 'LeStru',
+    chapterHeading: true,
+    fullText: `
 		
 &nbsp;
 The ecosystem and token need to take every possible effort to conform to national laws. Many of which are not perfectly suited for decentralised, community owned and led collectives, or cross border currencies.
@@ -1450,12 +1450,12 @@ The ecosystem and token need to take every possible effort to conform to nationa
 ..needs more discussion..
 
 `
-    },					
-    {
-        title: "Financial Feed-In and Token Value",
-        code: "ReStan",
-        chapterHeading: true,
-        fullText: `
+  },
+  {
+    title: 'Financial Feed-In and Token Value',
+    code: 'ReStan',
+    chapterHeading: true,
+    fullText: `
 
 &nbsp;
 The Token Price will initially reflect the amount raised in the Initial Coin Offerings. Following on, the ecosystem will have financial (Fiat) feed-in streams to continually grow our economy. The stronger our economy becomes, the means more power to all of the functions we exist to faciliatate in the world. Also allowing us to cover:
@@ -1470,11 +1470,11 @@ There will also be a pool created for the community to use. Members will vote on
 * donating to an external worthy cause
 
 `
-    },
-    {
-        title: "Speculation",
-        code: "Specul",
-        fullText: `
+  },
+  {
+    title: 'Speculation',
+    code: 'Specul',
+    fullText: `
 
 ## 11.1.
 
@@ -1485,11 +1485,11 @@ Speculation on exchanges is the main way the token's value will rise. Many peopl
 Being listed on at least one trust-worthy exchange before our IEO's finish is important to have a simple way users can begin trading the token immediately.
 
 `
-    },
-    {
-        title: "Local Happiness Hubs",
-        code: "Gym",
-        fullText: `
+  },
+  {
+    title: 'Local Happiness Hubs',
+    code: 'Gym',
+    fullText: `
 
 ## 11.2.
 
@@ -1520,11 +1520,11 @@ An example of activities on offer:
 
 
 `
-    },
-    {
-        title: "Shop",
-        code: "Shop",
-        fullText: `
+  },
+  {
+    title: 'Shop',
+    code: 'Shop',
+    fullText: `
 
 ## 11.3.
 
@@ -1536,11 +1536,11 @@ The platform includes a store where community members submit designs for, and pu
 See section 7.4. for more details.
 
 `
-    },
-    {
-        title: "Corporate Social Responsibility",
-        code: "CoSoRe",
-        fullText: `
+  },
+  {
+    title: 'Corporate Social Responsibility',
+    code: 'CoSoRe',
+    fullText: `
 
 ## 11.4.
 
@@ -1555,11 +1555,11 @@ If the project is realised in the physical world (as most will be) experiences o
 Running CSR through our platform creates an entire story of their for them, their stakeholders and staff to follow. This story also leaves a permanent trail for those curious or grateful in the local communities affected by the project they funded. If good-will or marketing was their aim, the story we create has a long legacy. This CSR route has the potential to be lucrative, boosting the tokens price and market value rapidly. Its also providing a regular boost for us to reach, engage with local communities, and further achieve our mission. 
 
 `
-    },
-    {
-        title: "Kindness Auction",
-        code: "KinAuc",
-        fullText: `
+  },
+  {
+    title: 'Kindness Auction',
+    code: 'KinAuc',
+    fullText: `
 
 ## 11.5.
 
@@ -1569,11 +1569,11 @@ Running CSR through our platform creates an entire story of their for them, thei
 A fun little project we've had good success over the years in the Focallocal Community, even when just a few people in one city joined in. Unleashed globally it will be a real powerhouse for fund-raising, and one which everyone who joins in receives something great in return.
 
 `
-    },
-    {
-        title: "Community Projects",
-        code: "ComPro",
-        fullText: `
+  },
+  {
+    title: 'Community Projects',
+    code: 'ComPro',
+    fullText: `
 
 ## 11.6.
 
@@ -1582,22 +1582,22 @@ A fun little project we've had good success over the years in the Focallocal Com
 The platform also allows for community members to suggest and create their own creative fund-raising projects, as long as they also fit with our [Community Values](https://publichappinessmovement.com/t/topic/2844) statement. This doesn't mean standard fund-raising like asking for sponsors to do a sky-dive. It's for creative innovative projects which also bring happiness directly while raising funds, for example [Queue Pimping](https://publichappinessmovement.com/docuss/build). Keeping balance to prevent fund-raising projects taking too much energy away from community projects is a challenge which the early community will be presented with as it grapples with decentralised decision making and taking on ownership for the direction we grow in.
 
 `
-    },
-    {
-        title: "Automated Token Distribution Matrix",
-        code: "AuToDi",
-        chapterHeading: true,
-        fullText: `
+  },
+  {
+    title: 'Automated Token Distribution Matrix',
+    code: 'AuToDi',
+    chapterHeading: true,
+    fullText: `
 
 &nbsp;
 The platform automates rewards for completing tasks which work towards maintaining and improving the operation of our ecosystem. Advancing our Movement's mission of creating more friendliness, peace and happiness in this world. This requires the building of the Automated Token Distribution Matrix outlined below.
 
 `
-    },
-    {
-        title: "Weighted Mining",
-        code: "WeiMin",
-        fullText: `
+  },
+  {
+    title: 'Weighted Mining',
+    code: 'WeiMin',
+    fullText: `
 
 ## 12.1.
 
@@ -1638,11 +1638,11 @@ By backdating the tokens awarded based on a members previous contributions to hu
 
 
 `
-    },
-    {
-        title: "Hard Cap",
-        code: "HarCap",
-        fullText: `
+  },
+  {
+    title: 'Hard Cap',
+    code: 'HarCap',
+    fullText: `
 
 ## 12.2.
 
@@ -1654,11 +1654,11 @@ For example, 80% of all tokens in that period might be reasonable when there are
 The percentage earned from each sub-activity when coordinating large scale activities and projects is subject to a different hard cap limit for tokens earned, as it could feasibly be a significant percent of all work ecosystem-wide, when a coordinated global activity occurs. Any obscenely large reward will likely be flagged for discussion by the community to check for abuse, or corrections needed in our systems. 
 
 `
-    },
-    {
-        title: "Adjusting the Balancing",
-        code: "AdthBa",
-        fullText: `
+  },
+  {
+    title: 'Adjusting the Balancing',
+    code: 'AdthBa',
+    fullText: `
 
 ## 12.3.
 
@@ -1666,11 +1666,11 @@ The percentage earned from each sub-activity when coordinating large scale activ
 The automated weighting and distribution system will apply a set level to the above metrics. These levels will be adjusted through community voting to find the most effective operating balances for maximising our network effect. These will constantly need adjusting during the Movements growth and evolution. 
 
 `
-    },
-    {
-        title: "Token Release",
-        code: "TokRel",
-        fullText: `
+  },
+  {
+    title: 'Token Release',
+    code: 'TokRel',
+    fullText: `
 
 ## 12.4.
 
@@ -1680,12 +1680,12 @@ Initially a pre-set amount of tokens will be set to release each week for 100 ye
 This weekly token release makes our currency deflationary, which will be offset by increases in value.
 
 `
- 
-    },
-    {
-        title: "Token Distribution",
-        code: "TokDis",
-        fullText: `
+
+  },
+  {
+    title: 'Token Distribution',
+    code: 'TokDis',
+    fullText: `
 
 ## 12.5. 
 
@@ -1707,11 +1707,11 @@ The mining total will include a small amount that will be ‘back-paid’ to not
 Average release rate: 265753 tokens per day
 
 `
-    },
-    {
-        title: "Further Matrix Considerations",
-        code: "FuMaCo",
-        fullText: ` 
+  },
+  {
+    title: 'Further Matrix Considerations',
+    code: 'FuMaCo',
+    fullText: ` 
 
 ## 12.6.
 
@@ -1723,23 +1723,23 @@ The number of actions per week by a user, plotted between 1, to a high of 400. W
 Estimating the value of returns is speculative at this point. The core team, and later the community itself, will adjust the points ‘mined’ for each action. As governance progresses on the path to decentralisation, these charts will be interactive and hosted on the platform as a useful visual guide to voting on increasing/decreasing these data points, and maximising their impact in advancing and maintaining the mission.
 
 `
-    },
-    {
-        title: "Key Supporters and Team",
-        code: "Team",
-        chapterHeading: true,
-        fullText: ` 
+  },
+  {
+    title: 'Key Supporters and Team',
+    code: 'Team',
+    chapterHeading: true,
+    fullText: ` 
 &nbsp;
 Those active in contributing value to the early stages have the opportunity to show their skills and passion for the project, to make the fixed roles and advisor positions theirs, and become part of the core team. Key skills the project is lacking at the IEO stage will be outsourced to industry experts. If you'd like to be in those positions you can introduce yourself here, or just dive into contributing to the build and applying your skills to improve this whitepaper.
 
 Much of the essential skills needed to build a successful blockchain project and community will come via members Microvolunteering in the Action Center, where people will be rewarded directly with our tokens. 
 
 `
-    },
-    {
-        title: "Current Team Members",
-        code: "CuTeMe",
-        fullText: ` 
+  },
+  {
+    title: 'Current Team Members',
+    code: 'CuTeMe',
+    fullText: ` 
 
 ## 13.1.
 
@@ -1796,11 +1796,11 @@ Producer/Director at Palm Tree Productions
 
 
 `
-    },
-    {
-        title: "Positions Open",
-        code: "PosOpe",
-        fullText: ` 
+  },
+  {
+    title: 'Positions Open',
+    code: 'PosOpe',
+    fullText: ` 
 
 ## 13.2.
 
@@ -1836,11 +1836,11 @@ Producer/Director at Palm Tree Productions
 Roles will be for a pre-agreed period to invigorate and lead the community as it grows. Once the community reaches maturation the above roles may be decentralised to member the community, rewarded by tokens to carry out these roles. It is hoped that experts involved will choose to remain actively involved in the community they were integral in building, due to their previous contributions they will certainly have earned top level user status.
 
 `
-    },
-    {
-        title: "Remuneration",
-        code: "Remune",
-        fullText: `
+  },
+  {
+    title: 'Remuneration',
+    code: 'Remune',
+    fullText: `
 
 ## 13.3.
 
@@ -1848,11 +1848,11 @@ Roles will be for a pre-agreed period to invigorate and lead the community as it
 The team of experts will be remunerated in our token, with a contracted buy-back at a set rate - if they choose to. This keeps everyone in the ecosystem being rewarded in the same way, amongst other benefits mentioned earlier. Giving the experts the choice to be paid in cash, or to keep a percentage, or all, in our token.
 
 `
-    },
-    {
-        title: "Facilities",
-        code: "Facili",
-        fullText: `
+  },
+  {
+    title: 'Facilities',
+    code: 'Facili',
+    fullText: `
 
 ## 13.4.
 
@@ -1862,12 +1862,12 @@ The team will either operate remotely using our online hub, or work from the roa
 Not requiring fixed office space will enable us to keep overheads low, adding flexibility and the ability to weather crisis, alongside a sense of adventure matching our global ambitions.
 
 `
-    },
-    { title: "Platform Technicals", code: "PlaTec", fullText: ` `, chapterHeading: true },
-    {
-        title: "Crypto Linking Bridges",
-        code: "CrLiBr",
-        fullText: `
+  },
+  { title: 'Platform Technicals', code: 'PlaTec', fullText: ` `, chapterHeading: true },
+  {
+    title: 'Crypto Linking Bridges',
+    code: 'CrLiBr',
+    fullText: `
 
 ## 14.1.
 
@@ -1877,11 +1877,11 @@ Public Happiness Activities: Meteor Js/React to REST API
 Projects (Missions): Currently Web-hooks from Trello (or Wekan). This system is scheduled for redesign
 
 `
-    },
-    {
-        title: "Leafletjs vs Google Maps API",
-        code: "LevsGo",
-        fullText: `
+  },
+  {
+    title: 'Leafletjs vs Google Maps API',
+    code: 'LevsGo',
+    fullText: `
 
 ## 14.2.
 **Leaflet.js vs Google Maps API** 
@@ -1889,11 +1889,11 @@ Projects (Missions): Currently Web-hooks from Trello (or Wekan). This system is 
 **The Public Happiness Gatherings system is currently built using MeteorJS, ReactJS and [Leaflet.js](http://leafletjs.com/). The map itself is designed by members of our previous (non-incentivised) volunteer community and links to Google's Maps API. The Public Happiness Gatherings system was built to handle 25,000 users each day, giving us a lot of room to develop before we need to assess changes.
 
 `
-    },
-    {
-        title: "Switching the Platform to the Dapps Network",
-        code: "SwthPl",
-        fullText: `
+  },
+  {
+    title: 'Switching the Platform to the Dapps Network',
+    code: 'SwthPl',
+    fullText: `
 
 ## 14.4.
 **Switching the Platform to the Dapps Network**
@@ -1904,21 +1904,21 @@ The Map (Public Happiness Gatherings) and the Projects/Micro-volunteering (Missi
 This switch is not guaranteed at this point, but it is a logical step and will be reviewed by the team and community at predetermined steps during the roadmap.
 
 `
-    },
-    {
-        title: "Doomsday Protocol",
-        code: "DooPro",
-        chapterHeading: true,
-        fullText: ` 
+  },
+  {
+    title: 'Doomsday Protocol',
+    code: 'DooPro',
+    chapterHeading: true,
+    fullText: ` 
 &nbsp;
 The Crypto world is highly volatile at this point in time which will lead many projects to overstretch themselves, ending up in trouble if an event outside of their control hits. Here we consider how to protect our ecosystem from certain scenarios.
 
 `
-    },
-    {
-        title: "Huge Market Crash",
-        code: "HuMaCr",
-        fullText: `
+  },
+  {
+    title: 'Huge Market Crash',
+    code: 'HuMaCr',
+    fullText: `
 
 ## 15.1.
 
@@ -1936,11 +1936,11 @@ Public Happiness Token would basically become fancy internet points, with the ad
 As long as there is a positive community behind it the Token cannot fail. It will continue to be a positive force in this world regardless of Market conditions.
 
 `
-    },
-    {
-        title: "Quantum Security",
-        code: "QuaSec",
-        fullText: ` 
+  },
+  {
+    title: 'Quantum Security',
+    code: 'QuaSec',
+    fullText: ` 
 
 ## 15.2.
 
@@ -1950,11 +1950,11 @@ To some extent we are tied to advancements in the Ethereum network. There are op
 On our end our entire system is being reviewed by quantum security experts. We will also host bounties and bounty hunting contests for anyone able to find flaws and vulnerabilities in our platform, so they can be identified and fixed. As much of the platform as possible will be open source, to benefit from many eyes searching for and flagging vulnerabilities.
 
 `
-    },
-    {
-        title: "Massive Hack",
-        code: "MasHac",
-        fullText: `
+  },
+  {
+    title: 'Massive Hack',
+    code: 'MasHac',
+    fullText: `
 
 ## 15.3.
 
@@ -1970,11 +1970,11 @@ Project contributions in Wekan/Trello can be backed up off-site or recovered fro
 The implications of this option are obviously wide ranging and it would be an absolute last resort in a disaster mitigation strategy, with the case explained to the community before being voted on.
 
 `
-    },
-    {
-        title: "Zombie Apocalypse",
-        code: "ZomApo",
-        fullText: `
+  },
+  {
+    title: 'Zombie Apocalypse',
+    code: 'ZomApo',
+    fullText: `
 
 ## 15.4.
 
@@ -1984,12 +1984,12 @@ If the inevitable finally occurs, we will convert the Public Happiness Bus into 
 If the community has decided on having a fixed central base, for example renovating an abandoned village, it will be built using the best off-grid technology today’s society has to offer - and also be zombie-proofed.
 
 `
-    },
-    {
-        title: "Giving Back to Open-source",
-        code: "GiBato",
-        chapterHeading: true,
-        fullText: ` 
+  },
+  {
+    title: 'Giving Back to Open-source',
+    code: 'GiBato',
+    chapterHeading: true,
+    fullText: ` 
 &nbsp;
 2% of all funds we raise from the IEO will be donated to support the Open-source ecosystem that drives so much of the innovation we see in the world
 
@@ -2012,12 +2012,12 @@ If the community has decided on having a fixed central base, for example renovat
 The vote results will be non-binding, to allow mitigation against any uncovered attempts to cheat the vote by outside groups. The platform and community will not yet be ready to protect itself from coordinated subversion efforts, without spending excess amounts of energy on securing the voting. Instead it can be used as an early pressure test on the integrity of certain areas of the platform, as this type of online contest invariably draws efforts to undermine fair voting.
 
 `
-    },
-   {
-        title: "Timeline",
-        code: "Timeli",
-        chapterHeading: true,
-        fullText: ` 
+  },
+  {
+    title: 'Timeline',
+    code: 'Timeli',
+    chapterHeading: true,
+    fullText: ` 
 ## 17
 * 1st draft of the White Paper created by founder
 * Experts invited to review and advise on improvements
@@ -2036,12 +2036,12 @@ Still to plan:
 * Open-source map replaces Google based map (if required)
 * blockchain on-ramp added into it platform to guide community members to a better understanding of blockchain and crypto economics. Fulfilling our mission of taking crypto to people on the streets.
 `
-    },
-    {
-        title: "Questions to be Resolved",
-        code: "Qutobe",
-        chapterHeading: true,
-        fullText: `
+  },
+  {
+    title: 'Questions to be Resolved',
+    code: 'Qutobe',
+    chapterHeading: true,
+    fullText: `
 ## 18
 * Open-sourcing. The vast majority of the system will be open-sourced 6 months after launch. We need to determine any sections which are too sensitive to open-source.
 * Getting listed on centralised and decentralised exchanges. The token will always have a low value if people can’t trade it so we’ll need to be listed on a few before the IEO finishes
@@ -2057,5 +2057,5 @@ Next Steps:
 * Full review of platform UX/UI and tech stack, looking quick ways to make large usability improvements, improving access and scalability.
 Thank you for reading, have a wonderful day!
  `
-    }
-];
+  }
+]

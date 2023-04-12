@@ -9,6 +9,7 @@ deployment.tar
 .idea/
 *.tar
 travis-ssh-key
+.DS_Store
 
 node_modules
 *.log

@@ -15,15 +15,15 @@ class Find extends Component {
     search: ''
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this._isMounted = true
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this._isMounted = false
   }
 
-  render() {
+  render () {
     const {
       error,
       isGettingLocation,
@@ -58,21 +58,21 @@ class Find extends Component {
 
         <Link to="https://publichappinessmovement.com/docuss/m_gather" target="_top" className="link">
           <InputGroup>
-              <Input
-                id='find'
-                type='text'
-                value={search}
-                invalid={error}
-                placeholder={form.local_search.text_input.placeholder}
-                onChange={this.handleSearch}
-                onFocus={this.removeError}
-                onKeyPress={this.handleKeyPress}
-              />
-              <InputGroupAddon addonType='append'>
-                <Button onClick={this.findBySearch} disabled={isGettingLocation}>
-                  {form.local_search.button.text}
-                </Button>
-              </InputGroupAddon>
+            <Input
+              id='find'
+              type='text'
+              value={search}
+              invalid={error}
+              placeholder={form.local_search.text_input.placeholder}
+              onChange={this.handleSearch}
+              onFocus={this.removeError}
+              onKeyPress={this.handleKeyPress}
+            />
+            <InputGroupAddon addonType='append'>
+              <Button onClick={this.findBySearch} disabled={isGettingLocation}>
+                {form.local_search.button.text}
+              </Button>
+            </InputGroupAddon>
           </InputGroup>
         </Link>
 
@@ -122,14 +122,12 @@ class Find extends Component {
   removeError = () => this.setState({ error: false })
 
   handleKeyPress = (event) => {
-    if (event.key === "Enter") this.findBySearch()
+    if (event.key === 'Enter') this.findBySearch()
   }
 
   globalSearch = () => {
 
   }
 }
-
-
 
 export default Find

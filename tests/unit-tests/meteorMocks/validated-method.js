@@ -1,8 +1,8 @@
 const Roles = {
-  call: jest.fn(),
+  call: jest.fn()
 }
 
 export {
-  Roles as default,
+  Roles as default
 
 }

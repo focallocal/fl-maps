@@ -1,18 +1,18 @@
-var secret = require('./mup-secrets.json');
+var secret = require('./mup-secrets.json')
 
 module.exports = {
   servers: {
     one: {
       host: '178.62.233.44',
       username: 'deploy',
-      pem: './travis-ssh-key',
+      pem: './travis-ssh-key'
     }
   },
   app: {
     name: 'brightertomorrowmap',
     path: '../../.',
     docker: {
-      image: 'abernix/meteord:node-8.4.0-base'
+      image: 'zodern/meteor:latest'
     },
     servers: {
       one: {}
@@ -22,7 +22,7 @@ module.exports = {
     },
     env: {
       ROOT_URL: 'https://fl-maps.brightertomorrowmap.com',
-      MONGO_URL: secret.mongo_url,
+      MONGO_URL: secret.mongo_url
     }
   },
   proxy: {
@@ -31,4 +31,4 @@ module.exports = {
       letsEncryptEmail: 'contact@focallocal.org'
     }
   }
-};
+}

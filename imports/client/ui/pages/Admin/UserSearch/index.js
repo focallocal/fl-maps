@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import {Form, FormGroup, Input, Button} from 'reactstrap'
+import React, { Component } from 'react'
+import { Form, FormGroup, Input, Button } from 'reactstrap'
 class UserSearch extends Component {
-  constructor(props) {
-    super(props);
-    this.userToSearch = React.createRef();
+  constructor (props) {
+    super(props)
+    this.userToSearch = React.createRef()
   }
 
   searchForUser = (e) => {
-    e.preventDefault();
-    this.props.searchForUser(this.userToSearch.current.value);
+    e.preventDefault()
+    this.props.searchForUser(this.userToSearch.current.value)
   }
 
-  render() { 
-    return ( 
+  render () {
+    return (
       <div className="search-container">
         <Form onSubmit={this.searchForUser} action="">
           <FormGroup>
@@ -24,5 +24,5 @@ class UserSearch extends Component {
     )
   }
 }
- 
-export default UserSearch;
+
+export default UserSearch
