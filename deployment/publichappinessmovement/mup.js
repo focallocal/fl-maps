@@ -1,4 +1,4 @@
-var secret = require('./mup-secrets.enc.json')
+var secret = require('./mup-secrets.json')
 
 module.exports = {
   servers: {
