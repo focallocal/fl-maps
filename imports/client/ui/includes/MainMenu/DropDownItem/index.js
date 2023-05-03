@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { NavItem, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 class DropDownItem extends Component {
   state = {
     dropdownOpen: false
@@ -24,10 +26,10 @@ class DropDownItem extends Component {
 
           {/* Item (Toggler) */}
           <DropdownToggle nav>
-            <i className={item.icon}></i>
+            <FontAwesomeIcon icon={item.icon} className='fas' />
             <div>
               {item.title}
-              <i className='fas fa-caret-down inline' />
+              <FontAwesomeIcon icon="fas fa-caret-down" className='fas fa-caret-down inline' />
             </div>
           </DropdownToggle>
 

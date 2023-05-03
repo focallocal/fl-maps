@@ -5,12 +5,19 @@ import App from '/imports/client'
 
 import '/imports/client/stylesheets/main.scss'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserCircle, faCaretDown, faBars, faHome, faCircleInfo, 
+  faShoppingCart, faWalking, faSun, faStar} from '@fortawesome/free-solid-svg-icons'
+
 Meteor.startup(() => {
   ensureSettingsFile()
   determineMapType()
   loadGoogleMaps()
 
   Meteor.subscribe('users.user') // subscribe to updated publication with custom fields
+
+  library.add(faUserCircle, faCaretDown, faBars, faHome, faCircleInfo, 
+    faShoppingCart, faWalking, faSun, faStar)
 
   // <div id='root' style='opacity: 0;'></div>
   const rootDiv = document.createElement('div')

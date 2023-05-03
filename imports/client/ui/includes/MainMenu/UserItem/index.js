@@ -16,7 +16,7 @@ const UserItem = ({ user }) => {
   }
   const item = {
     title: '',
-    icon: 'fas fa-user-circle user',
+    icon: 'fas fa-user-circle',
     content: i18n.MainMenu.userLink[userStatus]
   }
 

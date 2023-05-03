@@ -21,6 +21,7 @@ $nav-item-hover-transition: color .15s ease;
       position: relative;
       display: flex;
       flex-flow: column;
+      justify-content: space-between;
       height: 100%;
       color: #fff !important;
       transition: $nav-item-hover-transition;
@@ -51,7 +52,6 @@ $nav-item-hover-transition: color .15s ease;
 
       & > * { // Link children (title and icon)
         position: relative;
-        flex: 1;
       }
 
       & > div { // Link title
@@ -65,8 +65,8 @@ $nav-item-hover-transition: color .15s ease;
 
       .fas { // Icons
         position: relative;
+
         top: 4px;
-        display: block;
         margin-bottom: 2px;
         text-align: center;
         font-size: 1.3em;
