@@ -10,6 +10,7 @@ import UserItem from './UserItem'
 import Logo from './Logo'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class MainMenu extends Component {
   state = {
@@ -28,7 +29,7 @@ class MainMenu extends Component {
           {/* Left Links */}
           <Logo />
           <NavItem id="sidebar-toggle" onClick={this.toggleSidebar}>
-            <i className="fas fa-bars" />
+            <FontAwesomeIcon icon="fas fa-bars" className='fas' />
           </NavItem>
 
           {/* Right Links  */}

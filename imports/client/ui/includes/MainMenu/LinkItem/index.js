@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { NavItem, NavLink } from 'reactstrap'
 import { NavLink as RouterNavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const LinkItem = ({ item, onClick }) => {
   // Distingiush between link and route-link
@@ -10,14 +11,14 @@ const LinkItem = ({ item, onClick }) => {
   return isRouteLink ? (
     <NavItem onClick={onClick}>
       <RouterNavLink to={item.route} exact className='nav-link'>
-        <i className={item.icon}></i>
+        <FontAwesomeIcon icon={item.icon} className='fas'/>
         <div>{item.title}</div>
       </RouterNavLink>
     </NavItem>
-  )
-    : <NavItem>
+  ) : 
+    <NavItem>
       <NavLink href={item.link} target={item.targetSelf ? '_self' : '_blank'}>
-        <i className={item.icon}></i>
+        <FontAwesomeIcon icon={item.icon} className='fas'/>
         <div>{item.title}</div>
       </NavLink>
     </NavItem>

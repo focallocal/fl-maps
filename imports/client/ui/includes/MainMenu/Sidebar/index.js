@@ -6,6 +6,7 @@ import Category from './Category'
 import LinkItem from '../LinkItem'
 import Logo from '../Logo'
 import './styles.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Sidebar extends Component {
   state = {
@@ -36,7 +37,7 @@ class Sidebar extends Component {
       <Fragment>
         <Swipeable id="sidebar" className={className} onSwipedLeft={toggle}>
           <header>
-            <i className="fas fa-bars" onClick={toggle} />
+            <FontAwesomeIcon icon="fas fa-bars" className='fas' onClick={toggle}/>
             <Logo sidebar onClick={toggle} />
           </header>
 
