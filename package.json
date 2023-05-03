@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/googlemaps": "^3.30.16",
     "@types/markerclustererplus": "^2.1.33",
     "@types/react": "^16.7.18",
@@ -51,10 +54,10 @@
     "react-swipeable": "^4.3.0",
     "reactstrap": "^6.0.1",
     "remarkable": "^1.7.1",
-    "simpl-schema": "^1.5.0",
-    "sass-loader": "^7.2.0",
     "sass": "^1.22.10",
-    "uniforms": "^1.30.0",
+    "sass-loader": "^7.2.0",
+    "simpl-schema": "^1.5.0",
+    "uniforms": "^1.31.1",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
