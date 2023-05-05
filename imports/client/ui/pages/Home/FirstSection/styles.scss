@@ -72,13 +72,15 @@
     text-align: center;
   }
 
-  .link:hover {
+  .link {
     text-decoration: none;
+  }
+
+  .link:hover {
     cursor: pointer;
   }
 
   .link input:hover {
-    text-decoration: none;
     cursor: pointer;
   }
 }

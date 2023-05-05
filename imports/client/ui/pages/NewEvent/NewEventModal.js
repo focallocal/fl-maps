@@ -4,12 +4,11 @@ import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { EventsSchema } from '/imports/both/collections/events'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Alert } from 'reactstrap'
-import FormWizard from './FormWizard'
+// import FormWizard from './FormWizard'
 import i18n from '/imports/both/i18n/en'
 import qs from 'query-string'
-import cloneDeep from 'clone-deep'
+// import cloneDeep from 'clone-deep'
 import './styles.scss'
-import websiteJSON from '../../../../../public/dcs-website.json'
 import { routeMatcher } from '../../app'
 import { comToPlugin } from 'dcs-client'
 
@@ -75,6 +74,7 @@ class NewEventModal extends Component {
     if (this.state.isRedirect === true) {
       return <Redirect to='/map' />
     }
+
     const {
       currentStep,
       editMode,
@@ -95,10 +95,10 @@ class NewEventModal extends Component {
           {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
         <ModalBody>
-          <FormWizard
+          {/* <FormWizard
             currentStep={currentStep}
             passFormRefToParent={this.getRef}
-            editMode={editMode} />
+            editMode={editMode} /> */}
         </ModalBody>
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
           Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>)
@@ -224,7 +224,7 @@ class NewEventModal extends Component {
 
     // toggleModal() closes modal, but it is not called after form submits
     // copy unfinished form to global window and check for it inside FormWizard
-    window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
+    // window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
   }
 
   toggleErrors = () => this.setState({ hasErrors: false })
