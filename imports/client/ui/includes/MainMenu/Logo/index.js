@@ -21,7 +21,7 @@ const Logo = ({ sidebar, onClick }) => {
 
   return (
     <NavbarBrand id='brand-logo' tag='div' onClick={onClick}>
-      <NavLink to='/' exact>
+      <NavLink to='/' exact style={{ textDecoration: 'none' }}>
         {
           window.__mapType === 'gatherings'
             ? menuLogo

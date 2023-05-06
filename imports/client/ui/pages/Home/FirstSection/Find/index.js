@@ -47,13 +47,11 @@ class Find extends Component {
             <Input
               placeholder={form.global_search.text_input.placeholder}
             />
-            <InputGroupAddon addonType='append'>
-              <Button>
-                {form.global_search.button.text}
-              </Button>
-            </InputGroupAddon>
+            <Button>
+              {form.global_search.button.text}
+            </Button>
           </InputGroup>
-          {error && <div className='error-msg'>Couldn't find anything..</div>}
+          {error && <div className='error-msg'>Could not find anything..</div>}
         </Link>
 
         <Link to="https://publichappinessmovement.com/docuss/m_gather" target="_top" className="link">
@@ -68,11 +66,9 @@ class Find extends Component {
               onFocus={this.removeError}
               onKeyPress={this.handleKeyPress}
             />
-            <InputGroupAddon addonType='append'>
-              <Button onClick={this.findBySearch} disabled={isGettingLocation}>
-                {form.local_search.button.text}
-              </Button>
-            </InputGroupAddon>
+            <Button onClick={this.findBySearch} disabled={isGettingLocation}>
+              {form.local_search.button.text}
+            </Button>
           </InputGroup>
         </Link>
 
