@@ -12,7 +12,7 @@ module.exports = {
     name: 'publichappinessmovement',
     path: '../../.',
     docker: {
-      image: 'zodern/meteor:latest'
+      image: 'zodern/meteor:root'
     },
     servers: {
       one: {}
