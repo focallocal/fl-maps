@@ -3,7 +3,6 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
-  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "mocha": true,
@@ -11,12 +10,10 @@
   },
   "plugins": [
     "react",
-    "import",
-    "babel"
+    "import"
   ],
   "rules": {
     "react/prop-types": 0,
-    "babel/semi": 0,
     "no-return-assign": 0,
     "no-multi-spaces": ["error", { "exceptions": { "ImportDeclaration": true, "Property": true } }],
     "camelcase": 0,
@@ -24,10 +21,10 @@
     "indent": ["error", 2, {
       "ignoredNodes": ["TemplateLiteral"]
     }]
-  },
-  "globals": {
-    "google": 1,
-    "NProgress": 1,
-    "jest": 1
   }
+  // "globals": {
+  //   "google": 1,
+  //   "NProgress": 1,
+  //   "jest": 1
+  // }
 }

@@ -1,7 +1,7 @@
 // NPM Libraries
-import { hot } from 'react-hot-loader'
 import { Meteor } from 'meteor/meteor'
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment, Suspense } from 'react'
+import { lazy } from 'react'
 import { Router, Route, Redirect } from 'react-router-dom'
 import history from '../utils/history'
 import qs from 'query-string'
@@ -17,7 +17,6 @@ import Faq from './pages/Faq'
 import Partners from './pages/Partners'
 import About from './pages/About'
 import Map_ from './pages/Map'
-import NewEventLoadable from './pages/NewEvent/loadable'
 import CongratsModal from './pages/NewEvent/CongratsModal'
 import Page from './pages/Page'
 import { Error404 } from './pages/Errors'
@@ -38,6 +37,8 @@ import websiteJSON from '../../../public/dcs-website.json'
 
 // Styles and Other
 import './styles.scss'
+import Loading from './pages/NewEvent/Loading.js'
+const NewEventModal = lazy(() => import('./pages/NewEvent/NewEventModal.js'));
 
 // ------------------------------------------------------------------------------
 
@@ -128,7 +129,9 @@ class App extends Component {
     console.log('passed in loc:\n', location)
     console.log('passed in hist:\n', history)
     return (
-      <NewEventLoadable isOpen={isOpen} location={location} history={history} />
+      <Suspense fallback={<Loading />}>
+        <NewEventModal isOpen={isOpen} location={location} history={history} />
+      </Suspense>
     )
   };
 
@@ -153,7 +156,7 @@ class App extends Component {
   }
 }
 
-export default hot(module)(App)
+export default App;
 
 // ------------------------------------------------------------------------------
 

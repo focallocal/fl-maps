@@ -12,7 +12,7 @@ module.exports = {
     name: 'brightertomorrowmap',
     path: '../../.',
     docker: {
-      image: 'zodern/meteor:latest'
+      image: 'zodern/meteor:root'
     },
     servers: {
       one: {}
