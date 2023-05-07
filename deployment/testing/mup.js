@@ -10,7 +10,7 @@ module.exports = {
     name: 'testing-happiness.ga',
     path: '../../.',
     docker: {
-      image: 'zodern/meteor:latest'
+      image: 'zodern/meteor:root'
     },
     servers: {
       one: {}
