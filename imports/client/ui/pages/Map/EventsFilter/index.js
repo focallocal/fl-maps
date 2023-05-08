@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ListGroup, ListGroupItem, CustomInput } from 'reactstrap'
+import { ListGroup, ListGroupItem } from 'reactstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 // import categoryTree from '/imports/both/i18n/en/categories.json'
 
 import './styles.scss'
@@ -47,13 +49,14 @@ class FiltersList extends Component {
         <ListGroup>
           <ListGroupItem className='title'>
             <div><span>{i18n.Map.filtersTitle}</span></div>
-            <i className='fa fa-times close' onClick={toggleFiltersList}/>
-            <CustomInput
+            {/* <i className='fa fa-times close' onClick={toggleFiltersList}/> */}
+            <FontAwesomeIcon icon="fas fa-times" className='close' onClick={toggleFiltersList} />
+            {/* <CustomInput
               id='toggle-all'
               type='checkbox'
               checked={checkAll}
               onChange={this.toggleAllFilters}
-            />
+            /> */}
           </ListGroupItem>
           <div className='categories-items'>
             {possibleCategories.map((category, index) => {
@@ -67,14 +70,14 @@ class FiltersList extends Component {
                     display: category.hidden === true ? 'none' : 'block'
                   }}
                 >
-                  <CustomInput
+                  {/* <CustomInput
                     id={'filter-' + index}
                     type='checkbox'
                     label={category.name}
                     checked={checkedFilters[index].checked}
                     onChange={this.handleFilterChange}
                     onClick={category.parent === true ? this.expandCategory : null}
-                  />
+                  /> */}
                   { category.url &&
                     <a href={category.url} target='_blank' rel="external noreferrer" aria-label='Go to Page'>
                       <i className="far fa-question-circle"></i>
