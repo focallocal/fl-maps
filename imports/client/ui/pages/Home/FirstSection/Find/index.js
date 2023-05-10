@@ -39,8 +39,6 @@ class Find extends Component {
       return <Redirect to='/map' />
     }
 
-    console.log("running mode........" + standaloneMode)
-
     return (
       <FormGroup className='find-wrapper'>
         {/*<Label for='find'>{i18n.Home.find_events}</Label>*/}
@@ -164,7 +162,7 @@ const CategoryHrefComponent = () => {
   )
 }
 
-const GatherHrefComponent = () => {
+const GatherHrefComponent = ({search, error, isGettingLocation}) => {
   return (
     <a href='https://publichappinessmovement.com/docuss/m_gather' target="_top" className="link">
       <InputGroup>
