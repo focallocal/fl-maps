@@ -4,8 +4,11 @@ import { FormGroup, Label, InputGroup, InputGroupAddon, Input, Button } from 're
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import getUserPosition, { getCurrentLocation, storeUserLocation } from '/imports/client/utils/location/getUserPosition'
 import i18n from '/imports/both/i18n/en'
+import { inIFrame } from 'dcs-client'
 
 const FirstI18N = i18n.Home.first_section
+const standaloneMode = !inIFrame()
+const { form } = FirstI18N
 
 class Find extends Component {
   state = {
@@ -31,46 +34,27 @@ class Find extends Component {
       search
     } = this.state
 
-    const {
-      form
-    } = FirstI18N
     if (userLocation) {
       window.previousStateOfMap = undefined
       return <Redirect to='/map' />
     }
 
+    console.log("running mode........" + standaloneMode)
+
     return (
       <FormGroup className='find-wrapper'>
         {/*<Label for='find'>{i18n.Home.find_events}</Label>*/}
-        <Link to="https://publichappinessmovement.com/categories" target="_top" className="link">
-          <InputGroup>
-            <Input
-              placeholder={form.global_search.text_input.placeholder}
-            />
-            <Button>
-              {form.global_search.button.text}
-            </Button>
-          </InputGroup>
-          {error && <div className='error-msg'>Could not find anything..</div>}
-        </Link>
+        {
+          standaloneMode ? 
+            <CategoryLinkComponent /> :
+            <CategoryHrefComponent />
+        }
 
-        <Link to="https://publichappinessmovement.com/docuss/m_gather" target="_top" className="link">
-          <InputGroup>
-            <Input
-              id='find'
-              type='text'
-              value={search}
-              invalid={error}
-              placeholder={form.local_search.text_input.placeholder}
-              onChange={this.handleSearch}
-              onFocus={this.removeError}
-              onKeyPress={this.handleKeyPress}
-            />
-            <Button onClick={this.findBySearch} disabled={isGettingLocation}>
-              {form.local_search.button.text}
-            </Button>
-          </InputGroup>
-        </Link>
+        {
+          standaloneMode ?
+            <GatherLinkComponent search={search} error={error} isGettingLocation={isGettingLocation}/> :
+            <GatherHrefComponent search={search} error={error} isGettingLocation={isGettingLocation}/>
+        }
 
         {/*
         <div className='divider'>Or</div>
@@ -124,6 +108,82 @@ class Find extends Component {
   globalSearch = () => {
 
   }
+}
+
+const CategoryLinkComponent = () => {
+  return (
+    <Link to="/" target="_top" className="link">
+      <InputGroup>
+        <Input
+          placeholder={form.global_search.text_input.placeholder}
+        />
+        <Button>
+          {form.global_search.button.text}
+        </Button>
+      </InputGroup>
+      {/* {error && <div className='error-msg'>Could not find anything..</div>} */}
+     </Link>
+  )
+}
+
+const GatherLinkComponent = ({search, error, isGettingLocation}) => {
+  return (
+    <Link to="/map" target="_top" className="link">
+      <InputGroup>
+        <Input
+          id='find'
+          type='text'
+          value={search}
+          invalid={error}
+          placeholder={form.local_search.text_input.placeholder}
+          onChange={this.handleSearch}
+          onFocus={this.removeError}
+          onKeyPress={this.handleKeyPress}
+        />
+        <Button onClick={this.findBySearch} disabled={isGettingLocation}>
+          {form.local_search.button.text}
+        </Button>
+      </InputGroup>
+    </Link>
+  )
+}
+
+const CategoryHrefComponent = () => {
+  return (
+    <a href='https://publichappinessmovement.com/categories' target="_top" className="link">
+      <InputGroup>
+        <Input
+          placeholder={form.global_search.text_input.placeholder}
+        />
+        <Button>
+          {form.global_search.button.text}
+        </Button>
+      </InputGroup>
+      {/* {error && <div className='error-msg'>Could not find anything..</div>} */}
+    </a>
+  )
+}
+
+const GatherHrefComponent = () => {
+  return (
+    <a href='https://publichappinessmovement.com/docuss/m_gather' target="_top" className="link">
+      <InputGroup>
+        <Input
+          id='find'
+          type='text'
+          value={search}
+          invalid={error}
+          placeholder={form.local_search.text_input.placeholder}
+          onChange={this.handleSearch}
+          onFocus={this.removeError}
+          onKeyPress={this.handleKeyPress}
+        />
+        <Button onClick={this.findBySearch} disabled={isGettingLocation}>
+          {form.local_search.button.text}
+        </Button>
+      </InputGroup>
+    </a>
+  )
 }
 
 export default Find
