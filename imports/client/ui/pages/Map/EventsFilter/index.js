@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ListGroup, ListGroupItem } from 'reactstrap'
+import { ListGroup, ListGroupItem, Input, Label } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // import categoryTree from '/imports/both/i18n/en/categories.json'
@@ -51,12 +51,13 @@ class FiltersList extends Component {
             <div><span>{i18n.Map.filtersTitle}</span></div>
             {/* <i className='fa fa-times close' onClick={toggleFiltersList}/> */}
             <FontAwesomeIcon icon="fas fa-times" className='close' onClick={toggleFiltersList} />
-            {/* <CustomInput
-              id='toggle-all'
-              type='checkbox'
+            <Input
+              id="toggle-all"
+              name="check"
+              type="checkbox"
               checked={checkAll}
               onChange={this.toggleAllFilters}
-            /> */}
+            />
           </ListGroupItem>
           <div className='categories-items'>
             {possibleCategories.map((category, index) => {
@@ -70,14 +71,20 @@ class FiltersList extends Component {
                     display: category.hidden === true ? 'none' : 'block'
                   }}
                 >
-                  {/* <CustomInput
+                  <Input
                     id={'filter-' + index}
-                    type='checkbox'
-                    label={category.name}
+                    name="check"
+                    type="checkbox"
                     checked={checkedFilters[index].checked}
                     onChange={this.handleFilterChange}
                     onClick={category.parent === true ? this.expandCategory : null}
-                  /> */}
+                  />
+                  <Label
+                    check
+                    for={'filter-' + index}
+                  >
+                    {category.name}
+                  </Label>
                   { category.url &&
                     <a href={category.url} target='_blank' rel="external noreferrer" aria-label='Go to Page'>
                       <i className="far fa-question-circle"></i>
