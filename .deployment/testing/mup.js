@@ -7,7 +7,7 @@ module.exports = {
     }
   },
   app: {
-    name: 'testing-happiness.ga',
+    name: 'testing.publichappinessmovement.com',
     path: '../../.',
     docker: {
       image: 'zodern/meteor:root'
