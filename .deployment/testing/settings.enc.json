@@ -25,7 +25,7 @@
 	"private": {
 		"google_api_key": "ENC[AES256_GCM,data:H4yUJn0VU5O+bSkuWDGp5131AlHTK12IGpD/1yCAhB6Ou1aa+p22,iv:0sFAs0gRIfB53/X90AJSGZzHdyTp4bwESU3gA9kkh9Y=,tag:lDJqgdPM7kIsWQwZkOV5iA==,type:str]",
 		"discourse": {
-			"url": "https://testing-happiness.ga/",
+			"url": "https://testing.publichappinessmovement.com",
 			"secret": ""
 		}
 	},
