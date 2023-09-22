@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { Container } from 'reactstrap'
 
-import Find from './Find'
+// import Find from './Find'
 
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
