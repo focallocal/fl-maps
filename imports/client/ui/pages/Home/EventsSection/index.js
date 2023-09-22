@@ -19,15 +19,15 @@ import i18n from '/imports/both/i18n/en'
 import ContributorsSection from '../ContributorsSection'
 import './styles.scss'
 
-const MovementI18N = i18n.Home.movement_section
+const EventsI18N = i18n.Home.events_section
 const { Home } = i18n
 
-class MovementSection extends Component {
+class EventsSection extends Component {
   render (props) {
     const {
       title,
       content
-    } = MovementI18N
+    } = EventsI18N
 
     const {
       items
@@ -41,7 +41,7 @@ class MovementSection extends Component {
     </Button>
 
     return (
-      <section id='movement_section'>
+      <section id='events_section'>
         <Container>
           <div className='title'>{title}</div>
           <Row className="items justify-content-center">
@@ -54,8 +54,8 @@ class MovementSection extends Component {
     )
   }
 }
-MovementSection.propTypes = {
+EventsSection.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired
 }
 
-export default MovementSection
+export default EventsSection
