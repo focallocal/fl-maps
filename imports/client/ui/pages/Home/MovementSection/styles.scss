@@ -1,7 +1,7 @@
 @import '{}/imports/client/stylesheets/variables.scss';
 
 #movement_section {
-  margin-top: -5rem;
+  margin-top: -25rem;
   padding: 40px;
   // background: $gray-lighter;
   text-align: left;
@@ -17,6 +17,7 @@
   }
   .item-text {
     font-size: 1.3em;
+    font-weight: bolder;
   }
 
   // Text Color
@@ -25,6 +26,17 @@
   }
   .item{
     margin-bottom: 24px;
+  }
+
+  .subItems {
+    .subItemIitle {
+      font-weight: bolder;
+      font-size: 1rem;
+    }
+    .value {
+      color: green;
+      font-weight: bold;
+    }
   }
 
   .sign-and-post {
@@ -47,23 +59,9 @@
     text-align: center;
   }
 
-  .images {
-    //-webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
-    //-moz-transform: scale(0.5); /* FF3.5+ */
-    //-ms-transform: scale(0.5); /* IE9 */
-    //-o-transform: scale(0.5); /* Opera 10.5+ */
-    //transform: scale(0.5);
-    /* IE6–IE9 */
-    //filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.9999619230641713, M12=-0.008726535498373935, M21=0.008726535498373935, M22=0.9999619230641713,SizingMethod='auto expand');
-    float: left;
-    margin-right: 1rem;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
   @media screen and (max-width: 850px) {
     .title {
-      font-size: 1.4em;
+      font-size: 1.8em;
       line-height: 1.4em;
       margin-left: 0;
       text-align: left;
@@ -77,9 +75,9 @@
       // flex-flow: column;
 
       &>div {
-        /*flex: 1;
-        max-width: 480px;
-        margin: 0 1em;*/
+        // flex: 1;
+        // max-width: 480px;
+        // margin: 0 1em;
         margin-bottom: 24px;
       }
     }
