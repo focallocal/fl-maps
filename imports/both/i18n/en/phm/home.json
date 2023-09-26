@@ -153,7 +153,7 @@
           "title": "#About PHM",
           "url": "https://publichappinessmovement.com/docuss/wp_intro",
           "image": "/images/Public-happiness-movement-new-banner-01.jpg",
-          "description": "A community for building change through locally led positive action around the world",
+          "description": "A community for building change by creating locally led positive action around the world",
           "categories": [
             {
               "title": "Community Values",
@@ -181,11 +181,11 @@
               "url": "https://publichappinessmovement.com/t/topic/2844"
             },
 	          {
-              "title": "Contributing to Tasks + Projects",
+              "title": "Contributing to Tasks and Projects",
               "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1"
             },
             {
-              "title": "Meet Positive People Nearby for Action",
+              "title": "Meet Others to Take Positive Action to the Streets",
               "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1"
             },
             {
@@ -214,7 +214,7 @@
               "url": "https://www.facebook.com/Focallocal/"
             },
             {
-              "title": "Full List",
+              "title": "Full List of Channels",
               "url": "https://publichappinessmovement.com/t/topic/3727"
             }
           ]
@@ -224,7 +224,7 @@
           "title": "#Crypto",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
           "image": "/images/PHM-small.png",
-          "description": "We are transitioning our community into an ecosystem which rewards members for taking positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
+          "description": "You will lead and own this platform as we are on a path to transition into a decentralised governance self-evolving ecosystem which rewards members for contributions towards our shared mission, positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
           "categories": [
             {
               "title": "Whitepaper",
@@ -237,36 +237,6 @@
             {
               "title": "FAQs",
               "url": "https://publichappinessmovement.com/docuss/wp_faqs"
-            }
-          ]
-        },
-		    {
-          "color": "orange",
-          "title": "#We Are Building a Religion",
-          "url": "https://publichappinessmovement.com/c/wiggles/",
-          "image": "/images/Wiggles_logo.png",
-          "description": "This is a silly fun side project to turn our mascot Wiggles into a deity and create a space for everyone, religious, spiritual, or atheist to explore the meaning of life themselves, and together. For self-exploration and based on kindness, community connection, partying, and one golden rule: 'don't listen to anyone who tells you they know the answers'",
-          "categories": [
-            {
-              "title": "Project Brief",
-              "url": "https://publichappinessmovement.com/t/topic/2261"
-            }
-          ]
-        },
-        {
-          "color": "purple",
-          "title": "#Events Coming Soon",
-          "url": "#",
-          "image": "/images/cover-events.png",
-          "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
-          "categories": [
-            {
-              "title": "Tempate",
-              "url": "#"
-            },
-            {
-              "title": "Template",
-              "url": "#"
             }
           ]
         }
@@ -304,19 +274,11 @@
           "title": "#Community Climate Action Platform",
           "url": "https://publichappinessmovement.com/c/climate-action/",
           "image": "/images/cover_climate_hack.png",
-          "description": "A platform which brings people and communities together around effective action we as individuals can take to fight climate catastrophe, and a token which incentivises the most important fight humanity faces today",
+          "description": "A platform which asks people and communities to come together around effective action that we as individuals can take to fight climate change, and rewards all positive action taken with a crypto token, incentivising the most important fight of our lifetime",
           "categories": [
-	    {
+	          {
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2753/"
-            },
-	    {
-              "title": "Hack 1: Mid-May Location coming soon",
-              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1"
-            },
-            {
-              "title": "Hack 2: 4th - 17th July at Fort Kuddelstaart in Amsterdam",
-              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack2/"
             }
           ]
         },
@@ -343,7 +305,7 @@
         },
         {
           "color": "yellow",
-          "title": "#PHM Base",
+          "title": "#Public Happiness Base Camp",
           "url": "https://publichappinessmovement.com/c/homebase/",
           "image": "/images/test-project.png",
           "description": "A community and project center we’re building in Setubal, Portugal where members of our community can come and build a kinder world together",
@@ -368,23 +330,6 @@
             {
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2261"
-            }
-          ]
-        },
-        {
-          "color": "purple",
-          "title": "#Events Coming Soon",
-          "url": "#",
-          "image": "/images/cover-events.png",
-          "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
-          "categories": [
-            {
-              "title": "Tempate",
-              "url": "#"
-            },
-            {
-              "title": "Template",
-              "url": "#"
             }
           ]
         }
@@ -394,116 +339,136 @@
 
 
   "events_section":{
-    "title": "Events (Local)",
+    "title": "Gatherings (Local)",
     "content":{
       "items":[
         {
           "color": "green",
-          "title": "#Brighter Tomorrow Map",
-          "url": "https://www.brightertomorrowmap.com",
+          "title": "#Public Happiness Activities",
+          "url": "https://publichappinessmovement.com/docuss/m_gather",
           "image": "/images/Image_Community_Connection_Homelessness.png",
-          "description": "An effort to end world involuntary homelessness by bringing communities together and providing them with the tools to help people help people who are homeless nearby walk a path to a brighter future",
+          "description": "Meet others nearby and take to the streets to create more happiness and community connection where you live (often called Random Acts of Kindness)",
           "categories": [
             {
-              "title": "Project Brief",
-              "url": "https://publichappinessmovement.com/t/topic/2840"
+              "title": "Activities and Guides",
+              "url": "https://publichappinessmovement.com/c/raok/"
             },
 			      {
-              "title": "Kind Suggestions",
-              "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"
+              "title": "Youtube",
+              "url": "https://www.youtube.com/@FocallocalOrgWorldwide/playlists?view=50&sort=dd&shelf_id=4"
+            },
+            {
+              "title": "Photos",
+              "url": "https://www.facebook.com/Focallocal/photos_albums"
             },
             {
               "title": "Reddit Community",
-              "url": "https://www.old.reddit.com/r/brightertomorrow/"
+              "url": "https://www.old.reddit.com/r/randomactsofkindness/"
             }
           ]
         },
         {
           "color": "blue",
-          "title": "#Community Climate Action Platform",
-          "url": "https://publichappinessmovement.com/c/climate-action/",
+          "title": "#Give a Bubble Day",
+          "url": "https://publichappinessmovement.com/c/positiveaction/give-a-bubble",
           "image": "/images/cover_climate_hack.png",
-          "description": "A platform which brings people and communities together around effective action we as individuals can take to fight climate catastrophe, and a token which incentivises the most important fight humanity faces today",
+          "description": "Bring communities closer by reminding people of a time when sharing fun with others they hadn't met was normal. Join us building the BUBBLEUTION!!!",
           "categories": [
 	    {
-              "title": "Project Brief",
-              "url": "https://publichappinessmovement.com/t/topic/2753/"
+              "title": "Videos",
+              "url": "https://www.youtube.com/playlist?list=PLzwMXFvS_OYPLtIImok9ut5_yVQVU12Wn"
             },
 	    {
-              "title": "Hack 1: Mid-May Location coming soon",
-              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1"
+              "title": "Tasks",
+              "url": "https://publichappinessmovement.com/c/positiveaction/give-a-bubble/l/latest?board=default"
             },
             {
-              "title": "Hack 2: 4th - 17th July at Fort Kuddelstaart in Amsterdam",
-              "url": "https://publichappinessmovement.com/c/climate-action/climate-hack2/"
+              "title": "How To Guide",
+              "url": "https://publichappinessmovement.com/t/topic/1342"
             }
           ]
         },
 		    {
           "color": "red",
-          "title": "#PHM Token",
-          "url": "https://publichappinessmovement.com/c/focallocal-token/",
+          "title": "#International Pillow Fight Day",
+          "url": "https://publichappinessmovement.com/c/positiveaction/international-pillow-fight-day",
           "image": "/images/PHM-small.png",
-          "description": "We are transitioning our community into an ecosystem which rewards members for taking positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
+          "description": "Playing together is great for the health of a community. Join cities, towns and villages around the world for a world/wide pillow fight!",
           "categories": [
             {
-              "title": "Whitepaper",
-              "url": "https://publichappinessmovement.com/docuss/whitepaper"
+              "title": "Videos",
+              "url": "https://www.youtube.com/playlist?list=PLzwMXFvS_OYPNGGJl5GlUTDkbi3T_m22B"
             },
             {
-              "title": "Why?",
-              "url": "https://publichappinessmovement.com/docuss/wp_why"
+              "title": "Tasks",
+              "url": "https://publichappinessmovement.com/c/positiveaction/international-pillow-fight-day/l/latest?board=default"
             },
             {
-              "title": "FAQs",
-              "url": "https://publichappinessmovement.com/docuss/wp_faqs"
+              "title": "How To Guide",
+              "url": "https://publichappinessmovement.com/t/topic/1438"
             }
           ]
         },
         {
           "color": "yellow",
-          "title": "#PHM Base",
-          "url": "https://publichappinessmovement.com/c/homebase/",
+          "title": "#The Worlds Biggest Eye Contact Experiment",
+          "url": "https://publichappinessmovement.com/c/positiveaction/eye-contact/63/l/latest",
           "image": "/images/test-project.png",
-          "description": "A community and project center we’re building in Setubal, Portugal where members of our community can come and build a kinder world together",
+          "description": "Let's share a minutes eye contact with strangers in public to rebuild our sense of shared humanity in cities all over the world",
           "categories": [
             {
-              "title": "Project Brief",
-              "url": "https://publichappinessmovement.com/t/topic/2783"
+              "title": "Videos",
+              "url": "https://www.youtube.com/playlist?list=PLzwMXFvS_OYOFgNI3qYQh_fL88djaJX06"
             },
-			      {
-              "title": "Why Setubal",
-              "url": "https://publichappinessmovement.com/t/topic/2842"
+            {
+              "title": "Tasks",
+              "url": "https://publichappinessmovement.com/c/positiveaction/eye-contact/l/latest?board=default"
+            },
+            {
+              "title": "How To Guide",
+              "url": "https://publichappinessmovement.com/t/topic/1340"
+            }
+          ]
+        },
+        {
+          "color": "yellow",
+          "title": "#InspireMYneighbourhood Worldwide",
+          "url": "https://publichappinessmovement.com/c/positiveaction/get-inspired",
+          "image": "/images/test-project.png",
+          "description": "Once a year secret undercover chalking teams fill their streets with kind, happy and encouraging words, to brighten the day of people nearby",
+          "categories": [
+            {
+              "title": "Videos",
+              "url": "https://www.youtube.com/playlist?list=PLzwMXFvS_OYMmUWnpj_MPcwNMv4BhFwdJ"
+            },
+            {
+              "title": "Tasks",
+              "url": "https://publichappinessmovement.com/c/positiveaction/get-inspired/l/latest?board=default"
+            },
+            {
+              "title": "How To Guide",
+              "url": "https://publichappinessmovement.com/t/topic/1439"
             }
           ]
         },
 		    {
           "color": "orange",
-          "title": "#We Are Building a Religion",
-          "url": "https://publichappinessmovement.com/c/wiggles/",
+          "title": "#International Take a Smile Day",
+          "url": "https://publichappinessmovement.com/c/positiveaction/take-a-smile",
           "image": "/images/Wiggles_logo.png",
-          "description": "This is a silly fun side project to turn our mascot Wiggles into a deity and create a space for everyone, religious, spiritual, or atheist to explore the meaning of life themselves, and together. For self-exploration and based on kindness, community connection, partying, and one golden rule: 'don't listen to anyone who tells you they know the answers'",
+          "description": "Every year we ask as many people around the World as we can reach, to join us in inviting people to take a smile, a simple gift of creative little hand drawn smiley faces'",
           "categories": [
             {
-              "title": "Project Brief",
-              "url": "https://publichappinessmovement.com/t/topic/2261"
-            }
-          ]
-        },
-        {
-          "color": "purple",
-          "title": "#Events Coming Soon",
-          "url": "#",
-          "image": "/images/cover-events.png",
-          "description": "Our Global events schedule will reappear when Covid leaves humanity alone again",
-          "categories": [
-            {
-              "title": "Tempate",
-              "url": "#"
+              "title": "Videos",
+              "url": "https://www.youtube.com/playlist?list=PLzwMXFvS_OYOFc05XP7kO-hENuN5OtOXA"
             },
             {
-              "title": "Template",
-              "url": "#"
+              "title": "Tasks",
+              "url": "https://publichappinessmovement.com/c/positiveaction/take-a-smile/l/latest?board=default"
+            },
+            {
+              "title": "How To Guide",
+              "url": "https://publichappinessmovement.com/t/topic/1343"
             }
           ]
         }
