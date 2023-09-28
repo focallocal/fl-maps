@@ -26,8 +26,8 @@
     "button": "Sign Up and Begin!",
     "button_loggedIn": "Post onto the Map"
   },
-  "oldmovement_section":{
-    "title": "oldMovementsection",
+  "movement_section":{
+    "title": "Movement",
     "content":{
       "items":[
         {
