@@ -26,8 +26,8 @@
     "button": "Sign Up and Begin!",
     "button_loggedIn": "Post onto the Map"
   },
-  "movement_section":{
-    "title": "Movement",
+  "oldmovement_section":{
+    "title": "oldMovementsection",
     "content":{
       "items":[
         {
@@ -220,7 +220,7 @@
           ]
         },
         {
-          "color": "Emerald",
+          "color": "#50C878",
           "title": "#Crypto",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
           "image": "/images/PHM-small.png",
@@ -283,7 +283,7 @@
           ]
         },
 		    {
-          "color": "#50C878",
+          "color": "Emerald",
           "title": "#PHM Token",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
           "image": "/images/PHM-small.png",
