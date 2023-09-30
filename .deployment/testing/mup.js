@@ -7,7 +7,7 @@ module.exports = {
     }
   },
   app: {
-    name: 'testing-happiness.ga',
+    name: 'testing.publichappinessmovement.com',
     path: '../../.',
     docker: {
       image: 'zodern/meteor:root'
@@ -19,7 +19,7 @@ module.exports = {
       serverOnly: true
     },
     env: {
-      ROOT_URL: 'https://fl-maps.testing-happiness.ga'
+      ROOT_URL: 'https://testing-maps.publichappinessmovement.com/'
     }
   },
   mongo: {
@@ -29,7 +29,7 @@ module.exports = {
     }
   },
   proxy: {
-    domains: 'fl-maps.testing-happiness.ga',
+    domains: 'testing-maps.publichappinessmovement.com',
     ssl: {
       letsEncryptEmail: 'contact@focallocal.org'
     }
