@@ -1,43 +1,34 @@
 
-#movement_section {
-  .card {
-    border-radius: 8px;
+#how-to-help-section .item {
+
+  .icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background-size: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &.smiley {
+      background-image: url('/images/smiley.png');
+    }
+
+    &.friends {
+      background-image: url('/images/friends.png');
+    }
+
+    &.share {
+      background-image: url('/images/share.png');
+    }
   }
 
-  .card-link + .card-link {
-    margin-left: 0;
+  .item-title {
+    font-size: 22px;
+    margin-bottom: 14px;
   }
 
-  .item {
-    .icon {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto;
-      background-size: 70%;
-      background-position: center center;
-      background-repeat: no-repeat;
-
-      &.smiley {
-        background-image: url('/images/smiley.png');
-      }
-
-      &.friends {
-        background-image: url('/images/friends.png');
-      }
-
-      &.share {
-        background-image: url('/images/share.png');
-      }
-    }
-
-    .item-title {
-      font-size: 22px;
-      margin-bottom: 14px;
-    }
-
-    .item-text {
-      text-align: left;
-      font-size: 18px;
-    }
+  .item-text {
+    text-align: left;
+    font-size: 18px;
   }
 }

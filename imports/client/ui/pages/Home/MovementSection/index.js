@@ -1,19 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardSubtitle,
-  CardLink,
-  CardDeck
-} from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 import Item from './Item'
 import i18n from '/imports/both/i18n/en'
 import ContributorsSection from '../ContributorsSection'
@@ -44,9 +32,11 @@ class MovementSection extends Component {
       <section id='movement_section'>
         <Container>
           <div className='title'>{title}</div>
-          <Row className="items justify-content-center">
+          <Row className="items">
             {items.map((item, i) => (
-              <Item item={item} loginButton={loginButton} />
+              <Col key={i} xs="6" sm="6" md="6" lg="3">
+                <Item item={item} />
+              </Col>
             ))}
           </Row>
         </Container>
