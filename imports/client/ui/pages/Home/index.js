@@ -4,7 +4,6 @@ import SecondSection from './SecondSection'
 import HowToHelpSection from './HowToHelpSection'
 import MovementSection from './MovementSection'
 import ProjectsSection from './ProjectsSection'
-import EventsSection from './EventsSection'
 import './styles.scss'
 
 class Home extends Component {
@@ -32,7 +31,6 @@ class Home extends Component {
         <FirstSection />
         <MovementSection />
         <ProjectsSection />
-        <EventsSection />
         {/*
           <HowToHelpSection />
           <SecondSection button/>
