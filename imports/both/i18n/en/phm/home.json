@@ -197,7 +197,7 @@
           ]
         },
         {
-          "color": "Azure",
+          "color": "#007FFF",
           "title": "#Media",
           "url": "https://publichappinessmovement.com/c/phmgeneral/inmedia/",
           "image": "/images/test-project.png",
@@ -426,7 +426,7 @@
           ]
         },
         {
-          "color": "yellow",
+          "color": "#d3ffce",
           "title": "#InspireMYneighbourhood Worldwide",
           "url": "https://publichappinessmovement.com/c/positiveaction/get-inspired",
           "image": "/images/test-project.png",
