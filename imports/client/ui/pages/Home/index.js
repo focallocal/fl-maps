@@ -29,11 +29,11 @@ class Home extends Component {
         <div>
           <img src={url} style={imgStyle} />
         </div>
-        <FirstSection />
         <MovementSection />
         <ProjectsSection />
         <EventsSection />
         {/*
+          <FirstSection />
           <HowToHelpSection />
           <SecondSection button/>
         */}

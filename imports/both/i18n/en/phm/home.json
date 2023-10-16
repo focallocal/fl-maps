@@ -171,7 +171,7 @@
           "color": "Magenta",
           "title": "#Getting Started",
           "url": "https://publichappinessmovement.com/t/topic/3067",
-          "image": "/images/cover_climate_hack.png",
+          "image": "images/getting-started.jpg",
           "description": "How to get started building a kinder world with the PHM Community",
           "categories": [
             {
@@ -200,7 +200,7 @@
           "color": "#007FFF",
           "title": "#Media",
           "url": "https://publichappinessmovement.com/c/phmgeneral/inmedia/",
-          "image": "/images/test-project.png",
+          "image": "/images/media.jpg",
           "description": "Engage with the community on your favourite social media sites",
           "categories": [
             {
@@ -221,7 +221,7 @@
           "color": "#50C878",
           "title": "#Crypto",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
-          "image": "/images/PHM-small.png",
+          "image": "/images/crypto-tokens.jpg",
           "description": "You will lead and own this platform as we are on a path to transition into a decentralised governance self-evolving ecosystem which rewards members for contributions towards our shared mission, positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
           "categories": [
             {
