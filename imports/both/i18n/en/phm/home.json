@@ -26,14 +26,14 @@
     "button": "Sign Up and Begin!",
     "button_loggedIn": "Post onto the Map"
   },
-  "movement_section":{
-    "title": "Movement",
-    "content":{
-      "items":[
+  "oldmovement_section": {
+    "title": "oldMovementsection",
+    "content": {
+      "items": [
         {
           "title": "Global",
           "text": "Put yourself on the Public Happiness Map.",
-          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights.",
+          "subText": "For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights.",
           "subItems": [
             {
               "title": "Members",
@@ -42,7 +42,7 @@
                   "title": "Total",
                   "value": "216"
                 },
-				        {
+                {
                   "title": "New",
                   "value": "4"
                 }
@@ -71,7 +71,7 @@
         {
           "title": "Local",
           "text": "Find a Public Happiness Gathering near you.",
-          "subText":"Find a Public Happiness Gathering near you and join the movement.",
+          "subText": "Find a Public Happiness Gathering near you and join the movement.",
           "subItems": [
             {
               "title": "Gatherings",
@@ -99,7 +99,7 @@
         {
           "title": "Media",
           "text": "Take action to make a difference.",
-          "subText":"Take action to make a difference in your community.",
+          "subText": "Take action to make a difference in your community.",
           "subItems": [
             {
               "title": "Followers",
@@ -114,7 +114,7 @@
               "title": "Monthly Growth",
               "value": "+1,237"
             },
-	    {
+            {
               "title": "Estimated Happy Butterfly Effect",
               "value": "Coming when we get a bigger calculator"
             }
@@ -123,7 +123,7 @@
         {
           "title": "Economy",
           "text": "Connect with others.",
-          "subText":"Connect with others in your community.",
+          "subText": "Connect with others in your community.",
           "subItems": [
             {
               "title": "Market Cap",
@@ -142,12 +142,10 @@
       ]
     }
   },
-
-
-  "movements_section":{
+  "movement_section": {
     "title": "Movement",
-    "content":{
-      "items":[
+    "content": {
+      "items": [
         {
           "color": "Teal",
           "title": "#About PHM",
@@ -176,11 +174,11 @@
           "image": "/images/cover_climate_hack.png",
           "description": "How to get started building a kinder world with the PHM Community",
           "categories": [
-	          {
+            {
               "title": "Set up your Portal",
               "url": "https://publichappinessmovement.com/t/topic/2844"
             },
-	          {
+            {
               "title": "Contributing to Tasks and Projects",
               "url": "https://publichappinessmovement.com/c/climate-action/climate-hack1"
             },
@@ -199,7 +197,7 @@
           ]
         },
         {
-          "color": "Azure",
+          "color": "#007FFF",
           "title": "#Media",
           "url": "https://publichappinessmovement.com/c/phmgeneral/inmedia/",
           "image": "/images/test-project.png",
@@ -209,7 +207,7 @@
               "title": "Youtube",
               "url": "https://www.youtube.com/channel/UCV5vm0mYy3VM-I461q7QfcQ"
             },
-			      {
+            {
               "title": "Facebook",
               "url": "https://www.facebook.com/Focallocal/"
             },
@@ -243,11 +241,10 @@
       ]
     }
   },
-
-  "projects_section":{
+  "projects_section": {
     "title": "Projects (Global)",
-    "content":{
-      "items":[
+    "content": {
+      "items": [
         {
           "color": "green",
           "title": "#Brighter Tomorrow Map",
@@ -259,7 +256,7 @@
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2840"
             },
-			      {
+            {
               "title": "Kind Suggestions",
               "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"
             },
@@ -276,13 +273,13 @@
           "image": "/images/cover_climate_hack.png",
           "description": "A platform which asks people and communities to come together around effective action that we as individuals can take to fight climate change, and rewards all positive action taken with a crypto token, incentivising the most important fight of our lifetime",
           "categories": [
-	          {
+            {
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2753/"
             }
           ]
         },
-		    {
+        {
           "color": "#50C878",
           "title": "#PHM Token",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
@@ -314,13 +311,13 @@
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2783"
             },
-			      {
+            {
               "title": "Why Setubal",
               "url": "https://publichappinessmovement.com/t/topic/2842"
             }
           ]
         },
-		    {
+        {
           "color": "orange",
           "title": "#We Are Building a Religion",
           "url": "https://publichappinessmovement.com/c/wiggles/",
@@ -336,12 +333,10 @@
       ]
     }
   },
-
-
-  "events_section":{
+  "events_section": {
     "title": "Gatherings (Local)",
-    "content":{
-      "items":[
+    "content": {
+      "items": [
         {
           "color": "green",
           "title": "#Public Happiness Activities",
@@ -353,7 +348,7 @@
               "title": "Activities and Guides",
               "url": "https://publichappinessmovement.com/c/raok/"
             },
-			      {
+            {
               "title": "Youtube",
               "url": "https://www.youtube.com/@FocallocalOrgWorldwide/playlists?view=50&sort=dd&shelf_id=4"
             },
@@ -374,11 +369,11 @@
           "image": "/images/cover_climate_hack.png",
           "description": "Bring communities closer by reminding people of a time when sharing fun with others they hadn't met was normal. Join us building the BUBBLEUTION!!!",
           "categories": [
-	    {
+            {
               "title": "Videos",
               "url": "https://www.youtube.com/playlist?list=PLzwMXFvS_OYPLtIImok9ut5_yVQVU12Wn"
             },
-	    {
+            {
               "title": "Tasks",
               "url": "https://publichappinessmovement.com/c/positiveaction/give-a-bubble/l/latest?board=default"
             },
@@ -388,7 +383,7 @@
             }
           ]
         },
-		    {
+        {
           "color": "red",
           "title": "#International Pillow Fight Day",
           "url": "https://publichappinessmovement.com/c/positiveaction/international-pillow-fight-day",
@@ -431,7 +426,7 @@
           ]
         },
         {
-          "color": "yellow",
+          "color": "#d3ffce",
           "title": "#InspireMYneighbourhood Worldwide",
           "url": "https://publichappinessmovement.com/c/positiveaction/get-inspired",
           "image": "/images/test-project.png",
@@ -451,7 +446,7 @@
             }
           ]
         },
-		    {
+        {
           "color": "orange",
           "title": "#International Take a Smile Day",
           "url": "https://publichappinessmovement.com/c/positiveaction/take-a-smile",
@@ -475,15 +470,13 @@
       ]
     }
   },
-
-
-  "how_to_help_section":{
+  "how_to_help_section": {
     "title": "How can I take action to make where I live a friendlier, safer and happier place?",
-    "content":{
-      "items":[
+    "content": {
+      "items": [
         {
           "text": "Put yourself on the Public Happiness Map.",
-          "subText":"For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
+          "subText": "For other positive and pro-active people nearby to contact you and invite you to Public Happiness Gatherings, like public music jams/dance, free hugs, inviting passers-by to blow bubbles, connection pillow fights."
         },
         {
           "text": "Create your Public Happiness Gathering now.",
@@ -494,54 +487,54 @@
       ]
     }
   },
-  "contributors_section":{
+  "contributors_section": {
     "title": "Built for you by a wonderful team of volunteers at the Focallocal Public Happiness community.",
-    "content":{
-      "items":[
+    "content": {
+      "items": [
         {
-          "photo":"https://avatars1.githubusercontent.com/u/3659502?s=460&v=4",
+          "photo": "https://avatars1.githubusercontent.com/u/3659502?s=460&v=4",
           "name": "Mordka",
-          "link":"https://github.com/mordka"
+          "link": "https://github.com/mordka"
         },
         {
-          "photo":"https://avatars2.githubusercontent.com/u/11820758?s=460&v=4",
+          "photo": "https://avatars2.githubusercontent.com/u/11820758?s=460&v=4",
           "name": "ydaniel98",
-          "link":"https://github.com/ydaniel98"
+          "link": "https://github.com/ydaniel98"
         },
         {
-          "photo":"https://avatars3.githubusercontent.com/u/28781165?s=460&v=4",
+          "photo": "https://avatars3.githubusercontent.com/u/28781165?s=460&v=4",
           "name": "royGil",
-          "link":"https://github.com/royGil"
+          "link": "https://github.com/royGil"
         },
         {
-          "photo":"https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
+          "photo": "https://avatars3.githubusercontent.com/u/16229696?s=460&v=4",
           "name": "Andy",
-          "link":"https://github.com/AndyatFocallocal"
+          "link": "https://github.com/AndyatFocallocal"
         },
         {
-          "photo":"https://avatars0.githubusercontent.com/u/28017627?s=460&v=4",
+          "photo": "https://avatars0.githubusercontent.com/u/28017627?s=460&v=4",
           "name": "HuascarMC",
-          "link":"https://github.com/HuascarMC"
+          "link": "https://github.com/HuascarMC"
         },
         {
-          "photo":"https://avatars1.githubusercontent.com/u/7775349?s=460&v=4",
+          "photo": "https://avatars1.githubusercontent.com/u/7775349?s=460&v=4",
           "name": "cw00dw0rd",
-          "link":"https://github.com/cw00dw0rd"
+          "link": "https://github.com/cw00dw0rd"
         },
         {
-          "photo":"https://avatars2.githubusercontent.com/u/17742310?s=460&v=4",
+          "photo": "https://avatars2.githubusercontent.com/u/17742310?s=460&v=4",
           "name": "Spartano",
-          "link":"https://github.com/Spartano"
+          "link": "https://github.com/Spartano"
         },
         {
-          "photo":"https://avatars1.githubusercontent.com/u/11193792?s=460&v=4",
+          "photo": "https://avatars1.githubusercontent.com/u/11193792?s=460&v=4",
           "name": "distalx",
-          "link":"https://github.com/distalx"
+          "link": "https://github.com/distalx"
         },
         {
-          "photo":"https://avatars3.githubusercontent.com/u/22714384?s=460&v=4",
+          "photo": "https://avatars3.githubusercontent.com/u/22714384?s=460&v=4",
           "name": "Ziinc",
-          "link":"https://github.com/Ziinc"
+          "link": "https://github.com/Ziinc"
         }
       ]
     }
