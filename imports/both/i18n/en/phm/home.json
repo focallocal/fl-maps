@@ -150,6 +150,7 @@
           "color": "Teal",
           "title": "#About PHM",
           "url": "https://publichappinessmovement.com/docuss/wp_intro",
+          "image": "/images/welcome.jpg",
           "description": "A community for building change by creating locally led positive action around the world",
           "categories": [
             {
@@ -219,7 +220,7 @@
         {
           "color": "#50C878",
           "title": "#Crypto",
-          "url": "https://publichappinessmovement.com/c/focallocal-token/",
+          "url": "https://publichappinessmovement.com/c/phat",
           "image": "/images/crypto-tokens.jpg",
           "description": "You own this platform. We are on a path to become a decentralised governance, a self-evolving ecosystem led by its users that rewards contributions towards our shared mission: taking positive action to create more peace and well-being in the world",
           "categories": [
