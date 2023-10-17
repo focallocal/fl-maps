@@ -27,7 +27,7 @@ const Item = ({ item, loginButton }) => (
       <div style={{ margin: '1.25rem 1.25rem' }}>
         <img alt='Card image cap' src={item.image} className='images' />
         <CardTitle tag='h5'>
-          <CardLink href={item.url} target="_top" target="_top">{item.title}</CardLink>
+          <CardLink href={item.url} target="_top">{item.title}</CardLink>
           {/* <Link to={item.url}>
               {item.title}
           </Link> */}
