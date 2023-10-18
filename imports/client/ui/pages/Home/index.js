@@ -25,6 +25,8 @@ class Home extends Component {
       backgroundImage: `url(${url})`,
       opacity,
       backgroundAttachment: 'fixed',
+      backgroundPosition: 'center top',
+      backgroundSize: 'cover',
     };
     let imgStyle = { width: '100%' };
 
@@ -34,22 +36,18 @@ class Home extends Component {
           position: relative;
           overflow: hidden;
         }
-        .spacer {
-          height: 4em;
-        }
         .background-image {
           position: fixed;
-          top: 4em;
+          top: 4em; /* Push the background image down by 4em */
           left: 0;
           width: 100%;
-          height: calc(100% - 4em);
+          height: 100%;
           background-size: cover;
-          background-position: center;
           z-index: -1;
         }
         .home-content {
           position: relative;
-          padding-top: 30vh;
+          padding-top: 30vh; 
           text-align: center;
           z-index: 1;
         }
@@ -59,7 +57,6 @@ class Home extends Component {
     return (
       <main className="home">
         <style>{largeScreenStyle}</style>
-        <div className="spacer"></div>
         <div className="background-image" style={backgroundImage}></div>
         <div className="home-content">
           <MovementSection />
