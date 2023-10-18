@@ -28,26 +28,21 @@ class Home extends Component {
       @media (min-width: 768px) {
         .home {
           position: relative;
-          height: 100vh;
-          overflow: hidden;
         }
         .background-image {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
-          height: 100%;
+          height: 100vh;
           background-size: cover;
           background-position: center;
           z-index: 0;
         }
         .home-content {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 100%;
+          position: relative;
+          padding-top: 50vh;
           text-align: center;
-          z-index: 1;
         }
       }
     `;
