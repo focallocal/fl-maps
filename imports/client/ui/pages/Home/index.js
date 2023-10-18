@@ -21,29 +21,41 @@ class Home extends Component {
     } else {
       url = '/images/focallocal-bgOG.jpg';
     }
-    let backgroundImage = { backgroundImage: `url(${url})`, opacity };
+    let backgroundImage = {
+      backgroundImage: `url(${url})`,
+      opacity,
+      backgroundAttachment: 'fixed', // Lock the background image in place
+    };
     let imgStyle = { width: '100%' };
 
     let largeScreenStyle = `
       @media (min-width: 768px) {
         .home {
           position: relative;
+          overflow: hidden;
         }
         .background-image {
-          position: absolute;
+          position: fixed;
           top: 0;
           left: 0;
           width: 100%;
-          height: 100vh;
+          height: 100%;
           background-size: cover;
           background-position: center;
-          z-index: 0;
+          z-index: -1; // Lower the z-index to place it behind other elements
         }
         .home-content {
           position: relative;
           padding-top: 50vh;
           text-align: center;
+          z-index: 1; // Increase the z-index to ensure the content is above the background
         }
+        // Add more specific styles for your top menu to ensure it stays above the background
+        // For example:
+        // .top-menu {
+        //   position: relative;
+        //   z-index: 2;
+        // }
       }
     `;
 
