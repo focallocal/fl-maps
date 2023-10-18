@@ -27,31 +27,27 @@ class Home extends Component {
     let largeScreenStyle = `
       @media (min-width: 768px) {
         .home {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          position: relative;
           height: 100vh;
-          background: #f2f2f2; /* Background color to fill any potential white space */
-          background-size: cover;
-          background-position: center;
-          position: relative;
-        }
-        .home-content {
-          z-index: 2;
-          position: relative;
-          margin-top: 50vh;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          overflow: hidden;
         }
         .background-image {
-          z-index: 1;
           position: absolute;
           top: 0;
           left: 0;
-          right: 0;
-          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          z-index: 0;
+        }
+        .home-content {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          text-align: center;
+          z-index: 1;
         }
       }
     `;
