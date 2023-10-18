@@ -24,7 +24,7 @@ class Home extends Component {
     let backgroundImage = {
       backgroundImage: `url(${url})`,
       opacity,
-      backgroundAttachment: 'fixed', // Lock the background image in place
+      backgroundAttachment: 'fixed',
     };
     let imgStyle = { width: '100%' };
 
@@ -34,34 +34,32 @@ class Home extends Component {
           position: relative;
           overflow: hidden;
         }
+        .spacer {
+          height: 4em;
+        }
         .background-image {
           position: fixed;
-          top: 0;
+          top: 4em;
           left: 0;
           width: 100%;
-          height: 100%;
+          height: calc(100% - 4em);
           background-size: cover;
           background-position: center;
-          z-index: -1; // Lower the z-index to place it behind other elements
+          z-index: -1;
         }
         .home-content {
           position: relative;
-          padding-top: 50vh;
+          padding-top: 30vh;
           text-align: center;
-          z-index: 1; // Increase the z-index to ensure the content is above the background
+          z-index: 1;
         }
-        // Add more specific styles for your top menu to ensure it stays above the background
-        // For example:
-        // .top-menu {
-        //   position: relative;
-        //   z-index: 2;
-        // }
       }
     `;
 
     return (
       <main className="home">
         <style>{largeScreenStyle}</style>
+        <div className="spacer"></div>
         <div className="background-image" style={backgroundImage}></div>
         <div className="home-content">
           <MovementSection />
