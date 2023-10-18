@@ -16,7 +16,7 @@ class Home extends Component {
     let url
     let opacity
     if (window.__mapType === 'gatherings') {
-      url = '/images/PHM-logo-banner-text-high.svg'
+      url = '/images/PHM-logo-banner-text-mid.svg'
       // opacity = 0.5
     } else {
       url = '/images/focallocal-bgOG.jpg'
