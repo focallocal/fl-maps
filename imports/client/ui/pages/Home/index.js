@@ -24,8 +24,7 @@ class Home extends Component {
     let backgroundImage = {
       backgroundImage: `url(${url})`,
       opacity,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
     };
     let imgStyle = { width: '100%' };
 
@@ -35,13 +34,24 @@ class Home extends Component {
           position: relative;
           overflow: hidden;
         }
+        .spacer {
+          height: 4em;
+        }
         .background-image {
-          display: none;
+          position: fixed;
+          top: 4em;
+          left: 0;
+          width: 100%;
+          height: calc(100% - 4em);
+          background-size: cover;
+          background-position: center;
+          z-index: -1;
         }
         .home-content {
           position: relative;
           padding-top: 30vh;
           text-align: center;
+          z-index: 1;
         }
       }
     `;
@@ -49,11 +59,9 @@ class Home extends Component {
     return (
       <main className="home">
         <style>{largeScreenStyle}</style>
+        <div className="spacer"></div>
         <div className="background-image" style={backgroundImage}></div>
         <div className="home-content">
-          <div style={{ height: '100vh' }}>
-            <div style={backgroundImage}></div>
-          </div>
           <MovementSection />
           <ProjectsSection />
           <EventsSection />
