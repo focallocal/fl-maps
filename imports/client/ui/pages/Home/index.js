@@ -41,6 +41,7 @@ class Home extends Component {
       } else {
         url = '/images/wiggles.jpg'; // Desktop hero image
       }
+    }
 
     let backgroundImage = { backgroundImage: 'url(' + url + ')', opacity };
     let imgStyle = { width: '100%' };
