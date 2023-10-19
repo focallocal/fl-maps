@@ -19,13 +19,28 @@ class Home extends Component {
 
     if (window.__mapType === 'gatherings') {
       if (isMobile) {
-        url = '/images/PHM-logo-banner-low.jpg';
+        url = '/images/PHM-logo-banner-low.jpg'; // Mobile hero image
       } else {
-        url = '/images/PHM-logo-banner-text-high.svg';
+        url = '/images/PHM-logo-banner-text-high.svg'; // Desktop hero image
       }
-    } else {
-      url = '/images/focallocal-bgOG.jpg';
-    }
+    } else if (window.__mapType === 'btm') {
+      if (isMobile) {
+        url = '/images/focallocal-bgOG.jpg'; // Mobile hero image
+      } else {
+        url = '/images/focallocal-bgOG.jpg'; // Desktop hero image
+      }
+    } else if (window.__mapType === 'climate') {
+      if (isMobile) {
+        url = '/images/climate.jpg'; // Mobile hero image
+      } else {
+        url = '/images/climate.jpg'; // Desktop hero image
+      }
+    } else if (window.__mapType === 'wiggles') {
+      if (isMobile) {
+        url = '/images/wiggles.jpg'; // Mobile hero image
+      } else {
+        url = '/images/wiggles.jpg'; // Desktop hero image
+      }
 
     let backgroundImage = { backgroundImage: 'url(' + url + ')', opacity };
     let imgStyle = { width: '100%' };

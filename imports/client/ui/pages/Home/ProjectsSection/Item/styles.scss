@@ -38,6 +38,9 @@
     .item-text {
       text-align: left;
       font-size: 18px;
+      @media (min-width: 768px) {
+        font-weight: bold; /* Adjust the font weight as desired */
+      }
     }
   }
 }
