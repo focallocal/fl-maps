@@ -156,14 +156,6 @@
             {
               "title": "Community Values",
               "url": "https://publichappinessmovement.com/t/topic/2844"
-            },
-            {
-              "title": "Founders Team",
-              "url": "https://publichappinessmovement.com/docuss/m_team"
-            },
-            {
-              "title": "Legacy Site",
-              "url": "https://focallocal.org"
             }
           ]
         },
@@ -189,10 +181,6 @@
             {
               "title": "Platform User Manual",
               "url": "https://publichappinessmovement.com/c/docsusermanual/"
-            },
-            {
-              "title": "Documentation Section",
-              "url": "https://publichappinessmovement.com/docs"
             }
           ]
         },
@@ -208,11 +196,7 @@
               "url": "https://www.youtube.com/channel/UCV5vm0mYy3VM-I461q7QfcQ"
             },
             {
-              "title": "Facebook",
-              "url": "https://www.facebook.com/Focallocal/"
-            },
-            {
-              "title": "Full List of Channels",
+              "title": "Full List",
               "url": "https://publichappinessmovement.com/t/topic/3727"
             }
           ]
@@ -227,14 +211,6 @@
             {
               "title": "Whitepaper",
               "url": "https://publichappinessmovement.com/docuss/whitepaper"
-            },
-            {
-              "title": "Why?",
-              "url": "https://publichappinessmovement.com/docuss/wp_why"
-            },
-            {
-              "title": "FAQs",
-              "url": "https://publichappinessmovement.com/docuss/wp_faqs"
             }
           ]
         }
@@ -257,7 +233,7 @@
               "url": "https://publichappinessmovement.com/t/topic/2840"
             },
             {
-              "title": "Kind Suggestions",
+              "title": "Kindness Suggestions",
               "url": "https://www.reddit.com/r/brightertomorrow/?f=flair_name%3A%22Ideas%20for%20Helping%22"
             },
             {
@@ -289,14 +265,6 @@
             {
               "title": "Whitepaper",
               "url": "https://publichappinessmovement.com/docuss/whitepaper"
-            },
-            {
-              "title": "Why?",
-              "url": "https://publichappinessmovement.com/docuss/wp_why"
-            },
-            {
-              "title": "FAQs",
-              "url": "https://publichappinessmovement.com/docuss/wp_faqs"
             }
           ]
         },
@@ -305,15 +273,11 @@
           "title": "#Public Happiness Base Camp",
           "url": "https://publichappinessmovement.com/c/homebase/",
           "image": "/images/test-project.png",
-          "description": "A community and project center we’re building in Setubal, Portugal where members of our community can come and build a kinder world together",
+          "description": "A community and project center were building where members of our community can come and build a kinder world together",
           "categories": [
             {
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2783"
-            },
-            {
-              "title": "Why Setubal",
-              "url": "https://publichappinessmovement.com/t/topic/2842"
             }
           ]
         },
