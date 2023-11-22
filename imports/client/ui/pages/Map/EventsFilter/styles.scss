@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   height: calc(100vh - #{$menu-height});
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  //box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   transform: translate($map-events-list-width, calc(-100vh - #{$menu-height}));
   transition: transform .3s ease;
   will-change: transform;
@@ -76,5 +76,9 @@
         color: $primary-blue-hover;
       };
     }
+  }
+  //added margin to justify text alignemnt next to checkbox.
+  .form-check-label{
+    margin-left: 0.5em;
   }
 }

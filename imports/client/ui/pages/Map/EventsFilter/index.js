@@ -66,7 +66,8 @@ class FiltersList extends Component {
                   key={index}
                   className="checkbox"
                   style={{
-                    marginLeft: category.parent !== true ? '20px' : '0px',
+                    //marginLeft: category.parent !== true ? '20px' : '0px',
+                    paddingLeft: category.parent !== true ? '2em' : '0em',
                     color: category.color,
                     display: category.hidden === true ? 'none' : 'block'
                   }}
@@ -79,7 +80,7 @@ class FiltersList extends Component {
                     onChange={this.handleFilterChange}
                     onClick={category.parent === true ? this.expandCategory : null}
                   />
-                  <Label
+                  <Label 
                     check
                     for={'filter-' + index}
                   >
