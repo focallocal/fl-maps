@@ -37,13 +37,24 @@ class MarkerWrapper extends Component {
     )
   }
 
-  handleMouseOver = () => this.setState({
-    hovered: true
-  })
 
-  handleMouseOut = () => this.setState({
-    hovered: false
-  })
+  handleMouseOver = () => {
+    const {_id} = this.props.event;
+    const correspondingEvent = document.getElementById(`event-${_id}`);
+    this.setState({hovered: true })
+    this.props.onMarkerHover(_id);
+    if(correspondingEvent){
+      correspondingEvent.scrollIntoView({
+        behavior:'smooth',
+        block: "end" 
+      });
+    }
+  }
+
+  handleMouseOut = () => {
+    this.setState({hovered: false})
+    this.props.onMarkerLeave();
+  }
 
   handleClick = () => {
     this.props.onMarkerClick(this.props.event._id)
