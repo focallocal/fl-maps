@@ -13,7 +13,7 @@ import './styles.scss'
 
 class EventsList extends Component {
   state = {
-    events: []
+    events: [],
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
@@ -39,7 +39,7 @@ class EventsList extends Component {
     const {
       isFetching,
       userLocation,
-      history
+      history,
     } = this.props
 
     const currentEventProp = this.props.currentEvent
@@ -53,6 +53,7 @@ class EventsList extends Component {
           </div>
           <ListGroup>
             {events && events.map((event, index) => {
+              const ishovered = this.props.hoveredEvent === event._id ;
               return (
                 <EventsListItem
                   key={index}
@@ -60,6 +61,7 @@ class EventsList extends Component {
                   userLocation={userLocation}
                   userGravatar={Gravatar.isSpecialCategorySelected(event.categories) ? Gravatar.getGravatar(event.organiser.name, 50) : ''}
                   onItemClick={this.props.onItemClick}
+                  ishovered={ishovered} 
                 />
               )
             })}

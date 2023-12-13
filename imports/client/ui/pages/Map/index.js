@@ -41,7 +41,9 @@ class MapComponent_ extends Component {
       userLocation: null,
       zoom: 3,
       mapRadius: null,
-      showPastEvents: false
+      showPastEvents: false,
+      hoveredEvent: null,
+      isHovered: false
     }
   }
 
@@ -96,7 +98,10 @@ class MapComponent_ extends Component {
       isFetching,
       showFilters,
       userLocation,
-      zoom
+      zoom,
+      hoveredEvent,
+      isHovered
+
     } = this.state
 
     const { history } = this.props
@@ -104,8 +109,10 @@ class MapComponent_ extends Component {
     const { MainMenu } = i18n
 
     const events_ = filteredEvents || events
-
+    
     return (
+    
+
       <GoogleMap
         ref={ref => this.map = ref}
         center={center}
@@ -130,6 +137,8 @@ class MapComponent_ extends Component {
               event={event}
               isCurrent={currentEvent === event._id}
               onMarkerClick={this.onMarkerClick}
+              onMarkerHover={this.onMarkerHover}
+              onMarkerLeave={this.onMarkerLeave}
               position={ensureUniquePosition(this.memoizeLocations, event, events_)}
             />
           )}
@@ -144,8 +153,10 @@ class MapComponent_ extends Component {
         <EventsList
           currentEvent={currentEvent}
           events={events_}
-          isFetching={isFetching}
+          isFetching={isFetching} 
           onItemClick={this.onMarkerClick}
+          hoveredEvent={this.state.hoveredEvent}
+          isHovered={this.state.isHovered}
           openMoreInfo={this.openMoreInfo}
           userLocation={userLocation}
           removeCurrentEvent={this.removeCurrentEvent}
@@ -172,6 +183,19 @@ class MapComponent_ extends Component {
         <Alert id='map-error' color='danger' isOpen={!!error}>{error ? error.msg : ''}</Alert>
       </GoogleMap>
     )
+  }
+
+  onMarkerHover = (_id) => {
+    this.setState({
+      hoveredEvent: _id,
+      isHovered: true
+    });
+  }
+
+  onMarkerLeave = () => {
+    this.setState({
+      hoveredEvent: null
+    });
   }
 
   onMarkerClick = (_id) => {
