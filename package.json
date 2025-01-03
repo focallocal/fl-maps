@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint --fix .",
-    "start": "meteor run --settings settings.json",
+    "start": "meteor run --settings settings.json --port 3005",
     "start:withDiscourse": "meteor run --settings settings.json --port 4000 & local-ssl-proxy --target 4000 --source 2000",
     "test": "jest --maxWorkers=4",
     "test-watch": "jest --watchAll",
@@ -37,6 +37,7 @@
     "node-gyp": "^8.1.0",
     "nprogress": "^0.2.0",
     "query-string": "^6.2.0",
+    "randombytes": "^2.1.0",
     "react": "^16.8.0",
     "react-day-picker": "^7.1.9",
     "react-dom": "^16.8.0",
