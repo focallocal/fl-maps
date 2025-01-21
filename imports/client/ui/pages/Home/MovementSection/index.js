@@ -1,23 +1,14 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Container,
-  Row,
-  Col,
   Button,
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-  CardSubtitle,
-  CardLink,
-  CardDeck
+  Container,
+  Row
 } from 'reactstrap'
 import Item from './Item'
-import i18n from '/imports/both/i18n/en'
-import ContributorsSection from '../ContributorsSection'
 import './styles.scss'
+import i18n from '/imports/both/i18n/en'
 
 const MovementI18N = i18n.Home.movement_section
 const { Home } = i18n

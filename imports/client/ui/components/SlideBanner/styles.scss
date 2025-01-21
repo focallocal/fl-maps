@@ -1,0 +1,78 @@
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%; // Allow it to stretch across the screen
+  margin: 0 auto;
+  overflow: hidden;
+  aspect-ratio: 16/9; // Maintain a 16:9 aspect ratio
+  border-bottom: solid 6px orange;
+}
+
+.slideshow-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out; // Slide transition effect
+}
+
+.slideshow-slide {
+  min-width: 100%; // Each slide takes up full width
+  display: flex;
+  justify-content: center;
+}
+
+.slide-image {
+  width: 100%;
+  height: 50%;
+  object-fit: cover; // Ensure the image covers the area without stretching or distorting
+  background-color: white;
+  // background-color: #2876CA;
+}
+
+.slideshow-container button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.419);
+  color: white;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  font-size: 24px;
+  transform: translateY(-50%);
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.slideshow-container button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .prev-button, .next-button {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .slide-image {
+    object-fit: cover;
+  }
+}
+
+/* For very small screens, like phones */
+@media (max-width: 480px) {
+  .prev-button, .next-button {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  /*
+  .slideshow-container {
+    aspect-ratio: 4/3; // Slightly different aspect ratio for small screens
+  }
+  */
+}
