@@ -18,6 +18,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  
 
   .name {
     font-weight: bolder;
@@ -42,7 +43,27 @@
     transition: color .15s ease;
 
     &:hover {
-      color: $primary-blue-hover;
+      //color: $primary-blue-hover;
     }
   }
+
+  &.highlighted{
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: box-shadow,font-size  .35s ease-in-out;
+    transform: translateY(-1px);
+    box-shadow: rgba(93, 93, 93, 0.10) 0px 30px 40px -12px inset, 
+                rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+   
+  }
+}
+    
+.event-list-item:hover{
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: box-shadow, font-size .35s ease-in-out;
+    transform: translateY(-1px);
+    box-shadow: rgba(93, 93, 93, 0.10) 0px 30px 40px -12px inset,
+                rgba(0, 0, 0, 0.3) 10px 18px 36px -18px inset;
+
 }
