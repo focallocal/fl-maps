@@ -1,7 +1,8 @@
 @import '{}/imports/client/stylesheets/variables.scss';
 
 #movement_section {
-  padding: 40px;
+  padding-top: 2%;
+  padding-bottom: 2%;
   // background: $gray-lighter;
   text-align: left;
 
@@ -13,6 +14,13 @@
     font-size: 2.3em;
     line-height: 1.2em;
     margin-left: -15px;
+    z-index: 1;
+    background-color: white;
+    padding: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.22rem;
   }
   .item-text {
     font-size: 1.3em;
@@ -62,7 +70,7 @@
   }
 
   @media screen and (min-width: 851px) {
-    margin-top: -80vh;
+    // margin-top: -80vh;
     .title {
       font-size: 2.3em;
       line-height: 1.2em;
@@ -71,9 +79,9 @@
   }
 
   @media screen and (max-width: 850px) {
-    margin-top: 1rem;
+    // margin-top: 1rem;
     .title {
-      font-size: 1.4em;
+      font-size: 1.8em;
       line-height: 1.4em;
       margin-left: 0;
       text-align: left;

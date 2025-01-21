@@ -1,0 +1,46 @@
+/* Full-page container */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white; /* Keeps it clean with white space */
+  overflow: hidden; /* Ensures no scrolling */
+  position: relative;
+}
+
+/* Text in the middle */
+.hero-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  z-index: 10; /* Keeps text above floating images */
+}
+
+/* Floating images */
+.floating-image {
+  position: absolute;
+  // width: 100px; /* Adjust size of floating images */
+  width: 100%;
+  animation: float 10s infinite ease-in-out;
+}
+
+/* Keyframes for floating animation */
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -20px);
+  }
+  50% {
+    transform: translate(-20px, 30px);
+  }
+  75% {
+    transform: translate(20px, -30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

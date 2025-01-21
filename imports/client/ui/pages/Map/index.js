@@ -1,28 +1,28 @@
 // External Libraries
-import React, { Component, Fragment } from 'react'
 import { Meteor } from 'meteor/meteor'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from 'react-google-maps'
-import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
+import React, { Component, Fragment } from 'react'
+import { DirectionsRenderer, GoogleMap, Marker, withGoogleMap, withScriptjs } from 'react-google-maps'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
-import { Alert, Input, Button } from 'reactstrap'
+import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { Link } from 'react-router-dom'
+import { Alert, Button, Input } from 'reactstrap'
 
 // Components and Pages
-import EventsList from './EventsList'
 import FiltersList from './EventsFilter'
-import SearchButtons from './SearchButtons'
+import EventsList from './EventsList'
 import MarkerWrapper from './MarkerWrapper'
+import SearchButtons from './SearchButtons'
 
 // Utils
+import { inIFrame } from 'dcs-client'
 import mapOptions from './mapOptions'
 import { ensureUniquePosition } from './utils'
-import { inIFrame } from 'dcs-client'
-import getUserPosition from '/imports/client/utils/location/getUserPosition'
 import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
+import getUserPosition from '/imports/client/utils/location/getUserPosition'
 
 // Styles and Other
-import './styles.scss'
 import './mobile-styles.scss'
+import './styles.scss'
 import i18n from '/imports/both/i18n/en'
 
 class MapComponent_ extends Component {
@@ -38,7 +38,8 @@ class MapComponent_ extends Component {
       filteredEvents: null,
       isFetching: true,
       showFilters: false,
-      userLocation: null,
+      // userLocation: null,
+      userLocation: { lat: 40.71084185899232, lng: -73.9266585638803 },
       zoom: 3,
       mapRadius: null,
       showPastEvents: false,

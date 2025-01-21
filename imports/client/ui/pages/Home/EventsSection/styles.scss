@@ -1,8 +1,8 @@
 @import '{}/imports/client/stylesheets/variables.scss';
 
 #events_section {
-  margin-top: -5rem;
-  padding: 40px;
+  padding-top: 2%;
+  // padding: 40px;
   // background: $gray-lighter;
   text-align: left;
 
@@ -10,10 +10,17 @@
     max-width: 1000px;
     margin: auto;
   }
-  .title{
+  .title {
     font-size: 2.3em;
     line-height: 1.2em;
     margin-left: -15px;
+    z-index: 1;
+    background-color: white;
+    padding: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.22rem;
   }
   .item-text {
     font-size: 1.3em;
