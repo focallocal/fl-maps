@@ -1,5 +1,4 @@
-
-
+/*
 main {
   position: relative;
 
@@ -32,6 +31,16 @@ main {
   .a {
     font-weight: bold;
   }
+
+  .background-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+  }
 }
 
 #hero-bg {
@@ -47,6 +56,9 @@ main {
 
 
 @media screen and (max-width: 900px) {
+  .background-image {
+    display: none;
+  }
 
   #hero-bg {
     height: 30vw;
@@ -54,6 +66,9 @@ main {
 }
 
 @media screen and (max-width: 720px) {
+  .background-image {
+    display: none;
+  }
 
   section {
     padding: 8px !important;
@@ -61,8 +76,165 @@ main {
 }
 
 @media screen and (max-width: 460px) {
+  .background-image {
+    display: none;
+  }
 
   #hero-bg {
     display: none;
+  }
+}
+*/
+
+main {
+  position: relative;
+
+  .gather-button {
+    position: absolute;
+    z-index: 99;
+    left: 5px;
+    top: 5px;
+  }
+
+  &.home {
+    // background: #FFF9EB;
+  }
+
+  section {
+    // margin: 40px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .title {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-size: 2.2em;
+    font-weight: bold;
+  }
+
+  .a {
+    font-weight: bold;
+  }
+
+  .background-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+
+  /*.mobile-banner {
+    width: 100%;
+    display: block;
+  }*/
+
+  .banner-title {
+    // margin-top: -5rem;
+    padding: 0 2rem 0 2rem;
+    position: relative; /* Position the text absolutely */
+    // top: 0%; /* Move it 50% down */
+    // left: 50%; /* Move it 50% right */
+    // transform: translate(-50%, -50%); /* Center the text */
+    // color: red; /* Make the text readable */
+    background-color: #ffffff;
+    width: auto;
+    // font-size: 3rem; /* Adjust font size */
+    text-align: center; /* Center-align the text */
+    // text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better readability */
+  }
+
+  .banner-title h3 {
+    font-size: 5rem; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align the text */
+    // background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background: linear-gradient(to left, purple, red, blue, green, blue, indigo, violet);
+    -webkit-background-clip: text; /* Apply gradient to the text only */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Make the background visible */
+    font-family: 'Patrick Hand', 'Comic Sans MS', cursive; /* Use the custom font */
+    animation: rainbow-animation 4s linear infinite; /* Infinite animation */
+    background-size: 200%; /* Extend background for smooth animation */
+  }
+  /*
+  Disabled the animation on the "Public Happiness" text for now.
+  @keyframes rainbow-animation {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+  }
+    */
+}
+
+#hero-bg {
+  height: 28vw;
+  min-height: 250px;
+  max-height: 365px;
+  width: 100%;
+  background-color: #ffffff;
+  background-position: center;
+  background-size: cover;
+  transition: height .8s ease-in;
+}
+
+
+@media screen and (min-width: 640px) {
+  main {
+    .background-image {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    .background-image {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    .background-image {
+      display: block;
+    }
+
+    .mobile-banner {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  main {
+    .background-image {
+      display: block;
+    }
+
+    .mobile-banner {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1536px) {
+  main {
+    .background-image {
+      display: block;
+    }
+
+    .mobile-banner {
+      display: none;
+    }
   }
 }
