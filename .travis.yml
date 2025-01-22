@@ -33,7 +33,13 @@ branches:
     - deploy-phm
 
 script:
-  # Install dependencies and deploy with MUP
-  - npm install
-  - mup setup
-  - mup deploy
+  # Debugging steps to diagnose issues before deployment
+  - node -v                # Check Node.js version
+  - npm -v                 # Check npm version
+  - npm ls --all           # Print the dependency tree
+  - cat /home/travis/.npm/_logs/* || true  # Print npm logs, if available
+
+  # Main deployment scripts
+  - npm install            # Install dependencies
+  - mup setup              # Meteor Up setup
+  - mup deploy             # Meteor Up deployment
