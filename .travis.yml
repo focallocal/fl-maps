@@ -18,8 +18,6 @@ before_install:
 branches:
   only:
     - master
-    - fl-sleeper
-    - master_withoutDCS
     - deploy-btm
     - deploy-phm
 
