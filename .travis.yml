@@ -6,19 +6,43 @@ node_js:
 notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
 
+# Cache to avoid rebuilding GLIBC and speeding up npm installs
+cache:
+  directories:
+    - /opt/glibc-2.28
+    - ~/.npm
+
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y build-essential manpages-dev
-  - wget http://ftp.gnu.org/gnu/libc/glibc-2.28.tar.gz
-  - tar -xvzf glibc-2.28.tar.gz
-  - cd glibc-2.28
-  - mkdir build
-  - cd build
-  - ../configure --prefix=/opt/glibc-2.28
-  - make -j$(nproc)
-  - sudo make install
+  # Group: Dependencies installation
+  - travis_fold:start:dependencies
+  - sudo apt-get update -qq
+  - sudo apt-get install -y build-essential manpages-dev > /dev/null
+  - travis_fold:end:dependencies
+
+  # Check if GLIBC is already built and cached
+  - if [ ! -d "/opt/glibc-2.28/lib" ]; then
+
+      # Group: GLIBC download
+      travis_fold:start:glibc_download;
+      wget http://ftp.gnu.org/gnu/libc/glibc-2.28.tar.gz -q;
+      tar -xvzf glibc-2.28.tar.gz > /dev/null;
+      travis_fold:end:glibc_download;
+
+      # Group: GLIBC build
+      travis_fold:start:glibc_build;
+      cd glibc-2.28;
+      mkdir build;
+      cd build;
+      ../configure --prefix=/opt/glibc-2.28 > /dev/null;
+      make -s -j$(nproc) > /dev/null;
+      sudo make install > /dev/null;
+      cd ../../;
+      travis_fold:end:glibc_build;
+
+    fi
+
+  # Set library path
   - export LD_LIBRARY_PATH=/opt/glibc-2.28/lib:$LD_LIBRARY_PATH
-  - cd ../../
 
 branches:
   only:
