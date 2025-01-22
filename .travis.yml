@@ -1,6 +1,6 @@
 language: node_js
 sudo: required
-dist: bionic  # Checked 'trusty, bionic' 
+dist: focal  # Checked 'trusty, bionic, focal' 
 node_js:
   - '14.21.3'
 
