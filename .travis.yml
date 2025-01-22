@@ -12,18 +12,43 @@ cache:
     - ~/.npm
 
 before_install:
+  # Update and install system dependencies
   - sudo apt-get update -qq
   - sudo apt-get install -y build-essential manpages-dev > /dev/null
-  - wget http://ftp.gnu.org/gnu/libc/glibc-2.28.tar.gz -q
-  - tar -xvzf glibc-2.28.tar.gz > /dev/null
-  - cd glibc-2.28
-  - mkdir build
-  - cd build
-  - ../configure --prefix=/opt/glibc-2.28 > /dev/null
-  - make -j$(nproc) > /dev/null
-  - sudo make install > /dev/null
+
+  # Install GLIBC
+  - if [ ! -d "/opt/glibc-2.28/lib" ]; then
+      wget http://ftp.gnu.org/gnu/libc/glibc-2.28.tar.gz -q;
+      tar -xvzf glibc-2.28.tar.gz > /dev/null;
+      cd glibc-2.28;
+      mkdir build;
+      cd build;
+      ../configure --prefix=/opt/glibc-2.28 > /dev/null;
+      make -j$(nproc) > /dev/null;
+      sudo make install > /dev/null;
+      cd ../../;
+    fi
+
+  # Update library path
   - export LD_LIBRARY_PATH=/opt/glibc-2.28/lib:$LD_LIBRARY_PATH
+
+  # Install SOPS
+  - curl -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb"
+  - sudo dpkg -i sops.deb
+
+  # Import GPG key for SOPS
+  - echo "$sops_gpg_key" | base64 -d | gpg --batch --import
+
+  # Decrypt files in the deployment directory
+  - cd .deployment/$(./.deployment/branch-to-dir.sh "$TRAVIS_BRANCH")
+  - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
   - cd ../../
+
+  # Install MUP (Meteor Up)
+  - npm install -g mup
+
+  # Install Meteor
+  - curl https://install.meteor.com | /bin/sh
 
 branches:
   only:
@@ -32,6 +57,7 @@ branches:
     - deploy-phm
 
 script:
+  # Install dependencies and deploy with MUP
   - npm install
   - mup setup
   - mup deploy
