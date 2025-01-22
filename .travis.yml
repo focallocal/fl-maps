@@ -6,20 +6,17 @@ node_js:
 notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
 
-# Cache to avoid rebuilding GLIBC and speeding up npm installs
 cache:
   directories:
     - /opt/glibc-2.28
     - ~/.npm
 
 before_install:
-  # Group: Dependencies installation
   - travis_fold:start:dependencies
   - sudo apt-get update -qq
   - sudo apt-get install -y build-essential manpages-dev > /dev/null
   - travis_fold:end:dependencies
 
-  # Check if GLIBC is already built and cached
   - if [ ! -d "/opt/glibc-2.28/lib" ]; then
 
       # Group: GLIBC download
@@ -41,7 +38,6 @@ before_install:
 
     fi
 
-  # Set library path
   - export LD_LIBRARY_PATH=/opt/glibc-2.28/lib:$LD_LIBRARY_PATH
 
 branches:
