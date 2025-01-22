@@ -9,24 +9,16 @@ notifications:
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y build-essential manpages-dev
-  - if [ ! -d "/opt/glibc-2.28" ]; then
-      wget http://ftp.gnu.org/gnu/libc/glibc-2.28.tar.gz;
-      tar -xvzf glibc-2.28.tar.gz;
-      cd glibc-2.28;
-      mkdir build && cd build;
-      ../configure --prefix=/opt/glibc-2.28 > /dev/null;
-      make -j$(nproc) > /dev/null;
-      sudo make install > /dev/null;
-      cd ../..;
-    fi
+  - wget http://ftp.gnu.org/gnu/libc/glibc-2.28.tar.gz
+  - tar -xvzf glibc-2.28.tar.gz
+  - cd glibc-2.28
+  - mkdir build
+  - cd build
+  - ../configure --prefix=/opt/glibc-2.28
+  - make -j$(nproc)
+  - sudo make install
   - export LD_LIBRARY_PATH=/opt/glibc-2.28/lib:$LD_LIBRARY_PATH
-  - curl -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb"
-  - sudo dpkg -i sops.deb
-  - echo "$sops_gpg_key" | base64 -d | gpg --batch --import
-  - cd .deployment/$(./.deployment/branch-to-dir.sh "$TRAVIS_BRANCH")
-  - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
-  - npm install -g mup
-  - curl https://install.meteor.com | /bin/sh
+  - cd ../../
 
 branches:
   only:
