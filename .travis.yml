@@ -30,9 +30,6 @@ before_install:
       cd ../../;
     fi
 
-  # Update library path
-  - export LD_LIBRARY_PATH=/opt/glibc-2.28/lib:$LD_LIBRARY_PATH
-
   # Install SOPS
   - curl --retry 5 --retry-delay 5 --retry-connrefused -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb"
   # - curl --retry 5 --retry-connrefused --retry-delay 5 -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb"
