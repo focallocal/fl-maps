@@ -32,6 +32,28 @@ branches:
     - deploy-btm
     - deploy-phm
 
+cache:
+  directories:
+    - ~/.npm
+
+jobs:
+  include:
+    - stage: regenerate-lockfile
+      name: Regenerate package-lock.json
+      script:
+        - echo "Regenerating package-lock.json..."
+        - rm -rf node_modules package-lock.json
+        - npm install
+        - git config user.name "Travis CI"
+        - git config user.email "travis@ci.com"
+        - git add package-lock.json
+        - git commit -m "Regenerate package-lock.json via Travis CI" || echo "No changes to commit"
+        - git push origin $TRAVIS_BRANCH
+
+before_script:
+  - npm ci --verbose
+  - cat /home/travis/.npm/_logs/* || true  # Ensure the npm logs are displayed
+
 script:
   # Debugging steps to diagnose issues before deployment
   - node -v                # Check Node.js version
