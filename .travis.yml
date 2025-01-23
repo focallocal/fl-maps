@@ -8,22 +8,12 @@ notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
 
 before_install:
-  # Install SOPS
   - curl -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb"
   - sudo dpkg -i sops.deb
-
-  # Import GPG key for SOPS
   - echo "$sops_gpg_key" | base64 -d | gpg --batch --import
-
-  # Decrypt files in the deployment directory
   - cd .deployment/$(./.deployment/branch-to-dir.sh "$TRAVIS_BRANCH")
   - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
-  - cd ../../
-
-  # Install MUP (Meteor Up)
   - npm install -g mup
-
-  # Install Meteor
   - curl https://install.meteor.com | /bin/sh
 
 branches:
@@ -32,36 +22,7 @@ branches:
     - deploy-btm
     - deploy-phm
 
-cache:
-  directories:
-    - ~/.npm
-
-jobs:
-  include:
-    - stage: regenerate-lockfile
-      name: Regenerate package-lock.json
-      script:
-        - echo "Regenerating package-lock.json..."
-        - rm -rf node_modules package-lock.json
-        - npm install
-        - git config user.name "Travis CI"
-        - git config user.email "travis@ci.com"
-        - git add package-lock.json
-        - git commit -m "Regenerate package-lock.json via Travis CI" || echo "No changes to commit"
-        - git push origin $TRAVIS_BRANCH
-
-before_script:
-  - npm ci --verbose
-  - cat /home/travis/.npm/_logs/* || true  # Ensure the npm logs are displayed
-
 script:
-  # Debugging steps to diagnose issues before deployment
-  - node -v                # Check Node.js version
-  - npm -v                 # Check npm version
-  - npm ls --all           # Print the dependency tree
-  - cat /home/travis/.npm/_logs/* || true  # Print npm logs, if available
-
-  # Main deployment scripts
-  - npm install            # Install dependencies
-  - mup setup              # Meteor Up setup
-  - mup deploy             # Meteor Up deployment
+  - npm install
+  - mup setup
+  - mup deploy
