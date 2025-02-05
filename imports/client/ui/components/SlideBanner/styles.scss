@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Playwrite+DE+VA+Guides&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Playwrite+DE+VA+Guides&display=swap');
+
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .slideshow-container {
   position: relative;
   width: 100%;
-  max-width: 100%; // Allow it to stretch across the screen
+  max-width: 100%;
   margin: 0 auto;
-  overflow: hidden;
-  aspect-ratio: 16/9; // Maintain a 16:9 aspect ratio
+  aspect-ratio: 16/9;
   border-bottom: solid 6px orange;
 }
 
@@ -16,15 +24,56 @@
 .slideshow-slide {
   min-width: 100%; // Each slide takes up full width
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  // background-color: white;
 }
 
 .slide-image {
   width: 100%;
-  height: 50%;
+  height: 100%;
   object-fit: cover; // Ensure the image covers the area without stretching or distorting
   background-color: white;
-  // background-color: #2876CA;
+  aspect-ratio: 16/9;
+}
+
+.mobile-slide-header {
+  margin-top: 1rem;
+  text-align: center;
+  font-family: "Figtree", serif;
+  font-weight: 600;
+  font-size: 6vw;
+  text-align: center;
+  display: block;
+  color: rgb(0, 0, 0);
+  text-shadow: -3px -3px 2px white,
+                3px -3px 2px white,
+                -3px 3px 2px white,
+                3px 3px 2px white,
+                4px 4px 8px white;
+}
+
+.desktop-slide-header {
+  display: none;
+}
+
+.slide-sub-header {
+  margin-top: 1rem;
+  padding: 0 1rem 0 1rem;
+  text-align: center;
+  font-family: "Crimson Text", serif;
+  font-weight: bold;
+  font-size: 4vw;
+}
+
+.slide-cta {
+  text-align: center;
+  padding: 0 0 0.5rem 0;
+}
+.slide-cta a {
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-padding-x: 2rem;
+  --bs-btn-font-size: 1rem;
 }
 
 .slideshow-container button {
@@ -51,8 +100,47 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* For very small screens, like phones */
+@media (max-width: 480px) {
+  .prev-button, .next-button {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    border-bottom: solid 6px orange;
+    height: 30rem;
+  }
+
+  .slideshow-slide {
+    min-width: 100%; // Each slide takes up full width
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensure the image covers the area without stretching or distorting
+    background-color: white;
+    aspect-ratio: 16/9;
+  }
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .slideshow-container {
+    width: 100%;  // Changed from 100vw
+    margin-left: 0;  // Remove negative margins
+    margin-right: 0;
+  }
+
   .prev-button, .next-button {
     font-size: 20px;
     padding: 12px;
@@ -61,18 +149,104 @@
   .slide-image {
     object-fit: cover;
   }
+
 }
 
-/* For very small screens, like phones */
-@media (max-width: 480px) {
-  .prev-button, .next-button {
-    font-size: 18px;
-    padding: 10px;
+@media (min-width: 1024px) {
+  .slideshow-container {
+    aspect-ratio: unset;
   }
 
-  /*
-  .slideshow-container {
-    aspect-ratio: 4/3; // Slightly different aspect ratio for small screens
+  .slideshow-slide {
+    min-width: 100%; // Each slide takes up full width
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    background-color: white;
   }
-  */
+
+  .mobile-slide-header {
+    display: none;
+  }
+
+  .desktop-slide-header {
+    font-family: "Figtree", serif;
+    font-weight: 600;
+    font-size: 6vw;
+    text-align: center;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-shadow: -3px -3px 2px white,
+                  3px -3px 2px white,
+                  -3px 3px 2px white,
+                  3px 3px 2px white,
+                  4px 4px 8px white;
+    z-index: 1;
+    position: relative;
+  }
+
+  .slide-image {
+    width: 90%;
+    object-fit: cover; // Ensure the image covers the area without stretching or distorting
+    aspect-ratio: 16/9;
+    margin-top: -9vw;
+  }
+
+  .slide-sub-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: -22vw;
+  }
+
+  .slide-sub-header {
+    font-family: "Crimson Text", serif;
+    font-weight: 500;
+    font-size: 3vw;
+    width: 80vw;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-shadow: -2px -2px 3px white,
+                  2px -2px 3px white,
+                  -2px 2px 3px white,
+                  2px 2px 3px white,
+                  2px 2px 4px white;
+  }
+
+  .slide-cta{
+    padding: 0 0 1rem 0;
+  }
+
+  .slide-cta a {
+    --bs-btn-padding-y: 1rem;
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-font-size: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  main {
+    .background-image {
+      display: block;
+    }
+
+    .mobile-banner {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1536px) {
+  main {
+    .background-image {
+      display: block;
+    }
+
+    .mobile-banner {
+      display: none;
+    }
+  }
 }

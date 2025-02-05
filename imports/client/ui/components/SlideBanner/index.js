@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss'; // Ensure you have corresponding styles
+import i18n from '/imports/both/i18n/en';
 
-const SlideshowBanner = ({ images, autoScrollInterval = 3000 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const SlideshowBanner = ({ autoScrollInterval = 3000 }) => {
+  const SlideBannerI18N = i18n.Home.slide_banner_section;
+
+  const {
+    items
+  } = SlideBannerI18N
+
+  console.log(items);
+
+  // Get random initial index
+  const getRandomIndex = () => Math.floor(Math.random() * items.length);
+  const [currentIndex, setCurrentIndex] = useState(getRandomIndex());
   const [isHovered, setIsHovered] = useState(false);
 
   // Go to previous image
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
   };
 
   // Go to next image
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
   };
 
   // Auto scroll logic, stops when hovered
@@ -30,9 +41,24 @@ const SlideshowBanner = ({ images, autoScrollInterval = 3000 }) => {
       onMouseLeave={() => setIsHovered(false)} // Resume on mouse leave
     >
       <div className="slideshow-wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-        {images.map((image, index) => (
+        {items.map((item, index) => (
           <div className="slideshow-slide" key={index}>
-            <img src={image} alt={`Slide ${index + 1}`} className="slide-image" />
+            <div className='desktop-slide-header-container'>
+              <h5 className='desktop-slide-header'>{item.header}</h5>
+            </div>
+            <img src={item.image} alt={`Slide ${index + 1}`} className="slide-image" />
+            <div>
+              <div className='mobile-slide-header'>{item.header}</div>
+              <div className='slide-sub-header-container'>
+                <p className='slide-sub-header'>{item.sub_header}</p>
+              </div>
+              <div className='slide-cta'>
+                <a 
+                  href={item.cta_link}
+                  className='btn btn-primary'
+                >{item.cta}</a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
