@@ -1,4 +1,4 @@
-language: node_js
+language: node_js  # Note changes in this file are not merged when pushed to other branches and need to be copy pasted manually
 sudo: required
 dist: focal  # Checked 'trusty, bionic, focal, xenial, focal' 
 node_js:
