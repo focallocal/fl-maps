@@ -71,13 +71,6 @@ class Home extends Component {
       left: 0,
     };*/
 
-    const images = [
-      '/images/home-images/slide-images/andy_the_liberators.png',
-      '/images/home-images/slide-images/bubbles_cover.png',
-      '/images/home-images/slide-images/andy_pillow.png',
-      '/images/home-images/slide-images/andy_happy_cow.png',
-      '/images/home-images/slide-images/temp2.png',
-    ];
     return (
       <main className='home'>
         {/* <div id='hero-bg' style={backgroundImage} /> */}
@@ -88,7 +81,7 @@ class Home extends Component {
         <div className=''>
           <img src={url} alt="Banner" className='background-image' />
         </div>
-        <SlideshowBanner images={images} autoScrollInterval={3000} />
+        <SlideshowBanner autoScrollInterval={3000} />
         {/*<FloatingSlider />*/}
         {/*
         <div className='banner-title'>
