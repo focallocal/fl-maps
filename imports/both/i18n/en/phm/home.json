@@ -540,38 +540,31 @@
     "items": [
       {
         "image": "/images/home-images/slide-images/andy_the_liberators.png",
-        "header": "Andy the Liberators",
-        "sub_header": "A fun and friendly way to bring people together to create a better world",
-        "cta": "test",
-        "cta_link": "ppp"
+        "header": "Random Acts of Kindness",
+        "sub_header": "Host or join fun, public kindness activities—and connect with amazing people while making your community a friendlier, happier place. Create unforgettable memories, make amazing new friends, and spread more kindness where you live.",
+        "cta": "Find or Start a Kindness Activity",
+        "cta_link": "https://publichappinessmovement.com/docuss/m_gather"
       },
       {
         "image": "/images/home-images/slide-images/bubbles_cover.png",
-        "header": "Andy the Liberators",
-        "sub_header": "A fun and friendly way to bring people together to create a better world",
-        "cta": "test",
-        "cta_link": "ppp"
+        "header": "International Mass Kindness Days",
+        "sub_header": "Join a global wave of kindness! Take part in fun, globally coordinated activities with thousands of positive people - spreading joy and making a friendlier, happier world for all. Be there… or wish you had been!",
+        "cta": "I Want to Be There!",
+        "cta_link": "https://publichappinessmovement.com/c/positiveaction/
       },
       {
         "image": "/images/home-images/slide-images/andy_pillow.png",
-        "header": "Andy the Liberators",
-        "sub_header": "A fun and friendly way to bring people together to create a better world",
-        "cta": "test",
-        "cta_link": "ppp"
+        "header": "Build Kindness Projects with Your Skills",
+        "sub_header": "Collaborate globally with passionate, like-minded professionals to create impactful, kindness-driven, locally led projects that build a kindner world with more peace, well-being and happiness. Local Action for Global Change!",
+        "cta": "Build a Kinder World",
+        "cta_link": "https://publichappinessmovement.com/t/topic/205"
       },
       {
         "image": "/images/home-images/slide-images/andy_happy_cow.png",
-        "header": "Andy the Liberators",
-        "sub_header": "A fun and friendly way to bring people together to create a better world",
-        "cta": "test",
-        "cta_link": "ppp"
-      },
-      {
-        "image": "/images/home-images/slide-images/temp2.png",
-        "header": "Andy the Liberators",
-        "sub_header": "A fun and friendly way to bring people together to create a better world",
-        "cta": "test",
-        "cta_link": "ppp"
+        "header": "Kindness that isn’t only feel-good - it’s proven",
+        "sub_header": "Our projects are powered by the latest research on happiness and well-being, to make sure we have a real impact, as well as having loads of fun!",
+        "cta": "Explore the Science Behind Kindness",
+        "cta_link": "https://publichappinessmovement.com/t/topic/1278"
       }
     ]
   }
