@@ -3,7 +3,7 @@
 
 **Intro**
 
-This is an opensource project which brings people and communities together to take action on causes they care about, both in-person locally and also globally. Locally the platform collects and rates the most effective ways people can take action on that cause. Globally it allows users to discuss, vote on, and then use their skills to build projects together which target positive action on that issue. 
+This is a kindness based opensource project which brings people and communities together to take action on causes they care about, both in-person locally and also globally. Locally the platform collects and rates the most effective ways people can take action on that cause. Globally it allows users to discuss, vote on, and then use their skills to build projects together which target positive action on that issue. 
 
 The project map also reward users with a blockchain token to incentivise more action which benefits the each platforms mission, or the health and growth of the community built on it. We'll give the scheme a trial run and see how it goes.
 
