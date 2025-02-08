@@ -13,7 +13,7 @@ html, body {
   max-width: 100%;
   margin: 0 auto;
   aspect-ratio: 16/9;
-  border-bottom: solid 6px orange;
+  // border-bottom: solid 6px orange;
 }
 
 .slideshow-wrapper {
@@ -27,6 +27,7 @@ html, body {
   flex-direction: column;
   height: 100%;
   // background-color: white;
+  border-bottom: solid 6px orange;
 }
 
 .slide-image {
@@ -164,6 +165,7 @@ html, body {
     height: 100%;
     align-items: center;
     background-color: white;
+    border-bottom: solid 6px orange;
   }
 
   .mobile-slide-header {
