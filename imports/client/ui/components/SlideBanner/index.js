@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'reactstrap';
 import './styles.scss'; // Ensure you have corresponding styles
 import i18n from '/imports/both/i18n/en';
 
@@ -8,8 +9,6 @@ const SlideshowBanner = ({ autoScrollInterval = 3000 }) => {
   const {
     items
   } = SlideBannerI18N
-
-  console.log(items);
 
   // Get random initial index
   const getRandomIndex = () => Math.floor(Math.random() * items.length);
@@ -53,10 +52,9 @@ const SlideshowBanner = ({ autoScrollInterval = 3000 }) => {
                 <p className='slide-sub-header'>{item.sub_header}</p>
               </div>
               <div className='slide-cta'>
-                <a 
-                  href={item.cta_link}
-                  className='btn btn-primary'
-                >{item.cta}</a>
+                <Button tag="a" href={item.cta_link} className='cta-button' color='primary' target="_blank"> 
+                  {item.cta}
+                </Button>
               </div>
             </div>
           </div>
