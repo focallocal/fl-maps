@@ -13,7 +13,6 @@ html, body {
   max-width: 100%;
   margin: 0 auto;
   aspect-ratio: 16/9;
-  // border-bottom: solid 6px orange;
 }
 
 .slideshow-wrapper {
@@ -26,7 +25,6 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  // background-color: white;
   border-bottom: solid 6px orange;
 }
 
@@ -70,16 +68,20 @@ html, body {
 .slide-cta {
   text-align: center;
   padding: 0 0 0.5rem 0;
+  position: relative;
+  z-index: 10;
 }
-.slide-cta a {
-  --bs-btn-padding-y: 0.5rem;
-  --bs-btn-padding-x: 2rem;
-  --bs-btn-font-size: 1rem;
+
+.slide-cta .cta-button {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  pointer-events: auto;
 }
 
 .slideshow-container button {
   position: absolute;
-  top: 50%;
+  top: 30%;
   background-color: rgba(0, 0, 0, 0.419);
   color: white;
   border: none;
@@ -103,6 +105,18 @@ html, body {
 
 /* For very small screens, like phones */
 @media (max-width: 480px) {
+  .slideshow-container button {
+    position: absolute;
+    top: 30%;
+    background-color: rgba(0, 0, 0, 0.419);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    transform: translateY(-50%);
+  }
+
   .prev-button, .next-button {
     font-size: 18px;
     padding: 10px;
@@ -114,12 +128,11 @@ html, body {
     max-width: 100%;
     margin: 0 auto;
     aspect-ratio: 16/9;
-    border-bottom: solid 6px orange;
     height: 30rem;
   }
 
   .slideshow-slide {
-    min-width: 100%; // Each slide takes up full width
+    min-width: 100%;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -136,6 +149,18 @@ html, body {
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  .slideshow-container button {
+    position: absolute;
+    top: 30%;
+    background-color: rgba(0, 0, 0, 0.419);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    transform: translateY(-50%);
+  }
+
   .slideshow-container {
     width: 100%;  // Changed from 100vw
     margin-left: 0;  // Remove negative margins
@@ -158,6 +183,18 @@ html, body {
     aspect-ratio: unset;
   }
 
+  .slideshow-container button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.419);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    transform: translateY(-50%);
+  }
+
   .slideshow-slide {
     min-width: 100%; // Each slide takes up full width
     display: flex;
@@ -165,7 +202,7 @@ html, body {
     height: 100%;
     align-items: center;
     background-color: white;
-    border-bottom: solid 6px orange;
+    // border-bottom: solid 6px orange;
   }
 
   .mobile-slide-header {
