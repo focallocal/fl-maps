@@ -62,7 +62,7 @@ html, body {
   text-align: center;
   font-family: "Crimson Text", serif;
   font-weight: bold;
-  font-size: 3vw;
+  font-size: 4vw;
 }
 
 .slide-cta {
@@ -244,7 +244,7 @@ html, body {
   .slide-sub-header {
     font-family: "Crimson Text", serif;
     font-weight: 500;
-    font-size: 3vw;
+    font-size: 4vw;
     width: 80vw;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -258,6 +258,7 @@ html, body {
   @media screen and (min-width: 768px) {
     .slide-sub-header {
         line-height: 1.1;
+        font-size: 3vw;
     }
     
     .desktop-slide-header {
