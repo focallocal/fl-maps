@@ -42,7 +42,7 @@ html, body {
   text-align: center;
   font-family: "Figtree", serif;
   font-weight: 600;
-  font-size: 4vw;
+  font-size: 6vw;
   text-align: center;
   display: block;
   color: rgb(0, 0, 0);
@@ -209,13 +209,22 @@ html, body {
     width: 80vw;
     text-align: center;
     color: rgb(0, 0, 0);
-    line-height:1.1;
     text-shadow: -2px -2px 3px white,
                   2px -2px 3px white,
                   -2px 2px 3px white,
                   2px 2px 3px white,
                   2px 2px 4px white;
   }
+
+  @media screen and (min-width: 768px) {
+    .slide-sub-header {
+        line-height: 1.1;
+    }
+    
+    .desktop-slide-header {
+      font-size: 4vw;
+  }
+} 
 
   .slide-cta{
     padding: 0 0 1rem 0;
