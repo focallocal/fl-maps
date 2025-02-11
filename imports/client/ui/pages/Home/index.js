@@ -81,7 +81,7 @@ class Home extends Component {
         <div className=''>
           <img src={url} alt="Banner" className='background-image' />
         </div>
-        <SlideshowBanner autoScrollInterval={3000} />
+        <SlideshowBanner autoScrollInterval={10000} />
         {/*<FloatingSlider />*/}
         {/*
         <div className='banner-title'>
