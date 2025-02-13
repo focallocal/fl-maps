@@ -12,7 +12,7 @@ import FiltersList from './EventsFilter'
 import EventsList from './EventsList'
 import MarkerWrapper from './MarkerWrapper'
 import SearchButtons from './SearchButtons'
-import NewEventForm from '../NewEvent/FormWizard/FirstStep'  // Adjust path as needed
+import FormWizard from '../NewEvent/FormWizard'
 
 // Utils
 import { inIFrame } from 'dcs-client'
@@ -196,7 +196,7 @@ class MapComponent_ extends Component {
             New Event
           </ModalHeader>
           <ModalBody>
-            <NewEventForm />
+            <FormWizard />
           </ModalBody>
         </Modal>
       </GoogleMap>
