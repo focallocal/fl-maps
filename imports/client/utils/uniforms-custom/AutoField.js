@@ -1,4 +1,4 @@
-import BaseField from 'uniforms/BaseField'
+import { BaseField } from 'uniforms'
 import invariant from 'fbjs/lib/invariant'
 import {createElement} from 'react'
 

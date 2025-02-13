@@ -1,4 +1,4 @@
-import BaseField from 'uniforms/BaseField'
+import { BaseField } from 'uniforms'
 import React from 'react'
 import filterDOMProps from 'uniforms/filterDOMProps'
 
