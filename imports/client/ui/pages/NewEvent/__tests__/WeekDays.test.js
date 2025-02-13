@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import sinon from 'sinon'
-import AutoForm from 'uniforms/AutoForm'
+import { AutoForm } from 'uniforms'
 import { CustomInput } from 'reactstrap'
 import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
 import { EventsSchema } from '/imports/both/collections/events'

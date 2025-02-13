@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import sinon from 'sinon'
-import AutoForm from 'uniforms/AutoForm'
+import { AutoForm } from 'uniforms'
 import { EventsSchema } from '/imports/both/collections/events'
 import Weekly from '../FormWizard/DateTimeModule/Recurring/Weekly'
 
