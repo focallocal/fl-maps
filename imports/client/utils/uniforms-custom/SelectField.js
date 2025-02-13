@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import connectField from 'uniforms/connectField'
+import { connectField } from 'uniforms'
 import Select from 'react-select'
 import { FormGroup, Label } from 'reactstrap';
 

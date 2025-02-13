@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import connectField from 'uniforms/connectField'
+import { connectField } from 'uniforms'
 import DayPicker from 'react-day-picker/DayPicker'
 import { FormGroup, Label, Input, Modal } from "reactstrap";
 
