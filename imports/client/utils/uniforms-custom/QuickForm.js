@@ -1,24 +1,24 @@
-import { QuickForm } from 'uniforms'
+import React from 'react';
+import { QuickForm as UniformsQuickForm } from 'uniforms';
+import BaseForm from './BaseForm';
+import AutoField from './AutoField';
+import ErrorsField from './ErrorsField';
+import SubmitField from './SubmitField';
 
-import BaseForm from './BaseForm'
-import AutoField from './AutoField'
-import ErrorsField from './ErrorsField'
-import SubmitField from './SubmitField'
+const Quick = parent => class extends UniformsQuickForm.Quick(parent) {
+  static Quick = Quick;
 
-const Quick = parent => class extends QuickForm.Quick(parent) {
-    static Quick = Quick;
+  getAutoField() {
+    return AutoField;
+  }
 
-    getAutoField () {
-      return AutoField
-    }
+  getErrorsField() {
+    return ErrorsField;
+  }
 
-    getErrorsField () {
-      return ErrorsField
-    }
+  getSubmitField() {
+    return SubmitField;
+  }
+};
 
-    getSubmitField () {
-      return SubmitField
-    }
-}
-
-export default Quick(BaseForm)
+export default Quick(BaseForm);

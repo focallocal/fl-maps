@@ -1,9 +1,8 @@
-import { BaseForm } from 'uniforms'
+import React from 'react'
+import { BaseForm as UniformsBaseForm } from 'uniforms'
 
-const Custom = parent => class extends parent {
-    static Unstyled = Custom;
-
-    static displayName = `Custom${parent.displayName}`;
+const BaseForm = parent => class extends UniformsBaseForm {
+    static displayName = 'BaseForm'
 }
 
-export default Custom(BaseForm)
+export default BaseForm

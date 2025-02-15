@@ -1,8 +1,8 @@
 import React from 'react'
-import { connectField } from 'uniforms'
+import { NumField } from 'uniforms'
 import { FormGroup, Label, Input } from 'reactstrap'
 
-const Number_ = ({
+const NumberField = ({
   id,
   label,
   name,
@@ -18,16 +18,33 @@ const Number_ = ({
   field,
   ...props
 }) => {
+  const handleChange = (e) => {
+    const { value, type } = e.target
+
+    // Prevent numbers lower than the minimum
+    if (type === 'number' && value < min) {
+      if (field.optional) {
+        return onChange('')
+      }
+      return onChange(min)
+    }
+
+    if (type === 'number' && value > max) {
+      return onChange(max)
+    }
+
+    onChange(value.substr(0, max))
+  }
+
   return (
     <FormGroup>
       <Label>{label}</Label>
-
       <Input
         id={id}
         name={name}
-        onChange={e => handleChange(e, onChange, max, min, field.optional)}
+        onChange={handleChange}
         placeholder={placeholder}
-        type={customType || type}
+        type={customType || 'number'}
         value={value !== undefined ? value : defaultValue}
         max={max}
         min={min}
@@ -37,24 +54,4 @@ const Number_ = ({
   )
 }
 
-const handleChange = (e, onChange, max, min, optional) => {
-  const { value, type } = e.target
-
-  // Prevent numbers lower than the minimum
-  if (type === 'number' && value < min) {
-    if (optional) {
-      return onChange('')
-    }
-    return onChange(min)
-  }
-
-  if (type === 'number' && value > max) {
-    return onChange(max)
-  }
-
-  onChange(value.substr(0, max))
-}
-
-Number_.defaultProps = { type: 'number' }
-
-export default connectField(Number_)
+export default NumberField

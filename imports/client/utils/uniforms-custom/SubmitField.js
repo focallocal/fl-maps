@@ -1,16 +1,8 @@
-import { BaseField } from 'uniforms'
-import React from 'react'
-import { filterDOMProps } from 'uniforms'
+import React from 'react';
+import { SubmitField as UniformsSubmitField } from 'uniforms';
 
-const SubmitField = ({disabled, inputRef, value, ...props}, {uniforms: {error, state}}) =>
-  <input
-    disabled={disabled === undefined ? !!(error || state.disabled) : disabled}
-    ref={inputRef}
-    type="submit"
-    value={value}
-    {...filterDOMProps(props)}
-  />
+const SubmitField = (props) => {
+  return <UniformsSubmitField {...props} />;
+};
 
-SubmitField.contextTypes = BaseField.contextTypes
-
-export default SubmitField
+export default SubmitField;

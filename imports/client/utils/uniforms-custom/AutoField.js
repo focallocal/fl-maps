@@ -1,39 +1,33 @@
-import { BaseField } from 'uniforms'
-import invariant from 'fbjs/lib/invariant'
-import {createElement} from 'react'
+import React from 'react'
+import { connectField } from 'uniforms'
 
 import DateField from './DateField'
 import InputField from './InputField'
 import NumberField from './NumberField'
 import SelectField from './SelectField'
 
-export default class AutoField extends BaseField {
-    static displayName = 'AutoField';
+const Auto = props => {
+  const { component, customType, fieldType } = props
 
-    getChildContextName () {
-      return this.context.uniforms.name
+  if (customType) {
+    switch (customType) {
+      case 'select': return <SelectField {...props} />
+      case 'textarea': return <InputField {...props} />
+      case 'number': return <InputField {...props} />
+      default: return <InputField {...props} />
     }
+  }
 
-    render () {
-      const props = this.getFieldProps(undefined, {ensureValue: false})
-      const { customType, fieldType } = props
+  if (component) {
+    return React.createElement(component, props)
+  }
 
-      if (customType) {
-        switch (customType) {
-          case 'select': props.component = SelectField; break
-          case 'textarea': props.component = InputField; break
-          case 'number': props.component = InputField; break
-        }
-      } else {
-        switch (fieldType) {
-          case Date: props.component = DateField; break
-          case String: props.component = InputField; break
-          case Number: props.component = NumberField; break
-        }
-
-        invariant(props.component, 'Unsupported field type: %s', props.fieldType.toString())
-      }
-
-      return createElement(props.component, this.props)
-    }
+  switch (fieldType) {
+    case Date: return <DateField {...props} />
+    case String: return <InputField {...props} />
+    case Number: return <NumberField {...props} />
+    default: return <InputField {...props} />
+  }
 }
+
+export default connectField(Auto)

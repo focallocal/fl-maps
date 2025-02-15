@@ -1,5 +1,8 @@
-import BaseForm from './BaseForm'
-import QuickForm from './QuickForm'
-import ValidatedForm from './ValidatedForm'
+import React from 'react';
+import { ValidatedQuickForm as UniformsValidatedQuickForm } from 'uniforms';
 
-export default ValidatedForm.Validated(QuickForm.Quick(BaseForm))
+const ValidatedQuickForm = (props) => {
+  return <UniformsValidatedQuickForm {...props} />;
+};
+
+export default ValidatedQuickForm;
