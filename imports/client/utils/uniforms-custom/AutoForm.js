@@ -1,10 +1,9 @@
-import * as Uniforms from 'uniforms'
-import { QuickForm } from 'uniforms'
+import { AutoForm } from 'uniforms'
 import ValidatedQuickForm from './ValidatedQuickForm'
 // import BaseForm from 'uniforms/BaseForm' removed as AI said it wasn't used anywhere in project
 
 
-const Auto = parent => class extends Uniforms.QuickForm.Auto(parent) {
+const Auto = parent => class extends AutoForm.Auto(parent) {
     static Auto = Auto;
     onChange (key, value) {
       // starting date should not be later than ending date
