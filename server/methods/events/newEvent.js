@@ -5,7 +5,7 @@ import Events, { EventsSchema } from '/imports/both/collections/events'
 import { logRateLimit } from '/server/security/rate-limiter'
 
 const name = 'Events.newEvent'
-const newEvent = new ValidatedMethod({
+export const newEvent = new ValidatedMethod({
   name,
   mixins: [],
   validate: EventsSchema.validator(),
