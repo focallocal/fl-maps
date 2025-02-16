@@ -1,5 +1,5 @@
 import { AutoForm } from 'uniforms'
-import ValidatedQuickForm from './ValidatedQuickForm'
+import CustomValidatedQuickForm from './ValidatedQuickForm'
 // import BaseForm from 'uniforms/BaseForm' removed as AI said it wasn't used anywhere in project
 
 
@@ -17,4 +17,4 @@ const Auto = parent => class extends AutoForm.Auto(parent) {
     }
 }
 
-export default Auto(ValidatedQuickForm)
+export default Auto(CustomValidatedQuickForm)

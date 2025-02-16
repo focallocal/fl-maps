@@ -339,11 +339,11 @@ const EventsSchema = new SimpleSchema({
     type: Number,
     min: 0,
     max: 12,
-    defaultValue: 1,
     autoValue: function () {
       if (!this.value || this.value < 1) {
         return 1
       }
+      return this.value
     }
   },
   'when.recurring.forever': {

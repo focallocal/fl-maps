@@ -1,7 +1,7 @@
 import React from 'react';
-import { QuickForm } from 'uniforms';
+import { ValidatedQuickForm } from 'uniforms';
 
-class ValidatedQuickForm extends QuickForm {
+class CustomValidatedQuickForm extends ValidatedQuickForm {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
@@ -12,4 +12,4 @@ class ValidatedQuickForm extends QuickForm {
   }
 }
 
-export default ValidatedQuickForm;
+export default CustomValidatedQuickForm;
