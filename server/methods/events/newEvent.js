@@ -8,7 +8,9 @@ const name = 'Events.newEvent'
 export const newEvent = new ValidatedMethod({
   name,
   mixins: [],
-  validate: bridge.getValidator(),
+  validate(event) {
+    return bridge.getValidator()(event)
+  },
   run (event) {
     if (!Meteor.user()) {
       throw new Meteor.Error('Events.newEvent', 'Only users can perform this task')
