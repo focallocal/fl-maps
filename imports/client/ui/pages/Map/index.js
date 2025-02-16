@@ -5,14 +5,13 @@ import { DirectionsRenderer, GoogleMap, Marker, withGoogleMap, withScriptjs } fr
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { Link } from 'react-router-dom'
-import { Alert, Button, Input, Modal, ModalHeader, ModalBody } from 'reactstrap'
+import { Alert, Button, Input } from 'reactstrap'
 
 // Components and Pages
 import FiltersList from './EventsFilter'
 import EventsList from './EventsList'
 import MarkerWrapper from './MarkerWrapper'
 import SearchButtons from './SearchButtons'
-import FormWizard from '../NewEvent/FormWizard'
 
 // Utils
 import { inIFrame } from 'dcs-client'
@@ -39,13 +38,13 @@ class MapComponent_ extends Component {
       filteredEvents: null,
       isFetching: true,
       showFilters: false,
+      // userLocation: null,
       userLocation: { lat: 40.71084185899232, lng: -73.9266585638803 },
       zoom: 3,
       mapRadius: null,
       showPastEvents: false,
       hoveredEvent: null,
-      isHovered: false,
-      showNewEventModal: false
+      isHovered: false
     }
   }
 
@@ -59,13 +58,6 @@ class MapComponent_ extends Component {
     window.__setDocumentTitle('Map')
     toggleBodyOverflow()
     this._isMounted = true // don't remove that line
-
-    // Add URL parameter check
-    const params = new URLSearchParams(window.location.search)
-    if (params.get('new') === '1') {
-      console.log('Should show new event modal')
-      this.setState({ showNewEventModal: true })
-    }
 
     // keep at bottom of componentDidMount so that the event list is displayed and
     // correct zoom level  when individual page is closed
@@ -109,8 +101,8 @@ class MapComponent_ extends Component {
       userLocation,
       zoom,
       hoveredEvent,
-      isHovered,
-      showNewEventModal
+      isHovered
+
     } = this.state
 
     const { history } = this.props
@@ -190,15 +182,6 @@ class MapComponent_ extends Component {
         {userLocation && <Marker position={userLocation} />}
         {directions && <DirectionsRenderer directions={directions} />}
         <Alert id='map-error' color='danger' isOpen={!!error}>{error ? error.msg : ''}</Alert>
-
-        <Modal isOpen={showNewEventModal} toggle={() => this.setState({ showNewEventModal: false })}>
-          <ModalHeader toggle={() => this.setState({ showNewEventModal: false })}>
-            New Event
-          </ModalHeader>
-          <ModalBody>
-            <FormWizard />
-          </ModalBody>
-        </Modal>
       </GoogleMap>
     )
   }
