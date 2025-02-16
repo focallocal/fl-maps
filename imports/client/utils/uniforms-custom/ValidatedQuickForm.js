@@ -1,8 +1,8 @@
 import React from 'react';
-import { ValidatedQuickForm as UniformsValidatedQuickForm } from 'uniforms';
+import * as Uniforms from 'uniforms';
 
 const ValidatedQuickForm = (props) => {
-  return <UniformsValidatedQuickForm {...props} />;
+  return <Uniforms.ValidatedQuickForm {...props} />;
 };
 
 export default ValidatedQuickForm;
