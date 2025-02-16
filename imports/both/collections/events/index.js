@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Mongo } from 'meteor/mongo'
 import SimpleSchema from 'simpl-schema'
+import { SimpleSchema2Bridge } from 'uniforms-bridge-simple-schema-2'
 import { startingTime, endingTime, startingDate, endingDate, getHour, weekDays, getDate, videoHosts } from './helpers'
 // import categoryTree from '/imports/both/i18n/en/categories.json'
 // import labels from '/imports/both/i18n/en/new-event-modal.json'
@@ -565,6 +566,9 @@ const EventsSchema = new SimpleSchema({
   }
 })
 
+// Create the bridge
+const bridge = new SimpleSchema2Bridge(EventsSchema)
+
 Events.attachSchema(EventsSchema)
 
 if (Meteor.isServer) {
@@ -573,5 +577,6 @@ if (Meteor.isServer) {
 
 export {
   Events as default,
-  EventsSchema
+  EventsSchema,
+  bridge  // Export the bridge
 }

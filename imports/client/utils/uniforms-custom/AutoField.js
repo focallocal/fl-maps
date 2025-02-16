@@ -1,6 +1,7 @@
 import React from 'react'
 import { AutoField } from 'uniforms-bootstrap5'
 import { connectField } from 'uniforms-bootstrap5'
+import { bridge } from '/imports/both/collections/events/index'
 
 import DateField from './DateField'
 import InputField from './InputField'

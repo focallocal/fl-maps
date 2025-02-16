@@ -1,4 +1,4 @@
-import { EventsSchema } from '../events/index'
+import { EventsSchema, bridge } from '../events/index'
 import possibleCategories from '/imports/both/i18n/en/categories.json'
 import { determinePosition } from '../events/helpers'
 
@@ -6,27 +6,28 @@ describe('Events', () => {
   // Always remember to update those tests if changing something in the schema.
 
   const validateTheWhenObject = obj => {
-    const context = EventsSchema.newContext()
+    const validator = bridge.getValidator()
 
-    // validate the "when" field only
-    context.validate(context.clean({
+    validator.validate({
       when: obj
-    }), { keys: ['when'] })
+    }, { keys: ['when'] })
 
-    return context.validationErrors()
+    return validator.validationErrors()
   }
 
   test('validate empty form should fail', () => {
+    const validator = bridge.getValidator()
     try {
-      EventsSchema.validate({})
+      validator.validate({})
     } catch (ex) {
       expect(ex.error).toEqual('validation-error')
     }
   })
 
   test('validate with invalid categories value should fail', () => {
+    const validator = bridge.getValidator()
     try {
-      EventsSchema.validate({
+      validator.validate({
         categories: [{ name: 'unknown category', color: '#fff' }]
       })
     } catch (ex) {
@@ -35,8 +36,9 @@ describe('Events', () => {
   })
 
   test('validate with invalid location type should fail', () => {
+    const validator = bridge.getValidator()
     try {
-      EventsSchema.validate({
+      validator.validate({
         address: {
           location: {
             type: 'OnlyPointAllowed'
