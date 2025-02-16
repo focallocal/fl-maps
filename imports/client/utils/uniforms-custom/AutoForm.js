@@ -2,7 +2,7 @@ import { AutoForm } from 'uniforms'
 import CustomValidatedQuickForm from './ValidatedQuickForm'
 // import BaseForm from 'uniforms/BaseForm' removed as AI said it wasn't used anywhere in project
 
-
+// Return to original pattern that matches uniforms v3.10.2
 const Auto = parent => class extends AutoForm.Auto(parent) {
     static Auto = Auto;
     onChange (key, value) {
