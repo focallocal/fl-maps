@@ -1,4 +1,4 @@
-import { EventsSchema } from '../events'
+import { EventsSchema } from '../events/index'
 import possibleCategories from '/imports/both/i18n/en/categories.json'
 import { determinePosition } from '../events/helpers'
 

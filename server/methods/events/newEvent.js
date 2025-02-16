@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { DDPRateLimiter } from 'meteor/ddp-rate-limiter'
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
-import Events, { EventsSchema } from '/imports/both/collections/events'
+import Events, { EventsSchema } from '/imports/both/collections/events/index'
 import { logRateLimit } from '/server/security/rate-limiter'
 
 const name = 'Events.newEvent'
