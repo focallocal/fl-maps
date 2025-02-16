@@ -1,4 +1,4 @@
-import { AutoForm } from 'uniforms'
+import { AutoForm } from 'uniforms-bootstrap5'
 import CustomValidatedQuickForm from './ValidatedQuickForm'
 // import BaseForm from 'uniforms/BaseForm' removed as AI said it wasn't used anywhere in project
 

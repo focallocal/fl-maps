@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connectField } from 'uniforms'
+import { connectField } from 'uniforms-bootstrap5'
 import { FormGroup, Label } from 'reactstrap'
 import Select from 'react-select'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { NumField } from 'uniforms'
+import { NumField } from 'uniforms-bootstrap5'
 import { FormGroup, Label, Input } from 'reactstrap'
 
 const NumberField = ({

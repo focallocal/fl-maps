@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { FormGroup, Label } from 'reactstrap'
 import ReactDatePicker from 'react-datepicker'
-import { connectField } from 'uniforms'
+import { connectField } from 'uniforms-bootstrap5'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 

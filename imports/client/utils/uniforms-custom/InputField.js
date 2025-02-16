@@ -1,5 +1,5 @@
 import React from 'react'
-import { connectField } from 'uniforms'
+import { connectField } from 'uniforms-bootstrap5'
 import { FormGroup, Label, Input } from 'reactstrap'
 
 const Text = ({

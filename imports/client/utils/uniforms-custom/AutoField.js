@@ -1,40 +1,33 @@
 import React from 'react'
-import { AutoField } from 'uniforms'
-import { connectField } from 'uniforms'
+import { AutoField } from 'uniforms-bootstrap5'
+import { connectField } from 'uniforms-bootstrap5'
 
 import DateField from './DateField'
 import InputField from './InputField'
 import NumberField from './NumberField'
 import SelectField from './SelectField'
 
-class Auto extends AutoField {
-  getChildComponent() {
-    const { component, customType, fieldType } = this.props
+const Auto = props => {
+  const { component, customType, fieldType } = props
 
-    if (customType) {
-      switch (customType) {
-        case 'select': return SelectField
-        case 'textarea': return InputField
-        case 'number': return InputField
-        default: return InputField
-      }
-    }
-
-    if (component) {
-      return component
-    }
-
-    switch (fieldType) {
-      case Date: return DateField
-      case String: return InputField
-      case Number: return NumberField
-      default: return InputField
+  if (customType) {
+    switch (customType) {
+      case 'select': return <SelectField {...props} />
+      case 'textarea': return <InputField {...props} />
+      case 'number': return <InputField {...props} />
+      default: return <InputField {...props} />
     }
   }
 
-  render() {
-    const Component = this.getChildComponent()
-    return <Component {...this.props} />
+  if (component) {
+    return React.createElement(component, props)
+  }
+
+  switch (fieldType) {
+    case Date: return <DateField {...props} />
+    case String: return <InputField {...props} />
+    case Number: return <NumberField {...props} />
+    default: return <InputField {...props} />
   }
 }
 
