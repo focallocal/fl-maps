@@ -1,7 +1,7 @@
 import React from 'react';
-import * as Uniforms from 'uniforms';
+import { QuickForm } from 'uniforms';
 
-class ValidatedQuickForm extends Uniforms.ValidatedQuickForm {
+class ValidatedQuickForm extends QuickForm {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
