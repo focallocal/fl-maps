@@ -56,7 +56,8 @@
     "uniforms": "^3.10.2",
     "uniforms-bootstrap5": "^3.10.2",
     "uniforms-bridge-simple-schema-2": "^3.10.2",
-    "xmlhttprequest": "^1.8.0"
+    "xmlhttprequest": "^1.8.0",
+    "react-datepicker": "^4.25.0"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",
