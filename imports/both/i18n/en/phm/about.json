@@ -1,33 +1,31 @@
-
 {
   "first_section": {
     "title": "Our Mission",
     "content": {
-      "first": "If its not fun, its not sustainable!",
-      "second": "We believe that happier, kinder communities create a better world for everyone. The Public Happiness Movement brings together people who want to take real action, whether locally or globally, to spread positivity and solve issues that matter to them",
-      "third": "Here, you’ll find like-minded people, tools to take action, and a movement that grows stronger with each small act of kindness",
+      "main": "We believe that happier, kinder communities create a better world for everyone. The Public Happiness Movement brings together people who want to take real action, whether locally or globally, to spread positivity and solve issues that matter to them.\n\nHere, you'll find like-minded people, tools to take action, and a movement that grows stronger with each small act of kindness.",
       "youtubeLink": "https://www.youtube.com/embed/wFUKoXk8NwA",
-      "top_image_url": "../images/logo.png"
+      "quote": "If its not fun, its not sustainable!",
+      "author": "Gary Lachance"
     }
   },
   "second_section": {
-    "title": "A Kinder, Fairer and Happier Economy for our World",
+    "title": "A Kinder, Fairer, and Happier World",
     "content": {
-      "first": "Anyone who benefits society should be rewarded. That's what economic systems were created to do",
-      "second": "Today's GDP based economy ignores areas key to creating healthy and happy communities. Perpetuating systemic societal issues and asking the kind-hearted of us to try and cover the gaps through volunteering and donating to charities. Few have any plan to ever solve the issue they target",
-      "third": "Here everyone who wants to take positive actions to solve societal issues is rewarded. Either on the streets where you live, or by building projects which empower local people and communities around the world to tackle their issues",
-      "fourth": "If a world where the economic system we live in prioritises people, communities, and the planet; sounds like somewhere you want to live. Then welcome, you've just found your new home!",
-      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA"
+      "main": "In a world addicted to division, we aim to show the power of human and community connection. With a shared focus and effective, science-backed tools, a united community is more powerful than those who seek to divide us for their own selfish goals.\n\nBy coming together and taking action, we create real change, one step at a time."
     }
   },
-"third_section": {
-    "title": "A Kinder, Fairer and Happier Economy for our World",
+  "third_section": {
+    "title": "A Fairer, Happier Economy",
     "content": {
-      "first": "Anyone who benefits society should be rewarded. That's what economic systems were created to do",
-      "second": "Today's GDP based economy ignores areas key to creating healthy and happy communities. Perpetuating systemic societal issues and asking the kind-hearted of us to try and cover the gaps through volunteering and donating to charities. Few have any plan to ever solve the issue they target",
-      "third": "Here everyone who wants to take positive actions to solve societal issues is rewarded. Either on the streets where you live, or by building projects which empower local people and communities around the world to tackle their issues",
-      "fourth": "If a world where the economic system we live in prioritises people, communities, and the planet; sounds like somewhere you want to live. Then welcome, you've just found your new home!",
-      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA"
+      "main": "Imagine an economy that rewards what really matters - kindness, connection, and community well-being. That's why we're experimenting with PHM tokens, our innovative cryptocurrency that rewards people for creating positive change",
+      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA",
+      "quote": "Anyone who benefits society should be rewarded. That's what economic systems were created to do. How much is PHM token worth? It's worth whatever our community collectively values it at, which is how much value you believe we are creating in the world",
+      "author": "Andy Tulett",
+      "cta": {
+        "text": "💡 Want to be part of it? Click below to get started.",
+        "button": "Join the Movement",
+        "link": "/sign-in"
+      }
     }
   }
 }

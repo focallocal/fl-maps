@@ -1,0 +1,27 @@
+{
+  "first_section": {
+    "title": "What is Focallocal?",
+    "content": "Focallocal is an open, worldwide community of people creating positive action. We empower people to build a friendlier, happier world where people look out for each other.",
+    "content_subtitle": "Join us and turn Public Happiness into a daily habit!",
+    "video": {
+      "url": "https://www.youtube.com/embed/WUppGn2Z4b4?rel=0&amp;showinfo=0",
+      "title": "Focallocal - Meet Me and Take #PublicHappiness Worldwide"
+    }
+  },
+  "second_section": {
+    "title": "How It Works",
+    "content": [
+      "**Local Action, Global Impact** – Small efforts create big ripples. By working together, we create a wave of positive change.",
+      "**Community-Powered Solutions** – Connected communities are stronger and better at solving their own challenges.",
+      "**Fun & Sustainability** – If it's not fun, it won't last! We make social change enjoyable and engaging"
+    ]
+  },
+  "third_section": {
+    "title": "Our Mission",
+    "content": "We're building a movement to overcome social isolation and create positive cultural change through community action.",
+    "video": {
+      "url": "https://www.youtube.com/embed/WUppGn2Z4b4?rel=0&amp;showinfo=0",
+      "title": "Building Positive Change Through Community Action"
+    }
+  }
+} 

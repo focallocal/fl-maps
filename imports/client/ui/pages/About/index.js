@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TopImageSection from './TopImageSection'
 import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
+import ThirdSection from './ThirdSection'
 import AboutSection from '../Home/SecondSection'
 import i18n from '/imports/both/i18n/en'
 import './styles.scss'
@@ -20,6 +21,7 @@ class About extends Component {
         <AboutSection button= {false} />
         <FirstSection />
         <SecondSection />
+        <ThirdSection />
       </div>
     )
   }
