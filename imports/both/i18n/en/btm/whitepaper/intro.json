@@ -1,29 +1,29 @@
 {
   "first_section": {
-    "title": "Our Mission",
+    "title": "Connection is a Path to a Brighter Future",
     "content": {
-      "main": "We believe that happier, kinder communities create a better world for everyone. The Public Happiness Movement brings together people who want to take real action, whether locally or globally, to spread positivity and solve issues that matter to them.\n\nHere, you'll find like-minded people, tools to take action, and a movement that grows stronger with each small act of kindness.",
+      "main": "The Brighter Tomorrow Map helps reconnect our communities so we can effectively support each other through difficult times. Our focus is helping people who are homeless find resources they need and begin their path to a brighter future.",
       "youtubeLink": "https://www.youtube.com/embed/wFUKoXk8NwA",
-      "quote": "If its not fun, its not sustainable!",
-      "author": "Gary Lachance"
+      "quote": "A united community is more powerful than our challenges",
+      "author": "Brighter Tomorrow Movement"
     }
   },
   "second_section": {
-    "title": "A Kinder, Fairer, and Happier World",
+    "title": "How You Can Help",
     "content": {
-      "main": "In a world addicted to division, we aim to show the power of human and community connection. With a shared focus and effective, science-backed tools, a united community is more powerful than those who seek to divide us for their own selfish goals.\n\nBy coming together and taking action, we create real change, one step at a time."
+      "main": "Share resources you've found - like food banks, shelters, showers, or support services. Or offer direct help through community-tested ideas. Together, we're building a network of support that makes a real difference.\n\nEvery resource shared could be someone's first step to a better life."
     }
   },
   "third_section": {
-    "title": "A Fairer, Happier Economy",
+    "title": "Join the Movement",
     "content": {
-      "main": "Imagine an economy that rewards what really matters - kindness, connection, and community well-being. That's why we're experimenting with PHM tokens, our innovative cryptocurrency that rewards people for creating positive change",
+      "main": "We're a global community taking action to solve homelessness through local connection and support. Our map is just the beginning - it's a tool that helps us work together more effectively.",
       "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA",
-      "quote": "Anyone who benefits society should be rewarded. That's what economic systems were created to do. How much is PHM token worth? It's worth whatever our community collectively values it at, which is how much value you believe we are creating in the world",
-      "author": "Andy Tulett",
+      "quote": "Real change happens when communities come together to support each other",
+      "author": "Brighter Tomorrow Movement",
       "cta": {
-        "text": "💡 Want to be part of it? Click below to get started.",
-        "button": "Join the Movement",
+        "text": "💡 Ready to make a difference? Start by sharing a resource.",
+        "button": "Add Resource to Map",
         "link": "/sign-in"
       }
     }
