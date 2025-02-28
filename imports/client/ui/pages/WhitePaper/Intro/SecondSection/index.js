@@ -17,7 +17,7 @@ const SecondSection = () => (
     <Container>
       <Row>
         <Col md={6} className='attachment-content'>
-          {youtubeLink && <iframe src={youtubeLink} frameBorder="0" allowFullScreen></iframe>}
+          <iframe src={youtubeLink} frameBorder="0" allowFullScreen></iframe>
         </Col>
         <Col md={6}>
           <h2 className='title'>{title}</h2>

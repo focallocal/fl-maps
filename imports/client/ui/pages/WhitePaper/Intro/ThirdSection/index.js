@@ -23,12 +23,6 @@ const ThirdSection = () => (
             <p>{first}</p>
             <p>{second}</p>
             <p>{fourth}</p>
-            {cta && (
-              <div className="cta-wrapper">
-                <p>{cta.text}</p>
-                <Button color="primary" tag="a" href={cta.link}>{cta.button}</Button>
-              </div>
-            )}
           </div>
         </Col>
         <Col md={6} className='attachment-content'>
@@ -36,6 +30,14 @@ const ThirdSection = () => (
           <p className="quote">{third}</p>
         </Col>
       </Row>
+      {cta && (
+        <Row>
+          <Col className="cta-wrapper">
+            <p>{cta.text}</p>
+            <Button color="primary" tag="a" href={cta.link}>{cta.button}</Button>
+          </Col>
+        </Row>
+      )}
     </Container>
   </section>
 )

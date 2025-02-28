@@ -9,21 +9,6 @@
     p {
       margin-bottom: 10px;
     }
-    
-    .cta-wrapper {
-      margin-top: 20px;
-      text-align: center;
-      
-      p {
-        font-weight: 500;
-      }
-      
-      .btn {
-        margin-top: 8px;
-        padding: 10px 24px;
-        font-weight: 500;
-      }
-    }
   }
   
   .attachment-content {
@@ -40,13 +25,28 @@
     }
   }
   
+  .cta-wrapper {
+    margin-top: 30px;
+    text-align: center;
+    
+    p {
+      font-weight: 500;
+    }
+    
+    .btn {
+      margin-top: 8px;
+      padding: 10px 24px;
+      font-weight: 500;
+    }
+  }
+  
   @media screen and (max-width: 768px) {
     .text-content {
       max-width: 100%;
-      
-      .cta-wrapper {
-        text-align: left;
-      }
+    }
+    
+    .cta-wrapper {
+      text-align: center;
     }
   }
 } 
