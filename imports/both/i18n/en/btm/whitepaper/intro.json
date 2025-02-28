@@ -1,34 +1,35 @@
 {
   "first_section": {
-    "title": "Our Mission",
+    "title": "Connection is a Path to a Brighter Future",
     "content": {
-      "first": "If its not fun, its not sustainable!",
-      "second": "The Public Happiness Movement is for anyone, or group, who want to take action to build a world with more peace, kindness, and well-being in it",
-      "third": "Here you can find other positive, pro-active people both nearby and globally. To come together and create projects to target any and all societal issues you care about",
-      "fourth": "The key is community connection. Connected communities solve their own issues. Each action may feel like a tiny ripple. As more and more people join in the effects multiply exponentially, combining to form an unstoppable wave, a Positive Action Movement, which will sweep across this planet",
-      "fifth": "Our message here is that YOU have the power to change the world around you, and our mission is to give you the tools to create that positive change where you live. Local Action for Global Change",
+      "first": "A united community is more powerful than our challenges",
+      "second": "The Brighter Tomorrow Map helps reconnect our communities so we can effectively support each other through difficult times.",
+      "third": "Our focus is helping people who are homeless find resources they need and begin their path to a brighter future.",
       "youtubeLink": "https://www.youtube.com/embed/wFUKoXk8NwA",
       "top_image_url": "../images/logo.png"
     }
   },
   "second_section": {
-    "title": "A Kinder, Fairer and Happier Economy for our World",
+    "title": "How You Can Help",
     "content": {
-      "first": "Anyone who benefits society should be rewarded. That's what economic systems were created to do",
-      "second": "Today's GDP based economy ignores areas key to creating healthy and happy communities. Perpetuating systemic societal issues and asking the kind-hearted of us to try and cover the gaps through volunteering and donating to charities. Few have any plan to ever solve the issue they target",
-      "third": "Here everyone who wants to take positive actions to solve societal issues is rewarded. Either on the streets where you live, or by building projects which empower local people and communities around the world to tackle their issues",
-      "fourth": "If a world where the economic system we live in prioritises people, communities, and the planet; sounds like somewhere you want to live. Then welcome, you've just found your new home!",
-      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA"
+      "first": "Share resources you've found - like food banks, shelters, showers, or support services.",
+      "second": "Or offer direct help through community-tested ideas.",
+      "third": "Together, we're building a network of support that makes a real difference. Every resource shared could be someone's first step to a better life."
     }
   },
   "third_section": {
-    "title": "How You Can Help",
+    "title": "Join the Movement",
     "content": {
-      "first": "The Brighter Tomorrow Map is powered by people like you who care about making a difference.",
-      "second": "By sharing resources, organizing community events, or simply connecting with those in need, you're helping build a stronger support network for everyone.",
-      "third": "Every small action creates ripples of positive change that can transform lives and communities.",
-      "fourth": "Join us today and be part of the solution to homelessness in your community.",
-      "youtubeLink": "https://www.youtube.com/embed/mFE9pztP9no"
+      "first": "We're a global community taking action to solve homelessness through local connection and support.",
+      "second": "Our map is just the beginning - it's a tool that helps us work together more effectively.",
+      "third": "Real change happens when communities come together to support each other",
+      "fourth": "Ready to make a difference? Start by sharing a resource.",
+      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA",
+      "cta": {
+        "text": "💡 Ready to make a difference? Start by sharing a resource.",
+        "button": "Add Resource to Map",
+        "link": "/sign-in"
+      }
     }
   }
 }

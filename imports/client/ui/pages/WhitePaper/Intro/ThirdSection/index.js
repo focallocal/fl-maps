@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 import i18n from '/imports/both/i18n/en/'
 import './style.scss'
 
@@ -9,7 +9,8 @@ const {
   second,
   third,
   fourth,
-  youtubeLink
+  youtubeLink,
+  cta
 } = content
 
 const ThirdSection = () => (
@@ -23,10 +24,16 @@ const ThirdSection = () => (
             <p>{second}</p>
             <p>{third}</p>
             {fourth && <p>{fourth}</p>}
+            {cta && (
+              <div className="cta-wrapper">
+                <p>{cta.text}</p>
+                <Button color="primary" tag="a" href={cta.link}>{cta.button}</Button>
+              </div>
+            )}
           </div>
         </Col>
         <Col md={6} className='attachment-content'>
-          <iframe src="https://www.youtube.com/embed/mFE9pztP9no" frameBorder="0" allowFullScreen></iframe>
+          <iframe src={youtubeLink} frameBorder="0" allowFullScreen></iframe>
         </Col>
       </Row>
     </Container>
