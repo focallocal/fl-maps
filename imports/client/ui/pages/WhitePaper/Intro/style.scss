@@ -84,18 +84,19 @@
   }
 }
 
-/* Update the mobile override */
+/* Simplify and make more specific */
 @media screen and (max-width: 768px) {
-  section.first-section,
-  section.second-section,
-  section.third-section {
-    padding: 10px 0 !important;
-    margin: 10px 0 0 0 !important;
-    
-    .title {
-      margin-top: 0 !important;
-      margin-bottom: 8px !important;
-    }
+  body section.first-section,
+  body section.second-section,
+  body section.third-section {
+    padding-top: 0 !important;
+    padding-bottom: 10px !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  body section.third-section {
+    padding-bottom: 30px !important;
   }
 }
 
