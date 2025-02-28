@@ -13,3 +13,28 @@
     height: auto;
   }
 }
+
+.top-image-section {
+  text-align: center;
+  padding: 20px 0;
+  
+  .top-image-wrapper {
+    img {
+      max-width: 100%; /* Ensures image never exceeds container width */
+      height: auto; /* Maintains aspect ratio */
+      width: auto; /* Allows image to scale down naturally */
+      max-height: 150px; /* Limits maximum height */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    padding: 10px 0;
+    
+    .top-image-wrapper {
+      img {
+        max-width: 90%; /* Slightly smaller on mobile */
+        max-height: 100px; /* Smaller height on mobile */
+      }
+    }
+  }
+}
