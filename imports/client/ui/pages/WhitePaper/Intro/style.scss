@@ -27,9 +27,9 @@
     }
 
     @media screen and (max-width: 768px) {
-      padding: 16px 0;
-      margin-top: 8px;
-      margin-bottom: 16px;
+      padding: 12px 0 !important;
+      margin-top: 4px !important;
+      margin-bottom: 8px !important;
     }
   }
 
@@ -59,7 +59,7 @@
     }
 
     @media screen and (max-width: 768px) {
-      margin-top: 16px;
+      margin-top: 12px !important;
     }
   }
 
@@ -77,7 +77,7 @@
           }
 
           .attachment-content {
-            margin-top: 32px;
+            margin-top: 16px !important;
           }
         }
       }
