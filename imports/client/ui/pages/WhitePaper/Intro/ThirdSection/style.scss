@@ -1,5 +1,5 @@
 .third-section {
-  background: #FFF9EB;
+  background: #fff;
   
   .text-content {
     max-width: 100%;
@@ -12,6 +12,7 @@
     
     .cta-wrapper {
       margin-top: 20px;
+      text-align: center;
       
       p {
         font-weight: 500;
@@ -31,11 +32,21 @@
       aspect-ratio: 16 / 9;
       min-height: auto;
     }
+    
+    p.quote {
+      font-size: .9em;
+      font-style: italic;
+      margin-top: 10px;
+    }
   }
   
   @media screen and (max-width: 768px) {
     .text-content {
       max-width: 100%;
+      
+      .cta-wrapper {
+        text-align: left;
+      }
     }
   }
 } 

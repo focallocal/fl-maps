@@ -22,8 +22,7 @@ const ThirdSection = () => (
           <div className="text-content">
             <p>{first}</p>
             <p>{second}</p>
-            <p>{third}</p>
-            {fourth && <p>{fourth}</p>}
+            <p>{fourth}</p>
             {cta && (
               <div className="cta-wrapper">
                 <p>{cta.text}</p>
@@ -34,6 +33,7 @@ const ThirdSection = () => (
         </Col>
         <Col md={6} className='attachment-content'>
           <iframe src={youtubeLink} frameBorder="0" allowFullScreen></iframe>
+          <p className="quote">{third}</p>
         </Col>
       </Row>
     </Container>
