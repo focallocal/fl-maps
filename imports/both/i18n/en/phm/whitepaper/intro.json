@@ -1,30 +1,37 @@
 {
+  "top_image_url": "../images/logo.png",
   "first_section": {
     "title": "Our Mission",
     "content": {
-      "main": "We believe that happier, kinder communities create a better world for everyone. The Public Happiness Movement brings together people who want to take real action, whether locally or globally, to spread positivity and solve issues that matter to them.\n\nHere, you'll find like-minded people, tools to take action, and a movement that grows stronger with each small act of kindness.",
+      "first": "If its not fun, its not sustainable! - Gary Lachance",
+      "second": "We believe that happier, kinder communities create a better world for everyone. The Public Happiness Movement brings together people who want to take real action, whether locally or globally, to spread positivity and solve issues that matter to them",
+      "third": "Here, you'll find like-minded people, tools to take action, and a movement that grows stronger with each small act of kindness",
       "youtubeLink": "https://www.youtube.com/embed/wFUKoXk8NwA",
       "quote": "If its not fun, its not sustainable!",
       "author": "Gary Lachance"
     }
   },
   "second_section": {
-    "title": "A Kinder, Fairer, and Happier World",
+    "title": "A Kinder, Fairer and Happier World",
     "content": {
-      "main": "In a world addicted to division, we aim to show the power of human and community connection. With a shared focus and effective, science-backed tools, a united community is more powerful than those who seek to divide us for their own selfish goals.\n\nBy coming together and taking action, we create real change, one step at a time."
+      "first": "In a world addicted to division, we aim to show the power of human and community connection.",
+      "second": "With a shared focus and effective, science-backed tools, a united community is more powerful than those who seek to divide us for their own selfish goals.",
+      "third": "By coming together and taking action, we create real change, one activity at a time.",
+      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA"
     }
   },
   "third_section": {
-    "title": "A Fairer, Happier Economy",
+    "title": "A Fairer, Kinder and Happier Economy",
     "content": {
-      "main": "Imagine an economy that rewards what really matters - kindness, connection, and community well-being. That's why we're experimenting with PHM tokens, our innovative cryptocurrency that rewards people for creating positive change",
-      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA",
-      "quote": "Anyone who benefits society should be rewarded. That's what economic systems were created to do. How much is PHM token worth? It's worth whatever our community collectively values it at, which is how much value you believe we are creating in the world",
-      "author": "Andy Tulett",
+      "first": "Imagine an economy that rewards what really matters - kindness, connection, and community well-being.",
+      "second": "That's why we're experimenting with PHM tokens, our innovative cryptocurrency that rewards people for creating positive change.",
+      "third": "Anyone who benefits society should be rewarded. That's what economic systems were created to do - Andy Tulett",
+      "fourth": "How much is PHM token worth? It's worth whatever our community collectively values it at, which is how much value you believe we are creating in the world",
+      "youtubeLink": "https://www.youtube.com/embed/mFE9pztP9no",
       "cta": {
-        "text": "💡 Want to be part of it? Click below to get started.",
+        "text": "Want to Join in? Click below and get started",
         "button": "Join the Movement",
-        "link": "/sign-in"
+        "link": "https://publichappinessmovement.com/signup"
       }
     }
   }

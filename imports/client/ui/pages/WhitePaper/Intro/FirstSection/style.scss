@@ -1,5 +1,3 @@
-
-
 #intro {
 
   .first-section {
@@ -7,13 +5,21 @@
     .attachment-content {
 
       iframe {
-        height: 85%;
         width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: auto;
       }
 
       p {
         font-size: .9em;
         font-style: italic;
+      }
+
+      p.quote {
+        font-size: .9em;
+        font-style: italic;
+        margin-top: 10px;
+        text-align: center;
       }
     }
   }

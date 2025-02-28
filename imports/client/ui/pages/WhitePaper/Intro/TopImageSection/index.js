@@ -1,19 +1,16 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container } from 'reactstrap'
 import i18n from '/imports/both/i18n/en/'
 import './style.scss'
 
-const { content } = i18n.Whitepaper.Intro.first_section
-const { top_image_url } = content
+const { top_image_url } = i18n.Whitepaper.Intro
 
 const TopImageSection = () => (
-  <section id='top-image-section'>
+  <section className='top-image-section'>
     <Container>
-      <Row>
-        <Col xs={12}>
-          <img className='top_image' src={top_image_url}/>
-        </Col>
-      </Row>
+      <div className="top-image-wrapper">
+        <img src={top_image_url} alt="Public Happiness Movement Logo" />
+      </div>
     </Container>
   </section>
 )

@@ -1,22 +1,32 @@
-
 #intro {
 
   .second-section {
+    background: #FFF9EB;
 
     .row {
-      flex-flow: row-reverse;
+      flex-flow: row;
     }
     
     .attachment-content {
-
       iframe {
-        height: 85%;
         width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: auto;
       }
 
-      p {
+      p.quote {
         font-size: .9em;
         font-style: italic;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+
+    .text-content {
+      text-align: left;
+      
+      p {
+        margin-bottom: 10px;
       }
     }
   }
@@ -24,13 +34,10 @@
 
 @media screen and (max-width: 751px) {
   #intro {
-
-  .second-section {
-
-    .row {
-      flex-flow: column;
-      flex-wrap: wrap;
+    .second-section {
+      .row {
+        flex-flow: column-reverse;
+      }
     }
   }
-}
 }

@@ -1,0 +1,53 @@
+.third-section {
+  background: #fff;
+  
+  .text-content {
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+    
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  
+  .attachment-content {
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      min-height: auto;
+    }
+    
+    p.quote {
+      font-size: .9em;
+      font-style: italic;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+  
+  .cta-wrapper {
+    margin-top: 30px;
+    text-align: center;
+    
+    p {
+      font-weight: 500;
+    }
+    
+    .btn {
+      margin-top: 8px;
+      padding: 10px 24px;
+      font-weight: 500;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .text-content {
+      max-width: 100%;
+    }
+    
+    .cta-wrapper {
+      text-align: center;
+    }
+  }
+} 
