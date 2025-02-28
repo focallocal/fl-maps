@@ -12,7 +12,7 @@ const {
 } = content
 
 const FirstSection = () => (
-  <section className='first-section'>
+  <section className='first-section' style={{padding: '20px 0', margin: '0'}}>
     <Container>
       <Row>
         <Col md={6}>

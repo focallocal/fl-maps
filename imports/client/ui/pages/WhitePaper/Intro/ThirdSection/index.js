@@ -14,7 +14,7 @@ const {
 } = content
 
 const ThirdSection = () => (
-  <section className='third-section'>
+  <section className='third-section' style={{padding: '20px 0', margin: '0'}}>
     <Container>
       <Row>
         <Col md={6}>

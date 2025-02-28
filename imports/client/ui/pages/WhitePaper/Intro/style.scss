@@ -25,6 +25,11 @@
     &.second-section {
       background: $gray-lighter;
     }
+
+    @media screen and (max-width: 768px) {
+      padding: 20px 0 !important;
+      margin: 0 !important;
+    }
   }
 
   .title {
@@ -81,12 +86,27 @@
 
 /* Add a more specific mobile override */
 @media screen and (max-width: 768px) {
+  section.first-section,
+  section.second-section,
+  section.third-section {
+    padding: 20px 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Target Discourse-specific containers */
+.d-header, .d-header-wrap, .d-content, .d-wrap, body.djs-page {
   #about section,
   #about .first-section,
   #about .second-section,
-  #about .third-section {
+  #about .third-section,
+  section.first-section,
+  section.second-section,
+  section.third-section {
     padding: 20px 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    max-padding: 20px !important;
+    min-padding: 20px !important;
   }
 }
