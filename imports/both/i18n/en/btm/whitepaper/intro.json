@@ -1,4 +1,3 @@
-
 {
   "first_section": {
     "title": "Our Mission",
@@ -20,6 +19,16 @@
       "third": "Here everyone who wants to take positive actions to solve societal issues is rewarded. Either on the streets where you live, or by building projects which empower local people and communities around the world to tackle their issues",
       "fourth": "If a world where the economic system we live in prioritises people, communities, and the planet; sounds like somewhere you want to live. Then welcome, you've just found your new home!",
       "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA"
+    }
+  },
+  "third_section": {
+    "title": "How You Can Help",
+    "content": {
+      "first": "The Brighter Tomorrow Map is powered by people like you who care about making a difference.",
+      "second": "By sharing resources, organizing community events, or simply connecting with those in need, you're helping build a stronger support network for everyone.",
+      "third": "Every small action creates ripples of positive change that can transform lives and communities.",
+      "fourth": "Join us today and be part of the solution to homelessness in your community.",
+      "youtubeLink": "https://www.youtube.com/embed/mFE9pztP9no"
     }
   }
 }

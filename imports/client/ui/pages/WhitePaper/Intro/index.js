@@ -6,6 +6,7 @@ import { Container } from 'reactstrap'
 import TopImageSection from './TopImageSection'
 import FirstSection from './FirstSection'
 import SecondSection from './SecondSection'
+import ThirdSection from './ThirdSection'
 import NavMenu from '../NavMenu'
 
 // Styles and Other
@@ -26,6 +27,7 @@ class Intro extends Component {
         <TopImageSection />
         <FirstSection />
         <SecondSection />
+        <ThirdSection />
       </div>
     )
   }

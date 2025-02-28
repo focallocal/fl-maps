@@ -1,4 +1,3 @@
-
 {
   "first_section": {
     "title": "Our Mission",
@@ -20,6 +19,16 @@
       "third": "Here everyone who wants to take positive actions to solve societal issues locally or globally are rewarded. Creating an alternate economic system which prioritises people, communities, and the planet to build healthy and happy socieities and fix the broken foundations today's society is built upon",
       "fourth": "A currency has value because enough people believe it does. Blockchain gives anyone the ability to create their own currency. For every person that chooses to believe in the Public Happiness Token its value increases, and so does its power to create peace and well-being. ..yes, you can buy your next coffee with this. If a world with an economic system that prioritises people, communities, and the planet; sounds like somewhere you want to live. Then welcome, you've found your new home!",
       "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA"
+    }
+  },
+  "third_section": {
+    "title": "Join the Movement",
+    "content": {
+      "first": "The Public Happiness Movement is growing every day, with people like you taking action in communities around the world.",
+      "second": "Whether you're organizing local events, sharing resources, or simply spreading kindness in your daily life, you're part of something bigger.",
+      "third": "Together, we're creating a world where connection, compassion, and community are valued above all else.",
+      "fourth": "Ready to get started? Sign up today and be part of the change!",
+      "youtubeLink": "https://www.youtube.com/embed/mFE9pztP9no"
     }
   }
 }
