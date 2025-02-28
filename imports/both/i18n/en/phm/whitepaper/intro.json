@@ -6,7 +6,8 @@
       "second": "We believe that happier, kinder communities create a better world for everyone. The Public Happiness Movement brings together people who want to take real action, whether locally or globally, to spread positivity and solve issues that matter to them",
       "third": "Here, you'll find like-minded people, tools to take action, and a movement that grows stronger with each small act of kindness",
       "youtubeLink": "https://www.youtube.com/embed/wFUKoXk8NwA",
-      "top_image_url": "../images/logo.png"
+      "quote": "If its not fun, its not sustainable!",
+      "author": "Gary Lachance"
     }
   },
   "second_section": {
@@ -30,7 +31,6 @@
         "text": "Want to Join in? Click below and get started",
         "button": "Join the Movement",
         "link": "https://publichappinessmovement.com/signup"
-      }
     }
   }
 }
