@@ -8,9 +8,8 @@ const {
   first,
   second,
   third,
-  fourth,
-  fifth,
-  youtubeLink
+  youtubeLink,
+  top_image_url
 } = content
 
 const FirstSection = () => (
@@ -20,15 +19,14 @@ const FirstSection = () => (
         <Col md={6}>
           <h2 className='title'>{title}</h2>
           <div className="text-content">
+            <p>{first}</p>
             <p>{second}</p>
             <p>{third}</p>
-            <p>{fourth}</p>
-            <p>{fifth}</p>
           </div>
         </Col>
         <Col md={6} className='attachment-content'>
           <iframe src={youtubeLink} frameBorder="0" allowFullScreen></iframe>
-          <p>{first}</p>
+          {top_image_url && <img src={top_image_url} alt="Top Image" />}
         </Col>
       </Row>
     </Container>
