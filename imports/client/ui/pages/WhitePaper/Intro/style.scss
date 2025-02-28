@@ -89,8 +89,14 @@
   section.first-section,
   section.second-section,
   section.third-section {
-    padding: 20px 0 !important;
+    padding: 10px 0 !important;
     margin: 0 !important;
+    margin-top: 20px !important;
+    
+    .title {
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+    }
   }
 }
 
