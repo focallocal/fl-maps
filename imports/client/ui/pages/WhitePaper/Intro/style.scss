@@ -84,14 +84,13 @@
   }
 }
 
-/* Add a more specific mobile override */
+/* Update the mobile override */
 @media screen and (max-width: 768px) {
   section.first-section,
   section.second-section,
   section.third-section {
     padding: 10px 0 !important;
-    margin: 0 !important;
-    margin-top: 20px !important;
+    margin: 10px 0 0 0 !important;
     
     .title {
       margin-top: 0 !important;
@@ -100,7 +99,7 @@
   }
 }
 
-/* Target Discourse-specific containers */
+/* Remove or update the Discourse-specific styles */
 .d-header, .d-header-wrap, .d-content, .d-wrap, body.djs-page {
   #about section,
   #about .first-section,
@@ -109,10 +108,9 @@
   section.first-section,
   section.second-section,
   section.third-section {
-    padding: 20px 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    max-padding: 20px !important;
-    min-padding: 20px !important;
+    padding: 10px 0 !important;
+    margin: 10px 0 0 0 !important;
+    max-padding: 10px !important;
+    min-padding: 10px !important;
   }
 }
