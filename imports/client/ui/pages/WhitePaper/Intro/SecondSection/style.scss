@@ -1,22 +1,30 @@
-
 #intro {
 
   .second-section {
+    background: #FFF9EB;
 
     .row {
       flex-flow: row-reverse;
     }
     
     .attachment-content {
-
       iframe {
-        height: 85%;
         width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: auto;
       }
 
       p {
         font-size: .9em;
         font-style: italic;
+      }
+    }
+
+    .text-content {
+      text-align: left;
+      
+      p {
+        margin-bottom: 10px;
       }
     }
   }

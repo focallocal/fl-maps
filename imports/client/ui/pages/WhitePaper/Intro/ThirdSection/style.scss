@@ -2,9 +2,10 @@
   background: #FFF9EB;
   
   .text-content {
-    max-width: 75%;
-    margin: 0 auto;
-    text-align: center;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+    
     p {
       margin-bottom: 10px;
     }
@@ -25,11 +26,10 @@
   }
   
   .attachment-content {
-    margin-top: 30px;
-    
     iframe {
       width: 100%;
-      min-height: 300px;
+      aspect-ratio: 16 / 9;
+      min-height: auto;
     }
   }
   
