@@ -1,11 +1,9 @@
-import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
-import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
-import { CustomInput } from 'reactstrap'
-import Weekly from './Weekly'
+import React, { Component, Fragment } from 'react'
+import { CustomInput, Input } from 'reactstrap'
 import Monthly from './Monthly'
 import './styles.scss'
+import Weekly from './Weekly'
 
 class Recurring extends Component {
   state = {
@@ -37,17 +35,33 @@ class Recurring extends Component {
 
     return (
       <div id='recurring'>
-
         <div className='every-type inline-inputs hide-labels'>
           <span>Repeat every</span>
           <div>
-            <AutoField name='when.recurring.every' />
-            <AutoField name='when.recurring.type' />
+            <Input
+              type="number"
+              name="when.recurring.every"
+              value={recurring.every || ''}
+              onChange={(e) => form.change('when.recurring.every', parseInt(e.target.value))}
+            />
+            <Input
+              type="select"
+              name="when.recurring.type"
+              value={recurring.type || ''}
+              onChange={(e) => form.change('when.recurring.type', e.target.value)}
+            >
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+              <option value="month">Month</option>
+            </Input>
           </div>
         </div>
+
         {type === 'week' && (
           <Fragment>
-            <ErrorField name='when.recurring.days' errorMessage='Please select at least 1 day' />
+            {selectedDays.length === 0 && (
+              <div className="error-message">Please select at least 1 day</div>
+            )}
             <Weekly
               form={form}
               selectedDays={selectedDays}
@@ -55,6 +69,7 @@ class Recurring extends Component {
             />
           </Fragment>
         )}
+
         {type === 'month' &&
           <Monthly
             form={form}
@@ -68,16 +83,27 @@ class Recurring extends Component {
           label='Repeat forever'
           checked={forever}
         />
+
         {!forever && (
           <div className='occurences-until inline-inputs hide-labels'>
             <div>
               <span>Repeat for</span>
-              <AutoField name='when.recurring.occurences' />
+              <Input
+                type="number"
+                name="when.recurring.occurences"
+                value={recurring.occurences || ''}
+                onChange={(e) => form.change('when.recurring.occurences', parseInt(e.target.value))}
+              />
               <span>occurence{occurences > 1 ? 's' : ''}</span>
             </div>
             <div>
               <span> or until</span>
-              <AutoField name='when.recurring.until' />
+              <Input
+                type="date"
+                name="when.recurring.until"
+                value={recurring.until || ''}
+                onChange={(e) => form.change('when.recurring.until', e.target.value)}
+              />
             </div>
           </div>
         )}
