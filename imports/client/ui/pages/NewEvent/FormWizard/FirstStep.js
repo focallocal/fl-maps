@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { CustomInput, Alert } from 'reactstrap'
 import PropTypes from 'prop-types'
-
-import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
+import React from 'react'
+import { Alert, FormGroup, Input, Label } from 'reactstrap'
+import RadioButton from './RadioButton'
+import './styles.scss'
 
 import i18n from '/imports/both/i18n/en'
 
@@ -11,10 +11,10 @@ let Categories = i18n.Categories
 let defaultName
 let defaultColor
 
-if (window.__mapType = 'gatherings') {
+if (window.__mapType === 'gatherings') {
   defaultName = Categories[0].name
   defaultColor = Categories[0].color
-} else if ((window.__mapType = 'btm')) {
+} else if (window.__mapType === 'btm') {
   let defaultCategory = findDefaultCategory(Categories)
   defaultName = defaultCategory.name
   defaultColor = defaultCategory.color
@@ -32,91 +32,161 @@ function findDefaultCategory (C) {
   return category
 }
 
-class FirstStep extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      categories: null,
-      foundResource: true,
-      offerResource: false,
-      resourceType: 'found',
-      reset: false
-    }
-  }
-  render () {
-    const RadioButton = this.RadioButton
+const FirstStep = ({ form }) => {
+  const [state, setState] = React.useState({
+    categories: null,
+    foundResource: true,
+    offerResource: false,
+    resourceType: 'found',
+    reset: false
+  })
 
-    return (
-      <div id='first-step'>
-        <div id='radios'>
-          <label>{labels.resource_type.title}</label>
-          <RadioButton
-            id='foundResource'
-            label={labels.resource_type.firstRadio}
-            value={this.state.foundResource}
-            type='radio'
-            click={this.setCategories}
-          />
-          <RadioButton
-            id='offerResource'
-            label={labels.resource_type.secondRadio}
-            value={this.state.offerResource}
-            type='radio'
-            click={this.noCategories}
-          />
-        </div>
-        <AutoField name='name' />
-        <AutoField name='overview' />
-        <AutoField name='address' />
-        { this.state.offerResource &&
-          <Alert
-            color='info'
-            className='address-sub-label'>
-            PS - for privacy reasons, we strongly suggest you use a public
-            location nearby rather than your home address
-          </Alert>
-        }
-
-        {/* {(this.state.resourceType === 'found') ? ( */}
-        <AutoField name='categories'/>
-        {/* ) : null } */}
-
-      </div>
-    )
-  }
-  noCategories = (type, value) => {
-    this.setState({ resourceType: null, foundResource: false, offerResource: true, reset: true })
-  }
-
-  setCategories = () => {
-    this.setState({ categories: [{}], resourceType: 'found', foundResource: true, offerResource: false })
-  }
-
-  RadioButton = ({ label, id, value, type, click }) => (
-    <CustomInput
-      id={id}
-      type={type}
-      label={label}
-      checked={value === undefined ? false : value}
-      onChange={() => {}}
-      onClick={() => this.handleRadioButton(id, !value, click)}
-    />
-  )
-  handleRadioButton = (type, value, click) => {
-    const { categories } = this.props.form.getModel()
-    if (type === 'offerResource') {
-      this.props.form.change('categories', [{
-        ...categories,
-        resourceType: type === 'offerResource' && 'found',
-        name: type === 'offerResource' && defaultName,
-        color: type === 'offerResource' && defaultColor
-      }])
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    if (name === 'categories') {
+      const selectedOptions = Array.from(e.target.selectedOptions, option => ({
+        name: option.value,
+        color: Categories.find(cat => cat.name === option.value)?.color || defaultColor
+      }))
+      form.change(name, selectedOptions)
     } else {
-      // Empty array so that Community Resource never shows in the select field
-      this.props.form.change('categories', [])
+      form.change(name, value)
     }
-    click()
   }
+
+  const noCategories = (type, value) => {
+    setState({
+      ...state,
+      resourceType: null,
+      foundResource: false,
+      offerResource: true,
+      reset: true
+    })
+  }
+
+  const setCategories = () => {
+    setState({
+      ...state,
+      categories: [{}],
+      resourceType: 'found',
+      foundResource: true,
+      offerResource: false
+    })
+  }
+
+  const handleRadioButton = (type, value, click) => {
+    const { categories } = form.getModel()
+    if (type === 'offerResource') {
+      form.change('categories', [{
+        resourceType: 'found',
+        name: defaultName,
+        color: defaultColor
+      }])
+    } else if (type === 'foundResource') {
+      form.change('categories', [])
+    }
+    
+    setState(prevState => ({
+      ...prevState,
+      foundResource: type === 'foundResource' ? value : false,
+      offerResource: type === 'offerResource' ? value : false,
+      resourceType: type === 'offerResource' ? 'found' : null
+    }))
+    
+    if (click) {
+      click()
+    }
+  }
+
+  const formData = form?.getModel?.() || {}
+
+  return (
+    <div id='first-step'>
+      <div id='radios'>
+        <label>{labels.resource_type.title}</label>
+        <RadioButton
+          id='foundResource'
+          label={labels.resource_type.firstRadio}
+          value={state.foundResource}
+          type='radio'
+          click={setCategories}
+          onRadioButtonClick={handleRadioButton}
+          form={form}
+        />
+        <RadioButton
+          id='offerResource'
+          label={labels.resource_type.secondRadio}
+          value={state.offerResource}
+          type='radio'
+          click={noCategories}
+          onRadioButtonClick={handleRadioButton}
+          form={form}
+        />
+      </div>
+
+      <FormGroup>
+        <Label for="name">Name</Label>
+        <Input
+          type="text"
+          name="name"
+          id="name"
+          value={formData.name || ''}
+          onChange={handleInputChange}
+          placeholder="Enter name"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="overview">Overview</Label>
+        <Input
+          type="textarea"
+          name="overview"
+          id="overview"
+          value={formData.overview || ''}
+          onChange={handleInputChange}
+          placeholder="Enter overview"
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="address">Address</Label>
+        <Input
+          type="text"
+          name="address"
+          id="address"
+          value={formData.address || ''}
+          onChange={handleInputChange}
+          placeholder="Enter address"
+        />
+      </FormGroup>
+
+      {state.offerResource &&
+        <Alert
+          color='info'
+          className='address-sub-label'>
+          PS - for privacy reasons, we strongly suggest you use a public
+          location nearby rather than your home address
+        </Alert>
+      }
+
+      <FormGroup>
+        <Label for="categories">Categories</Label>
+        <Input
+          type="select"
+          name="categories"
+          id="categories"
+          value={formData.categories || []}
+          onChange={handleInputChange}
+          multiple
+          className="categories-select"
+        >
+          {Categories.map((category, index) => (
+            <option key={index} value={category.name}>{category.name}</option>
+          ))}
+        </Input>
+      </FormGroup>
+    </div>
+  )
 }
 
 FirstStep.propTypes = {

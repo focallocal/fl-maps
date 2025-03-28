@@ -1,15 +1,16 @@
-import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import { Button } from 'reactstrap'
-import AutoForm from '/imports/client/utils/uniforms-custom/AutoForm'
-import { EventsSchema } from '/imports/both/collections/events'
-import { getHour } from '/imports/both/collections/events/helpers'
 import FirstStep from './FirstStep'
 import SecondStep from './SecondStep'
+import { EventsSchema } from '/imports/both/collections/events'
+import { getHour } from '/imports/both/collections/events/helpers'
 
 class FormWizard extends Component {
   state = {
-    reset: false
+    reset: false,
+    formData: null,
+    errors: {}
   }
 
   render () {
@@ -30,35 +31,87 @@ class FormWizard extends Component {
     }
 
     return (
-      <AutoForm
-        schema={EventsSchema}
-        model={model}
-        ref={this.setRef}
-      >
-        {this.form ? (
-          <Fragment>
-            <Button
-              outline
-              color='secondary'
-              className='reset'
-              onClick={this.resetForm}>
-              Clear all fields
-            </Button>
-            {currentStep === 0 && <FirstStep form={this.form} />}
-            {currentStep === 1 && <SecondStep form={this.form} />}
-          </Fragment>
-        ) : <div />}
-      </AutoForm>
+      <form onSubmit={this.handleSubmit}>
+        <Button
+          outline
+          color='secondary'
+          className='reset'
+          onClick={this.resetForm}>
+          Clear all fields
+        </Button>
+        {currentStep === 0 && <FirstStep form={this} onChange={this.handleChange} errors={this.state.errors} />}
+        {currentStep === 1 && <SecondStep form={this} onChange={this.handleChange} errors={this.state.errors} />}
+      </form>
     )
   }
 
-  resetForm = () => {
-    this.form.reset()
-    this.setState({ reset: true })
+  resetForm = (e) => {
+    e.preventDefault()
+    const initialData = this.loadModelFromStorage(true)
+    this.setState({
+      reset: true,
+      formData: initialData,
+      errors: {}
+    })
 
     setTimeout(() => {
       this.setState({ reset: false })
-    }, 500) // a hack to update the component's state so it doesn't reset on next re-renders.
+    }, 500)
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const errors = this.validateForm()
+    if (Object.keys(errors).length === 0) {
+      // Handle form submission
+      this.props.onSubmit?.(this.state.formData)
+    } else {
+      this.setState({ errors })
+    }
+  }
+
+  handleChange = (field, value) => {
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        [field]: value
+      }
+    }))
+  }
+
+  getModel = () => {
+    return this.state.formData
+  }
+
+  change = (field, value) => {
+    this.handleChange(field, value)
+  }
+
+  validate = ({ clean }) => {
+    return new Promise((resolve, reject) => {
+      const model = this.getModel()
+      const errors = {}
+
+      // Validate required fields
+      Object.keys(EventsSchema._schema).forEach(field => {
+        const fieldSchema = EventsSchema._schema[field]
+        if (fieldSchema.optional === false && !model[field]) {
+          errors[field] = 'This field is required'
+        }
+      })
+
+      if (Object.keys(errors).length > 0) {
+        this.setState({ errors })
+        reject({ details: errors })
+      } else {
+        if (clean) {
+          // Clean the model according to schema
+          const cleanModel = EventsSchema.clean(model)
+          this.setState({ formData: cleanModel })
+        }
+        resolve()
+      }
+    })
   }
 
   loadModelFromStorage (empty) {
@@ -84,9 +137,10 @@ class FormWizard extends Component {
     return initialObject
   }
 
-  setRef = ref => {
-    this.form = ref
-    this.props.passFormRefToParent(ref)
+  componentDidMount() {
+    const initialData = this.loadModelFromStorage()
+    this.setState({ formData: initialData })
+    this.props.passFormRefToParent(this)
   }
 }
 
