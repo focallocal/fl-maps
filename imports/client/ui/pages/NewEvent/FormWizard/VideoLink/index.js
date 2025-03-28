@@ -1,15 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { FormGroup, Input, Label } from 'reactstrap'
-
-import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
-import { videoHosts } from '/imports/both/collections/events/helpers/index.js'
+import { videoHosts } from '/imports/both/collections/events/helpers'
 
 import './styles.scss'
 import i18n from '/imports/both/i18n/en'
 
 let labels = i18n.NewEventModal
-// import labels from '/imports/both/i18n/en/new-event-modal.json';
 
 class VideoLink extends Component {
   constructor (props) {
@@ -20,20 +17,45 @@ class VideoLink extends Component {
       open: false
     }
   }
+
   render () {
-    const { host, address } = this.state
+    const { form, name } = this.props
+    const formData = form.getModel()
+    const videoData = formData.video || {}
+    const currentLink = videoData[name.split('.')[1]] || {}
 
     return (
       <div className='video'>
-        <AutoField
-          name={`${this.props.name}.host`}
-          // onClick={this.setState({ open: !this.state.open})} <-- causes a loop
-        />
-        <AutoField
-          className="videoAddress"
-          name={`${this.props.name}.address`}
-          placeholder={labels.video.address}
-        />
+        <FormGroup>
+          <Label for={`${name}.host`}>Video Host</Label>
+          <Input
+            type="select"
+            name={`${name}.host`}
+            id={`${name}.host`}
+            value={currentLink.host || ''}
+            onChange={(e) => {
+              form.change(`${name}.host`, e.target.value)
+              this.selectHost(e.target.value)
+            }}
+          >
+            <option value="">Select a host</option>
+            {videoHosts.map((host, index) => (
+              <option key={index} value={host.host}>{host.name}</option>
+            ))}
+          </Input>
+        </FormGroup>
+        <FormGroup>
+          <Label for={`${name}.address`}>Video URL</Label>
+          <Input
+            type="text"
+            className="videoAddress"
+            name={`${name}.address`}
+            id={`${name}.address`}
+            value={currentLink.address || ''}
+            onChange={(e) => form.change(`${name}.address`, e.target.value)}
+            placeholder={labels.video.address}
+          />
+        </FormGroup>
       </div>
     )
   }
@@ -62,19 +84,12 @@ class VideoLink extends Component {
   handleChange = (value) => {
     this.setState({ address: value })
   }
-
-  // componentDidUpdate (prevProps, prevState) {
-  //   if (prevState !== this.state) {
-  //     const { form, linkId } = this.props
-  //     let links = form.getModel().video.links || []
-  //     links[linkId] = this.state
-  //     form.change('video.links', links)
-  //   }
-  // }
 }
 
 VideoLink.propTypes = {
-  form: PropTypes.object.isRequired
+  form: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  linkId: PropTypes.number
 }
 
 export default VideoLink

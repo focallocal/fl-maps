@@ -1,16 +1,16 @@
+import { Meteor } from 'meteor/meteor'
+import PropTypes from 'prop-types'
+import qs from 'query-string'
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { Meteor } from 'meteor/meteor'
+import { Alert, Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
+import FormWizard from './FormWizard'
 import { EventsSchema } from '/imports/both/collections/events'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Alert } from 'reactstrap'
-// import FormWizard from './FormWizard'
 import i18n from '/imports/both/i18n/en'
-import qs from 'query-string'
 // import cloneDeep from 'clone-deep'
-import './styles.scss'
-import { routeMatcher } from '../../app'
 import { comToPlugin } from 'dcs-client'
+import { routeMatcher } from '../../app'
+import './styles.scss'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
@@ -95,10 +95,10 @@ class NewEventModal extends Component {
           {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
         <ModalBody>
-          {/* <FormWizard
+          <FormWizard
             currentStep={currentStep}
             passFormRefToParent={this.getRef}
-            editMode={editMode} /> */}
+            editMode={editMode} />
         </ModalBody>
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
           Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>)
@@ -136,10 +136,10 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
+    console.log(this.state.form.getModel());
     this.state.form.validate({ clean: true })
       .then(() => {
         window.NProgress.set(0.4)
-
         let model = EventsSchema.clean(this.state.form.getModel())
         if (this.state.editMode) {
           model._id = this.state.form.getModel()._id

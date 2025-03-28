@@ -1,230 +1,295 @@
-import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { CustomInput, Row, Col, Button } from 'reactstrap'
-// import labels from '/imports/both/i18n/en/new-event-modal.json'
-import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
-import ErrorField from '/imports/client/utils/uniforms-custom/ErrorField'
-import Recurring from './DateTimeModule/Recurring'
-import WeekDays from './DateTimeModule/WeekDays'
-import VideoLink from './VideoLink'
+import React, { useState } from 'react'
+import { Button, Col, FormGroup, Input, Label, Row } from 'reactstrap'
+// import Recurring from './DateTimeModule/Recurring'
+// import WeekDays from './DateTimeModule/WeekDays'
+import RadioButton from './RadioButton'
 import SameDateHours from './SameDateHours'
-import { videoHosts } from '/imports/both/collections/events/helpers'
+import VideoEntry from './VideoEntry'
 
 import i18n from '/imports/both/i18n/en'
 
 let labels = i18n.NewEventModal
 
-class SecondStep extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      videoLinksAdded: 0,
-      openEndDate: this.props.form.getModel().categories.some(e => {
-        return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
-      })
+function VideoButtons({ videoLinksAdded, addLink, removeLink }) {
+  return (
+    <div className='video-buttons'>
+      {videoLinksAdded < 3 && (
+        <Button onClick={addLink}>Add Video</Button>
+      )}
+      {videoLinksAdded > 0 && (
+        <Button onClick={removeLink}>Remove Video</Button>
+      )}
+    </div>
+  )
+}
+
+VideoButtons.propTypes = {
+  videoLinksAdded: PropTypes.number.isRequired,
+  addLink: PropTypes.func.isRequired,
+  removeLink: PropTypes.func.isRequired
+}
+
+const SecondStep = ({ form }) => {
+  const [videoLinksAdded, setVideoLinksAdded] = useState(0)
+  const [openEndDate, setOpenEndDate] = useState(
+    (form.getModel()?.categories || []).some(e => {
+      return e?.name === 'Community Offer' || e?.name === 'Meet me for Action!'
+    })
+  )
+
+  const formData = form?.getModel?.() || {}
+  const { days, multipleDays, repeat } = formData.when || {}
+
+  const [attendeeLimit, setAttendeeLimit] = useState(() => formData.engagement?.limit || '');
+
+  const toggleLinks = () => {
+    if (videoLinksAdded === 0) {
+      setVideoLinksAdded(1)
+    } else {
+      setVideoLinksAdded(0)
     }
   }
-  render () {
-    const { form } = this.props
 
-    const RadioButton = this.RadioButton
-    const VideoEntry = this.VideoEntry
-    const VideoButtons = this.VideoButtons
+  const addLink = () => {
+    if (videoLinksAdded < 3) {
+      setVideoLinksAdded(videoLinksAdded + 1)
+    }
+  }
 
-    let { openEndDate, videoLinksAdded } = this.state
-    const {
-      days,
-      multipleDays,
-      repeat
-    } = form.getModel().when
+  const removeLink = () => {
+    if (videoLinksAdded > 0) {
+      setVideoLinksAdded(videoLinksAdded - 1)
+    }
+  }
 
-    return (
-      <div id='second-step'>
-        <AutoField name='findHints' />
-        <div className='dates-hours inline-inputs hide-labels'>
-          <div>
-            <Row>
-              <Col className='date-hours-coupled'>
-                <AutoField name='when.startingDate' />
-                {!multipleDays && <AutoField name='when.startingTime' />}
-              </Col>
-              <Col className='date-hours-coupled'>
-                {(!repeat && !openEndDate) && <AutoField
-                  name='when.endingDate'
-                  specialCat={this.props.form.getModel().categories.some(e => {
-                    return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
-                  })}
-                />}
-                {(!multipleDays && !openEndDate) && <AutoField name='when.endingTime' />}
-                {(!repeat && openEndDate) && (
-                  <AutoField
-                    name='when.endingDate'
-                    openEndDate={true}
-                    handleCalendarClick={this.resetEndDate}
+  const resetEndDate = () => {
+    setOpenEndDate(false)
+  }
+
+  return (
+    <div id='second-step'>
+      <FormGroup>
+        <Label for="findHints">Find Hints</Label>
+        <Input
+          type="text"
+          name="findHints"
+          id="findHints"
+          value={formData.findHints || ''}
+          onChange={(e) => form?.change?.('findHints', e.target.value)}
+        />
+      </FormGroup>
+
+      <div className='dates-hours inline-inputs hide-labels'>
+        <div>
+          <Row>
+            <Col className='date-hours-coupled'>
+              <FormGroup>
+                <Label for="startingDate">Starting Date</Label>
+                <Input
+                  type="date"
+                  name="startingDate"
+                  id="startingDate"
+                  value={formData.when?.startingDate || ''}
+                  // onChange={(e) => form.change('when.startingDate', e.target.value)}
+                  onChange={(e) => {
+                    const when = formData.when || {}
+                    form.change('when', { ...when, startingDate: e.target.value })
+                  }}
+                />
+              </FormGroup>
+              {!multipleDays && (
+                <FormGroup>
+                  <Label for="startingTime">Starting Time</Label>
+                  <Input
+                    type="time"
+                    name="startingTime"
+                    id="startingTime"
+                    value={formData.when?.startingTime || ''}
+                    // onChange={(e) => form.change('when.startingTime', e.target.value)}
+                    onChange={(e) => {
+                      const when = formData.when || {}
+                      form.change('when', { ...when, startingTime: e.target.value })
+                    }}
                   />
-                )}
-              </Col>
-            </Row>
-          </div>
-          {/*
-          <div>
-            <Row>
-              <Col>
-                {!multipleDays && <AutoField name='when.startingTime' />}
-              </Col>
-              <Col>
-                {!multipleDays && <AutoField name='when.endingTime' />}
-              </Col>
-            </Row>
-          </div>
-          */}
+                </FormGroup>
+              )}
+            </Col>
+            <Col className='date-hours-coupled'>
+              {(!repeat && !openEndDate) && (
+                <FormGroup>
+                  <Label for="endingDate">Ending Date</Label>
+                  <Input
+                    type="date"
+                    name="endingDate"
+                    id="endingDate"
+                    value={formData.when?.endingDate || ''}
+                    // onChange={(e) => form.change('when.endingDate', e.target.value)}
+                    onChange={(e) => {
+                      const when = formData.when || {}
+                      form.change('when', { ...when, endingDate: e.target.value })
+                    }}
+                  />
+                </FormGroup>
+              )}
+              {(!multipleDays && !openEndDate) && (
+                <FormGroup>
+                  <Label for="endingTime">Ending Time</Label>
+                  <Input
+                    type="time"
+                    name="endingTime"
+                    id="endingTime"
+                    value={formData.when?.endingTime || ''}
+                    // onChange={(e) => form.change('when.endingTime', e.target.value)}
+                    onChange={(e) => {
+                      const when = formData.when || {}
+                      form.change('when', { ...when, endingTime: e.target.value })
+                    }}
+                  />
+                </FormGroup>
+              )}
+              {(!repeat && openEndDate) && (
+                <FormGroup>
+                  <Label for="endingDate">Ending Date</Label>
+                  <Input
+                    type="date"
+                    name="endingDate"
+                    id="endingDate"
+                    value={formData.when?.endingDate || ''}
+                    // onChange={(e) => form.change('when.endingDate', e.target.value)}
+                    onChange={(e) => {
+                      const when = formData.when || {}
+                      form.change('when', { ...when, endingDate: e.target.value })
+                    }}
+                    onClick={resetEndDate}
+                  />
+                </FormGroup>
+              )}
+            </Col>
+          </Row>
         </div>
+      </div>
 
-        {/* Weekdays  */}
+      {RadioButton && (
         <RadioButton
           id='multipleDays'
           label={labels.recurrence.thirdRadio}
           value={multipleDays}
           type='radio'
+          onRadioButtonClick={() => {
+            const when = { ...formData.when, multipleDays: !multipleDays, repeat: false };
+            form.change('when', when);
+          }}
         />
-        {multipleDays && (
-          <div className='week-days'>
-            <ErrorField name='when.days' errorMessage='Please select at least 1 day' />
-            <SameDateHours
-              form={form}
-              schemaKey={'when.days'}
-            />
-            <WeekDays
-              form={form}
-              schemaKey={'when.days'}
-              selectedDays={days || []}
-            />
-          </div>
-        )}
+      )}
+      {multipleDays && (
+        <div className='week-days'>
+          <SameDateHours
+            form={form}
+            schemaKey={'when.days'}
+          />
+          <FormGroup>
+            <Label>Select Weekdays</Label>
+            {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day, index) => (
+              <FormGroup check inline key={index}>
+                <Label check>
+                  <Input
+                    type="checkbox"
+                    checked={days?.includes(day)}
+                    onChange={() => {
+                      const updatedDays = days?.includes(day)
+                        ? days.filter(d => d !== day)
+                        : [...(days || []), day];
+                      form.change('when.days', updatedDays);
+                    }}
+                  />{' '}
+                  {day}
+                </Label>
+              </FormGroup>
+            ))}
+          </FormGroup>
+        </div>
+      )}
 
-        {/* Repetition */}
+      <RadioButton
+        id='repeat'
+        label={labels.recurrence.fourthRadio}
+        value={repeat}
+        type='radio'
+        onRadioButtonClick={() => {
+          const when = { ...formData.when, repeat: !repeat, multipleDays: false };
+          form.change('when', when);
+        }}
+      />
+
+      {repeat && (
+        <FormGroup>
+          <Label for="recurringDetails">Recurring Details</Label>
+          <Input
+            type="text"
+            name="recurringDetails"
+            id="recurringDetails"
+            value={formData.when?.recurringDetails || ''}
+            onChange={(e) => form.change('when.recurringDetails', e.target.value)}
+          />
+        </FormGroup>
+      )}
+
+      <FormGroup>
+        <Label for="description">Description</Label>
+        <Input
+          type="textarea"
+          name="description"
+          id="description"
+          className="pageDetails"
+          value={formData.description || ''}
+          onChange={(e) => form.change('description', e.target.value)}
+        />
+      </FormGroup>
+
+      <FormGroup>
+        <Label for="engagement-limit">Attendee Limit</Label>
+        <Input
+          type="number"
+          name="engagement.limit"
+          id="engagement-limit"
+          className="pageDetails"
+          value={attendeeLimit}
+          onChange={(e) => {
+            const value = e.target.value === '' ? '' : Math.max(0, parseInt(e.target.value, 10) || 0);
+            setAttendeeLimit(value);
+            form.change('engagement', { ...formData.engagement, limit: value });
+          }}
+        />
+      </FormGroup>
+
+      <FormGroup>
         <RadioButton
-          id='repeat'
-          label={labels.recurrence.fourthRadio}
-          value={repeat}
-          type='radio'
+          id="includesVideo"
+          label={`${labels.video.title.firstLine} ${labels.video.title.secondLine}`}
+          value={videoLinksAdded > 0}
+          type="radio"
+          onRadioButtonClick={(id, value) => {
+            if (value && videoLinksAdded === 0) {
+              setVideoLinksAdded(1)
+            } else if (!value && videoLinksAdded > 0) {
+              setVideoLinksAdded(0)
+            }
+          }}
         />
-        {repeat && <Recurring form={form} />}
-
-        {/* Additional text description & attendee limit */}
-        <AutoField className='pageDetails' name='description' />
-        <AutoField className='pageDetails' name='engagement.limit' />
-
-        {/* Add video link(s) */}
-        <CustomInput
-          className="videoToggle"
-          id='includesVideo'
-          type='radio'
-          label={`${labels.video.title.firstLine}
-                ${labels.video.title.secondLine}`}
-          checked={videoLinksAdded > 0}
-          onClick={this.toggleLinks}
-        />
-        {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
-        {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
-        {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
-        {videoLinksAdded > 0 && <VideoButtons
+      </FormGroup>
+      {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
+      {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
+      {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
+      {videoLinksAdded > 0 && (
+        <VideoButtons
           videoLinksAdded={videoLinksAdded}
-          addLink={this.addLink}
-          removeLink={this.removeLink}
-        />}
-      </div>
-    )
-  }
-
-  toggleLinks = () => {
-    if (this.state.videoLinksAdded === 0) {
-      this.setState({ videoLinksAdded: 1 })
-    } else {
-      this.setState({ videoLinksAdded: 0 })
-      // formModel.resetVideoArray(this.props.form)
-    }
-  }
-
-  addLink = () => {
-    this.setState({ videoLinksAdded: this.state.videoLinksAdded + 1 })
-  }
-
-  removeLink = () => {
-    this.setState({ videoLinksAdded: this.state.videoLinksAdded - 1 })
-  }
-
-  resetEndDate = () => {
-    // NOTE: for special category events, this resets their ending date to standard
-    this.setState({ openEndDate: false })
-  }
-
-  // DESC: Node fragment that point to VideoLink component
-  // This includes entry fields for hostname and url
-  // Also includes error that displays when url is incorrect on submit
-  VideoEntry = ({ id, form }) => (
-    <Fragment>
-      <VideoLink
-        form={form}
-        linkId={id}
-        name={`video.link${id}`}
-      />
-      <ErrorField
-        name={`video.link${id}.address`}
-        errorMessage='Invalid URL, please ensure it conforms to the example shown'
-      />
-    </Fragment>
-  )
-
-  // DESC: Node fragment to add/remove video buttons
-  VideoButtons = ({ videoLinksAdded, addLink, removeLink }) => (
-    <div className='videoButtons'>
-      <Button
-        outline
-        color='secondary'
-        className='addLink'
-        onClick={addLink}
-        disabled={videoLinksAdded > 2}
-      >
-        Add Another Link
-      </Button>
-      <Button
-        outline
-        color='secondary'
-        className='removeLink'
-        onClick={removeLink}
-      >
-        Remove Last Link
-      </Button>
+          addLink={addLink}
+          removeLink={removeLink}
+        />
+      )}
     </div>
   )
-
-  RadioButton = ({ label, id, value, type }) => (
-    <CustomInput
-      id={id}
-      type={type}
-      label={label}
-      checked={value === undefined ? false : value}
-      onChange={() => {}}
-      onClick={() => this.handleRadioButton(id, !value)}
-    />
-  )
-
-  handleRadioButton = (type, value) => {
-    const { when } = this.props.form.getModel()
-
-    this.props.form.change('when', {
-      ...when,
-      multipleDays: type === 'multipleDays' ? value : false,
-      repeat: type === 'repeat' ? value : false
-    })
-
-    // Scroll to bottom of modal
-    setTimeout(() => {
-      const modal = document.querySelector('.modal-body')
-      modal.scrollTo(modal, 375)
-    }, 1)
-  }
 }
 
 SecondStep.propTypes = {
