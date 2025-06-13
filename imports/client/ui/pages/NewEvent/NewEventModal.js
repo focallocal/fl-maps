@@ -150,7 +150,9 @@ class NewEventModal extends Component {
       })
       .catch(err => {
         this.setState({ hasErrors: true })
+        // console.log(this.state.form.getModel());
         console.log('Validation errors:', this.state.form.state.errors);
+        console.log('Validation errors:', err.details);
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
 

@@ -90,7 +90,7 @@ const SecondStep = ({ form }) => {
                   type="date"
                   name="startingDate"
                   id="startingDate"
-                  value={formData.when?.startingDate || ''}
+                  value={formData.when.startingDate || ''}
                   // onChange={(e) => form.change('when.startingDate', e.target.value)}
                   onChange={(e) => {
                     const when = formData.when || {}
@@ -105,7 +105,7 @@ const SecondStep = ({ form }) => {
                     type="time"
                     name="startingTime"
                     id="startingTime"
-                    value={formData.when?.startingTime || ''}
+                    value={formData.when.startingTime || ''}
                     // onChange={(e) => form.change('when.startingTime', e.target.value)}
                     onChange={(e) => {
                       const when = formData.when || {}
@@ -123,11 +123,18 @@ const SecondStep = ({ form }) => {
                     type="date"
                     name="endingDate"
                     id="endingDate"
-                    value={formData.when?.endingDate || ''}
+                    value={formData.when.endingDate || ''}
                     // onChange={(e) => form.change('when.endingDate', e.target.value)}
-                    onChange={(e) => {
+                    /*onChange={(e) => {
                       const when = formData.when || {}
                       form.change('when', { ...when, endingDate: e.target.value })
+                    }}*/
+                    onChange={(e) => {
+                      const when = form.getModel().when || {};
+                      form.change('when', {
+                        ...when,
+                        endingDate: e.target.value,
+                      });
                     }}
                   />
                 </FormGroup>
@@ -155,11 +162,18 @@ const SecondStep = ({ form }) => {
                     type="date"
                     name="endingDate"
                     id="endingDate"
-                    value={formData.when?.endingDate || ''}
+                    value={formData.when.endingDate || ''}
                     // onChange={(e) => form.change('when.endingDate', e.target.value)}
-                    onChange={(e) => {
+                    /*onChange={(e) => {
                       const when = formData.when || {}
                       form.change('when', { ...when, endingDate: e.target.value })
+                    }}*/
+                    onChange={(e) => {
+                      const when = form.getModel().when || {};
+                      form.change('when', {
+                        ...when,
+                        endingDate: e.target.value,
+                      });
                     }}
                     onClick={resetEndDate}
                   />

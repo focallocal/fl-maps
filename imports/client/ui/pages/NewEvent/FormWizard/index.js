@@ -87,7 +87,7 @@ class FormWizard extends Component {
     this.handleChange(field, value)
   }
 
-  validate = ({ clean }) => {
+  /*validate = ({ clean }) => {
     return new Promise((resolve, reject) => {
       const model = this.getModel()
       const errors = {}
@@ -112,7 +112,40 @@ class FormWizard extends Component {
         resolve()
       }
     })
-  }
+  }*/
+
+  validate = ({ clean }) => {
+    return new Promise((resolve, reject) => {
+      const model = this.getModel();
+      const errors = {};
+
+      // Helper to safely access nested properties (e.g., "when.endingDate")
+      const getNestedValue = (obj, path) => {
+        return path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+      };
+
+      // Validate required fields
+      Object.keys(EventsSchema._schema).forEach(field => {
+        const fieldSchema = EventsSchema._schema[field];
+        const value = getNestedValue(model, field);
+
+        if (fieldSchema.optional === false && (value === undefined || value === '')) {
+          errors[field] = 'This field is required';
+        }
+      });
+
+      if (Object.keys(errors).length > 0) {
+        this.setState({ errors });
+        reject({ details: errors });
+      } else {
+        if (clean) {
+          const cleanModel = EventsSchema.clean(model);
+          this.setState({ formData: cleanModel });
+        }
+        resolve();
+      }
+    });
+  };
 
   loadModelFromStorage (empty) {
     // on fields reset, get rid of any previously unfinished New Event
