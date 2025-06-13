@@ -77,16 +77,19 @@ const EventsSchema = new SimpleSchema({
   },
   'categories.$.name': {
     type: String,
-    allowedValues: allowedValues.reduce((arr, obj) => (arr.concat(obj.name)), [])
+    allowedValues: allowedValues.reduce((arr, obj) => (arr.concat(obj.name)), []),
+    optional: true
   },
   'categories.$.color': {
     type: String,
     allowedValues: allowedValues.reduce((arr, obj) => (arr.concat(obj.color)), []),
-    defaultValue: '#f82d2d'
+    defaultValue: '#f82d2d',
+    optional: true
   },
   'categories.resourceType': {
     type: String,
-    defaultValue: ''
+    defaultValue: '',
+    optional: true
   },
 
   // Details
@@ -113,20 +116,24 @@ const EventsSchema = new SimpleSchema({
     }
   },
   'address.name': {
-    type: String
+    type: String,
+    optional: true
   },
   'address.location': {
-    type: Object
+    type: Object,
+    optional: true,
   },
   'address.location.type': {
     type: String,
     defaultValue: 'Point',
-    allowedValues: ['Point']
+    allowedValues: ['Point'],
+    optional: true,
   },
   'address.location.coordinates': {
     type: Array,
     max: 2,
-    min: 2
+    min: 2,
+    optional: true,
   },
   'address.location.coordinates.$': {
     type: Number
@@ -230,7 +237,8 @@ const EventsSchema = new SimpleSchema({
   },
   'when.multipleDays': {
     type: Boolean,
-    defaultValue: false
+    defaultValue: false,
+    optional: true
   },
   'when.days': { // used with multipleDays
     type: Array,
@@ -272,6 +280,7 @@ const EventsSchema = new SimpleSchema({
     }
   },
   'when.recurring.type': {
+    optional: true,
     type: String,
     allowedValues: ['day', 'week', 'month'],
     defaultValue: 'day',
@@ -320,6 +329,7 @@ const EventsSchema = new SimpleSchema({
   },
   'when.recurring.monthly.type': {
     type: String,
+    optional: true,
     allowedValues: ['byPosition', 'byDayInMonth'],
     autoValue: function () {
       if (!this.value) {
@@ -328,6 +338,7 @@ const EventsSchema = new SimpleSchema({
     }
   },
   'when.recurring.monthly.value': {
+    optional: true,
     type: Number,
     autoValue: function () {
       if (!this.value) {
@@ -337,6 +348,7 @@ const EventsSchema = new SimpleSchema({
   },
   'when.recurring.every': {
     type: Number,
+    optional: true,
     min: 0,
     max: 12,
     defaultValue: 1,
@@ -438,11 +450,13 @@ const EventsSchema = new SimpleSchema({
   },
   'engagement.attendees.$.id': {
     type: String,
-    max: 36
+    max: 36,
+    optional: true
   },
   'engagement.attendees.$.name': {
     type: String,
-    max: 120
+    max: 120,
+    optional: true
   },
   'video': {
     type: Object,
