@@ -28,8 +28,7 @@
 
     @media screen and (max-width: 768px) {
       padding: 20px 0 !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
+      margin: 0 !important;
     }
   }
 
@@ -82,5 +81,37 @@
         }
       }
     }
+  }
+}
+
+/* Simplify and make more specific */
+@media screen and (max-width: 768px) {
+  body section.first-section,
+  body section.second-section,
+  body section.third-section {
+    padding-top: 0 !important;
+    padding-bottom: 10px !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  body section.third-section {
+    padding-bottom: 60px !important;
+  }
+}
+
+/* Remove or update the Discourse-specific styles */
+.d-header, .d-header-wrap, .d-content, .d-wrap, body.djs-page {
+  #about section,
+  #about .first-section,
+  #about .second-section,
+  #about .third-section,
+  section.first-section,
+  section.second-section,
+  section.third-section {
+    padding: 10px 0 !important;
+    margin: 10px 0 0 0 !important;
+    max-padding: 10px !important;
+    min-padding: 10px !important;
   }
 }

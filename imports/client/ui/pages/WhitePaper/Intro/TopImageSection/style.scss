@@ -1,29 +1,23 @@
+/* Remove the old styles completely */
 #top-image-section {
-  margin-top: 0;
-  padding: 40px;
-  text-align: center;
-
-  .container {
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  .top_image {
-    width: 100%;
-    height: auto;
-  }
+  display: none;
 }
 
 .top-image-section {
   text-align: center;
   padding: 20px 0;
+  overflow: hidden; /* Prevent content from extending outside */
   
   .top-image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    
     img {
       max-width: 100%; /* Ensures image never exceeds container width */
       height: auto; /* Maintains aspect ratio */
       width: auto; /* Allows image to scale down naturally */
-      max-height: 150px; /* Limits maximum height */
     }
   }
   
@@ -32,8 +26,7 @@
     
     .top-image-wrapper {
       img {
-        max-width: 90%; /* Slightly smaller on mobile */
-        max-height: 100px; /* Smaller height on mobile */
+        max-width: 90%; /* Changed back to 90% as requested */
       }
     }
   }

@@ -13,14 +13,14 @@ const {
 } = content
 
 const SecondSection = () => (
-  <section className='second-section'>
+  <section className='second-section' style={{padding: '0 0 10px 0', marginTop: '10px', marginBottom: '0'}}>
     <Container>
       <Row>
         <Col md={6} className='attachment-content'>
           <iframe src={youtubeLink} frameBorder="0" allowFullScreen></iframe>
         </Col>
         <Col md={6}>
-          <h2 className='title'>{title}</h2>
+          <h2 className='title' style={{marginTop: '0', marginBottom: '8px'}}>{title}</h2>
           <div className="text-content">
             <p>{first}</p>
             <p>{second}</p>
