@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Alert, FormGroup, Input, Label } from 'reactstrap'
 import RadioButton from './RadioButton'
 import './styles.scss'
+import { GoogleAddressInput } from './GoogleAddressInput';
 
 import i18n from '/imports/both/i18n/en'
 
@@ -40,6 +41,9 @@ const FirstStep = ({ form }) => {
     resourceType: 'found',
     reset: false
   })
+
+  // const inputRef = useRef(null);
+  // const [address, setAddress] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -99,6 +103,36 @@ const FirstStep = ({ form }) => {
   }
 
   const formData = form?.getModel?.() || {}
+/*
+  useEffect(() => {
+    if (!window.google || !window.google.maps || !window.google.maps.places) {
+      console.error('Google Maps script not loaded');
+      return;
+    }
+
+    const autocomplete = new window.google.maps.places.Autocomplete(inputRef.current, {
+      types: ['geocode'],
+    });
+
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace();
+
+      if (!place.geometry) {
+        console.warn('No geometry found for place');
+        return;
+      }
+
+      const result = {
+        name: place.formatted_address,
+        location: {
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng(),
+        },
+      };
+
+      onPlaceSelected(result);
+    });
+  }, []);*/
 
   return (
     <div id='first-step'>
@@ -148,6 +182,7 @@ const FirstStep = ({ form }) => {
         />
       </FormGroup>
 
+      {/*
       <FormGroup>
         <Label for="address">Address</Label>
         <Input
@@ -159,7 +194,34 @@ const FirstStep = ({ form }) => {
           placeholder="Enter address"
         />
       </FormGroup>
+      */}
 
+      <FormGroup>
+        <GoogleAddressInput
+          onPlaceSelected={(address) => {
+            form.change('address', address); // Store object with name & location
+          }}
+        />
+      </FormGroup>
+
+      {/*
+      <FormGroup>
+        <Label for="addressName">Address</Label>
+        <Input
+          type="text"
+          id="addressName"
+          placeholder="Enter address"
+          defaultValue={formData.address?.name || ''}
+          innerRef={inputRef}
+          onChange={(e) =>
+            form.change('address', {
+              name: e.target.value,
+              location: null, // clear location if just typed
+            })
+          }
+        />
+      </FormGroup>
+      */}
       {state.offerResource &&
         <Alert
           color='info'
