@@ -99,7 +99,7 @@ const EventsSchema = new SimpleSchema({
       label: labels.event_name
     }
   },
-  'address': {
+  /*'address': {
     type: Object,
     custom: function () {
       if (!this.value || !this.value.name) {
@@ -137,7 +137,38 @@ const EventsSchema = new SimpleSchema({
   },
   'address.location.coordinates.$': {
     type: Number
+  },*/
+
+  address: {
+    type: Object,
+    optional: false,
+    custom() {
+      if (!this.value?.name || !this.value?.location?.coordinates?.length) {
+        return 'required';
+      }
+    }
   },
+  'address.name': {
+    type: String,
+    optional: true
+  },
+  'address.location': {
+    type: Object,
+    optional: true
+  },
+  'address.location.type': {
+    type: String,
+    optional: true
+  },
+  'address.location.coordinates': {
+    type: Array,
+    optional: true
+  },
+  'address.location.coordinates.$': {
+    type: Number,
+    optional: true
+  },
+
   'findHints': {
     type: String,
     max: 250,
