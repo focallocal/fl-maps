@@ -22,7 +22,14 @@ branches:
     - deploy-btm
     - deploy-phm
 
+env:
+  global:
+    - GPG_KEY_B64=$sops_gpg_key
+
 script:
   - npm install
   - mup setup
   - mup deploy
+  - echo "$GPG_KEY_B64" | base64 --decode > travis-private-key.asc
+  - gpg --batch --import travis-private-key.asc
+  - gpg --list-secret-keys
