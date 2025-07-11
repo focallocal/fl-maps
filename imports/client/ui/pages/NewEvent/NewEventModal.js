@@ -136,7 +136,7 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
-    console.log(this.state.form.getModel());
+    // console.log(this.state.form.getModel());
     this.state.form.validate({ clean: true })
       .then(() => {
         window.NProgress.set(0.4)
@@ -151,8 +151,8 @@ class NewEventModal extends Component {
       .catch(err => {
         this.setState({ hasErrors: true })
         // console.log(this.state.form.getModel());
-        console.log('Validation errors:', this.state.form.state.errors);
-        console.log('Validation errors:', err.details);
+        // console.log('Validation errors:', this.state.form.state.errors);
+        // console.log('Validation errors:', err.details);
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
 
