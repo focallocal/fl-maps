@@ -22,27 +22,32 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
       elem.addEventListener('gmp-select', async (event) => {
         const prediction = event.placePrediction;
         const place = await prediction.toPlace();
+
         await place.fetchFields({
-          fields: ['formattedAddress', 'location'],
+          fields: ['location', 'formattedAddress'],
         });
 
         const address = place.formattedAddress;
+        const lat = typeof place.location?.lat === 'function' ? place.location.lat() : null;
+        const lng = typeof place.location?.lng === 'function' ? place.location.lng() : null;
 
-        // ✅ This works even if the component resets the input
-        setSelectedAddress(address);
+        if (typeof lat === 'number' && typeof lng === 'number') {
+          setSelectedAddress(address);
 
-        // Optional: forcibly reset the visible value inside the shadow input (somewhat unreliable)
-        if (inputRef.current) {
-          inputRef.current.value = address;
+          if (inputRef.current) {
+            inputRef.current.value = address;
+          }
+
+          onPlaceSelected?.({
+            name: address,
+            location: {
+              type: 'Point',
+              coordinates: [lng, lat],
+            },
+          });
+        } else {
+          console.warn('Invalid coordinates received from place', place);
         }
-
-        onPlaceSelected?.({
-          name: address,
-          location: {
-            lat: place.location.latitude,
-            lng: place.location.longitude,
-          },
-        });
       });
     };
 
