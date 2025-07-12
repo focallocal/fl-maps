@@ -4,24 +4,17 @@ export const startingTime = {
   type: String,
   regEx: /^([01]\d|2[0-3]):([0-5]\d)$/,
   uniforms: {
-    customType: 'text', // change from 'select'
+    customType: 'text',
     label: 'Start Time'
   }
 }
 
 export const endingTime = {
-  /*type: String,
-  allowedValues: possibleEventHours,
-  uniforms: {
-    'customType': 'select',
-    'label': ' '
-  }*/
-
   type: String,
   regEx: /^([01]\d|2[0-3]):([0-5]\d)$/,
   uniforms: {
-    customType: 'text', // change from 'select'
-    label: 'Start Time'
+    customType: 'text',
+    label: 'End Time'
   }
 }
 

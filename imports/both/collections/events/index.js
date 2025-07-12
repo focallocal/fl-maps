@@ -99,6 +99,7 @@ const EventsSchema = new SimpleSchema({
       label: labels.event_name
     }
   },
+  // TODO: Complete fields validation and properties.
   /*'address': {
     type: Object,
     custom: function () {
