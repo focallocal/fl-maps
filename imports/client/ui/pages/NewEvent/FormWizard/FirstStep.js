@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Alert, FormGroup, Input, Label } from 'reactstrap'
 import RadioButton from './RadioButton'
 import './styles.scss'
+import { GoogleAddressInput } from './GoogleAddressInput';
 
 import i18n from '/imports/both/i18n/en'
 
@@ -149,14 +150,10 @@ const FirstStep = ({ form }) => {
       </FormGroup>
 
       <FormGroup>
-        <Label for="address">Address</Label>
-        <Input
-          type="text"
-          name="address"
-          id="address"
-          value={formData.address || ''}
-          onChange={handleInputChange}
-          placeholder="Enter address"
+        <GoogleAddressInput
+          onPlaceSelected={(address) => {
+            form.change('address', address);
+          }}
         />
       </FormGroup>
 

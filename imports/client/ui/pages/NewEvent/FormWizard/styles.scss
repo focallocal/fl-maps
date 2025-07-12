@@ -32,3 +32,28 @@
     }
   }
 }
+
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  // max-width: 400px;
+  // margin: 0 auto;
+
+  /*.address-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }*/
+
+  .address-container {
+    min-height: 40px;
+  }
+
+  .address-selected {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #4a90e2;
+    font-style: italic;
+  }
+}
