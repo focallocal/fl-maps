@@ -17,7 +17,8 @@ class MovementSection extends Component {
   render (props) {
     const {
       title,
-      content
+      content,
+      subtitle
     } = MovementI18N
 
     const {
@@ -34,7 +35,10 @@ class MovementSection extends Component {
     return (
       <section id='movement_section'>
         <Container>
-          <div className='title'>{title}</div>
+          <div className='title'>
+            {title}
+            <div className='sub-title'>{subtitle}</div>
+          </div>
           <Row className="items justify-content-center">
             {items.map((item, i) => (
               <Item item={item} loginButton={loginButton} />

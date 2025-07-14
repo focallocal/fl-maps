@@ -26,7 +26,8 @@ class EventsSection extends Component {
   render (props) {
     const {
       title,
-      content
+      content,
+      subtitle
     } = EventsI18N
 
     const {
@@ -43,7 +44,11 @@ class EventsSection extends Component {
     return (
       <section id='events_section'>
         <Container>
-          <div className='title'>{title}</div>
+          <div className='title'>
+            {title}
+            <div className='sub-title'>{subtitle}</div>
+          </div>
+          
           <Row className="items justify-content-center">
             {items.map((item, i) => (
               <Item item={item} loginButton={loginButton} />
