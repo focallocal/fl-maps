@@ -27,6 +27,18 @@
     border-top-right-radius: 2rem;
     border-bottom-left-radius: 0.2rem;
     border-bottom-right-radius: 0.22rem;
+    border-top: solid green 2px;
+    border-left: solid green 2px;
+    border-right: solid green 2px;
+    border-bottom: solid green 8px;
+    text-align: center;
+    padding: 1rem 1rem 0.2rem 1rem;
+
+    .sub-title {
+      font-size: 0.5em;
+      padding: 0.3rem 0 0.3rem 0;
+      font-weight: normal;
+    }
   }
   .item-text {
     font-size: 1.3em;
@@ -79,7 +91,13 @@
       font-size: 1.4em;
       line-height: 1.4em;
       margin-left: 0;
-      text-align: left;
+      text-align: center;
+
+      .sub-title {
+        font-size: 0.8em;
+        padding: 0.3rem 0 0.3rem 0;
+        font-weight: normal;
+      }
     }
 
     .item {
