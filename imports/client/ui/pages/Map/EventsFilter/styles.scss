@@ -38,6 +38,10 @@
       }
     }
 
+    label:hover{
+      cursor: pointer;
+    }
+
     .close {
       position: absolute;
       top: 18px;
@@ -66,6 +70,10 @@
       }
     }
 
+    .list-group-item:hover{
+      cursor: pointer;
+    }
+
     .list-group-item a{
       color: rgb(200, 200, 200);
       position: absolute;
@@ -79,8 +87,12 @@
       };
     }
   }
-  //added margin to justify text alignemnt next to checkbox.
+  //added margin to justify text alignment next to checkbox.
   .form-check-label{
     margin-left: 0.5em;
+  }
+
+  .form-check-label:hover{
+    cursor: pointer;
   }
 }
