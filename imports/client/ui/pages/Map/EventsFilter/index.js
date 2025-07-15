@@ -48,7 +48,6 @@ class FiltersList extends Component {
       <div id='filters-list' className={show ? 'show' : ''}>
         <ListGroup>
           <ListGroupItem className='title'>
-            <div><span>{i18n.Map.filtersTitle}</span></div>
             {/* <i className='fa fa-times close' onClick={toggleFiltersList}/> */}
             <FontAwesomeIcon icon="fas fa-times" className='close' onClick={toggleFiltersList} />
             <Input
@@ -58,6 +57,7 @@ class FiltersList extends Component {
               checked={checkAll}
               onChange={this.toggleAllFilters}
             />
+            <Label for="toggle-all" className="label"><span>{i18n.Map.filtersTitle}</span></Label>
           </ListGroupItem>
           <div className='categories-items'>
             {possibleCategories.map((category, index) => {
@@ -66,8 +66,7 @@ class FiltersList extends Component {
                   key={index}
                   className="checkbox"
                   style={{
-                    //marginLeft: category.parent !== true ? '20px' : '0px',
-                    paddingLeft: category.parent !== true ? '2em' : '0em',
+                    paddingLeft: category.parent !== true ? '2em' : '1em',
                     color: category.color,
                     display: category.hidden === true ? 'none' : 'block'
                   }}
@@ -87,8 +86,8 @@ class FiltersList extends Component {
                     {category.name}
                   </Label>
                   { category.url &&
-                    <a href={category.url} target='_blank' rel="external noreferrer" aria-label='Go to Page'>
-                      <i className="far fa-question-circle"></i>
+                    <a href={category.url} target='_blank' rel="external noreferrer" aria-label='Go to Page' style={{textDecoration: 'none'}}>
+                      ?
                     </a>
                   }
                 </ListGroupItem>
