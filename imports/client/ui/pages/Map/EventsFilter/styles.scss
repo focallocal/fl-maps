@@ -2,10 +2,11 @@
 
 #filters-list {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: calc(100vh - #{$menu-height});
-  //box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  top: 5px;
+  left: 5px;
+  // width: 700px;
+  // height: calc(100vh - #{$menu-height});
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   transform: translate($map-events-list-width, calc(-100vh - #{$menu-height}));
   transition: transform .3s ease;
   will-change: transform;
@@ -28,11 +29,12 @@
     position: relative;
     text-align: left;
     font-weight: bolder;
+    display: flex;
 
-    div {
+    label {
       position: relative;
       span {
-        padding-left: 23px;
+        padding-left: 10px;
       }
     }
 
