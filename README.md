@@ -83,9 +83,9 @@ https://www.meteor.com/install
 
    - `git remote add upstream https://github.com/focallocal/fl-maps`
 
-   ```
+   ```bash
      // make sure there are 2 remotes (origin that points to your fork and upstream for the original repo)
-     git remote -v
+     $ git remote -v
    ```
 
    - **every time you start working on a new feature, run: `git pull upstream master` which ensures you are always working with the most updated version of the project.**
@@ -100,8 +100,8 @@ https://www.meteor.com/install
 5. run the project
 
    ```bash
-   meteor npm install
-   npm run start // see notes below if it fails to run
+   $ meteor npm install
+   $ npm run start // see notes below if it fails to run
    ```
 
 6. make changes
@@ -110,10 +110,10 @@ https://www.meteor.com/install
 
 8. if all the tests have passed, run
 
-   ```
-     git add .
-     git commit -m 'description of what has changed'
-     git push origin your_working_branch_name
+   ```bash
+     $ git add .
+     $ git commit -m 'description of what has changed'
+     $ git push origin your_working_branch_name
    ```
 
 9. go to github and create a new pull request from your fork (make sure it's against the fl-maps/master branch)
