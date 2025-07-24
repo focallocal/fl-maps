@@ -14,6 +14,12 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
 
       const elem = new window.google.maps.places.PlaceAutocompleteElement();
       elem.classList.add('autocomplete-input');
+
+      // Force the input to field to use light theme.
+      // This will be removed when we start working on dark mode.
+      // TODO: Remove this line we start working on dark mode.
+      elem.style.colorScheme = 'none';
+
       containerRef.current.innerHTML = '';
       containerRef.current.appendChild(elem);
 
