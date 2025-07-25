@@ -32,11 +32,13 @@ VideoButtons.propTypes = {
 
 const SecondStep = ({ form }) => {
   const [videoLinksAdded, setVideoLinksAdded] = useState(0)
-  const [openEndDate, setOpenEndDate] = useState(
+  /*const [openEndDate, setOpenEndDate] = useState(
     (form.getModel()?.categories || []).some(e => {
       return e?.name === 'Community Offer' || e?.name === 'Meet me for Action!'
     })
-  )
+  )*/
+
+  const [openEndDate, setOpenEndDate] = useState()
 
   const formData = form?.getModel?.() || {}
   const { days, multipleDays, repeat } = formData.when || {}

@@ -54,7 +54,7 @@ const EventsSchema = new SimpleSchema({
 
   // Categories sub level
   'categories': {
-    type: Array,
+    type: Object,
     custom: function () {
       if (!this.value || this.value.length === 0) {
         return 'required'
@@ -72,15 +72,12 @@ const EventsSchema = new SimpleSchema({
       placeholder_: labels.categories
     }
   },
-  'categories.$': {
-    type: Object
-  },
-  'categories.$.name': {
+  'categories.name': {
     type: String,
     allowedValues: allowedValues.reduce((arr, obj) => (arr.concat(obj.name)), []),
     optional: true
   },
-  'categories.$.color': {
+  'categories.color': {
     type: String,
     allowedValues: allowedValues.reduce((arr, obj) => (arr.concat(obj.color)), []),
     defaultValue: '#f82d2d',
@@ -210,8 +207,11 @@ const EventsSchema = new SimpleSchema({
     // meaning autoValue will never trigger correctly
     // Solution: omit defaultValue and pre-populate form client-side via React
     autoValue: function () {
-      const categories = this.field('categories').value
-      const specialCat = categories.some(e => {
+      //TODO: I left these commented out codes for now because I need to make 
+      // sure they are not related to other parts of the form before deleting them entirely.
+
+      // const categories = this.field('categories').value
+      /*const specialCat = categories.some(e => {
         return e.name === 'Community Offer' || e.name === 'Meet me for Action!'
       })
       if (!this.isSet && specialCat) {
@@ -219,6 +219,13 @@ const EventsSchema = new SimpleSchema({
         return new Date(now.setFullYear(now.getFullYear() + 10))
       } else if (!this.isSet && !specialCat) {
         return getDate(3)
+      } else if (!this.isSet && this.siblingField('repeat').value) {
+        return getDate(3)
+      }*/
+
+      if (!this.isSet) {
+        let now = new Date()
+        return new Date(now.setFullYear(now.getFullYear() + 10))
       } else if (!this.isSet && this.siblingField('repeat').value) {
         return getDate(3)
       }

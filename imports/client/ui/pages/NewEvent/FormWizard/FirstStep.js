@@ -4,6 +4,7 @@ import { Alert, FormGroup, Input, Label } from 'reactstrap'
 import RadioButton from './RadioButton'
 import './styles.scss'
 import { GoogleAddressInput } from './GoogleAddressInput';
+import SearchableCategoryInput from './SearchableCategoryInput';
 
 import i18n from '/imports/both/i18n/en'
 
@@ -53,6 +54,15 @@ const FirstStep = ({ form }) => {
     } else {
       form.change(name, value)
     }
+  }
+
+  const handleSearchableCategory = (e) => {
+    const selectedOption = {
+      name: e.value,
+      color: e.color
+    }
+
+    form.change('categories', selectedOption);
   }
 
   const noCategories = (type, value) => {
@@ -167,22 +177,30 @@ const FirstStep = ({ form }) => {
       }
 
       <FormGroup>
+        <SearchableCategoryInput
+          groupedCategories={Categories}
+          handleInputChange={handleSearchableCategory}
+        />
+      </FormGroup>
+
+      {/*
+      <FormGroup>
         <Label for="categories">Categories</Label>
         <Input
           type="select"
           name="categories"
           id="categories"
-          value={formData.categories || []}
+          // value={formData.categories || []}
           onChange={handleInputChange}
-          multiple
           className="categories-select"
         >
           {Categories.map((category, index) => (
             <option key={index} value={category.name}>{category.name}</option>
           ))}
         </Input>
-      </FormGroup>
+      </FormGroup>*/}
     </div>
+
   )
 }
 
