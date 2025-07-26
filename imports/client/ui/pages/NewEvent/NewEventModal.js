@@ -163,9 +163,16 @@ class NewEventModal extends Component {
 
   onCreateEvent = (eventId) => {
     routeMatcher.getPageName('/page/' + eventId).then((result) => {
-      comToPlugin.postCreateDcsTags({
+      /*comToPlugin.postCreateDcsTags({
         pageName: result,
         triggerIds: ['photos', 'videos', 'stories'],
+        notificationLevel: 3
+      })*/
+      comToPlugin.postCreateTopic({
+        title: result,
+        body: `This is where we can talk about ${result}.`,
+        pageName: result,
+        triggerId: 'stories',
         notificationLevel: 3
       })
     })

@@ -17,16 +17,22 @@ export function formatCategories (categories) {
   /*
     Format array of categories into a sentence
   */
+  
+  if (Array.isArray(categories)) {
+    return categories.reduce((str, category, index) => {
+      str += `${category.name}, `;
 
-  return categories.reduce((str, category, index) => {
-    str += `${category.name}, `
+      if (!categories[index + 1]) {
+        str = str.slice(0, -2); // cleaner than substr
+      }
 
-    if (!categories[index + 1]) {
-      str = str.substr(0, str.length - 2)
-    }
-
-    return str
-  }, '')
+      return str;
+    }, '');
+  } else if (categories && typeof categories === 'object') {
+    return categories.name;
+  } else {
+    return '';
+  }
 }
 
 export function formatReactSelectOptions (options = [], labelKey, labelMapper) {

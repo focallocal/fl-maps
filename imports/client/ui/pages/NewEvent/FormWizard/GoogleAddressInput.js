@@ -14,10 +14,20 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
 
       const elem = new window.google.maps.places.PlaceAutocompleteElement();
       elem.classList.add('autocomplete-input');
+
+      // Force the input to field to use light theme.
+      // This will be removed when we start working on dark mode.
+      // TODO: Remove this line we start working on dark mode.
+      elem.style.colorScheme = 'none';
+      elem.style.border = '1px solid lightgray';
+      elem.style.height = '43px';
+
       containerRef.current.innerHTML = '';
       containerRef.current.appendChild(elem);
 
       inputRef.current = elem.shadowRoot?.querySelector('input');
+
+      containerRef.current.appendChild(elem);
 
       elem.addEventListener('gmp-select', async (event) => {
         const prediction = event.placePrediction;
@@ -34,9 +44,12 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
         if (typeof lat === 'number' && typeof lng === 'number') {
           setSelectedAddress(address);
 
-          if (inputRef.current) {
-            inputRef.current.value = address;
-          }
+          
+            const autocompleteElement = containerRef.current.querySelector('gmpx-place-autocomplete');
+            if (autocompleteElement) {
+              autocompleteElement.value = address;
+            }
+          
 
           onPlaceSelected?.({
             name: address,
@@ -56,11 +69,11 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
 
   return (
     <div className="address-form">
-      <label className="address-label">Enter Address</label>
-      <div ref={containerRef} className="address-container" />
+      <label htmlFor="google-address-input" className="address-label">Enter Address</label>
+      <div id="google-address-input" ref={containerRef} className="address-container" />
 
       {selectedAddress && (
-        <p className="address-selected">Selected: {selectedAddress}</p>
+        <p className="address-selected"><strong className='address-selected-title'>Selected:</strong> {selectedAddress}</p>
       )}
     </div>
   );
