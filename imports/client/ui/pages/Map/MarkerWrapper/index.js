@@ -22,7 +22,6 @@ class MarkerWrapper extends Component {
     const { latLng } = position
     let fillColor;
 
-    console.log(event.categories, event.categories.length);
     if (Array.isArray(event.categories)) {
       fillColor = event.categories.length > 1 ? '#d09d7a' : event.categories[0].color
     } else {

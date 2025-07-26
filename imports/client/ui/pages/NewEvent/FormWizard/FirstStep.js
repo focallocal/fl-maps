@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import React, { useEffect, useRef, useState } from 'react'
 import { Alert, FormGroup, Input, Label } from 'reactstrap'
 import RadioButton from './RadioButton'
-import './styles.scss'
 import { GoogleAddressInput } from './GoogleAddressInput';
 import SearchableCategoryInput from './SearchableCategoryInput';
+import './styles.scss'
 
 import i18n from '/imports/both/i18n/en'
 
@@ -18,8 +18,10 @@ if (window.__mapType === 'gatherings') {
   defaultColor = Categories[0].color
 } else if (window.__mapType === 'btm') {
   let defaultCategory = findDefaultCategory(Categories)
-  defaultName = defaultCategory.name
-  defaultColor = defaultCategory.color
+  if (defaultCategory) {
+    defaultName = defaultCategory.name
+    defaultColor = defaultCategory.color
+  }
 }
 
 function findDefaultCategory (C) {
@@ -57,12 +59,14 @@ const FirstStep = ({ form }) => {
   }
 
   const handleSearchableCategory = (e) => {
-    const selectedOption = {
-      name: e.value,
-      color: e.color
-    }
+    if (e) {
+      const selectedOption = {
+        name: e.value,
+        color: e.color
+      }
 
-    form.change('categories', selectedOption);
+      form.change('categories', selectedOption);
+    }
   }
 
   const noCategories = (type, value) => {
@@ -182,6 +186,7 @@ const FirstStep = ({ form }) => {
           handleInputChange={handleSearchableCategory}
         />
       </FormGroup>
+
 
       {/*
       <FormGroup>

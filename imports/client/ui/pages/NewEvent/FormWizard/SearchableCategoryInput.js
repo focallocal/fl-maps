@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { FormGroup, Label } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 
 const flattenCategories = (groups) => {
   return groups.flatMap(group =>
@@ -20,27 +20,33 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange }) => {
   return (
     <>
       <Label for="categories">Categories</Label>
+
+
       <Select
         inputId="categories"
         name="categories"
         id="categories"
         className="categories-select"
         options={options}
-        getOptionLabel={(e) => (
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <span
-              style={{
-                backgroundColor: e.color,
-                borderRadius: '50%',
-                width: 10,
-                height: 10,
-                display: 'inline-block',
-                marginRight: 8
-              }}>
-            </span>
-            {e.name}
-          </div>
-        )}
+        maxMenuHeight={220}
+        menuPlacement="auto"
+        formatOptionLabel={(e) => {
+          return (
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span
+                style={{
+                  backgroundColor: e.color,
+                  borderRadius: '50%',
+                  width: 10,
+                  height: 10,
+                  display: 'inline-block',
+                  marginRight: 8
+                }}>
+              </span>
+              {e.name}
+            </div>
+          )
+        }}
         onChange={handleInputChange}
         placeholder="Search or select a category..."
         isClearable

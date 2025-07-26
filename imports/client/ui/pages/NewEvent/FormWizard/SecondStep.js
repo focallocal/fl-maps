@@ -32,12 +32,6 @@ VideoButtons.propTypes = {
 
 const SecondStep = ({ form }) => {
   const [videoLinksAdded, setVideoLinksAdded] = useState(0)
-  /*const [openEndDate, setOpenEndDate] = useState(
-    (form.getModel()?.categories || []).some(e => {
-      return e?.name === 'Community Offer' || e?.name === 'Meet me for Action!'
-    })
-  )*/
-
   const [openEndDate, setOpenEndDate] = useState()
 
   const formData = form?.getModel?.() || {}
@@ -93,7 +87,6 @@ const SecondStep = ({ form }) => {
                   name="startingDate"
                   id="startingDate"
                   value={formData.when.startingDate || ''}
-                  // onChange={(e) => form.change('when.startingDate', e.target.value)}
                   onChange={(e) => {
                     const when = formData.when || {}
                     form.change('when', { ...when, startingDate: e.target.value })
@@ -108,7 +101,6 @@ const SecondStep = ({ form }) => {
                     name="startingTime"
                     id="startingTime"
                     value={formData.when.startingTime || ''}
-                    // onChange={(e) => form.change('when.startingTime', e.target.value)}
                     onChange={(e) => {
                       const when = formData.when || {}
                       form.change('when', { ...when, startingTime: e.target.value })
@@ -126,11 +118,6 @@ const SecondStep = ({ form }) => {
                     name="endingDate"
                     id="endingDate"
                     value={formData.when.endingDate || ''}
-                    // onChange={(e) => form.change('when.endingDate', e.target.value)}
-                    /*onChange={(e) => {
-                      const when = formData.when || {}
-                      form.change('when', { ...when, endingDate: e.target.value })
-                    }}*/
                     onChange={(e) => {
                       const when = form.getModel().when || {};
                       form.change('when', {
@@ -149,7 +136,6 @@ const SecondStep = ({ form }) => {
                     name="endingTime"
                     id="endingTime"
                     value={formData.when?.endingTime || ''}
-                    // onChange={(e) => form.change('when.endingTime', e.target.value)}
                     onChange={(e) => {
                       const when = formData.when || {}
                       form.change('when', { ...when, endingTime: e.target.value })
@@ -165,11 +151,6 @@ const SecondStep = ({ form }) => {
                     name="endingDate"
                     id="endingDate"
                     value={formData.when.endingDate || ''}
-                    // onChange={(e) => form.change('when.endingDate', e.target.value)}
-                    /*onChange={(e) => {
-                      const when = formData.when || {}
-                      form.change('when', { ...when, endingDate: e.target.value })
-                    }}*/
                     onChange={(e) => {
                       const when = form.getModel().when || {};
                       form.change('when', {
