@@ -4,7 +4,7 @@ import { Input, Label } from 'reactstrap';
 
 const RadioButton = ({ label, id, value, type, click, onRadioButtonClick }) => {
   return (
-    <div className="radio-button-wrapper d-flex align-items-center">
+    <div className="radio-button-wrapper d-flex">
       <Input
         id={id}
         type={type}

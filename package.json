@@ -47,14 +47,12 @@
     "react-player": "^1.9.3",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-select": "^2.0.0-beta.2",
+    "react-select": "^5.10.2",
     "react-share": "^2.4.0",
     "react-swipeable": "^4.3.0",
     "reactstrap": "^9.2.3",
     "remarkable": "^1.7.1",
     "simpl-schema": "^1.0.0",
-    "uniforms-bootstrap5": "^4.0.0-alpha.3",
-    "uniforms-bridge-simple-schema-2": "^4.0.0-alpha.3",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {

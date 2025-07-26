@@ -20,14 +20,21 @@ class MarkerWrapper extends Component {
     } = this.props
 
     const { latLng } = position
-    const fillColor = event.categories.length > 1 ? '#d09d7a' : event.categories[0].color
+    let fillColor;
+
+    if (Array.isArray(event.categories)) {
+      fillColor = event.categories.length > 1 ? '#d09d7a' : event.categories[0].color
+    } else {
+      fillColor = event.categories.color
+    }
+
     const iconScale = hovered || isCurrent ? 0.55 : 0.5
-    const hightlightIcon = isCurrent ? { strokeWeight: 3 } : null
+    const highlightIcon = isCurrent ? { strokeWeight: 3 } : null
     const zIndex = isCurrent ? 9999 : 1
 
     return (
       <Marker
-        icon={{ ...icon, fillColor, scale: iconScale, ...hightlightIcon }}
+        icon={{ ...icon, fillColor, scale: iconScale, ...highlightIcon }}
         onClick={this.handleClick}
         onMouseOver={this.handleMouseOver}
         onMouseOut={this.handleMouseOut}
