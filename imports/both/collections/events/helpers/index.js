@@ -2,19 +2,19 @@ import possibleEventHours from './possibleEventHours'
 
 export const startingTime = {
   type: String,
-  allowedValues: possibleEventHours,
+  regEx: /^([01]\d|2[0-3]):([0-5]\d)$/,
   uniforms: {
-    'customType': 'select',
-    'label': ' '
+    customType: 'text',
+    label: 'Start Time'
   }
 }
 
 export const endingTime = {
   type: String,
-  allowedValues: possibleEventHours,
+  regEx: /^([01]\d|2[0-3]):([0-5]\d)$/,
   uniforms: {
-    'customType': 'select',
-    'label': ' '
+    customType: 'text',
+    label: 'End Time'
   }
 }
 

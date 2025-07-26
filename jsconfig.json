@@ -1,0 +1,104 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "/*": [
+        "./*"
+      ],
+      "meteor/meteoreact:fix-unsupported-properties": [
+        "packages/simpl-schema-uniforms/index.js"
+      ],
+      "meteor/mongo": [
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/local_collection_driver.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/collection.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/connection_options.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/doc_fetcher.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/mongo_driver.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/mongo_utils.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/observe_multiplex.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/oplog_observe_driver.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/oplog_tailing.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/oplog_v2_converter.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/polling_observe_driver.js",
+        "/Users/marvelxy/.meteor/packages/mongo/1.16.6/web.browser/remote_collection_driver.js"
+      ],
+      "meteor/reactive-var": [
+        "/Users/marvelxy/.meteor/packages/reactive-var/1.0.12/web.browser/reactive-var.js"
+      ],
+      "meteor/tracker": [
+        "/Users/marvelxy/.meteor/packages/tracker/1.3.2/web.browser/tracker.js"
+      ],
+      "meteor/shell-server": [
+        "/Users/marvelxy/.meteor/packages/shell-server/0.5.0/web.browser/main.js",
+        "/Users/marvelxy/.meteor/packages/shell-server/0.5.0/web.browser/shell-server.js"
+      ],
+      "meteor/es5-shim": [
+        "/Users/marvelxy/.meteor/packages/es5-shim/4.8.0/web.browser/client.js",
+        "/Users/marvelxy/.meteor/packages/es5-shim/4.8.0/web.browser/console.js",
+        "/Users/marvelxy/.meteor/packages/es5-shim/4.8.0/web.browser/cordova.js",
+        "/Users/marvelxy/.meteor/packages/es5-shim/4.8.0/web.browser/export_globals.js",
+        "/Users/marvelxy/.meteor/packages/es5-shim/4.8.0/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "/Users/marvelxy/.meteor/packages/ecmascript/0.16.7/web.browser/ecmascript.js"
+      ],
+      "meteor/react-meteor-data": [
+        "/Users/marvelxy/.meteor/packages/react-meteor-data/2.7.2/web.browser/index.js",
+        "/Users/marvelxy/.meteor/packages/react-meteor-data/2.7.2/web.browser/suspense/index.js"
+      ],
+      "meteor/service-configuration": [
+        "/Users/marvelxy/.meteor/packages/service-configuration/1.3.1/web.browser/service_configuration_common.js",
+        "/Users/marvelxy/.meteor/packages/service-configuration/1.3.1/web.browser/service_configuration_server.js"
+      ],
+      "meteor/aldeed:collection2": [
+        "/Users/marvelxy/.meteor/packages/aldeed_collection2/3.5.0/web.browser/collection2.js",
+        "/Users/marvelxy/.meteor/packages/aldeed_collection2/3.5.0/web.browser/lib.js"
+      ],
+      "meteor/mdg:validated-method": [
+        "/Users/marvelxy/.meteor/packages/mdg_validated-method/1.3.0/web.browser/validated-method.js"
+      ],
+      "meteor/ddp-rate-limiter": [
+        "/Users/marvelxy/.meteor/packages/ddp-rate-limiter/1.2.0/web.browser/ddp-rate-limiter.js"
+      ],
+      "meteor/alanning:roles": [
+        "/Users/marvelxy/.meteor/packages/alanning_roles/1.3.0/web.browser/roles/roles_common.js",
+        "/Users/marvelxy/.meteor/packages/alanning_roles/1.3.0/web.browser/roles/client/debug.js",
+        "/Users/marvelxy/.meteor/packages/alanning_roles/1.3.0/web.browser/roles/client/uiHelpers.js",
+        "/Users/marvelxy/.meteor/packages/alanning_roles/1.3.0/web.browser/roles/client/subscriptions.js",
+        "/Users/marvelxy/.meteor/packages/alanning_roles/1.3.0/web.browser/roles/roles_server.js"
+      ],
+      "meteor/sylque:dcs-simple-route-matcher": [
+        "/Users/marvelxy/.meteor/packages/sylque_dcs-simple-route-matcher/0.0.6/web.browser/lib/main-client.js",
+        "/Users/marvelxy/.meteor/packages/sylque_dcs-simple-route-matcher/0.0.6/web.browser/lib/main-server.js",
+        "/Users/marvelxy/.meteor/packages/sylque_dcs-simple-route-matcher/0.0.6/web.browser/lib/pathname-ids-client.js",
+        "/Users/marvelxy/.meteor/packages/sylque_dcs-simple-route-matcher/0.0.6/web.browser/lib/pathname-ids-server.js"
+      ],
+      "meteor/sylque:accounts-discourse": [
+        "/Users/marvelxy/.meteor/packages/sylque_accounts-discourse/0.0.7/web.browser/lib/client.js",
+        "/Users/marvelxy/.meteor/packages/sylque_accounts-discourse/0.0.7/web.browser/lib/server.js"
+      ],
+      "meteor/underscore": [
+        "/Users/marvelxy/.meteor/packages/underscore/1.0.13/web.browser/pre.js",
+        "/Users/marvelxy/.meteor/packages/underscore/1.0.13/web.browser/underscore.js",
+        "/Users/marvelxy/.meteor/packages/underscore/1.0.13/web.browser/post.js"
+      ],
+      "meteor/http": [
+        "/Users/marvelxy/.meteor/packages/http/2.0.0/web.browser/httpcall_client.js",
+        "/Users/marvelxy/.meteor/packages/http/2.0.0/web.browser/httpcall_common.js",
+        "/Users/marvelxy/.meteor/packages/http/2.0.0/web.browser/httpcall_server.js"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}

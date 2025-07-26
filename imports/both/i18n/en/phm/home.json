@@ -144,6 +144,7 @@
   },
   "movement_section": {
     "title": "Movement",
+    "subtitle": "test 1",
     "content": {
       "items": [
         {
@@ -215,6 +216,7 @@
   },
   "projects_section": {
     "title": "Projects (Global)",
+    "subtitle": "test 2",
     "content": {
       "items": [
         {
@@ -295,6 +297,7 @@
   },
   "events_section": {
     "title": "Gatherings (Local)",
+    "subtitle": "test 3",
     "content": {
       "items": [
         {
