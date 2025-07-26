@@ -44,9 +44,12 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
         if (typeof lat === 'number' && typeof lng === 'number') {
           setSelectedAddress(address);
 
-          if (inputRef.current) {
-            inputRef.current.value = address;
-          }
+          
+            const autocompleteElement = containerRef.current.querySelector('gmpx-place-autocomplete');
+            if (autocompleteElement) {
+              autocompleteElement.value = address;
+            }
+          
 
           onPlaceSelected?.({
             name: address,
@@ -66,11 +69,11 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
 
   return (
     <div className="address-form">
-      <label className="address-label">Enter Address</label>
-      <div ref={containerRef} className="address-container" />
+      <label htmlFor="google-address-input" className="address-label">Enter Address</label>
+      <div id="google-address-input" ref={containerRef} className="address-container" />
 
       {selectedAddress && (
-        <p className="address-selected">Selected: {selectedAddress}</p>
+        <p className="address-selected"><strong className='address-selected-title'>Selected:</strong> {selectedAddress}</p>
       )}
     </div>
   );

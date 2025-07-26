@@ -186,24 +186,6 @@ const FirstStep = ({ form }) => {
           handleInputChange={handleSearchableCategory}
         />
       </FormGroup>
-
-
-      {/*
-      <FormGroup>
-        <Label for="categories">Categories</Label>
-        <Input
-          type="select"
-          name="categories"
-          id="categories"
-          // value={formData.categories || []}
-          onChange={handleInputChange}
-          className="categories-select"
-        >
-          {Categories.map((category, index) => (
-            <option key={index} value={category.name}>{category.name}</option>
-          ))}
-        </Input>
-      </FormGroup>*/}
     </div>
 
   )

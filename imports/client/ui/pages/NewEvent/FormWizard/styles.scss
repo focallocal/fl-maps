@@ -51,10 +51,14 @@
     min-height: 40px;
   }
 
+  .address-selected-title {
+    color: #000;
+    font-weight: bold;
+  }
+
   .address-selected {
-    margin-top: 6px;
     font-size: 14px;
     color: #4a90e2;
-    font-style: italic;
+    margin-bottom: 0;
   }
 }

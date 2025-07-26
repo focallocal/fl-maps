@@ -20,8 +20,6 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange }) => {
   return (
     <>
       <Label for="categories">Categories</Label>
-
-
       <Select
         inputId="categories"
         name="categories"
