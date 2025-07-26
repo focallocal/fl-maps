@@ -28,7 +28,7 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange }) => {
         id="categories"
         className="categories-select"
         options={options}
-        maxMenuHeight={220}
+        maxMenuHeight={205}
         menuPlacement="auto"
         formatOptionLabel={(e) => {
           return (
