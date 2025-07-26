@@ -19,11 +19,15 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
       // This will be removed when we start working on dark mode.
       // TODO: Remove this line we start working on dark mode.
       elem.style.colorScheme = 'none';
+      elem.style.border = '1px solid lightgray';
+      elem.style.height = '43px';
 
       containerRef.current.innerHTML = '';
       containerRef.current.appendChild(elem);
 
       inputRef.current = elem.shadowRoot?.querySelector('input');
+
+      containerRef.current.appendChild(elem);
 
       elem.addEventListener('gmp-select', async (event) => {
         const prediction = event.placePrediction;
