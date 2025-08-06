@@ -11,7 +11,8 @@ show-error() {
 
 for file in */*enc*; do
     echo "Updating keys for $file"
-    sops updatekeys -y "$file" > /dev/null 2>&1 || show-error
+    GPG_TTY=$(tty) sops updatekeys -y "$file"
     echo "Rotating master encryption key for $file"
-    sops --rotate --in-place "$file" || show-error
+    sops --rotate --in-place "$file"
 done
+

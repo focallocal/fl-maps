@@ -1,0 +1,80 @@
+{
+	"production": {
+		"meetup": {
+			"oauth_key": "ENC[AES256_GCM,data:TClqPA7jzvjjcGJMT8q6kZgtaqan/7QaDBQ=,iv:mBWjl44xxOtbD25pbjz9jyo6O/9tRhql3yUKu28C3B4=,tag:bm+e37bs1TjcwS46bX+aCw==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:l2st4z1yJoTm9B0hkZvOYybNwHIZl8d7y6I=,iv:srNxEktbyaU/d5b9LLl54gVSTY6abshXVoQHt0JMH7E=,tag:X+YQycY+yJ7Vy5vlNsixQA==,type:str]"
+		},
+		"facebook": {
+			"oauth_key": "ENC[AES256_GCM,data:3tB6aBmi0hnZTMU8usGh,iv:Ezzi4c2QCGYZOJRmcJJh/TvajhoKJlYzb+NwR4GdrLM=,tag:4EMHjO31qCP5cfNhzGXUvA==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:wsN/nI9JtSnO1FadMFCVlour0DnxiDO/LBUN8uY08uk=,iv:W0UedOiob+1cttzJPMExvvZvVdtHBeSdznfzW2jfbbM=,tag:vKyInPavyrSAm9fd6CVMLQ==,type:str]"
+		},
+		"google": {
+			"oauth_key": "ENC[AES256_GCM,data:otV8yMyA+rE3nOAbUOzZnVs1udsVyQikTOMcQIVNj750BUSRljJC0nWS3B9WdjIyRAdgclgoc4W5qDduF7PYvF4HQKftkWJq,iv:E1CYMV4+ARUWcjExgxZr62r8gcBXKrM7D2imUs0fSts=,tag:kVro+zzFe3FYQ0huH4Klvg==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:wNJqYKSxvThALPQ2dIeRcyjUOcysAUF9,iv:RX4C3J9BNS4wsIEQWEKuYPklQNKrhf+zGmNi01PFDgI=,tag:M/tqKXjU0uEQM97NgCy/Qg==,type:str]"
+		},
+		"twitter": {
+			"oauth_key": "ENC[AES256_GCM,data:JzRy0PsaHfv5xH6OpQhsy0LDLFQAgWZ0zg==,iv:FpOB/0rYs4yy1vi+cD/Rckro+IgD7yfLGtOB2uSP69E=,tag:EMRg2uvqCA+ilX3/65c20g==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:T4M9kTUaV6LoZW6VGVJKF7V22rXvKsgYt5914aw4kWL9gRjR1VsyQXdCsg1dWaYOriQ=,iv:WdxA6cb1q2AgecS6poCQf0/EJ07CGwptEQZ2A0heWMY=,tag:wa/DnqT2q0LH6eD6YCPcQQ==,type:str]"
+		},
+		"wordpress": {
+			"oauth_key": "ENC[AES256_GCM,data:wh2pUWnp0H83mvhUNx0fBY4SeYwO3sfn1Y4KtuBv,iv:l8A8nOJGdqkc6t06sZcLf6XcM5tw9fETqTfcEL/O598=,tag:2rSnA6Yzjy9Dg4P901Auew==,type:str]",
+			"oauth_secret": "ENC[AES256_GCM,data:epNzbRaJBJ7EWpZ0hkSIbaWrlNtmWdwNIYHhAqXY,iv:lxVqbsu/RzBuq0jEyY6nb5/1A7F/o4wSzVNop4SftlM=,tag:YdVsI/hW39nzZv4VVlG3jA==,type:str]",
+			"oauth_server_url": "https://focallocal.org"
+		}
+	},
+	"private": {
+		"google_api_key": "ENC[AES256_GCM,data:RoN5zm6FVDgMWe++BkBAKy23Z8qElNokxeufvI/N6xy3p5+f+iV6,iv:0sFAs0gRIfB53/X90AJSGZzHdyTp4bwESU3gA9kkh9Y=,tag:NGikVe62xQsGUcj7tlKA2w==,type:str]",
+		"discourse": {
+			"url": "https://testing-happiness.ga/",
+			"secret": ""
+		}
+	},
+	"public": {
+		"facebook": {
+			"oauth_key": "ENC[AES256_GCM,data:O5WFEdtuJbmyvxUT4n8B,iv:BOHXFSfB8n8+irf7aALGQie8OHby6XHH7Cs+JcmVJVo=,tag:8AheiQpnqHkcwR6pMUKEtQ==,type:str]"
+		},
+		"houston_root_route": "/godmode",
+		"houston_documents_per_page": 50,
+		"ga": {
+			"account": "UA-68970741-1"
+		},
+		"gm": {
+			"key": "ENC[AES256_GCM,data:ICGHWE4xlEH201x/GrhVMGDgKM/SNVxJn1kkThgEQNp7XPSO/LXi,iv:qB7QRvAXAvVQ2fBZjE5ELA6bXSCKdBOqni1XXTx8Mrk=,tag:V3TeeW8VpBEJoIXE1PYF/g==,type:str]"
+		},
+		"mapType": "gatherings"
+	},
+	"wp_oauth_accept_invalid_certs": "true",
+	"kadira": {
+		"appId": "bw79vW7NEjEMX9Xxd",
+		"appSecret": "ENC[AES256_GCM,data:KvUl//HRqF3bndCvEUER3GspMXiU6UJApyypWGp+4e8iFNc7,iv:hHz1rCLtQisvcL6RDPkmGd7z520gTgfNvoh0JAqd+5U=,tag:bGELrFj69wurG6XIaHpGXg==,type:str]",
+		"options": {}
+	},
+	"sops": {
+		"lastmodified": "2025-08-06T14:59:25Z",
+		"mac": "ENC[AES256_GCM,data:iUedzFf7p8BvpJ55bQizRYEYjWzOb/8MSON7vz8TLAzs3IJDxS62e9nfh1Gqu0dZ9hanR235lJfuHCD9P2q2T7sZc1O90Te7Tdx0OeIiOYlY9bjqUrUUW8fSgA39OljQYeYJ4jRkDbJ94NeLKNMfgaA+o8gWaCBtxfMQoyJmWTI=,iv:M1sTM0iHmU8x7X6YLMBPhoXiKi02fgBziFLq3KdsS8s=,tag:FgUBk8GgVdkzA2nZR6M0Dg==,type:str]",
+		"pgp": [
+			{
+				"created_at": "2025-08-06T14:59:25Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhQEMA5PCgedWIh8GAQgAn5eSj9wxd2rMk27IBh34VVMXeweCNA+gZiyejcboaMuV\nmGMKyBh0Dio2KnOzVA9JPyMGcke4YirSnW1o1yqqkc6R9grXSq1cwZvMOyHhAOw1\nAW6rTjJmtLXRRRuslN3gUvSMpa2nZvA8RjM1isCDlAX0vi/IocSm0J1etuIq/kRl\nwR0TLVdfNMczipcTpOUJWtSSZMmqCb3JsO417cT6E488vHeArXTXQfwi8xbD98OR\n2/NBiNF778hDhq7MpIeV7eDa1O3KjzMqI6wpVv8156pcTyPTowxqKua7hp9NXF4X\nL9Ijc5Qrix44rwOVa6M/kTRKGKDEw1iNWsc+qg6ke9JeARCpsznRXi45NfS+Dw5Q\nzs5jmRHKcLNzMf8nhNpdlIhrNDIpaJdGsjcu61O25cMOnBe53bt2juIuz5U1XU9T\nmbX5snJtjjnWYL4YLO/A7dRwlJ5RPEdP6LBSpnwItA==\n=eEif\n-----END PGP MESSAGE-----",
+				"fp": "AC7E7C66AC708F04578DD0E293C281E756221F06"
+			},
+			{
+				"created_at": "2025-08-06T14:59:25Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhQIMA8xUwR7gLVHvAQ//SKOxDIKo8IUdxTyAtAinFQSsMZtzrt8ULiStxCq5dK8d\n3oH5QLBPFQayNNKBaNCq4TmykUfpmy0o4vDgci/fVA7AmA4wSU3D9soudWKG9zRS\nB8kKVzwMsUQlt41akdAHYxBN71AcrkMtf9ckFpbuhk14mS2hdnSB+x3GOrO0ILf2\nYKv8RNXpG1Glq1DuJoGSDPJ+QArYu75wmLAc9RGDiq6F3iMaY2Fu4nmyYKDYa/qh\nFjqQhKbPbi3ThNg0Ally73xaMboo/UAABGTDI+63uYX5bwGFrAEV4/H3gJ6cmLpe\nRDudfEeMutJuhAWGWSXKn80qu/9aDryhjnDG31WnzngpDGUQUI4w9THvuhZZdzbu\nUC5iJu84zWWPpIaRkfRFRL28sWrjcXyfa2Z4EaCMKbIneevxxMT4dBKBknHlS4ab\ndZdVjWueLwNg54AqirSV4uLbDft9hzxJSiYSTecg6vuOkuZ3oy5UKZiy4lLvsq+K\n9hn62xuTWOBEjKfcvbiOjcnOHgl9WbbaUqnQScW9awI4/zXEe8j5Ydbyi52dW9ni\njd5K3PAiu/V+sR/FoJSoO/T0jQUrfVRTMi7mZGPDr2hCCb7odYrui/9CuKK0ivkJ\neWCFXFDsYnmbc3OjjggUBnh12yuVsAt427Td7zuwn48FR1NB2iBGZEMaHnS0MSLS\nXgE/UL4rEtKIkt3BHv45UpI+3fVdjHBCMe5cQ4r7SYbZEUZGGtwh5KvCWpVF2V1N\nX3g2hZODVx3HXt7nTU7RSCk4lA/U64/bVPJuW7ZJSb/qUYbjMCwUSRkq2dpl19A=\n=sH00\n-----END PGP MESSAGE-----",
+				"fp": "D4779D69C6974EDED34C1520A64013494062F0F3"
+			},
+			{
+				"created_at": "2025-08-06T14:59:25Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhQIMA+07ZljO47uxAQ/+PWnHbwGkBv8TQu3L7yDYj+KMEL2Ota+TIPlUwmTgSJ7d\nOHMhADwMqM3mKPknmZQ/eala8T+MIhVvUeoXBbTnpzbibVaAN0vFbLo93FALZ/yY\nmrzhQHzJFhoym0X4EL/gSlFOtzvUC9Lwwf13D8zH7f2h/s4xAsI/M0TeVlwr4ZBs\nIK39S5x2f7Jv20MjhregKR0gjXnR4oIAnn5puOizoEXsqW6LU2N5TFmUf2h4MhN0\n2LaA3OYrwG+IBecbod7Mfh9sHLnYQBNL4R/j14nHXbZMJh3eSjqJ9lmddCmlJsU+\n+rms3PNs3YCuCITWfhmOagQpp/McqveHE7CbNgY8xtvZj44zQDSa7DShA85srE0B\n4dmLoMaqzxSoCnCQQBY92lpmC2uoljHI0S8Fq8qlGf+TbiT1d68NSmQcxkHJsn64\ne6+YTBrk1GhyxqK/jV7l99eMghQjEq2aehEj5JYmwctGK+6ULlowsyutw8d8PVG4\nXNxNdwB/tstFUxXhKohtjCFvVM47CBb8TC1cNLdPQraF8NfDUXrO+z6QC7tqmSev\nw5KSKryP4p9SCnyJPLSu/oX0gGCV24Q0sdyb9ykp1vWCYcIZJa5BVOwhk/Md6Rrk\n21yLtL+pAcfeox2bkrLFHV/Suo9oWEtGaedPfsZObk1hJwkd5lybEdk9DzZThejS\nXgEWVCgEKuAdbjg33uiWFBxpqnse80rX6WdRkTcsCi6w3KxQk2mR4MDdawSU76bu\nAlUoBiOzYvdgVuT0Levo/odRUjS6iG6Gr//JisejdcKsi+9W7UnBgvdsv6iM09U=\n=McGT\n-----END PGP MESSAGE-----",
+				"fp": "DB46673D2483A5781D385DE4344BF8E63C6C833D"
+			},
+			{
+				"created_at": "2025-08-06T14:59:25Z",
+				"enc": "-----BEGIN PGP MESSAGE-----\n\nhF4DA2H7W1sR9ZESAQdA2dVvzG8SAht6iDYvgKB2ui5fxbBDm9wYWM2+gI2Fzkcw\nx70LrfzAf4HJAa/pfZh5ez2GfWWkyRFliCMy0daH9Plu3FHWif+E0ndHj0BaFI5b\n0l4Bd6BvOXdd5Hx4R2aFk6Ul9UiS3xZc1Cc94Kkb0iO9DynlnctVYbkPIxCqRd0F\nv5iVTn+geOErS0tDM576jLsrmkjE0GE3PWFqL34Z3zyiD6KaedFwMWgo7afknICB\n=ySJA\n-----END PGP MESSAGE-----",
+				"fp": "45114EAAF0B75C9BEEDB075820A4FCFC521C4EEB"
+			}
+		],
+		"encrypted_regex": "([kK][eE][yY]|[sS][eE][cC][rR][eE][tT])$",
+		"version": "3.5.0"
+	}
+}
