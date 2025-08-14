@@ -144,7 +144,7 @@
   },
   "movement_section": {
     "title": "Movement",
-    "subtitle": "test 1",
+    "subtitle": "Local Action for Global Change - A Positive Community taking Kindness to the Streets where you Live",
     "content": {
       "items": [
         {
@@ -152,7 +152,7 @@
           "title": "#About PHM",
           "url": "https://publichappinessmovement.com/docuss/wp_intro",
           "image": "/images/Welcome.jpg",
-          "description": "A community for building change by creating locally led positive action around the world",
+          "description": "A community for building a kinder world by creating locally led positive action around the world",
           "categories": [
             {
               "title": "Community Values",
@@ -216,7 +216,7 @@
   },
   "projects_section": {
     "title": "Projects (Global)",
-    "subtitle": "test 2",
+    "subtitle": "Build Mass-Kindness Projects with others Around the World. Grab an Open Task Today. ",
     "content": {
       "items": [
         {
@@ -297,7 +297,7 @@
   },
   "events_section": {
     "title": "Gatherings (Local)",
-    "subtitle": "test 3",
+    "subtitle": "Meet Positive People Nearby and Take Kindness to the Streets, Its like Couch Surfing for Kindness",
     "content": {
       "items": [
         {
