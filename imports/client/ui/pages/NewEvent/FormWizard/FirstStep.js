@@ -36,7 +36,7 @@ function findDefaultCategory (C) {
   return category
 }
 
-const FirstStep = ({ form }) => {
+const FirstStep = ({ form, onChange, errors }) => {
   const [state, setState] = React.useState({
     categories: null,
     foundResource: true,
@@ -53,7 +53,9 @@ const FirstStep = ({ form }) => {
         color: Categories.find(cat => cat.name === option.value)?.color || defaultColor
       }))
       form.change(name, selectedOptions)
+      onChange(name, value)
     } else {
+      onChange(name, value)
       form.change(name, value)
     }
   }
@@ -138,38 +140,54 @@ const FirstStep = ({ form }) => {
           form={form}
         />
       </div>
+      
+      <div className="mb-3">
+        <FormGroup noMargin={true}>
+          <Label for="name">Name</Label>
+          <Input
+            type="text"
+            name="name"
+            id="name"
+            value={formData.name || ''}
+            onChange={handleInputChange}
+            placeholder="Enter name"
+          />
+        </FormGroup>
+        
+        {errors?.name && (!formData?.name || formData.name.trim() === '') && (
+          <div className="text-danger">{errors.name}</div>
+        )}
+      </div>
 
-      <FormGroup>
-        <Label for="name">Name</Label>
-        <Input
-          type="text"
-          name="name"
-          id="name"
-          value={formData.name || ''}
-          onChange={handleInputChange}
-          placeholder="Enter name"
-        />
-      </FormGroup>
-
-      <FormGroup>
-        <Label for="overview">Overview</Label>
-        <Input
-          type="textarea"
-          name="overview"
-          id="overview"
-          value={formData.overview || ''}
-          onChange={handleInputChange}
-          placeholder="Enter overview"
-        />
-      </FormGroup>
-
-      <FormGroup>
-        <GoogleAddressInput
-          onPlaceSelected={(address) => {
-            form.change('address', address);
-          }}
-        />
-      </FormGroup>
+      <div className="mb-3">
+        <FormGroup noMargin={true}>
+          <Label for="overview">Overview</Label>
+          <Input
+            type="textarea"
+            name="overview"
+            id="overview"
+            value={formData.overview || ''}
+            onChange={handleInputChange}
+            placeholder="Enter overview"
+          />
+        </FormGroup>
+        {errors?.overview && (!formData?.overview || formData.overview.trim() === '') && (
+          <div className="text-danger">{errors.overview}</div>
+        )}
+      </div>
+      
+      <div className="mb-3">
+        <FormGroup noMargin={true}>
+          <GoogleAddressInput
+            onPlaceSelected={(address) => {
+              form.change('address', address);
+            }}
+          />
+        </FormGroup>
+        {errors?.address && (!formData?.address || formData.address.name.trim() === '') && (
+          <div className="text-danger">{errors.address}</div>
+        )}
+      </div>
 
       {state.offerResource &&
         <Alert
@@ -180,12 +198,17 @@ const FirstStep = ({ form }) => {
         </Alert>
       }
 
-      <FormGroup>
-        <SearchableCategoryInput
-          groupedCategories={Categories}
-          handleInputChange={handleSearchableCategory}
-        />
-      </FormGroup>
+      <div className='mb-3'>
+        <FormGroup noMargin={true}>
+          <SearchableCategoryInput
+            groupedCategories={Categories}
+            handleInputChange={handleSearchableCategory}
+          />
+        </FormGroup>
+        {errors?.category && (!formData?.category || formData.category.trim() === '') && (
+            <div className="text-danger">{errors.category}</div>
+        )}
+      </div>
     </div>
 
   )
