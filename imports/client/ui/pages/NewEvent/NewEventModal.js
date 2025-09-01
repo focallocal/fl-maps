@@ -10,6 +10,7 @@ import i18n from '/imports/both/i18n/en'
 import { comToPlugin } from 'dcs-client'
 import { routeMatcher } from '../../app'
 import './styles.scss'
+import cloneDeep from 'clone-deep'
 
 const { NewEventModal: i18n_ } = i18n // Strings from i18n
 
@@ -89,7 +90,7 @@ class NewEventModal extends Component {
     const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete Page</Button> : null
 
     return hasGoogleMapsLoaded && (
-      <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg'>
+      <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg' unmountOnClose={false}>
         <ModalHeader toggle={this.toggleModal}>
           {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
@@ -227,7 +228,7 @@ class NewEventModal extends Component {
 
     // toggleModal() closes modal, but it is not called after form submits
     // copy unfinished form to global window and check for it inside FormWizard
-    // window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
+    window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
   }
 
   toggleErrors = () => this.setState({ hasErrors: false })

@@ -30,7 +30,7 @@ VideoButtons.propTypes = {
   removeLink: PropTypes.func.isRequired
 }
 
-const SecondStep = ({ form }) => {
+const SecondStep = ({ form, onChange, errors }) => {
   const [videoLinksAdded, setVideoLinksAdded] = useState(0)
   const [openEndDate, setOpenEndDate] = useState()
 
@@ -65,16 +65,21 @@ const SecondStep = ({ form }) => {
 
   return (
     <div id='second-step'>
-      <FormGroup>
-        <Label for="findHints">Find Hints</Label>
-        <Input
-          type="text"
-          name="findHints"
-          id="findHints"
-          value={formData.findHints || ''}
-          onChange={(e) => form?.change?.('findHints', e.target.value)}
-        />
-      </FormGroup>
+      <div className='mb-3'>
+        <FormGroup noMargin={true}>
+          <Label for="findHints">Find Hints</Label>
+          <Input
+            type="text"
+            name="findHints"
+            id="findHints"
+            value={formData.findHints || ''}
+            onChange={(e) => form?.change?.('findHints', e.target.value)}
+          />
+        </FormGroup>
+        {errors?.findHints && (!formData?.findHints || formData.findHints.trim() === '') && (
+          <div className="text-danger">{errors.findHints}</div>
+        )}
+      </div>
 
       <div className='dates-hours inline-inputs hide-labels'>
         <div>
@@ -232,17 +237,22 @@ const SecondStep = ({ form }) => {
         </FormGroup>
       )}
 
-      <FormGroup>
-        <Label for="description">Description</Label>
-        <Input
-          type="textarea"
-          name="description"
-          id="description"
-          className="pageDetails"
-          value={formData.description || ''}
-          onChange={(e) => form.change('description', e.target.value)}
-        />
-      </FormGroup>
+      <div className="mb-3">
+        <FormGroup noMargin={true}>
+          <Label for="description">Description</Label>
+          <Input
+            type="textarea"
+            name="description"
+            id="description"
+            className="pageDetails"
+            value={formData.description || ''}
+            onChange={(e) => form.change('description', e.target.value)}
+          />
+        </FormGroup>
+        {errors?.description && (!formData?.description || formData.description.trim() === '') && (
+          <div className="text-danger">{errors.description}</div>
+        )}
+      </div>
 
       <FormGroup>
         <Label for="engagement-limit">Attendee Limit</Label>
