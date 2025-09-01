@@ -19,6 +19,7 @@
     "@types/react": "^16.7.18",
     "bcrypt": "5.0.1",
     "bootstrap": "^5.3.3",
+    "clone-deep": "^4.0.1",
     "dcs-client": "^1.0.20",
     "dcs-react-router-sync": "^1.0.17",
     "disqus-react": "^1.0.5",
