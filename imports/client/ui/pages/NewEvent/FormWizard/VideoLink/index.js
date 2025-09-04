@@ -32,7 +32,6 @@ class VideoLink extends Component {
             type="select"
             name={`${name}.host`}
             id={`${name}.host`}
-            // value={currentLink.host || ''}
             value={this.state.host || ''}
             onChange={(e) => {
               form.change(`${name}.host`, e.target.value)
@@ -52,7 +51,6 @@ class VideoLink extends Component {
             className="videoAddress"
             name={`${name}.address`}
             id={`${name}.address`}
-            // value={currentLink.address || ''}
             value={this.state.address || ''}
             onChange={(e) => {
               form.change(`${name}.address`, e.target.value)
