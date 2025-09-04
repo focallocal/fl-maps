@@ -32,7 +32,8 @@ class VideoLink extends Component {
             type="select"
             name={`${name}.host`}
             id={`${name}.host`}
-            value={currentLink.host || ''}
+            // value={currentLink.host || ''}
+            value={this.state.host || ''}
             onChange={(e) => {
               form.change(`${name}.host`, e.target.value)
               this.selectHost(e.target.value)
@@ -40,7 +41,7 @@ class VideoLink extends Component {
           >
             <option value="">Select a host</option>
             {videoHosts.map((host, index) => (
-              <option key={index} value={host.host}>{host.name}</option>
+              <option key={index} value={host.host}>{host.prefix}</option>
             ))}
           </Input>
         </FormGroup>
@@ -51,8 +52,12 @@ class VideoLink extends Component {
             className="videoAddress"
             name={`${name}.address`}
             id={`${name}.address`}
-            value={currentLink.address || ''}
-            onChange={(e) => form.change(`${name}.address`, e.target.value)}
+            // value={currentLink.address || ''}
+            value={this.state.address || ''}
+            onChange={(e) => {
+              form.change(`${name}.address`, e.target.value)
+              this.handleChange(e.target.value)
+            }}
             placeholder={labels.video.address}
           />
         </FormGroup>
@@ -66,6 +71,7 @@ class VideoLink extends Component {
       host: value,
       address: videoHostPrefix
     })
+    console.log(value)
   }
 
   fetchVideoURL = (id, form) => {
