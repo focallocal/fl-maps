@@ -169,9 +169,14 @@ const FirstStep = ({ form, onChange, errors }) => {
             value={formData.overview || ''}
             onChange={handleInputChange}
             placeholder="Enter overview"
+            minLength={20}
+            maxLength={300}
           />
         </FormGroup>
-        {errors?.overview && (!formData?.overview || formData.overview.trim() === '') && (
+        <div className="text-muted small">
+          {formData.overview?.length || 0} / 300
+        </div>
+        {errors?.overview && (
           <div className="text-danger">{errors.overview}</div>
         )}
       </div>

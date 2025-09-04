@@ -452,6 +452,7 @@ const EventsSchema = new SimpleSchema({
   // Description and More
   'overview': {
     type: String,
+    min: 10,
     max: 300,
     uniforms: {
       customType: 'textarea',
@@ -460,6 +461,7 @@ const EventsSchema = new SimpleSchema({
   },
   'description': {
     type: String,
+    min: 20,
     max: 1000,
     uniforms: {
       customType: 'textarea',
