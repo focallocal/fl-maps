@@ -11,6 +11,12 @@ import i18n from '/imports/both/i18n/en'
 
 let labels = i18n.NewEventModal
 
+VideoButtons.propTypes = {
+  videoLinksAdded: PropTypes.number.isRequired,
+  addLink: PropTypes.func.isRequired,
+  removeLink: PropTypes.func.isRequired
+}
+
 function VideoButtons({ videoLinksAdded, addLink, removeLink }) {
   return (
     <div className='video-buttons'>
@@ -22,12 +28,6 @@ function VideoButtons({ videoLinksAdded, addLink, removeLink }) {
       )}
     </div>
   )
-}
-
-VideoButtons.propTypes = {
-  videoLinksAdded: PropTypes.number.isRequired,
-  addLink: PropTypes.func.isRequired,
-  removeLink: PropTypes.func.isRequired
 }
 
 const SecondStep = ({ form, onChange, errors }) => {
@@ -247,9 +247,14 @@ const SecondStep = ({ form, onChange, errors }) => {
             className="pageDetails"
             value={formData.description || ''}
             onChange={(e) => form.change('description', e.target.value)}
+            minLength={20}
+            maxLength={1000}
           />
         </FormGroup>
-        {errors?.description && (!formData?.description || formData.description.trim() === '') && (
+        <div className="text-muted small">
+          {formData.description?.length || 0} / 1000
+        </div>
+        {errors?.description && (
           <div className="text-danger">{errors.description}</div>
         )}
       </div>
@@ -285,16 +290,19 @@ const SecondStep = ({ form, onChange, errors }) => {
           }}
         />
       </FormGroup>
-      {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
-      {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
-      {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
-      {videoLinksAdded > 0 && (
-        <VideoButtons
-          videoLinksAdded={videoLinksAdded}
-          addLink={addLink}
-          removeLink={removeLink}
-        />
-      )}
+
+      <FormGroup>
+        {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
+        {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
+        {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
+        {videoLinksAdded > 0 && (
+          <VideoButtons
+            videoLinksAdded={videoLinksAdded}
+            addLink={addLink}
+            removeLink={removeLink}
+          />
+        )}
+      </FormGroup>
     </div>
   )
 }
