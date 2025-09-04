@@ -114,6 +114,7 @@ class FormWizard extends Component {
     })
   }*/
 
+    /*
   validate = ({ clean }) => {
     return new Promise((resolve, reject) => {
       const model = this.getModel();
@@ -145,7 +146,32 @@ class FormWizard extends Component {
         resolve();
       }
     });
-  };
+  };*/
+
+validate = ({ clean } = {}) => {
+  return new Promise((resolve, reject) => {
+    const model = this.getModel() || {};
+    const doc = clean ? EventsSchema.clean({ ...model }) : model; // clean does NOT validate
+
+    const ctx = EventsSchema.newContext();
+    const isValid = ctx.validate(doc); // <-- this enforces min/max/etc.
+
+    if (!isValid) {
+      const errors = {};
+      ctx.validationErrors().forEach(err => {
+        // err.name is the field path, e.g. "overview"
+        // Friendly message for the field:
+        errors[err.name] = ctx.keyErrorMessage(err.name);
+      });
+      this.setState({ errors });
+      reject({ details: errors });
+      return;
+    }
+
+    this.setState({ formData: doc, errors: {} });
+    resolve();
+  });
+};
 
   loadModelFromStorage (empty) {
     // on fields reset, get rid of any previously unfinished New Event

@@ -247,9 +247,14 @@ const SecondStep = ({ form, onChange, errors }) => {
             className="pageDetails"
             value={formData.description || ''}
             onChange={(e) => form.change('description', e.target.value)}
+            minLength={20}
+            maxLength={1000}
           />
         </FormGroup>
-        {errors?.description && (!formData?.description || formData.description.trim() === '') && (
+        <div className="text-muted small">
+          {formData.description?.length || 0} / 1000
+        </div>
+        {errors?.description && (
           <div className="text-danger">{errors.description}</div>
         )}
       </div>
