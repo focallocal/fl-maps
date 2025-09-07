@@ -203,7 +203,7 @@
           "title": "#Crypto",
           "url": "https://publichappinessmovement.com/c/phat",
           "image": "/images/crypto-tokens.jpg",
-          "description": "You own this platform. We are on a path to become a decentralised governance, a self-evolving ecosystem led by its users that rewards contributions towards our shared mission: taking positive action to create more peace and well-being in the world",
+          "description": "You own this platform. We are on a path to become a decentralised governance, self-evolving ecosystem led by its users. Rewarding contributions towards our shared mission: taking positive action to create more peace and well-being in the world",
           "categories": [
             {
               "title": "Whitepaper",
@@ -224,7 +224,7 @@
           "title": "#Brighter Tomorrow Map",
           "url": "https://www.brightertomorrowmap.com",
           "image": "/images/Image_Community_Connection_Homelessness.png",
-          "description": "An effort to end world involuntary homelessness by bringing communities together and providing the tools to help people nearby who are homeless walk a path to a brighter future",
+          "description": "An effort to end world involuntary homelessness by bringing communities together and providing the tools we need to help people nearby who are homeless walk a path to a brighter future",
           "categories": [
             {
               "title": "Project Brief",
@@ -245,7 +245,7 @@
           "title": "#Community Climate Action Platform",
           "url": "https://publichappinessmovement.com/c/climate-action/",
           "image": "/images/climatechange600x800.jpg",
-          "description": "A platform which asks people and communities to come together around positive and effective action that we as individuals can take to fight climate change",
+          "description": "A platform which asks people and communities to come together around positive and effective actions that we as individuals can take to fight climate change",
           "categories": [
             {
               "title": "Project Brief",
@@ -258,7 +258,7 @@
           "title": "#PHM Token",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
           "image": "/images/PHM-small.png",
-          "description": "We are experimenting with an token that rewards members for taking positive action to create more peace and well-being in our shared world",
+          "description": "We are experimenting with a token that rewards taking positive action to create more peace and well-being in our shared world",
           "categories": [
             {
               "title": "Whitepaper",
@@ -271,24 +271,11 @@
           "title": "#Public Happiness Base Camp",
           "url": "https://publichappinessmovement.com/c/homebase/",
           "image": "/images/test-project.png",
-          "description": "A community and project building center where members of our community can come together and shape a kinder world for all",
+          "description": "A community and project building center where we can come together and work on creating more kindness in the world",
           "categories": [
             {
               "title": "Project Brief",
               "url": "https://publichappinessmovement.com/t/topic/2783"
-            }
-          ]
-        },
-        {
-          "color": "orange",
-          "title": "#We Are Building a Religion",
-          "url": "https://publichappinessmovement.com/c/wiggles/",
-          "image": "/images/Wiggles_logo.png",
-          "description": "A silly fun idea to turn our mascot Wiggles into a deity and create a social space where entire communities can be together, rather than separate and divided. All religions, spiritualities, and atheists are invited to explore the meaning of life, the universe and everything, both individually, and together. All religions, or none. The House of Wiggles is based on kindness, community connection, music, song, dance, fabulous costumes, and our one Golden Rule: 'Anyone who tells you they know the answers is full of sh*t'",
-          "categories": [
-            {
-              "title": "Project Brief",
-              "url": "https://publichappinessmovement.com/t/topic/2261"
             }
           ]
         }
@@ -297,7 +284,7 @@
   },
   "events_section": {
     "title": "Gatherings (Local)",
-    "subtitle": "Meet positive people nearby and take acts of kindness to the streets together. Its like Couch Surfing for Kindness",
+    "subtitle": "Meet positive people nearby and take kindness to the streets together. Its like Couch Surfing for Kindness. Also join in our regular International Mass-Kindness Days!",
     "content": {
       "items": [
         {
@@ -305,7 +292,7 @@
           "title": "#Public Happiness Activities",
           "url": "https://publichappinessmovement.com/docuss/m_gather",
           "image": "/images/phmactivities600x800.jpg",
-          "description": "Put yourself on our kindness map and invite others nearby meet up for random acts of kindness",
+          "description": "Put yourself on our kindness map to be invited, and/or invite others nearby to meet up for random acts of kindness",
           "categories": [
             {
               "title": "Activities and Guides",
@@ -540,28 +527,28 @@
       {
         "image": "/images/home-images/slide-images/andy_the_liberators.png",
         "header": "Random Acts of Kindness",
-        "sub_header": "Host or join fun kindness activities - connect with amazing people and spread kindness in your community. Create unforgettable memories, make new awesome friends, and spread kindness!",
+        "sub_header": "Host or join fun kindness activities near you - connect with fun, positive and awesome people to spread more kindness in your community. Create unforgettable memories and make new awesome friends!",
         "cta": "Find or Start a Kindness Activity",
         "cta_link": "https://publichappinessmovement.com/docuss/m_gather"
       },
       {
         "image": "/images/home-images/slide-images/bubbles_cover.png",
         "header": "International Mass Kindness Days",
-        "sub_header": "Global kindness waves! Join fun activities with thousands of positive people—spreading joy and making the world a little happier. Be there… or wish you had!",
+        "sub_header": "Waves of kindness sweeping across the world! Join thousands of positive people spreading joy and promoting a happier, more connected way to live. Be there… or wish you were!",
         "cta": "I Want to Be There!",
         "cta_link": "https://publichappinessmovement.com/c/positiveaction/"
       },
       {
         "image": "/images/home-images/slide-images/andy_pillow.png",
         "header": "Use Your Skills to Build Projects for Kindness",
-        "sub_header": "Collaborate globally with passionate, like-minded professionals to create impactful, kindness-driven, locally led projects to build a kinder world with more peace, well-being and happiness",
+        "sub_header": "Collaborate globally with passionate, like-minded people to create impactful, kindness-driven, locally led projects to build a kinder world",
         "cta": "Build a Kinder World",
         "cta_link": "https://publichappinessmovement.com/t/topic/205"
       },
       {
         "image": "/images/home-images/slide-images/andy_happy_cow.png",
         "header": "Kindness that’s proven to Create Change!",
-        "sub_header": "Our projects are guided by the latest research on happiness and well-being, to make sure we have a real impact, as well as having loads of fun!",
+        "sub_header": "Our projects and activities are guided by the latest research on happiness and well-being to make sure they we make a real impact, as well as having loads of fun!",
         "cta": "Explore the Science of Kindness",
         "cta_link": "https://publichappinessmovement.com/t/topic/1278"
       }
