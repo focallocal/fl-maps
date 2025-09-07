@@ -144,7 +144,7 @@
   },
   "movement_section": {
     "title": "Movement",
-    "subtitle": "Local Action for Global Change - A Positive Community taking Kindness to the Streets where you Live",
+    "subtitle": "Local Action for Global Change - find positive people near you and take kindness to the streets together",
     "content": {
       "items": [
         {
@@ -152,7 +152,7 @@
           "title": "#About PHM",
           "url": "https://publichappinessmovement.com/docuss/wp_intro",
           "image": "/images/Welcome.jpg",
-          "description": "A community for building a kinder world by creating locally led positive action around the world",
+          "description": "A community building a kinder world together by creating locally led positive action",
           "categories": [
             {
               "title": "Community Values",
@@ -216,7 +216,7 @@
   },
   "projects_section": {
     "title": "Projects (Global)",
-    "subtitle": "Build Mass-Kindness Projects with others Around the World. Grab an Open Task Today. ",
+    "subtitle": "Build Mass-Kindness Projects - Join others around the world by searching for your skills and finding open tasks. ",
     "content": {
       "items": [
         {
@@ -224,7 +224,7 @@
           "title": "#Brighter Tomorrow Map",
           "url": "https://www.brightertomorrowmap.com",
           "image": "/images/Image_Community_Connection_Homelessness.png",
-          "description": "An effort to end world involuntary homelessness by bringing communities together and providing them with the tools to help people help people who are homeless nearby walk a path to a brighter future",
+          "description": "An effort to end world involuntary homelessness by bringing communities together and providing the tools to help people nearby who are homeless walk a path to a brighter future",
           "categories": [
             {
               "title": "Project Brief",
@@ -245,7 +245,7 @@
           "title": "#Community Climate Action Platform",
           "url": "https://publichappinessmovement.com/c/climate-action/",
           "image": "/images/climatechange600x800.jpg",
-          "description": "A platform which asks people and communities to come together around effective action that we as individuals can take to fight climate change, and rewards all positive action taken with a crypto token, incentivising the most important fight of our lifetime",
+          "description": "A platform which asks people and communities to come together around positive and effective action that we as individuals can take to fight climate change",
           "categories": [
             {
               "title": "Project Brief",
@@ -258,7 +258,7 @@
           "title": "#PHM Token",
           "url": "https://publichappinessmovement.com/c/focallocal-token/",
           "image": "/images/PHM-small.png",
-          "description": "We are transitioning our community into an ecosystem which rewards members for taking positive action to create more peace and well-being by targeting issues currently not valued by todays economies",
+          "description": "We are experimenting with an token that rewards members for taking positive action to create more peace and well-being in our shared world",
           "categories": [
             {
               "title": "Whitepaper",
@@ -271,7 +271,7 @@
           "title": "#Public Happiness Base Camp",
           "url": "https://publichappinessmovement.com/c/homebase/",
           "image": "/images/test-project.png",
-          "description": "A community and project center were building where members of our community can come and build a kinder world together",
+          "description": "A community and project building center where members of our community can come together and shape a kinder world for all",
           "categories": [
             {
               "title": "Project Brief",
@@ -284,7 +284,7 @@
           "title": "#We Are Building a Religion",
           "url": "https://publichappinessmovement.com/c/wiggles/",
           "image": "/images/Wiggles_logo.png",
-          "description": "This is a silly fun idea to turn our mascot Wiggles into a deity and create a social space where entire communities can be together, rather than separate and divided. All religions, spiritualities, and atheists are invited to explore the meaning of life, the universe and everything, both individually, and together. The House of Wiggles is based on kindness, community connection, music, song, dance, fabulous costumes, and our one Golden Rule: 'Anyone who tells you they know the answers is full of sh*t'",
+          "description": "A silly fun idea to turn our mascot Wiggles into a deity and create a social space where entire communities can be together, rather than separate and divided. All religions, spiritualities, and atheists are invited to explore the meaning of life, the universe and everything, both individually, and together. All religions, or none. The House of Wiggles is based on kindness, community connection, music, song, dance, fabulous costumes, and our one Golden Rule: 'Anyone who tells you they know the answers is full of sh*t'",
           "categories": [
             {
               "title": "Project Brief",
@@ -297,7 +297,7 @@
   },
   "events_section": {
     "title": "Gatherings (Local)",
-    "subtitle": "Meet Positive People Nearby and Take Kindness to the Streets, Its like Couch Surfing for Kindness",
+    "subtitle": "Meet positive people nearby and take acts of kindness to the streets together. Its like Couch Surfing for Kindness",
     "content": {
       "items": [
         {
@@ -305,7 +305,7 @@
           "title": "#Public Happiness Activities",
           "url": "https://publichappinessmovement.com/docuss/m_gather",
           "image": "/images/phmactivities600x800.jpg",
-          "description": "Meet others nearby and take to the streets to create more happiness and community connection where you live (often called Random Acts of Kindness)",
+          "description": "Put yourself on our kindness map and invite others nearby meet up for random acts of kindness",
           "categories": [
             {
               "title": "Activities and Guides",
