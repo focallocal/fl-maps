@@ -23,8 +23,9 @@ function VideoButtons({ videoLinksAdded, addLink, removeLink }) {
       {videoLinksAdded < 3 && (
         <Button onClick={addLink}>Add Video</Button>
       )}
+      &nbsp;
       {videoLinksAdded > 0 && (
-        <Button onClick={removeLink}>Remove Video</Button>
+        <Button color='danger' onClick={removeLink}>Remove Video</Button>
       )}
     </div>
   )
