@@ -24,13 +24,6 @@ class VideoLink extends Component {
     const videoData = formData.video || {}
     const currentLink = videoData[name.split('.')[1]] || {}
 
-    const getNested = (obj, path) =>
-      path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
-
-    // ...inside render/functional body:
-    const model = form.getModel ? form.getModel() : {};
-    const hostValue = getNested(model, `${name}.host`); // name might be 'video.link1'
-
     return (
       <div className='video'>
         <FormGroup>
