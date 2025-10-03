@@ -7,7 +7,9 @@ import Weekly from './Weekly'
 
 class Recurring extends Component {
   state = {
-    forever: true
+    forever: true,
+    every: this.props.form.getModel().when?.recurring?.every ?? '',
+    type: this.props.form.getModel().when?.recurring?.type ?? ''
   }
 
   render () {
@@ -24,7 +26,7 @@ class Recurring extends Component {
     // ...then 'recurring' ibject is null, so we re-initialise:
     if (!recurring) recurring = {}
 
-    let forever = recurring.forever
+    let forever = recurring.forever ?? false
     let monthly = recurring.monthly
     let startingDate = model.when.startingDate || new Date()
     let selectedDays = recurring.days || []
@@ -38,13 +40,19 @@ class Recurring extends Component {
         <div className='every-type inline-inputs hide-labels'>
           <span>Repeat every</span>
           <div>
-            <Input
+            {/*<Input
               type="number"
               name="when.recurring.every"
               value={recurring.every || ''}
               onChange={(e) => form.change('when.recurring.every', parseInt(e.target.value))}
-            />
+            />*/}
             <Input
+              type="number"
+              name="when.recurring.every"
+              value={this.state.every}
+              onChange={this.handleEveryChange}
+            />
+            {/*<Input
               type="select"
               name="when.recurring.type"
               value={recurring.type || ''}
@@ -53,11 +61,22 @@ class Recurring extends Component {
               <option value="day">Day</option>
               <option value="week">Week</option>
               <option value="month">Month</option>
+            </Input>*/}
+
+            <Input
+              type="select"
+              name="when.recurring.type"
+              value={this.state.recurringType}
+              onChange={this.handleTypeChange}
+            >
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+              <option value="month">Month</option>
             </Input>
           </div>
         </div>
 
-        {type === 'week' && (
+        {this.state.recurringType === 'week' && (
           <Fragment>
             {selectedDays.length === 0 && (
               <div className="error-message">Please select at least 1 day</div>
@@ -70,7 +89,7 @@ class Recurring extends Component {
           </Fragment>
         )}
 
-        {type === 'month' &&
+        {this.state.recurringType === 'month' &&
           <Monthly
             form={form}
             startingDate={startingDate}
@@ -111,15 +130,32 @@ class Recurring extends Component {
     )
   }
 
+  handleEveryChange = (e) => {
+    const value = parseInt(e.target.value, 10) || ''
+    this.setState({ every: value })
+    this.props.form.change('when.recurring.every', value)
+  }
+
+  handleTypeChange = (e) => {
+    const value = e.target.value
+    this.setState({ recurringType: value })
+    this.props.form.change('when.recurring.type', value)
+  }
+
   CheckBox = ({ label, id, checked }) => (
-    <CustomInput
-      id={id}
-      className='checkbox'
-      type='checkbox'
-      label={label}
-      checked={checked}
-      onChange={() => this.handleCheckbox(!checked)}
-    />
+    <div>
+      <span>{label}</span>
+      <Input
+        id={id}
+        className='checkbox'
+        type='checkbox'
+        label={label}
+        defaultChecked={false}
+        onChange={(e) => 
+          this.handleCheckbox(e.target.checked)
+        }
+      />
+    </div>
   )
 
   handleCheckbox = (checked) => {

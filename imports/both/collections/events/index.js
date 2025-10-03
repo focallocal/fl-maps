@@ -399,7 +399,8 @@ const EventsSchema = new SimpleSchema({
   },
   'when.recurring.forever': {
     type: Boolean,
-    optional: true
+    optional: true,
+    defaultValue: false
   },
   'when.recurring.occurences': {
     type: Number,

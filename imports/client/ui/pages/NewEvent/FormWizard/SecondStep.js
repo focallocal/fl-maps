@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Button, Col, FormGroup, Input, Label, Row } from 'reactstrap'
-// import Recurring from './DateTimeModule/Recurring'
+import Recurring from './DateTimeModule/Recurring'
 // import WeekDays from './DateTimeModule/WeekDays'
 import RadioButton from './RadioButton'
 import SameDateHours from './SameDateHours'
@@ -225,6 +225,9 @@ const SecondStep = ({ form, onChange, errors }) => {
         }}
       />
 
+      {repeat && <Recurring form={form} />}
+
+      {/*
       {repeat && (
         <FormGroup>
           <Label for="recurringDetails">Recurring Details</Label>
@@ -237,6 +240,7 @@ const SecondStep = ({ form, onChange, errors }) => {
           />
         </FormGroup>
       )}
+      */}
 
       <div className="mb-3">
         <FormGroup noMargin={true}>
