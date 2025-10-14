@@ -40,28 +40,12 @@ class Recurring extends Component {
         <div className='every-type inline-inputs hide-labels'>
           <span>Repeat every</span>
           <div>
-            {/*<Input
-              type="number"
-              name="when.recurring.every"
-              value={recurring.every || ''}
-              onChange={(e) => form.change('when.recurring.every', parseInt(e.target.value))}
-            />*/}
             <Input
               type="number"
               name="when.recurring.every"
               value={this.state.every}
               onChange={this.handleEveryChange}
             />
-            {/*<Input
-              type="select"
-              name="when.recurring.type"
-              value={recurring.type || ''}
-              onChange={(e) => form.change('when.recurring.type', e.target.value)}
-            >
-              <option value="day">Day</option>
-              <option value="week">Week</option>
-              <option value="month">Month</option>
-            </Input>*/}
 
             <Input
               type="select"
@@ -83,7 +67,7 @@ class Recurring extends Component {
             )}
             <Weekly
               form={form}
-              selectedDays={selectedDays}
+              initialSelectedDays={selectedDays}
               schemaKey='when.recurring.days'
             />
           </Fragment>
