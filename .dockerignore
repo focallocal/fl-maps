@@ -1,0 +1,15 @@
+node_modules
+.meteor/local
+build
+.git
+.gitignore
+*.log
+.DS_Store
+coverage
+tests
+
+# Allow the .deployment folder to be copied into the image for build-time decryption.
+# If you keep sensitive unencrypted files in .deployment, consider keeping them out of the
+# repository and only placing encrypted files there. The Dockerfile uses BuildKit secrets
+# to decrypt files during build.
+!.deployment
