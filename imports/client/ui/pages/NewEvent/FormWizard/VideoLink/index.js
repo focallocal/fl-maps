@@ -40,7 +40,9 @@ class VideoLink extends Component {
           >
             <option value="">Select a host</option>
             {videoHosts.map((host, index) => (
-              <option key={index} value={host.host}>{host.prefix}</option>
+              <option key={index} value={host.host}>
+                {host.host} {host.prefix && `(e.g: ${host.prefix}...)`}
+              </option>
             ))}
           </Input>
         </FormGroup>
@@ -64,12 +66,9 @@ class VideoLink extends Component {
   }
 
   selectHost = (value) => {
-    const videoHostPrefix = value.length > 0 ? videoHosts.find(e => e.host === value).prefix : ''
     this.setState({
       host: value,
-      address: videoHostPrefix
     })
-    console.log(value)
   }
 
   fetchVideoURL = (id, form) => {

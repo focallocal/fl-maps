@@ -13,7 +13,17 @@ class Subscribe extends Component {
    * Waits for component to mount before rendering a button
    */
   componentDidMount () {
-    this.renderYtSubscribeButton('UCkYVBetdxHE5juw7SPMvOGg', 'default')
+    if (window.gapi) {
+      this.renderYtSubscribeButton('UCkYVBetdxHE5juw7SPMvOGg', 'default')
+    } else {
+    // Wait until gapi loads
+    const interval = setInterval(() => {
+      if (window.gapi && window.gapi.ytsubscribe) {
+        clearInterval(interval);
+        this.renderYtSubscribeButton('UCkYVBetdxHE5juw7SPMvOGg', 'default')
+      }
+    }, 100);
+  }
   }
 
   /**

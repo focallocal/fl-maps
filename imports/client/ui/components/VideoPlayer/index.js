@@ -25,7 +25,10 @@ class VideoPlayer extends Component {
     /**
      * List of categories linked to the event: determines what default video plays
      */
-    categories: PropTypes.array,
+    categories: PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.object
+    ]),
     /**
      * Refers to user submitted videos passed from the page, if any
      */
@@ -130,51 +133,65 @@ function getRandomVideo (playlist) {
   * @param {*} eventCategories Event categories used to filter out inappropriate playlists
  * @param {*} outputArray This is the new custom youtube playlist for the event
  */
-function generatePlaylist (playlists, eventCategories, outputArray) {
-  // STEP 1: Attempt to match lower level event category with video playlist category
+function generatePlaylist(playlists, eventCategories, outputArray, depth = 0) {
+  if (depth > 5) return outputArray; // safeguard against infinite loops
+
+  const toArray = (value) => Array.isArray(value) ? value : value ? [value] : [];
+  const eventCats = toArray(eventCategories);
+
+  // STEP 1: Try to match event categories
   playlists.forEach(playlist => {
-    eventCategories.forEach(eventCategory => {
+    eventCats.forEach(eventCategory => {
       if (playlist.categories.includes(eventCategory.name)) {
         playlist.videos.forEach(video => {
           if (!outputArray.includes(video)) {
-            outputArray.push(video)
+            outputArray.push(video);
           }
-        })
+        });
       }
-    })
-  })
+    });
+  });
 
-  // STEP 2a: BEFORE STEP 2b FIRST WE NEED TO CHECK IF THE MONGO DB EVENT CATEGORY IS OLD
-  // If no longer part of the i18n category tree there will be an inifinite loop in step 2b
-  // categoryTree includes parent-child level categories, following operation build an all-child array of sub-categories
+  // STEP 2a: If no matches, check validity of categories
   if (outputArray.length === 0) {
-    let possibleCategories = categoryTree.reduce((tot, elem) => {
-      return tot.concat([{ name: elem.name, parent: true }].concat(elem.categories))
-    }, [])
+    const possibleCategories = categoryTree.reduce((tot, elem) => {
+      return tot.concat([{ name: elem.name, parent: true }].concat(elem.categories));
+    }, []);
+
     const categoryStillValid = possibleCategories.some(category =>
-      eventCategories.some(eventCategory =>
-        eventCategory.name === category.name))
-    if (!categoryStillValid) generatePlaylist(playlists, [{ 'name': 'default' }], outputArray)
+      eventCats.some(eventCategory => eventCategory.name === category.name)
+    );
+
+    if (!categoryStillValid) {
+      // only try "default" once
+      if (!eventCats.some(c => c.name === "default")) {
+        return generatePlaylist(playlists, [{ name: "default" }], outputArray, depth + 1);
+      }
+      return outputArray; // stop if even "default" failed
+    }
   }
 
-  // STEP 2b: if event category does not have a playlist then we take the parent category instead and re-run
+  // STEP 2b: Fallback to parent categories
   if (outputArray.length === 0) {
-    const parentCategories = categoryTree.filter(parent => {
-      // filter to include only parent groups, with at least 1 child present in the event's category array
-      const hasCategoryAsChild = parent.categories.some(category =>
-        eventCategories.some(eventCategory =>
-          eventCategory.name === category.name))
-      return hasCategoryAsChild
-    })
-    generatePlaylist(playlists, parentCategories, outputArray)
+    const parentCategories = categoryTree.filter(parent =>
+      parent.categories.some(category =>
+        eventCats.some(eventCategory => eventCategory.name === category.name)
+      )
+    );
+
+    if (parentCategories.length > 0) {
+      return generatePlaylist(playlists, parentCategories, outputArray, depth + 1);
+    }
   }
 
-  // STEP 3: if parent does not have a playlist either then we generate a grand default and re-run
+  // STEP 3: Final fallback to default
   if (outputArray.length === 0) {
-    generatePlaylist(playlists, [{ 'name': 'default' }], outputArray)
+    if (!eventCats.some(c => c.name === "default")) {
+      return generatePlaylist(playlists, [{ name: "default" }], outputArray, depth + 1);
+    }
   }
 
-  return outputArray
+  return outputArray;
 }
 
 export default VideoPlayer

@@ -102,9 +102,9 @@ class Home extends Component {
             }}
           />
         </div>
-        <MovementSection />
-        <ProjectsSection />
         <EventsSection />
+        <ProjectsSection />
+        <MovementSection />
         {/* Uncomment the following sections if needed */}
         {/* <FirstSection /> */}
         {/* <HowToHelpSection /> */}

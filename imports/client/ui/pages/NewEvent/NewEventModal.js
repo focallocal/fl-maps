@@ -136,6 +136,8 @@ class NewEventModal extends Component {
   };
 
   submit = () => {
+    // This is important for debugging purpose.
+    // console.log(this.state.form.getModel())
     this.state.form.validate({ clean: true })
       .then(() => {
         window.NProgress.set(0.4)

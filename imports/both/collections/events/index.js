@@ -334,22 +334,25 @@ const EventsSchema = new SimpleSchema({
       }
     }
   },
-  'when.recurring.days': { // used with 'week'
+  'when.recurring.days': {
     type: Array,
     optional: true,
     custom: function () {
-      const type = this.siblingField('type')
-      if (type.value === 'week') {
-        const atLeastOneDay = !this.value || !this.value.join('')
-        return atLeastOneDay ? 'required' : undefined
+      // safely check sibling field
+      const typeField = this.field('when.recurring.type');
+      const type = typeField?.value;
+
+      // Only validate if type === 'week'
+      if (type === 'week') {
+        const value = this.value || this.field('when.recurring.days')?.value || [];
+        if (!Array.isArray(value) || value.length === 0) {
+          console.warn('⚠️ Validation check failed — days value:', value, 'type:', type);
+          return 'required';
+        }
       }
+
+      return undefined;
     },
-    autoValue: function () {
-      const type = this.siblingField('type')
-      if (type.value !== 'week') {
-        return null
-      }
-    }
   },
   'when.recurring.days.$': {
     type: String,
@@ -399,7 +402,8 @@ const EventsSchema = new SimpleSchema({
   },
   'when.recurring.forever': {
     type: Boolean,
-    optional: true
+    optional: true,
+    defaultValue: false
   },
   'when.recurring.occurences': {
     type: Number,
