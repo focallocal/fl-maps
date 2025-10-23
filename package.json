@@ -31,7 +31,7 @@
     "http": "0.0.0",
     "jquery": "^3.4.1",
     "jsdoc": "^3.6.3",
-    "linkifyjs": "^2.1.8",
+    "linkifyjs": "^4.3.2",
     "loaders.css": "^0.1.2",
     "meteor-node-stubs": "^1.2.5",
     "mup": "^1.0.2",
