@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Button, Col, FormGroup, Input, Label, Row } from 'reactstrap'
-// import Recurring from './DateTimeModule/Recurring'
+import Recurring from './DateTimeModule/Recurring'
 // import WeekDays from './DateTimeModule/WeekDays'
 import RadioButton from './RadioButton'
 import SameDateHours from './SameDateHours'
@@ -23,8 +23,9 @@ function VideoButtons({ videoLinksAdded, addLink, removeLink }) {
       {videoLinksAdded < 3 && (
         <Button onClick={addLink}>Add Video</Button>
       )}
+      &nbsp;
       {videoLinksAdded > 0 && (
-        <Button onClick={removeLink}>Remove Video</Button>
+        <Button color='danger' onClick={removeLink}>Remove Video</Button>
       )}
     </div>
   )
@@ -224,6 +225,9 @@ const SecondStep = ({ form, onChange, errors }) => {
         }}
       />
 
+      {repeat && <Recurring form={form} />}
+
+      {/*
       {repeat && (
         <FormGroup>
           <Label for="recurringDetails">Recurring Details</Label>
@@ -236,6 +240,7 @@ const SecondStep = ({ form, onChange, errors }) => {
           />
         </FormGroup>
       )}
+      */}
 
       <div className="mb-3">
         <FormGroup noMargin={true}>

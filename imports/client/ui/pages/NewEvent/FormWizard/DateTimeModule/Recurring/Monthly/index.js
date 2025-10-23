@@ -1,75 +1,7 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
 import { determinePosition } from '/imports/both/collections/events/helpers'
-
-function getOrdinalIndicator (dayInMonth) {
-  // dayInMonth outputs a number from 1-31
-  // add endings to number (nth,rd,th,st)
-  if (dayInMonth > 3 && dayInMonth < 21) return `${dayInMonth}th`
-  switch (dayInMonth % 10) {
-  case 1:
-    return `${dayInMonth}st`
-  case 2:
-    return `${dayInMonth}nd`
-  case 3:
-    return `${dayInMonth}rd`
-  default:
-    return `${dayInMonth}th`
-  }
-}
-
-class RecurrMonthly extends Component {
-  render () {
-    const {
-      startingDate,
-      monthly = {}
-    } = this.props
-
-    const options = this.getOptionsFromDate(startingDate)
-    const value = options.find(option => {
-      return monthly ? option.value === monthly.type : false
-    })
-
-    return (
-      <div id='recurr-monthly'>
-        <Select
-          value={value || options[0]}
-          options={options}
-          onChange={this.handleChange}
-        />
-      </div>
-    )
-  }
-
-  handleChange = ({ value }) => {
-    const {
-      form,
-      startingDate
-    } = this.props
-
-    const dayInMonth = startingDate.getDate()
-
-    let finalValue
-    if (value === 'byDayInMonth') {
-      finalValue = dayInMonth
-    } else {
-      finalValue = determinePosition(dayInMonth)[0] // get first letter which represents the position
-    }
-
-    form.change('when.recurring.monthly', { type: value, value: finalValue })
-  }
-
-  getOptionsFromDate = (date) => {
-    const dayInMonth = date.getDate()
-    const position = determinePosition(dayInMonth)
-
-    return [
-      { value: 'byDayInMonth', label: 'Monthly on day ' + dayInMonth },
-      { value: 'byPosition', label: 'Monthly on the ' + position + ' ' + weekdaysMap[date.getDay()] }
-    ]
-  }
-}
 
 const weekdaysMap = {
   0: 'Sunday',
@@ -81,9 +13,81 @@ const weekdaysMap = {
   6: 'Saturday'
 }
 
-RecurrMonthly.propTypes = {
-  form: PropTypes.object.isRequired,
-  startingDate: PropTypes.object.isRequired
+function toDate(input) {
+  if (!input) return null
+  if (input instanceof Date) return input
+  const d = new Date(input)
+  return isNaN(d.getTime()) ? null : d
 }
 
-export default RecurrMonthly
+export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
+  const date = useMemo(() => toDate(startingDate), [startingDate])
+
+  const options = useMemo(() => {
+    if (!date) {
+      return [
+        { value: 'byDayInMonth', label: 'Monthly on day —' },
+        { value: 'byPosition', label: 'Monthly on the — —' }
+      ]
+    }
+    const dayInMonth = date.getDate()
+    const position = determinePosition(dayInMonth)
+    return [
+      { value: 'byDayInMonth', label: `Monthly on day ${dayInMonth}` },
+      { value: 'byPosition', label: `Monthly on the ${position} ${weekdaysMap[date.getDay()]}` }
+    ]
+  }, [date])
+
+  const [selectedOption, setSelectedOption] = useState(
+    options.find(opt => opt.value === monthly.type) || options[0]
+  )
+
+  // If `monthly` changes from outside (form reset or prefill)
+  useEffect(() => {
+    if (monthly?.type) {
+      const match = options.find(opt => opt.value === monthly.type)
+      if (match) setSelectedOption(match)
+    }
+  }, [monthly, options])
+
+  const handleChange = (option) => {
+    setSelectedOption(option)
+
+    const value = option.value
+    if (!date) return
+
+    const dayInMonth = date.getDate()
+    const finalValue =
+      value === 'byDayInMonth'
+        ? dayInMonth
+        : determinePosition(dayInMonth)[0]
+
+    // Push update into the form model
+    if (typeof form?.change === 'function') {
+      form.change('when.recurring.monthly', { type: value, value: finalValue })
+    }
+
+    console.log('Changed monthly recurrence →', { value, finalValue })
+  }
+
+  return (
+    <div id='recurr-monthly'>
+      <Select
+        value={selectedOption}
+        options={options}
+        onChange={handleChange}
+        isSearchable={false}
+      />
+    </div>
+  )
+}
+
+RecurrMonthly.propTypes = {
+  form: PropTypes.object.isRequired,
+  startingDate: PropTypes.oneOfType([
+    PropTypes.instanceOf(Date),
+    PropTypes.string,
+    PropTypes.number
+  ]).isRequired,
+  monthly: PropTypes.object
+}
