@@ -167,7 +167,15 @@ const FirstStep = ({ form, onChange, errors }) => {
             name="overview"
             id="overview"
             value={formData.overview || ''}
-            onChange={handleInputChange}
+            onChange={(e) => {
+              const value = e.target.value
+              form.change('overview', value)
+
+              // Clear error when text length is 20 or more
+              if (errors?.overview && value.trim().length >= 10) {
+                form.change('errors.overview', null)
+              }
+            }}
             placeholder="Enter overview"
             minLength={20}
             maxLength={300}
@@ -176,7 +184,7 @@ const FirstStep = ({ form, onChange, errors }) => {
         <div className="text-muted small">
           {formData.overview?.length || 0} / 300
         </div>
-        {errors?.overview && (
+        {errors?.overview && (!formData?.overview || formData.overview.trim().length < 10) && (
           <div className="text-danger">{errors.overview}</div>
         )}
       </div>
