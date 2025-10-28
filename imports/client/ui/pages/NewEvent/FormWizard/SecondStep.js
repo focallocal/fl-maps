@@ -249,17 +249,26 @@ const SecondStep = ({ form, onChange, errors }) => {
             type="textarea"
             name="description"
             id="description"
-            className="pageDetails"
             value={formData.description || ''}
-            onChange={(e) => form.change('description', e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value
+              form.change('description', value)
+
+              // Clear error if length >= 10
+              if (errors?.description && value.trim().length >= 10) {
+                form.change('errors.description', null)
+              }
+            }}
             minLength={20}
             maxLength={1000}
           />
         </FormGroup>
+
         <div className="text-muted small">
           {formData.description?.length || 0} / 1000
         </div>
-        {errors?.description && (
+
+        {errors?.description && (!formData?.description || formData.description.trim().length < 20) && (
           <div className="text-danger">{errors.description}</div>
         )}
       </div>
@@ -270,7 +279,6 @@ const SecondStep = ({ form, onChange, errors }) => {
           type="number"
           name="engagement.limit"
           id="engagement-limit"
-          className="pageDetails"
           value={attendeeLimit}
           onChange={(e) => {
             const value = e.target.value === '' ? '' : Math.max(0, parseInt(e.target.value, 10) || 0);
@@ -295,19 +303,20 @@ const SecondStep = ({ form, onChange, errors }) => {
           }}
         />
       </FormGroup>
-
-      <FormGroup>
-        {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
-        {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
-        {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
-        {videoLinksAdded > 0 && (
-          <VideoButtons
-            videoLinksAdded={videoLinksAdded}
-            addLink={addLink}
-            removeLink={removeLink}
-          />
-        )}
-      </FormGroup>
+      <div className="video-section">
+        <FormGroup>
+          {videoLinksAdded > 0 && <VideoEntry id={1} form={form} />}
+          {videoLinksAdded > 1 && <VideoEntry id={2} form={form} />}
+          {videoLinksAdded > 2 && <VideoEntry id={3} form={form} />}
+          {videoLinksAdded > 0 && (
+            <VideoButtons
+              videoLinksAdded={videoLinksAdded}
+              addLink={addLink}
+              removeLink={removeLink}
+            />
+          )}
+        </FormGroup>
+      </div>
     </div>
   )
 }
