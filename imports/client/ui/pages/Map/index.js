@@ -122,6 +122,7 @@ class MapComponent_ extends Component {
         defaultOptions={mapOptions()}
         onZoomChanged={this.onZoomChanged}
         onDragEnd={this.onDragEnd}
+        onTilesLoaded={this.onZoomChanged}
       >
         <Button className="gather-button" tag={Link} to="?new=1">{MainMenu.addEvent}</Button>
 
