@@ -131,6 +131,7 @@ const FirstStep = ({ form, onChange, errors }) => {
           onRadioButtonClick={handleRadioButton}
           form={form}
         />
+        {/* This comments hides the "Put yourself on the map radio button" */}
         {/*
           <RadioButton
             id='offerResource'
