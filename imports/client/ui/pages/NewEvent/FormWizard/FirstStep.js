@@ -119,6 +119,7 @@ const FirstStep = ({ form, onChange, errors }) => {
 
   return (
     <div id='first-step'>
+      
       <div id='radios'>
         <label>{labels.resource_type.title}</label>
         <RadioButton
@@ -130,15 +131,17 @@ const FirstStep = ({ form, onChange, errors }) => {
           onRadioButtonClick={handleRadioButton}
           form={form}
         />
-        <RadioButton
-          id='offerResource'
-          label={labels.resource_type.secondRadio}
-          value={state.offerResource}
-          type='radio'
-          click={noCategories}
-          onRadioButtonClick={handleRadioButton}
-          form={form}
-        />
+        {/*
+          <RadioButton
+            id='offerResource'
+            label={labels.resource_type.secondRadio}
+            value={state.offerResource}
+            type='radio'
+            click={noCategories}
+            onRadioButtonClick={handleRadioButton}
+            form={form}
+          />
+        */}
       </div>
       
       <div className="mb-3">

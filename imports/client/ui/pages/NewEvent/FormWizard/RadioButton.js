@@ -23,6 +23,7 @@ RadioButton.propTypes = {
   type: PropTypes.string.isRequired,
   click: PropTypes.func,
   onRadioButtonClick: PropTypes.func.isRequired,
+  form: PropTypes.object
 };
 
 export default RadioButton;
