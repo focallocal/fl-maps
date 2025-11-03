@@ -1,6 +1,7 @@
 // External Packages
 import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
+import { withDcs } from 'dcs-react-router-sync'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
@@ -26,7 +27,7 @@ import i18n from '/imports/both/i18n/en'
 
 class Page extends Component {
   constructor (props) {
-    super()
+    super(props)
     this.state = {
       data: window.cachedDataForPage,
       id: props.match.params.id,
@@ -228,6 +229,12 @@ class Page extends Component {
       }
     })
   }
+
+  dcsClick = (node, event) => {
+    if (typeof this.props.dcsClick === 'function') {
+      this.props.dcsClick(node, event)
+    }
+  }
 }
 
 const SectionTitle = ({ title }) => <div className='section-title'>{title}</div>
@@ -247,11 +254,13 @@ Page.propTypes = {
   history: PropTypes.object.isRequired
 }
 
+const PageWithDcs = withDcs(Page)
+
 export default withTracker(() => {
   return {
     user: Meteor.user()
   }
-})(withRouter(Page))
+})(withRouter(PageWithDcs))
 
 // Testing
 export { Page }
