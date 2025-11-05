@@ -171,9 +171,11 @@ function createEventFacebbok () {
   return window.open('https://www.facebook.com/groups/focallocal/events/')
 }
 
-// Url for sharing
+// Url for sharing and navigation
 function getUrl (_id) {
-  return Meteor.absoluteUrl('page/' + _id)
+  // For Docuss integration, redirect to the event page in Docuss format
+  // Event pages use the format: /docuss/m_{eventId}
+  return Meteor.absoluteUrl('docuss/m_' + _id)
 }
 
 // Popup window options
