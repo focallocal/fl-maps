@@ -1,5 +1,12 @@
 @import '{}/imports/client/stylesheets/variables.scss';
 
+/**
+ * Browser Compatibility Notes:
+ * - Firefox: Uses absolute positioning for #map-container in iframes
+ * - Safari/iOS: Uses -webkit-fill-available for proper viewport height
+ * - All browsers: overflow:hidden prevents scroll issues in iframe contexts
+ */
+
 body.overflow {
   overflow: hidden;
 }
@@ -11,6 +18,22 @@ body.overflow {
   right: 0;
   bottom: 0;
   height: 100vh;
+  width: 100vw;
+  
+  /* Firefox iframe fix - use absolute positioning */
+  @supports (-moz-appearance: none) {
+    position: absolute;
+    min-height: 100vh;
+    height: 100%;
+  }
+  
+  /* Safari/iOS viewport height fix */
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
+  
+  /* Prevent scrolling issues in all browsers */
+  overflow: hidden;
 
   &.offset-standalone-menu {
     top: $menu-height;
