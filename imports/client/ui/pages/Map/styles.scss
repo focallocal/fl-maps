@@ -5,10 +5,15 @@ body.overflow {
 }
 
 #map-container {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 100vh;
 
   &.offset-standalone-menu {
+    top: $menu-height;
     height: calc(100vh - #{$menu-height})!important;
   }
 

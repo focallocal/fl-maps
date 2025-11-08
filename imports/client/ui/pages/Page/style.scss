@@ -442,6 +442,17 @@ $titles-color: #fff;
         .btn {
           width: 100%;
         }
+
+        .going-invite-buttons {
+          width: 100%;
+          align-items: stretch;
+
+          .going-btn,
+          .invite-btn {
+            width: 100%;
+            min-width: auto;
+          }
+        }
       }
 
       .body {
