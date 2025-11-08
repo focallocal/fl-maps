@@ -60,6 +60,8 @@ class Page extends Component {
   componentDidUpdate (prevProps, prevState) {
     if (this.state.data && !prevState.data) {
       window.__setDocumentTitle(this.state.data.name)
+      // Fetch organiser data when data becomes available
+      this.fetchOrganiserData(this.state.data.organiser)
     }
   }
 
@@ -94,6 +96,13 @@ class Page extends Component {
       gravatarUrl,
       organiserUsername
     } = this.state
+
+    console.log('[Page Render] State:', { 
+      gravatarUrl, 
+      organiserUsername,
+      organiserId: data?.organiser?._id,
+      organiserName: data?.organiser?.name
+    })
 
     if (!loaded) {
       return <PageLoader className='pages' />
