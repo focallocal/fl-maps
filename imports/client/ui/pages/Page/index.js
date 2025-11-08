@@ -97,13 +97,6 @@ class Page extends Component {
       organiserUsername
     } = this.state
 
-    console.log('[Page Render] State:', { 
-      gravatarUrl, 
-      organiserUsername,
-      organiserId: data?.organiser?._id,
-      organiserName: data?.organiser?.name
-    })
-
     if (!loaded) {
       return <PageLoader className='pages' />
     }
@@ -325,22 +318,16 @@ class Page extends Component {
 
   fetchOrganiserData = (organiser) => {
     if (!organiser || !organiser._id) {
-      console.log('No organiser data:', organiser)
       return
     }
-
-    console.log('Fetching organiser data for:', organiser)
 
     // Use username from organiser object to construct Discourse avatar URL
     if (organiser.username) {
       const discourseAvatarUrl = `https://publichappinessmovement.com/user_avatar/publichappinessmovement.com/${organiser.username}/50/`
-      console.log('Setting avatar URL:', discourseAvatarUrl)
       this.setState({ 
         gravatarUrl: discourseAvatarUrl,
         organiserUsername: organiser.username 
       })
-    } else {
-      console.log('No username in organiser object:', organiser)
     }
   }
 
