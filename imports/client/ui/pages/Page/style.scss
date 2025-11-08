@@ -17,38 +17,26 @@ $titles-color: #fff;
       }
     }
 
-    .whos-going-btn {
-      background-color: #87CEEB !important; /* Light summer sky blue */
-      border-color: #87CEEB !important;
-      padding: 0.375rem 0.75rem !important; /* Standard button padding */
-      display: inline-flex !important;
-      align-items: center !important;
+    .going-invite-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      align-items: flex-end;
 
-      .whos-going-link {
-        color: white !important;
-        display: inline-flex !important;
-        align-items: center !important;
-
-        .text-title {
-          color: white !important;
-          font-weight: bold !important;
-        }
-
-        .dcs-badge {
-          background-color: #FF6600 !important; /* Vibrant orange */
-          color: black !important;
-          font-weight: bold !important;
-          margin-left: 8px !important;
-          display: inline-block !important;
-        }
+      .going-btn,
+      .invite-btn {
+        min-width: 150px;
       }
     }
+  }
 
-    /* Shared styles for all Docuss buttons */
-    .going-btn,
-    .wall-btn,
-    .media-btn,
-    .stories-btn {
+  /* Shared styles for all Docuss buttons */
+  .going-btn,
+  .invite-btn,
+  .wall-btn,
+  .media-btn,
+  .stories-btn {
       padding: 0.375rem 0.75rem !important;
       display: inline-flex !important;
       align-items: center !important;
@@ -72,7 +60,7 @@ $titles-color: #fff;
       }
     }
 
-    /* Going/Invite button - Sky Blue */
+    /* Going button - Sky Blue */
     .going-btn {
       background-color: #87CEEB !important;
       border-color: #87CEEB !important;
@@ -91,6 +79,30 @@ $titles-color: #fff;
 
         .dcs-badge {
           background-color: #FF6600 !important;
+          color: black !important;
+        }
+      }
+    }
+
+    /* Invite button - Teal/Turquoise */
+    .invite-btn {
+      background-color: #20B2AA !important;
+      border-color: #20B2AA !important;
+
+      &:hover, &:focus, &:active {
+        background-color: #1A9A92 !important;
+        border-color: #1A9A92 !important;
+      }
+
+      .docuss-link {
+        color: white !important;
+        
+        .text-title {
+          color: white !important;
+        }
+
+        .dcs-badge {
+          background-color: #FFD700 !important;
           color: black !important;
         }
       }
@@ -255,6 +267,51 @@ $titles-color: #fff;
       width: 300px;
       max-width: 300px;
       padding-top: 15px;
+
+      .creator-info {
+        .creator-details {
+          margin-top: 8px;
+          
+          .creator-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s;
+
+            &:hover {
+              opacity: 0.8;
+            }
+
+            .creator-avatar {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              margin-right: 12px;
+              object-fit: cover;
+            }
+
+            .creator-avatar-placeholder {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              margin-right: 12px;
+              background-color: #87CEEB;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 24px;
+              font-weight: bold;
+            }
+
+            .creator-name {
+              font-weight: bold;
+              color: #007bff;
+            }
+          }
+        }
+      }
 
       .hours-formatted {
 

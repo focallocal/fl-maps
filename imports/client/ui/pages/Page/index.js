@@ -152,9 +152,14 @@ class Page extends Component {
             <Button color='danger' onClick={this.closePage}>Back To Map</Button>
           </Col>
           <Col xs={6} className='text-right'>
-            <Button className='going-btn'>
-              <DCSLink className='docuss-link' badge="true" format="text-link" title="Going / Invite" triggerId="going" />
-            </Button>
+            <div className='going-invite-buttons'>
+              <Button className='going-btn'>
+                <DCSLink className='docuss-link' badge="true" format="text-link" title="I'm Going" triggerId="going" />
+              </Button>
+              <Button className='invite-btn'>
+                <DCSLink className='docuss-link' badge="true" format="text-link" title="Invite" triggerId="invite" />
+              </Button>
+            </div>
           </Col>
         </Row>
 
@@ -196,6 +201,26 @@ class Page extends Component {
             </Col>
 
             <Col xs={4} className='right'>
+              <div className='creator-info'>
+                <SectionTitle title='Created By' />
+                <div className='creator-details'>
+                  <a href={`/profile/${organiser._id}`} className='creator-link'>
+                    {organiser.profile && organiser.profile.avatar ? (
+                      <img 
+                        src={organiser.profile.avatar}
+                        alt={organiser.profile.name || organiser.username || 'User'}
+                        className='creator-avatar'
+                      />
+                    ) : (
+                      <div className='creator-avatar-placeholder'>
+                        {(organiser.profile?.name || organiser.username || 'U')[0].toUpperCase()}
+                      </div>
+                    )}
+                    <span className='creator-name'>{organiser.profile?.name || organiser.username || 'Anonymous'}</span>
+                  </a>
+                </div>
+              </div>
+              <Divider />
               <SectionTitle title='Date and Time' />
               <HoursFormatted data={when}/>
               <Divider />
