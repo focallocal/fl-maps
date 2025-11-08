@@ -205,18 +205,21 @@ class Page extends Component {
                 <SectionTitle title='Created By' />
                 <div className='creator-details'>
                   <a href={`/profile/${organiser._id}`} className='creator-link'>
-                    {organiser.profile && organiser.profile.avatar ? (
-                      <img 
-                        src={organiser.profile.avatar}
-                        alt={organiser.profile.name || organiser.username || 'User'}
-                        className='creator-avatar'
-                      />
+                    {organiser.name && organiser.name !== '-' ? (
+                      <>
+                        <div className='creator-avatar-placeholder'>
+                          {organiser.name[0].toUpperCase()}
+                        </div>
+                        <span className='creator-name'>{organiser.name}</span>
+                      </>
                     ) : (
-                      <div className='creator-avatar-placeholder'>
-                        {(organiser.profile?.name || organiser.username || 'U')[0].toUpperCase()}
-                      </div>
+                      <>
+                        <div className='creator-avatar-placeholder'>
+                          A
+                        </div>
+                        <span className='creator-name'>Anonymous</span>
+                      </>
                     )}
-                    <span className='creator-name'>{organiser.profile?.name || organiser.username || 'Anonymous'}</span>
                   </a>
                 </div>
               </div>

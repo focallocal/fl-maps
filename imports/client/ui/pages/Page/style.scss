@@ -29,153 +29,153 @@ $titles-color: #fff;
         min-width: 150px;
       }
     }
+  }
 
-    /* Shared styles for all Docuss buttons */
-    .going-btn,
-    .invite-btn,
-    .wall-btn,
-    .media-btn,
-    .stories-btn {
-      padding: 0.375rem 0.75rem !important;
+  /* Shared styles for all Docuss buttons */
+  .going-btn,
+  .invite-btn,
+  .wall-btn,
+  .media-btn,
+  .stories-btn {
+    padding: 0.375rem 0.75rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+
+    .docuss-link {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      border: none !important;
 
-      .docuss-link {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+      .text-title {
+        font-weight: bold !important;
+      }
 
-        .text-title {
-          font-weight: bold !important;
-        }
-
-        .dcs-badge {
-          font-weight: bold !important;
-          margin-left: 8px !important;
-          display: inline-block !important;
-        }
+      .dcs-badge {
+        font-weight: bold !important;
+        margin-left: 8px !important;
+        display: inline-block !important;
       }
     }
+  }
 
-    /* Going button - Sky Blue */
-    .going-btn {
-      background-color: #87CEEB !important;
-      border-color: #87CEEB !important;
+  /* Going button - Sky Blue */
+  .going-btn {
+    background-color: #87CEEB !important;
+    border-color: #87CEEB !important;
 
-      &:hover, &:focus, &:active {
-        background-color: #6BB6D9 !important;
-        border-color: #6BB6D9 !important;
-      }
-
-      .docuss-link {
-        color: white !important;
-        
-        .text-title {
-          color: white !important;
-        }
-
-        .dcs-badge {
-          background-color: #FF6600 !important;
-          color: black !important;
-        }
-      }
+    &:hover, &:focus, &:active {
+      background-color: #6BB6D9 !important;
+      border-color: #6BB6D9 !important;
     }
 
-    /* Invite button - Teal/Turquoise */
-    .invite-btn {
-      background-color: #20B2AA !important;
-      border-color: #20B2AA !important;
-
-      &:hover, &:focus, &:active {
-        background-color: #1A9A92 !important;
-        border-color: #1A9A92 !important;
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
       }
 
-      .docuss-link {
-        color: white !important;
-        
-        .text-title {
-          color: white !important;
-        }
-
-        .dcs-badge {
-          background-color: #FFD700 !important;
-          color: black !important;
-        }
+      .dcs-badge {
+        background-color: #FF6600 !important;
+        color: black !important;
       }
     }
+  }
 
-    /* Wall button - Vibrant Pink */
-    .wall-btn {
-      background-color: #FF1493 !important;
-      border-color: #FF1493 !important;
+  /* Invite button - Teal/Turquoise */
+  .invite-btn {
+    background-color: #20B2AA !important;
+    border-color: #20B2AA !important;
 
-      &:hover, &:focus, &:active {
-        background-color: #E0127E !important;
-        border-color: #E0127E !important;
-      }
-
-      .docuss-link {
-        color: white !important;
-        
-        .text-title {
-          color: white !important;
-        }
-
-        .dcs-badge {
-          background-color: #FFD700 !important; /* Gold for contrast */
-          color: black !important;
-        }
-      }
+    &:hover, &:focus, &:active {
+      background-color: #1A9A92 !important;
+      border-color: #1A9A92 !important;
     }
 
-    /* Media button - Bright Orange */
-    .media-btn {
-      background-color: #FF8C00 !important;
-      border-color: #FF8C00 !important;
-
-      &:hover, &:focus, &:active {
-        background-color: #E07D00 !important;
-        border-color: #E07D00 !important;
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
       }
 
-      .docuss-link {
-        color: white !important;
-        
-        .text-title {
-          color: white !important;
-        }
-
-        .dcs-badge {
-          background-color: #4169E1 !important; /* Royal blue for contrast */
-          color: white !important;
-        }
+      .dcs-badge {
+        background-color: #FFD700 !important;
+        color: black !important;
       }
     }
+  }
 
-    /* Stories button - Purple/Violet */
-    .stories-btn {
-      background-color: #9370DB !important;
-      border-color: #9370DB !important;
+  /* Wall button - Vibrant Pink */
+  .wall-btn {
+    background-color: #FF1493 !important;
+    border-color: #FF1493 !important;
 
-      &:hover, &:focus, &:active {
-        background-color: #7D5BC4 !important;
-        border-color: #7D5BC4 !important;
+    &:hover, &:focus, &:active {
+      background-color: #E0127E !important;
+      border-color: #E0127E !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
       }
 
-      .docuss-link {
-        color: white !important;
-        
-        .text-title {
-          color: white !important;
-        }
+      .dcs-badge {
+        background-color: #FFD700 !important; /* Gold for contrast */
+        color: black !important;
+      }
+    }
+  }
 
-        .dcs-badge {
-          background-color: #32CD32 !important; /* Lime green for contrast */
-          color: black !important;
-        }
+  /* Media button - Bright Orange */
+  .media-btn {
+    background-color: #FF8C00 !important;
+    border-color: #FF8C00 !important;
+
+    &:hover, &:focus, &:active {
+      background-color: #E07D00 !important;
+      border-color: #E07D00 !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
+      }
+
+      .dcs-badge {
+        background-color: #4169E1 !important; /* Royal blue for contrast */
+        color: white !important;
+      }
+    }
+  }
+
+  /* Stories button - Purple/Violet */
+  .stories-btn {
+    background-color: #9370DB !important;
+    border-color: #9370DB !important;
+
+    &:hover, &:focus, &:active {
+      background-color: #7D5BC4 !important;
+      border-color: #7D5BC4 !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
+      }
+
+      .dcs-badge {
+        background-color: #32CD32 !important; /* Lime green for contrast */
+        color: black !important;
       }
     }
   }
