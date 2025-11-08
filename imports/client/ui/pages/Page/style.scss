@@ -29,14 +29,13 @@ $titles-color: #fff;
         min-width: 150px;
       }
     }
-  }
 
-  /* Shared styles for all Docuss buttons */
-  .going-btn,
-  .invite-btn,
-  .wall-btn,
-  .media-btn,
-  .stories-btn {
+    /* Shared styles for all Docuss buttons */
+    .going-btn,
+    .invite-btn,
+    .wall-btn,
+    .media-btn,
+    .stories-btn {
       padding: 0.375rem 0.75rem !important;
       display: inline-flex !important;
       align-items: center !important;
