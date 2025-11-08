@@ -331,29 +331,17 @@ class Page extends Component {
 
     console.log('Fetching organiser data for:', organiser)
 
-    // Fetch Gravatar URL
-    Meteor.call('users.getGravatarUrl', organiser._id, (err, gravatarUrl) => {
-      if (err) {
-        console.error('Error fetching Gravatar:', err)
-      } else {
-        console.log('Gravatar URL received:', gravatarUrl)
-        if (gravatarUrl) {
-          this.setState({ gravatarUrl })
-        }
-      }
-    })
-
-    // Fetch username via server method
-    Meteor.call('users.getUsername', organiser._id, (err, username) => {
-      if (err) {
-        console.error('Error fetching username:', err)
-      } else {
-        console.log('Username received:', username)
-        if (username) {
-          this.setState({ organiserUsername: username })
-        }
-      }
-    })
+    // Use username from organiser object to construct Discourse avatar URL
+    if (organiser.username) {
+      const discourseAvatarUrl = `https://publichappinessmovement.com/user_avatar/publichappinessmovement.com/${organiser.username}/50/`
+      console.log('Setting avatar URL:', discourseAvatarUrl)
+      this.setState({ 
+        gravatarUrl: discourseAvatarUrl,
+        organiserUsername: organiser.username 
+      })
+    } else {
+      console.log('No username in organiser object:', organiser)
+    }
   }
 
   componentWillUnmount () {

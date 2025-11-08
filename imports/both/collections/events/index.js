@@ -38,10 +38,11 @@ const EventsSchema = new SimpleSchema({
     type: Object,
     autoValue: function () {
       // Dont change this!
-      const { _id, profile } = Meteor.user() || { _id: '-', profile: { name: '-' } }
+      const { _id, profile, username } = Meteor.user() || { _id: '-', profile: { name: '-' }, username: null }
       return {
         _id,
-        name: profile.name
+        name: profile.name,
+        username: username || null
       }
     }
   },
@@ -50,6 +51,10 @@ const EventsSchema = new SimpleSchema({
   },
   'organiser.name': {
     type: String
+  },
+  'organiser.username': {
+    type: String,
+    optional: true
   },
 
   // Categories sub level
