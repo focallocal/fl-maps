@@ -3,6 +3,43 @@ $titles-color: #fff;
 
 #page {
 
+  /* Page Action Buttons Row */
+  .page-action-buttons {
+    margin: 15px 0;
+    padding: 0 15px;
+
+    .col-6 {
+      display: flex;
+      align-items: center;
+
+      &.text-right {
+        justify-content: flex-end;
+      }
+    }
+
+    .whos-going-btn {
+      background-color: #87CEEB !important; /* Light summer sky blue */
+      border-color: #87CEEB !important;
+      padding-right: 10px !important; /* Extra 5px space from right */
+
+      .whos-going-link {
+        color: white !important;
+
+        .text-title {
+          color: white !important;
+          font-weight: bold !important;
+        }
+
+        .dcs-badge {
+          background-color: #FF6600 !important; /* Vibrant orange */
+          color: black !important;
+          font-weight: bold !important;
+          margin-left: 8px !important;
+        }
+      }
+    }
+  }
+
   .header {
     position: relative;
     display: flex;
@@ -199,6 +236,28 @@ $titles-color: #fff;
 
   @media screen and (max-width: 640px) {
     & {
+      .page-action-buttons {
+        margin: 15px 0;
+        padding: 0;
+
+        .col-6 {
+          padding-left: 0;
+          padding-right: 0;
+
+          &:last-child {
+            padding-left: 5px;
+          }
+
+          &:first-child {
+            padding-right: 5px;
+          }
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+
       .body {
         .left,
         .right {

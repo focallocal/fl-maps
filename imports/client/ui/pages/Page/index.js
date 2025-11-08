@@ -147,13 +147,13 @@ class Page extends Component {
           />
 
         </div>
-        <Row>
-          <Col xs={6} lg={{ size: 1, offset: 0 }}>
+        <Row className='page-action-buttons'>
+          <Col xs={6}>
             <Button color='danger' onClick={this.closePage}>Back To Map</Button>
           </Col>
-          <Col xs={6} lg={{ size: 1, offset: 11 }}>
-            <Button color='primary'>
-              <DCSLink className='whos-going-link' badge="false" format="text-link" title="Who's Going" triggerId="going" />
+          <Col xs={6} className='text-right'>
+            <Button color='info' className='whos-going-btn'>
+              <DCSLink className='whos-going-link' badge="true" format="text-link" title="Who's Going" triggerId="going" />
             </Button>
           </Col>
         </Row>
