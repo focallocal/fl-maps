@@ -271,7 +271,8 @@ $titles-color: #fff;
         .creator-details {
           margin-top: 8px;
           
-          .creator-link {
+          .creator-link,
+          .creator-link-wrapper {
             display: flex;
             align-items: center;
             text-decoration: none;

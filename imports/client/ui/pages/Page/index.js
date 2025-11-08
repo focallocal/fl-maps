@@ -232,7 +232,7 @@ class Page extends Component {
                       </span>
                     </a>
                   ) : (
-                    <div className='creator-link'>
+                    <div className='creator-link-wrapper'>
                       {gravatarUrl ? (
                         <img 
                           src={gravatarUrl} 
@@ -315,19 +315,34 @@ class Page extends Component {
   }
 
   fetchOrganiserData = (organiser) => {
-    if (!organiser || !organiser._id) return
+    if (!organiser || !organiser._id) {
+      console.log('No organiser data:', organiser)
+      return
+    }
+
+    console.log('Fetching organiser data for:', organiser)
 
     // Fetch Gravatar URL
     Meteor.call('users.getGravatarUrl', organiser._id, (err, gravatarUrl) => {
-      if (!err && gravatarUrl) {
-        this.setState({ gravatarUrl })
+      if (err) {
+        console.error('Error fetching Gravatar:', err)
+      } else {
+        console.log('Gravatar URL received:', gravatarUrl)
+        if (gravatarUrl) {
+          this.setState({ gravatarUrl })
+        }
       }
     })
 
     // Fetch username via server method
     Meteor.call('users.getUsername', organiser._id, (err, username) => {
-      if (!err && username) {
-        this.setState({ organiserUsername: username })
+      if (err) {
+        console.error('Error fetching username:', err)
+      } else {
+        console.log('Username received:', username)
+        if (username) {
+          this.setState({ organiserUsername: username })
+        }
       }
     })
   }
