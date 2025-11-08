@@ -52,11 +52,13 @@ $titles-color: #fff;
       padding: 0.375rem 0.75rem !important;
       display: inline-flex !important;
       align-items: center !important;
+      justify-content: center !important;
       border: none !important;
 
       .docuss-link {
         display: inline-flex !important;
         align-items: center !important;
+        justify-content: center !important;
 
         .text-title {
           font-weight: bold !important;
@@ -74,6 +76,11 @@ $titles-color: #fff;
     .going-btn {
       background-color: #87CEEB !important;
       border-color: #87CEEB !important;
+
+      &:hover, &:focus, &:active {
+        background-color: #6BB6D9 !important;
+        border-color: #6BB6D9 !important;
+      }
 
       .docuss-link {
         color: white !important;
@@ -94,6 +101,11 @@ $titles-color: #fff;
       background-color: #FF1493 !important;
       border-color: #FF1493 !important;
 
+      &:hover, &:focus, &:active {
+        background-color: #E0127E !important;
+        border-color: #E0127E !important;
+      }
+
       .docuss-link {
         color: white !important;
         
@@ -113,6 +125,11 @@ $titles-color: #fff;
       background-color: #FF8C00 !important;
       border-color: #FF8C00 !important;
 
+      &:hover, &:focus, &:active {
+        background-color: #E07D00 !important;
+        border-color: #E07D00 !important;
+      }
+
       .docuss-link {
         color: white !important;
         
@@ -131,6 +148,11 @@ $titles-color: #fff;
     .stories-btn {
       background-color: #9370DB !important;
       border-color: #9370DB !important;
+
+      &:hover, &:focus, &:active {
+        background-color: #7D5BC4 !important;
+        border-color: #7D5BC4 !important;
+      }
 
       .docuss-link {
         color: white !important;
