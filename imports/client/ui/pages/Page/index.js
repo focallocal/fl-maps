@@ -94,6 +94,11 @@ class Page extends Component {
       return <PageLoader className='pages' />
     }
 
+    if (!data || !data.address) {
+      console.warn('Invalid event data, redirecting to map')
+      return <Redirect to='/map' />
+    }
+
     const {
       address,
       categories: c,
@@ -143,8 +148,11 @@ class Page extends Component {
 
         </div>
         <Row>
-          <Col lg={{ size: 1, offset: 12 }}>
+          <Col xs={6} lg={{ size: 1, offset: 0 }}>
             <Button color='danger' onClick={this.closePage}>Back To Map</Button>
+          </Col>
+          <Col xs={6} lg={{ size: 1, offset: 11 }}>
+            <DCSLink className='whos-going-btn' badge="true" format="button" title="Who's Going" triggerId="going" />
           </Col>
         </Row>
 
@@ -174,7 +182,6 @@ class Page extends Component {
                 <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" />
                 <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" />
                 <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" />
-                <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.whoIsGoing.title} triggerId="who-is-going" />
               </div>
             </Col>
 
@@ -226,7 +233,16 @@ class Page extends Component {
   getEventData = () => {
     Meteor.call('Events.getEvent', { id: this.state.id }, (err, res) => {
       if (!err) {
-        this.setState({ data: res, loaded: true })
+        if (res && res._id) {
+          this.setState({ data: res, loaded: true })
+        } else {
+          // Event not found or invalid, redirect to map
+          console.warn('Event not found:', this.state.id)
+          this.setState({ redirect: true })
+        }
+      } else {
+        console.error('Error loading event:', err)
+        this.setState({ redirect: true })
       }
     })
   }

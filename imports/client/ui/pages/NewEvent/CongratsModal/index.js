@@ -173,9 +173,9 @@ function createEventFacebbok () {
 
 // Url for sharing and navigation
 function getUrl (_id) {
-  // For Docuss integration, redirect to the event page in Docuss format
-  // Event pages use the format: /docuss/m_{eventId}
-  return Meteor.absoluteUrl('docuss/m_' + _id)
+  // For standalone mode, use the direct page URL
+  // For Docuss integration, the page component will handle the Docuss routing
+  return Meteor.absoluteUrl('page/' + _id)
 }
 
 // Popup window options
