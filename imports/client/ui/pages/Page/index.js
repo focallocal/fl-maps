@@ -152,7 +152,9 @@ class Page extends Component {
             <Button color='danger' onClick={this.closePage}>Back To Map</Button>
           </Col>
           <Col xs={6} lg={{ size: 1, offset: 11 }}>
-            <DCSLink className='whos-going-btn' badge="true" format="button" title="Who's Going" triggerId="going" />
+            <Button color='primary'>
+              <DCSLink className='whos-going-link' badge="false" format="text-link" title="Who's Going" triggerId="going" />
+            </Button>
           </Col>
         </Row>
 
