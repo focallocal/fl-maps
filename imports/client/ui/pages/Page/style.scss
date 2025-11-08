@@ -216,11 +216,11 @@ $titles-color: #fff;
       .share {
         margin-top: 20px;
 
-        .docuss-share-btn {
-          display: block !important;
-          width: 100% !important;
-          margin-bottom: 10px !important;
-          text-align: left !important;
+        .wall-btn,
+        .media-btn,
+        .stories-btn {
+          margin-right: 8px;
+          margin-bottom: 8px;
         }
       }
 

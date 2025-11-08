@@ -181,13 +181,15 @@ class Page extends Component {
               </div>
               <div className='share'>
                 <SectionTitle title={i18n.Map.eventInfo.shareExpTitle} />
-                <Button className='wall-btn docuss-share-btn'>
+                <Button className='wall-btn'>
                   <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" />
                 </Button>
-                <Button className='media-btn docuss-share-btn'>
+                {' '}
+                <Button className='media-btn'>
                   <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" />
                 </Button>
-                <Button className='stories-btn docuss-share-btn'>
+                {' '}
+                <Button className='stories-btn'>
                   <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" />
                 </Button>
               </div>
