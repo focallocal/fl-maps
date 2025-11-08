@@ -20,10 +20,14 @@ $titles-color: #fff;
     .whos-going-btn {
       background-color: #87CEEB !important; /* Light summer sky blue */
       border-color: #87CEEB !important;
-      padding-right: 10px !important; /* Extra 5px space from right */
+      padding: 0.375rem 0.75rem !important; /* Standard button padding */
+      display: inline-flex !important;
+      align-items: center !important;
 
       .whos-going-link {
         color: white !important;
+        display: inline-flex !important;
+        align-items: center !important;
 
         .text-title {
           color: white !important;
@@ -35,6 +39,109 @@ $titles-color: #fff;
           color: black !important;
           font-weight: bold !important;
           margin-left: 8px !important;
+          display: inline-block !important;
+        }
+      }
+    }
+
+    /* Shared styles for all Docuss buttons */
+    .going-btn,
+    .wall-btn,
+    .media-btn,
+    .stories-btn {
+      padding: 0.375rem 0.75rem !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      border: none !important;
+
+      .docuss-link {
+        display: inline-flex !important;
+        align-items: center !important;
+
+        .text-title {
+          font-weight: bold !important;
+        }
+
+        .dcs-badge {
+          font-weight: bold !important;
+          margin-left: 8px !important;
+          display: inline-block !important;
+        }
+      }
+    }
+
+    /* Going/Invite button - Sky Blue */
+    .going-btn {
+      background-color: #87CEEB !important;
+      border-color: #87CEEB !important;
+
+      .docuss-link {
+        color: white !important;
+        
+        .text-title {
+          color: white !important;
+        }
+
+        .dcs-badge {
+          background-color: #FF6600 !important;
+          color: black !important;
+        }
+      }
+    }
+
+    /* Wall button - Vibrant Pink */
+    .wall-btn {
+      background-color: #FF1493 !important;
+      border-color: #FF1493 !important;
+
+      .docuss-link {
+        color: white !important;
+        
+        .text-title {
+          color: white !important;
+        }
+
+        .dcs-badge {
+          background-color: #FFD700 !important; /* Gold for contrast */
+          color: black !important;
+        }
+      }
+    }
+
+    /* Media button - Bright Orange */
+    .media-btn {
+      background-color: #FF8C00 !important;
+      border-color: #FF8C00 !important;
+
+      .docuss-link {
+        color: white !important;
+        
+        .text-title {
+          color: white !important;
+        }
+
+        .dcs-badge {
+          background-color: #4169E1 !important; /* Royal blue for contrast */
+          color: white !important;
+        }
+      }
+    }
+
+    /* Stories button - Purple/Violet */
+    .stories-btn {
+      background-color: #9370DB !important;
+      border-color: #9370DB !important;
+
+      .docuss-link {
+        color: white !important;
+        
+        .text-title {
+          color: white !important;
+        }
+
+        .dcs-badge {
+          background-color: #32CD32 !important; /* Lime green for contrast */
+          color: black !important;
         }
       }
     }
@@ -107,13 +214,13 @@ $titles-color: #fff;
       }
 
       .share {
+        margin-top: 20px;
 
-        .share-btn {
-          .text-title {
-            margin-left: 5px;
-            font-weight: normal !important;
-            color: rgb(0, 123, 255) !important;
-          }
+        .docuss-share-btn {
+          display: block !important;
+          width: 100% !important;
+          margin-bottom: 10px !important;
+          text-align: left !important;
         }
       }
 

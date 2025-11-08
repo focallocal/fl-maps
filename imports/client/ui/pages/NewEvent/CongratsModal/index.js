@@ -30,6 +30,10 @@ class CongratsModal extends Component {
 
   componentDidMount () {
     loadFacebook()
+    // Cache the recent event data for the page component
+    if (this.state.event) {
+      window.cachedDataForPage = this.state.event
+    }
   }
 
   componentDidCatch (error, info) {

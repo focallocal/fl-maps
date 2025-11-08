@@ -152,8 +152,8 @@ class Page extends Component {
             <Button color='danger' onClick={this.closePage}>Back To Map</Button>
           </Col>
           <Col xs={6} className='text-right'>
-            <Button color='info' className='whos-going-btn'>
-              <DCSLink className='whos-going-link' badge="true" format="text-link" title="Who's Going" triggerId="going" />
+            <Button className='going-btn'>
+              <DCSLink className='docuss-link' badge="true" format="text-link" title="Going / Invite" triggerId="going" />
             </Button>
           </Col>
         </Row>
@@ -181,9 +181,15 @@ class Page extends Component {
               </div>
               <div className='share'>
                 <SectionTitle title={i18n.Map.eventInfo.shareExpTitle} />
-                <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" />
-                <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" />
-                <DCSLink className='share-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" />
+                <Button className='wall-btn docuss-share-btn'>
+                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" />
+                </Button>
+                <Button className='media-btn docuss-share-btn'>
+                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" />
+                </Button>
+                <Button className='stories-btn docuss-share-btn'>
+                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" />
+                </Button>
               </div>
             </Col>
 
