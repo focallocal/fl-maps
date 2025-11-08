@@ -34,7 +34,9 @@ class Page extends Component {
       loaded: false,
       badges: null,
       redirect: false,
-      editDeletePermission: false
+      editDeletePermission: false,
+      gravatarUrl: null,
+      organiserUsername: null
     }
   }
 
@@ -50,6 +52,7 @@ class Page extends Component {
     } else {
       this.setState({ loaded: true })
       window.__setDocumentTitle(data.name)
+      this.fetchOrganiserData(data.organiser)
     }
     this.deleteEditPermission()
   }
@@ -87,7 +90,9 @@ class Page extends Component {
     const {
       data,
       loaded,
-      editDeletePermission
+      editDeletePermission,
+      gravatarUrl,
+      organiserUsername
     } = this.state
 
     if (!loaded) {
@@ -204,23 +209,46 @@ class Page extends Component {
               <div className='creator-info'>
                 <SectionTitle title='Created By' />
                 <div className='creator-details'>
-                  <a href={`/profile/${organiser._id}`} className='creator-link'>
-                    {organiser.name && organiser.name !== '-' ? (
-                      <>
+                  {organiserUsername ? (
+                    <a 
+                      href={`https://publichappinessmovement.com/u/${organiserUsername}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className='creator-link'
+                    >
+                      {gravatarUrl ? (
+                        <img 
+                          src={gravatarUrl} 
+                          alt={organiser.name || 'User avatar'} 
+                          className='creator-avatar'
+                        />
+                      ) : (
                         <div className='creator-avatar-placeholder'>
-                          {organiser.name[0].toUpperCase()}
+                          {(organiser.name && organiser.name !== '-' ? organiser.name[0] : 'A').toUpperCase()}
                         </div>
-                        <span className='creator-name'>{organiser.name}</span>
-                      </>
-                    ) : (
-                      <>
+                      )}
+                      <span className='creator-name'>
+                        {organiser.name && organiser.name !== '-' ? organiser.name : 'Anonymous'}
+                      </span>
+                    </a>
+                  ) : (
+                    <div className='creator-link'>
+                      {gravatarUrl ? (
+                        <img 
+                          src={gravatarUrl} 
+                          alt={organiser.name || 'User avatar'} 
+                          className='creator-avatar'
+                        />
+                      ) : (
                         <div className='creator-avatar-placeholder'>
-                          A
+                          {(organiser.name && organiser.name !== '-' ? organiser.name[0] : 'A').toUpperCase()}
                         </div>
-                        <span className='creator-name'>Anonymous</span>
-                      </>
-                    )}
-                  </a>
+                      )}
+                      <span className='creator-name'>
+                        {organiser.name && organiser.name !== '-' ? organiser.name : 'Anonymous'}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
               <Divider />
@@ -273,6 +301,7 @@ class Page extends Component {
       if (!err) {
         if (res && res._id) {
           this.setState({ data: res, loaded: true })
+          this.fetchOrganiserData(res.organiser)
         } else {
           // Event not found or invalid, redirect to map
           console.warn('Event not found:', this.state.id)
@@ -283,6 +312,28 @@ class Page extends Component {
         this.setState({ redirect: true })
       }
     })
+  }
+
+  fetchOrganiserData = (organiser) => {
+    if (!organiser || !organiser._id) return
+
+    // Fetch Gravatar URL
+    Meteor.call('users.getGravatarUrl', organiser._id, (err, gravatarUrl) => {
+      if (!err && gravatarUrl) {
+        this.setState({ gravatarUrl })
+      }
+    })
+
+    // Fetch username via server method
+    Meteor.call('users.getUsername', organiser._id, (err, username) => {
+      if (!err && username) {
+        this.setState({ organiserUsername: username })
+      }
+    })
+  }
+
+  componentWillUnmount () {
+    // Clean up if needed
   }
 
   dcsClick = (node, event) => {
