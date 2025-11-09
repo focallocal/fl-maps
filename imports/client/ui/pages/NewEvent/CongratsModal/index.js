@@ -44,6 +44,25 @@ class CongratsModal extends Component {
     this.setState({ hasErrors: true })
   }
 
+  handleDone = () => {
+    const { event } = this.state
+    if (!event || !event._id) return
+
+    const isInIframe = window.self !== window.top
+    
+    if (isInIframe) {
+      // Tell parent Discourse window to navigate to the docuss page
+      const docussUrl = `/docuss/m_${event._id}`
+      window.parent.postMessage({
+        type: 'navigateTo',
+        url: docussUrl
+      }, '*')
+    } else {
+      // Standalone mode - navigate directly
+      window.location.href = `/page/${event._id}`
+    }
+  }
+
   render () {
     const {
       event
@@ -87,7 +106,7 @@ class CongratsModal extends Component {
 
         <ModalFooter>
           <Button 
-            href={getUrl(event._id)}
+            onClick={this.handleDone}
           >
             Done
           </Button>
