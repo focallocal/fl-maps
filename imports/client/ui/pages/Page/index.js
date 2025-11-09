@@ -1,7 +1,6 @@
 // External Packages
 import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
-import { withDcs } from 'dcs-react-router-sync'
 import PropTypes from 'prop-types'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
@@ -36,11 +35,28 @@ class Page extends Component {
       redirect: false,
       editDeletePermission: false,
       gravatarUrl: null,
-      organiserUsername: null
+      organiserUsername: null,
+      discourseTopic: null
     }
   }
 
   componentDidMount () {
+    // Listen for postMessage from Discourse parent window
+    this.messageListener = (event) => {
+      // Only accept messages from parent window
+      if (event.source === window.parent && event.data && event.data.type === 'dcsRoute') {
+        console.log('📨 Received dcsRoute message:', event.data)
+        if (event.data.topic) {
+          this.setState({ discourseTopic: event.data.topic })
+          // Re-fetch organiser data with new discourse topic info
+          if (this.state.data && this.state.data.organiser) {
+            this.fetchOrganiserData(this.state.data.organiser)
+          }
+        }
+      }
+    }
+    window.addEventListener('message', this.messageListener)
+
     // THIS IS WRONG: if you fetch data in componentDidMount(), then any route
     // change to the same component but with another id WON'T RELOAD THE DATA
     // AND WON'T RE-RENDER THE PAGE. See this bug:
@@ -55,6 +71,13 @@ class Page extends Component {
       this.fetchOrganiserData(data.organiser)
     }
     this.deleteEditPermission()
+  }
+
+  componentWillUnmount () {
+    // Clean up message listener
+    if (this.messageListener) {
+      window.removeEventListener('message', this.messageListener)
+    }
   }
 
   componentDidUpdate (prevProps, prevState) {
@@ -322,14 +345,14 @@ class Page extends Component {
     }
 
     // Debug: Log what we receive from Discourse
-    console.log('🔍 fetchOrganiserData - dcsRoute:', this.props.dcsRoute)
+    console.log('🔍 fetchOrganiserData - discourseTopic:', this.state.discourseTopic)
     console.log('🔍 fetchOrganiserData - organiser:', organiser)
 
     // Check if we have topic data from Discourse with avatarTemplate
-    const { dcsRoute } = this.props
-    if (dcsRoute && dcsRoute.topic && dcsRoute.topic.avatarTemplate) {
+    const { discourseTopic } = this.state
+    if (discourseTopic && discourseTopic.avatarTemplate) {
       // Use avatar template from Discourse
-      const avatarTemplate = dcsRoute.topic.avatarTemplate
+      const avatarTemplate = discourseTopic.avatarTemplate
       const avatarUrl = avatarTemplate.replace('{size}', '50')
       // Prepend domain if it's a relative URL
       const fullAvatarUrl = avatarUrl.startsWith('http') 
@@ -339,7 +362,7 @@ class Page extends Component {
       console.log('✅ Using Discourse avatar:', fullAvatarUrl)
       this.setState({ 
         gravatarUrl: fullAvatarUrl,
-        organiserUsername: dcsRoute.topic.username || organiser.username
+        organiserUsername: discourseTopic.username || organiser.username
       })
     } else if (organiser.username) {
       // Fallback: Use username from organiser object to construct Discourse avatar URL
@@ -379,18 +402,14 @@ export function mutateCachedMapState (updatedEntry) {
 
 Page.propTypes = {
   match: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
-  dcsRoute: PropTypes.object,
-  dcsClick: PropTypes.func
+  history: PropTypes.object.isRequired
 }
-
-const PageWithDcs = withDcs(Page)
 
 export default withTracker(() => {
   return {
     user: Meteor.user()
   }
-})(withRouter(PageWithDcs))
+})(withRouter(Page))
 
 // Testing
 export { Page }
