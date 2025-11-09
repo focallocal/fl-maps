@@ -321,8 +321,23 @@ class Page extends Component {
       return
     }
 
-    // Use username from organiser object to construct Discourse avatar URL
-    if (organiser.username) {
+    // Check if we have topic data from Discourse with avatarTemplate
+    const { dcsRoute } = this.props
+    if (dcsRoute && dcsRoute.topic && dcsRoute.topic.avatarTemplate) {
+      // Use avatar template from Discourse
+      const avatarTemplate = dcsRoute.topic.avatarTemplate
+      const avatarUrl = avatarTemplate.replace('{size}', '50')
+      // Prepend domain if it's a relative URL
+      const fullAvatarUrl = avatarUrl.startsWith('http') 
+        ? avatarUrl 
+        : `https://publichappinessmovement.com${avatarUrl}`
+      
+      this.setState({ 
+        gravatarUrl: fullAvatarUrl,
+        organiserUsername: dcsRoute.topic.username || organiser.username
+      })
+    } else if (organiser.username) {
+      // Fallback: Use username from organiser object to construct Discourse avatar URL
       const discourseAvatarUrl = `https://publichappinessmovement.com/user_avatar/publichappinessmovement.com/${organiser.username}/50/`
       this.setState({ 
         gravatarUrl: discourseAvatarUrl,
@@ -356,7 +371,9 @@ export function mutateCachedMapState (updatedEntry) {
 
 Page.propTypes = {
   match: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
+  dcsRoute: PropTypes.object,
+  dcsClick: PropTypes.func
 }
 
 const PageWithDcs = withDcs(Page)
