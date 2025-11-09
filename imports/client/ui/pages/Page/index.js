@@ -19,6 +19,7 @@ import DCSLink from '/imports/client/ui/components/DCSLink'
 import { formatCategories } from '/imports/client/utils/format'
 import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import { checkPermissions } from './../Admin/RolesPermissions/index'
+import { getDiscourseAvatarUrl, buildAvatarUrl } from '/imports/client/utils/discourseAvatar'
 
 // Styles and Other
 import './style.scss'
@@ -38,20 +39,24 @@ class Page extends Component {
       organiserUsername: null,
       discourseTopic: null
     }
+    this._isMounted = false
+    this.pendingAvatarUsername = null
   }
 
   componentDidMount () {
+    this._isMounted = true
     // Listen for postMessage from Discourse parent window
     this.messageListener = (event) => {
       // Only accept messages from parent window
       if (event.source === window.parent && event.data && event.data.type === 'dcsRoute') {
         console.log('📨 Received dcsRoute message:', event.data)
         if (event.data.topic) {
-          this.setState({ discourseTopic: event.data.topic })
-          // Re-fetch organiser data with new discourse topic info
-          if (this.state.data && this.state.data.organiser) {
-            this.fetchOrganiserData(this.state.data.organiser)
-          }
+          this.setState({ discourseTopic: event.data.topic }, () => {
+            // Re-fetch organiser data with new discourse topic info
+            if (this.state.data && this.state.data.organiser) {
+              this.fetchOrganiserData(this.state.data.organiser)
+            }
+          })
         }
       }
     }
@@ -78,6 +83,8 @@ class Page extends Component {
     if (this.messageListener) {
       window.removeEventListener('message', this.messageListener)
     }
+    this._isMounted = false
+    this.pendingAvatarUsername = null
   }
 
   componentDidUpdate (prevProps, prevState) {
@@ -324,52 +331,54 @@ class Page extends Component {
 
   fetchOrganiserData = (organiser) => {
     if (!organiser || !organiser._id) {
-      console.log('❌ No organiser data')
+      console.warn('❌ No organiser data')
       return
     }
 
-    // Debug: Log what we receive
-    console.log('🔍 fetchOrganiserData called')
-    console.log('  - organiser._id:', organiser._id)
-    console.log('  - organiser.name:', organiser.name)
-    console.log('  - organiser.username:', organiser.username)
-    console.log('  - discourseTopic:', this.state.discourseTopic)
-
-    // Check if we have topic data from Discourse with avatarTemplate
     const { discourseTopic } = this.state
-    if (discourseTopic && discourseTopic.avatarTemplate) {
-      // Use avatar template from Discourse
-      const avatarTemplate = discourseTopic.avatarTemplate
-      const avatarUrl = avatarTemplate.replace('{size}', '50')
-      // Prepend domain if it's a relative URL
-      const fullAvatarUrl = avatarUrl.startsWith('http') 
-        ? avatarUrl 
-        : `https://publichappinessmovement.com${avatarUrl}`
-      
-      console.log('✅ Using Discourse topic avatar:', fullAvatarUrl)
-      this.setState({ 
-        gravatarUrl: fullAvatarUrl,
-        organiserUsername: discourseTopic.username || organiser.username
-      })
-    } else if (organiser.username) {
-      // Fallback: Use username from organiser object to construct Discourse avatar URL
-      const discourseAvatarUrl = `https://publichappinessmovement.com/user_avatar/publichappinessmovement.com/${organiser.username}/50/`
-      console.log('✅ Using stored username avatar:', discourseAvatarUrl)
-      console.log('   Avatar URL:', discourseAvatarUrl)
-      this.setState({ 
-        gravatarUrl: discourseAvatarUrl,
-        organiserUsername: organiser.username 
-      })
-    } else {
-      console.log('❌ No avatar data available')
-      console.log('   - No discourseTopic with avatarTemplate')
-      console.log('   - No organiser.username')
-      console.log('   Organiser will show without avatar')
-    }
-  }
 
-  componentWillUnmount () {
-    // Clean up if needed
+    // Priority 1: use data coming from Discourse topic (when viewing the Discourse thread directly)
+    if (discourseTopic && discourseTopic.avatarTemplate) {
+      this.pendingAvatarUsername = null
+      const fullAvatarUrl = buildAvatarUrl(discourseTopic.avatarTemplate, 50)
+      if (this._isMounted) {
+        this.setState({
+          gravatarUrl: fullAvatarUrl,
+          organiserUsername: discourseTopic.username || organiser.username || null
+        })
+      }
+      return
+    }
+
+    // Priority 2: lookup via organiser.username by querying Discourse
+    if (organiser.username) {
+      const username = organiser.username
+      this.pendingAvatarUsername = username
+
+      if (this._isMounted) {
+        this.setState({
+          organiserUsername: username,
+          gravatarUrl: null
+        })
+      }
+
+      getDiscourseAvatarUrl(username, 50)
+        .then(url => {
+          if (!this._isMounted) {
+            return
+          }
+          if (this.pendingAvatarUsername !== username) {
+            return
+          }
+          this.setState({ gravatarUrl: url || null })
+        })
+        .catch(error => {
+          console.warn('❌ Failed to fetch Discourse avatar for organiser', username, error)
+        })
+      return
+    }
+
+    console.warn('❌ No avatar data available for organiser', organiser)
   }
 
   dcsClick = (node, event) => {
