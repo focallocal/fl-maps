@@ -50,7 +50,12 @@ const EventsSchema = new SimpleSchema({
       
       const { _id, profile } = user
       // Try to get username from services.discourse, fallback to top-level username
-      const username = user.services?.discourse?.username || user.username || null
+      let username = null
+      if (user.services && user.services.discourse && user.services.discourse.username) {
+        username = user.services.discourse.username
+      } else if (user.username) {
+        username = user.username
+      }
       
       console.log('🔍 EventsSchema - resolved username:', username)
       
