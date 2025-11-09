@@ -231,55 +231,35 @@ class Page extends Component {
             </Col>
 
             <Col xs={4} className='right'>
-              {organiser && organiser._id && organiser._id !== '-' && (
-                <div className='creator-info' data-version="v2-conditional">
+              {organiser && organiser._id && organiser._id !== '-' && organiserUsername && (
+                <div className='creator-info' data-version="v3-username-only">
                   <SectionTitle title='Created By' />
                   <div className='creator-details'>
-                    {organiserUsername ? (
-                      <a 
-                        href={`https://publichappinessmovement.com/u/${organiserUsername}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className='creator-link'
-                        data-has-username="true"
-                      >
-                        {gravatarUrl ? (
-                          <img 
-                            src={gravatarUrl} 
-                            alt={organiser.name || 'User avatar'} 
-                            className='creator-avatar'
-                          />
-                        ) : (
-                          <div className='creator-avatar-placeholder'>
-                            {(organiser.name && organiser.name !== '-' ? organiser.name[0] : 'A').toUpperCase()}
-                          </div>
-                        )}
-                        <span className='creator-name'>
-                          {organiser.name && organiser.name !== '-' ? organiser.name : 'Anonymous'}
-                        </span>
-                      </a>
-                    ) : (
-                      <div className='creator-link-wrapper'>
-                        {gravatarUrl ? (
-                          <img 
-                            src={gravatarUrl} 
-                            alt={organiser.name || 'User avatar'} 
-                            className='creator-avatar'
-                          />
-                        ) : (
-                          <div className='creator-avatar-placeholder'>
-                            {(organiser.name && organiser.name !== '-' ? organiser.name[0] : 'A').toUpperCase()}
-                          </div>
-                        )}
-                        <span className='creator-name'>
-                          {organiser.name && organiser.name !== '-' ? organiser.name : 'Anonymous'}
-                        </span>
-                      </div>
-                    )}
+                    <a 
+                      href={`https://publichappinessmovement.com/u/${organiserUsername}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className='creator-link'
+                    >
+                      {gravatarUrl ? (
+                        <img 
+                          src={gravatarUrl} 
+                          alt={organiser.name || 'User avatar'} 
+                          className='creator-avatar'
+                        />
+                      ) : (
+                        <div className='creator-avatar-placeholder'>
+                          {(organiser.name && organiser.name !== '-' ? organiser.name[0] : 'A').toUpperCase()}
+                        </div>
+                      )}
+                      <span className='creator-name'>
+                        {organiser.name && organiser.name !== '-' ? organiser.name : 'Anonymous'}
+                      </span>
+                    </a>
                   </div>
                 </div>
               )}
-              {organiser && organiser._id && organiser._id !== '-' && <Divider />}
+              {organiser && organiser._id && organiser._id !== '-' && organiserUsername && <Divider />}
               <SectionTitle title='Date and Time' />
               <HoursFormatted data={when}/>
               <Divider />

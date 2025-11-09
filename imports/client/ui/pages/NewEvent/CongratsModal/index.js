@@ -185,9 +185,9 @@ function getUrl (_id) {
   const isInIframe = window.self !== window.top
   
   if (isInIframe) {
-    // Navigate to the event page within the iframe
-    // The Docuss plugin will handle creating the topic when needed
-    return `/page/${_id}`
+    // Navigate to the Discourse docuss page for this event
+    // Format: /docuss/m_{eventId}
+    return `/docuss/m_${_id}`
   }
   
   // For standalone mode, use the direct page URL

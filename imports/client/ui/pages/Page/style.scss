@@ -414,6 +414,15 @@ $titles-color: #fff;
     height: 300px;
     width: 100%;
     margin: 32px auto;
+    position: relative;
+    will-change: transform;
+    transform: translateZ(0);
+    
+    /* Force dimensions on child divs */
+    > div {
+      width: 100% !important;
+      height: 300px !important;
+    }
   }
 
   /* Disqus Embedded Comments */
