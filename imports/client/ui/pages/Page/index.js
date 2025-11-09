@@ -232,7 +232,7 @@ class Page extends Component {
 
             <Col xs={4} className='right'>
               {organiser && organiser._id && organiser._id !== '-' && (
-                <div className='creator-info'>
+                <div className='creator-info' data-version="v2-conditional">
                   <SectionTitle title='Created By' />
                   <div className='creator-details'>
                     {organiserUsername ? (
@@ -241,6 +241,7 @@ class Page extends Component {
                         target="_blank"
                         rel="noopener noreferrer"
                         className='creator-link'
+                        data-has-username="true"
                       >
                         {gravatarUrl ? (
                           <img 
@@ -343,12 +344,16 @@ class Page extends Component {
 
   fetchOrganiserData = (organiser) => {
     if (!organiser || !organiser._id) {
+      console.log('❌ No organiser data')
       return
     }
 
-    // Debug: Log what we receive from Discourse
-    console.log('🔍 fetchOrganiserData - discourseTopic:', this.state.discourseTopic)
-    console.log('🔍 fetchOrganiserData - organiser:', organiser)
+    // Debug: Log what we receive
+    console.log('🔍 fetchOrganiserData called')
+    console.log('  - organiser._id:', organiser._id)
+    console.log('  - organiser.name:', organiser.name)
+    console.log('  - organiser.username:', organiser.username)
+    console.log('  - discourseTopic:', this.state.discourseTopic)
 
     // Check if we have topic data from Discourse with avatarTemplate
     const { discourseTopic } = this.state
@@ -361,7 +366,7 @@ class Page extends Component {
         ? avatarUrl 
         : `https://publichappinessmovement.com${avatarUrl}`
       
-      console.log('✅ Using Discourse avatar:', fullAvatarUrl)
+      console.log('✅ Using Discourse topic avatar:', fullAvatarUrl)
       this.setState({ 
         gravatarUrl: fullAvatarUrl,
         organiserUsername: discourseTopic.username || organiser.username
@@ -370,12 +375,16 @@ class Page extends Component {
       // Fallback: Use username from organiser object to construct Discourse avatar URL
       const discourseAvatarUrl = `https://publichappinessmovement.com/user_avatar/publichappinessmovement.com/${organiser.username}/50/`
       console.log('✅ Using stored username avatar:', discourseAvatarUrl)
+      console.log('   Avatar URL:', discourseAvatarUrl)
       this.setState({ 
         gravatarUrl: discourseAvatarUrl,
         organiserUsername: organiser.username 
       })
     } else {
       console.log('❌ No avatar data available')
+      console.log('   - No discourseTopic with avatarTemplate')
+      console.log('   - No organiser.username')
+      console.log('   Organiser will show without avatar')
     }
   }
 

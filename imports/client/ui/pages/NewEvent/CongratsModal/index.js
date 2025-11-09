@@ -88,7 +88,6 @@ class CongratsModal extends Component {
         <ModalFooter>
           <Button 
             href={getUrl(event._id)}
-            target={window.self !== window.top ? "_top" : "_self"}
           >
             Done
           </Button>
@@ -186,12 +185,9 @@ function getUrl (_id) {
   const isInIframe = window.self !== window.top
   
   if (isInIframe) {
-    // Construct the Docuss tag from the event ID
-    // The tag format is m_{eventId}
-    const docussTag = `m_${_id}`
-    // Use tag intersection URL which will show the topic if it exists
-    // or the tag page if no topic exists yet
-    return `https://publichappinessmovement.com/tags/intersection/dcs-comment/${docussTag}`
+    // Navigate to the event page within the iframe
+    // The Docuss plugin will handle creating the topic when needed
+    return `/page/${_id}`
   }
   
   // For standalone mode, use the direct page URL
