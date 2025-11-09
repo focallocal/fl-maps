@@ -293,6 +293,7 @@ $titles-color: #fff;
             text-decoration: none;
             color: inherit;
             transition: opacity 0.2s;
+            flex-wrap: nowrap; /* Prevent wrapping */
 
             &:hover {
               opacity: 0.8;
@@ -331,6 +332,10 @@ $titles-color: #fff;
             .creator-name {
               font-weight: bold;
               color: #007bff;
+              white-space: nowrap; /* Prevent text wrapping */
+              overflow: hidden;
+              text-overflow: ellipsis; /* Show ... if name is too long */
+              max-width: 200px; /* Limit width to prevent overflow */
             }
           }
         }

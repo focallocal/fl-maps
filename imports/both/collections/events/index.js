@@ -43,9 +43,16 @@ const EventsSchema = new SimpleSchema({
         return { _id: '-', name: '-', username: null }
       }
       
+      // Debug: Log the user object structure
+      console.log('🔍 EventsSchema - Meteor.user():', user)
+      console.log('🔍 EventsSchema - user.services:', user.services)
+      console.log('🔍 EventsSchema - user.username:', user.username)
+      
       const { _id, profile } = user
       // Try to get username from services.discourse, fallback to top-level username
       const username = user.services?.discourse?.username || user.username || null
+      
+      console.log('🔍 EventsSchema - resolved username:', username)
       
       return {
         _id,

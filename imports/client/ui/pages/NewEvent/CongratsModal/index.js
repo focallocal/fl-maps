@@ -189,8 +189,9 @@ function getUrl (_id) {
     // Construct the Docuss tag from the event ID
     // The tag format is m_{eventId}
     const docussTag = `m_${_id}`
-    // Use Docuss URL format: /docuss/m_{tag}
-    return `https://publichappinessmovement.com/docuss/${docussTag}`
+    // Use tag intersection URL which will show the topic if it exists
+    // or the tag page if no topic exists yet
+    return `https://publichappinessmovement.com/tags/intersection/dcs-comment/${docussTag}`
   }
   
   // For standalone mode, use the direct page URL
