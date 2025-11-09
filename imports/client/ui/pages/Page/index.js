@@ -321,6 +321,10 @@ class Page extends Component {
       return
     }
 
+    // Debug: Log what we receive from Discourse
+    console.log('🔍 fetchOrganiserData - dcsRoute:', this.props.dcsRoute)
+    console.log('🔍 fetchOrganiserData - organiser:', organiser)
+
     // Check if we have topic data from Discourse with avatarTemplate
     const { dcsRoute } = this.props
     if (dcsRoute && dcsRoute.topic && dcsRoute.topic.avatarTemplate) {
@@ -332,6 +336,7 @@ class Page extends Component {
         ? avatarUrl 
         : `https://publichappinessmovement.com${avatarUrl}`
       
+      console.log('✅ Using Discourse avatar:', fullAvatarUrl)
       this.setState({ 
         gravatarUrl: fullAvatarUrl,
         organiserUsername: dcsRoute.topic.username || organiser.username
@@ -339,10 +344,13 @@ class Page extends Component {
     } else if (organiser.username) {
       // Fallback: Use username from organiser object to construct Discourse avatar URL
       const discourseAvatarUrl = `https://publichappinessmovement.com/user_avatar/publichappinessmovement.com/${organiser.username}/50/`
+      console.log('✅ Using stored username avatar:', discourseAvatarUrl)
       this.setState({ 
         gravatarUrl: discourseAvatarUrl,
         organiserUsername: organiser.username 
       })
+    } else {
+      console.log('❌ No avatar data available')
     }
   }
 

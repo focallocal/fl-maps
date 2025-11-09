@@ -41,10 +41,15 @@ body, h1, h2, h3, h4, h5, p, span {
   min-height: 100vh;
   height: 100%;
   
+  /* Ensure root is positioned for absolute children */
+  position: relative;
+  width: 100%;
+  
   /* Firefox iframe compatibility */
   @supports (-moz-appearance: none) {
-    position: relative;
     min-height: 100vh;
+    /* Prevent scroll issues */
+    overflow: hidden;
   }
   
   /* Safari/iOS viewport height fix */

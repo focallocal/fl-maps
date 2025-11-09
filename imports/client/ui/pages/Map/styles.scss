@@ -26,6 +26,15 @@ body.overflow {
     height: -webkit-fill-available;
   }
   
+  /* Firefox fixes for white screen on scroll */
+  @supports (-moz-appearance: none) {
+    /* Force GPU acceleration to prevent white screen flickering */
+    transform: translateZ(0);
+    will-change: transform;
+    /* Ensure proper rendering */
+    backface-visibility: hidden;
+  }
+  
   /* Prevent scrolling issues in all browsers */
   overflow: hidden;
 
@@ -54,6 +63,15 @@ body.overflow {
     width: calc(100% - #{$map-events-list-width});
     float: right;
     transition: width .2s ease;
+    
+    /* Force Google Maps to calculate dimensions correctly */
+    position: relative;
+    
+    /* Ensure map tiles render in correct position */
+    > div {
+      height: 100% !important;
+      width: 100% !important;
+    }
   }
 
   

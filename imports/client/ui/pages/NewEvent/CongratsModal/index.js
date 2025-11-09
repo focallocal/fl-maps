@@ -177,8 +177,18 @@ function createEventFacebbok () {
 
 // Url for sharing and navigation
 function getUrl (_id) {
+  // Check if we're running in an iframe (Docuss integration)
+  const isInIframe = window.self !== window.top
+  
+  if (isInIframe) {
+    // Construct the Docuss tag from the event ID
+    // The tag format is m_{eventId}
+    const docussTag = `m_${_id}`
+    // Use Docuss URL format: /docuss/m_{tag}
+    return `https://publichappinessmovement.com/docuss/${docussTag}`
+  }
+  
   // For standalone mode, use the direct page URL
-  // For Docuss integration, the page component will handle the Docuss routing
   return Meteor.absoluteUrl('page/' + _id)
 }
 
