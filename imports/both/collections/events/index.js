@@ -38,11 +38,19 @@ const EventsSchema = new SimpleSchema({
     type: Object,
     autoValue: function () {
       // Dont change this!
-      const { _id, profile, username } = Meteor.user() || { _id: '-', profile: { name: '-' }, username: null }
+      const user = Meteor.user()
+      if (!user) {
+        return { _id: '-', name: '-', username: null }
+      }
+      
+      const { _id, profile } = user
+      // Try to get username from services.discourse, fallback to top-level username
+      const username = user.services?.discourse?.username || user.username || null
+      
       return {
         _id,
         name: profile.name,
-        username: username || null
+        username: username
       }
     }
   },

@@ -62,6 +62,20 @@ class MapComponent_ extends Component {
     // keep at bottom of componentDidMount so that the event list is displayed and
     // correct zoom level  when individual page is closed
     this.returnToDefaultAfterPageClose()
+
+    // Fix for white screen / half-page map issue in iframes
+    // Trigger Google Maps resize after a short delay to ensure proper rendering
+    if (inIFrame()) {
+      setTimeout(() => {
+        if (this.map && typeof google !== 'undefined' && google.maps) {
+          google.maps.event.trigger(this.map, 'resize')
+          // Re-center the map if we have a center position
+          if (this.state.center) {
+            this.map.panTo(this.state.center)
+          }
+        }
+      }, 300)
+    }
   }
 
   componentWillUnmount () {

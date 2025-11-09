@@ -86,7 +86,12 @@ class CongratsModal extends Component {
         </ModalBody>
 
         <ModalFooter>
-          <Button href={getUrl(event._id)}>Done</Button>
+          <Button 
+            href={getUrl(event._id)}
+            target={window.self !== window.top ? "_top" : "_self"}
+          >
+            Done
+          </Button>
         </ModalFooter>
       </Modal>
     )
