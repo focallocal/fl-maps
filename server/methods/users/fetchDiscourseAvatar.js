@@ -4,12 +4,12 @@ import { check } from 'meteor/check'
 import { getDiscourseOrigin } from '/imports/both/utils/discourse'
 
 Meteor.methods({
-  'users.fetchDiscourseAvatar' ({ username }) {
-    check(username, String)
-
-    if (!username) {
+  'users.fetchDiscourseAvatar' (input) {
+    const username = typeof input === 'string' ? input : input?.username
+    if (typeof username !== 'string' || username.trim() === '') {
       throw new Meteor.Error('bad-request', 'Username is required')
     }
+    check(username, String)
 
     const origin = getDiscourseOrigin()
     const endpoint = `${origin}/u/${encodeURIComponent(username)}.json`
