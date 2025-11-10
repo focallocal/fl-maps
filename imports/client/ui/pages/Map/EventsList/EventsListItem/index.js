@@ -10,7 +10,7 @@ class ListItem extends Component {
     const {
       item,
       userLocation,
-      userGravatar,
+      avatarUrl,
       ishovered,
     } = this.props
 
@@ -19,6 +19,8 @@ class ListItem extends Component {
       categories,
       address
     } = item
+
+    const fallbackInitial = this.getFallbackInitial(item)
 
     const listItemClass = `event-list-item clickable-list-item ${
       ishovered ? "highlighted" : ""
@@ -30,7 +32,13 @@ class ListItem extends Component {
         className={listItemClass}
         onClick={this.handleItemClick}
       >
-        <img src={userGravatar} className="rounded-circle float-left mr-2" alt=""/>
+        {avatarUrl ? (
+          <img src={avatarUrl} className="events-list-avatar rounded-circle float-left mr-2" alt="" />
+        ) : (
+          <div className="events-list-avatar events-list-avatar--placeholder rounded-circle float-left mr-2">
+            {fallbackInitial}
+          </div>
+        )}
         <div>
           <div className='name'>{name}</div>
           <div className='categories'>{formatCategories(categories)}</div>
@@ -43,11 +51,20 @@ class ListItem extends Component {
   handleItemClick = () => {
      this.props.onItemClick(this.props.item._id)
   }
+
+  getFallbackInitial = (item) => {
+    const name = item?.organiser?.name
+    if (name && name !== '-') {
+      return name.charAt(0).toUpperCase()
+    }
+    return 'A'
+  }
 }
 
 ListItem.propTypes = {
   item: PropTypes.object.isRequired,
   userLocation: PropTypes.any,
+  avatarUrl: PropTypes.string,
   onItemClick: PropTypes.func.isRequired,
 }
 

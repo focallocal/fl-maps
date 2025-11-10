@@ -1,4 +1,40 @@
+import { Meteor } from 'meteor/meteor'
+
 const AVATAR_CACHE = new Map()
+
+const DEFAULT_DISCOURSE_ORIGIN = 'https://publichappinessmovement.com'
+
+function resolveSettingOrigin() {
+  if (typeof Meteor === 'undefined') {
+    return null
+  }
+
+  const publicSettings = Meteor?.settings?.public || {}
+  return (
+    publicSettings.discourseOrigin ||
+    publicSettings.discourse_url ||
+    publicSettings.discourseUrl ||
+    publicSettings.discourse?.origin ||
+    publicSettings.discourse?.url ||
+    null
+  )
+}
+
+export function getDiscourseOrigin() {
+  if (typeof window !== 'undefined') {
+    const fromWindow = window['__DISCOURSE_ORIGIN'] || window['__docussDiscourseOrigin']
+    if (fromWindow) {
+      return fromWindow
+    }
+  }
+
+  const fromSettings = resolveSettingOrigin()
+  if (fromSettings) {
+    return fromSettings
+  }
+
+  return DEFAULT_DISCOURSE_ORIGIN
+}
 
 function normalizeKey(username = '', size = 50) {
   return `${username.toLowerCase()}|${size}`
@@ -20,7 +56,7 @@ export function buildAvatarUrl(template, size = 50) {
     return url
   }
 
-  const origin = typeof window !== 'undefined' && window.location ? window.location.origin : 'https://publichappinessmovement.com'
+  const origin = getDiscourseOrigin()
   return `${origin}${url}`
 }
 
@@ -35,8 +71,10 @@ export async function getDiscourseAvatarUrl(username, size = 50) {
   }
 
   try {
-    const response = await fetch(`/u/${encodeURIComponent(username)}.json`, {
-      credentials: 'include'
+    const origin = getDiscourseOrigin()
+    const response = await fetch(`${origin}/u/${encodeURIComponent(username)}.json`, {
+      credentials: 'include',
+      mode: 'cors'
     })
 
     if (!response.ok) {

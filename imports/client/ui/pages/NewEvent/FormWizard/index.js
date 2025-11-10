@@ -5,6 +5,7 @@ import FirstStep from './FirstStep'
 import SecondStep from './SecondStep'
 import { EventsSchema } from '/imports/both/collections/events'
 import { getHour } from '/imports/both/collections/events/helpers'
+import cloneDeep from 'clone-deep'
 
 class FormWizard extends Component {
   state = {
@@ -14,21 +15,7 @@ class FormWizard extends Component {
   }
 
   render () {
-    const {
-      currentStep,
-      editMode
-    } = this.props
-
-    let model = this.form ? this.form.getModel() : this.loadModelFromStorage()
-
-    if (editMode && window.__editData) {
-      model = { ...window.__editData }
-      delete window.__editData // only needed on 1st renderer, afterwards the data will be retrieved via getModel
-    }
-
-    if (this.state.reset) {
-      model = this.loadModelFromStorage(true)
-    }
+    const { currentStep } = this.props
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -61,13 +48,6 @@ class FormWizard extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const errors = this.validateForm()
-    if (Object.keys(errors).length === 0) {
-      // Handle form submission
-      this.props.onSubmit?.(this.state.formData)
-    } else {
-      this.setState({ errors })
-    }
   }
 
   handleChange = (field, value) => {
@@ -116,13 +96,13 @@ class FormWizard extends Component {
   loadModelFromStorage (empty) {
     // on fields reset, get rid of any previously unfinished New Event
     if (empty === true) {
-      delete window.__unfinishedNewEvent
+      delete window['__unfinishedNewEvent']
     }
 
     let initialObject
 
-    if ('__unfinishedNewEvent' in window) {
-      initialObject = window.__unfinishedNewEvent
+    if (Object.prototype.hasOwnProperty.call(window, '__unfinishedNewEvent')) {
+      initialObject = cloneDeep(window['__unfinishedNewEvent'])
     } else {
       initialObject = EventsSchema.clean({}, { mutate: true }) // get default values
       initialObject.when = {
@@ -137,7 +117,15 @@ class FormWizard extends Component {
   }
 
   componentDidMount() {
-    const initialData = this.loadModelFromStorage()
+    let initialData
+
+    if (this.props.editMode && window['__editData']) {
+      initialData = cloneDeep(window['__editData'])
+      delete window['__editData']
+    } else {
+      initialData = this.loadModelFromStorage()
+    }
+
     this.setState({ formData: initialData })
     this.props.passFormRefToParent(this)
   }

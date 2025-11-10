@@ -33,7 +33,7 @@ class NewEventModal extends Component {
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
-    if (window.__editData) {
+  if (window['__editData']) {
       return {
         ...nextProps,
         editMode: true,
@@ -61,7 +61,7 @@ class NewEventModal extends Component {
 
   componentDidUpdate (prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      delete window.__unfinishedNewEvent
+  delete window['__unfinishedNewEvent']
     }
   }
 
@@ -140,7 +140,7 @@ class NewEventModal extends Component {
     // console.log(this.state.form.getModel())
     this.state.form.validate({ clean: true })
       .then(() => {
-        window.NProgress.set(0.4)
+  window['NProgress']?.set(0.4)
         let model = EventsSchema.clean(this.state.form.getModel())
         if (this.state.editMode) {
           model._id = this.state.form.getModel()._id
@@ -154,7 +154,7 @@ class NewEventModal extends Component {
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
 
-    delete window.__unfinishedNewEvent
+  delete window['__unfinishedNewEvent']
   }
 
   deletePage = () => {
@@ -165,19 +165,28 @@ class NewEventModal extends Component {
   }
 
   onCreateEvent = (eventId) => {
-    routeMatcher.getPageName('/page/' + eventId).then((result) => {
+    return routeMatcher.getPageName('/page/' + eventId).then((pageName) => {
+      if (window['__recentEvent']) {
+        window['__recentEvent'].docussPageName = pageName
+      }
+
       /*comToPlugin.postCreateDcsTags({
-        pageName: result,
+        pageName,
         triggerIds: ['photos', 'videos', 'stories'],
         notificationLevel: 3
       })*/
       comToPlugin.postCreateTopic({
-        title: result,
-        body: `This is where we can talk about ${result}.`,
-        pageName: result,
+        title: pageName,
+        body: `This is where we can talk about ${pageName}.`,
+        pageName,
         triggerId: 'stories',
         notificationLevel: 3
       })
+
+      return pageName
+    }).catch(error => {
+      console.warn('[NewEventModal] Failed to resolve Docuss page name for event', eventId, error)
+      return null
     })
   }
 
@@ -185,12 +194,12 @@ class NewEventModal extends Component {
     Meteor.call('Events.newEvent', model, (err, res) => {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
-        window.__recentEvent = { ...model, _id: res }
+        window['__recentEvent'] = { ...model, _id: res }
         this.onCreateEvent(res)
         this.props.history.push('/thank-you')
       }
 
-      window.NProgress.done()
+      window['NProgress']?.done()
       if (Meteor.isDevelopment) { console.log(err) }
     })
   }
@@ -198,12 +207,12 @@ class NewEventModal extends Component {
   callEditEvent = (model) => {
     Meteor.call('Events.editEvent', model, (err, res) => {
       if (!err) {
-        window.__updatedData = model // update event page.
+        window['__updatedData'] = model // update event page.
         this.setState({ currentStep: 0 })
         this.props.history.push('/page/' + model._id)
       }
 
-      window.NProgress.done()
+      window['NProgress']?.done()
       if (Meteor.isDevelopment) { console.log(err, model) }
     })
   }
@@ -230,7 +239,7 @@ class NewEventModal extends Component {
 
     // toggleModal() closes modal, but it is not called after form submits
     // copy unfinished form to global window and check for it inside FormWizard
-    window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
+    window['__unfinishedNewEvent'] = cloneDeep(this.state.form.getModel())
   }
 
   toggleErrors = () => this.setState({ hasErrors: false })
