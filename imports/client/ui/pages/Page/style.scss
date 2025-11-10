@@ -380,14 +380,17 @@ $titles-color: #fff;
       .report-btn {
         background-color: #c1121f !important; /* stop-sign red */
         border-color: #c1121f !important;
-        color: #000 !important;
+        color: #fff !important;
         font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
         margin-top: 4px;
+        font-size: 0.85rem;
+        padding: 0.35rem 0.5rem !important;
+        width: auto;
+        align-self: flex-start;
 
         i {
-          color: #000 !important;
+          color: #fff !important;
         }
 
         &:hover,
@@ -395,10 +398,10 @@ $titles-color: #fff;
         &:active {
           background-color: #a10e19 !important;
           border-color: #a10e19 !important;
-          color: #000 !important;
+          color: #fff !important;
 
           i {
-            color: #000 !important;
+            color: #fff !important;
           }
         }
       }

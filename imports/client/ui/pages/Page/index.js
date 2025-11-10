@@ -325,23 +325,24 @@ class Page extends Component {
     }
 
     const pageName = data.docussPageName || `m_${data._id}`
-    const docussPath = `/docuss/${pageName}`
     const eventName = data.name || 'this event'
     const isInIframe = window.self !== window.top
 
     if (isInIframe) {
       try {
         window.parent.postMessage({
-          type: 'navigateTo',
-          url: docussPath
+          type: 'flagTopic',
+          pageName,
+          eventId: data._id,
+          eventName
         }, '*')
       } catch (error) {
         console.warn('[Page] Failed to post navigateTo message for report flow', error)
       }
 
-      alert(`We opened the discussion thread for "${eventName}". Use Discourse's flag button on the first post to send a private report to the moderators.`)
+      alert('A private report form will open in the forum. Please describe what happened and submit it to the moderators.')
     } else {
-      window.open(docussPath, '_blank', 'noopener')
+      window.open(`/docuss/${pageName}`, '_blank', 'noopener')
     }
   }
 
