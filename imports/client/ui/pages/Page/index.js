@@ -367,9 +367,9 @@ class Page extends Component {
   const recipients = 'moderators'
   const subject = `Report: ${eventName}`
     const bodySections = [
-      `**Event:** ${eventName}`,
-      `[Open event on the map](${eventUrl})`,
-      docussLink ? `[Open the Docuss discussion](${docussLink})` : null,
+      `Event: ${eventName}`,
+      `Event URL: ${eventUrl}`,
+      docussLink ? `Docuss discussion: ${docussLink}` : null,
       '',
       'Please describe your concern below:'
     ].filter(Boolean)

@@ -49,7 +49,7 @@ const SlideshowBanner = ({ autoScrollInterval = 3000 }) => {
               <img
                 src={item.image}
                 alt={`Slide ${index + 1}`}
-                className="slide-image bubble-effect"
+                className="slide-image"
               />
             </div>
             <div>
