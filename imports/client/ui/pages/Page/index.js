@@ -289,7 +289,7 @@ class Page extends Component {
                   onClick={this.handleReportClick}
                 >
                   <i className='fas fa-flag mr-2' aria-hidden='true' />
-                  Report Event
+                  Report
                 </Button>
               )}
             </Col>

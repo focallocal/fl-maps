@@ -13,11 +13,54 @@ html, body {
   max-width: 100%;
   margin: 0 auto;
   aspect-ratio: 16/9;
+  overflow: hidden;
 }
 
 .slideshow-wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out; // Slide transition effect
+}
+
+.slide-image-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 18px 32px rgba(19, 33, 68, 0.18));
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 4% 6% 8% 6%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.55), rgba(173, 216, 230, 0.12) 55%, rgba(173, 216, 230, 0));
+    opacity: 0.78;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 60%;
+    background: radial-gradient(circle at 65% 70%, rgba(15, 76, 129, 0.15), rgba(15, 76, 129, 0));
+    opacity: 0.6;
+    filter: blur(26px);
+    z-index: 0;
+  }
+
+  .slide-image {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+    filter: saturate(110%) contrast(1.03);
+    image-rendering: auto;
+  }
 }
 
 .slideshow-slide {

@@ -387,7 +387,10 @@ $titles-color: #fff;
         font-size: 0.85rem;
         padding: 0.35rem 0.5rem !important;
         width: auto;
-        align-self: flex-start;
+        align-self: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
 
         i {
           color: #fff !important;
