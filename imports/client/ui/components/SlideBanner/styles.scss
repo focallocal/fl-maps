@@ -10,6 +10,13 @@
   overflow: hidden;
 }
 
+.slideshow-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
 .slide-image {
   width: 100%;
   height: 100%;
@@ -19,11 +26,20 @@
   filter: saturate(100%);
 }
 
+.slide-image-frame {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .slideshow-slide {
   min-width: 100%; // Each slide takes up full width
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex-shrink: 0;
   border-bottom: solid 6px orange;
 }
 
