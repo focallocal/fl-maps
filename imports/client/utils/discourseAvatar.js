@@ -41,7 +41,7 @@ export async function getDiscourseAvatarUrl(username, size = 50) {
 
   try {
     const template = await new Promise((resolve, reject) => {
-      Meteor.call('Users.fetchDiscourseAvatar', { username }, (error, result) => {
+      Meteor.call('users.fetchDiscourseAvatar', username, (error, result) => {
         if (error) {
           reject(error)
         } else {
