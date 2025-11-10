@@ -31,12 +31,63 @@ function VideoButtons({ videoLinksAdded, addLink, removeLink }) {
   )
 }
 
+const formatDateInput = (value) => {
+  if (!value) {
+    return ''
+  }
+
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10)
+  }
+
+  if (typeof value === 'string') {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+      return value
+    }
+
+    const parsed = new Date(value)
+    if (!isNaN(parsed)) {
+      return parsed.toISOString().slice(0, 10)
+    }
+  }
+
+  return ''
+}
+
+const formatTimeInput = (value) => {
+  if (!value) {
+    return ''
+  }
+
+  if (value instanceof Date) {
+    return value.toISOString().slice(11, 16)
+  }
+
+  if (typeof value === 'string') {
+    if (/^\d{2}:\d{2}/.test(value)) {
+      return value.slice(0, 5)
+    }
+
+    const parsed = new Date(value)
+    if (!isNaN(parsed)) {
+      return parsed.toISOString().slice(11, 16)
+    }
+  }
+
+  return ''
+}
+
 const SecondStep = ({ form, onChange, errors }) => {
   const [videoLinksAdded, setVideoLinksAdded] = useState(0)
   const [openEndDate, setOpenEndDate] = useState()
 
   const formData = form?.getModel?.() || {}
   const { days, multipleDays, repeat } = formData.when || {}
+
+  const startingDateValue = formatDateInput(formData.when?.startingDate)
+  const endingDateValue = formatDateInput(formData.when?.endingDate)
+  const startingTimeValue = formatTimeInput(formData.when?.startingTime)
+  const endingTimeValue = formatTimeInput(formData.when?.endingTime)
 
   const [attendeeLimit, setAttendeeLimit] = useState(() => formData.engagement?.limit || '');
 
@@ -92,7 +143,7 @@ const SecondStep = ({ form, onChange, errors }) => {
                   type="date"
                   name="startingDate"
                   id="startingDate"
-                  value={formData.when.startingDate || ''}
+                  value={startingDateValue}
                   onChange={(e) => {
                     const when = formData.when || {}
                     form.change('when', { ...when, startingDate: e.target.value })
@@ -106,7 +157,7 @@ const SecondStep = ({ form, onChange, errors }) => {
                     type="time"
                     name="startingTime"
                     id="startingTime"
-                    value={formData.when.startingTime || ''}
+                    value={startingTimeValue}
                     onChange={(e) => {
                       const when = formData.when || {}
                       form.change('when', { ...when, startingTime: e.target.value })
@@ -123,7 +174,7 @@ const SecondStep = ({ form, onChange, errors }) => {
                     type="date"
                     name="endingDate"
                     id="endingDate"
-                    value={formData.when.endingDate || ''}
+                    value={endingDateValue}
                     onChange={(e) => {
                       const when = form.getModel().when || {};
                       form.change('when', {
@@ -141,7 +192,7 @@ const SecondStep = ({ form, onChange, errors }) => {
                     type="time"
                     name="endingTime"
                     id="endingTime"
-                    value={formData.when?.endingTime || ''}
+                    value={endingTimeValue}
                     onChange={(e) => {
                       const when = formData.when || {}
                       form.change('when', { ...when, endingTime: e.target.value })
@@ -156,7 +207,7 @@ const SecondStep = ({ form, onChange, errors }) => {
                     type="date"
                     name="endingDate"
                     id="endingDate"
-                    value={formData.when.endingDate || ''}
+                    value={endingDateValue}
                     onChange={(e) => {
                       const when = form.getModel().when || {};
                       form.change('when', {

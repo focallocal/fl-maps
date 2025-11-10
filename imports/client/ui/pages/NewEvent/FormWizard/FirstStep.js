@@ -60,14 +60,18 @@ const FirstStep = ({ form, onChange, errors }) => {
     }
   }
 
-  const handleSearchableCategory = (e) => {
-    if (e) {
+  const handleSearchableCategory = (selected) => {
+    if (selected) {
       const selectedOption = {
-        name: e.value,
-        color: e.color
+        name: selected.value,
+        color: selected.color
       }
 
-      form.change('categories', selectedOption);
+      form.change('categories', selectedOption)
+      onChange('categories', selectedOption)
+    } else {
+      form.change('categories', null)
+      onChange('categories', null)
     }
   }
 
@@ -196,8 +200,10 @@ const FirstStep = ({ form, onChange, errors }) => {
       <div className="mb-3">
         <FormGroup noMargin={true}>
           <GoogleAddressInput
+            value={formData.address}
             onPlaceSelected={(address) => {
-              form.change('address', address);
+              form.change('address', address)
+              onChange('address', address)
             }}
           />
         </FormGroup>
@@ -220,6 +226,7 @@ const FirstStep = ({ form, onChange, errors }) => {
           <SearchableCategoryInput
             groupedCategories={Categories}
             handleInputChange={handleSearchableCategory}
+            value={formData.categories}
           />
         </FormGroup>
         {errors?.category && (!formData?.category || formData.category.trim() === '') && (

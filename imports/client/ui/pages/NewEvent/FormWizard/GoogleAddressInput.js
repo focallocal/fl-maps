@@ -1,9 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export const GoogleAddressInput = ({ onPlaceSelected }) => {
+const extractAddressLabel = (value) => {
+  if (!value) {
+    return ''
+  }
+
+  if (typeof value === 'string') {
+    return value
+  }
+
+  if (typeof value === 'object' && value.name) {
+    return value.name
+  }
+
+  return ''
+}
+
+export const GoogleAddressInput = ({ onPlaceSelected, value }) => {
   const containerRef = useRef(null);
   const inputRef = useRef(null);
-  const [selectedAddress, setSelectedAddress] = useState('');
+  const [selectedAddress, setSelectedAddress] = useState(() => extractAddressLabel(value));
 
   useEffect(() => {
     const init = async () => {
@@ -28,6 +44,15 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
       inputRef.current = elem.shadowRoot?.querySelector('input');
 
       containerRef.current.appendChild(elem);
+
+      const initialValue = extractAddressLabel(value);
+      if (initialValue) {
+        elem.value = initialValue;
+        if (inputRef.current) {
+          inputRef.current.value = initialValue;
+        }
+        setSelectedAddress(initialValue);
+      }
 
       elem.addEventListener('gmp-select', async (event) => {
         const prediction = event.placePrediction;
@@ -66,6 +91,22 @@ export const GoogleAddressInput = ({ onPlaceSelected }) => {
 
     init();
   }, [onPlaceSelected]);
+
+  useEffect(() => {
+    const label = extractAddressLabel(value);
+    if (label && label !== selectedAddress) {
+      setSelectedAddress(label);
+      if (containerRef.current) {
+        const elem = containerRef.current.querySelector('gmpx-place-autocomplete');
+        if (elem) {
+          elem.value = label;
+        }
+      }
+      if (inputRef.current) {
+        inputRef.current.value = label;
+      }
+    }
+  }, [selectedAddress, value]);
 
   return (
     <div className="address-form">
