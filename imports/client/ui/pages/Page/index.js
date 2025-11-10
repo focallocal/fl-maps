@@ -363,12 +363,13 @@ class Page extends Component {
     const discourseOrigin = (discourseOriginRaw || fallbackOrigin) ? (discourseOriginRaw || fallbackOrigin).replace(/\/$/, '') : null
     const docussLink = discourseOrigin ? `${discourseOrigin}/docuss/${pageName}` : null
     const eventUrl = window.location.href
+    const shareUrl = data?.shareUrl || data?.congratsShareUrl
 
   const recipients = 'moderators'
   const subject = `Report: ${eventName}`
     const bodySections = [
       `Event: ${eventName}`,
-      `Event URL: ${eventUrl}`,
+      `Event URL: ${shareUrl || eventUrl}`,
       docussLink ? `Docuss discussion: ${docussLink}` : null,
       '',
       'Please describe your concern below:'

@@ -63,11 +63,16 @@ class CongratsModal extends Component {
       return
     }
 
-    const cached = docussPageName
-      ? { ...event, docussPageName }
-      : { ...event }
+    const discourseOrigin = getDiscourseOrigin()
+    const shareUrl = docussPageName
+      ? `${discourseOrigin}/docuss/${docussPageName}`
+      : Meteor.absoluteUrl('page/' + event._id)
 
-  window['cachedDataForPage'] = cached
+    const cached = docussPageName
+      ? { ...event, docussPageName, shareUrl }
+      : { ...event, shareUrl }
+
+    window['cachedDataForPage'] = cached
   }
 
   getResolvedPageName = () => {
