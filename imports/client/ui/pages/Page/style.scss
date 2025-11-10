@@ -377,6 +377,32 @@ $titles-color: #fff;
         margin-bottom: 8px;
       }
 
+      .report-btn {
+        background-color: #c1121f !important; /* stop-sign red */
+        border-color: #c1121f !important;
+        color: #000 !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        margin-top: 4px;
+
+        i {
+          color: #000 !important;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: #a10e19 !important;
+          border-color: #a10e19 !important;
+          color: #000 !important;
+
+          i {
+            color: #000 !important;
+          }
+        }
+      }
+
     }
 
     /* ------------ End Right Column -------------- */

@@ -283,6 +283,15 @@ class Page extends Component {
               </div>
               <Divider />
               {isAuthor && <EditPage data={data} history={history} />}
+              {data && (
+                <Button
+                  className='report-btn'
+                  onClick={this.handleReportClick}
+                >
+                  <i className='fas fa-flag mr-2' aria-hidden='true' />
+                  Report Event
+                </Button>
+              )}
             </Col>
 
           </Row>
@@ -305,6 +314,35 @@ class Page extends Component {
     checkPermissions('deleteEditResource').then(response => {
       this.setState({ editDeletePermission: response })
     })
+  }
+
+  handleReportClick = () => {
+    const { data } = this.state
+
+    if (!data || !data._id) {
+      alert('Event details are still loading. Please try again in a moment.')
+      return
+    }
+
+    const pageName = data.docussPageName || `m_${data._id}`
+    const docussPath = `/docuss/${pageName}`
+    const eventName = data.name || 'this event'
+    const isInIframe = window.self !== window.top
+
+    if (isInIframe) {
+      try {
+        window.parent.postMessage({
+          type: 'navigateTo',
+          url: docussPath
+        }, '*')
+      } catch (error) {
+        console.warn('[Page] Failed to post navigateTo message for report flow', error)
+      }
+
+      alert(`We opened the discussion thread for "${eventName}". Use Discourse's flag button on the first post to send a private report to the moderators.`)
+    } else {
+      window.open(docussPath, '_blank', 'noopener')
+    }
   }
 
   scrollToMap () {
@@ -396,8 +434,17 @@ export function mutateCachedMapState (updatedEntry) {
     mutate the cached object so it is updated with changes made to the current viewd page.
   */
 
-  const entryIndex = window.previousStateOfMap.events.findIndex(e => e._id === updatedEntry._id)
-  window.previousStateOfMap.events[entryIndex] = updatedEntry
+  const previousState = window['previousStateOfMap']
+  if (!previousState || !Array.isArray(previousState.events)) {
+    return
+  }
+
+  const entryIndex = previousState.events.findIndex(e => e._id === updatedEntry._id)
+  if (entryIndex === -1) {
+    return
+  }
+
+  previousState.events[entryIndex] = updatedEntry
 }
 
 Page.propTypes = {
