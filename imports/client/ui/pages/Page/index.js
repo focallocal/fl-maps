@@ -333,11 +333,12 @@ class Page extends Component {
     const docussLink = discourseOrigin ? `${discourseOrigin}/docuss/${pageName}` : null
     const eventUrl = window.location.href
 
-    const subject = `Report: ${eventName}`
+  const recipients = 'moderators'
+  const subject = `Report: ${eventName}`
     const bodySections = [
-      `Event: ${eventName}`,
-      `Event URL: ${eventUrl}`,
-      docussLink ? `Docuss discussion: ${docussLink}` : null,
+      `**Event:** ${eventName}`,
+      `**Event URL:** ${eventUrl}`,
+      docussLink ? `**Docuss discussion:** ${docussLink}` : null,
       '',
       'Please describe your concern below:'
     ].filter(Boolean)
@@ -347,7 +348,7 @@ class Page extends Component {
       try {
         window.parent.postMessage({
           type: 'composeMessage',
-          recipients: 'admins',
+          recipients,
           subject,
           body: messageBody,
           draftKey: `docuss-report-${pageName}`,
@@ -359,7 +360,7 @@ class Page extends Component {
       }
     } else if (discourseOrigin) {
       const query = new URLSearchParams({
-        username: 'admins',
+        username: recipients,
         title: subject,
         body: messageBody
       })

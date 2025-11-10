@@ -385,15 +385,9 @@ $titles-color: #fff;
         letter-spacing: 0.01em;
         margin-top: 4px;
         font-size: 0.85rem;
-        padding: 0.4rem 1.1rem !important;
+        padding: 0.35rem 0.5rem !important;
         width: auto;
         align-self: flex-start;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-        border-radius: 0;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
 
         i {
           color: #fff !important;
@@ -405,8 +399,6 @@ $titles-color: #fff;
           background-color: #a10e19 !important;
           border-color: #a10e19 !important;
           color: #fff !important;
-          transform: scale(1.02);
-          box-shadow: 0 0 0 2px rgba(193, 18, 31, 0.35);
 
           i {
             color: #fff !important;
