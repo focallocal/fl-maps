@@ -1,40 +1,9 @@
 import { Meteor } from 'meteor/meteor'
+import { getDiscourseOrigin as getSharedDiscourseOrigin } from '/imports/both/utils/discourse'
 
 const AVATAR_CACHE = new Map()
 
-const DEFAULT_DISCOURSE_ORIGIN = 'https://publichappinessmovement.com'
-
-function resolveSettingOrigin() {
-  if (typeof Meteor === 'undefined') {
-    return null
-  }
-
-  const publicSettings = Meteor?.settings?.public || {}
-  return (
-    publicSettings.discourseOrigin ||
-    publicSettings.discourse_url ||
-    publicSettings.discourseUrl ||
-    publicSettings.discourse?.origin ||
-    publicSettings.discourse?.url ||
-    null
-  )
-}
-
-export function getDiscourseOrigin() {
-  if (typeof window !== 'undefined') {
-    const fromWindow = window['__DISCOURSE_ORIGIN'] || window['__docussDiscourseOrigin']
-    if (fromWindow) {
-      return fromWindow
-    }
-  }
-
-  const fromSettings = resolveSettingOrigin()
-  if (fromSettings) {
-    return fromSettings
-  }
-
-  return DEFAULT_DISCOURSE_ORIGIN
-}
+export const getDiscourseOrigin = getSharedDiscourseOrigin
 
 function normalizeKey(username = '', size = 50) {
   return `${username.toLowerCase()}|${size}`
@@ -71,20 +40,17 @@ export async function getDiscourseAvatarUrl(username, size = 50) {
   }
 
   try {
-    const origin = getDiscourseOrigin()
-    const response = await fetch(`${origin}/u/${encodeURIComponent(username)}.json`, {
-      credentials: 'include',
-      mode: 'cors'
+    const template = await new Promise((resolve, reject) => {
+      Meteor.call('Users.fetchDiscourseAvatar', { username }, (error, result) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve(result)
+        }
+      })
     })
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`)
-    }
-
-    const data = await response.json()
-    const template = data?.user?.avatar_template
     const resolved = buildAvatarUrl(template, size)
-
     AVATAR_CACHE.set(cacheKey, resolved)
     return resolved
   } catch (error) {
