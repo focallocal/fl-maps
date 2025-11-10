@@ -307,6 +307,36 @@ class Page extends Component {
   }
 
   closePage = () => {
+    const { data } = this.state
+  const globalWindow = /** @type {any} */ (window)
+
+    const previousMapState = globalWindow.previousStateOfMap || {}
+    const coordinates = data?.address?.location?.coordinates
+    let center = previousMapState.center
+    let zoom = previousMapState.zoom || 12
+
+    if (Array.isArray(coordinates) && coordinates.length === 2) {
+      const [lng, lat] = coordinates
+      if (typeof lat === 'number' && typeof lng === 'number') {
+        center = { lat, lng }
+        zoom = 12
+      }
+    }
+
+    if (center) {
+      globalWindow.__savedUserLocation = center
+    }
+
+    globalWindow.previousStateOfMap = {
+      ...previousMapState,
+      center: center || previousMapState.center,
+      zoom,
+      userLocation: center || previousMapState.userLocation || previousMapState.center,
+      currentEvent: null,
+      showFilters: false,
+      filteredEvents: null
+    }
+
     this.setState({ redirect: true })
   }
 
@@ -329,7 +359,8 @@ class Page extends Component {
     const isInIframe = window.self !== window.top
 
     const discourseOriginRaw = getDiscourseOrigin()
-    const discourseOrigin = discourseOriginRaw ? discourseOriginRaw.replace(/\/$/, '') : null
+    const fallbackOrigin = typeof window !== 'undefined' ? window.location.origin : null
+    const discourseOrigin = (discourseOriginRaw || fallbackOrigin) ? (discourseOriginRaw || fallbackOrigin).replace(/\/$/, '') : null
     const docussLink = discourseOrigin ? `${discourseOrigin}/docuss/${pageName}` : null
     const eventUrl = window.location.href
 
@@ -337,8 +368,8 @@ class Page extends Component {
   const subject = `Report: ${eventName}`
     const bodySections = [
       `**Event:** ${eventName}`,
-      `**Event URL:** ${eventUrl}`,
-      docussLink ? `**Docuss discussion:** ${docussLink}` : null,
+      `[Open event on the map](${eventUrl})`,
+      docussLink ? `[Open the Docuss discussion](${docussLink})` : null,
       '',
       'Please describe your concern below:'
     ].filter(Boolean)
@@ -351,7 +382,7 @@ class Page extends Component {
           recipients,
           subject,
           body: messageBody,
-          draftKey: `docuss-report-${pageName}`,
+          draftKey: `docuss-report-${data._id}-${Date.now()}`,
           pageName,
           eventId: data._id
         }, '*')
