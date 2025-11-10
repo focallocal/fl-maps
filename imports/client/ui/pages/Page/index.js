@@ -19,7 +19,7 @@ import DCSLink from '/imports/client/ui/components/DCSLink'
 import { formatCategories } from '/imports/client/utils/format'
 import { scrollToElement } from '/imports/client/utils/DOMInteractions'
 import { checkPermissions } from './../Admin/RolesPermissions/index'
-import { getDiscourseAvatarUrl, buildAvatarUrl } from '/imports/client/utils/discourseAvatar'
+import { getDiscourseAvatarUrl, buildAvatarUrl, getDiscourseOrigin } from '/imports/client/utils/discourseAvatar'
 
 // Styles and Other
 import './style.scss'
@@ -325,24 +325,47 @@ class Page extends Component {
     }
 
     const pageName = data.docussPageName || `m_${data._id}`
-    const eventName = data.name || 'this event'
+    const eventName = data.name?.trim() || 'this event'
     const isInIframe = window.self !== window.top
+
+    const discourseOriginRaw = getDiscourseOrigin()
+    const discourseOrigin = discourseOriginRaw ? discourseOriginRaw.replace(/\/$/, '') : null
+    const docussLink = discourseOrigin ? `${discourseOrigin}/docuss/${pageName}` : null
+    const eventUrl = window.location.href
+
+    const subject = `Report: ${eventName}`
+    const bodySections = [
+      `Event: ${eventName}`,
+      `Event URL: ${eventUrl}`,
+      docussLink ? `Docuss discussion: ${docussLink}` : null,
+      '',
+      'Please describe your concern below:'
+    ].filter(Boolean)
+    const messageBody = bodySections.join('\n')
 
     if (isInIframe) {
       try {
         window.parent.postMessage({
-          type: 'flagTopic',
+          type: 'composeMessage',
+          recipients: 'admins',
+          subject,
+          body: messageBody,
+          draftKey: `docuss-report-${pageName}`,
           pageName,
-          eventId: data._id,
-          eventName
+          eventId: data._id
         }, '*')
       } catch (error) {
-        console.warn('[Page] Failed to post navigateTo message for report flow', error)
+        console.warn('[Page] Failed to request moderator message composer', error)
       }
-
-      alert('A private report form will open in the forum. Please describe what happened and submit it to the moderators.')
+    } else if (discourseOrigin) {
+      const query = new URLSearchParams({
+        username: 'admins',
+        title: subject,
+        body: messageBody
+      })
+      window.open(`${discourseOrigin}/new-message?${query.toString()}`, '_blank', 'noopener')
     } else {
-      window.open(`/docuss/${pageName}`, '_blank', 'noopener')
+      alert('We could not reach the forum messaging system. Please contact the moderators directly.')
     }
   }
 
