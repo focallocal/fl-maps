@@ -4,7 +4,7 @@ import { check } from 'meteor/check'
 import { getDiscourseOrigin } from '/imports/both/utils/discourse'
 
 Meteor.methods({
-  'Users.fetchDiscourseAvatar' ({ username }) {
+  'users.fetchDiscourseAvatar' ({ username }) {
     check(username, String)
 
     if (!username) {
