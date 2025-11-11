@@ -45,13 +45,7 @@ const SlideshowBanner = ({ autoScrollInterval = 3000 }) => {
             <div className='desktop-slide-header-container'>
               <h5 className='desktop-slide-header'>{item.header}</h5>
             </div>
-            <div className="slide-image-frame">
-              <img
-                src={item.image}
-                alt={`Slide ${index + 1}`}
-                className="slide-image"
-              />
-            </div>
+            <img src={item.image} alt={`Slide ${index + 1}`} className="slide-image" />
             <div>
               <div className='mobile-slide-header'>{item.header}</div>
               <div className='slide-sub-header-container'>
