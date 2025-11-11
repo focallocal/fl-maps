@@ -1,66 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Playwrite+DE+VA+Guides&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Playwrite+DE+VA+Guides&display=swap');
 
+html, body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
 .slideshow-container {
   position: relative;
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   aspect-ratio: 16/9;
-  overflow: hidden;
 }
 
 .slideshow-wrapper {
   display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slide-image-frame {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  overflow: visible;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    pointer-events: none;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-  }
-
-  &::before {
-    width: 78%;
-    height: 78%;
-    box-shadow: 0 28px 36px rgba(19, 33, 68, 0.28);
-    filter: blur(2px);
-    opacity: 0.75;
-  }
-
-  &::after {
-    width: 70%;
-    height: 70%;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), rgba(240, 248, 255, 0.2) 55%, rgba(240, 248, 255, 0));
-    mix-blend-mode: screen;
-    opacity: 0.9;
-  }
-}
-
-.slide-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: white;
-  aspect-ratio: 16/9;
-  filter: saturate(108%) contrast(1.02);
+  transition: transform 0.5s ease-in-out; // Slide transition effect
 }
 
 .slideshow-slide {
@@ -68,8 +25,15 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  flex-shrink: 0;
   border-bottom: solid 6px orange;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Ensure the image covers the area without stretching or distorting
+  background-color: white;
+  aspect-ratio: 16/9;
 }
 
 .mobile-slide-header {
