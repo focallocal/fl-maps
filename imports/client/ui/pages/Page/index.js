@@ -362,14 +362,19 @@ class Page extends Component {
     const fallbackOrigin = typeof window !== 'undefined' ? window.location.origin : null
     const discourseOrigin = (discourseOriginRaw || fallbackOrigin) ? (discourseOriginRaw || fallbackOrigin).replace(/\/$/, '') : null
     const docussLink = discourseOrigin ? `${discourseOrigin}/docuss/${pageName}` : null
-    const eventUrl = window.location.href
+    const eventUrl = typeof window !== 'undefined' && window.location ? window.location.href : ''
+    const siteOrigin = typeof window !== 'undefined' && window.location ? window.location.origin : ''
+    const canonicalEventUrl = siteOrigin && data?._id
+      ? `${siteOrigin.replace(/\/$/, '')}/page/${data._id}`
+      : null
     const shareUrl = data?.shareUrl || data?.congratsShareUrl
+    const resolvedShareUrl = shareUrl || docussLink || canonicalEventUrl || eventUrl || 'Not available'
 
-  const recipients = 'moderators'
-  const subject = `Report: ${eventName}`
+    const recipients = 'moderators'
+    const subject = `Report: ${eventName}`
     const bodySections = [
       `Event: ${eventName}`,
-      `Event URL: ${shareUrl || eventUrl}`,
+    `Event URL: ${resolvedShareUrl}`,
       docussLink ? `Docuss discussion: ${docussLink}` : null,
       '',
       'Please describe your concern below:'

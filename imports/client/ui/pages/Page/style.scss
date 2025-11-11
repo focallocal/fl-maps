@@ -386,11 +386,10 @@ $titles-color: #fff;
         margin-top: 4px;
         font-size: 0.85rem;
         padding: 0.35rem 0.5rem !important;
-        width: auto;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto;
-        display: inline-flex;
+        width: auto !important;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
         justify-content: center;
         align-items: center;
 
