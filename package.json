@@ -57,7 +57,7 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
-    "css-loader": "^0.28.11",
+    "css-loader": "^7.1.2",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "eslint": "^8.39.0",
