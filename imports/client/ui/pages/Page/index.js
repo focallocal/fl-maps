@@ -191,10 +191,10 @@ class Page extends Component {
           <Col xs={6} className='text-right'>
             <div className='going-invite-buttons'>
               <Button className='going-btn'>
-                <DCSLink className='docuss-link' badge="true" format="text-link" title="I'm Going" triggerId="going" />
+                <DCSLink className='docuss-link' badge="true" format="text-link" title="I'm Going" triggerId="going" composerTemplate="going" />
               </Button>
               <Button className='invite-btn'>
-                <DCSLink className='docuss-link' badge="true" format="text-link" title="Invite" triggerId="invite" />
+                <DCSLink className='docuss-link' badge="true" format="text-link" title="Invite" triggerId="invite" composerTemplate="invite" />
               </Button>
             </div>
           </Col>
@@ -224,15 +224,15 @@ class Page extends Component {
               <div className='share'>
                 <SectionTitle title={i18n.Map.eventInfo.shareExpTitle} />
                 <Button className='wall-btn'>
-                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" />
+                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" composerTemplate="wall" />
                 </Button>
                 {' '}
                 <Button className='media-btn'>
-                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" />
+                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" composerTemplate="media" />
                 </Button>
                 {' '}
                 <Button className='stories-btn'>
-                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" />
+                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" composerTemplate="stories" />
                 </Button>
               </div>
             </Col>
@@ -284,13 +284,18 @@ class Page extends Component {
               <Divider />
               {isAuthor && <EditPage data={data} history={history} />}
               {data && (
-                <Button
-                  className='report-btn'
-                  onClick={this.handleReportClick}
-                >
-                  <i className='fas fa-flag mr-2' aria-hidden='true' />
-                  Report
-                </Button>
+                <>
+                  <Button
+                    className='report-btn'
+                    onClick={this.handleReportClick}
+                  >
+                    <i className='fas fa-flag mr-2' aria-hidden='true' />
+                    Report
+                  </Button>
+                  <Button className='discuss-report-btn mt-2'>
+                    <DCSLink className='docuss-link' badge="true" format="text-link" title="Discuss Report" triggerId="report" composerTemplate="report" />
+                  </Button>
+                </>
               )}
             </Col>
 

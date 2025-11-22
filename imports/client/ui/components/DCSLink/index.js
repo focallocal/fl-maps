@@ -42,7 +42,7 @@ class DCSLink extends Component {
   }
 
   handleClick = () => {
-    const { triggerId, dcsSelected, history } = this.props
+    const { triggerId, dcsSelected, history, composerTemplate } = this.props
     const url = new URL(location.href)
     
     // If already selected, close the slider by removing params
@@ -50,11 +50,16 @@ class DCSLink extends Component {
       url.searchParams.delete('dcs-layout')
       url.searchParams.delete('dcs-interact-mode')
       url.searchParams.delete('dcs-trigger-id')
+      url.searchParams.delete('composer_template')
     } else {
       // Otherwise, open the slider with this trigger
       url.searchParams.set('dcs-layout', 3)
       url.searchParams.set('dcs-interact-mode', 'DISCUSS')
       url.searchParams.set('dcs-trigger-id', triggerId)
+      // Add composer template if provided
+      if (composerTemplate) {
+        url.searchParams.set('composer_template', composerTemplate)
+      }
     }
     
     const path = url.pathname + url.search
@@ -133,5 +138,6 @@ DCSLink.propTypes = {
   badge: PropTypes.string,
   title: PropTypes.string,
   triggerId: PropTypes.string.isRequired,
-  format: PropTypes.string.isRequired
+  format: PropTypes.string.isRequired,
+  composerTemplate: PropTypes.string
 }
