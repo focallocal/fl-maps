@@ -56,9 +56,18 @@ class DCSLink extends Component {
       url.searchParams.set('dcs-layout', 3)
       url.searchParams.set('dcs-interact-mode', 'DISCUSS')
       url.searchParams.set('dcs-trigger-id', triggerId)
-      // Add composer template if provided
-      if (composerTemplate) {
-        url.searchParams.set('composer_template', composerTemplate)
+      
+      // Send composer template via postMessage to parent window
+      if (composerTemplate && window.parent !== window) {
+        try {
+          window.parent.postMessage({
+            type: 'dcs-composer-template',
+            template: composerTemplate,
+            triggerId: triggerId
+          }, '*')
+        } catch (error) {
+          console.warn('Failed to send composer template to parent:', error)
+        }
       }
     }
     
