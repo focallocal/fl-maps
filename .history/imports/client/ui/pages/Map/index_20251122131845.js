@@ -220,8 +220,7 @@ class MapComponent_ extends Component {
       overlapping = true
     }
 
-    // Center map on clicked marker without delay
-    this.map.panTo(latLng)
+    // Removed panTo to prevent map jump
 
     this.setState({
       zoom: overlapping ? 22 : 18,
