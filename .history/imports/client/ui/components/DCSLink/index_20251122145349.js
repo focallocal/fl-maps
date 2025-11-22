@@ -81,7 +81,7 @@ class DCSLink extends Component {
       return (
         <span 
           className={className + ' dcs-link' + (dcsSelected ? ' dcs-selected' : '')}
-          onClick={this.handleClick}
+          onClick={() => history.push(path)}
           style={{ cursor: 'pointer' }}
         >
           <span className="dcs-link-title">{title}</span>
@@ -94,7 +94,7 @@ class DCSLink extends Component {
     } else if (format === 'text-link') {
       return (
         <span
-          onClick={this.handleClick}
+          onClick={() => history.push(path)}
           className={className + ' dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
         >
           <span className="dcs-link-title text-title">{title}</span>

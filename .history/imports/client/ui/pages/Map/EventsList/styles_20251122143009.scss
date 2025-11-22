@@ -1,0 +1,46 @@
+@import '{}/imports/client/stylesheets/variables.scss';
+
+#events-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $map-events-list-width;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  transition: transform .25s ease;
+  will-change: transform;
+  z-index: 2;
+
+  &.offset-standalone-menu {
+    height: calc(100vh - #{$menu-height})!important;
+  }
+
+  .header {
+    position: relative;
+    padding: 20px;
+
+    #google-maps-searchbox {
+      position: relative;
+      right: 2px;
+      height: 48px;
+    }
+  }
+
+  .va-center {
+    position: relative;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 140px);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .no-near-events {
+    color: rgba(0, 0, 0, .5);
+  }
+}

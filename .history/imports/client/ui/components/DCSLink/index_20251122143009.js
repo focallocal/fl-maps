@@ -41,28 +41,14 @@ class DCSLink extends Component {
     initDeselectHandler(history)
   }
 
-  handleClick = () => {
-    const { triggerId, dcsSelected, history } = this.props
-    const url = new URL(location.href)
-    
-    // If already selected, close the slider by removing params
-    if (dcsSelected) {
-      url.searchParams.delete('dcs-layout')
-      url.searchParams.delete('dcs-interact-mode')
-      url.searchParams.delete('dcs-trigger-id')
-    } else {
-      // Otherwise, open the slider with this trigger
-      url.searchParams.set('dcs-layout', 3)
-      url.searchParams.set('dcs-interact-mode', 'DISCUSS')
-      url.searchParams.set('dcs-trigger-id', triggerId)
-    }
-    
-    const path = url.pathname + url.search
-    history.push(path)
-  }
-
   render () {
     const { title, triggerId, dcsSelected, dcsCount, history, format, badge, className } = this.props
+
+    const url = new URL(location.href)
+    url.searchParams.set('dcs-layout', 3)
+    url.searchParams.set('dcs-interact-mode', 'DISCUSS')
+    url.searchParams.set('dcs-trigger-id', triggerId)
+    const path = url.pathname + url.search
 
     let renderBadge = (
       <span
@@ -81,7 +67,7 @@ class DCSLink extends Component {
       return (
         <span 
           className={className + ' dcs-link' + (dcsSelected ? ' dcs-selected' : '')}
-          onClick={this.handleClick}
+          onClick={() => history.push(path)}
           style={{ cursor: 'pointer' }}
         >
           <span className="dcs-link-title">{title}</span>
@@ -94,7 +80,7 @@ class DCSLink extends Component {
     } else if (format === 'text-link') {
       return (
         <span
-          onClick={this.handleClick}
+          onClick={() => history.push(path)}
           className={className + ' dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
         >
           <span className="dcs-link-title text-title">{title}</span>
