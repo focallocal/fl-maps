@@ -63,11 +63,6 @@ class EventsList extends Component {
     }
   }
 
-  handleWheel = (e) => {
-    // Stop wheel events from propagating to the Google Map
-    e.stopPropagation()
-  }
-
   populateAvatarMap = (events = []) => {
     if (!Array.isArray(events)) {
       return

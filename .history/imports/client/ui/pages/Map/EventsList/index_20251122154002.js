@@ -55,17 +55,6 @@ class EventsList extends Component {
   componentWillUnmount () {
     this._isMounted = false
     this.pendingAvatarLookups.clear()
-    
-    // Clean up wheel event listener
-    const eventsList = document.getElementById('events-list')
-    if (eventsList) {
-      eventsList.removeEventListener('wheel', this.handleWheel)
-    }
-  }
-
-  handleWheel = (e) => {
-    // Stop wheel events from propagating to the Google Map
-    e.stopPropagation()
   }
 
   populateAvatarMap = (events = []) => {
