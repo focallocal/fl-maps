@@ -220,7 +220,9 @@ class MapComponent_ extends Component {
       overlapping = true
     }
 
-    // Removed panTo to prevent map jump
+    setTimeout(() => {
+      this.map.panTo(latLng)
+    }, 35)
 
     this.setState({
       zoom: overlapping ? 22 : 18,
