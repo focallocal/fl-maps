@@ -92,11 +92,11 @@ class NewEventModal extends Component {
     const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete Page</Button> : null
 
     return hasGoogleMapsLoaded && (
-      <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg' unmountOnClose={false} scrollable>
+      <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg' unmountOnClose={false}>
         <ModalHeader toggle={this.toggleModal}>
           {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
-        <ModalBody>
+        <ModalBody innerRef={this.modalBodyRef}>
           <FormWizard
             currentStep={currentStep}
             passFormRefToParent={this.getRef}
