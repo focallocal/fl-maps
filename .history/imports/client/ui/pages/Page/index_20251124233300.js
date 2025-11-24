@@ -274,26 +274,15 @@ class Page extends Component {
               </div>
               <Divider />
               {isAuthor && <EditPage data={data} history={history} />}
-              <div className='event-actions'>
-                {isAuthor && (
-                  <Button
-                    className='delete-btn'
-                    onClick={this.toggleDeleteModal}
-                  >
-                    <i className='fas fa-trash-alt mr-2' aria-hidden='true' />
-                    Delete
-                  </Button>
-                )}
-                {data && (
-                  <Button
-                    className='report-btn'
-                    onClick={this.handleReportClick}
-                  >
-                    <i className='fas fa-flag mr-2' aria-hidden='true' />
-                    Report
-                  </Button>
-                )}
-              </div>
+              {data && (
+                <Button
+                  className='report-btn'
+                  onClick={this.handleReportClick}
+                >
+                  <i className='fas fa-flag mr-2' aria-hidden='true' />
+                  Report
+                </Button>
+              )}
             </Col>
 
           </Row>
@@ -304,21 +293,6 @@ class Page extends Component {
             src={mapUrl}
           />
         </Container>
-
-        <Modal isOpen={this.state.showDeleteModal} toggle={this.toggleDeleteModal}>
-          <ModalHeader toggle={this.toggleDeleteModal}>Delete Event</ModalHeader>
-          <ModalBody>
-            Are you sure you want to delete this event? This action cannot be undone.
-          </ModalBody>
-          <ModalFooter>
-            <Button color='secondary' onClick={this.toggleDeleteModal}>
-              No, Cancel
-            </Button>
-            <Button color='danger' onClick={this.handleDeleteEvent}>
-              Yes, Delete
-            </Button>
-          </ModalFooter>
-        </Modal>
       </div>
     )
   }

@@ -304,21 +304,6 @@ class Page extends Component {
             src={mapUrl}
           />
         </Container>
-
-        <Modal isOpen={this.state.showDeleteModal} toggle={this.toggleDeleteModal}>
-          <ModalHeader toggle={this.toggleDeleteModal}>Delete Event</ModalHeader>
-          <ModalBody>
-            Are you sure you want to delete this event? This action cannot be undone.
-          </ModalBody>
-          <ModalFooter>
-            <Button color='secondary' onClick={this.toggleDeleteModal}>
-              No, Cancel
-            </Button>
-            <Button color='danger' onClick={this.handleDeleteEvent}>
-              Yes, Delete
-            </Button>
-          </ModalFooter>
-        </Modal>
       </div>
     )
   }
