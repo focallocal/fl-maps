@@ -44,7 +44,7 @@ class DCSLink extends Component {
   handleClick = (e) => {
     // Prevent event from bubbling to parent Button or other handlers
     if (e) {
-      e.stopPropagation()
+      // stopPropagation is intentionally omitted so parent buttons remain clickable
       e.preventDefault()
     }
     

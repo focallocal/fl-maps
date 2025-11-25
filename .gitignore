@@ -7,6 +7,7 @@ deployment.tar
 .deploy
 .deploy/
 .idea/
+.history/
 *.tar
 travis-ssh-key
 .DS_Store

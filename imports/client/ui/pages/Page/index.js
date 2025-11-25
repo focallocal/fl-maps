@@ -176,6 +176,19 @@ class Page extends Component {
       isAuthor = editDeletePermission
     }
 
+    if (Meteor.isDevelopment) {
+      const organiserId = organiser && organiser._id ? organiser._id : null
+      const userId = user && user._id ? user._id : null
+      // Surface auth state to diagnose missing delete button reports
+      console.debug('🔐 Delete button state', {
+        isLoggedIn,
+        userId,
+        organiserId,
+        editDeletePermission,
+        isAuthor
+      })
+    }
+
     return (
       <div id='page' onClick={e => this.dcsClick(null, e)}>
         <div className='header'>
