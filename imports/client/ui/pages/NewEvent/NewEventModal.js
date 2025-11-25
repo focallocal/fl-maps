@@ -28,6 +28,7 @@ class NewEventModal extends Component {
     }
 
     this.modalBodyRef = React.createRef()
+    this.modalWheelListenerAttached = false
 
     if (window.google) {
       this.state.googleLoaded = true
@@ -59,17 +60,33 @@ class NewEventModal extends Component {
         this.setState({ googleLoaded: true })
       }
     }, 1000) // 1 second
+
+    // Attempt to lock scrolling within the modal body once it exists
+    this.attachModalScrollLock()
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate (prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
   delete window['__unfinishedNewEvent']
+    }
+
+    // When modal opens (or after google assets load), ensure scroll lock is attached
+    const wasOpen = !!(prevState && prevState.isOpen)
+    const isOpen = !!this.state.isOpen
+
+    if (!wasOpen && isOpen) {
+      this.attachModalScrollLock()
+    } else if (wasOpen && !isOpen) {
+      this.detachModalScrollLock()
+    } else if (isOpen) {
+      this.attachModalScrollLock()
     }
   }
 
   componentWillUnmount () {
     clearInterval(this.interval)
     this.interval = null
+    this.detachModalScrollLock()
   }
 
   render () {
@@ -96,7 +113,7 @@ class NewEventModal extends Component {
         <ModalHeader toggle={this.toggleModal}>
           {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
-        <ModalBody>
+        <ModalBody innerRef={this.modalBodyRef}>
           <FormWizard
             currentStep={currentStep}
             passFormRefToParent={this.getRef}
@@ -248,6 +265,45 @@ class NewEventModal extends Component {
 
   getRef = (form) => {
     this.setState({ form: form })
+  }
+
+  attachModalScrollLock = () => {
+    const modalBody = this.modalBodyRef.current
+
+    if (!modalBody || this.modalWheelListenerAttached) {
+      return
+    }
+
+    modalBody.addEventListener('wheel', this.handleModalWheel, { passive: false })
+    this.modalWheelListenerAttached = true
+  }
+
+  detachModalScrollLock = () => {
+    const modalBody = this.modalBodyRef.current
+
+    if (!modalBody || !this.modalWheelListenerAttached) {
+      return
+    }
+
+    modalBody.removeEventListener('wheel', this.handleModalWheel)
+    this.modalWheelListenerAttached = false
+  }
+
+  handleModalWheel = (event) => {
+    const modalBody = this.modalBodyRef.current
+
+    if (!modalBody) {
+      return
+    }
+
+    const deltaY = event.deltaY || 0
+    const atTop = modalBody.scrollTop <= 0
+    const atBottom = Math.ceil(modalBody.scrollTop + modalBody.clientHeight) >= modalBody.scrollHeight
+
+    if ((deltaY < 0 && atTop) || (deltaY > 0 && atBottom)) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
   }
 }
 

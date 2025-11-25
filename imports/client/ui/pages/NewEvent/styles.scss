@@ -3,10 +3,11 @@
     min-width: 300px;
 
     .modal-body {
-      max-height: 70vh !important;
-      overflow-y: auto !important;
-      overflow-x: hidden !important;
+      max-height: 70vh;
+      overflow-y: auto;
+      overflow-x: hidden;
       -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+      overscroll-behavior: contain; /* Keep the wheel/touch events inside the modal */
 
       .reset {
         position: absolute;
