@@ -167,9 +167,9 @@ class Page extends Component {
     const mapUrl = 'https://www.google.com/maps/embed/v1/place?key=' + key + '&q=' + address.name
 
     const isLoggedIn = !!user
-    let isAuthor = false
+    let isAuthor
 
-    if (isLoggedIn && organiser && organiser._id) {
+    if (isLoggedIn) {
       isAuthor = user._id === organiser._id
     }
     if (isLoggedIn && editDeletePermission) {
@@ -191,12 +191,8 @@ class Page extends Component {
           </Col>
           <Col xs={6} className='text-right'>
             <div className='going-invite-buttons'>
-              <Button className='going-btn'>
-                <DCSLink className='docuss-link' badge="true" format="text-link" title="I'm Going" triggerId="going" composerTemplate="going" />
-              </Button>
-              <Button className='invite-btn'>
-                <DCSLink className='docuss-link' badge="true" format="text-link" title="Invite" triggerId="invite" composerTemplate="invite" />
-              </Button>
+              <DCSLink className='docuss-link going-btn' badge="true" format="text-link" title="I'm Going" triggerId="going" composerTemplate="going" />
+              <DCSLink className='docuss-link invite-btn' badge="true" format="text-link" title="Invite" triggerId="invite" composerTemplate="invite" />
             </div>
           </Col>
         </Row>
@@ -224,17 +220,11 @@ class Page extends Component {
               </div>
               <div className='share'>
                 <SectionTitle title={i18n.Map.eventInfo.shareExpTitle} />
-                <Button className='wall-btn'>
-                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" composerTemplate="wall" />
-                </Button>
+                <DCSLink className='docuss-link wall-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.wall.title} triggerId="wall" composerTemplate="wall" />
                 {' '}
-                <Button className='media-btn'>
-                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" composerTemplate="media" />
-                </Button>
+                <DCSLink className='docuss-link media-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.media.title} triggerId="media" composerTemplate="media" />
                 {' '}
-                <Button className='stories-btn'>
-                  <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" composerTemplate="stories" />
-                </Button>
+                <DCSLink className='docuss-link stories-btn' badge="true" format="text-link" title={i18n.Map.eventInfo.stories.title} triggerId="stories" composerTemplate="stories" />
               </div>
             </Col>
 

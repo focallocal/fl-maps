@@ -1,0 +1,612 @@
+@import '{}/imports/client/stylesheets/variables.scss';
+$titles-color: #fff;
+
+#page {
+
+  /* Page Action Buttons Row */
+  .page-action-buttons {
+    margin: 15px 0;
+    padding: 0 15px;
+
+    .col-6 {
+      display: flex;
+      align-items: center;
+
+      &.text-right {
+        justify-content: flex-end;
+      }
+    }
+
+    .going-invite-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      align-items: flex-end;
+      
+      /* IE11 gap fallback */
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        gap: 0;
+        
+        .going-btn {
+          margin-bottom: 8px;
+        }
+      }
+
+      .going-btn,
+      .invite-btn {
+        min-width: 150px;
+      }
+    }
+  }
+
+  /* Shared styles for all Docuss buttons */
+  .going-btn,
+  .invite-btn,
+  .wall-btn,
+  .media-btn,
+  .stories-btn {
+    padding: 0.375rem 0.75rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+
+    .docuss-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      .text-title {
+        font-weight: bold !important;
+      }
+
+      .dcs-badge {
+        font-weight: bold !important;
+        margin-left: 8px !important;
+        display: inline-block !important;
+      }
+    }
+  }
+
+  /* Going button - Sky Blue */
+  .going-btn {
+    background-color: #87CEEB !important;
+    border-color: #87CEEB !important;
+
+    &:hover, &:focus, &:active {
+      background-color: #6BB6D9 !important;
+      border-color: #6BB6D9 !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
+      }
+
+      .dcs-badge {
+        background-color: #FF6600 !important;
+        color: black !important;
+      }
+    }
+  }
+
+  /* Invite button - Teal/Turquoise */
+  .invite-btn {
+    background-color: #20B2AA !important;
+    border-color: #20B2AA !important;
+
+    &:hover, &:focus, &:active {
+      background-color: #1A9A92 !important;
+      border-color: #1A9A92 !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
+      }
+
+      .dcs-badge {
+        background-color: #FFD700 !important;
+        color: black !important;
+      }
+    }
+  }
+
+  /* Wall button - Vibrant Pink */
+  .wall-btn {
+    background-color: #FF1493 !important;
+    border-color: #FF1493 !important;
+
+    &:hover, &:focus, &:active {
+      background-color: #E0127E !important;
+      border-color: #E0127E !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
+      }
+
+      .dcs-badge {
+        background-color: #FFD700 !important; /* Gold for contrast */
+        color: black !important;
+      }
+    }
+  }
+
+  /* Media button - Bright Orange */
+  .media-btn {
+    background-color: #FF8C00 !important;
+    border-color: #FF8C00 !important;
+
+    &:hover, &:focus, &:active {
+      background-color: #E07D00 !important;
+      border-color: #E07D00 !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
+      }
+
+      .dcs-badge {
+        background-color: #4169E1 !important; /* Royal blue for contrast */
+        color: white !important;
+      }
+    }
+  }
+
+  /* Stories button - Purple/Violet */
+  .stories-btn {
+    background-color: #9370DB !important;
+    border-color: #9370DB !important;
+
+    &:hover, &:focus, &:active {
+      background-color: #7D5BC4 !important;
+      border-color: #7D5BC4 !important;
+    }
+
+    .docuss-link {
+      color: white !important;
+      
+      .text-title {
+        color: white !important;
+      }
+
+      .dcs-badge {
+        background-color: #32CD32 !important; /* Lime green for contrast */
+        color: black !important;
+      }
+    }
+  }
+
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vw;
+    min-height: 250px;
+    margin: 0 0 15px 0;
+    
+    /* Safari/iOS vw units fix */
+    @supports (-webkit-touch-callout: none) {
+      height: 250px;
+      max-height: 350px;
+    }
+
+    .subscribe {
+      align-self: flex-end;
+      z-index: 100;
+      right: 0;
+    }
+  }
+
+  .body * {
+    white-space: pre-wrap;
+  }
+
+  .body {
+    width: 80%;
+    margin: 24px auto;
+    font-size: 1.2rem;
+    color: #666A73;
+
+    .row {
+      width: 100%;
+      justify-content: space-between;
+      word-wrap: break-word;
+    }
+
+    .section-title {
+      margin-bottom: 8px;
+      font-weight: bolder;
+    }
+
+    /* --------------
+        Left Column
+       -------------- */
+
+    .left {
+
+      .title-wrapper {
+        width: 100%;
+        color: rgb(50, 52, 56);
+        font-weight: bolder;
+        word-wrap: break-word;
+        overflow: auto;
+      }
+
+      .title {
+        font-size: 2rem;
+        margin: 5px 0 10px;
+      }
+
+      .sub-title-categories {
+        font-size: 1.4rem;
+      }
+
+      .intro,
+      .meet-me,
+      .description {
+        margin: 20px 0;
+      }
+
+      .share {
+        margin-top: 20px;
+
+        .wall-btn,
+        .media-btn,
+        .stories-btn {
+          margin-right: 8px;
+          margin-bottom: 8px;
+        }
+      }
+
+    }
+
+    /* ---------------
+        Right Column
+       --------------- */
+    .right {
+      width: 300px;
+      max-width: 300px;
+      padding-top: 15px;
+
+      .creator-info {
+        .creator-details {
+          margin-top: 8px;
+          
+          .creator-link,
+          .creator-link-wrapper {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s;
+            flex-wrap: nowrap; /* Prevent wrapping */
+
+            &:hover {
+              opacity: 0.8;
+            }
+
+            .creator-avatar {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              margin-right: 12px;
+              object-fit: cover;
+              
+              /* Fallback for older browsers without object-fit support */
+              @supports not (object-fit: cover) {
+                width: 50px;
+                height: 50px;
+                max-width: 50px;
+                max-height: 50px;
+              }
+            }
+
+            .creator-avatar-placeholder {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              margin-right: 12px;
+              background-color: #87CEEB;
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 24px;
+              font-weight: bold;
+            }
+
+            .creator-name {
+              font-weight: bold;
+              color: #007bff;
+              white-space: nowrap; /* Prevent text wrapping */
+              overflow: hidden;
+              text-overflow: ellipsis; /* Show ... if name is too long */
+              max-width: 200px; /* Limit width to prevent overflow */
+            }
+          }
+        }
+      }
+
+      .hours-formatted {
+
+        .date {
+          margin-bottom: 8px;
+        }
+
+        .day {
+          display: flex;
+          justify-content: space-between;
+
+          &>div:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .location {
+
+        .view-map {
+          color: #007bff;
+          font-size: .9em;
+          cursor: pointer;
+        }
+      }
+
+      .social {
+        .social__subheading {
+          font-size: 0.75em;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+
+      .event-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 4px;
+        justify-content: center;
+      }
+
+      .delete-btn {
+        background-color: #dc3545 !important;
+        border-color: #dc3545 !important;
+        color: #fff !important;
+        font-weight: bold;
+        letter-spacing: 0.01em;
+        font-size: 0.85rem;
+        padding: 0.35rem 0.5rem !important;
+        width: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          color: #fff !important;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: #c82333 !important;
+          border-color: #bd2130 !important;
+          color: #fff !important;
+
+          i {
+            color: #fff !important;
+          }
+        }
+      }
+
+      .report-btn {
+        background-color: #c1121f !important; /* stop-sign red */
+        border-color: #c1121f !important;
+        color: #fff !important;
+        font-weight: bold;
+        letter-spacing: 0.01em;
+        font-size: 0.85rem;
+        padding: 0.35rem 0.5rem !important;
+        width: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          color: #fff !important;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: #a10e19 !important;
+          border-color: #a10e19 !important;
+          color: #fff !important;
+
+          i {
+            color: #fff !important;
+          }
+        }
+      }
+
+    }
+
+    /* ------------ End Right Column -------------- */
+  }
+
+  .divider {
+    height: 1px;
+    width: 95%;
+    margin: 24px auto;
+    background: rgba(0, 0, 0, 0.24);
+
+    &.sections {
+      width: 50%;
+    }
+  }
+
+  .fixed-bg {
+    background: $primary-blue !important;
+
+    &.active {
+      background: $primary-blue-darker !important;
+    }
+  }
+
+  .err-msg {
+    margin-top: -5px;
+    font-size: .6em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Google Maps IFrame */
+  .embedded-map {
+    display: block;
+    height: 300px;
+    width: 100%;
+    margin: 32px auto;
+    position: relative;
+    will-change: transform;
+    transform: translateZ(0);
+    
+    /* Force dimensions on child divs */
+    > div {
+      width: 100% !important;
+      height: 300px !important;
+    }
+  }
+
+  /* Disqus Embedded Comments */
+  #disqus_thread {
+    overflow: auto;
+    max-height: 600px;
+    width: 97%;
+    margin-top: 16px;
+    padding: 1.5%;
+  }
+
+  @media screen and (max-width: 860px) {
+
+    & {
+
+      .header .title-wrapper {
+        width: 95%;
+      }
+
+      .body {
+        width: 95%;
+
+        /* --------------
+            Right Column
+           -------------- */
+        .right {
+          width: 350px;
+          max-width: 350px;
+          flex: 0 0 39%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    & {
+      .page-action-buttons {
+        margin: 15px 0;
+        padding: 0;
+
+        .col-6 {
+          padding-left: 0;
+          padding-right: 0;
+
+          &:last-child {
+            padding-left: 5px;
+          }
+
+          &:first-child {
+            padding-right: 5px;
+          }
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .going-invite-buttons {
+          width: 100%;
+          align-items: stretch;
+
+          .going-btn,
+          .invite-btn {
+            width: 100%;
+            min-width: auto;
+          }
+        }
+      }
+
+      .body {
+        .left,
+        .right {
+          max-width: 95%;
+          flex: 0 0 100%;
+          margin-bottom: 24px;
+          padding-right: 0;
+        }
+
+        .left {
+          .title {
+            font-size: 1.5rem;
+          }
+    
+          .sub-title-categories {
+            font-size: 1em;
+          }
+        }
+
+        .hours-formatted {
+          width: 302px;
+        }
+
+        .divider {
+          height: 0 !important;
+        }
+      }
+
+      .embedded-map {
+        height: 200px;
+        margin: 16px auto 0 auto;
+        padding: 0 20px;
+      }
+
+      #disqus_thread {
+        margin: 16px auto;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+
+    & {
+
+      .body {
+        width: 90%;
+      }
+    }
+  }
+}
