@@ -614,12 +614,8 @@ $titles-color: #fff;
   }
 
   @media screen and (max-width: 520px) {
-
-    & {
-
-      .body {
-        width: 90%;
-      }
+    .body {
+      width: 90%;
     }
   }
 }

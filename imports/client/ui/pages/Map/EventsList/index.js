@@ -38,12 +38,6 @@ class EventsList extends Component {
   componentDidMount () {
     this._isMounted = true
     this.populateAvatarMap(this.props.events)
-    
-    // Ensure mouse wheel scrolling works on events list
-    const eventsList = document.getElementById('events-list')
-    if (eventsList) {
-      eventsList.addEventListener('wheel', this.handleWheel, { passive: false })
-    }
   }
 
   componentDidUpdate (prevProps) {
@@ -55,17 +49,6 @@ class EventsList extends Component {
   componentWillUnmount () {
     this._isMounted = false
     this.pendingAvatarLookups.clear()
-    
-    // Clean up wheel event listener
-    const eventsList = document.getElementById('events-list')
-    if (eventsList) {
-      eventsList.removeEventListener('wheel', this.handleWheel)
-    }
-  }
-
-  handleWheel = (e) => {
-    // Stop wheel events from propagating to the Google Map
-    e.stopPropagation()
   }
 
   populateAvatarMap = (events = []) => {
