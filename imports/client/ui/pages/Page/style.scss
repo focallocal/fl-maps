@@ -6,17 +6,10 @@ $titles-color: #fff;
   /* Page Action Buttons Row */
   .page-action-buttons {
     margin: 15px 0;
-    padding: 0 15px;
-
-    .col-6 {
-      display: flex;
-      align-items: center;
-
-      &.text-right {
-        justify-content: flex-end;
-      }
-    }
-
+    border-radius: 0 !important;
+    width: 100%;
+    justify-content: space-between;
+    display: flex !important;
     .going-invite-buttons {
       display: flex;
       flex-direction: column;
@@ -229,17 +222,6 @@ $titles-color: #fff;
     font-size: 1.2rem;
     color: #666A73;
 
-    border-radius: 0 !important;
-      width: 100%;
-      justify-content: space-between;
-      display: flex !important;
-    }
-
-      width: 100%;
-      height: 100%;
-      padding: 0.375rem 0.75rem;
-      box-sizing: border-box;
-      cursor: pointer;
     .section-title {
       margin-bottom: 8px;
       font-weight: bolder;
