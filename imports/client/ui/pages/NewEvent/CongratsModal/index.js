@@ -136,19 +136,21 @@ class CongratsModal extends Component {
     }
 
     this.ensureDocussPageName().then(pageName => {
-      // Use pageName if available, otherwise fall back to m_eventId format
-      const docussPath = pageName ? `/docuss/${pageName}` : `/docuss/m_${event._id}`
+      const resolvedPageName = pageName || `m_${event._id}`
+      const docussPath = `/docuss/${resolvedPageName}`
 
       console.log('🚀 Navigate after event creation:', {
         eventId: event._id,
-        pageName,
+        pageName: resolvedPageName,
         docussPath
       })
 
       window.parent.postMessage({
         type: 'navigateTo',
         url: docussPath,
-        delay: 500 // Add 500ms delay to allow page to be created/rendered
+        delay: 500,
+        waitForPageName: resolvedPageName,
+        waitTimeout: 8000
       }, '*')
     })
   }

@@ -38,6 +38,7 @@ class EventsList extends Component {
   componentDidMount () {
     this._isMounted = true
     this.populateAvatarMap(this.props.events)
+    this.attachWheelListener()
   }
 
   componentDidUpdate (prevProps) {
@@ -49,6 +50,7 @@ class EventsList extends Component {
   componentWillUnmount () {
     this._isMounted = false
     this.pendingAvatarLookups.clear()
+    this.detachWheelListener()
   }
 
   populateAvatarMap = (events = []) => {
@@ -167,6 +169,39 @@ class EventsList extends Component {
 
   returnToList = () => {
     this.props.removeCurrentEvent()
+  }
+
+  attachWheelListener = () => {
+    const listElement = document.getElementById('events-list')
+    if (listElement && !this.wheelListenerAttached) {
+      listElement.addEventListener('wheel', this.handleWheel, { passive: false })
+      this.wheelListenerAttached = true
+    }
+  }
+
+  detachWheelListener = () => {
+    const listElement = document.getElementById('events-list')
+    if (listElement && this.wheelListenerAttached) {
+      listElement.removeEventListener('wheel', this.handleWheel)
+      this.wheelListenerAttached = false
+    }
+  }
+
+  handleWheel = (e) => {
+    const listElement = document.getElementById('events-list')
+    if (!listElement) return
+
+    const { scrollTop, scrollHeight, clientHeight } = listElement
+    const isAtTop = scrollTop === 0
+    const isAtBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight
+    const isScrollingUp = e.deltaY < 0
+    const isScrollingDown = e.deltaY > 0
+
+    // Prevent parent (map) from scrolling when at boundaries
+    if ((isAtTop && isScrollingUp) || (isAtBottom && isScrollingDown)) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
   }
 }
 
