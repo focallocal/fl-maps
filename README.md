@@ -2,9 +2,9 @@
 
 # Intro
 
-This is a kindness based opensource project which brings people and communities together to take action on causes they care about, both in-person locally and also globally. Locally the platform collects and rates the most effective ways people can take action on that cause. Globally it allows users to discuss, vote on, and then use their skills to build projects together which target positive action on that issue.
+This is a kindness based opensource project which brings people and communities together to take action on causes they care about, both in-person locally and also globally. Locally the platform collects and rates the most effective ways people can take action on that cause. Globally it allows users to discuss, vote on, and then use their skills to build projects together which target positive action on that issue
 
-The project map also reward users with a blockchain token to incentivise more action which benefits the each platforms mission, or the health and growth of the community built on it. We'll give the scheme a trial run and see how it goes.
+The project map also reward users with a blockchain token to incentivise more action which benefits the each platforms mission, or the health and growth of the community built on it. We'll give the scheme a trial run and see how it goes
 
 # Main causes and branches\*\*
 
@@ -18,7 +18,7 @@ The codebase for all projects is identical as its purpose is the same, to unite 
 
 # To join in
 
-Tasks, issues, documentation and bugs are on our Meta platform at Publichappinessmovement.com in the Web-dev, Reactjs and Documentation categories.
+Tasks, issues, documentation and bugs are on our Meta platform at Publichappinessmovement.com in the Web-dev, Reactjs and Documentation categories
 
 Want to get coding? The most likely page you are looking for is the Getting Started Guide here: https://publichappinessmovement.com/t/topic/1370
 
