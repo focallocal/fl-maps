@@ -8,10 +8,9 @@ notifications:
   slack: focallocal:njis5lKnuOTF1dp8W7HiTn8I
 
 before_install:
-  - curl -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.5.0/sops_3.5.0_amd64.deb"
+  - curl -L -o sops.deb "https://github.com/mozilla/sops/releases/download/v3.8.1/sops_3.8.1_amd64.deb"
   - sudo dpkg -i sops.deb
   - echo "$sops_gpg_key" | base64 -d | gpg --batch --import
-  - gpg --export-secret-keys > ~/.gnupg/secring.gpg
   - cd .deployment/$(./.deployment/branch-to-dir.sh "$TRAVIS_BRANCH")
   - for file in *.enc*; do sops --decrypt --output "${file%.enc*}${file##*.enc}" "${file}"; done
   - npm install -g mup
