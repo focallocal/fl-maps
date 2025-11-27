@@ -26,7 +26,7 @@ import './styles.scss'
 import i18n from '/imports/both/i18n/en'
 
 class MapComponent_ extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
       bounds: null,
@@ -50,7 +50,7 @@ class MapComponent_ extends Component {
 
   memoizeLocations = {} // cache locations
 
-  componentDidMount () {
+  componentDidMount() {
     if (window.previousStateOfMap) {
       this.setState({ ...window.previousStateOfMap })
     }
@@ -75,12 +75,12 @@ class MapComponent_ extends Component {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     toggleBodyOverflow()
     this._isMounted = false // don't remove that line
   }
 
-  componentDidUpdate (nextProps, prevState) {
+  componentDidUpdate(nextProps, prevState) {
     const {
       userLocation,
       userLocationError
@@ -99,7 +99,7 @@ class MapComponent_ extends Component {
     }
   }
 
-  render () {
+  render() {
     const {
       center,
       currentEvent,
@@ -121,9 +121,9 @@ class MapComponent_ extends Component {
     const { MainMenu } = i18n
 
     const events_ = filteredEvents || events
-    
+
     return (
-    
+
 
       <GoogleMap
         ref={ref => this.map = ref}
@@ -166,7 +166,7 @@ class MapComponent_ extends Component {
         <EventsList
           currentEvent={currentEvent}
           events={events_}
-          isFetching={isFetching} 
+          isFetching={isFetching}
           onItemClick={this.onMarkerClick}
           hoveredEvent={this.state.hoveredEvent}
           isHovered={this.state.isHovered}
@@ -212,6 +212,11 @@ class MapComponent_ extends Component {
   }
 
   onMarkerClick = (_id) => {
+    if (!Meteor.userId()) {
+      alert('You need to login before viewing event details')
+      return null
+    }
+
     const { latLng, overlapping: ol } = this.memoizeLocations[_id]
     const cachedSet = this.memoizeLocations[`${latLng.lng}${latLng.lat}`]
 
@@ -340,7 +345,7 @@ class MapComponent_ extends Component {
   }
 
   // Accept google map bounds object (coordinates) and calculates screen radius in metres
-  getBoundsRadius (bounds) {
+  getBoundsRadius(bounds) {
     // r = radius of the earth in km
     const r = 6378.8
     // degrees to radians (divide by 57.2958)
@@ -426,7 +431,7 @@ class MapComponent_ extends Component {
 const MapComponent = withScriptjs(withGoogleMap(MapComponent_))
 
 class Map_ extends Component {
-  render () {
+  render() {
     const standaloneMode = !inIFrame()
     const { key } = Meteor.settings.public.gm
     const url = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&v=3.exp&libraries=places'
@@ -435,7 +440,7 @@ class Map_ extends Component {
       <MapComponent
         googleMapURL={!window.google ? url : '-'}
         loadingElement={<div style={{ height: '100%' }} />}
-        containerElement={<div id='map-container' className={standaloneMode ? 'offset-standalone-menu' : undefined}/>}
+        containerElement={<div id='map-container' className={standaloneMode ? 'offset-standalone-menu' : undefined} />}
         mapElement={<div id='map' />}
         history={this.props.history}
       />
