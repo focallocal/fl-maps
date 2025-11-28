@@ -76,15 +76,14 @@ class App extends Component {
         const triggerId = event.data.triggerId
         console.log('📨 Received dcs-topic-posted message for trigger:', triggerId)
         
-        // Force re-render of DCSLink components by updating cachedDataForPage if it exists
-        if (window.cachedDataForPage && window.cachedDataForPage.dcsCount !== undefined) {
-          window.cachedDataForPage.dcsCount += 1
-          console.log('✅ Updated cachedDataForPage.dcsCount to:', window.cachedDataForPage.dcsCount)
-        }
-        
-        // Trigger a re-fetch of DCS counts (will be implemented in DCSLink component)
-        window.dispatchEvent(new CustomEvent('dcs-count-update', { detail: { triggerId } }))
-        console.log('🔄 Dispatched dcs-count-update event')
+        // Trigger a route refresh to update DCS counts
+        // This causes dcs-react-router-sync to refetch topic counts
+        setTimeout(() => {
+          const currentPath = window.location.pathname + window.location.search
+          window.history.pushState({}, '', currentPath)
+          window.dispatchEvent(new PopStateEvent('popstate'))
+          console.log('🔄 Triggered route refresh to update DCS counts')
+        }, 1000) // Wait 1 second for Discourse to index the new topic
       }
     })
   }
