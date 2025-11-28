@@ -48,8 +48,8 @@ class DCSLink extends Component {
       e.preventDefault()
     }
     
-    const { triggerId, dcsSelected, history, composerTemplate } = this.props
-    console.log('🔘 DCSLink clicked:', { triggerId, dcsSelected, composerTemplate })
+    const { triggerId, dcsSelected, history, composerTemplate, dcsCount } = this.props
+    console.log('🔘 DCSLink clicked:', { triggerId, dcsSelected, composerTemplate, dcsCount })
     
     const url = new URL(location.href)
     
@@ -59,11 +59,17 @@ class DCSLink extends Component {
       url.searchParams.delete('dcs-interact-mode')
       url.searchParams.delete('dcs-trigger-id')
       url.searchParams.delete('composer_template')
+      url.searchParams.delete('has_topics')
     } else {
       // Otherwise, open the slider with this trigger
       url.searchParams.set('dcs-layout', 3)
       url.searchParams.set('dcs-interact-mode', 'DISCUSS')
       url.searchParams.set('dcs-trigger-id', triggerId)
+      
+      // Add has_topics param if count > 0
+      if (dcsCount > 0) {
+        url.searchParams.set('has_topics', 'true')
+      }
       
       // Send composer template via postMessage to parent window
       if (composerTemplate && window.parent !== window) {
@@ -71,7 +77,8 @@ class DCSLink extends Component {
           window.parent.postMessage({
             type: 'dcs-composer-template',
             template: composerTemplate,
-            triggerId: triggerId
+            triggerId: triggerId,
+            hasTopics: dcsCount > 0
           }, '*')
         } catch (error) {
           console.warn('Failed to send composer template to parent:', error)
