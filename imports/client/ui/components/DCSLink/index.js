@@ -39,6 +39,28 @@ class DCSLink extends Component {
     super(props)
     const { history } = this.props
     initDeselectHandler(history)
+    
+    this.handleDCSCountUpdate = this.handleDCSCountUpdate.bind(this)
+  }
+  
+  componentDidMount () {
+    // Listen for DCS count updates from parent window
+    window.addEventListener('dcs-count-update', this.handleDCSCountUpdate)
+  }
+  
+  componentWillUnmount () {
+    window.removeEventListener('dcs-count-update', this.handleDCSCountUpdate)
+  }
+  
+  handleDCSCountUpdate (event) {
+    const { triggerId } = this.props
+    const updatedTriggerId = event.detail?.triggerId
+    
+    // If this is the bubble that was updated, force a re-render
+    if (updatedTriggerId === triggerId) {
+      console.log('🔄 DCSLink re-rendering for trigger:', triggerId)
+      this.forceUpdate()
+    }
   }
 
   handleClick = (e) => {
