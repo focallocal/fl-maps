@@ -223,6 +223,7 @@ $titles-color: #fff;
     color: #666A73;
 
     .row {
+      display: flex !important;
       width: 100%;
       justify-content: space-between;
       word-wrap: break-word;
