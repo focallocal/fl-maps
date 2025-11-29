@@ -12,6 +12,7 @@ import { ServiceConfiguration } from 'meteor/service-configuration'
 
 import { Accounts } from 'meteor/accounts-base'
 import { Meteor } from 'meteor/meteor'
+import { Roles } from 'meteor/alanning:roles'
 
 ServiceConfiguration.configurations.upsert(
   { service: 'discourse' },
@@ -24,12 +25,27 @@ ServiceConfiguration.configurations.upsert(
   }
 )
 
-// Add an additional service-agnostic "name" field
+// Add an additional service-agnostic "name" field and sync roles from Discourse
 Accounts.onLogin(data => {
   if (data.type === 'discourse') {
     const discourse = data.user.services.discourse
     const name = discourse.name || discourse.username
     Meteor.users.update(data.user._id, { $set: { profile: { name } } })
+    
+    // Sync roles from Discourse admin/moderator status
+    const userId = data.user._id
+    
+    // Remove all existing roles first
+    Roles.setUserRoles(userId, [], Roles.GLOBAL_GROUP)
+    
+    // Set new roles based on Discourse status
+    if (discourse.admin === true) {
+      Roles.addUsersToRoles(userId, 'admin', Roles.GLOBAL_GROUP)
+    } else if (discourse.moderator === true) {
+      Roles.addUsersToRoles(userId, 'moderator', Roles.GLOBAL_GROUP)
+    } else {
+      Roles.addUsersToRoles(userId, 'user', Roles.GLOBAL_GROUP)
+    }
   }
 })
 
