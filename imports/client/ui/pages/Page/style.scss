@@ -222,6 +222,12 @@ $titles-color: #fff;
     font-size: 1.2rem;
     color: #666A73;
 
+    .row {
+      width: 100%;
+      justify-content: space-between;
+      word-wrap: break-word;
+    }
+
     .section-title {
       margin-bottom: 8px;
       font-weight: bolder;
