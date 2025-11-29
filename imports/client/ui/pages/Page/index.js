@@ -353,13 +353,13 @@ class Page extends Component {
     const previousMapState = globalWindow.previousStateOfMap || {}
     const coordinates = data?.address?.location?.coordinates
     let center = previousMapState.center
-    let zoom = previousMapState.zoom || 12
+    let zoom = previousMapState.zoom || 11
 
     if (Array.isArray(coordinates) && coordinates.length === 2) {
       const [lng, lat] = coordinates
       if (typeof lat === 'number' && typeof lng === 'number') {
         center = { lat, lng }
-        zoom = 12
+        zoom = 11
       }
     }
 
@@ -400,6 +400,35 @@ class Page extends Component {
 
     Meteor.call('Events.deleteEvent', data, (err, res) => {
       if (!err) {
+        // Use closePage logic to restore proper map state
+        const globalWindow = /** @type {any} */ (window)
+        const previousMapState = globalWindow.previousStateOfMap || {}
+        const coordinates = data?.address?.location?.coordinates
+        let center = previousMapState.center
+        let zoom = previousMapState.zoom || 11
+
+        if (Array.isArray(coordinates) && coordinates.length === 2) {
+          const [lng, lat] = coordinates
+          if (typeof lat === 'number' && typeof lng === 'number') {
+            center = { lat, lng }
+            zoom = 11
+          }
+        }
+
+        if (center) {
+          globalWindow.__savedUserLocation = center
+        }
+
+        globalWindow.previousStateOfMap = {
+          ...previousMapState,
+          center: center || previousMapState.center,
+          zoom,
+          userLocation: center || previousMapState.userLocation || previousMapState.center,
+          currentEvent: null,
+          showFilters: false,
+          filteredEvents: null
+        }
+
         this.setState({ 
           showDeleteModal: false,
           redirect: true 
