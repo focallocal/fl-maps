@@ -44,6 +44,23 @@
   .admin-controls{
     margin: 15px auto;
     max-width: 350px;
+    
+    .sort-users {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 0;
+      
+      label {
+        margin-bottom: 0;
+        white-space: nowrap;
+      }
+      
+      select {
+        flex: 1;
+      }
+    }
   }
 
   .link-btns{

@@ -51,6 +51,7 @@
     "react-select": "^5.10.2",
     "react-share": "^2.4.0",
     "react-swipeable": "^4.3.0",
+    "react-window": "^1.8.10",
     "reactstrap": "^9.2.3",
     "remarkable": "^1.7.1",
     "simpl-schema": "^1.0.0",

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, Alert, Button } from 'reactstrap'
+import { Navbar, Nav, Alert, Button, FormGroup, Label, Input } from 'reactstrap'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { rolesDataKey, checkPermissions } from './RolesPermissions/index'
 import AdminTable from './AdminTable/index'
+import PostsView from './PostsView/index'
 import './style.scss'
 import UserSearch from './UserSearch/index'
 import UserDisplay from './UserDisplay/index'
@@ -21,7 +22,10 @@ class Admin extends Component {
       isNoMoreUsers: false,
       alertNotAuthorized: false,
       isSearching: false,
-      isAllEvents: false
+      isAllEvents: false,
+      showPostsView: false,
+      userSortBy: 'alphabetical', // 'alphabetical', 'mostPosts', 'joinDateNewest', 'joinDateOldest'
+      syncingUsers: false
 
     }
   }
@@ -192,6 +196,82 @@ class Admin extends Component {
     this.setState({ isAllEvents: !this.state.isAllEvents })
   }
 
+  handleToggleView = () => {
+    this.setState({ showPostsView: !this.state.showPostsView })
+  }
+
+  handleSyncDiscourseUsers = () => {
+    if (!window.confirm('Sync all Discourse users? This may take a few minutes.')) {
+      return;
+    }
+
+    this.setState({ syncingUsers: true });
+    
+    Meteor.call('Admin.syncDiscourseUsers', (error, result) => {
+      this.setState({ syncingUsers: false });
+      
+      if (error) {
+        alert(`Error syncing users: ${error.message}`);
+      } else {
+        alert(`Sync complete!\nTotal: ${result.totalSynced}\nCreated: ${result.totalCreated}\nUpdated: ${result.totalUpdated}`);
+        // Reload users after sync
+        this.setState({ users: [], skip: 0, isNoMoreUsers: false }, () => {
+          this.getUsers();
+        });
+      }
+    });
+  }
+
+  handleUserSortChange = (e) => {
+    this.setState({ userSortBy: e.target.value })
+  }
+
+  getSortedUsers = () => {
+    const { users, userSortBy, events } = this.state
+    const usersCopy = [...users]
+
+    switch (userSortBy) {
+      case 'alphabetical':
+        return usersCopy.sort((a, b) => {
+          const nameA = parseData('user', a).toLowerCase()
+          const nameB = parseData('user', b).toLowerCase()
+          return nameA.localeCompare(nameB)
+        })
+      
+      case 'mostPosts':
+        // Count events for each user
+        const userEventCounts = {}
+        events.forEach(event => {
+          const userId = event.organiser?._id
+          if (userId) {
+            userEventCounts[userId] = (userEventCounts[userId] || 0) + 1
+          }
+        })
+        return usersCopy.sort((a, b) => {
+          const countA = userEventCounts[a._id] || 0
+          const countB = userEventCounts[b._id] || 0
+          return countB - countA
+        })
+      
+      case 'joinDateNewest':
+        return usersCopy.sort((a, b) => {
+          const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
+          const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
+          return dateB - dateA
+        })
+      
+      case 'joinDateOldest':
+        return usersCopy.sort((a, b) => {
+          const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
+          const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
+          return dateA - dateB
+        })
+      
+      default:
+        return usersCopy
+    }
+  }
+
   deleteAllEvents = (eventIds) => {
     const handleDeleteEvent = () => {
       const remainingEvents = this.state.events.filter(ele => {
@@ -241,25 +321,69 @@ class Admin extends Component {
   }
 
   render () {
-    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay } = this.state
+    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers } = this.state
 
     let isNoUsersFound = this.state.users.length <= 0
+    const sortedUsers = this.getSortedUsers()
+    
     return (
       <div id="admin">
         <UserDisplay name={currentUserDisplay.name} role={currentUserDisplay.role}/>
         <div className="admin-controls">
           <UserSearch searchForUser={this.searchForUser} />
-          <Button color="primary" onClick={this.handleToggleEvents}>Toggle Events Display</Button>
+          <Button color="primary" onClick={this.handleToggleView}>
+            {showPostsView ? 'Show Users View' : 'Show Posts View'}
+          </Button>
+          {!showPostsView && (
+            <>
+              <Button color="primary" onClick={this.handleToggleEvents}>Toggle Posts Display</Button>
+              <Button 
+                color="info" 
+                onClick={this.handleSyncDiscourseUsers}
+                disabled={syncingUsers}
+              >
+                {syncingUsers ? 'Syncing...' : 'Sync Discourse Users'}
+              </Button>
+              <FormGroup className="sort-users">
+                <Label for="userSortSelect">Sort by:</Label>
+                <Input
+                  type="select"
+                  id="userSortSelect"
+                  value={userSortBy}
+                  onChange={this.handleUserSortChange}
+                >
+                  <option value="alphabetical">Alphabetical</option>
+                  <option value="mostPosts">Most Posts</option>
+                  <option value="joinDateNewest">Join Date (Newest)</option>
+                  <option value="joinDateOldest">Join Date (Oldest)</option>
+                </Input>
+              </FormGroup>
+            </>
+          )}
         </div>
-        {isNoUsersFound &&
-          <Alert color="secondary">No Users found</Alert>
+        {showPostsView ? (
+          <PostsView />
+        ) : (
+          <>
+            {isNoUsersFound &&
+              <Alert color="secondary">No Users found</Alert>
+            }
+            <AdminTable deleteUser={this.deleteUser} users={sortedUsers} deleteAllEvents={this.deleteAllEvents}
+              isAllEvents={this.state.isAllEvents} changeUserRole={this.changeUserRole} events={events}/>
+            <Button onClick={this.displayMoreUsers} >More</Button>
+            {isNoMoreUsers &&
+              <Alert color="secondary">No More Users</Alert>
+            }
+          </>
+        )}
+        {alertNotAuthorized &&
+          <Alert color="secondary">Not Authorized</Alert>
         }
-        <AdminTable deleteUser={this.deleteUser} users={this.state.users} deleteAllEvents={this.deleteAllEvents}
-          isAllEvents={this.state.isAllEvents} changeUserRole={this.changeUserRole} events={events}/>
-        <Button onClick={this.displayMoreUsers} >More</Button>
-        {isNoMoreUsers &&
-          <Alert color="secondary">No More Users</Alert>
-        }
+      </div>
+    )
+  }
+          </>
+        )}
         {alertNotAuthorized &&
           <Alert color="secondary">Not Authorized</Alert>
         }
