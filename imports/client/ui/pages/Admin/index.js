@@ -382,14 +382,6 @@ class Admin extends Component {
       </div>
     )
   }
-          </>
-        )}
-        {alertNotAuthorized &&
-          <Alert color="secondary">Not Authorized</Alert>
-        }
-      </div>
-    )
-  }
 }
 
 export default withTracker(() => {
