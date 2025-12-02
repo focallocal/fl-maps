@@ -184,8 +184,18 @@ class PostsView extends Component {
     this.setState({ sortBy: e.target.value });
   };
 
-  formatDate = (date) => {
+  formatDate = (event) => {
+    // Try to get the event date from when.startingDate or createdAt
+    let date = null;
+    
+    if (event.when && event.when.startingDate) {
+      date = event.when.startingDate;
+    } else if (event.createdAt) {
+      date = event.createdAt;
+    }
+    
     if (!date) return 'N/A';
+    
     return new Date(date).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
@@ -195,7 +205,16 @@ class PostsView extends Component {
 
   formatLocation = (address) => {
     if (!address) return 'N/A';
-    return address.name || address.city || 'Unknown';
+    
+    // Try to build a descriptive location string
+    const parts = [];
+    if (address.city) parts.push(address.city);
+    if (address.country) parts.push(address.country);
+    
+    if (parts.length > 0) return parts.join(', ');
+    if (address.name) return address.name;
+    
+    return 'Unknown';
   };
 
   formatCategories = (categories) => {
@@ -227,8 +246,8 @@ class PostsView extends Component {
             {post.name || 'Untitled Post'}
           </div>
           
-          <div className="post-organizer" title={post.organiser?.name}>
-            {post.organiser?.name || 'Unknown'}
+          <div className="post-organizer" title={post.organiser?.name || post.organiser?.username || 'Unknown'}>
+            {post.organiser?.name || post.organiser?.username || 'Unknown'}
           </div>
           
           <div className="post-location" title={this.formatLocation(post.address)}>
@@ -240,7 +259,7 @@ class PostsView extends Component {
           </div>
           
           <div className="post-date">
-            {this.formatDate(post.when || post.createdAt)}
+            {this.formatDate(post)}
           </div>
           
           <div className="post-actions">

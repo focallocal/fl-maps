@@ -98,6 +98,7 @@ export const getPosts = new ValidatedMethod({
           'address.name': 1,
           'address.city': 1,
           'address.country': 1,
+          'address.location': 1,
           categories: 1,
           when: 1,
           createdAt: 1,
