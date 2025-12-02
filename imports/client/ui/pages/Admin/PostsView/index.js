@@ -242,7 +242,7 @@ class PostsView extends Component {
   };
 
   formatCategories = (categories) => {
-    if (!categories || categories.length === 0) return 'None';
+    if (!categories || !Array.isArray(categories) || categories.length === 0) return 'None';
     return categories.map(c => c.name).join(', ');
   };
 
