@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { FixedSizeList as List } from 'react-window';
 import { Button, Input, FormGroup, Label } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
 class PostsView extends Component {
@@ -263,6 +264,15 @@ class PostsView extends Component {
           </div>
           
           <div className="post-actions">
+            <Link to={`/page/${post._id}`}>
+              <Button
+                size="sm"
+                color="info"
+                className="me-1"
+              >
+                Go To
+              </Button>
+            </Link>
             <Button
               size="sm"
               color="danger"

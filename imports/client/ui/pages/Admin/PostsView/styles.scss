@@ -76,7 +76,7 @@
   
   .post-row-content {
     display: grid;
-    grid-template-columns: 40px 2fr 1.5fr 1.5fr 1.5fr 1fr 100px;
+    grid-template-columns: 40px 2fr 1.5fr 1.5fr 1.5fr 1fr 160px;
     gap: 10px;
     align-items: center;
     
@@ -112,6 +112,15 @@
     .post-actions {
       display: flex;
       justify-content: flex-end;
+      gap: 5px;
+      
+      a {
+        text-decoration: none;
+      }
+      
+      .me-1 {
+        margin-right: 5px;
+      }
     }
   }
   
