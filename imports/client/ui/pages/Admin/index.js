@@ -155,15 +155,15 @@ class Admin extends Component {
   }
 
   getEvents = () => {
-    const { users } = this.state
-    let result = users.map(e => e._id)
     this.setState({ eventsLoading: true })
-    Meteor.call('Admin.getEvents', { ids: result }, (err, res) => {
+    // Get ALL events for accurate sorting, not just events for loaded users
+    Meteor.call('Admin.getPosts', {}, (err, res) => {
       if (err) {
         this.setState({ eventsLoading: false })
-        throw new Meteor.Error('could not find user...')
+        console.error('Error fetching events:', err)
+        return
       }
-      this.setState({ events: res || [], eventsLoading: false })
+      this.setState({ events: res?.posts || [], eventsLoading: false })
     })
   }
 

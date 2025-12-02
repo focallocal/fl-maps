@@ -156,29 +156,31 @@ class PostsView extends Component {
       let deletedCount = 0;
       let errorCount = 0;
       
-      // Delete each post individually using Events.deleteEvent
-      postIds.forEach((postId) => {
-        Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
-          if (error) {
-            console.error(`Failed to delete post ${postId}:`, error);
-            errorCount++;
-          } else {
-            deletedCount++;
-          }
-          
-          // When all deletions are complete
-          if (deletedCount + errorCount === postIds.length) {
-            if (errorCount > 0) {
-              alert(`Deleted ${deletedCount} post(s). ${errorCount} failed.`);
+      // Delete each post with delay to avoid rate limiting (2 per 5 seconds)
+      postIds.forEach((postId, index) => {
+        setTimeout(() => {
+          Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
+            if (error) {
+              console.error(`Failed to delete post ${postId}:`, error);
+              errorCount++;
+            } else {
+              deletedCount++;
             }
-            this.setState({ selectedPosts: new Set() });
-            // Reload posts and notify parent
-            this.loadAllPosts();
-            if (this.props.onDeletePosts) {
-              this.props.onDeletePosts();
+            
+            // When all deletions are complete
+            if (deletedCount + errorCount === postIds.length) {
+              if (errorCount > 0) {
+                alert(`Deleted ${deletedCount} post(s). ${errorCount} failed.`);
+              }
+              this.setState({ selectedPosts: new Set() });
+              // Reload posts and notify parent
+              this.loadAllPosts();
+              if (this.props.onDeletePosts) {
+                this.props.onDeletePosts();
+              }
             }
-          }
-        });
+          });
+        }, index * 2600); // 2600ms delay between each delete (slightly more than 5000ms / 2)
       });
     }
   };
@@ -321,55 +323,53 @@ class PostsView extends Component {
   };
 
   render() {
-    const posts = this.getFilteredAndSortedPosts();
+    const filteredAndSortedPosts = this.getFilteredAndSortedPosts();
     const { selectedPosts, searchQuery, searchFilter, sortBy, isLoading } = this.state;
     const hasSelection = selectedPosts.size > 0;
-    const allSelected = posts.length > 0 && selectedPosts.size === posts.length;
+    const allSelected = filteredAndSortedPosts.length > 0 && selectedPosts.size === filteredAndSortedPosts.length;
 
     return (
       <div className="posts-view">
         <div className="posts-controls">
-          <div className="search-section">
-            <FormGroup className="search-input-group">
-              <Input
-                type="text"
-                placeholder="Search posts..."
-                value={searchQuery}
-                onChange={this.handleSearchChange}
-              />
-            </FormGroup>
-            
-            <div className="filter-buttons">
-              <Button
-                size="sm"
-                color={searchFilter === 'title' ? 'primary' : 'secondary'}
-                onClick={() => this.handleFilterChange('title')}
-              >
-                Title
-              </Button>
-              <Button
-                size="sm"
-                color={searchFilter === 'user' ? 'primary' : 'secondary'}
-                onClick={() => this.handleFilterChange('user')}
-              >
-                User
-              </Button>
-              <Button
-                size="sm"
-                color={searchFilter === 'location' ? 'primary' : 'secondary'}
-                onClick={() => this.handleFilterChange('location')}
-              >
-                Location
-              </Button>
-              <Button
-                size="sm"
-                color={searchFilter === 'category' ? 'primary' : 'secondary'}
-                onClick={() => this.handleFilterChange('category')}
-              >
-                Category
-              </Button>
-            </div>
+          <div className="filter-buttons">
+            <Button
+              size="sm"
+              color={searchFilter === 'title' ? 'primary' : 'secondary'}
+              onClick={() => this.handleFilterChange('title')}
+            >
+              Title
+            </Button>
+            <Button
+              size="sm"
+              color={searchFilter === 'user' ? 'primary' : 'secondary'}
+              onClick={() => this.handleFilterChange('user')}
+            >
+              User
+            </Button>
+            <Button
+              size="sm"
+              color={searchFilter === 'location' ? 'primary' : 'secondary'}
+              onClick={() => this.handleFilterChange('location')}
+            >
+              Location
+            </Button>
+            <Button
+              size="sm"
+              color={searchFilter === 'category' ? 'primary' : 'secondary'}
+              onClick={() => this.handleFilterChange('category')}
+            >
+              Category
+            </Button>
           </div>
+          
+          <FormGroup className="search-input-group">
+            <Input
+              type="text"
+              placeholder="Search posts..."
+              value={searchQuery}
+              onChange={this.handleSearchChange}
+            />
+          </FormGroup>
 
           <div className="sort-section">
             <FormGroup>
@@ -389,17 +389,17 @@ class PostsView extends Component {
               </Input>
             </FormGroup>
           </div>
+        </div>
 
-          <div className="bulk-actions">
-            {hasSelection && (
-              <Button
-                color="danger"
-                onClick={this.handleDeleteSelected}
-              >
-                Delete Selected ({selectedPosts.size})
-              </Button>
-            )}
-          </div>
+        <div className="bulk-actions">
+          {hasSelection && (
+            <Button
+              color="danger"
+              onClick={this.handleDeleteSelected}
+            >
+              Delete Selected ({selectedPosts.size})
+            </Button>
+          )}
         </div>
 
         <div className="posts-header">
@@ -422,12 +422,12 @@ class PostsView extends Component {
 
         {this.state.isLoading ? (
           <div className="posts-loading">Loading posts...</div>
-        ) : posts.length === 0 ? (
+        ) : filteredAndSortedPosts.length === 0 ? (
           <div className="posts-empty">No posts found</div>
         ) : (
           <List
             height={600}
-            itemCount={posts.length}
+            itemCount={filteredAndSortedPosts.length}
             itemSize={60}
             width="100%"
             className="posts-list"
@@ -437,10 +437,10 @@ class PostsView extends Component {
         )}
 
         <div className="posts-footer">
-          Total: {posts.length} post{posts.length !== 1 ? 's' : ''}
+          Total: {filteredAndSortedPosts.length} post{filteredAndSortedPosts.length !== 1 ? 's' : ''}
         </div>
       </div>
-    );
+    )
   }
 }
 

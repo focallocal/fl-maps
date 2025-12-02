@@ -3,30 +3,23 @@
   
   .posts-controls {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    align-items: center;
     
-    .search-section {
+    .filter-buttons {
       display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      flex-wrap: wrap;
+      gap: 5px;
       
-      .search-input-group {
-        flex: 1;
-        min-width: 250px;
-        margin-bottom: 0;
+      button {
+        min-width: 80px;
       }
-      
-      .filter-buttons {
-        display: flex;
-        gap: 5px;
-        
-        button {
-          min-width: 80px;
-        }
-      }
+    }
+    
+    .search-input-group {
+      flex: 1;
+      margin-bottom: 0;
     }
     
     .sort-section {
@@ -42,15 +35,16 @@
         }
         
         select {
-          max-width: 200px;
+          min-width: 160px;
         }
       }
     }
-    
-    .bulk-actions {
-      display: flex;
-      justify-content: flex-end;
-    }
+  }
+  
+  .bulk-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
   }
   
   .posts-header {
@@ -70,8 +64,9 @@
     }
     
     &.selected {
-      background-color: #cce5ff;
-      border-left: 3px solid #007bff;
+      background-color: #d4e9ff;
+      border-left: 4px solid #007bff;
+      padding-left: 6px;
     }
   }
   
@@ -90,10 +85,11 @@
         width: 20px;
         height: 20px;
         cursor: pointer;
+        appearance: auto;
         
         &:checked {
           accent-color: #007bff;
-          background-color: #007bff;
+          filter: saturate(2);
         }
       }
     }
