@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import { Roles } from 'meteor/alanning:roles';
-import { Events } from '/imports/both/collections/events';
+import Events from '/imports/both/collections/events';
 
 export const deletePosts = new ValidatedMethod({
   name: 'Admin.deletePosts',
