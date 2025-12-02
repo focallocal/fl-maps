@@ -17,7 +17,7 @@ class Admin extends Component {
     this.state = {
       users: [],
       currentUserDisplay: { role: '', name: '' },
-      events: undefined,
+      events: [],
       limit: 25,
       skip: 0,
       isNoMoreUsers: false,
@@ -27,7 +27,8 @@ class Admin extends Component {
       showPostsView: false,
       userSortBy: 'alphabetical', // 'alphabetical', 'mostPosts', 'joinDateNewest', 'joinDateOldest'
       syncingUsers: false,
-      showMergeModal: false
+      showMergeModal: false,
+      eventsLoading: false
 
     }
   }
@@ -156,11 +157,13 @@ class Admin extends Component {
   getEvents = () => {
     const { users } = this.state
     let result = users.map(e => e._id)
+    this.setState({ eventsLoading: true })
     Meteor.call('Admin.getEvents', { ids: result }, (err, res) => {
       if (err) {
+        this.setState({ eventsLoading: false })
         throw new Meteor.Error('could not find user...')
       }
-      this.setState({ events: res })
+      this.setState({ events: res || [], eventsLoading: false })
     })
   }
 
@@ -276,12 +279,14 @@ class Admin extends Component {
       case 'mostPosts':
         // Count events for each user
         const userEventCounts = {}
-        events.forEach(event => {
-          const userId = event.organiser?._id
-          if (userId) {
-            userEventCounts[userId] = (userEventCounts[userId] || 0) + 1
-          }
-        })
+        if (events && Array.isArray(events)) {
+          events.forEach(event => {
+            const userId = event.organiser?._id
+            if (userId) {
+              userEventCounts[userId] = (userEventCounts[userId] || 0) + 1
+            }
+          })
+        }
         return usersCopy.sort((a, b) => {
           const countA = userEventCounts[a._id] || 0
           const countB = userEventCounts[b._id] || 0
@@ -418,7 +423,13 @@ class Admin extends Component {
           </div>
         </div>
         {showPostsView ? (
-          <PostsView events={events} users={this.state.users} onDeletePosts={this.getEvents} onToggleView={this.handleToggleView} />
+          eventsLoading ? (
+            <div className='admin-container'>
+              <p>Loading events...</p>
+            </div>
+          ) : (
+            <PostsView events={events || []} users={this.state.users} onDeletePosts={this.getEvents} onToggleView={this.handleToggleView} />
+          )
         ) : (
           <>
             {isNoUsersFound &&
