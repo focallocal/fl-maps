@@ -155,14 +155,15 @@ class Admin extends Component {
   }
 
   getEvents = () => {
+    const { users } = this.state
+    let result = users.map(e => e._id)
     this.setState({ eventsLoading: true })
-    // Fetch ALL events, not just for visible users
-    Meteor.call('Admin.getPosts', { searchQuery: '', searchFilter: 'title', sortBy: 'dateNewest' }, (err, res) => {
+    Meteor.call('Admin.getEvents', { ids: result }, (err, res) => {
       if (err) {
         this.setState({ eventsLoading: false })
-        throw new Meteor.Error('could not load events: ' + err.message)
+        throw new Meteor.Error('could not find user...')
       }
-      this.setState({ events: (res && res.posts) || [], eventsLoading: false })
+      this.setState({ events: res || [], eventsLoading: false })
     })
   }
 

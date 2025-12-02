@@ -13,24 +13,45 @@ class PostsView extends Component {
       searchQuery: '',
       searchFilter: 'title', // 'title', 'user', 'location', 'category'
       sortBy: 'dateNewest', // 'dateNewest', 'dateOldest', 'alphabetical', 'category', 'location'
+      allPosts: [],
+      isLoading: false,
     };
   }
 
+  componentDidMount() {
+    this.loadAllPosts();
+  }
+
+  loadAllPosts = () => {
+    this.setState({ isLoading: true });
+    Meteor.call('Admin.getPosts', { searchQuery: '', searchFilter: 'title', sortBy: 'dateNewest' }, (err, res) => {
+      if (err) {
+        console.error('Error loading posts:', err);
+        this.setState({ isLoading: false });
+      } else {
+        this.setState({ 
+          allPosts: (res && res.posts) || [], 
+          isLoading: false 
+        });
+      }
+    });
+  };
+
   getFilteredAndSortedPosts = () => {
-    const { events } = this.props;
+    const { allPosts } = this.state;
     const { searchQuery, searchFilter, sortBy } = this.state;
 
-    if (!events || events.length === 0) {
+    if (!allPosts || allPosts.length === 0) {
       return [];
     }
 
     // Filter posts based on search
-    let filteredPosts = events;
+    let filteredPosts = allPosts;
     
     if (searchQuery && searchQuery.trim().length > 0) {
       const query = searchQuery.trim().toLowerCase();
       
-      filteredPosts = events.filter(event => {
+      filteredPosts = allPosts.filter(event => {
         switch (searchFilter) {
           case 'title':
             return event.name && event.name.toLowerCase().includes(query);
@@ -144,7 +165,8 @@ class PostsView extends Component {
               alert(`Deleted ${deletedCount} post(s). ${errorCount} failed.`);
             }
             this.setState({ selectedPosts: new Set() });
-            // Notify parent to refresh events
+            // Reload posts and notify parent
+            this.loadAllPosts();
             if (this.props.onDeletePosts) {
               this.props.onDeletePosts();
             }
@@ -164,7 +186,8 @@ class PostsView extends Component {
         if (error) {
           alert('Error deleting post: ' + error.message);
         } else {
-          // Notify parent to refresh events
+          // Reload posts and notify parent
+          this.loadAllPosts();
           if (this.props.onDeletePosts) {
             this.props.onDeletePosts();
           }
@@ -288,7 +311,7 @@ class PostsView extends Component {
 
   render() {
     const posts = this.getFilteredAndSortedPosts();
-    const { selectedPosts, searchQuery, searchFilter, sortBy } = this.state;
+    const { selectedPosts, searchQuery, searchFilter, sortBy, isLoading } = this.state;
     const hasSelection = selectedPosts.size > 0;
     const allSelected = posts.length > 0 && selectedPosts.size === posts.length;
 
@@ -386,7 +409,7 @@ class PostsView extends Component {
           </div>
         </div>
 
-        {this.props.events === undefined || this.props.events === null ? (
+        {this.state.isLoading ? (
           <div className="posts-loading">Loading posts...</div>
         ) : posts.length === 0 ? (
           <div className="posts-empty">No posts found</div>
