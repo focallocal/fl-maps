@@ -74,7 +74,18 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
+      
+      .user-search-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+      }
+      
+      .admin-sort-wrapper {
+        margin-left: auto;
+      }
       
       @media (min-width: 768px) {
         justify-content: flex-start;

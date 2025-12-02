@@ -17,7 +17,7 @@ class Admin extends Component {
     this.state = {
       users: [],
       currentUserDisplay: { role: '', name: '' },
-      events: [],
+      events: undefined,
       limit: 25,
       skip: 0,
       isNoMoreUsers: false,
@@ -232,6 +232,16 @@ class Admin extends Component {
     this.setState({ showMergeModal: !this.state.showMergeModal });
   }
 
+  handleToggleView = () => {
+    const willShowPostsView = !this.state.showPostsView;
+    this.setState({ showPostsView: willShowPostsView });
+    
+    // Ensure events are loaded when switching to PostsView
+    if (willShowPostsView && this.state.users.length > 0 && !this.state.events) {
+      this.getEvents();
+    }
+  }
+
   handleMergeComplete = () => {
     // Refresh user list and events after merge
     this.setState({ skip: 0, users: [], events: [] }, () => {
@@ -351,9 +361,8 @@ class Admin extends Component {
                 onClick={this.toggleMergeModal}
                 className="merge-users-btn"
               >
-                Merge Users
+                Merge Users FL-Maps
               </Button>
-              <span className="app-name">FL-Maps</span>
             </div>
             <div className="right-controls">
               <Button 
@@ -366,31 +375,35 @@ class Admin extends Component {
               </Button>
             </div>
           </div>
-          <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
-            {showPostsView ? 'Show Users View' : 'Show Posts View'}
-          </Button>
           {!showPostsView && (
             <div className="admin-controls-row">
-              <UserSearch searchForUser={this.searchForUser} />
-              <FormGroup className="sort-users">
-                <Label for="userSortSelect">Sort by:</Label>
-                <Input
-                  type="select"
-                  id="userSortSelect"
-                  value={userSortBy}
-                  onChange={this.handleUserSortChange}
-                >
-                  <option value="alphabetical">Alphabetical</option>
-                  <option value="mostPosts">Most Posts</option>
-                  <option value="joinDateNewest">Join Date (Newest)</option>
-                  <option value="joinDateOldest">Join Date (Oldest)</option>
-                </Input>
-              </FormGroup>
+              <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
+                {showPostsView ? 'Show Users View' : 'Show Posts View'}
+              </Button>
+              <div className="user-search-wrapper">
+                <UserSearch searchForUser={this.searchForUser} />
+              </div>
+              <div className="admin-sort-wrapper">
+                <FormGroup className="sort-users">
+                  <Label for="userSortSelect">Sort by:</Label>
+                  <Input
+                    type="select"
+                    id="userSortSelect"
+                    value={userSortBy}
+                    onChange={this.handleUserSortChange}
+                  >
+                    <option value="alphabetical">Alphabetical</option>
+                    <option value="mostPosts">Most Posts</option>
+                    <option value="joinDateNewest">Join Date (Newest)</option>
+                    <option value="joinDateOldest">Join Date (Oldest)</option>
+                  </Input>
+                </FormGroup>
+              </div>
             </div>
           )}
         </div>
         {showPostsView ? (
-          <PostsView events={events} users={this.state.users} onDeletePosts={this.getEvents} />
+          <PostsView events={events} users={this.state.users} onDeletePosts={this.getEvents} onToggleView={this.handleToggleView} />
         ) : (
           <>
             {isNoUsersFound &&

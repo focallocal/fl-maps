@@ -254,6 +254,9 @@ class PostsView extends Component {
       <div className="posts-view">
         <div className="posts-controls">
           <div className="search-section">
+            <Button color="primary" onClick={this.props.onToggleView} className="view-toggle-btn" style={{marginRight: '10px'}}>
+              Show Users View
+            </Button>
             <FormGroup className="search-input-group">
               <Input
                 type="text"
@@ -344,7 +347,7 @@ class PostsView extends Component {
           </div>
         </div>
 
-        {!this.props.events ? (
+        {this.props.events === undefined || this.props.events === null ? (
           <div className="posts-loading">Loading posts...</div>
         ) : posts.length === 0 ? (
           <div className="posts-empty">No posts found</div>
