@@ -125,17 +125,30 @@ class PostsView extends Component {
     
     if (confirmDelete) {
       const postIds = Array.from(selectedPosts);
+      let deletedCount = 0;
+      let errorCount = 0;
       
-      Meteor.call('Admin.deletePosts', postIds, (error) => {
-        if (error) {
-          alert('Error deleting posts: ' + error.message);
-        } else {
-          this.setState({ selectedPosts: new Set() });
-          // Notify parent to refresh events
-          if (this.props.onDeletePosts) {
-            this.props.onDeletePosts();
+      // Delete each post individually using Events.deleteEvent
+      postIds.forEach((postId) => {
+        Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
+          if (error) {
+            errorCount++;
+          } else {
+            deletedCount++;
           }
-        }
+          
+          // When all deletions are complete
+          if (deletedCount + errorCount === postIds.length) {
+            if (errorCount > 0) {
+              alert(`Deleted ${deletedCount} post(s). ${errorCount} failed.`);
+            }
+            this.setState({ selectedPosts: new Set() });
+            // Notify parent to refresh events
+            if (this.props.onDeletePosts) {
+              this.props.onDeletePosts();
+            }
+          }
+        });
       });
     }
   };
@@ -146,7 +159,7 @@ class PostsView extends Component {
     );
     
     if (confirmDelete) {
-      Meteor.call('Admin.deletePosts', [postId], (error) => {
+      Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
         if (error) {
           alert('Error deleting post: ' + error.message);
         } else {
@@ -200,7 +213,7 @@ class PostsView extends Component {
     const isSelected = selectedPosts.has(post._id);
 
     return (
-      <div className="post-row" style={style}>
+      <div className={`post-row ${isSelected ? 'selected' : ''}`} style={style}>
         <div className="post-row-content">
           <div className="post-checkbox">
             <Input
@@ -254,9 +267,6 @@ class PostsView extends Component {
       <div className="posts-view">
         <div className="posts-controls">
           <div className="search-section">
-            <Button color="primary" onClick={this.props.onToggleView} className="view-toggle-btn" style={{marginRight: '10px'}}>
-              Show Users View
-            </Button>
             <FormGroup className="search-input-group">
               <Input
                 type="text"

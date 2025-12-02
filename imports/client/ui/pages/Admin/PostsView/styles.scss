@@ -68,6 +68,10 @@
     &:hover {
       background-color: #f9f9f9;
     }
+    
+    &.selected {
+      background-color: #e3f2fd;
+    }
   }
   
   .post-row-content {
@@ -79,6 +83,16 @@
     .post-checkbox {
       display: flex;
       justify-content: center;
+      
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        
+        &:checked {
+          accent-color: #007bff;
+        }
+      }
     }
     
     .post-name,
