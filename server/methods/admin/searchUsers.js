@@ -14,7 +14,9 @@ const getUsers = new ValidatedMethod({
 
   }).validator(),
   run ({ profileName }) {
-    return Meteor.users.find({ 'profile.name': profileName }).fetch()
+    // Case-insensitive partial match search
+    const searchRegex = { $regex: profileName, $options: 'i' };
+    return Meteor.users.find({ 'profile.name': searchRegex }).fetch();
   }
 })
 

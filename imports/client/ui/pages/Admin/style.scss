@@ -52,14 +52,27 @@
     
     @media (min-width: 768px) {
       justify-content: flex-start;
+      
+      // Force line break after merge button on desktop
+      .merge-users-btn {
+        margin-right: 100%;
+      }
     }
     
     .view-toggle-btn {
       order: 1;
     }
     
-    .search-container {
+    .sync-users-btn {
       order: 2;
+    }
+    
+    .merge-users-btn {
+      order: 3;
+    }
+    
+    .search-container {
+      order: 4;
       flex: 1;
       min-width: 250px;
       margin-bottom: 0;
@@ -69,12 +82,8 @@
       }
     }
     
-    .sync-users-btn {
-      order: 3;
-    }
-    
     .sort-users {
-      order: 4;
+      order: 5;
       display: flex;
       align-items: center;
       gap: 10px;

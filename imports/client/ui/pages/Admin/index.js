@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data'
 import { rolesDataKey, checkPermissions } from './RolesPermissions/index'
 import AdminTable from './AdminTable/index'
 import PostsView from './PostsView/index'
+import MergeUsersModal from './MergeUsersModal/index'
 import './style.scss'
 import UserSearch from './UserSearch/index'
 import UserDisplay from './UserDisplay/index'
@@ -25,7 +26,8 @@ class Admin extends Component {
       isAllEvents: false,
       showPostsView: false,
       userSortBy: 'alphabetical', // 'alphabetical', 'mostPosts', 'joinDateNewest', 'joinDateOldest'
-      syncingUsers: false
+      syncingUsers: false,
+      showMergeModal: false
 
     }
   }
@@ -223,10 +225,21 @@ class Admin extends Component {
   }
 
   handleUserSortChange = (e) => {
-    this.setState({ userSortBy: e.target.value })
+    this.setState({ userSortBy: e.target.value });
   }
 
-  getSortedUsers = () => {
+  toggleMergeModal = () => {
+    this.setState({ showMergeModal: !this.state.showMergeModal });
+  }
+
+  handleMergeComplete = () => {
+    // Refresh user list after merge
+    this.setState({ skip: 0, users: [] }, () => {
+      this.getUsers();
+    });
+  }
+
+  getSortedUsers () {
     const { users, userSortBy, events } = this.state
     const usersCopy = [...users]
 
@@ -321,7 +334,7 @@ class Admin extends Component {
   }
 
   render () {
-    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers } = this.state
+    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers, showMergeModal } = this.state
 
     let isNoUsersFound = this.state.users.length <= 0
     const sortedUsers = this.getSortedUsers()
@@ -343,6 +356,13 @@ class Admin extends Component {
                 className="sync-users-btn"
               >
                 {syncingUsers ? 'Syncing...' : 'Sync Discourse Users'}
+              </Button>
+              <Button 
+                color="warning" 
+                onClick={this.toggleMergeModal}
+                className="merge-users-btn"
+              >
+                Merge Users
               </Button>
               <FormGroup className="sort-users">
                 <Label for="userSortSelect">Sort by:</Label>
@@ -379,6 +399,12 @@ class Admin extends Component {
         {alertNotAuthorized &&
           <Alert color="secondary">Not Authorized</Alert>
         }
+        <MergeUsersModal 
+          isOpen={showMergeModal} 
+          toggle={this.toggleMergeModal}
+          users={this.state.users}
+          onMergeComplete={this.handleMergeComplete}
+        />
       </div>
     )
   }
