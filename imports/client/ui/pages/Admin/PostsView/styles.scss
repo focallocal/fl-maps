@@ -246,9 +246,27 @@
 @media (max-width: 1200px) {
   .posts-view {
     .post-row-content {
-      grid-template-columns: 40px 2fr 1fr 1fr 1fr 80px 80px;
-      gap: 5px;
+      grid-template-columns: 40px 2fr 1.5fr 1fr 1fr 100px 100px;
+      gap: 8px;
       font-size: 0.9em;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .posts-view {
+    .post-row-content {
+      grid-template-columns: 40px 2fr 1fr 1fr 120px;
+      gap: 6px;
+      font-size: 0.85em;
+      
+      .post-categories {
+        display: none;
+      }
+      
+      .post-date {
+        display: none;
+      }
     }
   }
 }
@@ -257,33 +275,124 @@
   .posts-view {
     padding: 10px;
     
-    .posts-controls {
-      .search-section {
-        flex-direction: column;
-        
-        .filter-buttons {
-          flex-wrap: wrap;
-        }
-      }
+    .posts-header {
+      padding: 8px;
+    }
+    
+    .post-row {
+      padding: 8px;
     }
     
     .post-row-content {
       grid-template-columns: 30px 1fr;
-      gap: 5px;
+      grid-template-rows: auto auto auto;
+      gap: 8px;
+      align-items: start;
       
-      .post-organizer,
-      .post-location,
-      .post-categories {
-        display: none;
+      .post-checkbox {
+        grid-column: 1;
+        grid-row: 1 / 4;
+        align-self: start;
       }
       
-      .post-date {
+      .post-name {
         grid-column: 2;
-        font-size: 0.8em;
+        grid-row: 1;
+        font-weight: 500;
+        font-size: 1em;
+        white-space: normal;
+        word-wrap: break-word;
+      }
+      
+      .post-organizer {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 0.85em;
+        
+        .organizer-name,
+        .organizer-email {
+          white-space: normal;
+          word-wrap: break-word;
+        }
+      }
+      
+      .post-location {
+        grid-column: 2;
+        grid-row: 3;
+        font-size: 0.85em;
+        color: #666;
+        white-space: normal;
+        word-wrap: break-word;
+      }
+      
+      .post-categories,
+      .post-date {
+        display: none;
       }
       
       .post-actions {
         grid-column: 2;
+        grid-row: 4;
+        justify-content: flex-start;
+        margin-top: 5px;
+        
+        button {
+          font-size: 0.8em;
+          padding: 4px 8px;
+        }
+      }
+    }
+    
+    .posts-header .post-row-content {
+      grid-template-columns: 30px 1fr;
+      grid-template-rows: auto;
+      
+      .post-name {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      
+      .post-checkbox,
+      .post-organizer,
+      .post-location,
+      .post-categories,
+      .post-date,
+      .post-actions {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .posts-view {
+    padding: 5px;
+    
+    .post-row-content {
+      grid-template-columns: 25px 1fr;
+      gap: 6px;
+      
+      .post-checkbox {
+        input[type="checkbox"] {
+          width: 16px;
+          height: 16px;
+        }
+      }
+      
+      .post-name {
+        font-size: 0.95em;
+      }
+      
+      .post-organizer,
+      .post-location {
+        font-size: 0.8em;
+      }
+      
+      .post-actions {
+        button {
+          font-size: 0.75em;
+          padding: 3px 6px;
+        }
       }
     }
   }
