@@ -130,7 +130,15 @@ class Admin extends Component {
     const { skip, limit } = this.state
     Meteor.call('Admin.getUsers', { skip, limit }, (err, res) => {
       if (err) {
-        throw new Meteor.Error('could not find user...')
+        console.error('Error fetching users:', err)
+        this.setState({ users: [] })
+        return
+      }
+
+      if (!res) {
+        console.error('getUsers returned undefined')
+        this.setState({ users: [] })
+        return
       }
 
       if (res && res.length > 0) {
@@ -252,6 +260,9 @@ class Admin extends Component {
 
   getSortedUsers () {
     const { users, userSortBy, events } = this.state
+    if (!users || !Array.isArray(users)) {
+      return []
+    }
     const usersCopy = [...users]
 
     switch (userSortBy) {
@@ -375,32 +386,36 @@ class Admin extends Component {
               </Button>
             </div>
           </div>
-          {!showPostsView && (
-            <div className="admin-controls-row">
+          <div className="admin-controls-row">
+            <div className="toggle-wrapper">
               <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
                 {showPostsView ? 'Show Users View' : 'Show Posts View'}
               </Button>
-              <div className="user-search-wrapper">
-                <UserSearch searchForUser={this.searchForUser} />
-              </div>
-              <div className="admin-sort-wrapper">
-                <FormGroup className="sort-users">
-                  <Label for="userSortSelect">Sort by:</Label>
-                  <Input
-                    type="select"
-                    id="userSortSelect"
-                    value={userSortBy}
-                    onChange={this.handleUserSortChange}
-                  >
-                    <option value="alphabetical">Alphabetical</option>
-                    <option value="mostPosts">Most Posts</option>
-                    <option value="joinDateNewest">Join Date (Newest)</option>
-                    <option value="joinDateOldest">Join Date (Oldest)</option>
-                  </Input>
-                </FormGroup>
-              </div>
             </div>
-          )}
+            {!showPostsView && (
+              <>
+                <div className="user-search-wrapper">
+                  <UserSearch searchForUser={this.searchForUser} />
+                </div>
+                <div className="admin-sort-wrapper">
+                  <FormGroup className="sort-users">
+                    <Label for="userSortSelect">Sort by:</Label>
+                    <Input
+                      type="select"
+                      id="userSortSelect"
+                      value={userSortBy}
+                      onChange={this.handleUserSortChange}
+                    >
+                      <option value="alphabetical">Alphabetical</option>
+                      <option value="mostPosts">Most Posts</option>
+                      <option value="joinDateNewest">Join Date (Newest)</option>
+                      <option value="joinDateOldest">Join Date (Oldest)</option>
+                    </Input>
+                  </FormGroup>
+                </div>
+              </>
+            )}
+          </div>
         </div>
         {showPostsView ? (
           <PostsView events={events} users={this.state.users} onDeletePosts={this.getEvents} onToggleView={this.handleToggleView} />

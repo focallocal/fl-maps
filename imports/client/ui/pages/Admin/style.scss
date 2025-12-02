@@ -72,19 +72,49 @@
     .admin-controls-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 1%;
       align-items: center;
-      justify-content: flex-start;
+      width: 100%;
+      padding: 10px 0;
+      
+      .toggle-wrapper {
+        flex: 0 0 auto;
+        margin-left: 2%;
+      }
       
       .user-search-wrapper {
-        flex: 1;
+        flex: 1 1 auto;
         display: flex;
         justify-content: center;
-        margin: 0 auto;
+        min-width: 200px;
       }
       
       .admin-sort-wrapper {
+        flex: 0 0 auto;
+        margin-right: 2%;
         margin-left: auto;
+      }
+      
+      @media (max-width: 768px) {
+        .toggle-wrapper,
+        .user-search-wrapper,
+        .admin-sort-wrapper {
+          flex: 0 0 calc(50% - 10px);
+          margin: 5px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: stretch;
+        
+        .toggle-wrapper,
+        .user-search-wrapper,
+        .admin-sort-wrapper {
+          flex: 0 0 100%;
+          margin: 5px 0;
+          justify-content: center;
+        }
       }
       
       @media (min-width: 768px) {
