@@ -3,7 +3,7 @@
   
   .posts-controls {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 15px;
     align-items: center;
@@ -11,6 +11,7 @@
     .filter-buttons {
       display: flex;
       gap: 5px;
+      flex-wrap: wrap;
       
       button {
         min-width: 80px;
@@ -18,11 +19,15 @@
     }
     
     .search-input-group {
-      flex: 1;
+      flex: 1 1 200px;
+      min-width: 200px;
       margin-bottom: 0;
     }
     
     .sort-section {
+      flex: 0 1 auto;
+      min-width: 200px;
+      
       .form-group {
         display: flex;
         align-items: center;
@@ -35,8 +40,42 @@
         }
         
         select {
-          min-width: 160px;
+          min-width: 120px;
         }
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .filter-buttons {
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+      
+      .search-input-group {
+        flex: 1 1 45%;
+        min-width: 150px;
+      }
+      
+      .sort-section {
+        flex: 1 1 45%;
+        min-width: 150px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      gap: 10px;
+      
+      .filter-buttons {
+        button {
+          flex: 1;
+          min-width: 60px;
+        }
+      }
+      
+      .search-input-group,
+      .sort-section {
+        flex: 1 1 100%;
+        min-width: 100%;
       }
     }
   }
@@ -45,6 +84,33 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
+    min-height: 38px;
+    align-items: center;
+    
+    .delete-progress {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      
+      span {
+        font-weight: 500;
+        color: #dc3545;
+      }
+      
+      .progress-bar {
+        width: 200px;
+        height: 8px;
+        background-color: #e9ecef;
+        border-radius: 4px;
+        overflow: hidden;
+        
+        .progress-fill {
+          height: 100%;
+          background-color: #dc3545;
+          transition: width 0.3s ease;
+        }
+      }
+    }
   }
   
   .posts-header {

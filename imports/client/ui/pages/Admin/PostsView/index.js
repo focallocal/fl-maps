@@ -15,6 +15,8 @@ class PostsView extends Component {
       sortBy: 'dateNewest', // 'dateNewest', 'dateOldest', 'alphabetical', 'category', 'location'
       allPosts: [],
       isLoading: false,
+      isDeleting: false,
+      deleteProgress: { current: 0, total: 0 },
     };
   }
 
@@ -148,31 +150,54 @@ class PostsView extends Component {
     if (count === 0) return;
     
     const confirmDelete = window.confirm(
-      `Are you sure you want to delete ${count} post${count > 1 ? 's' : ''}?`
+      `Are you sure you want to delete ${count} post${count > 1 ? 's' : ''}? This may take a few minutes.`
     );
     
     if (confirmDelete) {
       const postIds = Array.from(selectedPosts);
       let deletedCount = 0;
       let errorCount = 0;
+      let cancelled = false;
+      
+      // Show progress
+      this.setState({ isDeleting: true, deleteProgress: { current: 0, total: postIds.length } });
+      console.log(`Starting bulk delete of ${postIds.length} posts...`);
       
       // Delete each post with delay to avoid rate limiting (2 per 5 seconds)
       postIds.forEach((postId, index) => {
         setTimeout(() => {
+          if (cancelled) return;
+          
           Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
+            if (cancelled) return;
+            
             if (error) {
               console.error(`Failed to delete post ${postId}:`, error);
               errorCount++;
             } else {
+              console.log(`Deleted post ${deletedCount + 1}/${postIds.length}`);
               deletedCount++;
             }
             
+            // Update progress
+            this.setState({ 
+              deleteProgress: { current: deletedCount + errorCount, total: postIds.length } 
+            });
+            
             // When all deletions are complete
             if (deletedCount + errorCount === postIds.length) {
-              if (errorCount > 0) {
-                alert(`Deleted ${deletedCount} post(s). ${errorCount} failed.`);
-              }
-              this.setState({ selectedPosts: new Set() });
+              const message = errorCount > 0 
+                ? `Completed: ${deletedCount} deleted, ${errorCount} failed.`
+                : `Successfully deleted ${deletedCount} post${deletedCount > 1 ? 's' : ''}.`;
+              
+              console.log(message);
+              alert(message);
+              
+              this.setState({ 
+                selectedPosts: new Set(),
+                isDeleting: false,
+                deleteProgress: { current: 0, total: 0 }
+              });
               // Reload posts and notify parent
               this.loadAllPosts();
               if (this.props.onDeletePosts) {
@@ -182,8 +207,18 @@ class PostsView extends Component {
           });
         }, index * 2600); // 2600ms delay between each delete (slightly more than 5000ms / 2)
       });
+      
+      // Store reference to allow cancellation if component unmounts
+      this._bulkDeleteInProgress = true;
     }
   };
+
+  componentWillUnmount() {
+    // Mark any in-progress bulk delete as cancelled
+    if (this._bulkDeleteInProgress) {
+      this._bulkDeleteCancelled = true;
+    }
+  }
 
   handleDeleteSingle = (postId, postName) => {
     const confirmDelete = window.confirm(
@@ -323,7 +358,7 @@ class PostsView extends Component {
 
   render() {
     const filteredAndSortedPosts = this.getFilteredAndSortedPosts();
-    const { selectedPosts, searchQuery, searchFilter, sortBy, isLoading } = this.state;
+    const { selectedPosts, searchQuery, searchFilter, sortBy, isLoading, isDeleting, deleteProgress } = this.state;
     const hasSelection = selectedPosts.size > 0;
     const allSelected = filteredAndSortedPosts.length > 0 && selectedPosts.size === filteredAndSortedPosts.length;
 
@@ -391,7 +426,17 @@ class PostsView extends Component {
         </div>
 
         <div className="bulk-actions">
-          {hasSelection && (
+          {isDeleting ? (
+            <div className="delete-progress">
+              <span>Deleting {deleteProgress.current} of {deleteProgress.total}...</span>
+              <div className="progress-bar">
+                <div 
+                  className="progress-fill" 
+                  style={{ width: `${(deleteProgress.current / deleteProgress.total) * 100}%` }}
+                />
+              </div>
+            </div>
+          ) : hasSelection && (
             <Button
               color="danger"
               onClick={this.handleDeleteSelected}
