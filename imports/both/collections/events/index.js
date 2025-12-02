@@ -81,7 +81,7 @@ const EventsSchema = new SimpleSchema({
   'categories': {
     type: Object,
     custom: function () {
-      if (!this.value || this.value.length === 0) {
+      if (!this.value || (Array.isArray(this.value) && this.value.length === 0)) {
         return 'required'
       }
     },

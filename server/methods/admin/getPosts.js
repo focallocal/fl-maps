@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
+import { Roles } from 'meteor/alanning:roles';
 import { Events } from '/imports/both/collections/events';
 
 export const getPosts = new ValidatedMethod({
@@ -23,8 +24,7 @@ export const getPosts = new ValidatedMethod({
       throw new Meteor.Error('not-authorized', 'You must be logged in');
     }
 
-    const user = Meteor.users.findOne(this.userId);
-    if (!user || user.roles !== 'admin') {
+    if (!Roles.userIsInRole(this.userId, 'admin', Roles.GLOBAL_GROUP)) {
       throw new Meteor.Error('not-authorized', 'You must be an admin');
     }
 

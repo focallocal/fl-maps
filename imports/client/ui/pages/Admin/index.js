@@ -330,17 +330,17 @@ class Admin extends Component {
       <div id="admin">
         <UserDisplay name={currentUserDisplay.name} role={currentUserDisplay.role}/>
         <div className="admin-controls">
-          <UserSearch searchForUser={this.searchForUser} />
-          <Button color="primary" onClick={this.handleToggleView}>
+          <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
             {showPostsView ? 'Show Users View' : 'Show Posts View'}
           </Button>
           {!showPostsView && (
             <>
-              <Button color="primary" onClick={this.handleToggleEvents}>Toggle Posts Display</Button>
+              <UserSearch searchForUser={this.searchForUser} />
               <Button 
                 color="info" 
                 onClick={this.handleSyncDiscourseUsers}
                 disabled={syncingUsers}
+                className="sync-users-btn"
               >
                 {syncingUsers ? 'Syncing...' : 'Sync Discourse Users'}
               </Button>

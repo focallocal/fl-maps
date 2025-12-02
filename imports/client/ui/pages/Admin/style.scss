@@ -43,13 +43,42 @@
 
   .admin-controls{
     margin: 15px auto;
-    max-width: 350px;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+    
+    .view-toggle-btn {
+      order: 1;
+    }
+    
+    .search-container {
+      order: 2;
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 0;
+      
+      @media (min-width: 768px) {
+        max-width: 400px;
+      }
+    }
+    
+    .sync-users-btn {
+      order: 3;
+    }
     
     .sort-users {
+      order: 4;
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-top: 10px;
+      margin-top: 0;
       margin-bottom: 0;
       
       label {
@@ -58,7 +87,7 @@
       }
       
       select {
-        flex: 1;
+        min-width: 150px;
       }
     }
   }
