@@ -275,6 +275,18 @@
   .posts-view {
     padding: 10px;
     
+    .posts-list {
+      // Override react-window positioning on mobile
+      > div {
+        position: relative !important;
+        
+        > div {
+          position: relative !important;
+          height: auto !important;
+        }
+      }
+    }
+    
     .posts-header {
       padding: 8px;
       
@@ -304,6 +316,10 @@
     }
     
     .post-row {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      height: auto !important;
       padding: 12px 8px;
       min-height: auto;
       width: 100%;
