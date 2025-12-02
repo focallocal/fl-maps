@@ -75,7 +75,8 @@ export const syncDiscourseUsers = () => {
 
     return {
       success: true,
-      totalProcessed: users.length,
+      totalSynced: users.length,
+      totalCreated: 0,
       totalUpdated,
       message: `Synced ${users.length} users. Updated ${totalUpdated} user roles.`
     };

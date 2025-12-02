@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Meteor } from 'meteor/meteor';
 import { FixedSizeList as List } from 'react-window';
 import { Button, Input, FormGroup, Label } from 'reactstrap';
 import './styles.scss';
@@ -66,6 +67,10 @@ class PostsView extends Component {
           const aLoc = a.address && a.address.city ? a.address.city : '';
           const bLoc = b.address && b.address.city ? b.address.city : '';
           return aLoc.localeCompare(bLoc);
+        case 'mostAttendees':
+          const aCount = a.engagement?.attendees?.length || 0;
+          const bCount = b.engagement?.attendees?.length || 0;
+          return bCount - aCount;
         default:
           return 0;
       }

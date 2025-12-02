@@ -233,9 +233,10 @@ class Admin extends Component {
   }
 
   handleMergeComplete = () => {
-    // Refresh user list after merge
-    this.setState({ skip: 0, users: [] }, () => {
+    // Refresh user list and events after merge
+    this.setState({ skip: 0, users: [], events: [] }, () => {
       this.getUsers();
+      // getEvents() will be called by componentDidUpdate when users update
     });
   }
 
@@ -365,11 +366,11 @@ class Admin extends Component {
               </Button>
             </div>
           </div>
+          <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
+            {showPostsView ? 'Show Users View' : 'Show Posts View'}
+          </Button>
           {!showPostsView && (
             <div className="admin-controls-row">
-              <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
-                {showPostsView ? 'Show Users View' : 'Show Posts View'}
-              </Button>
               <UserSearch searchForUser={this.searchForUser} />
               <FormGroup className="sort-users">
                 <Label for="userSortSelect">Sort by:</Label>
