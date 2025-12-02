@@ -75,10 +75,16 @@ class PostsView extends Component {
     // Sort posts
     const sortedPosts = [...filteredPosts].sort((a, b) => {
       switch (sortBy) {
-        case 'dateNewest':
-          return (b.createdAt || 0) - (a.createdAt || 0);
-        case 'dateOldest':
-          return (a.createdAt || 0) - (b.createdAt || 0);
+        case 'dateNewest': {
+          const aDate = (a.when && a.when.startingDate) ? new Date(a.when.startingDate).getTime() : (a.createdAt || 0);
+          const bDate = (b.when && b.when.startingDate) ? new Date(b.when.startingDate).getTime() : (b.createdAt || 0);
+          return bDate - aDate;
+        }
+        case 'dateOldest': {
+          const aDate = (a.when && a.when.startingDate) ? new Date(a.when.startingDate).getTime() : (a.createdAt || 0);
+          const bDate = (b.when && b.when.startingDate) ? new Date(b.when.startingDate).getTime() : (b.createdAt || 0);
+          return aDate - bDate;
+        }
         case 'alphabetical':
           return (a.name || '').localeCompare(b.name || '');
         case 'category':
@@ -154,6 +160,7 @@ class PostsView extends Component {
       postIds.forEach((postId) => {
         Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
           if (error) {
+            console.error(`Failed to delete post ${postId}:`, error);
             errorCount++;
           } else {
             deletedCount++;
@@ -184,6 +191,7 @@ class PostsView extends Component {
     if (confirmDelete) {
       Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
         if (error) {
+          console.error(`Failed to delete post ${postId}:`, error);
           alert('Error deleting post: ' + error.message);
         } else {
           // Reload posts and notify parent
@@ -271,7 +279,10 @@ class PostsView extends Component {
           </div>
           
           <div className="post-organizer" title={post.organiser?.name || post.organiser?.username || 'Unknown'}>
-            {post.organiser?.name || post.organiser?.username || 'Unknown'}
+            <div className="organizer-name">{post.organiser?.name || post.organiser?.username || 'Unknown'}</div>
+            {post.organiser?.username && (
+              <div className="organizer-email">{post.organiser.username}</div>
+            )}
           </div>
           
           <div className="post-location" title={this.formatLocation(post.address)}>

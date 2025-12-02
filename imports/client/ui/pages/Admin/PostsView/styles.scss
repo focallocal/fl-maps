@@ -70,7 +70,8 @@
     }
     
     &.selected {
-      background-color: #e3f2fd;
+      background-color: #cce5ff;
+      border-left: 3px solid #007bff;
     }
   }
   
@@ -83,25 +84,45 @@
     .post-checkbox {
       display: flex;
       justify-content: center;
+      align-items: center;
       
       input[type="checkbox"] {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
         cursor: pointer;
         
         &:checked {
           accent-color: #007bff;
+          background-color: #007bff;
         }
       }
     }
     
     .post-name,
-    .post-organizer,
     .post-location,
     .post-categories {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+    
+    .post-organizer {
+      overflow: hidden;
+      
+      .organizer-name {
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      
+      .organizer-email {
+        font-size: 0.85em;
+        color: #666;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
     
     .post-date {
