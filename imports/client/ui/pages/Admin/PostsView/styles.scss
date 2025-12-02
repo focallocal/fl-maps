@@ -277,103 +277,105 @@
     
     .posts-header {
       padding: 8px;
+      
+      .post-row-content {
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        
+        .post-checkbox {
+          margin-right: 10px;
+          margin-bottom: 0;
+        }
+        
+        .post-name {
+          flex: 1;
+        }
+        
+        .post-organizer,
+        .post-location,
+        .post-categories,
+        .post-date,
+        .post-actions {
+          display: none;
+        }
+      }
     }
     
     .post-row {
       padding: 12px 8px;
       min-height: auto;
-    }
-    
-    .post-row-content {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: stretch;
-      width: 100%;
       
-      .post-checkbox {
-        order: -1;
-        align-self: flex-start;
-        margin-bottom: 5px;
-      }
-      
-      .post-name {
-        order: 1;
-        font-weight: 500;
-        font-size: 1em;
-        white-space: normal;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+      .post-row-content {
+        display: flex !important;
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
         width: 100%;
-      }
-      
-      .post-organizer {
-        order: 2;
-        font-size: 0.85em;
-        width: 100%;
+        grid-template-columns: unset !important;
         
-        .organizer-name,
-        .organizer-email {
-          white-space: normal;
+        .post-checkbox {
+          order: -1;
+          align-self: flex-start;
+          margin-bottom: 5px;
+        }
+        
+        .post-name {
+          order: 1;
+          font-weight: 500;
+          font-size: 1em;
+          white-space: normal !important;
           word-wrap: break-word;
           overflow-wrap: break-word;
+          width: 100%;
+          overflow: visible;
+          text-overflow: clip;
         }
-      }
-      
-      .post-location {
-        order: 3;
-        font-size: 0.85em;
-        color: #666;
-        white-space: normal;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        width: 100%;
-      }
-      
-      .post-categories,
-      .post-date {
-        display: none;
-      }
-      
-      .post-actions {
-        order: 4;
-        justify-content: flex-start;
-        margin-top: 8px;
-        width: 100%;
         
-        button {
+        .post-organizer {
+          order: 2;
           font-size: 0.85em;
-          padding: 6px 12px;
+          width: 100%;
+          overflow: visible;
+          
+          .organizer-name,
+          .organizer-email {
+            white-space: normal !important;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            overflow: visible;
+            text-overflow: clip;
+          }
         }
-      }
-    }
-    
-    .posts-header .post-row-content {
-      display: flex;
-      flex-direction: row;
-      
-      .post-checkbox {
-        margin-right: 10px;
-        margin-bottom: 0;
-      }
-      
-      .post-name {
-        flex: 1;
-      }
-      
-      .post-organizer,
-      .post-location,
-      .post-categories,
-      .post-date,
-      .post-actions {
-        display: none;
-      }
-    }
-    
-    .posts-list {
-      // Override react-window's fixed item height on mobile
-      > div > div {
-        height: auto !important;
+        
+        .post-location {
+          order: 3;
+          font-size: 0.85em;
+          color: #666;
+          white-space: normal !important;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          width: 100%;
+          overflow: visible;
+          text-overflow: clip;
+        }
+        
+        .post-categories,
+        .post-date {
+          display: none;
+        }
+        
+        .post-actions {
+          order: 4;
+          justify-content: flex-start;
+          margin-top: 8px;
+          width: 100%;
+          
+          button {
+            font-size: 0.85em;
+            padding: 6px 12px;
+          }
+        }
       }
     }
   }
