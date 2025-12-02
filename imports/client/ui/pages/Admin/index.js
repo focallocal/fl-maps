@@ -373,6 +373,15 @@ class Admin extends Component {
           <div className="admin-controls-header">
             <div className="left-controls">
               <Button 
+                color="primary" 
+                onClick={this.handleToggleView}
+                className="view-toggle-btn"
+              >
+                {showPostsView ? 'Show Users View' : 'Show Posts View'}
+              </Button>
+            </div>
+            <div className="center-controls">
+              <Button 
                 color="warning" 
                 onClick={this.toggleMergeModal}
                 className="merge-users-btn"
@@ -392,11 +401,6 @@ class Admin extends Component {
             </div>
           </div>
           <div className="admin-controls-row">
-            <div className="toggle-wrapper">
-              <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
-                {showPostsView ? 'Show Users View' : 'Show Posts View'}
-              </Button>
-            </div>
             {!showPostsView && (
               <>
                 <div className="user-search-wrapper">

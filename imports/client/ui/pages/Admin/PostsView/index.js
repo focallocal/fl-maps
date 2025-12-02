@@ -256,9 +256,8 @@ class PostsView extends Component {
     return categories.map(c => c.name).join(', ');
   };
 
-  renderRow = ({ index, style }) => {
-    const posts = this.getFilteredAndSortedPosts();
-    const { selectedPosts } = this.state;
+  renderRow = ({ index, style, data }) => {
+    const { posts, selectedPosts } = data;
     const post = posts[index];
     
     if (!post) return null;
@@ -431,6 +430,7 @@ class PostsView extends Component {
             itemSize={60}
             width="100%"
             className="posts-list"
+            itemData={{ posts: filteredAndSortedPosts, selectedPosts: this.state.selectedPosts }}
           >
             {this.renderRow}
           </List>

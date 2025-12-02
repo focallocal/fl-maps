@@ -46,26 +46,28 @@
     max-width: 1200px;
     
     .admin-controls-header {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       margin-bottom: 15px;
+      padding: 10px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      gap: 10px;
       
       .left-controls {
         display: flex;
-        align-items: center;
-        gap: 15px;
-        
-        .app-name {
-          font-size: 1.2em;
-          font-weight: bold;
-          color: #333;
-        }
+        justify-content: flex-start;
+      }
+      
+      .center-controls {
+        display: flex;
+        justify-content: center;
       }
       
       .right-controls {
         display: flex;
-        gap: 10px;
+        justify-content: flex-end;
       }
     }
     
