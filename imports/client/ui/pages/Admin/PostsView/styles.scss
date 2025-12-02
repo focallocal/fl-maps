@@ -282,6 +282,7 @@
         display: flex !important;
         flex-direction: row;
         align-items: center;
+        grid-template-columns: none !important;
         
         .post-checkbox {
           margin-right: 10px;
@@ -297,7 +298,7 @@
         .post-categories,
         .post-date,
         .post-actions {
-          display: none;
+          display: none !important;
         }
       }
     }
@@ -305,19 +306,29 @@
     .post-row {
       padding: 12px 8px;
       min-height: auto;
+      width: 100%;
       
       .post-row-content {
         display: flex !important;
-        flex-direction: column;
+        flex-direction: column !important;
         gap: 8px;
-        align-items: stretch;
-        width: 100%;
-        grid-template-columns: unset !important;
+        align-items: stretch !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
+        
+        > * {
+          width: 100% !important;
+          max-width: 100% !important;
+          flex: 0 0 auto;
+        }
         
         .post-checkbox {
           order: -1;
           align-self: flex-start;
           margin-bottom: 5px;
+          width: auto !important;
         }
         
         .post-name {
@@ -327,24 +338,22 @@
           white-space: normal !important;
           word-wrap: break-word;
           overflow-wrap: break-word;
-          width: 100%;
-          overflow: visible;
-          text-overflow: clip;
+          overflow: visible !important;
+          text-overflow: clip !important;
         }
         
         .post-organizer {
           order: 2;
           font-size: 0.85em;
-          width: 100%;
-          overflow: visible;
+          overflow: visible !important;
           
           .organizer-name,
           .organizer-email {
             white-space: normal !important;
             word-wrap: break-word;
             overflow-wrap: break-word;
-            overflow: visible;
-            text-overflow: clip;
+            overflow: visible !important;
+            text-overflow: clip !important;
           }
         }
         
@@ -355,21 +364,20 @@
           white-space: normal !important;
           word-wrap: break-word;
           overflow-wrap: break-word;
-          width: 100%;
-          overflow: visible;
-          text-overflow: clip;
+          overflow: visible !important;
+          text-overflow: clip !important;
         }
         
         .post-categories,
         .post-date {
-          display: none;
+          display: none !important;
         }
         
         .post-actions {
           order: 4;
           justify-content: flex-end;
           margin-top: 8px;
-          width: 100%;
+          display: flex !important;
           
           button {
             font-size: 0.85em;
