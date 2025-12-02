@@ -361,7 +361,7 @@ class Admin extends Component {
   }
 
   render () {
-    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers, showMergeModal } = this.state
+    const { isNoMoreUsers, events, eventsLoading, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers, showMergeModal } = this.state
 
     let isNoUsersFound = this.state.users.length <= 0
     const sortedUsers = this.getSortedUsers()
