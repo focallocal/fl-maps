@@ -280,49 +280,54 @@
     }
     
     .post-row {
-      padding: 8px;
+      padding: 12px 8px;
+      min-height: auto;
     }
     
     .post-row-content {
-      grid-template-columns: 30px 1fr;
-      grid-template-rows: auto auto auto;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
-      align-items: start;
+      align-items: stretch;
+      width: 100%;
       
       .post-checkbox {
-        grid-column: 1;
-        grid-row: 1 / 4;
-        align-self: start;
+        order: -1;
+        align-self: flex-start;
+        margin-bottom: 5px;
       }
       
       .post-name {
-        grid-column: 2;
-        grid-row: 1;
+        order: 1;
         font-weight: 500;
         font-size: 1em;
         white-space: normal;
         word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 100%;
       }
       
       .post-organizer {
-        grid-column: 2;
-        grid-row: 2;
+        order: 2;
         font-size: 0.85em;
+        width: 100%;
         
         .organizer-name,
         .organizer-email {
           white-space: normal;
           word-wrap: break-word;
+          overflow-wrap: break-word;
         }
       }
       
       .post-location {
-        grid-column: 2;
-        grid-row: 3;
+        order: 3;
         font-size: 0.85em;
         color: #666;
         white-space: normal;
         word-wrap: break-word;
+        overflow-wrap: break-word;
+        width: 100%;
       }
       
       .post-categories,
@@ -331,34 +336,44 @@
       }
       
       .post-actions {
-        grid-column: 2;
-        grid-row: 4;
+        order: 4;
         justify-content: flex-start;
-        margin-top: 5px;
+        margin-top: 8px;
+        width: 100%;
         
         button {
-          font-size: 0.8em;
-          padding: 4px 8px;
+          font-size: 0.85em;
+          padding: 6px 12px;
         }
       }
     }
     
     .posts-header .post-row-content {
-      grid-template-columns: 30px 1fr;
-      grid-template-rows: auto;
+      display: flex;
+      flex-direction: row;
       
-      .post-name {
-        grid-column: 2;
-        grid-row: 1;
+      .post-checkbox {
+        margin-right: 10px;
+        margin-bottom: 0;
       }
       
-      .post-checkbox,
+      .post-name {
+        flex: 1;
+      }
+      
       .post-organizer,
       .post-location,
       .post-categories,
       .post-date,
       .post-actions {
         display: none;
+      }
+    }
+    
+    .posts-list {
+      // Override react-window's fixed item height on mobile
+      > div > div {
+        height: auto !important;
       }
     }
   }
@@ -368,14 +383,17 @@
   .posts-view {
     padding: 5px;
     
+    .post-row {
+      padding: 10px 6px;
+    }
+    
     .post-row-content {
-      grid-template-columns: 25px 1fr;
       gap: 6px;
       
       .post-checkbox {
         input[type="checkbox"] {
-          width: 16px;
-          height: 16px;
+          width: 18px;
+          height: 18px;
         }
       }
       
@@ -389,9 +407,11 @@
       }
       
       .post-actions {
+        margin-top: 6px;
+        
         button {
-          font-size: 0.75em;
-          padding: 3px 6px;
+          font-size: 0.8em;
+          padding: 5px 10px;
         }
       }
     }
