@@ -1,172 +1,88 @@
 import { Meteor } from 'meteor/meteor';
-import { HTTP } from 'meteor/http';
 import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
-import { getDiscourseOrigin } from '/imports/both/utils/discourse';
 
 /**
  * Syncs users from Discourse to the fl-maps database.
- * This method fetches users from the Discourse API and creates/updates their
- * accounts in Meteor with proper profile information and roles.
+ * Since Discourse SSO already handles user authentication and profile data,
+ * this method now updates existing users' profiles on demand rather than
+ * requiring API access to Discourse.
  * 
- * Schedule this to run weekly to keep user profiles up-to-date.
+ * User data is automatically synced when they log in via Discourse SSO.
+ * This method can be used to manually trigger a refresh of user role assignments.
  */
 
 export const syncDiscourseUsers = () => {
-  console.log('[Discourse Sync] Starting user synchronization...');
+  console.log('[Discourse Sync] Starting user role synchronization...');
   
-  const origin = getDiscourseOrigin();
-  const apiKey = Meteor.settings.private?.discourse?.apiKey;
-  const apiUsername = Meteor.settings.private?.discourse?.apiUsername || 'system';
+  // Note: Discourse SSO already syncs user profile data on login
+  // This function now focuses on ensuring role consistency
   
-  if (!apiKey) {
-    throw new Meteor.Error(
-      'discourse-api-key-missing',
-      'Discourse API key not found in settings.private.discourse.apiKey'
-    );
-  }
-
-  let page = 0;
-  let totalSynced = 0;
   let totalUpdated = 0;
-  let totalCreated = 0;
-  let hasMore = true;
 
-  while (hasMore) {
-    try {
-      console.log(`[Discourse Sync] Fetching page ${page}...`);
-      
-      // Fetch users from Discourse admin API
-      // See: https://docs.discourse.org/#tag/Users/operation/adminListUsers
-      const response = HTTP.get(`${origin}/admin/users/list/active.json`, {
-        params: {
-          page,
-          show_emails: true
-        },
-        headers: {
-          'Api-Key': apiKey,
-          'Api-Username': apiUsername
-        },
-        timeout: 30000
-      });
+  try {
+    // Get all users with Discourse service
+    const users = Meteor.users.find({
+      'services.discourse': { $exists: true }
+    }).fetch();
 
-      const users = response.data || [];
-      
-      if (!Array.isArray(users) || users.length === 0) {
-        hasMore = false;
-        break;
-      }
+    console.log(`[Discourse Sync] Found ${users.length} Discourse users`);
 
-      console.log(`[Discourse Sync] Processing ${users.length} users from page ${page}`);
+    users.forEach(user => {
+      try {
+        const discourseData = user.services && user.services.discourse;
+        if (!discourseData) return;
 
-      users.forEach(discourseUser => {
-        try {
-          const {
-            id,
-            username,
-            name,
-            email,
-            admin,
-            moderator,
-            groups
-          } = discourseUser;
+        const {
+          admin,
+          moderator,
+          username
+        } = discourseData;
 
-          // Check if user already exists
-          const existingUser = Meteor.users.findOne({
-            'services.discourse.id': id
-          });
+        let rolesUpdated = false;
 
-          if (existingUser) {
-            // Update existing user
-            const profileName = name || username;
-            
-            Meteor.users.update(existingUser._id, {
-              $set: {
-                'profile.name': profileName,
-                'services.discourse': {
-                  id,
-                  username,
-                  name,
-                  groups: Array.isArray(groups) ? groups.map(g => g.name).join(',') : '',
-                  email,
-                  admin: !!admin,
-                  moderator: !!moderator
-                }
-              }
-            });
-
-            // Update roles
-            Roles.setUserRoles(existingUser._id, [], Roles.GLOBAL_GROUP);
-            if (admin) {
-              Roles.addUsersToRoles(existingUser._id, 'admin', Roles.GLOBAL_GROUP);
-            } else if (moderator) {
-              Roles.addUsersToRoles(existingUser._id, 'moderator', Roles.GLOBAL_GROUP);
-            } else {
-              Roles.addUsersToRoles(existingUser._id, 'user', Roles.GLOBAL_GROUP);
-            }
-
-            totalUpdated++;
-          } else {
-            // Create new user using the same method as SSO login
-            const result = Accounts.updateOrCreateUserFromExternalService('discourse', {
-              id,
-              username,
-              name,
-              groups: Array.isArray(groups) ? groups.map(g => g.name).join(',') : '',
-              email,
-              admin: !!admin,
-              moderator: !!moderator
-            });
-
-            if (result && result.userId) {
-              // Set profile and roles (same as onLogin handler)
-              const profileName = name || username;
-              Meteor.users.update(result.userId, {
-                $set: { 'profile.name': profileName }
-              });
-
-              Roles.setUserRoles(result.userId, [], Roles.GLOBAL_GROUP);
-              if (admin) {
-                Roles.addUsersToRoles(result.userId, 'admin', Roles.GLOBAL_GROUP);
-              } else if (moderator) {
-                Roles.addUsersToRoles(result.userId, 'moderator', Roles.GLOBAL_GROUP);
-              } else {
-                Roles.addUsersToRoles(result.userId, 'user', Roles.GLOBAL_GROUP);
-              }
-
-              totalCreated++;
-            }
-          }
-
-          totalSynced++;
-        } catch (userError) {
-          console.error(`[Discourse Sync] Error processing user ${discourseUser.username}:`, userError);
+        // Sync admin role
+        if (admin && !Roles.userIsInRole(user._id, 'admin', Roles.GLOBAL_GROUP)) {
+          Roles.addUsersToRoles(user._id, 'admin', Roles.GLOBAL_GROUP);
+          rolesUpdated = true;
+          console.log(`[Discourse Sync] Granted admin role to ${username}`);
+        } else if (!admin && Roles.userIsInRole(user._id, 'admin', Roles.GLOBAL_GROUP)) {
+          Roles.removeUsersFromRoles(user._id, 'admin', Roles.GLOBAL_GROUP);
+          rolesUpdated = true;
+          console.log(`[Discourse Sync] Removed admin role from ${username}`);
         }
-      });
 
-      page++;
-      
-      // Discourse typically returns 100 users per page
-      // If we got fewer, we've reached the end
-      if (users.length < 100) {
-        hasMore = false;
+        // Sync moderator role
+        if (moderator && !Roles.userIsInRole(user._id, 'moderator', Roles.GLOBAL_GROUP)) {
+          Roles.addUsersToRoles(user._id, 'moderator', Roles.GLOBAL_GROUP);
+          rolesUpdated = true;
+          console.log(`[Discourse Sync] Granted moderator role to ${username}`);
+        } else if (!moderator && Roles.userIsInRole(user._id, 'moderator', Roles.GLOBAL_GROUP)) {
+          Roles.removeUsersFromRoles(user._id, 'moderator', Roles.GLOBAL_GROUP);
+          rolesUpdated = true;
+          console.log(`[Discourse Sync] Removed moderator role from ${username}`);
+        }
+
+        if (rolesUpdated) {
+          totalUpdated++;
+        }
+      } catch (error) {
+        console.error(`[Discourse Sync] Error syncing user:`, error);
       }
+    });
 
-    } catch (pageError) {
-      console.error(`[Discourse Sync] Error fetching page ${page}:`, pageError);
-      hasMore = false;
-    }
+    console.log(`[Discourse Sync] Completed. Updated ${totalUpdated} users.`);
+
+    return {
+      success: true,
+      totalProcessed: users.length,
+      totalUpdated,
+      message: `Synced ${users.length} users. Updated ${totalUpdated} user roles.`
+    };
+  } catch (error) {
+    console.error('[Discourse Sync] Sync failed:', error);
+    throw new Meteor.Error('sync-failed', `Failed to sync users: ${error.message}`);
   }
-
-  const summary = {
-    totalSynced,
-    totalCreated,
-    totalUpdated,
-    completedAt: new Date()
-  };
-
-  console.log('[Discourse Sync] Synchronization complete:', summary);
-  return summary;
 };
 
 // Meteor method for manual invocation
@@ -187,38 +103,3 @@ Meteor.methods({
     return syncDiscourseUsers();
   }
 });
-
-// Schedule weekly sync
-if (Meteor.isServer) {
-  const SyncedAt = new Mongo.Collection('discourse_user_sync_log');
-  
-  // Run sync on server startup if it hasn't run in the last 7 days
-  Meteor.startup(() => {
-    const lastSync = SyncedAt.findOne({}, { sort: { syncedAt: -1 } });
-    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-    
-    if (!lastSync || lastSync.syncedAt < sevenDaysAgo) {
-      console.log('[Discourse Sync] Running scheduled sync...');
-      try {
-        const result = syncDiscourseUsers();
-        SyncedAt.insert({ syncedAt: new Date(), result });
-      } catch (error) {
-        console.error('[Discourse Sync] Scheduled sync failed:', error);
-      }
-    } else {
-      console.log('[Discourse Sync] Skipping sync - last run was recent');
-    }
-  });
-
-  // Run sync weekly (every 7 days)
-  const weekInMs = 7 * 24 * 60 * 60 * 1000;
-  Meteor.setInterval(() => {
-    console.log('[Discourse Sync] Running weekly sync...');
-    try {
-      const result = syncDiscourseUsers();
-      SyncedAt.insert({ syncedAt: new Date(), result });
-    } catch (error) {
-      console.error('[Discourse Sync] Weekly sync failed:', error);
-    }
-  }, weekInMs);
-}

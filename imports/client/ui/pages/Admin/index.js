@@ -343,12 +343,18 @@ class Admin extends Component {
       <div id="admin">
         <UserDisplay name={currentUserDisplay.name} role={currentUserDisplay.role}/>
         <div className="admin-controls">
-          <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
-            {showPostsView ? 'Show Users View' : 'Show Posts View'}
-          </Button>
-          {!showPostsView && (
-            <>
-              <UserSearch searchForUser={this.searchForUser} />
+          <div className="admin-controls-header">
+            <div className="left-controls">
+              <Button 
+                color="warning" 
+                onClick={this.toggleMergeModal}
+                className="merge-users-btn"
+              >
+                Merge Users
+              </Button>
+              <span className="app-name">FL-Maps</span>
+            </div>
+            <div className="right-controls">
               <Button 
                 color="info" 
                 onClick={this.handleSyncDiscourseUsers}
@@ -357,13 +363,14 @@ class Admin extends Component {
               >
                 {syncingUsers ? 'Syncing...' : 'Sync Discourse Users'}
               </Button>
-              <Button 
-                color="warning" 
-                onClick={this.toggleMergeModal}
-                className="merge-users-btn"
-              >
-                Merge Users
+            </div>
+          </div>
+          {!showPostsView && (
+            <div className="admin-controls-row">
+              <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
+                {showPostsView ? 'Show Users View' : 'Show Posts View'}
               </Button>
+              <UserSearch searchForUser={this.searchForUser} />
               <FormGroup className="sort-users">
                 <Label for="userSortSelect">Sort by:</Label>
                 <Input
@@ -378,11 +385,11 @@ class Admin extends Component {
                   <option value="joinDateOldest">Join Date (Oldest)</option>
                 </Input>
               </FormGroup>
-            </>
+            </div>
           )}
         </div>
         {showPostsView ? (
-          <PostsView />
+          <PostsView events={events} users={this.state.users} onDeletePosts={this.getEvents} />
         ) : (
           <>
             {isNoUsersFound &&

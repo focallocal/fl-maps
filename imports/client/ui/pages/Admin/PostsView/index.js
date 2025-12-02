@@ -7,56 +7,86 @@ class PostsView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: [],
-      loading: true,
       selectedPosts: new Set(),
-      totalCount: 0,
       searchQuery: '',
       searchFilter: 'title', // 'title', 'user', 'location', 'category'
-      sortBy: 'dateNewest', // 'dateNewest', 'dateOldest', 'mostAttendees', 'alphabetical', 'category', 'location'
+      sortBy: 'dateNewest', // 'dateNewest', 'dateOldest', 'alphabetical', 'category', 'location'
     };
   }
 
-  componentDidMount() {
-    this.loadPosts();
-  }
+  getFilteredAndSortedPosts = () => {
+    const { events } = this.props;
+    const { searchQuery, searchFilter, sortBy } = this.state;
+
+    if (!events || events.length === 0) {
+      return [];
+    }
+
+    // Filter posts based on search
+    let filteredPosts = events;
+    
+    if (searchQuery && searchQuery.trim().length > 0) {
+      const query = searchQuery.trim().toLowerCase();
+      
+      filteredPosts = events.filter(event => {
+        switch (searchFilter) {
+          case 'title':
+            return event.name && event.name.toLowerCase().includes(query);
+          case 'user':
+            return event.organiser && event.organiser.name && 
+                   event.organiser.name.toLowerCase().includes(query);
+          case 'location':
+            return (event.address && event.address.name && event.address.name.toLowerCase().includes(query)) ||
+                   (event.address && event.address.city && event.address.city.toLowerCase().includes(query)) ||
+                   (event.address && event.address.country && event.address.country.toLowerCase().includes(query));
+          case 'category':
+            return event.categories && event.categories.some(cat => 
+              cat.name && cat.name.toLowerCase().includes(query)
+            );
+          default:
+            return true;
+        }
+      });
+    }
+
+    // Sort posts
+    const sortedPosts = [...filteredPosts].sort((a, b) => {
+      switch (sortBy) {
+        case 'dateNewest':
+          return (b.createdAt || 0) - (a.createdAt || 0);
+        case 'dateOldest':
+          return (a.createdAt || 0) - (b.createdAt || 0);
+        case 'alphabetical':
+          return (a.name || '').localeCompare(b.name || '');
+        case 'category':
+          const aCat = a.categories && a.categories[0] ? a.categories[0].name : '';
+          const bCat = b.categories && b.categories[0] ? b.categories[0].name : '';
+          return aCat.localeCompare(bCat);
+        case 'location':
+          const aLoc = a.address && a.address.city ? a.address.city : '';
+          const bLoc = b.address && b.address.city ? b.address.city : '';
+          return aLoc.localeCompare(bLoc);
+        default:
+          return 0;
+      }
+    });
+
+    return sortedPosts;
+  };
 
   componentDidUpdate(prevProps, prevState) {
-    // Reload posts when search/filter/sort changes
+    // Clear selection when search/filter/sort changes
     if (
       prevState.searchQuery !== this.state.searchQuery ||
       prevState.searchFilter !== this.state.searchFilter ||
       prevState.sortBy !== this.state.sortBy
     ) {
-      this.loadPosts();
+      this.setState({ selectedPosts: new Set() });
     }
   }
 
-  loadPosts = () => {
-    this.setState({ loading: true });
-
-    const { searchQuery, searchFilter, sortBy } = this.state;
-
-    Meteor.call(
-      'Admin.getPosts',
-      { searchQuery, searchFilter, sortBy },
-      (error, result) => {
-        if (error) {
-          console.error('Error loading posts:', error);
-          this.setState({ loading: false });
-        } else {
-          this.setState({
-            posts: result.posts || [],
-            totalCount: result.totalCount || 0,
-            loading: false,
-          });
-        }
-      }
-    );
-  };
-
   handleSelectAll = (e) => {
-    const { posts } = this.state;
+    const posts = this.getFilteredAndSortedPosts();
     if (e.target.checked) {
       const allPostIds = new Set(posts.map(p => p._id));
       this.setState({ selectedPosts: allPostIds });
@@ -96,7 +126,10 @@ class PostsView extends Component {
           alert('Error deleting posts: ' + error.message);
         } else {
           this.setState({ selectedPosts: new Set() });
-          this.loadPosts();
+          // Notify parent to refresh events
+          if (this.props.onDeletePosts) {
+            this.props.onDeletePosts();
+          }
         }
       });
     }
@@ -112,7 +145,10 @@ class PostsView extends Component {
         if (error) {
           alert('Error deleting post: ' + error.message);
         } else {
-          this.loadPosts();
+          // Notify parent to refresh events
+          if (this.props.onDeletePosts) {
+            this.props.onDeletePosts();
+          }
         }
       });
     }
@@ -150,7 +186,8 @@ class PostsView extends Component {
   };
 
   renderRow = ({ index, style }) => {
-    const { posts, selectedPosts } = this.state;
+    const posts = this.getFilteredAndSortedPosts();
+    const { selectedPosts } = this.state;
     const post = posts[index];
     
     if (!post) return null;
@@ -203,7 +240,8 @@ class PostsView extends Component {
   };
 
   render() {
-    const { posts, loading, selectedPosts, totalCount, searchQuery, searchFilter, sortBy } = this.state;
+    const posts = this.getFilteredAndSortedPosts();
+    const { selectedPosts, searchQuery, searchFilter, sortBy } = this.state;
     const hasSelection = selectedPosts.size > 0;
     const allSelected = posts.length > 0 && selectedPosts.size === posts.length;
 
@@ -301,7 +339,7 @@ class PostsView extends Component {
           </div>
         </div>
 
-        {loading ? (
+        {!this.props.events ? (
           <div className="posts-loading">Loading posts...</div>
         ) : posts.length === 0 ? (
           <div className="posts-empty">No posts found</div>
@@ -318,7 +356,7 @@ class PostsView extends Component {
         )}
 
         <div className="posts-footer">
-          Total: {totalCount} post{totalCount !== 1 ? 's' : ''}
+          Total: {posts.length} post{posts.length !== 1 ? 's' : ''}
         </div>
       </div>
     );

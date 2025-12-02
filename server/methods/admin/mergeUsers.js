@@ -27,6 +27,14 @@ export const mergeUsers = new ValidatedMethod({
       throw new Meteor.Error('not-authorized', 'You must be an admin');
     }
 
+    // Prevent merging current user
+    if (sourceUserId === this.userId) {
+      throw new Meteor.Error('cannot-merge-self', 'Cannot merge your own account as source. Please select a different user.');
+    }
+    if (targetUserId === this.userId) {
+      throw new Meteor.Error('cannot-merge-self-target', 'Cannot merge into your own account. Please log in as the target user or select a different target.');
+    }
+
     try {
       // Get both users to verify they exist
       const sourceUser = Meteor.users.findOne(sourceUserId);
@@ -39,13 +47,16 @@ export const mergeUsers = new ValidatedMethod({
         throw new Meteor.Error('user-not-found', 'Target user not found');
       }
 
+      // Get target user name from profile
+      const targetName = (targetUser.profile && targetUser.profile.name) || targetUser.username || 'Unknown';
+      
       // Update all events where sourceUser is the organiser
       const eventsUpdated = Events.update(
         { 'organiser._id': sourceUserId },
         { 
           $set: { 
             'organiser._id': targetUserId,
-            'organiser.name': targetUser.profile?.name || targetUser.username || 'Unknown',
+            'organiser.name': targetName,
             'organiser.username': targetUser.username
           } 
         },

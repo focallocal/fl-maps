@@ -44,59 +44,73 @@
   .admin-controls{
     margin: 15px auto;
     max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
     
-    @media (min-width: 768px) {
-      justify-content: flex-start;
+    .admin-controls-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
       
-      // Force line break after merge button on desktop
-      .merge-users-btn {
-        margin-right: 100%;
+      .left-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        .app-name {
+          font-size: 1.2em;
+          font-weight: bold;
+          color: #333;
+        }
+      }
+      
+      .right-controls {
+        display: flex;
+        gap: 10px;
       }
     }
     
-    .view-toggle-btn {
-      order: 1;
-    }
-    
-    .sync-users-btn {
-      order: 2;
-    }
-    
-    .merge-users-btn {
-      order: 3;
-    }
-    
-    .search-container {
-      order: 4;
-      flex: 1;
-      min-width: 250px;
-      margin-bottom: 0;
+    .admin-controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
       
       @media (min-width: 768px) {
-        max-width: 400px;
+        justify-content: flex-start;
       }
-    }
-    
-    .sort-users {
-      order: 5;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 0;
-      margin-bottom: 0;
       
-      label {
+      .view-toggle-btn {
+        order: 1;
+      }
+      
+      .search-container {
+        order: 2;
+        flex: 1;
+        min-width: 250px;
         margin-bottom: 0;
-        white-space: nowrap;
+        
+        @media (min-width: 768px) {
+          max-width: 400px;
+        }
       }
       
-      select {
-        min-width: 150px;
+      .sort-users {
+        order: 3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+        
+        label {
+          margin-bottom: 0;
+          white-space: nowrap;
+        }
+        
+        select {
+          min-width: 150px;
+        }
       }
     }
   }
