@@ -38,10 +38,31 @@ const EventsSchema = new SimpleSchema({
     type: Object,
     autoValue: function () {
       // Dont change this!
-      const { _id, profile } = Meteor.user() || { _id: '-', profile: { name: '-' } }
+      const user = Meteor.user()
+      if (!user) {
+        return { _id: '-', name: '-', username: null }
+      }
+      
+      // Debug: Log the user object structure
+      console.log('🔍 EventsSchema - Meteor.user():', user)
+      console.log('🔍 EventsSchema - user.services:', user.services)
+      console.log('🔍 EventsSchema - user.username:', user.username)
+      
+      const { _id, profile } = user
+      // Try to get username from services.discourse, fallback to top-level username
+      let username = null
+      if (user.services && user.services.discourse && user.services.discourse.username) {
+        username = user.services.discourse.username
+      } else if (user.username) {
+        username = user.username
+      }
+      
+      console.log('🔍 EventsSchema - resolved username:', username)
+      
       return {
         _id,
-        name: profile.name
+        name: profile.name,
+        username: username
       }
     }
   },
@@ -51,12 +72,16 @@ const EventsSchema = new SimpleSchema({
   'organiser.name': {
     type: String
   },
+  'organiser.username': {
+    type: String,
+    optional: true
+  },
 
   // Categories sub level
   'categories': {
     type: Object,
     custom: function () {
-      if (!this.value || this.value.length === 0) {
+      if (!this.value || (Array.isArray(this.value) && this.value.length === 0)) {
         return 'required'
       }
     },

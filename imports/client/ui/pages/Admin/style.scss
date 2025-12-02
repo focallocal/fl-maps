@@ -43,7 +43,117 @@
 
   .admin-controls{
     margin: 15px auto;
-    max-width: 350px;
+    max-width: 1200px;
+    
+    .admin-controls-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      
+      .left-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        .app-name {
+          font-size: 1.2em;
+          font-weight: bold;
+          color: #333;
+        }
+      }
+      
+      .right-controls {
+        display: flex;
+        gap: 10px;
+      }
+    }
+    
+    .admin-controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1%;
+      align-items: center;
+      width: 100%;
+      padding: 10px 0;
+      
+      .toggle-wrapper {
+        flex: 0 0 auto;
+        margin-left: 2%;
+      }
+      
+      .user-search-wrapper {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        min-width: 200px;
+      }
+      
+      .admin-sort-wrapper {
+        flex: 0 0 auto;
+        margin-right: 2%;
+        margin-left: auto;
+      }
+      
+      @media (max-width: 768px) {
+        .toggle-wrapper,
+        .user-search-wrapper,
+        .admin-sort-wrapper {
+          flex: 0 0 calc(50% - 10px);
+          margin: 5px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: stretch;
+        
+        .toggle-wrapper,
+        .user-search-wrapper,
+        .admin-sort-wrapper {
+          flex: 0 0 100%;
+          margin: 5px 0;
+          justify-content: center;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+      }
+      
+      .view-toggle-btn {
+        order: 1;
+      }
+      
+      .search-container {
+        order: 2;
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 0;
+        
+        @media (min-width: 768px) {
+          max-width: 400px;
+        }
+      }
+      
+      .sort-users {
+        order: 3;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+        
+        label {
+          margin-bottom: 0;
+          white-space: nowrap;
+        }
+        
+        select {
+          min-width: 150px;
+        }
+      }
+    }
   }
 
   .link-btns{

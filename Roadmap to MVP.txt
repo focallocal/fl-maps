@@ -1,0 +1,67 @@
+PHM ROADMAP TO MVP
+
+======================
+ANDY'S TASKS
+======================
+
+* ~~All images the same dimensions as with Liberators bubble~~ [x]
+* ~~Update wireframe~~ [x]
+* ~~Separate text and image on heart logo~~ [x]
+* ~~Add links to the forum and map in the header via Discourse~~ [x]
+* ~~Remove some links from boxes on homepage so it doesn't distract users too much~~ [x]
+* ~~Re-order the boxes on the bottom~~ [x]
+* ~~Improve About Page~~ [x]
+* ~~Update 'Getting Started' guides phase 1~~ [x]
+* ~~Find a way to hide the burger menu on the homepage since it doesn't work~~ [x]
+* ~~Add target-top to login/sign up link~~ [x]
+* Re-do setup with sidebar navigation section on Discourse and colours to match homepage. Hopefully nested category/subcategories are now supported (as UX sucks without it). [ ]
+* ~~[Add subtitles to sections on homepage](https://github.com/focallocal/fl-maps/blob/deploy-phm/imports/both/i18n/en/phm/home.json)~~ [x]
+* Finish adding all activities to website [ ]
+* ~~Settings minimum tags 3, and set up tag swapping for common near duplications from my notes~~ [x]
+* Fix Our Team Page in wp-docuss [ ]
+* Make post in Reddit subs asking for new ideas for activities as a way to encourage people to check out our website [ ]
+* ~~Change 'categories' to 'forum' sitewide~~ [x]
+* ~~Create 'Forum' Header button where it currently says Gather~~ [x]
+* ~~Headers, subheaders and CTA button text written~~ [x]
+* ~~Fix Docuss~~ [x]
+* ~~Fix User Gravitars~~ [x]
+* ~~Create Following system for notifictions~~ [x]
+* ~~Create invite system~~ [x]
+* Edit sign up/login to encourage users to select or create a 'location' category so the invite system works [ ]
+* Text for forms/activities updated [ ]
+* ~~https://publichappinessmovement.com/t/topic/6290~~ [x]
+* change boxes to add community owned elements. leaderboard. most active recent posts. comments with most hearts received. [ ]
+* find a way to put pre-filled text into report, going and invite commenting box. [ ]
+* review all 'getting started' guides, see if i can make them clearer and more engaging. [ ]
+
+======================
+MARVELOUS'S TASKS
+======================
+
+* ~~Add a hero banner slide component.~~ [x]
+* ~~Redesign the slider.~~ [x]
+* ~~Add content to slides explaining why users would want to use our site and where they can do those actions~~ [x]
+* ~~Put a call to action button in the hero banner slider, so users have a big button to take them directly to that place~~ [x]
+* ~~Put 'Public Happiness' text image after the banner slides.~~ [x]
+* ~~Lock the heart globe in the background so its visable between elements as users scroll the page.~~ [x]
+* ~~Update desktop to new boxes design if possible~~ [x]
+* ~~CSS fixes on homepage to get it working well on all devices/screens~~ [x]
+* ~~Add a coloured border to the headers for each section so it matches the boxes~~ [x]
+* ~~[Question marks added again to filter titles in the map](https://publichappinessmovement.com/t/topic/5885).~~ [x]
+* ~~[Make a sitewide notifications system by setting users to 'follow' the tags created by Docuss when they post something on the map](https://publichappinessmovement.com/t/topic/2835)~~ (*Done, but needs testing in production since we don't have docuss locally yet.*) [x]
+* [Forms rebuilt](https://publichappinessmovement.com/t/topic/5364) (titles and text are all still there in i18n). We should make two versions this time as last time we forced two different functions into one form and it was a constant problem [ ]
+* [Whitepage bug fixed](https://publichappinessmovement.com/t/topic/6296) [ ]
+* [Gap on homepage on Brave/Chrome fixed](https://publichappinessmovement.com/t/topic/6299) [ ]
+
+**Tasks identified for next phase of Roadmap**
+
+* ~~[users can toggle available and unavailable for invites](https://publichappinessmovement.com/t/topic/6048)~~ [x]
+* [Make bubbles float around the image](https://publichappinessmovement.com/t/topic/5313) or random images load, choice to be discussed later [ ]
+* Add an informational footer, should be easy via Discourse [ ]
+* Add a CTA under all activity guides with a fixed url once we have a link for the forms so users don't have to navigate back to the map and click on it themselves [ ]
+* Reduce PHM notifications default to only those that directly interest user, as it pisses me off so much on new reddit [ ]
+* Add Hashtags to all How-To articles, so users will be promoting us when they post on other social media sites. [ ]
+* Remove MeteorJS from the codebase [ ]
+* Dockerise project [ ]
+* Build in cryptocurrency payment/donation system [ ]
+* Review the whitepaper and update anything which is outdated, plus general review for 2024 [ ]

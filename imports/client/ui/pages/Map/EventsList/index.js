@@ -8,13 +8,18 @@ import EventInfo from './EventInfo'
 
 import { inIFrame } from 'dcs-client'
 import * as Gravatar from '/imports/client/utils/Gravatar'
+import { getDiscourseAvatarUrl } from '/imports/client/utils/discourseAvatar'
 
 import './styles.scss'
 
 class EventsList extends Component {
   state = {
     events: [],
+    avatarMap: {}
   }
+
+  pendingAvatarLookups = new Map()
+  _isMounted = false
 
   static getDerivedStateFromProps (nextProps, prevState) {
     // If we had an array of events but they were eith filtered/researched
@@ -28,6 +33,84 @@ class EventsList extends Component {
     }
 
     return state
+  }
+
+  componentDidMount () {
+    this._isMounted = true
+    this.populateAvatarMap(this.props.events)
+    this.attachWheelListener()
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.events !== this.props.events) {
+      this.populateAvatarMap(this.props.events)
+    }
+  }
+
+  componentWillUnmount () {
+    this._isMounted = false
+    this.pendingAvatarLookups.clear()
+    this.detachWheelListener()
+  }
+
+  populateAvatarMap = (events = []) => {
+    if (!Array.isArray(events)) {
+      return
+    }
+
+    events.forEach(event => {
+      if (!event || !event._id) {
+        return
+      }
+
+      const existing = this.state.avatarMap[event._id]
+      if (existing !== undefined || this.pendingAvatarLookups.has(event._id)) {
+        return
+      }
+
+      const username = event.organiser && event.organiser.username
+      if (!username) {
+        const fallback = this.getFallbackAvatar(event)
+        this.setAvatarForEvent(event._id, fallback)
+        return
+      }
+
+      this.pendingAvatarLookups.set(event._id, true)
+      getDiscourseAvatarUrl(username, 50)
+        .then(url => {
+          const resolved = url || this.getFallbackAvatar(event)
+          this.setAvatarForEvent(event._id, resolved)
+        })
+        .catch(() => {
+          this.setAvatarForEvent(event._id, this.getFallbackAvatar(event))
+        })
+        .finally(() => {
+          this.pendingAvatarLookups.delete(event._id)
+        })
+    })
+  }
+
+  setAvatarForEvent = (eventId, url) => {
+    if (!this._isMounted) {
+      return
+    }
+    this.setState(prevState => ({
+      avatarMap: {
+        ...prevState.avatarMap,
+        [eventId]: url
+      }
+    }))
+  }
+
+  getFallbackAvatar = (event) => {
+    const organiser = event && event.organiser
+    const identifier = organiser?.username || organiser?.name || 'user'
+    try {
+      return Gravatar.getGravatar(identifier, 50)
+    } catch (error) {
+      console.warn('[EventsList] Failed to build fallback avatar', error)
+      return ''
+    }
   }
 
   render () {
@@ -56,10 +139,10 @@ class EventsList extends Component {
               const ishovered = this.props.hoveredEvent === event._id ;
               return (
                 <EventsListItem
-                  key={index}
+                  key={event._id || index}
                   item={event}
                   userLocation={userLocation}
-                  userGravatar={Gravatar.isSpecialCategorySelected(event.categories) ? Gravatar.getGravatar(event.organiser.name, 50) : ''}
+                  avatarUrl={this.state.avatarMap[event._id]}
                   onItemClick={this.props.onItemClick}
                   ishovered={ishovered} 
                 />
@@ -86,6 +169,39 @@ class EventsList extends Component {
 
   returnToList = () => {
     this.props.removeCurrentEvent()
+  }
+
+  attachWheelListener = () => {
+    const listElement = document.getElementById('events-list')
+    if (listElement && !this.wheelListenerAttached) {
+      listElement.addEventListener('wheel', this.handleWheel, { passive: false })
+      this.wheelListenerAttached = true
+    }
+  }
+
+  detachWheelListener = () => {
+    const listElement = document.getElementById('events-list')
+    if (listElement && this.wheelListenerAttached) {
+      listElement.removeEventListener('wheel', this.handleWheel)
+      this.wheelListenerAttached = false
+    }
+  }
+
+  handleWheel = (e) => {
+    const listElement = document.getElementById('events-list')
+    if (!listElement) return
+
+    const { scrollTop, scrollHeight, clientHeight } = listElement
+    const isAtTop = scrollTop === 0
+    const isAtBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight
+    const isScrollingUp = e.deltaY < 0
+    const isScrollingDown = e.deltaY > 0
+
+    // Prevent parent (map) from scrolling when at boundaries
+    if ((isAtTop && isScrollingUp) || (isAtBottom && isScrollingDown)) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
   }
 }
 

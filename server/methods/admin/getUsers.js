@@ -16,11 +16,12 @@ const getUsers = new ValidatedMethod({
     }
   }).validator(),
   run ({ skip, limit }) {
-    return Meteor.users.find({},
+    const users = Meteor.users.find({},
       {
         skip,
         limit
       }).fetch()
+    return users
   }
 })
 

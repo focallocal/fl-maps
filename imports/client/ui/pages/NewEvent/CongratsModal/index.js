@@ -4,6 +4,8 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap'
 import { Redirect } from 'react-router-dom'
 import { formatCategories, formatWhenObject } from '/imports/client/utils/format'
 import i18n from '/imports/both/i18n/en'
+import { routeMatcher } from '../../../app'
+import { getDiscourseOrigin } from '/imports/client/utils/discourseAvatar'
 import './styles.scss'
 
 const socialButtons = [
@@ -16,20 +18,35 @@ const socialButtons = [
 ]
 
 class CongratsModal extends Component {
+  pageNamePromise = null
+
   state = {
-    event: null
+    event: null,
+    docussPageName: null
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
-    if (!prevState.event) {
+    if (!prevState.event && window['__recentEvent']) {
+      const recentEvent = { ...window['__recentEvent'] }
       return {
-        event: { ...window.__recentEvent }
+        event: recentEvent,
+        docussPageName: recentEvent.docussPageName || null
       }
     }
+
+    return null
   }
 
   componentDidMount () {
     loadFacebook()
+    this.updateCachedEvent()
+    this.ensureDocussPageName()
+  }
+
+  componentDidUpdate (prevProps, prevState) {
+    if (this.state.event !== prevState.event || this.state.docussPageName !== prevState.docussPageName) {
+      this.updateCachedEvent()
+    }
   }
 
   componentDidCatch (error, info) {
@@ -40,6 +57,104 @@ class CongratsModal extends Component {
     this.setState({ hasErrors: true })
   }
 
+  updateCachedEvent = () => {
+    const { event, docussPageName } = this.state
+    if (!event) {
+      return
+    }
+
+    const discourseOrigin = getDiscourseOrigin()
+    const shareUrl = docussPageName
+      ? `${discourseOrigin}/docuss/${docussPageName}`
+      : Meteor.absoluteUrl('page/' + event._id)
+
+    const cached = docussPageName
+      ? { ...event, docussPageName, shareUrl }
+      : { ...event, shareUrl }
+
+    window['cachedDataForPage'] = cached
+  }
+
+  getResolvedPageName = () => {
+    const { docussPageName, event } = this.state
+    return docussPageName || event?.docussPageName || null
+  }
+
+  ensureDocussPageName = () => {
+    const { event } = this.state
+    if (!event || !event._id) {
+      return Promise.resolve(null)
+    }
+
+    const existing = this.getResolvedPageName()
+    if (existing) {
+      return Promise.resolve(existing)
+    }
+
+    if (!this.pageNamePromise) {
+      this.pageNamePromise = routeMatcher
+        .getPageName('/page/' + event._id)
+        .then(pageName => {
+          if (pageName) {
+            this.setState(prev => {
+              const baseEvent = prev.event || event
+              const updatedEvent = baseEvent ? { ...baseEvent, docussPageName: pageName } : baseEvent
+
+              if (updatedEvent) {
+                window['__recentEvent'] = { ...updatedEvent }
+              }
+
+              return {
+                docussPageName: pageName,
+                event: updatedEvent
+              }
+            })
+          }
+          return pageName
+        })
+        .catch(error => {
+          console.warn('[CongratsModal] Failed to resolve Docuss page name', error)
+          return null
+        })
+        .finally(() => {
+          this.pageNamePromise = null
+        })
+    }
+
+    return this.pageNamePromise
+  }
+
+  handleDone = () => {
+    const { event } = this.state
+    if (!event || !event._id) return
+
+    const isInIframe = window.self !== window.top
+
+    if (!isInIframe) {
+      window.location.href = `/page/${event._id}`
+      return
+    }
+
+    this.ensureDocussPageName().then(pageName => {
+      const resolvedPageName = pageName || `m_${event._id}`
+      const docussPath = `/docuss/${resolvedPageName}`
+
+      console.log('🚀 Navigate after event creation:', {
+        eventId: event._id,
+        pageName: resolvedPageName,
+        docussPath
+      })
+
+      window.parent.postMessage({
+        type: 'navigateTo',
+        url: docussPath,
+        delay: 500,
+        waitForPageName: resolvedPageName,
+        waitTimeout: 8000
+      }, '*')
+    })
+  }
+
   render () {
     const {
       event
@@ -48,6 +163,12 @@ class CongratsModal extends Component {
     if (!event) {
       return <Redirect to='/' />
     }
+
+    const docussPageName = this.getResolvedPageName()
+    const discourseOrigin = getDiscourseOrigin()
+    const shareUrl = docussPageName
+      ? `${discourseOrigin}/docuss/${docussPageName}`
+      : Meteor.absoluteUrl('page/' + event._id)
 
     const {
       first_sentence,
@@ -66,30 +187,34 @@ class CongratsModal extends Component {
 
           <div className='social-links'>
             {socialButtons.map((btn, index) => {
-              const onClick = getFunctionByMapType(btn, event)
+              const onClick = getFunctionByMapType(btn, event, shareUrl)
 
               return onClick && (
                 <Button
                   key={index}
-                  onClick={() => onClick(event)}
+                  onClick={onClick}
                   className={'social ' + btn.icon}
                 />
               )
             })}
           </div>
 
-          <SelectableText event={event} />
+          <SelectableText event={event} shareUrl={shareUrl} />
         </ModalBody>
 
         <ModalFooter>
-          <Button href={getUrl(event._id)}>Done</Button>
+          <Button 
+            onClick={this.handleDone}
+          >
+            Done
+          </Button>
         </ModalFooter>
       </Modal>
     )
   }
 }
 
-const SelectableText = ({ event }) => {
+const SelectableText = ({ event, shareUrl }) => {
   return (
     <div id="selectable">
       <blockquote>
@@ -99,22 +224,22 @@ const SelectableText = ({ event }) => {
         <p>Address: {event.address.name}</p>
         <p>When: {formatWhenObject(event.when)}</p>
         <p>How to find us: {event.findHints}</p>
-        <p>Link: <a href={getUrl(event._id)} target='__blank'>{getUrl(event._id)}</a></p>
+        <p>Link: <a href={shareUrl} target='__blank' rel='noopener noreferrer'>{shareUrl}</a></p>
       </blockquote>
     </div>
   )
 }
 
-function getFunctionByMapType (btn, event) {
-  const isHomelessMap = window.__mapType === 'street-sleeper'
+function getFunctionByMapType (btn, event, shareUrl) {
+  const isHomelessMap = window['__mapType'] === 'street-sleeper'
 
   switch (btn.type) {
   case 'facebook':
-    return isHomelessMap ? shareFacebook : createEventFacebbok
+    return isHomelessMap ? () => shareFacebook(event, shareUrl) : createEventFacebbok
   case 'twitter':
-    return shareTwitter
+    return () => shareTwitter(event, shareUrl)
   case 'google':
-    return shareGooglePlus
+    return () => shareGooglePlus(event, shareUrl)
   case 'couchsurfing':
     return isHomelessMap ? null : () => window.open('https://www.couchsurfing.com/events')
   case 'eventbrite':
@@ -125,10 +250,15 @@ function getFunctionByMapType (btn, event) {
 
 /* brightertomorrowmap */
 
-function shareFacebook ({ _id, name, categories, description }) {
-  const url = getUrl(_id)
+function shareFacebook ({ _id, name, description }, shareUrl) {
+  const url = shareUrl || Meteor.absoluteUrl('page/' + _id)
 
-  window.FB.ui({
+  const fb = window['FB']
+  if (!fb || typeof fb.ui !== 'function') {
+    return
+  }
+
+  fb.ui({
     method: 'share_open_graph',
     action_type: 'og.shares',
     action_properties: JSON.stringify({
@@ -142,8 +272,8 @@ function shareFacebook ({ _id, name, categories, description }) {
   })
 }
 
-function shareTwitter ({ _id, name }) {
-  const url = getUrl(_id)
+function shareTwitter ({ _id, name }, shareUrl) {
+  const url = shareUrl || Meteor.absoluteUrl('page/' + _id)
   const promoText =
 `
 I've just posted on the Brighter Tomorrow Map to support people who are homeless living near me in building a brighter future
@@ -160,8 +290,8 @@ For more info: ${url}
   return window.open(tweet, '', _getWindowOptions(253, 600))
 }
 
-function shareGooglePlus ({ _id }) {
-  const url = getUrl(_id)
+function shareGooglePlus ({ _id }, shareUrl) {
+  const url = shareUrl || Meteor.absoluteUrl('page/' + _id)
   return window.open('https://plus.google.com/share?url=' + url, '', _getWindowOptions(350, 600))
 }
 
@@ -169,11 +299,6 @@ function shareGooglePlus ({ _id }) {
 
 function createEventFacebbok () {
   return window.open('https://www.facebook.com/groups/focallocal/events/')
-}
-
-// Url for sharing
-function getUrl (_id) {
-  return Meteor.absoluteUrl('page/' + _id)
 }
 
 // Popup window options
@@ -186,16 +311,16 @@ function _getWindowOptions (height = 300, width = 300) {
 }
 
 function loadFacebook () {
-  if (!window.FB) {
+  if (!window['FB']) {
     let ele = document.createElement('script')
     ele.setAttribute('id', 'facebook-jssdk')
     ele.src = '//connect.facebook.net/en_US/sdk.js'
     ele.async = true
     document.body.appendChild(ele)
 
-    window.fbAsyncInit = function () {
+    window['fbAsyncInit'] = function () {
       const { appId } = Meteor.settings.public.facebook
-      window.FB.init({
+      window['FB'].init({
         appId: appId,
         xfbml: true,
         version: 'v2.9'

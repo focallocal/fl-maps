@@ -27,13 +27,16 @@ class NewEventModal extends Component {
       isConfirmBtn: false
     }
 
+    this.modalBodyRef = React.createRef()
+    this.modalWheelListenerAttached = false
+
     if (window.google) {
       this.state.googleLoaded = true
     }
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
-    if (window.__editData) {
+  if (window['__editData']) {
       return {
         ...nextProps,
         editMode: true,
@@ -57,17 +60,33 @@ class NewEventModal extends Component {
         this.setState({ googleLoaded: true })
       }
     }, 1000) // 1 second
+
+    // Attempt to lock scrolling within the modal body once it exists
+    this.attachModalScrollLock()
   }
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate (prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      delete window.__unfinishedNewEvent
+  delete window['__unfinishedNewEvent']
+    }
+
+    // When modal opens (or after google assets load), ensure scroll lock is attached
+    const wasOpen = !!(prevState && prevState.isOpen)
+    const isOpen = !!this.state.isOpen
+
+    if (!wasOpen && isOpen) {
+      this.attachModalScrollLock()
+    } else if (wasOpen && !isOpen) {
+      this.detachModalScrollLock()
+    } else if (isOpen) {
+      this.attachModalScrollLock()
     }
   }
 
   componentWillUnmount () {
     clearInterval(this.interval)
     this.interval = null
+    this.detachModalScrollLock()
   }
 
   render () {
@@ -90,11 +109,11 @@ class NewEventModal extends Component {
     const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete Page</Button> : null
 
     return hasGoogleMapsLoaded && (
-      <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg' unmountOnClose={false}>
+      <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg' unmountOnClose={false} scrollable>
         <ModalHeader toggle={this.toggleModal}>
           {editMode ? header.replace('New', 'Edit') : header}
         </ModalHeader>
-        <ModalBody>
+        <ModalBody innerRef={this.modalBodyRef}>
           <FormWizard
             currentStep={currentStep}
             passFormRefToParent={this.getRef}
@@ -140,7 +159,7 @@ class NewEventModal extends Component {
     // console.log(this.state.form.getModel())
     this.state.form.validate({ clean: true })
       .then(() => {
-        window.NProgress.set(0.4)
+  window['NProgress']?.set(0.4)
         let model = EventsSchema.clean(this.state.form.getModel())
         if (this.state.editMode) {
           model._id = this.state.form.getModel()._id
@@ -154,7 +173,7 @@ class NewEventModal extends Component {
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
 
-    delete window.__unfinishedNewEvent
+  delete window['__unfinishedNewEvent']
   }
 
   deletePage = () => {
@@ -165,19 +184,28 @@ class NewEventModal extends Component {
   }
 
   onCreateEvent = (eventId) => {
-    routeMatcher.getPageName('/page/' + eventId).then((result) => {
+    return routeMatcher.getPageName('/page/' + eventId).then((pageName) => {
+      if (window['__recentEvent']) {
+        window['__recentEvent'].docussPageName = pageName
+      }
+
       /*comToPlugin.postCreateDcsTags({
-        pageName: result,
+        pageName,
         triggerIds: ['photos', 'videos', 'stories'],
         notificationLevel: 3
       })*/
       comToPlugin.postCreateTopic({
-        title: result,
-        body: `This is where we can talk about ${result}.`,
-        pageName: result,
+        title: pageName,
+        body: `This is where we can talk about ${pageName}.`,
+        pageName,
         triggerId: 'stories',
         notificationLevel: 3
       })
+
+      return pageName
+    }).catch(error => {
+      console.warn('[NewEventModal] Failed to resolve Docuss page name for event', eventId, error)
+      return null
     })
   }
 
@@ -185,12 +213,12 @@ class NewEventModal extends Component {
     Meteor.call('Events.newEvent', model, (err, res) => {
       if (!err) {
         this.setState({ currentStep: 0 }) // return to first step
-        window.__recentEvent = { ...model, _id: res }
+        window['__recentEvent'] = { ...model, _id: res }
         this.onCreateEvent(res)
         this.props.history.push('/thank-you')
       }
 
-      window.NProgress.done()
+      window['NProgress']?.done()
       if (Meteor.isDevelopment) { console.log(err) }
     })
   }
@@ -198,12 +226,12 @@ class NewEventModal extends Component {
   callEditEvent = (model) => {
     Meteor.call('Events.editEvent', model, (err, res) => {
       if (!err) {
-        window.__updatedData = model // update event page.
+        window['__updatedData'] = model // update event page.
         this.setState({ currentStep: 0 })
         this.props.history.push('/page/' + model._id)
       }
 
-      window.NProgress.done()
+      window['NProgress']?.done()
       if (Meteor.isDevelopment) { console.log(err, model) }
     })
   }
@@ -230,13 +258,52 @@ class NewEventModal extends Component {
 
     // toggleModal() closes modal, but it is not called after form submits
     // copy unfinished form to global window and check for it inside FormWizard
-    window.__unfinishedNewEvent = cloneDeep(this.state.form.getModel())
+    window['__unfinishedNewEvent'] = cloneDeep(this.state.form.getModel())
   }
 
   toggleErrors = () => this.setState({ hasErrors: false })
 
   getRef = (form) => {
     this.setState({ form: form })
+  }
+
+  attachModalScrollLock = () => {
+    const modalBody = this.modalBodyRef.current
+
+    if (!modalBody || this.modalWheelListenerAttached) {
+      return
+    }
+
+    modalBody.addEventListener('wheel', this.handleModalWheel, { passive: false })
+    this.modalWheelListenerAttached = true
+  }
+
+  detachModalScrollLock = () => {
+    const modalBody = this.modalBodyRef.current
+
+    if (!modalBody || !this.modalWheelListenerAttached) {
+      return
+    }
+
+    modalBody.removeEventListener('wheel', this.handleModalWheel)
+    this.modalWheelListenerAttached = false
+  }
+
+  handleModalWheel = (event) => {
+    const modalBody = this.modalBodyRef.current
+
+    if (!modalBody) {
+      return
+    }
+
+    const deltaY = event.deltaY || 0
+    const atTop = modalBody.scrollTop <= 0
+    const atBottom = Math.ceil(modalBody.scrollTop + modalBody.clientHeight) >= modalBody.scrollHeight
+
+    if ((deltaY < 0 && atTop) || (deltaY > 0 && atBottom)) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
   }
 }
 

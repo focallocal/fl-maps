@@ -43,6 +43,22 @@
     padding-top: 0;
     word-wrap: break-word;
 
+    .event-info-avatar {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-left: 12px;
+
+      &.event-info-avatar--placeholder {
+        background-color: #87CEEB;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    }
+
     .title {
       margin-top: 4px;
       margin-bottom: 8px;

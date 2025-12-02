@@ -9,7 +9,8 @@ class Events extends Component {
 
   render () {
     const { userEvents, user, isAllEvents, deleteAllEvents } = this.props
-    const events = userEvents.filter(ele => {
+    const safeUserEvents = userEvents || []
+    const events = safeUserEvents.filter(ele => {
       return ele.organiser._id === user._id
     })
 

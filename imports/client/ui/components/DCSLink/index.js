@@ -41,14 +41,57 @@ class DCSLink extends Component {
     initDeselectHandler(history)
   }
 
+  handleClick = (e) => {
+    // Prevent event from bubbling to parent Button or other handlers
+    if (e) {
+      // stopPropagation is intentionally omitted so parent buttons remain clickable
+      e.preventDefault()
+    }
+    
+    const { triggerId, dcsSelected, history, composerTemplate, dcsCount } = this.props
+    console.log('🔘 DCSLink clicked:', { triggerId, dcsSelected, composerTemplate, dcsCount })
+    
+    const url = new URL(location.href)
+    
+    // If already selected, close the slider by removing params
+    if (dcsSelected) {
+      url.searchParams.delete('dcs-layout')
+      url.searchParams.delete('dcs-interact-mode')
+      url.searchParams.delete('dcs-trigger-id')
+      url.searchParams.delete('composer_template')
+      url.searchParams.delete('has_topics')
+    } else {
+      // Otherwise, open the slider with this trigger
+      url.searchParams.set('dcs-layout', 3)
+      url.searchParams.set('dcs-interact-mode', 'DISCUSS')
+      url.searchParams.set('dcs-trigger-id', triggerId)
+      
+      // Add has_topics param if count > 0
+      if (dcsCount > 0) {
+        url.searchParams.set('has_topics', 'true')
+      }
+      
+      // Send composer template via postMessage to parent window
+      if (composerTemplate && window.parent !== window) {
+        try {
+          window.parent.postMessage({
+            type: 'dcs-composer-template',
+            template: composerTemplate,
+            triggerId: triggerId,
+            hasTopics: dcsCount > 0
+          }, '*')
+        } catch (error) {
+          console.warn('Failed to send composer template to parent:', error)
+        }
+      }
+    }
+    
+    const path = url.pathname + url.search
+    history.push(path)
+  }
+
   render () {
     const { title, triggerId, dcsSelected, dcsCount, history, format, badge, className } = this.props
-
-    const url = new URL(location.href)
-    url.searchParams.set('dcs-layout', 3)
-    url.searchParams.set('dcs-interact-mode', 'DISCUSS')
-    url.searchParams.set('dcs-trigger-id', triggerId)
-    const path = url.pathname + url.search
 
     let renderBadge = (
       <span
@@ -65,9 +108,13 @@ class DCSLink extends Component {
 
     if (format === 'speech-bubble') {
       return (
-        <span className={className + ' dcs-link' + (dcsSelected ? ' dcs-selected' : '')}>
+        <span 
+          className={className + ' dcs-link' + (dcsSelected ? ' dcs-selected' : '')}
+          onClick={this.handleClick}
+          style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+        >
           <span className="dcs-link-title">{title}</span>
-          <span className="dcs-link-icons" onClick={() => history.push(path)}>
+          <span className="dcs-link-icons">
             <img src={`/images/dcs-balloon-bal.png`} />
             {dcsCount > 0 && badge === 'true' && renderBadge}
           </span>
@@ -76,8 +123,9 @@ class DCSLink extends Component {
     } else if (format === 'text-link') {
       return (
         <span
-          onClick={() => history.push(path)}
+          onClick={this.handleClick}
           className={className + ' dcs-link dcs-link-icons' + (dcsSelected ? ' dcs-selected' : '')}
+          style={{ pointerEvents: 'auto', cursor: 'pointer' }}
         >
           <span className="dcs-link-title text-title">{title}</span>
           {/* {' '}<img src={`/images/dcs-balloon-bal.png`} /> */}
@@ -115,5 +163,6 @@ DCSLink.propTypes = {
   badge: PropTypes.string,
   title: PropTypes.string,
   triggerId: PropTypes.string.isRequired,
-  format: PropTypes.string.isRequired
+  format: PropTypes.string.isRequired,
+  composerTemplate: PropTypes.string
 }

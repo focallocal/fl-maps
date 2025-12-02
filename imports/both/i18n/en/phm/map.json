@@ -4,17 +4,21 @@
   "eventInfo": {
     "shareExpTitle": "Share Your Experience",
     "introTitle": "Introduction",
-    "photos": {
-      "title": "Tasks",
+    "wall": {
+      "title": "Wall",
       "subtitle": "Help Building and Growing"
     },
-    "videos": {
+    "media": {
       "title": "Media",
       "subtitle": "Vids and Photos"
     },
-    "wall": {
-      "title": "Wall",
-      "subtitle": "Chat with others joining in"
+    "stories": {
+      "title": "Stories",
+      "subtitle": "Share your experience"
+    },
+    "whoIsGoing": {
+      "title": "Who Is Going",
+      "subtitle": "See who's joining"
     },
     "experiences": {
       "title": "References",
@@ -24,9 +28,6 @@
       "title": "Social Media",
       "subtitle": "Support by Sharing",
       "messagePre": "Check out this: "
-    },
-    "stories": {
-      "title": "Stories"
     }
   }
 }

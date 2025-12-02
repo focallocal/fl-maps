@@ -8,15 +8,9 @@ const name = 'Events.deleteEvent'
 const newEvent = new ValidatedMethod({
   name,
   mixins: [],
-  validate: ({ _id, ...model }) => {
-    try {
-      EventsSchema.validate(model)
-    } catch (ex) {
-      throw new Meteor.Error(ex)
-    }
-
+  validate: ({ _id }) => {
     if (typeof _id !== 'string') {
-      throw new Meteor.Error('?')
+      throw new Meteor.Error('Invalid event ID')
     }
   },
   run (model) {

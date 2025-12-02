@@ -8,6 +8,7 @@ import Linkify from 'linkifyjs/react'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as formatUtils from '/imports/client/utils/format'
 import * as Gravatar from '/imports/client/utils/Gravatar'
+import { getDiscourseAvatarUrl } from '/imports/client/utils/discourseAvatar'
 
 import './styles.scss'
 import i18n from '/imports/both/i18n/en'
@@ -15,6 +16,30 @@ import i18n from '/imports/both/i18n/en'
 let i18n_ = i18n.Map
 
 class EventInfo extends Component {
+  state = {
+    avatarUrl: ''
+  }
+
+  _isMounted = false
+
+  componentDidMount () {
+    this._isMounted = true
+    this.resolveAvatar(this.props.event)
+  }
+
+  componentDidUpdate (prevProps) {
+    const prevId = prevProps.event ? prevProps.event._id : null
+    const currentId = this.props.event ? this.props.event._id : null
+
+    if (prevId !== currentId) {
+      this.resolveAvatar(this.props.event)
+    }
+  }
+
+  componentWillUnmount () {
+    this._isMounted = false
+  }
+
   render () {
     const {
       userLocation,
@@ -35,14 +60,15 @@ class EventInfo extends Component {
     // predefine some variables that will be left blank when no event is selected
     // (need to render blank component in order to animate it)
     let categories,
-      distance,
-      gravatar
+      distance
 
     if (event) {
       categories = formatUtils.formatCategories(event.categories)
       distance = formatUtils.formatMilesFromLocation(userLocation, event.address.location.coordinates)
-      gravatar = Gravatar.isSpecialCategorySelected(event.categories) ? Gravatar.getGravatar(event.organiser.name, 50) : ''
     }
+
+    const { avatarUrl } = this.state
+    const fallbackInitial = this.getFallbackInitial(event)
 
     return (
       <div id='event-info' className={event ? 'active' : ''}>
@@ -54,7 +80,15 @@ class EventInfo extends Component {
         </header>
 
         <div className='first-section'>
-          <img src={gravatar} className="rounded-circle float-right" alt=""/>
+          {event && (
+            avatarUrl ? (
+              <img src={avatarUrl} className='event-info-avatar rounded-circle float-right' alt="" />
+            ) : (
+              <div className='event-info-avatar event-info-avatar--placeholder rounded-circle float-right'>
+                {fallbackInitial}
+              </div>
+            )
+          )}
           <div className='title'>{event ? event.name : ''}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
@@ -93,6 +127,54 @@ class EventInfo extends Component {
     } = this.props
 
     openMoreInfo(event)
+  }
+
+  resolveAvatar = (event) => {
+    if (!event || !event.organiser) {
+      if (this._isMounted) {
+        this.setState({ avatarUrl: '' })
+      }
+      return
+    }
+
+    const username = event.organiser.username
+    if (!username) {
+      this.setState({ avatarUrl: this.getFallbackAvatar(event) })
+      return
+    }
+
+    getDiscourseAvatarUrl(username, 50)
+      .then(url => {
+        if (this._isMounted) {
+          this.setState({ avatarUrl: url || this.getFallbackAvatar(event) })
+        }
+      })
+      .catch(() => {
+        if (this._isMounted) {
+          this.setState({ avatarUrl: this.getFallbackAvatar(event) })
+        }
+      })
+  }
+
+  getFallbackAvatar = (event) => {
+    if (!event || !event.organiser) {
+      return ''
+    }
+    const identifier = event.organiser.username || event.organiser.name || 'user'
+    try {
+      return Gravatar.getGravatar(identifier, 50)
+    } catch (error) {
+      console.warn('[EventInfo] Failed to build fallback avatar', error)
+      return ''
+    }
+  }
+
+  getFallbackInitial = (event) => {
+    const name = event?.organiser?.name
+    if (name && name !== '-') {
+      return name.charAt(0).toUpperCase()
+    }
+    return 'A'
   }
 }
 

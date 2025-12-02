@@ -196,7 +196,7 @@ class FiltersList extends Component {
     const filters = this.mapIndexToCategory(checkedFilters)
 
     return this.props.events.filter(event => {
-      return event.categories.some(category => filters.includes(category.name))
+      return event.categories && event.categories.some(category => filters.includes(category.name))
     })
   }
 

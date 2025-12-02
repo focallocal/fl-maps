@@ -54,6 +54,38 @@ class App extends Component {
     setTimeout(() => {
       document.querySelector('#root').classList.toggle('show')
     }, 100) // add a fading effect on the inital loading
+
+    // Listen for pauseVideo messages from Docuss
+    window.addEventListener('message', (event) => {
+      if (event.data && event.data.type === 'pauseVideo') {
+        console.log('📥 Received pauseVideo message from Docuss')
+        // Find all YouTube iframes and pause them
+        const iframes = document.querySelectorAll('iframe[src*="youtube.com"]')
+        iframes.forEach(iframe => {
+          try {
+            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*')
+            console.log('⏸️ Paused YouTube video in iframe')
+          } catch (e) {
+            console.warn('Failed to pause video:', e)
+          }
+        })
+      }
+      
+      // Listen for dcs-topic-posted messages from Discourse to update bubble counts
+      if (event.data && event.data.type === 'dcs-topic-posted') {
+        const triggerId = event.data.triggerId
+        console.log('📨 Received dcs-topic-posted message for trigger:', triggerId)
+        
+        // Trigger a route refresh to update DCS counts
+        // This causes dcs-react-router-sync to refetch topic counts
+        setTimeout(() => {
+          const currentPath = window.location.pathname + window.location.search
+          window.history.pushState({}, '', currentPath)
+          window.dispatchEvent(new PopStateEvent('popstate'))
+          console.log('🔄 Triggered route refresh to update DCS counts')
+        }, 1000) // Wait 1 second for Discourse to index the new topic
+      }
+    })
   }
 
   render () {
@@ -177,9 +209,9 @@ if (inIFrame()) {
           : route.pageName === 'wp_why' ? 'Public Happiness Token'
             : route.pageName === 'wp_intro' ? 'Public Happiness Token'
               : route.pageName === 'wp_faqs' ? 'Public Happiness Token'
-                : route.pageName === 'm_gather' ? 'Hidden'
+                : route.pageName === 'm_gather' ? 'General'
                   : route.pageName === 'summit' ? 'The Happier World Economies Summit'
-                    : 'Hidden'
+                    : 'General'
     comToPlugin.postSetRouteProps({ category: topicCategory })
   })
 }

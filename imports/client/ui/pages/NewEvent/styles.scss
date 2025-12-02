@@ -3,9 +3,11 @@
     min-width: 300px;
 
     .modal-body {
-      // max-height: 455px;
-      /*overflow-y: auto;
-      overflow-x: hidden;*/
+      max-height: 70vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+      overscroll-behavior: contain; /* Keep the wheel/touch events inside the modal */
 
       .reset {
         position: absolute;
@@ -20,8 +22,8 @@
     }
 
     .modal-body > form{
-      padding-top: 1.25rem;
-      padding-bottom: 1.55rem;
+      /* padding-top: 1.25rem;
+      padding-bottom: 1.55rem;*/
     }
 
     .alert.error-general {

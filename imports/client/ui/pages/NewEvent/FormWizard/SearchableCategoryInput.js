@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import { FormGroup, Label, Input } from 'reactstrap';
+import { Label } from 'reactstrap';
 
 const flattenCategories = (groups) => {
   return groups.flatMap(group =>
@@ -14,8 +14,26 @@ const flattenCategories = (groups) => {
   );
 };
 
-const SearchableCategoryInput = ({ groupedCategories, handleInputChange }) => {
+const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }) => {
   const options = flattenCategories(groupedCategories);
+
+  const resolveSelectedOption = () => {
+    if (!value) {
+      return null
+    }
+
+    const categoryName = Array.isArray(value)
+      ? (value[0]?.name || value[0])
+      : (typeof value === 'string' ? value : value?.name)
+
+    if (!categoryName) {
+      return null
+    }
+
+    return options.find(option => option.name === categoryName) || null
+  }
+
+  const selectedOption = resolveSelectedOption()
 
   return (
     <>
@@ -48,6 +66,7 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange }) => {
         onChange={handleInputChange}
         placeholder="Search or select a category..."
         isClearable
+        value={selectedOption}
       />
     </>
   );

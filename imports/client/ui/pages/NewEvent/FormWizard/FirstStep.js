@@ -60,14 +60,18 @@ const FirstStep = ({ form, onChange, errors }) => {
     }
   }
 
-  const handleSearchableCategory = (e) => {
-    if (e) {
+  const handleSearchableCategory = (selected) => {
+    if (selected) {
       const selectedOption = {
-        name: e.value,
-        color: e.color
+        name: selected.value,
+        color: selected.color
       }
 
-      form.change('categories', selectedOption);
+      form.change('categories', selectedOption)
+      onChange('categories', selectedOption)
+    } else {
+      form.change('categories', null)
+      onChange('categories', null)
     }
   }
 
@@ -119,6 +123,7 @@ const FirstStep = ({ form, onChange, errors }) => {
 
   return (
     <div id='first-step'>
+      
       <div id='radios'>
         <label>{labels.resource_type.title}</label>
         <RadioButton
@@ -130,15 +135,18 @@ const FirstStep = ({ form, onChange, errors }) => {
           onRadioButtonClick={handleRadioButton}
           form={form}
         />
-        <RadioButton
-          id='offerResource'
-          label={labels.resource_type.secondRadio}
-          value={state.offerResource}
-          type='radio'
-          click={noCategories}
-          onRadioButtonClick={handleRadioButton}
-          form={form}
-        />
+        {/* This comments hides the "Put yourself on the map radio button" */}
+        {/*
+          <RadioButton
+            id='offerResource'
+            label={labels.resource_type.secondRadio}
+            value={state.offerResource}
+            type='radio'
+            click={noCategories}
+            onRadioButtonClick={handleRadioButton}
+            form={form}
+          />
+        */}
       </div>
       
       <div className="mb-3">
@@ -167,7 +175,15 @@ const FirstStep = ({ form, onChange, errors }) => {
             name="overview"
             id="overview"
             value={formData.overview || ''}
-            onChange={handleInputChange}
+            onChange={(e) => {
+              const value = e.target.value
+              form.change('overview', value)
+
+              // Clear error when text length is 20 or more
+              if (errors?.overview && value.trim().length >= 10) {
+                form.change('errors.overview', null)
+              }
+            }}
             placeholder="Enter overview"
             minLength={20}
             maxLength={300}
@@ -176,7 +192,7 @@ const FirstStep = ({ form, onChange, errors }) => {
         <div className="text-muted small">
           {formData.overview?.length || 0} / 300
         </div>
-        {errors?.overview && (
+        {errors?.overview && (!formData?.overview || formData.overview.trim().length < 10) && (
           <div className="text-danger">{errors.overview}</div>
         )}
       </div>
@@ -184,8 +200,10 @@ const FirstStep = ({ form, onChange, errors }) => {
       <div className="mb-3">
         <FormGroup noMargin={true}>
           <GoogleAddressInput
+            value={formData.address}
             onPlaceSelected={(address) => {
-              form.change('address', address);
+              form.change('address', address)
+              onChange('address', address)
             }}
           />
         </FormGroup>
@@ -208,6 +226,7 @@ const FirstStep = ({ form, onChange, errors }) => {
           <SearchableCategoryInput
             groupedCategories={Categories}
             handleInputChange={handleSearchableCategory}
+            value={formData.categories}
           />
         </FormGroup>
         {errors?.category && (!formData?.category || formData.category.trim() === '') && (

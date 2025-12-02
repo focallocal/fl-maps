@@ -12,7 +12,9 @@
     "ipstack_api_key": "",
     "discourse": {
       "url": "",
-      "secret": ""
+      "secret": "",
+      "apiKey": "",
+      "apiUsername": "system"
     }
   }
 }

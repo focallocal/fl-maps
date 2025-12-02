@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, Alert, Button } from 'reactstrap'
+import { Navbar, Nav, Alert, Button, FormGroup, Label, Input } from 'reactstrap'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import { rolesDataKey, checkPermissions } from './RolesPermissions/index'
 import AdminTable from './AdminTable/index'
+import PostsView from './PostsView/index'
+import MergeUsersModal from './MergeUsersModal/index'
 import './style.scss'
 import UserSearch from './UserSearch/index'
 import UserDisplay from './UserDisplay/index'
@@ -21,7 +23,12 @@ class Admin extends Component {
       isNoMoreUsers: false,
       alertNotAuthorized: false,
       isSearching: false,
-      isAllEvents: false
+      isAllEvents: false,
+      showPostsView: false,
+      userSortBy: 'alphabetical', // 'alphabetical', 'mostPosts', 'joinDateNewest', 'joinDateOldest'
+      syncingUsers: false,
+      showMergeModal: false,
+      eventsLoading: false
 
     }
   }
@@ -124,7 +131,15 @@ class Admin extends Component {
     const { skip, limit } = this.state
     Meteor.call('Admin.getUsers', { skip, limit }, (err, res) => {
       if (err) {
-        throw new Meteor.Error('could not find user...')
+        console.error('Error fetching users:', err)
+        this.setState({ users: [] })
+        return
+      }
+
+      if (!res) {
+        console.error('getUsers returned undefined')
+        this.setState({ users: [] })
+        return
       }
 
       if (res && res.length > 0) {
@@ -140,13 +155,14 @@ class Admin extends Component {
   }
 
   getEvents = () => {
-    const { users } = this.state
-    let result = users.map(e => e._id)
-    Meteor.call('Admin.getEvents', { ids: result }, (err, res) => {
+    this.setState({ eventsLoading: true })
+    // Fetch ALL events, not just for visible users
+    Meteor.call('Admin.getPosts', { searchQuery: '', searchFilter: 'title', sortBy: 'dateNewest' }, (err, res) => {
       if (err) {
-        throw new Meteor.Error('could not find user...')
+        this.setState({ eventsLoading: false })
+        throw new Meteor.Error('could not load events: ' + err.message)
       }
-      this.setState({ events: res })
+      this.setState({ events: (res && res.posts) || [], eventsLoading: false })
     })
   }
 
@@ -190,6 +206,109 @@ class Admin extends Component {
 
   handleToggleEvents =() => {
     this.setState({ isAllEvents: !this.state.isAllEvents })
+  }
+
+  handleToggleView = () => {
+    this.setState({ showPostsView: !this.state.showPostsView })
+  }
+
+  handleSyncDiscourseUsers = () => {
+    if (!window.confirm('Sync all Discourse users? This may take a few minutes.')) {
+      return;
+    }
+
+    this.setState({ syncingUsers: true });
+    
+    Meteor.call('Admin.syncDiscourseUsers', (error, result) => {
+      this.setState({ syncingUsers: false });
+      
+      if (error) {
+        alert(`Error syncing users: ${error.message}`);
+      } else {
+        alert(`Sync complete!\nTotal: ${result.totalSynced}\nCreated: ${result.totalCreated}\nUpdated: ${result.totalUpdated}`);
+        // Reload users after sync
+        this.setState({ users: [], skip: 0, isNoMoreUsers: false }, () => {
+          this.getUsers();
+        });
+      }
+    });
+  }
+
+  handleUserSortChange = (e) => {
+    this.setState({ userSortBy: e.target.value });
+  }
+
+  toggleMergeModal = () => {
+    this.setState({ showMergeModal: !this.state.showMergeModal });
+  }
+
+  handleToggleView = () => {
+    const willShowPostsView = !this.state.showPostsView;
+    this.setState({ showPostsView: willShowPostsView });
+    
+    // Ensure events are loaded when switching to PostsView
+    if (willShowPostsView && this.state.users.length > 0 && !this.state.events) {
+      this.getEvents();
+    }
+  }
+
+  handleMergeComplete = () => {
+    // Refresh user list and events after merge
+    this.setState({ skip: 0, users: [], events: [] }, () => {
+      this.getUsers();
+      // getEvents() will be called by componentDidUpdate when users update
+    });
+  }
+
+  getSortedUsers () {
+    const { users, userSortBy, events } = this.state
+    if (!users || !Array.isArray(users)) {
+      return []
+    }
+    const usersCopy = [...users]
+
+    switch (userSortBy) {
+      case 'alphabetical':
+        return usersCopy.sort((a, b) => {
+          const nameA = parseData('user', a).toLowerCase()
+          const nameB = parseData('user', b).toLowerCase()
+          return nameA.localeCompare(nameB)
+        })
+      
+      case 'mostPosts':
+        // Count events for each user
+        const userEventCounts = {}
+        if (events && Array.isArray(events)) {
+          events.forEach(event => {
+            const userId = event.organiser?._id
+            if (userId) {
+              userEventCounts[userId] = (userEventCounts[userId] || 0) + 1
+            }
+          })
+        }
+        return usersCopy.sort((a, b) => {
+          const countA = userEventCounts[a._id] || 0
+          const countB = userEventCounts[b._id] || 0
+          return countB - countA
+        })
+      
+      case 'joinDateNewest':
+        return usersCopy.sort((a, b) => {
+          const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
+          const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
+          return dateB - dateA
+        })
+      
+      case 'joinDateOldest':
+        return usersCopy.sort((a, b) => {
+          const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
+          const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
+          return dateA - dateB
+        })
+      
+      default:
+        return usersCopy
+    }
   }
 
   deleteAllEvents = (eventIds) => {
@@ -241,28 +360,97 @@ class Admin extends Component {
   }
 
   render () {
-    const { isNoMoreUsers, events, alertNotAuthorized, currentUserDisplay } = this.state
+    const { isNoMoreUsers, events, eventsLoading, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers, showMergeModal } = this.state
 
     let isNoUsersFound = this.state.users.length <= 0
+    const sortedUsers = this.getSortedUsers()
+    
     return (
       <div id="admin">
         <UserDisplay name={currentUserDisplay.name} role={currentUserDisplay.role}/>
         <div className="admin-controls">
-          <UserSearch searchForUser={this.searchForUser} />
-          <Button color="primary" onClick={this.handleToggleEvents}>Toggle Events Display</Button>
+          <div className="admin-controls-header">
+            <div className="left-controls">
+              <Button 
+                color="warning" 
+                onClick={this.toggleMergeModal}
+                className="merge-users-btn"
+              >
+                Merge Users FL-Maps
+              </Button>
+            </div>
+            <div className="right-controls">
+              <Button 
+                color="info" 
+                onClick={this.handleSyncDiscourseUsers}
+                disabled={syncingUsers}
+                className="sync-users-btn"
+              >
+                {syncingUsers ? 'Syncing...' : 'Sync Discourse Users'}
+              </Button>
+            </div>
+          </div>
+          <div className="admin-controls-row">
+            <div className="toggle-wrapper">
+              <Button color="primary" onClick={this.handleToggleView} className="view-toggle-btn">
+                {showPostsView ? 'Show Users View' : 'Show Posts View'}
+              </Button>
+            </div>
+            {!showPostsView && (
+              <>
+                <div className="user-search-wrapper">
+                  <UserSearch searchForUser={this.searchForUser} />
+                </div>
+                <div className="admin-sort-wrapper">
+                  <FormGroup className="sort-users">
+                    <Label for="userSortSelect">Sort by:</Label>
+                    <Input
+                      type="select"
+                      id="userSortSelect"
+                      value={userSortBy}
+                      onChange={this.handleUserSortChange}
+                    >
+                      <option value="alphabetical">Alphabetical</option>
+                      <option value="mostPosts">Most Posts</option>
+                      <option value="joinDateNewest">Join Date (Newest)</option>
+                      <option value="joinDateOldest">Join Date (Oldest)</option>
+                    </Input>
+                  </FormGroup>
+                </div>
+              </>
+            )}
+          </div>
         </div>
-        {isNoUsersFound &&
-          <Alert color="secondary">No Users found</Alert>
-        }
-        <AdminTable deleteUser={this.deleteUser} users={this.state.users} deleteAllEvents={this.deleteAllEvents}
-          isAllEvents={this.state.isAllEvents} changeUserRole={this.changeUserRole} events={events}/>
-        <Button onClick={this.displayMoreUsers} >More</Button>
-        {isNoMoreUsers &&
-          <Alert color="secondary">No More Users</Alert>
-        }
+        {showPostsView ? (
+          eventsLoading ? (
+            <div className='admin-container'>
+              <p>Loading events...</p>
+            </div>
+          ) : (
+            <PostsView events={events || []} users={this.state.users} onDeletePosts={this.getEvents} onToggleView={this.handleToggleView} />
+          )
+        ) : (
+          <>
+            {isNoUsersFound &&
+              <Alert color="secondary">No Users found</Alert>
+            }
+            <AdminTable deleteUser={this.deleteUser} users={sortedUsers} deleteAllEvents={this.deleteAllEvents}
+              isAllEvents={this.state.isAllEvents} changeUserRole={this.changeUserRole} events={events}/>
+            <Button onClick={this.displayMoreUsers} >More</Button>
+            {isNoMoreUsers &&
+              <Alert color="secondary">No More Users</Alert>
+            }
+          </>
+        )}
         {alertNotAuthorized &&
           <Alert color="secondary">Not Authorized</Alert>
         }
+        <MergeUsersModal 
+          isOpen={showMergeModal} 
+          toggle={this.toggleMergeModal}
+          users={this.state.users}
+          onMergeComplete={this.handleMergeComplete}
+        />
       </div>
     )
   }

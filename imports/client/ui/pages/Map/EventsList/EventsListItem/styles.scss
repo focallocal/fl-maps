@@ -12,6 +12,21 @@
     width: 90%;
   }
 
+  .events-list-avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+
+    &.events-list-avatar--placeholder {
+      background-color: #87CEEB;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+  }
+
   .name, .categories, .distance {
     word-wrap: break-word;
     white-space: nowrap;
@@ -42,9 +57,6 @@
     cursor: pointer;
     transition: color .15s ease;
 
-    &:hover {
-      //color: $primary-blue-hover;
-    }
   }
 
   &.highlighted{

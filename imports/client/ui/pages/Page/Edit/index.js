@@ -16,7 +16,7 @@ class EditPage extends Component {
   }
 
   openEditModal = () => {
-    window.__editData = this.props.data
+    window['__editData'] = this.props.data
     this.props.history.push('?edit=1')
   }
 }
