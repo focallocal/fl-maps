@@ -465,16 +465,16 @@ class PostsView extends Component {
         </div>
 
         {this.state.isLoading ? (
-          <div className=\"posts-loading\">Loading posts...</div>
+          <div className="posts-loading">Loading posts...</div>
         ) : filteredAndSortedPosts.length === 0 ? (
-          <div className=\"posts-empty\">No posts found</div>
+          <div className="posts-empty">No posts found</div>
         ) : (
           <List
             height={600}
             itemCount={filteredAndSortedPosts.length}
             itemSize={window.innerWidth <= 768 ? 180 : 60}
-            width=\"100%\"
-            className=\"posts-list\"
+            width="100%"
+            className="posts-list"
             itemData={{ posts: filteredAndSortedPosts, selectedPosts: this.state.selectedPosts }}
           >
             {this.renderRow}
