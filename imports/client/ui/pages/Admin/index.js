@@ -96,7 +96,9 @@ class Admin extends Component {
     function handledeleteUser (context) {
       Meteor.call('Admin.deleteUser', { id }, (err, res) => {
         if (err) {
-          throw new Meteor.Error('could not change delete')
+          console.error('Error deleting user:', err)
+          alert('Failed to delete user. Please try again.')
+          return
         }
         context.setState(currentState => {
           let userData = [...currentState.users]

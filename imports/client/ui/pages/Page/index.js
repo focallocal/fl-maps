@@ -514,10 +514,12 @@ class Page extends Component {
         } else {
           // Event not found or invalid, redirect to map
           console.warn('Event not found:', this.state.id)
+          alert('Event not found. Redirecting to map.')
           this.setState({ redirect: true })
         }
       } else {
         console.error('Error loading event:', err)
+        alert('Failed to load event. Please try again later.')
         this.setState({ redirect: true })
       }
     })
