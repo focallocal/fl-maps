@@ -271,46 +271,46 @@ class Admin extends Component {
     const usersCopy = [...users]
 
     switch (userSortBy) {
-      case 'alphabetical':
-        return usersCopy.sort((a, b) => {
-          const nameA = parseData('user', a).toLowerCase()
-          const nameB = parseData('user', b).toLowerCase()
-          return nameA.localeCompare(nameB)
-        })
+    case 'alphabetical':
+      return usersCopy.sort((a, b) => {
+        const nameA = parseData('user', a).toLowerCase()
+        const nameB = parseData('user', b).toLowerCase()
+        return nameA.localeCompare(nameB)
+      })
       
-      case 'mostPosts':
-        // Count events for each user
-        const userEventCounts = {}
-        if (events && Array.isArray(events)) {
-          events.forEach(event => {
-            const userId = event.organiser?._id
-            if (userId) {
-              userEventCounts[userId] = (userEventCounts[userId] || 0) + 1
-            }
-          })
-        }
-        return usersCopy.sort((a, b) => {
-          const countA = userEventCounts[a._id] || 0
-          const countB = userEventCounts[b._id] || 0
-          return countB - countA
+    case 'mostPosts':
+      // Count events for each user
+      const userEventCounts = {}
+      if (events && Array.isArray(events)) {
+        events.forEach(event => {
+          const userId = event.organiser?._id
+          if (userId) {
+            userEventCounts[userId] = (userEventCounts[userId] || 0) + 1
+          }
         })
+      }
+      return usersCopy.sort((a, b) => {
+        const countA = userEventCounts[a._id] || 0
+        const countB = userEventCounts[b._id] || 0
+        return countB - countA
+      })
       
-      case 'joinDateNewest':
-        return usersCopy.sort((a, b) => {
-          const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
-          const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
-          return dateB - dateA
-        })
+    case 'joinDateNewest':
+      return usersCopy.sort((a, b) => {
+        const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
+        const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
+        return dateB - dateA
+      })
       
-      case 'joinDateOldest':
-        return usersCopy.sort((a, b) => {
-          const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
-          const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
-          return dateA - dateB
-        })
+    case 'joinDateOldest':
+      return usersCopy.sort((a, b) => {
+        const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0)
+        const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0)
+        return dateA - dateB
+      })
       
-      default:
-        return usersCopy
+    default:
+      return usersCopy
     }
   }
 

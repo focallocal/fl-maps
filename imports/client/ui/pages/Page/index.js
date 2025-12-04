@@ -348,7 +348,7 @@ class Page extends Component {
 
   closePage = () => {
     const { data } = this.state
-  const globalWindow = /** @type {any} */ (window)
+    const globalWindow = /** @type {any} */ (window)
 
     const previousMapState = globalWindow.previousStateOfMap || {}
     const coordinates = data?.address?.location?.coordinates
@@ -469,9 +469,9 @@ class Page extends Component {
     const bodySections = [
       `Event: ${eventName}`,
     `Event URL: ${resolvedShareUrl}`,
-      docussLink ? `Docuss discussion: ${docussLink}` : null,
-      '',
-      'Please describe your concern below:'
+    docussLink ? `Docuss discussion: ${docussLink}` : null,
+    '',
+    'Please describe your concern below:'
     ].filter(Boolean)
     const messageBody = bodySections.join('\n')
 
