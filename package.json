@@ -58,6 +58,10 @@
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.28.5",
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
     "css-loader": "^0.28.11",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",

@@ -1,4 +1,16 @@
 {
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"
@@ -6,12 +18,19 @@
   "env": {
     "browser": true,
     "mocha": true,
-    "jest": true
+    "jest": true,
+    "node": true,
+    "es6": true
   },
   "plugins": [
     "react",
     "import"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "rules": {
     "react/prop-types": 0,
     "no-return-assign": 0,
@@ -21,10 +40,12 @@
     "indent": ["error", 2, {
       "ignoredNodes": ["TemplateLiteral"]
     }]
+  },
+  "globals": {
+    "google": "readonly",
+    "NProgress": "readonly",
+    "Meteor": "readonly",
+    "Package": "readonly",
+    "module": "readonly"
   }
-  // "globals": {
-  //   "google": 1,
-  //   "NProgress": 1,
-  //   "jest": 1
-  // }
 }
