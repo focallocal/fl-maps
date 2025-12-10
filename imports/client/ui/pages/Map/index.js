@@ -410,7 +410,7 @@ class MapComponent_ extends Component {
             this.memoizeLocations = {} // reset caching
           } else {
             console.error('Error loading events:', err)
-            alert('Failed to load events. Please refresh the page.')
+            this.setError('Failed to load events. Please refresh the page.')
             this.setState({ events: [], filteredEvents: [] })
           }
 
@@ -426,7 +426,7 @@ class MapComponent_ extends Component {
             this.memoizeLocations = {} // reset caching
           } else {
             console.error('Error loading future events:', err)
-            alert('Failed to load events. Please refresh the page.')
+            this.setError('Failed to load events. Please refresh the page.')
             this.setState({ events: [], filteredEvents: [] })
           }
 
