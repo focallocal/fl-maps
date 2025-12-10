@@ -12,7 +12,15 @@ import { routeMatcher } from '../../app'
 import './styles.scss'
 import cloneDeep from 'clone-deep'
 
-const { NewEventModal: i18n_ } = i18n // Strings from i18n
+// Helper function to get modal labels based on formType
+function getModalLabels(formType) {
+  if (formType === 2 && i18n.NewEventModal2) {
+    return i18n.NewEventModal2
+  } else if (formType === 3 && i18n.NewEventModal3) {
+    return i18n.NewEventModal3
+  }
+  return i18n.NewEventModal
+}
 
 class NewEventModal extends Component {
   constructor () {
@@ -104,6 +112,7 @@ class NewEventModal extends Component {
 
     const hasGoogleMapsLoaded = window.google || googleLoaded
 
+    const i18n_ = getModalLabels(this.props.formType)
     const header = i18n_.modal_header
     const isConfirmBtn = this.state.isConfirmBtn
     const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete Page</Button> : null

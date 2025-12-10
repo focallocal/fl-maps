@@ -8,42 +8,26 @@ import './styles.scss'
 
 import i18n from '/imports/both/i18n/en'
 
-let labels = i18n.NewEventModal
-
 // Helper function to get categories based on formType
 function getCategoriesForFormType(formType) {
   if (formType === 2 && i18n.Categories2) {
-    // Categories2 has the new structure with metadata
-    return i18n.Categories2.categories || i18n.Categories
+    return i18n.Categories2
   } else if (formType === 3 && i18n.Categories3) {
-    // Categories3 has the new structure with metadata
-    return i18n.Categories3.categories || i18n.Categories
+    return i18n.Categories3
   }
-  // Default to form type 1 (original categories structure - array)
+  // Default to form type 1
   return i18n.Categories
 }
 
-// Helper function to get form metadata (titles) based on formType
-function getFormMetadata(formType) {
-  if (formType === 2 && i18n.Categories2) {
-    return {
-      formTitle: i18n.Categories2.formTitle || 'Gather',
-      introTitle: i18n.Categories2.introTitle || i18n.Map?.introTitle || 'Introduction',
-      shareExpTitle: i18n.Categories2.shareExpTitle || i18n.Map?.shareExpTitle || 'Share Your Experience'
-    }
-  } else if (formType === 3 && i18n.Categories3) {
-    return {
-      formTitle: i18n.Categories3.formTitle || 'Gather',
-      introTitle: i18n.Categories3.introTitle || i18n.Map?.introTitle || 'Introduction',
-      shareExpTitle: i18n.Categories3.shareExpTitle || i18n.Map?.shareExpTitle || 'Share Your Experience'
-    }
+// Helper function to get modal labels based on formType
+function getLabelsForFormType(formType) {
+  if (formType === 2 && i18n.NewEventModal2) {
+    return i18n.NewEventModal2
+  } else if (formType === 3 && i18n.NewEventModal3) {
+    return i18n.NewEventModal3
   }
-  // Default form type 1
-  return {
-    formTitle: 'Gather',
-    introTitle: i18n.Map?.introTitle || 'Introduction',
-    shareExpTitle: i18n.Map?.shareExpTitle || 'Share Your Experience'
-  }
+  // Default to form type 1
+  return i18n.NewEventModal
 }
 
 let defaultName
@@ -75,9 +59,9 @@ function findDefaultCategory (C) {
 }
 
 const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
-  // Get the correct categories based on formType
+  // Get the correct categories and labels based on formType
   const Categories = getCategoriesForFormType(formType)
-  const formMetadata = getFormMetadata(formType)
+  const labels = getLabelsForFormType(formType)
   
   const [state, setState] = React.useState({
     categories: null,

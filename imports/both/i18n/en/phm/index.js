@@ -4,6 +4,8 @@ import Home from './home.json'
 import MainMenu from './menu.json'
 import Map from './map.json'
 import NewEventModal from './new-event-modal.json'
+import NewEventModal2 from './new-event-modal2.json'
+import NewEventModal3 from './new-event-modal3.json'
 import Team from './team.json'
 import Partners from './partners.json'
 import Faq from './faq.json'
@@ -21,6 +23,8 @@ export default {
   MainMenu,
   Map,
   NewEventModal,
+  NewEventModal2,
+  NewEventModal3,
   Team,
   Partners,
   Faq,
