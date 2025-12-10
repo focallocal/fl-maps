@@ -75,9 +75,24 @@ class App extends Component {
       if (event.data && event.data.type === 'dcsOpenForm') {
         const formType = event.data.formType || 1
         console.log('📥 Received dcsOpenForm message from Docuss, formType:', formType)
-        // Navigate to map with new=1 and formType parameter to open the form
-        const newUrl = `/map?new=1&formType=${formType}`
-        history.push(newUrl)
+        
+        // Wait a bit for SSO to complete if in progress, then navigate
+        const tryOpenForm = (retries = 0) => {
+          if (Meteor.userId()) {
+            // User is logged in, navigate to form
+            const newUrl = `/map?new=1&formType=${formType}`
+            history.push(newUrl)
+          } else if (retries < 10) {
+            // Wait for SSO login to complete (check every 500ms, max 5 seconds)
+            console.log('⏳ Waiting for SSO login... attempt', retries + 1)
+            setTimeout(() => tryOpenForm(retries + 1), 500)
+          } else {
+            // SSO didn't complete, show login prompt
+            console.log('⚠️ SSO login not completed, prompting user')
+            alert('You need to login before you can create an event')
+          }
+        }
+        tryOpenForm()
       }
       
       // Listen for dcs-topic-posted messages from Discourse to update bubble counts
