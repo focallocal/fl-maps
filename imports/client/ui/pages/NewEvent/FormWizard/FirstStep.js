@@ -9,10 +9,48 @@ import './styles.scss'
 import i18n from '/imports/both/i18n/en'
 
 let labels = i18n.NewEventModal
-let Categories = i18n.Categories
+
+// Helper function to get categories based on formType
+function getCategoriesForFormType(formType) {
+  if (formType === 2 && i18n.Categories2) {
+    // Categories2 has the new structure with metadata
+    return i18n.Categories2.categories || i18n.Categories
+  } else if (formType === 3 && i18n.Categories3) {
+    // Categories3 has the new structure with metadata
+    return i18n.Categories3.categories || i18n.Categories
+  }
+  // Default to form type 1 (original categories structure - array)
+  return i18n.Categories
+}
+
+// Helper function to get form metadata (titles) based on formType
+function getFormMetadata(formType) {
+  if (formType === 2 && i18n.Categories2) {
+    return {
+      formTitle: i18n.Categories2.formTitle || 'Gather',
+      introTitle: i18n.Categories2.introTitle || i18n.Map?.introTitle || 'Introduction',
+      shareExpTitle: i18n.Categories2.shareExpTitle || i18n.Map?.shareExpTitle || 'Share Your Experience'
+    }
+  } else if (formType === 3 && i18n.Categories3) {
+    return {
+      formTitle: i18n.Categories3.formTitle || 'Gather',
+      introTitle: i18n.Categories3.introTitle || i18n.Map?.introTitle || 'Introduction',
+      shareExpTitle: i18n.Categories3.shareExpTitle || i18n.Map?.shareExpTitle || 'Share Your Experience'
+    }
+  }
+  // Default form type 1
+  return {
+    formTitle: 'Gather',
+    introTitle: i18n.Map?.introTitle || 'Introduction',
+    shareExpTitle: i18n.Map?.shareExpTitle || 'Share Your Experience'
+  }
+}
+
 let defaultName
 let defaultColor
 
+// Initialize defaults from form type 1 categories
+let Categories = i18n.Categories
 if (window.__mapType === 'gatherings') {
   defaultName = Categories[0].name
   defaultColor = Categories[0].color
@@ -36,7 +74,11 @@ function findDefaultCategory (C) {
   return category
 }
 
-const FirstStep = ({ form, onChange, errors }) => {
+const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
+  // Get the correct categories based on formType
+  const Categories = getCategoriesForFormType(formType)
+  const formMetadata = getFormMetadata(formType)
+  
   const [state, setState] = React.useState({
     categories: null,
     foundResource: true,
@@ -239,7 +281,12 @@ const FirstStep = ({ form, onChange, errors }) => {
 }
 
 FirstStep.propTypes = {
-  form: PropTypes.object
+  form: PropTypes.object,
+  formType: PropTypes.number
+}
+
+FirstStep.defaultProps = {
+  formType: 1
 }
 
 export default FirstStep

@@ -638,6 +638,13 @@ const EventsSchema = new SimpleSchema({
   'createdAt': {
     type: Date,
     autoValue: () => new Date()
+  },
+  'formType': {
+    type: Number,
+    optional: true,
+    defaultValue: 1,
+    min: 1,
+    max: 3
   }
 }, {
   clean: {

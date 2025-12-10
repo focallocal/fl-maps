@@ -1,0 +1,21 @@
+{
+  "formTitle": "Form 2",
+  "introTitle": "Introduction (Form 2)",
+  "shareExpTitle": "Share Your Experience (Form 2)",
+  "categories": [
+    {
+      "name": "Form 2 - Category Group 1",
+      "categories": [
+        { "name": "Form 2 - Sub-category A", "color": "#18a80d", "url": "" },
+        { "name": "Form 2 - Sub-category B", "color": "#6d65bc", "url": "" }
+      ]
+    },
+    {
+      "name": "Form 2 - Category Group 2",
+      "categories": [
+        { "name": "Form 2 - Sub-category C", "color": "#6512bc", "url": "" },
+        { "name": "Form 2 - Sub-category D", "color": "#a711c4", "url": "" }
+      ]
+    }
+  ]
+}

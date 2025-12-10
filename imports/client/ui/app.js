@@ -71,6 +71,15 @@ class App extends Component {
         })
       }
       
+      // Listen for dcsOpenForm messages from Docuss to open forms with specific formType
+      if (event.data && event.data.type === 'dcsOpenForm') {
+        const formType = event.data.formType || 1
+        console.log('📥 Received dcsOpenForm message from Docuss, formType:', formType)
+        // Navigate to map with new=1 and formType parameter to open the form
+        const newUrl = `/map?new=1&formType=${formType}`
+        history.push(newUrl)
+      }
+      
       // Listen for dcs-topic-posted messages from Discourse to update bubble counts
       if (event.data && event.data.type === 'dcs-topic-posted') {
         const triggerId = event.data.triggerId
@@ -142,8 +151,9 @@ class App extends Component {
   }
 
   renderNewEvent = ({ location, history }) => {
-    const { new: new_, edit } = qs.parse(location.search)
+    const { new: new_, edit, formType } = qs.parse(location.search)
     const isOpen = Boolean(new_ === '1' || (edit === '1' && window.__editData))
+    const formTypeNum = parseInt(formType, 10) || 1  // Default to form type 1
 
     if (isOpen && !Meteor.userId()) {
       /*
@@ -160,9 +170,10 @@ class App extends Component {
     */
     console.log('passed in loc:\n', location)
     console.log('passed in hist:\n', history)
+    console.log('formType:', formTypeNum)
     return (
       <Suspense fallback={<Loading />}>
-        <NewEventModal isOpen={isOpen} location={location} history={history} />
+        <NewEventModal isOpen={isOpen} location={location} history={history} formType={formTypeNum} />
       </Suspense>
     )
   };
@@ -176,7 +187,9 @@ class App extends Component {
    * And this may break interactions with Docus (e.g. editing an event directly from the forum)
    */
   check404Route = (routes) => {
-    if (window.location.search === '?new=1' || window.location.search === '?edit=1') {
+    const search = window.location.search
+    // Check for new=1 with optional formType parameter
+    if (search.startsWith('?new=1') || search === '?edit=1') {
       return this.renderNewEvent({ location: window.location, history })
     }
     if (!routes.some(e => e === window.location.pathname) &&
@@ -210,8 +223,10 @@ if (inIFrame()) {
             : route.pageName === 'wp_intro' ? 'Public Happiness Token'
               : route.pageName === 'wp_faqs' ? 'Public Happiness Token'
                 : route.pageName === 'm_gather' ? 'General'
-                  : route.pageName === 'summit' ? 'The Happier World Economies Summit'
-                    : 'General'
+                  : route.pageName === 'm_gather2' ? 'General'
+                    : route.pageName === 'm_gather3' ? 'General'
+                      : route.pageName === 'summit' ? 'The Happier World Economies Summit'
+                        : 'General'
     comToPlugin.postSetRouteProps({ category: topicCategory })
   })
 }

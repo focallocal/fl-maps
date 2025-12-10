@@ -117,7 +117,8 @@ class NewEventModal extends Component {
           <FormWizard
             currentStep={currentStep}
             passFormRefToParent={this.getRef}
-            editMode={editMode} />
+            editMode={editMode}
+            formType={this.props.formType} />
         </ModalBody>
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
           Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>)
@@ -161,6 +162,8 @@ class NewEventModal extends Component {
       .then(() => {
   window['NProgress']?.set(0.4)
         let model = EventsSchema.clean(this.state.form.getModel())
+        // Add formType to the model
+        model.formType = this.props.formType || 1
         if (this.state.editMode) {
           model._id = this.state.form.getModel()._id
           this.callEditEvent(model)
@@ -310,7 +313,12 @@ class NewEventModal extends Component {
 NewEventModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   location: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
+  formType: PropTypes.number
+}
+
+NewEventModal.defaultProps = {
+  formType: 1
 }
 
 export default NewEventModal

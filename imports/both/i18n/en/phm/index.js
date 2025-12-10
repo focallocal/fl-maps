@@ -10,6 +10,8 @@ import Faq from './faq.json'
 import Admin from './admin.json'
 import Whitepaper from './whitepaper'
 import Categories from './categories.json'
+import Categories2 from './categories2.json'
+import Categories3 from './categories3.json'
 import Video from './video.json'
 
 export default {
@@ -25,5 +27,7 @@ export default {
   Admin,
   Whitepaper,
   Categories,
+  Categories2,
+  Categories3,
   Video
 }

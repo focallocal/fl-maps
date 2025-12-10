@@ -15,7 +15,7 @@ class FormWizard extends Component {
   }
 
   render () {
-    const { currentStep } = this.props
+    const { currentStep, formType } = this.props
 
     return (
       <form onSubmit={this.handleSubmit}>
@@ -26,7 +26,7 @@ class FormWizard extends Component {
           onClick={this.resetForm}>
           Clear all fields
         </Button>
-        {currentStep === 0 && <FirstStep form={this} onChange={this.handleChange} errors={this.state.errors} />}
+        {currentStep === 0 && <FirstStep form={this} onChange={this.handleChange} errors={this.state.errors} formType={formType} />}
         {currentStep === 1 && <SecondStep form={this} onChange={this.handleChange} errors={this.state.errors} />}
       </form>
     )
@@ -133,7 +133,12 @@ class FormWizard extends Component {
 
 FormWizard.propTypes = {
   currentStep: PropTypes.number.isRequired,
-  passFormRefToParent: PropTypes.func.isRequired
+  passFormRefToParent: PropTypes.func.isRequired,
+  formType: PropTypes.number
+}
+
+FormWizard.defaultProps = {
+  formType: 1
 }
 
 export default FormWizard
