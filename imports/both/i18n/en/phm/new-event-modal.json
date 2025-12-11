@@ -6,12 +6,12 @@
     "secondRadio": "Put myself on the Map!"
   },
   "overview":"Intro",
-  "event_name": "Name/Title",
+  "event_name": "Title",
   "categories": "Public Happiness activity",
   "description": "Tell us more!",
-  "contact_info": "Meeting Details (what for?/where?/why?)",
-  "active_from": "Active from",
-  "active_until": "Active until",
+  "contact_info": "How to find us",
+  "active_from": "Starts",
+  "active_until": "Finishes",
   "recurrence": {
     "thirdRadio": "Specific days of each week",
     "fourthRadio": "Other options for repeating"

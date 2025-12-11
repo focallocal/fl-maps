@@ -27,7 +27,7 @@ class FormWizard extends Component {
           Clear all fields
         </Button>
         {currentStep === 0 && <FirstStep form={this} onChange={this.handleChange} errors={this.state.errors} formType={formType} />}
-        {currentStep === 1 && <SecondStep form={this} onChange={this.handleChange} errors={this.state.errors} />}
+        {currentStep === 1 && <SecondStep form={this} onChange={this.handleChange} errors={this.state.errors} formType={formType} />}
       </form>
     )
   }

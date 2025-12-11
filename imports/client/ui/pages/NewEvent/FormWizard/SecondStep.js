@@ -9,7 +9,16 @@ import VideoEntry from './VideoEntry'
 
 import i18n from '/imports/both/i18n/en'
 
-let labels = i18n.NewEventModal
+// Helper function to get modal labels based on formType
+function getLabelsForFormType(formType) {
+  if (formType === 2 && i18n.NewEventModal2) {
+    return i18n.NewEventModal2
+  } else if (formType === 3 && i18n.NewEventModal3) {
+    return i18n.NewEventModal3
+  }
+  // Default to form type 1
+  return i18n.NewEventModal
+}
 
 VideoButtons.propTypes = {
   videoLinksAdded: PropTypes.number.isRequired,
@@ -77,7 +86,8 @@ const formatTimeInput = (value) => {
   return ''
 }
 
-const SecondStep = ({ form, onChange, errors }) => {
+const SecondStep = ({ form, onChange, errors, formType }) => {
+  const labels = getLabelsForFormType(formType)
   const [videoLinksAdded, setVideoLinksAdded] = useState(0)
   const [openEndDate, setOpenEndDate] = useState()
 
@@ -227,7 +237,7 @@ const SecondStep = ({ form, onChange, errors }) => {
       {RadioButton && (
         <RadioButton
           id='multipleDays'
-          label={labels.recurrence.thirdRadio}
+          label={labels.recurrence?.thirdRadio || 'Specific days of each week'}
           value={multipleDays}
           type='radio'
           onRadioButtonClick={() => {
@@ -267,7 +277,7 @@ const SecondStep = ({ form, onChange, errors }) => {
 
       <RadioButton
         id='repeat'
-        label={labels.recurrence.fourthRadio}
+        label={labels.recurrence?.fourthRadio || 'Other options for repeating'}
         value={repeat}
         type='radio'
         onRadioButtonClick={() => {
@@ -295,7 +305,7 @@ const SecondStep = ({ form, onChange, errors }) => {
 
       <div className="mb-3">
         <FormGroup noMargin={true}>
-          <Label for="description">Description</Label>
+          <Label for="description">{labels.description || 'Description'}</Label>
           <Input
             type="textarea"
             name="description"
@@ -325,7 +335,7 @@ const SecondStep = ({ form, onChange, errors }) => {
       </div>
 
       <FormGroup>
-        <Label for="engagement-limit">Attendee Limit</Label>
+        <Label for="engagement-limit">{labels.attendee_limit || 'Attendee Limit'}</Label>
         <Input
           type="number"
           name="engagement.limit"
@@ -342,7 +352,7 @@ const SecondStep = ({ form, onChange, errors }) => {
       <FormGroup>
         <RadioButton
           id="includesVideo"
-          label={`${labels.video.title.firstLine} ${labels.video.title.secondLine}`}
+          label={`${labels.video?.title?.firstLine || 'Add video to page banner'} ${labels.video?.title?.secondLine || ''}`}
           value={videoLinksAdded > 0}
           type="radio"
           onRadioButtonClick={(id, value) => {
@@ -373,7 +383,8 @@ const SecondStep = ({ form, onChange, errors }) => {
 }
 
 SecondStep.propTypes = {
-  form: PropTypes.object
+  form: PropTypes.object,
+  formType: PropTypes.number
 }
 
 export default SecondStep
