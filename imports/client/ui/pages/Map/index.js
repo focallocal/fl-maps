@@ -51,6 +51,8 @@ class MapComponent_ extends Component {
   memoizeLocations = {} // cache locations
 
   componentDidMount() {
+    if (window.FlMapsTiming) window.FlMapsTiming.log('Map component mounting')
+    
     if (window.previousStateOfMap) {
       this.setState({ ...window.previousStateOfMap })
     }
@@ -70,9 +72,12 @@ class MapComponent_ extends Component {
         if (this.map && typeof google !== 'undefined' && google.maps) {
           google.maps.event.trigger(this.map, 'resize')
           // Don't panTo - let user's current view persist
+          if (window.FlMapsTiming) window.FlMapsTiming.log('Google Maps resize triggered')
         }
       }, 300)
     }
+    
+    if (window.FlMapsTiming) window.FlMapsTiming.log('Map component mounted')
   }
 
   componentWillUnmount() {

@@ -41,6 +41,46 @@ import Loading from './pages/NewEvent/Loading.js'
 const NewEventModal = lazy(() => import('./pages/NewEvent/NewEventModal.js'));
 
 // ------------------------------------------------------------------------------
+// Debug Timing System - Receives toggle from Discourse parent
+// ------------------------------------------------------------------------------
+
+const FlMapsTiming = {
+  enabled: false,
+  
+  init() {
+    // Listen for timing toggle from Discourse parent
+    window.addEventListener('message', (event) => {
+      if (event.data && event.data.type === 'dcs-timing-toggle') {
+        this.enabled = event.data.enabled
+        console.log(`⏱️ [fl-maps] Timing ${this.enabled ? 'enabled' : 'disabled'}`)
+      }
+    })
+  },
+  
+  log(eventName, details = null) {
+    if (!this.enabled) return
+    console.log(`⏱️ [fl-maps] ${eventName}`, details || '')
+    
+    // Send to parent Discourse window
+    if (window.parent !== window) {
+      window.parent.postMessage({
+        type: 'dcs-timing',
+        source: 'fl-maps',
+        event: eventName,
+        details: details,
+        timestamp: Date.now()
+      }, '*')
+    }
+  }
+}
+
+// Initialize timing system
+FlMapsTiming.init()
+
+// Expose globally for use in other components
+window.FlMapsTiming = FlMapsTiming
+
+// ------------------------------------------------------------------------------
 
 class App extends Component {
   componentDidMount () {
@@ -59,6 +99,7 @@ class App extends Component {
     window.addEventListener('message', (event) => {
       if (event.data && event.data.type === 'pauseVideo') {
         console.log('📥 Received pauseVideo message from Docuss')
+        FlMapsTiming.log('Received pauseVideo message')
         // Find all YouTube iframes and pause them
         const iframes = document.querySelectorAll('iframe[src*="youtube.com"]')
         iframes.forEach(iframe => {
@@ -75,20 +116,24 @@ class App extends Component {
       if (event.data && event.data.type === 'dcsOpenForm') {
         const formType = event.data.formType || 1
         console.log('📥 Received dcsOpenForm message from Docuss, formType:', formType)
+        FlMapsTiming.log('Received dcsOpenForm message', { formType })
         
         // Wait a bit for SSO to complete if in progress, then navigate
         const tryOpenForm = (retries = 0) => {
           if (Meteor.userId()) {
             // User is logged in, navigate to form
+            FlMapsTiming.log('User logged in, opening form', { formType })
             const newUrl = `/map?new=1&formType=${formType}`
             history.push(newUrl)
           } else if (retries < 10) {
             // Wait for SSO login to complete (check every 500ms, max 5 seconds)
             console.log('⏳ Waiting for SSO login... attempt', retries + 1)
+            FlMapsTiming.log('Waiting for SSO login', { attempt: retries + 1 })
             setTimeout(() => tryOpenForm(retries + 1), 500)
           } else {
             // SSO didn't complete, show login prompt
             console.log('⚠️ SSO login not completed, prompting user')
+            FlMapsTiming.log('SSO login timeout')
             alert('You need to login before you can create an event')
           }
         }
@@ -99,6 +144,7 @@ class App extends Component {
       if (event.data && event.data.type === 'dcs-topic-posted') {
         const triggerId = event.data.triggerId
         console.log('📨 Received dcs-topic-posted message for trigger:', triggerId)
+        FlMapsTiming.log('Received dcs-topic-posted', { triggerId })
         
         // Trigger a route refresh to update DCS counts
         // This causes dcs-react-router-sync to refetch topic counts
@@ -107,6 +153,7 @@ class App extends Component {
           window.history.pushState({}, '', currentPath)
           window.dispatchEvent(new PopStateEvent('popstate'))
           console.log('🔄 Triggered route refresh to update DCS counts')
+          FlMapsTiming.log('Triggered route refresh for DCS counts')
         }, 1000) // Wait 1 second for Discourse to index the new topic
       }
     })
