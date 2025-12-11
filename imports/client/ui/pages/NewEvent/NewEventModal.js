@@ -172,7 +172,10 @@ class NewEventModal extends Component {
   window['NProgress']?.set(0.4)
         let model = EventsSchema.clean(this.state.form.getModel())
         // Add formType to the model
-        model.formType = this.props.formType || 1
+        // When editing, preserve the original formType from the model; otherwise use props or default to 1
+        if (!model.formType) {
+          model.formType = this.props.formType || 1
+        }
         if (this.state.editMode) {
           model._id = this.state.form.getModel()._id
           this.callEditEvent(model)

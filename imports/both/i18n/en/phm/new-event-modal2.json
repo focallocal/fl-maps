@@ -2,14 +2,14 @@
   "modal_header": "Form 2",
   "resource_type": {
    "title": "I want to:",
-    "firstRadio": "Create a Public Happiness Activity",
-    "secondRadio": "Put myself on the Map!"
+    "firstRadio": "Put myself on the Map!",
+    "secondRadio": "None"
   },
   "overview": "Intro",
   "event_name": "Name/Title",
   "categories": "Public Happiness activity",
-  "description": "Tell us more!",
-  "contact_info": "Meeting Details (what for?/where?/why?)",
+  "description": "Tell us more about you!",
+  "contact_info": "Invite me for..",
   "video": {
     "title": {
       "firstLine": "Add video to page banner",

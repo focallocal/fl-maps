@@ -2,8 +2,8 @@
   "modal_header": "Form 3",
   "resource_type": {
    "title": "I want to:",
-    "firstRadio": "Create a Public Happiness Activity",
-    "secondRadio": "Put myself on the Map!"
+    "firstRadio": "Put my group on the Map!",
+    "secondRadio": "None"
   },
   "overview": "Intro",
   "event_name": "Name/Title",
