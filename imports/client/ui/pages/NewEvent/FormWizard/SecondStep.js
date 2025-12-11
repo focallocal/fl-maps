@@ -334,20 +334,23 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
         )}
       </div>
 
-      <FormGroup>
-        <Label for="engagement-limit">{labels.attendee_limit || 'Attendee Limit'}</Label>
-        <Input
-          type="number"
-          name="engagement.limit"
-          id="engagement-limit"
-          value={attendeeLimit}
-          onChange={(e) => {
-            const value = e.target.value === '' ? '' : Math.max(0, parseInt(e.target.value, 10) || 0);
-            setAttendeeLimit(value);
-            form.change('engagement', { ...formData.engagement, limit: value });
-          }}
-        />
-      </FormGroup>
+      {/* Hide attendee limit for Form 2 and Form 3 */}
+      {formType !== 2 && formType !== 3 && (
+        <FormGroup>
+          <Label for="engagement-limit">{labels.attendee_limit || 'Attendee Limit'}</Label>
+          <Input
+            type="number"
+            name="engagement.limit"
+            id="engagement-limit"
+            value={attendeeLimit}
+            onChange={(e) => {
+              const value = e.target.value === '' ? '' : Math.max(0, parseInt(e.target.value, 10) || 0);
+              setAttendeeLimit(value);
+              form.change('engagement', { ...formData.engagement, limit: value });
+            }}
+          />
+        </FormGroup>
+      )}
 
       <FormGroup>
         <RadioButton
