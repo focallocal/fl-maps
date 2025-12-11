@@ -129,7 +129,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
     <div id='second-step'>
       <div className='mb-3'>
         <FormGroup noMargin={true}>
-          <Label for="findHints">Find Hints</Label>
+          <Label for="findHints">{labels.contact_info || 'Find Hints'}</Label>
           <Input
             type="text"
             name="findHints"
@@ -148,7 +148,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
           <Row>
             <Col className='date-hours-coupled'>
               <FormGroup>
-                <Label for="startingDate">Starting Date</Label>
+                <Label for="startingDate">{labels.active_from || 'Starting Date'}</Label>
                 <Input
                   type="date"
                   name="startingDate"
@@ -162,7 +162,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
               </FormGroup>
               {!multipleDays && (
                 <FormGroup>
-                  <Label for="startingTime">Starting Time</Label>
+                  <Label for="startingTime">{labels.active_from ? `${labels.active_from} Time` : 'Starting Time'}</Label>
                   <Input
                     type="time"
                     name="startingTime"
@@ -179,7 +179,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
             <Col className='date-hours-coupled'>
               {(!repeat && !openEndDate) && (
                 <FormGroup>
-                  <Label for="endingDate">Ending Date</Label>
+                  <Label for="endingDate">{labels.active_until || 'Ending Date'}</Label>
                   <Input
                     type="date"
                     name="endingDate"
@@ -197,7 +197,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
               )}
               {(!multipleDays && !openEndDate) && (
                 <FormGroup>
-                  <Label for="endingTime">Ending Time</Label>
+                  <Label for="endingTime">{labels.active_until ? `${labels.active_until} Time` : 'Ending Time'}</Label>
                   <Input
                     type="time"
                     name="endingTime"
@@ -212,7 +212,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
               )}
               {(!repeat && openEndDate) && (
                 <FormGroup>
-                  <Label for="endingDate">Ending Date</Label>
+                  <Label for="endingDate">{labels.active_until || 'Ending Date'}</Label>
                   <Input
                     type="date"
                     name="endingDate"
@@ -337,7 +337,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
       {/* Hide attendee limit for Form 2 and Form 3 */}
       {formType !== 2 && formType !== 3 && (
         <FormGroup>
-          <Label for="engagement-limit">{labels.attendee_limit || 'Attendee Limit'}</Label>
+          <Label for="engagement-limit">{labels.attendee_limit_label || 'Attendee Limit'}</Label>
           <Input
             type="number"
             name="engagement.limit"

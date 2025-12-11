@@ -7,9 +7,16 @@
   },
   "overview": "Intro",
   "event_name": "Name/Title",
+  "address_hint": "Where is your groups fav meeting spot?",
   "categories": "Public Happiness activity",
   "description": "Tell us more!",
   "contact_info": "Meeting Details (what for?/where?/why?)",
+  "active_from": "Starts",
+  "active_until": "Finishes",
+  "recurrence": {
+    "thirdRadio": "Specific days of each week",
+    "fourthRadio": "Other options for repeating"
+  },
   "video": {
     "title": {
       "firstLine": "Add video to page banner",

@@ -177,7 +177,7 @@ const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
       
       <div className="mb-3">
         <FormGroup noMargin={true}>
-          <Label for="name">Name</Label>
+          <Label for="name">{labels.event_name || 'Name'}</Label>
           <Input
             type="text"
             name="name"
@@ -195,7 +195,7 @@ const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
 
       <div className="mb-3">
         <FormGroup noMargin={true}>
-          <Label for="overview">Overview</Label>
+          <Label for="overview">{labels.overview || 'Overview'}</Label>
           <Input
             type="textarea"
             name="overview"
@@ -233,6 +233,9 @@ const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
             }}
           />
         </FormGroup>
+        {labels.address_hint && (
+          <div className="text-muted small mt-1">{labels.address_hint}</div>
+        )}
         {errors?.address && (!formData?.address || formData.address.name.trim() === '') && (
           <div className="text-danger">{errors.address}</div>
         )}

@@ -7,9 +7,16 @@
   },
   "overview": "Intro",
   "event_name": "Name",
+  "address_hint": "For safety/privacy reasons we recommend using a nearby public landmark",
   "categories": "Public Happiness activity",
   "description": "Tell us more about you!",
   "contact_info": "Invite me for..",
+  "active_from": "Available from",
+  "active_until": "Available until",
+  "recurrence": {
+    "thirdRadio": "Specific days of each week",
+    "fourthRadio": "Other options for repeating"
+  },
   "video": {
     "title": {
       "firstLine": "Add video to page banner",

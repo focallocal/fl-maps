@@ -5,8 +5,9 @@
     "firstRadio": "Create a Public Happiness Activity",
     "secondRadio": "Put myself on the Map!"
   },
-  "overview":"Intro",
+  "overview": "Intro",
   "event_name": "Title",
+  "address_hint": "Where will your activity be?",
   "categories": "Public Happiness activity",
   "description": "Tell us more!",
   "contact_info": "How to find us",
@@ -24,5 +25,6 @@
     "host": "Select your video host from the dropdown",
     "address": "Then enter the full video URL link"
   },
-  "attendee_limit": "1000"
+  "attendee_limit": "1000",
+  "attendee_limit_label": "Attendee Limit"
 }
