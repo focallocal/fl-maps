@@ -1,6 +1,7 @@
 // External Libraries
 import { Meteor } from 'meteor/meteor'
 import React, { Component, Fragment } from 'react'
+import debounce from 'lodash.debounce'
 import { DirectionsRenderer, GoogleMap, Marker, withGoogleMap, withScriptjs } from 'react-google-maps'
 import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer'
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
@@ -46,6 +47,11 @@ class MapComponent_ extends Component {
       hoveredEvent: null,
       isHovered: false
     }
+    
+    // Debounce getEvents to prevent rapid-fire API calls when scrolling/zooming
+    this.debouncedGetEvents = debounce((location, skip, limit) => {
+      this.getEvents(location, skip, limit)
+    }, 400)
   }
 
   memoizeLocations = {} // cache locations
@@ -83,6 +89,11 @@ class MapComponent_ extends Component {
   componentWillUnmount() {
     toggleBodyOverflow()
     this._isMounted = false // don't remove that line
+    
+    // Cancel any pending debounced calls
+    if (this.debouncedGetEvents) {
+      this.debouncedGetEvents.cancel()
+    }
   }
 
   componentDidUpdate(nextProps, prevState) {
@@ -343,7 +354,8 @@ class MapComponent_ extends Component {
     })
 
     const center = this.map.getCenter()
-    this.getEvents({
+    // Use debounced version to prevent rapid-fire API calls when scrolling
+    this.debouncedGetEvents({
       lat: center.lat(),
       lng: center.lng()
     })
@@ -368,7 +380,8 @@ class MapComponent_ extends Component {
 
   onDragEnd = () => {
     const center = this.map.getCenter()
-    this.getEvents({
+    // Use debounced version to prevent rapid-fire API calls
+    this.debouncedGetEvents({
       lat: center.lat(),
       lng: center.lng()
     })
