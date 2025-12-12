@@ -39,21 +39,21 @@ class MapComponent_ extends Component {
       filteredEvents: null,
       isFetching: true,
       showFilters: false,
-      // userLocation: null,
-      userLocation: { lat: 40.71084185899232, lng: -73.9266585638803 },
+      userLocation: null, // Set via getUserPosition or search box
       zoom: 3,
       mapRadius: null,
       showPastEvents: false,
       hoveredEvent: null,
       isHovered: false,
-      listDisplayCount: 30 // Number of events to show in list (pagination)
+      listDisplayCount: 30, // Number of events to show in list (pagination)
+      hasLoadedInitial: false // Flag to trigger initial events load via onIdle
     }
     
     // Debounce getEvents to prevent rapid-fire API calls when scrolling/zooming
-    // Rate limit is 5 requests per 2 seconds, so 500ms debounce = max 4 calls per 2s (safe margin)
+    // Rate limit is 8 requests per 2 seconds, so 700ms debounce = max ~3 calls per 2s (safe margin)
     this.debouncedGetEvents = debounce((location, skip, limit) => {
       this.getEvents(location, skip, limit)
-    }, 500, { leading: false, trailing: true })
+    }, 700, { leading: false, trailing: true })
   }
 
   memoizeLocations = {} // cache locations
@@ -104,16 +104,18 @@ class MapComponent_ extends Component {
       userLocationError
     } = this.state
 
+    // When user location is detected, load events (debounced to prevent rate limit)
     if (!prevState.userLocation && userLocation) {
-      this.getEvents()
+      this.debouncedGetEvents(userLocation)
     }
 
     if (!prevState.userLocationError && userLocationError) {
       this.setState({ isFetching: false })
     }
 
+    // When toggling past events, reload (debounced)
     if (prevState.showPastEvents !== this.state.showPastEvents) {
-      this.getEvents()
+      this.debouncedGetEvents()
     }
   }
 
@@ -156,7 +158,7 @@ class MapComponent_ extends Component {
         defaultOptions={mapOptions()}
         onZoomChanged={this.onZoomChanged}
         onDragEnd={this.onDragEnd}
-        // Removed onTilesLoaded - it was causing duplicate getEvents calls and exceeding rate limit
+        onIdle={this.onMapIdle}
       >
         <Button className="gather-button" tag={Link} to="?new=1">{MainMenu.addEvent}</Button>
 
@@ -353,7 +355,23 @@ class MapComponent_ extends Component {
     }
     this.map.fitBounds(bounds)
 
-    this.getEvents(latLng)
+    // Use debounced version to prevent rate limit issues
+    this.debouncedGetEvents(latLng)
+  }
+
+  // Called once when map first becomes idle - loads initial events
+  onMapIdle = () => {
+    if (!this.state.hasLoadedInitial && this.map) {
+      this.setState({ hasLoadedInitial: true })
+      const center = this.map.getCenter()
+      if (center) {
+        // Load events for current map center (works even if user declined location)
+        this.getEvents({
+          lat: center.lat(),
+          lng: center.lng()
+        })
+      }
+    }
   }
 
   onZoomChanged = () => {
