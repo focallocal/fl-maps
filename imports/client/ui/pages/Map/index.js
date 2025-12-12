@@ -40,7 +40,7 @@ class MapComponent_ extends Component {
       isFetching: true,
       showFilters: false,
       userLocation: null, // Set via getUserPosition or search box
-      zoom: 4, // Start at 4, will zoom out to 3 after mount to trigger event load
+      zoom: 3,
       mapRadius: null,
       showPastEvents: false,
       hoveredEvent: null,
@@ -84,20 +84,6 @@ class MapComponent_ extends Component {
         }
       }, 300)
     }
-    
-    // Zoom out from 4 to 3 after map loads to trigger onZoomChanged and load events
-    // This is more reliable than onIdle which doesn't fire consistently on all browsers
-    // Use interval to wait for map ref to be set (may take longer on mobile)
-    const zoomOutInterval = setInterval(() => {
-      if (this.map && !this.state.hasLoadedInitial) {
-        clearInterval(zoomOutInterval)
-        this.setState({ zoom: 3, hasLoadedInitial: true })
-        // onZoomChanged will be triggered by the zoom change and will call getEvents
-        if (window.FlMapsTiming) window.FlMapsTiming.log('Zoom-out triggered to load events')
-      }
-    }, 500)
-    // Clear interval after 10 seconds to prevent infinite loop
-    setTimeout(() => clearInterval(zoomOutInterval), 10000)
     
     if (window.FlMapsTiming) window.FlMapsTiming.log('Map component mounted')
   }
@@ -172,6 +158,7 @@ class MapComponent_ extends Component {
         defaultOptions={mapOptions()}
         onZoomChanged={this.onZoomChanged}
         onDragEnd={this.onDragEnd}
+        onTilesLoaded={this.onZoomChanged}
         onIdle={this.onMapIdle}
       >
         <Button className="gather-button" tag={Link} to="?new=1">{MainMenu.addEvent}</Button>
