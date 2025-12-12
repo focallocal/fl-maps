@@ -40,7 +40,7 @@ class MapComponent_ extends Component {
       isFetching: true,
       showFilters: false,
       userLocation: null, // Set via getUserPosition or search box
-      zoom: 3,
+      zoom: 4, // Start at 4, will zoom out to 3 after mount to trigger event load
       mapRadius: null,
       showPastEvents: false,
       hoveredEvent: null,
@@ -84,6 +84,15 @@ class MapComponent_ extends Component {
         }
       }, 300)
     }
+    
+    // Zoom out from 4 to 3 after map loads to trigger onZoomChanged and load events
+    // This is more reliable than onIdle which doesn't fire consistently on all browsers
+    setTimeout(() => {
+      if (this.map && !this.state.hasLoadedInitial) {
+        this.setState({ zoom: 3, hasLoadedInitial: true })
+        // onZoomChanged will be triggered by the zoom change and will call getEvents
+      }
+    }, 800)
     
     if (window.FlMapsTiming) window.FlMapsTiming.log('Map component mounted')
   }
