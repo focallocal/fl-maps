@@ -119,13 +119,33 @@ class App extends Component {
         console.log('📥 Received dcsOpenForm message from Docuss, formType:', formType)
         FlMapsTiming.log('Received dcsOpenForm message', { formType })
         
+        // Helper function to navigate to form - uses both history.push and location.href for mobile compatibility
+        const navigateToForm = (formType) => {
+          const newUrl = `/map?new=1&formType=${formType}`
+          console.log('🔀 Navigating to form:', newUrl)
+          
+          // Use history.push first for smooth SPA navigation
+          history.push(newUrl)
+          
+          // On mobile browsers (especially in iframes), history.push may not trigger re-render
+          // Force a component update by dispatching a popstate event
+          setTimeout(() => {
+            if (window.location.search !== `?new=1&formType=${formType}`) {
+              console.log('⚠️ history.push did not work, using window.location')
+              window.location.href = newUrl
+            } else {
+              // Trigger popstate to ensure React Router picks up the change
+              window.dispatchEvent(new PopStateEvent('popstate'))
+            }
+          }, 100)
+        }
+        
         // Use Tracker.autorun to reactively wait for SSO login completion
         // This is more efficient than setTimeout polling as it reacts immediately to changes
         if (Meteor.userId()) {
           // User is already logged in, navigate to form immediately
           FlMapsTiming.log('User already logged in, opening form', { formType })
-          const newUrl = `/map?new=1&formType=${formType}`
-          history.push(newUrl)
+          navigateToForm(formType)
         } else {
           // Wait for SSO login using reactive Tracker
           console.log('⏳ Waiting for SSO login via Tracker.autorun...')
@@ -147,8 +167,7 @@ class App extends Component {
               computation.stop()
               console.log('✅ SSO login detected via Tracker, opening form')
               FlMapsTiming.log('User logged in via Tracker, opening form', { formType })
-              const newUrl = `/map?new=1&formType=${formType}`
-              history.push(newUrl)
+              navigateToForm(formType)
             }
           })
         }
