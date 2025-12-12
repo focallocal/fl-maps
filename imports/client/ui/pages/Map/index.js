@@ -49,9 +49,10 @@ class MapComponent_ extends Component {
     }
     
     // Debounce getEvents to prevent rapid-fire API calls when scrolling/zooming
+    // Rate limit is 5 requests per 2 seconds, so 500ms debounce = max 4 calls per 2s (safe margin)
     this.debouncedGetEvents = debounce((location, skip, limit) => {
       this.getEvents(location, skip, limit)
-    }, 400)
+    }, 500, { leading: false, trailing: true })
   }
 
   memoizeLocations = {} // cache locations
@@ -149,7 +150,7 @@ class MapComponent_ extends Component {
         defaultOptions={mapOptions()}
         onZoomChanged={this.onZoomChanged}
         onDragEnd={this.onDragEnd}
-        onTilesLoaded={this.onZoomChanged}
+        // Removed onTilesLoaded - it was causing duplicate getEvents calls and exceeding rate limit
       >
         <Button className="gather-button" tag={Link} to="?new=1">{MainMenu.addEvent}</Button>
 
