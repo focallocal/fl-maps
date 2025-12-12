@@ -21,4 +21,21 @@
       margin-right: 2.5px;
     }
   }
+  
+  .next-btn {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+    
+    &:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+    
+    &.active {
+      background-color: #1e7e34;
+      border-color: #1c7430;
+      box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    }
+  }
 }

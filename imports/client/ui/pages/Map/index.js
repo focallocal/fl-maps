@@ -20,6 +20,7 @@ import mapOptions from './mapOptions'
 import { ensureUniquePosition } from './utils'
 import { toggleBodyOverflow } from '/imports/client/utils/DOMInteractions'
 import getUserPosition from '/imports/client/utils/location/getUserPosition'
+import { findNextEvent } from '/imports/client/utils/findNextEvent'
 
 // Styles and Other
 import './mobile-styles.scss'
@@ -43,6 +44,7 @@ class MapComponent_ extends Component {
       zoom: 3,
       mapRadius: null,
       showPastEvents: false,
+      showNextView: false,
       hoveredEvent: null,
       isHovered: false,
       listDisplayCount: 30, // Number of events to show in list (pagination)
@@ -138,12 +140,43 @@ class MapComponent_ extends Component {
 
     const { history } = this.props
 
-    const { MainMenu } = i18n
+    const { MainMenu, NextViewConfig } = i18n
 
     const events_ = filteredEvents || events
     
+    // Apply Next view filtering and sorting if enabled
+    let processedEvents = events_
+    if (this.state.showNextView) {
+      const excludedCategories = NextViewConfig?.excludedCategories || []
+      
+      // Filter out excluded categories
+      processedEvents = events_.filter(event => {
+        const eventCategories = event.categories || []
+        return !eventCategories.some(cat => 
+          excludedCategories.includes(cat.name || cat)
+        )
+      })
+      
+      // Sort by next occurrence date
+      processedEvents = processedEvents.sort((a, b) => {
+        const getNextDate = (event) => {
+          const when = event.when || {}
+          if (when.repeat && when.recurring) {
+            const { type, every, days, monthly } = when.recurring
+            try {
+              return findNextEvent(when.startingDate, type, every, days, monthly)
+            } catch (e) {
+              return new Date(when.startingDate)
+            }
+          }
+          return new Date(when.startingDate)
+        }
+        return getNextDate(a) - getNextDate(b)
+      })
+    }
+    
     // For the list: show only first N events (paginated)
-    const listEvents = events_.slice(0, this.state.listDisplayCount)
+    const listEvents = processedEvents.slice(0, this.state.listDisplayCount)
     // For map markers: show ALL events
     const mapEvents = events_
 
@@ -212,6 +245,8 @@ class MapComponent_ extends Component {
               <Input id='google-maps-searchbox' type="text" placeholder="Search" />
               <SearchButtons
                 toggleFilters={this.toggleFiltersList}
+                toggleNextView={this.toggleNextView}
+                showNextView={this.state.showNextView}
                 togglePastEvents={this.togglePastEvents}
                 showPastEvents={this.state.showPastEvents}
               />
@@ -296,6 +331,10 @@ class MapComponent_ extends Component {
 
   togglePastEvents = () => {
     this.setState((state) => ({ showPastEvents: !state.showPastEvents }))
+  }
+
+  toggleNextView = () => {
+    this.setState((state) => ({ showNextView: !state.showNextView }))
   }
 
   setDirections = (destination) => {

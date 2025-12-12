@@ -15,6 +15,7 @@ import Categories from './categories.json'
 import Categories2 from './categories2.json'
 import Categories3 from './categories3.json'
 import Video from './video.json'
+import NextViewConfig from './next-view-config.json'
 
 export default {
   About,
@@ -33,5 +34,6 @@ export default {
   Categories,
   Categories2,
   Categories3,
-  Video
+  Video,
+  NextViewConfig
 }

@@ -12,6 +12,13 @@ class SearchButtons extends Component {
           Filter
         </Button>
         <Button
+          className={this.props.showNextView ? 'next-btn active' : 'next-btn'}
+          onClick={this.props.toggleNextView}
+        >
+          <i className='fa fa-clock' />
+          Next
+        </Button>
+        <Button
           onClick={this.props.togglePastEvents}
         >
           {this.props.showPastEvents ? 'Hide Past' : 'Show Past'}
@@ -26,7 +33,11 @@ class SearchButtons extends Component {
 }
 
 SearchButtons.propTypes = {
-  toggleFilters: PropTypes.func.isRequired
+  toggleFilters: PropTypes.func.isRequired,
+  toggleNextView: PropTypes.func.isRequired,
+  showNextView: PropTypes.bool,
+  togglePastEvents: PropTypes.func,
+  showPastEvents: PropTypes.bool
 }
 
 export default SearchButtons
