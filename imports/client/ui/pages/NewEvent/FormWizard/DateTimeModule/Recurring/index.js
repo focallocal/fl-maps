@@ -134,7 +134,7 @@ class Recurring extends Component {
         className='checkbox'
         type='checkbox'
         label={label}
-        defaultChecked={false}
+        checked={checked}
         onChange={(e) => 
           this.handleCheckbox(e.target.checked)
         }

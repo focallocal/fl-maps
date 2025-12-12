@@ -103,48 +103,38 @@ const HoursFormatted = ({ data }) => {
     if (type === 'day') {
       return (
         <ul className='hours-formatted repeat'>
-          {(forever === true) && nextOccurence}
-          {(!forever && recurrenceEndDate && new Date() < recurrenceEndDate) && nextOccurence}
-          {(!forever && until && new Date() < until) && nextOccurence}
-          <li>{repeatTitle} {repeatSchedule}, between {startingTime} - {endingTime} </li>
+          <li>{startingTime} - {endingTime}</li>
+          <li>Every {every > 1 ? `${every} days` : 'day'}</li>
           {!forever && notForeverDay}
         </ul>
       )
     } else if (type === 'week') {
       return (
         <ul className='hours-formatted repeat'>
-          {(forever === true) && nextOccurence}
-          {(!forever && recurrenceEndDate && new Date() < recurrenceEndDate) && nextOccurence}
-          {(!forever && until && new Date() < until) && nextOccurence}
-          <li>
-            <span className='every-sentence'>{repeatTitle} {repeatSchedule}</span><br/>
-            {daysOrdered.map((day, index) => (
-              day &&
-                <div key={index} className='day'>
-                  <span>on {day.substr(0, 3)}, {startingTime} - {endingTime}</span><br/>
-                </div>
-            ))}
-          </li>
+          {daysOrdered.map((day, index) => (
+            day &&
+              <li key={index} className='day'>
+                {day.substr(0, 3)} {startingTime} - {endingTime}
+              </li>
+          ))}
+          <li>Every {every > 1 ? `${every} weeks` : 'week'}</li>
           {!forever && notForeverWeek}
         </ul>
       )
     } else if (type === 'month') {
+      const ordinalSuffix = (n) => {
+        if (n === 1 || n === 21 || n === 31) return 'st'
+        if (n === 2 || n === 22) return 'nd'
+        if (n === 3 || n === 23) return 'rd'
+        return 'th'
+      }
       return (
         <ul className='hours-formatted repeat'>
-          {nextOccurence}
           <li>
-            <span className='every-sentence'>{repeatTitle} {repeatSchedule} </span><br/>
-            <span>
-              {(monthly.type === 'byDayInMonth' && monthly.value === 1) && `on the ${monthly.value}st`}
-              {(monthly.type === 'byDayInMonth' && monthly.value === 2) && `on the ${monthly.value}nd`}
-              {(monthly.type === 'byDayInMonth' && monthly.value === 3) && `on the ${monthly.value}rd`}
-              {(monthly.type === 'byDayInMonth' && monthly.value > 3) && `on the ${monthly.value}th`}
-              {(monthly.type === 'byPosition' && monthly.value === 1) && `on the ${monthly.value}st ${weekDays[startingDate.getDay()]}`}
-              {(monthly.type === 'byPosition' && monthly.value === 2) && `on the ${monthly.value}nd ${weekDays[startingDate.getDay()]}`}
-              {(monthly.type === 'byPosition' && monthly.value === 3) && `on the ${monthly.value}rd ${weekDays[startingDate.getDay()]}`}
-              {(monthly.type === 'byPosition' && monthly.value > 3) && `on the ${monthly.value}th ${weekDays[startingDate.getDay()]}`}
-            </span>
+            {monthly.type === 'byDayInMonth' && `${monthly.value}${ordinalSuffix(monthly.value)} of each month`}
+            {monthly.type === 'byPosition' && `${monthly.value}${ordinalSuffix(monthly.value)} ${weekDays[startingDate.getDay()]} of each month`}
           </li>
+          <li>{startingTime} - {endingTime}</li>
           {!forever && notForeverMonth}
         </ul>
       )

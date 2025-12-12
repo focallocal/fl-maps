@@ -245,16 +245,34 @@ class MapComponent_ extends Component {
       return null
     }
 
-    const { latLng, overlapping: ol } = this.memoizeLocations[_id]
-    const cachedSet = this.memoizeLocations[`${latLng.lng}${latLng.lat}`]
-
-    let overlapping = ol
-    if (cachedSet && cachedSet.size > 1) {
-      overlapping = true
+    // Get cached location data, or fall back to finding event in state
+    let latLng, overlapping = false
+    
+    if (this.memoizeLocations[_id]) {
+      const cached = this.memoizeLocations[_id]
+      latLng = cached.latLng
+      overlapping = cached.overlapping || false
+      const cachedSet = this.memoizeLocations[`${latLng.lng}${latLng.lat}`]
+      if (cachedSet && cachedSet.size > 1) {
+        overlapping = true
+      }
+    } else {
+      // Event not in cache - find from events array
+      const event = this.state.events.find(e => e._id === _id)
+      if (event && event.address && event.address.location) {
+        const coords = event.address.location.coordinates
+        latLng = { lng: coords[0], lat: coords[1] }
+      } else {
+        // Can't find event location, just set currentEvent without panning
+        this.setState({ currentEvent: _id })
+        return
+      }
     }
 
     // Center map on clicked marker without delay
-    this.map.panTo(latLng)
+    if (this.map && latLng) {
+      this.map.panTo(latLng)
+    }
 
     this.setState({
       zoom: overlapping ? 22 : 18,
