@@ -453,38 +453,36 @@ class MapComponent_ extends Component {
       }
 
       this.setState({ isFetching: true, listDisplayCount: 30 }) // Reset list pagination on new fetch
+      
+      // Retry logic for rate limit errors (500 Internal Server Error)
+      const callWithRetry = (methodName, retryCount = 0) => {
+        const maxRetries = 3
+        const retryDelay = 1500 * (retryCount + 1) // 1.5s, 3s, 4.5s
+        
+        Meteor.call(methodName, data, (err, res) => {
+          if (!err) {
+            this.setState({
+              events: res,
+              filteredEvents: res,
+              isFetching: false
+            })
+            this.memoizeLocations = {} // reset caching
+          } else if (err.error === 500 && retryCount < maxRetries) {
+            // Rate limited - retry after delay
+            console.log(`Rate limited, retrying in ${retryDelay}ms (attempt ${retryCount + 1}/${maxRetries})`)
+            setTimeout(() => callWithRetry(methodName, retryCount + 1), retryDelay)
+          } else {
+            console.error(`Error loading events:`, err)
+            this.setError('Failed to load events. Please refresh the page.')
+            this.setState({ events: [], filteredEvents: [], isFetching: false })
+          }
+        })
+      }
+      
       if (this.state.showPastEvents) {
-        Meteor.call('Events.getEvents', data, (err, res) => {
-          if (!err) {
-            this.setState({
-              events: res,
-              filteredEvents: res
-            })
-            this.memoizeLocations = {} // reset caching
-          } else {
-            console.error('Error loading events:', err)
-            this.setError('Failed to load events. Please refresh the page.')
-            this.setState({ events: [], filteredEvents: [] })
-          }
-
-          this.setState({ isFetching: false })
-        })
+        callWithRetry('Events.getEvents')
       } else {
-        Meteor.call('Events.getFutureEvents', data, (err, res) => {
-          if (!err) {
-            this.setState({
-              events: res,
-              filteredEvents: res
-            })
-            this.memoizeLocations = {} // reset caching
-          } else {
-            console.error('Error loading future events:', err)
-            this.setError('Failed to load events. Please refresh the page.')
-            this.setState({ events: [], filteredEvents: [] })
-          }
-
-          this.setState({ isFetching: false })
-        })
+        callWithRetry('Events.getFutureEvents')
       }
     }
   }
