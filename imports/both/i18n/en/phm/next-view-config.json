@@ -1,6 +1,8 @@
 {
-  "excludedCategories": [
+  "defaultUnselectedCategories": [
     "Positive People Nearby",
     "Random Acts of Kindness Communities"
-  ]
+  ],
+  "printHeader": "Publichappinessmovement.com",
+  "printTitle": "Calendar"
 }

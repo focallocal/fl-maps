@@ -18,6 +18,16 @@ class SearchButtons extends Component {
           <i className='fa fa-clock' />
           Next
         </Button>
+        {this.props.showNextView && (
+          <Button
+            className='print-btn'
+            onClick={this.props.handlePrint}
+            title='Print Calendar'
+          >
+            <i className='fa fa-print' />
+            Print
+          </Button>
+        )}
         <Button
           onClick={this.props.togglePastEvents}
         >
@@ -36,6 +46,7 @@ SearchButtons.propTypes = {
   toggleFilters: PropTypes.func.isRequired,
   toggleNextView: PropTypes.func.isRequired,
   showNextView: PropTypes.bool,
+  handlePrint: PropTypes.func,
   togglePastEvents: PropTypes.func,
   showPastEvents: PropTypes.bool
 }

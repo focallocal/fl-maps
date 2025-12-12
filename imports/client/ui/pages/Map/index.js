@@ -59,6 +59,7 @@ class MapComponent_ extends Component {
   }
 
   memoizeLocations = {} // cache locations
+  savedFilterState = null // saved filter state when entering Next view
 
   componentDidMount() {
     if (window.FlMapsTiming) window.FlMapsTiming.log('Map component mounting')
@@ -147,15 +148,17 @@ class MapComponent_ extends Component {
     // Apply Next view filtering and sorting if enabled
     let processedEvents = events_
     if (this.state.showNextView) {
-      const excludedCategories = NextViewConfig?.excludedCategories || []
+      const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
       
-      // Filter out excluded categories
-      processedEvents = events_.filter(event => {
-        const eventCategories = event.categories || []
-        return !eventCategories.some(cat => 
-          excludedCategories.includes(cat.name || cat)
-        )
-      })
+      // Filter out default unselected categories (unless user has applied their own filters)
+      if (!filteredEvents) {
+        processedEvents = events_.filter(event => {
+          const eventCategories = Array.isArray(event.categories) ? event.categories : []
+          return !eventCategories.some(cat => 
+            defaultUnselectedCategories.includes(cat.name || cat)
+          )
+        })
+      }
       
       // Sort by next occurrence date
       processedEvents = processedEvents.sort((a, b) => {
@@ -247,6 +250,7 @@ class MapComponent_ extends Component {
                 toggleFilters={this.toggleFiltersList}
                 toggleNextView={this.toggleNextView}
                 showNextView={this.state.showNextView}
+                handlePrint={this.handlePrint}
                 togglePastEvents={this.togglePastEvents}
                 showPastEvents={this.state.showPastEvents}
               />
@@ -334,7 +338,167 @@ class MapComponent_ extends Component {
   }
 
   toggleNextView = () => {
-    this.setState((state) => ({ showNextView: !state.showNextView }))
+    this.setState((state) => {
+      if (!state.showNextView) {
+        // Entering Next view - save current filter state
+        this.savedFilterState = state.filteredEvents
+      } else {
+        // Exiting Next view - restore saved filter state
+        if (this.savedFilterState !== null) {
+          return { showNextView: false, filteredEvents: this.savedFilterState }
+        }
+      }
+      return { showNextView: !state.showNextView }
+    })
+  }
+
+  handlePrint = () => {
+    const { events, filteredEvents } = this.state
+    const { NextViewConfig, Categories } = i18n
+    const events_ = filteredEvents || events
+    const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
+    
+    // Apply same filtering as Next view
+    let printEvents = events_
+    if (!filteredEvents) {
+      printEvents = events_.filter(event => {
+        const eventCategories = Array.isArray(event.categories) ? event.categories : []
+        return !eventCategories.some(cat => 
+          defaultUnselectedCategories.includes(cat.name || cat)
+        )
+      })
+    }
+    
+    // Sort by next occurrence date
+    printEvents = printEvents.sort((a, b) => {
+      const getNextDate = (event) => {
+        const when = event.when || {}
+        if (when.repeat && when.recurring) {
+          const { type, every, days, monthly } = when.recurring
+          try {
+            return findNextEvent(when.startingDate, type, every, days, monthly)
+          } catch (e) {
+            return new Date(when.startingDate)
+          }
+        }
+        return new Date(when.startingDate)
+      }
+      return getNextDate(a) - getNextDate(b)
+    })
+    
+    // Collect unique categories from printed events
+    const usedCategories = new Set()
+    printEvents.forEach(event => {
+      const cats = Array.isArray(event.categories) ? event.categories : []
+      cats.forEach(cat => {
+        usedCategories.add(cat.name || cat)
+      })
+    })
+    
+    // Format date/time for display
+    const formatEventDateTime = (event) => {
+      const when = event.when || {}
+      const date = new Date(when.startingDate)
+      const dateStr = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })
+      const timeStr = when.startingTime ? ` ${when.startingTime}` : ''
+      const endTimeStr = when.endingTime ? ` - ${when.endingTime}` : ''
+      
+      let recurringStr = ''
+      if (when.repeat && when.recurring) {
+        const { type, every, days } = when.recurring
+        if (type === 'day') recurringStr = every === 1 ? ' (Daily)' : ` (Every ${every} days)`
+        else if (type === 'week') {
+          const dayStr = days && days.length ? days.join(', ') : ''
+          recurringStr = every === 1 ? ` (Weekly: ${dayStr})` : ` (Every ${every} weeks: ${dayStr})`
+        }
+        else if (type === 'month') recurringStr = every === 1 ? ' (Monthly)' : ` (Every ${every} months)`
+      }
+      
+      return `${dateStr}${timeStr}${endTimeStr}${recurringStr}`
+    }
+    
+    // Build category key HTML
+    const categoryKeyHtml = Array.from(usedCategories).map(catName => {
+      // Find category color from Categories i18n
+      let color = '#666'
+      if (Categories && Categories.categories) {
+        for (const parent of Categories.categories) {
+          if (parent.name === catName) { color = parent.color; break }
+          if (parent.subcategories) {
+            const sub = parent.subcategories.find(s => s.name === catName)
+            if (sub) { color = sub.color || parent.color; break }
+          }
+        }
+      }
+      return `<span style="display:inline-block;margin:2px 8px 2px 0;padding:2px 8px;background:${color};color:#fff;border-radius:3px;font-size:12px;">${catName}</span>`
+    }).join('')
+    
+    // Build table rows
+    const rows = printEvents.map((event, i) => {
+      const bgColor = i % 2 === 0 ? '#ffffff' : '#f5f5f5'
+      const cats = Array.isArray(event.categories) ? event.categories : []
+      const categories = cats.map(c => c.name || c).join(', ')
+      const address = event.address?.name || ''
+      const dateTime = formatEventDateTime(event)
+      
+      return `<tr style="background:${bgColor};">
+        <td style="padding:8px;border:1px solid #ddd;">${dateTime}</td>
+        <td style="padding:8px;border:1px solid #ddd;font-weight:bold;">${event.name}</td>
+        <td style="padding:8px;border:1px solid #ddd;">${categories}</td>
+        <td style="padding:8px;border:1px solid #ddd;">${address}</td>
+      </tr>`
+    }).join('')
+    
+    // Build full HTML document
+    const html = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>${NextViewConfig?.printHeader || 'Calendar'}</title>
+        <style>
+          @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+          }
+          body { font-family: Arial, sans-serif; padding: 20px; }
+          h1 { color: #28a745; margin-bottom: 5px; }
+          h2 { color: #666; margin-top: 0; font-weight: normal; }
+          table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+          th { background: #28a745; color: #fff; padding: 10px; text-align: left; border: 1px solid #ddd; }
+          .category-key { margin-top: 20px; padding-top: 15px; border-top: 2px solid #ddd; }
+          .category-key h3 { margin-bottom: 10px; color: #666; }
+        </style>
+      </head>
+      <body>
+        <h1>${NextViewConfig?.printHeader || 'Calendar'}</h1>
+        <h2>${NextViewConfig?.printTitle || 'Upcoming Events'}</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date & Time</th>
+              <th>Event Name</th>
+              <th>Categories</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows}
+          </tbody>
+        </table>
+        <div class="category-key">
+          <h3>Category Key</h3>
+          ${categoryKeyHtml}
+        </div>
+        <script>window.onload = function() { window.print(); }</script>
+      </body>
+      </html>
+    `
+    
+    // Open print window
+    const printWindow = window.open('', '_blank')
+    if (printWindow) {
+      printWindow.document.write(html)
+      printWindow.document.close()
+    }
   }
 
   setDirections = (destination) => {
