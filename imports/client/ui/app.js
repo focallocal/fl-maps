@@ -1,5 +1,6 @@
 // NPM Libraries
 import { Meteor } from 'meteor/meteor'
+import { Tracker } from 'meteor/tracker'
 import React, { Component, Fragment, Suspense } from 'react'
 import { lazy } from 'react'
 import { Router, Route, Redirect } from 'react-router-dom'
@@ -118,26 +119,39 @@ class App extends Component {
         console.log('📥 Received dcsOpenForm message from Docuss, formType:', formType)
         FlMapsTiming.log('Received dcsOpenForm message', { formType })
         
-        // Wait a bit for SSO to complete if in progress, then navigate
-        const tryOpenForm = (retries = 0) => {
-          if (Meteor.userId()) {
-            // User is logged in, navigate to form
-            FlMapsTiming.log('User logged in, opening form', { formType })
-            const newUrl = `/map?new=1&formType=${formType}`
-            history.push(newUrl)
-          } else if (retries < 10) {
-            // Wait for SSO login to complete (check every 500ms, max 5 seconds)
-            console.log('⏳ Waiting for SSO login... attempt', retries + 1)
-            FlMapsTiming.log('Waiting for SSO login', { attempt: retries + 1 })
-            setTimeout(() => tryOpenForm(retries + 1), 500)
-          } else {
-            // SSO didn't complete, show login prompt
+        // Use Tracker.autorun to reactively wait for SSO login completion
+        // This is more efficient than setTimeout polling as it reacts immediately to changes
+        if (Meteor.userId()) {
+          // User is already logged in, navigate to form immediately
+          FlMapsTiming.log('User already logged in, opening form', { formType })
+          const newUrl = `/map?new=1&formType=${formType}`
+          history.push(newUrl)
+        } else {
+          // Wait for SSO login using reactive Tracker
+          console.log('⏳ Waiting for SSO login via Tracker.autorun...')
+          FlMapsTiming.log('Waiting for SSO login via Tracker')
+          
+          const timeoutId = setTimeout(() => {
+            // Timeout after 5 seconds if SSO doesn't complete
             console.log('⚠️ SSO login not completed, prompting user')
             FlMapsTiming.log('SSO login timeout')
+            computation.stop()
             alert('You need to login before you can create an event')
-          }
+          }, 5000)
+          
+          const computation = Tracker.autorun(() => {
+            const userId = Meteor.userId()
+            if (userId) {
+              // User logged in! Clear timeout and navigate
+              clearTimeout(timeoutId)
+              computation.stop()
+              console.log('✅ SSO login detected via Tracker, opening form')
+              FlMapsTiming.log('User logged in via Tracker, opening form', { formType })
+              const newUrl = `/map?new=1&formType=${formType}`
+              history.push(newUrl)
+            }
+          })
         }
-        tryOpenForm()
       }
       
       // Listen for dcs-topic-posted messages from Discourse to update bubble counts

@@ -46,16 +46,27 @@ function determineMapType () {
 function loadGoogleMaps () {
   const { key } = Meteor.settings.public.gm
 
-  setTimeout(() => {
-    if (!window.google) {
-      const url = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&v=3.exp&libraries=places'
-      let script = document.createElement('script')
-      script.src = url
-      script.defer = true
-
-      document.head.appendChild(script)
+  // Load Google Maps immediately using script.onload event instead of setTimeout
+  // This ensures the script loads as soon as possible and we know exactly when it's ready
+  if (!window.google) {
+    const url = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&v=3.exp&libraries=places'
+    let script = document.createElement('script')
+    script.src = url
+    script.defer = true
+    script.async = true
+    
+    script.onload = () => {
+      console.log('✅ Google Maps API loaded successfully')
+      // Dispatch a custom event that components can listen for
+      window.dispatchEvent(new Event('google-maps-loaded'))
     }
-  }, 1500)
+    
+    script.onerror = () => {
+      console.error('❌ Failed to load Google Maps API')
+    }
+
+    document.head.appendChild(script)
+  }
 }
 
 window.__setDocumentTitle = function (page) {
