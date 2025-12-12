@@ -87,12 +87,17 @@ class MapComponent_ extends Component {
     
     // Zoom out from 4 to 3 after map loads to trigger onZoomChanged and load events
     // This is more reliable than onIdle which doesn't fire consistently on all browsers
-    setTimeout(() => {
+    // Use interval to wait for map ref to be set (may take longer on mobile)
+    const zoomOutInterval = setInterval(() => {
       if (this.map && !this.state.hasLoadedInitial) {
+        clearInterval(zoomOutInterval)
         this.setState({ zoom: 3, hasLoadedInitial: true })
         // onZoomChanged will be triggered by the zoom change and will call getEvents
+        if (window.FlMapsTiming) window.FlMapsTiming.log('Zoom-out triggered to load events')
       }
-    }, 800)
+    }, 500)
+    // Clear interval after 10 seconds to prevent infinite loop
+    setTimeout(() => clearInterval(zoomOutInterval), 10000)
     
     if (window.FlMapsTiming) window.FlMapsTiming.log('Map component mounted')
   }
