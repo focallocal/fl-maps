@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { ListGroup } from 'reactstrap'
+import { ListGroup, Button } from 'reactstrap'
 
 import EventsListItem from './EventsListItem'
 import MinimizeButton from './MinimizeButton'
@@ -149,6 +149,16 @@ class EventsList extends Component {
               )
             })}
           </ListGroup>
+          {this.props.totalEvents > events.length && (
+            <Button 
+              color="link" 
+              className="load-more-btn" 
+              onClick={this.props.onLoadMore}
+              style={{ width: '100%', padding: '10px', marginTop: '5px' }}
+            >
+              Load More ({events.length} of {this.props.totalEvents})
+            </Button>
+          )}
           <Loading show={isFetching} />
           <NoResults show={!hasData && !isFetching} />
         </div>

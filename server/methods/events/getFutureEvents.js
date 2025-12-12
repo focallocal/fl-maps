@@ -42,7 +42,7 @@ const getFutureEvents = new ValidatedMethod({
       },
       {
         skip,
-        limit: 30
+        limit: limit || 10000 // No practical limit - MarkerClusterer handles large numbers
       }
     )
 

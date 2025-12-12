@@ -45,7 +45,8 @@ class MapComponent_ extends Component {
       mapRadius: null,
       showPastEvents: false,
       hoveredEvent: null,
-      isHovered: false
+      isHovered: false,
+      listDisplayCount: 30 // Number of events to show in list (pagination)
     }
     
     // Debounce getEvents to prevent rapid-fire API calls when scrolling/zooming
@@ -138,6 +139,11 @@ class MapComponent_ extends Component {
     const { MainMenu } = i18n
 
     const events_ = filteredEvents || events
+    
+    // For the list: show only first N events (paginated)
+    const listEvents = events_.slice(0, this.state.listDisplayCount)
+    // For map markers: show ALL events
+    const mapEvents = events_
 
     return (
 
@@ -161,7 +167,7 @@ class MapComponent_ extends Component {
           maxZoom={20}
           onClick={this.onMarkerClustererClick}
         >
-          {events_.map((event, i) =>
+          {mapEvents.map((event, i) =>
             <MarkerWrapper
               key={event._id}
               event={event}
@@ -169,7 +175,7 @@ class MapComponent_ extends Component {
               onMarkerClick={this.onMarkerClick}
               onMarkerHover={this.onMarkerHover}
               onMarkerLeave={this.onMarkerLeave}
-              position={ensureUniquePosition(this.memoizeLocations, event, events_)}
+              position={ensureUniquePosition(this.memoizeLocations, event, mapEvents)}
             />
           )}
         </MarkerClusterer>
@@ -182,7 +188,9 @@ class MapComponent_ extends Component {
         />
         <EventsList
           currentEvent={currentEvent}
-          events={events_}
+          events={listEvents}
+          totalEvents={events_.length}
+          onLoadMore={this.loadMoreEvents}
           isFetching={isFetching}
           onItemClick={this.onMarkerClick}
           hoveredEvent={this.state.hoveredEvent}
@@ -388,6 +396,13 @@ class MapComponent_ extends Component {
     })
   }
 
+  loadMoreEvents = () => {
+    // Increase the number of events shown in the list by 30
+    this.setState(prevState => ({
+      listDisplayCount: prevState.listDisplayCount + 30
+    }))
+  }
+
   openMoreInfo = (event) => {
     window.cachedDataForPage = event // store data in cache to prevent another call to the server.
     window.previousStateOfMap = this.state // store state so users can easly return to his previous position
@@ -399,7 +414,7 @@ class MapComponent_ extends Component {
     this.props.history.push('/page/' + event._id)
   }
 
-  getEvents = (location, skip = 0, limit = 30) => {
+  getEvents = (location, skip = 0, limit = 10000) => {
     const {
       userLocation,
       mapRadius
@@ -418,7 +433,7 @@ class MapComponent_ extends Component {
         distance: distance_
       }
 
-      this.setState({ isFetching: true })
+      this.setState({ isFetching: true, listDisplayCount: 30 }) // Reset list pagination on new fetch
       if (this.state.showPastEvents) {
         Meteor.call('Events.getEvents', data, (err, res) => {
           if (!err) {
