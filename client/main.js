@@ -12,7 +12,8 @@ import { faUserCircle, faCaretDown, faBars, faHome, faCircleInfo,
 Meteor.startup(() => {
   ensureSettingsFile()
   determineMapType()
-  loadGoogleMaps()
+  // Note: Google Maps is loaded by withScriptjs in the Map component
+  // Do NOT load it here to avoid "Element already defined" errors
 
   Meteor.subscribe('users.user') // subscribe to updated publication with custom fields
 
@@ -41,32 +42,6 @@ function determineMapType () {
     throw new Error("You've probably forgot to add a mapType field to settings.json file")
   }
   window.__mapType = mapType
-}
-
-function loadGoogleMaps () {
-  const { key } = Meteor.settings.public.gm
-
-  // Load Google Maps immediately using script.onload event instead of setTimeout
-  // This ensures the script loads as soon as possible and we know exactly when it's ready
-  if (!window.google) {
-    const url = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&v=3.exp&libraries=places'
-    let script = document.createElement('script')
-    script.src = url
-    script.defer = true
-    script.async = true
-    
-    script.onload = () => {
-      console.log('✅ Google Maps API loaded successfully')
-      // Dispatch a custom event that components can listen for
-      window.dispatchEvent(new Event('google-maps-loaded'))
-    }
-    
-    script.onerror = () => {
-      console.error('❌ Failed to load Google Maps API')
-    }
-
-    document.head.appendChild(script)
-  }
 }
 
 window.__setDocumentTitle = function (page) {

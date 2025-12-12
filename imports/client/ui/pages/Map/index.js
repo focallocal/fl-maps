@@ -470,7 +470,11 @@ class MapComponent_ extends Component {
     }
   }
 }
+// Wrap with Google Maps HOCs
 const MapComponent = withScriptjs(withGoogleMap(MapComponent_))
+
+// Separate component for when Google Maps is already loaded (avoids double-loading)
+const MapComponentNoScript = withGoogleMap(MapComponent_)
 
 class Map_ extends Component {
   render() {
@@ -478,11 +482,27 @@ class Map_ extends Component {
     const { key } = Meteor.settings.public.gm
     const url = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&v=3.exp&libraries=places'
 
+    const containerClass = standaloneMode ? 'offset-standalone-menu' : undefined
+
+    // If Google Maps is already loaded, use MapComponentNoScript to avoid double-loading
+    // This prevents "Element already defined" errors
+    if (window.google && window.google.maps) {
+      return (
+        <MapComponentNoScript
+          loadingElement={<div style={{ height: '100%' }} />}
+          containerElement={<div id='map-container' className={containerClass} />}
+          mapElement={<div id='map' />}
+          history={this.props.history}
+        />
+      )
+    }
+
+    // First load - use withScriptjs to load Google Maps
     return (
       <MapComponent
-        googleMapURL={!window.google ? url : '-'}
+        googleMapURL={url}
         loadingElement={<div style={{ height: '100%' }} />}
-        containerElement={<div id='map-container' className={standaloneMode ? 'offset-standalone-menu' : undefined} />}
+        containerElement={<div id='map-container' className={containerClass} />}
         mapElement={<div id='map' />}
         history={this.props.history}
       />
