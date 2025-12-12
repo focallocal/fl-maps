@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import Select from 'react-select'
+import { Input, Label, FormGroup } from 'reactstrap'
 import { determinePosition } from '/imports/both/collections/events/helpers'
 
 const weekdaysMap = {
@@ -12,6 +13,8 @@ const weekdaysMap = {
   5: 'Friday',
   6: 'Saturday'
 }
+
+const positionLabels = ['1st', '2nd', '3rd', '4th', '5th']
 
 function toDate(input) {
   if (!input) return null
@@ -27,20 +30,26 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
     if (!date) {
       return [
         { value: 'byDayInMonth', label: 'Monthly on day —' },
-        { value: 'byPosition', label: 'Monthly on the — —' }
+        { value: 'byPosition', label: 'Monthly on the — —' },
+        { value: 'byCustomPositions', label: 'Specific weekdays each month' }
       ]
     }
     const dayInMonth = date.getDate()
     const position = determinePosition(dayInMonth)
     return [
       { value: 'byDayInMonth', label: `Monthly on day ${dayInMonth}` },
-      { value: 'byPosition', label: `Monthly on the ${position} ${weekdaysMap[date.getDay()]}` }
+      { value: 'byPosition', label: `Monthly on the ${position} ${weekdaysMap[date.getDay()]}` },
+      { value: 'byCustomPositions', label: 'Specific weekdays each month' }
     ]
   }, [date])
 
   const [selectedOption, setSelectedOption] = useState(
     options.find(opt => opt.value === monthly.type) || options[0]
   )
+  
+  // State for custom positions (e.g., 1st and 3rd Friday)
+  const [selectedWeekday, setSelectedWeekday] = useState(monthly.weekday ?? date?.getDay() ?? 5)
+  const [selectedPositions, setSelectedPositions] = useState(monthly.positions || [1])
 
   // If `monthly` changes from outside (form reset or prefill)
   useEffect(() => {
@@ -48,6 +57,8 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
       const match = options.find(opt => opt.value === monthly.type)
       if (match) setSelectedOption(match)
     }
+    if (monthly?.weekday !== undefined) setSelectedWeekday(monthly.weekday)
+    if (monthly?.positions) setSelectedPositions(monthly.positions)
   }, [monthly, options])
 
   const handleChange = (option) => {
@@ -57,17 +68,57 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
     if (!date) return
 
     const dayInMonth = date.getDate()
-    const finalValue =
-      value === 'byDayInMonth'
-        ? dayInMonth
-        : determinePosition(dayInMonth)[0]
+    
+    if (value === 'byCustomPositions') {
+      // Save custom positions format
+      if (typeof form?.change === 'function') {
+        form.change('when.recurring.monthly', { 
+          type: value, 
+          weekday: selectedWeekday,
+          positions: selectedPositions
+        })
+      }
+    } else {
+      const finalValue =
+        value === 'byDayInMonth'
+          ? dayInMonth
+          : determinePosition(dayInMonth)[0]
 
-    // Push update into the form model
-    if (typeof form?.change === 'function') {
-      form.change('when.recurring.monthly', { type: value, value: finalValue })
+      // Push update into the form model
+      if (typeof form?.change === 'function') {
+        form.change('when.recurring.monthly', { type: value, value: finalValue })
+      }
     }
-
-    console.log('Changed monthly recurrence →', { value, finalValue })
+  }
+  
+  const handleWeekdayChange = (e) => {
+    const weekday = parseInt(e.target.value)
+    setSelectedWeekday(weekday)
+    if (typeof form?.change === 'function') {
+      form.change('when.recurring.monthly', { 
+        type: 'byCustomPositions', 
+        weekday,
+        positions: selectedPositions
+      })
+    }
+  }
+  
+  const handlePositionToggle = (position) => {
+    const newPositions = selectedPositions.includes(position)
+      ? selectedPositions.filter(p => p !== position)
+      : [...selectedPositions, position].sort((a, b) => a - b)
+    
+    // Must have at least one position selected
+    if (newPositions.length === 0) return
+    
+    setSelectedPositions(newPositions)
+    if (typeof form?.change === 'function') {
+      form.change('when.recurring.monthly', { 
+        type: 'byCustomPositions', 
+        weekday: selectedWeekday,
+        positions: newPositions
+      })
+    }
   }
 
   return (
@@ -78,6 +129,41 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
         onChange={handleChange}
         isSearchable={false}
       />
+      
+      {selectedOption.value === 'byCustomPositions' && (
+        <div className='custom-positions mt-3'>
+          <FormGroup>
+            <Label>Which weekday?</Label>
+            <Input
+              type='select'
+              value={selectedWeekday}
+              onChange={handleWeekdayChange}
+            >
+              {Object.entries(weekdaysMap).map(([value, label]) => (
+                <option key={value} value={value}>{label}</option>
+              ))}
+            </Input>
+          </FormGroup>
+          
+          <FormGroup>
+            <Label>Which occurrences? (select one or more)</Label>
+            <div className='position-checkboxes'>
+              {positionLabels.map((label, index) => (
+                <FormGroup check inline key={index}>
+                  <Label check>
+                    <Input
+                      type='checkbox'
+                      checked={selectedPositions.includes(index + 1)}
+                      onChange={() => handlePositionToggle(index + 1)}
+                    />{' '}
+                    {label}
+                  </Label>
+                </FormGroup>
+              ))}
+            </div>
+          </FormGroup>
+        </div>
+      )}
     </div>
   )
 }

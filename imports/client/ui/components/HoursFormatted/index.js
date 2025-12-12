@@ -128,11 +128,16 @@ const HoursFormatted = ({ data }) => {
         if (n === 3 || n === 23) return 'rd'
         return 'th'
       }
+      const positionLabels = ['1st', '2nd', '3rd', '4th', '5th']
+      
       return (
         <ul className='hours-formatted repeat'>
           <li>
             {monthly.type === 'byDayInMonth' && `${monthly.value}${ordinalSuffix(monthly.value)} of each month`}
             {monthly.type === 'byPosition' && `${monthly.value}${ordinalSuffix(monthly.value)} ${weekDays[startingDate.getDay()]} of each month`}
+            {monthly.type === 'byCustomPositions' && monthly.positions && (
+              `${monthly.positions.map(p => positionLabels[p - 1]).join(' & ')} ${weekDays[monthly.weekday]} of each month`
+            )}
           </li>
           <li>{startingTime} - {endingTime}</li>
           {!forever && notForeverMonth}

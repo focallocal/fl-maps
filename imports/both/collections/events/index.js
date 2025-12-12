@@ -397,7 +397,7 @@ const EventsSchema = new SimpleSchema({
   'when.recurring.monthly.type': {
     type: String,
     optional: true,
-    allowedValues: ['byPosition', 'byDayInMonth'],
+    allowedValues: ['byPosition', 'byDayInMonth', 'byCustomPositions'],
     autoValue: function () {
       if (!this.value) {
         return 'byDayInMonth'
@@ -408,10 +408,25 @@ const EventsSchema = new SimpleSchema({
     optional: true,
     type: Number,
     autoValue: function () {
-      if (!this.value) {
+      if (!this.value && this.siblingField('type').value !== 'byCustomPositions') {
         return this.field('when.startingDate').value.getDate()
       }
     }
+  },
+  'when.recurring.monthly.weekday': {
+    optional: true,
+    type: Number,
+    min: 0,
+    max: 6
+  },
+  'when.recurring.monthly.positions': {
+    optional: true,
+    type: Array
+  },
+  'when.recurring.monthly.positions.$': {
+    type: Number,
+    min: 1,
+    max: 5
   },
   'when.recurring.every': {
     type: Number,
