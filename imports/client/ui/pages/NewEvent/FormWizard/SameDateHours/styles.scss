@@ -1,12 +1,31 @@
 
 .set-same-hours {
-
+  margin: 12px 0;
 }
 
 #select-new-hours {
-  min-width: 200px;
+  min-width: 220px;
+  padding: 12px;
 
-  &>div {
+  .popover-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 500;
+
+    .close-icon {
+      cursor: pointer;
+      color: #666;
+      padding: 4px;
+      
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+
+  &>div:not(.popover-header-row) {
     margin-bottom: 8px;
   }
 }

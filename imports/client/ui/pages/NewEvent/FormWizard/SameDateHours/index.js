@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Popover, PopoverBody } from 'reactstrap'
+import { Popover, PopoverBody, Button } from 'reactstrap'
 import Select from 'react-select'
 import possibleEventHours from '/imports/both/collections/events/helpers/possibleEventHours'
 import { formatReactSelectOptions } from '/imports/client/utils/format'
@@ -29,12 +29,16 @@ class SameDateHours extends Component {
         </span>
         <Popover placement='top' target='set-hours' isOpen={isOpen} toggle={this.togglePopover}>
           <PopoverBody id='select-new-hours'>
-            <div>Select new hours</div>
+            <div className='popover-header-row'>
+              <span>Select new hours</span>
+              <i className='fas fa-times close-icon' onClick={this.togglePopover} />
+            </div>
             <Select
               value={startingTime}
               options={options}
               onChange={this.handleStartingTime}
               isSearchable={false}
+              placeholder='Start time'
             />
 
             <Select
@@ -42,7 +46,11 @@ class SameDateHours extends Component {
               options={options}
               onChange={this.handleEndingTime}
               isSearchable={false}
+              placeholder='End time'
             />
+            <Button color='primary' size='sm' className='mt-2' onClick={this.togglePopover} block>
+              Done
+            </Button>
           </PopoverBody>
         </Popover>
       </div>
