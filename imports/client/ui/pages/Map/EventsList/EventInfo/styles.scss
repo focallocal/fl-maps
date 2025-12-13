@@ -26,14 +26,19 @@
   header {
     display: flex;
     justify-content: space-between;
-    padding: 14px 20px 0 20px;
-    position: relative;
+    align-items: center;
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
     z-index: 10;
     background: #fff;
+    width: 100%;
+    box-sizing: border-box;
 
     .back-btn {
       line-height: 1.5;
       font-size: 1.3em;
+      flex-shrink: 0;
 
       i {
         cursor: pointer;
@@ -43,6 +48,8 @@
     .close-btn {
       line-height: 1.5;
       font-size: 1.3em;
+      flex-shrink: 0;
+      margin-left: auto;
 
       i {
         cursor: pointer;
