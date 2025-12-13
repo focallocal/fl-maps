@@ -27,7 +27,7 @@
     }
   }
 
-  .name, .categories, .distance {
+  .name, .categories, .distance, .next-date {
     word-wrap: break-word;
     white-space: nowrap;
     overflow: hidden;
@@ -38,6 +38,12 @@
   .name {
     font-weight: bolder;
     font-size: 1em;
+  }
+
+  .next-date {
+    font-size: .85em;
+    color: #28a745;
+    font-weight: 500;
   }
 
   .categories {

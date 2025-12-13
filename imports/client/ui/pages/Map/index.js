@@ -145,23 +145,11 @@ class MapComponent_ extends Component {
 
     const events_ = filteredEvents || events
     
-    // Apply Next view filtering and sorting if enabled
+    // Apply Next view sorting if enabled (filtering is handled by FiltersList via preselectFiltersForNextView)
     let processedEvents = events_
     if (this.state.showNextView) {
-      const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
-      
-      // Filter out default unselected categories (unless user has applied their own filters)
-      if (!filteredEvents) {
-        processedEvents = events_.filter(event => {
-          const eventCategories = Array.isArray(event.categories) ? event.categories : []
-          return !eventCategories.some(cat => 
-            defaultUnselectedCategories.includes(cat.name || cat)
-          )
-        })
-      }
-      
       // Sort by next occurrence date
-      processedEvents = processedEvents.sort((a, b) => {
+      processedEvents = [...processedEvents].sort((a, b) => {
         const getNextDate = (event) => {
           const when = event.when || {}
           if (when.repeat && when.recurring) {
@@ -220,6 +208,7 @@ class MapComponent_ extends Component {
         </MarkerClusterer>
 
         <FiltersList
+          ref={ref => this.filtersList = ref}
           show={showFilters}
           events={events}
           onFilter={this.setFilteredEvents}
@@ -239,6 +228,7 @@ class MapComponent_ extends Component {
           removeCurrentEvent={this.removeCurrentEvent}
           onDirections={this.setDirections}
           history={history}
+          showNextView={this.state.showNextView}
         >
           <StandaloneSearchBox
             ref={ref => this.searchBox = ref}
@@ -338,39 +328,44 @@ class MapComponent_ extends Component {
   }
 
   toggleNextView = () => {
+    const { NextViewConfig } = i18n
+    const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
+    
     this.setState((state) => {
       if (!state.showNextView) {
-        // Entering Next view - save current filter state
+        // Entering Next view - save current filter state and preselect categories
         this.savedFilterState = state.filteredEvents
+        
+        // Use setTimeout to call preselectFilters after state update
+        setTimeout(() => {
+          if (this.filtersList && this.filtersList.preselectFiltersForNextView) {
+            this.filtersList.preselectFiltersForNextView(defaultUnselectedCategories)
+          }
+        }, 0)
+        
+        return { showNextView: true }
       } else {
-        // Exiting Next view - restore saved filter state
-        if (this.savedFilterState !== null) {
-          return { showNextView: false, filteredEvents: this.savedFilterState }
-        }
+        // Exiting Next view - clear filters and restore saved state
+        setTimeout(() => {
+          if (this.filtersList && this.filtersList.clearAllFilters) {
+            this.filtersList.clearAllFilters()
+          }
+        }, 0)
+        
+        return { showNextView: false, filteredEvents: this.savedFilterState }
       }
-      return { showNextView: !state.showNextView }
     })
   }
 
   handlePrint = () => {
     const { events, filteredEvents } = this.state
     const { NextViewConfig, Categories } = i18n
-    const events_ = filteredEvents || events
-    const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
     
-    // Apply same filtering as Next view
-    let printEvents = events_
-    if (!filteredEvents) {
-      printEvents = events_.filter(event => {
-        const eventCategories = Array.isArray(event.categories) ? event.categories : []
-        return !eventCategories.some(cat => 
-          defaultUnselectedCategories.includes(cat.name || cat)
-        )
-      })
-    }
+    // Use filtered events (set by FiltersList when in Next view)
+    const events_ = filteredEvents || events
     
     // Sort by next occurrence date
-    printEvents = printEvents.sort((a, b) => {
+    let printEvents = [...events_].sort((a, b) => {
       const getNextDate = (event) => {
         const when = event.when || {}
         if (when.repeat && when.recurring) {

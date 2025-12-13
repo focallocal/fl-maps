@@ -99,6 +99,41 @@ class FiltersList extends Component {
     )
   }
 
+  // Method to preselect filters for Next view (called via ref from parent)
+  preselectFiltersForNextView = (unselectedCategories = []) => {
+    const checkedFilters = [...this.state.checkedFilters]
+    
+    // First, expand all parent categories and show children
+    possibleCategories.forEach((cat, index) => {
+      if (!cat.parent) {
+        possibleCategories[index].hidden = false
+      }
+    })
+    
+    // Check all categories except those in unselectedCategories
+    checkedFilters.forEach((filter, index) => {
+      const shouldUncheck = unselectedCategories.includes(filter.name)
+      checkedFilters[index].checked = !shouldUncheck
+    })
+    
+    this.setState({ checkedFilters, checkAll: false })
+    
+    // Apply the filter
+    this.props.onFilter(this.applyFilter(checkedFilters.map(e => e.checked)))
+  }
+
+  // Method to clear all filters (called via ref from parent)
+  clearAllFilters = () => {
+    const checkedFilters = possibleCategories.map(elem => {
+      elem.checked = false
+      elem.hidden = elem.parent !== true
+      return elem
+    })
+    
+    this.setState({ checkedFilters, checkAll: false })
+    this.props.onFilter(null) // null means no filter applied
+  }
+
   expandCategory = ({ target }) => {
     const checkedFilters = [...this.state.checkedFilters]
     let index = target.id.split('-')[1]
@@ -196,7 +231,8 @@ class FiltersList extends Component {
     const filters = this.mapIndexToCategory(checkedFilters)
 
     return this.props.events.filter(event => {
-      return event.categories && event.categories.some(category => filters.includes(category.name))
+      const categories = Array.isArray(event.categories) ? event.categories : []
+      return categories.some(category => filters.includes(category.name))
     })
   }
 

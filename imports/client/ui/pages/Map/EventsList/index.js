@@ -144,7 +144,8 @@ class EventsList extends Component {
                   userLocation={userLocation}
                   avatarUrl={this.state.avatarMap[event._id]}
                   onItemClick={this.props.onItemClick}
-                  ishovered={ishovered} 
+                  ishovered={ishovered}
+                  showNextView={this.props.showNextView}
                 />
               )
             })}
@@ -243,7 +244,8 @@ EventsList.propTypes = {
   onItemClick: PropTypes.func.isRequired,
   openMoreInfo: PropTypes.func.isRequired,
   userLocation: PropTypes.object,
-  removeCurrentEvent: PropTypes.func.isRequired
+  removeCurrentEvent: PropTypes.func.isRequired,
+  showNextView: PropTypes.bool
 }
 
 export default EventsList
