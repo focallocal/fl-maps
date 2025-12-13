@@ -12,6 +12,8 @@ class WeekDays extends Component {
       form
     } = this.props
 
+    console.log('WeekDays render - selectedDays:', selectedDays)
+
     // Get the selected days that have time data
     const selectedDayEntries = selectedDays.filter(entry => entry && entry.day)
 
