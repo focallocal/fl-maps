@@ -102,6 +102,48 @@
 
     .week-days {
 
+      .weekdays {
+        .day-checkboxes {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-bottom: 16px;
+
+          .custom-checkbox {
+            margin-right: 8px;
+          }
+        }
+
+        .day-times {
+          margin-top: 12px;
+
+          .day-time-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+
+            .day-label {
+              width: 100px;
+              margin-bottom: 0;
+              font-weight: 500;
+            }
+
+            .hours {
+              display: flex;
+              align-items: center;
+
+              input[type="time"] {
+                width: 130px;
+              }
+
+              .time-separator {
+                margin: 0 12px;
+              }
+            }
+          }
+        }
+      }
+
       .day {
         display: flex;
         flex-direction: row;

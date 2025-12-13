@@ -60,28 +60,25 @@ class SameDateHours extends Component {
   }
 
   handleDefaults = (key, value) => {
-    // Update days with the same hours!
+    // Update all selected days with the same hours!
 
     const {
       form
     } = this.props
 
     const model = form.getModel()
-    const selectedDays = model.when.days
+    const selectedDays = model.when.days || []
 
-    let days = JSON.parse(JSON.stringify(selectedDays || []))
-    selectedDays.forEach((day, i) => {
-      if (!day) { return } // null
-
-      if (days[i]) {
-        days[i][key] = value
-      } else {
-        days[i] = {
-          [key]: value
-        }
+    // Update each day entry with the new time value
+    const updatedDays = selectedDays.map(day => {
+      if (!day || !day.day) { return day } // Skip invalid entries
+      return {
+        ...day,
+        [key]: value
       }
-    })
-    form.change('when.days', days)
+    }).filter(day => day && day.day) // Remove any invalid entries
+
+    form.change('when.days', updatedDays)
   }
 
   togglePopover = () => {

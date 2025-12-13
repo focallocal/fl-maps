@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Button, Col, FormGroup, Input, Label, Row } from 'reactstrap'
 import Recurring from './DateTimeModule/Recurring'
-// import WeekDays from './DateTimeModule/WeekDays'
+import WeekDays from './DateTimeModule/WeekDays'
 import RadioButton from './RadioButton'
 import SameDateHours from './SameDateHours'
 import VideoEntry from './VideoEntry'
@@ -248,29 +248,17 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
       )}
       {multipleDays && (
         <div className='week-days'>
-          <SameDateHours
-            form={form}
-            schemaKey={'when.days'}
-          />
           <FormGroup>
             <Label>Select Weekdays</Label>
-            {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day, index) => (
-              <FormGroup check inline key={index}>
-                <Label check>
-                  <Input
-                    type="checkbox"
-                    checked={days?.includes(day)}
-                    onChange={() => {
-                      const updatedDays = days?.includes(day)
-                        ? days.filter(d => d !== day)
-                        : [...(days || []), day];
-                      form.change('when.days', updatedDays);
-                    }}
-                  />{' '}
-                  {day}
-                </Label>
-              </FormGroup>
-            ))}
+            <WeekDays
+              form={form}
+              schemaKey={'when.days'}
+              selectedDays={days || []}
+            />
+            <SameDateHours
+              form={form}
+              schemaKey={'when.days'}
+            />
           </FormGroup>
         </div>
       )}

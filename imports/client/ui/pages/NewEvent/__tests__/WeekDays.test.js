@@ -2,8 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import sinon from 'sinon'
 import AutoForm from 'uniforms/AutoForm'
-import { CustomInput } from 'reactstrap'
-import AutoField from '/imports/client/utils/uniforms-custom/AutoField'
+import { CustomInput, Input } from 'reactstrap'
 import { EventsSchema } from '/imports/both/collections/events'
 import WeekDays from '../FormWizard/DateTimeModule/WeekDays'
 
@@ -16,10 +15,12 @@ class Parent extends React.Component {
         schema={EventsSchema}
       >
         <WeekDays
-          form={{}}
+          form={{ change: () => {}, getModel: () => ({}) }}
           schemaKey={'when.days'}
           selectedDays={[{
-            day: 'Sunday'
+            day: 'Sunday',
+            startingTime: '09:00',
+            endingTime: '17:00'
           }]}
           {...this.props}
         />
@@ -30,65 +31,67 @@ class Parent extends React.Component {
 
 describe('<WeekDays />', () => {
   const wrapper = mount(<Parent />)
-  const schemaKey = 'when.days'
 
   it('should render', () => {
     expect(wrapper.find(WeekDays)).toHaveLength(1)
   })
 
-  it('should render a list of all weekdays', () => {
-    expect(wrapper.find('.day')).toHaveLength(weekDays.length)
-  })
-
-  test('each item should render a checkbox, and hours inputs', () => {
-    const day = wrapper.find('.day').at(0)
-    const index = 0
-
-    expect(day.find(CustomInput).props().id).toEqual('day-Sunday')
-    expect(day.find('.hours').find(AutoField).at(0).props().name).toEqual(schemaKey + '.' + index + '.startingTime')
-    expect(day.find('.hours').find(AutoField).at(1).props().name).toEqual(schemaKey + '.' + index + '.endingTime')
+  it('should render a list of all weekday checkboxes', () => {
+    expect(wrapper.find('.day-checkboxes').find(CustomInput)).toHaveLength(weekDays.length)
   })
 
   test('checkbox should be marked if selectedDays contains the rendered day object', () => {
-    const day = wrapper.find('.day').at(0)
-
-    expect(day.find(CustomInput).props().checked).toBe(true)
+    const sundayCheckbox = wrapper.find('.day-checkboxes').find(CustomInput).at(0)
+    expect(sundayCheckbox.props().checked).toBe(true)
   })
 
-  test('unchecking should remove the day object from the selectedDays array', () => {
+  test('unchecked day should not be checked', () => {
+    const mondayCheckbox = wrapper.find('.day-checkboxes').find(CustomInput).at(1)
+    expect(mondayCheckbox.props().checked).toBe(false)
+  })
+
+  test('selected days should show time inputs', () => {
+    expect(wrapper.find('.day-times').find('.day-time-row')).toHaveLength(1)
+  })
+
+  test('time row should have start and end time inputs', () => {
+    const timeRow = wrapper.find('.day-time-row').at(0)
+    const timeInputs = timeRow.find('.hours').find(Input)
+    expect(timeInputs).toHaveLength(2)
+  })
+
+  test('unchecking a day should call form.change to remove it', () => {
     const spy = sinon.spy()
-    const index = 0
     const wrapper_ = mount(
       <Parent
-        form={{ change: spy }}
+        form={{ change: spy, getModel: () => ({}) }}
+        selectedDays={[{ day: 'Sunday', startingTime: '09:00', endingTime: '17:00' }]}
       />
     )
-    const day = wrapper_.find('.day').at(index)
+    const sundayCheckbox = wrapper_.find('.day-checkboxes').find(CustomInput).at(0)
 
-    day.find(CustomInput).find('input').simulate('change')
-    expect(spy.calledOnceWith(`${schemaKey}`, [null])).toBe(true)
+    sundayCheckbox.find('input').simulate('change')
+    expect(spy.calledOnce).toBe(true)
+    expect(spy.firstCall.args[0]).toBe('when.days')
+    expect(spy.firstCall.args[1]).toEqual([]) // Sunday should be removed
   })
 
-  test('checking should add an object to selectedDays and populate the "day" key', () => {
+  test('checking a new day should add it to selectedDays', () => {
     const spy = sinon.spy()
-    const index = 1
     const wrapper_ = mount(
       <Parent
-        form={{ change: spy }}
+        form={{ change: spy, getModel: () => ({}) }}
+        selectedDays={[{ day: 'Sunday', startingTime: '09:00', endingTime: '17:00' }]}
       />
     )
-    const day = wrapper_.find('.day').at(index)
-    day.find(CustomInput).find('input').simulate('change')
-    expect(spy.calledOnceWith(`${schemaKey}.${index}.day`, 'Monday')).toBe(true)
-  })
+    const mondayCheckbox = wrapper_.find('.day-checkboxes').find(CustomInput).at(1)
 
-  test('providing hours only should automatically check the checkbox', () => {
-    const wrapper = mount(
-      <Parent
-        selectedDays={[{ startingTime: '0:00', endingTime: '0:30' }]}
-      />
-    )
-
-    expect(wrapper.find(CustomInput).at(0).props().checked).toEqual(true)
+    mondayCheckbox.find('input').simulate('change')
+    expect(spy.calledOnce).toBe(true)
+    expect(spy.firstCall.args[0]).toBe('when.days')
+    // Should now have Sunday and Monday (sorted by weekday order)
+    expect(spy.firstCall.args[1]).toHaveLength(2)
+    expect(spy.firstCall.args[1][0].day).toBe('Sunday')
+    expect(spy.firstCall.args[1][1].day).toBe('Monday')
   })
 })

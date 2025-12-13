@@ -12,11 +12,11 @@ class SearchButtons extends Component {
           Filter
         </Button>
         <Button
-          className={this.props.showNextView ? 'next-btn active' : 'next-btn'}
+          className={this.props.showNextView ? 'cal-view-btn active' : 'cal-view-btn'}
           onClick={this.props.toggleNextView}
         >
           <i className='fa fa-clock' />
-          Next
+          Cal View
         </Button>
         {this.props.showNextView && (
           <Button
