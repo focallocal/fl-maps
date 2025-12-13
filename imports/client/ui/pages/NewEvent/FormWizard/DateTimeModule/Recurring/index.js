@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component, Fragment } from 'react'
-import { CustomInput, Input } from 'reactstrap'
+import { Input } from 'reactstrap'
 import Monthly from './Monthly'
 import './styles.scss'
 import Weekly from './Weekly'

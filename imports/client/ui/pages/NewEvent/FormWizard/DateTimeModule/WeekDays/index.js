@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { CustomInput, Input, Label } from 'reactstrap'
+import { Input, Label, FormGroup } from 'reactstrap'
 
 const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
@@ -23,15 +23,15 @@ class WeekDays extends Component {
             const isChecked = selectedDayEntries.some(entry => entry.day === day)
 
             return (
-              <CustomInput
-                key={index}
-                id={'day-' + day}
-                className='checkbox'
-                type='checkbox'
-                label={day.substr(0, 3)}
-                checked={isChecked}
-                onChange={() => this.handleDayChange(day)}
-              />
+              <FormGroup check inline key={index}>
+                <Input
+                  id={'day-' + day}
+                  type='checkbox'
+                  checked={isChecked}
+                  onChange={() => this.handleDayChange(day)}
+                />
+                <Label check for={'day-' + day}>{day.substr(0, 3)}</Label>
+              </FormGroup>
             )
           })}
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import sinon from 'sinon'
 import AutoForm from 'uniforms/AutoForm'
-import { CustomInput, Input } from 'reactstrap'
+import { Input, FormGroup } from 'reactstrap'
 import { EventsSchema } from '/imports/both/collections/events'
 import WeekDays from '../FormWizard/DateTimeModule/WeekDays'
 
@@ -37,16 +37,16 @@ describe('<WeekDays />', () => {
   })
 
   it('should render a list of all weekday checkboxes', () => {
-    expect(wrapper.find('.day-checkboxes').find(CustomInput)).toHaveLength(weekDays.length)
+    expect(wrapper.find('.day-checkboxes').find(FormGroup)).toHaveLength(weekDays.length)
   })
 
   test('checkbox should be marked if selectedDays contains the rendered day object', () => {
-    const sundayCheckbox = wrapper.find('.day-checkboxes').find(CustomInput).at(0)
+    const sundayCheckbox = wrapper.find('.day-checkboxes').find('input[type="checkbox"]').at(0)
     expect(sundayCheckbox.props().checked).toBe(true)
   })
 
   test('unchecked day should not be checked', () => {
-    const mondayCheckbox = wrapper.find('.day-checkboxes').find(CustomInput).at(1)
+    const mondayCheckbox = wrapper.find('.day-checkboxes').find('input[type="checkbox"]').at(1)
     expect(mondayCheckbox.props().checked).toBe(false)
   })
 
@@ -68,9 +68,9 @@ describe('<WeekDays />', () => {
         selectedDays={[{ day: 'Sunday', startingTime: '09:00', endingTime: '17:00' }]}
       />
     )
-    const sundayCheckbox = wrapper_.find('.day-checkboxes').find(CustomInput).at(0)
+    const sundayCheckbox = wrapper_.find('.day-checkboxes').find('input[type="checkbox"]').at(0)
 
-    sundayCheckbox.find('input').simulate('change')
+    sundayCheckbox.simulate('change')
     expect(spy.calledOnce).toBe(true)
     expect(spy.firstCall.args[0]).toBe('when.days')
     expect(spy.firstCall.args[1]).toEqual([]) // Sunday should be removed
@@ -84,9 +84,9 @@ describe('<WeekDays />', () => {
         selectedDays={[{ day: 'Sunday', startingTime: '09:00', endingTime: '17:00' }]}
       />
     )
-    const mondayCheckbox = wrapper_.find('.day-checkboxes').find(CustomInput).at(1)
+    const mondayCheckbox = wrapper_.find('.day-checkboxes').find('input[type="checkbox"]').at(1)
 
-    mondayCheckbox.find('input').simulate('change')
+    mondayCheckbox.simulate('change')
     expect(spy.calledOnce).toBe(true)
     expect(spy.firstCall.args[0]).toBe('when.days')
     // Should now have Sunday and Monday (sorted by weekday order)
