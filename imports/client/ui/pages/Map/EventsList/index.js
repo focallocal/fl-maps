@@ -76,7 +76,7 @@ class EventsList extends Component {
       }
 
       this.pendingAvatarLookups.set(event._id, true)
-      getDiscourseAvatarUrl(username, 50)
+      getDiscourseAvatarUrl(username, 90)
         .then(url => {
           const resolved = url || this.getFallbackAvatar(event)
           this.setAvatarForEvent(event._id, resolved)
@@ -106,7 +106,7 @@ class EventsList extends Component {
     const organiser = event && event.organiser
     const identifier = organiser?.username || organiser?.name || 'user'
     try {
-      return Gravatar.getGravatar(identifier, 50)
+      return Gravatar.getGravatar(identifier, 90)
     } catch (error) {
       console.warn('[EventsList] Failed to build fallback avatar', error)
       return ''

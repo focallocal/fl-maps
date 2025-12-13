@@ -55,29 +55,11 @@
 
     .top-right-actions {
       float: right;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      .close-btn {
-        font-size: 1.3em;
-        cursor: pointer;
-        padding: 5px;
-        color: #666;
-
-        &:hover {
-          color: #333;
-        }
-
-        i {
-          cursor: pointer;
-        }
-      }
     }
 
     .event-info-avatar {
-      width: 50px;
-      height: 50px;
+      width: 88px;
+      height: 88px;
       object-fit: cover;
 
       &.event-info-avatar--placeholder {
@@ -87,6 +69,24 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
+      }
+    }
+
+    .open-close-btn-group {
+      display: flex;
+      width: 100%;
+
+      .open-btn {
+        flex: 4;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .close-btn {
+        flex: 1;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 1px solid rgba(0, 0, 0, 0.15);
       }
     }
 

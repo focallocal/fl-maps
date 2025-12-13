@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'
 import PropTypes from 'prop-types'
-import { Button } from 'reactstrap'
+import { Button, ButtonGroup } from 'reactstrap'
 import Linkify from 'linkifyjs/react'
 // import i18n_ from '/imports/both/i18n/en/map.json'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
@@ -80,9 +80,6 @@ class EventInfo extends Component {
 
         <div className='first-section'>
           <div className='top-right-actions'>
-            <div className='close-btn' onClick={this.props.returnToList}>
-              <i className='fas fa-times' />
-            </div>
             {event && (
               avatarUrl ? (
                 <img src={avatarUrl} className='event-info-avatar rounded-circle' alt="" />
@@ -96,7 +93,10 @@ class EventInfo extends Component {
           <div className='title'>{event ? event.name : ''}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
-          <Button color='secondary' onClick={this.openMoreInfo} block>{i18n_.openEventDetailsBtn}</Button>
+          <ButtonGroup className='open-close-btn-group'>
+            <Button color='secondary' className='open-btn' onClick={this.openMoreInfo}>{i18n_.openEventDetailsBtn}</Button>
+            <Button color='secondary' className='close-btn' onClick={this.props.returnToList}>Close</Button>
+          </ButtonGroup>
         </div>
 
         <hr className='divider' />
@@ -147,7 +147,7 @@ class EventInfo extends Component {
       return
     }
 
-    getDiscourseAvatarUrl(username, 50)
+    getDiscourseAvatarUrl(username, 90)
       .then(url => {
         if (this._isMounted) {
           this.setState({ avatarUrl: url || this.getFallbackAvatar(event) })
@@ -166,7 +166,7 @@ class EventInfo extends Component {
     }
     const identifier = event.organiser.username || event.organiser.name || 'user'
     try {
-      return Gravatar.getGravatar(identifier, 50)
+      return Gravatar.getGravatar(identifier, 90)
     } catch (error) {
       console.warn('[EventInfo] Failed to build fallback avatar', error)
       return ''

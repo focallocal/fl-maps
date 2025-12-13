@@ -47,9 +47,9 @@ class ListItem extends Component {
         onClick={this.handleItemClick}
       >
         {avatarUrl ? (
-          <img src={avatarUrl} className="events-list-avatar rounded-circle float-left mr-2" alt="" />
+          <img src={avatarUrl} className="events-list-avatar rounded-circle float-right ml-2" alt="" />
         ) : (
-          <div className="events-list-avatar events-list-avatar--placeholder rounded-circle float-left mr-2">
+          <div className="events-list-avatar events-list-avatar--placeholder rounded-circle float-right ml-2">
             {fallbackInitial}
           </div>
         )}
