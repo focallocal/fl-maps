@@ -147,7 +147,7 @@ class EventInfo extends Component {
       return
     }
 
-    getDiscourseAvatarUrl(username, 90)
+    getDiscourseAvatarUrl(username, 120)
       .then(url => {
         if (this._isMounted) {
           this.setState({ avatarUrl: url || this.getFallbackAvatar(event) })
@@ -166,7 +166,7 @@ class EventInfo extends Component {
     }
     const identifier = event.organiser.username || event.organiser.name || 'user'
     try {
-      return Gravatar.getGravatar(identifier, 90)
+      return Gravatar.getGravatar(identifier, 120)
     } catch (error) {
       console.warn('[EventInfo] Failed to build fallback avatar', error)
       return ''

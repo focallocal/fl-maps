@@ -7,15 +7,22 @@
   border-radius: 0 !important;
   border-right: 0;
   border-left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 
-  &>div {
-    width: 90%;
+  .events-list-content {
+    flex: 1;
+    min-width: 0;
   }
 
   .events-list-avatar {
     width: 79px;
     height: 79px;
     object-fit: cover;
+    flex-shrink: 0;
+    margin-left: 10px;
 
     &.events-list-avatar--placeholder {
       background-color: #87CEEB;

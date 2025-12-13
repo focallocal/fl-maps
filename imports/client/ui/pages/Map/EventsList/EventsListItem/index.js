@@ -46,14 +46,7 @@ class ListItem extends Component {
         className={listItemClass}
         onClick={this.handleItemClick}
       >
-        {avatarUrl ? (
-          <img src={avatarUrl} className="events-list-avatar rounded-circle float-right ml-2" alt="" />
-        ) : (
-          <div className="events-list-avatar events-list-avatar--placeholder rounded-circle float-right ml-2">
-            {fallbackInitial}
-          </div>
-        )}
-        <div>
+        <div className='events-list-content'>
           <div className='name'>{name}</div>
           {showNextView && nextDateTimeStr && (
             <div className='next-date'>{nextDateTimeStr}</div>
@@ -63,6 +56,13 @@ class ListItem extends Component {
             <div className='distance'>{formatMilesFromLocation(userLocation, address.location.coordinates)}</div>
           )}
         </div>
+        {avatarUrl ? (
+          <img src={avatarUrl} className="events-list-avatar rounded-circle" alt="" />
+        ) : (
+          <div className="events-list-avatar events-list-avatar--placeholder rounded-circle">
+            {fallbackInitial}
+          </div>
+        )}
       </ListGroupItem>
     )
   }

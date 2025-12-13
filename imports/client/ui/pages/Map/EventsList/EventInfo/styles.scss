@@ -5,7 +5,8 @@
   top: 0;
   left: 0;
   width: $map-events-list-width;
-  height: calc(100vh - #{$menu-height});
+  height: 100%;
+  min-height: calc(100vh - #{$menu-height});
   background: #fff;
   color: $black-lighter;
   overflow: auto;
@@ -58,8 +59,8 @@
     }
 
     .event-info-avatar {
-      width: 88px;
-      height: 88px;
+      width: 132px;
+      height: 132px;
       object-fit: cover;
 
       &.event-info-avatar--placeholder {
