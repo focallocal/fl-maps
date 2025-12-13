@@ -4,7 +4,6 @@ import { Button, Col, FormGroup, Input, Label, Row } from 'reactstrap'
 import Recurring from './DateTimeModule/Recurring'
 import WeekDays from './DateTimeModule/WeekDays'
 import RadioButton from './RadioButton'
-import SameDateHours from './SameDateHours'
 import VideoEntry from './VideoEntry'
 
 import i18n from '/imports/both/i18n/en'
@@ -254,10 +253,6 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
               form={form}
               schemaKey={'when.days'}
               selectedDays={days || []}
-            />
-            <SameDateHours
-              form={form}
-              schemaKey={'when.days'}
             />
           </FormGroup>
         </div>

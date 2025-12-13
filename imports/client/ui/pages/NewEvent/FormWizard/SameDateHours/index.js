@@ -49,14 +49,26 @@ class SameDateHours extends Component {
     )
   }
 
+  // Normalize time to HH:mm format (e.g., "9:00" -> "09:00")
+  normalizeTime = (time) => {
+    if (!time) return time
+    const parts = time.split(':')
+    if (parts.length !== 2) return time
+    const hours = parts[0].padStart(2, '0')
+    const mins = parts[1].padStart(2, '0')
+    return `${hours}:${mins}`
+  }
+
   handleStartingTime = value => {
     this.setState({ startingTime: value })
-    this.handleDefaults('startingTime', value.label)
+    // Use value.value (the actual time string) and normalize it
+    this.handleDefaults('startingTime', this.normalizeTime(value.value))
   }
 
   handleEndingTime = value => {
     this.setState({ endingTime: value })
-    this.handleDefaults('endingTime', value.label)
+    // Use value.value (the actual time string) and normalize it
+    this.handleDefaults('endingTime', this.normalizeTime(value.value))
   }
 
   handleDefaults = (key, value) => {

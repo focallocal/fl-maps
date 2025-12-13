@@ -5,9 +5,20 @@ import { Input } from 'reactstrap'
 import Select from 'react-select'
 import possibleEventHours from '/imports/both/collections/events/helpers/possibleEventHours'
 import { formatReactSelectOptions } from '/imports/client/utils/format'
+import SameDateHours from '../../SameDateHours'
 
 const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const timeOptions = formatReactSelectOptions(possibleEventHours)
+
+// Normalize time to HH:mm format (e.g., "9:00" -> "09:00")
+function normalizeTime(time) {
+  if (!time) return time
+  const parts = time.split(':')
+  if (parts.length !== 2) return time
+  const hours = parts[0].padStart(2, '0')
+  const mins = parts[1].padStart(2, '0')
+  return `${hours}:${mins}`
+}
 
 // Get default times in HH:mm format for new day entries
 function getDefaultStartTime() {
@@ -56,16 +67,28 @@ class WeekDays extends Component {
           })}
         </div>
 
+        {/* Set same hours link - positioned between checkboxes and time selectors */}
+        {selectedDayEntries.length > 0 && (
+          <SameDateHours form={form} />
+        )}
+
         {/* Time selectors for checked days - inline layout */}
         {selectedDayEntries.length > 0 && (
           <div className='day-times'>
             {selectedDayEntries.map((entry, idx) => {
-              const startValue = entry.startingTime 
-                ? timeOptions.find(opt => opt.value === entry.startingTime) 
-                : null
-              const endValue = entry.endingTime 
-                ? timeOptions.find(opt => opt.value === entry.endingTime) 
-                : null
+              // Find matching option - need to handle both HH:mm and H:mm formats
+              const findTimeOption = (time) => {
+                if (!time) return null
+                // Try exact match first
+                let opt = timeOptions.find(o => o.value === time)
+                if (opt) return opt
+                // Try normalized version (strip leading zero from hours)
+                const normalized = time.replace(/^0/, '')
+                return timeOptions.find(o => o.value === normalized)
+              }
+              
+              const startValue = findTimeOption(entry.startingTime)
+              const endValue = findTimeOption(entry.endingTime)
 
               return (
                 <div key={entry.day} className='day-time-row'>
@@ -76,7 +99,7 @@ class WeekDays extends Component {
                       classNamePrefix='time-select'
                       value={startValue}
                       options={timeOptions}
-                      onChange={(opt) => this.handleTimeChange(entry.day, 'startingTime', opt?.value || '')}
+                      onChange={(opt) => this.handleTimeChange(entry.day, 'startingTime', normalizeTime(opt?.value || ''))}
                       isSearchable={false}
                       placeholder='From'
                       menuPlacement='auto'
@@ -87,7 +110,7 @@ class WeekDays extends Component {
                       classNamePrefix='time-select'
                       value={endValue}
                       options={timeOptions}
-                      onChange={(opt) => this.handleTimeChange(entry.day, 'endingTime', opt?.value || '')}
+                      onChange={(opt) => this.handleTimeChange(entry.day, 'endingTime', normalizeTime(opt?.value || ''))}
                       isSearchable={false}
                       placeholder='To'
                       menuPlacement='auto'
