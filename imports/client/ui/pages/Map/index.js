@@ -59,7 +59,6 @@ class MapComponent_ extends Component {
   }
 
   memoizeLocations = {} // cache locations
-  savedFilterState = null // saved filter state when entering Next view
 
   componentDidMount() {
     if (window.FlMapsTiming) window.FlMapsTiming.log('Map component mounting')
@@ -145,22 +144,45 @@ class MapComponent_ extends Component {
 
     const events_ = filteredEvents || events
     
-    // Apply Next view sorting if enabled (filtering is handled by FiltersList via preselectFiltersForNextView)
+    // Apply Next view filtering and sorting if enabled
     let processedEvents = events_
     if (this.state.showNextView) {
-      // Sort by next occurrence date
+      const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
+      
+      // Filter out events that ONLY have unselected categories
+      // (keep events that have at least one category not in the unselected list)
+      processedEvents = processedEvents.filter(event => {
+        const eventCategories = Array.isArray(event.categories) ? event.categories : 
+          (event.categories ? [event.categories] : [])
+        
+        if (eventCategories.length === 0) return true // Keep events with no categories
+        
+        // Check if ALL of the event's categories are in the unselected list
+        const allCategoriesUnselected = eventCategories.every(cat => {
+          const catName = cat.name || cat
+          return defaultUnselectedCategories.includes(catName)
+        })
+        
+        // Keep the event only if NOT all categories are unselected
+        return !allCategoriesUnselected
+      })
+      
+      // Sort by next occurrence date (soonest first)
       processedEvents = [...processedEvents].sort((a, b) => {
         const getNextDate = (event) => {
           const when = event.when || {}
           if (when.repeat && when.recurring) {
             const { type, every, days, monthly } = when.recurring
             try {
-              return findNextEvent(when.startingDate, type, every, days, monthly)
+              const nextDate = findNextEvent(when.startingDate, type, every, days, monthly)
+              return nextDate ? nextDate.getTime() : Infinity
             } catch (e) {
-              return new Date(when.startingDate)
+              const startDate = when.startingDate instanceof Date ? when.startingDate : new Date(when.startingDate)
+              return startDate.getTime() || Infinity
             }
           }
-          return new Date(when.startingDate)
+          const startDate = when.startingDate instanceof Date ? when.startingDate : new Date(when.startingDate)
+          return startDate.getTime() || Infinity
         }
         return getNextDate(a) - getNextDate(b)
       })
@@ -208,7 +230,6 @@ class MapComponent_ extends Component {
         </MarkerClusterer>
 
         <FiltersList
-          ref={ref => this.filtersList = ref}
           show={showFilters}
           events={events}
           onFilter={this.setFilteredEvents}
@@ -328,44 +349,36 @@ class MapComponent_ extends Component {
   }
 
   toggleNextView = () => {
-    const { NextViewConfig } = i18n
-    const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
-    
-    this.setState((state) => {
-      if (!state.showNextView) {
-        // Entering Next view - save current filter state and preselect categories
-        this.savedFilterState = state.filteredEvents
-        
-        // Use setTimeout to call preselectFilters after state update
-        setTimeout(() => {
-          if (this.filtersList && this.filtersList.preselectFiltersForNextView) {
-            this.filtersList.preselectFiltersForNextView(defaultUnselectedCategories)
-          }
-        }, 0)
-        
-        return { showNextView: true }
-      } else {
-        // Exiting Next view - clear filters and restore saved state
-        setTimeout(() => {
-          if (this.filtersList && this.filtersList.clearAllFilters) {
-            this.filtersList.clearAllFilters()
-          }
-        }, 0)
-        
-        return { showNextView: false, filteredEvents: this.savedFilterState }
-      }
-    })
+    // Simply toggle the Next view state
+    // Filtering is now handled directly in render() using defaultUnselectedCategories
+    this.setState((state) => ({ showNextView: !state.showNextView }))
   }
 
   handlePrint = () => {
     const { events, filteredEvents } = this.state
-    const { NextViewConfig, Categories } = i18n
+    const { NextViewConfig } = i18n
+    const defaultUnselectedCategories = NextViewConfig?.defaultUnselectedCategories || []
     
-    // Use filtered events (set by FiltersList when in Next view)
-    const events_ = filteredEvents || events
+    // Start with filtered events or all events
+    let events_ = filteredEvents || events
+    
+    // Apply same filtering as Next view
+    let printEvents = events_.filter(event => {
+      const eventCategories = Array.isArray(event.categories) ? event.categories : 
+        (event.categories ? [event.categories] : [])
+      
+      if (eventCategories.length === 0) return true
+      
+      const allCategoriesUnselected = eventCategories.every(cat => {
+        const catName = cat.name || cat
+        return defaultUnselectedCategories.includes(catName)
+      })
+      
+      return !allCategoriesUnselected
+    })
     
     // Sort by next occurrence date
-    let printEvents = [...events_].sort((a, b) => {
+    printEvents = [...printEvents].sort((a, b) => {
       const getNextDate = (event) => {
         const when = event.when || {}
         if (when.repeat && when.recurring) {
@@ -379,15 +392,6 @@ class MapComponent_ extends Component {
         return new Date(when.startingDate)
       }
       return getNextDate(a) - getNextDate(b)
-    })
-    
-    // Collect unique categories from printed events
-    const usedCategories = new Set()
-    printEvents.forEach(event => {
-      const cats = Array.isArray(event.categories) ? event.categories : []
-      cats.forEach(cat => {
-        usedCategories.add(cat.name || cat)
-      })
     })
     
     // Format date/time for display
@@ -411,22 +415,6 @@ class MapComponent_ extends Component {
       
       return `${dateStr}${timeStr}${endTimeStr}${recurringStr}`
     }
-    
-    // Build category key HTML
-    const categoryKeyHtml = Array.from(usedCategories).map(catName => {
-      // Find category color from Categories i18n
-      let color = '#666'
-      if (Categories && Categories.categories) {
-        for (const parent of Categories.categories) {
-          if (parent.name === catName) { color = parent.color; break }
-          if (parent.subcategories) {
-            const sub = parent.subcategories.find(s => s.name === catName)
-            if (sub) { color = sub.color || parent.color; break }
-          }
-        }
-      }
-      return `<span style="display:inline-block;margin:2px 8px 2px 0;padding:2px 8px;background:${color};color:#fff;border-radius:3px;font-size:12px;">${catName}</span>`
-    }).join('')
     
     // Build table rows
     const rows = printEvents.map((event, i) => {
@@ -459,8 +447,6 @@ class MapComponent_ extends Component {
           h2 { color: #666; margin-top: 0; font-weight: normal; }
           table { width: 100%; border-collapse: collapse; margin-top: 20px; }
           th { background: #28a745; color: #fff; padding: 10px; text-align: left; border: 1px solid #ddd; }
-          .category-key { margin-top: 20px; padding-top: 15px; border-top: 2px solid #ddd; }
-          .category-key h3 { margin-bottom: 10px; color: #666; }
         </style>
       </head>
       <body>
@@ -479,10 +465,6 @@ class MapComponent_ extends Component {
             ${rows}
           </tbody>
         </table>
-        <div class="category-key">
-          <h3>Category Key</h3>
-          ${categoryKeyHtml}
-        </div>
         <script>window.onload = function() { window.print(); }</script>
       </body>
       </html>
