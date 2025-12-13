@@ -76,7 +76,9 @@ class EventInfo extends Component {
           <div className='back-btn'>
             <i className='fas fa-long-arrow-alt-left' onClick={this.props.returnToList}/>
           </div>
-
+          <div className='close-btn'>
+            <i className='fas fa-times' onClick={this.props.returnToList}/>
+          </div>
         </header>
 
         <div className='first-section'>

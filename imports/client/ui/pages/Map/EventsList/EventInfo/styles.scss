@@ -36,6 +36,20 @@
         cursor: pointer;
       }
     }
+
+    .close-btn {
+      line-height: 1.5;
+      font-size: 1.3em;
+
+      i {
+        cursor: pointer;
+        color: #666;
+        
+        &:hover {
+          color: #333;
+        }
+      }
+    }
   }
 
 
