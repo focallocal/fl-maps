@@ -51,7 +51,7 @@ class SameDateHours extends Component {
 
   // Normalize time to HH:mm format (e.g., "9:00" -> "09:00")
   normalizeTime = (time) => {
-    if (!time) return time
+    if (!time || typeof time !== 'string') return ''
     const parts = time.split(':')
     if (parts.length !== 2) return time
     const hours = parts[0].padStart(2, '0')
@@ -61,14 +61,14 @@ class SameDateHours extends Component {
 
   handleStartingTime = value => {
     this.setState({ startingTime: value })
-    // Use value.value (the actual time string) and normalize it
-    this.handleDefaults('startingTime', this.normalizeTime(value.value))
+    // Use value.label (the actual time string) - value.value is the index
+    this.handleDefaults('startingTime', this.normalizeTime(value?.label || ''))
   }
 
   handleEndingTime = value => {
     this.setState({ endingTime: value })
-    // Use value.value (the actual time string) and normalize it
-    this.handleDefaults('endingTime', this.normalizeTime(value.value))
+    // Use value.label (the actual time string) - value.value is the index
+    this.handleDefaults('endingTime', this.normalizeTime(value?.label || ''))
   }
 
   handleDefaults = (key, value) => {

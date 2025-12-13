@@ -12,7 +12,7 @@ const timeOptions = formatReactSelectOptions(possibleEventHours)
 
 // Normalize time to HH:mm format (e.g., "9:00" -> "09:00")
 function normalizeTime(time) {
-  if (!time) return time
+  if (!time || typeof time !== 'string') return ''
   const parts = time.split(':')
   if (parts.length !== 2) return time
   const hours = parts[0].padStart(2, '0')
@@ -77,14 +77,23 @@ class WeekDays extends Component {
           <div className='day-times'>
             {selectedDayEntries.map((entry, idx) => {
               // Find matching option - need to handle both HH:mm and H:mm formats
+              // Note: timeOptions has { value: index, label: "9:00" } format
               const findTimeOption = (time) => {
                 if (!time) return null
-                // Try exact match first
-                let opt = timeOptions.find(o => o.value === time)
+                // Try exact match on label first
+                let opt = timeOptions.find(o => o.label === time)
                 if (opt) return opt
                 // Try normalized version (strip leading zero from hours)
                 const normalized = time.replace(/^0/, '')
-                return timeOptions.find(o => o.value === normalized)
+                opt = timeOptions.find(o => o.label === normalized)
+                if (opt) return opt
+                // Try adding leading zero
+                const parts = time.split(':')
+                if (parts.length === 2 && parts[0].length === 1) {
+                  const withZero = `0${parts[0]}:${parts[1]}`
+                  opt = timeOptions.find(o => o.label === withZero)
+                }
+                return opt
               }
               
               const startValue = findTimeOption(entry.startingTime)
@@ -99,7 +108,7 @@ class WeekDays extends Component {
                       classNamePrefix='time-select'
                       value={startValue}
                       options={timeOptions}
-                      onChange={(opt) => this.handleTimeChange(entry.day, 'startingTime', normalizeTime(opt?.value || ''))}
+                      onChange={(opt) => this.handleTimeChange(entry.day, 'startingTime', normalizeTime(opt?.label || ''))}
                       isSearchable={false}
                       placeholder='From'
                       menuPlacement='auto'
@@ -110,7 +119,7 @@ class WeekDays extends Component {
                       classNamePrefix='time-select'
                       value={endValue}
                       options={timeOptions}
-                      onChange={(opt) => this.handleTimeChange(entry.day, 'endingTime', normalizeTime(opt?.value || ''))}
+                      onChange={(opt) => this.handleTimeChange(entry.day, 'endingTime', normalizeTime(opt?.label || ''))}
                       isSearchable={false}
                       placeholder='To'
                       menuPlacement='auto'
