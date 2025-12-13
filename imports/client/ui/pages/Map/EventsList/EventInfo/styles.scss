@@ -25,7 +25,7 @@
 
   header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 14px 20px;
     position: sticky;
@@ -39,25 +39,11 @@
       line-height: 1.5;
       font-size: 1.3em;
       flex-shrink: 0;
+      cursor: pointer;
+      padding: 5px;
 
       i {
         cursor: pointer;
-      }
-    }
-
-    .close-btn {
-      line-height: 1.5;
-      font-size: 1.3em;
-      flex-shrink: 0;
-      margin-left: auto;
-
-      i {
-        cursor: pointer;
-        color: #666;
-        
-        &:hover {
-          color: #333;
-        }
       }
     }
   }
@@ -67,11 +53,32 @@
     padding-top: 0;
     word-wrap: break-word;
 
+    .top-right-actions {
+      float: right;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .close-btn {
+        font-size: 1.3em;
+        cursor: pointer;
+        padding: 5px;
+        color: #666;
+
+        &:hover {
+          color: #333;
+        }
+
+        i {
+          cursor: pointer;
+        }
+      }
+    }
+
     .event-info-avatar {
       width: 50px;
       height: 50px;
       object-fit: cover;
-      margin-left: 12px;
 
       &.event-info-avatar--placeholder {
         background-color: #87CEEB;

@@ -73,24 +73,26 @@ class EventInfo extends Component {
     return (
       <div id='event-info' className={event ? 'active' : ''}>
         <header>
-          <div className='back-btn'>
-            <i className='fas fa-long-arrow-alt-left' onClick={this.props.returnToList}/>
-          </div>
-          <div className='close-btn'>
-            <i className='fas fa-times' onClick={this.props.returnToList}/>
+          <div className='back-btn' onClick={this.props.returnToList}>
+            <i className='fas fa-long-arrow-alt-left' />
           </div>
         </header>
 
         <div className='first-section'>
-          {event && (
-            avatarUrl ? (
-              <img src={avatarUrl} className='event-info-avatar rounded-circle float-right' alt="" />
-            ) : (
-              <div className='event-info-avatar event-info-avatar--placeholder rounded-circle float-right'>
-                {fallbackInitial}
-              </div>
-            )
-          )}
+          <div className='top-right-actions'>
+            <div className='close-btn' onClick={this.props.returnToList}>
+              <i className='fas fa-times' />
+            </div>
+            {event && (
+              avatarUrl ? (
+                <img src={avatarUrl} className='event-info-avatar rounded-circle' alt="" />
+              ) : (
+                <div className='event-info-avatar event-info-avatar--placeholder rounded-circle'>
+                  {fallbackInitial}
+                </div>
+              )
+            )}
+          </div>
           <div className='title'>{event ? event.name : ''}</div>
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
