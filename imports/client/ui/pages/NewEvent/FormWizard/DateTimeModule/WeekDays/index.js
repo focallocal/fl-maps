@@ -72,6 +72,9 @@ class WeekDays extends Component {
       selectedDays
     } = this.props
 
+    console.log('handleDayChange called for day:', day)
+    console.log('Current selectedDays:', selectedDays)
+
     const existingIndex = selectedDays.findIndex(entry => entry && entry.day === day)
     let updatedDays
 
@@ -85,6 +88,8 @@ class WeekDays extends Component {
       updatedDays.sort((a, b) => weekDays.indexOf(a.day) - weekDays.indexOf(b.day))
     }
 
+    console.log('Updated days:', updatedDays)
+    console.log('Calling form.change with schemaKey:', schemaKey)
     form.change(schemaKey, updatedDays)
   }
 
