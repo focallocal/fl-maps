@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import './styles.scss'
+import i18n from '/imports/both/i18n/en'
 
 class SearchButtons extends Component {
   render () {
+    const labels = i18n.Map
     return (
       <div className='buttons'>
         <Button onClick={this.props.toggleFilters}>
@@ -12,11 +14,11 @@ class SearchButtons extends Component {
           Filter
         </Button>
         <Button
-          className={this.props.showNextView ? 'cal-view-btn active' : 'cal-view-btn'}
+          className={this.props.showNextView ? 'upcoming-btn active' : 'upcoming-btn'}
           onClick={this.props.toggleNextView}
         >
           <i className='fa fa-clock' />
-          Cal View
+          {this.props.showNextView ? (labels.listButton || 'List') : (labels.upcomingButton || 'Upcoming')}
         </Button>
         {this.props.showNextView && (
           <Button

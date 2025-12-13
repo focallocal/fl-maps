@@ -1,5 +1,7 @@
 {
   "filtersTitle": "Select All",
+  "upcomingButton": "Upcoming",
+  "listButton": "List",
   "openEventDetailsBtn": "Open",
   "eventInfo": {
     "shareExpTitle": "Share Your Experience",
