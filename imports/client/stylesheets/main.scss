@@ -26,6 +26,14 @@ body {
   max-width: 100%;
 }
 
+/* Mobile footer spacer - prevents content from being hidden behind Discourse floating footer */
+#root::after {
+  content: '';
+  display: block;
+  height: 55px;
+  width: 100%;
+}
+
 * {
   font-family: $default-font;
 }
