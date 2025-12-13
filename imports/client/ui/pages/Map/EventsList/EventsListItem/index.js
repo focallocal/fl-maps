@@ -25,8 +25,8 @@ class ListItem extends Component {
     } = item
 
     const fallbackInitial = this.getFallbackInitial(item)
-    // Use avatarUrl from parent, or generate Fun Emoji fallback
-    const displayAvatarUrl = avatarUrl || getFunEmojiAvatar(fallbackInitial, 79)
+    // Use avatarUrl from parent, or generate Fun Emoji fallback (slightly smaller to match photo sizing)
+    const displayAvatarUrl = avatarUrl || getFunEmojiAvatar(fallbackInitial, 70)
 
     const listItemClass = `event-list-item clickable-list-item ${
       ishovered ? "highlighted" : ""

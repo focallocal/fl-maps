@@ -8,7 +8,7 @@ import EventInfo from './EventInfo'
 
 import { inIFrame } from 'dcs-client'
 import { getFallbackAvatarAsync } from '/imports/client/utils/avatarFallback'
-import { getDiscourseAvatarUrl } from '/imports/client/utils/discourseAvatar'
+import { getDiscourseAvatarUrl, clearAvatarCache } from '/imports/client/utils/discourseAvatar'
 
 import './styles.scss'
 
@@ -37,6 +37,8 @@ class EventsList extends Component {
 
   componentDidMount () {
     this._isMounted = true
+    // Clear avatar cache to ensure fresh avatars are fetched
+    clearAvatarCache()
     this.populateAvatarMap(this.props.events)
     this.attachWheelListener()
   }
@@ -112,9 +114,16 @@ class EventsList extends Component {
 
   getFallbackAvatar = (event) => {
     const organiser = event && event.organiser
-    const identifier = organiser?.username || organiser?.name || 'user'
-    // Return a promise that checks Gravatar first, then falls back to Fun Emoji
-    return getFallbackAvatarAsync(identifier, 90)
+    // Use username, then name (if not placeholder '-'), then event ID as identifier
+    let identifier = organiser?.username
+    if (!identifier && organiser?.name && organiser.name !== '-') {
+      identifier = organiser.name
+    }
+    if (!identifier) {
+      // Use event ID for old events without organiser info
+      identifier = event?._id || 'anonymous'
+    }
+    return getFallbackAvatarAsync(identifier, 80)
   }
 
   render () {

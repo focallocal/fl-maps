@@ -69,8 +69,8 @@ class EventInfo extends Component {
 
     const { avatarUrl } = this.state
     const fallbackInitial = this.getFallbackInitial(event)
-    // Use avatarUrl from state, or generate Fun Emoji fallback immediately
-    const displayAvatarUrl = avatarUrl || getFunEmojiAvatar(fallbackInitial, 132)
+    // Use avatarUrl from state, or generate Fun Emoji fallback (slightly smaller to match photo sizing)
+    const displayAvatarUrl = avatarUrl || getFunEmojiAvatar(fallbackInitial, 115)
 
     return (
       <div id='event-info' className={event ? 'active' : ''}>
@@ -171,8 +171,17 @@ class EventInfo extends Component {
   }
 
   getFallbackAvatar = (event) => {
-    const identifier = event?.organiser?.username || event?.organiser?.name || 'user'
-    return getFallbackAvatarAsync(identifier, 120)
+    const organiser = event?.organiser
+    // Use username, then name (if not placeholder '-'), then event ID as identifier
+    let identifier = organiser?.username
+    if (!identifier && organiser?.name && organiser.name !== '-') {
+      identifier = organiser.name
+    }
+    if (!identifier) {
+      // Use event ID for old events without organiser info
+      identifier = event?._id || 'anonymous'
+    }
+    return getFallbackAvatarAsync(identifier, 115)
   }
 
   getFallbackInitial = (event) => {
