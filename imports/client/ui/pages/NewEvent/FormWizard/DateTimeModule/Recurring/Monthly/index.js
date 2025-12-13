@@ -61,6 +61,23 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
     if (monthly?.positions) setSelectedPositions(monthly.positions)
   }, [monthly, options])
 
+  // Helper to update when.recurring.monthly properly
+  const updateMonthly = (monthlyData) => {
+    if (typeof form?.change === 'function') {
+      const model = form.getModel ? form.getModel() : {}
+      const when = model.when || {}
+      const recurring = when.recurring || {}
+      const updatedWhen = {
+        ...when,
+        recurring: {
+          ...recurring,
+          monthly: monthlyData
+        }
+      }
+      form.change('when', updatedWhen)
+    }
+  }
+
   const handleChange = (option) => {
     setSelectedOption(option)
 
@@ -71,13 +88,11 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
     
     if (value === 'byCustomPositions') {
       // Save custom positions format
-      if (typeof form?.change === 'function') {
-        form.change('when.recurring.monthly', { 
-          type: value, 
-          weekday: selectedWeekday,
-          positions: selectedPositions
-        })
-      }
+      updateMonthly({ 
+        type: value, 
+        weekday: selectedWeekday,
+        positions: selectedPositions
+      })
     } else {
       const finalValue =
         value === 'byDayInMonth'
@@ -85,22 +100,18 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
           : determinePosition(dayInMonth)[0]
 
       // Push update into the form model
-      if (typeof form?.change === 'function') {
-        form.change('when.recurring.monthly', { type: value, value: finalValue })
-      }
+      updateMonthly({ type: value, value: finalValue })
     }
   }
   
   const handleWeekdayChange = (e) => {
     const weekday = parseInt(e.target.value)
     setSelectedWeekday(weekday)
-    if (typeof form?.change === 'function') {
-      form.change('when.recurring.monthly', { 
-        type: 'byCustomPositions', 
-        weekday,
-        positions: selectedPositions
-      })
-    }
+    updateMonthly({ 
+      type: 'byCustomPositions', 
+      weekday,
+      positions: selectedPositions
+    })
   }
   
   const handlePositionToggle = (position) => {
@@ -112,13 +123,11 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
     if (newPositions.length === 0) return
     
     setSelectedPositions(newPositions)
-    if (typeof form?.change === 'function') {
-      form.change('when.recurring.monthly', { 
-        type: 'byCustomPositions', 
-        weekday: selectedWeekday,
-        positions: newPositions
-      })
-    }
+    updateMonthly({ 
+      type: 'byCustomPositions', 
+      weekday: selectedWeekday,
+      positions: newPositions
+    })
   }
 
   return (

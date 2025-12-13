@@ -95,7 +95,7 @@ class Recurring extends Component {
                 type="number"
                 name="when.recurring.occurences"
                 value={recurring.occurences || ''}
-                onChange={(e) => form.change('when.recurring.occurences', parseInt(e.target.value))}
+                onChange={(e) => this.handleOccurencesChange(parseInt(e.target.value))}
               />
               <span>occurence{occurences > 1 ? 's' : ''}</span>
             </div>
@@ -105,7 +105,7 @@ class Recurring extends Component {
                 type="date"
                 name="when.recurring.until"
                 value={recurring.until || ''}
-                onChange={(e) => form.change('when.recurring.until', e.target.value)}
+                onChange={(e) => this.handleUntilChange(e.target.value)}
               />
             </div>
           </div>
@@ -117,13 +117,25 @@ class Recurring extends Component {
   handleEveryChange = (e) => {
     const value = parseInt(e.target.value, 10) || ''
     this.setState({ every: value })
-    this.props.form.change('when.recurring.every', value)
+    // Update the entire 'when' object since form.change doesn't handle nested paths
+    const currentWhen = this.props.form.getModel().when || {}
+    const updatedWhen = { 
+      ...currentWhen, 
+      recurring: { ...currentWhen.recurring, every: value }
+    }
+    this.props.form.change('when', updatedWhen)
   }
 
   handleTypeChange = (e) => {
     const value = e.target.value
     this.setState({ recurringType: value })
-    this.props.form.change('when.recurring.type', value)
+    // Update the entire 'when' object since form.change doesn't handle nested paths
+    const currentWhen = this.props.form.getModel().when || {}
+    const updatedWhen = { 
+      ...currentWhen, 
+      recurring: { ...currentWhen.recurring, type: value }
+    }
+    this.props.form.change('when', updatedWhen)
   }
 
   CheckBox = ({ label, id, checked }) => (
@@ -143,7 +155,31 @@ class Recurring extends Component {
   )
 
   handleCheckbox = (checked) => {
-    this.props.form.change(`when.recurring.forever`, checked)
+    // Update the entire 'when' object since form.change doesn't handle nested paths
+    const currentWhen = this.props.form.getModel().when || {}
+    const updatedWhen = { 
+      ...currentWhen, 
+      recurring: { ...currentWhen.recurring, forever: checked }
+    }
+    this.props.form.change('when', updatedWhen)
+  }
+
+  handleOccurencesChange = (value) => {
+    const currentWhen = this.props.form.getModel().when || {}
+    const updatedWhen = { 
+      ...currentWhen, 
+      recurring: { ...currentWhen.recurring, occurences: value }
+    }
+    this.props.form.change('when', updatedWhen)
+  }
+
+  handleUntilChange = (value) => {
+    const currentWhen = this.props.form.getModel().when || {}
+    const updatedWhen = { 
+      ...currentWhen, 
+      recurring: { ...currentWhen.recurring, until: value }
+    }
+    this.props.form.change('when', updatedWhen)
   }
 }
 

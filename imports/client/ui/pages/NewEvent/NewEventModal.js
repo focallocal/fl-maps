@@ -166,9 +166,10 @@ class NewEventModal extends Component {
 
   submit = () => {
     // This is important for debugging purpose.
-    // console.log(this.state.form.getModel())
+    console.log('Submit clicked - form model:', this.state.form.getModel())
     this.state.form.validate({ clean: true })
       .then(() => {
+        console.log('Validation passed!')
   window['NProgress']?.set(0.4)
         let model = EventsSchema.clean(this.state.form.getModel())
         // Add formType to the model
@@ -184,6 +185,7 @@ class NewEventModal extends Component {
         }
       })
       .catch(err => {
+        console.log('Validation failed:', err.details, err)
         this.setState({ hasErrors: true })
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })

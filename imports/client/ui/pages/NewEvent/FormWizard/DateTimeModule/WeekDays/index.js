@@ -1,8 +1,29 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { Input, Label, FormGroup } from 'reactstrap'
+import { Label, FormGroup } from 'reactstrap'
+import { Input } from 'reactstrap'
+import Select from 'react-select'
+import possibleEventHours from '/imports/both/collections/events/helpers/possibleEventHours'
+import { formatReactSelectOptions } from '/imports/client/utils/format'
 
 const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const timeOptions = formatReactSelectOptions(possibleEventHours)
+
+// Get default times in HH:mm format for new day entries
+function getDefaultStartTime() {
+  const now = new Date()
+  const hours = now.getHours().toString().padStart(2, '0')
+  const mins = now.getMinutes() >= 30 ? '30' : '00'
+  return `${hours}:${mins}`
+}
+
+function getDefaultEndTime() {
+  const now = new Date()
+  now.setHours(now.getHours() + 1)
+  const hours = now.getHours().toString().padStart(2, '0')
+  const mins = now.getMinutes() >= 30 ? '30' : '00'
+  return `${hours}:${mins}`
+}
 
 class WeekDays extends Component {
   render () {
@@ -35,24 +56,41 @@ class WeekDays extends Component {
           })}
         </div>
 
-        {/* Time selectors for checked days */}
+        {/* Time selectors for checked days - inline layout */}
         {selectedDayEntries.length > 0 && (
           <div className='day-times'>
             {selectedDayEntries.map((entry, idx) => {
+              const startValue = entry.startingTime 
+                ? timeOptions.find(opt => opt.value === entry.startingTime) 
+                : null
+              const endValue = entry.endingTime 
+                ? timeOptions.find(opt => opt.value === entry.endingTime) 
+                : null
+
               return (
                 <div key={entry.day} className='day-time-row'>
                   <Label className='day-label'>{entry.day}</Label>
                   <div className='hours'>
-                    <Input
-                      type="time"
-                      value={entry.startingTime || ''}
-                      onChange={(e) => this.handleTimeChange(entry.day, 'startingTime', e.target.value)}
+                    <Select
+                      className='time-select'
+                      classNamePrefix='time-select'
+                      value={startValue}
+                      options={timeOptions}
+                      onChange={(opt) => this.handleTimeChange(entry.day, 'startingTime', opt?.value || '')}
+                      isSearchable={false}
+                      placeholder='From'
+                      menuPlacement='auto'
                     />
                     <span className='time-separator'>-</span>
-                    <Input
-                      type="time"
-                      value={entry.endingTime || ''}
-                      onChange={(e) => this.handleTimeChange(entry.day, 'endingTime', e.target.value)}
+                    <Select
+                      className='time-select'
+                      classNamePrefix='time-select'
+                      value={endValue}
+                      options={timeOptions}
+                      onChange={(opt) => this.handleTimeChange(entry.day, 'endingTime', opt?.value || '')}
+                      isSearchable={false}
+                      placeholder='To'
+                      menuPlacement='auto'
                     />
                   </div>
                 </div>
@@ -77,8 +115,12 @@ class WeekDays extends Component {
       // Remove the day
       updatedDays = selectedDays.filter(entry => entry && entry.day !== day)
     } else {
-      // Add the day with default times
-      updatedDays = [...selectedDays.filter(entry => entry && entry.day), { day, startingTime: '', endingTime: '' }]
+      // Add the day with default times (HH:mm format required by schema)
+      updatedDays = [...selectedDays.filter(entry => entry && entry.day), { 
+        day, 
+        startingTime: getDefaultStartTime(), 
+        endingTime: getDefaultEndTime() 
+      }]
       // Sort by weekday order
       updatedDays.sort((a, b) => weekDays.indexOf(a.day) - weekDays.indexOf(b.day))
     }

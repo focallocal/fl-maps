@@ -62,8 +62,9 @@ export default function RecurrWeekly({ form, schemaKey, initialSelectedDays = []
         days: updated
       }
 
-      // Update via form.change with the nested object
-      form.change('when.recurring', newRecurring)
+      // Update the entire 'when' object since form.change doesn't handle nested paths
+      const updatedWhen = { ...when, recurring: newRecurring }
+      form.change('when', updatedWhen)
     } catch (err) {
       console.error('Error updating recurring.days:', err)
     }

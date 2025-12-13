@@ -67,7 +67,8 @@ class SameDateHours extends Component {
     } = this.props
 
     const model = form.getModel()
-    const selectedDays = model.when.days || []
+    const currentWhen = model.when || {}
+    const selectedDays = currentWhen.days || []
 
     // Update each day entry with the new time value
     const updatedDays = selectedDays.map(day => {
@@ -78,7 +79,9 @@ class SameDateHours extends Component {
       }
     }).filter(day => day && day.day) // Remove any invalid entries
 
-    form.change('when.days', updatedDays)
+    // Update the entire 'when' object since form.change doesn't handle nested paths
+    const updatedWhen = { ...currentWhen, days: updatedDays }
+    form.change('when', updatedWhen)
   }
 
   togglePopover = () => {
