@@ -7,7 +7,7 @@ import Linkify from 'linkifyjs/react'
 // import i18n_ from '/imports/both/i18n/en/map.json'
 import HoursFormatted from '/imports/client/ui/components/HoursFormatted'
 import * as formatUtils from '/imports/client/utils/format'
-import * as Gravatar from '/imports/client/utils/Gravatar'
+import { getFallbackAvatarAsync, getFunEmojiAvatar } from '/imports/client/utils/avatarFallback'
 import { getDiscourseAvatarUrl } from '/imports/client/utils/discourseAvatar'
 
 import './styles.scss'
@@ -69,6 +69,8 @@ class EventInfo extends Component {
 
     const { avatarUrl } = this.state
     const fallbackInitial = this.getFallbackInitial(event)
+    // Use avatarUrl from state, or generate Fun Emoji fallback immediately
+    const displayAvatarUrl = avatarUrl || getFunEmojiAvatar(fallbackInitial, 132)
 
     return (
       <div id='event-info' className={event ? 'active' : ''}>
@@ -81,13 +83,7 @@ class EventInfo extends Component {
         <div className='first-section'>
           <div className='top-right-actions'>
             {event && (
-              avatarUrl ? (
-                <img src={avatarUrl} className='event-info-avatar rounded-circle' alt="" />
-              ) : (
-                <div className='event-info-avatar event-info-avatar--placeholder rounded-circle'>
-                  {fallbackInitial}
-                </div>
-              )
+              <img src={displayAvatarUrl} className='event-info-avatar rounded-circle' alt="" />
             )}
           </div>
           <div className='title'>{event ? event.name : ''}</div>
@@ -143,34 +139,40 @@ class EventInfo extends Component {
 
     const username = event.organiser.username
     if (!username) {
-      this.setState({ avatarUrl: this.getFallbackAvatar(event) })
+      this.getFallbackAvatar(event).then(url => {
+        if (this._isMounted) {
+          this.setState({ avatarUrl: url })
+        }
+      })
       return
     }
 
     getDiscourseAvatarUrl(username, 120)
       .then(url => {
-        if (this._isMounted) {
-          this.setState({ avatarUrl: url || this.getFallbackAvatar(event) })
+        if (url) {
+          if (this._isMounted) {
+            this.setState({ avatarUrl: url })
+          }
+        } else {
+          return this.getFallbackAvatar(event).then(fallbackUrl => {
+            if (this._isMounted) {
+              this.setState({ avatarUrl: fallbackUrl })
+            }
+          })
         }
       })
       .catch(() => {
-        if (this._isMounted) {
-          this.setState({ avatarUrl: this.getFallbackAvatar(event) })
-        }
+        this.getFallbackAvatar(event).then(fallbackUrl => {
+          if (this._isMounted) {
+            this.setState({ avatarUrl: fallbackUrl })
+          }
+        })
       })
   }
 
   getFallbackAvatar = (event) => {
-    if (!event || !event.organiser) {
-      return ''
-    }
-    const identifier = event.organiser.username || event.organiser.name || 'user'
-    try {
-      return Gravatar.getGravatar(identifier, 120)
-    } catch (error) {
-      console.warn('[EventInfo] Failed to build fallback avatar', error)
-      return ''
-    }
+    const identifier = event?.organiser?.username || event?.organiser?.name || 'user'
+    return getFallbackAvatarAsync(identifier, 120)
   }
 
   getFallbackInitial = (event) => {

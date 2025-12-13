@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { ListGroupItem } from 'reactstrap'
 import { formatMilesFromLocation, formatCategories } from '/imports/client/utils/format'
 import { findNextEvent } from '/imports/client/utils/findNextEvent'
+import { getFunEmojiAvatar } from '/imports/client/utils/avatarFallback'
 import './styles.scss'
 
 class ListItem extends Component {
@@ -24,6 +25,8 @@ class ListItem extends Component {
     } = item
 
     const fallbackInitial = this.getFallbackInitial(item)
+    // Use avatarUrl from parent, or generate Fun Emoji fallback
+    const displayAvatarUrl = avatarUrl || getFunEmojiAvatar(fallbackInitial, 79)
 
     const listItemClass = `event-list-item clickable-list-item ${
       ishovered ? "highlighted" : ""
@@ -56,13 +59,7 @@ class ListItem extends Component {
             <div className='distance'>{formatMilesFromLocation(userLocation, address.location.coordinates)}</div>
           )}
         </div>
-        {avatarUrl ? (
-          <img src={avatarUrl} className="events-list-avatar rounded-circle" alt="" />
-        ) : (
-          <div className="events-list-avatar events-list-avatar--placeholder rounded-circle">
-            {fallbackInitial}
-          </div>
-        )}
+        <img src={displayAvatarUrl} className="events-list-avatar rounded-circle" alt="" />
       </ListGroupItem>
     )
   }

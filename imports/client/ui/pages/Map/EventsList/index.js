@@ -7,7 +7,7 @@ import MinimizeButton from './MinimizeButton'
 import EventInfo from './EventInfo'
 
 import { inIFrame } from 'dcs-client'
-import * as Gravatar from '/imports/client/utils/Gravatar'
+import { getFallbackAvatarAsync } from '/imports/client/utils/avatarFallback'
 import { getDiscourseAvatarUrl } from '/imports/client/utils/discourseAvatar'
 
 import './styles.scss'
@@ -70,19 +70,27 @@ class EventsList extends Component {
 
       const username = event.organiser && event.organiser.username
       if (!username) {
-        const fallback = this.getFallbackAvatar(event)
-        this.setAvatarForEvent(event._id, fallback)
+        this.getFallbackAvatar(event).then(fallback => {
+          this.setAvatarForEvent(event._id, fallback)
+        })
         return
       }
 
       this.pendingAvatarLookups.set(event._id, true)
       getDiscourseAvatarUrl(username, 90)
         .then(url => {
-          const resolved = url || this.getFallbackAvatar(event)
-          this.setAvatarForEvent(event._id, resolved)
+          if (url) {
+            this.setAvatarForEvent(event._id, url)
+          } else {
+            return this.getFallbackAvatar(event).then(fallback => {
+              this.setAvatarForEvent(event._id, fallback)
+            })
+          }
         })
         .catch(() => {
-          this.setAvatarForEvent(event._id, this.getFallbackAvatar(event))
+          this.getFallbackAvatar(event).then(fallback => {
+            this.setAvatarForEvent(event._id, fallback)
+          })
         })
         .finally(() => {
           this.pendingAvatarLookups.delete(event._id)
@@ -105,12 +113,8 @@ class EventsList extends Component {
   getFallbackAvatar = (event) => {
     const organiser = event && event.organiser
     const identifier = organiser?.username || organiser?.name || 'user'
-    try {
-      return Gravatar.getGravatar(identifier, 90)
-    } catch (error) {
-      console.warn('[EventsList] Failed to build fallback avatar', error)
-      return ''
-    }
+    // Return a promise that checks Gravatar first, then falls back to Fun Emoji
+    return getFallbackAvatarAsync(identifier, 90)
   }
 
   render () {
