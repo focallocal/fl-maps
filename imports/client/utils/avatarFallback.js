@@ -13,7 +13,10 @@
  */
 
 // Happy/positive mouth expressions only (excludes sad, sick, shout, etc.)
-const HAPPY_MOUTHS = 'cute,kissHeart,lilSmile,ppisoPatty,smileLol,smileTeeth,tongueOut,wideSmile'
+// Valid values from DiceBear fun-emoji docs: cute, drip, faceMask, kissHeart, lilSmile,
+// pissed, plain, sad, shout, shy, sick, smileLol, smileTeeth, tongueOut, wideSmile
+// We keep only clearly positive ones here.
+const HAPPY_MOUTHS = 'cute,kissHeart,lilSmile,smileLol,smileTeeth,tongueOut,wideSmile'
 
 /**
  * Generate a DiceBear Fun Emoji avatar URL

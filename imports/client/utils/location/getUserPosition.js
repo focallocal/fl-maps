@@ -21,6 +21,13 @@ export function getCurrentLocation (context) {
           code 3 - timeout
         */
 
+        if (err.code === 1) {
+          // User explicitly blocked location access - remember this choice
+          try {
+            window.localStorage.setItem('userLocationPermission', 'denied')
+          } catch (e) {}
+        }
+
         if (err.code === 2) { // run only if there's a problem with the browser's ability to get location
           Meteor.call('General.getUserLocation', (err, res) => {
             if (!err) {
@@ -63,14 +70,28 @@ export default function getUserPosition (context) {
     window.__savedUserLocation = undefined
   }
   // Get from cache
-  const savedLocation = sessionStorage.getItem('userLocation')
+  let savedLocation = sessionStorage.getItem('userLocation')
+  if (!savedLocation) {
+    // Also check localStorage so the choice persists across browser sessions
+    try {
+      savedLocation = window.localStorage.getItem('userLocation')
+    } catch (e) {}
+  }
   if (savedLocation) {
     updateState(context, JSON.parse(savedLocation, castToFloat))
   }
 
   // Get location from geolcation api
   if (!context.state.userLocation && !savedLocation && !window.__savedUserLocation) {
-    getCurrentLocation(context)
+    // Respect a previously stored "denied" preference so we don't keep asking
+    let permission = null
+    try {
+      permission = window.localStorage.getItem('userLocationPermission')
+    } catch (e) {}
+
+    if (permission !== 'denied') {
+      getCurrentLocation(context)
+    }
   }
 }
 
@@ -86,7 +107,13 @@ const updateState = (context, latLng) => {
 }
 
 export function storeUserLocation (location) {
-  sessionStorage.setItem('userLocation', JSON.stringify(location))
+  const serialized = JSON.stringify(location)
+  sessionStorage.setItem('userLocation', serialized)
+  try {
+    window.localStorage.setItem('userLocation', serialized)
+    // If we successfully stored a location, we can clear any previous "denied" flag
+    window.localStorage.removeItem('userLocationPermission')
+  } catch (e) {}
   window.__savedUserLocation = location
 }
 
