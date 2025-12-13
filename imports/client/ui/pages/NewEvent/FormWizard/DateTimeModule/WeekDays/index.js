@@ -7,12 +7,9 @@ const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 class WeekDays extends Component {
   render () {
     const {
-      schemaKey,
       selectedDays,
       form
     } = this.props
-
-    console.log('WeekDays render - selectedDays:', selectedDays)
 
     // Get the selected days that have time data
     const selectedDayEntries = selectedDays.filter(entry => entry && entry.day)
@@ -70,12 +67,8 @@ class WeekDays extends Component {
   handleDayChange = (day) => {
     const {
       form,
-      schemaKey,
       selectedDays
     } = this.props
-
-    console.log('handleDayChange called for day:', day)
-    console.log('Current selectedDays:', selectedDays)
 
     const existingIndex = selectedDays.findIndex(entry => entry && entry.day === day)
     let updatedDays
@@ -90,15 +83,15 @@ class WeekDays extends Component {
       updatedDays.sort((a, b) => weekDays.indexOf(a.day) - weekDays.indexOf(b.day))
     }
 
-    console.log('Updated days:', updatedDays)
-    console.log('Calling form.change with schemaKey:', schemaKey)
-    form.change(schemaKey, updatedDays)
+    // Update the entire 'when' object since form.change doesn't handle nested paths
+    const currentWhen = form.getModel().when || {}
+    const updatedWhen = { ...currentWhen, days: updatedDays }
+    form.change('when', updatedWhen)
   }
 
   handleTimeChange = (day, field, value) => {
     const {
       form,
-      schemaKey,
       selectedDays
     } = this.props
 
@@ -109,7 +102,10 @@ class WeekDays extends Component {
       return entry
     })
 
-    form.change(schemaKey, updatedDays)
+    // Update the entire 'when' object since form.change doesn't handle nested paths
+    const currentWhen = form.getModel().when || {}
+    const updatedWhen = { ...currentWhen, days: updatedDays }
+    form.change('when', updatedWhen)
   }
 }
 
