@@ -9,18 +9,23 @@
  * 
  * Uses DiceBear's fun-emoji style: https://www.dicebear.com/styles/fun-emoji/
  * These are fun, colorful emoji-style faces that avoid demographic concerns.
+ * Only happy/positive expressions are used.
  */
+
+// Happy/positive mouth expressions only (excludes sad, sick, shout, etc.)
+const HAPPY_MOUTHS = 'cute,kissHeart,lilSmile,ppisoPatty,smileLol,smileTeeth,tongueOut,wideSmile'
 
 /**
  * Generate a DiceBear Fun Emoji avatar URL
  * Same identifier always generates the same emoji face (deterministic)
+ * Only uses happy/positive expressions
  * @param {string} identifier - Username or any string to seed the avatar
  * @param {number} size - Size in pixels (default 90)
  * @returns {string} URL to the avatar SVG
  */
 export function getFunEmojiAvatar(identifier, size = 90) {
   const seed = (identifier || 'anonymous').toString().trim().toLowerCase()
-  return `https://api.dicebear.com/7.x/fun-emoji/svg?seed=${encodeURIComponent(seed)}&size=${size}`
+  return `https://api.dicebear.com/7.x/fun-emoji/svg?seed=${encodeURIComponent(seed)}&size=${size}&mouth=${HAPPY_MOUTHS}`
 }
 
 /**
