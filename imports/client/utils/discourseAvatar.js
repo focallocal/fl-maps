@@ -9,6 +9,17 @@ function normalizeKey(username = '', size = 50) {
   return `${username.toLowerCase()}|${size}`
 }
 
+/**
+ * Check if the avatar template is a default letter avatar (not a real image)
+ * @param {string} template - The avatar template URL from Discourse
+ * @returns {boolean} True if it's a letter avatar
+ */
+function isLetterAvatar(template) {
+  if (!template) return true
+  // Discourse letter avatars contain 'letter_avatar' in the path
+  return template.includes('letter_avatar')
+}
+
 export function buildAvatarUrl(template, size = 50) {
   if (!template) {
     return null
@@ -49,6 +60,12 @@ export async function getDiscourseAvatarUrl(username, size = 50) {
         }
       })
     })
+
+    // If it's a letter avatar (default), return null so Fun Emoji fallback is used
+    if (isLetterAvatar(template)) {
+      AVATAR_CACHE.set(cacheKey, null)
+      return null
+    }
 
     const resolved = buildAvatarUrl(template, size)
     AVATAR_CACHE.set(cacheKey, resolved)
