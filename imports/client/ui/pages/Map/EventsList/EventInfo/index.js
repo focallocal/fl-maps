@@ -76,9 +76,11 @@ class EventInfo extends Component {
     let categories,
       distance
 
+    let hasDistance = false
     if (event) {
       categories = formatUtils.formatCategories(event.categories)
       distance = formatUtils.formatMilesFromLocation(userLocation, event.address.location.coordinates)
+      hasDistance = !!userLocation
     }
 
     const { avatarUrl } = this.state
@@ -105,7 +107,7 @@ class EventInfo extends Component {
             <div className='organiser-name'>{event.organiser.name}</div>
           )}
           <div className='categories'>{categories}</div>
-          <div className='distance'>{distance}</div>
+          <div className={`distance ${hasDistance ? 'has-distance' : 'permission-needed'}`}>{distance}</div>
           <ButtonGroup className='open-close-btn-group'>
             <Button color='secondary' className='open-btn' onClick={this.openMoreInfo}>{i18n_.openEventDetailsBtn}</Button>
             <Button color='secondary' className='close-btn' onClick={this.props.returnToList}>{i18n_.closeBtn}</Button>

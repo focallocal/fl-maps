@@ -56,7 +56,7 @@ class ListItem extends Component {
           )}
           <div className='categories'>{formatCategories(categories)}</div>
           {!showNextView && (
-            <div className='distance'>{formatMilesFromLocation(userLocation, address.location.coordinates)}</div>
+            <div className={`distance ${userLocation ? 'has-distance' : 'permission-needed'}`}>{formatMilesFromLocation(userLocation, address.location.coordinates)}</div>
           )}
         </div>
         <img src={displayAvatarUrl} className="events-list-avatar rounded-circle" alt="" />

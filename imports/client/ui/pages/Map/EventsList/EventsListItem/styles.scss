@@ -63,6 +63,14 @@
     line-height: 3;
     word-wrap: break-word;
     white-space: normal;
+    
+    &.has-distance {
+      color: #027A48;
+    }
+    
+    &.permission-needed {
+      color: #B54708;
+    }
   }
 
   .go-to {

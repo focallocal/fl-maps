@@ -69,7 +69,8 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }
         </div>
       )}
 
-      <div className="accordion-groups">
+      <div className="category-modal-container">
+        <div className="accordion-groups">
         {filteredGroups.map((group) => (
           <div key={group.name} className="accordion-group">
             <div
@@ -104,6 +105,7 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }
             </Collapse>
           </div>
         ))}
+        </div>
       </div>
     </div>
   );

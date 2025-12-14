@@ -115,7 +115,15 @@
 
     .distance {
       margin-bottom: 12px;
-      font-size: .9em;
+      font-size: .6em;
+      
+      &.has-distance {
+        color: #027A48;
+      }
+      
+      &.permission-needed {
+        color: #B54708;
+      }
     }
   }
 
