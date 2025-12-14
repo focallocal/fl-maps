@@ -40,6 +40,7 @@ class EventsList extends Component {
     // Clear avatar cache to ensure fresh avatars are fetched
     clearAvatarCache()
     this.populateAvatarMap(this.props.events)
+    this.attachWheelListener()
   }
 
   componentDidUpdate (prevProps) {
@@ -51,6 +52,29 @@ class EventsList extends Component {
   componentWillUnmount () {
     this._isMounted = false
     this.pendingAvatarLookups.clear()
+    this.detachWheelListener()
+  }
+
+  // Stop wheel events from propagating to Google Maps (which uses greedy gesture handling)
+  attachWheelListener = () => {
+    const listElement = document.getElementById('events-list')
+    if (listElement && !this.wheelListenerAttached) {
+      listElement.addEventListener('wheel', this.handleWheel, { passive: false })
+      this.wheelListenerAttached = true
+    }
+  }
+
+  detachWheelListener = () => {
+    const listElement = document.getElementById('events-list')
+    if (listElement && this.wheelListenerAttached) {
+      listElement.removeEventListener('wheel', this.handleWheel)
+      this.wheelListenerAttached = false
+    }
+  }
+
+  handleWheel = (e) => {
+    // Stop the event from reaching Google Maps
+    e.stopPropagation()
   }
 
   populateAvatarMap = (events = []) => {

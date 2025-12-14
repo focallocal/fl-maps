@@ -25,6 +25,11 @@ class EventInfo extends Component {
   componentDidMount () {
     this._isMounted = true
     this.resolveAvatar(this.props.event)
+    // Stop wheel events from propagating to Google Maps
+    const eventInfo = document.getElementById('event-info')
+    if (eventInfo) {
+      eventInfo.addEventListener('wheel', this.handleWheel, { passive: false })
+    }
   }
 
   componentDidUpdate (prevProps) {
@@ -38,6 +43,14 @@ class EventInfo extends Component {
 
   componentWillUnmount () {
     this._isMounted = false
+    const eventInfo = document.getElementById('event-info')
+    if (eventInfo) {
+      eventInfo.removeEventListener('wheel', this.handleWheel)
+    }
+  }
+
+  handleWheel = (e) => {
+    e.stopPropagation()
   }
 
   render () {

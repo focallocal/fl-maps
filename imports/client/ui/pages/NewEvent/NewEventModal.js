@@ -67,17 +67,23 @@ class NewEventModal extends Component {
         this.setState({ googleLoaded: true })
       }
     }, 1000) // 1 second
+    
+    // Stop wheel events from propagating to Google Maps
+    this.attachWheelListener()
   }
 
   componentDidUpdate (prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
   delete window['__unfinishedNewEvent']
     }
+    // Re-attach wheel listener when modal opens
+    this.attachWheelListener()
   }
 
   componentWillUnmount () {
     clearInterval(this.interval)
     this.interval = null
+    this.detachWheelListener()
   }
 
   render () {
@@ -265,6 +271,26 @@ class NewEventModal extends Component {
 
   getRef = (form) => {
     this.setState({ form: form })
+  }
+
+  attachWheelListener = () => {
+    const modalBody = this.modalBodyRef.current
+    if (modalBody && !this.wheelListenerAttached) {
+      modalBody.addEventListener('wheel', this.handleWheel, { passive: false })
+      this.wheelListenerAttached = true
+    }
+  }
+
+  detachWheelListener = () => {
+    const modalBody = this.modalBodyRef.current
+    if (modalBody && this.wheelListenerAttached) {
+      modalBody.removeEventListener('wheel', this.handleWheel)
+      this.wheelListenerAttached = false
+    }
+  }
+
+  handleWheel = (e) => {
+    e.stopPropagation()
   }
 }
 

@@ -165,16 +165,14 @@ class Recurring extends Component {
       recurring: { ...currentWhen.recurring, forever: checked }
     }
     
-    // When forever is enabled, set dates to today + 99 years
+    // When forever is enabled, set end date to 99 years and end time to 23:59
     if (checked) {
-      const today = new Date()
-      const todayStr = today.toISOString().slice(0, 10)
-      const future = new Date(today)
+      const future = new Date()
       future.setFullYear(future.getFullYear() + 99)
       const futureStr = future.toISOString().slice(0, 10)
       
-      updatedWhen.startingDate = todayStr
       updatedWhen.endingDate = futureStr
+      updatedWhen.endingTime = '23:59'
     }
     
     this.props.form.change('when', updatedWhen)
