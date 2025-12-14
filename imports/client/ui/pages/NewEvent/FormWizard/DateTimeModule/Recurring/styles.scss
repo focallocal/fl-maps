@@ -1,29 +1,34 @@
 
 #recurring {
+  
+  // Forever checkbox at top
+  > div:first-child {
+    margin-bottom: 8px;
+  }
 
   #recurr-monthly,
   #recurr-yearly {
-    margin: 16px 0;
+    margin: 8px 0;
     
     .form-check {
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
     
     .monthly-position-options,
     .yearly-position-options {
-      margin-top: 12px;
-      padding: 12px;
-      background: #f8f9fa;
-      border-radius: 6px;
+      margin-top: 0;
+      padding: 0;
+      background: transparent;
       
       .position-row {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         flex-wrap: wrap;
         
         span {
           color: #555;
+          font-size: 14px;
         }
         
         .position-select,
@@ -31,25 +36,27 @@
         .month-select {
           width: auto;
           display: inline-block;
+          padding: 4px 8px;
+          height: auto;
         }
         
         .position-select {
-          width: 70px;
+          width: 65px;
         }
         
         .weekday-select {
-          width: 120px;
+          width: 110px;
         }
         
         .month-select {
-          width: 120px;
+          width: 110px;
         }
       }
     }
   }
 
   .inline-inputs {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 
     &.every-type {
 

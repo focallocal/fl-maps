@@ -73,27 +73,28 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 12px;
+    padding: 6px 10px;
     background: #e8f4fd;
-    border-radius: 6px;
-    margin-bottom: 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
 
     .selected-label {
       color: #666;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .selected-name {
-      font-weight: 500;
+      font-weight: normal;
       color: #333;
+      font-size: 14px;
       flex: 1;
     }
 
     .clear-btn {
       background: none;
       border: none;
-      font-size: 18px;
-      color: #666;
+      font-size: 16px;
+      color: #999;
       cursor: pointer;
       padding: 0 4px;
       line-height: 1;
@@ -105,41 +106,35 @@
   }
 
   .accordion-groups {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    overflow: hidden;
+    border: none;
   }
 
   .accordion-group {
-    border-bottom: 1px solid #ddd;
-
-    &:last-child {
-      border-bottom: none;
-    }
+    border: none;
   }
 
   .accordion-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 16px;
-    background: #f8f9fa;
+    padding: 6px 0;
+    background: transparent;
     cursor: pointer;
     user-select: none;
-    transition: background 0.2s;
 
     &:hover {
-      background: #e9ecef;
+      background: transparent;
     }
 
     .group-name {
-      font-weight: 500;
+      font-weight: normal;
       color: #333;
+      font-size: 14px;
     }
 
     .chevron {
       font-size: 10px;
-      color: #666;
+      color: #999;
       transition: transform 0.2s;
 
       &.open {
@@ -149,18 +144,17 @@
   }
 
   .accordion-content {
-    background: #fff;
+    background: transparent;
   }
 
   .category-item {
     display: flex;
     align-items: center;
-    padding: 10px 16px 10px 24px;
+    padding: 6px 0 6px 16px;
     cursor: pointer;
-    transition: background 0.15s;
 
     &:hover {
-      background: #f0f7ff;
+      background: #f5f5f5;
     }
 
     &.selected {
@@ -178,6 +172,7 @@
     .category-name {
       color: #333;
       font-size: 14px;
+      font-weight: normal;
     }
   }
 }

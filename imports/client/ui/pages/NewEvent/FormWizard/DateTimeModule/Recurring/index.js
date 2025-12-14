@@ -38,6 +38,15 @@ class Recurring extends Component {
 
     return (
       <div id='recurring'>
+        {/* Repeat forever toggle at top for form type 1 */}
+        {this.props.formType === 1 && (
+          <CheckBox
+            id='forever'
+            label='Repeat forever'
+            checked={forever}
+          />
+        )}
+
         <div className='every-type inline-inputs hide-labels'>
           <span>Repeat every</span>
           <div>
@@ -90,15 +99,6 @@ class Recurring extends Component {
             yearly={recurring.yearly}
           />
         }
-
-        {/* Only show forever toggle for form type 1 */}
-        {this.props.formType === 1 && (
-          <CheckBox
-            id='forever'
-            label='Repeat forever'
-            checked={forever}
-          />
-        )}
 
         {!forever && this.props.formType === 1 && (
           <div className='occurences-until inline-inputs hide-labels'>

@@ -51,9 +51,9 @@
     ]
   },
   {
-    "name": "Suggest Something New",
+    "name": "Testing Something New",
     "categories": [
-      { "name" : "Suggest a New Gathering", "color" : "#e5a20b", "url": "https://publichappinessmovement.com/c/suggested-activities/activitysuggestions"}
+      { "name" : "Testing a New Gathering", "color" : "#e5a20b", "url": "https://publichappinessmovement.com/c/suggested-activities/activitysuggestions"}
     ]
   }
 ]
