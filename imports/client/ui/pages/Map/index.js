@@ -258,6 +258,7 @@ class MapComponent_ extends Component {
             <Fragment>
               <Input id='google-maps-searchbox' type="text" placeholder="Search" />
               <SearchButtons
+                goToMyLocation={this.goToMyLocation}
                 toggleFilters={this.toggleFiltersList}
                 toggleNextView={this.toggleNextView}
                 showNextView={this.state.showNextView}
@@ -512,6 +513,75 @@ class MapComponent_ extends Component {
       this.setState({ zoom: 3 })
     }
     this.removeCurrentEvent()
+  }
+
+  // Go to user's current location - prompts for permission if not granted
+  goToMyLocation = () => {
+    if (!navigator.geolocation) {
+      this.setError('Geolocation is not supported by your browser')
+      return
+    }
+
+    // Show loading state
+    this.setState({ isFetching: true })
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const userLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }
+
+        // Store in localStorage so future visits remember the location
+        try {
+          window.localStorage.setItem('userLocation', JSON.stringify(userLocation))
+          // Clear any 'denied' flag since user just granted permission
+          window.localStorage.removeItem('userLocationPermission')
+        } catch (e) {
+          console.warn('Could not save location to localStorage:', e)
+        }
+
+        // Update state and pan map to location
+        this.setState({
+          userLocation,
+          center: userLocation,
+          zoom: 12,
+          isFetching: false
+        })
+
+        // Pan the map to the new location
+        if (this.map) {
+          this.map.panTo(userLocation)
+        }
+
+        // Load events for this location
+        this.debouncedGetEvents(userLocation)
+      },
+      (error) => {
+        this.setState({ isFetching: false })
+        
+        // Store denied flag so we don't keep prompting
+        if (error.code === error.PERMISSION_DENIED) {
+          try {
+            window.localStorage.setItem('userLocationPermission', 'denied')
+          } catch (e) {
+            console.warn('Could not save permission state:', e)
+          }
+          this.setError('Location permission denied. Please enable it in your browser settings.')
+        } else if (error.code === error.POSITION_UNAVAILABLE) {
+          this.setError('Location information is unavailable.')
+        } else if (error.code === error.TIMEOUT) {
+          this.setError('Location request timed out.')
+        } else {
+          this.setError('Could not get your location.')
+        }
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 60000 // Cache for 1 minute
+      }
+    )
   }
 
   setError = (msg) => {

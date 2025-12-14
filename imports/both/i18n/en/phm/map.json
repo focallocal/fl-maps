@@ -10,6 +10,7 @@
   "printBtn": "Print",
   "hidePastBtn": "Hide Past",
   "showPastBtn": "Show Past",
+  "myLocationBtn": "My Location",
   "searchPlaceholder": "Search",
   "loading": "looking for events near you...",
   "noResults": "Sorry, we could not find anything around you...",

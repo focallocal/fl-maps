@@ -22,6 +22,23 @@
     }
   }
   
+  .my-location-btn {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 5px 8px;
+    
+    i {
+      margin-right: 0;
+      font-size: 1em;
+    }
+    
+    &:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+  }
+  
   .next-btn {
     background-color: #28a745;
     border-color: #28a745;
