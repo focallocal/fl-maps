@@ -159,20 +159,12 @@ class Recurring extends Component {
 
   handleCheckbox = (checked) => {
     // Update the entire 'when' object since form.change doesn't handle nested paths
+    // This only toggles the recurrence forever flag - it means "repeat indefinitely"
+    // NOT the same as the 99-year permanent marker for forms 2/3
     const currentWhen = this.props.form.getModel().when || {}
-    let updatedWhen = { 
+    const updatedWhen = { 
       ...currentWhen, 
       recurring: { ...currentWhen.recurring, forever: checked }
-    }
-    
-    // When forever is enabled, set end date to 99 years and end time to 23:59
-    if (checked) {
-      const future = new Date()
-      future.setFullYear(future.getFullYear() + 99)
-      const futureStr = future.toISOString().slice(0, 10)
-      
-      updatedWhen.endingDate = futureStr
-      updatedWhen.endingTime = '23:59'
     }
     
     this.props.form.change('when', updatedWhen)

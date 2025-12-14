@@ -120,7 +120,7 @@ class FormWizard extends Component {
         startingDate: isForeverForm ? todayStr : null,
         endingDate: isForeverForm ? futureStr : null,
         startingTime: getHour(),
-        endingTime: getHour(3),
+        endingTime: isForeverForm ? '23:59' : getHour(3),
         recurring: { forever: isForeverForm },
         repeat: false
       }

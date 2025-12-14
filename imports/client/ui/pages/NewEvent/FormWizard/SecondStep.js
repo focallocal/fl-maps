@@ -92,7 +92,6 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
 
   const formData = form?.getModel?.() || {}
   const { days, multipleDays, repeat } = formData.when || {}
-  const forever = formData.when?.recurring?.forever || false
 
   const startingDateValue = formatDateInput(formData.when?.startingDate)
   const endingDateValue = formatDateInput(formData.when?.endingDate)
@@ -179,7 +178,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
               )}
             </Col>
             <Col className='date-hours-coupled'>
-              {(!repeat && !openEndDate && !forever) && (
+              {(!repeat && !openEndDate) && (
                 <FormGroup>
                   <Label for="endingDate">{labels.active_until || 'Ending Date'}</Label>
                   <Input
@@ -197,7 +196,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
                   />
                 </FormGroup>
               )}
-              {(!multipleDays && !openEndDate && !forever) && (
+              {(!multipleDays && !openEndDate) && (
                 <FormGroup>
                   <Label for="endingTime">{labels.active_until ? `${labels.active_until} Time` : 'Ending Time'}</Label>
                   <Input
