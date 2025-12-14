@@ -7,6 +7,7 @@ import { MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerC
 import { StandaloneSearchBox } from 'react-google-maps/lib/components/places/StandaloneSearchBox'
 import { Link } from 'react-router-dom'
 import { Alert, Button, Input } from 'reactstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // Components and Pages
 import FiltersList from './EventsFilter'
@@ -264,7 +265,7 @@ class MapComponent_ extends Component {
                   title={i18n.Map.myLocationBtn}
                   type='button'
                 >
-                  <i className='fa fa-location-arrow' />
+                  <FontAwesomeIcon icon="fas fa-location-arrow" />
                 </button>
               </div>
               <SearchButtons
