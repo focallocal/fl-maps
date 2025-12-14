@@ -505,7 +505,12 @@ class MapComponent_ extends Component {
   }
 
   returnToDefaultAfterPageClose = () => {
-    getUserPosition(this)
+    // Only call getUserPosition if we don't already have a valid center from previousStateOfMap
+    // The previousStateOfMap.center is set by closePage() in Page component with the event's location
+    if (!window.previousStateOfMap?.center) {
+      // Fallback: keep the default center at initial zoom level 3
+      this.setState({ zoom: 3 })
+    }
     this.removeCurrentEvent()
   }
 

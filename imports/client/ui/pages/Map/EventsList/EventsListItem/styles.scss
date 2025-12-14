@@ -36,7 +36,7 @@
     }
   }
 
-  .name, .categories, .distance, .next-date {
+  .name, .categories, .next-date {
     word-wrap: break-word;
     white-space: nowrap;
     overflow: hidden;
@@ -59,7 +59,9 @@
   }
 
   .distance {
-    font-size: .8em
+    font-size: .8em;
+    word-wrap: break-word;
+    white-space: normal;
   }
 
   .go-to {

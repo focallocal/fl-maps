@@ -128,6 +128,22 @@ class CongratsModal extends Component {
     const { event } = this.state
     if (!event || !event._id) return
 
+    // Save event location to previousStateOfMap so map returns to this location
+    const coordinates = event?.address?.location?.coordinates
+    if (Array.isArray(coordinates) && coordinates.length === 2) {
+      const [lng, lat] = coordinates
+      if (typeof lat === 'number' && typeof lng === 'number') {
+        const center = { lat, lng }
+        window.previousStateOfMap = {
+          ...(window.previousStateOfMap || {}),
+          center,
+          zoom: 11,
+          userLocation: center
+        }
+        window.__savedUserLocation = center
+      }
+    }
+
     const isInIframe = window.self !== window.top
 
     if (!isInIframe) {
