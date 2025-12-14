@@ -24,10 +24,32 @@
     position: relative;
     padding: 20px;
 
-    #google-maps-searchbox {
+    .search-input-wrapper {
       position: relative;
-      right: 2px;
-      height: 48px;
+      display: flex;
+      align-items: center;
+      
+      #google-maps-searchbox {
+        position: relative;
+        right: 2px;
+        height: 48px;
+        padding-right: 35px; // Make room for location icon
+      }
+      
+      .search-location-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #007bff;
+        font-size: 1.1em;
+        cursor: pointer;
+        z-index: 10;
+        
+        &:hover {
+          color: #0056b3;
+        }
+      }
     }
   }
 

@@ -9,13 +9,6 @@ class SearchButtons extends Component {
     const labels = i18n.Map
     return (
       <div className='buttons'>
-        <Button 
-          className='my-location-btn'
-          onClick={this.props.goToMyLocation}
-          title={labels.myLocationBtn}
-        >
-          <i className='fa fa-location-arrow' />
-        </Button>
         <Button onClick={this.props.toggleFilters}>
           <i className='fa fa-filter' />
           {labels.filterBtn}
@@ -52,7 +45,6 @@ class SearchButtons extends Component {
 }
 
 SearchButtons.propTypes = {
-  goToMyLocation: PropTypes.func.isRequired,
   toggleFilters: PropTypes.func.isRequired,
   toggleNextView: PropTypes.func.isRequired,
   showNextView: PropTypes.bool,

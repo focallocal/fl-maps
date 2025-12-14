@@ -256,9 +256,15 @@ class MapComponent_ extends Component {
             onPlacesChanged={this.handlePlaces}
           >
             <Fragment>
-              <Input id='google-maps-searchbox' type="text" placeholder="Search" />
+              <div className='search-input-wrapper'>
+                <Input id='google-maps-searchbox' type="text" placeholder="Search" />
+                <i 
+                  className='fa fa-location-arrow search-location-icon' 
+                  onClick={this.goToMyLocation}
+                  title={i18n.Map.myLocationBtn}
+                />
+              </div>
               <SearchButtons
-                goToMyLocation={this.goToMyLocation}
                 toggleFilters={this.toggleFiltersList}
                 toggleNextView={this.toggleNextView}
                 showNextView={this.state.showNextView}
