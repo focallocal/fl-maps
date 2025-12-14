@@ -274,17 +274,17 @@ class NewEventModal extends Component {
   }
 
   attachWheelListener = () => {
-    const modalBody = this.modalBodyRef.current
-    if (modalBody && !this.wheelListenerAttached) {
-      modalBody.addEventListener('wheel', this.handleWheel, { passive: false })
+    const modal = document.getElementById('new-event-modal')
+    if (modal && !this.wheelListenerAttached) {
+      modal.addEventListener('wheel', this.handleWheel, { passive: false })
       this.wheelListenerAttached = true
     }
   }
 
   detachWheelListener = () => {
-    const modalBody = this.modalBodyRef.current
-    if (modalBody && this.wheelListenerAttached) {
-      modalBody.removeEventListener('wheel', this.handleWheel)
+    const modal = document.getElementById('new-event-modal')
+    if (modal && this.wheelListenerAttached) {
+      modal.removeEventListener('wheel', this.handleWheel)
       this.wheelListenerAttached = false
     }
   }

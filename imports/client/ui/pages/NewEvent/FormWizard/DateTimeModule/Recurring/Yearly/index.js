@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { Input, Label, FormGroup } from 'reactstrap'
-import { determinePosition } from '/imports/both/collections/events/helpers'
 
 const weekdaysMap = {
   0: 'Sunday',
@@ -13,6 +12,21 @@ const weekdaysMap = {
   6: 'Saturday'
 }
 
+const monthsMap = {
+  0: 'January',
+  1: 'February',
+  2: 'March',
+  3: 'April',
+  4: 'May',
+  5: 'June',
+  6: 'July',
+  7: 'August',
+  8: 'September',
+  9: 'October',
+  10: 'November',
+  11: 'December'
+}
+
 const positionLabels = ['1st', '2nd', '3rd', '4th', '5th']
 
 function toDate(input) {
@@ -22,25 +36,31 @@ function toDate(input) {
   return isNaN(d.getTime()) ? null : d
 }
 
-export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
+function formatMonthDay(date) {
+  if (!date) return ''
+  const month = monthsMap[date.getMonth()]
+  const day = date.getDate()
+  return `${month} ${day}`
+}
+
+export default function RecurrYearly({ form, startingDate, yearly = {} }) {
   const date = useMemo(() => toDate(startingDate), [startingDate])
-  const dayInMonth = date?.getDate() ?? 1
-  const positionFromDate = determinePosition(dayInMonth)
-  const weekdayFromDate = date?.getDay() ?? 5
 
-  const [selectedType, setSelectedType] = useState(monthly.type || 'byDayInMonth')
-  const [selectedWeekday, setSelectedWeekday] = useState(monthly.weekday ?? weekdayFromDate)
-  const [selectedPosition, setSelectedPosition] = useState(monthly.position ?? 1)
+  const [selectedType, setSelectedType] = useState(yearly.type || 'byDate')
+  const [selectedMonth, setSelectedMonth] = useState(yearly.month ?? date?.getMonth() ?? 0)
+  const [selectedWeekday, setSelectedWeekday] = useState(yearly.weekday ?? date?.getDay() ?? 5)
+  const [selectedPosition, setSelectedPosition] = useState(yearly.position ?? 1)
 
-  // If `monthly` changes from outside (form reset or prefill)
+  // If `yearly` changes from outside (form reset or prefill)
   useEffect(() => {
-    if (monthly?.type) setSelectedType(monthly.type)
-    if (monthly?.weekday !== undefined) setSelectedWeekday(monthly.weekday)
-    if (monthly?.position !== undefined) setSelectedPosition(monthly.position)
-  }, [monthly])
+    if (yearly?.type) setSelectedType(yearly.type)
+    if (yearly?.month !== undefined) setSelectedMonth(yearly.month)
+    if (yearly?.weekday !== undefined) setSelectedWeekday(yearly.weekday)
+    if (yearly?.position !== undefined) setSelectedPosition(yearly.position)
+  }, [yearly])
 
-  // Helper to update when.recurring.monthly properly
-  const updateMonthly = (monthlyData) => {
+  // Helper to update when.recurring.yearly properly
+  const updateYearly = (yearlyData) => {
     if (typeof form?.change === 'function') {
       const model = form.getModel ? form.getModel() : {}
       const when = model.when || {}
@@ -49,7 +69,7 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
         ...when,
         recurring: {
           ...recurring,
-          monthly: monthlyData
+          yearly: yearlyData
         }
       }
       form.change('when', updatedWhen)
@@ -60,25 +80,39 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
     const type = e.target.value
     setSelectedType(type)
     
-    if (type === 'byDayInMonth') {
-      updateMonthly({
-        type: 'byDayInMonth',
-        value: dayInMonth
+    if (type === 'byDate') {
+      updateYearly({
+        type: 'byDate',
+        month: date?.getMonth() ?? 0,
+        day: date?.getDate() ?? 1
       })
     } else {
-      updateMonthly({
+      updateYearly({
         type: 'byPosition',
+        month: selectedMonth,
         weekday: selectedWeekday,
         position: selectedPosition
       })
     }
   }
 
+  const handleMonthChange = (e) => {
+    const month = parseInt(e.target.value)
+    setSelectedMonth(month)
+    updateYearly({
+      type: 'byPosition',
+      month,
+      weekday: selectedWeekday,
+      position: selectedPosition
+    })
+  }
+
   const handleWeekdayChange = (e) => {
     const weekday = parseInt(e.target.value)
     setSelectedWeekday(weekday)
-    updateMonthly({
+    updateYearly({
       type: 'byPosition',
+      month: selectedMonth,
       weekday,
       position: selectedPosition
     })
@@ -87,26 +121,27 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
   const handlePositionChange = (e) => {
     const position = parseInt(e.target.value)
     setSelectedPosition(position)
-    updateMonthly({
+    updateYearly({
       type: 'byPosition',
+      month: selectedMonth,
       weekday: selectedWeekday,
       position
     })
   }
 
   return (
-    <div id='recurr-monthly'>
+    <div id='recurr-yearly'>
       <FormGroup tag="fieldset">
         <FormGroup check>
           <Label check>
             <Input
               type='radio'
-              name='monthlyType'
-              value='byDayInMonth'
-              checked={selectedType === 'byDayInMonth'}
+              name='yearlyType'
+              value='byDate'
+              checked={selectedType === 'byDate'}
               onChange={handleTypeChange}
             />{' '}
-            On day {dayInMonth} of the month
+            On {formatMonthDay(date) || 'same date'} each year
           </Label>
         </FormGroup>
         
@@ -114,18 +149,18 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
           <Label check>
             <Input
               type='radio'
-              name='monthlyType'
+              name='yearlyType'
               value='byPosition'
               checked={selectedType === 'byPosition'}
               onChange={handleTypeChange}
             />{' '}
-            On a specific weekday each month
+            On a specific weekday each year
           </Label>
         </FormGroup>
       </FormGroup>
 
       {selectedType === 'byPosition' && (
-        <div className='monthly-position-options'>
+        <div className='yearly-position-options'>
           <div className='position-row'>
             <span>The</span>
             <Input
@@ -150,7 +185,18 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
               ))}
             </Input>
             
-            <span>of each month</span>
+            <span>of</span>
+            
+            <Input
+              type='select'
+              value={selectedMonth}
+              onChange={handleMonthChange}
+              className='month-select'
+            >
+              {Object.entries(monthsMap).map(([value, label]) => (
+                <option key={value} value={value}>{label}</option>
+              ))}
+            </Input>
           </div>
         </div>
       )}
@@ -158,12 +204,12 @@ export default function RecurrMonthly({ form, startingDate, monthly = {} }) {
   )
 }
 
-RecurrMonthly.propTypes = {
+RecurrYearly.propTypes = {
   form: PropTypes.object.isRequired,
   startingDate: PropTypes.oneOfType([
     PropTypes.instanceOf(Date),
     PropTypes.string,
     PropTypes.number
   ]).isRequired,
-  monthly: PropTypes.object
+  yearly: PropTypes.object
 }

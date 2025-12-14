@@ -1,10 +1,51 @@
 
 #recurring {
 
-
-  #recurr-monthly {
-    width: 290px;
+  #recurr-monthly,
+  #recurr-yearly {
     margin: 16px 0;
+    
+    .form-check {
+      margin-bottom: 8px;
+    }
+    
+    .monthly-position-options,
+    .yearly-position-options {
+      margin-top: 12px;
+      padding: 12px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      
+      .position-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        
+        span {
+          color: #555;
+        }
+        
+        .position-select,
+        .weekday-select,
+        .month-select {
+          width: auto;
+          display: inline-block;
+        }
+        
+        .position-select {
+          width: 70px;
+        }
+        
+        .weekday-select {
+          width: 120px;
+        }
+        
+        .month-select {
+          width: 120px;
+        }
+      }
+    }
   }
 
   .inline-inputs {

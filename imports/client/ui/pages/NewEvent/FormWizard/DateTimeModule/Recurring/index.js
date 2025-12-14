@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React, { Component, Fragment } from 'react'
 import { Input } from 'reactstrap'
 import Monthly from './Monthly'
+import Yearly from './Yearly'
 import './styles.scss'
 import Weekly from './Weekly'
 
@@ -56,6 +57,7 @@ class Recurring extends Component {
               <option value="day">Day</option>
               <option value="week">Week</option>
               <option value="month">Month</option>
+              <option value="year">Year</option>
             </Input>
           </div>
         </div>
@@ -78,6 +80,14 @@ class Recurring extends Component {
             form={form}
             startingDate={startingDate}
             monthly={monthly}
+          />
+        }
+
+        {this.state.recurringType === 'year' &&
+          <Yearly
+            form={form}
+            startingDate={startingDate}
+            yearly={recurring.yearly}
           />
         }
 

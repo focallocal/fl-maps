@@ -196,7 +196,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
                   />
                 </FormGroup>
               )}
-              {(!multipleDays && !openEndDate) && (
+              {(!multipleDays && !openEndDate && !repeat) && (
                 <FormGroup>
                   <Label for="endingTime">{labels.active_until ? `${labels.active_until} Time` : 'Ending Time'}</Label>
                   <Input

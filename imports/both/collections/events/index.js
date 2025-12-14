@@ -346,7 +346,7 @@ const EventsSchema = new SimpleSchema({
   'when.recurring.type': {
     optional: true,
     type: String,
-    allowedValues: ['day', 'week', 'month'],
+    allowedValues: ['day', 'week', 'month', 'year'],
     defaultValue: 'day',
     uniforms: {
       customType: 'select',
@@ -354,7 +354,8 @@ const EventsSchema = new SimpleSchema({
         labelMapper: {
           'day': 'day(s)',
           'week': 'week(s)',
-          'month': 'month(s)'
+          'month': 'month(s)',
+          'year': 'year(s)'
         }
       }
     }
@@ -424,6 +425,52 @@ const EventsSchema = new SimpleSchema({
     type: Array
   },
   'when.recurring.monthly.positions.$': {
+    type: Number,
+    min: 1,
+    max: 5
+  },
+  'when.recurring.monthly.position': {
+    optional: true,
+    type: Number,
+    min: 1,
+    max: 5
+  },
+  'when.recurring.yearly': {
+    type: Object,
+    optional: true,
+    autoValue: function () {
+      if (this.siblingField('type').value === 'year') {
+        return this.value || {}
+      } else {
+        return null
+      }
+    }
+  },
+  'when.recurring.yearly.type': {
+    type: String,
+    optional: true,
+    allowedValues: ['byDate', 'byPosition']
+  },
+  'when.recurring.yearly.month': {
+    optional: true,
+    type: Number,
+    min: 0,
+    max: 11
+  },
+  'when.recurring.yearly.day': {
+    optional: true,
+    type: Number,
+    min: 1,
+    max: 31
+  },
+  'when.recurring.yearly.weekday': {
+    optional: true,
+    type: Number,
+    min: 0,
+    max: 6
+  },
+  'when.recurring.yearly.position': {
+    optional: true,
     type: Number,
     min: 1,
     max: 5

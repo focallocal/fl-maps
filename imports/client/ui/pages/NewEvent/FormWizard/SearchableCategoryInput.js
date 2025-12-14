@@ -1,74 +1,108 @@
-import React from 'react';
-import Select from 'react-select';
-import { Label } from 'reactstrap';
+import React, { useState } from 'react';
+import { Label, Collapse } from 'reactstrap';
 
-const flattenCategories = (groups) => {
-  return groups.flatMap(group =>
-    group.categories.map(category => ({
-      name: category.name,
-      value: category.name,
-      group: group.name,
-      color: category.color,
-      url: category.url,
-    }))
-  );
-};
+// Categories to hide from Form 1
+const HIDDEN_CATEGORIES = [
+  'Positive People Nearby',
+  'Random Acts of Kindness Communities'
+];
 
 const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }) => {
-  const options = flattenCategories(groupedCategories);
+  const [openGroups, setOpenGroups] = useState({});
 
-  const resolveSelectedOption = () => {
-    if (!value) {
-      return null
+  // Filter out hidden categories from each group
+  const filteredGroups = groupedCategories
+    .map(group => ({
+      ...group,
+      categories: group.categories.filter(
+        cat => !HIDDEN_CATEGORIES.includes(cat.name)
+      )
+    }))
+    .filter(group => group.categories.length > 0); // Remove empty groups
+
+  const toggleGroup = (groupName) => {
+    setOpenGroups(prev => ({
+      ...prev,
+      [groupName]: !prev[groupName]
+    }));
+  };
+
+  const resolveSelectedName = () => {
+    if (!value) return null;
+    if (Array.isArray(value)) {
+      return value[0]?.name || value[0] || null;
     }
+    return typeof value === 'string' ? value : value?.name || null;
+  };
 
-    const categoryName = Array.isArray(value)
-      ? (value[0]?.name || value[0])
-      : (typeof value === 'string' ? value : value?.name)
+  const selectedName = resolveSelectedName();
 
-    if (!categoryName) {
-      return null
-    }
-
-    return options.find(option => option.name === categoryName) || null
-  }
-
-  const selectedOption = resolveSelectedOption()
+  const handleCategoryClick = (category) => {
+    // Mimic react-select's onChange format
+    handleInputChange({
+      name: category.name,
+      value: category.name,
+      color: category.color,
+      url: category.url
+    });
+  };
 
   return (
-    <>
+    <div className="category-accordion">
       <Label for="categories">Categories</Label>
-      <Select
-        inputId="categories"
-        name="categories"
-        id="categories"
-        className="categories-select"
-        options={options}
-        maxMenuHeight={205}
-        menuPlacement="auto"
-        formatOptionLabel={(e) => {
-          return (
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span
-                style={{
-                  backgroundColor: e.color,
-                  borderRadius: '50%',
-                  width: 10,
-                  height: 10,
-                  display: 'inline-block',
-                  marginRight: 8
-                }}>
-              </span>
-              {e.name}
+      
+      {selectedName && (
+        <div className="selected-category">
+          <span className="selected-label">Selected:</span>
+          <span className="selected-name">{selectedName}</span>
+          <button
+            type="button"
+            className="clear-btn"
+            onClick={() => handleInputChange(null)}
+            aria-label="Clear selection"
+          >
+            ×
+          </button>
+        </div>
+      )}
+
+      <div className="accordion-groups">
+        {filteredGroups.map((group) => (
+          <div key={group.name} className="accordion-group">
+            <div
+              className="accordion-header"
+              onClick={() => toggleGroup(group.name)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && toggleGroup(group.name)}
+            >
+              <span className="group-name">{group.name}</span>
+              <span className={`chevron ${openGroups[group.name] ? 'open' : ''}`}>▶</span>
             </div>
-          )
-        }}
-        onChange={handleInputChange}
-        placeholder="Search or select a category..."
-        isClearable
-        value={selectedOption}
-      />
-    </>
+            <Collapse isOpen={openGroups[group.name]}>
+              <div className="accordion-content">
+                {group.categories.map((category) => (
+                  <div
+                    key={category.name}
+                    className={`category-item ${selectedName === category.name ? 'selected' : ''}`}
+                    onClick={() => handleCategoryClick(category)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && handleCategoryClick(category)}
+                  >
+                    <span
+                      className="color-dot"
+                      style={{ backgroundColor: category.color }}
+                    />
+                    <span className="category-name">{category.name}</span>
+                  </div>
+                ))}
+              </div>
+            </Collapse>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

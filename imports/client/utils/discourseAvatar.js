@@ -2,6 +2,17 @@ import { Meteor } from 'meteor/meteor'
 import { getDiscourseOrigin as getSharedDiscourseOrigin } from '/imports/both/utils/discourse'
 
 const AVATAR_CACHE = new Map()
+let hasCheckedThisVisit = false
+
+// Clear cache once per page visit to check for updates
+if (typeof window !== 'undefined') {
+  window.addEventListener('load', () => {
+    if (!hasCheckedThisVisit) {
+      AVATAR_CACHE.clear()
+      hasCheckedThisVisit = true
+    }
+  }, { once: true })
+}
 
 export const getDiscourseOrigin = getSharedDiscourseOrigin
 
