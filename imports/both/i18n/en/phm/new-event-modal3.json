@@ -14,8 +14,8 @@
   "active_from": "Starts",
   "active_until": "Finishes",
   "recurrence": {
-    "thirdRadio": "Specific days of each week",
-    "fourthRadio": "Other options for repeating"
+    "thirdRadio": "Common activity times (weekly)",
+    "fourthRadio": "Common activity times (monthly/yearly)"
   },
   "video": {
     "title": {

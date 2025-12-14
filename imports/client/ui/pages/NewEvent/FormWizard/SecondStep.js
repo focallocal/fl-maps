@@ -142,6 +142,8 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
         )}
       </div>
 
+      {/* Only show date/time inputs for form type 1 */}
+      {formType === 1 && (
       <div className='dates-hours inline-inputs hide-labels'>
         <div>
           <Row>
@@ -232,6 +234,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
           </Row>
         </div>
       </div>
+      )}
 
       {RadioButton && (
         <RadioButton
@@ -269,7 +272,7 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
         }}
       />
 
-      {repeat && <Recurring form={form} />}
+      {repeat && <Recurring form={form} formType={formType} />}
 
       {/*
       {repeat && (

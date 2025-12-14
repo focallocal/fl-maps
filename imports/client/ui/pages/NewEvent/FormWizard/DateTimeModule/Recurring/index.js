@@ -81,13 +81,16 @@ class Recurring extends Component {
           />
         }
 
-        <CheckBox
-          id='forever'
-          label='Repeat forever'
-          checked={forever}
-        />
+        {/* Only show forever toggle for form type 1 */}
+        {this.props.formType === 1 && (
+          <CheckBox
+            id='forever'
+            label='Repeat forever'
+            checked={forever}
+          />
+        )}
 
-        {!forever && (
+        {!forever && this.props.formType === 1 && (
           <div className='occurences-until inline-inputs hide-labels'>
             <div>
               <span>Repeat for</span>
@@ -157,10 +160,23 @@ class Recurring extends Component {
   handleCheckbox = (checked) => {
     // Update the entire 'when' object since form.change doesn't handle nested paths
     const currentWhen = this.props.form.getModel().when || {}
-    const updatedWhen = { 
+    let updatedWhen = { 
       ...currentWhen, 
       recurring: { ...currentWhen.recurring, forever: checked }
     }
+    
+    // When forever is enabled, set dates to today + 99 years
+    if (checked) {
+      const today = new Date()
+      const todayStr = today.toISOString().slice(0, 10)
+      const future = new Date(today)
+      future.setFullYear(future.getFullYear() + 99)
+      const futureStr = future.toISOString().slice(0, 10)
+      
+      updatedWhen.startingDate = todayStr
+      updatedWhen.endingDate = futureStr
+    }
+    
     this.props.form.change('when', updatedWhen)
   }
 
@@ -184,7 +200,12 @@ class Recurring extends Component {
 }
 
 Recurring.propTypes = {
-  form: PropTypes.object.isRequired
+  form: PropTypes.object.isRequired,
+  formType: PropTypes.number
+}
+
+Recurring.defaultProps = {
+  formType: 1
 }
 
 export default Recurring

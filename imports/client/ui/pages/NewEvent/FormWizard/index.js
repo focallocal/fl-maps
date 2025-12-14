@@ -105,10 +105,23 @@ class FormWizard extends Component {
       initialObject = cloneDeep(window['__unfinishedNewEvent'])
     } else {
       initialObject = EventsSchema.clean({}, { mutate: true }) // get default values
+      
+      // Get today's date and 99 years from now for "forever" events
+      const today = new Date()
+      const todayStr = today.toISOString().slice(0, 10)
+      const future = new Date(today)
+      future.setFullYear(future.getFullYear() + 99)
+      const futureStr = future.toISOString().slice(0, 10)
+      
+      // For forms 2 and 3, auto-set forever with date range (hidden from user)
+      const isForeverForm = this.props.formType === 2 || this.props.formType === 3
+      
       initialObject.when = {
+        startingDate: isForeverForm ? todayStr : null,
+        endingDate: isForeverForm ? futureStr : null,
         startingTime: getHour(),
         endingTime: getHour(3),
-        recurring: { forever: true },
+        recurring: { forever: isForeverForm },
         repeat: false
       }
     }
