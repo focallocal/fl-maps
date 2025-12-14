@@ -27,21 +27,18 @@
     .search-input-wrapper {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       
       #google-maps-searchbox {
         flex: 1;
-        height: 48px;
       }
       
       .my-location-btn {
-        width: 48px;
-        height: 48px;
+        padding: 6px 10px;
         border: 1px solid #ced4da;
         border-radius: 4px;
         background-color: #fff;
         color: #007bff;
-        font-size: 1.1em;
         cursor: pointer;
         display: flex;
         align-items: center;
