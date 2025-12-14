@@ -258,11 +258,14 @@ class MapComponent_ extends Component {
             <Fragment>
               <div className='search-input-wrapper'>
                 <Input id='google-maps-searchbox' type="text" placeholder="Search" />
-                <i 
-                  className='fa fa-location-arrow search-location-icon' 
+                <button 
+                  className='my-location-btn' 
                   onClick={this.goToMyLocation}
                   title={i18n.Map.myLocationBtn}
-                />
+                  type='button'
+                >
+                  <i className='fa fa-location-arrow' />
+                </button>
               </div>
               <SearchButtons
                 toggleFilters={this.toggleFiltersList}

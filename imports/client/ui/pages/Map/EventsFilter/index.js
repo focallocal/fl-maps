@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ListGroup, ListGroupItem, Input, Label } from 'reactstrap'
+import { Modal, ModalHeader, ModalBody, ListGroup, ListGroupItem, Input, Label } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-// import categoryTree from '/imports/both/i18n/en/categories.json'
 
 import './styles.scss'
 import i18n from '/imports/both/i18n/en'
@@ -13,7 +11,7 @@ let categoryTree = i18n.Categories
 // categoryTree includes parent-child level categories, following operation build an all-child array of sub-categories
 // the last function elem.categories.map(...) adds an additional 'hidden' field to each subscategory for UI purposes
 let possibleCategories = categoryTree.reduce((tot, elem) => {
-  return tot.concat([{ name: elem.name, parent: true }].concat(elem.categories.map(category => {
+  return tot.concat([{ name: elem.name, parent: true, color: elem.color }].concat(elem.categories.map(category => {
     category.hidden = true
     return category
   })))
@@ -30,7 +28,6 @@ class FiltersList extends Component {
       elem.checked = false // all unchecked by default
       return elem
     })
-    // checkedFilters: Array(possibleCategories.length).fill(true) // all checked by default
   }
 
   render () {
@@ -45,58 +42,62 @@ class FiltersList extends Component {
     } = this.props
 
     return (
-      <div id='filters-list' className={show ? 'show' : ''}>
-        <ListGroup>
-          <ListGroupItem className='title'>
-            {/* <i className='fa fa-times close' onClick={toggleFiltersList}/> */}
-            <FontAwesomeIcon icon="fas fa-times" className='close' onClick={toggleFiltersList} />
-            <Input
-              id="toggle-all"
-              name="check"
-              type="checkbox"
-              checked={checkAll}
-              onChange={this.toggleAllFilters}
-            />
-            <Label for="toggle-all" className="label"><span>{i18n.Map.filtersTitle}</span></Label>
-          </ListGroupItem>
-          <div className='categories-items'>
+      <Modal id='filters-modal' isOpen={show} toggle={toggleFiltersList} scrollable centered>
+        <ModalHeader toggle={toggleFiltersList}>
+          <Input
+            id="toggle-all"
+            name="check"
+            type="checkbox"
+            checked={checkAll}
+            onChange={this.toggleAllFilters}
+          />
+          <Label for="toggle-all" className="select-all-label">{i18n.Map.filtersTitle}</Label>
+        </ModalHeader>
+        <ModalBody>
+          <ListGroup flush>
             {possibleCategories.map((category, index) => {
               return (
                 <ListGroupItem
                   key={index}
-                  className="checkbox"
+                  className={category.parent ? 'category-parent' : 'category-child'}
                   style={{
-                    paddingLeft: category.parent !== true ? '2em' : '1em',
-                    color: category.color,
-                    display: category.hidden === true ? 'none' : 'block'
+                    display: category.hidden === true ? 'none' : 'flex'
                   }}
+                  onClick={() => this.handleCategoryClick(index, category.parent)}
                 >
-                  <Input
-                    id={'filter-' + index}
-                    name="check"
-                    type="checkbox"
-                    checked={checkedFilters[index].checked}
-                    onChange={this.handleFilterChange}
-                    onClick={category.parent === true ? this.expandCategory : null}
+                  <span 
+                    className='category-color-dot' 
+                    style={{ backgroundColor: category.color || '#ccc' }}
                   />
-                  <Label 
-                    check
-                    for={'filter-' + index}
-                  >
-                    {category.name}
-                  </Label>
-                  { category.url &&
-                    <a href={category.url} target='_blank' rel="external noreferrer" aria-label='Go to Page' style={{textDecoration: 'none'}}>
+                  <span className='category-name'>{category.name}</span>
+                  {checkedFilters[index].checked && (
+                    <FontAwesomeIcon icon="fas fa-check" className='category-check' />
+                  )}
+                  {category.url && (
+                    <a 
+                      href={category.url} 
+                      target='_blank' 
+                      rel="external noreferrer" 
+                      aria-label='Go to Page'
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       ?
                     </a>
-                  }
+                  )}
                 </ListGroupItem>
               )
             })}
-          </div>
-        </ListGroup>
-      </div>
+          </ListGroup>
+        </ModalBody>
+      </Modal>
     )
+  }
+
+  handleCategoryClick = (index, isParent) => {
+    if (isParent) {
+      this.expandCategory(index)
+    }
+    this.handleFilterChange(index)
   }
 
   // Method to preselect filters for Next view (called via ref from parent)
@@ -134,30 +135,25 @@ class FiltersList extends Component {
     this.props.onFilter(null) // null means no filter applied
   }
 
-  expandCategory = ({ target }) => {
+  expandCategory = (index) => {
     const checkedFilters = [...this.state.checkedFilters]
-    let index = target.id.split('-')[1]
     if (checkedFilters[index].parent) {
       const parentChecked = checkedFilters[index].checked
+      let tempIndex = index
       do {
-        index++
+        tempIndex++
         // parent currently CHECKED: means you are UNCHECKING, means children should become hidden (so set to true)
         // parent currently UNCHECKED: means you are CHECKING, so children should unhide (so set to false)
-        possibleCategories[index].hidden = !!parentChecked
+        possibleCategories[tempIndex].hidden = !!parentChecked
       }
-      while (checkedFilters[index + 1] && !checkedFilters[index + 1].parent)
+      while (checkedFilters[tempIndex + 1] && !checkedFilters[tempIndex + 1].parent)
+      this.forceUpdate() // Trigger re-render to show/hide children
     }
   }
 
-  handleFilterChange = ({ target }) => {
+  handleFilterChange = (index) => {
     let checkedFilters = [...this.state.checkedFilters]
-    let index = target.id.split('-')[1]
-    // console.log(checkedFilters)
-    if (checkedFilters[index].checked) {
-      checkedFilters[index].checked = false
-    } else {
-      checkedFilters[index].checked = true
-    }
+    checkedFilters[index].checked = !checkedFilters[index].checked
 
     // if parent, then the tick needs to be propagating to all its child categories
     if (checkedFilters[index].parent) {

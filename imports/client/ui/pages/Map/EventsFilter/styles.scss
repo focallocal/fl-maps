@@ -1,97 +1,100 @@
 @import '{}/imports/client/stylesheets/variables.scss';
 
-#filters-list {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  max-height: calc(100vh - #{$menu-height} - 20px);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  transform: translate($map-events-list-width, calc(-100vh - #{$menu-height}));
-  transition: transform .3s ease;
-  will-change: transform;
-  z-index: 1;
-  overflow-y: auto;
-
-  &.show {
-    transform: translate($map-events-list-width, 0);
-  }
-
-  .list-group-item {
-
-    &:hover {
-      z-index: 0 !important;
-    }
-  }
-
-  .title {
-    height: calc(100% + 20px);
-    position: relative;
-    text-align: left;
-    font-weight: bolder;
+#filters-modal {
+  .modal-header {
     display: flex;
-
-    label {
-      position: relative;
-      span {
-        padding-left: 10px;
-      }
+    align-items: center;
+    padding: 12px 20px;
+    
+    .modal-title {
+      display: flex;
+      align-items: center;
+      flex: 1;
     }
-
-    label:hover{
+    
+    input[type="checkbox"] {
+      margin-right: 10px;
+      width: 18px;
+      height: 18px;
       cursor: pointer;
     }
-
-    .close {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      font-size: .9em;
-    }
-
-    .custom-checkbox {
-      position: absolute;
-      top: -5px;
-      left: 20px;
+    
+    .select-all-label {
+      font-weight: 600;
+      margin: 0;
+      cursor: pointer;
     }
   }
-
-  .categories-items{
-    .list-group-item{
-      display: flex;
-      align-items: center; //value before flex start
-      flex-flow: row nowrap;
-      justify-content: space-between;
+  
+  .modal-body {
+    max-height: 360px; // ~6 parent categories visible
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding: 0;
+  }
+  
+  .list-group {
+    margin: 0;
+  }
+  
+  .list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
     
-      position: relative;
-
-      div {
-        display: inline-block;
+    &:first-child {
+      border-top: none;
+    }
+    
+    &:hover {
+      background-color: #f5f5f5;
+    }
+    
+    &.category-parent {
+      font-weight: 600;
+      background-color: #fafafa;
+      
+      &:hover {
+        background-color: #f0f0f0;
       }
     }
-
-    .list-group-item:hover{
-      cursor: pointer;
+    
+    &.category-child {
+      padding-left: 40px;
     }
-
-    .list-group-item a{
-      color: rgb(200, 200, 200);
-      position: absolute;
-      right: 20px;
-      top: 6px;
-
-      font-size: 1.5em;
-
+    
+    .category-color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    .category-name {
+      flex: 1;
+    }
+    
+    .category-check {
+      color: $green;
+      margin-left: 10px;
+    }
+    
+    a {
+      color: #ccc;
+      font-size: 1.2em;
+      margin-left: 10px;
+      text-decoration: none;
+      
       &:hover {
         color: $primary-blue-hover;
-      };
+      }
     }
-  }
-  //added margin to justify text alignment next to checkbox.
-  .form-check-label{
-    margin-left: 0.5em;
-  }
-
-  .form-check-label:hover{
-    cursor: pointer;
   }
 }

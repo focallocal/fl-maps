@@ -25,28 +25,31 @@
     padding: 20px;
 
     .search-input-wrapper {
-      position: relative;
       display: flex;
       align-items: center;
+      gap: 8px;
       
       #google-maps-searchbox {
-        position: relative;
-        right: 2px;
+        flex: 1;
         height: 48px;
-        padding-right: 35px; // Make room for location icon
       }
       
-      .search-location-icon {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
+      .my-location-btn {
+        width: 48px;
+        height: 48px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        background-color: #fff;
         color: #007bff;
         font-size: 1.1em;
         cursor: pointer;
-        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
         
         &:hover {
+          background-color: #f8f9fa;
           color: #0056b3;
         }
       }
