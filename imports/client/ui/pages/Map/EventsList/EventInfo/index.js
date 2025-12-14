@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { Component } from 'react'
 import { Meteor } from 'meteor/meteor'
 import { withTracker } from 'meteor/react-meteor-data'

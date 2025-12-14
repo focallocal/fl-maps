@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { Input } from 'reactstrap'

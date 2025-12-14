@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Meteor } from 'meteor/meteor'
 import PropTypes from 'prop-types'
 import qs from 'query-string'

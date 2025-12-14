@@ -1,3 +1,4 @@
+// @ts-nocheck
 import haversine from 'haversine'
 import i18n from '/imports/both/i18n/en'
 

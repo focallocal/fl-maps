@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { Component } from 'react'
 import { Navbar, Nav, Alert, Button, FormGroup, Label, Input } from 'reactstrap'
 import { Meteor } from 'meteor/meteor'

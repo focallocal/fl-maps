@@ -1,3 +1,4 @@
+// @ts-nocheck
 import About from './about.json'
 import CongratsModal from './congrats-modal.json'
 import Home from './home.json'

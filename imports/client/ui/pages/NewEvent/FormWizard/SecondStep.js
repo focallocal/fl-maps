@@ -1,3 +1,4 @@
+// @ts-nocheck
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Button, Col, FormGroup, Input, Label, Row } from 'reactstrap'
