@@ -152,12 +152,12 @@ class App extends Component {
           FlMapsTiming.log('Waiting for SSO login via Tracker')
           
           const timeoutId = setTimeout(() => {
-            // Timeout after 5 seconds if SSO doesn't complete
+            // Timeout after 10 seconds if SSO doesn't complete (increased from 5s for slow connections)
             console.log('⚠️ SSO login not completed, prompting user')
             FlMapsTiming.log('SSO login timeout')
             computation.stop()
             alert('You need to login before you can create an event')
-          }, 5000)
+          }, 10000)
           
           const computation = Tracker.autorun(() => {
             const userId = Meteor.userId()
