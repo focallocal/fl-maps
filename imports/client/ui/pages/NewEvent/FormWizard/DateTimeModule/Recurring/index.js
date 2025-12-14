@@ -62,6 +62,7 @@ class Recurring extends Component {
               name="when.recurring.type"
               value={this.state.recurringType}
               onChange={this.handleTypeChange}
+              className="type-select"
             >
               <option value="day">Day</option>
               <option value="week">Week</option>
