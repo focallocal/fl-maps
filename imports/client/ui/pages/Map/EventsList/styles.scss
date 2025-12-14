@@ -31,10 +31,13 @@
       
       #google-maps-searchbox {
         flex: 1;
+        padding: 6px 12px;
       }
       
       .my-location-btn {
-        padding: 8px 10px;
+        height: 38px;
+        width: 38px;
+        padding: 0;
         border: none;
         border-radius: 4px;
         background-color: #007bff;
@@ -44,6 +47,7 @@
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+        font-size: 16px;
         
         &:hover {
           background-color: #0056b3;
