@@ -107,14 +107,14 @@ class EventInfo extends Component {
           <div className='distance'>{distance}</div>
           <ButtonGroup className='open-close-btn-group'>
             <Button color='secondary' className='open-btn' onClick={this.openMoreInfo}>{i18n_.openEventDetailsBtn}</Button>
-            <Button color='secondary' className='close-btn' onClick={this.props.returnToList}>Close</Button>
+            <Button color='secondary' className='close-btn' onClick={this.props.returnToList}>{i18n_.closeBtn}</Button>
           </ButtonGroup>
         </div>
 
         <hr className='divider' />
 
         <div className='second-section'>
-          <div className='title'>Date and Time</div>
+          <div className='title'>{i18n_.dateAndTime}</div>
           {event && <HoursFormatted data={event.when} />}
         </div>
 

@@ -78,7 +78,7 @@ class ListItem extends Component {
   }
       
   handleItemClick = () => {
-     this.props.onItemClick(this.props.item._id)
+    this.props.onItemClick(this.props.item._id)
   }
 
   getFallbackInitial = (item) => {

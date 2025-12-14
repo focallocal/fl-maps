@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, Input, Button } from 'reactstrap'
+import i18n from '/imports/both/i18n/en'
+
+const searchI18n = i18n.Admin.search
+
 class UserSearch extends Component {
   constructor (props) {
     super(props)
@@ -16,8 +20,8 @@ class UserSearch extends Component {
       <div className="search-container">
         <Form onSubmit={this.searchForUser} action="">
           <FormGroup>
-            <input placeholder="profile name or email" type="text" ref={this.userToSearch} />
-            <Button>Search</Button>
+            <input placeholder={searchI18n.placeholder} type="text" ref={this.userToSearch} />
+            <Button>{searchI18n.searchBtn}</Button>
           </FormGroup>
         </Form>
       </div>

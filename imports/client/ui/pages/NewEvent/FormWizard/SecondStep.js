@@ -22,18 +22,19 @@ function getLabelsForFormType(formType) {
 VideoButtons.propTypes = {
   videoLinksAdded: PropTypes.number.isRequired,
   addLink: PropTypes.func.isRequired,
-  removeLink: PropTypes.func.isRequired
+  removeLink: PropTypes.func.isRequired,
+  labels: PropTypes.object
 }
 
-function VideoButtons({ videoLinksAdded, addLink, removeLink }) {
+function VideoButtons({ videoLinksAdded, addLink, removeLink, labels }) {
   return (
     <div className='video-buttons'>
       {videoLinksAdded < 3 && (
-        <Button onClick={addLink}>Add Video</Button>
+        <Button onClick={addLink}>{labels.video.addVideoBtn}</Button>
       )}
       &nbsp;
       {videoLinksAdded > 0 && (
-        <Button color='danger' onClick={removeLink}>Remove Video</Button>
+        <Button color='danger' onClick={removeLink}>{labels.video.removeVideoBtn}</Button>
       )}
     </div>
   )
@@ -144,96 +145,96 @@ const SecondStep = ({ form, onChange, errors, formType }) => {
 
       {/* Only show date/time inputs for form type 1 */}
       {formType === 1 && (
-      <div className='dates-hours inline-inputs hide-labels'>
-        <div>
-          <Row>
-            <Col className='date-hours-coupled'>
-              <FormGroup>
-                <Label for="startingDate">{labels.active_from || 'Starting Date'}</Label>
-                <Input
-                  type="date"
-                  name="startingDate"
-                  id="startingDate"
-                  value={startingDateValue}
-                  onChange={(e) => {
-                    const when = formData.when || {}
-                    form.change('when', { ...when, startingDate: e.target.value })
-                  }}
-                />
-              </FormGroup>
-              {!multipleDays && (
+        <div className='dates-hours inline-inputs hide-labels'>
+          <div>
+            <Row>
+              <Col className='date-hours-coupled'>
                 <FormGroup>
-                  <Label for="startingTime">{labels.active_from ? `${labels.active_from} Time` : 'Starting Time'}</Label>
-                  <Input
-                    type="time"
-                    name="startingTime"
-                    id="startingTime"
-                    value={startingTimeValue}
-                    onChange={(e) => {
-                      const when = formData.when || {}
-                      form.change('when', { ...when, startingTime: e.target.value })
-                    }}
-                  />
-                </FormGroup>
-              )}
-            </Col>
-            <Col className='date-hours-coupled'>
-              {(!repeat && !openEndDate) && (
-                <FormGroup>
-                  <Label for="endingDate">{labels.active_until || 'Ending Date'}</Label>
+                  <Label for="startingDate">{labels.active_from || 'Starting Date'}</Label>
                   <Input
                     type="date"
-                    name="endingDate"
-                    id="endingDate"
-                    value={endingDateValue}
-                    onChange={(e) => {
-                      const when = form.getModel().when || {};
-                      form.change('when', {
-                        ...when,
-                        endingDate: e.target.value,
-                      });
-                    }}
-                  />
-                </FormGroup>
-              )}
-              {(!multipleDays && !openEndDate && !repeat) && (
-                <FormGroup>
-                  <Label for="endingTime">{labels.active_until ? `${labels.active_until} Time` : 'Ending Time'}</Label>
-                  <Input
-                    type="time"
-                    name="endingTime"
-                    id="endingTime"
-                    value={endingTimeValue}
+                    name="startingDate"
+                    id="startingDate"
+                    value={startingDateValue}
                     onChange={(e) => {
                       const when = formData.when || {}
-                      form.change('when', { ...when, endingTime: e.target.value })
+                      form.change('when', { ...when, startingDate: e.target.value })
                     }}
                   />
                 </FormGroup>
-              )}
-              {(!repeat && openEndDate) && (
-                <FormGroup>
-                  <Label for="endingDate">{labels.active_until || 'Ending Date'}</Label>
-                  <Input
-                    type="date"
-                    name="endingDate"
-                    id="endingDate"
-                    value={endingDateValue}
-                    onChange={(e) => {
-                      const when = form.getModel().when || {};
-                      form.change('when', {
-                        ...when,
-                        endingDate: e.target.value,
-                      });
-                    }}
-                    onClick={resetEndDate}
-                  />
-                </FormGroup>
-              )}
-            </Col>
-          </Row>
+                {!multipleDays && (
+                  <FormGroup>
+                    <Label for="startingTime">{labels.active_from ? `${labels.active_from} Time` : 'Starting Time'}</Label>
+                    <Input
+                      type="time"
+                      name="startingTime"
+                      id="startingTime"
+                      value={startingTimeValue}
+                      onChange={(e) => {
+                        const when = formData.when || {}
+                        form.change('when', { ...when, startingTime: e.target.value })
+                      }}
+                    />
+                  </FormGroup>
+                )}
+              </Col>
+              <Col className='date-hours-coupled'>
+                {(!repeat && !openEndDate) && (
+                  <FormGroup>
+                    <Label for="endingDate">{labels.active_until || 'Ending Date'}</Label>
+                    <Input
+                      type="date"
+                      name="endingDate"
+                      id="endingDate"
+                      value={endingDateValue}
+                      onChange={(e) => {
+                        const when = form.getModel().when || {};
+                        form.change('when', {
+                          ...when,
+                          endingDate: e.target.value,
+                        });
+                      }}
+                    />
+                  </FormGroup>
+                )}
+                {(!multipleDays && !openEndDate && !repeat) && (
+                  <FormGroup>
+                    <Label for="endingTime">{labels.active_until ? `${labels.active_until} Time` : 'Ending Time'}</Label>
+                    <Input
+                      type="time"
+                      name="endingTime"
+                      id="endingTime"
+                      value={endingTimeValue}
+                      onChange={(e) => {
+                        const when = formData.when || {}
+                        form.change('when', { ...when, endingTime: e.target.value })
+                      }}
+                    />
+                  </FormGroup>
+                )}
+                {(!repeat && openEndDate) && (
+                  <FormGroup>
+                    <Label for="endingDate">{labels.active_until || 'Ending Date'}</Label>
+                    <Input
+                      type="date"
+                      name="endingDate"
+                      id="endingDate"
+                      value={endingDateValue}
+                      onChange={(e) => {
+                        const when = form.getModel().when || {};
+                        form.change('when', {
+                          ...when,
+                          endingDate: e.target.value,
+                        });
+                      }}
+                      onClick={resetEndDate}
+                    />
+                  </FormGroup>
+                )}
+              </Col>
+            </Row>
+          </div>
         </div>
-      </div>
       )}
 
       {RadioButton && (

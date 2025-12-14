@@ -35,7 +35,7 @@ function generateEvent () {
       name: 'fake address',
       location: {
         // Include the necessary properties for the location object
-        type: 'Point',  // Example type, adjust based on your application
+        type: 'Point', // Example type, adjust based on your application
         coordinates: [
           parseFloat(faker.address.longitude()),
           parseFloat(faker.address.latitude())

@@ -1,13 +1,14 @@
 {
   "modal_header": "Gather",
   "resource_type": {
-   "title": "I want to:",
+    "title": "I want to:",
     "firstRadio": "Create a Public Happiness Activity",
     "secondRadio": "Put myself on the Map!"
   },
   "overview": "Intro",
   "event_name": "Title",
   "address_hint": "Where will your activity be?",
+  "enterAddress": "Enter Address",
   "categories": "Public Happiness activity",
   "description": "Tell us more!",
   "contact_info": "How to find us",
@@ -15,7 +16,35 @@
   "active_until": "Finishes",
   "recurrence": {
     "thirdRadio": "Specific days of each week",
-    "fourthRadio": "Other options for repeating"
+    "fourthRadio": "Other options for repeating",
+    "repeatForever": "Repeat forever",
+    "repeatEvery": "Repeat every",
+    "repeatOn": "Repeat on",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "year": "Year",
+    "repeatFor": "Repeat for",
+    "occurence": "occurence",
+    "occurences": "occurences",
+    "orUntil": "or until",
+    "the": "The",
+    "of": "of",
+    "pleaseSelectDay": "Please select at least 1 day"
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
   },
   "video": {
     "title": {
@@ -23,8 +52,32 @@
       "secondLine": "(if omitted, defaults to focallocal Youtube channel)"
     },
     "host": "Select your video host from the dropdown",
-    "address": "Then enter the full video URL link"
+    "address": "Then enter the full video URL link",
+    "addVideoBtn": "Add Video",
+    "removeVideoBtn": "Remove Video"
   },
   "attendee_limit": "1000",
-  "attendee_limit_label": "Attendee Limit"
+  "attendee_limit_label": "Attendee Limit",
+  "buttons": {
+    "next": "Next",
+    "back": "Back",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "confirmDelete": "CONFIRM DELETE"
+  },
+  "validation": {
+    "fillRequired": "Please check that all necessary fields (outlined in red) are filled out."
+  },
+  "weekdays": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "categoryPicker": {
+    "selected": "Selected:"
+  }
 }

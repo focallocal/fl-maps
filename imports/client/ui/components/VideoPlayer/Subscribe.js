@@ -17,13 +17,13 @@ class Subscribe extends Component {
       this.renderYtSubscribeButton('UCkYVBetdxHE5juw7SPMvOGg', 'default')
     } else {
     // Wait until gapi loads
-    const interval = setInterval(() => {
-      if (window.gapi && window.gapi.ytsubscribe) {
-        clearInterval(interval);
-        this.renderYtSubscribeButton('UCkYVBetdxHE5juw7SPMvOGg', 'default')
-      }
-    }, 100);
-  }
+      const interval = setInterval(() => {
+        if (window.gapi && window.gapi.ytsubscribe) {
+          clearInterval(interval);
+          this.renderYtSubscribeButton('UCkYVBetdxHE5juw7SPMvOGg', 'default')
+        }
+      }, 100);
+    }
   }
 
   /**

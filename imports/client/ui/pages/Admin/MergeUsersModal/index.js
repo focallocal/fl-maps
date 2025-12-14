@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button, FormGroup, Label, Input, Alert } from 'reactstrap';
+import i18n from '/imports/both/i18n/en';
+
+const mergeI18n = i18n.Admin.merge;
 
 class MergeUsersModal extends Component {
   state = {
@@ -15,19 +18,19 @@ class MergeUsersModal extends Component {
     const { sourceUserId, targetUserId } = this.state;
 
     if (!sourceUserId || !targetUserId) {
-      this.setState({ error: 'Please select both users' });
+      this.setState({ error: mergeI18n.selectBoth });
       return;
     }
 
     if (sourceUserId === targetUserId) {
-      this.setState({ error: 'Cannot merge user with itself' });
+      this.setState({ error: mergeI18n.cannotMergeSelf });
       return;
     }
 
     const sourceUser = this.props.users.find(u => u._id === sourceUserId);
     const targetUser = this.props.users.find(u => u._id === targetUserId);
 
-    const confirmMessage = `Are you sure you want to merge "${sourceUser?.profile?.name || sourceUser?.username}" INTO "${targetUser?.profile?.name || targetUser?.username}"?\n\nThis will:\n- Transfer all events from source to target user\n- Merge roles\n- DELETE the source user\n\nThis action CANNOT be undone!`;
+    const confirmMessage = `${mergeI18n.confirmMerge} "${sourceUser?.profile?.name || sourceUser?.username}" ${mergeI18n.confirmMergeInto} "${targetUser?.profile?.name || targetUser?.username}"?\n\n${mergeI18n.confirmMergeDetails}`;
 
     if (!window.confirm(confirmMessage)) {
       return;
@@ -74,18 +77,17 @@ class MergeUsersModal extends Component {
 
     return (
       <Modal isOpen={isOpen} toggle={toggle} size="lg">
-        <ModalHeader toggle={toggle}>Merge Duplicate Users</ModalHeader>
+        <ModalHeader toggle={toggle}>{mergeI18n.header}</ModalHeader>
         <ModalBody>
           {error && <Alert color="danger">{error}</Alert>}
           {success && <Alert color="success">{success}</Alert>}
           
           <p className="text-muted">
-            Select the user to merge FROM (will be deleted) and the user to merge INTO (will be kept).
-            All events will be transferred to the target user.
+            {mergeI18n.instructions}
           </p>
 
           <FormGroup>
-            <Label for="sourceUser">Source User (will be DELETED)</Label>
+            <Label for="sourceUser">{mergeI18n.sourceLabel}</Label>
             <Input
               type="select"
               id="sourceUser"
@@ -93,7 +95,7 @@ class MergeUsersModal extends Component {
               onChange={(e) => this.setState({ sourceUserId: e.target.value, error: null })}
               disabled={loading}
             >
-              <option value="">-- Select user to merge from --</option>
+              <option value="">{mergeI18n.selectSource}</option>
               {sortedUsers.map(user => (
                 <option key={user._id} value={user._id}>
                   {user.profile?.name || user.username || 'Unknown'} ({user.username})
@@ -103,7 +105,7 @@ class MergeUsersModal extends Component {
           </FormGroup>
 
           <FormGroup>
-            <Label for="targetUser">Target User (will be KEPT)</Label>
+            <Label for="targetUser">{mergeI18n.targetLabel}</Label>
             <Input
               type="select"
               id="targetUser"
@@ -111,7 +113,7 @@ class MergeUsersModal extends Component {
               onChange={(e) => this.setState({ targetUserId: e.target.value, error: null })}
               disabled={loading}
             >
-              <option value="">-- Select user to merge into --</option>
+              <option value="">{mergeI18n.selectTarget}</option>
               {sortedUsers.map(user => (
                 <option key={user._id} value={user._id}>
                   {user.profile?.name || user.username || 'Unknown'} ({user.username})
@@ -121,9 +123,9 @@ class MergeUsersModal extends Component {
           </FormGroup>
         </ModalBody>
         <ModalFooter>
-          <Button color="secondary" onClick={toggle} disabled={loading}>Cancel</Button>
+          <Button color="secondary" onClick={toggle} disabled={loading}>{mergeI18n.cancelBtn}</Button>
           <Button color="danger" onClick={this.handleMerge} disabled={loading}>
-            {loading ? 'Merging...' : 'Merge Users'}
+            {loading ? mergeI18n.mergingBtn : mergeI18n.mergeBtn}
           </Button>
         </ModalFooter>
       </Modal>

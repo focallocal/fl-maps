@@ -120,7 +120,7 @@ const CategoryLinkComponent = () => {
         </Button>
       </InputGroup>
       {/* {error && <div className='error-msg'>Could not find anything..</div>} */}
-     </Link>
+    </Link>
   )
 }
 

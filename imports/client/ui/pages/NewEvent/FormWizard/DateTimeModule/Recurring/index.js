@@ -5,6 +5,14 @@ import Monthly from './Monthly'
 import Yearly from './Yearly'
 import './styles.scss'
 import Weekly from './Weekly'
+import i18n from '/imports/both/i18n/en'
+
+// Get recurrence labels from i18n
+const getRecurrenceLabels = (formType) => {
+  if (formType === 2 && i18n.NewEventModal2?.recurrence) return i18n.NewEventModal2.recurrence
+  if (formType === 3 && i18n.NewEventModal3?.recurrence) return i18n.NewEventModal3.recurrence
+  return i18n.NewEventModal.recurrence
+}
 
 class Recurring extends Component {
   state = {
@@ -15,9 +23,11 @@ class Recurring extends Component {
 
   render () {
     const {
-      form
+      form,
+      formType
     } = this.props
 
+    const labels = getRecurrenceLabels(formType)
     const model = form.getModel()
     let {
       recurring
@@ -42,13 +52,13 @@ class Recurring extends Component {
         {this.props.formType === 1 && (
           <CheckBox
             id='forever'
-            label='Repeat forever'
+            label={labels.repeatForever}
             checked={forever}
           />
         )}
 
         <div className='every-type inline-inputs hide-labels'>
-          <span>Repeat every</span>
+          <span>{labels.repeatEvery}</span>
           <div>
             <Input
               type="number"
@@ -64,10 +74,10 @@ class Recurring extends Component {
               onChange={this.handleTypeChange}
               className="type-select"
             >
-              <option value="day">Day</option>
-              <option value="week">Week</option>
-              <option value="month">Month</option>
-              <option value="year">Year</option>
+              <option value="day">{labels.day}</option>
+              <option value="week">{labels.week}</option>
+              <option value="month">{labels.month}</option>
+              <option value="year">{labels.year}</option>
             </Input>
           </div>
         </div>
@@ -75,7 +85,7 @@ class Recurring extends Component {
         {this.state.recurringType === 'week' && (
           <Fragment>
             {selectedDays.length === 0 && (
-              <div className="error-message">Please select at least 1 day</div>
+              <div className="error-message">{labels.pleaseSelectDay}</div>
             )}
             <Weekly
               form={form}
@@ -103,15 +113,15 @@ class Recurring extends Component {
 
         {!forever && this.props.formType === 1 && (
           <div className='occurences-until inline-inputs hide-labels'>
-            <span>Repeat for</span>
+            <span>{labels.repeatFor}</span>
             <Input
               type="number"
               name="when.recurring.occurences"
               value={recurring.occurences || ''}
               onChange={(e) => this.handleOccurencesChange(parseInt(e.target.value))}
             />
-            <span>occurence{occurences > 1 ? 's' : ''}</span>
-            <span className='or-separator'>or until</span>
+            <span>{occurences > 1 ? labels.occurences : labels.occurence}</span>
+            <span className='or-separator'>{labels.orUntil}</span>
             <Input
               type="date"
               name="when.recurring.until"

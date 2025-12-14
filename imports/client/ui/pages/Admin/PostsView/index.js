@@ -3,7 +3,10 @@ import { Meteor } from 'meteor/meteor';
 import { FixedSizeList as List } from 'react-window';
 import { Button, Input, FormGroup, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import i18n from '/imports/both/i18n/en';
 import './styles.scss';
+
+const postsI18n = i18n.Admin.posts;
 
 class PostsView extends Component {
   constructor(props) {
@@ -55,21 +58,21 @@ class PostsView extends Component {
       
       filteredPosts = allPosts.filter(event => {
         switch (searchFilter) {
-          case 'title':
-            return event.name && event.name.toLowerCase().includes(query);
-          case 'user':
-            return event.organiser && event.organiser.name && 
+        case 'title':
+          return event.name && event.name.toLowerCase().includes(query);
+        case 'user':
+          return event.organiser && event.organiser.name && 
                    event.organiser.name.toLowerCase().includes(query);
-          case 'location':
-            return (event.address && event.address.name && event.address.name.toLowerCase().includes(query)) ||
+        case 'location':
+          return (event.address && event.address.name && event.address.name.toLowerCase().includes(query)) ||
                    (event.address && event.address.city && event.address.city.toLowerCase().includes(query)) ||
                    (event.address && event.address.country && event.address.country.toLowerCase().includes(query));
-          case 'category':
-            return event.categories && event.categories.some(cat => 
-              cat.name && cat.name.toLowerCase().includes(query)
-            );
-          default:
-            return true;
+        case 'category':
+          return event.categories && event.categories.some(cat => 
+            cat.name && cat.name.toLowerCase().includes(query)
+          );
+        default:
+          return true;
         }
       });
     }
@@ -77,32 +80,32 @@ class PostsView extends Component {
     // Sort posts
     const sortedPosts = [...filteredPosts].sort((a, b) => {
       switch (sortBy) {
-        case 'dateNewest': {
-          const aDate = (a.when && a.when.startingDate) ? new Date(a.when.startingDate).getTime() : (a.createdAt || 0);
-          const bDate = (b.when && b.when.startingDate) ? new Date(b.when.startingDate).getTime() : (b.createdAt || 0);
-          return bDate - aDate;
-        }
-        case 'dateOldest': {
-          const aDate = (a.when && a.when.startingDate) ? new Date(a.when.startingDate).getTime() : (a.createdAt || 0);
-          const bDate = (b.when && b.when.startingDate) ? new Date(b.when.startingDate).getTime() : (b.createdAt || 0);
-          return aDate - bDate;
-        }
-        case 'alphabetical':
-          return (a.name || '').localeCompare(b.name || '');
-        case 'category':
-          const aCat = a.categories && a.categories[0] ? a.categories[0].name : '';
-          const bCat = b.categories && b.categories[0] ? b.categories[0].name : '';
-          return aCat.localeCompare(bCat);
-        case 'location':
-          const aLoc = a.address && a.address.city ? a.address.city : '';
-          const bLoc = b.address && b.address.city ? b.address.city : '';
-          return aLoc.localeCompare(bLoc);
-        case 'mostAttendees':
-          const aCount = a.engagement?.attendees?.length || 0;
-          const bCount = b.engagement?.attendees?.length || 0;
-          return bCount - aCount;
-        default:
-          return 0;
+      case 'dateNewest': {
+        const aDate = (a.when && a.when.startingDate) ? new Date(a.when.startingDate).getTime() : (a.createdAt || 0);
+        const bDate = (b.when && b.when.startingDate) ? new Date(b.when.startingDate).getTime() : (b.createdAt || 0);
+        return bDate - aDate;
+      }
+      case 'dateOldest': {
+        const aDate = (a.when && a.when.startingDate) ? new Date(a.when.startingDate).getTime() : (a.createdAt || 0);
+        const bDate = (b.when && b.when.startingDate) ? new Date(b.when.startingDate).getTime() : (b.createdAt || 0);
+        return aDate - bDate;
+      }
+      case 'alphabetical':
+        return (a.name || '').localeCompare(b.name || '');
+      case 'category':
+        const aCat = a.categories && a.categories[0] ? a.categories[0].name : '';
+        const bCat = b.categories && b.categories[0] ? b.categories[0].name : '';
+        return aCat.localeCompare(bCat);
+      case 'location':
+        const aLoc = a.address && a.address.city ? a.address.city : '';
+        const bLoc = b.address && b.address.city ? b.address.city : '';
+        return aLoc.localeCompare(bLoc);
+      case 'mostAttendees':
+        const aCount = a.engagement?.attendees?.length || 0;
+        const bCount = b.engagement?.attendees?.length || 0;
+        return bCount - aCount;
+      default:
+        return 0;
       }
     });
 
@@ -150,7 +153,7 @@ class PostsView extends Component {
     if (count === 0) return;
     
     const confirmDelete = window.confirm(
-      `Are you sure you want to delete ${count} post${count > 1 ? 's' : ''}? This may take a few minutes.`
+      `${postsI18n.deleteConfirm} ${count} ${postsI18n.deleteConfirmSuffix}`
     );
     
     if (confirmDelete) {
@@ -187,8 +190,8 @@ class PostsView extends Component {
             // When all deletions are complete
             if (deletedCount + errorCount === postIds.length) {
               const message = errorCount > 0 
-                ? `Completed: ${deletedCount} deleted, ${errorCount} failed.`
-                : `Successfully deleted ${deletedCount} post${deletedCount > 1 ? 's' : ''}.`;
+                ? `${postsI18n.deleteComplete} ${deletedCount} ${postsI18n.deleted}, ${errorCount} ${postsI18n.failed}.`
+                : `${postsI18n.successDeleted} ${deletedCount} ${count > 1 ? postsI18n.posts : postsI18n.post}.`;
               
               console.log(message);
               alert(message);
@@ -222,14 +225,14 @@ class PostsView extends Component {
 
   handleDeleteSingle = (postId, postName) => {
     const confirmDelete = window.confirm(
-      `Are you sure you want to delete "${postName}"?`
+      `${postsI18n.deleteSingle} "${postName}"?`
     );
     
     if (confirmDelete) {
       Meteor.call('Events.deleteEvent', { _id: postId }, (error) => {
         if (error) {
           console.error(`Failed to delete post ${postId}:`, error);
-          alert('Error deleting post: ' + error.message);
+          alert(postsI18n.errorDeleting + ' ' + error.message);
         } else {
           // Reload posts and notify parent
           this.loadAllPosts();
@@ -273,7 +276,7 @@ class PostsView extends Component {
   };
 
   formatLocation = (address) => {
-    if (!address) return 'N/A';
+    if (!address) return postsI18n.na;
     
     // Try to build a descriptive location string
     const parts = [];
@@ -283,11 +286,11 @@ class PostsView extends Component {
     if (parts.length > 0) return parts.join(', ');
     if (address.name) return address.name;
     
-    return 'Unknown';
+    return postsI18n.unknown;
   };
 
   formatCategories = (categories) => {
-    if (!categories || !Array.isArray(categories) || categories.length === 0) return 'None';
+    if (!categories || !Array.isArray(categories) || categories.length === 0) return postsI18n.none;
     return categories.map(c => c.name).join(', ');
   };
 
@@ -311,11 +314,11 @@ class PostsView extends Component {
           </div>
           
           <div className="post-name" title={post.name}>
-            {post.name || 'Untitled Post'}
+            {post.name || postsI18n.untitled}
           </div>
           
-          <div className="post-organizer" title={post.organiser?.name || post.organiser?.username || 'Unknown'}>
-            <div className="organizer-name">{post.organiser?.name || post.organiser?.username || 'Unknown'}</div>
+          <div className="post-organizer" title={post.organiser?.name || post.organiser?.username || postsI18n.unknown}>
+            <div className="organizer-name">{post.organiser?.name || post.organiser?.username || postsI18n.unknown}</div>
             {post.organiser?.username && (
               <div className="organizer-email">{post.organiser.username}</div>
             )}
@@ -340,7 +343,7 @@ class PostsView extends Component {
                 color="info"
                 className="me-1"
               >
-                Go To
+                {postsI18n.gotoBtn}
               </Button>
             </Link>
             <Button
@@ -348,7 +351,7 @@ class PostsView extends Component {
               color="danger"
               onClick={() => this.handleDeleteSingle(post._id, post.name)}
             >
-              Delete
+              {postsI18n.deleteBtn}
             </Button>
           </div>
         </div>
@@ -371,35 +374,35 @@ class PostsView extends Component {
               color={searchFilter === 'title' ? 'primary' : 'secondary'}
               onClick={() => this.handleFilterChange('title')}
             >
-              Title
+              {postsI18n.filterTitle}
             </Button>
             <Button
               size="sm"
               color={searchFilter === 'user' ? 'primary' : 'secondary'}
               onClick={() => this.handleFilterChange('user')}
             >
-              User
+              {postsI18n.filterUser}
             </Button>
             <Button
               size="sm"
               color={searchFilter === 'location' ? 'primary' : 'secondary'}
               onClick={() => this.handleFilterChange('location')}
             >
-              Location
+              {postsI18n.filterLocation}
             </Button>
             <Button
               size="sm"
               color={searchFilter === 'category' ? 'primary' : 'secondary'}
               onClick={() => this.handleFilterChange('category')}
             >
-              Category
+              {postsI18n.filterCategory}
             </Button>
           </div>
           
           <FormGroup className="search-input-group">
             <Input
               type="text"
-              placeholder="Search posts..."
+              placeholder={postsI18n.searchPlaceholder}
               value={searchQuery}
               onChange={this.handleSearchChange}
             />
@@ -407,19 +410,19 @@ class PostsView extends Component {
 
           <div className="sort-section">
             <FormGroup>
-              <Label for="sortSelect">Sort by:</Label>
+              <Label for="sortSelect">{postsI18n.sortBy}</Label>
               <Input
                 type="select"
                 id="sortSelect"
                 value={sortBy}
                 onChange={this.handleSortChange}
               >
-                <option value="dateNewest">Date (Newest)</option>
-                <option value="dateOldest">Date (Oldest)</option>
-                <option value="mostAttendees">Most Attendees</option>
-                <option value="alphabetical">Alphabetical</option>
-                <option value="category">By Category</option>
-                <option value="location">By Location</option>
+                <option value="dateNewest">{postsI18n.sortNewest}</option>
+                <option value="dateOldest">{postsI18n.sortOldest}</option>
+                <option value="mostAttendees">{postsI18n.sortMostAttendees}</option>
+                <option value="alphabetical">{postsI18n.sortAlphabetical}</option>
+                <option value="category">{postsI18n.sortByCategory}</option>
+                <option value="location">{postsI18n.sortByLocation}</option>
               </Input>
             </FormGroup>
           </div>
@@ -428,7 +431,7 @@ class PostsView extends Component {
         <div className="bulk-actions">
           {isDeleting ? (
             <div className="delete-progress">
-              <span>Deleting {deleteProgress.current} of {deleteProgress.total}...</span>
+              <span>{postsI18n.deleting} {deleteProgress.current} {postsI18n.of} {deleteProgress.total}...</span>
               <div className="progress-bar">
                 <div 
                   className="progress-fill" 
@@ -441,7 +444,7 @@ class PostsView extends Component {
               color="danger"
               onClick={this.handleDeleteSelected}
             >
-              Delete Selected ({selectedPosts.size})
+              {postsI18n.deleteSelectedBtn} ({selectedPosts.size})
             </Button>
           )}
         </div>
@@ -455,19 +458,19 @@ class PostsView extends Component {
                 onChange={this.handleSelectAll}
               />
             </div>
-            <div className="post-name"><strong>Title</strong></div>
-            <div className="post-organizer"><strong>Organizer</strong></div>
-            <div className="post-location"><strong>Location</strong></div>
-            <div className="post-categories"><strong>Categories</strong></div>
-            <div className="post-date"><strong>Date</strong></div>
-            <div className="post-actions"><strong>Actions</strong></div>
+            <div className="post-name"><strong>{postsI18n.tableHeaders.title}</strong></div>
+            <div className="post-organizer"><strong>{postsI18n.tableHeaders.organizer}</strong></div>
+            <div className="post-location"><strong>{postsI18n.tableHeaders.location}</strong></div>
+            <div className="post-categories"><strong>{postsI18n.tableHeaders.categories}</strong></div>
+            <div className="post-date"><strong>{postsI18n.tableHeaders.date}</strong></div>
+            <div className="post-actions"><strong>{postsI18n.tableHeaders.actions}</strong></div>
           </div>
         </div>
 
         {this.state.isLoading ? (
-          <div className="posts-loading">Loading posts...</div>
+          <div className="posts-loading">{postsI18n.loading}</div>
         ) : filteredAndSortedPosts.length === 0 ? (
-          <div className="posts-empty">No posts found</div>
+          <div className="posts-empty">{postsI18n.noResults}</div>
         ) : (
           <List
             height={600}
@@ -482,7 +485,7 @@ class PostsView extends Component {
         )}
 
         <div className="posts-footer">
-          Total: {filteredAndSortedPosts.length} post{filteredAndSortedPosts.length !== 1 ? 's' : ''}
+          {postsI18n.total} {filteredAndSortedPosts.length} {filteredAndSortedPosts.length !== 1 ? postsI18n.posts : postsI18n.post}
         </div>
       </div>
     )

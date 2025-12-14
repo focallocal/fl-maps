@@ -9,8 +9,11 @@ import EventInfo from './EventInfo'
 import { inIFrame } from 'dcs-client'
 import { getFallbackAvatarAsync } from '/imports/client/utils/avatarFallback'
 import { getDiscourseAvatarUrl, clearAvatarCache } from '/imports/client/utils/discourseAvatar'
+import i18n from '/imports/both/i18n/en'
 
 import './styles.scss'
+
+const i18n_ = i18n.Map
 
 class EventsList extends Component {
   state = {
@@ -226,7 +229,7 @@ const Loading = ({ show }) => (
       <div className='ball-beat'>
         <div /><div /><div />
       </div>
-      <div>looking for events near you...</div>
+      <div>{i18n_.loading}</div>
     </div>
   )
 )
@@ -234,8 +237,7 @@ const Loading = ({ show }) => (
 const NoResults = ({ show }) => (
   show && (
     <div className='no-near-events va-center'>
-      <div>Sorry, we could not find anything</div>
-      <div>around you...</div>
+      <div>{i18n_.noResults}</div>
     </div>
   )
 )

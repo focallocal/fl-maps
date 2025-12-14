@@ -200,15 +200,15 @@ class Page extends Component {
         </div>
         <Row className='page-action-buttons'>
           <Col xs={6}>
-            <Button color='danger' onClick={this.closePage}>Back To Map</Button>
+            <Button color='danger' onClick={this.closePage}>{i18n.Map.backToMapBtn}</Button>
           </Col>
           <Col xs={6} className='text-right'>
             <div className='going-invite-buttons'>
               <Button className='going-btn'>
-                <DCSLink className='docuss-link' badge="true" format="text-link" title="I'm Going" triggerId="going" composerTemplate="going" />
+                <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.goingBtn} triggerId="going" composerTemplate="going" />
               </Button>
               <Button className='invite-btn'>
-                <DCSLink className='docuss-link' badge="true" format="text-link" title="Invite" triggerId="invite" composerTemplate="invite" />
+                <DCSLink className='docuss-link' badge="true" format="text-link" title={i18n.Map.inviteBtn} triggerId="invite" composerTemplate="invite" />
               </Button>
             </div>
           </Col>
@@ -224,15 +224,15 @@ class Page extends Component {
                 <div className='sub-title-categories'>{categories}</div>
               </div>
               <div className='intro'>
-                <SectionTitle title='Introduction' />
+                <SectionTitle title={i18n.Map.eventInfo.introTitle} />
                 <Linkify options={linkifyOption}>{overview}</Linkify>
               </div>
               <div className='meet-me'>
-                <SectionTitle title='Meet Me Details' />
+                <SectionTitle title={i18n.Map.meetMeDetails} />
                 <Linkify options={linkifyOption}>{findHints}</Linkify>
               </div>
               <div className='description'>
-                <SectionTitle title='About' />
+                <SectionTitle title={i18n.Map.about} />
                 <Linkify options={linkifyOption}>{description}</Linkify>
               </div>
               <div className='share'>
@@ -254,7 +254,7 @@ class Page extends Component {
             <Col xs={4} className='right'>
               {organiser && organiser._id && organiser._id !== '-' && organiserUsername && (
                 <div className='creator-info' data-version="v3-username-only">
-                  <SectionTitle title='Created By' />
+                  <SectionTitle title={i18n.Map.createdBy} />
                   <div className='creator-details'>
                     <a 
                       href={`https://publichappinessmovement.com/u/${organiserUsername}`}
@@ -274,20 +274,20 @@ class Page extends Component {
                         </div>
                       )}
                       <span className='creator-name'>
-                        {organiser.name && organiser.name !== '-' ? organiser.name : 'Anonymous'}
+                        {organiser.name && organiser.name !== '-' ? organiser.name : i18n.Map.anonymous}
                       </span>
                     </a>
                   </div>
                 </div>
               )}
               {organiser && organiser._id && organiser._id !== '-' && organiserUsername && <Divider />}
-              <SectionTitle title='Date and Time' />
+              <SectionTitle title={i18n.Map.dateAndTime} />
               <HoursFormatted data={when}/>
               <Divider />
               <div className='location'>
-                <SectionTitle title='Location' />
+                <SectionTitle title={i18n.Map.location} />
                 <div>{address.name}</div>
-                <a className='view-map' onClick={this.scrollToMap}>View Map</a>
+                <a className='view-map' onClick={this.scrollToMap}>{i18n.Map.viewMap}</a>
               </div>
               <Divider />
               <div className='social'>
@@ -304,7 +304,7 @@ class Page extends Component {
                     onClick={this.toggleDeleteModal}
                   >
                     <i className='fas fa-trash-alt mr-2' aria-hidden='true' />
-                    Delete
+                    {i18n.Map.deleteBtn}
                   </Button>
                 )}
                 {data && (
@@ -313,7 +313,7 @@ class Page extends Component {
                     onClick={this.handleReportClick}
                   >
                     <i className='fas fa-flag mr-2' aria-hidden='true' />
-                    Report
+                    {i18n.Map.reportBtn}
                   </Button>
                 )}
               </div>
@@ -329,16 +329,16 @@ class Page extends Component {
         </Container>
 
         <Modal isOpen={this.state.showDeleteModal} toggle={this.toggleDeleteModal}>
-          <ModalHeader toggle={this.toggleDeleteModal}>Delete Event</ModalHeader>
+          <ModalHeader toggle={this.toggleDeleteModal}>{i18n.Map.deleteModal.header}</ModalHeader>
           <ModalBody>
-            Are you sure you want to delete this event? This action cannot be undone.
+            {i18n.Map.deleteModal.body}
           </ModalBody>
           <ModalFooter>
             <Button color='secondary' onClick={this.toggleDeleteModal}>
-              No, Cancel
+              {i18n.Map.deleteModal.cancelBtn}
             </Button>
             <Button color='danger' onClick={this.handleDeleteEvent}>
-              Yes, Delete
+              {i18n.Map.deleteModal.confirmBtn}
             </Button>
           </ModalFooter>
         </Modal>

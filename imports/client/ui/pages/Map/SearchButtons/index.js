@@ -11,29 +11,29 @@ class SearchButtons extends Component {
       <div className='buttons'>
         <Button onClick={this.props.toggleFilters}>
           <i className='fa fa-filter' />
-          Filter
+          {labels.filterBtn}
         </Button>
         <Button
           className={this.props.showNextView ? 'upcoming-btn active' : 'upcoming-btn'}
           onClick={this.props.toggleNextView}
         >
           <i className='fa fa-clock' />
-          {this.props.showNextView ? (labels.listButton || 'List') : (labels.upcomingButton || 'Upcoming')}
+          {this.props.showNextView ? labels.listButton : labels.upcomingButton}
         </Button>
         {this.props.showNextView && (
           <Button
             className='print-btn'
             onClick={this.props.handlePrint}
-            title='Print Calendar'
+            title={labels.printCalendarBtn}
           >
             <i className='fa fa-print' />
-            Print
+            {labels.printBtn}
           </Button>
         )}
         <Button
           onClick={this.props.togglePastEvents}
         >
-          {this.props.showPastEvents ? 'Hide Past' : 'Show Past'}
+          {this.props.showPastEvents ? labels.hidePastBtn : labels.showPastBtn}
         </Button>
         {/* <Button>
           <i className='fas fa-cog' />

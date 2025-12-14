@@ -43,7 +43,7 @@ class NewEventModal extends Component {
   }
 
   static getDerivedStateFromProps (nextProps, prevState) {
-  if (window['__editData']) {
+    if (window['__editData']) {
       return {
         ...nextProps,
         editMode: true,
@@ -74,7 +74,7 @@ class NewEventModal extends Component {
 
   componentDidUpdate (prevProps, prevState) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-  delete window['__unfinishedNewEvent']
+      delete window['__unfinishedNewEvent']
     }
     // Re-attach wheel listener when modal opens
     this.attachWheelListener()
@@ -103,8 +103,10 @@ class NewEventModal extends Component {
 
     const i18n_ = getModalLabels(this.props.formType)
     const header = i18n_.modal_header
+    const buttons = i18n_.buttons
+    const validation = i18n_.validation
     const isConfirmBtn = this.state.isConfirmBtn
-    const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>Delete Page</Button> : null
+    const deleteBtn = editMode && currentStep + 1 <= 1 ? <Button color='danger' onClick={() => this.setState({ isConfirmBtn: true })}>{buttons.deleteBtn}</Button> : null
 
     return hasGoogleMapsLoaded && (
       <Modal id='new-event-modal' isOpen={isOpen} toggle={this.toggleModal} size='lg' unmountOnClose={false} scrollable>
@@ -119,25 +121,24 @@ class NewEventModal extends Component {
             formType={this.props.formType} />
         </ModalBody>
         <Alert color='danger' isOpen={hasErrors} toggle={this.toggleErrors} className='error-general'>
-          Please check that <strong>all necessary fields</strong> (outlined in <strong>red</strong>)
-          <strong> are filled out</strong>.
+          {validation.fillRequired}
         </Alert>
         {isConfirmBtn
           ? <ModalFooter>
-            <Button color='primary' onClick={() => this.setState({ isConfirmBtn: false })}>Cancel</Button>
-            <Button color='danger' onClick={this.deletePage}>CONFIRM DELETE</Button>
+            <Button color='primary' onClick={() => this.setState({ isConfirmBtn: false })}>{buttons.cancel}</Button>
+            <Button color='danger' onClick={this.deletePage}>{buttons.confirmDelete}</Button>
 
           </ModalFooter>
           : <ModalFooter>
             {currentStep + 1 <= 1 &&
-              <Button color='primary' onClick={this.moveNext}>Next</Button>
+              <Button color='primary' onClick={this.moveNext}>{buttons.next}</Button>
             }
             {deleteBtn}
             {currentStep === 1 &&
-              <Button color='primary' onClick={this.submit} className='submit'>Submit</Button>
+              <Button color='primary' onClick={this.submit} className='submit'>{buttons.submit}</Button>
             }
             {currentStep > 0 &&
-              <Button color='primary' onClick={this.moveBack}>Back</Button>
+              <Button color='primary' onClick={this.moveBack}>{buttons.back}</Button>
             }
           </ModalFooter>
         }
@@ -159,7 +160,7 @@ class NewEventModal extends Component {
     this.state.form.validate({ clean: true })
       .then(() => {
         console.log('Validation passed!')
-  window['NProgress']?.set(0.4)
+        window['NProgress']?.set(0.4)
         let model = EventsSchema.clean(this.state.form.getModel())
         // Add formType to the model
         // When editing, preserve the original formType from the model; otherwise use props or default to 1
@@ -179,7 +180,7 @@ class NewEventModal extends Component {
         if (Meteor.isDevelopment) { console.log(err.details, err) }
       })
 
-  delete window['__unfinishedNewEvent']
+    delete window['__unfinishedNewEvent']
   }
 
   deletePage = () => {

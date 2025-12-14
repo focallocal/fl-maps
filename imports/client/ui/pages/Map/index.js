@@ -437,7 +437,7 @@ class MapComponent_ extends Component {
       <!DOCTYPE html>
       <html>
       <head>
-        <title>${NextViewConfig?.printHeader || 'Calendar'}</title>
+        <title>${i18n.Map.printTitle}</title>
         <style>
           @media print {
             body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -450,8 +450,8 @@ class MapComponent_ extends Component {
         </style>
       </head>
       <body>
-        <h1>${NextViewConfig?.printHeader || 'Calendar'}</h1>
-        <h2>${NextViewConfig?.printTitle || 'Upcoming Events'}</h2>
+        <h1>${i18n.Map.printTitle}</h1>
+        <h2>${i18n.Map.printSubtitle}</h2>
         <table>
           <thead>
             <tr>

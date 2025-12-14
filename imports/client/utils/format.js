@@ -1,8 +1,9 @@
 import haversine from 'haversine'
+import i18n from '/imports/both/i18n/en'
 
 export function formatMilesFromLocation (userLocation, coordinates) {
   if (!userLocation) {
-    return 'location permission needed for distances'
+    return i18n.Map.locationPermission
   }
 
   const userPosition = { latitude: userLocation.lat, longitude: userLocation.lng }

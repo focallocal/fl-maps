@@ -188,13 +188,16 @@ class CongratsModal extends Component {
 
     const {
       first_sentence,
-      second_sentence
+      second_sentence,
+      header,
+      doneBtn,
+      labels
     } = i18n.CongratsModal
 
     return (
       <Modal isOpen={true} size='lg' id='congrats-modal'>
         <ModalHeader tag={'div'}>
-          <h4>Congratulations! We are one step closer to a happier and more connected world!</h4>
+          <h4>{header}</h4>
         </ModalHeader>
 
         <ModalBody>
@@ -215,14 +218,14 @@ class CongratsModal extends Component {
             })}
           </div>
 
-          <SelectableText event={event} shareUrl={shareUrl} />
+          <SelectableText event={event} shareUrl={shareUrl} labels={labels} />
         </ModalBody>
 
         <ModalFooter>
           <Button 
             onClick={this.handleDone}
           >
-            Done
+            {doneBtn}
           </Button>
         </ModalFooter>
       </Modal>
@@ -230,16 +233,16 @@ class CongratsModal extends Component {
   }
 }
 
-const SelectableText = ({ event, shareUrl }) => {
+const SelectableText = ({ event, shareUrl, labels }) => {
   return (
     <div id="selectable">
       <blockquote>
         <p>{event.name}</p>
         <p>{formatCategories(event.categories)}</p>
-        <p>Description: {event.description}</p>
-        <p>Address: {event.address.name}</p>
-        <p>When: {formatWhenObject(event.when)}</p>
-        <p>How to find us: {event.findHints}</p>
+        <p>{labels.description}{event.description}</p>
+        <p>{labels.address}{event.address.name}</p>
+        <p>{labels.when}{formatWhenObject(event.when)}</p>
+        <p>{labels.findHints}{event.findHints}</p>
         <p>Link: <a href={shareUrl} target='__blank' rel='noopener noreferrer'>{shareUrl}</a></p>
       </blockquote>
     </div>

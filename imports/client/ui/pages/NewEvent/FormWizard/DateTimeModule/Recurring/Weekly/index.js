@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
+import i18n from '/imports/both/i18n/en'
 import './styles.scss'
 
+const labels = i18n.NewEventModal.recurrence
 const weekDays = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 
 /**
@@ -72,7 +74,7 @@ export default function RecurrWeekly({ form, schemaKey, initialSelectedDays = []
 
   return (
     <div id="recurr-weekly">
-      Repeat on
+      {labels.repeatOn}
       <div className="weekdays">
         {weekDays.map((day) => {
           const active = selectedDays.includes(day)

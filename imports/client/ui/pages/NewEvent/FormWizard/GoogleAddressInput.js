@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import i18n from '/imports/both/i18n/en'
+
+const labels = i18n.NewEventModal || {}
 
 const extractAddressLabel = (value) => {
   if (!value) {
@@ -70,10 +73,10 @@ export const GoogleAddressInput = ({ onPlaceSelected, value }) => {
           setSelectedAddress(address);
 
           
-            const autocompleteElement = containerRef.current.querySelector('gmpx-place-autocomplete');
-            if (autocompleteElement) {
-              autocompleteElement.value = address;
-            }
+          const autocompleteElement = containerRef.current.querySelector('gmpx-place-autocomplete');
+          if (autocompleteElement) {
+            autocompleteElement.value = address;
+          }
           
 
           onPlaceSelected?.({
@@ -110,11 +113,11 @@ export const GoogleAddressInput = ({ onPlaceSelected, value }) => {
 
   return (
     <div className="address-form">
-      <label htmlFor="google-address-input" className="address-label">Enter Address</label>
+      <label htmlFor="google-address-input" className="address-label">{labels.enterAddress}</label>
       <div id="google-address-input" ref={containerRef} className="address-container" />
 
       {selectedAddress && (
-        <p className="address-selected"><strong className='address-selected-title'>Selected:</strong> {selectedAddress}</p>
+        <p className="address-selected"><strong className='address-selected-title'>{labels.categoryPicker.selected}</strong> {selectedAddress}</p>
       )}
     </div>
   );

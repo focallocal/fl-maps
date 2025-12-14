@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Label, Collapse } from 'reactstrap';
+import i18n from '/imports/both/i18n/en';
+
+const categoryLabels = i18n.NewEventModal.categoryPicker
 
 // Categories to hide from Form 1
 const HIDDEN_CATEGORIES = [
@@ -49,11 +52,11 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }
 
   return (
     <div className="category-accordion">
-      <Label for="categories">Categories</Label>
+      <Label for="categories">{i18n.NewEventModal.categories}</Label>
       
       {selectedName && (
         <div className="selected-category">
-          <span className="selected-label">Selected:</span>
+          <span className="selected-label">{categoryLabels.selected}</span>
           <span className="selected-name">{selectedName}</span>
           <button
             type="button"

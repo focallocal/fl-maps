@@ -36,23 +36,23 @@ export const getPosts = new ValidatedMethod({
         const searchRegex = { $regex: searchQuery.trim(), $options: 'i' };
         
         switch (searchFilter) {
-          case 'title':
-            query.name = searchRegex;
-            break;
-          case 'user':
-            query['organiser.name'] = searchRegex;
-            break;
-          case 'location':
-            query.$or = [
-              { 'address.name': searchRegex },
-              { 'address.city': searchRegex },
-              { 'address.country': searchRegex }
-            ];
-            break;
-          case 'category':
-            // Query array of objects with name field
-            query['categories.name'] = searchRegex;
-            break;
+        case 'title':
+          query.name = searchRegex;
+          break;
+        case 'user':
+          query['organiser.name'] = searchRegex;
+          break;
+        case 'location':
+          query.$or = [
+            { 'address.name': searchRegex },
+            { 'address.city': searchRegex },
+            { 'address.country': searchRegex }
+          ];
+          break;
+        case 'category':
+          // Query array of objects with name field
+          query['categories.name'] = searchRegex;
+          break;
         }
       }
 
@@ -60,26 +60,26 @@ export const getPosts = new ValidatedMethod({
       let sortOptions = {};
       
       switch (sortBy) {
-        case 'dateNewest':
-          sortOptions = { createdAt: -1 };
-          break;
-        case 'dateOldest':
-          sortOptions = { createdAt: 1 };
-          break;
-        case 'mostAttendees':
-          sortOptions = { 'engagement.attendees': -1 };
-          break;
-        case 'alphabetical':
-          sortOptions = { name: 1 };
-          break;
-        case 'category':
-          sortOptions = { 'categories.0.name': 1 };
-          break;
-        case 'location':
-          sortOptions = { 'address.city': 1 };
-          break;
-        default:
-          sortOptions = { createdAt: -1 };
+      case 'dateNewest':
+        sortOptions = { createdAt: -1 };
+        break;
+      case 'dateOldest':
+        sortOptions = { createdAt: 1 };
+        break;
+      case 'mostAttendees':
+        sortOptions = { 'engagement.attendees': -1 };
+        break;
+      case 'alphabetical':
+        sortOptions = { name: 1 };
+        break;
+      case 'category':
+        sortOptions = { 'categories.0.name': 1 };
+        break;
+      case 'location':
+        sortOptions = { 'address.city': 1 };
+        break;
+      default:
+        sortOptions = { createdAt: -1 };
       }
 
       // Get total count

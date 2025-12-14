@@ -177,7 +177,7 @@ const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
       
       <div className="mb-3">
         <FormGroup noMargin={true}>
-          <Label for="name">{labels.event_name || 'Name'}</Label>
+          <Label for="name">{labels.event_name}</Label>
           <Input
             type="text"
             name="name"
@@ -195,7 +195,7 @@ const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
 
       <div className="mb-3">
         <FormGroup noMargin={true}>
-          <Label for="overview">{labels.overview || 'Overview'}</Label>
+          <Label for="overview">{labels.overview}</Label>
           <Input
             type="textarea"
             name="overview"
@@ -259,7 +259,7 @@ const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
           />
         </FormGroup>
         {errors?.category && (!formData?.category || formData.category.trim() === '') && (
-            <div className="text-danger">{errors.category}</div>
+          <div className="text-danger">{errors.category}</div>
         )}
       </div>
     </div>

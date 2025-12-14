@@ -248,7 +248,7 @@ class App extends Component {
   renderNewEvent = ({ location, history }) => {
     const { new: new_, edit, formType } = qs.parse(location.search)
     const isOpen = Boolean(new_ === '1' || (edit === '1' && window.__editData))
-    const formTypeNum = parseInt(formType, 10) || 1  // Default to form type 1
+    const formTypeNum = parseInt(formType, 10) || 1 // Default to form type 1
 
     if (isOpen && !Meteor.userId()) {
       /*

@@ -6,10 +6,17 @@ import { rolesDataKey, checkPermissions } from './RolesPermissions/index'
 import AdminTable from './AdminTable/index'
 import PostsView from './PostsView/index'
 import MergeUsersModal from './MergeUsersModal/index'
+import i18n from '/imports/both/i18n/en'
 import './style.scss'
 import UserSearch from './UserSearch/index'
 import UserDisplay from './UserDisplay/index'
 import { parseData } from  './AdminTable/helper'
+
+const adminI18n = i18n.Admin;
+const usersI18n = adminI18n.users;
+const viewsI18n = adminI18n.views;
+const mergeI18n = adminI18n.merge;
+const commonI18n = adminI18n.common;
 
 class Admin extends Component {
   constructor (props) {
@@ -97,7 +104,7 @@ class Admin extends Component {
       Meteor.call('Admin.deleteUser', { id }, (err, res) => {
         if (err) {
           console.error('Error deleting user:', err)
-          alert('Failed to delete user. Please try again.')
+          alert(usersI18n.deleteFailed)
           return
         }
         context.setState(currentState => {
@@ -216,7 +223,7 @@ class Admin extends Component {
   }
 
   handleSyncDiscourseUsers = () => {
-    if (!window.confirm('Sync all Discourse users? This may take a few minutes.')) {
+    if (!window.confirm(usersI18n.syncConfirm)) {
       return;
     }
 
@@ -226,9 +233,9 @@ class Admin extends Component {
       this.setState({ syncingUsers: false });
       
       if (error) {
-        alert(`Error syncing users: ${error.message}`);
+        alert(`${commonI18n.errorSyncing} ${error.message}`);
       } else {
-        alert(`Sync complete!\nTotal: ${result.totalSynced}\nCreated: ${result.totalCreated}\nUpdated: ${result.totalUpdated}`);
+        alert(`${usersI18n.syncComplete}\n${usersI18n.syncTotal} ${result.totalSynced}\n${usersI18n.syncCreated} ${result.totalCreated}\n${usersI18n.syncUpdated} ${result.totalUpdated}`);
         // Reload users after sync
         this.setState({ users: [], skip: 0, isNoMoreUsers: false }, () => {
           this.getUsers();
@@ -379,7 +386,7 @@ class Admin extends Component {
                 onClick={this.handleToggleView}
                 className="view-toggle-btn"
               >
-                {showPostsView ? 'Show Users View' : 'Show Posts View'}
+                {showPostsView ? viewsI18n.showUsersView : viewsI18n.showPostsView}
               </Button>
             </div>
             <div className="center-controls">
@@ -388,7 +395,7 @@ class Admin extends Component {
                 onClick={this.toggleMergeModal}
                 className="merge-users-btn"
               >
-                Merge Users FL-Maps
+                {mergeI18n.mergeUsersBtn}
               </Button>
             </div>
             <div className="right-controls">
@@ -398,7 +405,7 @@ class Admin extends Component {
                 disabled={syncingUsers}
                 className="sync-users-btn"
               >
-                {syncingUsers ? 'Syncing...' : 'Sync Discourse Users'}
+                {syncingUsers ? usersI18n.syncingBtn : usersI18n.syncBtn}
               </Button>
             </div>
           </div>
@@ -410,17 +417,17 @@ class Admin extends Component {
                 </div>
                 <div className="admin-sort-wrapper">
                   <FormGroup className="sort-users">
-                    <Label for="userSortSelect">Sort by:</Label>
+                    <Label for="userSortSelect">{usersI18n.sortBy}</Label>
                     <Input
                       type="select"
                       id="userSortSelect"
                       value={userSortBy}
                       onChange={this.handleUserSortChange}
                     >
-                      <option value="alphabetical">Alphabetical</option>
-                      <option value="mostPosts">Most Posts</option>
-                      <option value="joinDateNewest">Join Date (Newest)</option>
-                      <option value="joinDateOldest">Join Date (Oldest)</option>
+                      <option value="alphabetical">{usersI18n.sortAlphabetical}</option>
+                      <option value="mostPosts">{usersI18n.sortMostPosts}</option>
+                      <option value="joinDateNewest">{usersI18n.sortNewest}</option>
+                      <option value="joinDateOldest">{usersI18n.sortOldest}</option>
                     </Input>
                   </FormGroup>
                 </div>
@@ -431,7 +438,7 @@ class Admin extends Component {
         {showPostsView ? (
           eventsLoading ? (
             <div className='admin-container'>
-              <p>Loading events...</p>
+              <p>{viewsI18n.loadingEvents}</p>
             </div>
           ) : (
             <PostsView events={events || []} users={this.state.users} onDeletePosts={this.getEvents} onToggleView={this.handleToggleView} />
@@ -439,18 +446,18 @@ class Admin extends Component {
         ) : (
           <>
             {isNoUsersFound &&
-              <Alert color="secondary">No Users found</Alert>
+              <Alert color="secondary">{usersI18n.noUsers}</Alert>
             }
             <AdminTable deleteUser={this.deleteUser} users={sortedUsers} deleteAllEvents={this.deleteAllEvents}
               isAllEvents={this.state.isAllEvents} changeUserRole={this.changeUserRole} events={events}/>
-            <Button onClick={this.displayMoreUsers} >More</Button>
+            <Button onClick={this.displayMoreUsers} >{usersI18n.moreBtn}</Button>
             {isNoMoreUsers &&
-              <Alert color="secondary">No More Users</Alert>
+              <Alert color="secondary">{usersI18n.noMoreUsers}</Alert>
             }
           </>
         )}
         {alertNotAuthorized &&
-          <Alert color="secondary">Not Authorized</Alert>
+          <Alert color="secondary">{usersI18n.notAuthorized}</Alert>
         }
         <MergeUsersModal 
           isOpen={showMergeModal} 
