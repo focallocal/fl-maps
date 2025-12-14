@@ -11,6 +11,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overscroll-behavior: contain; /* Keep scroll events inside this element */
   transition: transform .25s ease;
   will-change: transform;
   z-index: 2;

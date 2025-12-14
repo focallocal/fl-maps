@@ -83,7 +83,12 @@ class EventInfo extends Component {
         <div className='first-section'>
           <div className='top-right-actions'>
             {event && (
-              <img src={displayAvatarUrl} className='event-info-avatar rounded-circle' alt="" />
+              <>
+                <img src={displayAvatarUrl} className='event-info-avatar rounded-circle' alt="" />
+                {event.organiser?.name && event.organiser.name !== '-' && (
+                  <div className='organiser-name'>{event.organiser.name}</div>
+                )}
+              </>
             )}
           </div>
           <div className='title'>{event ? event.name : ''}</div>

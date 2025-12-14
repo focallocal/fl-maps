@@ -9,7 +9,10 @@
   min-height: calc(100vh - #{$menu-height});
   background: #fff;
   color: $black-lighter;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Enable momentum scrolling on iOS */
+  overscroll-behavior: contain; /* Keep scroll events inside this element */
   transition: transform .25s ease;
   transform: translateX(-#{$map-events-list-width});
   will-change: transform;
@@ -72,6 +75,15 @@
         justify-content: center;
         font-weight: bold;
       }
+    }
+
+    .organiser-name {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      margin-bottom: 8px;
+      max-width: 132px;
+      word-wrap: break-word;
     }
 
     .open-close-btn-group {
