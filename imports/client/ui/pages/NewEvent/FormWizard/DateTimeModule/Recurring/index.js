@@ -102,25 +102,21 @@ class Recurring extends Component {
 
         {!forever && this.props.formType === 1 && (
           <div className='occurences-until inline-inputs hide-labels'>
-            <div>
-              <span>Repeat for</span>
-              <Input
-                type="number"
-                name="when.recurring.occurences"
-                value={recurring.occurences || ''}
-                onChange={(e) => this.handleOccurencesChange(parseInt(e.target.value))}
-              />
-              <span>occurence{occurences > 1 ? 's' : ''}</span>
-            </div>
-            <div>
-              <span> or until</span>
-              <Input
-                type="date"
-                name="when.recurring.until"
-                value={recurring.until || ''}
-                onChange={(e) => this.handleUntilChange(e.target.value)}
-              />
-            </div>
+            <span>Repeat for</span>
+            <Input
+              type="number"
+              name="when.recurring.occurences"
+              value={recurring.occurences || ''}
+              onChange={(e) => this.handleOccurencesChange(parseInt(e.target.value))}
+            />
+            <span>occurence{occurences > 1 ? 's' : ''}</span>
+            <span className='or-separator'>or until</span>
+            <Input
+              type="date"
+              name="when.recurring.until"
+              value={recurring.until || ''}
+              onChange={(e) => this.handleUntilChange(e.target.value)}
+            />
           </div>
         )}
       </div>
@@ -184,7 +180,7 @@ class Recurring extends Component {
     const currentWhen = this.props.form.getModel().when || {}
     const updatedWhen = { 
       ...currentWhen, 
-      recurring: { ...currentWhen.recurring, occurences: value }
+      recurring: { ...currentWhen.recurring, occurences: value, until: '' }
     }
     this.props.form.change('when', updatedWhen)
   }
@@ -193,7 +189,7 @@ class Recurring extends Component {
     const currentWhen = this.props.form.getModel().when || {}
     const updatedWhen = { 
       ...currentWhen, 
-      recurring: { ...currentWhen.recurring, until: value }
+      recurring: { ...currentWhen.recurring, until: value, occurences: '' }
     }
     this.props.form.change('when', updatedWhen)
   }

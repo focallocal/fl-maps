@@ -56,38 +56,55 @@
   }
 
   .inline-inputs {
-    margin-bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
 
     &.every-type {
-
       .select-field {
         width: 140px !important;
       }
     }
 
-    &>div {
+    > div {
       display: flex;
       flex-direction: row;
       align-items: center;
-
-      margin-left: 5px;
-      margin-bottom: 0;
-      width: auto;
+      gap: 6px;
+      margin: 0;
 
       .form-group {
-        margin: 0 4px;
-      }
-
-      &:first-child {
-
-        .form-group {
-          width: 70px;
-        }
+        margin: 0;
       }
     }
 
-    &>span {
-      margin: 0 4px;
+    > span {
+      margin: 0;
+    }
+
+    .or-separator {
+      margin-left: 8px;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 4px 8px;
+      height: auto;
+    }
+
+    input[type="date"] {
+      width: auto;
+      padding: 4px 8px;
+      height: auto;
+    }
+
+    select {
+      width: auto;
+      padding: 4px 8px;
+      height: auto;
     }
   }
 
@@ -96,36 +113,17 @@
   }
 
   @media (max-width: 494px) {
-    & {
-
-      .inline-inputs {
-
-        & {
-          flex-flow: column;
-          align-items: baseline !important;
-        }
-
-        &>div {
-          margin-top: 8px;
-        }
-
-        &.every-type {
-
-          .form-group {
-            margin-left: 0;
-          }
-        }
-
-        &>div:first-child {
-          // margin-bottom: 8px;
-        }
-
-        &.every-type {
-
-          &>div {
-            margin-left: 0;
-          }
-        }
+    .inline-inputs {
+      flex-direction: column;
+      align-items: flex-start !important;
+      
+      > div {
+        margin-top: 4px;
+      }
+      
+      .or-separator {
+        margin-left: 0;
+        margin-top: 4px;
       }
     }
   }

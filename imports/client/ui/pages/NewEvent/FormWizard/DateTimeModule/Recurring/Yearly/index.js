@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
-import { Input, Label, FormGroup } from 'reactstrap'
+import { Input } from 'reactstrap'
 
 const weekdaysMap = {
   0: 'Sunday',
@@ -36,28 +36,29 @@ function toDate(input) {
   return isNaN(d.getTime()) ? null : d
 }
 
-function formatMonthDay(date) {
-  if (!date) return ''
-  const month = monthsMap[date.getMonth()]
-  const day = date.getDate()
-  return `${month} ${day}`
-}
-
 export default function RecurrYearly({ form, startingDate, yearly = {} }) {
   const date = useMemo(() => toDate(startingDate), [startingDate])
 
-  const [selectedType, setSelectedType] = useState(yearly.type || 'byDate')
   const [selectedMonth, setSelectedMonth] = useState(yearly.month ?? date?.getMonth() ?? 0)
   const [selectedWeekday, setSelectedWeekday] = useState(yearly.weekday ?? date?.getDay() ?? 5)
   const [selectedPosition, setSelectedPosition] = useState(yearly.position ?? 1)
 
   // If `yearly` changes from outside (form reset or prefill)
   useEffect(() => {
-    if (yearly?.type) setSelectedType(yearly.type)
     if (yearly?.month !== undefined) setSelectedMonth(yearly.month)
     if (yearly?.weekday !== undefined) setSelectedWeekday(yearly.weekday)
     if (yearly?.position !== undefined) setSelectedPosition(yearly.position)
   }, [yearly])
+
+  // Initialize with byPosition on mount
+  useEffect(() => {
+    updateYearly({
+      type: 'byPosition',
+      month: selectedMonth,
+      weekday: selectedWeekday,
+      position: selectedPosition
+    })
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Helper to update when.recurring.yearly properly
   const updateYearly = (yearlyData) => {
@@ -76,130 +77,65 @@ export default function RecurrYearly({ form, startingDate, yearly = {} }) {
     }
   }
 
-  const handleTypeChange = (e) => {
-    const type = e.target.value
-    setSelectedType(type)
-    
-    if (type === 'byDate') {
-      updateYearly({
-        type: 'byDate',
-        month: date?.getMonth() ?? 0,
-        day: date?.getDate() ?? 1
-      })
-    } else {
-      updateYearly({
-        type: 'byPosition',
-        month: selectedMonth,
-        weekday: selectedWeekday,
-        position: selectedPosition
-      })
-    }
-  }
-
   const handleMonthChange = (e) => {
     const month = parseInt(e.target.value)
     setSelectedMonth(month)
-    updateYearly({
-      type: 'byPosition',
-      month,
-      weekday: selectedWeekday,
-      position: selectedPosition
-    })
+    updateYearly({ type: 'byPosition', month, weekday: selectedWeekday, position: selectedPosition })
   }
 
   const handleWeekdayChange = (e) => {
     const weekday = parseInt(e.target.value)
     setSelectedWeekday(weekday)
-    updateYearly({
-      type: 'byPosition',
-      month: selectedMonth,
-      weekday,
-      position: selectedPosition
-    })
+    updateYearly({ type: 'byPosition', month: selectedMonth, weekday, position: selectedPosition })
   }
 
   const handlePositionChange = (e) => {
     const position = parseInt(e.target.value)
     setSelectedPosition(position)
-    updateYearly({
-      type: 'byPosition',
-      month: selectedMonth,
-      weekday: selectedWeekday,
-      position
-    })
+    updateYearly({ type: 'byPosition', month: selectedMonth, weekday: selectedWeekday, position })
   }
 
   return (
     <div id='recurr-yearly'>
-      <FormGroup tag="fieldset">
-        <FormGroup check>
-          <Label check>
-            <Input
-              type='radio'
-              name='yearlyType'
-              value='byDate'
-              checked={selectedType === 'byDate'}
-              onChange={handleTypeChange}
-            />{' '}
-            On {formatMonthDay(date) || 'same date'} each year
-          </Label>
-        </FormGroup>
-        
-        <FormGroup check>
-          <Label check>
-            <Input
-              type='radio'
-              name='yearlyType'
-              value='byPosition'
-              checked={selectedType === 'byPosition'}
-              onChange={handleTypeChange}
-            />{' '}
-            On a specific weekday each year
-          </Label>
-        </FormGroup>
-      </FormGroup>
-
-      {selectedType === 'byPosition' && (
-        <div className='yearly-position-options'>
-          <div className='position-row'>
-            <span>The</span>
-            <Input
-              type='select'
-              value={selectedPosition}
-              onChange={handlePositionChange}
-              className='position-select'
-            >
-              {positionLabels.map((label, index) => (
-                <option key={index} value={index + 1}>{label}</option>
-              ))}
-            </Input>
-            
-            <Input
-              type='select'
-              value={selectedWeekday}
-              onChange={handleWeekdayChange}
-              className='weekday-select'
-            >
-              {Object.entries(weekdaysMap).map(([value, label]) => (
-                <option key={value} value={value}>{label}</option>
-              ))}
-            </Input>
-            
-            <span>of</span>
-            
-            <Input
-              type='select'
-              value={selectedMonth}
-              onChange={handleMonthChange}
-              className='month-select'
-            >
-              {Object.entries(monthsMap).map(([value, label]) => (
-                <option key={value} value={value}>{label}</option>
-              ))}
-            </Input>
-          </div>
+      <div className='yearly-position-options'>
+        <div className='position-row'>
+          <span>The</span>
+          <Input
+            type='select'
+            value={selectedPosition}
+            onChange={handlePositionChange}
+            className='position-select'
+          >
+            {positionLabels.map((label, index) => (
+              <option key={index} value={index + 1}>{label}</option>
+            ))}
+          </Input>
+          
+          <Input
+            type='select'
+            value={selectedWeekday}
+            onChange={handleWeekdayChange}
+            className='weekday-select'
+          >
+            {Object.entries(weekdaysMap).map(([value, label]) => (
+              <option key={value} value={value}>{label}</option>
+            ))}
+          </Input>
+          
+          <span>of</span>
+          
+          <Input
+            type='select'
+            value={selectedMonth}
+            onChange={handleMonthChange}
+            className='month-select'
+          >
+            {Object.entries(monthsMap).map(([value, label]) => (
+              <option key={value} value={value}>{label}</option>
+            ))}
+          </Input>
         </div>
-      )}
+      </div>
     </div>
   )
 }
