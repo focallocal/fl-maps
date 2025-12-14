@@ -1,34 +1,31 @@
 /**
  * Avatar Fallback Utility
  * 
- * Provides Fun Emoji avatars as fallback when Discourse avatar is not available.
+ * Provides Notionists avatars as fallback when Discourse avatar is not available.
  * 
  * Flow:
  * 1. Discourse Avatar (includes Gravatar via Discourse settings) - handled by discourseAvatar.js
- * 2. DiceBear Fun Emoji (this file) - final fallback for users without custom avatars
+ * 2. DiceBear Notionists (this file) - final fallback for users without custom avatars
  * 
- * Uses DiceBear's fun-emoji style: https://www.dicebear.com/styles/fun-emoji/
- * These are fun, colorful emoji-style faces that avoid demographic concerns.
- * Only happy/positive expressions are used.
+ * Uses DiceBear's notionists style: https://www.dicebear.com/styles/notionists/
+ * These are fun, hand-drawn style avatars.
  */
 
-// Happy/positive mouth expressions only (excludes sad, sick, shout, etc.)
-// Valid values from DiceBear fun-emoji docs: cute, drip, faceMask, kissHeart, lilSmile,
-// pissed, plain, sad, shout, shy, sick, smileLol, smileTeeth, tongueOut, wideSmile
-// We keep only clearly positive ones here.
-const HAPPY_MOUTHS = 'cute,kissHeart,lilSmile,smileLol,smileTeeth,tongueOut,wideSmile'
-
 /**
- * Generate a DiceBear Fun Emoji avatar URL
- * Same identifier always generates the same emoji face (deterministic)
- * Only uses happy/positive expressions
+ * Generate a DiceBear Notionists avatar URL
+ * Same identifier always generates the same avatar (deterministic)
  * @param {string} identifier - Username or any string to seed the avatar
  * @param {number} size - Size in pixels (default 90)
  * @returns {string} URL to the avatar SVG
  */
-export function getFunEmojiAvatar(identifier, size = 90) {
+export function getNotionistsAvatar(identifier, size = 90) {
   const seed = (identifier || 'anonymous').toString().trim().toLowerCase()
-  return `https://api.dicebear.com/7.x/fun-emoji/svg?seed=${encodeURIComponent(seed)}&size=${size}&mouth=${HAPPY_MOUTHS}`
+  return `https://api.dicebear.com/7.x/notionists/svg?seed=${encodeURIComponent(seed)}&size=${size}`
+}
+
+// Keep old function name for backwards compatibility
+export function getFunEmojiAvatar(identifier, size = 90) {
+  return getNotionistsAvatar(identifier, size)
 }
 
 /**

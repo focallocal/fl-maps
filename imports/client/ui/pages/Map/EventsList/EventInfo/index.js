@@ -83,15 +83,13 @@ class EventInfo extends Component {
         <div className='first-section'>
           <div className='top-right-actions'>
             {event && (
-              <>
-                <img src={displayAvatarUrl} className='event-info-avatar rounded-circle' alt="" />
-                {event.organiser?.name && event.organiser.name !== '-' && (
-                  <div className='organiser-name'>{event.organiser.name}</div>
-                )}
-              </>
+              <img src={displayAvatarUrl} className='event-info-avatar rounded-circle' alt="" />
             )}
           </div>
           <div className='title'>{event ? event.name : ''}</div>
+          {event?.organiser?.name && event.organiser.name !== '-' && (
+            <div className='organiser-name'>{event.organiser.name}</div>
+          )}
           <div className='categories'>{categories}</div>
           <div className='distance'>{distance}</div>
           <ButtonGroup className='open-close-btn-group'>

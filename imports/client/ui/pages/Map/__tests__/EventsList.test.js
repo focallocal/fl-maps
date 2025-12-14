@@ -148,7 +148,7 @@ describe('<EventsListItem />', () => {
   })
 
   it('should display distance from event only if userLocation is provided', () => {
-    expect(component.find('.distance').text()).toEqual('couldn\'t calculate distance to location')
+    expect(component.find('.distance').text()).toEqual('location permission needed to show distance')
   })
 
   it('should display distance if location is provided', () => {

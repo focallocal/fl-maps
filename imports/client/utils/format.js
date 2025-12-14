@@ -2,7 +2,7 @@ import haversine from 'haversine'
 
 export function formatMilesFromLocation (userLocation, coordinates) {
   if (!userLocation) {
-    return 'couldn\'t calculate distance to location'
+    return 'location permission needed to show distance'
   }
 
   const userPosition = { latitude: userLocation.lat, longitude: userLocation.lng }
