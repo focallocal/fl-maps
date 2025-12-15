@@ -256,6 +256,7 @@ const FirstStep = ({ form, onChange, errors, formType = 1 }) => {
             groupedCategories={Categories}
             handleInputChange={handleSearchableCategory}
             value={formData.categories}
+            showSearch={true}
           />
         </FormGroup>
         {errors?.category && (!formData?.category || formData.category.trim() === '') && (

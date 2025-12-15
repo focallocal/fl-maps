@@ -67,7 +67,7 @@
   margin-bottom: 0 !important;
 }
 
-// Category Accordion Styles
+// Category Accordion Styles - matching filter list style
 .category-accordion {
   .selected-category {
     display: flex;
@@ -110,89 +110,81 @@
     border: 1px solid #dee2e6;
     border-radius: 4px;
     background: #fff;
-    max-height: 300px; // ~6 top-level categories visible (50px each approx)
+    max-height: 300px; // ~6 top-level categories visible
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   }
 
-  .accordion-groups {
-    margin: 0;
-  }
-
-  .accordion-group {
+  .category-search {
+    padding: 10px;
     border-bottom: 1px solid #dee2e6;
-    
-    &:last-child {
-      border-bottom: none;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+
+    input {
+      width: 100%;
     }
   }
 
-  .accordion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    background: #fafafa;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.15s ease;
+  .category-list {
+    margin: 0;
 
-    &:hover {
-      background: #f0f0f0;
-    }
+    .list-group-item {
+      cursor: pointer;
 
-    .group-name {
-      font-weight: 600;
-      color: #333;
-      font-size: 14px;
-    }
-
-    .chevron {
-      font-size: 10px;
-      color: #999;
-      transition: transform 0.2s;
-
-      &.open {
-        transform: rotate(90deg);
+      &:hover {
+        z-index: 0 !important;
+        background-color: #f8f9fa;
       }
     }
-  }
 
-  .accordion-content {
-    background: #fff;
-  }
+    .category-parent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bolder;
+      padding: 10px 1em;
 
-  .category-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 20px 12px 40px;
-    cursor: pointer;
-    border-top: 1px solid #f0f0f0;
-    transition: background-color 0.15s ease;
+      .chevron {
+        font-size: 10px;
+        color: #999;
+        transition: transform 0.2s;
 
-    &:hover {
-      background: #f5f5f5;
+        &.open {
+          transform: rotate(90deg);
+        }
+      }
     }
 
-    &.selected {
-      background: #e3f2fd;
-    }
+    .category-child {
+      padding-left: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
 
-    .color-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
+      &.selected {
+        background-color: #e3f2fd;
+      }
 
-    .category-name {
-      color: #333;
-      font-size: 14px;
-      font-weight: normal;
-      flex: 1;
+      &.search-hidden {
+        opacity: 0.3;
+      }
+
+      a {
+        color: rgb(200, 200, 200);
+        font-size: 1.5em;
+        text-decoration: none;
+
+        &:hover {
+          color: #0056b3;
+        }
+      }
     }
   }
 }

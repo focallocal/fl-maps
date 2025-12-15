@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Label, Collapse } from 'reactstrap';
+import React, { useState, useRef } from 'react';
+import { Label, Collapse, Input, ListGroup, ListGroupItem } from 'reactstrap';
 import i18n from '/imports/both/i18n/en';
 
 const categoryLabels = i18n.NewEventModal.categoryPicker
@@ -10,8 +10,10 @@ const HIDDEN_CATEGORIES = [
   'Random Acts of Kindness Communities'
 ];
 
-const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }) => {
+const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value, showSearch = false }) => {
   const [openGroups, setOpenGroups] = useState({});
+  const [searchTerm, setSearchTerm] = useState('');
+  const containerRef = useRef(null);
 
   // Filter out hidden categories from each group
   const filteredGroups = groupedCategories
@@ -48,6 +50,38 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }
       color: category.color,
       url: category.url
     });
+    setSearchTerm(''); // Clear search after selection
+  };
+
+  // Search functionality - expand all groups and scroll to match
+  const handleSearch = (e) => {
+    const term = e.target.value.toLowerCase();
+    setSearchTerm(e.target.value);
+    
+    if (term.length > 0) {
+      // Expand all groups when searching
+      const allOpen = {};
+      filteredGroups.forEach(group => {
+        allOpen[group.name] = true;
+      });
+      setOpenGroups(allOpen);
+      
+      // Find first matching category and scroll to it
+      setTimeout(() => {
+        const matchingElement = containerRef.current?.querySelector(
+          `[data-category-name*="${term}"]`
+        );
+        if (matchingElement) {
+          matchingElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
+  };
+
+  // Check if category matches search term
+  const matchesSearch = (categoryName) => {
+    if (!searchTerm) return true;
+    return categoryName.toLowerCase().includes(searchTerm.toLowerCase());
   };
 
   return (
@@ -69,43 +103,54 @@ const SearchableCategoryInput = ({ groupedCategories, handleInputChange, value }
         </div>
       )}
 
-      <div className="category-modal-container">
-        <div className="accordion-groups">
-        {filteredGroups.map((group) => (
-          <div key={group.name} className="accordion-group">
-            <div
-              className="accordion-header"
-              onClick={() => toggleGroup(group.name)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && toggleGroup(group.name)}
-            >
-              <span className="group-name">{group.name}</span>
-              <span className={`chevron ${openGroups[group.name] ? 'open' : ''}`}>▶</span>
-            </div>
-            <Collapse isOpen={openGroups[group.name]}>
-              <div className="accordion-content">
-                {group.categories.map((category) => (
-                  <div
-                    key={category.name}
-                    className={`category-item ${selectedName === category.name ? 'selected' : ''}`}
-                    onClick={() => handleCategoryClick(category)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => e.key === 'Enter' && handleCategoryClick(category)}
-                  >
-                    <span
-                      className="color-dot"
-                      style={{ backgroundColor: category.color }}
-                    />
-                    <span className="category-name">{category.name}</span>
-                  </div>
-                ))}
-              </div>
-            </Collapse>
+      <div className="category-modal-container" ref={containerRef}>
+        {showSearch && (
+          <div className="category-search">
+            <Input
+              type="text"
+              placeholder="Search categories..."
+              value={searchTerm}
+              onChange={handleSearch}
+            />
           </div>
-        ))}
-        </div>
+        )}
+        <ListGroup className="category-list">
+          {filteredGroups.map((group) => (
+            <React.Fragment key={group.name}>
+              <ListGroupItem
+                className="category-parent"
+                onClick={() => toggleGroup(group.name)}
+              >
+                <span style={{ color: group.color }}>{group.name}</span>
+                <span className={`chevron ${openGroups[group.name] ? 'open' : ''}`}>▶</span>
+              </ListGroupItem>
+              <Collapse isOpen={openGroups[group.name]}>
+                {group.categories.map((category) => (
+                  <ListGroupItem
+                    key={category.name}
+                    className={`category-child ${selectedName === category.name ? 'selected' : ''} ${!matchesSearch(category.name) ? 'search-hidden' : ''}`}
+                    onClick={() => handleCategoryClick(category)}
+                    data-category-name={category.name.toLowerCase()}
+                    style={{ color: category.color }}
+                  >
+                    {category.name}
+                    {category.url && (
+                      <a 
+                        href={category.url} 
+                        target='_blank' 
+                        rel="external noreferrer" 
+                        aria-label='Go to Page'
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        ?
+                      </a>
+                    )}
+                  </ListGroupItem>
+                ))}
+              </Collapse>
+            </React.Fragment>
+          ))}
+        </ListGroup>
       </div>
     </div>
   );
