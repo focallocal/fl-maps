@@ -2,58 +2,68 @@
   {
     "name": "PHM Community",
     "categories": [
-      { "name" : "Positive People Nearby", "color" : "#18a80d", "url": ""},
-      { "name" : "Random Acts of Kindness Communities", "color": "#6d65bc", "url": ""},
-      { "name" : "Global Flash Mobs", "color" : "#38a80d", "url": ""}     
+      { "name": "Positive People Nearby", "color": "#18a80d", "url": "" },
+      { "name": "Random Acts of Kindness Communities", "color": "#6d65bc", "url": "" },
+      { "name": "Global Flash Mobs", "color": "#38a80d", "url": "" }
     ]
   },
   {
     "name": "Art, Music, Dance and Poetry",
     "categories": [
-      {"name": "Public Dancing", "color": "#6512bc", "url": ""},
-      {"name": "Public Music Jam", "color": "#a711c4", "url": ""},
-      {"name": "Connecting Canvas", "color": "#ce1ca4", "url": "https://news.focallocal.org/connecting-canvas/"},
-      {"name": "Pick-me-up Public Poetry", "color": "#6d65bc", "url": ""},
-      {"name": "Busker Dance Party", "color": "#5e9e6b", "url": ""}
+      { "name": "Public Dancing", "color": "#6512bc", "url": "https://publichappinessmovement.com/t/topic/5527" },
+      { "name": "Public Music Jam", "color": "#a711c4", "url": "" },
+      { "name": "Connecting Canvas", "color": "#ce1ca4", "url": "https://publichappinessmovement.com/t/topic/4199" },
+      { "name": "Pick-me-up Public Poetry", "color": "#6d65bc", "url": "https://publichappinessmovement.com/t/topic/5917" },
+      { "name": "Busker Dance Party", "color": "#5e9e6b", "url": "" },
+      { "name": "Public Sing-A-Long", "color": "#7a8f99", "url": "https://publichappinessmovement.com/t/topic/5579" }
     ]
   },
   {
     "name": "Health and Well-being",
     "categories": [
-      { "name" : "Open Skills Sharing Day", "color" : "#52929b", "url": "https://news.focallocal.org/international-open-skills-sharing-day/"},
-      { "name" : "Health + Well-being Flash", "color" : "#5e9b6b", "url": ""}
+      { "name": "Health + Well-being Flash", "color": "#5e9b6b", "url": "" }
     ]
   },
   {
     "name": "Public Playfulness",
     "categories": [
-      { "name" : "Free Hugs", "color" : "#f82d2d", "url": "https://news.focallocal.org/free-hugs/"},
-      { "name" : "Pillow Fight 4Connection", "color" : "#48a80d", "url": "https://news.focallocal.org/pillow-fight4connection/"},
-      { "name" : "Give a Bubble", "color" : "#0ea575", "url": "https://news.focallocal.org/give-a-bubble/"},
-      { "name" : "Eye Bombing", "color" : "#43a904", "url": ""}
+      { "name": "Free Hugs", "color": "#f82d2d", "url": "https://news.focallocal.org/free-hugs/" },
+      { "name": "Pillow Fight 4Connection", "color": "#48a80d", "url": "https://news.focallocal.org/pillow-fight4connection/" },
+      { "name": "Give a Bubble", "color": "#0ea575", "url": "https://publichappinessmovement.com/t/topic/3239" },
+      { "name": "Eye Bombing", "color": "#43a904", "url": "https://publichappinessmovement.com/t/topic/5915" },
+      { "name": "Public Slip 'n' Slide", "color": "#2ea8d9", "url": "https://publichappinessmovement.com/t/topic/5524" }
     ]
   },
   {
     "name": "Human and Community Connection",
     "categories": [
-      { "name" : "I've Got a Message for YOU!", "color" : "#fc1976", "url": "https://news.focallocal.org/ive-got-a-message-for-you-the-positive-thinking-jar/"},
-      { "name" : "The Positivity Facilitator", "color" : "#080fba", "url": "https://news.focallocal.org/the-positivity-facilitator/"},
-      { "name" : "Take a Smile", "color" : "#4a0bff", "url": "https://publichappinessmovement.com/t/topic/3084"},
-      { "name" : "Good Human Appreciation", "color" : "#4a0bff", "url": ""},
-      { "name" : "Eye Contact for Connection", "color" : "#adbc12", "url": "https://news.focallocal.org/eye-contact-gathering/"}
+      { "name": "I've Got a Message for YOU!", "color": "#fc1976", "url": "https://publichappinessmovement.com/t/topic/3132" },
+      { "name": "The Positivity Facilitator", "color": "#080fba", "url": "https://publichappinessmovement.com/t/topic/5916" },
+      { "name": "Take a Smile", "color": "#4a0bff", "url": "https://publichappinessmovement.com/t/topic/3084" },
+      { "name": "Eye Contact for Connection", "color": "#adbc12", "url": "https://news.focallocal.org/eye-contact-gathering/" },
+      { "name": "Open Skills Sharing Day", "color": "#52929b", "url": "https://publichappinessmovement.com/t/topic/5455" },
+      { "name": "Public Laughter Instigation", "color": "#ff6b35", "url": "https://publichappinessmovement.com/t/topic/6507" }
+    ]
+  },
+  {
+    "name": "Kindness",
+    "categories": [
+      { "name": "Upcycle Gifting", "color": "#2ecc71", "url": "https://publichappinessmovement.com/t/topic/5914" }
     ]
   },
   {
     "name": "Environment and Sustainability",
     "categories": [
-      { "name" : "Inspire MY City", "color" : "#e5a20b", "url": "https://news.focallocal.org/musical-connection/transport-jam/"},
-      { "name" : "Guerrilla Urban Beautification", "color" : "#1f482d", "url": "https://news.focallocal.org/community-guerrilla-gardening/"}
+      { "name": "Inspire MY City", "color": "#e5a20b", "url": "https://news.focallocal.org/musical-connection/transport-jam/" },
+      { "name": "Guerrilla Urban Beautification", "color": "#1f482d", "url": "https://publichappinessmovement.com/t/topic/5453" },
+      { "name": "De-Trash Dance Party", "color": "#27ae60", "url": "https://publichappinessmovement.com/t/topic/5526" },
+      { "name": "Epic Water-Fight Re-wilding Battle", "color": "#16a085", "url": "https://publichappinessmovement.com/t/topic/6508" }
     ]
   },
   {
     "name": "Testing Something New",
     "categories": [
-      { "name" : "Testing a New Gathering", "color" : "#e5a20b", "url": "https://publichappinessmovement.com/c/suggested-activities/activitysuggestions"}
+      { "name": "Testing a New Gathering", "color": "#e5a20b", "url": "https://publichappinessmovement.com/c/suggested-activities/activitysuggestions" }
     ]
   }
 ]
