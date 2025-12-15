@@ -146,7 +146,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-weight: bolder;
+      font-weight: normal;
+      font-size: 1rem;
+      color: #495057;
       padding: 10px 1em;
 
       .chevron {
