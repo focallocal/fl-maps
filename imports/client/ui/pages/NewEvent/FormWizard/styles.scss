@@ -107,7 +107,7 @@
 
   // Modal-style scrollable container
   .category-modal-container {
-    border: 1px solid #dee2e6;
+    border: 1px solid #ced4da;
     border-radius: 4px;
     background: #fff;
     max-height: 300px; // ~6 top-level categories visible
@@ -132,9 +132,12 @@
 
   .category-list {
     margin: 0;
+    border: none;
 
     .list-group-item {
       cursor: pointer;
+      border-width: 1px;
+      border-color: #ced4da;
 
       &:hover {
         z-index: 0 !important;

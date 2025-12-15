@@ -11,18 +11,7 @@
   #map-container {
 
     #minimize {
-      display: block!important;
-      position: absolute;
-      bottom: 55vh!important;
-      top: auto!important;
-      left: 0px;
-      height: $minimize-button-height;
-      width: 76.2px;
-      font-size: .7em;
-      background-color: $gray-lighter;
-      color: $black-lighter;
-      transform: rotateZ(0deg);
-      transition: top .2s ease;
+      display: none!important;
     }
 
     &.minimized {
