@@ -2,35 +2,7 @@
 
 @media screen and (max-width: 750px) {
 
-  .offset-standalone-menu {
-      #minimize {
-        top: calc(45vh - #{$minimize-button-height})!important;
-      }
-    }  
-
   #map-container {
-
-    #minimize {
-      display: none!important;
-    }
-
-    &.minimized {
-
-      #events-list {
-        transform: translateY(100vh);
-      }
-
-      #map {
-        height: 100%!important;
-      }
-
-      button#minimize {
-        top: calc(100vh - 30px)!important;
-        bottom: auto!important;
-        left: 0px;
-        z-index: 99;
-      }
-    }
 
     #map {
       height: 45vh;

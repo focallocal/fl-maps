@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { ListGroup, Button } from 'reactstrap'
 
 import EventsListItem from './EventsListItem'
-import MinimizeButton from './MinimizeButton'
 import EventInfo from './EventInfo'
 
 import { inIFrame } from 'dcs-client'
@@ -202,8 +201,6 @@ class EventsList extends Component {
           <Loading show={isFetching} />
           <NoResults show={!hasData && !isFetching} />
         </div>
-
-        <MinimizeButton />
 
         <EventInfo
           event={events.find(event => event._id === currentEvent)}
