@@ -136,12 +136,17 @@
 
     .list-group-item {
       cursor: pointer;
-      border-width: 1px;
-      border-color: #ced4da;
+      border: none;
+      border-bottom: 1px solid #ced4da;
+      border-radius: 0;
 
       &:hover {
         z-index: 0 !important;
         background-color: #f8f9fa;
+      }
+      
+      &:last-child {
+        border-bottom: none;
       }
     }
 
