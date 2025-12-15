@@ -15,6 +15,7 @@
   transition: transform .25s ease;
   will-change: transform;
   z-index: 2;
+  padding-bottom: 60px; /* Space for floating footer */
 
   &.offset-standalone-menu {
     height: calc(100vh - #{$menu-height})!important;
