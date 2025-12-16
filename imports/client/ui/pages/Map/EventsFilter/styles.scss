@@ -56,6 +56,9 @@
   }
 
   .categories-items{
+    overflow-y: auto;
+    max-height: calc(100vh - #{$menu-height} - 80px);
+
     .list-group-item{
       display: flex;
       align-items: center; //value before flex start
@@ -63,6 +66,7 @@
       justify-content: space-between;
     
       position: relative;
+      padding-right: 45px;
 
       div {
         display: inline-block;
