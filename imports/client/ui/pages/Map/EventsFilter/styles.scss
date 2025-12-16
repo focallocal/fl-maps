@@ -57,6 +57,9 @@
 
   .categories-items{
     overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     max-height: calc(100vh - #{$menu-height} - 80px);
 
     .list-group-item{
