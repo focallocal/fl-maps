@@ -33,6 +33,42 @@ class FiltersList extends Component {
     // checkedFilters: Array(possibleCategories.length).fill(true) // all checked by default
   }
 
+  wheelListenerAttached = false
+
+  componentDidMount() {
+    this.attachWheelListener()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.show && !prevProps.show) {
+      this.attachWheelListener()
+    }
+  }
+
+  componentWillUnmount() {
+    this.detachWheelListener()
+  }
+
+  attachWheelListener = () => {
+    const filtersList = document.getElementById('filters-list')
+    if (filtersList && !this.wheelListenerAttached) {
+      filtersList.addEventListener('wheel', this.handleWheel, { passive: false })
+      this.wheelListenerAttached = true
+    }
+  }
+
+  detachWheelListener = () => {
+    const filtersList = document.getElementById('filters-list')
+    if (filtersList && this.wheelListenerAttached) {
+      filtersList.removeEventListener('wheel', this.handleWheel)
+      this.wheelListenerAttached = false
+    }
+  }
+
+  handleWheel = (e) => {
+    e.stopPropagation()
+  }
+
   render () {
     const {
       checkAll,
