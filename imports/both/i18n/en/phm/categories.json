@@ -27,9 +27,8 @@
   {
     "name": "Public Playfulness",
     "categories": [
-      { "name": "Free Hugs", "color": "#f82d2d", "url": "" },
-        { "name": "Free Hugs", "color": "#f82d2d", "url": "https://publichappinessmovement.com/t/topic/3241" },
-        { "name": "Pillow Fights for Connection", "color": "#48a80d", "url": "https://publichappinessmovement.com/t/topic/4201" },
+      { "name": "Free Hugs", "color": "#f82d2d", "url": "https://publichappinessmovement.com/t/topic/3241" },
+      { "name": "Pillow Fights for Connection", "color": "#48a80d", "url": "https://publichappinessmovement.com/t/topic/4201" },
       { "name": "Give a Bubble", "color": "#0ea575", "url": "https://publichappinessmovement.com/t/topic/3239" },
       { "name": "Eye Bombing", "color": "#43a904", "url": "https://publichappinessmovement.com/t/topic/5915" },
       { "name": "Public Slip 'n' Slide", "color": "#2ea8d9", "url": "https://publichappinessmovement.com/t/topic/5524" }
