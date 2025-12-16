@@ -27,11 +27,11 @@
   {
     "name": "Public Playfulness",
     "categories": [
-      { "name": "Free Hugs", "color": "#D50000", "url": "https://publichappinessmovement.com/t/topic/3241" },
-      { "name": "Pillow Fights for Connection", "color": "#E53935", "url": "https://publichappinessmovement.com/t/topic/4201" },
-      { "name": "Give a Bubble", "color": "#F4511E", "url": "https://publichappinessmovement.com/t/topic/3239" },
-      { "name": "Eye Bombing", "color": "#FF5722", "url": "https://publichappinessmovement.com/t/topic/5915" },
-      { "name": "Public Slip 'n' Slide", "color": "#FF6D00", "url": "https://publichappinessmovement.com/t/topic/5524" }
+      { "name": "Free Hugs", "color": "#F43F5E", "url": "https://publichappinessmovement.com/t/topic/3241" },
+      { "name": "Pillow Fights for Connection", "color": "#FB7185", "url": "https://publichappinessmovement.com/t/topic/4201" },
+      { "name": "Give a Bubble", "color": "#EC4899", "url": "https://publichappinessmovement.com/t/topic/3239" },
+      { "name": "Eye Bombing", "color": "#D946EF", "url": "https://publichappinessmovement.com/t/topic/5915" },
+      { "name": "Public Slip 'n' Slide", "color": "#A855F7", "url": "https://publichappinessmovement.com/t/topic/5524" }
     ]
   },
   {
@@ -48,16 +48,16 @@
   {
     "name": "Kindness",
     "categories": [
-      { "name": "Upcycle Gifting", "color": "#FFB300", "url": "https://publichappinessmovement.com/t/topic/5914" }
+      { "name": "Upcycle Gifting", "color": "#3F51B5", "url": "https://publichappinessmovement.com/t/topic/5914" }
     ]
   },
   {
     "name": "Environment and Sustainability",
     "categories": [
       { "name": "Inspire My Neighbourhood", "color": "#1B5E20", "url": "https://publichappinessmovement.com/t/topic/4226" },
-      { "name": "Guerrilla Urban Beautification", "color": "#388E3C", "url": "https://publichappinessmovement.com/t/topic/5453" },
-      { "name": "De-Trash Dance Party", "color": "#558B2F", "url": "https://publichappinessmovement.com/t/topic/5526" },
-      { "name": "Epic Water-Fight Re-wilding Battle", "color": "#7CB342", "url": "https://publichappinessmovement.com/t/topic/6508" }
+      { "name": "Guerrilla Urban Beautification", "color": "#2E7D32", "url": "https://publichappinessmovement.com/t/topic/5453" },
+      { "name": "De-Trash Dance Party", "color": "#43A047", "url": "https://publichappinessmovement.com/t/topic/5526" },
+      { "name": "Epic Water-Fight Re-wilding Battle", "color": "#A3E635", "url": "https://publichappinessmovement.com/t/topic/6508" }
     ]
   },
   {
