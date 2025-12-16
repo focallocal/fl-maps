@@ -10,7 +10,7 @@
   transition: transform .3s ease;
   will-change: transform;
   z-index: 1;
-  overflow: hidden;
+  overflow-y: auto;
 
   &.show {
     transform: translate($map-events-list-width, 0);
