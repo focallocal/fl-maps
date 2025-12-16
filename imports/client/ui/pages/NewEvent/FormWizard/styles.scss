@@ -176,6 +176,7 @@
       align-items: center;
       justify-content: space-between;
       position: relative;
+      border-bottom: 1px solid #ced4da !important;
 
       &.selected {
         background-color: #e3f2fd;
