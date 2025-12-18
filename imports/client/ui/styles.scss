@@ -1,18 +1,4 @@
-html {
-  /* Ensure consistent scrollbar behavior across browsers */
-  overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
-}
-
-body {
-  overflow-y: auto;
-  overflow-x: hidden; /* Prevent horizontal scroll from content overflow */
-  margin: 0;
-  padding: 0;
-}
-
-@media screen and (max-width: 750px) {
-  body {
-    overflow-y: scroll; /* has to be scroll, not auto */
-    -webkit-overflow-scrolling: touch;
-  }
-}
+/* 
+ * App-specific styles.
+ * Global html/body styles are in imports/client/stylesheets/main.scss
+ */
