@@ -1,18 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Playwrite+DE+VA+Guides&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Playwrite+DE+VA+Guides&display=swap');
 
-html, body {
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
-}
-
 .slideshow-container {
   position: relative;
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
   aspect-ratio: 16/9;
+  overflow: hidden; /* Contain slides within container, not globally */
 }
 
 .slideshow-wrapper {

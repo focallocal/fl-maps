@@ -1,6 +1,13 @@
+html {
+  /* Ensure consistent scrollbar behavior across browsers */
+  overflow-y: scroll; /* Always show scrollbar to prevent layout shift */
+}
+
 body {
   overflow-y: auto;
-
+  overflow-x: hidden; /* Prevent horizontal scroll from content overflow */
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 750px) {
