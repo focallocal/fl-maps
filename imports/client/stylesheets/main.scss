@@ -2,42 +2,27 @@
 @import './bootstrap.scss';
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
 
+/* 
+ * Scroll Architecture: Best Practice
+ * - Let browser handle scrolling naturally on <html>
+ * - No height:100% chain that constrains document flow
+ * - No overflow rules on root elements (except body overflow-x for safety)
+ */
+
 html {
-  height: 100%;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  /* Always show scrollbar to prevent layout shift and ensure it's clickable */
-  overflow-y: scroll;
-  overflow-x: hidden;
-  
-  /* Firefox iframe compatibility */
-  @supports (-moz-appearance: none) {
-    min-height: 100vh;
-  }
-  
-  /* Safari/iOS viewport height fix */
-  @supports (-webkit-touch-callout: none) {
-    min-height: -webkit-fill-available;
-  }
+  /* No height constraints - document flows naturally */
+  /* No overflow rules - browser default handles scrolling */
 }
 
 body {
-  height: 100%;
-  min-height: 100vh;
   margin: 0;
   padding: 0;
-  /* Body should not scroll - let html handle scrolling */
-  overflow-x: hidden;
-  overflow-y: visible;
-  /* Use width:100% instead of max-width to prevent centering issues */
+  min-height: 100vh;
   width: 100%;
-  
-  /* Firefox iframe compatibility */
-  @supports (-moz-appearance: none) {
-    min-height: 100vh;
-    height: auto;
-  }
+  /* Only prevent horizontal scroll - let vertical scroll happen naturally */
+  overflow-x: hidden;
   
   /* Safari/iOS viewport height fix */
   @supports (-webkit-touch-callout: none) {
@@ -72,18 +57,11 @@ body, h1, h2, h3, h4, h5, p, span {
   opacity: 0;
   transition: opacity .3s ease-in;
   min-height: 100vh;
-  height: 100%;
+  /* No height:100% - let content determine height */
   
   /* Ensure root is positioned for absolute children */
   position: relative;
   width: 100%;
-  
-  /* Firefox iframe compatibility */
-  @supports (-moz-appearance: none) {
-    min-height: 100vh;
-    /* Prevent scroll issues */
-    overflow: hidden;
-  }
   
   /* Safari/iOS viewport height fix */
   @supports (-webkit-touch-callout: none) {
