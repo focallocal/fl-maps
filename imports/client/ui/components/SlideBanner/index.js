@@ -29,9 +29,11 @@ const SlideshowBanner = ({ autoScrollInterval = 3000 }) => {
   useEffect(() => {
     if (isHovered) return; // Don't run auto scroll when hovered
 
-    const interval = setInterval(goToNext, autoScrollInterval);
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
+    }, autoScrollInterval);
     return () => clearInterval(interval); // Clean up interval on component unmount
-  }, [currentIndex, autoScrollInterval, isHovered]);
+  }, [autoScrollInterval, isHovered, items.length]);
 
   return (
     <div

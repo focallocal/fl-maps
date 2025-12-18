@@ -41,7 +41,7 @@ class MovementSection extends Component {
           </div>
           <Row className="items justify-content-center">
             {items.map((item, i) => (
-              <Item item={item} loginButton={loginButton} />
+              <Item key={item.title || i} item={item} loginButton={loginButton} />
             ))}
           </Row>
         </Container>
@@ -50,7 +50,7 @@ class MovementSection extends Component {
   }
 }
 MovementSection.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool
 }
 
 export default MovementSection

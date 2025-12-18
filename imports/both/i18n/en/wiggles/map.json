@@ -1,0 +1,79 @@
+{
+  "filtersTitle": "Select All",
+  "upcomingButton": "Upcoming",
+  "listButton": "List",
+  "openEventDetailsBtn": "Open",
+  "closeBtn": "Close",
+  "backToMapBtn": "Back To Map",
+  "filterBtn": "Filter",
+  "printCalendarBtn": "Print Calendar",
+  "printBtn": "Print",
+  "hidePastBtn": "Hide Past",
+  "showPastBtn": "Show Past",
+  "myLocationBtn": "My Location",
+  "searchPlaceholder": "Search",
+  "loading": "looking for events near you...",
+  "noResults": "Sorry, we could not find anything around you...",
+  "locationPermission": "location permission needed for distances",
+  "printTitle": "Calendar",
+  "printSubtitle": "Upcoming Events",
+  "tableHeaders": {
+    "date": "Date",
+    "eventName": "Event Name",
+    "time": "Time",
+    "address": "Address"
+  },
+  "dateAndTime": "Date and Time",
+  "location": "Location",
+  "viewMap": "View Map",
+  "createdBy": "Created By",
+  "anonymous": "Anonymous",
+  "meetMeDetails": "Meet Me Details",
+  "about": "About",
+  "deleteBtn": "Delete",
+  "reportBtn": "Report",
+  "deleteModal": {
+    "header": "Delete Event",
+    "body": "Are you sure you want to delete this event? This action cannot be undone.",
+    "cancelBtn": "No, Cancel",
+    "confirmBtn": "Yes, Delete"
+  },
+  "goingBtn": "I'm Going",
+  "inviteBtn": "Invite",
+  "eventInfo": {
+    "shareExpTitle": "Share Your Experience",
+    "introTitle": "Introduction",
+    "wall": {
+      "title": "Wall",
+      "subtitle": "Help Building and Growing"
+    },
+    "media": {
+      "title": "Media",
+      "subtitle": "Vids and Photos"
+    },
+    "stories": {
+      "title": "Stories",
+      "subtitle": "Share your experience"
+    },
+    "whoIsGoing": {
+      "title": "Who Is Going",
+      "subtitle": "See who's joining"
+    },
+    "experiences": {
+      "title": "References",
+      "subtitle": "positive or negative experience?"
+    },
+    "socialMedia": {
+      "title": "Social Media",
+      "subtitle": "Support by Sharing",
+      "messagePre": "Check out this: "
+    }
+  },
+  "alerts": {
+    "eventLoading": "Event details are still loading. Please try again.",
+    "deleteFailed": "Failed to delete event. Please try again.",
+    "loadFailed": "Failed to load event. Please try again later.",
+    "messagingError": "We could not reach the forum messaging system. Please contact the moderators directly.",
+    "noEventsFound": "No events found matching search"
+  }
+}

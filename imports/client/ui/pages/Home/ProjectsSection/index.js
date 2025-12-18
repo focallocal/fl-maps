@@ -50,7 +50,7 @@ class ProjectsSection extends Component {
           </div>
           <Row className="items justify-content-center">
             {items.map((item, i) => (
-              <Item item={item} loginButton={loginButton} />
+              <Item key={item.title || i} item={item} loginButton={loginButton} />
             ))}
           </Row>
         </Container>
@@ -59,7 +59,7 @@ class ProjectsSection extends Component {
   }
 }
 ProjectsSection.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool
 }
 
 export default ProjectsSection

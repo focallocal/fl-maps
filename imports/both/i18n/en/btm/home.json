@@ -1,4 +1,9 @@
 {
+  "_comment_background_images": "Background images for the homepage. Recommended dimensions: Desktop 1920x1080px, Mobile 750x1334px. Images should be placed in /public/images/",
+  "background_image": {
+    "desktop": "/images/focallocal-bgOG.jpg",
+    "mobile": "/images/focallocal-bgOG.jpg"
+  },
   "first_title": "Connection is a Path to a Brighter Future",
   "find_events": "See free resources available near you",
   "post": {

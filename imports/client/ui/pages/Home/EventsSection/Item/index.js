@@ -37,7 +37,7 @@ const Item = ({ item, loginButton }) => (
       <CardBody>
         <div style={{ display: 'flex', flexFlow: 'wrap' }}>
           {item.categories.map((category, i) => (
-            <CardLink href={category.url} target="_top">
+            <CardLink key={category.title || i} href={category.url} target="_top">
               <span
                 style={{
                   display: 'flex',

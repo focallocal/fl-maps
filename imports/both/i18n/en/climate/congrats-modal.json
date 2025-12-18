@@ -1,0 +1,13 @@
+{
+  "header": "Congratulations! We are one step closer to a happier and more connected world!",
+  "first_sentence": "We've made it super easy to share this and reach more people!",
+  "second_sentence": "Simply click the buttons below and then copy/paste the info into other social media avenues",
+  "doneBtn": "Done",
+  "labels": {
+    "description": "Description: ",
+    "address": "Address: ",
+    "when": "When: ",
+    "findHints": "How to find us: ",
+    "categories": "Categories: "
+  }
+}

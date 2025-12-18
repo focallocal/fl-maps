@@ -1,0 +1,25 @@
+
+{
+  "first_section": {
+    "title": " This is a standard page with a few paragraphs of text, two sections, an header image and a youtube video",
+    "content": {
+      "first": " Paragraphs and sections can be added or removed",
+      "second": " ",
+      "third": " ",
+      "fourth": " ",
+      "fifth": " ",
+      "youtubeLink": " ",
+      "top_image_url": "../images/logo.png"
+    }
+  },
+  "second_section": {
+    "title": " ",
+    "content": {
+      "first": " ",
+      "second": " ",
+      "third": " ",
+      "fourth": " ",
+      "youtubeLink": "https://www.youtube.com/embed/-UeOnZP5_dA"
+    }
+  }
+}

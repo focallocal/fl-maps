@@ -1,8 +1,8 @@
 {
   "_comment_background_images": "Background images for the homepage. Recommended dimensions: Desktop 1920x1080px, Mobile 750x1334px. Images should be placed in /public/images/",
   "background_image": {
-    "desktop": "/images/home-images/public_happiness_logo_main.png",
-    "mobile": "/images/PHM-logo-banner-low.jpg"
+    "desktop": "/images/wiggles.jpg",
+    "mobile": "/images/wiggles.jpg"
   },
   "first_title": "Local Action for Global Change",
   "find_events": "Find the #PublicHappinessMovement near me!",

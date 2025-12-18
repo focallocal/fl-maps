@@ -1,0 +1,38 @@
+{
+  "faq" : [
+       {
+      "heading" : "Isn't 'Happiness' a subjective term?",
+      "text" : "Yes, 'public well-being and peace' would be more accurate terms. We use happiness because it's fun, grabs people's attention, and because it's a more recognisable word for many non English speakers"
+      },
+      {
+      "heading" : "Is it Focallocal, or The Public Happiness Movement?",
+      "text" : "This platform is the home of The Public Happiness Movement. It was built by the Focallocal Community as their new home, but then expanded when we realised the great need for all groups working towards creating a similar world change, to combine our energies and escape pay to play social media. We then opened the platform up to everyone to make it possible for a truly global Movement for positive change, connection and peace to form. Sometimes you'll find a page we haven't updated yet, it would be helpful to post a link in the forum"
+    },
+    {
+      "heading" : "Why is the focus on Local Action?",
+      "text" : "Our mission is to empower you and your community to create positive change yourselves. We do this by sharing the best ideas from our community, and giving everyone the tools needed to create positive change where they live. Our platform connects local people who want to take action. This approach teaches people and communities that they have the power to tackle their issues and create change. There are international projects planned on our platform, but it's always local people who understand the cultural situation who carry them out. There are of course, excellent projects for those wanting to directly help those in need overseas, that just isn't what we're doing here. p.s. if that's what you are looking for you should research criticisms carefully as there is a growing awareness that voluntourism often harms, rather than helps communities in need."
+    },
+    {
+      "heading" : "Capitalism lifted millions out of poverty and created a better world than we've ever had before. Life span increased, etc? Why is our economic system better? ",
+      "text" : "Yes, its true that it did. It didn't solve homelessness, it didn't stop humanity creating climate emergency, it hasn't ended poverty, and much of the western world still seems to have politicians who listen to financial interests over the rights and needs of the general population. None of these systemic issues seem likely to go away in the current system. Blockchain gives us all of humanity the tools to explore new economic systems, and we've created one designed to hit the blind-spots inherent in capitalist based economies. Our economic system creates an economy focused on solving those issues which capitalism doesn't place value on fixing, empowering ordinary people to take action to solve them, rather than asking them to squeeze it in if they can find the time through volunteering"
+    },
+   {
+      "heading" : "Is this another blockchain aiming to cut out the middleman with direct donations to charitable projects/actions and make charitable donations more efficient",
+      "text" : "Not at all, although those are one of the oldest concepts for how blockchain can improve society so they are important projects too. Our ecosystem is an economy which empowers people to create positive change themselves, and rewards them for effective actions they take towards that goal. We aren't seeking donations. We're seeking to create a world with an economic system which focuses humanities efforts on bettering itself"
+    },
+      {
+      "heading" : "I'm gonna get mine first, then give back",
+      "text" : "The put your own life-jacket on 1st myth, where people aim to become rich and then give back, has created a 'me first' culture that has ravaged our planet and societies. The obvious problem is that it only works if there is enough for everyone to become rich, and then give back. There isn't as capitalism requires scarcity to enable something to have value. The myth is perpetuated by survivorship bias - where we are surrounded by stories of those who made it, and miss that the majority can never reach that point or the system would become top heavy and fail. At it's core, there have to be losers or there can't be winners in a capitalist society. That myth has created a society where people convince themselves a little bit of shitty behaviour now, which hurts others and our planet, is ok to become wealthy, because i'll just give to charity when i make it - creating hurt, suffering, and destroying our planet."
+    },
+    {
+      "heading" : "How does this token help people who are struggling for their basic needs, like water, food, shelter?",
+      "text" : "We create an alternate economy where anyone can earn tokens for doing work which benefits their local community. They can spend or trade the tokens like cash on exchanges or by using point of sale apps, creating a new earning potential by doing work which benefits their local community, people around them, and the planet. In the Build section our community are also creating and building new projects which can be implemented by local people to better meet these needs, without needing to chase funding. If someone has a great idea, our community builds it ready to pay those implementing it where they live to meet the basic needs of others struggling nearby"
+    },
+    {
+      "heading" : "How can people who don't have access to the internet utilise this new economic system?",
+      "text" : "This is a challenge, as our 'proof of work' model requires access to social media. The barriers preventing access to the internet, and our economy are rapidly being reduced by others. It's also an issue which would fit perfectly in our build section for our community to discuss projects we can build which would help people in remote place to access the internet, and to invite them to join our new ecomomy based on actions which benefit others nearby, their local community, and the planet - and of course the most effective ideas for how they can improve life where they live, collected from around the world and ready to choose from"
+    }
+
+
+  ]
+}

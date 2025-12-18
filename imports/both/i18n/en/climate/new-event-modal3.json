@@ -1,0 +1,28 @@
+{
+  "modal_header": "Form 3",
+  "resource_type": {
+   "title": "I want to:",
+    "firstRadio": "Put my group on the Map!",
+    "secondRadio": "None"
+  },
+  "overview": "Intro",
+  "event_name": "Name/Title",
+  "address_hint": "Where is your groups fav meeting spot?",
+  "categories": "Public Happiness activity",
+  "description": "Tell us more!",
+  "contact_info": "Meeting Details (what for?/where?/why?)",
+  "active_from": "Starts",
+  "active_until": "Finishes",
+  "recurrence": {
+    "thirdRadio": "Common activity times (weekly)",
+    "fourthRadio": "Common activity times (monthly/yearly)"
+  },
+  "video": {
+    "title": {
+      "firstLine": "Add video to page banner",
+      "secondLine": "(if omitted, defaults to focallocal Youtube channel)"
+    },
+    "host": "Select your video host from the dropdown",
+    "address": "Then enter the full video URL link"
+  }
+}

@@ -51,7 +51,7 @@ class EventsSection extends Component {
           
           <Row className="items justify-content-center">
             {items.map((item, i) => (
-              <Item item={item} loginButton={loginButton} />
+              <Item key={item.title || i} item={item} loginButton={loginButton} />
             ))}
           </Row>
         </Container>
@@ -60,7 +60,7 @@ class EventsSection extends Component {
   }
 }
 EventsSection.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool
 }
 
 export default EventsSection
