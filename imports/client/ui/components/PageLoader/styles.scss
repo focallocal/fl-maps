@@ -12,6 +12,11 @@
   background: #fff;
   z-index: 9999999999;
 
+  /* Ensure loader doesn't block scrollbar when hidden */
+  &:not(.active) {
+    pointer-events: none;
+  }
+
   .ball-beat > div {
     // background-color: rgba(50, 50, 50, .5);
   }
