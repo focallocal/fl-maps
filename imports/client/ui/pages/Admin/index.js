@@ -35,6 +35,7 @@ class Admin extends Component {
       showPostsView: false,
       userSortBy: 'alphabetical', // 'alphabetical', 'mostPosts', 'joinDateNewest', 'joinDateOldest'
       syncingUsers: false,
+      migratingAvatars: false,
       showMergeModal: false,
       eventsLoading: false
 
@@ -245,6 +246,24 @@ class Admin extends Component {
     });
   }
 
+  handleMigrateAvatars = () => {
+    if (!window.confirm(usersI18n.migrateAvatarsConfirm)) {
+      return;
+    }
+
+    this.setState({ migratingAvatars: true });
+    
+    Meteor.call('Admin.migrateEventAvatars', (error, result) => {
+      this.setState({ migratingAvatars: false });
+      
+      if (error) {
+        alert(`Error: ${error.message}`);
+      } else {
+        alert(`${usersI18n.migrateAvatarsComplete}\n${usersI18n.migrateAvatarsTotal} ${result.total}\n${usersI18n.migrateAvatarsUpdated} ${result.updated}\n${usersI18n.migrateAvatarsSkipped} ${result.skipped}\n${usersI18n.migrateAvatarsErrors} ${result.errors}`);
+      }
+    });
+  }
+
   handleUserSortChange = (e) => {
     this.setState({ userSortBy: e.target.value });
   }
@@ -371,7 +390,7 @@ class Admin extends Component {
   }
 
   render () {
-    const { isNoMoreUsers, events, eventsLoading, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers, showMergeModal } = this.state
+    const { isNoMoreUsers, events, eventsLoading, alertNotAuthorized, currentUserDisplay, showPostsView, userSortBy, syncingUsers, migratingAvatars, showMergeModal } = this.state
 
     let isNoUsersFound = this.state.users.length <= 0
     const sortedUsers = this.getSortedUsers()
@@ -407,6 +426,15 @@ class Admin extends Component {
                 className="sync-users-btn"
               >
                 {syncingUsers ? usersI18n.syncingBtn : usersI18n.syncBtn}
+              </Button>
+              <Button 
+                color="secondary" 
+                onClick={this.handleMigrateAvatars}
+                disabled={migratingAvatars}
+                className="migrate-avatars-btn"
+                style={{ marginLeft: '10px' }}
+              >
+                {migratingAvatars ? usersI18n.migratingAvatarsBtn : usersI18n.migrateAvatarsBtn}
               </Button>
             </div>
           </div>
