@@ -29,9 +29,19 @@ class PathwayCards extends Component {
     });
   };
 
-  renderUserThumbnails = (users, maxShow = 10) => {
-    const displayUsers = users.slice(0, maxShow);
-    const remaining = users.length - maxShow;
+  renderUserThumbnails = (users) => {
+    // Only show users who are actually active (have a score > 0)
+    const activeUsers = users.filter(u => u.score > 0);
+    
+    // Show as many as fit - we'll use CSS to handle overflow
+    // Maximum reasonable display before "+N" is around 50-60 avatars
+    const maxDisplay = 60;
+    const displayUsers = activeUsers.slice(0, maxDisplay);
+    const remaining = activeUsers.length - maxDisplay;
+
+    if (displayUsers.length === 0) {
+      return null;
+    }
 
     return (
       <div className="pathway-users">
@@ -43,12 +53,15 @@ class PathwayCards extends Component {
             className="user-avatar"
             title={user.username}
             onError={(e) => {
-              e.target.src = '/images/default-avatar.png';
+              if (!e.target.dataset.fallback) {
+                e.target.dataset.fallback = 'true';
+                e.target.src = '/images/default-avatar.png';
+              }
             }}
           />
         ))}
         {remaining > 0 && (
-          <span className="more-users">+{remaining > 300 ? '300+' : remaining}</span>
+          <span className="more-users">+{remaining}</span>
         )}
       </div>
     );
@@ -62,60 +75,46 @@ class PathwayCards extends Component {
 
     return (
       <section className="pathway-section">
-        {/* Gatherings (Local) Card */}
+        {/* Gatherings (Local) Card - Shows Map image */}
         <div className="pathway-card gatherings">
           <div className="pathway-header">
             <h2 className="pathway-title">{gatherings.title || 'Gatherings (Local)'}</h2>
             <a href={gatherings.see_all_url} className="see-all-link">See All</a>
           </div>
-          <div className="pathway-content">
-            <div className="pathway-icons">
-              <a href={gatherings.map_url} className="pathway-icon-link">
-                <img 
-                  src="/images/home-images/Homepage Maps.jpg" 
-                  alt="Map" 
-                  className="pathway-icon"
-                />
-              </a>
-              <a href={gatherings.forum_url} className="pathway-icon-link">
-                <img 
-                  src="/images/home-images/Homepage Forum.jpg" 
-                  alt="Forum" 
-                  className="pathway-icon"
-                />
-              </a>
+          <div className="pathway-body">
+            <a href={gatherings.map_url} className="pathway-image-link">
+              <img 
+                src="/images/home-images/Homepage Maps.jpg" 
+                alt="Map" 
+                className="pathway-image"
+              />
+            </a>
+            <div className="pathway-right">
+              <p className="pathway-description">{gatherings.description}</p>
+              {this.renderUserThumbnails(gatheringsUsers)}
             </div>
-            <p className="pathway-description">{gatherings.description}</p>
           </div>
-          {this.renderUserThumbnails(gatheringsUsers)}
         </div>
 
-        {/* Projects (Global) Card */}
+        {/* Projects (Global) Card - Shows Forum image */}
         <div className="pathway-card projects">
           <div className="pathway-header">
             <h2 className="pathway-title">{projects.title || 'Projects (Global)'}</h2>
             <a href={projects.see_all_url} className="see-all-link">See All</a>
           </div>
-          <div className="pathway-content">
-            <div className="pathway-icons">
-              <a href={projects.map_url} className="pathway-icon-link">
-                <img 
-                  src="/images/home-images/Homepage Maps.jpg" 
-                  alt="Map" 
-                  className="pathway-icon"
-                />
-              </a>
-              <a href={projects.forum_url} className="pathway-icon-link">
-                <img 
-                  src="/images/home-images/Homepage Forum.jpg" 
-                  alt="Forum" 
-                  className="pathway-icon"
-                />
-              </a>
+          <div className="pathway-body">
+            <a href={projects.forum_url} className="pathway-image-link">
+              <img 
+                src="/images/home-images/Homepage Forum.jpg" 
+                alt="Forum" 
+                className="pathway-image"
+              />
+            </a>
+            <div className="pathway-right">
+              <p className="pathway-description">{projects.description}</p>
+              {this.renderUserThumbnails(projectsUsers)}
             </div>
-            <p className="pathway-description">{projects.description}</p>
           </div>
-          {this.renderUserThumbnails(projectsUsers)}
         </div>
       </section>
     );

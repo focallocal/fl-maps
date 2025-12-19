@@ -22,8 +22,11 @@ class UpcomingAndNews extends Component {
   }
 
   fetchNews = () => {
+    const newsContent = i18n.NewHomepage?.latest_news || {}
+    const limit = newsContent.items_count || 3
+    
     // Fetch latest news from Discourse
-    Meteor.call('Discourse.getLatestNews', { limit: 3 }, (error, result) => {
+    Meteor.call('Discourse.getLatestNews', { limit }, (error, result) => {
       if (!error && result) {
         this.setState({
           newsItems: result,
@@ -39,96 +42,84 @@ class UpcomingAndNews extends Component {
     const upcomingContent = i18n.NewHomepage?.upcoming_gatherings || {}
     const newsContent = i18n.NewHomepage?.latest_news || {}
     const upcomingItems = upcomingContent.items || []
+    const displayCount = upcomingContent.display_count || upcomingItems.length
     const { newsItems, newsLoading } = this.state
 
     return (
       <section className="upcoming-news-section">
         {/* Left Column: Upcoming International Gatherings */}
         <div className="section-column upcoming-column">
-          <div className="section-header">
+          {/* Title box */}
+          <div className="title-box">
             <h2 className="section-title">
               {upcomingContent.title || 'Upcoming International Gatherings'}
             </h2>
-            <a href={upcomingContent.see_all_url} className="see-all-link">
-              See All
-            </a>
           </div>
 
-          <div className="cards-container">
-            {upcomingItems.map((item, index) => (
-              <div key={index} className="gathering-card">
-                <div className="gathering-image-section">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="gathering-image"
-                    onError={(e) => {
-                      e.target.src = '/images/home-images/placeholder.jpg'
-                    }}
-                  />
-                  <div className="gathering-date">{item.date}</div>
-                </div>
-                <div className="gathering-details">
-                  <h3 className="gathering-title">{item.title}</h3>
-                  <p className="gathering-text">{item.description}</p>
-                  <div className="gathering-actions">
-                    <a href={item.build_url} className="action-btn build-btn">
-                      Build
-                    </a>
-                    <a href={item.join_url} className="action-btn join-btn">
-                      Join
-                    </a>
-                  </div>
+          {/* See all link - no border */}
+          <a href={upcomingContent.see_all_url} className="see-all-link">
+            See All →
+          </a>
+
+          {/* Individual gathering cards */}
+          {upcomingItems.slice(0, displayCount).map((item, index) => (
+            <div key={index} className="gathering-card">
+              <div className="gathering-details">
+                <h3 className="gathering-title">{item.title}</h3>
+                <p className="gathering-date">{item.date}</p>
+                <p className="gathering-text">{item.description}</p>
+                <div className="gathering-actions">
+                  <a href={item.build_url} className="action-btn build-btn">
+                    Build
+                  </a>
+                  <a href={item.join_url} className="action-btn join-btn">
+                    Join
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
         {/* Right Column: Latest Community News */}
         <div className="section-column news-column">
-          <div className="section-header">
+          {/* Title box */}
+          <div className="title-box">
             <h2 className="section-title">
               {newsContent.title || 'Latest Community News'}
             </h2>
-            <a href={newsContent.see_all_url} className="see-all-link">
-              See All
-            </a>
           </div>
 
-          <div className="cards-container">
-            {newsLoading ? (
-              <div className="loading">Loading news...</div>
-            ) : newsItems.length > 0 ? (
-              newsItems.map((news, index) => (
-                <div key={index} className="news-card">
-                  {news.image && (
-                    <img
-                      src={news.image}
-                      alt={decodeHtmlEntities(news.title)}
-                      className="news-image"
-                      onError={(e) => {
-                        e.target.style.display = 'none'
-                      }}
-                    />
-                  )}
-                  <div className="news-content">
-                    <h3 className="news-title">
-                      {decodeHtmlEntities(news.title)}
-                    </h3>
-                    <p className="news-excerpt">
-                      {decodeHtmlEntities(news.excerpt)}
-                    </p>
-                    <a href={news.url} className="read-more-link">
-                      Read More →
-                    </a>
-                  </div>
+          {/* See all link - no border */}
+          <a href={newsContent.see_all_url} className="see-all-link">
+            See All →
+          </a>
+
+          {/* Individual news cards */}
+          {newsLoading ? (
+            <div className="loading-box">Loading news...</div>
+          ) : newsItems.length > 0 ? (
+            newsItems.map((news, index) => (
+              <a 
+                key={index} 
+                href={news.url} 
+                className="news-card"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="news-content">
+                  <h3 className="news-title">
+                    {decodeHtmlEntities(news.title)}
+                  </h3>
+                  <p className="news-excerpt">
+                    {decodeHtmlEntities(news.excerpt)}
+                  </p>
                 </div>
-              ))
-            ) : (
-              <div className="no-news">No recent news available</div>
-            )}
-          </div>
+              </a>
+            ))
+          ) : (
+            <div className="no-news-box">No recent news available</div>
+          )}
         </div>
       </section>
     )

@@ -45,6 +45,7 @@
     "title": "Upcoming International Gatherings",
     "see_all_url": "https://publichappinessmovement.com/c/mass-kindness/",
     "join_filter": "Global Kindness",
+    "display_count": 2,
     "items": [
       {
         "title": "World Freehugs Day",
@@ -67,7 +68,8 @@
   "latest_news": {
     "title": "Latest Community News",
     "see_all_url": "https://publichappinessmovement.com/c/news-hub/",
-    "discourse_category": "news-hub"
+    "discourse_category": "news-hub",
+    "items_count": 3
   },
   "project_builds": {
     "title": "Current Project Builds",
