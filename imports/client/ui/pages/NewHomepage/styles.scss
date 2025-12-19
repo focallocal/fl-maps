@@ -69,7 +69,7 @@ $see-all-bg-opacity: 0.15;
     max-width: 1200px;
     margin: 0 auto $section-spacing auto;
     padding: 0 20px;
-    padding-bottom: 60px; // Space for overflow boxes
+    padding-bottom: 40px; // Reduced space for overflow boxes
     
     .getting-started-container {
       display: flex;
@@ -77,9 +77,9 @@ $see-all-bg-opacity: 0.15;
       background: rgba(255, 255, 255, 0.9);
       border: 2px solid $grey-light;
       border-radius: $card-border-radius;
-      padding: $element-spacing;
+      padding: $element-spacing * 0.7; // Reduced padding
       position: relative;
-      min-height: 200px;
+      min-height: 140px; // Reduced from 200px (30% less)
       overflow: visible; // Allow boxes to overflow
       
       .getting-started-content {
@@ -88,16 +88,16 @@ $see-all-bg-opacity: 0.15;
         padding-right: $element-spacing;
         
         .getting-started-title {
-          font-size: 1.4em;
+          font-size: 1.15em; // Reduced from 1.4em (~18% smaller)
           font-weight: 600;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
           color: $black-lighter;
         }
         
         .getting-started-text {
-          font-size: 0.95em;
-          line-height: 1.5;
-          margin-bottom: 15px;
+          font-size: 0.8em; // Reduced from 0.95em (~15% smaller)
+          line-height: 1.4;
+          margin-bottom: 10px;
           color: $grey;
         }
         
@@ -125,9 +125,10 @@ $see-all-bg-opacity: 0.15;
         display: flex;
         gap: $element-spacing;
         position: relative;
-        // Start 1/5 from top, extend 1/10 below
-        margin-top: 40px;
-        margin-bottom: -50px;
+        // Shifted right, reduced top margin
+        margin-top: 25px; // Reduced from 40px
+        margin-bottom: -40px; // Reduced from -50px
+        margin-left: 15px; // Shift boxes to the right
         z-index: 10;
         
         .guide-box {
@@ -146,28 +147,28 @@ $see-all-bg-opacity: 0.15;
           }
           
           &:last-child {
-            margin-right: calc(-20px - 15px); // Overflow past container + gap to screen edge
+            margin-right: -70px; // Overflow past container edge
           }
           
           .guide-image {
             width: 100%;
-            height: 120px;
+            height: 90px; // Reduced from 120px
             object-fit: cover;
           }
           
           .guide-content {
-            padding: 15px;
+            padding: 10px; // Reduced from 15px
             
             .guide-title {
-              font-size: 1em;
+              font-size: 0.85em; // Reduced from 1em (~15% smaller)
               font-weight: 600;
-              margin-bottom: 6px;
+              margin-bottom: 4px;
             }
             
             .guide-description {
-              font-size: 0.85em;
+              font-size: 0.72em; // Reduced from 0.85em (~15% smaller)
               color: $grey;
-              line-height: 1.4;
+              line-height: 1.3;
             }
           }
         }

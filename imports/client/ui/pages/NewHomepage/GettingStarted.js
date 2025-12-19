@@ -31,7 +31,11 @@ const GettingStarted = () => {
                 alt={guide.title} 
                 className="guide-image"
                 onError={(e) => {
-                  e.target.src = '/images/home-images/placeholder.jpg';
+                  // Prevent infinite loop if placeholder also fails
+                  if (!e.target.dataset.fallback) {
+                    e.target.dataset.fallback = 'true';
+                    e.target.src = '/images/home-images/placeholder.jpg';
+                  }
                 }}
               />
               <div className="guide-content">
