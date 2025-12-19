@@ -12,6 +12,7 @@ import MainMenu from './includes/MainMenu'
 
 // Pages
 import Home from './pages/Home'
+import NewHomepage from './pages/NewHomepage'
 import Whitepaper from './pages/WhitePaper'
 import Team from './pages/TeamMembers'
 import Faq from './pages/Faq'
@@ -196,6 +197,7 @@ class App extends Component {
     const routePaths = {
       root: '/',
       home: '/home',
+      newhomepage: '/newhomepage',
       team: '/team',
       partners: '/partners',
       whitepaper: '/whitepaper',
@@ -224,6 +226,7 @@ class App extends Component {
           <ScrollToTop>
             <Route exact path={routePaths.root} component={Home} />
             <Route exact path={routePaths.home} component={Home} />
+            <Route exact path={routePaths.newhomepage} component={NewHomepage} />
             <Route exact path={routePaths.team} component={Team} />
             <Route exact path={routePaths.partners} component={Partners} />
             <Route exact path={routePaths.whitepaper} component={Whitepaper} />

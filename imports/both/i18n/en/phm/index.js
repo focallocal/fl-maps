@@ -2,6 +2,7 @@
 import About from './about.json'
 import CongratsModal from './congrats-modal.json'
 import Home from './home.json'
+import NewHomepage from './newhomepage.json'
 import MainMenu from './menu.json'
 import Map from './map.json'
 import NewEventModal from './new-event-modal.json'
@@ -22,6 +23,7 @@ export default {
   About,
   CongratsModal,
   Home,
+  NewHomepage,
   MainMenu,
   Map,
   NewEventModal,

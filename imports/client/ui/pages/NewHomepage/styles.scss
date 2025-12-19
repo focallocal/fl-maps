@@ -1,0 +1,680 @@
+@import '{}/imports/client/stylesheets/variables.scss';
+
+/* ==========================================================================
+   New Homepage Styles
+   - Spacious, airy design with 25% more spacing than original
+   - Single-column focused with responsive multi-column sections
+   ========================================================================== */
+
+$section-spacing: 80px; // 25% more than typical 60-65px
+$element-spacing: 30px; // 25% more than typical 24px
+$card-border-radius: 12px;
+$see-all-bg-opacity: 0.15;
+
+.new-homepage {
+  position: relative;
+  min-height: 100vh;
+  
+  /* ========================================
+     Section 1 & 2: Hero & Title (unchanged styling)
+     ======================================== */
+  
+  .hero-section {
+    position: relative;
+    
+    .background-image {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      
+      @media (max-width: 1023px) {
+        display: none;
+      }
+      
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
+  }
+  
+  .site-title-section {
+    position: relative;
+    text-align: center;
+    margin: 5% 0 $section-spacing 0;
+    
+    .site-title-logo {
+      max-width: 90%;
+      height: auto;
+    }
+  }
+  
+  /* ========================================
+     Section 3: Getting Started
+     - Full width container with overflow boxes
+     ======================================== */
+  
+  .getting-started-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto $section-spacing auto;
+    padding: 0 20px;
+    
+    .getting-started-container {
+      display: flex;
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: $card-border-radius;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: $element-spacing * 1.5;
+      position: relative;
+      min-height: 300px;
+      
+      .getting-started-content {
+        flex: 0 0 30%;
+        max-width: 30%;
+        padding-right: $element-spacing;
+        
+        .getting-started-title {
+          font-size: 2em;
+          font-weight: bold;
+          margin-bottom: $element-spacing / 2;
+          color: $black-lighter;
+        }
+        
+        .getting-started-text {
+          font-size: 1.1em;
+          line-height: 1.6;
+          margin-bottom: $element-spacing;
+          color: $grey;
+        }
+        
+        .see-all-btn {
+          display: inline-block;
+          padding: 12px 24px;
+          background: rgba($primary-color, $see-all-bg-opacity);
+          color: $primary-color;
+          border: none;
+          border-radius: 8px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: background 0.3s ease;
+          
+          &:hover {
+            background: rgba($primary-color, $see-all-bg-opacity + 0.1);
+          }
+        }
+      }
+      
+      .getting-started-boxes {
+        flex: 0 0 70%;
+        max-width: 70%;
+        display: flex;
+        gap: $element-spacing;
+        position: relative;
+        // Boxes start 1/5 from top and extend 1/10 below container
+        margin-top: 60px; // ~1/5 of 300px min-height
+        margin-bottom: -30px; // ~1/10 of 300px extends below
+        
+        .guide-box {
+          flex: 1;
+          background: #fff;
+          border-radius: $card-border-radius;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          }
+          
+          &:last-child {
+            // Far right box touches screen edge with 5px gap
+            margin-right: -20px; // Compensate for container padding
+          }
+          
+          .guide-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+          }
+          
+          .guide-content {
+            padding: $element-spacing / 1.5;
+            
+            .guide-title {
+              font-size: 1.2em;
+              font-weight: 600;
+              margin-bottom: 8px;
+            }
+            
+            .guide-description {
+              font-size: 0.95em;
+              color: $grey;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+    
+    // Mobile: Stack vertically
+    @media (max-width: 768px) {
+      .getting-started-container {
+        flex-direction: column;
+        
+        .getting-started-content {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding-right: 0;
+          margin-bottom: $element-spacing;
+        }
+        
+        .getting-started-boxes {
+          flex: 0 0 100%;
+          max-width: 100%;
+          flex-direction: column;
+          margin-top: 0;
+          margin-bottom: 0;
+          
+          .guide-box {
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* ========================================
+     Section 4: Pathway Cards (Gatherings/Projects)
+     - Single column, stacked cards
+     ======================================== */
+  
+  .pathway-section {
+    max-width: 1200px;
+    margin: 0 auto $section-spacing auto;
+    padding: 0 20px;
+    
+    .pathway-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: $card-border-radius;
+      border: 2px solid;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: $element-spacing * 1.5;
+      overflow: hidden;
+      
+      &.gatherings {
+        border-color: $primary-color;
+      }
+      
+      &.projects {
+        border-color: $secondary-color;
+      }
+      
+      .pathway-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $element-spacing;
+        
+        .pathway-title {
+          font-size: 1.8em;
+          font-weight: bold;
+          margin: 0;
+        }
+        
+        .see-all-link {
+          padding: 8px 16px;
+          background: rgba($primary-color, $see-all-bg-opacity);
+          color: $primary-color;
+          border: none;
+          border-radius: 6px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: background 0.3s ease;
+          
+          &:hover {
+            background: rgba($primary-color, $see-all-bg-opacity + 0.1);
+          }
+        }
+      }
+      
+      .pathway-content {
+        display: flex;
+        gap: $element-spacing;
+        padding: 0 $element-spacing $element-spacing;
+        
+        .pathway-icons {
+          display: flex;
+          gap: $element-spacing / 2;
+          
+          .pathway-icon-link {
+            display: block;
+            
+            .pathway-icon {
+              width: 80px;
+              height: 80px;
+              border-radius: 8px;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+              
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+        }
+        
+        .pathway-description {
+          flex: 1;
+          font-size: 1.05em;
+          line-height: 1.6;
+          color: $grey;
+        }
+      }
+      
+      .pathway-users {
+        display: flex;
+        align-items: center;
+        padding: $element-spacing / 2 $element-spacing $element-spacing;
+        gap: -8px; // Overlapping avatars
+        
+        .user-avatar {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 2px solid #fff;
+          margin-left: -8px;
+          object-fit: cover;
+          
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        
+        .more-users {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: $grey-light;
+          border: 2px solid #fff;
+          margin-left: -8px;
+          font-size: 0.75em;
+          font-weight: 600;
+          color: $grey;
+        }
+      }
+    }
+  }
+  
+  /* ========================================
+     Section 5: Upcoming Gatherings + News
+     - Two column layout
+     ======================================== */
+  
+  .upcoming-news-section {
+    max-width: 1200px;
+    margin: 0 auto $section-spacing auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $element-spacing * 1.5;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+    
+    .section-column {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: $card-border-radius;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: $element-spacing;
+      
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $element-spacing;
+        
+        .section-title {
+          font-size: 1.5em;
+          font-weight: bold;
+          margin: 0;
+        }
+        
+        .see-all-link {
+          padding: 8px 16px;
+          background: rgba($primary-color, $see-all-bg-opacity);
+          color: $primary-color;
+          border: none;
+          border-radius: 6px;
+          font-weight: 500;
+          text-decoration: none;
+          
+          &:hover {
+            background: rgba($primary-color, $see-all-bg-opacity + 0.1);
+          }
+        }
+      }
+      
+      // Upcoming Gatherings cards
+      .gathering-card {
+        display: flex;
+        gap: $element-spacing / 2;
+        margin-bottom: $element-spacing;
+        padding-bottom: $element-spacing;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        
+        &:last-child {
+          border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        
+        .gathering-image-section {
+          flex: 0 0 33%;
+          
+          .gathering-image {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+          }
+          
+          .gathering-date {
+            font-size: 0.9em;
+            color: $grey;
+            margin-top: 8px;
+            text-align: center;
+          }
+        }
+        
+        .gathering-details {
+          flex: 0 0 67%;
+          
+          .gathering-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
+          
+          .gathering-text {
+            font-size: 0.95em;
+            color: $grey;
+            line-height: 1.5;
+            margin-bottom: 12px;
+          }
+          
+          .gathering-actions {
+            display: flex;
+            gap: 12px;
+            
+            .action-btn {
+              padding: 6px 14px;
+              border-radius: 6px;
+              font-size: 0.9em;
+              font-weight: 500;
+              text-decoration: none;
+              transition: opacity 0.3s ease;
+              
+              &.build-btn {
+                background: rgba($secondary-color, 0.15);
+                color: $secondary-color;
+              }
+              
+              &.join-btn {
+                background: rgba($primary-color, 0.15);
+                color: $primary-color;
+              }
+              
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+      
+      // News section with Discourse embed
+      .news-item {
+        display: flex;
+        gap: $element-spacing / 2;
+        margin-bottom: $element-spacing;
+        
+        .news-image {
+          flex: 0 0 33%;
+          border-radius: 8px;
+          object-fit: cover;
+          height: 100px;
+        }
+        
+        .news-content {
+          flex: 0 0 67%;
+          
+          .news-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
+          
+          .news-excerpt {
+            font-size: 0.95em;
+            color: $grey;
+            line-height: 1.5;
+          }
+          
+          .read-more-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: $primary-color;
+            font-weight: 500;
+            text-decoration: none;
+            
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* ========================================
+     Section 6: Project Builds
+     - Three column layout
+     ======================================== */
+  
+  .project-builds-section {
+    max-width: 1200px;
+    margin: 0 auto $section-spacing auto;
+    padding: 0 20px;
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: $element-spacing * 1.5;
+      
+      .section-title {
+        font-size: 2em;
+        font-weight: bold;
+      }
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $element-spacing;
+      
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: $card-border-radius;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        
+        .project-image {
+          width: 100%;
+          height: 0;
+          padding-bottom: 56%; // 16:9 aspect ratio - roughly 1/3 of card
+          background-size: cover;
+          background-position: center;
+        }
+        
+        .project-content {
+          flex: 1;
+          padding: $element-spacing;
+          display: flex;
+          flex-direction: column;
+          
+          .project-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 12px;
+          }
+          
+          .project-description {
+            flex: 1;
+            font-size: 0.95em;
+            color: $grey;
+            line-height: 1.6;
+            margin-bottom: $element-spacing;
+          }
+          
+          .project-actions {
+            display: flex;
+            justify-content: space-between;
+            
+            .action-btn {
+              padding: 8px 16px;
+              border-radius: 6px;
+              font-size: 0.9em;
+              font-weight: 500;
+              text-decoration: none;
+              
+              &.see-more-btn {
+                background: rgba($primary-color, $see-all-bg-opacity);
+                color: $primary-color;
+              }
+              
+              &.tasks-btn {
+                background: rgba($secondary-color, $see-all-bg-opacity);
+                color: $secondary-color;
+              }
+              
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* ========================================
+     Section 7: Leaderboards
+     - Two column grid with 6 stat boxes
+     ======================================== */
+  
+  .leaderboards-section {
+    max-width: 1200px;
+    margin: 0 auto $section-spacing auto;
+    padding: 0 20px;
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: $element-spacing * 1.5;
+      
+      .section-title {
+        font-size: 2em;
+        font-weight: bold;
+      }
+    }
+    
+    .leaderboards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $element-spacing;
+      
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+      
+      .leaderboard-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: $card-border-radius;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: $element-spacing;
+        
+        .leaderboard-title {
+          font-size: 1.2em;
+          font-weight: 600;
+          margin-bottom: $element-spacing / 2;
+          text-align: center;
+          color: $primary-color;
+        }
+        
+        .leaderboard-subtitle {
+          font-size: 0.9em;
+          color: $grey;
+          text-align: center;
+          margin-bottom: $element-spacing;
+        }
+        
+        .leaderboard-entries {
+          .leaderboard-entry {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            
+            &:last-child {
+              border-bottom: none;
+            }
+            
+            .entry-rank {
+              font-size: 1.1em;
+              font-weight: bold;
+              color: $grey;
+              width: 24px;
+            }
+            
+            .entry-avatar {
+              width: 32px;
+              height: 32px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            
+            .entry-name {
+              flex: 1;
+              font-weight: 500;
+            }
+            
+            .entry-score {
+              font-weight: 600;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
