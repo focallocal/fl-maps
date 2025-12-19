@@ -60,7 +60,8 @@ $see-all-bg-opacity: 0.15;
   
   /* ========================================
      Section 3: Getting Started
-     - Full width container with overflow boxes
+     - Smaller, less prominent section
+     - Boxes overflow the container
      ======================================== */
   
   .getting-started-section {
@@ -68,43 +69,46 @@ $see-all-bg-opacity: 0.15;
     max-width: 1200px;
     margin: 0 auto $section-spacing auto;
     padding: 0 20px;
+    padding-bottom: 60px; // Space for overflow boxes
     
     .getting-started-container {
       display: flex;
       flex-wrap: wrap;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid $grey-light;
       border-radius: $card-border-radius;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: $element-spacing * 1.5;
+      padding: $element-spacing;
       position: relative;
-      min-height: 300px;
+      min-height: 200px;
+      overflow: visible; // Allow boxes to overflow
       
       .getting-started-content {
-        flex: 0 0 30%;
-        max-width: 30%;
+        flex: 0 0 28%;
+        max-width: 28%;
         padding-right: $element-spacing;
         
         .getting-started-title {
-          font-size: 2em;
-          font-weight: bold;
-          margin-bottom: $element-spacing / 2;
+          font-size: 1.4em;
+          font-weight: 600;
+          margin-bottom: 10px;
           color: $black-lighter;
         }
         
         .getting-started-text {
-          font-size: 1.1em;
-          line-height: 1.6;
-          margin-bottom: $element-spacing;
+          font-size: 0.95em;
+          line-height: 1.5;
+          margin-bottom: 15px;
           color: $grey;
         }
         
         .see-all-btn {
           display: inline-block;
-          padding: 12px 24px;
+          padding: 8px 16px;
           background: rgba($primary-color, $see-all-bg-opacity);
           color: $primary-color;
           border: none;
-          border-radius: 8px;
+          border-radius: 6px;
+          font-size: 0.9em;
           font-weight: 500;
           text-decoration: none;
           transition: background 0.3s ease;
@@ -116,21 +120,24 @@ $see-all-bg-opacity: 0.15;
       }
       
       .getting-started-boxes {
-        flex: 0 0 70%;
-        max-width: 70%;
+        flex: 0 0 72%;
+        max-width: 72%;
         display: flex;
         gap: $element-spacing;
         position: relative;
-        // Boxes start 1/5 from top and extend 1/10 below container
-        margin-top: 60px; // ~1/5 of 300px min-height
-        margin-bottom: -30px; // ~1/10 of 300px extends below
+        // Start 1/5 from top, extend 1/10 below
+        margin-top: 40px;
+        margin-bottom: -50px;
+        z-index: 10;
         
         .guide-box {
           flex: 1;
           background: #fff;
+          border: 2px solid $primary-color;
           border-radius: $card-border-radius;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
           overflow: hidden;
+          text-decoration: none;
+          color: inherit;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           
           &:hover {
@@ -139,29 +146,28 @@ $see-all-bg-opacity: 0.15;
           }
           
           &:last-child {
-            // Far right box touches screen edge with 5px gap
-            margin-right: -20px; // Compensate for container padding
+            margin-right: calc(-20px - 15px); // Overflow past container + gap to screen edge
           }
           
           .guide-image {
             width: 100%;
-            height: 150px;
+            height: 120px;
             object-fit: cover;
           }
           
           .guide-content {
-            padding: $element-spacing / 1.5;
+            padding: 15px;
             
             .guide-title {
-              font-size: 1.2em;
+              font-size: 1em;
               font-weight: 600;
-              margin-bottom: 8px;
+              margin-bottom: 6px;
             }
             
             .guide-description {
-              font-size: 0.95em;
+              font-size: 0.85em;
               color: $grey;
-              line-height: 1.5;
+              line-height: 1.4;
             }
           }
         }
@@ -341,9 +347,14 @@ $see-all-bg-opacity: 0.15;
     
     .section-column {
       background: rgba(255, 255, 255, 0.95);
+      border: 2px solid $primary-color;
       border-radius: $card-border-radius;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       padding: $element-spacing;
+      overflow: hidden; // Prevent text overflow
+      
+      &.news-column {
+        border-color: $secondary-color;
+      }
       
       .section-header {
         display: flex;
@@ -449,7 +460,74 @@ $see-all-bg-opacity: 0.15;
         }
       }
       
-      // News section with Discourse embed
+      // Cards container for floating header effect
+      .cards-container {
+        // Cards are inside the container
+      }
+      
+      // News cards
+      .news-card {
+        display: flex;
+        gap: $element-spacing / 2;
+        margin-bottom: $element-spacing;
+        padding: $element-spacing / 2;
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid $grey-light;
+        border-radius: 8px;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        .news-image {
+          flex: 0 0 30%;
+          border-radius: 6px;
+          object-fit: cover;
+          height: 80px;
+        }
+        
+        .news-content {
+          flex: 1;
+          min-width: 0;
+          overflow: hidden;
+          
+          .news-title {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+          
+          .news-excerpt {
+            font-size: 0.9em;
+            color: $grey;
+            line-height: 1.4;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+          
+          .read-more-link {
+            display: inline-block;
+            margin-top: 6px;
+            color: $secondary-color;
+            font-weight: 500;
+            font-size: 0.9em;
+            text-decoration: none;
+            
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      
+      // Legacy news-item (keeping for backwards compat)
       .news-item {
         display: flex;
         gap: $element-spacing / 2;
@@ -463,18 +541,27 @@ $see-all-bg-opacity: 0.15;
         }
         
         .news-content {
-          flex: 0 0 67%;
+          flex: 1;
+          min-width: 0;
+          overflow: hidden;
           
           .news-title {
             font-size: 1.1em;
             font-weight: 600;
             margin-bottom: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
           
           .news-excerpt {
             font-size: 0.95em;
             color: $grey;
             line-height: 1.5;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
           }
           
           .read-more-link {
@@ -528,8 +615,8 @@ $see-all-bg-opacity: 0.15;
       
       .project-card {
         background: rgba(255, 255, 255, 0.95);
+        border: 2px solid $secondary-color;
         border-radius: $card-border-radius;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -624,8 +711,8 @@ $see-all-bg-opacity: 0.15;
       
       .leaderboard-card {
         background: rgba(255, 255, 255, 0.95);
+        border: 2px solid $primary-color;
         border-radius: $card-border-radius;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         padding: $element-spacing;
         
         .leaderboard-title {
