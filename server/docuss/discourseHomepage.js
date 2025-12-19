@@ -1,7 +1,6 @@
 // @ts-nocheck
-import { Meteor } from 'meteor/meteor';
-import { HTTP } from 'meteor/http';
-import { getDiscourseOrigin } from '/imports/client/utils/discourseAvatar';
+import { Meteor } from 'meteor/meteor'
+import { HTTP } from 'meteor/http'
 
 /**
  * Discourse API methods for the new homepage
@@ -10,33 +9,32 @@ import { getDiscourseOrigin } from '/imports/client/utils/discourseAvatar';
 
 // Get Discourse URL from settings or default
 const getDiscourseUrl = () => {
-  try {
-    return getDiscourseOrigin();
-  } catch (e) {
-    return Meteor.settings?.public?.discourse?.url || 'https://publichappinessmovement.com';
-  }
-};
+  return (
+    Meteor.settings?.public?.discourse?.url ||
+    'https://publichappinessmovement.com'
+  )
+}
 
 // Helper to make Discourse API requests
 const discourseRequest = (endpoint, options = {}) => {
-  const baseUrl = getDiscourseUrl();
-  const url = `${baseUrl}${endpoint}`;
-  
+  const baseUrl = getDiscourseUrl()
+  const url = `${baseUrl}${endpoint}`
+
   try {
     const response = HTTP.get(url, {
       timeout: 10000,
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         ...options.headers
       },
       ...options
-    });
-    return response.data;
+    })
+    return response.data
   } catch (error) {
-    console.error(`[Discourse API] Error fetching ${endpoint}:`, error.message);
-    return null;
+    console.error(`[Discourse API] Error fetching ${endpoint}:`, error.message)
+    return null
   }
-};
+}
 
 Meteor.methods({
   /**
