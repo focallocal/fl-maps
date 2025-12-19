@@ -21,6 +21,12 @@ $see-all-bg-opacity: 0.15;
   position: relative;
   min-height: 100vh;
   
+  // Reset h2 margins globally for this page
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
   /* ========================================
      Section 1 & 2: Hero & Title (unchanged styling)
      ======================================== */
@@ -69,35 +75,39 @@ $see-all-bg-opacity: 0.15;
     max-width: 1200px;
     margin: 0 auto $section-spacing auto;
     padding: 0 20px;
-    padding-bottom: 40px; // Reduced space for overflow boxes
+    padding-bottom: 30px; // Space for overflow boxes
     
     .getting-started-container {
       display: flex;
       flex-wrap: wrap;
+      align-items: center; // Vertically center content
       background: rgba(255, 255, 255, 0.9);
       border: 2px solid $grey-light;
       border-radius: $card-border-radius;
-      padding: 10px 15px; // Compact padding
+      padding: 8px 15px; // Minimal padding
       position: relative;
-      min-height: 120px;
+      min-height: 80px; // Reduced height
       overflow: visible; // Allow boxes to overflow
       
       .getting-started-content {
-        flex: 0 0 28%;
-        max-width: 28%;
+        flex: 0 0 33%; // Changed to 1/3
+        max-width: 33%;
         padding-right: $element-spacing;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; // Vertically center
         
         .getting-started-title {
-          font-size: 1.15em; // Reduced from 1.4em (~18% smaller)
+          font-size: 1.15em;
           font-weight: 600;
-          margin-bottom: 8px;
+          margin: 0 0 6px 0; // Remove top margin
           color: $black-lighter;
         }
         
         .getting-started-text {
-          font-size: 0.8em; // Reduced from 0.95em (~15% smaller)
+          font-size: 0.8em;
           line-height: 1.4;
-          margin-bottom: 10px;
+          margin: 0 0 8px 0; // Remove top margin
           color: $grey;
         }
         
@@ -120,13 +130,13 @@ $see-all-bg-opacity: 0.15;
       }
       
       .getting-started-boxes {
-        flex: 0 0 72%;
-        max-width: 72%;
+        flex: 0 0 67%; // Changed from 72% to match 1/3 content
+        max-width: 67%;
         display: flex;
-        gap: $element-spacing;
+        gap: $element-spacing * 0.75; // Slightly smaller gap
         position: relative;
-        margin-top: 15px;
-        margin-bottom: -35px;
+        margin-top: 10px;
+        margin-bottom: -30px; // Reduced overhang
         margin-left: auto; // Push boxes to the right
         z-index: 10;
         
@@ -151,21 +161,21 @@ $see-all-bg-opacity: 0.15;
           
           .guide-image {
             width: 100%;
-            height: 90px; // Reduced from 120px
+            height: 70px; // Reduced from 90px
             object-fit: cover;
           }
           
           .guide-content {
-            padding: 10px; // Reduced from 15px
+            padding: 8px; // Reduced from 10px
             
             .guide-title {
-              font-size: 0.85em; // Reduced from 1em (~15% smaller)
+              font-size: 0.85em;
               font-weight: 600;
               margin-bottom: 4px;
             }
             
             .guide-description {
-              font-size: 0.72em; // Reduced from 0.85em (~15% smaller)
+              font-size: 0.72em;
               color: $grey;
               line-height: 1.3;
             }
@@ -240,7 +250,7 @@ $see-all-bg-opacity: 0.15;
         .pathway-title {
           font-size: 1.4em;
           font-weight: bold;
-          margin: 0;
+          margin: 0; // Ensure no margin
         }
         
         .see-all-link {
@@ -545,6 +555,7 @@ $see-all-bg-opacity: 0.15;
     
     .section-header {
       margin-bottom: $element-spacing;
+      text-align: center; // Center the title
       
       .section-title {
         display: inline-block;
@@ -650,6 +661,7 @@ $see-all-bg-opacity: 0.15;
     
     .section-header {
       margin-bottom: $element-spacing;
+      text-align: center; // Center the title
       
       .section-title {
         display: inline-block;

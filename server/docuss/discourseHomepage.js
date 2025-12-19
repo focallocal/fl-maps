@@ -123,41 +123,118 @@ Meteor.methods({
   },
 
   /**
-   * Get upcoming international gatherings from mass-kindness category
+   * Get upcoming international gatherings from mass-kindness subcategories
    * Each subcategory represents a different global event
+   * Fetches the About page from each subcategory for image and description
    */
   'Discourse.getUpcomingGatherings'({ limit = 6 } = {}) {
-    // Fetch topics from mass-kindness category (global events)
-    const data = discourseRequest('/c/mass-kindness.json');
-    
-    if (!data || !data.topic_list || !data.topic_list.topics) {
-      return [];
-    }
-
     const baseUrl = getDiscourseUrl();
     
-    // Get pinned topics first (these are usually the "about" pages with images)
-    const topics = data.topic_list.topics
-      .filter(topic => !topic.closed) // Exclude closed topics
+    // First, get the categories to find mass-kindness subcategories
+    const categoriesData = discourseRequest('/categories.json');
+    
+    if (!categoriesData || !categoriesData.category_list || !categoriesData.category_list.categories) {
+      return [];
+    }
+    
+    // Find mass-kindness category and its subcategories
+    const massKindnessCategory = categoriesData.category_list.categories.find(
+      cat => cat.slug === 'mass-kindness'
+    );
+    
+    if (!massKindnessCategory) {
+      return [];
+    }
+    
+    // Get subcategories - these are the individual global events
+    const subcategories = massKindnessCategory.subcategory_ids || [];
+    const allCategories = categoriesData.category_list.categories;
+    
+    // Build list of subcategory info
+    const eventCategories = subcategories
+      .map(subId => allCategories.find(cat => cat.id === subId))
+      .filter(cat => cat && !cat.read_restricted)
       .slice(0, limit);
     
-    return topics.map(topic => {
-      // Get first image from topic if available
+    // For each subcategory, try to get the About page (pinned topic)
+    const gatherings = eventCategories.map(category => {
+      // Fetch topics from this subcategory
+      const categoryData = discourseRequest(`/c/${category.slug}.json`);
+      
+      let aboutTopic = null;
       let image = null;
-      if (topic.image_url) {
-        image = topic.image_url.startsWith('http') 
-          ? topic.image_url 
-          : baseUrl + topic.image_url;
+      let excerpt = category.description_excerpt || category.description_text || '';
+      let eventDate = null;
+      
+      if (categoryData?.topic_list?.topics) {
+        // Look for pinned "About" topic
+        aboutTopic = categoryData.topic_list.topics.find(
+          topic => topic.pinned && topic.title.toLowerCase().includes('about')
+        );
+        
+        // If no About topic, use first pinned topic
+        if (!aboutTopic) {
+          aboutTopic = categoryData.topic_list.topics.find(topic => topic.pinned);
+        }
+        
+        // If still no topic, use first topic
+        if (!aboutTopic && categoryData.topic_list.topics.length > 0) {
+          aboutTopic = categoryData.topic_list.topics[0];
+        }
+        
+        if (aboutTopic) {
+          // Get image from about topic
+          if (aboutTopic.image_url) {
+            image = aboutTopic.image_url.startsWith('http')
+              ? aboutTopic.image_url
+              : baseUrl + aboutTopic.image_url;
+          }
+          
+          // Get excerpt from about topic if available
+          if (aboutTopic.excerpt) {
+            excerpt = aboutTopic.excerpt;
+          }
+          
+          // Try to extract date from title or excerpt
+          // Look for patterns like "First Saturday of July" or dates
+          const datePatterns = [
+            /(\d{1,2}(?:st|nd|rd|th)?\s+(?:of\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December))/i,
+            /((?:First|Second|Third|Fourth|Last)\s+(?:Saturday|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday)\s+(?:of|in)\s+(?:January|February|March|April|May|June|July|August|September|October|November|December))/i,
+            /(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}/i
+          ];
+          
+          const textToSearch = (aboutTopic.title + ' ' + excerpt).toLowerCase();
+          for (const pattern of datePatterns) {
+            const match = textToSearch.match(pattern);
+            if (match) {
+              eventDate = match[1];
+              break;
+            }
+          }
+        }
+      }
+      
+      // Use category uploaded logo/image if no topic image
+      if (!image && category.uploaded_logo) {
+        image = category.uploaded_logo.url.startsWith('http')
+          ? category.uploaded_logo.url
+          : baseUrl + category.uploaded_logo.url;
       }
       
       return {
-        title: topic.title,
-        excerpt: topic.excerpt || topic.fancy_title || '',
-        url: `${baseUrl}/t/${topic.slug}/${topic.id}`,
+        title: category.name,
+        excerpt: excerpt,
+        url: `${baseUrl}/c/${category.slug}`,
         image,
-        date: topic.created_at
+        date: eventDate,
+        categorySlug: category.slug,
+        sortOrder: category.position || 999
       };
     });
+    
+    // Sort by date (nearest first) - for now just return in category order
+    // since parsing dates from text is complex
+    return gatherings.sort((a, b) => a.sortOrder - b.sortOrder);
   },
 
   /**
