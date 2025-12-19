@@ -6,6 +6,12 @@
    - Single-column focused with responsive multi-column sections
    ========================================================================== */
 
+// Local variables (extending from variables.scss)
+$grey: #666;
+$grey-light: #e0e0e0;
+$primary-color: $orange;
+$secondary-color: $green;
+
 $section-spacing: 80px; // 25% more than typical 60-65px
 $element-spacing: 30px; // 25% more than typical 24px
 $card-border-radius: 12px;
