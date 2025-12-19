@@ -427,6 +427,7 @@ class Admin extends Component {
               >
                 {syncingUsers ? usersI18n.syncingBtn : usersI18n.syncBtn}
               </Button>
+              {/* Migration button - uncomment when needed for one-time data migrations
               <Button 
                 color="secondary" 
                 onClick={this.handleMigrateAvatars}
@@ -436,6 +437,7 @@ class Admin extends Component {
               >
                 {migratingAvatars ? usersI18n.migratingAvatarsBtn : usersI18n.migrateAvatarsBtn}
               </Button>
+              */}
             </div>
           </div>
           <div className="admin-controls-row">

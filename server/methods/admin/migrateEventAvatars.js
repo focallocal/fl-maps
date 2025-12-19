@@ -4,10 +4,17 @@ import { Roles } from 'meteor/alanning:roles'
 import Events from '/imports/both/collections/events'
 
 /**
- * One-time migration to populate organiser.username on old events
- * This fixes avatar display for events created before the username field was added
+ * One-time migration utility for Events collection
+ * Currently: Populates organiser.username on old events for avatar display
  * 
- * Can be removed after running successfully
+ * Other fields that could be migrated with similar logic:
+ * - organiser.avatar_template (Discourse avatar URL template)
+ * - organiser.name (display name vs username)
+ * - categories.color / categories.slug (if category schema changes)
+ * - address.city / address.country (geocoding updates)
+ * - engagement.limit (if default values change)
+ * 
+ * To reuse: Update the $or query and the $set operation below
  */
 
 // Meteor method for manual invocation
