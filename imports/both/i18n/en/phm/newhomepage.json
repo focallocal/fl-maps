@@ -44,26 +44,8 @@
   "upcoming_gatherings": {
     "title": "Upcoming International Gatherings",
     "see_all_url": "https://publichappinessmovement.com/c/mass-kindness/",
-    "join_filter": "Global Kindness",
-    "display_count": 2,
-    "items": [
-      {
-        "title": "World Freehugs Day",
-        "description": "Join thousands worldwide in spreading warmth and connection through the simple act of offering free hugs.",
-        "image": "/images/home-images/freehugs.jpg",
-        "date": "First Saturday of July",
-        "build_url": "https://publichappinessmovement.com/c/mass-kindness/freehugs/",
-        "join_url": "/map?category=Global+Kindness"
-      },
-      {
-        "title": "International Pillow Fight Day",
-        "description": "A playful celebration bringing communities together through the joy of friendly pillow battles.",
-        "image": "/images/home-images/pillowfight.jpg",
-        "date": "First Saturday of April",
-        "build_url": "https://publichappinessmovement.com/c/mass-kindness/pillowfight/",
-        "join_url": "/map?category=Global+Kindness"
-      }
-    ]
+    "discourse_category": "mass-kindness",
+    "items_count": 6
   },
   "latest_news": {
     "title": "Latest Community News",
@@ -73,27 +55,28 @@
   },
   "project_builds": {
     "title": "Current Project Builds",
+    "discourse_category": "building",
     "projects": [
       {
-        "title": "Public Happiness Token",
-        "description": "A cryptocurrency designed to reward positive community actions and fund local happiness initiatives.",
-        "image": "/images/home-images/project-token.jpg",
-        "see_more_url": "https://publichappinessmovement.com/c/building/token/",
-        "tasks_url": "https://publichappinessmovement.com/c/building/token/tasks/"
+        "title": "End Homelessness",
+        "description": "A collaborative initiative to create sustainable solutions for homelessness through community action and innovative approaches.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "see_more_url": "https://publichappinessmovement.com/c/end-homelessness/",
+        "tasks_url": "https://publichappinessmovement.com/c/end-homelessness/"
       },
       {
-        "title": "Happiness Map",
-        "description": "An interactive map connecting people with local gatherings, activities, and positive community members.",
-        "image": "/images/home-images/project-map.jpg",
-        "see_more_url": "https://publichappinessmovement.com/c/building/map/",
-        "tasks_url": "https://publichappinessmovement.com/c/building/map/tasks/"
+        "title": "Climate Action",
+        "description": "Taking positive action on climate change through community gatherings, education, and grassroots initiatives.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "see_more_url": "https://publichappinessmovement.com/c/climate-action/",
+        "tasks_url": "https://publichappinessmovement.com/c/climate-action/"
       },
       {
-        "title": "Community Platform",
-        "description": "Building the digital infrastructure to support and grow the Public Happiness Movement globally.",
-        "image": "/images/home-images/project-platform.jpg",
-        "see_more_url": "https://publichappinessmovement.com/c/building/platform/",
-        "tasks_url": "https://publichappinessmovement.com/c/building/platform/tasks/"
+        "title": "Homebase",
+        "description": "Building the central hub and infrastructure for the Public Happiness Movement community.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "see_more_url": "https://publichappinessmovement.com/c/homebase/",
+        "tasks_url": "https://publichappinessmovement.com/c/homebase/"
       }
     ]
   },

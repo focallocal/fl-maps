@@ -123,6 +123,44 @@ Meteor.methods({
   },
 
   /**
+   * Get upcoming international gatherings from mass-kindness category
+   * Each subcategory represents a different global event
+   */
+  'Discourse.getUpcomingGatherings'({ limit = 6 } = {}) {
+    // Fetch topics from mass-kindness category (global events)
+    const data = discourseRequest('/c/mass-kindness.json');
+    
+    if (!data || !data.topic_list || !data.topic_list.topics) {
+      return [];
+    }
+
+    const baseUrl = getDiscourseUrl();
+    
+    // Get pinned topics first (these are usually the "about" pages with images)
+    const topics = data.topic_list.topics
+      .filter(topic => !topic.closed) // Exclude closed topics
+      .slice(0, limit);
+    
+    return topics.map(topic => {
+      // Get first image from topic if available
+      let image = null;
+      if (topic.image_url) {
+        image = topic.image_url.startsWith('http') 
+          ? topic.image_url 
+          : baseUrl + topic.image_url;
+      }
+      
+      return {
+        title: topic.title,
+        excerpt: topic.excerpt || topic.fancy_title || '',
+        url: `${baseUrl}/t/${topic.slug}/${topic.id}`,
+        image,
+        date: topic.created_at
+      };
+    });
+  },
+
+  /**
    * Get gamification leaderboards from Discourse
    * Includes: hearts received (total/monthly), likes given (monthly),
    * posts created, solutions accepted (total/monthly)

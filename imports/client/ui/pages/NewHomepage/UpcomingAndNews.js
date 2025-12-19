@@ -13,12 +13,32 @@ const decodeHtmlEntities = (text) => {
 
 class UpcomingAndNews extends Component {
   state = {
+    gatheringItems: [],
+    gatheringsLoading: true,
     newsItems: [],
     newsLoading: true
   }
 
   componentDidMount () {
+    this.fetchGatherings()
     this.fetchNews()
+  }
+
+  fetchGatherings = () => {
+    const upcomingContent = i18n.NewHomepage?.upcoming_gatherings || {}
+    const limit = upcomingContent.items_count || 6
+    
+    // Fetch upcoming gatherings from Discourse mass-kindness category
+    Meteor.call('Discourse.getUpcomingGatherings', { limit }, (error, result) => {
+      if (!error && result) {
+        this.setState({
+          gatheringItems: result,
+          gatheringsLoading: false
+        })
+      } else {
+        this.setState({ gatheringsLoading: false })
+      }
+    })
   }
 
   fetchNews = () => {
@@ -41,61 +61,71 @@ class UpcomingAndNews extends Component {
   render () {
     const upcomingContent = i18n.NewHomepage?.upcoming_gatherings || {}
     const newsContent = i18n.NewHomepage?.latest_news || {}
-    const upcomingItems = upcomingContent.items || []
-    const displayCount = upcomingContent.display_count || upcomingItems.length
-    const { newsItems, newsLoading } = this.state
+    const { gatheringItems, gatheringsLoading, newsItems, newsLoading } = this.state
 
     return (
       <section className="upcoming-news-section">
         {/* Left Column: Upcoming International Gatherings */}
         <div className="section-column upcoming-column">
-          {/* Title box */}
+          {/* Title box with See All inside */}
           <div className="title-box">
             <h2 className="section-title">
               {upcomingContent.title || 'Upcoming International Gatherings'}
             </h2>
+            <a href={upcomingContent.see_all_url} className="see-all-btn">
+              See All
+            </a>
           </div>
 
-          {/* See all link - no border */}
-          <a href={upcomingContent.see_all_url} className="see-all-link">
-            See All →
-          </a>
-
-          {/* Individual gathering cards */}
-          {upcomingItems.slice(0, displayCount).map((item, index) => (
-            <div key={index} className="gathering-card">
-              <div className="gathering-details">
-                <h3 className="gathering-title">{item.title}</h3>
-                <p className="gathering-date">{item.date}</p>
-                <p className="gathering-text">{item.description}</p>
-                <div className="gathering-actions">
-                  <a href={item.build_url} className="action-btn build-btn">
-                    Build
-                  </a>
-                  <a href={item.join_url} className="action-btn join-btn">
-                    Join
-                  </a>
+          {/* Individual gathering cards with images */}
+          {gatheringsLoading ? (
+            <div className="loading-box">Loading gatherings...</div>
+          ) : gatheringItems.length > 0 ? (
+            gatheringItems.map((item, index) => (
+              <a 
+                key={index} 
+                href={item.url}
+                className="gathering-card"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.image && (
+                  <img 
+                    src={item.image} 
+                    alt={decodeHtmlEntities(item.title)}
+                    className="gathering-image"
+                    onError={(e) => {
+                      if (!e.target.dataset.fallback) {
+                        e.target.dataset.fallback = 'true'
+                        e.target.src = '/images/home-images/PHM-logo-banner-text-mid.svg'
+                      }
+                    }}
+                  />
+                )}
+                <div className="gathering-details">
+                  <h3 className="gathering-title">{decodeHtmlEntities(item.title)}</h3>
+                  <p className="gathering-text">{decodeHtmlEntities(item.excerpt)}</p>
                 </div>
-              </div>
-            </div>
-          ))}
+              </a>
+            ))
+          ) : (
+            <div className="no-data-box">No upcoming gatherings</div>
+          )}
         </div>
 
         {/* Right Column: Latest Community News */}
         <div className="section-column news-column">
-          {/* Title box */}
+          {/* Title box with See All inside */}
           <div className="title-box">
             <h2 className="section-title">
               {newsContent.title || 'Latest Community News'}
             </h2>
+            <a href={newsContent.see_all_url} className="see-all-btn">
+              See All
+            </a>
           </div>
 
-          {/* See all link - no border */}
-          <a href={newsContent.see_all_url} className="see-all-link">
-            See All →
-          </a>
-
-          {/* Individual news cards */}
+          {/* Individual news cards with images */}
           {newsLoading ? (
             <div className="loading-box">Loading news...</div>
           ) : newsItems.length > 0 ? (
@@ -107,6 +137,19 @@ class UpcomingAndNews extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                {news.image && (
+                  <img 
+                    src={news.image} 
+                    alt={decodeHtmlEntities(news.title)}
+                    className="news-image"
+                    onError={(e) => {
+                      if (!e.target.dataset.fallback) {
+                        e.target.dataset.fallback = 'true'
+                        e.target.src = '/images/home-images/PHM-logo-banner-text-mid.svg'
+                      }
+                    }}
+                  />
+                )}
                 <div className="news-content">
                   <h3 className="news-title">
                     {decodeHtmlEntities(news.title)}
