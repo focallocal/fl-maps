@@ -92,34 +92,59 @@ Meteor.methods({
    * Get latest news topics from Discourse news-hub category
    */
   'Discourse.getLatestNews'({ limit = 3 } = {}) {
-    // Fetch topics from news-hub category
-    const data = discourseRequest('/c/news-hub.json');
+    const baseUrl = getDiscourseUrl();
+    
+    // First try to get category ID for news-hub
+    const categoriesData = discourseRequest('/categories.json');
+    let categoryId = null;
+    
+    if (categoriesData?.category_list?.categories) {
+      const newsCategory = categoriesData.category_list.categories.find(
+        cat => cat.slug === 'news-hub'
+      );
+      if (newsCategory) {
+        categoryId = newsCategory.id;
+      }
+    }
+    
+    // Fetch topics from news-hub category using category ID
+    let data;
+    if (categoryId) {
+      // Use the proper category endpoint with ID
+      data = discourseRequest(`/c/news-hub/${categoryId}.json`);
+    } else {
+      // Fallback to slug-only endpoint
+      data = discourseRequest('/c/news-hub.json');
+    }
     
     if (!data || !data.topic_list || !data.topic_list.topics) {
+      console.log('[Discourse API] No topics found in news-hub category');
       return [];
     }
 
-    const baseUrl = getDiscourseUrl();
+    // Filter out pinned "About" topics and sort by latest
+    const topics = data.topic_list.topics
+      .filter(topic => !topic.pinned || !topic.title.toLowerCase().includes('about'))
+      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+      .slice(0, limit);
     
-    return data.topic_list.topics
-      .slice(0, limit)
-      .map(topic => {
-        // Get first image from topic if available
-        let image = null;
-        if (topic.image_url) {
-          image = topic.image_url.startsWith('http') 
-            ? topic.image_url 
-            : baseUrl + topic.image_url;
-        }
-        
-        return {
-          title: topic.title,
-          excerpt: topic.excerpt || topic.fancy_title || '',
-          url: `${baseUrl}/t/${topic.slug}/${topic.id}`,
-          image,
-          date: topic.created_at
-        };
-      });
+    return topics.map(topic => {
+      // Get first image from topic if available
+      let image = null;
+      if (topic.image_url) {
+        image = topic.image_url.startsWith('http') 
+          ? topic.image_url 
+          : baseUrl + topic.image_url;
+      }
+      
+      return {
+        title: topic.title,
+        excerpt: topic.excerpt || topic.fancy_title || '',
+        url: `${baseUrl}/t/${topic.slug}/${topic.id}`,
+        image,
+        date: topic.created_at
+      };
+    });
   },
 
   /**
