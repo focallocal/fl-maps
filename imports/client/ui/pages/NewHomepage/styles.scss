@@ -77,9 +77,9 @@ $see-all-bg-opacity: 0.15;
       background: rgba(255, 255, 255, 0.9);
       border: 2px solid $grey-light;
       border-radius: $card-border-radius;
-      padding: $element-spacing * 0.7; // Reduced padding
+      padding: 10px 15px; // Compact padding
       position: relative;
-      min-height: 140px; // Reduced from 200px (30% less)
+      min-height: 120px;
       overflow: visible; // Allow boxes to overflow
       
       .getting-started-content {
@@ -125,10 +125,9 @@ $see-all-bg-opacity: 0.15;
         display: flex;
         gap: $element-spacing;
         position: relative;
-        // Shifted right, reduced top margin
-        margin-top: 25px; // Reduced from 40px
-        margin-bottom: -40px; // Reduced from -50px
-        margin-left: 15px; // Shift boxes to the right
+        margin-top: 15px;
+        margin-bottom: -35px;
+        margin-left: auto; // Push boxes to the right
         z-index: 10;
         
         .guide-box {
@@ -147,7 +146,7 @@ $see-all-bg-opacity: 0.15;
           }
           
           &:last-child {
-            margin-right: -70px; // Overflow past container edge
+            margin-right: -35px; // Overflow past container edge by 35px
           }
           
           .guide-image {
@@ -236,10 +235,10 @@ $see-all-bg-opacity: 0.15;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: $element-spacing;
+        padding: $element-spacing * 0.5 $element-spacing;
         
         .pathway-title {
-          font-size: 1.8em;
+          font-size: 1.6em;
           font-weight: bold;
           margin: 0;
         }
@@ -371,32 +370,35 @@ $see-all-bg-opacity: 0.15;
       flex-direction: column;
       gap: $element-spacing / 2;
       
-      // Title box with colored border
+      // Title box with colored border - compact
       .title-box {
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $primary-color;
         border-radius: $card-border-radius;
-        padding: $element-spacing * 0.75;
+        padding: 8px 12px;
         
         .section-title {
-          font-size: 1.4em;
+          font-size: 1.2em;
           font-weight: bold;
           margin: 0;
           color: $black-lighter;
         }
       }
       
-      // See all link - no border
+      // See all link - styled like Getting Started button
       .see-all-link {
         display: inline-block;
         padding: 8px 16px;
+        background: rgba($primary-color, $see-all-bg-opacity);
         color: $primary-color;
+        border-radius: 6px;
         font-weight: 500;
         text-decoration: none;
         align-self: flex-start;
+        transition: background 0.3s ease;
         
         &:hover {
-          text-decoration: underline;
+          background: rgba($primary-color, $see-all-bg-opacity + 0.1);
         }
       }
       
@@ -405,11 +407,11 @@ $see-all-bg-opacity: 0.15;
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $primary-color;
         border-radius: $card-border-radius;
-        padding: $element-spacing * 0.75;
+        padding: 10px 12px;
         
         .gathering-details {
           .gathering-title {
-            font-size: 1.15em;
+            font-size: 1.1em;
             font-weight: 600;
             margin-bottom: 4px;
             color: $black-lighter;
@@ -535,12 +537,17 @@ $see-all-bg-opacity: 0.15;
     padding: 0 20px;
     
     .section-header {
-      text-align: center;
-      margin-bottom: $element-spacing * 1.5;
+      margin-bottom: $element-spacing;
       
       .section-title {
-        font-size: 2em;
+        display: inline-block;
+        font-size: 1.4em;
         font-weight: bold;
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid $secondary-color;
+        border-radius: $card-border-radius;
+        padding: 8px 16px;
+        margin: 0;
       }
     }
     
@@ -635,12 +642,17 @@ $see-all-bg-opacity: 0.15;
     padding: 0 20px;
     
     .section-header {
-      text-align: center;
-      margin-bottom: $element-spacing * 1.5;
+      margin-bottom: $element-spacing;
       
       .section-title {
-        font-size: 2em;
+        display: inline-block;
+        font-size: 1.4em;
         font-weight: bold;
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid $primary-color;
+        border-radius: $card-border-radius;
+        padding: 8px 16px;
+        margin: 0;
       }
     }
     
@@ -657,12 +669,12 @@ $see-all-bg-opacity: 0.15;
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $primary-color;
         border-radius: $card-border-radius;
-        padding: $element-spacing;
+        padding: 10px 12px;
         
         .leaderboard-title {
-          font-size: 1.2em;
+          font-size: 1.1em;
           font-weight: 600;
-          margin-bottom: $element-spacing / 2;
+          margin-bottom: 8px;
           text-align: center;
           color: $primary-color;
         }

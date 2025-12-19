@@ -27,14 +27,14 @@ const GettingStarted = () => {
               rel="noopener noreferrer"
             >
               <img 
-                src={guide.image} 
+                src={guide.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 
                 alt={guide.title} 
                 className="guide-image"
                 onError={(e) => {
-                  // Prevent infinite loop if placeholder also fails
+                  // Use PHM logo as fallback
                   if (!e.target.dataset.fallback) {
                     e.target.dataset.fallback = 'true';
-                    e.target.src = '/images/home-images/placeholder.jpg';
+                    e.target.src = '/images/home-images/PHM-logo-banner-text-mid.svg';
                   }
                 }}
               />
