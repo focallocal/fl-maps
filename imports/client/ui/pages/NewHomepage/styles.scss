@@ -777,33 +777,37 @@ $see-all-bg-opacity: 0.15;
       }
     }
   }
+}
 
-  /* ========================================
-     Mobile Responsive Styles
-     - Single column layout
-     - Images on top of cards
-     - Carousel for Getting Started
-     - News above Gatherings
-     ======================================== */
+/* ==========================================================================
+   MOBILE RESPONSIVE STYLES (Outside .new-homepage block for better compatibility)
+   - Single column layout
+   - Images on top of cards
+   - Carousel for Getting Started
+   - News above Gatherings
+   ========================================================================== */
 
-  // Hide/show classes for mobile/desktop
-  .desktop-only {
-    display: flex;
-    
-    @media (max-width: 767px) {
-      display: none !important;
-    }
+// Hide/show classes for mobile/desktop
+.new-homepage .desktop-only {
+  display: flex;
+}
+
+.new-homepage .mobile-only {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .new-homepage .desktop-only {
+    display: none !important;
   }
   
-  .mobile-only {
-    display: none;
-    
-    @media (max-width: 767px) {
-      display: flex !important;
-    }
+  .new-homepage .mobile-only {
+    display: flex !important;
   }
+}
 
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
+  .new-homepage {
     // Reduce section spacing on mobile
     $mobile-section-spacing: 60px;
     
