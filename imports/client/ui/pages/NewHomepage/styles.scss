@@ -21,10 +21,10 @@ $see-all-bg-opacity: 0.15;
   position: relative;
   min-height: 100vh;
   
-  // Reset h2 margins globally for this page
-  h2 {
-    margin-top: 0;
-    margin-bottom: 0;
+  // Reset h2 margins globally for this page with !important to override external styles
+  h2, h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
   
   /* ========================================
@@ -440,6 +440,19 @@ $see-all-bg-opacity: 0.15;
           flex: 1;
           padding: 8px 10px;
           
+          .gathering-date {
+            display: block;
+            font-size: 0.75em;
+            font-weight: 600;
+            color: $primary-color;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            
+            &.tba {
+              color: $grey;
+            }
+          }
+          
           .gathering-title {
             font-size: 1em;
             font-weight: 600;
@@ -452,10 +465,14 @@ $see-all-bg-opacity: 0.15;
             color: $grey;
             line-height: 1.4;
             margin: 0;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
+            position: relative;
+            
+            .read-more {
+              color: $primary-color;
+              font-weight: 500;
+              background: linear-gradient(to right, transparent, rgba(255,255,255,0.9) 30%, rgba(255,255,255,1) 60%);
+              padding-left: 20px;
+            }
           }
         }
       }
@@ -520,22 +537,21 @@ $see-all-bg-opacity: 0.15;
               font-weight: 600;
               margin-bottom: 4px;
               color: $black-lighter;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              display: -webkit-box;
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
             }
             
             .news-excerpt {
               font-size: 0.85em;
               color: $grey;
               line-height: 1.4;
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-line-clamp: 2;
-              -webkit-box-orient: vertical;
               margin: 0;
+              position: relative;
+              
+              .read-more {
+                color: $secondary-color;
+                font-weight: 500;
+                background: linear-gradient(to right, transparent, rgba(255,255,255,0.9) 30%, rgba(255,255,255,1) 60%);
+                padding-left: 20px;
+              }
             }
           }
         }

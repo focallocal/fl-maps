@@ -103,8 +103,13 @@ class UpcomingAndNews extends Component {
                   />
                 )}
                 <div className="gathering-details">
+                  {item.date && <span className="gathering-date">{item.date}</span>}
+                  {!item.date && <span className="gathering-date tba">TBA</span>}
                   <h3 className="gathering-title">{decodeHtmlEntities(item.title)}</h3>
-                  <p className="gathering-text">{decodeHtmlEntities(item.excerpt)}</p>
+                  <p className="gathering-text">
+                    {decodeHtmlEntities(item.excerpt)}
+                    <span className="read-more">...read more</span>
+                  </p>
                 </div>
               </a>
             ))
@@ -156,6 +161,7 @@ class UpcomingAndNews extends Component {
                   </h3>
                   <p className="news-excerpt">
                     {decodeHtmlEntities(news.excerpt)}
+                    <span className="read-more">...read more</span>
                   </p>
                 </div>
               </a>

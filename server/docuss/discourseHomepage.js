@@ -15,6 +15,20 @@ const getDiscourseUrl = () => {
   )
 }
 
+// Helper to get month order for sorting
+const getMonthOrder = (dateStr) => {
+  if (!dateStr) return 99; // TBA goes to end
+  const months = ['january', 'february', 'march', 'april', 'may', 'june', 
+                  'july', 'august', 'september', 'october', 'november', 'december'];
+  const lowerDate = dateStr.toLowerCase();
+  for (let i = 0; i < months.length; i++) {
+    if (lowerDate.includes(months[i])) {
+      return i;
+    }
+  }
+  return 99; // Unknown date goes to end
+}
+
 // Helper to make Discourse API requests
 const discourseRequest = (endpoint, options = {}) => {
   const baseUrl = getDiscourseUrl()
@@ -183,13 +197,14 @@ Meteor.methods({
     
     // For each subcategory, try to get the About page (pinned topic)
     const gatherings = eventCategories.map(category => {
-      // Fetch topics from this subcategory
-      const categoryData = discourseRequest(`/c/${category.slug}.json`);
+      // Fetch topics from this subcategory using category ID
+      const categoryData = discourseRequest(`/c/${category.slug}/${category.id}.json`);
       
       let aboutTopic = null;
       let image = null;
       let excerpt = category.description_excerpt || category.description_text || '';
       let eventDate = null;
+      let eventDateRaw = null; // For sorting
       
       if (categoryData?.topic_list?.topics) {
         // Look for pinned "About" topic
@@ -208,33 +223,60 @@ Meteor.methods({
         }
         
         if (aboutTopic) {
-          // Get image from about topic
-          if (aboutTopic.image_url) {
+          // Fetch the actual topic content to get the full text for date parsing
+          const topicData = discourseRequest(`/t/${aboutTopic.id}.json`);
+          
+          if (topicData) {
+            // Get image from topic
+            if (topicData.image_url) {
+              image = topicData.image_url.startsWith('http')
+                ? topicData.image_url
+                : baseUrl + topicData.image_url;
+            }
+            
+            // Get first post content for date extraction
+            if (topicData.post_stream?.posts?.length > 0) {
+              const firstPost = topicData.post_stream.posts[0];
+              const postContent = firstPost.cooked || ''; // HTML content
+              
+              // Also use excerpt if available
+              if (firstPost.excerpt) {
+                excerpt = firstPost.excerpt;
+              }
+              
+              // Extract date from the first line of the post
+              // Looking for dates at the top like "First Saturday of July" or "March 15th"
+              const datePatterns = [
+                /((?:First|Second|Third|Fourth|Last)\s+(?:Saturday|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday)\s+(?:of|in)\s+(?:January|February|March|April|May|June|July|August|September|October|November|December))/i,
+                /(\d{1,2}(?:st|nd|rd|th)?\s+(?:of\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December))/i,
+                /((?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:st|nd|rd|th)?)/i
+              ];
+              
+              // Parse HTML to get text
+              const textContent = postContent.replace(/<[^>]*>/g, ' ').replace(/\\s+/g, ' ').trim();
+              const firstLines = textContent.substring(0, 500); // Check first 500 chars
+              
+              for (const pattern of datePatterns) {
+                const match = firstLines.match(pattern);
+                if (match) {
+                  eventDate = match[1];
+                  // Try to calculate approximate sort date
+                  eventDateRaw = getMonthOrder(eventDate);
+                  break;
+                }
+              }
+            }
+          }
+          
+          // Fallback to topic-level data if we didn't get content
+          if (!image && aboutTopic.image_url) {
             image = aboutTopic.image_url.startsWith('http')
               ? aboutTopic.image_url
               : baseUrl + aboutTopic.image_url;
           }
           
-          // Get excerpt from about topic if available
-          if (aboutTopic.excerpt) {
+          if (!excerpt && aboutTopic.excerpt) {
             excerpt = aboutTopic.excerpt;
-          }
-          
-          // Try to extract date from title or excerpt
-          // Look for patterns like "First Saturday of July" or dates
-          const datePatterns = [
-            /(\d{1,2}(?:st|nd|rd|th)?\s+(?:of\s+)?(?:January|February|March|April|May|June|July|August|September|October|November|December))/i,
-            /((?:First|Second|Third|Fourth|Last)\s+(?:Saturday|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday)\s+(?:of|in)\s+(?:January|February|March|April|May|June|July|August|September|October|November|December))/i,
-            /(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}/i
-          ];
-          
-          const textToSearch = (aboutTopic.title + ' ' + excerpt).toLowerCase();
-          for (const pattern of datePatterns) {
-            const match = textToSearch.match(pattern);
-            if (match) {
-              eventDate = match[1];
-              break;
-            }
           }
         }
       }
@@ -252,14 +294,23 @@ Meteor.methods({
         url: `${baseUrl}/c/${category.slug}`,
         image,
         date: eventDate,
+        dateOrder: eventDateRaw || 99, // For sorting - TBA goes to end
         categorySlug: category.slug,
         sortOrder: category.position || 999
       };
     });
     
-    // Sort by date (nearest first) - for now just return in category order
-    // since parsing dates from text is complex
-    return gatherings.sort((a, b) => a.sortOrder - b.sortOrder);
+    // Sort gatherings: first by date (so TBA items go to end), then by position
+    const sortedGatherings = gatherings.sort((a, b) => {
+      // First sort by date order (lower is earlier month)
+      if (a.dateOrder !== b.dateOrder) {
+        return a.dateOrder - b.dateOrder;
+      }
+      // Then by category position
+      return a.sortOrder - b.sortOrder;
+    });
+    
+    return sortedGatherings;
   },
 
   /**
