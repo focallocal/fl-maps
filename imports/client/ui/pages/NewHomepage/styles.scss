@@ -760,6 +760,236 @@ $see-all-bg-opacity: 0.15;
    - News above Gatherings
    ========================================================================== */
 
+// Shared mobile spacing
+$mobile-section-spacing: 60px;
+
+// Reusable mobile mixin so we can target both media-query and JS-driven .is-mobile class
+@mixin new-homepage-mobile {
+  .site-title-section {
+    margin: 3% 0 $mobile-section-spacing 0;
+    
+    .site-title-logo {
+      max-width: 95%;
+    }
+  }
+  
+  .getting-started-section {
+    margin-bottom: $mobile-section-spacing;
+    padding-bottom: 0;
+    
+    .getting-started-container {
+      flex-direction: column;
+      padding: 15px;
+      
+      .getting-started-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+        
+        .getting-started-title {
+          font-size: 1.1em;
+        }
+        
+        .getting-started-text {
+          font-size: 0.8em;
+        }
+        
+        .see-all-btn {
+          align-self: center;
+        }
+      }
+      
+      .getting-started-carousel {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        padding: 0 40px;
+        
+        .guide-box {
+          width: 100%;
+          max-width: 300px;
+          margin: 0;
+          
+          .guide-image {
+            height: 120px;
+          }
+        }
+        
+        .carousel-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba($primary-color, 0.9);
+          color: white;
+          border: none;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          font-size: 14px;
+          cursor: pointer;
+          z-index: 10;
+          
+          &.prev {
+            left: 0;
+          }
+          
+          &.next {
+            right: 0;
+          }
+          
+          &:hover {
+            background: $primary-color;
+          }
+        }
+        
+        .carousel-dots {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          margin-top: 15px;
+          
+          .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $grey-light;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            
+            &.active {
+              background: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .pathway-section {
+    margin-bottom: $mobile-section-spacing;
+    
+    .pathway-card {
+      flex-direction: column !important; // Force single-column stack on mobile
+      margin-bottom: 30px;
+      
+      .pathway-image-link {
+        flex: none;
+        width: 100%;
+        height: 180px;
+        
+        .pathway-image {
+          width: 100%;
+          height: 100%;
+          min-height: 180px;
+        }
+      }
+      
+      .pathway-content {
+        .pathway-header {
+          padding: 12px;
+          
+          .pathway-title {
+            font-size: 1.2em;
+          }
+        }
+        
+        .pathway-body {
+          padding: 0 15px 15px;
+          
+          .pathway-description {
+            font-size: 0.95em;
+          }
+        }
+      }
+    }
+  }
+  
+  .upcoming-news-section {
+    grid-template-columns: 1fr !important; // Force single column for both columns
+    gap: 40px;
+    margin-bottom: $mobile-section-spacing;
+    
+    .news-column {
+      order: 1;
+    }
+    
+    .upcoming-column {
+      order: 2;
+    }
+    
+    .section-column {
+      gap: 20px;
+      
+      .title-box {
+        .section-title {
+          font-size: 1em;
+        }
+      }
+      
+      .gathering-card,
+      .news-card {
+        flex-direction: column !important; // Override any upstream flex row defaults
+        
+        .gathering-image,
+        .news-image {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 150px;
+          max-height: 150px;
+        }
+        
+        .gathering-details,
+        .news-content {
+          padding: 12px;
+        }
+      }
+    }
+  }
+  
+  .project-builds-section {
+    margin-bottom: $mobile-section-spacing;
+    
+    .projects-grid {
+      grid-template-columns: 1fr !important; // Force single column
+      gap: 20px;
+      
+      .project-card {
+        .project-image {
+          padding-bottom: 50%; // Slightly shorter on mobile
+        }
+        
+        .project-content {
+          padding: 20px;
+          
+          .project-title {
+            font-size: 1.1em;
+          }
+          
+          .project-actions {
+            flex-direction: column;
+            gap: 10px;
+            
+            .action-btn {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .leaderboards-section {
+    margin-bottom: $mobile-section-spacing;
+    
+    .leaderboards-grid {
+      grid-template-columns: 1fr !important; // Force single column
+      gap: 20px;
+    }
+  }
+}
+
 // Hide/show classes for mobile/desktop
 .new-homepage .desktop-only {
   display: flex;
@@ -779,259 +1009,22 @@ $see-all-bg-opacity: 0.15;
   }
 }
 
-// Shared mobile spacing
-$mobile-section-spacing: 60px;
-
-// Site title adjustments
+// Apply mobile mixin via media query
 @media (max-width: 767px) {
   .new-homepage {
-    .site-title-section {
-      margin: 3% 0 $mobile-section-spacing 0;
-      
-      .site-title-logo {
-        max-width: 95%;
-      }
-    }
+    @include new-homepage-mobile();
   }
 }
 
-// Getting Started - carousel & stack
-@media (max-width: 767px) {
-  .new-homepage {
-    .getting-started-section {
-      margin-bottom: $mobile-section-spacing;
-      padding-bottom: 0;
-      
-      .getting-started-container {
-        flex-direction: column;
-        padding: 15px;
-        
-        .getting-started-content {
-          flex: 0 0 100%;
-          max-width: 100%;
-          padding-right: 0;
-          margin-bottom: 20px;
-          
-          .getting-started-title {
-            font-size: 1.1em;
-          }
-          
-          .getting-started-text {
-            font-size: 0.8em;
-          }
-          
-          .see-all-btn {
-            align-self: center;
-          }
-        }
-        
-        .getting-started-carousel {
-          flex-direction: column;
-          align-items: center;
-          position: relative;
-          width: 100%;
-          padding: 0 40px;
-          
-          .guide-box {
-            width: 100%;
-            max-width: 300px;
-            margin: 0;
-            
-            .guide-image {
-              height: 120px;
-            }
-          }
-          
-          .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba($primary-color, 0.9);
-            color: white;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            font-size: 14px;
-            cursor: pointer;
-            z-index: 10;
-            
-            &.prev {
-              left: 0;
-            }
-            
-            &.next {
-              right: 0;
-            }
-            
-            &:hover {
-              background: $primary-color;
-            }
-          }
-          
-          .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
-            
-            .dot {
-              width: 10px;
-              height: 10px;
-              border-radius: 50%;
-              background: $grey-light;
-              cursor: pointer;
-              transition: background 0.3s ease;
-              
-              &.active {
-                background: $primary-color;
-              }
-            }
-          }
-        }
-      }
-    }
+// Apply same mobile mixin when JS flags is-mobile class (guards against any viewport/meta quirks)
+.new-homepage.is-mobile {
+  @include new-homepage-mobile();
+  
+  .desktop-only {
+    display: none !important;
   }
-}
-
-// Pathway Cards - image on top, single column
-@media (max-width: 767px) {
-  .new-homepage {
-    .pathway-section {
-      margin-bottom: $mobile-section-spacing;
-      
-      .pathway-card {
-        flex-direction: column !important; // Force single-column stack on mobile
-        margin-bottom: 30px;
-        
-        .pathway-image-link {
-          flex: none;
-          width: 100%;
-          height: 180px;
-          
-          .pathway-image {
-            width: 100%;
-            height: 100%;
-            min-height: 180px;
-          }
-        }
-        
-        .pathway-content {
-          .pathway-header {
-            padding: 12px;
-            
-            .pathway-title {
-              font-size: 1.2em;
-            }
-          }
-          
-          .pathway-body {
-            padding: 0 15px 15px;
-            
-            .pathway-description {
-              font-size: 0.95em;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// Upcoming & News - single column, News first
-@media (max-width: 767px) {
-  .new-homepage {
-    .upcoming-news-section {
-      grid-template-columns: 1fr !important; // Force single column for both columns
-      gap: 40px;
-      margin-bottom: $mobile-section-spacing;
-      
-      .news-column {
-        order: 1;
-      }
-      
-      .upcoming-column {
-        order: 2;
-      }
-      
-      .section-column {
-        gap: 20px;
-        
-        .title-box {
-          .section-title {
-            font-size: 1em;
-          }
-        }
-        
-        .gathering-card,
-        .news-card {
-          flex-direction: column !important; // Override any upstream flex row defaults
-          
-          .gathering-image,
-          .news-image {
-            width: 100% !important;
-            max-width: 100% !important;
-            height: 150px;
-            max-height: 150px;
-          }
-          
-          .gathering-details,
-          .news-content {
-            padding: 12px;
-          }
-        }
-      }
-    }
-  }
-}
-
-// Project Builds - single column
-@media (max-width: 767px) {
-  .new-homepage {
-    .project-builds-section {
-      margin-bottom: $mobile-section-spacing;
-      
-      .projects-grid {
-        grid-template-columns: 1fr !important; // Force single column
-        gap: 20px;
-        
-        .project-card {
-          .project-image {
-            padding-bottom: 50%; // Slightly shorter on mobile
-          }
-          
-          .project-content {
-            padding: 20px;
-            
-            .project-title {
-              font-size: 1.1em;
-            }
-            
-            .project-actions {
-              flex-direction: column;
-              gap: 10px;
-              
-              .action-btn {
-                text-align: center;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// Leaderboards - single column
-@media (max-width: 767px) {
-  .new-homepage {
-    .leaderboards-section {
-      margin-bottom: $mobile-section-spacing;
-      
-      .leaderboards-grid {
-        grid-template-columns: 1fr !important; // Force single column
-        gap: 20px;
-      }
-    }
+  
+  .mobile-only {
+    display: flex !important;
   }
 }
