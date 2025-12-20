@@ -434,6 +434,7 @@ $see-all-bg-opacity: 0.15;
       // Individual gathering cards with image on left
       .gathering-card {
         display: flex;
+        align-items: center;
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $primary-color;
         border-radius: $card-border-radius;
@@ -529,6 +530,7 @@ $see-all-bg-opacity: 0.15;
         // Individual news cards with image on left
         .news-card {
           display: flex;
+          align-items: center;
           background: rgba(255, 255, 255, 0.95);
           border: 2px solid $secondary-color;
           border-radius: $card-border-radius;
