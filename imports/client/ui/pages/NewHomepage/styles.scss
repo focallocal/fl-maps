@@ -33,9 +33,6 @@ $see-all-bg-opacity: 0.15;
   min-height: 100vh;
   text-align: center;
   
-  // DEBUG: Unconditional test - should always show
-  background-color: pink !important;
-  
   // Reset h2 margins globally for this page with !important to override external styles
   h2, h3 {
     margin-top: 0 !important;
@@ -348,7 +345,7 @@ $see-all-bg-opacity: 0.15;
       }
       
       // Mobile: Stack vertically
-      @media (max-width: 575px) {
+      @media (max-width: 767px) {
         flex-direction: column;
         
         .pathway-image-link {
@@ -604,11 +601,7 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(3, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: 991px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      @media (max-width: 575px) {
+      @media (max-width: 767px) {
         grid-template-columns: 1fr;
       }
       
@@ -711,7 +704,7 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(2, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: 575px) {
+      @media (max-width: 767px) {
         grid-template-columns: 1fr;
       }
       
