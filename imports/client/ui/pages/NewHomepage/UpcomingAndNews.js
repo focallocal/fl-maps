@@ -89,19 +89,17 @@ class UpcomingAndNews extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {item.image && (
-                  <img 
-                    src={item.image} 
-                    alt={decodeHtmlEntities(item.title)}
-                    className="gathering-image"
-                    onError={(e) => {
-                      if (!e.target.dataset.fallback) {
-                        e.target.dataset.fallback = 'true'
-                        e.target.src = '/images/home-images/PHM-logo-banner-text-mid.svg'
-                      }
-                    }}
-                  />
-                )}
+                <img 
+                  src={item.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 
+                  alt={decodeHtmlEntities(item.title)}
+                  className="gathering-image"
+                  onError={(e) => {
+                    if (!e.target.dataset.fallback) {
+                      e.target.dataset.fallback = 'true'
+                      e.target.src = '/images/home-images/PHM-logo-banner-text-mid.svg'
+                    }
+                  }}
+                />
                 <div className="gathering-details">
                   {item.date && <span className="gathering-date">{item.date}</span>}
                   {!item.date && <span className="gathering-date tba">TBA</span>}
@@ -142,19 +140,17 @@ class UpcomingAndNews extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {news.image && (
-                  <img 
-                    src={news.image} 
-                    alt={decodeHtmlEntities(news.title)}
-                    className="news-image"
-                    onError={(e) => {
-                      if (!e.target.dataset.fallback) {
-                        e.target.dataset.fallback = 'true'
-                        e.target.src = '/images/home-images/PHM-logo-banner-text-mid.svg'
-                      }
-                    }}
-                  />
-                )}
+                <img 
+                  src={news.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 
+                  alt={decodeHtmlEntities(news.title)}
+                  className="news-image"
+                  onError={(e) => {
+                    if (!e.target.dataset.fallback) {
+                      e.target.dataset.fallback = 'true'
+                      e.target.src = '/images/home-images/PHM-logo-banner-text-mid.svg'
+                    }
+                  }}
+                />
                 <div className="news-content">
                   <h3 className="news-title">
                     {decodeHtmlEntities(news.title)}

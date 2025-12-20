@@ -430,10 +430,12 @@ $see-all-bg-opacity: 0.15;
         }
         
         .gathering-image {
-          flex: 0 0 33%;
-          width: 33%;
+          flex: 0 0 auto;
+          width: auto;
+          max-width: 33%;
+          height: 100px;
           object-fit: cover;
-          min-height: 80px;
+          object-position: center;
         }
         
         .gathering-details {
@@ -522,10 +524,12 @@ $see-all-bg-opacity: 0.15;
           }
           
           .news-image {
-            flex: 0 0 33%;
-            width: 33%;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: 33%;
+            height: 100px;
             object-fit: cover;
-            min-height: 80px;
+            object-position: center;
           }
           
           .news-content {

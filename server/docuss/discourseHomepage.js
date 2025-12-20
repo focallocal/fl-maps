@@ -142,18 +142,47 @@ Meteor.methods({
       .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
       .slice(0, limit);
     
+    // Fetch actual content for each topic
     return topics.map(topic => {
-      // Get first image from topic if available
       let image = null;
-      if (topic.image_url) {
+      let excerpt = '';
+      
+      // Fetch the actual topic content
+      const topicData = discourseRequest(`/t/${topic.id}.json`);
+      
+      if (topicData) {
+        // Get image from topic
+        if (topicData.image_url) {
+          image = topicData.image_url.startsWith('http')
+            ? topicData.image_url
+            : baseUrl + topicData.image_url;
+        }
+        
+        // Get first post content for excerpt
+        if (topicData.post_stream?.posts?.length > 0) {
+          const firstPost = topicData.post_stream.posts[0];
+          const postContent = firstPost.cooked || '';
+          
+          // Strip HTML and get first 200 chars
+          const textContent = postContent.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+          excerpt = textContent.substring(0, 200);
+        }
+      }
+      
+      // Fallback to topic-level data
+      if (!image && topic.image_url) {
         image = topic.image_url.startsWith('http') 
           ? topic.image_url 
           : baseUrl + topic.image_url;
       }
       
+      if (!excerpt) {
+        excerpt = topic.excerpt || topic.fancy_title || '';
+      }
+      
       return {
         title: topic.title,
-        excerpt: topic.excerpt || topic.fancy_title || '',
+        excerpt,
         url: `${baseUrl}/t/${topic.slug}/${topic.id}`,
         image,
         date: topic.created_at
