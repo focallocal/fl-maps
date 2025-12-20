@@ -12,7 +12,7 @@ $grey-light: #e0e0e0;
 $primary-color: $orange;
 $secondary-color: $green;
 
-$section-spacing: 80px; // 25% more than typical 60-65px
+$section-spacing: 100px; // Increased 25% from 80px
 $element-spacing: 30px; // 25% more than typical 24px
 $card-border-radius: 12px;
 $see-all-bg-opacity: 0.15;
@@ -108,13 +108,13 @@ $see-all-bg-opacity: 0.15;
         .getting-started-text {
           font-size: 0.8em;
           line-height: 1.4;
-          margin: 0 0 8px 0; // Remove top margin
+          margin: 8px 0 8px 0;
           color: $grey;
         }
         
         .see-all-btn {
           display: inline-block;
-          align-self: flex-start;
+          align-self: flex-end;
           width: auto;
           padding: 8px 16px;
           background: rgba($primary-color, $see-all-bg-opacity);
@@ -247,7 +247,8 @@ $see-all-bg-opacity: 0.15;
       
       // Image on left spanning full height
       .pathway-image-link {
-        display: block;
+        display: flex;
+        align-items: center;
         flex: 0 0 280px;
         
         .pathway-image {
@@ -255,6 +256,7 @@ $see-all-bg-opacity: 0.15;
           height: 100%;
           min-height: 200px;
           object-fit: cover;
+          object-position: center;
           transition: transform 0.3s ease;
           
           &:hover {
@@ -268,6 +270,7 @@ $see-all-bg-opacity: 0.15;
         flex: 1;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         min-width: 0;
       }
       
@@ -279,6 +282,7 @@ $see-all-bg-opacity: 0.15;
         text-align: center;
         
         .pathway-title {
+          flex: 1;
           font-size: 1.4em;
           font-weight: bold;
           margin: 0;
@@ -305,14 +309,16 @@ $see-all-bg-opacity: 0.15;
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: 0 $element-spacing $element-spacing;
+        justify-content: center;
+        align-items: center;
+        padding: 0 $element-spacing 8px;
         text-align: center;
         
         .pathway-description {
           font-size: 1.05em;
           line-height: 1.6;
           color: $grey;
-          margin: 0 0 $element-spacing / 2 0;
+          margin: 0;
           text-align: center;
         }
         
@@ -401,10 +407,12 @@ $see-all-bg-opacity: 0.15;
         padding: 6px 10px;
         
         .section-title {
+          flex: 1;
           font-size: 1.1em;
           font-weight: bold;
           margin: 0;
           color: $black-lighter;
+          text-align: center;
         }
         
         .see-all-btn {
