@@ -55,7 +55,7 @@ class NewHomepage extends Component {
       : (backgroundConfig.desktop || DEFAULT_BACKGROUND.desktop);
 
     return (
-      <main className='new-homepage'>
+      <main className={`new-homepage ${isMobile ? 'is-mobile' : ''}`}>
         {/* Section 1: Hero Banner (unchanged) */}
         <div className='hero-section'>
           <img src={url} alt="Banner" className='background-image' />

@@ -4,7 +4,7 @@
    New Homepage Styles
    - Spacious, airy design with 25% more spacing than original
    - Single-column focused with responsive multi-column sections
-  - Cache bust: 2024-12-20-v2
+  - Cache bust: 2024-12-20-v3
    ========================================================================== */
 
 // ============================================================================
@@ -1034,4 +1034,120 @@ $mobile-section-spacing: 60px;
       }
     }
   }
+}
+
+/* ==========================================================================
+   JS FALLBACK (is-mobile class)
+   Mirrors the mobile media query in case the device or cache misses @media
+   ========================================================================== */
+.new-homepage.is-mobile {
+  .site-title-section {
+    margin: 3% 0 $mobile-section-spacing 0;
+    
+    .site-title-logo {
+      max-width: 95%;
+    }
+  }
+  
+  .getting-started-section {
+    margin-bottom: $mobile-section-spacing;
+    padding-bottom: 0;
+    
+    .getting-started-container {
+      flex-direction: column;
+      padding: 15px;
+      
+      .getting-started-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+        
+        .see-all-btn {
+          align-self: center;
+        }
+      }
+      
+      .getting-started-carousel {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        padding: 0 40px;
+      }
+    }
+  }
+  
+  .pathway-section {
+    margin-bottom: $mobile-section-spacing;
+    
+    .pathway-card {
+      flex-direction: column !important;
+      margin-bottom: 30px;
+      
+      .pathway-image-link {
+        flex: none;
+        width: 100%;
+        height: 180px;
+      }
+    }
+  }
+  
+  .upcoming-news-section {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    margin-bottom: $mobile-section-spacing;
+    
+    .news-column { order: 1; }
+    .upcoming-column { order: 2; }
+    
+    .section-column {
+      gap: 20px;
+      
+      .gathering-card,
+      .news-card {
+        flex-direction: column !important;
+        
+        .gathering-image,
+        .news-image {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: 150px;
+          max-height: 150px;
+        }
+      }
+    }
+  }
+  
+  .project-builds-section {
+    margin-bottom: $mobile-section-spacing;
+    
+    .projects-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+      
+      .project-card {
+        .project-image { padding-bottom: 50%; }
+        
+        .project-actions {
+          flex-direction: column;
+          gap: 10px;
+          
+          .action-btn { text-align: center; }
+        }
+      }
+    }
+  }
+  
+  .leaderboards-section {
+    margin-bottom: $mobile-section-spacing;
+    
+    .leaderboards-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+    }
+  }
+  
+  .desktop-only { display: none !important; }
+  .mobile-only { display: flex !important; }
 }
