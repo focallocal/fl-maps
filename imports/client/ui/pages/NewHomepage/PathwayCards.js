@@ -77,19 +77,19 @@ class PathwayCards extends Component {
       <section className="pathway-section">
         {/* Gatherings (Local) Card - Shows Map image */}
         <div className="pathway-card gatherings">
-          <div className="pathway-header">
-            <h2 className="pathway-title">{gatherings.title || 'Gatherings (Local)'}</h2>
-            <a href={gatherings.see_all_url} className="see-all-link">See All</a>
-          </div>
-          <div className="pathway-body">
-            <a href={gatherings.map_url} className="pathway-image-link">
-              <img 
-                src="/images/home-images/Homepage Maps.jpg" 
-                alt="Map" 
-                className="pathway-image"
-              />
-            </a>
-            <div className="pathway-right">
+          <a href={gatherings.map_url} className="pathway-image-link">
+            <img 
+              src="/images/home-images/Homepage Maps.jpg" 
+              alt="Map" 
+              className="pathway-image"
+            />
+          </a>
+          <div className="pathway-content">
+            <div className="pathway-header">
+              <h2 className="pathway-title">{gatherings.title || 'Gatherings (Local)'}</h2>
+              <a href={gatherings.see_all_url} className="see-all-link">See All</a>
+            </div>
+            <div className="pathway-body">
               <p className="pathway-description">{gatherings.description}</p>
               {this.renderUserThumbnails(gatheringsUsers)}
             </div>
@@ -98,19 +98,19 @@ class PathwayCards extends Component {
 
         {/* Projects (Global) Card - Shows Forum image */}
         <div className="pathway-card projects">
-          <div className="pathway-header">
-            <h2 className="pathway-title">{projects.title || 'Projects (Global)'}</h2>
-            <a href={projects.see_all_url} className="see-all-link">See All</a>
-          </div>
-          <div className="pathway-body">
-            <a href={projects.forum_url} className="pathway-image-link">
-              <img 
-                src="/images/home-images/Homepage Forum.jpg" 
-                alt="Forum" 
-                className="pathway-image"
-              />
-            </a>
-            <div className="pathway-right">
+          <a href={projects.forum_url} className="pathway-image-link">
+            <img 
+              src="/images/home-images/Homepage Forum.jpg" 
+              alt="Forum" 
+              className="pathway-image"
+            />
+          </a>
+          <div className="pathway-content">
+            <div className="pathway-header">
+              <h2 className="pathway-title">{projects.title || 'Projects (Global)'}</h2>
+              <a href={projects.see_all_url} className="see-all-link">See All</a>
+            </div>
+            <div className="pathway-body">
               <p className="pathway-description">{projects.description}</p>
               {this.renderUserThumbnails(projectsUsers)}
             </div>
