@@ -54,14 +54,7 @@ $see-all-bg-opacity: 0.15;
       top: 0;
       left: 0;
       z-index: -1;
-      
-      @media (max-width: 991px) {
-        display: none;
-      }
-      
-      @media (min-width: 992px) {
-        display: block;
-      }
+      display: none; // Default hidden, shown on desktop via root-level media query
     }
   }
   
@@ -343,20 +336,6 @@ $see-all-bg-opacity: 0.15;
           }
         }
       }
-      
-      // Mobile: Stack vertically
-      @media (max-width: 767px) {
-        flex-direction: column;
-        
-        .pathway-image-link {
-          flex: none;
-          height: 150px;
-          
-          .pathway-image {
-            min-height: 150px;
-          }
-        }
-      }
     }
   }
   
@@ -372,10 +351,6 @@ $see-all-bg-opacity: 0.15;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $element-spacing * 1.5;
-    
-    @media (max-width: 767px) {
-      grid-template-columns: 1fr;
-    }
     
     .section-column {
       display: flex;
@@ -601,10 +576,6 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(3, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: 767px) {
-        grid-template-columns: 1fr;
-      }
-      
       .project-card {
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $secondary-color;
@@ -704,10 +675,6 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(2, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: 767px) {
-        grid-template-columns: 1fr;
-      }
-      
       .leaderboard-card {
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $primary-color;
@@ -768,6 +735,19 @@ $see-all-bg-opacity: 0.15;
           }
         }
       }
+    }
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE STYLES (Root-level media queries for proper specificity)
+   ========================================================================== */
+
+// Desktop: Show background image (1024px and up, matching Home page pattern)
+@media (min-width: 1024px) {
+  .new-homepage {
+    .hero-section .background-image {
+      display: block;
     }
   }
 }
