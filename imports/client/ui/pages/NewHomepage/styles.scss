@@ -4,7 +4,18 @@
    New Homepage Styles
    - Spacious, airy design with 25% more spacing than original
    - Single-column focused with responsive multi-column sections
+   - Cache bust: 2024-12-20-v1
    ========================================================================== */
+
+// ============================================================================
+// RESPONSIVE BREAKPOINTS (Bootstrap-style, mobile-first)
+// Usage: @media (min-width: $breakpoint-md) { ... } for tablet and up
+//        @media (max-width: $breakpoint-md - 1) { ... } for mobile only
+// ============================================================================
+$breakpoint-sm: 576px;   // Small phones (portrait)
+$breakpoint-md: 768px;   // Tablets / large phones (landscape)
+$breakpoint-lg: 992px;   // Small laptops / tablets (landscape)
+$breakpoint-xl: 1200px;  // Desktops and larger
 
 // Local variables (extending from variables.scss)
 $grey: #666;
@@ -21,6 +32,11 @@ $see-all-bg-opacity: 0.15;
   position: relative;
   min-height: 100vh;
   text-align: center;
+  
+  // DEBUG: Remove after confirming mobile styles work
+  @media (max-width: 767px) {
+    border: 5px solid red !important;
+  }
   
   // Reset h2 margins globally for this page with !important to override external styles
   h2, h3 {
@@ -44,11 +60,11 @@ $see-all-bg-opacity: 0.15;
       left: 0;
       z-index: -1;
       
-      @media (max-width: 1023px) {
+      @media (max-width: $breakpoint-lg - 1) {
         display: none;
       }
       
-      @media (min-width: 1024px) {
+      @media (min-width: $breakpoint-lg) {
         display: block;
       }
     }
@@ -334,7 +350,7 @@ $see-all-bg-opacity: 0.15;
       }
       
       // Mobile: Stack vertically
-      @media (max-width: 576px) {
+      @media (max-width: $breakpoint-sm - 1) {
         flex-direction: column;
         
         .pathway-image-link {
@@ -362,7 +378,7 @@ $see-all-bg-opacity: 0.15;
     grid-template-columns: 1fr 1fr;
     gap: $element-spacing * 1.5;
     
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-md - 1) {
       grid-template-columns: 1fr;
     }
     
@@ -590,11 +606,11 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(3, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: 992px) {
+      @media (max-width: $breakpoint-lg - 1) {
         grid-template-columns: repeat(2, 1fr);
       }
       
-      @media (max-width: 576px) {
+      @media (max-width: $breakpoint-sm - 1) {
         grid-template-columns: 1fr;
       }
       
@@ -697,7 +713,7 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(2, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: 576px) {
+      @media (max-width: $breakpoint-sm - 1) {
         grid-template-columns: 1fr;
       }
       
@@ -776,7 +792,7 @@ $see-all-bg-opacity: 0.15;
   .desktop-only {
     display: flex;
     
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-md - 1) {
       display: none !important;
     }
   }
@@ -784,12 +800,12 @@ $see-all-bg-opacity: 0.15;
   .mobile-only {
     display: none;
     
-    @media (max-width: 768px) {
+    @media (max-width: $breakpoint-md - 1) {
       display: flex !important;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-md - 1) {
     // Reduce section spacing on mobile
     $mobile-section-spacing: 60px;
     
