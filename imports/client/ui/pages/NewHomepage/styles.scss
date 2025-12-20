@@ -175,6 +175,7 @@ $see-all-bg-opacity: 0.15;
               font-size: 0.85em;
               font-weight: 600;
               margin-bottom: 4px;
+              padding-bottom: 8px;
             }
             
             .guide-description {
@@ -318,7 +319,7 @@ $see-all-bg-opacity: 0.15;
           font-size: 1.05em;
           line-height: 1.6;
           color: $grey;
-          margin: 0;
+          margin: auto 0;
           text-align: center;
         }
         
@@ -407,12 +408,11 @@ $see-all-bg-opacity: 0.15;
         padding: 6px 10px;
         
         .section-title {
-          flex: 1;
           font-size: 1.1em;
           font-weight: bold;
           margin: 0;
           color: $black-lighter;
-          text-align: center;
+          text-align: left;
         }
         
         .see-all-btn {
@@ -448,12 +448,12 @@ $see-all-bg-opacity: 0.15;
         }
         
         .gathering-image {
-          flex: 0 0 auto;
-          width: auto;
+          height: 100%;
           max-width: 33%;
-          height: 100px;
           object-fit: cover;
           object-position: center;
+          width: auto;
+          max-height: 150px;
         }
         
         .gathering-details {
@@ -542,12 +542,12 @@ $see-all-bg-opacity: 0.15;
           }
           
           .news-image {
-            flex: 0 0 auto;
-            width: auto;
+            height: 100%;
             max-width: 33%;
-            height: 100px;
             object-fit: cover;
             object-position: center;
+            width: auto;
+            max-height: 150px;
           }
           
           .news-content {
