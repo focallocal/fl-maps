@@ -188,33 +188,7 @@ $see-all-bg-opacity: 0.15;
       }
     }
     
-    // Mobile: Stack vertically
-    @media (max-width: 768px) {
-      .getting-started-container {
-        flex-direction: column;
-        
-        .getting-started-content {
-          flex: 0 0 100%;
-          max-width: 100%;
-          padding-right: 0;
-          margin-bottom: $element-spacing;
-        }
-        
-        .getting-started-boxes {
-          flex: 0 0 100%;
-          max-width: 100%;
-          flex-direction: column;
-          margin-top: 0;
-          margin-bottom: 0;
-          
-          .guide-box {
-            &:last-child {
-              margin-right: 0;
-            }
-          }
-        }
-      }
-    }
+    // Mobile styles handled in main mobile media query at end of file
   }
   
   /* ========================================
