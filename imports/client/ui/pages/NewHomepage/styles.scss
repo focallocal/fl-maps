@@ -60,11 +60,11 @@ $see-all-bg-opacity: 0.15;
       left: 0;
       z-index: -1;
       
-      @media (max-width: #{$breakpoint-lg - 1}) {
+      @media (max-width: 991px) {
         display: none;
       }
       
-      @media (min-width: $breakpoint-lg) {
+      @media (min-width: 992px) {
         display: block;
       }
     }
@@ -350,7 +350,7 @@ $see-all-bg-opacity: 0.15;
       }
       
       // Mobile: Stack vertically
-      @media (max-width: #{$breakpoint-sm - 1}) {
+      @media (max-width: 575px) {
         flex-direction: column;
         
         .pathway-image-link {
@@ -378,7 +378,7 @@ $see-all-bg-opacity: 0.15;
     grid-template-columns: 1fr 1fr;
     gap: $element-spacing * 1.5;
     
-    @media (max-width: #{$breakpoint-md - 1}) {
+    @media (max-width: 767px) {
       grid-template-columns: 1fr;
     }
     
@@ -606,11 +606,11 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(3, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: #{$breakpoint-lg - 1}) {
+      @media (max-width: 991px) {
         grid-template-columns: repeat(2, 1fr);
       }
       
-      @media (max-width: #{$breakpoint-sm - 1}) {
+      @media (max-width: 575px) {
         grid-template-columns: 1fr;
       }
       
@@ -713,7 +713,7 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(2, 1fr);
       gap: $element-spacing;
       
-      @media (max-width: #{$breakpoint-sm - 1}) {
+      @media (max-width: 575px) {
         grid-template-columns: 1fr;
       }
       
@@ -792,7 +792,7 @@ $see-all-bg-opacity: 0.15;
   .desktop-only {
     display: flex;
     
-    @media (max-width: #{$breakpoint-md - 1}) {
+    @media (max-width: 767px) {
       display: none !important;
     }
   }
@@ -800,12 +800,12 @@ $see-all-bg-opacity: 0.15;
   .mobile-only {
     display: none;
     
-    @media (max-width: #{$breakpoint-md - 1}) {
+    @media (max-width: 767px) {
       display: flex !important;
     }
   }
 
-  @media (max-width: #{$breakpoint-md - 1}) {
+  @media (max-width: 767px) {
     // Reduce section spacing on mobile
     $mobile-section-spacing: 60px;
     
