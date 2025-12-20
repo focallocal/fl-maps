@@ -44,8 +44,50 @@
   "upcoming_gatherings": {
     "title": "Upcoming International Gatherings",
     "see_all_url": "https://publichappinessmovement.com/c/mass-kindness/",
-    "discourse_category": "mass-kindness",
-    "items_count": 6
+    "items": [
+      {
+        "title": "International Day of Happiness",
+        "description": "Join millions worldwide celebrating the International Day of Happiness with gatherings, events, and acts of kindness in your community.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "url": "https://publichappinessmovement.com/c/mass-kindness/intl-day-of-happiness/",
+        "date": "2026-03-20"
+      },
+      {
+        "title": "World Laughter Day",
+        "description": "Celebrate the healing power of laughter with public laughter yoga sessions and joyful gatherings around the globe.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "url": "https://publichappinessmovement.com/c/mass-kindness/world-laughter-day/",
+        "date": "2026-05-03"
+      },
+      {
+        "title": "Global Free Hugs Day",
+        "description": "Spread warmth and connection through the simple act of offering free hugs in public spaces worldwide.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "url": "https://publichappinessmovement.com/c/mass-kindness/free-hugs/",
+        "date": "2026-07-04"
+      },
+      {
+        "title": "World Smile Day",
+        "description": "Dedicated to smiles and acts of kindness, join communities everywhere in spreading positivity.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "url": "https://publichappinessmovement.com/c/mass-kindness/world-smile-day/",
+        "date": "2026-10-02"
+      },
+      {
+        "title": "World Kindness Day",
+        "description": "A global celebration of kindness with events encouraging compassion and goodwill in every corner of the world.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "url": "https://publichappinessmovement.com/c/mass-kindness/world-kindness-day/",
+        "date": "2026-11-13"
+      },
+      {
+        "title": "International Music Jam Day",
+        "description": "Bring your instruments and join spontaneous music sessions in parks and public spaces worldwide.",
+        "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
+        "url": "https://publichappinessmovement.com/c/mass-kindness/music-jam/",
+        "date": "2026-06-21"
+      }
+    ]
   },
   "latest_news": {
     "title": "Latest Community News",

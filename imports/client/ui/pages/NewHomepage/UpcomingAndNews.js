@@ -13,31 +13,35 @@ const decodeHtmlEntities = (text) => {
 
 class UpcomingAndNews extends Component {
   state = {
-    gatheringItems: [],
-    gatheringsLoading: true,
     newsItems: [],
     newsLoading: true
   }
 
   componentDidMount () {
-    this.fetchGatherings()
     this.fetchNews()
   }
 
-  fetchGatherings = () => {
+  // Format date from YYYY-MM-DD to readable format
+  formatDate = (dateStr) => {
+    if (!dateStr) return 'TBA'
+    const date = new Date(dateStr)
+    return date.toLocaleDateString('en-US', { 
+      month: 'long', 
+      day: 'numeric', 
+      year: 'numeric' 
+    })
+  }
+
+  // Get gatherings from i18n sorted by date
+  getGatherings = () => {
     const upcomingContent = i18n.NewHomepage?.upcoming_gatherings || {}
-    const limit = upcomingContent.items_count || 6
+    const items = upcomingContent.items || []
     
-    // Fetch upcoming gatherings from Discourse mass-kindness category
-    Meteor.call('Discourse.getUpcomingGatherings', { limit }, (error, result) => {
-      if (!error && result) {
-        this.setState({
-          gatheringItems: result,
-          gatheringsLoading: false
-        })
-      } else {
-        this.setState({ gatheringsLoading: false })
-      }
+    // Sort by date (earliest first)
+    return [...items].sort((a, b) => {
+      if (!a.date) return 1
+      if (!b.date) return -1
+      return new Date(a.date) - new Date(b.date)
     })
   }
 
@@ -61,7 +65,8 @@ class UpcomingAndNews extends Component {
   render () {
     const upcomingContent = i18n.NewHomepage?.upcoming_gatherings || {}
     const newsContent = i18n.NewHomepage?.latest_news || {}
-    const { gatheringItems, gatheringsLoading, newsItems, newsLoading } = this.state
+    const gatheringItems = this.getGatherings()
+    const { newsItems, newsLoading } = this.state
 
     return (
       <section className="upcoming-news-section">
@@ -78,9 +83,7 @@ class UpcomingAndNews extends Component {
           </div>
 
           {/* Individual gathering cards with images */}
-          {gatheringsLoading ? (
-            <div className="loading-box">Loading gatherings...</div>
-          ) : gatheringItems.length > 0 ? (
+          {gatheringItems.length > 0 ? (
             gatheringItems.map((item, index) => (
               <a 
                 key={index} 
@@ -91,7 +94,7 @@ class UpcomingAndNews extends Component {
               >
                 <img 
                   src={item.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 
-                  alt={decodeHtmlEntities(item.title)}
+                  alt={item.title}
                   className="gathering-image"
                   onError={(e) => {
                     if (!e.target.dataset.fallback) {
@@ -101,11 +104,12 @@ class UpcomingAndNews extends Component {
                   }}
                 />
                 <div className="gathering-details">
-                  {item.date && <span className="gathering-date">{item.date}</span>}
-                  {!item.date && <span className="gathering-date tba">TBA</span>}
-                  <h3 className="gathering-title">{decodeHtmlEntities(item.title)}</h3>
+                  <span className={`gathering-date${!item.date ? ' tba' : ''}`}>
+                    {this.formatDate(item.date)}
+                  </span>
+                  <h3 className="gathering-title">{item.title}</h3>
                   <p className="gathering-text">
-                    {decodeHtmlEntities(item.excerpt)}
+                    {item.description}
                     <span className="read-more">...read more</span>
                   </p>
                 </div>

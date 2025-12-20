@@ -113,6 +113,8 @@ $see-all-bg-opacity: 0.15;
         
         .see-all-btn {
           display: inline-block;
+          align-self: flex-start;
+          width: auto;
           padding: 8px 16px;
           background: rgba($primary-color, $see-all-bg-opacity);
           color: $primary-color;
