@@ -53,7 +53,7 @@ const SlideshowBanner = ({ autoScrollInterval = 3000 }) => {
               <div className='slide-sub-header-container'>
                 <p className='slide-sub-header'>{item.sub_header}</p>
               </div>
-              <div className='slide-cta'>
+              <div className='slide-cta' style={{ paddingBottom: 0 }}>
                 <Button tag="a" href={item.cta_link} className='cta-button' color='primary' target="_blank"> 
                   {item.cta}
                 </Button>
