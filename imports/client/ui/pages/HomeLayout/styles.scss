@@ -150,11 +150,16 @@
 }
 
 @media (max-width: 600px) {
-  .home-layout .offset-boxes-section .offset-boxes-row,
-  .home-layout .double-column-section .double-column-grid,
+  .home-layout .offset-boxes-section .offset-boxes-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .home-layout .double-column-section .double-column-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
   .home-layout .triple-column-section .triple-column-grid {
-    flex-direction: column !important;
-    display: flex !important;
+    grid-template-columns: 1fr;
     gap: 12px;
   }
   .home-layout .offset-boxes-section .offset-box,
