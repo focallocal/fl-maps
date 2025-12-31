@@ -4,14 +4,7 @@
    New Homepage Styles
    - Spacious, airy design with 25% more spacing than original
    - Single-column focused with responsive multi-column sections
-   - Cache bust: 2024-12-21-v4
-// Usage: @media (min-width: $breakpoint-md) { ... } for tablet and up
-//        @media (max-width: $breakpoint-md - 1) { ... } for mobile only
-// ============================================================================
-$breakpoint-sm: 576px;   // Small phones (portrait)
-$breakpoint-md: 768px;   // Tablets / large phones (landscape)
-$breakpoint-lg: 992px;   // Small laptops / tablets (landscape)
-$breakpoint-xl: 1200px;  // Desktops and larger
+   ========================================================================== */
 
 // Local variables (extending from variables.scss)
 $grey: #666;
@@ -50,7 +43,14 @@ $see-all-bg-opacity: 0.15;
       top: 0;
       left: 0;
       z-index: -1;
-      display: none; // Default hidden, shown on desktop via root-level media query
+      
+      @media (max-width: 1023px) {
+        display: none;
+      }
+      
+      @media (min-width: 1024px) {
+        display: block;
+      }
     }
   }
   
@@ -188,7 +188,33 @@ $see-all-bg-opacity: 0.15;
       }
     }
     
-    // Mobile styles handled in main mobile media query at end of file
+    // Mobile: Stack vertically
+    @media (max-width: 768px) {
+      .getting-started-container {
+        flex-direction: column;
+        
+        .getting-started-content {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding-right: 0;
+          margin-bottom: $element-spacing;
+        }
+        
+        .getting-started-boxes {
+          flex: 0 0 100%;
+          max-width: 100%;
+          flex-direction: column;
+          margin-top: 0;
+          margin-bottom: 0;
+          
+          .guide-box {
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
   }
   
   /* ========================================
@@ -332,6 +358,20 @@ $see-all-bg-opacity: 0.15;
           }
         }
       }
+      
+      // Mobile: Stack vertically
+      @media (max-width: 576px) {
+        flex-direction: column;
+        
+        .pathway-image-link {
+          flex: none;
+          height: 150px;
+          
+          .pathway-image {
+            min-height: 150px;
+          }
+        }
+      }
     }
   }
   
@@ -347,6 +387,10 @@ $see-all-bg-opacity: 0.15;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $element-spacing * 1.5;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
     
     .section-column {
       display: flex;
@@ -572,6 +616,14 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(3, 1fr);
       gap: $element-spacing;
       
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+      
       .project-card {
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $secondary-color;
@@ -671,6 +723,10 @@ $see-all-bg-opacity: 0.15;
       grid-template-columns: repeat(2, 1fr);
       gap: $element-spacing;
       
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+      }
+      
       .leaderboard-card {
         background: rgba(255, 255, 255, 0.95);
         border: 2px solid $primary-color;
@@ -733,54 +789,36 @@ $see-all-bg-opacity: 0.15;
       }
     }
   }
-}
 
-/* ==========================================================================
-   RESPONSIVE STYLES (Root-level media queries for proper specificity)
-   ========================================================================== */
+  /* ========================================
+     Mobile Responsive Styles
+     - Single column layout
+     - Images on top of cards
+     - Carousel for Getting Started
+     - News above Gatherings
+     ======================================== */
 
-// Desktop: Show background image (1024px and up, matching Home page pattern)
-@media (min-width: 1024px) {
-  .new-homepage {
-    .hero-section .background-image {
-      display: block;
+  // Hide/show classes for mobile/desktop
+  .desktop-only {
+    display: flex;
+    
+    @media (max-width: 768px) {
+      display: none !important;
     }
   }
-}
-
-/* ==========================================================================
-   MOBILE RESPONSIVE STYLES (Root-level media queries, placed near sections)
-   - Single column layout
-   - Images on top of cards
-   - Carousel for Getting Started
-   - News above Gatherings
-   ========================================================================== */
-
-// Hide/show classes for mobile/desktop
-.new-homepage .desktop-only {
-  display: flex;
-}
-
-.new-homepage .mobile-only {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .new-homepage .desktop-only {
-    display: none !important;
-  }
   
-  .new-homepage .mobile-only {
-    display: flex !important;
+  .mobile-only {
+    display: none;
+    
+    @media (max-width: 768px) {
+      display: flex !important;
+    }
   }
-}
 
-// Shared mobile spacing
-$mobile-section-spacing: 60px;
-
-// Site title adjustments
-@media (max-width: 767px) {
-  .new-homepage {
+  @media (max-width: 768px) {
+    // Reduce section spacing on mobile
+    $mobile-section-spacing: 60px;
+    
     .site-title-section {
       margin: 3% 0 $mobile-section-spacing 0;
       
@@ -788,12 +826,8 @@ $mobile-section-spacing: 60px;
         max-width: 95%;
       }
     }
-  }
-}
-
-// Getting Started - carousel & stack
-@media (max-width: 767px) {
-  .new-homepage {
+    
+    // Getting Started - Carousel on mobile
     .getting-started-section {
       margin-bottom: $mobile-section-spacing;
       padding-bottom: 0;
@@ -821,6 +855,7 @@ $mobile-section-spacing: 60px;
           }
         }
         
+        // Mobile carousel
         .getting-started-carousel {
           flex-direction: column;
           align-items: center;
@@ -887,17 +922,13 @@ $mobile-section-spacing: 60px;
         }
       }
     }
-  }
-}
-
-// Pathway Cards - image on top, single column
-@media (max-width: 767px) {
-  .new-homepage {
+    
+    // Pathway Cards - Image on top, single column
     .pathway-section {
       margin-bottom: $mobile-section-spacing;
       
       .pathway-card {
-        flex-direction: column !important; // Force single-column stack on mobile
+        flex-direction: column;
         margin-bottom: 30px;
         
         .pathway-image-link {
@@ -931,17 +962,14 @@ $mobile-section-spacing: 60px;
         }
       }
     }
-  }
-}
-
-// Upcoming & News - single column, News first
-@media (max-width: 767px) {
-  .new-homepage {
+    
+    // Upcoming & News - Single column, News first
     .upcoming-news-section {
-      grid-template-columns: 1fr !important; // Force single column for both columns
+      grid-template-columns: 1fr;
       gap: 40px;
       margin-bottom: $mobile-section-spacing;
       
+      // Reorder: News first, Gatherings second
       .news-column {
         order: 1;
       }
@@ -959,14 +987,15 @@ $mobile-section-spacing: 60px;
           }
         }
         
+        // Cards with image on top
         .gathering-card,
         .news-card {
-          flex-direction: column !important; // Override any upstream flex row defaults
+          flex-direction: column;
           
           .gathering-image,
           .news-image {
-            width: 100% !important;
-            max-width: 100% !important;
+            width: 100%;
+            max-width: 100%;
             height: 150px;
             max-height: 150px;
           }
@@ -978,17 +1007,13 @@ $mobile-section-spacing: 60px;
         }
       }
     }
-  }
-}
-
-// Project Builds - single column
-@media (max-width: 767px) {
-  .new-homepage {
+    
+    // Project Builds - Single column
     .project-builds-section {
       margin-bottom: $mobile-section-spacing;
       
       .projects-grid {
-        grid-template-columns: 1fr !important; // Force single column
+        grid-template-columns: 1fr;
         gap: 20px;
         
         .project-card {
@@ -1015,20 +1040,15 @@ $mobile-section-spacing: 60px;
         }
       }
     }
-  }
-}
-
-// Leaderboards - single column
-@media (max-width: 767px) {
-  .new-homepage {
+    
+    // Leaderboards - Single column
     .leaderboards-section {
       margin-bottom: $mobile-section-spacing;
       
       .leaderboards-grid {
-        grid-template-columns: 1fr !important; // Force single column
+        grid-template-columns: 1fr;
         gap: 20px;
       }
     }
   }
 }
-

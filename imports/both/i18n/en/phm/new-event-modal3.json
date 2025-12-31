@@ -24,5 +24,8 @@
     },
     "host": "Select your video host from the dropdown",
     "address": "Then enter the full video URL link"
+  },
+  "validation": {
+    "fillRequired": "Please check that all necessary fields (outlined in red) are filled out."
   }
 }

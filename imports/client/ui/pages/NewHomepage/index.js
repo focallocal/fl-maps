@@ -15,38 +15,13 @@ const DEFAULT_BACKGROUND = {
   mobile: '/images/PHM-logo-banner-low.jpg'
 };
 
-// Breakpoint must match $breakpoint-md in styles.scss
-const MOBILE_BREAKPOINT = 768;
-
 class NewHomepage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: typeof window !== 'undefined' ? window.innerWidth < MOBILE_BREAKPOINT : false
-    };
-    this.handleResize = this.handleResize.bind(this);
-  }
-
   componentDidMount() {
     window.__setDocumentTitle('Home');
-    window.addEventListener('resize', this.handleResize);
-    // Check on mount in case SSR value was different
-    this.handleResize();
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  handleResize() {
-    const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
-    if (isMobile !== this.state.isMobile) {
-      this.setState({ isMobile });
-    }
   }
 
   render() {
-    const { isMobile } = this.state;
+    const isMobile = window.innerWidth <= 768;
     
     // Get background image from i18n, with PHM fallback
     const backgroundConfig = i18n.Home.background_image || DEFAULT_BACKGROUND;

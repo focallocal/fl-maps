@@ -22,6 +22,7 @@ import Map_ from './pages/Map'
 import CongratsModal from './pages/NewEvent/CongratsModal'
 import Page from './pages/Page'
 import { Error404 } from './pages/Errors'
+import HomeLayout from './pages/HomeLayout'
 
 import WPIntro from './pages/WhitePaper/Intro'
 import WPWhy from './pages/WhitePaper/Why'
@@ -240,6 +241,7 @@ class App extends Component {
             <Route exact path={routePaths.whitepaper_intro} component={WPIntro} />
             <Route exact path={routePaths.whitepaper_why} render={WPWhy} />
             <Route exact path={routePaths.whitepaper_faqs} render={WPFAQs} />
+            <Route exact path="/home-layout" component={HomeLayout} />
 
             <Route path="*" render={() => this.check404Route(Object.values(routePaths))} />
           </ScrollToTop>

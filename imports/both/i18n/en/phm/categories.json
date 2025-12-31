@@ -4,7 +4,8 @@
     "categories": [
       { "name": "Positive People Nearby", "color": "#FF4500", "url": "https://publichappinessmovement.com/u" },
       { "name": "Random Acts of Kindness Communities", "color": "#FF8C00", "url": "https://publichappinessmovement.com/g" },
-      { "name": "Global Flash Mobs", "color": "#FFD700", "url": "https://publichappinessmovement.com/c/mass-kindness/" }
+      { "name": "Global Flash Mobs", "color": "#FFD700", "url": "https://publichappinessmovement.com/c/mass-kindness/" },
+      { "name": "Hosting", "color": "#FFFF00", "url": "https://publichappinessmovement.com/t/topic/6555" }
     ]
   },
   {

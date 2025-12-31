@@ -2,7 +2,8 @@
   {
     "name": "PHM Community",
     "categories": [
-      { "name": "Positive People Nearby", "color": "#18a80d", "url": "https://publichappinessmovement.com/u" }
+      { "name": "Positive People Nearby", "color": "#18a80d", "url": "https://publichappinessmovement.com/u" },
+      { "name": "Host", "color": "#FFFF00", "url": "https://publichappinessmovement.com/t/topic/6555" }
     ]
   }
 ]
