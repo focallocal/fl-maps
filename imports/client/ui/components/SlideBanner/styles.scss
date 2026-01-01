@@ -233,6 +233,27 @@
 @media (min-width: 1024px) {
   .slideshow-container {
     aspect-ratio: unset;
+    
+    // Cover any edge artifacts from sub-pixel rendering with white overlays on both sides
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 5.5%; // Slightly more than the 5% gap to ensure full coverage
+      height: calc(100% - 6px); // Leave room for orange border
+      background: white;
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    &::before {
+      left: 0;
+    }
+    
+    &::after {
+      right: 0;
+    }
   }
 
   .slideshow-container button {
@@ -254,9 +275,9 @@
     height: 100%;
     align-items: center;
     background-color: white;
-    border: none; // Ensure no borders
+    border: none; // Remove side borders
+    border-bottom: solid 6px orange; // Keep the separator line under slider
     box-shadow: none; // Ensure no shadows
-    // border-bottom: solid 6px orange;
   }
 
   .mobile-slide-header {
