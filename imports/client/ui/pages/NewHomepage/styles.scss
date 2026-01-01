@@ -579,7 +579,7 @@ $see-all-bg-opacity: 0.15;
           
           .news-content {
             flex: 1;
-            padding: 8px 10px;
+            padding: 16px 10px; // Increased from 8px to 16px top/bottom
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -598,6 +598,11 @@ $see-all-bg-opacity: 0.15;
               line-height: 1.4;
               margin: 0;
               position: relative;
+              // Limit to 2 lines for landscape/square cards (non-portrait)
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
               
               .read-more {
                 color: $secondary-color;
@@ -606,6 +611,11 @@ $see-all-bg-opacity: 0.15;
                 padding-left: 20px;
               }
             }
+          }
+          
+          // Portrait cards get more lines since they have more space
+          &.portrait .news-excerpt {
+            -webkit-line-clamp: 4;
           }
         }
       }
