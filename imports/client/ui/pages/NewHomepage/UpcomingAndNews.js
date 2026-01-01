@@ -22,7 +22,14 @@ const stripHtmlAndLinks = (text) => {
   cleaned = cleaned.replace(/<[^>]*>/g, '')
   // Remove URLs (http/https links)
   cleaned = cleaned.replace(/https?:\/\/[^\s]+/gi, '')
-  // Clean up extra whitespace
+  // Remove Discourse image placeholders like "image 708x912 40.1KB" or "filename 480x360 77KB"
+  cleaned = cleaned.replace(/[\w-]+\s*\d+x\d+\s*[\d.]+[KMG]?B/gi, '')
+  // Remove standalone dimensions like "708x912" or "480x360"
+  cleaned = cleaned.replace(/\b\d+x\d+\b/gi, '')
+  // Remove file sizes like "40.1KB" or "77KB"
+  cleaned = cleaned.replace(/\b[\d.]+[KMG]?B\b/gi, '')
+  // Clean up extra whitespace and dashes
+  cleaned = cleaned.replace(/\s*-\s*-\s*/g, ' ')
   cleaned = cleaned.replace(/\s+/g, ' ').trim()
   return cleaned
 }
@@ -139,7 +146,7 @@ class UpcomingAndNews extends Component {
                   <h3 className="gathering-title">{item.title}</h3>
                   <p className="gathering-text">
                     {item.description}
-                    <span className="read-more">...read more</span>
+                    <span className="read-more">... read more</span>
                   </p>
                 </div>
               </a>
