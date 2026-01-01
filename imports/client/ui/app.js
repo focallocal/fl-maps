@@ -4,6 +4,7 @@ import { Tracker } from 'meteor/tracker'
 import React, { Component, Fragment, Suspense } from 'react'
 import { lazy } from 'react'
 import { Router, Route, Redirect } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 import history from '../utils/history'
 import qs from 'query-string'
 
@@ -223,6 +224,9 @@ class App extends Component {
     return (
       <Router history={history}>
         <Fragment>
+          <Helmet>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          </Helmet>
           {standaloneMode && <MainMenu />}
           <ScrollToTop>
             <Route exact path={routePaths.root} component={Home} />
