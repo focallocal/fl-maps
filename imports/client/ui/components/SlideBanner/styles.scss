@@ -241,7 +241,7 @@
       position: absolute;
       top: 0;
       width: 5.5%; // Slightly more than the 5% gap to ensure full coverage
-      height: calc(100% - 6px); // Leave room for orange border
+      height: calc(100% - 8px); // Leave room for orange border (6px + 2px buffer)
       background: white;
       pointer-events: none;
       z-index: 2;
@@ -266,6 +266,7 @@
     cursor: pointer;
     font-size: 24px;
     transform: translateY(-50%);
+    z-index: 5; // Higher than white overlays (z-index: 2) so buttons are clickable
   }
 
   .slideshow-slide {
