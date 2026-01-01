@@ -885,14 +885,17 @@ $see-all-bg-opacity: 0.15;
           
           .getting-started-title {
             font-size: 1.1em;
+            text-decoration: none;
           }
           
           .getting-started-text {
             font-size: 0.8em;
+            text-decoration: none;
           }
           
           .see-all-btn {
             align-self: center;
+            text-decoration: none; // Remove blue hyperlink underline
           }
         }
         
@@ -908,6 +911,7 @@ $see-all-bg-opacity: 0.15;
             width: 100%;
             max-width: 300px;
             margin: 0;
+            text-decoration: none; // Remove blue hyperlink underline
             
             /* Recommended image size: 800x450px (16:9 aspect ratio)
                Images will be cropped top/bottom if taller */
@@ -916,6 +920,20 @@ $see-all-bg-opacity: 0.15;
               height: 120px; // Fixed height, crops top/bottom as needed
               object-fit: cover;
               object-position: center;
+            }
+            
+            .guide-content {
+              margin-top: 20px; // Match the gap above the image (margin-bottom on .getting-started-content)
+              
+              .guide-title {
+                font-size: 1.1em; // Match .getting-started-title size
+                text-decoration: none;
+              }
+              
+              .guide-description {
+                font-size: 0.8em; // Match .getting-started-text size
+                text-decoration: none;
+              }
             }
           }
           
