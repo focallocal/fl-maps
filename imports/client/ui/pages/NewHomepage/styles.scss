@@ -553,7 +553,7 @@ $see-all-bg-opacity: 0.15;
         // Individual news cards with image on left
         .news-card {
           display: flex;
-          align-items: center;
+          align-items: stretch; // Changed from center to stretch so image fills height
           background: rgba(255, 255, 255, 0.95);
           border: 2px solid $secondary-color;
           border-radius: $card-border-radius;
@@ -561,6 +561,7 @@ $see-all-bg-opacity: 0.15;
           text-decoration: none;
           color: inherit;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
+          min-height: 120px; // Ensure minimum card height
           
           &:hover {
             transform: translateY(-2px);
@@ -568,17 +569,20 @@ $see-all-bg-opacity: 0.15;
           }
           
           .news-image {
-            height: 100%;
+            height: auto;
+            min-height: 100%; // Ensure image fills card height
             max-width: 33%;
             object-fit: cover;
             object-position: center;
             width: auto;
-            max-height: 150px;
           }
           
           .news-content {
             flex: 1;
             padding: 8px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             
             .news-title {
               font-size: 1em;
