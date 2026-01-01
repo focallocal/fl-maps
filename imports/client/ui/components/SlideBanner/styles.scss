@@ -8,11 +8,14 @@
   margin: 0 auto;
   aspect-ratio: 16/9;
   overflow: hidden; /* Contain slides within container, not globally */
+  border: none; /* Prevent any border artifacts */
+  box-sizing: border-box;
 }
 
 .slideshow-wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out; // Slide transition effect
+  border: none; /* Prevent any border artifacts */
 }
 
 .slideshow-slide {
@@ -29,6 +32,8 @@
   object-fit: cover; // Ensure the image covers the area without stretching or distorting
   background-color: white;
   aspect-ratio: 16/9;
+  border: none; /* Prevent any border artifacts */
+  outline: none;
 }
 
 .mobile-slide-header {
@@ -249,6 +254,8 @@
     height: 100%;
     align-items: center;
     background-color: white;
+    border: none; // Ensure no borders
+    box-shadow: none; // Ensure no shadows
     // border-bottom: solid 6px orange;
   }
 
