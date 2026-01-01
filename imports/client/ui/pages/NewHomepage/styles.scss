@@ -819,6 +819,19 @@ $see-all-bg-opacity: 0.15;
     // Reduce section spacing on mobile
     $mobile-section-spacing: 60px;
     
+    // Reorder sections on mobile: Getting Started after Pathways
+    display: flex;
+    flex-direction: column;
+    
+    .hero-section { order: 1; }
+    .slide-banner { order: 2; }
+    .site-title-section { order: 3; }
+    .pathway-section { order: 4; }
+    .getting-started-section { order: 5; }
+    .upcoming-news-section { order: 6; }
+    .project-builds-section { order: 7; }
+    .leaderboards-section { order: 8; }
+    
     .site-title-section {
       margin: 3% 0 $mobile-section-spacing 0;
       

@@ -199,7 +199,7 @@ class App extends Component {
     const routePaths = {
       root: '/',
       home: '/home',
-      newhomepage: '/newhomepage',
+      oldhomepage: '/oldhomepage',
       team: '/team',
       partners: '/partners',
       whitepaper: '/whitepaper',
@@ -229,9 +229,9 @@ class App extends Component {
           </Helmet>
           {standaloneMode && <MainMenu />}
           <ScrollToTop>
-            <Route exact path={routePaths.root} component={Home} />
-            <Route exact path={routePaths.home} component={Home} />
-            <Route exact path={routePaths.newhomepage} component={NewHomepage} />
+            <Route exact path={routePaths.root} component={NewHomepage} />
+            <Route exact path={routePaths.home} component={NewHomepage} />
+            <Route exact path={routePaths.oldhomepage} component={Home} />
             <Route exact path={routePaths.team} component={Team} />
             <Route exact path={routePaths.partners} component={Partners} />
             <Route exact path={routePaths.whitepaper} component={Whitepaper} />
