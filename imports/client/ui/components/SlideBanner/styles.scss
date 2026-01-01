@@ -142,6 +142,58 @@
   }
 }
 
+/* Tablet range: 481px-1023px - text and CTA need to be visible */
+@media (min-width: 481px) and (max-width: 1023px) {
+  .slideshow-container {
+    aspect-ratio: unset;
+    height: auto;
+    overflow: visible;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .slideshow-slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide-image {
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+
+  .mobile-slide-header {
+    display: block;
+    margin-top: 1rem;
+    font-size: 5vw;
+  }
+
+  .desktop-slide-header {
+    display: none;
+  }
+
+  .slide-sub-header {
+    font-size: 3.5vw;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+  }
+
+  .slide-cta {
+    display: block;
+    padding: 0.5rem 0 1rem 0;
+  }
+
+  .prev-button, .next-button {
+    font-size: 20px;
+    padding: 12px;
+    top: 25%;
+  }
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .slideshow-container button {

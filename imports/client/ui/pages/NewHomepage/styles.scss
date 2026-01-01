@@ -698,9 +698,11 @@ $see-all-bg-opacity: 0.15;
      ======================================== */
   
   .leaderboards-section {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto $section-spacing auto;
     padding: 0 20px;
+    box-sizing: border-box;
     
     .section-header {
       margin-bottom: $element-spacing;
@@ -722,6 +724,7 @@ $see-all-bg-opacity: 0.15;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: $element-spacing;
+      width: 100%;
       
       @media (max-width: 576px) {
         grid-template-columns: 1fr;
@@ -732,6 +735,8 @@ $see-all-bg-opacity: 0.15;
         border: 2px solid $primary-color;
         border-radius: $card-border-radius;
         padding: 10px 12px;
+        width: 100%;
+        box-sizing: border-box;
         
         .leaderboard-title {
           font-size: 1.1em;
@@ -936,7 +941,7 @@ $see-all-bg-opacity: 0.15;
       }
     }
     
-    // Pathway Cards - Image on top, single column
+    // Pathway Cards - Title on top, then image, single column
     .pathway-section {
       margin-bottom: $mobile-section-spacing;
       
@@ -944,20 +949,14 @@ $see-all-bg-opacity: 0.15;
         flex-direction: column;
         margin-bottom: 30px;
         
-        .pathway-image-link {
-          flex: none;
-          width: 100%;
-          height: 180px;
-          
-          .pathway-image {
-            width: 100%;
-            height: 100%;
-            min-height: 180px;
-          }
-        }
-        
+        // Reorder: Header first (order 1), Image second (order 2), Body third (order 3)
         .pathway-content {
+          display: flex;
+          flex-direction: column;
+          order: 1; // Header container comes first
+          
           .pathway-header {
+            order: 1;
             padding: 12px;
             
             .pathway-title {
@@ -966,11 +965,25 @@ $see-all-bg-opacity: 0.15;
           }
           
           .pathway-body {
+            order: 3; // Body comes after image
             padding: 0 15px 15px;
             
             .pathway-description {
               font-size: 0.95em;
             }
+          }
+        }
+        
+        .pathway-image-link {
+          order: 2; // Image comes between header and body
+          flex: none;
+          width: 100%;
+          height: 180px;
+          
+          .pathway-image {
+            width: 100%;
+            height: 100%;
+            min-height: 180px;
           }
         }
       }
