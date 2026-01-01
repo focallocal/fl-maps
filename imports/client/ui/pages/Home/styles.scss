@@ -1,4 +1,4 @@
-main {
+main.home {
   position: relative;
 
   .gather-button {
@@ -6,10 +6,6 @@ main {
     z-index: 99;
     left: 5px;
     top: 5px;
-  }
-
-  &.home {
-    // background: #FFF9EB;
   }
 
   section {
@@ -100,7 +96,7 @@ main {
 
 
 @media screen and (min-width: 640px) {
-  main {
+  main.home {
     .background-image {
       display: none;
     }
@@ -108,7 +104,7 @@ main {
 }
 
 @media (min-width: 768px) {
-  main {
+  main.home {
     .background-image {
       display: none;
     }
@@ -116,7 +112,7 @@ main {
 }
 
 @media (min-width: 1024px) {
-  main {
+  main.home {
     .background-image {
       display: block;
     }
@@ -128,7 +124,7 @@ main {
 }
 
 @media (min-width: 1280px) {
-  main {
+  main.home {
     .background-image {
       display: block;
     }
@@ -140,7 +136,7 @@ main {
 }
 
 @media (min-width: 1536px) {
-  main {
+  main.home {
     .background-image {
       display: block;
     }
