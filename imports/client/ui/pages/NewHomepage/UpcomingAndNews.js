@@ -14,11 +14,24 @@ const decodeHtmlEntities = (text) => {
 class UpcomingAndNews extends Component {
   state = {
     newsItems: [],
-    newsLoading: true
+    newsLoading: true,
+    imageOrientations: {} // Track image orientations: { index: 'portrait' | 'landscape' }
   }
 
   componentDidMount () {
     this.fetchNews()
+  }
+
+  // Detect if image is portrait or landscape
+  handleImageLoad = (e, index) => {
+    const img = e.target
+    const isPortrait = img.naturalHeight > img.naturalWidth
+    this.setState(prevState => ({
+      imageOrientations: {
+        ...prevState.imageOrientations,
+        [index]: isPortrait ? 'portrait' : 'landscape'
+      }
+    }))
   }
 
   // Format date from YYYY-MM-DD to readable format
@@ -66,7 +79,7 @@ class UpcomingAndNews extends Component {
     const upcomingContent = i18n.NewHomepage?.upcoming_gatherings || {}
     const newsContent = i18n.NewHomepage?.latest_news || {}
     const gatheringItems = this.getGatherings()
-    const { newsItems, newsLoading } = this.state
+    const { newsItems, newsLoading, imageOrientations } = this.state
 
     return (
       <section className="upcoming-news-section">
@@ -140,7 +153,7 @@ class UpcomingAndNews extends Component {
               <a 
                 key={index} 
                 href={news.url} 
-                className="news-card"
+                className={`news-card ${imageOrientations[index] || ''}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -148,6 +161,7 @@ class UpcomingAndNews extends Component {
                   src={news.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 
                   alt={decodeHtmlEntities(news.title)}
                   className="news-image"
+                  onLoad={(e) => this.handleImageLoad(e, index)}
                   onError={(e) => {
                     if (!e.target.dataset.fallback) {
                       e.target.dataset.fallback = 'true'
