@@ -11,6 +11,22 @@ const decodeHtmlEntities = (text) => {
   return textarea.value
 }
 
+// Helper to strip HTML tags, links, and images from text
+const stripHtmlAndLinks = (text) => {
+  if (!text) return ''
+  // Remove img tags and their content
+  let cleaned = text.replace(/<img[^>]*>/gi, '')
+  // Remove anchor tags but keep their text content
+  cleaned = cleaned.replace(/<a[^>]*>(.*?)<\/a>/gi, '$1')
+  // Remove any remaining HTML tags
+  cleaned = cleaned.replace(/<[^>]*>/g, '')
+  // Remove URLs (http/https links)
+  cleaned = cleaned.replace(/https?:\/\/[^\s]+/gi, '')
+  // Clean up extra whitespace
+  cleaned = cleaned.replace(/\s+/g, ' ').trim()
+  return cleaned
+}
+
 class UpcomingAndNews extends Component {
   state = {
     newsItems: [],
@@ -174,8 +190,8 @@ class UpcomingAndNews extends Component {
                     {decodeHtmlEntities(news.title)}
                   </h3>
                   <p className="news-excerpt">
-                    {decodeHtmlEntities(news.excerpt)}
-                    <span className="read-more">...read more</span>
+                    {stripHtmlAndLinks(decodeHtmlEntities(news.excerpt))}
+                    <span className="read-more">... read more</span>
                   </p>
                 </div>
               </a>

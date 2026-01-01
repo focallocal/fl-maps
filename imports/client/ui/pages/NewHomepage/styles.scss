@@ -597,25 +597,24 @@ $see-all-bg-opacity: 0.15;
               color: $grey;
               line-height: 1.4;
               margin: 0;
-              position: relative;
-              padding-right: 70px; // Space for "read more"
+              // Limit to 3 lines for landscape/square cards
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
               
               .read-more {
-                position: absolute;
-                bottom: 0;
-                right: 0;
                 color: $secondary-color;
                 font-weight: 500;
-                background: linear-gradient(to right, transparent, rgba(255,255,255,0.9) 30%, rgba(255,255,255,1) 60%);
-                padding-left: 20px;
+                // Inline, immediately after text
               }
             }
           }
           
-          // Portrait cards - no changes needed, text flows naturally
+          // Portrait cards get more lines since they have more space
           &.portrait .news-content {
             .news-excerpt {
-              padding-right: 70px;
+              -webkit-line-clamp: 5;
             }
           }
         }
