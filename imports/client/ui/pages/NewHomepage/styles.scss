@@ -1017,28 +1017,35 @@ $see-all-bg-opacity: 0.15;
           }
         }
         
-        // Cards with image on top (default for landscape/square images)
-        .gathering-card,
-        .news-card {
+        // Gathering cards - keep working as before, just adjust for mobile
+        .gathering-card {
           flex-direction: column;
-          height: auto;
-          min-height: 0;
-          overflow: hidden;
           
-          .gathering-image,
-          .news-image {
+          .gathering-image {
             width: 100%;
             max-width: 100%;
-            height: 0;
-            padding-bottom: 50%; // Aspect ratio like project builds
+            height: 150px;
             object-fit: cover;
           }
           
-          .gathering-details,
+          .gathering-details {
+            padding: 12px;
+          }
+        }
+        
+        // News cards - image on top for mobile
+        .news-card {
+          flex-direction: column;
+          
+          .news-image {
+            width: 100%;
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+          }
+          
           .news-content {
             padding: 12px;
-            flex: 1;
-            overflow: hidden;
           }
         }
         
@@ -1049,9 +1056,8 @@ $see-all-bg-opacity: 0.15;
           .news-image {
             width: auto;
             max-width: 40%;
-            height: 100%;
+            height: auto;
             min-height: 120px;
-            max-height: none;
             object-fit: cover;
           }
           
@@ -1064,24 +1070,19 @@ $see-all-bg-opacity: 0.15;
           }
         }
         
-        // Landscape image cards: image on top, text below (default)
+        // Landscape image cards: image on top, text below
         .news-card.landscape {
           flex-direction: column;
-          height: auto;
-          overflow: hidden;
           
           .news-image {
             width: 100%;
             max-width: 100%;
-            height: 0;
-            padding-bottom: 50%; // Aspect ratio like project builds
+            height: 150px;
             object-fit: cover;
           }
           
           .news-content {
             padding: 12px;
-            flex: 1;
-            overflow: hidden;
           }
         }
       }
