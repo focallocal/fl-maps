@@ -22,21 +22,30 @@ const stripHtmlAndLinks = (text) => {
   cleaned = cleaned.replace(/<[^>]*>/g, '')
   // Remove URLs (http/https links)
   cleaned = cleaned.replace(/https?:\/\/[^\s]+/gi, '')
-  // Remove Discourse image placeholders - match any text followed by dimensions and file size
-  // Patterns like: "image 708x912 40.1KB", "connectioncanvas london2015aug (10) 480x360 77KB"
-  cleaned = cleaned.replace(/[\w\s()-]*\d+x\d+\s*[\d.]+\s*[KMG]?B/gi, '')
-  // Remove lines that start with bullet points followed by image-like content
-  cleaned = cleaned.replace(/^\s*[-•]\s*[\w\s()-]*\d+x\d+.*$/gim, '')
-  // Remove standalone dimensions like "708x912" or "480x360" (with optional dash prefix)
-  cleaned = cleaned.replace(/[-–]?\s*\d+x\d+/gi, '')
-  // Remove file sizes like "40.1KB" or "77KB" (with optional dash prefix)
-  cleaned = cleaned.replace(/[-–]?\s*[\d.]+\s*[KMG]?B\b/gi, '')
-  // Remove isolated "image" word that might remain
-  cleaned = cleaned.replace(/[-–]?\s*\bimage\b/gi, '')
-  // Clean up bullet points and dashes that might remain
-  cleaned = cleaned.replace(/^\s*[-•]\s*$/gm, '')
+  
+  // Skip to content - find where actual content starts (after category headers and image placeholders)
+  // Look for common section starters like "Societal Issues Targeted:"
+  const contentStartPatterns = [
+    /Societal Issues Targeted:/i,
+    /Description:/i,
+    /About:/i,
+    /Overview:/i
+  ]
+  
+  for (const pattern of contentStartPatterns) {
+    const match = cleaned.match(pattern)
+    if (match && match.index !== undefined) {
+      cleaned = cleaned.substring(match.index)
+      break
+    }
+  }
+  
+  // Remove any dimension patterns like "708x912" or "480x360" anywhere in text
+  cleaned = cleaned.replace(/\d+[x×]\d+/gi, '')
+  // Remove file sizes like "40.1KB" or "77KB"
+  cleaned = cleaned.replace(/[\d.]+\s*[KMG]?B\b/gi, '')
+  // Clean up extra whitespace and dashes
   cleaned = cleaned.replace(/\s*-\s*-\s*/g, ' ')
-  // Clean up extra whitespace
   cleaned = cleaned.replace(/\s+/g, ' ').trim()
   return cleaned
 }

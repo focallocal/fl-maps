@@ -1022,25 +1022,23 @@ $see-all-bg-opacity: 0.15;
         .news-card {
           flex-direction: column;
           height: auto;
-          min-height: 0; // Allow flex to shrink
-          overflow: hidden; // Keep content inside card borders
+          min-height: 0;
+          overflow: hidden;
           
           .gathering-image,
           .news-image {
             width: 100%;
             max-width: 100%;
-            height: 100px; // Reduced height on mobile
-            min-height: 100px;
-            max-height: 100px;
-            flex-shrink: 0;
+            height: 0;
+            padding-bottom: 50%; // Aspect ratio like project builds
             object-fit: cover;
           }
           
           .gathering-details,
           .news-content {
             padding: 12px;
-            flex: 1; // Take remaining space
-            overflow: hidden; // Keep text inside
+            flex: 1;
+            overflow: hidden;
           }
         }
         
@@ -1075,10 +1073,8 @@ $see-all-bg-opacity: 0.15;
           .news-image {
             width: 100%;
             max-width: 100%;
-            height: 100px;
-            min-height: 100px;
-            max-height: 100px;
-            flex-shrink: 0;
+            height: 0;
+            padding-bottom: 50%; // Aspect ratio like project builds
             object-fit: cover;
           }
           
