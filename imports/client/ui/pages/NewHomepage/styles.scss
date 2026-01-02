@@ -1021,18 +1021,23 @@ $see-all-bg-opacity: 0.15;
         .gathering-card,
         .news-card {
           flex-direction: column;
+          height: auto; // Ensure card expands to fit content
+          overflow: visible; // Don't hide content
           
           .gathering-image,
           .news-image {
             width: 100%;
             max-width: 100%;
-            height: 150px;
-            max-height: 150px;
+            height: 120px;
+            max-height: 120px;
+            flex-shrink: 0; // Don't shrink the image
+            object-fit: cover;
           }
           
           .gathering-details,
           .news-content {
             padding: 12px;
+            display: block; // Ensure content displays
           }
         }
         
@@ -1061,18 +1066,20 @@ $see-all-bg-opacity: 0.15;
         // Landscape image cards: image on top, text below (default)
         .news-card.landscape {
           flex-direction: column;
+          height: auto; // Ensure card expands to fit content
+          overflow: visible; // Don't hide content
           
           .news-image {
             width: 100%;
             max-width: 100%;
-            height: 120px; // Reduced from 150px to leave room for content
+            height: 120px;
             max-height: 120px;
+            flex-shrink: 0;
             object-fit: cover;
           }
           
           .news-content {
-            display: flex;
-            flex-direction: column;
+            display: block; // Ensure content displays
             padding: 12px;
           }
         }
