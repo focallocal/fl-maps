@@ -1020,11 +1020,13 @@ $see-all-bg-opacity: 0.15;
         // Gathering cards - keep working as before, just adjust for mobile
         .gathering-card {
           flex-direction: column;
+          align-items: stretch;
           
           .gathering-image {
             width: 100%;
             max-width: 100%;
             height: 150px;
+            max-height: 150px;
             object-fit: cover;
           }
           
@@ -1033,19 +1035,24 @@ $see-all-bg-opacity: 0.15;
           }
         }
         
-        // News cards - image on top for mobile
+        // News cards - default mobile layout
         .news-card {
           flex-direction: column;
+          align-items: stretch;
+          min-height: auto;
           
           .news-image {
             width: 100%;
             max-width: 100%;
             height: 150px;
+            max-height: 150px;
+            min-height: auto;
             object-fit: cover;
           }
           
           .news-content {
             padding: 12px;
+            flex: none;
           }
         }
         
@@ -1057,6 +1064,7 @@ $see-all-bg-opacity: 0.15;
             width: auto;
             max-width: 40%;
             height: auto;
+            max-height: none;
             min-height: 120px;
             object-fit: cover;
           }
@@ -1070,19 +1078,23 @@ $see-all-bg-opacity: 0.15;
           }
         }
         
-        // Landscape image cards: image on top, text below
+        // Landscape/square image cards: image on top, text below (same as gatherings)
         .news-card.landscape {
           flex-direction: column;
+          align-items: stretch;
           
           .news-image {
             width: 100%;
             max-width: 100%;
             height: 150px;
+            max-height: 150px;
+            min-height: auto;
             object-fit: cover;
           }
           
           .news-content {
             padding: 12px;
+            flex: none;
           }
         }
       }
