@@ -1021,23 +1021,26 @@ $see-all-bg-opacity: 0.15;
         .gathering-card,
         .news-card {
           flex-direction: column;
-          height: auto; // Ensure card expands to fit content
-          overflow: visible; // Don't hide content
+          height: auto;
+          min-height: 0; // Allow flex to shrink
+          overflow: hidden; // Keep content inside card borders
           
           .gathering-image,
           .news-image {
             width: 100%;
             max-width: 100%;
-            height: 120px;
-            max-height: 120px;
-            flex-shrink: 0; // Don't shrink the image
+            height: 100px; // Reduced height on mobile
+            min-height: 100px;
+            max-height: 100px;
+            flex-shrink: 0;
             object-fit: cover;
           }
           
           .gathering-details,
           .news-content {
             padding: 12px;
-            display: block; // Ensure content displays
+            flex: 1; // Take remaining space
+            overflow: hidden; // Keep text inside
           }
         }
         
@@ -1066,21 +1069,23 @@ $see-all-bg-opacity: 0.15;
         // Landscape image cards: image on top, text below (default)
         .news-card.landscape {
           flex-direction: column;
-          height: auto; // Ensure card expands to fit content
-          overflow: visible; // Don't hide content
+          height: auto;
+          overflow: hidden;
           
           .news-image {
             width: 100%;
             max-width: 100%;
-            height: 120px;
-            max-height: 120px;
+            height: 100px;
+            min-height: 100px;
+            max-height: 100px;
             flex-shrink: 0;
             object-fit: cover;
           }
           
           .news-content {
-            display: block; // Ensure content displays
             padding: 12px;
+            flex: 1;
+            overflow: hidden;
           }
         }
       }

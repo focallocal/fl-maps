@@ -27,12 +27,12 @@ const stripHtmlAndLinks = (text) => {
   cleaned = cleaned.replace(/[\w\s()-]*\d+x\d+\s*[\d.]+\s*[KMG]?B/gi, '')
   // Remove lines that start with bullet points followed by image-like content
   cleaned = cleaned.replace(/^\s*[-•]\s*[\w\s()-]*\d+x\d+.*$/gim, '')
-  // Remove standalone dimensions like "708x912" or "480x360"
-  cleaned = cleaned.replace(/\b\d+x\d+\b/gi, '')
-  // Remove file sizes like "40.1KB" or "77KB" 
-  cleaned = cleaned.replace(/\b[\d.]+\s*[KMG]?B\b/gi, '')
+  // Remove standalone dimensions like "708x912" or "480x360" (with optional dash prefix)
+  cleaned = cleaned.replace(/[-–]?\s*\d+x\d+/gi, '')
+  // Remove file sizes like "40.1KB" or "77KB" (with optional dash prefix)
+  cleaned = cleaned.replace(/[-–]?\s*[\d.]+\s*[KMG]?B\b/gi, '')
   // Remove isolated "image" word that might remain
-  cleaned = cleaned.replace(/\bimage\b/gi, '')
+  cleaned = cleaned.replace(/[-–]?\s*\bimage\b/gi, '')
   // Clean up bullet points and dashes that might remain
   cleaned = cleaned.replace(/^\s*[-•]\s*$/gm, '')
   cleaned = cleaned.replace(/\s*-\s*-\s*/g, ' ')
