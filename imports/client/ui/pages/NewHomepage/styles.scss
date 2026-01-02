@@ -1026,7 +1026,6 @@ $see-all-bg-opacity: 0.15;
             width: 100%;
             max-width: 100%;
             height: 150px;
-            max-height: 150px;
             object-fit: cover;
           }
           
@@ -1045,7 +1044,6 @@ $see-all-bg-opacity: 0.15;
             width: 100%;
             max-width: 100%;
             height: 150px;
-            max-height: 150px;
             min-height: auto;
             object-fit: cover;
           }
@@ -1064,7 +1062,6 @@ $see-all-bg-opacity: 0.15;
             width: auto;
             max-width: 40%;
             height: auto;
-            max-height: none;
             min-height: 120px;
             object-fit: cover;
           }
@@ -1087,7 +1084,6 @@ $see-all-bg-opacity: 0.15;
             width: 100%;
             max-width: 100%;
             height: 150px;
-            max-height: 150px;
             min-height: auto;
             object-fit: cover;
           }
@@ -1096,6 +1092,23 @@ $see-all-bg-opacity: 0.15;
             padding: 12px;
             flex: none;
           }
+        }
+        
+        // Intermediate breakpoint: 550px-768px - taller images
+        @media (min-width: 550px) {
+          .gathering-card .gathering-image {
+            height: 220px;
+          }
+          
+          .news-card .news-image {
+            height: 220px;
+          }
+          
+          .news-card.landscape .news-image {
+            height: 220px;
+          }
+          
+          // Portrait stays as-is (image on left)
         }
       }
     }
