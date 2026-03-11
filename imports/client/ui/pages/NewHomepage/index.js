@@ -31,6 +31,19 @@ class NewHomepage extends Component {
 
     return (
       <main className='new-homepage'>
+        {/* SVG sharpening filter - tightens edges on scaled PNGs */}
+        <svg width="0" height="0" style={{ position: 'absolute' }}>
+          <defs>
+            <filter id="sharpen-edges">
+              <feConvolveMatrix
+                order="3"
+                kernelMatrix="0 -0.5 0  -0.5 3 -0.5  0 -0.5 0"
+                preserveAlpha="true"
+              />
+            </filter>
+          </defs>
+        </svg>
+        
         {/* Section 1: Hero Banner (unchanged) */}
         <div className='hero-section'>
           <img src={url} alt="Banner" className='background-image' />
