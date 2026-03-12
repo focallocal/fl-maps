@@ -44,13 +44,6 @@ $see-all-bg-opacity: 0.15;
       top: 0;
       left: 0;
       z-index: -1;
-      // Force GPU-accelerated rendering for higher-quality image interpolation
-      // This smooths stairstepped edges on scaled PNGs without blur or fade
-      transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      // SVG smooth-edge filter: blurred colour-matched border covers pixelated edges
-      filter: url(#smooth-bubble-edge);
       
       @media (max-width: 1023px) {
         display: none !important; // !important to override any conflicting Home styles

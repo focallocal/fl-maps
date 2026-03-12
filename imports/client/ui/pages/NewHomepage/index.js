@@ -31,22 +31,6 @@ class NewHomepage extends Component {
 
     return (
       <main className='new-homepage'>
-        {/* SVG filter: smooth anti-aliased edge border that fades into the bubble */}
-        <svg width="0" height="0" style={{ position: 'absolute' }}>
-          <defs>
-            <filter id="smooth-bubble-edge" x="-2%" y="-2%" width="104%" height="104%">
-              {/* Step 1: Create a smoothly blurred version of the full image */}
-              <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="smoothed"/>
-              {/* Step 2: Erode the alpha channel inward to create an interior-only mask */}
-              <feMorphology in="SourceAlpha" operator="erode" radius="2" result="inner-mask"/>
-              {/* Step 3: Cut the sharp original to only the interior (no jagged edges) */}
-              <feComposite in="SourceGraphic" in2="inner-mask" operator="in" result="crisp-center"/>
-              {/* Step 4: Layer crisp center over smooth edges - edges show the blurred color-matched border */}
-              <feComposite in="crisp-center" in2="smoothed" operator="over"/>
-            </filter>
-          </defs>
-        </svg>
-        
         {/* Section 1: Hero Banner (unchanged) */}
         <div className='hero-section'>
           <img src={url} alt="Banner" className='background-image' />
