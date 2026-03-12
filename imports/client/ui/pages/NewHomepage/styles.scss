@@ -49,8 +49,8 @@ $see-all-bg-opacity: 0.15;
       transform: translateZ(0);
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      // SVG sharpen filter tightens semi-transparent edge pixels into crisp edges
-      filter: url(#sharpen-edges);
+      // SVG smooth-edge filter: blurred colour-matched border covers pixelated edges
+      filter: url(#smooth-bubble-edge);
       
       @media (max-width: 1023px) {
         display: none !important; // !important to override any conflicting Home styles
