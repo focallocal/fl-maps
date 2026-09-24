@@ -21,7 +21,7 @@ const GettingStarted = () => {
         <div className="getting-started-content">
           <h2 className="getting-started-title">{content.title || 'Get Started'}</h2>
           <p className="getting-started-text">{content.description}</p>
-          <a href={content.see_all_url} className="see-all-btn">
+          <a href={content.see_all_url} className="see-all-btn" target="_top">
             {content.see_all_btn || 'See All Guides'}
           </a>
         </div>

@@ -25,8 +25,8 @@ const ProjectBuilds = () => {
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <div className="project-actions">
-                <a href={project.see_more_url} className="action-btn see-more-btn">See More</a>
-                <a href={project.tasks_url} className="action-btn tasks-btn">Tasks</a>
+                <a href={project.see_more_url} className="action-btn see-more-btn" target="_top">See More</a>
+                <a href={project.tasks_url} className="action-btn tasks-btn" target="_top">Tasks</a>
               </div>
             </div>
           </div>

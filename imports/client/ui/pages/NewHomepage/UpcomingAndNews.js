@@ -129,7 +129,7 @@ class UpcomingAndNews extends Component {
             <h2 className="section-title">
               {upcomingContent.title || 'Upcoming International Gatherings'}
             </h2>
-            <a href={upcomingContent.see_all_url} className="see-all-btn">
+            <a href={upcomingContent.see_all_url} className="see-all-btn" target="_top">
               See All
             </a>
           </div>
@@ -179,7 +179,7 @@ class UpcomingAndNews extends Component {
             <h2 className="section-title">
               {newsContent.title || 'Latest Community News'}
             </h2>
-            <a href={newsContent.see_all_url} className="see-all-btn">
+            <a href={newsContent.see_all_url} className="see-all-btn" target="_top">
               See All
             </a>
           </div>
