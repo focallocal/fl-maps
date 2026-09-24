@@ -3,17 +3,17 @@
     "title": "Get Started",
     "description": "Join our global community of changemakers creating happier cities through local action. Whether you're new or experienced, there's a path for everyone.",
     "see_all_btn": "See All Guides",
-    "see_all_url": "https://publichappinessmovement.com/c/building/guides/",
+    "see_all_url": "https://publichappinessmovement.com/c/docsusermanual/76",
     "guides": [
       {
         "title": "Host Your First Gathering",
         "description": "Learn how to organize a public happiness event in your community.",
         "image": "/images/home-images/Homepage Forum.jpg",
-        "url": "https://publichappinessmovement.com/t/how-to-host-a-public-happiness-gathering/"
+        "url": "https://publichappinessmovement.com/c/docsusermanual/76"
       },
       {
-        "title": "Join the Movement",
-        "description": "Connect with like-minded people and find gatherings near you.",
+        "title": "Put Yourself on the Map",
+        "description": "So other Public Happiness creators can invite you to their gatherings and activities. Also your space to share links to photos and videos from them.",
         "image": "/images/home-images/Homepage Maps.jpg",
         "url": "https://publichappinessmovement.com/t/welcome-to-public-happiness/"
       },
@@ -21,7 +21,7 @@
         "title": "Build Projects",
         "description": "Contribute to global initiatives making the world a happier place.",
         "image": "/images/home-images/public_happiness_logo_main.png",
-        "url": "https://publichappinessmovement.com/c/building/"
+        "url": "https://publichappinessmovement.com/chat/c/kindness-tasks/42"
       }
     ]
   },
@@ -29,16 +29,16 @@
     "gatherings": {
       "title": "Gatherings (Local)",
       "description": "Meet positive people nearby and join Public Happiness Gatherings - from music jams and free hugs to community connection events.",
-      "see_all_url": "https://publichappinessmovement.com/c/phm-community/",
+      "see_all_url": "https://publichappinessmovement.com/docuss/m_gather",
       "map_url": "/map",
-      "forum_url": "https://publichappinessmovement.com/c/phm-community/"
+      "forum_url": "https://publichappinessmovement.com/docuss/m_gather"
     },
     "projects": {
       "title": "Projects (Global)",
       "description": "Collaborate on global initiatives that create positive change. Build tools, resources, and campaigns that spread happiness worldwide.",
-      "see_all_url": "https://publichappinessmovement.com/c/building/",
+      "see_all_url": "https://publichappinessmovement.com/c/introductions/183",
       "map_url": "/map?category=global",
-      "forum_url": "https://publichappinessmovement.com/c/building/"
+      "forum_url": "https://publichappinessmovement.com/c/introductions/183"
     }
   },
   "upcoming_gatherings": {
@@ -79,7 +79,7 @@
     "discourse_category": "building",
     "projects": [
       {
-        "title": "End Homelessness",
+        "title": "Ending Involuntary Homelessness",
         "description": "A collaborative initiative to create sustainable solutions for homelessness through community action and innovative approaches.",
         "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
         "see_more_url": "https://publichappinessmovement.com/c/end-homelessness/",
@@ -90,14 +90,14 @@
         "description": "Taking positive action on climate change through community gatherings, education, and grassroots initiatives.",
         "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
         "see_more_url": "https://publichappinessmovement.com/c/climate-action/",
-        "tasks_url": "https://publichappinessmovement.com/c/climate-action/"
+        "tasks_url": "https://publichappinessmovement.com/c/climate-action/l/latest?board=default"
       },
       {
-        "title": "Homebase",
+        "title": "Road Trip",
         "description": "Building the central hub and infrastructure for the Public Happiness Movement community.",
         "image": "/images/home-images/PHM-logo-banner-text-mid.svg",
-        "see_more_url": "https://publichappinessmovement.com/c/homebase/",
-        "tasks_url": "https://publichappinessmovement.com/c/homebase/"
+        "see_more_url": "https://publichappinessmovement.com/c/road-trip/",
+        "tasks_url": "https://publichappinessmovement.com/c/road-trip/l/latest?board=default"
       }
     ]
   },

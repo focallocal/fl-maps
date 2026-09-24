@@ -193,8 +193,7 @@ class UpcomingAndNews extends Component {
                 key={index} 
                 href={news.url} 
                 className={`news-card ${imageOrientations[index] || ''}`}
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_top"
               >
                 <img 
                   src={news.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 

@@ -101,7 +101,7 @@ class PathwayCards extends Component {
           {/* Header separate from content for mobile reordering */}
           <div className="pathway-header">
             <h2 className="pathway-title">{projects.title || 'Projects (Global)'}</h2>
-            <a href={projects.see_all_url} className="see-all-link" target="_top">See All</a>
+            <a href={projects.see_all_url} className="see-all-link" target="_top">Begin</a>
           </div>
           <a href={projects.forum_url} className="pathway-image-link" target="_top">
             <img 
