@@ -730,13 +730,17 @@ $see-all-bg-opacity: 0.15;
     
     .title-box {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
+      gap: $element-spacing * 0.5;
+      width: fit-content;
+      max-width: 90%;
       background: rgba(255, 255, 255, 0.95);
       border: 2px solid $teal;
       border-radius: $card-border-radius;
-      padding: 6px 10px;
-      margin-bottom: $element-spacing;
+      padding: 6px 16px;
+      margin: 0 auto $element-spacing auto;
       
       .section-title {
         font-size: 1.1em;

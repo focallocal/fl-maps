@@ -3,57 +3,61 @@ import { Meteor } from 'meteor/meteor'
 import { HTTP } from 'meteor/http'
 
 /**
- * Fetches the latest videos from a public YouTube playlist using YouTube's
- * public Atom feed (no API key required, no npm dependency needed).
- * Feed docs: https://www.youtube.com/feeds/videos.xml?playlist_id=PLAYLIST_ID
+ * Fetches the latest videos from a public YouTube playlist using the
+ * official YouTube Data API v3 (requires a free API key from Google
+ * Cloud Console, stored in Meteor.settings.private.youtube.apiKey).
+ *
+ * Note: YouTube's legacy public Atom feed (/feeds/videos.xml) has been
+ * discontinued and now returns 404 for all channels/playlists, so the
+ * official API is the only reliable option.
  */
-
-// Decode the handful of HTML/XML entities that show up in YouTube feed titles
-const decodeEntities = (text = '') => {
-  return text
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(code))
-}
 
 Meteor.methods({
   /**
-   * Get the latest videos from a public YouTube playlist
+   * Get the latest videos from a public YouTube playlist, sorted by
+   * publish date (most recent first).
    */
   'Youtube.getLatestVideos'({ playlistId, limit = 6 } = {}) {
     if (!playlistId) {
       return []
     }
 
-    const url = `https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`
+    const apiKey = Meteor.settings?.private?.youtube?.apiKey
+    if (!apiKey) {
+      console.error('[Youtube API] Missing Meteor.settings.private.youtube.apiKey')
+      return []
+    }
 
-    let xml
+    const url = 'https://www.googleapis.com/youtube/v3/playlistItems'
+
+    let data
     try {
-      const response = HTTP.get(url, { timeout: 10000 })
-      xml = response.content
+      const response = HTTP.get(url, {
+        timeout: 10000,
+        params: {
+          part: 'snippet',
+          playlistId,
+          maxResults: 50,
+          key: apiKey
+        }
+      })
+      data = response.data
     } catch (error) {
-      console.error('[Youtube API] Error fetching playlist feed:', error.message)
+      console.error('[Youtube API] Error fetching playlist items:', error.message)
       return []
     }
 
-    if (!xml) {
+    if (!data || !Array.isArray(data.items)) {
       return []
     }
 
-    const entries = xml.match(/<entry>[\s\S]*?<\/entry>/g) || []
-
-    return entries.slice(0, limit).map(entry => {
-      const videoId = (entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/) || [])[1]
-      const title = decodeEntities((entry.match(/<title>(.*?)<\/title>/) || [])[1] || '')
-
-      return {
-        videoId,
-        title,
-        url: `https://www.youtube.com/watch?v=${videoId}`
-      }
-    }).filter(video => video.videoId)
+    return data.items
+      .filter(item => item.snippet?.resourceId?.videoId)
+      .sort((a, b) => new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt))
+      .slice(0, limit)
+      .map(item => ({
+        videoId: item.snippet.resourceId.videoId,
+        title: item.snippet.title
+      }))
   }
 })

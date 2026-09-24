@@ -15,6 +15,9 @@
       "secret": "",
       "apiKey": "",
       "apiUsername": "system"
+    },
+    "youtube": {
+      "apiKey": ""
     }
   }
 }
