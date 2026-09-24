@@ -33,7 +33,11 @@ class Leaderboards extends Component {
 
     return (
       <div key={board.id} className="leaderboard-card">
-        <h3 className="leaderboard-title">{board.title}</h3>
+        {board.url ? (
+          <a href={board.url} className="leaderboard-title" target="_top">{board.title}</a>
+        ) : (
+          <h3 className="leaderboard-title">{board.title}</h3>
+        )}
         <p className="leaderboard-subtitle">{board.subtitle}</p>
         
         <div className="leaderboard-entries">

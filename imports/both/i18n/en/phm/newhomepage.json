@@ -115,32 +115,38 @@
       {
         "id": "hearts_total",
         "title": "Hearts Received",
-        "subtitle": "All Time"
+        "subtitle": "All Time",
+        "url": "https://publichappinessmovement.com/leaderboard/1"
       },
       {
         "id": "hearts_monthly",
         "title": "Hearts Received",
-        "subtitle": "This Month"
+        "subtitle": "This Month",
+        "url": "https://publichappinessmovement.com/leaderboard/2"
       },
       {
         "id": "likes_monthly",
         "title": "Likes Given",
-        "subtitle": "This Month"
+        "subtitle": "This Month",
+        "url": "https://publichappinessmovement.com/leaderboard/2"
       },
       {
         "id": "posts_created",
         "title": "Posts Created",
-        "subtitle": "All Time"
+        "subtitle": "All Time",
+        "url": "https://publichappinessmovement.com/leaderboard/1"
       },
       {
         "id": "solutions_total",
         "title": "Solutions Accepted",
-        "subtitle": "All Time"
+        "subtitle": "All Time",
+        "url": "https://publichappinessmovement.com/leaderboard/3"
       },
       {
         "id": "solutions_monthly",
         "title": "Solutions Accepted",
-        "subtitle": "This Month"
+        "subtitle": "This Month",
+        "url": "https://publichappinessmovement.com/leaderboard/2"
       }
     ]
   },

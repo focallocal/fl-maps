@@ -27,6 +27,9 @@ class FeaturedVideos extends Component {
       if (!error && result) {
         this.setState({ videos: result, loading: false });
       } else {
+        if (error) {
+          console.error('[FeaturedVideos] Youtube.getLatestVideos failed:', error);
+        }
         this.setState({ loading: false });
       }
     });
@@ -38,7 +41,7 @@ class FeaturedVideos extends Component {
 
     return (
       <section className="featured-videos-section">
-        <div className="section-header">
+        <div className="title-box">
           <h2 className="section-title">{content.title || 'Latest Featured Videos'}</h2>
           <a href={content.see_all_url} className="see-all-btn" target="_top">
             {content.see_all_btn || 'See All'}

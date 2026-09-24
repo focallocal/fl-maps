@@ -728,30 +728,30 @@ $see-all-bg-opacity: 0.15;
     margin: 0 auto $section-spacing auto;
     padding: 0 20px;
     
-    .section-header {
-      margin-bottom: $element-spacing;
+    .title-box {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      gap: $element-spacing * 0.5;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid $teal;
+      border-radius: $card-border-radius;
+      padding: 6px 10px;
+      margin-bottom: $element-spacing;
       
       .section-title {
-        display: inline-block;
-        font-size: 1.4em;
+        font-size: 1.1em;
         font-weight: bold;
-        background: rgba(255, 255, 255, 0.95);
-        border: 2px solid $teal;
-        border-radius: $card-border-radius;
-        padding: 8px 16px;
         margin: 0;
+        color: $black-lighter;
+        text-align: left;
       }
       
       .see-all-btn {
-        padding: 8px 16px;
+        padding: 5px 12px;
         background: rgba($red, $see-all-bg-opacity);
         color: $red;
-        border-radius: 6px;
-        font-size: 0.9em;
+        border-radius: 5px;
+        font-size: 0.85em;
         font-weight: 500;
         text-decoration: none;
         transition: background 0.3s ease;
@@ -867,12 +867,18 @@ $see-all-bg-opacity: 0.15;
         box-sizing: border-box;
         
         .leaderboard-title {
+          display: block;
           font-size: 1.1em;
           font-weight: 600;
           padding-top: 8px;
           margin-bottom: 8px;
           text-align: center;
           color: $primary-color;
+          text-decoration: none;
+          
+          &:hover {
+            text-decoration: underline;
+          }
         }
         
         .leaderboard-subtitle {
