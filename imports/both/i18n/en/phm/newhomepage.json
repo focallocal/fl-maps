@@ -29,6 +29,7 @@
     "gatherings": {
       "title": "Gatherings (Local)",
       "description": "Meet positive people nearby and join Public Happiness Gatherings - from music jams and free hugs to community connection events.",
+      "see_all_btn": "See All",
       "see_all_url": "https://publichappinessmovement.com/docuss/m_gather",
       "map_url": "/map",
       "forum_url": "https://publichappinessmovement.com/docuss/m_gather"
@@ -36,6 +37,7 @@
     "projects": {
       "title": "Projects (Global)",
       "description": "Collaborate on global initiatives that create positive change. Build tools, resources, and campaigns that spread happiness worldwide.",
+      "see_all_btn": "Begin",
       "see_all_url": "https://publichappinessmovement.com/c/introductions/183",
       "map_url": "/map?category=global",
       "forum_url": "https://publichappinessmovement.com/c/introductions/183"
@@ -43,6 +45,8 @@
   },
   "upcoming_gatherings": {
     "title": "Upcoming International Gatherings",
+    "see_all_btn": "See All",
+    "read_more_text": "... read more",
     "see_all_url": "https://publichappinessmovement.com/c/mass-kindness/",
     "items": [
       {
@@ -70,12 +74,16 @@
   },
   "latest_news": {
     "title": "Latest Community News",
+    "see_all_btn": "See All",
+    "read_more_text": "... read more",
     "see_all_url": "https://publichappinessmovement.com/c/news-hub/",
     "discourse_category": "news-hub",
     "items_count": 3
   },
   "project_builds": {
     "title": "Current Project Builds",
+    "see_more_btn": "See More",
+    "tasks_btn": "Tasks",
     "discourse_category": "building",
     "projects": [
       {

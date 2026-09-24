@@ -130,7 +130,7 @@ class UpcomingAndNews extends Component {
               {upcomingContent.title || 'Upcoming International Gatherings'}
             </h2>
             <a href={upcomingContent.see_all_url} className="see-all-btn" target="_top">
-              See All
+              {upcomingContent.see_all_btn || 'See All'}
             </a>
           </div>
 
@@ -162,7 +162,7 @@ class UpcomingAndNews extends Component {
                   <h3 className="gathering-title">{item.title}</h3>
                   <p className="gathering-text">
                     {item.description}
-                    <span className="read-more">... read more</span>
+                    <span className="read-more">{upcomingContent.read_more_text || '... read more'}</span>
                   </p>
                 </div>
               </a>
@@ -180,7 +180,7 @@ class UpcomingAndNews extends Component {
               {newsContent.title || 'Latest Community News'}
             </h2>
             <a href={newsContent.see_all_url} className="see-all-btn" target="_top">
-              See All
+              {newsContent.see_all_btn || 'See All'}
             </a>
           </div>
 
@@ -213,7 +213,7 @@ class UpcomingAndNews extends Component {
                   </h3>
                   <p className="news-excerpt">
                     {stripHtmlAndLinks(decodeHtmlEntities(news.excerpt))}
-                    <span className="read-more">... read more</span>
+                    <span className="read-more">{newsContent.read_more_text || '... read more'}</span>
                   </p>
                 </div>
               </a>

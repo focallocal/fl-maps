@@ -81,7 +81,7 @@ class PathwayCards extends Component {
           {/* Header separate from content for mobile reordering */}
           <div className="pathway-header">
             <h2 className="pathway-title">{gatherings.title || 'Gatherings (Local)'}</h2>
-            <a href={gatherings.see_all_url} className="see-all-link" target="_top">See All</a>
+            <a href={gatherings.see_all_url} className="see-all-link" target="_top">{gatherings.see_all_btn || 'See All'}</a>
           </div>
           <Link to={gatherings.map_url} className="pathway-image-link">
             <img 
@@ -101,7 +101,7 @@ class PathwayCards extends Component {
           {/* Header separate from content for mobile reordering */}
           <div className="pathway-header">
             <h2 className="pathway-title">{projects.title || 'Projects (Global)'}</h2>
-            <a href={projects.see_all_url} className="see-all-link" target="_top">Begin</a>
+            <a href={projects.see_all_url} className="see-all-link" target="_top">{projects.see_all_btn || 'Begin'}</a>
           </div>
           <a href={projects.forum_url} className="pathway-image-link" target="_top">
             <img 
