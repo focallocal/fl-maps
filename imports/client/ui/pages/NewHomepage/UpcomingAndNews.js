@@ -141,8 +141,7 @@ class UpcomingAndNews extends Component {
                 key={index} 
                 href={item.url}
                 className="gathering-card"
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_top"
               >
                 <img 
                   src={item.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 

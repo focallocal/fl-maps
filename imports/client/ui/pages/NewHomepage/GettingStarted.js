@@ -33,8 +33,7 @@ const GettingStarted = () => {
               key={index} 
               href={guide.url} 
               className="guide-box"
-              target="_blank"
-              rel="noopener noreferrer"
+              target="_top"
             >
               <img 
                 src={guide.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 
@@ -64,8 +63,7 @@ const GettingStarted = () => {
           <a 
             href={guides[currentIndex]?.url} 
             className="guide-box"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_top"
           >
             <img 
               src={guides[currentIndex]?.image || '/images/home-images/PHM-logo-banner-text-mid.svg'} 
