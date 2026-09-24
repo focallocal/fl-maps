@@ -5,6 +5,7 @@ import GettingStarted from './GettingStarted';
 import PathwayCards from './PathwayCards';
 import UpcomingAndNews from './UpcomingAndNews';
 import ProjectBuilds from './ProjectBuilds';
+import FeaturedVideos from './FeaturedVideos';
 import Leaderboards from './Leaderboards';
 import i18n from '/imports/both/i18n/en';
 import './styles.scss';
@@ -58,6 +59,9 @@ class NewHomepage extends Component {
 
         {/* Section 6: Current Project Builds - 3 columns */}
         <ProjectBuilds />
+
+        {/* Section 6b: Latest Featured Videos - 3 columns */}
+        <FeaturedVideos />
 
         {/* Section 7: Leaderboards - 2 column grid */}
         <Leaderboards />

@@ -41,7 +41,12 @@ class Leaderboards extends Component {
             <div className="loading">Loading...</div>
           ) : data.length > 0 ? (
             data.slice(0, 5).map((entry, index) => (
-              <div key={index} className="leaderboard-entry">
+              <a
+                key={index}
+                href={entry.url}
+                className="leaderboard-entry"
+                target="_top"
+              >
                 <span className="entry-rank">{index + 1}</span>
                 <img 
                   src={entry.avatar} 
@@ -53,7 +58,7 @@ class Leaderboards extends Component {
                 />
                 <span className="entry-name">{entry.username}</span>
                 <span className="entry-score">{entry.score}</span>
-              </div>
+              </a>
             ))
           ) : (
             <div className="no-data">No data available</div>

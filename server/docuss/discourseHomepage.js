@@ -420,6 +420,7 @@ function processLeaderboardData(items, scoreField, baseUrl) {
       return {
         username: user.username,
         avatar: avatarUrl,
+        url: `${baseUrl}/u/${user.username}/summary`,
         score: item[scoreField] || 0
       };
     });
